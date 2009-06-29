@@ -1,0 +1,8 @@
+CHANGELOG.rdoc
+lib/whois/version.rb
+lib/whois.rb
+LICENSE.rdoc
+Rakefile
+README.rdoc
+test/test_helper.rb
+Manifest
