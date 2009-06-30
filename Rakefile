@@ -57,3 +57,7 @@ begin
 rescue LoadError
   puts "CodeStatistics (Rails) is not available"
 end
+
+Dir["tasks/**/*.rake"].each do |file|
+  load(file)
+end

@@ -15,6 +15,7 @@
 
 
 require 'whois/version'
+require 'whois/client'
 
 
 class Whois
