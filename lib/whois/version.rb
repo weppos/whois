@@ -14,7 +14,7 @@
 #++
 
 
-class Whois
+module Whois
 
   module Version
     MAJOR = 0
