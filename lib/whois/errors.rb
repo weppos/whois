@@ -8,6 +8,14 @@ module Whois
   class ServerError < StandardError
   end
   
+  class UnexpectedServerResponse < ServerError
+    attr_reader :response
+    def initialize(message, response = nil)
+      @response = response
+      super(message)
+    end
+  end
+  
   
   # Definition not found
   

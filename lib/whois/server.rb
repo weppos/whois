@@ -62,7 +62,8 @@ module Whois
       elsif server == "NONE"
         raise NoInterfaceError,   "This TLD has no whois server"
       elsif server == "CRSNIC"
-        raise NotImplementedError
+        # just for now let the client handle the whois negotiation
+        server
       elsif server == "PIR"
         raise NotImplementedError
       elsif server == "AFILIAS"
