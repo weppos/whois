@@ -48,12 +48,32 @@ module Whois
     end
     
     def self.find_for_domain(string)
-      servers.each do |ext, server|
-        return server if string.slice(-ext.size, ext.size) == ext
+      server = servers.each do |ext, srv|
+        break(srv) if string.slice(-ext.size, ext.size) == ext
       end
-      # you might want to remove this raise statement
-      # to make the guessing more clever.
-      raise ServerNotFound, "Unable to find a WHOIS server for `#{string}'"
+      
+      if server.nil?
+        # you might want to remove this raise statement
+        # to make the guessing more clever.
+        raise ServerNotFound, "Unable to find a whois server for `#{string}'"
+      elsif server =~ /^WEB (.*)/
+        raise WebInterfaceError,  "This TLD has no whois server, " +
+                                  "but you can access the whois database at `#{$1}'"
+      elsif server == "NONE"
+        raise NoInterfaceError,   "This TLD has no whois server"
+      elsif server == "CRSNIC"
+        raise NotImplementedError
+      elsif server == "PIR"
+        raise NotImplementedError
+      elsif server == "AFILIAS"
+        raise NotImplementedError
+      elsif server == "NICCC"
+        raise NotImplementedError
+      elsif server == "ARPA"
+        raise NotImplementedError
+      else
+        server
+      end
     end
     
     def self.servers

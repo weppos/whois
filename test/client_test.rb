@@ -17,4 +17,15 @@ class ClientTest < Test::Unit::TestCase
     assert_match /Created:/, response
   end
   
+  def test_query_with_domain_with_no_whois
+    error = assert_raise(NoInterfaceError) { @client.query("weppos.ad") }
+    assert_match /no whois server/, error.message
+  end
+  
+  def test_query_with_domain_with_web_whois
+    error = assert_raise(WebInterfaceError) { @client.query("weppos.ar") }
+    assert_match /no whois server/, error.message
+    assert_match /www\.nic\.ar/, error.message
+  end
+  
 end
