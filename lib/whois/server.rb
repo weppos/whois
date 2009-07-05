@@ -62,10 +62,9 @@ module Whois
       elsif server == "NONE"
         raise NoInterfaceError,   "This TLD has no whois server"
       elsif server == "CRSNIC"
-        # just for now let the client handle the whois negotiation
-        server
+        query_crsnic(string)
       elsif server == "PIR"
-        raise NotImplementedError
+        query_pir(string)
       elsif server == "AFILIAS"
         raise NotImplementedError
       elsif server == "NICCC"
@@ -81,6 +80,41 @@ module Whois
       @@servers ||= YAML.load_file(File.dirname(__FILE__) + "/servers.yml")
     end
     
+    private
+      
+      def self.ask_the_socket(query, server, port = 43)
+        client = TCPSocket.open(server, port)
+        client.write("#{query}\r\n")
+        client.read
+      ensure
+        client.close if client
+      end
+      
+      
+      def self.query_crsnic(query)
+        # weppos.com
+        # domain weppos.com
+        # =weppos.com
+        response = ask_the_socket("=#{query}", "whois.crsnic.net")
+        if response =~ /Domain Name:/ && response =~ /Whois Server: (.*)/
+          return $1
+        else
+          raise UnexpectedServerResponse, 
+                "Invalid response from `whois.crsnic.net'", response
+        end
+      end
+      
+      def self.query_pir(query)
+        # FULL weppos.org
+        response = ask_the_socket("FULL #{query}", "whois.publicinterestregistry.net")
+        if response =~ /Registrant Name:SEE SPONSORING REGISTRAR/ && 
+           response =~ /Registrant Street1:Whois Server:(.*)/
+          return $1
+        else
+          # Here's the full response
+          # ARGH!
+        end
+      end
     
   end
   
