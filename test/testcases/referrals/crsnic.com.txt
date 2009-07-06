@@ -173,7 +173,7 @@ for detailed information.
    Creation Date: 15-sep-1997
    Expiration Date: 14-sep-2011
 
->>> Last update of whois database: Sun, 05 Jul 2009 22:54:58 UTC <<<
+>>> Last update of whois database: Mon, 06 Jul 2009 10:12:55 UTC <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

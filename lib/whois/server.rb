@@ -66,11 +66,11 @@ module Whois
       elsif server == "PIR"
         query_pir(string)
       elsif server == "AFILIAS"
-        raise NotImplementedError
+        query_afilias(string)
       elsif server == "NICCC"
-        raise NotImplementedError
+        query_niccc(string)
       elsif server == "ARPA"
-        raise NotImplementedError
+        whichwhois(inaddr_to_ip(string))
       else
         server
       end
@@ -91,26 +91,62 @@ module Whois
       end
       
       
+      # FIXME: incomplete query handler
+      # 1. if not found, the query returns the response
+      # 2. if found, the query could return the response
+      # 3. if found, the query could return a referral
       def self.query_crsnic(query)
         response = ask_the_socket("=#{query}", "whois.crsnic.net")
-        if response =~ /Domain Name:/ && response =~ /Whois Server: (.*)/
+        if response =~ /Domain Name:/ && response =~ /Whois Server: (\S+)/
           return $1
         else
           # FIXME: Here's the full response. ARGH!
-          # Usually this happens when domain is not registered.
         end
       end
       
+      # FIXME: incomplete query handler
+      # It behavies like query_crsnic because the whois belongs to verisign.
+      def self.query_niccc(query)
+        response = ask_the_socket("=#{query}", "whois.nic.cc")
+        if response =~ /Domain Name:/ && response =~ /Whois Server: (\S+)/
+          return $1
+        else
+          # FIXME: Here's the full response. ARGH!
+        end
+      end
+      
+      # FIXME: incomplete query handler
+      # 1. if not found, the query returns the response
+      # 2. if found, the query could return the response (95% probs)
+      # 3. if found, the query could return a referral
       def self.query_pir(query)
         response = ask_the_socket("FULL #{query}", "whois.publicinterestregistry.net")
-        puts response
         if response =~ /Registrant Name:SEE SPONSORING REGISTRAR/ && 
-           response =~ /Registrant Street1:Whois Server:(.*)/
+           response =~ /Registrant Street1:Whois Server:(\S+)/
           return $1
         else
           # FIXME: Here's the full response. ARGH!
           # Usually this happens for the 95% of queries. Isn't that wonderful?
         end
+      end
+      
+      # FIXME: incomplete query handler
+      # 1. if not found, the query returns the response
+      # 2. if found, the query could return the response
+      # 3. if found, the query could return a referral
+      def self.query_afilias(query)
+        response = ask_the_socket(query, "whois.afilias-grs.info")
+        # TEST: ensure regexp matches
+        if response =~ /Domain Name:/ &&  response =~ /Whois Server:(\S+)/
+          return $1
+        else
+          # FIXME: Here's the full response. ARGH!
+        end
+      end
+      
+      def self.inaddr_to_ip(query)
+        raise NotImplementedError
+        
       end
     
   end
