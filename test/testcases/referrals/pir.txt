@@ -14,60 +14,61 @@ necessary to register domain names or modify existing registrations.  All
 rights reserved. Public Interest Registry reserves the right to modify these terms at any 
 time. By submitting this query, you agree to abide by this policy. 
 
-Domain ID:D106767520-LROR
-Domain Name:WEPPOS.ORG
-Created On:30-Jun-2005 13:06:03 UTC
-Last Updated On:30-Jun-2009 07:02:03 UTC
-Expiration Date:30-Jun-2010 13:06:03 UTC
-Sponsoring Registrar:GoDaddy.com, Inc. (R91-LROR)
-Status:CLIENT DELETE PROHIBITED
-Status:CLIENT RENEW PROHIBITED
-Status:CLIENT TRANSFER PROHIBITED
-Status:CLIENT UPDATE PROHIBITED
-Registrant ID:GODA-021200217
-Registrant Name:Simone Carletti
-Registrant Street1:SS Laghi di Avigliana, 95
-Registrant Street2:
+Domain ID:D593840-LROR
+Domain Name:Z.ORG
+Created On:01-Dec-1993 05:00:00 UTC
+Last Updated On:09-Dec-2002 13:14:08 UTC
+Expiration Date:08-Dec-2003 17:05:15 UTC
+Sponsoring Registrar:Internet Assigned Numbers Authority (IANA) (R193-LROR)
+Status:INACTIVE
+Status:DELETE PROHIBITED
+Status:RENEW PROHIBITED
+Status:TRANSFER PROHIBITED
+Status:UPDATE PROHIBITED
+Registrant ID:193-C
+Registrant Name:SEE SPONSORING REGISTRAR
+Registrant Street1:Whois Server:whois.iana.org
+Registrant Street2:Referral URL:res-dom.iana.org
 Registrant Street3:
-Registrant City:Manta
-Registrant State/Province:Cuneo
-Registrant Postal Code:12030
-Registrant Country:IT
-Registrant Phone:+39.3392551831
+Registrant City:N/A
+Registrant State/Province:
+Registrant Postal Code:N/A
+Registrant Country:CA
+Registrant Phone:
 Registrant Phone Ext.:
 Registrant FAX:
 Registrant FAX Ext.:
-Registrant Email:hosting@weppos.net
-Admin ID:GODA-221200217
-Admin Name:Simone Carletti
-Admin Street1:SS Laghi di Avigliana, 95
-Admin Street2:
+Registrant Email:not@available.org
+Admin ID:193-C
+Admin Name:SEE SPONSORING REGISTRAR
+Admin Street1:Whois Server:whois.iana.org
+Admin Street2:Referral URL:res-dom.iana.org
 Admin Street3:
-Admin City:Manta
-Admin State/Province:Cuneo
-Admin Postal Code:12030
-Admin Country:IT
-Admin Phone:+39.3392551831
+Admin City:N/A
+Admin State/Province:
+Admin Postal Code:N/A
+Admin Country:CA
+Admin Phone:
 Admin Phone Ext.:
 Admin FAX:
 Admin FAX Ext.:
-Admin Email:hosting@weppos.net
-Tech ID:GODA-121200217
-Tech Name:Simone Carletti
-Tech Street1:SS Laghi di Avigliana, 95
-Tech Street2:
+Admin Email:not@available.org
+Tech ID:193-C
+Tech Name:SEE SPONSORING REGISTRAR
+Tech Street1:Whois Server:whois.iana.org
+Tech Street2:Referral URL:res-dom.iana.org
 Tech Street3:
-Tech City:Manta
-Tech State/Province:Cuneo
-Tech Postal Code:12030
-Tech Country:IT
-Tech Phone:+39.3392551831
+Tech City:N/A
+Tech State/Province:
+Tech Postal Code:N/A
+Tech Country:CA
+Tech Phone:
 Tech Phone Ext.:
 Tech FAX:
 Tech FAX Ext.:
-Tech Email:hosting@weppos.net
-Name Server:NS28.DOMAINCONTROL.COM
-Name Server:NS27.DOMAINCONTROL.COM
+Tech Email:not@available.org
+Name Server: 
+Name Server: 
 Name Server: 
 Name Server: 
 Name Server: 

@@ -49,7 +49,7 @@ module Whois
     
     def self.find_for_domain(string)
       server = servers.each do |ext, srv|
-        break(srv) if string.slice(-ext.size, ext.size) == ext
+        break(srv) if /#{ext}$/ =~ string
       end
       
       if server.nil?
@@ -92,27 +92,24 @@ module Whois
       
       
       def self.query_crsnic(query)
-        # weppos.com
-        # domain weppos.com
-        # =weppos.com
         response = ask_the_socket("=#{query}", "whois.crsnic.net")
         if response =~ /Domain Name:/ && response =~ /Whois Server: (.*)/
           return $1
         else
-          raise UnexpectedServerResponse, 
-                "Invalid response from `whois.crsnic.net'", response
+          # FIXME: Here's the full response. ARGH!
+          # Usually this happens when domain is not registered.
         end
       end
       
       def self.query_pir(query)
-        # FULL weppos.org
         response = ask_the_socket("FULL #{query}", "whois.publicinterestregistry.net")
+        puts response
         if response =~ /Registrant Name:SEE SPONSORING REGISTRAR/ && 
            response =~ /Registrant Street1:Whois Server:(.*)/
           return $1
         else
-          # Here's the full response
-          # ARGH!
+          # FIXME: Here's the full response. ARGH!
+          # Usually this happens for the 95% of queries. Isn't that wonderful?
         end
       end
     

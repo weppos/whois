@@ -43,7 +43,7 @@ module Whois
       
       def ask_the_socket(query, server, port = 43)
         client = TCPSocket.open(server, port)
-        client.write("#{query}\n")    # I could use put(foo) and forget the \n
+        client.write("#{query}\r\n")  # I could use put(foo) and forget the \n
         client.read                   # but write/read sounds better than puts/read
       ensure                          # and I really want to use read instead of gets.
         client.close if client        # If != client something went wrong.
