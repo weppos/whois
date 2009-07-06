@@ -144,9 +144,24 @@ module Whois
         end
       end
       
+      # "127.1.168.192.in-addr.arpa" => "192.168.1.127"
+      # "1.168.192.in-addr.arpa" => "192.168.1.0"
+      # "168.192.in-addr.arpa" => "192.168.0.0"
+      # "192.in-addr.arpa" => "192.0.0.0"
+      # "in-addr.arpa" => "0.0.0.0"
       def self.inaddr_to_ip(query)
-        raise NotImplementedError
-        
+        unless /^([0-9]{1,3}\.?){0,4}in-addr\.arpa$/ =~ query
+          raise ServerError, "Invalid .in-addr.arpa address"
+        end
+         a, b, c, d = query.scan(/[0-9]{1,3}\./).reverse
+        [a, b, c, d].map do |token|
+          token = (token ||= 0).to_i
+          if token <= 255 && token >= 0
+            token
+          else
+            raise ServerError, "Invalid .in-addr.arpa token `#{token}'"
+          end
+        end.join(".")
       end
     
   end
