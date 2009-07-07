@@ -5,7 +5,7 @@
 #
 #
 # Category::    Net
-# Package::     WWW::Delicious
+# Package::     Whois
 # Author::      Simone Carletti <weppos@weppos.net>
 # License::     MIT License
 #
@@ -34,20 +34,10 @@ module Whois
     end
     
     
-    def query(string)
-      server = Server.whichwhois(string)
-      ask_the_socket(string, server)
+    def query(qstring)
+      server = Server.guess(qstring)
+      server.query(qstring)
     end
-    
-    private
-      
-      def ask_the_socket(query, server, port = 43)
-        client = TCPSocket.open(server, port)
-        client.write("#{query}\r\n")  # I could use put(foo) and forget the \n
-        client.read                   # but write/read sounds better than puts/read
-      ensure                          # and I really want to use read instead of gets.
-        client.close if client        # If != client something went wrong.
-      end
       
   end
 

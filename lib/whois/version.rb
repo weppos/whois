@@ -5,7 +5,7 @@
 #
 #
 # Category::    Net
-# Package::     WWW::Delicious
+# Package::     Whois
 # Author::      Simone Carletti <weppos@weppos.net>
 # License::     MIT License
 #

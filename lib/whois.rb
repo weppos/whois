@@ -5,7 +5,7 @@
 #
 #
 # Category::    Net
-# Package::     WWW::Delicious
+# Package::     Whois
 # Author::      Simone Carletti <weppos@weppos.net>
 # License::     MIT License
 #
@@ -18,6 +18,7 @@ require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
 require 'whois/server'
+require 'whois/definitions/tlds.rb'
 
 
 module Whois
@@ -29,7 +30,7 @@ module Whois
 end
 
 module Kernel
-  def whois(string)
-    Whois::Client.new.query(string)
+  def whois(qstring)
+    Whois::Client.new.query(qstring)
   end
 end
