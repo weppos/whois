@@ -36,7 +36,7 @@ Whois::Server.define ".arpa", "whois.iana.org"
 Whois::Server.define ".aero", "whois.aero"
 Whois::Server.define ".asia", "whois.nic.asia"
 Whois::Server.define ".biz", "whois.nic.biz"
-Whois::Server.define ".cat", "whois.cat"
+Whois::Server.define ".cat", "whois.cat", {:format => "-C US-ASCII ace %s"}
 Whois::Server.define ".coop", "whois.nic.coop"
 Whois::Server.define ".info", "whois.afilias.info"
 Whois::Server.define ".jobs", "jobswhois.verisign-grs.com"
@@ -104,7 +104,7 @@ Whois::Server.define ".cv", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define ".cx", "whois.nic.cx"
 Whois::Server.define ".cy", nil, {:web=>"http://www.nic.cy/nslookup/online_database.php", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define ".cz", "whois.nic.cz"
-Whois::Server.define ".de", "whois.denic.de"
+Whois::Server.define ".de", "whois.denic.de", {:format => "-T dn,ace -C US-ASCII %s"}
 Whois::Server.define ".dj", "whois.domain.dj"
 Whois::Server.define ".dk", "whois.dk-hostmaster.dk"
 Whois::Server.define ".dm", "whois.nic.dm"
