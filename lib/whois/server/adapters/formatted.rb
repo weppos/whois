@@ -20,7 +20,7 @@ module Whois
       
       class Formatted < Base
         
-        def query(qstring)
+        def request(qstring)
           query_the_socket(sprintf(options[:format], qstring), server)
         end
         

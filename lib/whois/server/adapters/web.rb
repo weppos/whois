@@ -20,7 +20,7 @@ module Whois
       
       class Web < Base
         
-        def query(qstring)
+        def request(qstring)
           raise WebInterfaceError,  "This TLD has no whois server, " +
                                     "but you can access the whois database at `#{options[:web]}'"
         end

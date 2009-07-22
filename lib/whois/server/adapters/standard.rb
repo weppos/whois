@@ -20,7 +20,7 @@ module Whois
       
       class Standard < Base
         
-        def query(qstring)
+        def request(qstring)
           query_the_socket(qstring, server)
         end
         

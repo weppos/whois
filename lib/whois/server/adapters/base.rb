@@ -34,9 +34,13 @@ module Whois
         end
         
         def query(qstring)
+          request(qstring)
+        end
+
+        def request(qstring)
           raise NotImplementedError
         end
-        
+
         
         protected
 

@@ -20,7 +20,7 @@ module Whois
       
       class Arpa < Base
         
-        def query(qstring)
+        def request(qstring)
           Server.guess(inaddr_to_ip(qstring)).query(qstring)
         end
         

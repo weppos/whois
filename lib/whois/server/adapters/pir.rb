@@ -20,7 +20,7 @@ module Whois
       
       class Pir < Base
         
-        def query(qstring)
+        def request(qstring)
           response = ask_the_socket("FULL #{qstring}", "whois.publicinterestregistry.net", DEFAULT_WHOIS_PORT)
           if response =~ /Registrant Name:SEE SPONSORING REGISTRAR/ && 
              response =~ /Registrant Street1:Whois Server:(\S+)/

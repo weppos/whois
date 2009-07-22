@@ -20,7 +20,7 @@ module Whois
       
       class None < Base
         
-        def query(qstring)
+        def request(qstring)
           raise NoInterfaceError, "This TLD has no whois server"
         end
         
