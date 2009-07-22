@@ -18,7 +18,7 @@ module Whois
   class Server
     module Adapters
       
-      class Pir < Base
+      class Arpa < Base
         
         def query(qstring)
           Server.guess(inaddr_to_ip(qstring)).query(qstring)

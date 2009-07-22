@@ -21,7 +21,7 @@ module Whois
       class Standard < Base
         
         def query(qstring)
-          ask_the_socket(qstring, server, options[:port] || 43)
+          query_the_socket(qstring, server)
         end
         
       end

@@ -20,6 +20,7 @@ require 'whois/server/adapters/afilias'
 require 'whois/server/adapters/arpa'
 require 'whois/server/adapters/formatted'
 require 'whois/server/adapters/none'
+require 'whois/server/adapters/pir'
 require 'whois/server/adapters/verisign'
 require 'whois/server/adapters/web'
 
@@ -29,17 +30,17 @@ module Whois
   class Server
     
     @@definitions = []
-    
-    def self.define(extension, server, options = {})
-      @@definitions << [extension, server, options]
-    end
-    
+
     def self.definitions
       @@definitions
     end
     
-    def self.factory(definition)
-      extension, server, options = definition
+    def self.define(extension, server, options = {})
+      @@definitions << [extension, server, options]
+    end
+
+    def self.factory(extension, server, options = {})
+      options = options.dup
       (options.delete(:adapter) || Adapters::Standard).new(extension, server, options)
     end
     
@@ -49,37 +50,39 @@ module Whois
       # TODO: IPv6 address
       
       # Email Address
-      if qstring =~ /@/
-        find_for_email(qstring)
+      if qstring =~ /@/ && server = find_for_email(qstring)
+        return server
       end
       
       # TODO: NSI NIC
       # TODO: ASN32
       # TODO: IP
       
-      # Domain
-      find_for_domain(qstring)
+      # TLD
+      if server = find_for_tld(qstring)
+        return server
+      end
       
       # TODO: guessing
       # TODO: game-over
-    end
-    
-    
-    def self.find_for_email(qstring)
-      raise ServerNotSupported, "No whois server is known for email objects"
-    end
-    
-    def self.find_for_domain(qstring)
-      server = definitions.each do |definition|
-        return factory(definition) if /#{definition.first}$/ =~ qstring
-      end
+
       # you might want to remove this raise statement
       # to make the guessing more clever.
       raise ServerNotFound, "Unable to find a whois server for `#{qstring}'"
     end
     
+
     private
-      
+
+      def self.find_for_email(qstring)
+        raise ServerNotSupported, "No whois server is known for email objects"
+      end
+
+      def self.find_for_tld(qstring)
+        server = definitions.each do |definition|
+          return factory(*definition) if /#{definition.first}$/ =~ qstring
+        end
+      end
     
   end
   

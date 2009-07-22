@@ -19,6 +19,9 @@ module Whois
     module Adapters
       
       class Base
+
+        DEFAULT_WHOIS_PORT = 43
+
         
         attr_reader :extension
         attr_reader :server
@@ -35,9 +38,15 @@ module Whois
         end
         
         
+        protected
+
+          def query_the_socket(qstring, server, port = nil)
+            ask_the_socket(qstring, server, port || options[:port] || DEFAULT_WHOIS_PORT)
+          end
+
         private
-          
-          def ask_the_socket(qstring, server, port = 43)
+
+          def ask_the_socket(qstring, server, port)
             client = TCPSocket.open(server, port)
             client.write("#{qstring}\r\n")  # I could use put(foo) and forget the \n
             client.read                   # but write/read sounds better than puts/read

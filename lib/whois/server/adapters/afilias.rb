@@ -21,9 +21,9 @@ module Whois
       class Afilias < Base
         
         def query(qstring)
-          response = ask_the_socket(qstring, "whois.afilias-grs.info")
+          response = ask_the_socket(qstring, "whois.afilias-grs.info", DEFAULT_WHOIS_PORT)
           if response =~ /Domain Name:/ && response =~ /Whois Server:(\S+)/
-            ask_the_socket(qstring, $1)
+            ask_the_socket(qstring, $1, DEFAULT_WHOIS_PORT)
           else
             response
           end
