@@ -1,0 +1,3 @@
+= Whois
+
+Whois is a pure Ruby, platform-indipendent WHOIS client.
