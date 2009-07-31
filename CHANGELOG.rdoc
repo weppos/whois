@@ -5,6 +5,8 @@
 
 * FIXED: Server#guess should raise ServerNotFound when query is not recognized.
 
+* FIXED: ServerError should inherits from Error and not StandardError.
+
 * CHANGED: Removed the Kernel#whois method because fights with many implementations of missing_method. Moved the method under the Whois namespace.
 
 

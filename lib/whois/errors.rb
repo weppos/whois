@@ -5,7 +5,7 @@ module Whois
   
   
   # Generic Server exception class.
-  class ServerError < StandardError
+  class ServerError < Error
   end
   
   class UnexpectedServerResponse < ServerError
