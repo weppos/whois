@@ -13,6 +13,10 @@ class ServerTest < Test::Unit::TestCase
     assert Server.guess("google.com")
   end
 
+  def test_guess_should_raise_servernotfound_with_unrecognized_query
+    assert_raise(ServerNotFound){ Server.guess("xyz") }
+  end
+
 
   def test_definitions
     assert_instance_of Array, Server.definitions

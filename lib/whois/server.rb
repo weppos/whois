@@ -82,6 +82,7 @@ module Whois
         server = definitions.each do |definition|
           return factory(*definition) if /#{definition.first}$/ =~ qstring
         end
+        nil
       end
     
   end

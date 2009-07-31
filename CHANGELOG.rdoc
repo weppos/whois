@@ -3,6 +3,8 @@
 
 == master
 
+* FIXED: Server#guess should raise ServerNotFound when query is not recognized.
+
 * CHANGED: Removed the Kernel#whois method because fights with many implementations of missing_method. Moved the method under the Whois namespace.
 
 
