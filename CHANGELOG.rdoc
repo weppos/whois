@@ -1,5 +1,11 @@
 = Changelog
 
+
+== master
+
+* CHANGED: Removed the Kernel#whois method because fights with many implementations of missing_method. Moved the method under the Whois namespace.
+
+
 == Release 0.1.0
 
 * First release
