@@ -27,7 +27,7 @@ module Whois
   GEM             = 'whois'
   AUTHORS         = ['Simone Carletti <weppos@weppos.net>']
   
-  def whois(qstring)
+  def self.whois(qstring)
     Whois::Client.new.query(qstring)
   end
 end

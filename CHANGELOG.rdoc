@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* FIXED: Whois#whois defined as instance method but modules can't have instances!
+
+
 == Release 0.1.1
 
 * FIXED: Server#guess should raise ServerNotFound when query is not recognized.
