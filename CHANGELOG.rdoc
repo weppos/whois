@@ -5,6 +5,8 @@
 
 * FIXED: Whois#whois defined as instance method but modules can't have instances!
 
+* FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
+
 
 == Release 0.1.1
 
