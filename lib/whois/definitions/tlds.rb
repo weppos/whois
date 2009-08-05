@@ -275,7 +275,7 @@ Whois::Server.define ".to", "whois.tonic.to"
 Whois::Server.define ".tp", "whois.nic.tp"
 Whois::Server.define ".tr", "whois.metu.edu.tr"
 Whois::Server.define ".tt", nil, {:web=>"http://www.nic.tt/cgi-bin/search.pl", :adapter=>Whois::Server::Adapters::Web}
-Whois::Server.define ".tv", "whois.nic.tv"
+Whois::Server.define ".tv", "whois.nic.tv", {:adapter=>Whois::Server::Adapters::Verisign}
 Whois::Server.define ".tw", "whois.twnic.net"
 Whois::Server.define ".tz", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define ".ua", "whois.net.ua"

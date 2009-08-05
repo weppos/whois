@@ -7,6 +7,8 @@
 
 * FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
 
+* FIXED: .tv whois server has become a thin server (closes #261).
+
 
 == Release 0.1.1
 
