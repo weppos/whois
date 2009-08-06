@@ -72,7 +72,7 @@ Whois::Server.define :tld, #{extension.inspect}, \
       end
 
       <<-RUBY
-Whois::Server.define :ipv6, #{range.inspect}, \
+Whois::Server.define :ipv4, #{range.inspect}, \
 #{server.inspect}\
 #{options.nil? ? "" : ", " + options.inspect}
       RUBY
