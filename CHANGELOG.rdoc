@@ -11,6 +11,8 @@
 
 * ADDED: Support for IPv4 and IPv6 (closes #265).
 
+* ADDED: Compatibility with existing GEM Whois 0.4.2 (closes #266).
+
 
 == Release 0.1.1
 

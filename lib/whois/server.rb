@@ -86,8 +86,9 @@ module Whois
     private
 
       def self.find_for_ipv6(qstring)
+        ip = IPAddr.new(qstring)
         definitions(:ipv6).each do |definition|
-          if IPAddr.new(definition.first).include?(qstring)
+          if IPAddr.new(definition.first).include?(ip)
             return factory(:ipv6, *definition)
           end
         end
@@ -97,8 +98,9 @@ module Whois
       end
 
       def self.find_for_ipv4(qstring)
+        ip = IPAddr.new(qstring)
         definitions(:ipv4).each do |definition|
-          if IPAddr.new(definition.first).include?(qstring)
+          if IPAddr.new(definition.first).include?(ip)
             return factory(:ipv4, *definition)
           end
         end

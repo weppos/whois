@@ -21,7 +21,7 @@ require 'timeout'
 module Whois
 
   class Client
-    
+
     class Query
       # IPv6?
       # RPSL?
@@ -35,8 +35,8 @@ module Whois
     
     
     def query(qstring)
-      server = Server.guess(qstring)
-      server.query(qstring)
+      @server = Server.guess(qstring)
+      @server.query(qstring)
     end
       
   end

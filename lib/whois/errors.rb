@@ -1,3 +1,19 @@
+#
+# = Ruby Whois
+#
+# A pure Ruby WHOIS client.
+#
+#
+# Category::    Net
+# Package::     Whois
+# Author::      Simone Carletti <weppos@weppos.net>
+# License::     MIT License
+#
+#--
+#
+#++
+
+
 module Whois
   
   class Error < StandardError
