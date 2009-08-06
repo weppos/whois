@@ -9,6 +9,8 @@
 
 * FIXED: .tv whois server has become a thin server (closes #261).
 
+* ADDED: Support for IPv4 and IPv6 (closes #265).
+
 
 == Release 0.1.1
 

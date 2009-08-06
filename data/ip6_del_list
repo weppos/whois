@@ -1,0 +1,47 @@
+# http://www.iana.org/assignments/ipv6-unicast-address-assignments
+# The parser is very simple-minded and wants the two first components of
+# addresses. It does not deal with networks == 0 or > 24 bit.
+
+2001:0000::/32	teredo
+2001:0200::/23	apnic
+2001:0400::/23	arin
+2001:0600::/23	ripe
+2001:0800::/22	ripe
+2001:0C00::/22	apnic
+# contains 2001:1000::/23, not allocated
+2001:1000::/22	lacnic
+2001:1400::/22	ripe
+2001:1800::/23	arin
+2001:1A00::/23	ripe
+2001:1C00::/22	ripe
+# contains 2001:3C00::/22, reserved for RIPE but not allocated
+2001:2000::/19	ripe
+2001:4000::/23	ripe
+2001:4200::/23	afrinic
+2001:4400::/23	apnic
+2001:4600::/23	ripe
+2001:4800::/23	arin
+2001:4A00::/23	ripe
+# contains 2001:4E00::/23, not allocated
+2001:4C00::/22	ripe
+
+2001:5000::/20	ripe
+
+2001:8000::/18	apnic
+
+# 6to4 is special-cased
+2002:0000::/16	6to4
+
+2003:0000::/18	ripe
+
+2400:0000::/20	whois.nic.or.kr
+2400:0000::/12	apnic
+2600:0000::/12	arin
+2610:0000::/23	arin
+2620:0000::/23	arin
+2800:0000::/12	lacnic
+2A00:0000::/12	ripe
+2C00:0000::/12	afrinic
+
+3FFE:0000::/16	6bone
+

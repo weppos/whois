@@ -4,7 +4,7 @@ class ServerAdaptersStandardTest < Test::Unit::TestCase
   include Whois
 
   def setup
-    @definition = [".foo", "whois.foo", {}]
+    @definition = [:tld, ".foo", "whois.foo", {}]
     @klass = Server::Adapters::Standard
     @server = @klass.new(*@definition)
   end
@@ -15,7 +15,7 @@ class ServerAdaptersStandardTest < Test::Unit::TestCase
   end
 
   def test_query_with_port
-    @server = @klass.new(".foo", "whois.foo", { :port => 20 })
+    @server = @klass.new(:tld, ".foo", "whois.foo", { :port => 20 })
     @server.expects(:ask_the_socket).with("domain.foo", "whois.foo", 20)
     @server.query("domain.foo")
   end

@@ -4,13 +4,19 @@ class ServerAdaptersNoneTest < Test::Unit::TestCase
   include Whois
 
   def setup
-    @definition = [".foo", nil, {}]
     @klass = Server::Adapters::None
-    @server = @klass.new(*@definition)
   end
 
   def test_query
-    assert_raise(NoInterfaceError) { @server.query("domain.foo") }
+    @server = @klass.new(:tld, ".foo", nil, {})
+    error = assert_raise(NoInterfaceError) { @server.query("domain.foo") }
+    assert_match /tld/, error.message
+  end
+
+  def test_query_with_ipv4
+    @server = @klass.new(:ipv4, "127.0.0.1", nil, {})
+    error = assert_raise(NoInterfaceError) { @server.query("domain.foo") }
+    assert_match /ipv4/, error.message
   end
 
 end

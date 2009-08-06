@@ -22,14 +22,16 @@ module Whois
 
         DEFAULT_WHOIS_PORT = 43
 
-        
-        attr_reader :extension
-        attr_reader :server
+        attr_reader :type
+        attr_reader :allocation
+        attr_reader :host
         attr_reader :options
+
         
-        def initialize(extension, server, options = {})
-          @extension  = extension
-          @server     = server
+        def initialize(type, allocation, host, options = {})
+          @type       = type
+          @allocation = allocation
+          @host       = host
           @options    = options || {}
         end
         
@@ -44,18 +46,18 @@ module Whois
         
         protected
 
-          def query_the_socket(qstring, server, port = nil)
-            ask_the_socket(qstring, server, port || options[:port] || DEFAULT_WHOIS_PORT)
+          def query_the_socket(qstring, host, port = nil)
+            ask_the_socket(qstring, host, port || options[:port] || DEFAULT_WHOIS_PORT)
           end
 
         private
 
-          def ask_the_socket(qstring, server, port)
-            client = TCPSocket.open(server, port)
+          def ask_the_socket(qstring, host, port)
+            client = TCPSocket.open(host, port)
             client.write("#{qstring}\r\n")  # I could use put(foo) and forget the \n
-            client.read                   # but write/read sounds better than puts/read
-          ensure                          # and I really want to use read instead of gets.
-            client.close if client        # If != client something went wrong.
+            client.read                     # but write/read sounds better than puts/read
+          ensure                            # and I really want to use read instead of gets.
+            client.close if client          # If != client something went wrong.
           end
         
       end

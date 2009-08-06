@@ -8,7 +8,7 @@ module Whois
   class ServerError < Error
   end
   
-  class UnexpectedServerResponse < ServerError
+  class UnexpectedServerResponseError < ServerError
     attr_reader :response
     def initialize(message, response = nil)
       @response = response
@@ -40,14 +40,22 @@ module Whois
   # specific domains that only provide a web–based whois interface. (\x01)
   class WebInterfaceError < InterfaceNotSupported
   end
-  
-  
+
+
+  # Known object, Definition unavailable
+
+  # Raised when we know about a specific functionality
+  # but this functionality has not been implemented yet.
+  # This is usually the result of a porting from a third-party library.
+  class ServerNotImplemented < ServerError
+  end
+
   # Raised when no whois server is known for this kind of object. (\x05)
   class ServerNotSupported < ServerError
   end
   
   # Raised when unknown AS numer of IP network. (\x06)
-  class UnknownServer < ServerError
+  class AllocationUnknown < ServerError
   end
 
 end

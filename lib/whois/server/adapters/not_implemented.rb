@@ -18,10 +18,10 @@ module Whois
   class Server
     module Adapters
       
-      class None < Base
+      class NotImplemented < Base
         
         def request(qstring)
-          raise NoInterfaceError, "This `#{type}' has no whois server"
+          raise ServerNotImplemented, "The `#{host}' feature has not been implemented yet."
         end
         
       end

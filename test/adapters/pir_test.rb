@@ -4,7 +4,7 @@ class ServerAdaptersPirTest < Test::Unit::TestCase
   include Whois
 
   def setup
-    @definition = [".foo", "whois.foo", {}]
+    @definition = [:tld, ".foo", "whois.foo", {}]
     @klass = Server::Adapters::Pir
     @server = @klass.new(*@definition)
   end

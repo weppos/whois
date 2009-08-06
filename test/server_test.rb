@@ -19,33 +19,39 @@ class ServerTest < Test::Unit::TestCase
 
 
   def test_definitions
-    assert_instance_of Array, Server.definitions
-  end
-  
-
-  def test_define
-    Server.define(".foo", "whois.foo")
-    assert_equal [".foo", "whois.foo", {}], Server.definitions.last
+    assert_instance_of Hash, Server.definitions
   end
 
-  def test_define_with_options
-    Server.define(".foo", "whois.foo", :foo => "bar")
-    assert_equal [".foo", "whois.foo", { :foo => "bar" }], Server.definitions.last
+  def test_definitions_with_key
+    assert_equal nil, Server.definitions(:foo)
+    Server.define(:foo, ".foo", "whois.foo")
+    assert_equal [[".foo", "whois.foo", {}]], Server.definitions(:foo)
+  end
+
+
+  def test_define_tld
+    Server.define(:tld, ".foo", "whois.foo")
+    assert_equal [".foo", "whois.foo", {}], Server.definitions[:tld].last
+  end
+
+  def test_define_tld_with_options
+    Server.define(:tld, ".foo", "whois.foo", :foo => "bar")
+    assert_equal [".foo", "whois.foo", { :foo => "bar" }], Server.definitions[:tld].last
   end
 
 
   def test_factory
-    server = Server.factory(".foo", "whois.foo")
+    server = Server.factory(:tld, ".foo", "whois.foo")
     assert_instance_of Server::Adapters::Standard, server
   end
 
   def test_factory_with_adapter
-    server = Server.factory(".foo", "whois.foo", :adapter => Server::Adapters::None)
+    server = Server.factory(:tld, ".foo", "whois.foo", :adapter => Server::Adapters::None)
     assert_instance_of Server::Adapters::None, server
   end
 
   def test_factory_with_adapter_should_delete_adapter_option
-    server = Server.factory(".foo", "whois.foo", :adapter => Server::Adapters::None, :foo => "bar")
+    server = Server.factory(:tld, ".foo", "whois.foo", :adapter => Server::Adapters::None, :foo => "bar")
     assert_equal server.options, { :foo => "bar" } 
   end
 

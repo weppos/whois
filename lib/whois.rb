@@ -18,7 +18,6 @@ require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
 require 'whois/server'
-require 'whois/definitions/tlds.rb'
 
 
 module Whois

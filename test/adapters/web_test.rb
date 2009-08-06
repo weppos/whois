@@ -4,7 +4,7 @@ class ServerAdaptersWebTest < Test::Unit::TestCase
   include Whois
 
   def setup
-    @definition = [".foo", nil, { :web => "http://whois.foo" }]
+    @definition = [:tld, ".foo", nil, { :web => "http://whois.foo" }]
     @klass = Server::Adapters::Web
     @server = @klass.new(*@definition)
   end

@@ -4,7 +4,7 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
   include Whois
 
   def setup
-    @definition = [".foo", "whois.foo", {}]
+    @definition = [:tld, ".foo", "whois.foo", {}]
     @klass = Server::Adapters::Afilias
     @server = @klass.new(*@definition)
   end
