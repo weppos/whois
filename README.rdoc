@@ -3,7 +3,7 @@
 Whois is a pure Ruby WHOIS client. 
 It is a os-independent library and doesn't require external C libraries or GEMS: it is a 100% Ruby software with all the advantages and disadvantages that it involves.
 
-This software was developed to power "RoboDomain":http://www.robodomain.com and, despite it has been using in a production environment since July 2009, it should not be considered production-ready yet. It is currently in its beta stage.
+This software was developed to power RoboDomain[http://www.robodomain.com] and, despite it has been using in a production environment since July 2009, it should not be considered production-ready yet. It is currently in its beta stage.
 
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change Whois interfaces without notice and at any time causing queries to specific hosts to stop working.
 
@@ -70,7 +70,7 @@ Whois is largely inspired by other notable Whois projects, most of all the Debia
 I would lie if I say I'm completely unaware of the other Ruby Whois projects. Before starting this Ruby Whois library I deeply investigated the available resources and, despite none of them was a good candidate for a refactoring, some of them expose a really cool API.
 They didn't directly influence this library or any design decision, but they have been a really interesting code-reading.
 
-The parser architecture (yet to come) has been inspired by the "PHPWhois":http://phpwhois.sourceforge.net/ project. The authors puts lot of effort to create whois-specific parsers normalizing the different responses in a single tree-based structure. So far, this is the only one opensource project that offers such this feature in all the programming language ecosystem.
+The parser architecture (yet to come) has been inspired by the PHPWhois[http://phpwhois.sourceforge.net/] project. The authors puts lot of effort to create whois-specific parsers normalizing the different responses in a single tree-based structure. So far, this is the only one opensource project that offers such this feature in all the programming language ecosystem.
 
 Despite I spent weeks reading source code from the available whois libraries, Ruby Whois has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
@@ -98,7 +98,7 @@ First Whois Version:: {Cyril Mougel}[http://blog.shingara.fr/] <cyril.mougel@gma
 
 If you use this library and find yourself missing any functionality I have missed, please {let me know}[mailto:weppos@weppos.net].
 
-Bug reports and Feature suggestions "are welcomed":http://code.simonecarletti.com/projects/whois/issues.
+Bug reports and Feature suggestions {are welcomed}[http://code.simonecarletti.com/projects/whois/issues].
 
 
 == Resources
