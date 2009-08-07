@@ -19,12 +19,22 @@ require 'resolv'
 
 module Whois
 
+  def self.deprecate(message = nil)
+    message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
+    $stderr.puts("DEPRECATION WARNING: #{message}")
+  end
+
+
   class WhoisException < Exception # :nodoc
+    def initialize(message)
+      ::Whois.deprecate "WhoisException is deprecated as of 0.5.0 and will be removed in a future release along with Whois::Whois class."
+      super
+    end
   end
 
   class WhoisExceptionError < WhoisException # :nodoc
-    def initialize (i)
-      super("Report a bug with error #{i} to http://rubyforge.org/projects/whois/")
+    def initialize(message)
+      super("Report a bug with error #{message} to http://rubyforge.org/projects/whois/")
     end
   end
 
@@ -54,15 +64,22 @@ module Whois
   #   # The host of this IPv4
   #   w.host
   #
+  # WARNING: The Whois::Whois class will be removed in a future release.
+  # You should update your code to the new interface offered by <tt>Whois::Client</tt>.
+  # If you want to save keystrokes, you can even use the handy <tt>Whois.query</tt> method.
+  #
+  #   Whois.query '72.14.207.99'
+  #   # => whois response
   #
   class Whois # :nodoc
 
-    attr_reader   :all
     attr_reader   :ip
     attr_reader   :host
     attr_accessor :host_search
 
     def initialize(request, host_search = false)
+      ::Whois.deprecate "Whois::Whois class is deprecated as of 0.5.0 and will be removed in a future release. Use Whois.query('#{request.to_s}') instead."
+
       @host_search = host_search
       @host        = nil
       @client      = Client.new
@@ -92,6 +109,7 @@ module Whois
     end
 
     def search_host
+      ::Whois.deprecate "#search_host will be removed in a future release. Use Resolv.getname(#{@ip.to_s}) in your application to get the same feature."
       @host = if @host_search
         Resolv.getname(@ip.to_s)
       else
@@ -101,7 +119,13 @@ module Whois
       @host = nil
     end
 
+    def all
+      ::Whois.deprecate "#all will be removed in a future release. You are responsible for storing the whois response in a custom variable."
+      @all
+    end
+
     def server
+      ::Whois.deprecate "#server will be removed in a future release. No replacement has been planned for the immediate future."
       if server = @client.instance_variable_get(:"@server")
         Server::Server.lookup(server.host)
       end

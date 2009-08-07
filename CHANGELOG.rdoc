@@ -13,6 +13,8 @@
 
 * ADDED: Compatibility with existing GEM Whois 0.4.2 (closes #266).
 
+* ADDED: Deprecation warning for all the features that will be removed in Whois 0.6.0 (closes #266).
+
 
 == Release 0.1.1
 
