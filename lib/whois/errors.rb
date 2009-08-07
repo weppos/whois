@@ -15,21 +15,14 @@
 
 
 module Whois
-  
+
+  # The base error class for all Whois error classes.
   class Error < StandardError
   end
   
   
   # Generic Server exception class.
   class ServerError < Error
-  end
-  
-  class UnexpectedServerResponseError < ServerError
-    attr_reader :response
-    def initialize(message, response = nil)
-      @response = response
-      super(message)
-    end
   end
   
   

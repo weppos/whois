@@ -22,7 +22,7 @@ module Whois
 
   class Client
 
-    class Query
+    class Query # :nodoc
       # IPv6?
       # RPSL?
       # email?
