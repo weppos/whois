@@ -135,7 +135,7 @@ module Whois
 
   class Server # :nodoc
 
-    class Server
+    class Server # :nodoc
       @@definitions = [
         ['whois.afrinic.net'  , 'Afrinic'     ],
         ['whois.ripe.net'     , 'Ripe'        ],
@@ -170,21 +170,21 @@ module Whois
       end
     end
 
-    class Afrinic < Server;     end
-    class Ripe < Server;        end
-    class Apnic < Server;       end
-    class Arin < Server;        end
-    class Lacnic < Server;      end
-    class Nicor < Server;       end
-    class Nicad < Server;       end
-    class Nicbr < Server;       end
-    class Teredo < Server;      end
-    class Ipv6ToIpv4 < Server;  end
-    class V6nic < Server;       end
-    class Twnic < Server;       end
-    class Verio < Server;       end
-    class Ipv6Bone < Server;    end
-    class Ginntt < Server;      end
+    Afrinic     = Class.new(Server)
+    Ripe        = Class.new(Server)
+    Apnic       = Class.new(Server)
+    Arin        = Class.new(Server)
+    Lacnic      = Class.new(Server)
+    Nicor       = Class.new(Server)
+    Nicad       = Class.new(Server)
+    Nicbr       = Class.new(Server)
+    Teredo      = Class.new(Server)
+    Ipv6ToIpv4  = Class.new(Server)
+    V6nic       = Class.new(Server)
+    Twnic       = Class.new(Server)
+    Verio       = Class.new(Server)
+    Ipv6Bone    = Class.new(Server)
+    Ginntt      = Class.new(Server)
 
   end
 

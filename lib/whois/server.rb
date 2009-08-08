@@ -42,7 +42,7 @@ module Whois
 
     # Returns the active definition list.
     # If <tt>type</tt>, returns only the definitions matching given type or
-    # nil if no definition exists.
+    # nil if no definition exists.
     #
     #   Whois::Server.definitions
     #   # => { :tld => [...], :ipv4 => [], ... }
@@ -61,13 +61,17 @@ module Whois
 
     # Defines a new server for <tt>:type</tt> queries.
     #
-    # This method requires 3 mandatory arguments:
+    # == Parameters
+    #
     # type::
-    #   The type of whois server to define. Allowed values are :tld, :ipv4, :ipv6.
+    #   The type of whois server to define. 
+    #   Allowed values are :tld, :ipv4, :ipv6.
     # allocation::
     #   The allocation, range or hostname this server is responsible for.
     # host::
     #   The server hostname.
+    # options::
+    #   Additional options to customize Adpter behavior.
     #
     # ==== Examples
     #
