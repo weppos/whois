@@ -22,6 +22,17 @@ module Whois
 
   class Client
 
+    # The maximum time to run a whois query expressed in seconds
+    DEFAULT_TIMEOUT = 5
+
+    attr_accessor :timeout
+
+
+    def initialize(options = {})
+      self.timeout = options[:timeout] || DEFAULT_TIMEOUT
+    end
+
+
     class Query # :nodoc
       # IPv6?
       # RPSL?
@@ -35,8 +46,10 @@ module Whois
     
     
     def query(qstring)
-      @server = Server.guess(qstring)
-      @server.query(qstring)
+      Timeout::timeout(timeout) do
+        @server = Server.guess(qstring)
+        @server.query(qstring)
+      end
     end
       
   end
