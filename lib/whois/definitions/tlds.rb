@@ -46,7 +46,7 @@ Whois::Server.define :tld, ".tel", "whois.nic.tel"
 Whois::Server.define :tld, ".travel", "whois.nic.travel"
 Whois::Server.define :tld, ".ac", "whois.nic.ac"
 Whois::Server.define :tld, ".ad", nil, {:adapter=>Whois::Server::Adapters::None}
-Whois::Server.define :tld, ".ae", "whois.uaenic.ae"
+Whois::Server.define :tld, ".ae", "whois.aeda.net.ae"
 Whois::Server.define :tld, ".af", "whois.nic.af"
 Whois::Server.define :tld, ".ag", "whois.nic.ag"
 Whois::Server.define :tld, ".ai", "whois.ai"

@@ -7,7 +7,9 @@
 
 * FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
 
-* FIXED: .tv whois server has become a thin server (closes #261).
+* FIXED: Outdated .tv definition: .tv whois server has become a thin server (closes #261).
+
+* FIXED: Outdated .ae definition (closes #270).
 
 * ADDED: Support for IPv4 and IPv6 (closes #265).
 
