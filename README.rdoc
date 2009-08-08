@@ -8,6 +8,15 @@ This software was developed to power RoboDomain[http://www.robodomain.com] and, 
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change Whois interfaces without notice and at any time causing queries to specific hosts to stop working.
 
 
+== Features
+
+* Written in pure Ruby without any additional dependency
+* Flexible and extensible with custom server
+* Support for ipv6, ipv4 and top level domain whois queries
+* Object oriented design
+* Compatible with older Whois version (Whois 0.4.2, see below)
+
+
 == Requirements
 
 * Ruby >= 1.8.6 (not tested with previous versions)
@@ -106,11 +115,19 @@ Bug reports and Feature suggestions {are welcomed}[http://code.simonecarletti.co
 * {Homepage}[http://code.simonecarletti.com/whois]
 * {GitHub}[http://github.com/weppos/whois]
 * {RubyForge}[http://rubyforge.org/projects/whois/]
+* {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
 
 == Changelog
 
 See the CHANGELOG.rdoc file for details.
+
+
+== Roadmap
+
+* Implement intelligent Whois response parsing
+
+For more details visit the {roadmap page}[http://code.simonecarletti.com/projects/roadmap/whois].
 
 
 == License
