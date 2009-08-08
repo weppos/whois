@@ -28,6 +28,6 @@ module Whois
   AUTHORS         = ['Simone Carletti <weppos@weppos.net>']
   
   def self.whois(qstring)
-    Whois::Client.new.query(qstring)
+    Client.new.query(qstring)
   end
 end
