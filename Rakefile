@@ -27,7 +27,7 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.url           = "http://code.simonecarletti.com/whois"
   p.project       = RUBYFORGE_PROJECT
   p.description   = <<-EOD
-    WWW::Delicious is an intelligent WHOIS client written in pure Ruby. \
+    Whois is an intelligent WHOIS client written in pure Ruby. \
     It enables you to query registry data for ipv4, ipv6 and top level domains.
   EOD
 
