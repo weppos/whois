@@ -1,7 +1,7 @@
 #
 # = Ruby Whois
 #
-# A pure Ruby WHOIS client.
+# An intelligent pure Ruby WHOIS client.
 #
 #
 # Category::    Net
@@ -18,14 +18,14 @@ module Whois
 
   module Version
     MAJOR = 0
-    MINOR = 1
-    TINY  = 1
+    MINOR = 5
+    TINY  = 0
 
     STRING = [MAJOR, MINOR, TINY].join('.')
   end
 
   VERSION         = Version::STRING
-  STATUS          = 'dev'
+  STATUS          = 'beta'
   BUILD           = nil
 
 end

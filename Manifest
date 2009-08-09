@@ -40,6 +40,7 @@ test/adapters/standard_test.rb
 test/adapters/verisign_test.rb
 test/adapters/web_test.rb
 test/client_test.rb
+test/deprecated_test.rb
 test/server_test.rb
 test/test_helper.rb
 test/testcases/referrals/afilias.bz.txt
@@ -49,3 +50,4 @@ test/testcases/referrals/pir.org.txt
 test/testcases/responses/it.txt
 test/whois_test.rb
 utils/bm_shell_vs_pure.rb
+utils/tlds.txt

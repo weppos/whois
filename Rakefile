@@ -13,7 +13,7 @@ PKG_FILES   = FileList.new("{lib,test}/**/*.rb") do |files|
   files.include %w(README.rdoc CHANGELOG.rdoc LICENSE.rdoc)
   files.include %w(Rakefile)
 end
-RUBYFORGE_PROJECT = nil
+RUBYFORGE_PROJECT = 'whois'
 
 if ENV['SNAPSHOT'].to_i == 1
   PKG_VERSION << "." << Time.now.utc.strftime("%Y%m%d%H%M%S")
@@ -23,9 +23,13 @@ end
 Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.author        = "Simone Carletti"
   p.email         = "weppos@weppos.net"
-  p.summary       = "A pure Ruby WHOIS client."
+  p.summary       = "An intelligent pure Ruby WHOIS client."
   p.url           = "http://code.simonecarletti.com/whois"
   p.project       = RUBYFORGE_PROJECT
+  p.description   = <<-EOD
+    WWW::Delicious is an intelligent WHOIS client written in pure Ruby. \
+    It enables you to query registry data for ipv4, ipv6 and top level domains.
+  EOD
 
   p.need_zip      = true
   p.rdoc_pattern  = /^(lib|CHANGELOG.rdoc|README.rdoc)/
