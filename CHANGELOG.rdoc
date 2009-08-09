@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* FIXED: rake coverage task crashes.
+
+
 == 0.5.0
 
 * FIXED: Whois#whois defined as instance method but modules can't have instances!

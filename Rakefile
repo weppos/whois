@@ -41,8 +41,7 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   #p.add_development_dependency "echoe", "~>3.1.0"
   #p.add_development_dependency "mocha", "~>0.9.0"
 
-  p.rcov_options  = ["--main << README.rdoc -x Rakefile -x mocha -x rcov"]
-
+  p.rcov_options  = ["-Itest -x mocha,rcov,Rakefile"]
 end
 
 
