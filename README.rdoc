@@ -21,7 +21,13 @@ An extensive test suite is available to verify the library correctness but you m
 
 * Ruby >= 1.8.6 (not tested with previous versions)
 
-Whois is compatible with Ruby 1.9.
+Whois has been {successfully tested}[http://code.simonecarletti.com/wiki/whois/Platforms] against the following Ruby platforms:
+
+* Ruby 1.8.6 / 1.8.7 / 1.9.1
+* MacRuby 0.4
+* Ruby Enterprise Edition
+
+Do you run any other Ruby platform or version? Are you experiencing any problem? Join our {discussion group}[http://groups.google.com/group/ruby-whois].
 
 
 == Installation
