@@ -1,6 +1,7 @@
 = Whois
 
-Whois is a pure Ruby WHOIS client. 
+Whois is an intelligent pure Ruby WHOIS client.
+
 It is a os-independent library and doesn't require external C libraries or GEMS: it is a 100% Ruby software with all the advantages and disadvantages that it involves.
 
 This software was developed to power RoboDomain[http://www.robodomain.com] and, despite it has been using in a production environment since July 2009, it should not be considered production-ready yet. It is currently in its beta stage.
@@ -42,6 +43,8 @@ You might need administrator privileges on your system to install it.
 
 == Getting Started
 
+Note. This section covers only the essentials for getting started with the Whois library. If you want to take the full advantage of all its features, visit the {documentation page}[http://code.simonecarletti.com/wiki/whois].
+
 Whois provides the ability to get whois information for hostnames, ipv4 and ipv6 ip addresses. The client is smart enough to guess the best whois server according to given query, send the request and return the response.
 
 Checkout the following examples:
@@ -69,10 +72,18 @@ The query method is stateless. For this reason, you can safely re-use the same c
   w.query("2001:db8::1428:57ab")
   w.query("google.it")
 
+=== Timeout
 
-== Documentation
+By default, each query run though the client has a timeout value of 5 seconds. If the execution exceeds timeout limit, the client raises a <tt>Timeout::Error</tt> exception.
 
-More documentation to come. Please be patient, this library is under active development.
+Off course, you can customize the timeout value setting a different value. If timeout is <tt>nil</tt>, the client will until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know you are doing!
+
+  w = Whois::Client.new(:timeout => 10)
+  w.timeout # => 10
+  w.timeout = 5
+  w.timeout # => 5
+  
+  w.query("google.com")
 
 
 == Acknowledgments
@@ -121,6 +132,9 @@ Bug reports and Feature suggestions {are welcomed}[http://code.simonecarletti.co
 * {Homepage}[http://code.simonecarletti.com/whois]
 * {GitHub}[http://github.com/weppos/whois]
 * {RubyForge}[http://rubyforge.org/projects/whois/]
+
+* {Documentation}[http://code.simonecarletti.com/wiki/whois]
+* {API}[http://whois.rubyforge.org/]
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
 
