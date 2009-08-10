@@ -9,10 +9,6 @@ require 'whois'
 # Common package properties
 PKG_NAME    = ENV['PKG_NAME']    || Whois::GEM
 PKG_VERSION = ENV['PKG_VERSION'] || Whois::VERSION
-PKG_FILES   = FileList.new("{lib,test}/**/*.rb") do |files|
-  files.include %w(README.rdoc CHANGELOG.rdoc LICENSE.rdoc)
-  files.include %w(Rakefile)
-end
 RUBYFORGE_PROJECT = 'whois'
 
 if ENV['SNAPSHOT'].to_i == 1
@@ -32,14 +28,10 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   EOD
 
   p.need_zip      = true
-  p.rdoc_pattern  = /^(lib|CHANGELOG.rdoc|README.rdoc)/
 
   p.development_dependencies += ["rake  ~>0.8",
                                  "echoe ~>3.1",
                                  "mocha ~>0.9"]
-  #p.add_development_dependency "rake",  "~>0.8.0"
-  #p.add_development_dependency "echoe", "~>3.1.0"
-  #p.add_development_dependency "mocha", "~>0.9.0"
 
   p.rcov_options  = ["-Itest -x mocha,rcov,Rakefile"]
 end
