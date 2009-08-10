@@ -1,6 +1,16 @@
 = Changelog
 
 
+== next maintenance
+
+* ADDED: Whois::Client.new now accepts a block and yields self.
+
+    client = Whois::Client.new do |c|
+      c.timeout = nil
+    end
+    client.query("google.com")
+
+
 == Release 0.5.1
 
 * FIXED: 'rake coverage' task crashes.

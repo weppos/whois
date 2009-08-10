@@ -28,8 +28,23 @@ module Whois
     attr_accessor :timeout
 
 
-    def initialize(options = {})
+    #
+    # :call-seq:
+    #   new { |client| ... } => client
+    #   new(options = {}) { |client| ... } => client
+    # 
+    # Initializes a new Whois::Client with <tt>options</tt>.
+    # 
+    # If block is given, yields self.
+    # 
+    #   client = Whois::Client.new do |c|
+    #     c.timeout = nil
+    #   end
+    #   client.query("google.com")
+    #
+    def initialize(options = {}, &block)
       self.timeout = options[:timeout] || DEFAULT_TIMEOUT
+      yield(self) if block_given?
     end
 
 
