@@ -3,7 +3,9 @@
 
 == next maintenance
 
-* FIXED: rake coverage task crashes.
+* FIXED: 'rake coverage' task crashes.
+
+* FIXED: In case of thin server the client should concatenate all responses (closes #259).
 
 * ADDED: Whois binary (closes #271).
 

@@ -10,16 +10,18 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
   end
 
   def test_query
-    expected = "No match for DOMAIN.FOO."
-    @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(expected)
+    response = "No match for DOMAIN.FOO."
+    expected = response
+    @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(response)
     assert_equal expected, @server.query("domain.foo")
   end
 
   def test_query_with_referral
-    response = File.read(File.dirname(__FILE__) + "/../testcases/referrals/afilias.bz.txt")
-    expected = "Match for DOMAIN.FOO."
-    @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(response)
-    @server.expects(:ask_the_socket).with("domain.foo", "whois.belizenic.bz", 43).returns(expected)
+    referral = File.read(File.dirname(__FILE__) + "/../testcases/referrals/afilias.bz.txt")
+    response = "Match for DOMAIN.FOO."
+    expected = referral + "\n" + response
+    @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(referral)
+    @server.expects(:ask_the_socket).with("domain.foo", "whois.belizenic.bz", 43).returns(response)
     assert_equal expected, @server.query("domain.foo")
   end
 

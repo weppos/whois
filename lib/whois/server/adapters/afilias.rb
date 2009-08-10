@@ -17,18 +17,27 @@
 module Whois
   class Server
     module Adapters
-      
+
       class Afilias < Base
-        
+
         def request(qstring)
           response = ask_the_socket(qstring, "whois.afilias-grs.info", DEFAULT_WHOIS_PORT)
-          if response =~ /Domain Name:/ && response =~ /Whois Server:(\S+)/
-            ask_the_socket(qstring, $1, DEFAULT_WHOIS_PORT)
+          endpoint = extract_referral(response)
+          if endpoint
+            response + "\n" + ask_the_socket(qstring, endpoint, DEFAULT_WHOIS_PORT)
           else
             response
           end
         end
-        
+
+        private
+
+          def extract_referral(response)
+            if response =~ /Domain Name:/ && response =~ /Whois Server:(\S+)/
+              $1
+            end
+          end
+
       end
       
     end
