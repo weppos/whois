@@ -1,7 +1,7 @@
 = Changelog
 
 
-== next maintenance
+== Release 0.5.1
 
 * FIXED: 'rake coverage' task crashes.
 
