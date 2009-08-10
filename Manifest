@@ -1,3 +1,4 @@
+bin/ruby-whois
 CHANGELOG.rdoc
 data/ip6_del_list
 data/ip_del_list
