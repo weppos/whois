@@ -10,25 +10,19 @@
     end
     client.query("google.com")
 
+* FIXED: DeprecatedWhoisTest are flagged with need_connectivity method because they require connectivity.
+
 
 == Release 0.5.1
+
+* ADDED: Whois binary (closes #271).
 
 * FIXED: 'rake coverage' task crashes.
 
 * FIXED: In case of thin server the client should concatenate all responses (closes #259).
 
-* ADDED: Whois binary (closes #271).
-
 
 == Release 0.5.0
-
-* FIXED: Whois#whois defined as instance method but modules can't have instances!
-
-* FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
-
-* FIXED: Outdated .tv definition: .tv whois server has become a thin server (closes #261).
-
-* FIXED: Outdated .ae definition (closes #270).
 
 * ADDED: Support for IPv4 and IPv6 (closes #265).
 
@@ -37,6 +31,14 @@
 * ADDED: Deprecation warning for all the features that will be removed in Whois 0.6.0 (closes #266).
 
 * ADDED: Default timeout for any Whois query run from the client interface (closes #269).
+
+* FIXED: Whois#whois defined as instance method but modules can't have instances!
+
+* FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
+
+* FIXED: Outdated .tv definition: .tv whois server has become a thin server (closes #261).
+
+* FIXED: Outdated .ae definition (closes #270).
 
 
 == Release 0.1.1
