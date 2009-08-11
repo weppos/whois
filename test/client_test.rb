@@ -77,8 +77,8 @@ class ClientTest < Test::Unit::TestCase
 
     def test_query_with_domain
       response = @client.query("weppos.it")
-      assert_match /Domain:\s+weppos\.it/, response
-      assert_match /Created:/, response
+      assert response.match?(/Domain:\s+weppos\.it/)
+      assert response.match?(/Created:/)
     end
 
   end

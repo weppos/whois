@@ -25,16 +25,14 @@ module Whois
   class ServerError < Error
   end
   
-  
-  # Definition not found
+  # Server Definition not found
   
   # Raised when the class hasn't been able to select a valid server
   # probably because definitions are outdated.
   class ServerNotFound < ServerError
   end
   
-  
-  # Definition found
+  # Server Definition found
   
   class InterfaceNotSupported < ServerError
   end
@@ -50,8 +48,7 @@ module Whois
   class WebInterfaceError < InterfaceNotSupported
   end
 
-
-  # Known object, Definition unavailable
+  # Server Known object, Definition unavailable
 
   # Raised when we know about a specific functionality
   # but this functionality has not been implemented yet.
@@ -65,6 +62,16 @@ module Whois
   
   # Raised when unknown AS numer of IP network. (\x06)
   class AllocationUnknown < ServerError
+  end
+  
+  
+  # Generic Parser exception class.
+  class ParserError < Error
+  end
+  
+  # Raised when the class hasn't been able to load a valid parser
+  # according to current settings.
+  class ParserNotFound < ParserError
   end
 
 end

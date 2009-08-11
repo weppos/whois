@@ -36,7 +36,8 @@ module Whois
         end
         
         def query(qstring)
-          request(qstring)
+          response = request(qstring)
+          Response.new(response, self)
         end
 
         def request(qstring)

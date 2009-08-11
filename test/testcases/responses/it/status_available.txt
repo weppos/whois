@@ -1,0 +1,2 @@
+Domain:             foobarbaz.it
+Status:             AVAILABLE

@@ -13,7 +13,7 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
     response = "No match for DOMAIN.FOO."
     expected = response
     @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(response)
-    assert_equal expected, @server.query("domain.foo")
+    assert_equal expected, @server.query("domain.foo").to_s
   end
 
   def test_query_with_referral
@@ -22,7 +22,7 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
     expected = referral + "\n" + response
     @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(referral)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.belizenic.bz", 43).returns(response)
-    assert_equal expected, @server.query("domain.foo")
+    assert_equal expected, @server.query("domain.foo").to_s
   end
 
 end
