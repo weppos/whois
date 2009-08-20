@@ -13,6 +13,11 @@
 * FIXED: DeprecatedWhoisTest are flagged with need_connectivity method because they require connectivity.
 
 
+* SERVERS: Sync definitions with Debian whois 4.7.36
+
+
+
+
 == Release 0.5.1
 
 * ADDED: Whois binary (closes #271).
@@ -36,9 +41,10 @@
 
 * FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
 
-* FIXED: Outdated .tv definition: .tv whois server has become a thin server (closes #261).
 
-* FIXED: Outdated .ae definition (closes #270).
+* SERVERS: Updated .tv definition (closes #261).
+
+* SERVERS: Updated .ae definition (closes #270).
 
 
 == Release 0.1.1

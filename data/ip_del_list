@@ -9,6 +9,7 @@
 24.132.0.0/14	ripe
 41.0.0.0/8	afrinic
 43.0.0.0/8	v6nic
+51.0.0.0/8	ripe
 # whois -r -K -h whois.apnic.net -i admin-c IM76-AP
 59.0.0.0/11	whois.nic.or.kr
 58.0.0.0/7	apnic
@@ -44,9 +45,10 @@
 139.24.0.0/14	ripe
 139.28.0.0/15	ripe
 141.0.0.0/10	ripe
-141.64.0.0/12	ripe
-141.80.0.0/14	ripe
-141.84.0.0/15	ripe
+141.86.0.0/16	arin
+141.64.0.0/11	ripe
+141.96.0.0/14	ripe
+141.100.0.0/16	ripe
 145.0.0.0/8	ripe
 146.48.0.0/16	ripe
 149.202.0.0/15	ripe
@@ -58,10 +60,13 @@
 149.248.0.0/14	ripe
 150.183.0.0/16	whois.nic.or.kr
 150.254.0.0/16	ripe
+150.0.0.0/8	apnic
 151.0.0.0/10	ripe
 151.64.0.0/11	ripe
 151.96.0.0/14	ripe
 151.100.0.0/16	ripe
+#153.0.0.0/8	apnic
+154.0.0.0/8	afrinic
 155.232.0.0/13	afrinic
 155.240.0.0/16	afrinic
 160.216.0.0/14	ripe
@@ -77,6 +82,7 @@
 163.195.0.0/16	afrinic
 163.196.0.0/14	afrinic
 163.200.0.0/14	afrinic
+#163.0.0.0/8	apnic
 164.0.0.0/11	ripe
 164.32.0.0/13	ripe
 164.40.0.0/16	ripe
@@ -89,14 +95,15 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
+#171.0.0.0/8	apnic
+175.0.0.0/8	apnic
 178.0.0.0/8	ripe
-180.0.0.0/8	lacnic
-183.0.0.0/8	lacnic
-# 175 -> 185 reserved
+180.0.0.0/8	apnic
+182.0.0.0/7	apnic
 186.0.0.0/7	lacnic
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE
 189.0.0.0/8	lacnic
-190.0.0.0/8	lacnic
+190.0.0.0/7	lacnic
 ## All other B class addresses are supposed to be allocated by ARIN
 ## We know that many of them are not, but they can't all be listed here
 128.0.0.0/2	arin

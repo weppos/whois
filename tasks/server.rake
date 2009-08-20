@@ -38,14 +38,15 @@ namespace :server do
 
       extension, instructions = $1, $2
       server, options = case instructions
-        when "NONE"       then [nil, { :adapter => Whois::Server::Adapters::None }]
-        when "ARPA"       then [nil, { :adapter => Whois::Server::Adapters::Arpa }]
-        when /^WEB (.*)$/ then [nil, { :adapter => Whois::Server::Adapters::Web, :web => $1 }]
-        when "CRSNIC"     then ["whois.crsnic.net", { :adapter => Whois::Server::Adapters::Verisign }]
-        when "PIR"        then ["whois.publicinterestregistry.net", { :adapter => Whois::Server::Adapters::Pir }]
-        when "AFILIAS"    then ["whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }]
-        when "NICCC"      then ["whois.nic.cc", { :adapter => Whois::Server::Adapters::Verisign }]
-        else              [instructions]
+        when "NONE"             then [nil, { :adapter => Whois::Server::Adapters::None }]
+        when "ARPA"             then [nil, { :adapter => Whois::Server::Adapters::Arpa }]
+        when /^WEB (.*)$/       then [nil, { :adapter => Whois::Server::Adapters::Web, :web => $1 }]
+        when "CRSNIC"           then ["whois.crsnic.net", { :adapter => Whois::Server::Adapters::Verisign }]
+        when /^VERISIGN (.*)$/  then [$1, { :adapter => Whois::Server::Adapters::Verisign }]
+        when "PIR"              then ["whois.publicinterestregistry.net", { :adapter => Whois::Server::Adapters::Pir }]
+        when "AFILIAS"          then ["whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }]
+        when "NICCC"            then ["whois.nic.cc", { :adapter => Whois::Server::Adapters::Verisign }]
+        else                    [instructions]
       end
 
       <<-RUBY
