@@ -13,7 +13,9 @@
 * FIXED: DeprecatedWhoisTest are flagged with need_connectivity method because they require connectivity.
 
 
-* SERVERS: Sync definitions with Debian whois 4.7.36
+* SERVERS: Sync definitions with Debian whois 4.7.36.
+
+* SERVERS: Added new IPv4 allocations (whois 4.7.36).
 
 
 
