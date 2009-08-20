@@ -1,0 +1,20 @@
+disclaimer      String
+
+domain          String
+domain_id       String
+
+registrar       <Registrar :name, :organization, :url, :id>
+
+status          Enumerator
+properties      [] client delete prohibited...
+created_on      Time
+updated_on      Time
+expires_on      Time
+
+registrant      Contact
+admin           Contact
+tech            Contact
+
+made_at
+
+nameserver      []
