@@ -17,6 +17,8 @@
 
 * SERVERS: Added new IPv4 allocations (whois 4.7.36).
 
+* SERVERS: Removed .td TLD definition (whois 4.7.36).
+
 
 
 
@@ -44,9 +46,9 @@
 * FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
 
 
-* SERVERS: Updated .tv definition (closes #261).
+* SERVERS: Updated .tv TLD definition (closes #261).
 
-* SERVERS: Updated .ae definition (closes #270).
+* SERVERS: Updated .ae TLD definition (closes #270).
 
 
 == Release 0.1.1

@@ -260,7 +260,7 @@ Whois::Server.define :tld, ".sv", nil, {:web=>"http://www.uca.edu.sv/dns/", :ada
 Whois::Server.define :tld, ".sy", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".sz", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".tc", "whois.adamsnames.tc"
-Whois::Server.define :tld, ".td", nil, {:web=>"http://www.nic.td/", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".td", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".tf", "whois.nic.tf"
 Whois::Server.define :tld, ".tg", nil, {:web=>"http://www.nic.tg/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".th", "whois.thnic.net"
