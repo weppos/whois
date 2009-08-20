@@ -17,6 +17,8 @@
 
 * SERVERS: Added new IPv4 allocations (whois 4.7.36).
 
+* SERVERS: Updated .jobs, .ms and .ph TLD definitions (whois 4.7.36).
+
 * SERVERS: Removed .td TLD definition (whois 4.7.36).
 
 
