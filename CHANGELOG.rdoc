@@ -1,7 +1,7 @@
 = Changelog
 
 
-== next maintenance
+== Release 0.5.2
 
 * ADDED: Whois::Client.new now accepts a block and yields self.
 
@@ -22,8 +22,6 @@
 * SERVERS: Updated .jobs, .ms and .ph TLD definitions (whois 4.7.36).
 
 * SERVERS: Removed .td TLD definition (whois 4.7.36).
-
-
 
 
 == Release 0.5.1
