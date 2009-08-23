@@ -20,12 +20,27 @@ require 'whois/response/parsers/base'
 module Whois
   class Response
     module Parsers
-      
+
+      #
+      # = whois.nic.it parser
+      #
+      # Parser for the whois.nic.it server.
+      #
       class WhoisNicIt < Base
 
         def disclaimer
           node("Disclaimer")
         end
+
+
+        def domain
+          node("Domain").downcase
+        end
+
+        def domain_id
+          nil
+        end
+        
 
         def status
           node("Status").downcase.to_sym
@@ -41,48 +56,91 @@ module Whois
         
         
         def created_on
-          return unless registered?
-          node("Created") { |value| Time.parse(value) }
+          node("Created") { |raw| Time.parse(raw) }
         end
         
         def updated_on
-          return unless registered?
-          node("Last Update") { |value| Time.parse(value) }
+          node("Last Update") { |raw| Time.parse(raw) }
         end
         
         def expires_on
-          return unless registered?
-          node("Expire Date") { |value| Time.parse(value) }
+          node("Expire Date") { |raw| Time.parse(raw) }
         end
 
 
-        def parse
-          @input = StringScanner.new(@response.to_s)
-          @ast = {}
-          while !@input.eos?
-            trim_newline  ||
-            parse_content
-          end
-          @ast
-        end
-
-        def ast
-          @ast || parse
-        end
-
-        def node(key, &block)
-          if block_given?
-            value = ast[key]
-            value = yield(value) unless value.nil?
-            value
-          else
-            ast[key]
+        def registrar
+          node("Registrar") do |raw|
+            Response::Registrar.new(
+              :id           => raw["Name"],
+              :name         => raw["Name"],
+              :organization => raw["Organization"]
+            )
           end
         end
 
-        def node?(key)
-          !ast[key].nil?
+        def registrant
+          contact("Registrant")
         end
+
+        def admin
+          contact("Admin Contact")
+        end
+
+        def technical
+          contact("Technical Contacts")
+        end
+
+
+        def nameservers
+          node("Nameservers")
+        end
+
+
+        protected
+
+          def contact(element)
+            node(element) do |raw|
+              address = (raw["Address"] || "").split("\n")
+              Response::Contact.new(
+                :id           => raw["ContactID"],
+                :name         => raw["Name"],
+                :organization => raw["Organization"],
+                :address      => address[0],
+                :city         => address[1],
+                :country_code => address[3],
+                :created_on   => raw["Created"] ? Time.parse(raw["Created"]) : nil,
+                :updated_on   => raw["Last Update"] ? Time.parse(raw["Created"]) : nil
+              )
+            end
+          end
+
+          def parse
+            @input = StringScanner.new(@response.to_s)
+            @ast = {}
+            while !@input.eos?
+              trim_newline  ||
+              parse_content
+            end
+            @ast
+          end
+
+          def ast
+            @ast || parse
+          end
+
+          def node(key, &block)
+            if block_given?
+              value = ast[key]
+              value = yield(value) unless value.nil?
+              value
+            else
+              ast[key]
+            end
+          end
+
+          def node?(key)
+            !ast[key].nil?
+          end
 
 
         private

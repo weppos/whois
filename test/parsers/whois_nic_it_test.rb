@@ -13,8 +13,7 @@ class WhoisNicItTest < Test::Unit::TestCase
 
 
   def test_disclaimer
-    expected = "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi"
-    assert_equal  expected,
+    assert_equal  "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi",
                   @klass.new(load_response('/registered.txt')).disclaimer
   end
 
@@ -22,6 +21,22 @@ class WhoisNicItTest < Test::Unit::TestCase
     assert_equal  nil,
                   @klass.new(load_response('/available.txt')).disclaimer
   end
+
+
+  def test_domain
+    assert_equal  "google.it",
+                  @klass.new(load_response('/available.txt')).domain
+    assert_equal  "google.it",
+                  @klass.new(load_response('/registered.txt')).domain
+  end
+
+  def test_domain_id
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).domain_id
+    assert_equal  nil,
+                  @klass.new(load_response('/registered.txt')).domain_id
+  end
+
 
   def test_status
     assert_equal  :available,
@@ -69,6 +84,91 @@ class WhoisNicItTest < Test::Unit::TestCase
   def test_expires_on_with_available
     assert_equal  nil,
                   @klass.new(load_response('/available.txt')).expires_on
+  end
+
+
+  def test_registrar
+    registrar = @klass.new(load_response('/registered.txt')).registrar
+    assert_instance_of Whois::Response::Registrar, registrar
+    assert_equal "REGISTER-MNT", registrar.id
+    assert_equal "REGISTER-MNT", registrar.name
+    assert_equal "Register.it s.p.a.", registrar.organization
+  end
+
+  def test_registrar_with_available
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).registrar
+  end
+
+
+  def test_registrant
+    contact = @klass.new(load_response('/registered.txt')).registrant
+    assert_instance_of Whois::Response::Contact, contact
+    assert_equal "GOOG175-ITNIC", contact.id
+    assert_equal "Google Ireland Holdings", contact.name
+    assert_equal nil, contact.organization
+    assert_equal "30 Herbert Street", contact.address
+    assert_equal "Dublin", contact.city
+    assert_equal nil, contact.country
+    assert_equal "IE", contact.country_code
+    assert_equal Time.parse("2008-11-27 16:47:22"), contact.created_on
+    assert_equal Time.parse("2008-11-27 16:47:22"), contact.updated_on
+  end
+
+  def test_registrant_with_available
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).registrant
+  end
+
+
+  def test_admin
+    contact = @klass.new(load_response('/registered.txt')).admin
+    assert_instance_of Whois::Response::Contact, contact
+    assert_equal "TT4277-ITNIC", contact.id
+    assert_equal "Tsao Tu", contact.name
+    assert_equal "Tu Tsao", contact.organization
+    assert_equal "30 Herbert Street", contact.address
+    assert_equal "Dublin", contact.city
+    assert_equal nil, contact.country
+    assert_equal "IE", contact.country_code
+    assert_equal Time.parse("2008-11-27 16:47:22"), contact.created_on
+    assert_equal Time.parse("2008-11-27 16:47:22"), contact.updated_on
+  end
+
+  def test_admin_with_available
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).admin
+  end
+
+
+  def test_technical
+    contact = @klass.new(load_response('/registered.txt')).technical
+    assert_instance_of Whois::Response::Contact, contact
+    assert_equal "TS7016-ITNIC", contact.id
+    assert_equal "Technical Services", contact.name
+    assert_equal nil, contact.organization
+    assert_equal nil, contact.address
+    assert_equal nil, contact.city
+    assert_equal nil, contact.country
+    assert_equal nil, contact.country_code
+    assert_equal nil, contact.created_on
+    assert_equal nil, contact.updated_on
+  end
+
+  def test_technical_with_available
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).technical
+  end
+
+
+  def test_nameservers
+    assert_equal  %w(ns1.google.com ns4.google.com ns2.google.com ns3.google.com),
+                  @klass.new(load_response('/registered.txt')).nameservers
+  end
+
+  def test_nameservers_with_available
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).nameservers
   end
 
 

@@ -1,2 +1,2 @@
-Domain:             foobarbaz.it
+Domain:             google.it
 Status:             AVAILABLE

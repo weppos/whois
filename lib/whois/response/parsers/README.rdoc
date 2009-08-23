@@ -3,18 +3,21 @@ disclaimer      String
 domain          String
 domain_id       String
 
-registrar       <Registrar :name, :organization, :url, :id>
+status          Enumerator/Array
+available?      Boolean
+registered?     Boolean
 
-status          Enumerator
-properties      [] client delete prohibited...
 created_on      Time
 updated_on      Time
 expires_on      Time
 
-registrant      Contact
-admin           Contact
-tech            Contact
+registrar       <Registrar :id, :name, :organization, :url, ...>
+
+
+registrant      <Contact :id, :name, :organization, ...>
+admin           <Contact :id, :name, :organization, ...>
+tech            <Contact :id, :name, :organization, ...>
 
 made_at
 
-nameserver      []
+nameservers     Array

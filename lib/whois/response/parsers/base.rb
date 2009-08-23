@@ -16,12 +16,14 @@
 
 require 'strscan'
 require 'time'
+require 'whois/response/contact'
+require 'whois/response/registrar'
 
 
 module Whois
   class Response
     module Parsers
-      
+
       #
       # = Base Response Parser
       #
@@ -29,31 +31,35 @@ module Whois
       # server-specific parser implementations.
       #
       class Base
-  
+
         @@allowed_methods = [
-          :disclaimer, :status, :registered?, :available?,
+          :disclaimer,
+          :domain, :domain_id,
+          :status, :registered?, :available?,
           :created_on, :updated_on, :expires_on,
+          :registrar, :registrant, :admin, :technical,
+          :nameservers,
         ]
-        
+
         def self.allowed_methods
           @@allowed_methods
         end
-        
+
         attr_reader :response
-        
-        
+
+
         def initialize(response)
           @response = response
         end
-        
+
         allowed_methods.each do |method|
           define_method(method) do
             raise NotImplementedError, "You should overwrite this method."
           end
         end
-        
+
       end
-      
+
     end
   end
 end
