@@ -14,6 +14,7 @@
 #++
 
 
+require 'strscan'
 require 'time'
 
 
@@ -30,7 +31,7 @@ module Whois
       class Base
   
         @@allowed_methods = [
-          :registered?, :available?, :status,
+          :disclaimer, :status, :registered?, :available?,
           :created_on, :updated_on, :expires_on,
         ]
         

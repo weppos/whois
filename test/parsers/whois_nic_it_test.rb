@@ -12,27 +12,41 @@ class WhoisNicItTest < Test::Unit::TestCase
   end
 
 
-  def test_available?
-    assert  @klass.new(load_response('/available.txt')).available?
-    assert !@klass.new(load_response('/registered.txt')).available?
+  def test_disclaimer
+    expected = "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi"
+    assert_equal  expected,
+                  @klass.new(load_response('/registered.txt')).disclaimer
   end
 
-  def test_registered?
-    assert  @klass.new(load_response('/registered.txt')).registered?
-    assert !@klass.new(load_response('/available.txt')).registered?
+  def test_disclaimer_with_available
+    assert_equal  nil,
+                  @klass.new(load_response('/available.txt')).disclaimer
   end
 
   def test_status
-    assert_equal  :active,
-                  @klass.new(load_response('/status_active.txt')).status
     assert_equal  :available,
                   @klass.new(load_response('/status_available.txt')).status
+    assert_equal  :active,
+                  @klass.new(load_response('/status_active.txt')).status
+  end
+
+  def test_available?
+    assert !@klass.new(load_response('/registered.txt')).available?
+    assert  @klass.new(load_response('/available.txt')).available?
+  end
+
+  def test_registered?
+    assert !@klass.new(load_response('/available.txt')).registered?
+    assert  @klass.new(load_response('/registered.txt')).registered?
   end
 
 
   def test_created_on
     assert_equal  Time.parse("1999-12-10 00:00:00"),
                   @klass.new(load_response('/registered.txt')).created_on
+  end
+
+  def test_created_on_with_available
     assert_equal  nil,
                   @klass.new(load_response('/available.txt')).created_on
   end
@@ -40,6 +54,9 @@ class WhoisNicItTest < Test::Unit::TestCase
   def test_updated_on
     assert_equal  Time.parse("2008-11-27 16:47:22"),
                   @klass.new(load_response('/registered.txt')).updated_on
+  end
+
+  def test_updated_on_with_available
     assert_equal  nil,
                   @klass.new(load_response('/available.txt')).updated_on
   end
@@ -47,6 +64,9 @@ class WhoisNicItTest < Test::Unit::TestCase
   def test_expires_on
     assert_equal  Time.parse("2009-11-27"),
                   @klass.new(load_response('/registered.txt')).expires_on
+  end
+
+  def test_expires_on_with_available
     assert_equal  nil,
                   @klass.new(load_response('/available.txt')).expires_on
   end

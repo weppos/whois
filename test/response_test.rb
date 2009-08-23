@@ -63,23 +63,41 @@ class ResponseTest < Test::Unit::TestCase
   
   
   def test_parser
-    @server   = Whois::Server.factory(:tld, ".it", "whois.nic.it")
-    @response = @klass.new("", @server)
+    server   = Whois::Server.factory(:tld, ".it", "whois.nic.it")
+    response = @klass.new("", server)
     assert_instance_of  Whois::Response::Parsers::WhoisNicIt,
-                        @response.parser
+                        response.parser
   end
   
   def test_parser_should_raise_with_missing_parser
-    @server   = Whois::Server.factory(:tld, ".it", "invalid.nic.it")
-    @response = @klass.new("", @server)
-    error = assert_raise(Whois::ParserNotFound) { @response.parser }
+    server   = Whois::Server.factory(:tld, ".it", "invalid.nic.it")
+    response = @klass.new("", server)
+    error = assert_raise(Whois::ParserNotFound) { response.parser }
     assert_match /Unable to find a parser/, error.message
   end
   
   def test_parser_should_raise_with_missing_server
-    @response = @klass.new("")
-    error = assert_raise(Whois::ParserError) { @response.parser }
+    response = @klass.new("")
+    error = assert_raise(Whois::ParserError) { response.parser }
     assert_match /Unable to select a parser/, error.message
   end
-  
+
+  Whois::Response::Parsers::Base.allowed_methods.each do |method|
+    define_method "test_should_delegate_#{method}_to_parser" do
+      server   = Whois::Server.factory(:tld, ".it", "whois.nic.it")
+      response = @klass.new("", server)
+      parser   = response.parser
+      parser.expects(method).returns(:value)
+      assert_equal :value, response.send(method)
+    end
+  end
+
+  def test_should_not_delegate_unallowed_method_to_parser
+    server   = Whois::Server.factory(:tld, ".it", "whois.nic.it")
+    response = @klass.new("", server)
+    parser   = response.parser
+    parser.expects("unallowed_method").never
+    assert_raise(NoMethodError) { response.send("unallowed_method") }
+  end
+
 end
