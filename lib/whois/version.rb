@@ -18,14 +18,14 @@ module Whois
 
   module Version
     MAJOR = 0
-    MINOR = 5
-    TINY  = 1
+    MINOR = 6
+    TINY  = 0
 
     STRING = [MAJOR, MINOR, TINY].join('.')
   end
 
   VERSION         = Version::STRING
-  STATUS          = 'beta'
+  STATUS          = 'eap'
   BUILD           = nil
 
 end

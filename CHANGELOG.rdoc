@@ -1,6 +1,44 @@
 = Changelog
 
 
+== Release 0.6.0
+
+* ADDED: new more convenient method to query a whois server in addition to the existing Whois::whois method.
+
+    Whois::query("domain.com")
+    # same as Whois::whois but added to normalize application interfaces.
+
+    Whois::available?("domain.com")
+    # returns true if the domain is available.
+
+    Whois::registered?("domain.com")
+    # returns true if the domain is registered.
+
+* ADDED: Experimental support for whois response parsing. This release is shipped with two parsers for the .it and .net TLD.
+
+    r = Whois::query("google.it")
+    r.available?
+    # => false
+    r.created_on
+    # => Time.parse("1999-12-10 00:00:00")
+    r.Nameservers
+    # => ["ns1.google.com", "ns2.google.com", ...]
+
+* CHANGED: A whois query now returns a custom Whois::Response object instead of a simple string.
+  The previous interface is still supported, so you can continue to compare the response with Strings
+  but this behavior will be deprecated in a future release.
+  
+    r = Whois::query("domain.com")
+    # supported but deprecated in a future version
+    r == "NOT FOUND"
+    # explicitly cast the object to string instead
+    r.to_s == "NOT FOUND"
+    # or use one of the other Whois::Response methods.
+
+Note. This is an experimental version (EAP) and it should not be considered production-ready.
+API might change at any time without previous notice.
+
+
 == next maintenance
 
 * ADDED: Whois::Client.new now accepts a block and yields self.
