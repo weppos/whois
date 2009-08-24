@@ -32,8 +32,13 @@ module Whois
     # <tt>:organization</tt>::
     # <tt>:address</tt>::
     # <tt>:city</tt>::
+    # <tt>:zip</tt>::
+    # <tt>:state</tt>::
     # <tt>:country</tt>::
     # <tt>:country_code</tt>::
+    # <tt>:phone</tt>::
+    # <tt>:fax</tt>::
+    # <tt>:email</tt>::
     # <tt>:created_on</tt>::
     # <tt>:updated_on</tt>::
     #
@@ -41,7 +46,8 @@ module Whois
     # or no details at all.
     #
     class Contact < SuperStruct.new(:id, :name, :organization,
-                                    :address, :city, :country, :country_code,
+                                    :address, :city, :zip, :state, :country, :country_code,
+                                    :phone, :fax, :email,
                                     :created_on, :updated_on)
     end
 

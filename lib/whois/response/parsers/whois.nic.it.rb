@@ -28,46 +28,61 @@ module Whois
       #
       class WhoisNicIt < Base
 
+        # Returns the registry disclaimer that comes with the response.
         def disclaimer
           node("Disclaimer")
         end
 
 
+        # If available, returns the domain name as stored by the registry.
         def domain
-          node("Domain").downcase
+          node("Domain") { |raw| raw.downcase }
         end
 
+        # If available, returns the unique domain ID set by the registry.
         def domain_id
           nil
         end
         
 
+        # Returns the record status or an array of status,
+        # in case the registry supports it.
         def status
-          node("Status").downcase.to_sym
+          node("Status") { |raw| raw.downcase.to_sym }
         end
         
+        # Returns whether this record is available.
         def available?
           node("Status") == "AVAILABLE"
         end
         
+        # Returns whether this record is registered.
         def registered?
           !available?
         end
         
-        
+
+        # If available, returns a Time object representing the date
+        # the record was created, according to the registry response.
         def created_on
           node("Created") { |raw| Time.parse(raw) }
         end
         
+        # If available, returns a Time object representing the date
+        # the record was last updated, according to the registry response.
         def updated_on
           node("Last Update") { |raw| Time.parse(raw) }
         end
         
+        # If available, returns a Time object representing the date
+        # the record is set to expire, according to the registry response.
         def expires_on
           node("Expire Date") { |raw| Time.parse(raw) }
         end
 
 
+        # If available, returns a <tt>Whois::Response::Registrar</tt> record
+        # containing the registrar details extracted from the registry response.
         def registrar
           node("Registrar") do |raw|
             Response::Registrar.new(
@@ -78,40 +93,59 @@ module Whois
           end
         end
 
+        # If available, returns a <tt>Whois::Response::Contact</tt> record
+        # containing the registrant details extracted from the registry response.
         def registrant
           contact("Registrant")
         end
 
+        # If available, returns a <tt>Whois::Response::Contact</tt> record
+        # containing the admin contact details extracted from the registry response.
         def admin
           contact("Admin Contact")
         end
 
+        # If available, returns a <tt>Whois::Response::Contact</tt> record
+        # containing the technical contact details extracted from the registry response.
         def technical
           contact("Technical Contacts")
         end
 
 
+        # If available, returns an array of name servers entries for this domain
+        # if any name server is available in the registry response.
+        # Each name server is a lower case string.
+        #
+        # ==== Examples
+        #
+        #   nameserver
+        #   # => nil
+        #   nameserver
+        #   # => ["ns2.google.com", "ns1.google.com", "ns3.google.com"]
+        #
         def nameservers
           node("Nameservers")
         end
 
 
-        # Returns whether this response is equal to <tt>other</tt>.
-        #
-        # Comparing the Response contents is not always as trivial as it seems.
-        # Whois servers sometimes inject dynamic method into the whois response such as
-        # the timestamp the request was generated.
-        # This causes two responses to be different even if they actually should be considered equal
-        # because the registry data didn't change.
-        #
-        # This method should provide a bulletproof way to detect whether this response
-        # changed if compared with <tt>other</tt>.
-        def equals?(other)
-          domain     == other.domain     &&
-          created_on == other.created_on &&
-          updated_on == other.updated_on &&
-          expires_on == other.expires_on
-        end
+#        # Returns whether this response is equal to <tt>other</tt>.
+#        #
+#        # Comparing the Response contents is not always as trivial as it seems.
+#        # Whois servers sometimes inject dynamic method into the whois response such as
+#        # the timestamp the request was generated.
+#        # This causes two responses to be different even if they actually should be considered equal
+#        # because the registry data didn't change.
+#        #
+#        # This method should provide a bulletproof way to detect whether this response
+#        # changed if compared with <tt>other</tt>.
+#        def equals?(other)
+#          self == other ||
+#          self.response.to_s == other.response.to_s
+#          # domain     == other.domain     &&
+#          # created_on == other.created_on &&
+#          # updated_on == other.updated_on &&
+#          # expires_on == other.expires_on
+#        end
 
 
         protected
@@ -131,6 +165,7 @@ module Whois
               )
             end
           end
+
 
           def parse
             @input = StringScanner.new(@response.to_s)
