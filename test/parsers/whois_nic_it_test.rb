@@ -172,6 +172,28 @@ class WhoisNicItTest < Test::Unit::TestCase
   end
 
 
+  def test_equals_question
+    response = load_response('/registered.txt')
+    assert  response.equals?(load_response('/registered.txt'))
+    assert !response.equals?(load_response('/available.txt'))
+  end
+
+  def test_equals_question_with_available
+    response = @response.new(<<-RESPONSE, @server)
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+
+    assert  response.equals?(@response.new(<<-RESPONSE, @server))
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+    assert !response.equals?(@response.new(<<-RESPONSE, @server))
+Domain:             weppos.it
+Status:             AVAILABLE
+    RESPONSE
+  end
+
 
   protected
   

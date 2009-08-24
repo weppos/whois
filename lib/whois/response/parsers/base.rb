@@ -30,6 +30,11 @@ module Whois
       # This class is intended to be the base abstract class for all
       # server-specific parser implementations.
       #
+      # == Available Methods
+      #
+      # The Base class is for the most part auto-generated via meta programming.
+      # This is the reason why RDoc can't detect and document all available methods.
+      #
       class Base
 
         @@allowed_methods = [
@@ -39,6 +44,7 @@ module Whois
           :created_on, :updated_on, :expires_on,
           :registrar, :registrant, :admin, :technical,
           :nameservers,
+          :equals?
         ]
 
         def self.allowed_methods
