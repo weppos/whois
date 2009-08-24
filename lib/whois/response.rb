@@ -46,14 +46,30 @@ module Whois
     # or is a string and has the same content.
     def ==(other)
       (other.equal?(self)) ||
-      (other.instance_of?(String) && other == self.to_s)
+      # This option should be deprecated
+      (other.instance_of?(String) && other == self.to_s) ||
+      (other.instance_of?(Response) && other.to_s == self.to_s)
     end
     
     # Delegates to ==.
     def eql?(other)
       self == other
     end
-    
+
+    # Returns whether this response is equal to <tt>other</tt>.
+    #
+    # Comparing the Response contents is not always as trivial as it seems.
+    # Whois servers sometimes inject dynamic method into the whois response such as
+    # the timestamp the request was generated.
+    # This causes two responses to be different even if they actually should be considered equal
+    # because the registry data didn't change.
+    #
+    # This method should provide a bulletproof way to detect whether this response
+    # changed if compared with <tt>other</tt>.
+    # def equals?
+    #
+    # end  
+
     
     # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
     # matches <tt>@content</tt>, <tt>false</tt> otherwise.
@@ -83,7 +99,7 @@ module Whois
     def parser
       @parser ||= self.class.parser_klass(@server).new(self)
     end
-    
+
     protected
       
       # Delegates all method calls to the internal parser.
