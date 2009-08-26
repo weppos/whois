@@ -44,7 +44,6 @@ module Whois
           :created_on, :updated_on, :expires_on,
           :registrar, :registrant, :admin, :technical,
           :nameservers,
-          :equals?
         ]
 
         def self.allowed_methods

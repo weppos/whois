@@ -38,19 +38,19 @@ class ResponseTest < Test::Unit::TestCase
     assert_equal @content.match(/google/), @response.match(/google/)
   end
 
-  def test_equality_with_self
+  def test_equality_check_self
     assert_equal      @response, @response
     assert  @response.eql?(@response)
   end
 
-  def test_equality_with_string
+  def test_equality_check_string
     assert_equal      @response, @content
     assert_not_equal  @content, @response
     assert  @response.eql?(@content)
     assert !@content.eql?(@response)
   end
 
-  def test_equality
+  def test_equality_check_content
     other = @klass.new(@content, @server)
     assert_equal @response, other
     assert_equal other, @response

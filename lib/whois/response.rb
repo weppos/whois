@@ -56,7 +56,7 @@ module Whois
       self == other
     end
 
-    # Returns whether this response is equal to <tt>other</tt>.
+    # Returns whether this response changed compared to <tt>other</tt>.
     #
     # Comparing the Response contents is not always as trivial as it seems.
     # Whois servers sometimes inject dynamic method into the whois response such as
@@ -66,11 +66,17 @@ module Whois
     #
     # This method should provide a bulletproof way to detect whether this response
     # changed if compared with <tt>other</tt>.
-    # def equals?
-    #
-    # end  
+    def changed?(other)
+      !unchanged?(other)
+    end
 
-    
+    # The opposite of <tt>changed?</tt>.
+    def unchanged?(other)
+      self == other ||
+      parser.unchanged?(other.parser)
+    end
+
+
     # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
     # matches <tt>@content</tt>, <tt>false</tt> otherwise.
     def match?(pattern)
@@ -99,6 +105,7 @@ module Whois
     def parser
       @parser ||= self.class.parser_klass(@server).new(self)
     end
+
 
     protected
       
@@ -133,14 +140,6 @@ module Whois
           gsub(/\./, '_').
           gsub(/(?:^|_)(.)/)  { $1.upcase }
       end
-      
-      # available?
-      # registered?
-      # status
-      
-      # created_on
-      # updated_on
-      # expires_on
     
   end
 

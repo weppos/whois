@@ -128,24 +128,30 @@ module Whois
         end
 
 
-#        # Returns whether this response is equal to <tt>other</tt>.
-#        #
-#        # Comparing the Response contents is not always as trivial as it seems.
-#        # Whois servers sometimes inject dynamic method into the whois response such as
-#        # the timestamp the request was generated.
-#        # This causes two responses to be different even if they actually should be considered equal
-#        # because the registry data didn't change.
-#        #
-#        # This method should provide a bulletproof way to detect whether this response
-#        # changed if compared with <tt>other</tt>.
-#        def equals?(other)
-#          self == other ||
-#          self.response.to_s == other.response.to_s
-#          # domain     == other.domain     &&
-#          # created_on == other.created_on &&
-#          # updated_on == other.updated_on &&
-#          # expires_on == other.expires_on
-#        end
+        # Returns whether this response changed compared to <tt>other</tt>.
+        #
+        # Comparing the Response contents is not always as trivial as it seems.
+        # Whois servers sometimes inject dynamic method into the whois response such as
+        # the timestamp the request was generated.
+        # This causes two responses to be different even if they actually should be considered equal
+        # because the registry data didn't change.
+        #
+        # This method should provide a bulletproof way to detect whether this response
+        # changed if compared with <tt>other</tt>.
+        def changed?(other)
+          !unchanged?(other)
+        end
+
+        # The opposite of <tt>changed?</tt>.
+        def unchanged?(other)
+          self == other ||
+          self.response.to_s == other.response.to_s
+          # (self == other)                 ||
+          # (domain     == other.domain     &&
+          #  created_on == other.created_on &&
+          #  updated_on == other.updated_on &&
+          #  expires_on == other.expires_on )
+        end
 
 
         protected

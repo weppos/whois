@@ -172,27 +172,75 @@ class WhoisNicItTest < Test::Unit::TestCase
   end
 
 
-#   def test_equals_question
-#     parser = load_response('/registered.txt').parser
-#     assert  parser.equals?(load_response('/registered.txt').parser)
-#     assert !parser.equals?(load_response('/available.txt').parser)
-#   end
-#
-#   def test_equals_question_with_available
-#     parser = @response.new(<<-RESPONSE, @server).parser
-# Domain:             google.it
-# Status:             AVAILABLE
-#     RESPONSE
-#
-#     assert  parser.equals?(@response.new(<<-RESPONSE, @server).parser)
-# Domain:             google.it
-# Status:             AVAILABLE
-#     RESPONSE
-#     assert !parser.equals?(@response.new(<<-RESPONSE, @server).parser)
-# Domain:             weppos.it
-# Status:             AVAILABLE
-#     RESPONSE
-#   end
+  def test_changed_question_check_self
+    parser = load_response('/registered.txt').parser
+    assert !parser.changed?(parser)
+  end
+
+  def test_changed_question_check_internals
+    parser = load_response('/registered.txt').parser
+    assert parser.changed?(load_response('/available.txt').parser)
+  end
+
+  def test_changed_question_check_self_with_available
+    parser = @response.new(<<-RESPONSE, @server).parser
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+
+    assert !parser.changed?(parser)
+  end
+
+  def test_changed_question_check_internals_with_available
+    parser = @response.new(<<-RESPONSE, @server).parser
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+
+    assert  parser.changed?(@response.new(<<-RESPONSE, @server).parser)
+Domain:             weppos.it
+Status:             AVAILABLE
+    RESPONSE
+    assert !parser.changed?(@response.new(<<-RESPONSE, @server).parser)
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+  end
+
+  def test_unchanged_question_check_self
+    parser = load_response('/registered.txt').parser
+    assert parser.unchanged?(parser)
+  end
+
+  def test_unchanged_question_check_internals
+    parser = load_response('/registered.txt').parser
+    assert parser.unchanged?(load_response('/registered.txt').parser)
+  end
+
+  def test_unchanged_question_check_self_with_available
+    parser = @response.new(<<-RESPONSE, @server).parser
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+
+    assert  parser.unchanged?(parser)
+  end
+
+  def test_unchanged_question_check_internals_with_available
+    parser = @response.new(<<-RESPONSE, @server).parser
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+
+    assert  parser.unchanged?(@response.new(<<-RESPONSE, @server).parser)
+Domain:             google.it
+Status:             AVAILABLE
+    RESPONSE
+    assert !parser.unchanged?(@response.new(<<-RESPONSE, @server).parser)
+Domain:             weppos.it
+Status:             AVAILABLE
+    RESPONSE
+  end
 
 
   protected

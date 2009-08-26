@@ -100,6 +100,16 @@ module Whois
         end
 
 
+        def changed?(other)
+          !unchanged?(other)
+        end
+
+        def unchanged?(other)
+          self == other ||
+          self.response.to_s == other.response.to_s
+        end
+
+
         protected
         
           def contact(element)
