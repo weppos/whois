@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes #300)
+
+
 == Release 0.5.2
 
 * ADDED: Whois::Client.new now accepts a block and yields self.
