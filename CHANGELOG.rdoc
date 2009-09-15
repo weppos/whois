@@ -1,6 +1,13 @@
 = Changelog
 
 
+== next mini
+
+* ADDED: whois.denic.de (.de TLD) parser [Aaron Mueller]
+
+* CHANGED: extracted all scanners into separated classes in order to make easier extract shared features.
+
+
 == Release 0.6.0
 
 * ADDED: new more convenient method to query a whois server in addition to the existing Whois::whois method.

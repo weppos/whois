@@ -133,18 +133,8 @@ module Whois
           end
 
 
-          def parse
-            @input = StringScanner.new(@response.to_s)
-            @ast = {}
-            while !@input.eos?
-              trim_newline  ||
-              parse_content
-            end
-            @ast
-          end
-
           def ast
-            @ast || parse
+            @ast ||= parse
           end
 
           def node(key, &block)
@@ -161,58 +151,79 @@ module Whois
             !ast[key].nil?
           end
 
-
-        private
-
-          def parse_content
-            parse_not_found   ||
-            parse_disclaimer  ||
-            parse_pair        ||
-            error("Unexpected token")
+          def parse
+            Scanner.new(@response.to_s).parse
           end
 
-          def trim_newline
-            # The last line is \r\n\n
-            @input.scan(/\r\n+/)
+
+        class Scanner
+
+          def initialize(response)
+            @input = StringScanner.new(response.to_s)
           end
 
-          def parse_not_found
-            @input.scan(/NOT FOUND\n/)
-          end
-
-          def parse_disclaimer
-            if @input.match?(/NOTICE:/)
-              lines = []
-              while !@input.match?(/\r\n/) && @input.scan(/(.*)\r\n/)
-                lines << @input[1].strip
-              end
-              @ast["Disclaimer"] = lines.join(" ")
-            else
-              false
+          def parse
+            @ast = {}
+            while !@input.eos?
+              trim_newline  ||
+              parse_content
             end
+            @ast
           end
+          
+          private
 
-          def parse_pair
-            if @input.scan(/(.*?):(.*?)\r\n/)
-              key, value = @input[1].strip, @input[2].strip
-              if @ast[key].nil?
-                @ast[key] = value
+            def parse_content
+              parse_not_found   ||
+              parse_disclaimer  ||
+              parse_pair        ||
+              error("Unexpected token")
+            end
+
+            def trim_newline
+              # The last line is \r\n\n
+              @input.scan(/\r\n+/)
+            end
+
+            def parse_not_found
+              @input.scan(/NOT FOUND\n/)
+            end
+
+            def parse_disclaimer
+              if @input.match?(/NOTICE:/)
+                lines = []
+                while !@input.match?(/\r\n/) && @input.scan(/(.*)\r\n/)
+                  lines << @input[1].strip
+                end
+                @ast["Disclaimer"] = lines.join(" ")
               else
-                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                @ast[key] << value
+                false
               end
-            else
-              false
             end
-          end
 
-          def error(message)
-            if @input.eos?
-              raise "Unexpected end of input."
-            else
-              raise "#{message}: #{@input.peek(@input.string.length)}"
+            def parse_pair
+              if @input.scan(/(.*?):(.*?)\r\n/)
+                key, value = @input[1].strip, @input[2].strip
+                if @ast[key].nil?
+                  @ast[key] = value
+                else
+                  @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
+                  @ast[key] << value
+                end
+              else
+                false
+              end
             end
-          end
+
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: #{@input.peek(@input.string.length)}"
+              end
+            end
+
+        end
 
       end
       
