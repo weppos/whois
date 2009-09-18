@@ -1,7 +1,7 @@
 = Changelog
 
 
-== release-0.5
+== Release 0.5.3
 
 FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes #300)
 
