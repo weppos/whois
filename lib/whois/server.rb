@@ -175,7 +175,7 @@ module Whois
 
       def self.find_for_tld(qstring)
         definitions(:tld).each do |definition|
-          return factory(:tld, *definition) if /#{definition.first}$/ =~ qstring
+          return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ qstring
         end
         nil
       end
