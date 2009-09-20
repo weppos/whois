@@ -89,24 +89,7 @@ module Whois
     def match?(pattern)
       !content.match(pattern).nil?
     end
-    
-    # Invokes <tt>match</tt> and returns the first useful match,
-    # nil otherwise.
-    #
-    #   "My car is blue".i_m_feeling_lucky(/^My car is (\w+)$/)
-    #   # => "blue"
-    #   "My car is blue".i_m_feeling_lucky(/^My bike is (\w+)$/)
-    #   # => nil
-    #
-    def i_m_feeling_lucky(pattern, &block)
-      if matches = match(pattern)
-        m = matches[1]
-        m = yield(m) if block_given?
-        m
-      end
-    end
-    alias :imfl :i_m_feeling_lucky
-    
+
     
     # Lazy-loads and returns current answer parser.
     def parser

@@ -11,6 +11,8 @@
 
 * CHANGED: renamed Whois::Response to Whois::Answer. This change is required to avoid confusion between query-answer and server request-response. A Whois::Answer is composed by one or more parts, corresponding to single server answers.
 
+* REMOVED: Whois::Answer#i_am_feeling_lucky (formerly Whois::Answer#i_am_feeling_lucky) become obsolete since the introduction of Answer parsers.
+
 
 == Release 0.6.0
 

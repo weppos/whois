@@ -73,11 +73,6 @@ class AnswerTest < Test::Unit::TestCase
     assert !@answer.match?(/google/)
   end
   
-  def test_i_m_feeling_lucky
-    assert_equal "domain.foo", @answer.i_m_feeling_lucky(/for (.*)\.$/)
-    assert_equal nil, @answer.i_m_feeling_lucky(/^invalid (.*)$/)
-  end
-  
   
   require 'whois/answer/parsers/whois.nic.it'
   def test_parser
