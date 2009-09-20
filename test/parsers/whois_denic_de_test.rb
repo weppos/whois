@@ -3,7 +3,7 @@ require 'whois/answer/parsers/whois.denic.de'
 
 class WhoisDenicDeTest < Test::Unit::TestCase
 
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/de')
+  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/whois.denic.de')
 
   def setup
     @class  = Whois::Answer::Parsers::WhoisDenicDe

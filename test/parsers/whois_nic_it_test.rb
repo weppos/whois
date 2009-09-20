@@ -3,7 +3,7 @@ require 'whois/answer/parsers/whois.nic.it.rb'
 
 class WhoisNicItTest < Test::Unit::TestCase
 
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/it')
+  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/whois.nic.it')
 
   def setup
     @klass  = Whois::Answer::Parsers::WhoisNicIt

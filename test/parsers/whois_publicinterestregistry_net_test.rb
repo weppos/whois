@@ -3,7 +3,7 @@ require 'whois/answer/parsers/whois.publicinterestregistry.net'
 
 class WhoisPublicinterestregistryNetTest < Test::Unit::TestCase
 
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/org')
+  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/whois.publicinterestregistry.net')
 
   def setup
     @klass  = Whois::Answer::Parsers::WhoisPublicinterestregistryNet
