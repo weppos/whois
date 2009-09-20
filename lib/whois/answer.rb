@@ -14,12 +14,12 @@
 #++
 
 
-require 'whois/response/parsers/base'
+require 'whois/answer/parsers/base'
 
 
 module Whois
 
-  class Response
+  class Answer
 
     attr_reader :server
     attr_reader :parts
@@ -38,7 +38,7 @@ module Whois
       content.inspect
     end
     
-    # Invokes <tt>match</tt> on response <tt>@content</tt>
+    # Invokes <tt>match</tt> on answer <tt>@content</tt>
     # and returns the <tt>MatchData</tt> or <tt>nil</tt>.
     def match(pattern)
       content.match(pattern)
@@ -50,7 +50,7 @@ module Whois
       (other.equal?(self)) ||
       # This option should be deprecated
       (other.instance_of?(String) && other == self.to_s) ||
-      (other.instance_of?(Response) && other.to_s == self.to_s)
+      (other.instance_of?(Answer) && other.to_s == self.to_s)
     end
     
     # Delegates to ==.
@@ -63,15 +63,15 @@ module Whois
       @content ||= parts.map { |response, host| response }.join("\n")
     end
 
-    # Returns whether this response changed compared to <tt>other</tt>.
+    # Returns whether this answer changed compared to <tt>other</tt>.
     #
-    # Comparing the Response contents is not always as trivial as it seems.
-    # Whois servers sometimes inject dynamic method into the whois response such as
+    # Comparing the Answer contents is not always as trivial as it seems.
+    # Whois servers sometimes inject dynamic method into the whois answer such as
     # the timestamp the request was generated.
-    # This causes two responses to be different even if they actually should be considered equal
+    # This causes two answers to be different even if they actually should be considered equal
     # because the registry data didn't change.
     #
-    # This method should provide a bulletproof way to detect whether this response
+    # This method should provide a bulletproof way to detect whether this answer
     # changed if compared with <tt>other</tt>.
     def changed?(other)
       !unchanged?(other)
@@ -108,7 +108,7 @@ module Whois
     alias :imfl :i_m_feeling_lucky
     
     
-    # Lazy-loads and returns current response parser.
+    # Lazy-loads and returns current answer parser.
     def parser
       @parser ||= self.class.parser_klass(parts.first.last).new(self)
     end
@@ -127,7 +127,7 @@ module Whois
       
       
       def self.parser_klass(host)
-        file = "whois/response/parsers/#{host}.rb"
+        file = "whois/answer/parsers/#{host}.rb"
         require file
         
         name = host_to_parser(host)

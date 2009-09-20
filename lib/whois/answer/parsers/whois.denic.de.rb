@@ -14,11 +14,11 @@
 #++
 
 
-require 'whois/response/parsers/base'
+require 'whois/answer/parsers/base'
 
 
 module Whois
-  class Response
+  class Answer
     module Parsers
       class WhoisDenicDe < Base
 
@@ -60,7 +60,7 @@ module Whois
 
         def registrar
           return nil unless ast['Zone-C']
-          Response::Registrar.new(
+          Answer::Registrar.new(
               :id => nil,
               :name => ast['Zone-C'].name,
               :organization => ast['Zone-C'].organization,
@@ -92,14 +92,14 @@ module Whois
           end
 
           def parse
-            Scanner.new(@response.to_s).parse
+            Scanner.new(answer.to_s).parse
           end
 
 
         class Scanner
 
-          def initialize(response)
-            @input = StringScanner.new(response.to_s)
+          def initialize(content)
+            @input = StringScanner.new(content.to_s)
           end
 
           def parse
@@ -160,7 +160,7 @@ module Whois
                 contact = {}
                 while parse_pair(contact)
                 end
-                @ast[contact_name] = Response::Contact.new(
+                @ast[contact_name] = Answer::Contact.new(
                     :id => nil,
                     :name => contact['Name'],
                     :organization => contact['Organisation'],

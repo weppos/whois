@@ -14,11 +14,11 @@
 #++
 
 
-require 'whois/response/parsers/base'
+require 'whois/answer/parsers/base'
 
 
 module Whois
-  class Response
+  class Answer
     module Parsers
 
       #
@@ -75,7 +75,7 @@ module Whois
             else
               [nil, registrar]
             end
-            Response::Registrar.new(
+            Answer::Registrar.new(
               :id           => id,
               :name         => name
             )
@@ -106,7 +106,7 @@ module Whois
 
         def unchanged?(other)
           self == other ||
-          self.response.to_s == other.response.to_s
+          self.answer.to_s == other.answer.to_s
         end
 
 
@@ -114,7 +114,7 @@ module Whois
         
           def contact(element)
             node("#{element} ID") do |registrant_id|
-              Response::Contact.new(
+              Answer::Contact.new(
                 :id           => registrant_id,
                 :name         => node("#{element} Name"),
                 :organization => node("#{element} Organization"),
@@ -152,14 +152,14 @@ module Whois
           end
 
           def parse
-            Scanner.new(@response.to_s).parse
+            Scanner.new(answer.to_s).parse
           end
 
 
         class Scanner
 
-          def initialize(response)
-            @input = StringScanner.new(response.to_s)
+          def initialize(content)
+            @input = StringScanner.new(content.to_s)
           end
 
           def parse

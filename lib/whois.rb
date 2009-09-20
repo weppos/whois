@@ -18,7 +18,7 @@ require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
 require 'whois/server'
-require 'whois/response'
+require 'whois/answer'
 require 'whois/whois'
 
 

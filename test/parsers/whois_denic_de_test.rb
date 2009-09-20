@@ -1,14 +1,14 @@
 require 'test_helper'
-require 'whois/response/parsers/whois.denic.de'
+require 'whois/answer/parsers/whois.denic.de'
 
 class WhoisDenicDeTest < Test::Unit::TestCase
 
   TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/de')
 
   def setup
-    @class = Whois::Response::Parsers::WhoisDenicDe
+    @class  = Whois::Answer::Parsers::WhoisDenicDe
     @server = Whois::Server.factory(:tld, ".de", "whois.denic.de")
-    @response = Whois::Response
+    @answer = Whois::Answer
   end
 
   def test_disclaimer
@@ -26,46 +26,46 @@ purposes. You are aware that DENIC maintains the right to initiate \
 legal proceedings against you in the event of any breach of this \
 assurance and to bar you from using its whois query.
     EOS
-    assert_equal(expected, @class.new(load_response('/available.txt')).disclaimer)
-    assert_equal(expected, @class.new(load_response('/registered.txt')).disclaimer)
+    assert_equal(expected, @class.new(load_answer('/available.txt')).disclaimer)
+    assert_equal(expected, @class.new(load_answer('/registered.txt')).disclaimer)
   end
 
   def test_registered
-    assert(!@class.new(load_response('/available.txt')).registered?)
-    assert(@class.new(load_response('/registered.txt')).registered?)
+    assert(!@class.new(load_answer('/available.txt')).registered?)
+    assert(@class.new(load_answer('/registered.txt')).registered?)
   end
 
   def test_available
-    assert(@class.new(load_response('/available.txt')).available?)
-    assert(!@class.new(load_response('/registered.txt')).available?)
+    assert(@class.new(load_answer('/available.txt')).available?)
+    assert(!@class.new(load_answer('/registered.txt')).available?)
   end
 
   def test_status
-    assert_equal(nil, @class.new(load_response('/available.txt')).status)
-    assert_equal('connect', @class.new(load_response('/registered.txt')).status)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).status)
+    assert_equal('connect', @class.new(load_answer('/registered.txt')).status)
   end
 
   def test_domain
-    assert_equal(nil, @class.new(load_response('/available.txt')).domain)
-    assert_equal('google.de', @class.new(load_response('/registered.txt')).domain)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).domain)
+    assert_equal('google.de', @class.new(load_answer('/registered.txt')).domain)
   end
 
   def test_created_on
-    assert_equal(nil, @class.new(load_response('/available.txt')).created_on)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).created_on)
   end
 
   def test_expires_on
-    assert_equal(nil, @class.new(load_response('/available.txt')).expires_on)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).expires_on)
   end
 
   def test_updated_on
-    assert_equal(nil, @class.new(load_response('/available.txt')).updated_on)
-    assert_equal(Time.parse('2009-02-28T12:03:09+01:00'), @class.new(load_response('/registered.txt')).updated_on)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).updated_on)
+    assert_equal(Time.parse('2009-02-28T12:03:09+01:00'), @class.new(load_answer('/registered.txt')).updated_on)
   end
 
   def test_registrar
-    registrar = @class.new(load_response('/registered.txt')).registrar
-    assert_instance_of(Whois::Response::Registrar, registrar)
+    registrar = @class.new(load_answer('/registered.txt')).registrar
+    assert_instance_of(Whois::Answer::Registrar, registrar)
     assert_equal(nil, registrar.id)
     assert_equal('Domain Billing', registrar.name)
     assert_equal('MarkMonitor', registrar.organization)
@@ -73,12 +73,12 @@ assurance and to bar you from using its whois query.
   end
 
   def test_registrar_for_avalable_domain
-    assert_equal(nil, @class.new(load_response('/available.txt')).registrar)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).registrar)
   end
 
   def test_registrant
-    contact = @class.new(load_response('/registered.txt')).registrant
-    assert_instance_of(Whois::Response::Contact, contact)
+    contact = @class.new(load_answer('/registered.txt')).registrant
+    assert_instance_of(Whois::Answer::Contact, contact)
     assert_equal(nil, contact.id)
     assert_equal('Google Inc.', contact.name)
     assert_equal(nil, contact.organization)
@@ -94,12 +94,12 @@ assurance and to bar you from using its whois query.
   end
 
   def test_registrant_for_avalable_domain
-    assert_equal(nil, @class.new(load_response('/available.txt')).registrant)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).registrant)
   end
 
   def test_admin
-    contact = @class.new(load_response('/registered.txt')).admin
-    assert_instance_of(Whois::Response::Contact, contact)
+    contact = @class.new(load_answer('/registered.txt')).admin
+    assert_instance_of(Whois::Answer::Contact, contact)
     assert_equal(nil, contact.id)
     assert_equal('Lena Tangermann', contact.name)
     assert_equal('Google Germany GmbH', contact.organization)
@@ -115,12 +115,12 @@ assurance and to bar you from using its whois query.
   end
 
   def test_admin_for_avalable_domain
-    assert_equal(nil, @class.new(load_response('/available.txt')).admin)
+    assert_equal(nil, @class.new(load_answer('/available.txt')).admin)
   end
 
   def test_technical
-    contact = @class.new(load_response('/registered.txt')).technical
-    assert_instance_of(Whois::Response::Contact, contact)
+    contact = @class.new(load_answer('/registered.txt')).technical
+    assert_instance_of(Whois::Answer::Contact, contact)
     assert_equal(nil, contact.id)
     assert_equal('Google Inc.', contact.name)
     assert_equal(nil, contact.organization)
@@ -137,28 +137,28 @@ assurance and to bar you from using its whois query.
 
   def test_technical_for_avalable_domain
     assert_equal  nil,
-                  @class.new(load_response('/available.txt')).technical
+                  @class.new(load_answer('/available.txt')).technical
   end
 
   def test_nameservers
     assert_equal  %w(ns1.google.com ns4.google.com ns3.google.com ns2.google.com),
-                  @class.new(load_response('/registered.txt')).nameservers
+                  @class.new(load_answer('/registered.txt')).nameservers
   end
 
   def test_nameservers_for_available_domain
     assert_equal  nil,
-                  @class.new(load_response('/available.txt')).nameservers
+                  @class.new(load_answer('/available.txt')).nameservers
   end
 
   
   protected
 
-    def load_response(path)
-      new_response(@server, File.read(TESTCASE_PATH + path))
+    def load_answer(path)
+      new_answer(@server, File.read(TESTCASE_PATH + path))
     end
 
-    def new_response(server, content)
-      @response.new(server, [[content, server.host]])
+    def new_answer(server, content)
+      @answer.new(server, [[content, server.host]])
     end
 
 end

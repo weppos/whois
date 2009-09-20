@@ -1,14 +1,14 @@
 require 'test_helper'
-require 'whois/response/parsers/whois.publicinterestregistry.net'
+require 'whois/answer/parsers/whois.publicinterestregistry.net'
 
 class WhoisPublicinterestregistryNetTest < Test::Unit::TestCase
 
   TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/org')
 
   def setup
-    @klass    = Whois::Response::Parsers::WhoisPublicinterestregistryNet
-    @server   = Whois::Server.factory(:tld, ".org", "whois.publicinterestregistry.net")
-    @response = Whois::Response
+    @klass  = Whois::Answer::Parsers::WhoisPublicinterestregistryNet
+    @server = Whois::Server.factory(:tld, ".org", "whois.publicinterestregistry.net")
+    @answer = Whois::Answer
   end
 
 
@@ -31,82 +31,82 @@ rights reserved. Public Interest Registry reserves the right to modify these ter
 time. By submitting this query, you agree to abide by this policy.
     EOS
     assert_equal  expected,
-                  @klass.new(load_response('/registered.txt')).disclaimer
+                  @klass.new(load_answer('/registered.txt')).disclaimer
   end
 
   def test_disclaimer_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).disclaimer
+                  @klass.new(load_answer('/available.txt')).disclaimer
   end
 
 
   def test_domain
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).domain
+                  @klass.new(load_answer('/available.txt')).domain
     assert_equal  "google.org",
-                  @klass.new(load_response('/registered.txt')).domain
+                  @klass.new(load_answer('/registered.txt')).domain
   end
 
   def test_domain_id
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).domain_id
+                  @klass.new(load_answer('/available.txt')).domain_id
     assert_equal  "D2244233-LROR",
-                  @klass.new(load_response('/registered.txt')).domain_id
+                  @klass.new(load_answer('/registered.txt')).domain_id
   end
 
 
   def test_status
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).status
+                  @klass.new(load_answer('/available.txt')).status
     assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_response('/registered.txt')).status
+                  @klass.new(load_answer('/registered.txt')).status
   end
 
   def test_available?
-    assert !@klass.new(load_response('/registered.txt')).available?
-    assert  @klass.new(load_response('/available.txt')).available?
+    assert !@klass.new(load_answer('/registered.txt')).available?
+    assert  @klass.new(load_answer('/available.txt')).available?
   end
 
   def test_registered?
-    assert !@klass.new(load_response('/available.txt')).registered?
-    assert  @klass.new(load_response('/registered.txt')).registered?
+    assert !@klass.new(load_answer('/available.txt')).registered?
+    assert  @klass.new(load_answer('/registered.txt')).registered?
   end
 
 
   def test_created_on
     assert_equal  Time.parse("21-Oct-1998 04:00:00 UTC"),
-                  @klass.new(load_response('/registered.txt')).created_on
+                  @klass.new(load_answer('/registered.txt')).created_on
   end
 
   def test_created_on_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).created_on
+                  @klass.new(load_answer('/available.txt')).created_on
   end
 
   def test_updated_on
     assert_equal  Time.parse("04-Mar-2009 12:07:19 UTC"),
-                  @klass.new(load_response('/registered.txt')).updated_on
+                  @klass.new(load_answer('/registered.txt')).updated_on
   end
 
   def test_updated_on_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).updated_on
+                  @klass.new(load_answer('/available.txt')).updated_on
   end
 
   def test_expires_on
     assert_equal  Time.parse("20-Oct-2012 04:00:00 UTC"),
-                  @klass.new(load_response('/registered.txt')).expires_on
+                  @klass.new(load_answer('/registered.txt')).expires_on
   end
 
   def test_expires_on_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).expires_on
+                  @klass.new(load_answer('/available.txt')).expires_on
   end
 
 
   def test_registrar
-    registrar = @klass.new(load_response('/registered.txt')).registrar
-    assert_instance_of Whois::Response::Registrar, registrar
+    registrar = @klass.new(load_answer('/registered.txt')).registrar
+    assert_instance_of Whois::Answer::Registrar, registrar
     assert_equal "R37-LROR", registrar.id
     assert_equal "MarkMonitor Inc.", registrar.name
     assert_equal nil, registrar.organization
@@ -114,13 +114,13 @@ time. By submitting this query, you agree to abide by this policy.
 
   def test_registrar_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).registrar
+                  @klass.new(load_answer('/available.txt')).registrar
   end
 
 
   def test_registrant
-    contact = @klass.new(load_response('/registered.txt')).registrant
-    assert_instance_of Whois::Response::Contact, contact
+    contact = @klass.new(load_answer('/registered.txt')).registrant
+    assert_instance_of Whois::Answer::Contact, contact
     assert_equal "mmr-32097", contact.id
     assert_equal "DNS Admin", contact.name
     assert_equal "Google Inc.", contact.organization
@@ -137,13 +137,13 @@ time. By submitting this query, you agree to abide by this policy.
 
   def test_registrant_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).registrant
+                  @klass.new(load_answer('/available.txt')).registrant
   end
 
 
   def test_admin
-    contact = @klass.new(load_response('/registered.txt')).admin
-    assert_instance_of Whois::Response::Contact, contact
+    contact = @klass.new(load_answer('/registered.txt')).admin
+    assert_instance_of Whois::Answer::Contact, contact
     assert_equal "mmr-32097", contact.id
     assert_equal "DNS Admin", contact.name
     assert_equal "Google Inc.", contact.organization
@@ -160,13 +160,13 @@ time. By submitting this query, you agree to abide by this policy.
 
   def test_admin_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).admin
+                  @klass.new(load_answer('/available.txt')).admin
   end
 
 
   def test_technical
-    contact = @klass.new(load_response('/registered.txt')).technical
-    assert_instance_of Whois::Response::Contact, contact
+    contact = @klass.new(load_answer('/registered.txt')).technical
+    assert_instance_of Whois::Answer::Contact, contact
     assert_equal "mmr-32097", contact.id
     assert_equal "DNS Admin", contact.name
     assert_equal "Google Inc.", contact.organization
@@ -183,18 +183,18 @@ time. By submitting this query, you agree to abide by this policy.
 
   def test_technical_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).technical
+                  @klass.new(load_answer('/available.txt')).technical
   end
 
 
   def test_nameservers
     assert_equal  %w(ns2.google.com ns1.google.com ns3.google.com ns4.google.com),
-                  @klass.new(load_response('/registered.txt')).nameservers
+                  @klass.new(load_answer('/registered.txt')).nameservers
   end
 
   def test_nameservers_with_available
     assert_equal  nil,
-                  @klass.new(load_response('/available.txt')).nameservers
+                  @klass.new(load_answer('/available.txt')).nameservers
   end
 
 
@@ -202,12 +202,12 @@ time. By submitting this query, you agree to abide by this policy.
 
   protected
 
-    def load_response(path)
-      new_response(@server, File.read(TESTCASE_PATH + path))
+    def load_answer(path)
+      new_answer(@server, File.read(TESTCASE_PATH + path))
     end
 
-    def new_response(server, content)
-      @response.new(server, [[content, server.host]])
+    def new_answer(server, content)
+      @answer.new(server, [[content, server.host]])
     end
 
 end

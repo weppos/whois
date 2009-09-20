@@ -14,16 +14,16 @@
 #++
 
 
-require 'whois/response/super_struct'
+require 'whois/answer/super_struct'
 
 
 module Whois
-  class Response
+  class Answer
 
     #
     # = Registrar
     #
-    # Holds the details of the Registrar extracted from the WHOIS response.
+    # Holds the details of the Registrar extracted from the WHOIS answer.
     #
     # A Registrar is composed by the following attributes:
     #

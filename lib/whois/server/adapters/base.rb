@@ -46,7 +46,7 @@ module Whois
         def query(qstring)
           with_buffer do |buffer|
             request(qstring)
-            Response.new(self, buffer)
+            Answer.new(self, buffer)
           end
         end
 
@@ -64,7 +64,7 @@ module Whois
             # result
           end
           
-          # Store a pair of response and host in <tt>@buffer</tt>.
+          # Store a pair of answer and host in <tt>@buffer</tt>.
           def push_buffer(response, host)
             @buffer << [response, host]
           end

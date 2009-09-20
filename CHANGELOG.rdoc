@@ -9,6 +9,8 @@
 
 * CHANGED: extracted all scanners into separated classes in order to make easier extract shared features.
 
+* CHANGED: renamed Whois::Response to Whois::Answer. This change is required to avoid confusion between query-answer and server request-response. A Whois::Answer is composed by one or more parts, corresponding to single server answers.
+
 
 == Release 0.6.0
 

@@ -14,11 +14,11 @@
 #++
 
 
-require 'whois/response/parsers/base'
+require 'whois/answer/parsers/base'
 
 
 module Whois
-  class Response
+  class Answer
     module Parsers
 
       #
@@ -28,7 +28,7 @@ module Whois
       #
       class WhoisNicIt < Base
 
-        # Returns the registry disclaimer that comes with the response.
+        # Returns the registry disclaimer that comes with the answer.
         def disclaimer
           node("Disclaimer")
         end
@@ -63,29 +63,29 @@ module Whois
         
 
         # If available, returns a Time object representing the date
-        # the record was created, according to the registry response.
+        # the record was created, according to the registry answer.
         def created_on
           node("Created") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
-        # the record was last updated, according to the registry response.
+        # the record was last updated, according to the registry answer.
         def updated_on
           node("Last Update") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
-        # the record is set to expire, according to the registry response.
+        # the record is set to expire, according to the registry answer.
         def expires_on
           node("Expire Date") { |raw| Time.parse(raw) }
         end
 
 
-        # If available, returns a <tt>Whois::Response::Registrar</tt> record
-        # containing the registrar details extracted from the registry response.
+        # If available, returns a <tt>Whois::Answer::Registrar</tt> record
+        # containing the registrar details extracted from the registry answer.
         def registrar
           node("Registrar") do |raw|
-            Response::Registrar.new(
+            Answer::Registrar.new(
               :id           => raw["Name"],
               :name         => raw["Name"],
               :organization => raw["Organization"]
@@ -93,27 +93,27 @@ module Whois
           end
         end
 
-        # If available, returns a <tt>Whois::Response::Contact</tt> record
-        # containing the registrant details extracted from the registry response.
+        # If available, returns a <tt>Whois::Answer::Contact</tt> record
+        # containing the registrant details extracted from the registry answer.
         def registrant
           contact("Registrant")
         end
 
-        # If available, returns a <tt>Whois::Response::Contact</tt> record
-        # containing the admin contact details extracted from the registry response.
+        # If available, returns a <tt>Whois::Answer::Contact</tt> record
+        # containing the admin contact details extracted from the registry answer.
         def admin
           contact("Admin Contact")
         end
 
-        # If available, returns a <tt>Whois::Response::Contact</tt> record
-        # containing the technical contact details extracted from the registry response.
+        # If available, returns a <tt>Whois::Answer::Contact</tt> record
+        # containing the technical contact details extracted from the registry answer.
         def technical
           contact("Technical Contacts")
         end
 
 
         # If available, returns an array of name servers entries for this domain
-        # if any name server is available in the registry response.
+        # if any name server is available in the registry answer.
         # Each name server is a lower case string.
         #
         # ==== Examples
@@ -128,15 +128,15 @@ module Whois
         end
 
 
-        # Returns whether this response changed compared to <tt>other</tt>.
+        # Returns whether this answer changed compared to <tt>other</tt>.
         #
-        # Comparing the Response contents is not always as trivial as it seems.
-        # Whois servers sometimes inject dynamic method into the whois response such as
+        # Comparing the Answer contents is not always as trivial as it seems.
+        # Whois servers sometimes inject dynamic method into the whois answer such as
         # the timestamp the request was generated.
-        # This causes two responses to be different even if they actually should be considered equal
+        # This causes two answers to be different even if they actually should be considered equal
         # because the registry data didn't change.
         #
-        # This method should provide a bulletproof way to detect whether this response
+        # This method should provide a bulletproof way to detect whether this answer
         # changed if compared with <tt>other</tt>.
         def changed?(other)
           !unchanged?(other)
@@ -145,7 +145,7 @@ module Whois
         # The opposite of <tt>changed?</tt>.
         def unchanged?(other)
           self == other ||
-          self.response.to_s == other.response.to_s
+          self.answer.to_s == other.answer.to_s
           # (self == other)                 ||
           # (domain     == other.domain     &&
           #  created_on == other.created_on &&
@@ -159,7 +159,7 @@ module Whois
           def contact(element)
             node(element) do |raw|
               address = (raw["Address"] || "").split("\n")
-              Response::Contact.new(
+              Answer::Contact.new(
                 :id           => raw["ContactID"],
                 :name         => raw["Name"],
                 :organization => raw["Organization"],
@@ -192,14 +192,14 @@ module Whois
           end
 
           def parse
-            Scanner.new(@response.to_s).parse
+            Scanner.new(answer.to_s).parse
           end
 
 
         class Scanner
 
-          def initialize(response)
-            @input = StringScanner.new(response.to_s)
+          def initialize(content)
+            @input = StringScanner.new(content.to_s)
           end
 
           def parse

@@ -16,16 +16,16 @@
 
 require 'strscan'
 require 'time'
-require 'whois/response/contact'
-require 'whois/response/registrar'
+require 'whois/answer/contact'
+require 'whois/answer/registrar'
 
 
 module Whois
-  class Response
+  class Answer
     module Parsers
 
       #
-      # = Base Response Parser
+      # = Base Answer Parser
       #
       # This class is intended to be the base abstract class for all
       # server-specific parser implementations.
@@ -50,11 +50,11 @@ module Whois
           @@allowed_methods
         end
 
-        attr_reader :response
+        attr_reader :answer
 
 
-        def initialize(response)
-          @response = response
+        def initialize(answer)
+          @answer = answer
         end
 
         allowed_methods.each do |method|

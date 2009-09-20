@@ -14,16 +14,16 @@
 #++
 
 
-require 'whois/response/super_struct'
+require 'whois/answer/super_struct'
 
 
 module Whois
-  class Response
+  class Answer
 
     #
     # = Contacts
     #
-    # Holds the details of a Contact extracted from the WHOIS response.
+    # Holds the details of a Contact extracted from the WHOIS answer.
     #
     # A Contact is composed by the following attributes:
     #
