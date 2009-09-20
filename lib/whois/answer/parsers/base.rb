@@ -40,6 +40,7 @@ module Whois
         @@allowed_methods = [
           :disclaimer,
           :domain, :domain_id,
+          :referral_whois, :referral_url,
           :status, :registered?, :available?,
           :created_on, :updated_on, :expires_on,
           :registrar, :registrant, :admin, :technical,

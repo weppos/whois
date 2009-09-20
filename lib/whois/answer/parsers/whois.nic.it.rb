@@ -43,24 +43,24 @@ module Whois
         def domain_id
           nil
         end
-        
+
 
         # Returns the record status or an array of status,
         # in case the registry supports it.
         def status
           node("Status") { |raw| raw.downcase.to_sym }
         end
-        
+
         # Returns whether this record is available.
         def available?
           node("Status") == "AVAILABLE"
         end
-        
+
         # Returns whether this record is registered.
         def registered?
           !available?
         end
-        
+
 
         # If available, returns a Time object representing the date
         # the record was created, according to the registry answer.

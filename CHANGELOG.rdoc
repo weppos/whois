@@ -7,6 +7,8 @@
 
 * ADDED: support for multipart answers. This is useful in case of thin servers such as .com or .net because the parser needs to know all different responses in order to load all single scanners.
 
+* ADDED: whois.crsnic.net (.com, .net, ... TLDs) parser.
+
 * CHANGED: extracted all scanners into separated classes in order to make easier extract shared features.
 
 * CHANGED: renamed Whois::Response to Whois::Answer. This change is required to avoid confusion between query-answer and server request-response. A Whois::Answer is composed by one or more parts, corresponding to single server answers.

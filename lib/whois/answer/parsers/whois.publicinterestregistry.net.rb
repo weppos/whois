@@ -165,7 +165,6 @@ module Whois
           def parse
             @ast = {}
             while !@input.eos?
-              trim_newline  ||
               parse_content
             end
             @ast
@@ -174,6 +173,7 @@ module Whois
           private
 
             def parse_content
+              trim_newline      ||
               parse_not_found   ||
               parse_disclaimer  ||
               parse_pair        ||
