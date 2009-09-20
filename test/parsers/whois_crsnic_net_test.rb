@@ -154,7 +154,7 @@ EOS
 
   def test_registrar
     assert_equal  nil,
-                  @klass.new(load_answer('/registrar.txt')).registrar
+                  @klass.new(load_answer('/registered.txt')).registrar
   end
 
   def test_registrar_with_available
