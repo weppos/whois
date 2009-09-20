@@ -2,6 +2,7 @@ require 'test_helper'
 require 'whois/response/parsers/whois.denic.de'
 
 class WhoisDenicDeTest < Test::Unit::TestCase
+
   TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../testcases/responses/de')
 
   def setup
@@ -135,20 +136,29 @@ assurance and to bar you from using its whois query.
   end
 
   def test_technical_for_avalable_domain
-    assert_equal(nil, @class.new(load_response('/available.txt')).technical)
+    assert_equal  nil,
+                  @class.new(load_response('/available.txt')).technical
   end
 
   def test_nameservers
-    assert_equal(%w(ns1.google.com ns4.google.com ns3.google.com ns2.google.com),
-        @class.new(load_response('/registered.txt')).nameservers)
+    assert_equal  %w(ns1.google.com ns4.google.com ns3.google.com ns2.google.com),
+                  @class.new(load_response('/registered.txt')).nameservers
   end
 
   def test_nameservers_for_available_domain
-    assert_equal(nil, @class.new(load_response('/available.txt')).nameservers)
+    assert_equal  nil,
+                  @class.new(load_response('/available.txt')).nameservers
   end
 
+  
   protected
-  def load_response(path)
-    @response.new(File.read(TESTCASE_PATH + path), @server)
-  end
+
+    def load_response(path)
+      new_response(@server, File.read(TESTCASE_PATH + path))
+    end
+
+    def new_response(server, content)
+      @response.new(server, [[content, server.host]])
+    end
+
 end

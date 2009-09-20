@@ -14,6 +14,7 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
     expected = response
     @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(response)
     assert_equal expected, @server.query("domain.foo").to_s
+    assert_equal [[response, "whois.afilias-grs.info"]], @server.buffer
   end
 
   def test_query_with_referral
@@ -23,6 +24,7 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
     @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(referral)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.belizenic.bz", 43).returns(response)
     assert_equal expected, @server.query("domain.foo").to_s
+    assert_equal [[referral, "whois.afilias-grs.info"], [response, "whois.belizenic.bz"]], @server.buffer
   end
 
 end

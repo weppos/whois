@@ -14,6 +14,7 @@ class ServerAdaptersPirTest < Test::Unit::TestCase
     expected = response
     @server.expects(:ask_the_socket).with("FULL domain.foo", "whois.publicinterestregistry.net", 43).returns(response)
     assert_equal expected, @server.query("domain.foo").to_s
+    assert_equal [[response, "whois.publicinterestregistry.net"]], @server.buffer
   end
 
   def test_query_with_referral
@@ -23,6 +24,7 @@ class ServerAdaptersPirTest < Test::Unit::TestCase
     @server.expects(:ask_the_socket).with("FULL domain.foo", "whois.publicinterestregistry.net", 43).returns(referral)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.iana.org", 43).returns(response)
     assert_equal expected, @server.query("domain.foo").to_s
+    assert_equal [[referral, "whois.publicinterestregistry.net"], [response, "whois.iana.org"]], @server.buffer
   end
 
 end

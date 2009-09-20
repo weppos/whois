@@ -20,26 +20,28 @@ require 'whois/response/parsers/base'
 module Whois
 
   class Response
+
     attr_reader :server
-    attr_reader :content
-    
-    def initialize(content, server = nil)
-      @content  = content
-      @server   = server
+    attr_reader :parts
+
+    def initialize(server, parts)
+      @parts  = parts
+      @server = server
     end
+
     
     def to_s
-      @content.to_s
+      content.to_s
     end
     
     def inspect
-      @content.inspect
+      content.inspect
     end
     
     # Invokes <tt>match</tt> on response <tt>@content</tt>
     # and returns the <tt>MatchData</tt> or <tt>nil</tt>.
     def match(pattern)
-      @content.match(pattern)
+      content.match(pattern)
     end
     
     # Returns true if the <tt>object</tt> is the same object,
@@ -54,6 +56,11 @@ module Whois
     # Delegates to ==.
     def eql?(other)
       self == other
+    end
+
+
+    def content
+      @content ||= parts.map { |response, host| response }.join("\n")
     end
 
     # Returns whether this response changed compared to <tt>other</tt>.
@@ -80,7 +87,7 @@ module Whois
     # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
     # matches <tt>@content</tt>, <tt>false</tt> otherwise.
     def match?(pattern)
-      !@content.match(pattern).nil?
+      !content.match(pattern).nil?
     end
     
     # Invokes <tt>match</tt> and returns the first useful match,
@@ -103,7 +110,7 @@ module Whois
     
     # Lazy-loads and returns current response parser.
     def parser
-      @parser ||= self.class.parser_klass(@server).new(self)
+      @parser ||= self.class.parser_klass(parts.first.last).new(self)
     end
 
 
@@ -119,24 +126,20 @@ module Whois
       end
       
       
-      def self.parser_klass(server)
-        raise ParserError, 
-          "Unable to select a parser. " +
-          "The server for this response is either nil or invalid." if server.nil? || server.host.nil?
-        
-        file = "whois/response/parsers/#{server.host}.rb"
+      def self.parser_klass(host)
+        file = "whois/response/parsers/#{host}.rb"
         require file
         
-        name = host_to_parser(server)
+        name = host_to_parser(host)
         Parsers.const_get(name)
       
       rescue LoadError
         raise ParserNotFound, 
-          "Unable to find a parser for the server `#{server.host}'"
+          "Unable to find a parser for the server `#{host}'"
       end
       
-      def self.host_to_parser(server)
-        server.host.to_s.
+      def self.host_to_parser(host)
+        host.to_s.
           gsub(/\./, '_').
           gsub(/(?:^|_)(.)/)  { $1.upcase }
       end

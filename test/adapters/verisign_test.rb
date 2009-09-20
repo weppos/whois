@@ -14,6 +14,7 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
     expected = response
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(response)
     assert_equal expected, @server.query("domain.foo").to_s
+    assert_equal [[response, "whois.foo"]], @server.buffer
   end
 
   def test_query_with_referral
@@ -23,6 +24,7 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(referral)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.tucows.com", 43).returns(response)
     assert_equal expected, @server.query("domain.foo").to_s
+    assert_equal [[referral, "whois.foo"], [response, "whois.tucows.com"]], @server.buffer
   end
 
 end

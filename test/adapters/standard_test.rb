@@ -13,6 +13,7 @@ class ServerAdaptersStandardTest < Test::Unit::TestCase
     @server.expects(:ask_the_socket).with("domain.foo", "whois.foo", 43).returns("Whois Response")
     response = @server.query("domain.foo")
     assert_equal response, "Whois Response"
+    assert_equal [[response, "whois.foo"]], @server.buffer
   end
 
   def test_query_with_port
@@ -20,6 +21,7 @@ class ServerAdaptersStandardTest < Test::Unit::TestCase
     @server.expects(:ask_the_socket).with("domain.foo", "whois.foo", 20).returns("Whois Response")
     response = @server.query("domain.foo")
     assert_equal response, "Whois Response"
+    assert_equal [[response, "whois.foo"]], @server.buffer
   end
 
 end

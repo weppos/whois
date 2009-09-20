@@ -5,6 +5,8 @@
 
 * ADDED: whois.denic.de (.de TLD) parser [Aaron Mueller]
 
+* ADDED: support for multipart answers. This is useful in case of thin servers such as .com or .net because the parser needs to know all different responses in order to load all single scanners.
+
 * CHANGED: extracted all scanners into separated classes in order to make easier extract shared features.
 
 

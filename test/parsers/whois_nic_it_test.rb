@@ -183,7 +183,7 @@ class WhoisNicItTest < Test::Unit::TestCase
   end
 
   def test_changed_question_check_self_with_available
-    parser = @response.new(<<-RESPONSE, @server).parser
+    parser = new_response(@server, <<-RESPONSE).parser
 Domain:             google.it
 Status:             AVAILABLE
     RESPONSE
@@ -192,16 +192,16 @@ Status:             AVAILABLE
   end
 
   def test_changed_question_check_internals_with_available
-    parser = @response.new(<<-RESPONSE, @server).parser
+    parser = new_response(@server, <<-RESPONSE).parser
 Domain:             google.it
 Status:             AVAILABLE
     RESPONSE
 
-    assert  parser.changed?(@response.new(<<-RESPONSE, @server).parser)
+    assert  parser.changed?(new_response(@server, <<-RESPONSE).parser)
 Domain:             weppos.it
 Status:             AVAILABLE
     RESPONSE
-    assert !parser.changed?(@response.new(<<-RESPONSE, @server).parser)
+    assert !parser.changed?(new_response(@server, <<-RESPONSE).parser)
 Domain:             google.it
 Status:             AVAILABLE
     RESPONSE
@@ -218,7 +218,7 @@ Status:             AVAILABLE
   end
 
   def test_unchanged_question_check_self_with_available
-    parser = @response.new(<<-RESPONSE, @server).parser
+    parser = new_response(@server, <<-RESPONSE).parser
 Domain:             google.it
 Status:             AVAILABLE
     RESPONSE
@@ -227,16 +227,16 @@ Status:             AVAILABLE
   end
 
   def test_unchanged_question_check_internals_with_available
-    parser = @response.new(<<-RESPONSE, @server).parser
+    parser = new_response(@server, <<-RESPONSE).parser
 Domain:             google.it
 Status:             AVAILABLE
     RESPONSE
 
-    assert  parser.unchanged?(@response.new(<<-RESPONSE, @server).parser)
+    assert  parser.unchanged?(new_response(@server, <<-RESPONSE).parser)
 Domain:             google.it
 Status:             AVAILABLE
     RESPONSE
-    assert !parser.unchanged?(@response.new(<<-RESPONSE, @server).parser)
+    assert !parser.unchanged?(new_response(@server, <<-RESPONSE).parser)
 Domain:             weppos.it
 Status:             AVAILABLE
     RESPONSE
@@ -246,7 +246,11 @@ Status:             AVAILABLE
   protected
   
     def load_response(path)
-      @response.new(File.read(TESTCASE_PATH + path), @server)
+      new_response(@server, File.read(TESTCASE_PATH + path))
+    end
+
+    def new_response(server, content)
+      @response.new(server, [[content, server.host]])
     end
 
 end

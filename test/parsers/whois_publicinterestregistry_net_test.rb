@@ -203,7 +203,11 @@ time. By submitting this query, you agree to abide by this policy.
   protected
 
     def load_response(path)
-      @response.new(File.read(TESTCASE_PATH + path), @server)
+      new_response(@server, File.read(TESTCASE_PATH + path))
+    end
+
+    def new_response(server, content)
+      @response.new(server, [[content, server.host]])
     end
 
 end

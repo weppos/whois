@@ -20,32 +20,54 @@ module Whois
       
       class Base
 
+        # Default Whois request port.
         DEFAULT_WHOIS_PORT = 43
 
         attr_reader :type
         attr_reader :allocation
         attr_reader :host
         attr_reader :options
+        attr_reader :buffer
 
-        
         def initialize(type, allocation, host, options = {})
           @type       = type
           @allocation = allocation
           @host       = host
           @options    = options || {}
         end
-        
+
+        # Performs a Whois query for <tt>qstring</tt> 
+        # using current server adapter and returns a <tt>Whois::Response</tt>
+        # instance with the result of the request.
+        #
+        # server.query("google.com")
+        # # => Whois::Response
+        #
         def query(qstring)
-          response = request(qstring)
-          Response.new(response, self)
+          with_buffer do |buffer|
+            request(qstring)
+            Response.new(self, buffer)
+          end
         end
 
         def request(qstring)
           raise NotImplementedError
         end
 
-        
+
         protected
+
+          def with_buffer(&block)
+            @buffer = []
+            result = yield(@buffer)
+            # @buffer = []
+            # result
+          end
+          
+          # Store a pair of response and host in <tt>@buffer</tt>.
+          def push_buffer(response, host)
+            @buffer << [response, host]
+          end
 
           def query_the_socket(qstring, host, port = nil)
             ask_the_socket(qstring, host, port || options[:port] || DEFAULT_WHOIS_PORT)
