@@ -207,7 +207,7 @@ time. By submitting this query, you agree to abide by this policy.
     end
 
     def new_answer(server, content)
-      @answer.new(server, [[content, server.host]])
+      @answer.new(server, [Whois::Answer::Part.new(content, server.host)])
     end
 
 end

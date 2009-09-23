@@ -22,7 +22,7 @@ module Whois
         
         def request(qstring)
           response = query_the_socket(qstring, host)
-          push_buffer response, host
+          append_to_buffer response, host
         end
         
       end

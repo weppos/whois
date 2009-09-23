@@ -22,11 +22,11 @@ module Whois
 
         def request(qstring)
           response = ask_the_socket(qstring, "whois.afilias-grs.info", DEFAULT_WHOIS_PORT)
-          push_buffer response, "whois.afilias-grs.info"
+          append_to_buffer response, "whois.afilias-grs.info"
 
           if endpoint = extract_referral(response)
             response = ask_the_socket(qstring, endpoint, DEFAULT_WHOIS_PORT)
-            push_buffer response, endpoint
+            append_to_buffer response, endpoint
           end
         end
 

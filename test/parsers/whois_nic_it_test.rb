@@ -250,7 +250,7 @@ Status:             AVAILABLE
     end
 
     def new_answer(server, content)
-      @answer.new(server, [[content, server.host]])
+      @answer.new(server, [Whois::Answer::Part.new(content, server.host)])
     end
 
 end

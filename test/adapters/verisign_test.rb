@@ -1,11 +1,10 @@
 require 'test_helper'
 
 class ServerAdaptersVerisignTest < Test::Unit::TestCase
-  include Whois
 
   def setup
     @definition = [:tld, ".foo", "whois.foo", {}]
-    @klass = Server::Adapters::Verisign
+    @klass  = Whois::Server::Adapters::Verisign
     @server = @klass.new(*@definition)
   end
 
@@ -13,8 +12,10 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
     response = "No match for DOMAIN.FOO."
     expected = response
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(response)
-    assert_equal expected, @server.query("domain.foo").to_s
-    assert_equal [[response, "whois.foo"]], @server.buffer
+    assert_equal expected,
+                 @server.query("domain.foo").to_s
+    assert_equal [Whois::Answer::Part.new(response, "whois.foo")],
+                 @server.buffer
   end
 
   def test_query_with_referral
@@ -23,8 +24,10 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
     expected = referral + "\n" + response
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(referral)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.tucows.com", 43).returns(response)
-    assert_equal expected, @server.query("domain.foo").to_s
-    assert_equal [[referral, "whois.foo"], [response, "whois.tucows.com"]], @server.buffer
+    assert_equal expected,
+                 @server.query("domain.foo").to_s
+    assert_equal [Whois::Answer::Part.new(referral, "whois.foo"), Whois::Answer::Part.new(response, "whois.tucows.com")],
+                 @server.buffer
   end
 
 end

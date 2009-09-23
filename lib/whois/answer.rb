@@ -60,7 +60,7 @@ module Whois
 
 
     def content
-      @content ||= parts.map { |response, host| response }.join("\n")
+      @content ||= parts.map { |part| part.response }.join("\n")
     end
 
     # Returns whether this answer changed compared to <tt>other</tt>.
@@ -92,8 +92,12 @@ module Whois
 
     
     # Lazy-loads and returns current answer parser.
+    #
+    # TODO: actually only the first part is considered.
+    # Add support for multi-part answer.
+    #
     def parser
-      @parser ||= self.class.parser_klass(parts.first.last).new(self)
+      @parser ||= self.class.parser_klass(parts.first.host).new(self)
     end
 
 

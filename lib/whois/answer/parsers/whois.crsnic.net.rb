@@ -105,8 +105,7 @@ module Whois
           end
 
           def parse
-            # NOTE: ugly...
-            Scanner.new(answer.parts.first.first).parse
+            Scanner.new(answer.parts.first.response).parse
           end
 
 

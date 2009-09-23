@@ -5,7 +5,10 @@ class AnswerTest < Test::Unit::TestCase
   def setup
     @klass    = Whois::Answer
     @server   = Whois::Server.factory(:tld, ".foo", "whois.foo")
-    @parts    = [["This is a answer for domain.foo.", "foo.whois.com"], ["This is a answer for domain.bar.", "bar.whois.com"]]
+    @parts    = [
+        Whois::Answer::Part.new("This is a answer for domain.foo.", "foo.whois.com"),
+        Whois::Answer::Part.new("This is a answer for domain.bar.", "bar.whois.com")
+    ]
     @content  = "This is a answer for domain.foo.\nThis is a answer for domain.bar."
     @answer   = @klass.new(@server, @parts)
   end
@@ -76,29 +79,29 @@ class AnswerTest < Test::Unit::TestCase
   
   require 'whois/answer/parsers/whois.nic.it'
   def test_parser
-    answer = @klass.new(nil, [["", "whois.nic.it"]])
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
     assert_instance_of  Whois::Answer::Parsers::WhoisNicIt,
                         answer.parser
   end
 
   def test_parser_should_raise_with_missing_parser
-    answer = @klass.new(nil, [["", "invalid.nic.it"]])
-    error = assert_raise(Whois::ParserNotFound) { answer.parser }
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "invalid.nic.it")])
+    error  = assert_raise(Whois::ParserNotFound) { answer.parser }
     assert_match /Unable to find a parser/, error.message
   end
 
   Whois::Answer::Parsers::Base.allowed_methods.each do |method|
     define_method "test_should_delegate_#{method}_to_parser" do
-      answer = @klass.new(nil, [["", "whois.nic.it"]])
-      parser   = answer.parser
+      answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
+      parser = answer.parser
       parser.expects(method).returns(:value)
       assert_equal :value, answer.send(method)
     end
   end
 
   def test_should_not_delegate_unallowed_method_to_parser
-    answer = @klass.new(nil, [["", "whois.nic.it"]])
-    parser   = answer.parser
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
+    parser = answer.parser
     parser.expects("unallowed_method").never
     assert_raise(NoMethodError) { answer.send("unallowed_method") }
   end

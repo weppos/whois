@@ -14,6 +14,10 @@
 #++
 
 
+require 'whois/answer/part'
+require 'whois/answer'
+
+
 module Whois
   class Server
     module Adapters
@@ -64,9 +68,9 @@ module Whois
             # result
           end
           
-          # Store a pair of answer and host in <tt>@buffer</tt>.
-          def push_buffer(response, host)
-            @buffer << [response, host]
+          # Store an answer part in <tt>@buffer</tt>.
+          def append_to_buffer(response, host)
+            @buffer << ::Whois::Answer::Part.new(response, host)
           end
 
           def query_the_socket(qstring, host, port = nil)
