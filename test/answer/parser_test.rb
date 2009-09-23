@@ -20,13 +20,6 @@ class AnswerParserTest < Test::Unit::TestCase
   end
 
 
-  def test_parsers_should_not_raise_with_empty_parts
-    answer = Whois::Answer.new(nil, [])
-    parser = @klass.new(answer)
-    assert_equal 0, parser.parsers.length
-    assert_equal [], parser.parsers
-  end
-
   def test_parsers_should_not_raise_with_valid_parser
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
@@ -39,6 +32,12 @@ class AnswerParserTest < Test::Unit::TestCase
     parser = @klass.new(answer)
     error  = assert_raise(Whois::ParserNotFound) { parser.parsers }
     assert_match /Unable to find a parser/, error.message
+  end
+
+  def test_parsers_should_raise_with_empty_parts
+    answer = Whois::Answer.new(nil, [])
+    parser = @klass.new(answer)
+    error  = assert_raise(Whois::ParserError) { parser.parsers }
   end
 
   # Whois::Answer::Parsers::Base.allowed_methods.each do |method|

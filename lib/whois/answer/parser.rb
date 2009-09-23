@@ -64,6 +64,9 @@ module Whois
         # Loops through all answer parts and initializes a parser
         # for any available part.
         def init_parsers
+          raise ParserError,
+            "Unable to select a parser because the answer is empty." if answer.parts.empty?
+
           answer.parts.map { |part| parser_for(part) }
         end
 
