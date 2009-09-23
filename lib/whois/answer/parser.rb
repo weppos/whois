@@ -55,7 +55,8 @@ module Whois
         # This is the standard behaviour of the previous implementation.
         def method_missing(method, *args, &block)
           if parsers.empty?
-            super
+            raise ParserError,
+              "Unable to select a parser because the answer is empty." if answer.parts.empty?
           else
             parsers.first.send(method, *args, &block)
           end
@@ -64,9 +65,6 @@ module Whois
         # Loops through all answer parts and initializes a parser
         # for any available part.
         def init_parsers
-          raise ParserError,
-            "Unable to select a parser because the answer is empty." if answer.parts.empty?
-
           answer.parts.map { |part| parser_for(part) }
         end
 
