@@ -14,7 +14,8 @@
 #++
 
 
-require 'whois/answer/parsers/base'
+require 'whois/answer/parser'
+require 'whois/answer/parser/base'
 
 
 module Whois
@@ -59,6 +60,18 @@ module Whois
     end
 
 
+    # Returns the content of this answer as a string.
+    # This method joins all answer parts into a single string
+    # and separates each response with a newline character.
+    #
+    #   answer = Whois::Answer.new([Whois::Answer::Part.new("First answer.")])
+    #   answer.content
+    #   # => "First answer."
+    #
+    #   answer = Whois::Answer.new([Whois::Answer::Part.new("First answer."), Whois::Answer::Part.new("Second answer.")])
+    #   answer.content
+    #   # => "First answer.\nSecond answer."
+    #
     def content
       @content ||= parts.map { |part| part.response }.join("\n")
     end
@@ -90,14 +103,10 @@ module Whois
       !content.match(pattern).nil?
     end
 
-    
-    # Lazy-loads and returns current answer parser.
-    #
-    # TODO: actually only the first part is considered.
-    # Add support for multi-part answer.
-    #
+
+    # Lazy-loads and returns a <tt>Whois::Answer::Parser</tt> proxy for current answer.
     def parser
-      @parser ||= self.class.parser_klass(parts.first.host).new(self)
+      @parser ||= Parser.new(self)
     end
 
 
@@ -105,32 +114,13 @@ module Whois
       
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
-        if Parsers::Base.allowed_methods.include?(method)
+        if Parser.allowed_methods.include?(method)
           parser.send(method, *args, &block)
         else
           super
         end
       end
       
-      
-      def self.parser_klass(host)
-        file = "whois/answer/parsers/#{host}.rb"
-        require file
-        
-        name = host_to_parser(host)
-        Parsers.const_get(name)
-      
-      rescue LoadError
-        raise ParserNotFound, 
-          "Unable to find a parser for the server `#{host}'"
-      end
-      
-      def self.host_to_parser(host)
-        host.to_s.
-          gsub(/\./, '_').
-          gsub(/(?:^|_)(.)/)  { $1.upcase }
-      end
-    
   end
 
 end

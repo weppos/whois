@@ -14,12 +14,12 @@
 #++
 
 
-require 'whois/answer/parsers/base'
+require 'whois/answer/parser/base'
 
 
 module Whois
   class Answer
-    module Parsers
+    class Parser
 
       #
       # = whois.crsnic.net.rb parser
@@ -105,7 +105,7 @@ module Whois
           end
 
           def parse
-            Scanner.new(answer.parts.first.response).parse
+            Scanner.new(content.to_s).parse
           end
 
 

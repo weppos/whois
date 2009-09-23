@@ -14,12 +14,12 @@
 #++
 
 
-require 'whois/answer/parsers/base'
+require 'whois/answer/parser/base'
 
 
 module Whois
   class Answer
-    module Parsers
+    class Parser
       class WhoisDenicDe < Base
 
         def disclaimer
@@ -92,7 +92,7 @@ module Whois
           end
 
           def parse
-            Scanner.new(answer.to_s).parse
+            Scanner.new(content.to_s).parse
           end
 
 

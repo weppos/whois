@@ -19,7 +19,7 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
   end
 
   def test_query_with_referral
-    referral = File.read(File.dirname(__FILE__) + "/../testcases/referrals/crsnic.com.txt")
+    referral = File.read(File.dirname(__FILE__) + "/../../testcases/referrals/crsnic.com.txt")
     response = "Match for DOMAIN.FOO."
     expected = referral + "\n" + response
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(referral)

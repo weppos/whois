@@ -22,7 +22,7 @@ require 'whois/answer/registrar'
 
 module Whois
   class Answer
-    module Parsers
+    class Parser
 
       #
       # = Base Answer Parser
@@ -37,31 +37,33 @@ module Whois
       #
       class Base
 
-        @@allowed_methods = [
-          :disclaimer,
-          :domain, :domain_id,
-          :referral_whois, :referral_url,
-          :status, :registered?, :available?,
-          :created_on, :updated_on, :expires_on,
-          :registrar, :registrant, :admin, :technical,
-          :nameservers,
-        ]
+        attr_reader :part
 
-        def self.allowed_methods
-          @@allowed_methods
+
+        def initialize(part)
+          @part = part
         end
 
-        attr_reader :answer
-
-
-        def initialize(answer)
-          @answer = answer
-        end
-
-        allowed_methods.each do |method|
+        ::Whois::Answer::Parser.allowed_methods.each do |method|
           define_method(method) do
             raise NotImplementedError, "You should overwrite this method."
           end
+        end
+
+
+        # This is an internal method primaly used as a common access point
+        # to get the content to be parsed as a string.
+        #
+        # The main reason behind this method is because I changed the internal
+        # representation of the data to be parsed more than once
+        # and I always had to rewrite all single parsers in order to reflect these changes.
+        # Now, as far as the parser access the data via the content method,
+        # there's no need to change each single implementation in case the content source changes.
+        #
+        # That said, the only constraints about this method is to return the data to be parsed as string.
+        #
+        def content
+          part.response
         end
 
       end

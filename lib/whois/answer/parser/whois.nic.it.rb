@@ -14,12 +14,12 @@
 #++
 
 
-require 'whois/answer/parsers/base'
+require 'whois/answer/parser/base'
 
 
 module Whois
   class Answer
-    module Parsers
+    class Parser
 
       #
       # = whois.nic.it parser
@@ -145,7 +145,7 @@ module Whois
         # The opposite of <tt>changed?</tt>.
         def unchanged?(other)
           self == other ||
-          self.answer.to_s == other.answer.to_s
+          self.content.to_s == other.content.to_s
           # (self == other)                 ||
           # (domain     == other.domain     &&
           #  created_on == other.created_on &&
@@ -192,7 +192,7 @@ module Whois
           end
 
           def parse
-            Scanner.new(answer.to_s).parse
+            Scanner.new(content.to_s).parse
           end
 
 

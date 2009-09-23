@@ -75,35 +75,25 @@ class AnswerTest < Test::Unit::TestCase
     assert  @answer.match?(/domain\.foo/)
     assert !@answer.match?(/google/)
   end
-  
-  
-  require 'whois/answer/parsers/whois.nic.it'
+
+
   def test_parser
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-    assert_instance_of  Whois::Answer::Parsers::WhoisNicIt,
+    assert_instance_of  Whois::Answer::Parser,
+                        answer.parser
+
+    answer = @klass.new(nil, [])
+    assert_instance_of  Whois::Answer::Parser,
                         answer.parser
   end
 
-  def test_parser_should_raise_with_missing_parser
-    answer = @klass.new(nil, [Whois::Answer::Part.new("", "invalid.nic.it")])
-    error  = assert_raise(Whois::ParserNotFound) { answer.parser }
-    assert_match /Unable to find a parser/, error.message
-  end
-
-  Whois::Answer::Parsers::Base.allowed_methods.each do |method|
+  Whois::Answer::Parser.allowed_methods.each do |method|
     define_method "test_should_delegate_#{method}_to_parser" do
       answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
       parser = answer.parser
       parser.expects(method).returns(:value)
       assert_equal :value, answer.send(method)
     end
-  end
-
-  def test_should_not_delegate_unallowed_method_to_parser
-    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-    parser = answer.parser
-    parser.expects("unallowed_method").never
-    assert_raise(NoMethodError) { answer.send("unallowed_method") }
   end
 
 end
