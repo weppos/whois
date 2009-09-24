@@ -22,43 +22,43 @@ module Whois
     class Parser
       class WhoisDenicDe < Base
 
-        def disclaimer
+        register_method :disclaimer do
           ast['Disclaimer']
         end
 
-        def domain
+        register_method :domain do
           ast['Domain']
         end
 
-        def domain_id
+        register_method :domain_id do
           nil
         end
 
-        def status
+        register_method :status do
           ast['Status']
         end
 
-        def registered?
+        register_method :registered? do
           !ast['NotFound']
         end
 
-        def available?
+        register_method :available? do
           ast['NotFound']
         end
 
-        def created_on
+        register_method :created_on do
           nil
         end
 
-        def expires_on
+        register_method :expires_on do
           nil
         end
 
-        def updated_on
+        register_method :updated_on do
           ast['Changed'] ? Time.parse(ast['Changed']) : nil
         end
 
-        def registrar
+        register_method :registrar do
           return nil unless ast['Zone-C']
           Answer::Registrar.new(
               :id => nil,
@@ -68,19 +68,19 @@ module Whois
           )
         end
 
-        def registrant
+        register_method :registrant do
           ast['Holder']
         end
 
-        def admin
+        register_method :admin do
           ast['Admin-C']
         end
 
-        def technical
+        register_method :technical do
           ast['Tech-C']
         end
 
-        def nameservers
+        register_method :nameservers do
           ast['Nserver']
         end
 

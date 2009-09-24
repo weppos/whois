@@ -28,56 +28,56 @@ module Whois
       #
       class WhoisCrsnicNet < Base
 
-        def disclaimer
+        register_method :disclaimer do
           node("Disclaimer")
         end
 
 
-        def domain
+        register_method :domain do
           node("Domain Name") { |raw| raw.downcase }
         end
 
-        def domain_id
+        register_method :domain_id do
           nil
         end
 
 
-        def referral_whois
+        register_method :referral_whois do
           node("Whois Server")
         end
 
-        def referral_url
+        register_method :referral_url do
           node("Referral URL")
         end
 
 
-        def status
+        register_method :status do
           node("Status")
         end
 
-        def available?
+        register_method :available? do
           node("Registrar").nil?
         end
 
-        def registered?
+        register_method :registered? do
           !available?
         end
 
 
-        def created_on
+        register_method :created_on do
           node("Creation Date") { |raw| Time.parse(raw) }
         end
 
-        def updated_on
+        register_method :updated_on do
           node("Updated Date") { |raw| Time.parse(raw) }
         end
 
-        def expires_on
+        register_method :expires_on do
           node("Expiration Date") { |raw| Time.parse(raw) }
         end
 
 
-        def registrar
+        register_method :registrar do
           # Return nil because when the response contains more than one registrar section
           # the response can be messy. See, for instance, the Verisign response for google.com.
           nil

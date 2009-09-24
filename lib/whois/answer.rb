@@ -114,7 +114,7 @@ module Whois
       
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
-        if Parser.allowed_methods.include?(method)
+        if Parser.registrable_methods.include?(method)
           parser.send(method, *args, &block)
         else
           super

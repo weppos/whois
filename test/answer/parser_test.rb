@@ -20,30 +20,30 @@ class AnswerParserTest < Test::Unit::TestCase
   end
 
 
-  def test_parsers_should_not_raise_with_empty_parts
+  def test_parsers_should_not_create_parser_instance_with_zero_parts
     answer = Whois::Answer.new(nil, [])
     parser = @klass.new(answer)
     assert_equal 0, parser.parsers.length
     assert_equal [], parser.parsers
   end
 
-  def test_parsers_should_not_raise_with_valid_parser
+  def test_parsers_should_create_parser_instance_with_supported_server
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
     assert_equal 1, parser.parsers.length
     assert_instance_of Whois::Answer::Parser::WhoisNicIt, parser.parsers.first
   end
 
-  def test_parsers_should_raise_with_missing_parser
+  def test_parsers_should_create_blank_parser_instance_with_not_supported_server
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "invalid.nic.it")])
     parser = @klass.new(answer)
-    error  = assert_raise(Whois::ParserNotFound) { parser.parsers }
-    assert_match /Unable to find a parser/, error.message
+    assert_equal 1, parser.parsers.length
+    assert_instance_of Whois::Answer::Parser::Blank, parser.parsers.first
   end
 
   
-  Whois::Answer::Parser.allowed_methods.each do |method|
-    define_method "test_should_delegate_#{method}_to_parsers_first_parser_with_one_part" do
+  (Whois::Answer::Parser.registrable_methods - [:referral_url, :referral_whois]).each do |method|
+    define_method "test_should_delegate_#{method}_to_parsers_first_parser_if_supported" do
       answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
       parser = @klass.new(answer)
       parser.parsers.first.expects(method).returns(:value)
@@ -51,7 +51,15 @@ class AnswerParserTest < Test::Unit::TestCase
     end
   end
 
-  Whois::Answer::Parser.allowed_methods.each do |method|
+  [:referral_url, :referral_whois].each do |method|
+    define_method "test_should_delegate_#{method}_to_parsers_raise_unless_supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
+      parser = @klass.new(answer)
+      assert_raise(Whois::PropertyNotSupported) { parser.send(method) }
+    end
+  end
+
+  Whois::Answer::Parser.registrable_methods.each do |method|
     define_method "test_should_delegate_#{method}_to_parser_raise_with_no_zero_parts" do
       answer = Whois::Answer.new(nil, [])
       parser = @klass.new(answer)

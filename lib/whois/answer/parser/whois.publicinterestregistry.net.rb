@@ -28,47 +28,47 @@ module Whois
       #
       class WhoisPublicinterestregistryNet < Base
 
-        def disclaimer
+        register_method :disclaimer do
           node("Disclaimer")
         end
 
 
-        def domain
+        register_method :domain do
           node("Domain Name") { |value| value.downcase }
         end
 
-        def domain_id
+        register_method :domain_id do
           node("Domain ID")
         end
 
 
-        def status
+        register_method :status do
           node("Status")
         end
 
-        def available?
+        register_method :available? do
           node("Domain ID").nil?
         end
 
-        def registered?
+        register_method :registered? do
           !available?
         end
 
 
-        def created_on
+        register_method :created_on do
           node("Created On") { |value| Time.parse(value) }
         end
 
-        def updated_on
+        register_method :updated_on do
           node("Last Updated On") { |value| Time.parse(value) }
         end
 
-        def expires_on
+        register_method :expires_on do
           node("Expiration Date") { |value| Time.parse(value) }
         end
 
         
-        def registrar
+        register_method :registrar do
           node("Sponsoring Registrar") do |registrar|
             id, name = if registrar =~ /(.*?)\((.*?)\)/
               [$2.strip, $1.strip]
@@ -82,29 +82,29 @@ module Whois
           end
         end
 
-        def registrant
+        register_method :registrant do
           contact("Registrant")
         end
 
-        def admin
+        register_method :admin do
           contact("Admin")
         end
 
-        def technical
+        register_method :technical do
           contact("Tech")
         end
 
 
-        def nameservers
+        register_method :nameservers do
           node("Name Server") { |server| server.reject { |value| value.empty? }.map { |value| value.downcase }}
         end
 
 
-        def changed?(other)
+        register_method :changed? do |other|
           !unchanged?(other)
         end
 
-        def unchanged?(other)
+        register_method :unchanged? do |other|
           self == other ||
           self.content.to_s == other.content.to_s
         end

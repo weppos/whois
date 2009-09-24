@@ -44,9 +44,9 @@ module Whois
           @part = part
         end
 
-        ::Whois::Answer::Parser.allowed_methods.each do |method|
+        ::Whois::Answer::Parser.registrable_methods.each do |method|
           define_method(method) do
-            raise NotImplementedError, "You should overwrite this method."
+            raise PropertyNotImplemented, "You should overwrite this method."
           end
         end
 
@@ -64,6 +64,34 @@ module Whois
         #
         def content
           part.response
+        end
+
+
+        @@method_registry = {}
+
+        def self.method_registry(key = nil)
+          if key.nil?
+            @@method_registry
+          else
+            @@method_registry[key] ||= []
+          end
+        end
+
+        def self.method_registered?(key)
+          method_registry(self).include?(key)
+        end
+
+        def self.register_method(method, &block)
+          method_registry(self) << method
+          define_method(method, &block)
+        end
+
+        def method_registered?(key)
+          self.class.method_registered?(key)
+        end
+
+        def register_method(method, &block)
+          self.class.register_method(method, &block)
         end
 
       end

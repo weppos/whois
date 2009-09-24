@@ -29,61 +29,61 @@ module Whois
       class WhoisNicIt < Base
 
         # Returns the registry disclaimer that comes with the answer.
-        def disclaimer
+        register_method :disclaimer do
           node("Disclaimer")
         end
 
 
         # If available, returns the domain name as stored by the registry.
-        def domain
+        register_method :domain do
           node("Domain") { |raw| raw.downcase }
         end
 
         # If available, returns the unique domain ID set by the registry.
-        def domain_id
+        register_method :domain_id do
           nil
         end
 
 
         # Returns the record status or an array of status,
         # in case the registry supports it.
-        def status
+        register_method :status do
           node("Status") { |raw| raw.downcase.to_sym }
         end
 
         # Returns whether this record is available.
-        def available?
+        register_method :available? do
           node("Status") == "AVAILABLE"
         end
 
         # Returns whether this record is registered.
-        def registered?
+        register_method :registered? do
           !available?
         end
 
 
         # If available, returns a Time object representing the date
         # the record was created, according to the registry answer.
-        def created_on
+        register_method :created_on do
           node("Created") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
         # the record was last updated, according to the registry answer.
-        def updated_on
+        register_method :updated_on do
           node("Last Update") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
         # the record is set to expire, according to the registry answer.
-        def expires_on
+        register_method :expires_on do
           node("Expire Date") { |raw| Time.parse(raw) }
         end
 
 
         # If available, returns a <tt>Whois::Answer::Registrar</tt> record
         # containing the registrar details extracted from the registry answer.
-        def registrar
+        register_method :registrar do
           node("Registrar") do |raw|
             Answer::Registrar.new(
               :id           => raw["Name"],
@@ -95,19 +95,19 @@ module Whois
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the registrant details extracted from the registry answer.
-        def registrant
+        register_method :registrant do
           contact("Registrant")
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the admin contact details extracted from the registry answer.
-        def admin
+        register_method :admin do
           contact("Admin Contact")
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the technical contact details extracted from the registry answer.
-        def technical
+        register_method :technical do
           contact("Technical Contacts")
         end
 
@@ -123,7 +123,7 @@ module Whois
         #   nameserver
         #   # => ["ns2.google.com", "ns1.google.com", "ns3.google.com"]
         #
-        def nameservers
+        register_method :nameservers do
           node("Nameservers")
         end
 
@@ -138,12 +138,12 @@ module Whois
         #
         # This method should provide a bulletproof way to detect whether this answer
         # changed if compared with <tt>other</tt>.
-        def changed?(other)
+        register_method :changed? do |other|
           !unchanged?(other)
         end
 
         # The opposite of <tt>changed?</tt>.
-        def unchanged?(other)
+        register_method :unchanged? do |other|
           self == other ||
           self.content.to_s == other.content.to_s
           # (self == other)                 ||

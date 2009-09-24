@@ -74,4 +74,10 @@ module Whois
   class ParserNotFound < ParserError
   end
 
+  class PropertyNotImplemented < ParserError
+  end
+
+  class PropertyNotSupported < ParserError
+  end
+
 end
