@@ -39,7 +39,7 @@ module Whois
         # ==== Raises
         # NoInterfaceError:: for every request
         #
-        def request(query)
+        def request(qstring)
           raise NoInterfaceError, "This `#{type}' has no whois server"
         end
         

@@ -30,8 +30,8 @@ module Whois
       #
       class Standard < Base
         
-        def request(query)
-          response = query_the_socket(query, host)
+        def request(qstring)
+          response = query_the_socket(qstring, host)
           append_to_buffer response, host
         end
         

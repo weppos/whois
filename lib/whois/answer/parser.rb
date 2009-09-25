@@ -32,13 +32,16 @@ module Whois
         :nameservers,
       ]
 
+      # Returns an array containing the name of all methods
+      # that can be registered and should be implemented by
+      # server-specific parsers.
       def self.registrable_methods
         @@registrable_methods
       end
 
       attr_reader :answer
 
-   
+
       def initialize(answer)
         @answer = answer
       end

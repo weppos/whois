@@ -30,7 +30,16 @@ module Whois
 
 
   # Queries the right whois server for <tt>qstring</tt> and returns
-  # a Whois::Answer instance containing the response from the server.
+  # a <tt>Whois::Answer</tt> instance containing the response from the server.
+  #
+  #   Whois.query("google.com")
+  #   # => #<Whois::Answer>
+  #
+  # This is equivalent to
+  #
+  #   Whois::Client.new.query("google.com")
+  #   # => #<Whois::Answer>
+  #
   def self.whois(qstring)
     query(qstring)
   end
@@ -39,11 +48,11 @@ module Whois
   # <tt>qstring</tt> is intended to be a domain name,
   # otherwise this method may return unexpected responses.
   #
-  # Whois.available?("google.com")
-  # # => false
-  #
-  # Whois.available?("google-is-not-available-try-again-later.com")
-  # # => true
+  #   Whois.available?("google.com")
+  #   # => false
+  #   
+  #   Whois.available?("google-is-not-available-try-again-later.com")
+  #   # => true
   #
   # Warning: this method is only available if a Whois parser exists
   # for <tt>qstring</tt> top level domain. Otherwise you'll get a warning message
@@ -63,11 +72,11 @@ module Whois
   # <tt>qstring</tt> is intended to be a domain name,
   # otherwise this method may return unexpected responses.
   #
-  # Whois.registered?("google.com")
-  # # => true
-  #
-  # Whois.registered?("google-is-not-available-try-again-later.com")
-  # # => false
+  #   Whois.registered?("google.com")
+  #   # => true
+  #   
+  #   Whois.registered?("google-is-not-available-try-again-later.com")
+  #   # => false
   #
   # Warning: this method is only available if a Whois parser exists
   # for <tt>qstring</tt> top level domain. Otherwise you'll get a warning message

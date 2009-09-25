@@ -60,6 +60,12 @@ module Whois
     end
     
     
+    # Queries the right whois server for <tt>qstring</tt> and returns
+    # a <tt>Whois::Answer</tt> instance containing the response from the server.
+    #
+    #   client.query("google.com")
+    #   # => #<Whois::Answer>
+    #
     def query(qstring)
       Timeout::timeout(timeout) do
         @server = Server.guess(qstring)

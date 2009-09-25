@@ -38,13 +38,13 @@ module Whois
   end
   
   # Raised when a server is known to not be available for this kind of object
-  # or because this specific object doesn't support whois. (\x03)
+  # or because this specific object doesn't support WHOIS. (\x03)
   class NoInterfaceError < InterfaceNotSupported
   end
   
   # Raised when the class has found a server but it doesn't support the
   # standard whois interface via port 43. This is the case of some
-  # specific domains that only provide a web–based whois interface. (\x01)
+  # specific domains that only provide a web–based WHOIS interface. (\x01)
   class WebInterfaceError < InterfaceNotSupported
   end
 
@@ -74,9 +74,13 @@ module Whois
   class ParserNotFound < ParserError
   end
 
+  # Raised when the property method has not been overwritten (implemented)
+  # in a child parser class.
   class PropertyNotImplemented < ParserError
   end
 
+  # Raised when you are trying to access a property that is not supported
+  # by any of the parsers available for current WHOIS answer.
   class PropertyNotSupported < ParserError
   end
 

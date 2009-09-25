@@ -22,7 +22,7 @@ module Whois
     class Parser
 
       #
-      # = blank parser
+      # = Blank parser
       #
       # The Blank parser isn't a real parser. It's just a fake parser
       # that acts as a parser but doesn't provide any special capability.

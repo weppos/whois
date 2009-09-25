@@ -23,9 +23,10 @@ module Whois
     #
     # = Part
     #
-    # A single answer fragment. For instance, in case of thin server,
-    # an answer may be composed by more parts corresponding
-    # to all responses returned by the whois servers.
+    # A single <tt>Whois::Answer</tt> fragment. For instance, 
+    # in case of thin server, an <tt>Whois::Answer</tt> may be composed by 
+    # one or more parts corresponding to all responses 
+    # returned by the WHOIS servers.
     #
     class Part < SuperStruct.new(:response, :host)
     end
