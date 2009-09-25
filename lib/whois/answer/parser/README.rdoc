@@ -18,6 +18,4 @@ registrant      <Contact :id, :name, :organization, ...>
 admin           <Contact :id, :name, :organization, ...>
 tech            <Contact :id, :name, :organization, ...>
 
-made_at
-
 nameservers     Array

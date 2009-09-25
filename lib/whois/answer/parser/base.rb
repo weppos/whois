@@ -69,6 +69,18 @@ module Whois
 
         @@method_registry = {}
 
+        #
+        # :call-seq:
+        #   method_registry => hash
+        #   method_registry(:key) => array
+        #
+        # Returns the <tt>@@method_registry</tt> if <tt>key</tt> is nil,
+        # otherwise returns the value in <tt>@@method_registry</tt> for given <tt>key</tt>.
+        #
+        # <tt>@@method_registry</tt> is always a Hash while <tt>@@method_registry[:key]</tt>
+        # is always an array. If <tt>@@method_registry[:key]</tt> doesn't exist, this method
+        # automatically initializes it to an empty array.
+        #
         def self.method_registry(key = nil)
           if key.nil?
             @@method_registry
@@ -77,19 +89,50 @@ module Whois
           end
         end
 
-        def self.method_registered?(key)
-          method_registry(self).include?(key)
+        # Returns true if <tt>method</tt> is registered for current class.
+        #
+        #   method_registered?(:disclaimer)
+        #   # => false
+        #
+        #   register_method(:discaimer) {}
+        #   method_registered?(:disclaimer)
+        #   # => true
+        #
+        def self.method_registered?(method)
+          method_registry(self).include?(method)
         end
 
+        #
+        # :call-seq:
+        #   register_method(:method) { }
+        #   register_method(:method) { |parameter| ... }
+        #   register_method(:method) { |parameter, ...| ... }
+        #
+        # Creates <tt>method</tt> with the content of <tt>block</tt>
+        # and automatically registers <tt>method</tt> for current class.
+        #
+        #   register_method(:discaimer) do
+        #     ...
+        #   end
+        #
+        #   register_method(:changed?) do |other|
+        #     ...
+        #   end
+        #
+        #   method_registered?(:disclaimer)
+        #   # => true
+        #
         def self.register_method(method, &block)
           method_registry(self) << method
           define_method(method, &block)
         end
 
-        def method_registered?(key)
-          self.class.method_registered?(key)
+        # Instance-level version of <tt>Base.method_registered?</tt>.
+        def method_registered?(method)
+          self.class.method_registered?(method)
         end
 
+        # Instance-level version of <tt>Base.register_method</tt>.
         def register_method(method, &block)
           self.class.register_method(method, &block)
         end
