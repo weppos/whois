@@ -1,21 +1,24 @@
 = Whois
 
-Whois is an intelligent pure Ruby WHOIS client.
+Whois is an intelligent pure Ruby WHOIS client and parser.
 
 It is a os-independent library and doesn't require external C libraries or GEMS: it is a 100% Ruby software with all the advantages and disadvantages that it involves.
 
-This software was developed to power RoboDomain[http://www.robodomain.com] and, despite it has been using in a production environment since July 2009, it should not be considered production-ready yet. It is currently in its beta stage.
+This software was developed to power RoboDomain[http://www.robodomain.com] and, since July 2009, it run more than thousands requests.
 
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change Whois interfaces without notice and at any time causing queries to specific hosts to stop working.
 
 
 == Features
 
-* Written in pure Ruby without any additional dependency
-* Flexible and extensible with custom server
+* Pure Ruby library without any external dependency other than Ruby itself
+* Intelligent Ruby client
+* Flexible and extensible configuration with support for user-defined servers
+* Powerful whois response parser
 * Support for ipv6, ipv4 and top level domain whois queries
 * Object oriented design
 * Compatible with older Whois version (Whois 0.4.2, see below)
+* Compatible with Ruby 1.8.6 and greater, including Ruby 1.9
 
 
 == Requirements
@@ -43,26 +46,28 @@ You might need administrator privileges on your system to install it.
 
 == Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. If you want to take the full advantage of all its features, visit the {documentation page}[http://code.simonecarletti.com/wiki/whois].
+Note. This section covers only the essentials for getting started with the Whois library. The {documentation}[http://code.simonecarletti.com/wiki/whois] provides a more accurate explanation including tutorials, more examples and technical details about the client/server/answer/parser architecture.
 
-Whois provides the ability to get whois information for hostnames, ipv4 and ipv6 ip addresses. The client is smart enough to guess the best whois server according to given query, send the request and return the response.
+=== Querying the Server
+
+Whois provides the ability to get WHOIS information for hostnames, ipv4 and ipv6 ip addresses. The client is smart enough to guess the best WHOIS server according to given query, send the request and return the response.
 
 Checkout the following examples:
 
   # Domain Whois
   w = Whois::Client.new
   w.query("google.com")
-  # => whois response for google.com
+  # => #<Whois::Answer>
 
   # IPv4 Whois
   w = Whois::Client.new
   w.query("74.125.67.100")
-  # => whois response for 74.125.67.100
+  # => #<Whois::Answer>
 
   # IPv6 Whois
   w = Whois::Client.new
   w.query("2001:db8::1428:57ab")
-  # => whois response for 2001:db8::1428:57ab
+  # => #<Whois::Answer>
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
@@ -71,6 +76,43 @@ The query method is stateless. For this reason, you can safely re-use the same c
   w.query("74.125.67.100")
   w.query("2001:db8::1428:57ab")
   w.query("google.it")
+
+If you just need a WHOIS response and you don't care about a full control of the WHOIS Client, Whois comes with a simple method called whois. This is the simplest way to send a WHOIS request.
+
+  Whois.whois("google.com")
+  # => #<Whois::Answer>
+
+=== Consuming the Answer
+
+As of release 0.8, a WHOIS query no longer returns a simple string. Instead, you get a full Whois::Answer instance and this is just the beginning of the story.
+
+Whois::Answer is a super powerful object. It encapsulates the full WHOIS answer and it provides you the ability to parse the WHOIS response with a full object oriented notation.
+
+  a = Whois.whois("google.it")
+  # => #<Whois::Answer>
+  
+  a.available?
+  # => false
+  a.registered?
+  # => true
+  
+  a.created_on
+  # => Fri Dec 10 00:00:00 +0100 1999
+  
+  t = a.techinical
+  # => #<Whois::Answer::Contact>
+  t.id
+  # => "TS7016-ITNIC"
+  t.name
+  # => "Technical Services"
+  
+  a.nameservers.each do |nameserver|
+    puts nameserver
+  end
+
+This feature is made possible by the Whois answer parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
+
+If you create a new parser, please consider releasing it to the public so that it can be included in a next version.
 
 === Timeout
 
@@ -101,7 +143,7 @@ The parser architecture (yet to come) has been inspired by the PHPWhois[http://p
 Despite I spent weeks reading source code from the available whois libraries, Ruby Whois has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
 
-== Notice for users of Whois 0.4.2 (or previous version)
+== Notice for users of Whois 0.4 (or previous version)
 
 As of release 0.5.0, the Whois GEM has been completely rewritten. As I explained in the Acknowledgment section, Cyril Mougel (the author of the original Whois package) yield me the privilege to use the Whois RubyForge project for my new Whois client.
 
@@ -117,7 +159,7 @@ Copyright (c) 2007 by Cyril Mougel (cyril.mougel@gmail.com)
 == Credits
 
 Author:: {Simone Carletti}[http://www.simonecarletti.com/] <weppos@weppos.net>
-First Whois Version:: {Cyril Mougel}[http://blog.shingara.fr/] <cyril.mougel@gmail.com>
+Author (Whois 0.4):: {Cyril Mougel}[http://blog.shingara.fr/] <cyril.mougel@gmail.com>
 
 
 == FeedBack and Bug reports
@@ -132,8 +174,6 @@ Bug reports and Feature suggestions {are welcomed}[http://code.simonecarletti.co
 * {Homepage}[http://code.simonecarletti.com/whois]
 * {GitHub}[http://github.com/weppos/whois]
 * {RubyForge}[http://rubyforge.org/projects/whois/]
-
-* {Documentation}[http://code.simonecarletti.com/wiki/whois]
 * {API}[http://whois.rubyforge.org/]
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
@@ -141,13 +181,6 @@ Bug reports and Feature suggestions {are welcomed}[http://code.simonecarletti.co
 == Changelog
 
 See the CHANGELOG.rdoc file for details.
-
-
-== Roadmap
-
-* Implement intelligent Whois response parsing
-
-For more details visit the {roadmap page}[http://code.simonecarletti.com/projects/roadmap/whois].
 
 
 == License
