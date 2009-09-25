@@ -57,6 +57,13 @@ assurance and to bar you from using its whois query.
                   @klass.new(load_part('/registered.txt')).domain
   end
 
+  def test_domain_id
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).domain_id
+    assert_equal  nil,
+                  @klass.new(load_part('/registered.txt')).domain_id
+  end
+
 
   def test_status
     assert_equal  nil,
