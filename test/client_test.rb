@@ -76,9 +76,9 @@ class ClientTest < Test::Unit::TestCase
   need_connectivity do
 
     def test_query_with_domain
-      response = @client.query("weppos.it")
-      assert_match /Domain:\s+weppos\.it/, response
-      assert_match /Created:/, response
+      answer = @client.query("weppos.it")
+      assert answer.match?(/Domain:\s+weppos\.it/)
+      assert answer.match?(/Created:/)
     end
 
   end

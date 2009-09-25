@@ -1,6 +1,59 @@
 = Changelog
 
 
+== next mini
+
+* ADDED: whois.denic.de (.de TLD) parser [Aaron Mueller]
+
+* ADDED: introduced support for multipart answers and Parser proxy class. This is useful in case of thin servers such as .com or .net because the parser needs to know all different responses in order to load all single scanners.
+
+* ADDED: whois.crsnic.net (.com, .net, ... TLDs) parser.
+
+* CHANGED: extracted all scanners into separated classes in order to make easier extract shared features.
+
+* CHANGED: renamed Whois::Response to Whois::Answer. This change is required to avoid confusion between query-answer and server request-response. A Whois::Answer is composed by one or more parts, corresponding to single server answers.
+
+* REMOVED: Whois::Answer#i_am_feeling_lucky (formerly Whois::Answer#i_am_feeling_lucky) become obsolete since the introduction of Answer parsers.
+
+
+== Release 0.6.0
+
+* ADDED: new more convenient method to query a whois server in addition to the existing Whois::whois method.
+
+    Whois::query("domain.com")
+    # same as Whois::whois but added to normalize application interfaces.
+
+    Whois::available?("domain.com")
+    # returns true if the domain is available.
+
+    Whois::registered?("domain.com")
+    # returns true if the domain is registered.
+
+* ADDED: Experimental support for whois response parsing. This release is shipped with two parsers for the .it and .net TLD.
+
+    r = Whois::query("google.it")
+    r.available?
+    # => false
+    r.created_on
+    # => Time.parse("1999-12-10 00:00:00")
+    r.Nameservers
+    # => ["ns1.google.com", "ns2.google.com", ...]
+
+* CHANGED: A whois query now returns a custom Whois::Response object instead of a simple string.
+  The previous interface is still supported, so you can continue to compare the response with Strings
+  but this behavior will be deprecated in a future release.
+  
+    r = Whois::query("domain.com")
+    # supported but deprecated in a future version
+    r == "NOT FOUND"
+    # explicitly cast the object to string instead
+    r.to_s == "NOT FOUND"
+    # or use one of the other Whois::Response methods.
+
+Note. This is an experimental version (EAP) and it should not be considered production-ready.
+API might change at any time without previous notice.
+
+
 == Release 0.5.3
 
 FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes #300)

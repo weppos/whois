@@ -21,7 +21,9 @@ module Whois
       class Formatted < Base
         
         def request(qstring)
-          query_the_socket(sprintf(options[:format], qstring), host)
+          options[:format] || raise(ServerError, "Missing mandatory :format option for adapter `Formatted'")
+          response = query_the_socket(sprintf(options[:format], qstring), host)
+          append_to_buffer response, host
         end
         
       end

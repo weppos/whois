@@ -6,7 +6,7 @@ class ServerTest < Test::Unit::TestCase
     Whois::Server.class_eval { class_variable_set("@@definitions", { :tld => [], :ipv4 =>[], :ipv6 => [] }) }  
   end
 
-
+ 
   def test_guess_should_recognize_email
     Whois::Server.expects(:find_for_email).with("email@example.org").returns(true)
     assert Whois::Server.guess("email@example.org")
@@ -47,6 +47,10 @@ class ServerTest < Test::Unit::TestCase
     Whois::Server.define(:ipv6, "::192.168.1.1", "whois.foo")
     Whois::Server.expects(:factory).with(:ipv6, any_parameters).returns(true)
     assert Whois::Server.guess("::192.168.1.1")
+  end
+
+  def test_guess_should_raise_servernotfound_with_unrecognized_query
+    assert_raise(Whois::ServerNotFound) { Whois::Server.guess("xyz") }
   end
 
 

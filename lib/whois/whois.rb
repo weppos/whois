@@ -69,7 +69,7 @@ module Whois
   # If you want to save keystrokes, you can even use the handy <tt>Whois.query</tt> method.
   #
   #   Whois.query '72.14.207.99'
-  #   # => whois response
+  #   # => whois answer
   #
   class Whois # :nodoc
 
@@ -120,7 +120,7 @@ module Whois
     end
 
     def all
-      ::Whois.deprecate "#all will be removed in a future release. You are responsible for storing the whois response in a custom variable."
+      ::Whois.deprecate "#all will be removed in a future release. You are responsible for storing the whois answer in a custom variable."
       @all
     end
 

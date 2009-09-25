@@ -17,10 +17,29 @@
 module Whois
   class Server
     module Adapters
-      
+
+      #
+      # = None Adapter
+      #
+      # Special adapter intended to be used when a WHOIS interface
+      # doesn't exist for given query.
+      # For example, the domain authority for some TLD doesn't offer
+      # any way to query for WHOIS data.
+      #
+      # In case the authority provides only a web based interface,
+      # you should use the <tt>Whois::Server::Adapters::Web</tt> adapter.
+      #
+      # Every query for an object associated to a <tt>Whois::Server::Adapters::None</tt>
+      # adapter raises a <tt>Whois::NoInterfaceError</tt> exception.
+      #
       class None < Base
         
-        def request(qstring)
+        # Always raises a <tt>Whois::NoInterfaceError</tt> exception.
+        #
+        # ==== Raises
+        # NoInterfaceError:: for every request
+        #
+        def request(query)
           raise NoInterfaceError, "This `#{type}' has no whois server"
         end
         

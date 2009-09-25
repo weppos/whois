@@ -22,11 +22,11 @@ module Whois
 
         def request(qstring)
           response = ask_the_socket("FULL #{qstring}", "whois.publicinterestregistry.net", DEFAULT_WHOIS_PORT)
-          endpoint = extract_referral(response)
-          if endpoint
-            response + "\n" + ask_the_socket(qstring, endpoint, DEFAULT_WHOIS_PORT)
-          else
-            response
+          append_to_buffer response, "whois.publicinterestregistry.net"
+
+          if endpoint = extract_referral(response)
+            response = ask_the_socket(qstring, endpoint, DEFAULT_WHOIS_PORT)
+            append_to_buffer response, endpoint
           end
         end
 
