@@ -34,7 +34,7 @@ Whois::Server.define :tld, ".arpa", "whois.iana.org"
 Whois::Server.define :tld, ".aero", "whois.aero"
 Whois::Server.define :tld, ".asia", "whois.nic.asia"
 Whois::Server.define :tld, ".biz", "whois.nic.biz"
-Whois::Server.define :tld, ".cat", "whois.cat", {:format => "-C US-ASCII ace %s"}
+Whois::Server.define :tld, ".cat", "whois.cat", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-C US-ASCII ace %s"}
 Whois::Server.define :tld, ".coop", "whois.nic.coop"
 Whois::Server.define :tld, ".info", "whois.afilias.info"
 Whois::Server.define :tld, ".jobs", "jobswhois.verisign-grs.com", {:adapter=>Whois::Server::Adapters::Verisign}
@@ -102,7 +102,7 @@ Whois::Server.define :tld, ".cv", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".cx", "whois.nic.cx"
 Whois::Server.define :tld, ".cy", nil, {:web=>"http://www.nic.cy/nslookup/online_database.php", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".cz", "whois.nic.cz"
-Whois::Server.define :tld, ".de", "whois.denic.de", {:format => "-T dn,ace -C US-ASCII %s"}
+Whois::Server.define :tld, ".de", "whois.denic.de", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-T dn,ace -C US-ASCII %s"}
 Whois::Server.define :tld, ".dj", "whois.domain.dj"
 Whois::Server.define :tld, ".dk", "whois.dk-hostmaster.dk"
 Whois::Server.define :tld, ".dm", "whois.nic.dm"
