@@ -1,5 +1,9 @@
 = Changelog
 
+== next maintenance
+
+FIXED: Server definition with :format doesn't use the Formatted adapter (closes #305)
+
 
 == Release 0.5.3
 
