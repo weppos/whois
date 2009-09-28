@@ -1,7 +1,7 @@
 #
 # = Ruby Whois
 #
-# An intelligent pure Ruby WHOIS client.
+# An intelligent pure Ruby WHOIS client and parser.
 #
 #
 # Category::    Net

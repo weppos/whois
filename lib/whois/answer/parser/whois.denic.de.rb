@@ -1,12 +1,12 @@
 #
 # = Ruby Whois
 #
-# An intelligent pure Ruby WHOIS client.
+# An intelligent pure Ruby WHOIS client and parser.
 #
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Aaron Mueller <mail@aaron-mueller.de>
+# Author::      Aaron Mueller <mail@aaron-mueller.de>, Simone Carletti <weppos@weppos.net>
 # License::     MIT License
 #
 #--
