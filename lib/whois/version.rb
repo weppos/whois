@@ -25,7 +25,7 @@ module Whois
   end
 
   VERSION         = Version::STRING
-  STATUS          = 'eap'
+  STATUS          = 'beta'
   BUILD           = nil
 
 end

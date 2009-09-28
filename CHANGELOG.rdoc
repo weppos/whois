@@ -1,11 +1,9 @@
 = Changelog
 
-== next maintenance
 
-FIXED: Server definition with :format doesn't use the Formatted adapter (closes #305)
+== Release 0.8.0
 
-
-== next mini
+* FIXED: Server definition with :format doesn't use the Formatted adapter (closes #305)
 
 * ADDED: whois.denic.de (.de TLD) parser [Aaron Mueller]
 
