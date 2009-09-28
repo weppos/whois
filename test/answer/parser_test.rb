@@ -20,28 +20,61 @@ class AnswerParserTest < Test::Unit::TestCase
   end
 
 
-  def test_parsers_should_not_create_parser_instance_with_zero_parts
+  def test_parsers_with_zero_parts
     answer = Whois::Answer.new(nil, [])
     parser = @klass.new(answer)
     assert_equal 0, parser.parsers.length
     assert_equal [], parser.parsers
   end
 
-  def test_parsers_should_create_parser_instance_with_supported_server
+  def test_parsers_with_one_part_supported
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
     assert_equal 1, parser.parsers.length
     assert_instance_of Whois::Answer::Parser::WhoisNicIt, parser.parsers.first
   end
 
-  def test_parsers_should_create_blank_parser_instance_with_not_supported_server
+  def test_parsers_with_one_part_unsupported
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "invalid.nic.it")])
     parser = @klass.new(answer)
     assert_equal 1, parser.parsers.length
     assert_instance_of Whois::Answer::Parser::Blank, parser.parsers.first
   end
 
-  
+  def test_parsers_with_two_parts
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
+    parser = @klass.new(answer)
+    assert_equal 2, parser.parsers.length
+    assert_instance_of Whois::Answer::Parser::WhoisNicIt, parser.parsers.first
+    assert_instance_of Whois::Answer::Parser::WhoisCrsnicNet, parser.parsers.last
+  end
+
+
+  def test_supported_with_zero_parts
+    answer = Whois::Answer.new(nil, [])
+    parser = @klass.new(answer)
+    assert !parser.supported?(:disclaimer)
+  end
+
+  def test_supported_with_one_part_supported
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
+    parser = @klass.new(answer)
+    assert  parser.supported?(:disclaimer)
+  end
+
+  def test_supported_with_one_part_unsupported
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "invalid.nic.it")])
+    parser = @klass.new(answer)
+    assert !parser.supported?(:disclaimer)
+  end
+
+  def test_supported_with_two_parts
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
+    parser = @klass.new(answer)
+    assert  parser.supported?(:disclaimer)
+  end
+
+
   (Whois::Answer::Parser.registrable_methods - [:referral_url, :referral_whois]).each do |method|
     define_method "test_should_delegate_#{method}_to_parsers_first_parser_if_supported" do
       answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])

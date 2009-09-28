@@ -1,6 +1,11 @@
 = Changelog
 
 
+== next mini
+
+* ADDED: ability to check whether a property is supported via answer.supported? or parser.supported?
+
+
 == Release 0.8.0
 
 * FIXED: Server definition with :format doesn't use the Formatted adapter (closes #305)

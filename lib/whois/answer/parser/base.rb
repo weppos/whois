@@ -50,6 +50,43 @@ module Whois
           end
         end
 
+        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+        # is supported by current parser.
+        #
+        #   parser.supported? :disclaimer
+        #   # => false
+        #
+        #   parser.register_method(:disclaimer) {}
+        #   parser.supported? :disclaimer
+        #   # => true
+        #
+        # This method is different than <tt>respond_to?</tt>.
+        # While <tt>respond_to?</tt> always returns true for any registrable property,
+        # including those not effectively implemented,
+        # this method only returns <tt>true</tt> if the parser implements <tt>property</tt>.
+        # Also, <tt>supported?</tt> returns <tt>false</tt> if <tt>property</tt> exists as a method
+        # but it's not a property method.
+        #
+        #   parser.respond_to?(:disclaimer)
+        #   # => true
+        #   parser.supported?(:disclaimer)
+        #   # => false
+        #
+        #   parser.register_method(:disclaimer) {}
+        #   parser.respond_to?(:disclaimer)
+        #   # => true
+        #   parser.supported?(:disclaimer)
+        #   # => true
+        #
+        #   parser.respond_to?(:contact)
+        #   # => true
+        #   parser.supported?(:contact)
+        #   # => false
+        #
+        def supported?(property)
+          method_registered?(property.to_s.to_sym)
+        end
+
 
         # This is an internal method primaly used as a common access point
         # to get the content to be parsed as a string.

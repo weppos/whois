@@ -63,7 +63,7 @@ module Whois
   def self.available?(qstring)
     query(qstring).available?
   rescue ParserNotFound => e
-    $stderr.puts  "This method is not available for this kind of object.\n" +
+    $stderr.puts  "This method is not supported for this kind of object.\n" +
                   "Use Whois.query('#{qstring}') instead."
     nil
   end
@@ -87,7 +87,7 @@ module Whois
   def self.registered?(qstring)
     query(qstring).registered?
   rescue ParserNotFound => e
-    $stderr.puts  "This method is not available for this kind of object.\n" +
+    $stderr.puts  "This method is not supported for this kind of object.\n" +
                   "Use Whois.query('#{qstring}') instead."
     nil
   end

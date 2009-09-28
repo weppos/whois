@@ -46,8 +46,18 @@ module Whois
         @answer = answer
       end
 
+      # Returns an array with all host-specific parsers initialized for the parts
+      # contained into this parser.
+      # The array is lazy-initialized.
       def parsers
         @parsers ||= init_parsers
+      end
+
+      # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+      # is supported by any available parser.
+      # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
+      def supported?(property)
+        parsers.any? { |parser| parser.supported?(property) }
       end
 
 
@@ -70,12 +80,21 @@ module Whois
         # Loops through all answer parts, for each parts tries to guess
         # the appropriate Whois::Answer::Parser::<parser> if it exists
         # and returns the final array of server-specific parsers.
+        #
+        # Parsers are initialized in reverse order for performance reason.
+        # See also <tt>select_parser</tt>.
+        #
+        #   parser.parts
+        #   # => [whois.foo.com, whois.bar.com]
+        #   parser.parsers
+        #   # => [parser(whois.bar.com), parser(whois.foo.com)]
+        #
         def init_parsers
-          answer.parts.map { |part| self.class.parser_for(part) }
+          answer.parts.reverse.map { |part| self.class.parser_for(part) }
         end
 
         def select_parser(method)
-          parsers.reverse.each do |parser|
+          parsers.each do |parser|
             return parser if parser.method_registered?(method)
           end
           nil

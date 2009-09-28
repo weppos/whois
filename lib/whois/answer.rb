@@ -109,6 +109,13 @@ module Whois
       @parser ||= Parser.new(self)
     end
 
+    # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+    # is supported by any available parser for this answer.
+    # See also <tt>Whois::Answer::Parser.supported?</tt>.
+    def supported?(property)
+      parser.supported?(property)
+    end
+
 
     protected
       

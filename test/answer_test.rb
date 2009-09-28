@@ -79,13 +79,18 @@ class AnswerTest < Test::Unit::TestCase
 
   def test_parser
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-    assert_instance_of  Whois::Answer::Parser,
-                        answer.parser
+    assert_instance_of Whois::Answer::Parser, answer.parser
 
     answer = @klass.new(nil, [])
-    assert_instance_of  Whois::Answer::Parser,
-                        answer.parser
+    assert_instance_of Whois::Answer::Parser, answer.parser
   end
+
+  def test_supported?
+    answer = @klass.new(nil, [])
+    answer.parser.expects(:supported?).with(:disclaimer).returns(:value)
+    assert_equal :value, answer.supported?(:disclaimer)
+  end
+
 
   Whois::Answer::Parser.registrable_methods.each do |method|
     define_method "test_should_delegate_#{method}_to_parser" do
