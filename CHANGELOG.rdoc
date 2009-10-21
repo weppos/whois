@@ -3,6 +3,8 @@
 
 == next mini
 
+* FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes #314)
+
 * ADDED: ability to check whether a property is supported via answer.supported? or parser.supported?
 
 

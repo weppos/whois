@@ -33,10 +33,5 @@
 % whois service available at the DENIC website:
 % http://www.denic.de/en/background/whois-service/webwhois.html
 
-% Object "googlededewdedewdewde.de" not found in database
-%
-% If you would like to search on arbitrary strings,
-% please see the Database page on the RIPE NCC
-% web-site at http://www.ripe.net/db/
-% This will only work for RIPE data.
+% "googlededewdedewdewde.foo.de" is not a valid domain name
 

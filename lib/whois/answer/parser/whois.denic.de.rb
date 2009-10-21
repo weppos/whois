@@ -39,11 +39,11 @@ module Whois
         end
 
         register_method :registered? do
-          !ast['NotFound']
+          !(ast['NotFound'] || ast['Invalid'])
         end
 
         register_method :available? do
-          ast['NotFound']
+          ast['NotFound'] && !ast['Invalid']
         end
 
         register_method :created_on do
@@ -119,6 +119,7 @@ module Whois
 
             def parse_content
               parse_disclaimer ||
+              parse_invalid ||
               parse_not_found ||
               parse_pair(@ast) ||
               parse_contact ||
@@ -127,8 +128,8 @@ module Whois
             end
 
             def parse_disclaimer
-              if @input.match?(/% Copyright \(c\)2008 by DENIC\n/)
-                8.times { @input.scan(/%(.*)\n/) } # strip junk
+              if @input.match?(/% Copyright \(c\) *\d{4} by DENIC\n/)
+                @input.scan_until(/% Terms and Conditions of Use\n/)
                 lines = []
                 while @input.match?(/%/) && @input.scan(/%(.*)\n/)
                   lines << @input[1].strip unless @input[1].strip == ""
@@ -189,6 +190,14 @@ module Whois
               end
               @ast['NotFound'] = false
             end
+
+            def parse_invalid
+              if @input.match?(/% ".*" is not a valid domain name\n/)
+                 @input.scan(/%.*\n/)
+                 return @ast['Invalid'] = true
+              end 
+              @ast['Invalid'] = false
+            end 
 
             def error(message)
               raise "#{message}: #{@input.peek(@input.string.length)}"
