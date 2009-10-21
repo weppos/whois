@@ -33,8 +33,8 @@ module Whois
         private
 
           def extract_referral(response)
-            if response =~ /Domain Name:/ && response =~ /Whois Server: (\S+)/
-              $1
+            if response =~ /Domain Name:/
+              endpoint = response.scan(/Whois Server: (\S+)/).flatten.last
             end
           end
 

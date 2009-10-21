@@ -5,6 +5,8 @@
 
 * FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes #314)
 
+* FIXED: In case of thin server the client should select the closest whois server match (closes #264)
+
 * ADDED: ability to check whether a property is supported via answer.supported? or parser.supported?
 
 
