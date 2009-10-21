@@ -1,7 +1,7 @@
 = Changelog
 
 
-== next mini
+== Release 0.8.1
 
 * FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes #314)
 
