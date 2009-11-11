@@ -11,8 +11,6 @@ class AnswerParserWhoisNicFrTest < Test::Unit::TestCase
   end
 
 
-
-
   def test_status
     assert_equal  :available,
                   @klass.new(load_part('/available.txt')).status

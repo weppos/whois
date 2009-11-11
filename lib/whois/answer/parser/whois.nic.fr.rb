@@ -34,7 +34,6 @@ module Whois
       #
       class WhoisNicFr < Base
 
-
         register_method :status do
           @status ||= if content.to_s =~ /status:\s+(.*)\n/
             $1.downcase.to_sym
@@ -60,7 +59,7 @@ module Whois
         end
         
         register_method :updated_on do
-          @created_on ||= if content.to_s =~ /last-update:\s+(.*)\n/
+          @updated_on ||= if content.to_s =~ /last-update:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
