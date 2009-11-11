@@ -1,11 +1,17 @@
 = Changelog
 
+== availability
+
+* ADDED: Base .fr TLD parser.
+
+* ADDED: Base .name TLD parser.
+
+* ADDED: Base .ie TLD parser.
+
 
 == master
 
 * CHANGED: Removed Whois::BUILD and Whois::STATUS constants. Added Whois::Version::ALPHA constant to be used when I need to package prereleases (see RubyGem --prerelease flag).
-
-* ADDED: Base .fr TLD parser.
 
 
 == Release 0.8.1
