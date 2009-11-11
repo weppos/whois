@@ -14,10 +14,10 @@
 #++
 
 
-require 'strscan'
 require 'time'
 require 'whois/answer/contact'
 require 'whois/answer/registrar'
+require 'whois/answer/parser/ast'
 
 
 module Whois

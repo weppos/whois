@@ -27,6 +27,7 @@ module Whois
       # Parser for the whois.crsnic.net.rb server.
       #
       class WhoisCrsnicNet < Base
+        include Ast
 
         register_method :disclaimer do
           node("Disclaimer")
@@ -85,24 +86,6 @@ module Whois
 
 
         protected
-
-          def ast
-            @ast ||= parse
-          end
-
-          def node(key, &block)
-            if block_given?
-              value = ast[key]
-              value = yield(value) unless value.nil?
-              value
-            else
-              ast[key]
-            end
-          end
-
-          def node?(key)
-            !ast[key].nil?
-          end
 
           def parse
             Scanner.new(content.to_s).parse

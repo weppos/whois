@@ -27,6 +27,7 @@ module Whois
       # Parser for the whois.publicinterestregistry.net server.
       #
       class WhoisPublicinterestregistryNet < Base
+        include Ast
 
         register_method :disclaimer do
           node("Disclaimer")
@@ -111,7 +112,11 @@ module Whois
 
 
         protected
-        
+
+          def parse
+            Scanner.new(content.to_s).parse
+          end
+
           def contact(element)
             node("#{element} ID") do |registrant_id|
               Answer::Contact.new(
@@ -130,29 +135,6 @@ module Whois
                 :email        => node("#{element} Email")
               )
             end
-          end
-
-
-          def ast
-            @ast ||= parse
-          end
-
-          def node(key, &block)
-            if block_given?
-              value = ast[key]
-              value = yield(value) unless value.nil?
-              value
-            else
-              ast[key]
-            end
-          end
-
-          def node?(key)
-            !ast[key].nil?
-          end
-
-          def parse
-            Scanner.new(content.to_s).parse
           end
 
 

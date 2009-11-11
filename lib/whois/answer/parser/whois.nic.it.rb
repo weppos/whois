@@ -27,6 +27,7 @@ module Whois
       # Parser for the whois.nic.it server.
       #
       class WhoisNicIt < Base
+        include Ast
 
         # Returns the registry disclaimer that comes with the answer.
         register_method :disclaimer do
@@ -156,6 +157,10 @@ module Whois
 
         protected
 
+          def parse
+            Scanner.new(content.to_s).parse
+          end
+
           def contact(element)
             node(element) do |raw|
               address = (raw["Address"] || "").split("\n")
@@ -170,29 +175,6 @@ module Whois
                 :updated_on   => raw["Last Update"] ? Time.parse(raw["Created"]) : nil
               )
             end
-          end
-
-
-          def ast
-            @ast ||= parse
-          end
-
-          def node(key, &block)
-            if block_given?
-              value = ast[key]
-              value = yield(value) unless value.nil?
-              value
-            else
-              ast[key]
-            end
-          end
-
-          def node?(key)
-            !ast[key].nil?
-          end
-
-          def parse
-            Scanner.new(content.to_s).parse
           end
 
 
