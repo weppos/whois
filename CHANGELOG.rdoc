@@ -7,6 +7,8 @@
 
 * CHANGED: Extracted Whois::Answer::Parser::Ast module from existing parsers.
 
+* CHANGED: Normalized WhoisDenicDe parser.
+
 
 == Release 0.8.1
 

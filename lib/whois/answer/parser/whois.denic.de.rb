@@ -21,75 +21,78 @@ module Whois
   class Answer
     class Parser
       class WhoisDenicDe < Base
+        include Ast
 
         register_method :disclaimer do
-          ast['Disclaimer']
+          node("Disclaimer")
         end
 
+
         register_method :domain do
-          ast['Domain']
+          node("Domain")
         end
 
         register_method :domain_id do
           nil
         end
 
-        register_method :status do
-          ast['Status']
-        end
 
-        register_method :registered? do
-          !(ast['NotFound'] || ast['Invalid'])
+        register_method :status do
+          node("Status")
         end
 
         register_method :available? do
-          ast['NotFound'] && !ast['Invalid']
+          node("NotFound") && !node("Invalid")
         end
+
+        register_method :registered? do
+          !(node("NotFound") || node("Invalid"))
+        end
+
 
         register_method :created_on do
           nil
+        end
+
+        register_method :updated_on do
+          node("Changed") { |raw| Time.parse(raw) }
         end
 
         register_method :expires_on do
           nil
         end
 
-        register_method :updated_on do
-          ast['Changed'] ? Time.parse(ast['Changed']) : nil
-        end
 
         register_method :registrar do
-          return nil unless ast['Zone-C']
-          Answer::Registrar.new(
-              :id => nil,
-              :name => ast['Zone-C'].name,
-              :organization => ast['Zone-C'].organization,
-              :url => nil
-          )
+          node("Zone-C") do |raw|
+            Answer::Registrar.new(
+                :id => nil,
+                :name => raw.name,
+                :organization => raw.organization,
+                :url => nil
+            )
+          end
         end
 
         register_method :registrant do
-          ast['Holder']
+          node("Holder")
         end
 
         register_method :admin do
-          ast['Admin-C']
+          node("Admin-C")
         end
 
         register_method :technical do
-          ast['Tech-C']
+          node("Tech-C")
         end
 
+
         register_method :nameservers do
-          ast['Nserver']
+          node("Nserver")
         end
 
         
         protected
-
-          def ast
-            @ast ||= parse
-          end
 
           def parse
             Scanner.new(content.to_s).parse
