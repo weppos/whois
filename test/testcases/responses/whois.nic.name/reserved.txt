@@ -1,0 +1,30 @@
+Disclaimer: VeriSign, Inc. makes every effort to
+maintain the completeness and accuracy of the Whois data, but cannot
+guarantee that the results are error-free. Therefore, any data
+provided through the Whois service are on an "as is" basis without
+any warranties. BY USING THE WHOIS SERVICE AND THE DATA CONTAINED
+HEREIN OR IN ANY REPORT GENERATED WITH RESPECT THERETO, IT IS
+ACCEPTED THAT VERISIGN, INC. IS NOT LIABLE FOR
+ANY DAMAGES OF ANY KIND ARISING OUT OF, OR IN CONNECTION WITH, THE
+REPORT OR THE INFORMATION PROVIDED BY THE WHOIS SERVICE, NOR
+OMISSIONS OR MISSING INFORMATION. THE RESULTS OF ANY WHOIS REPORT OR
+INFORMATION PROVIDED BY THE WHOIS SERVICE CANNOT BE RELIED UPON IN
+CONTEMPLATION OF LEGAL PROCEEDINGS WITHOUT FURTHER VERIFICATION, NOR
+DO SUCH RESULTS CONSTITUTE A LEGAL OPINION. Acceptance of the
+results of the Whois constitutes acceptance of these terms,
+conditions and limitations. Whois data may be requested only for
+lawful purposes, in particular, to protect legal rights and
+obligations.  Illegitimate uses of Whois data include, but are not
+limited to, unsolicited email, data mining, direct marketing or any
+other improper purpose.  Any request made for Whois data will be
+documented by VeriSign, Inc. but will not be used
+for any commercial purpose whatsoever.
+
+This is the .name Tiered Access Whois. For help, query whois with the
+string "help". A whois web service also exists on http://www.whois.name.
+A full list of .name Registrars can be found on http://www.nic.name
+                              --------
+
+Not available for second level registration.
+Third level registrations may be available on this name.
+
