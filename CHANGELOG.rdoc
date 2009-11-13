@@ -12,6 +12,8 @@
 
 * ADDED: Simple .info TLD parser.
 
+* ADDED: Simple .gov TLD parser.
+
 * CHANGED: Changed .edu TLD server to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
 
 

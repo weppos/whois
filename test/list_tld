@@ -26,6 +26,7 @@ net;whois.crsnic.net;google.net;u34jedzcq.net
 #Whois::Server.define :tld, ".za.org", "whois.za.org"
 org;whois.publicinterestregistry.net;google.org;u34jedzcq.org
 edu;whois.educause.edu;google.edu;u34jedzcq.edu
+gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
 #Whois::Server.define :tld, ".int", "whois.iana.org"
 #Whois::Server.define :tld, ".mil", nil, {:adapter=>Whois::Server::Adapters::None}
 #Whois::Server.define :tld, ".e164.arpa", "whois.ripe.net"
