@@ -110,7 +110,7 @@ de;whois.denic.de;google.de;u34jedzcq.de
 #Whois::Server.define :tld, ".dm", "whois.nic.dm"
 do;;;
 dz;;;
-#Whois::Server.define :tld, ".ec", nil, {:web=>"http://www.nic.ec/whois/eng/whois.asp", :adapter=>Whois::Server::Adapters::Web}
+#Whois::Server.define :tld, ".ec", "whois.nic.ec"
 #Whois::Server.define :tld, ".ee", "whois.eenet.ee"
 eg;;;
 er;;;

@@ -3,6 +3,8 @@
 
 == master
 
+* FIXED: .ec TLD has a whois server (closes #322)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.
