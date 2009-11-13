@@ -131,7 +131,7 @@ ge;;;
 #Whois::Server.define :tld, ".gg", "whois.gg"
 gh;;;
 #Whois::Server.define :tld, ".gi", "whois.afilias-grs.info"
-#Whois::Server.define :tld, ".gl", nil, {:adapter=>Whois::Server::Adapters::None}
+#Whois::Server.define :tld, ".gl", "whois.nic.gl"
 #Whois::Server.define :tld, ".gm", "whois.ripe.net"
 gn;;;
 #Whois::Server.define :tld, ".gp", "whois.nic.gp"

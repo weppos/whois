@@ -5,6 +5,8 @@
 
 * FIXED: .ec TLD has a whois server (closes #322)
 
+* FIXED: .gl TLD has a whois server (closes #323)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.
