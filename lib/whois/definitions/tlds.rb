@@ -184,7 +184,7 @@ Whois::Server.define :tld, ".lv", "whois.nic.lv"
 Whois::Server.define :tld, ".ly", "whois.nic.ly"
 Whois::Server.define :tld, ".ma", "whois.iam.net.ma"
 Whois::Server.define :tld, ".mc", "whois.ripe.net"
-Whois::Server.define :tld, ".md", nil, {:web=>"http://www.dns.md/wh1.php", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".md", "whois.nic.md"
 Whois::Server.define :tld, ".me", "whois.meregistry.net"
 Whois::Server.define :tld, ".mg", "whois.nic.mg"
 Whois::Server.define :tld, ".mh", nil, {:adapter=>Whois::Server::Adapters::None}

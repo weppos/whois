@@ -7,6 +7,8 @@
 
 * FIXED: .gl TLD has a whois server (closes #323)
 
+* FIXED: .md TLD has a whois server (closes #325)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.
