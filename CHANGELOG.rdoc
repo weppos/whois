@@ -8,6 +8,8 @@
 
 * ADDED: Base .ie TLD parser.
 
+* CHANGED: Changed .edu TLD server from whois.educause.net to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
+
 
 == master
 
