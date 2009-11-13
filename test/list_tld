@@ -26,7 +26,6 @@ net;whois.crsnic.net;google.net;u34jedzcq.net
 #Whois::Server.define :tld, ".za.org", "whois.za.org"
 org;whois.publicinterestregistry.net;google.org;u34jedzcq.org
 edu;whois.educause.edu;google.edu;u34jedzcq.edu
-#Whois::Server.define :tld, ".gov", "whois.nic.gov"
 #Whois::Server.define :tld, ".int", "whois.iana.org"
 #Whois::Server.define :tld, ".mil", nil, {:adapter=>Whois::Server::Adapters::None}
 #Whois::Server.define :tld, ".e164.arpa", "whois.ripe.net"
@@ -37,7 +36,7 @@ edu;whois.educause.edu;google.edu;u34jedzcq.edu
 #Whois::Server.define :tld, ".biz", "whois.nic.biz"
 #Whois::Server.define :tld, ".cat", "whois.cat", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-C US-ASCII ace %s"}
 #Whois::Server.define :tld, ".coop", "whois.nic.coop"
-#Whois::Server.define :tld, ".info", "whois.afilias.info"
+info;whois.afilias.info;google.info;u34jedzcq.info
 #Whois::Server.define :tld, ".jobs", "jobswhois.verisign-grs.com", {:adapter=>Whois::Server::Adapters::Verisign}
 #Whois::Server.define :tld, ".mobi", "whois.dotmobiregistry.net"
 #Whois::Server.define :tld, ".museum", "whois.museum"

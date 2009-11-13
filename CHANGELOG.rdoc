@@ -2,15 +2,17 @@
 
 == availability
 
-* ADDED: Base .fr TLD parser.
+* ADDED: Simple .fr TLD parser.
 
-* ADDED: Base .name TLD parser.
+* ADDED: Simple .name TLD parser.
 
-* ADDED: Base .ie TLD parser.
+* ADDED: Simple .ie TLD parser.
 
-* ADDED: Base .edu TLD parser.
+* ADDED: Simple .edu TLD parser.
 
-* CHANGED: Changed .edu TLD server from whois.educause.net to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
+* ADDED: Simple .info TLD parser.
+
+* CHANGED: Changed .edu TLD server to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
 
 
 == master
