@@ -32,9 +32,6 @@ class AnswerParserWhoisNicNameTest < Test::Unit::TestCase
   def test_created_on
     assert_equal  nil,
                   @klass.new(load_part('/registered.txt')).created_on
-  end
-
-  def test_created_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).created_on
   end
@@ -42,9 +39,6 @@ class AnswerParserWhoisNicNameTest < Test::Unit::TestCase
   def test_updated_on
     assert_equal  nil,
                   @klass.new(load_part('/registered.txt')).updated_on
-  end
-
-  def test_updated_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).updated_on
   end
@@ -52,9 +46,6 @@ class AnswerParserWhoisNicNameTest < Test::Unit::TestCase
   def test_expires_on
     assert_equal  nil,
                   @klass.new(load_part('/registered.txt')).expires_on
-  end
-
-  def test_expires_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
   end

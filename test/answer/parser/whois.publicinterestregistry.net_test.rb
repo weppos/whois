@@ -73,31 +73,22 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_created_on
-    assert_equal  Time.parse("21-Oct-1998 04:00:00 UTC"),
+    assert_equal  Time.parse("1998-10-21 04:00:00 UTC"),
                   @klass.new(load_part('/registered.txt')).created_on
-  end
-
-  def test_created_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).created_on
   end
 
   def test_updated_on
-    assert_equal  Time.parse("04-Mar-2009 12:07:19 UTC"),
+    assert_equal  Time.parse("2009-03-04 12:07:19 UTC"),
                   @klass.new(load_part('/registered.txt')).updated_on
-  end
-
-  def test_updated_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).updated_on
   end
 
   def test_expires_on
-    assert_equal  Time.parse("20-Oct-2012 04:00:00 UTC"),
+    assert_equal  Time.parse("2012-10-20 04:00:00 UTC"),
                   @klass.new(load_part('/registered.txt')).expires_on
-  end
-
-  def test_expires_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
   end

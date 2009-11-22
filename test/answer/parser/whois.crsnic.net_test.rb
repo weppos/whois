@@ -121,7 +121,7 @@ EOS
 
 
   def test_created_on
-    assert_equal  Time.parse("1999-03-15 00:00:00"),
+    assert_equal  Time.parse("1999-03-15 00:00:00 +0100"),
                   @klass.new(load_part('/registered.txt')).created_on
   end
 
@@ -131,7 +131,7 @@ EOS
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-02-10 00:00:00"),
+    assert_equal  Time.parse("2009-02-10 00:00:00 +0100"),
                   @klass.new(load_part('/registered.txt')).updated_on
   end
 
@@ -141,7 +141,7 @@ EOS
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-03-15 00:00:00"),
+    assert_equal  Time.parse("2010-03-15 00:00:00 +0100"),
                   @klass.new(load_part('/registered.txt')).expires_on
   end
 
