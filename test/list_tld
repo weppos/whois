@@ -23,7 +23,7 @@ com;whois.crsnic.net;google.com;u34jedzcq.com
 za.net;whois.za.net;karnaugh.za.net;u34jedzcq.za.net
 net;whois.crsnic.net;google.net;u34jedzcq.net
 eu.org;whois.eu.org;google.eu.org;u34jedzcq.eu.org
-#Whois::Server.define :tld, ".za.org", "whois.za.org"
+za.org;whois.za.org;csa.za.org;u34jedzcq.za.org
 org;whois.publicinterestregistry.net;google.org;u34jedzcq.org
 edu;whois.educause.edu;google.edu;u34jedzcq.edu
 gov;whois.nic.gov;gsa.gov;u34jedzcq.gov

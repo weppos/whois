@@ -1,0 +1,44 @@
+
+Domain Name            : csa.za.org
+
+Registered for         : W&C Information Consultants CC
+                         No 4 Botano Bldg
+                         Centurion
+                         0046
+                         South Africa
+
+Administrative Contact : Willo van der Merwe <hostmaster@wcic.co.za> <hostmaster@wcic.co.za>
+                         W&C Information Consultants CC
+                         No 4 Botano Bldg
+                         Centurion
+                         Gauteng
+                         0046
+                         South Africa
+                         +27 12 643 0288
+                         +27 12 643 0287
+
+Technical Contact      : Willo van der Merwe <hostmaster@wcic.co.za> <hostmaster@wcic.co.za>
+                         W&C Information Consultants CC
+                         No 4 Botano Bldg
+                         Centurion
+                         Gauteng
+                         0046
+                         South Africa
+                         +27 12 643 0288
+                         +27 12 643 0287
+
+Record Created         : Sun Nov  5 14:03:48 GMT 2000
+Record Last Updated    : Mon Aug 15 12:15:10 BST 2005
+Database Last Updated  : Sun Nov 22 16:01:16 GMT 2009
+
+Domain Name Servers listed in order:
+
+  blade.wcic.co.za                                    
+  sabertooth.wcic.co.za                               
+  ns2.iafrica.com                                     
+
+The ZA NiC whois service contains ONLY information relating to the registration
+or availability of Internet domain names under the ZA.NET and ZA.ORG namespace.
+Online registration of ZA NiC domains can be made using the automated tool
+available at http://www.za.net/
+
