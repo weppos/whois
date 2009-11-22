@@ -22,7 +22,7 @@ tld;registry;available;unavailable
 com;whois.crsnic.net;google.com;u34jedzcq.com
 za.net;whois.za.net;karnaugh.za.net;u34jedzcq.za.net
 net;whois.crsnic.net;google.net;u34jedzcq.net
-#Whois::Server.define :tld, ".eu.org", "whois.eu.org"
+eu.org;whois.eu.org;google.eu.org;u34jedzcq.eu.org
 #Whois::Server.define :tld, ".za.org", "whois.za.org"
 org;whois.publicinterestregistry.net;google.org;u34jedzcq.org
 edu;whois.educause.edu;google.edu;u34jedzcq.edu

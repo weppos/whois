@@ -1,0 +1,19 @@
+domain:      ECRYPT.EU.ORG
+address:     Dept. Electrical Engineering - ESAT, K.U.Leuven
+address:     Kasteelpark Arenberg 10
+address:     3001 Heverlee
+address:     Belgium
+changed:     2004-04-16 00:00:00+02:00
+tech-c:      FS35-FREE
+admin-c:     FS35-FREE
+
+person:      Frank Schoeters
+nic-hdl:     FS35-FREE
+ext-hdl:     FSX73
+address:     Kasteelpark Arenberg 10
+address:     3001 Heverlee
+address:     Belgium
+phone:       +32 16 321017
+e-mail:      Frank.Schoeters@esat.kuleuven.ac.be
+changed:     2004-04-16 00:00:00+02:00
+
