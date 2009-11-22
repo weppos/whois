@@ -8,7 +8,7 @@ class AnswerParserBlankTest < Test::Unit::TestCase
     @part   = Whois::Answer::Part.new("This is the response.", "whois.foo.com")
   end
 
-  Whois::Answer::Parser.registrable_methods.each do |method|
+  Whois::Answer::Parser.properties.each do |method|
     define_method "test_#{method}_should_raise" do
       parser = @klass.new(@part)
       error  = assert_raise(Whois::ParserNotFound) { parser.send(method) }

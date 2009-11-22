@@ -49,17 +49,17 @@ module Whois
         end
 
 
-        # FIXME: implement? && !support?
+        # TODO: NotAvailable
         register_method :created_on do
           nil
         end
         
-        # FIXME: implement? && !support?
+        # TODO: NotAvailable
         register_method :updated_on do
           nil
         end
         
-        # FIXME: implement? && !support?
+        # TODO: NotAvailable
         register_method :expires_on do
           nil
         end

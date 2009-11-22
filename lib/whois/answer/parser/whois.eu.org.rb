@@ -51,17 +51,17 @@ module Whois
         end
 
 
-        # FIXME: implement? && !support? (or anniversary?)
+        # TODO: NotAvailable (or anniversary?)
         register_method :created_on do
           nil
         end
         
-        # FIXME: implement? && !support? (or anniversary?)
+        # TODO: NotAvailable (or anniversary?)
         register_method :updated_on do
           nil
         end
         
-        # FIXME: implement? && !support? (or anniversary?)
+        # TODO: NotAvailable (or anniversary?)
         register_method :expires_on do
           nil
         end

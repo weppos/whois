@@ -22,7 +22,7 @@ module Whois
     #
     class Parser
 
-      @@registrable_methods = [
+      @@properties = [
         :disclaimer,
         :domain, :domain_id,
         :referral_whois, :referral_url,
@@ -32,11 +32,11 @@ module Whois
         :nameservers,
       ]
 
-      # Returns an array containing the name of all methods
+      # Returns an array containing the name of all properties
       # that can be registered and should be implemented by
       # server-specific parsers.
-      def self.registrable_methods
-        @@registrable_methods
+      def self.properties
+        @@properties
       end
 
       attr_reader :answer
@@ -56,15 +56,20 @@ module Whois
       # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
       # is supported by any available parser.
       # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
-      def supported?(property)
+      def property_supported?(property)
         parsers.any? { |parser| parser.supported?(property) }
+      end
+      
+      def supported?(*args)
+        ::Whois.deprecate "supported? is deprecated. Use property_supported? instead."
+        property_supported?(*args)
       end
 
 
       protected
 
         def method_missing(method, *args, &block)
-          if Parser.registrable_methods.include?(method)
+          if Parser.properties.include?(method)
             if parsers.empty?
               raise ParserError, "Unable to select a parser because the answer is empty"
             elsif parser = select_parser(method)

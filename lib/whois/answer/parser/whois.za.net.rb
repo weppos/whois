@@ -63,6 +63,7 @@ module Whois
           end
         end
         
+        # TODO: NotAvailable
         register_method :expires_on do
           nil
         end

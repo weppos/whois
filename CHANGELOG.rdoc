@@ -33,6 +33,8 @@
 
 * CHANGED: Changed .edu TLD server to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
 
+* CHANGED: Renamed #supported to #property_supported?
+
 
 == Release 0.8.1
 

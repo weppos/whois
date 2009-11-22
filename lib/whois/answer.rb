@@ -112,8 +112,13 @@ module Whois
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
     # See also <tt>Whois::Answer::Parser.supported?</tt>.
-    def supported?(property)
+    def property_supported?(property)
       parser.supported?(property)
+    end
+
+    def supported?(*args)
+      ::Whois.deprecate "supported? is deprecated. Use property_supported? instead."
+      property_supported?(*args)
     end
 
 
@@ -121,7 +126,7 @@ module Whois
       
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
-        if Parser.registrable_methods.include?(method)
+        if Parser.properties.include?(method)
           parser.send(method, *args, &block)
         else
           super

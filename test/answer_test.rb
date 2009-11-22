@@ -85,14 +85,14 @@ class AnswerTest < Test::Unit::TestCase
     assert_instance_of Whois::Answer::Parser, answer.parser
   end
 
-  def test_supported?
+  def test_property_supported?
     answer = @klass.new(nil, [])
-    answer.parser.expects(:supported?).with(:disclaimer).returns(:value)
-    assert_equal :value, answer.supported?(:disclaimer)
+    answer.parser.expects(:property_supported?).with(:disclaimer).returns(:value)
+    assert_equal :value, answer.property_supported?(:disclaimer)
   end
 
 
-  Whois::Answer::Parser.registrable_methods.each do |method|
+  Whois::Answer::Parser.properties.each do |method|
     define_method "test_should_delegate_#{method}_to_parser" do
       answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
       parser = answer.parser

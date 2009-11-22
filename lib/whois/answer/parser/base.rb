@@ -44,7 +44,7 @@ module Whois
           @part = part
         end
 
-        ::Whois::Answer::Parser.registrable_methods.each do |method|
+        ::Whois::Answer::Parser.properties.each do |method|
           define_method(method) do
             raise PropertyNotImplemented, "You should overwrite this method."
           end
@@ -53,38 +53,43 @@ module Whois
         # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
         # is supported by current parser.
         #
-        #   parser.supported? :disclaimer
+        #   parser.property_supported? :disclaimer
         #   # => false
         #
         #   parser.register_method(:disclaimer) {}
-        #   parser.supported? :disclaimer
+        #   parser.property_supported? :disclaimer
         #   # => true
         #
         # This method is different than <tt>respond_to?</tt>.
         # While <tt>respond_to?</tt> always returns true for any registrable property,
         # including those not effectively implemented,
         # this method only returns <tt>true</tt> if the parser implements <tt>property</tt>.
-        # Also, <tt>supported?</tt> returns <tt>false</tt> if <tt>property</tt> exists as a method
+        # Also, <tt>property_supported?</tt> returns <tt>false</tt> if <tt>property</tt> exists as a method
         # but it's not a property method.
         #
         #   parser.respond_to?(:disclaimer)
         #   # => true
-        #   parser.supported?(:disclaimer)
+        #   parser.property_supported?(:disclaimer)
         #   # => false
         #
         #   parser.register_method(:disclaimer) {}
         #   parser.respond_to?(:disclaimer)
         #   # => true
-        #   parser.supported?(:disclaimer)
+        #   parser.property_supported?(:disclaimer)
         #   # => true
         #
         #   parser.respond_to?(:contact)
         #   # => true
-        #   parser.supported?(:contact)
+        #   parser.property_supported?(:contact)
         #   # => false
         #
-        def supported?(property)
+        def property_supported?(property)
           method_registered?(property.to_s.to_sym)
+        end
+
+        def supported?(*args)
+          ::Whois.deprecate "supported? is deprecated. Use property_supported? instead."
+          property_supported?(*args)
         end
 
 

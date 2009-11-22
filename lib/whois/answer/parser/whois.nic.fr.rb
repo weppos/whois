@@ -65,7 +65,7 @@ module Whois
           end
         end
         
-        # FIXME: implement? && !support? (or anniversary?)
+        # TODO: NotAvailable (or anniversary?)
         register_method :expires_on do
           nil
         end
