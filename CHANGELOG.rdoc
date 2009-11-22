@@ -27,6 +27,8 @@
 
 * ADDED: Simple .za.org TLD parser.
 
+* ADDED: Simple .int/.arpa TLD parser.
+
 * CHANGED: Removed Whois::BUILD and Whois::STATUS constants. Added Whois::Version::ALPHA constant to be used when I need to package prereleases (see RubyGem --prerelease flag).
 
 * CHANGED: Extracted Whois::Answer::Parser::Ast module from existing parsers.

@@ -1,0 +1,3 @@
+whois.nic.fr serves multiple TLD:
+* .int
+* .arpa

@@ -1,0 +1,89 @@
+
+IANA Whois Service
+Domain: nato.int
+ID: nato-int
+
+Registrant:
+    Name: 
+    Organization: North Atlantic Treaty Organization
+    Address1: Blvd Leopold III
+    Address2: 1110 Brussels
+    Address3: 
+    City: Brussels
+    State/Province: 
+    Country: Belgium
+    Postal Code: 
+    Phone: 
+    Fax: 
+    Email: 
+    Registration Date: 10-September-2001
+    Last Updated Date: 22-June-2007
+
+Administrative Contact:
+    Name: Aidan Murdock
+    Organization: 
+    Address1: SHAPE
+    Address2: NCSA/SDD/SAL
+    Address3: 
+    City: Casteau
+    State/Province: Hainaut
+    Country: Belgium
+    Postal Code: 7010
+    Phone: +32 65 44 7244
+    Fax: +32 65 44 7221
+    Email: aidan.murdock@ncsa.nato.int
+    Registration Date: 10-September-2001
+    Last Updated Date: 10-November-2009
+
+Technical Contact:
+    Name: Aad Van der Zanden
+    Organization: 
+    Address1: P.O. Box 174
+    Address2: 
+    Address3: 
+    City: The Hague
+    State/Province: ZH
+    Country: The Netherlands
+    Postal Code: 2501 CD
+    Phone: +31 70 3743433
+    Fax: 
+    Email: zanden@nc3a.nato.int
+    Registration Date: 10-September-2001
+    Last Updated Date: 22-June-2007
+
+Technical Contact:
+    Name: Jack Smits
+    Organization: 
+    Address1: SHAPE
+    Address2: NCSA/SMD
+    Address3: 
+    City: Casteau
+    State/Province: Hainaut
+    Country: Belgium
+    Postal Code: 7010
+    Phone: +32 65 44 7534
+    Fax: +32 65 44 7556
+    Email: jack.smits@ncsa.nato.int
+    Registration Date: 23-April-2002
+    Last Updated Date: 10-November-2009
+
+Nameserver Information:
+    Nameserver: max.nra.nato.int.
+    IP Address: 192.101.252.69
+    Nameserver: ns1.cs.uc1.ac.uk.
+    IP Address: 128.16.5.32
+    Nameserver: ns1.drenet.dnd.ca.
+    IP Address: 131.136.242.3
+    Nameserver: relay.mod.uk.
+    IP Address: 192.5.29.50
+    Nameserver: maxima.nra.nato.int.
+    IP Address: 193.110.130.68
+    Nameserver: ns.namsa.nato.int.
+    IP Address: 208.161.248.15
+    Nameserver: ns.saclantc.nato.int.
+    IP Address: 192.106.197.1
+    Nameserver: ns.nc3a.nato.int.
+    IP Address: 195.169.116.6
+
+Registration Date: 26-August-1997
+Last Updated Date: 10-November-2009
