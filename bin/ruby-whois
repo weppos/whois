@@ -1,37 +1,50 @@
 #!/usr/bin/env ruby -wKU
 
 require 'optparse'
+require 'ostruct'
 require 'rubygems'
 require 'whois'
 
-opts = OptionParser.new do |opts|
-  opts.banner = "Whois: an intelligent pure Ruby Whois client"
-  opts.define_head "Usage: whois [options] object"
-  opts.separator ""
-  opts.separator "Examples:"
-  opts.separator " whois ruby-lang.com"
-  opts.separator " whois 213.149.247.64"
-  opts.separator ""
-  opts.separator "Options:"
- 
+
+options = OpenStruct.new
+OptionParser.new do |opts|
+  opts.banner     = "Whois: an intelligent pure Ruby Whois client"
+  opts.define_head  "Usage: whois [options] object"
+  opts.separator    ""
+  opts.separator    "Examples:"
+  opts.separator    " whois ruby-lang.com"
+  opts.separator    " whois 213.149.247.64"
+  opts.separator    ""
+  opts.separator    "Options:"
+
+  opts.on("-t", "--timeout [SECONDS]", Integer, "Specify the timeout value") do |seconds|
+    options.timeout = seconds
+  end
+
   opts.on_tail("--help", "Show this message") do
     puts opts
     exit
   end
- 
+
   opts.on_tail("-v", "--version", "Show version") do
     puts "#{Whois::NAME} #{Whois::VERSION}"
     exit
   end
+
+  begin
+    opts.parse!
+  rescue OptionParser::ParseError
+    puts opts
+    exit 1
+  end
+
+  if ARGV.size.zero?
+    puts opts
+    exit 1
+  end
 end
-opts.parse!
- 
+
 qstring = ARGV.shift
  
-if qstring.to_s.strip.empty?
-  puts opts
-  exit 1
-end
- 
-@client = Whois::Client.new
+@client = Whois::Client.new(:timeout => options.timeout)
 puts @client.query(qstring)
