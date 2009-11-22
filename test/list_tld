@@ -20,7 +20,7 @@ tld;registry;available;unavailable
 #Whois::Server.define :tld, ".jpn.com", "whois.centralnic.net"
 #Whois::Server.define :tld, ".web.com", "whois.centralnic.net"
 com;whois.crsnic.net;google.com;u34jedzcq.com
-#Whois::Server.define :tld, ".za.net", "whois.za.net"
+za.net;whois.za.net;karnaugh.za.net;u34jedzcq.za.net
 net;whois.crsnic.net;google.net;u34jedzcq.net
 #Whois::Server.define :tld, ".eu.org", "whois.eu.org"
 #Whois::Server.define :tld, ".za.org", "whois.za.org"
