@@ -1,9 +1,7 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.publicinterestregistry.net'
 
-class AnswerParserWhoisPublicinterestregistryNetTest < Test::Unit::TestCase
-
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../../testcases/responses/whois.publicinterestregistry.net')
+class AnswerParserWhoisPublicinterestregistryNetTest < Whois::Answer::Parser::TestCase
 
   def setup
     @klass  = Whois::Answer::Parser::WhoisPublicinterestregistryNet
@@ -186,16 +184,5 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).nameservers
   end
-
-
-  protected
-
-    def load_part(path)
-      part(File.read(TESTCASE_PATH + path), @host)
-    end
-
-    def part(*args)
-      Whois::Answer::Part.new(*args)
-    end
 
 end

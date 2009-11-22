@@ -1,9 +1,7 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.nic.it.rb'
 
-class AnswerParserWhoisNicItTest < Test::Unit::TestCase
-
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../../testcases/responses/whois.nic.it')
+class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
   def setup
     @klass  = Whois::Answer::Parser::WhoisNicIt
@@ -231,16 +229,5 @@ Domain:             weppos.it
 Status:             AVAILABLE
     RESPONSE
   end
-
-
-  protected
-
-    def load_part(path)
-      part(File.read(TESTCASE_PATH + path), @host)
-    end
-
-    def part(*args)
-      Whois::Answer::Part.new(*args)
-    end
 
 end

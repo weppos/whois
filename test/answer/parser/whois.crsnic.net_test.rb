@@ -1,9 +1,7 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.crsnic.net'
 
-class AnswerParserWhoisCrsnicNetTest < Test::Unit::TestCase
-
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../../testcases/responses/whois.crsnic.net')
+class AnswerParserWhoisCrsnicNetTest < Whois::Answer::Parser::TestCase
 
   def setup
     @klass  = Whois::Answer::Parser::WhoisCrsnicNet
@@ -160,16 +158,5 @@ EOS
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).registrar
   end
-
-
-  protected
-
-    def load_part(path)
-      part(File.read(TESTCASE_PATH + path), @host)
-    end
-
-    def part(*args)
-      Whois::Answer::Part.new(*args)
-    end
 
 end

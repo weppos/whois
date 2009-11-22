@@ -1,9 +1,7 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.nic.name.rb'
 
-class AnswerParserWhoisNicNameTest < Test::Unit::TestCase
-
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../../testcases/responses/whois.nic.name')
+class AnswerParserWhoisNicNameTest < Whois::Answer::Parser::TestCase
 
   def setup
     @klass  = Whois::Answer::Parser::WhoisNicName
@@ -49,16 +47,5 @@ class AnswerParserWhoisNicNameTest < Test::Unit::TestCase
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
   end
-
-
-  protected
-
-    def load_part(path)
-      part(File.read(TESTCASE_PATH + path), @host)
-    end
-
-    def part(*args)
-      Whois::Answer::Part.new(*args)
-    end
 
 end
