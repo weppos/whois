@@ -18,6 +18,7 @@ lib/whois/answer/parser/README.rdoc
 lib/whois/answer/parser/ast.rb
 lib/whois/answer/parser/base.rb
 lib/whois/answer/parser/blank.rb
+lib/whois/answer/parser/scanners/verisign.rb
 lib/whois/answer/parser/whois.afilias.info.rb
 lib/whois/answer/parser/whois.crsnic.net.rb
 lib/whois/answer/parser/whois.denic.de.rb
@@ -29,6 +30,7 @@ lib/whois/answer/parser/whois.nic.fr.rb
 lib/whois/answer/parser/whois.nic.gov.rb
 lib/whois/answer/parser/whois.nic.it.rb
 lib/whois/answer/parser/whois.nic.name.rb
+lib/whois/answer/parser/whois.nic.tv.rb
 lib/whois/answer/parser/whois.publicinterestregistry.net.rb
 lib/whois/answer/parser/whois.za.net.rb
 lib/whois/answer/parser/whois.za.org.rb
@@ -70,6 +72,7 @@ test/answer/parser/whois.nic.fr_test.rb
 test/answer/parser/whois.nic.gov_test.rb
 test/answer/parser/whois.nic.it_test.rb
 test/answer/parser/whois.nic.name_test.rb
+test/answer/parser/whois.nic.tv_test.rb
 test/answer/parser/whois.publicinterestregistry.net_test.rb
 test/answer/parser/whois.za.net_test.rb
 test/answer/parser/whois.za.org_test.rb
@@ -128,6 +131,8 @@ test/testcases/responses/whois.nic.it/status_available.txt
 test/testcases/responses/whois.nic.name/available.txt
 test/testcases/responses/whois.nic.name/registered.txt
 test/testcases/responses/whois.nic.name/reserved.txt
+test/testcases/responses/whois.nic.tv/available.txt
+test/testcases/responses/whois.nic.tv/registered.txt
 test/testcases/responses/whois.publicinterestregistry.net/available.txt
 test/testcases/responses/whois.publicinterestregistry.net/registered.txt
 test/testcases/responses/whois.za.net/available.txt

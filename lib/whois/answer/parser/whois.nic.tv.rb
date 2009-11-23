@@ -23,11 +23,11 @@ module Whois
     class Parser
 
       #
-      # = whois.crsnic.net parser
+      # = whois.nic.tv parser
       #
-      # Parser for the whois.crsnic.net server.
+      # Parser for the whois.nic.tv server.
       #
-      class WhoisCrsnicNet < Base
+      class WhoisNicTv < Base
         include Ast
 
         register_method :disclaimer do

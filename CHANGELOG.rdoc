@@ -29,6 +29,8 @@
 
 * ADDED: Simple .int/.arpa TLD parser.
 
+* ADDED: .tv TLD parser.
+
 * ADDED: Ability to pass timeout option to 'ruby-whois' (closes #334)
 
 * CHANGED: Removed Whois::BUILD and Whois::STATUS constants. Added Whois::Version::ALPHA constant to be used when I need to package prereleases (see RubyGem --prerelease flag).
