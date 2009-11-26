@@ -147,7 +147,7 @@ gw;;;
 #Whois::Server.define :tld, ".hn", "whois.afilias-grs.info"
 hr;;;
 #Whois::Server.define :tld, ".ht", "whois.nic.ht"
-#Whois::Server.define :tld, ".hu", "whois.nic.hu"
+hu;whois.nic.hu;google.hu;u34jedzcq.hu
 #Whois::Server.define :tld, ".id", "whois.idnic.net.id"
 ie;whois.domainregistry.ie;google.ie;u34jedzcq.ie
 #Whois::Server.define :tld, ".il", "whois.isoc.org.il"

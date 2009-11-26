@@ -3,6 +3,8 @@
 
 == master
 
+* ADDED: Simple .hu TLD parser.
+
 * FIXED: .ec TLD has a whois server (closes #322)
 
 * FIXED: .gl TLD has a whois server (closes #323)
