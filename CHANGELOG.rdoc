@@ -3,7 +3,7 @@
 
 == master
 
-* ADDED: Simple .hu TLD parser.
+* ADDED: .hu TLD parser.
 
 * FIXED: .ec TLD has a whois server (closes #322)
 
