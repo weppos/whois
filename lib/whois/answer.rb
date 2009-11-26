@@ -113,7 +113,7 @@ module Whois
     # is supported by any available parser for this answer.
     # See also <tt>Whois::Answer::Parser.supported?</tt>.
     def property_supported?(property)
-      parser.supported?(property)
+      parser.property_supported?(property)
     end
 
     def supported?(*args)

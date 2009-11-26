@@ -57,7 +57,7 @@ module Whois
       # is supported by any available parser.
       # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
       def property_supported?(property)
-        parsers.any? { |parser| parser.supported?(property) }
+        parsers.any? { |parser| parser.property_supported?(property) }
       end
       
       def supported?(*args)

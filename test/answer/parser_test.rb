@@ -54,28 +54,28 @@ class AnswerParserTest < Test::Unit::TestCase
   def test_supported_with_zero_parts
     answer = Whois::Answer.new(nil, [])
     parser = @klass.new(answer)
-    assert !parser.supported?(:disclaimer)
+    assert !parser.property_supported?(:disclaimer)
   end
 
   # DEPRECATED
   def test_supported_with_one_part_supported
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
-    assert  parser.supported?(:disclaimer)
+    assert  parser.property_supported?(:disclaimer)
   end
 
   # DEPRECATED
   def test_supported_with_one_part_unsupported
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "invalid.nic.it")])
     parser = @klass.new(answer)
-    assert !parser.supported?(:disclaimer)
+    assert !parser.property_supported?(:disclaimer)
   end
 
   # DEPRECATED
   def test_supported_with_two_parts
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
-    assert  parser.supported?(:disclaimer)
+    assert  parser.property_supported?(:disclaimer)
   end
 
   def test_property_supported_with_zero_parts
