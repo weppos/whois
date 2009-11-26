@@ -34,12 +34,23 @@ module Whois
       #
       class WhoisNicHu < Base
 
+        register_method :status do
+          last_line = content.to_s.strip.split(/\n/).compact.last
+          if last_line =~ /\ANincs tal.lat \/ No match\Z/
+            :available
+          elsif last_line =~ /\ARegisztr.ci. folyamatban \/ Registration in progress\Z/
+            :in_progress
+          else
+            :registered
+          end
+        end
+        
         register_method :available? do
-          @available ||= content.to_s.strip.split(/\n/).last =~ /\ANincs tal.lat \/ No match\Z/
+          @available ||= status == :available
         end
         
         register_method :registered? do
-          !available?
+          @registered ||= status == :registered
         end
         
         register_method :created_on do

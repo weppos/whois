@@ -10,29 +10,44 @@ class AnswerParserWhoisNicHuTest < Test::Unit::TestCase
     @host   = "whois.nic.hu"
   end
 
+  def test_status
+    assert_equal  :available,
+                  @klass.new(load_part('/available.txt')).status
+    assert_equal  :in_progress,
+                  @klass.new(load_part('/in_progress.txt')).status
+    assert_equal  :registered,
+                  @klass.new(load_part('/registered.txt')).status
+  end
 
   def test_available?
-    assert !@klass.new(load_part('/registered.txt')).available?
     assert  @klass.new(load_part('/available.txt')).available?
+    assert !@klass.new(load_part('/in_progress.txt')).available?
+    assert !@klass.new(load_part('/registered.txt')).available?
   end
 
   def test_registered?
     assert !@klass.new(load_part('/available.txt')).registered?
+    assert !@klass.new(load_part('/in_progress.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
   end
 
+
   def test_created_on
-    assert_equal  Time.parse("2000-03-25 23:20:39"),
-                  @klass.new(load_part('/registered.txt')).created_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).created_on
+    assert_equal  nil,
+                  @klass.new(load_part('/in_progress.txt')).created_on
+    assert_equal  Time.parse("2000-03-25 23:20:39"),
+                  @klass.new(load_part('/registered.txt')).created_on
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-08-25 10:11:32"),
-                  @klass.new(load_part('/registered.txt')).updated_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).updated_on
+    assert_equal  nil,
+                  @klass.new(load_part('/in_progress.txt')).updated_on
+    assert_equal  Time.parse("2009-08-25 10:11:32"),
+                  @klass.new(load_part('/registered.txt')).updated_on
   end
 
 
