@@ -107,25 +107,25 @@ module Whois
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the admin contact details extracted from the registry answer.
         register_method :admin do
-          node(node('admin-c'))
+          contact('admin-c')
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the technical contact details extracted from the registry answer.
         register_method :technical do
-          node(node('tech-c'))
+          contact('tech-c')
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the zone contact details extracted from the registry answer.
         register_method :zone_contact do
-          node(node('zone-c'))
+          contact('zone-c')
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the registrar contact details extracted from the registry answer.
         register_method :registrar_contact do
-          node(node('registrar'))
+          contact('registrar')
         end
 
         register_method :registrar do
@@ -143,6 +143,15 @@ module Whois
           def parse
             Scanner.new(content.to_s).parse
           end
+
+          def contact(element)
+            node(node(element)) do |raw|
+              Answer::Contact.new do |c|
+                raw.each { |k,v| c[k.to_sym] = v }
+              end
+            end
+          end
+
 
         class Scanner
 
@@ -264,29 +273,29 @@ module Whois
                     # we should keep the old values if this is an already
                     # defined contact
                     if @ast[value].nil?
-                      @ast[value] = Answer::Contact.new(
-                        :id => value,
-                        :name => contact['name'],
-                        :organization => contact['org'],
-                        :address => contact['address'][0],
-                        :city => city,
-                        :zip => zip,
-                        :country_code => contact['address'][2],
-                        :phone => contact['phone'],
-                        :fax => contact['fax-no'],
-                        :email => contact['e-mail']
-                      )
+                      @ast[value] = {
+                        "id" => value,
+                        "name" => contact['name'],
+                        "organization" => contact['org'],
+                        "address" => contact['address'][0],
+                        "city" => city,
+                        "zip" => zip,
+                        "country_code" => contact['address'][2],
+                        "phone" => contact['phone'],
+                        "fax" => contact['fax-no'],
+                        "email" => contact['e-mail']
+                      }
                     else
-                      @ast[value].id ||= value
-                      @ast[value].name ||= contact['name']
-                      @ast[value].organization ||= contact['org']
-                      @ast[value].address ||= contact['address'][0]
-                      @ast[value].city ||= city
-                      @ast[value].zip ||= zip
-                      @ast[value].country_code ||= contact['address'][2]
-                      @ast[value].phone ||= contact['phone']
-                      @ast[value].fax ||= contact['fax-no']
-                      @ast[value].email ||= contact['e-mail']
+                      @ast[value]["id"] ||= value
+                      @ast[value]["name"] ||= contact['name']
+                      @ast[value]["organization"] ||= contact['org']
+                      @ast[value]["address"] ||= contact['address'][0]
+                      @ast[value]["city"] ||= city
+                      @ast[value]["zip"] ||= zip
+                      @ast[value]["country_code"] ||= contact['address'][2]
+                      @ast[value]["phone"] ||= contact['phone']
+                      @ast[value]["fax"] ||= contact['fax-no']
+                      @ast[value]["email"] ||= contact['e-mail']
                     end
                     contact = {}
                   elsif key == 'person'
