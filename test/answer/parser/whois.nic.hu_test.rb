@@ -1,5 +1,3 @@
-# coding: iso-8859-1
-
 require 'test_helper'
 require 'whois/answer/parser/whois.nic.hu.rb'
 
