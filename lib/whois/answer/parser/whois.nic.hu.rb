@@ -128,6 +128,16 @@ module Whois
           node(node('registrar'))
         end
 
+        register_method :registrar do
+          if rc = registrar_contact
+            Answer::Registrar.new(
+              :id => rc[:id],
+              :name => rc[:name],
+              :organization => rc[:organization]
+            )
+          end
+        end
+
         protected
 
           def parse
