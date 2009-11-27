@@ -156,10 +156,16 @@ Ruby Whois 0.4.2 is released under the MIT license.
 Copyright (c) 2007 by Cyril Mougel (cyril.mougel@gmail.com)
 
 
-== Credits
+== Author
 
 Author:: {Simone Carletti}[http://www.simonecarletti.com/] <weppos@weppos.net>
-Author (Whois 0.4):: {Cyril Mougel}[http://blog.shingara.fr/] <cyril.mougel@gmail.com>
+
+
+== Thanks to
+
+* {Cyril Mougel}[http://blog.shingara.fr/] <cyril.mougel@gmail.com> Author of the initial Whois GEM
+* {Gábor Vészi}[http://well.done.hu/] .hu whois parser
+* {Aaron Mueller}[http://aaron-mueller.de/] .de whois parser
 
 
 == FeedBack and Bug reports
