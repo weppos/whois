@@ -98,4 +98,10 @@ module Whois
     Client.new.query(qstring)
   end
 
+
+  def self.deprecate(message = nil)
+    message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
+    $stderr.puts("DEPRECATION WARNING: #{message}")
+  end
+
 end

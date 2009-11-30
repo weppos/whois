@@ -19,12 +19,6 @@ require 'resolv'
 
 module Whois
 
-  def self.deprecate(message = nil)
-    message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
-    $stderr.puts("DEPRECATION WARNING: #{message}")
-  end
-
-
   class WhoisException < Exception # :nodoc
     def initialize(message)
       ::Whois.deprecate "WhoisException is deprecated as of 0.5.0 and will be removed in a future release along with Whois::Whois class."
