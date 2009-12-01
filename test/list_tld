@@ -276,7 +276,6 @@ tn;;;
 #Whois::Server.define :tld, ".tr", "whois.metu.edu.tr"
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
-#Whois::Server.define :tld, ".tv", "whois.nic.tv", {:adapter=>Whois::Server::Adapters::Verisign}
 #Whois::Server.define :tld, ".tw", "whois.twnic.net"
 tz;;;
 #Whois::Server.define :tld, ".ua", "whois.net.ua"
