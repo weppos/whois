@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby -wKU
 
+$:.unshift(File.dirname(__FILE__) + "/../lib")
+
 require 'optparse'
 require 'ostruct'
-require 'rubygems'
 require 'whois'
 
 

@@ -11,6 +11,8 @@
 
 * FIXED: TLD definitions for whois.afilias-grs.info missing proper adapter (closes #342)
 
+* FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes #344)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.
