@@ -9,6 +9,8 @@
 
 * FIXED: .md TLD has a whois server (closes #325)
 
+* FIXED: TLD definitions for whois.afilias-grs.info missing proper adapter (closes #342)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.
