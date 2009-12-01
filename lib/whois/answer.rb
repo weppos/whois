@@ -30,21 +30,27 @@ module Whois
       @server = server
     end
 
-    
+
     def to_s
       content.to_s
     end
-    
+
     def inspect
       content.inspect
     end
-    
+
     # Invokes <tt>match</tt> on answer <tt>@content</tt>
     # and returns the <tt>MatchData</tt> or <tt>nil</tt>.
     def match(pattern)
       content.match(pattern)
     end
-    
+
+    # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
+    # matches <tt>@content</tt>, <tt>false</tt> otherwise.
+    def match?(pattern)
+      !content.match(pattern).nil?
+    end
+
     # Returns true if the <tt>object</tt> is the same object,
     # or is a string and has the same content.
     def ==(other)
@@ -53,7 +59,7 @@ module Whois
       (other.instance_of?(String) && other == self.to_s) ||
       (other.instance_of?(Answer) && other.to_s == self.to_s)
     end
-    
+
     # Delegates to ==.
     def eql?(other)
       self == other
@@ -97,16 +103,21 @@ module Whois
     end
 
 
-    # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
-    # matches <tt>@content</tt>, <tt>false</tt> otherwise.
-    def match?(pattern)
-      !content.match(pattern).nil?
-    end
-
 
     # Lazy-loads and returns a <tt>Whois::Answer::Parser</tt> proxy for current answer.
     def parser
       @parser ||= Parser.new(self)
+    end
+
+
+    # Returns a Hash containing all supported properties for this Answer
+    # along with corresponding values.
+    def properties
+      list = Parser.properties.inject([]) do |l,a|
+        l.concat([a, send(a)]) if property_supported?(a)
+        l
+      end
+      Hash[*list]
     end
 
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
