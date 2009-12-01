@@ -4,7 +4,8 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 require 'whois'
-
+require 'rake/rdoctask'
+require 'hanna/rdoctask'
 
 # Common package properties
 PKG_NAME    = ENV['PKG_NAME']    || Whois::GEM
@@ -31,9 +32,11 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.need_zip      = true
 
   p.development_dependencies += ["rake  ~>0.8",
+                                 "hanna ~>0.1.12",
                                  "echoe ~>3.1",
                                  "mocha ~>0.9"]
 
+  p.rdoc_options  = ["--inline-source", "-T", "hanna"]
   p.rcov_options  = ["-Itest -x mocha,rcov,Rakefile"]
 end
 
