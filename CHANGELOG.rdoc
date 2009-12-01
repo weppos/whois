@@ -3,11 +3,11 @@
 
 == Release 0.9.0
 
-* FIXED: .ec TLD has a whois server (closes #322)
+* SERVER: .ec TLD has a whois server (closes #322)
 
-* FIXED: .gl TLD has a whois server (closes #323)
+* SERVER: .gl TLD has a whois server (closes #323)
 
-* FIXED: .md TLD has a whois server (closes #325)
+* SERVER: .md TLD has a whois server (closes #325)
 
 * FIXED: TLD definitions for whois.afilias-grs.info missing proper adapter (closes #342)
 
@@ -128,9 +128,9 @@ API might change at any time without previous notice.
 
 == Release 0.5.3
 
-FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes #300)
+* FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes #300)
 
-FIXED: In some rare circumstances the server guessing fails to return the right server but returns an other server instead (closes #260).
+* FIXED: In some rare circumstances the server guessing fails to return the right server but returns an other server instead (closes #260).
 
 
 == Release 0.5.2
