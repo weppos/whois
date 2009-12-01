@@ -1,0 +1,98 @@
+Access to CCTLD WHOIS information is provided to assist persons in 
+determining the contents of a domain name registration record in the 
+Afilias registry database. The data in this record is provided by 
+Afilias Limited for informational purposes only, and Afilias does not 
+guarantee its accuracy.  This service is intended only for query-based 
+access. You agree that you will use this data only for lawful purposes 
+and that, under no circumstances will you use this data to: (a) allow, 
+enable, or otherwise support the transmission by e-mail, telephone, or 
+facsimile of mass unsolicited, commercial advertising or solicitations 
+to entities other than the data recipient's own existing customers; or 
+(b) enable high volume, automated, electronic processes that send 
+queries or data to the systems of Registry Operator, a Registrar, or 
+Afilias except as reasonably necessary to register domain names or 
+modify existing registrations. All rights reserved. Afilias reserves 
+the right to modify these terms at any time. By submitting this query, 
+you agree to abide by this policy. 
+
+Domain ID:D68296-LRCC
+Domain Name:SAPPHIRE.GI
+Created On:20-Dec-2004 13:34:34 UTC
+Last Updated On:20-Dec-2008 19:25:54 UTC
+Expiration Date:20-Dec-2009 13:34:34 UTC
+Sponsoring Registrar:GibNet Registrar (R43-LRCC)
+Status:OK
+Registrant ID:FR-1103549674779
+Registrant Name:Jimmy Imossi
+Registrant Organization:Broadband Gibraltar Limited
+Registrant Street1:Suite 951
+Registrant Street2:Europort
+Registrant Street3:
+Registrant City:Gibraltar
+Registrant State/Province:
+Registrant Postal Code:NA
+Registrant Country:GI
+Registrant Phone:+350.47200
+Registrant Phone Ext.:
+Registrant FAX:+350.47272
+Registrant FAX Ext.:
+Registrant Email:jimossi@sapphire.gi
+Admin ID:FR-1103549674779
+Admin Name:Jimmy Imossi
+Admin Organization:Broadband Gibraltar Limited
+Admin Street1:Suite 951
+Admin Street2:Europort
+Admin Street3:
+Admin City:Gibraltar
+Admin State/Province:
+Admin Postal Code:NA
+Admin Country:GI
+Admin Phone:+350.47200
+Admin Phone Ext.:
+Admin FAX:+350.47272
+Admin FAX Ext.:
+Admin Email:jimossi@sapphire.gi
+Billing ID:FR-1103549674779
+Billing Name:Jimmy Imossi
+Billing Organization:Broadband Gibraltar Limited
+Billing Street1:Suite 951
+Billing Street2:Europort
+Billing Street3:
+Billing City:Gibraltar
+Billing State/Province:
+Billing Postal Code:NA
+Billing Country:GI
+Billing Phone:+350.47200
+Billing Phone Ext.:
+Billing FAX:+350.47272
+Billing FAX Ext.:
+Billing Email:jimossi@sapphire.gi
+Tech ID:FR-10a223e2e4cf0
+Tech Name:Tech Dept
+Tech Organization:Broadband Gibraltar Ltd
+Tech Street1:Suite 9.5.1
+Tech Street2:Europort
+Tech Street3:
+Tech City:N/A
+Tech State/Province:
+Tech Postal Code:N/A
+Tech Country:GI
+Tech Phone:+350.47200
+Tech Phone Ext.:
+Tech FAX:+350.47271
+Tech FAX Ext.:
+Tech Email:tech@sapphire.gi
+Name Server:NS1-A.SAPPHIRE.GI
+Name Server:NS2-A.SAPPHIRE.GI
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+

@@ -41,6 +41,8 @@
 
 * ADDED: Simple .asia TLD parser.
 
+* ADDED: Simple .bz/.gi/.hn/.lc/.mn/.sc/.vc TLD parser.
+
 * ADDED: .tv TLD parser.
 
 * ADDED: .hu TLD parser.
