@@ -1,29 +1,36 @@
 require 'test_helper'
 
 class ClientTest < Test::Unit::TestCase
-  
+
   def setup
     @client = Whois::Client.new
   end
-  
-  
+
+
   def test_initialize
     client = Whois::Client.new
     assert_instance_of Whois::Client, client
   end
-  
+
   def test_initialize_with_timeout
     client = Whois::Client.new(:timeout => 100)
     assert_equal 100, client.timeout
   end
-  
+
   def test_initialize_with_block
     Whois::Client.new do |client|
       assert_instance_of Whois::Client, client
     end
   end
-  
-  
+
+
+  def test_query_should_cast_qstring_to_string
+    server = Object.new
+    server.expects(:query).with("google.com")
+    Whois::Server.expects(:guess).with("google.com").returns(server)
+    @client.query(["google", ".", "com"])
+  end
+
   def test_query_with_email_address_should_raise
     assert_raise(Whois::ServerNotSupported) { @client.query("weppos@weppos.net") }
   end
@@ -32,13 +39,13 @@ class ClientTest < Test::Unit::TestCase
     error = assert_raise(Whois::NoInterfaceError) { @client.query("weppos.ad") }
     assert_match /no whois server/, error.message
   end
-  
+
   def test_query_with_domain_with_web_whois
     error = assert_raise(Whois::WebInterfaceError) { @client.query("weppos.ar") }
     assert_match /no whois server/, error.message
     assert_match /www\.nic\.ar/, error.message
   end
-  
+
   def test_query_with_timeout
     server = Class.new do
       def query(*args)
@@ -49,7 +56,7 @@ class ClientTest < Test::Unit::TestCase
     @client.timeout = 1
     assert_raise(Timeout::Error) { @client.query("foo.com") }
   end
-  
+
   def test_query_with_unlimited_timeout
     server = Class.new do
       def query(*args)
@@ -60,7 +67,7 @@ class ClientTest < Test::Unit::TestCase
     @client.timeout = nil
     assert_nothing_raised { @client.query("foo.com") }
   end
-  
+
   def test_query_within_timeout
     server = Class.new do
       def query(*args)

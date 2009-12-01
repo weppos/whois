@@ -13,6 +13,8 @@
 
 * FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes #344)
 
+* FIXED: Whois::Client doesn't cast qstring to_s (closes #339)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.

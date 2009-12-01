@@ -58,8 +58,8 @@ module Whois
       # domain?
       # network?
     end
-    
-    
+
+
     # Queries the right whois server for <tt>qstring</tt> and returns
     # a <tt>Whois::Answer</tt> instance containing the response from the server.
     #
@@ -67,12 +67,13 @@ module Whois
     #   # => #<Whois::Answer>
     #
     def query(qstring)
+      qstring = qstring.to_s
       Timeout::timeout(timeout) do
         @server = Server.guess(qstring)
         @server.query(qstring)
       end
     end
-      
+
   end
 
 end
