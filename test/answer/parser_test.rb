@@ -135,4 +135,17 @@ class AnswerParserTest < Test::Unit::TestCase
     assert_raise(NoMethodError) { parser.send("unallowed_method") }
   end
 
+
+  def test_parser_klass
+    assert_equal "Whois::Answer::Parser::WhoisNicIt", @klass.parser_klass("whois.nic.it").name
+  end
+
+  def test_parser_klass_with_preloaded_class
+    @klass.class_eval <<-RUBY
+      class WhoisFooBar
+      end
+    RUBY
+    assert_equal "Whois::Answer::Parser::WhoisFooBar", @klass.parser_klass("whois.foo.bar").name
+  end
+
 end

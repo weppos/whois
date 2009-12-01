@@ -15,6 +15,8 @@
 
 * FIXED: Whois::Client doesn't cast qstring to_s (closes #339)
 
+* FIXED: Whois::Parser doesn't detect preloaded parsers. Improved performances skipping unnecessary 'require'. (closes #340)
+
 * ADDED: Simple .fr TLD parser.
 
 * ADDED: Simple .name TLD parser.

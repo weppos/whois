@@ -111,14 +111,12 @@ module Whois
       end
 
       def self.parser_klass(host)
-        file = "whois/answer/parser/#{host}"
-        require file
-
         name = host_to_parser(host)
+        Parser.const_defined?(name) || autoload(host)
         Parser.const_get(name)
 
       rescue LoadError
-        require "whois/answer/parser/blank"
+        Parser.const_defined?("Blank") || autoload("blank")
         Parser::Blank
       end
 
@@ -126,6 +124,11 @@ module Whois
         host.to_s.
           gsub(/\./, '_').
           gsub(/(?:^|_)(.)/)  { $1.upcase }
+      end
+      
+      def self.autoload(name)
+        file = "whois/answer/parser/#{name}"
+        require file
       end
 
     end
