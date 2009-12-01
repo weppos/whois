@@ -31,6 +31,8 @@
 
 * ADDED: Simple .aero TLD parser.
 
+* ADDED: Simple .asia TLD parser.
+
 * ADDED: .tv TLD parser.
 
 * ADDED: .hu TLD parser.
