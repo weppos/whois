@@ -29,11 +29,13 @@
 
 * ADDED: Simple .int/.arpa TLD parser.
 
+* ADDED: Simple .aero TLD parser.
+
 * ADDED: .tv TLD parser.
 
-* ADDED: Ability to pass timeout option to 'ruby-whois' (closes #334)
-
 * ADDED: .hu TLD parser.
+
+* ADDED: Ability to pass timeout option to 'ruby-whois' (closes #334)
 
 * ADDED: Whois::Answer#properties returns an Hash of :key => value
 

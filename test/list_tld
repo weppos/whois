@@ -32,7 +32,7 @@ mil;;;
 #Whois::Server.define :tld, ".e164.arpa", "whois.ripe.net"
 #Whois::Server.define :tld, ".in-addr.arpa", nil
 arpa;whois.iana.org;ip6.arpa;u34jedzcq.arpa
-#Whois::Server.define :tld, ".aero", "whois.aero"
+aero;whois.aero;srilankan.aero;u34jedzcq.aero
 #Whois::Server.define :tld, ".asia", "whois.nic.asia"
 #Whois::Server.define :tld, ".biz", "whois.nic.biz"
 #Whois::Server.define :tld, ".cat", "whois.cat", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-C US-ASCII ace %s"}
@@ -41,7 +41,6 @@ info;whois.afilias.info;google.info;u34jedzcq.info
 #Whois::Server.define :tld, ".jobs", "jobswhois.verisign-grs.com", {:adapter=>Whois::Server::Adapters::Verisign}
 #Whois::Server.define :tld, ".mobi", "whois.dotmobiregistry.net"
 #Whois::Server.define :tld, ".museum", "whois.museum"
-#Whois::Server.define :tld, ".name", "whois.nic.name"
 name;whois.nicc.name;carletti.name;u34jedzcq.name
 #Whois::Server.define :tld, ".pro", "whois.registrypro.pro"
 #Whois::Server.define :tld, ".tel", "whois.nic.tel"
