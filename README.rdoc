@@ -17,7 +17,6 @@ An extensive test suite is available to verify the library correctness but you m
 * Powerful whois response parser
 * Support for ipv6, ipv4 and top level domain whois queries
 * Object oriented design
-* Compatible with older Whois version (Whois 0.4.2, see below)
 * Compatible with Ruby 1.8.6 and greater, including Ruby 1.9
 
 
@@ -36,8 +35,7 @@ Do you run any other Ruby platform or version? Are you experiencing any problem?
 
 == Installation
 
-This library is intended to be installed via the
-RubyGems[http://rubyforge.org/projects/rubygems/] system.
+This library is intended to be installed as a Gem.
 
   $ gem install whois
 
