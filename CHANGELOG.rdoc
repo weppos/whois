@@ -9,6 +9,8 @@
 
 * SERVER: .md TLD has a whois server (closes #325)
 
+* SERVER: Changed .edu TLD server to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
+
 * FIXED: TLD definitions for whois.afilias-grs.info missing proper adapter (closes #342)
 
 * FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes #344)
@@ -56,8 +58,6 @@
 * CHANGED: Extracted Whois::Answer::Parser::Ast module from existing parsers.
 
 * CHANGED: Normalized WhoisDenicDe parser.
-
-* CHANGED: Changed .edu TLD server to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
 
 * CHANGED: Renamed #supported to #property_supported?
 
