@@ -66,7 +66,7 @@ az;;;
 ba;;;
 bb;;;
 #Whois::Server.define :tld, ".bd", "www.whois.com.bd"
-#Whois::Server.define :tld, ".be", "whois.dns.be"
+be;whois.dns.be;google.be;u34jedzcq.be
 bf;;;
 #Whois::Server.define :tld, ".bg", "whois.register.bg"
 bh;;;

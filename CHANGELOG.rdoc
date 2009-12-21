@@ -5,6 +5,8 @@
 
 * ADDED: Simple .at TLD parser.
 
+* ADDED: Simple .be TLD parser.
+
 
 
 == Release 0.9.0
