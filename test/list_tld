@@ -43,7 +43,7 @@ jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
 #Whois::Server.define :tld, ".museum", "whois.museum"
 name;whois.nicc.name;carletti.name;u34jedzcq.name
 #Whois::Server.define :tld, ".pro", "whois.registrypro.pro"
-#Whois::Server.define :tld, ".tel", "whois.nic.tel"
+tel;whois.nic.tel;weppos.tel;u34jedzcq.tel
 #Whois::Server.define :tld, ".travel", "whois.nic.travel"
 #Whois::Server.define :tld, ".ac", "whois.nic.ac"
 ad;;;

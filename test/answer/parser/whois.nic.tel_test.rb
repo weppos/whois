@@ -1,18 +1,18 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.nic.us.rb'
+require 'whois/answer/parser/whois.nic.tel'
 
-class AnswerParserWhoisNicUsTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisNicTelTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisNicUs
-    @host   = "whois.nic.us"
+    @klass  = Whois::Answer::Parser::WhoisNicTel
+    @host   = "whois.nic.tel"
   end
 
 
   def test_status
-    assert_equal  ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"],
+    assert_equal  :registered,
                   @klass.new(load_part('/registered.txt')).status
-    assert_equal  [],
+    assert_equal  :available,
                   @klass.new(load_part('/available.txt')).status
   end
 
@@ -28,14 +28,14 @@ class AnswerParserWhoisNicUsTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_equal  Time.parse("2002-04-19 23:15:57 GMT"),
+    assert_equal  Time.parse("2009-04-19 12:36:25 GMT"),
                   @klass.new(load_part('/registered.txt')).created_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).created_on
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-03-17 09:40:30 GMT"),
+    assert_equal  Time.parse("2009-04-20 12:39:49 GMT"),
                   @klass.new(load_part('/registered.txt')).updated_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).updated_on

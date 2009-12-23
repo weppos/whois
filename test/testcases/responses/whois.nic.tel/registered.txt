@@ -1,0 +1,111 @@
+Domain Name:                                 WEPPOS.TEL
+Domain ID:                                   D1223829-TEL
+Sponsoring Registrar:                        EURODNS SA
+Sponsoring Registrar IANA ID:                1052
+Domain Status:                               ok
+Registrant ID:                               EDSR2957339
+Registrant Name:                             Carletti Simone
+Registrant Address1:                         P.zza Sabaudia, 5
+Registrant City:                             Roma
+Registrant Postal Code:                      00171
+Registrant Country:                          Italy
+Registrant Country Code:                     IT
+Registrant Phone Number:                     +39.3392551831
+Registrant Email:                            hosting@weppos.net
+Administrative Contact ID:                   EDSA2957339
+Administrative Contact Name:                 Carletti Simone
+Administrative Contact Address1:             P.zza Sabaudia, 5
+Administrative Contact City:                 Roma
+Administrative Contact Postal Code:          00171
+Administrative Contact Country:              Italy
+Administrative Contact Country Code:         IT
+Administrative Contact Phone Number:         +39.3392551831
+Administrative Contact Email:                hosting@weppos.net
+Billing Contact ID:                          EDNS-BILLING
+Billing Contact Name:                        Julien Franck
+Billing Contact Organization:                EuroDNS S.A.
+Billing Contact Address1:                    2, rue Leon Laval
+Billing Contact City:                        Leudelange
+Billing Contact Postal Code:                 L-3372
+Billing Contact Country:                     Luxembourg
+Billing Contact Country Code:                LU
+Billing Contact Phone Number:                +352.2637252
+Billing Contact Facsimile Number:            +352.26372537
+Billing Contact Email:                       finance@eurodns.com
+Technical Contact ID:                        EDST2957339
+Technical Contact Name:                      Carletti Simone
+Technical Contact Address1:                  P.zza Sabaudia, 5
+Technical Contact City:                      Roma
+Technical Contact Postal Code:               00171
+Technical Contact Country:                   Italy
+Technical Contact Country Code:              IT
+Technical Contact Phone Number:              +39.3392551831
+Technical Contact Email:                     hosting@weppos.net
+Name Server:                                 A0.CTH.DNS.NIC.TEL
+Name Server:                                 D0.CTH.DNS.NIC.TEL
+Name Server:                                 N0.CTH.DNS.NIC.TEL
+Name Server:                                 S0.CTH.DNS.NIC.TEL
+Name Server:                                 T0.CTH.DNS.NIC.TEL
+Created by Registrar:                        EURODNS SA
+Last Updated by Registrar:                   NEULEVELCSR
+Domain Registration Date:                    Sun Apr 19 12:36:25 GMT 2009
+Domain Expiration Date:                      Sun Apr 18 23:59:59 GMT 2010
+Domain Last Updated Date:                    Mon Apr 20 12:39:49 GMT 2009
+
+>>>> Whois database was last updated on: Wed Dec 23 18:30:16 GMT 2009 <<<<
+
+Telnic, Ltd., the Registry Operator for .TEL, has collected this information
+for the WHOIS database through an ICANN-Accredited Registrar. This information
+is provided to you for informational purposes only and is designed to assist
+persons in determining contents of a domain name registration record in the
+Telnic registry database. Telnic makes this information available to you
+"as is" and does not guarantee its accuracy. By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that, under no
+circumstances will you use this data: (1) to allow, enable, or otherwise
+support the transmission of mass unsolicited, commercial advertising or
+solicitations via direct mail, electronic mail, or by telephone; (2) in
+contravention of any applicable data and privacy protection acts; or (3) to
+enable high volume, automated, electronic processes that apply to the registry
+(or its systems). Compilation, repackaging, dissemination, or other use of the
+WHOIS database in its entirety, or of a substantial portion thereof, is not
+allowed without Telnic's prior written permission. Telnic reserves the
+right to modify or change these conditions at any time without prior or
+subsequent notification of any kind. By executing this query, in any manner
+whatsoever, you agree to abide by these terms.
+
+Contact information: Disclosure of contact data is restricted because
+of UK and EU Data Protection legislation. The contact details for this
+contact ID may be available by looking up a domain object in the WHOIS
+system. The information can also be obtained through the Telnic
+Special Access Service. Visit http://www.sas.nic.tel for more details.
+
+
+.TEL WHOIS DISCLAIMER AND TERMS & CONDITIONS
+
+By submitting a query and/or making further queries in the future, you 
+agree to these terms and conditions:
+
+This whois information is provided by Telnic Ltd, a UK registered company.  
+Telnic operates the Registry for .tel top level domain names. whois information 
+is provided for information purposes only and Telnic shall not be responsible 
+and shall have no liability for any information that is incomplete or 
+inaccurate.
+
+Telnic is the owner of all Copyright (c) and Database Rights in information 
+that is made available via this whois service. You are not licensed to use 
+the information you obtain from this whois service for any purpose other 
+than to obtain information about whether a .tel domain name is available 
+for registration or to obtain the contact information of a registrant of
+of a domain name that is already registered.  You must not 
+utilise, combine or compile any information you obtain from this whois service 
+to produce a list or database containing such information without obtaining 
+a license from Telnic to do so. At our request, which may be made for any 
+reason, you will destroy all information you obtain or have obtained
+using this whois service.
+
+You must not use the information you obtain from this whois service
+to: (a) allow, enable or otherwise facilitate or support the transmission of 
+unsolicited commercial advertising or other marketing information by any means; 
+(b) harass any person; or (c) cause nuisance in any possible way to any person.
+
+

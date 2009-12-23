@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.us parser
+      # = whois.nic.tel parser
       #
-      # Parser for the whois.nic.us server.
+      # Parser for the whois.nic.tel server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,10 +32,14 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicUs < Base
+      class WhoisNicTel < Base
 
         register_method :status do
-          @status ||= content.to_s.scan(/Domain Status:\s+(.*?)\n/).flatten
+          @status ||= if available?
+            :available
+          else
+            :registered
+          end
         end
 
         register_method :available? do

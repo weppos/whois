@@ -35,6 +35,8 @@
 
 * ADDED: Simple .tl TLD parser.
 
+* ADDED: Simple .tel TLD parser.
+
 * ADDED: Simple .us TLD parser.
 
 * ADDED: .cc, .jobs TLD parser.
