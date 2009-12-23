@@ -11,6 +11,8 @@
 
 * ADDED: Simple .ca TLD parser.
 
+* ADDED: Simple .ch TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
