@@ -37,7 +37,7 @@
 
 * ADDED: Simple .us TLD parser.
 
-* ADDED: .cc TLD parser.
+* ADDED: .cc, .jobs TLD parser.
 
 
 == Release 0.9.0

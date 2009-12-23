@@ -1,3 +1,4 @@
-mn    whois.nic.mn      # http://www.iana.org/domains/root/db/mn.html tested and not working. maintenance page
-so    whois.nic.so      # http://www.iana.org/domains/root/db/so.html doesn't work
 ki    whois.nic.ki      # http://www.iana.org/domains/root/db/ki.html timeout
+mn    whois.nic.mn      # http://www.iana.org/domains/root/db/mn.html tested and not working. maintenance page
+mp    whois.nic.mp      # http://www.iana.org/domains/root/db/mp.html 
+so    whois.nic.so      # http://www.iana.org/domains/root/db/so.html doesn't work

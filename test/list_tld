@@ -38,7 +38,7 @@ asia;whois.nic.asia;srilankan.aero;u34jedzcq.asia
 #Whois::Server.define :tld, ".cat", "whois.cat", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-C US-ASCII ace %s"}
 #Whois::Server.define :tld, ".coop", "whois.nic.coop"
 info;whois.afilias.info;google.info;u34jedzcq.info
-#Whois::Server.define :tld, ".jobs", "jobswhois.verisign-grs.com", {:adapter=>Whois::Server::Adapters::Verisign}
+jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
 #Whois::Server.define :tld, ".mobi", "whois.dotmobiregistry.net"
 #Whois::Server.define :tld, ".museum", "whois.museum"
 name;whois.nicc.name;carletti.name;u34jedzcq.name
@@ -196,7 +196,7 @@ ml;;;
 #Whois::Server.define :tld, ".mm", "whois.nic.mm"
 mn;whois.afilias-grs.info;google.mn;u34jedzcq.mn
 mo;;;
-#Whois::Server.define :tld, ".mp", nil, {:adapter=>Whois::Server::Adapters::None}
+mp;;;
 #Whois::Server.define :tld, ".mq", "whois.nic.mq"
 mr;;;
 #Whois::Server.define :tld, ".ms", "whois.nic.ms"
@@ -283,16 +283,16 @@ tz;;;
 #Whois::Server.define :tld, ".ua", "whois.net.ua"
 #Whois::Server.define :tld, ".ug", "www.registry.co.ug"
 #Whois::Server.define :tld, ".ac.uk", "whois.ja.net"
-#Whois::Server.define :tld, ".bl.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".british-library.uk", nil, {:adapter=>Whois::Server::Adapters::None}
+.bl.uk;;;
+.british-library.uk;;;
 #Whois::Server.define :tld, ".gov.uk", "whois.ja.net"
-#Whois::Server.define :tld, ".icnet.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".jet.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".mod.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".nhs.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".nls.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".parliament.uk", nil, {:adapter=>Whois::Server::Adapters::None}
-#Whois::Server.define :tld, ".police.uk", nil, {:adapter=>Whois::Server::Adapters::None}
+.icnet.uk;;;
+.jet.uk;;;
+.mod.uk;;;
+.nhs.uk;;;
+.nls.uk;;;
+.parliament.uk;;;
+.police.uk;;;
 #Whois::Server.define :tld, ".uk", "whois.nic.uk"
 #Whois::Server.define :tld, ".fed.us", "whois.nic.gov"
 us;whois.nic.us;google.us;u34jedzcq.us
