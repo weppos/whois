@@ -188,7 +188,7 @@ ly;whois.nic.ly;google.ly;u34jedzcq.ly
 #Whois::Server.define :tld, ".ma", "whois.iam.net.ma"
 #Whois::Server.define :tld, ".mc", "whois.ripe.net"
 #Whois::Server.define :tld, ".md", "whois.nic.md"
-#Whois::Server.define :tld, ".me", "whois.meregistry.net"
+me;whois.meregistry.net;google.me;u34jedzcq.me
 #Whois::Server.define :tld, ".mg", "whois.nic.mg"
 mh;;;
 mk;;;

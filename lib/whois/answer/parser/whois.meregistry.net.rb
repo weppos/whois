@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.afilias.info parser
+      # = whois.meregistry.net parser
       #
-      # Parser for the whois.afilias.info server.
+      # Parser for the whois.meregistry.net server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,10 +32,10 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisAfiliasInfo < Base
+      class WhoisMeregistryNet < Base
 
         register_method :status do
-          @status ||= content.to_s.scan(/Status:(.*?)[\r\n]+/).flatten
+          @status ||= content.to_s.scan(/Domain Status:(.*?)\r\n/).flatten
         end
 
         register_method :available? do
@@ -48,19 +48,19 @@ module Whois
 
 
         register_method :created_on do
-          @created_on ||= if content.to_s =~ /Created On:(.*?)[\r\n]+/
+          @created_on ||= if content.to_s =~ /Domain Create Date:(.*)\r\n/
             Time.parse($1)
           end
         end
 
         register_method :updated_on do
-          @updated_on ||= if content.to_s =~ /Last Updated On:(.*?)[\r\n]+/
+          @updated_on ||= if content.to_s =~ /Domain Last Updated Date:(.*)\r\n/
             Time.parse($1)
           end
         end
 
         register_method :expires_on do
-          @expires_on ||= if content.to_s =~ /Expiration Date:(.*?)[\r\n]+/
+          @expires_on ||= if content.to_s =~ /Domain Expiration Date:(.*)\r\n/
             Time.parse($1)
           end
         end

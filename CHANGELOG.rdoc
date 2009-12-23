@@ -23,6 +23,8 @@
 
 * ADDED: Simple .ly TLD parser.
 
+* ADDED: Simple .me TLD parser.
+
 * ADDED: .cc TLD parser.
 
 

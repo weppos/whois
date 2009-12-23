@@ -10,10 +10,10 @@ class AnswerParserWhoisEducauseEduTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    assert_equal  :available,
-                  @klass.new(load_part('/available.txt')).status
     assert_equal  :registered,
                   @klass.new(load_part('/registered.txt')).status
+    assert_equal  :available,
+                  @klass.new(load_part('/available.txt')).status
   end
 
   def test_available?
@@ -22,8 +22,8 @@ class AnswerParserWhoisEducauseEduTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 

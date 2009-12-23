@@ -1,0 +1,94 @@
+WHOIS TERMS & CONDITIONS: Access to .ME WHOIS information is provided to 
+assist persons in determining the contents of a domain name registration 
+record in the .ME registry database. The data in this record is provided by 
+.ME Registry for informational purposes only, and .ME Registry does not 
+guarantee its accuracy. This service is intended only for query-based 
+access. You agree that you will use this data only for lawful purposes 
+and that, under no circumstances will you use this data to: (a) allow, 
+enable, or otherwise support the transmission by e-mail, telephone, 
+facsimile, or other electronic processes of mass unsolicited, commercial 
+advertising or solicitations to entities other than the data recipient's own 
+existing customers; or (b) enable high volume, automated, electronic 
+processes that send queries or data to the systems of Registry Operator, 
+except as reasonably necessary to register domain names or modify existing 
+registrations. All rights reserved. .ME Registry reserves the right to modify 
+these terms at any time. By submitting this query, you agree to abide by this 
+policy.
+
+Domain ID:D11599-ME
+Domain Name:GOOGLE.ME
+Domain Create Date:13-Jun-2008 17:17:40 UTC
+Domain Last Updated Date:10-Jun-2009 11:00:13 UTC
+Domain Expiration Date:13-Jun-2013 17:17:40 UTC
+Last Transferred Date:
+Trademark Name:google
+Trademark Country:BX
+Trademark Number:Benelux-0694499
+Date Trademark Applied For:2001-09-10
+Date Trademark Registered:2002-01-01
+Sponsoring Registrar:MarkMonitor Inc R45-ME
+Created by:MarkMonitor Inc R45-ME
+Last Updated by Registrar:MarkMonitor Inc R45-ME
+Domain Status:CLIENT DELETE PROHIBITED
+Domain Status:CLIENT TRANSFER PROHIBITED
+Domain Status:CLIENT UPDATE PROHIBITED
+Registrant ID:mmr-32097
+Registrant Name:DNS Admin
+Registrant Organization:Google Inc.
+Registrant Address:1600 Amphitheatre Parkway
+Registrant Address2:
+Registrant Address3:
+Registrant City:Mountain View
+Registrant State/Province:CA
+Registrant Country/Economy:US
+Registrant Postal Code:94043
+Registrant Phone:+1.6506234000
+Registrant Phone Ext.:
+Registrant FAX:+1.6506188571
+Registrant FAX Ext.:
+Registrant E-mail:dotme@markmonitor.com
+Admin ID:mmr-32097
+Admin Name:DNS Admin
+Admin Organization:Google Inc.
+Admin Address:1600 Amphitheatre Parkway
+Admin Address2:
+Admin Address3:
+Admin City:Mountain View
+Admin State/Province:CA
+Admin Country/Economy:US
+Admin Postal Code:94043
+Admin Phone:+1.6506234000
+Admin Phone Ext.:
+Admin FAX:+1.6506188571
+Admin FAX Ext.:
+Admin E-mail:dotme@markmonitor.com
+Tech ID:mmr-32097
+Tech Name:DNS Admin
+Tech Organization:Google Inc.
+Tech Address:1600 Amphitheatre Parkway
+Tech Address2:
+Tech Address3:
+Tech City:Mountain View
+Tech State/Province:CA
+Tech Country/Economy:US
+Tech Postal Code:94043
+Tech Phone:+1.6506234000
+Tech Phone Ext.:
+Tech FAX:+1.6506188571
+Tech FAX Ext.:
+Tech E-mail:dotme@markmonitor.com
+Nameservers:NS2.GOOGLE.COM
+Nameservers:NS1.GOOGLE.COM
+Nameservers:NS4.GOOGLE.COM
+Nameservers:NS3.GOOGLE.COM
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+
+
