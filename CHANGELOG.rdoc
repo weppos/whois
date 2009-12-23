@@ -19,6 +19,8 @@
 
 * ADDED: Simple .im TLD parser.
 
+* ADDED: Simple .is TLD parser.
+
 * ADDED: .cc TLD parser.
 
 

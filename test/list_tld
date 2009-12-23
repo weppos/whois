@@ -156,6 +156,7 @@ im;whois.nic.im;google.im;u34jedzcq.im
 iq;;;
 #Whois::Server.define :tld, ".ir", "whois.nic.ir"
 #Whois::Server.define :tld, ".is", "whois.isnet.is"
+is;whois.isnet.is;google.is;u34jedzcq.is
 it;whois.nic.it;google.it;u34jedzcq.it
 #Whois::Server.define :tld, ".je", "whois.je"
 jm;;;

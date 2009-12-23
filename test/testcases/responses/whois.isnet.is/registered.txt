@@ -1,0 +1,57 @@
+% This is the ISNIC Whois server.
+%
+% Rights restricted by copyright.
+% See http://www.isnic.is/copyright.php
+
+domain:       google.is
+descr:        Google Inc
+descr:        1600 Ampitheatre Parkway
+descr:        Mountain View, California 94043
+descr:        US
+admin-c:      MTC2-IS
+tech-c:       MTC2-IS
+zone-c:       AG49-IS
+billing-c:    CB2-IS
+nserver:      ns1.google.com
+nserver:      ns2.google.com
+created:      May 22 2002
+expires:      May 22 2010
+source:       ISNIC 
+
+person:       Markmonitor Tech Contact
+address:      MarkMonitor
+address:      PMB 155, 10400 Overland Road
+address:      Boise, ID 83709
+address:      US
+phone:        +1 208 3895740
+fax-no:       +1 208 3895799
+e-mail:       ccops@markmonitor.com
+nic-hdl:      MTC2-IS
+created:      July 22 2004
+source:       ISNIC 
+
+role:         CCOPS Billing
+address:      MarkMonitor Inc.
+address:      10400 Overland Road PMB 155
+address:      Boise, ID 83709
+address:      US
+phone:        +1 208 3895740
+fax-no:       +1 208 3895771
+e-mail:       ccops@markmonitor.com
+nic-hdl:      CB2-IS
+created:      June  8 2006
+source:       ISNIC 
+
+person:       Amit Garg
+address:      Google Inc.
+address:      1600 Amphitheatre Parkway
+address:      Mountain View, CA 94043
+address:      US
+phone:        +1 650 3300100
+fax-no:       +1 650 6188571
+e-mail:       dns-admin@google.com
+nic-hdl:      AG49-IS
+created:      October  3 2004
+source:       ISNIC 
+
+
