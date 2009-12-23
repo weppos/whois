@@ -201,7 +201,7 @@ mo;;;
 mr;;;
 #Whois::Server.define :tld, ".ms", "whois.nic.ms"
 mt;;;
-#Whois::Server.define :tld, ".mu", "whois.nic.mu"
+mu;whois.nic.mu;google.mu;u34jedzcq.mu
 mv;;;
 mw;;;
 #Whois::Server.define :tld, ".mx", "whois.nic.mx"

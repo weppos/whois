@@ -25,6 +25,8 @@
 
 * ADDED: Simple .me TLD parser.
 
+* ADDED: Simple .mu TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
