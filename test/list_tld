@@ -165,7 +165,7 @@ jo;;;
 #Whois::Server.define :tld, ".ke", "whois.kenic.or.ke"
 #Whois::Server.define :tld, ".kg", "whois.domain.kg"
 kh;;;
-#Whois::Server.define :tld, ".ki", nil, {:web=>"http://www.ki/dns/", :adapter=>Whois::Server::Adapters::Web}
+ki;;;
 km;;;
 kn;;;
 #Whois::Server.define :tld, ".kp", "whois.kcce.kp"
