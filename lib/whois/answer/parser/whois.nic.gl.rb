@@ -35,7 +35,7 @@ module Whois
       class WhoisNicGl < Base
 
         register_method :status do
-          @status ||= if content.to_s =~ /Status:\s+(.*?)\n+/
+          @status ||= if content.to_s =~ /Status:\s+(.*?)\n/
             case $1.downcase.to_sym
               when :"active"          then :registered
               when :"not registered"  then :available
@@ -53,19 +53,19 @@ module Whois
 
 
         register_method :created_on do
-          @created_on ||= if content.to_s =~ /Created:\s+(.*?)\n+/
+          @created_on ||= if content.to_s =~ /Created:\s+(.*?)\n/
             Time.parse($1)
           end
         end
         
         register_method :updated_on do
-          @updated_on ||= if content.to_s =~ /Modified:\s+(.*?)\n+/
+          @updated_on ||= if content.to_s =~ /Modified:\s+(.*?)\n/
             Time.parse($1)
           end
         end
         
         register_method :expires_on do
-          @expires_on ||= if content.to_s =~ /Expires:\s+(.*?)\n+/
+          @expires_on ||= if content.to_s =~ /Expires:\s+(.*?)\n/
             Time.parse($1)
           end
         end
