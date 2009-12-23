@@ -31,6 +31,8 @@
 
 * ADDED: Simple .no TLD parser.
 
+* ADDED: Simple .tl TLD parser.
+
 * ADDED: .cc TLD parser.
 
 

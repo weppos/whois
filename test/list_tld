@@ -270,7 +270,7 @@ tg;;;
 #Whois::Server.define :tld, ".th", "whois.thnic.net"
 #Whois::Server.define :tld, ".tj", "whois.nic.tj"
 #Whois::Server.define :tld, ".tk", "whois.dot.tk"
-#Whois::Server.define :tld, ".tl", "whois.nic.tl"
+tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl
 #Whois::Server.define :tld, ".tm", "whois.nic.tm"
 tn;;;
 #Whois::Server.define :tld, ".to", "whois.tonic.to"
