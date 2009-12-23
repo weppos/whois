@@ -7,6 +7,8 @@
 
 * ADDED: Simple .be TLD parser.
 
+* ADDED: Simple .bg TLD parser.
+
 
 
 == Release 0.9.0
