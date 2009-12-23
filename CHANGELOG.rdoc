@@ -21,6 +21,8 @@
 
 * ADDED: Simple .is TLD parser.
 
+* ADDED: Simple .ly TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
