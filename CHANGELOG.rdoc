@@ -17,6 +17,8 @@
 
 * ADDED: Simple .gl TLD parser.
 
+* ADDED: Simple .im TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
