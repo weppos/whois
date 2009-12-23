@@ -214,7 +214,7 @@ ne;;;
 #Whois::Server.define :tld, ".ng", "whois.register.net.ng"
 ni;;;
 nl;whois.domain-registry.nl;google.nl;u34jedzcq.nl
-#Whois::Server.define :tld, ".no", "whois.norid.no"
+no;whois.norid.no;google.no;u34jedzcq.no
 np;;;
 nr;;;
 #Whois::Server.define :tld, ".nu", "whois.nic.nu"

@@ -29,6 +29,8 @@
 
 * ADDED: Simple .nl TLD parser.
 
+* ADDED: Simple .no TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
