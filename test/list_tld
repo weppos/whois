@@ -83,7 +83,7 @@ by;;;
 bw;;;
 bz;whois.afilias-grs.info;google.bz;u34jedzcq.bz
 #Whois::Server.define :tld, ".co.ca", "whois.co.ca"
-#Whois::Server.define :tld, ".ca", "whois.cira.ca"
+ca;whois.cira.ca;google.ca;u34jedzcq.ca
 #Whois::Server.define :tld, ".cc", "whois.nic.cc", {:adapter=>Whois::Server::Adapters::Verisign}
 #Whois::Server.define :tld, ".cd", "whois.nic.cd"
 cf;;;

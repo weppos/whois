@@ -9,6 +9,8 @@
 
 * ADDED: Simple .bg TLD parser.
 
+* ADDED: Simple .ca TLD parser.
+
 
 
 == Release 0.9.0

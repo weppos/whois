@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.register.bg parser
+      # = whois.cira.ca parser
       #
-      # Parser for the whois.register.bg server.
+      # Parser for the whois.cira.ca server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,16 +32,19 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisRegisterBg < Base
+      class WhoisCiraCa < Base
 
         register_method :status do
-          @status ||= if content.to_s =~ /registration status:\s+(.*?)\n/
-            $1.downcase.to_sym
+          @status ||= if content.to_s =~ /Domain status:\s+(.*?)\n+/
+            case $1.downcase.to_sym
+              when :exist then :registered
+              when :avail then :available
+            end
           end
         end
 
         register_method :available? do
-          @available ||= (content.to_s =~ /Domain name (.+?) does not exist/)
+          @available ||= (status == :available)
         end
 
         register_method :registered? do
@@ -50,23 +53,20 @@ module Whois
 
 
         register_method :created_on do
-          @created_on ||= if content.to_s =~ /activated on:\s+(.*?)\n/
-            # Time.parse("30/06/2003 00:00:00")
-            # => ArgumentError: argument out of range
-            Time.parse($1.gsub("/", "-"))
+          @created_on ||= if content.to_s =~ /Approval date:\s+(.*?)\n+/
+            Time.parse($1)
           end
         end
         
-        # TODO: NotAvailable
         register_method :updated_on do
-          nil
+          @updated_on ||= if content.to_s =~ /Updated date:\s+(.*?)\n+/
+            Time.parse($1)
+          end
         end
         
         register_method :expires_on do
-          @expires_on ||= if content.to_s =~ /expires at:\s+(.*?)\n/
-            # Time.parse("30/06/2003 00:00:00")
-            # => ArgumentError: argument out of range
-            Time.parse($1.gsub("/", "-"))
+          @expires_on ||= if content.to_s =~ /Renewal date:\s+(.*?)\n+/
+            Time.parse($1)
           end
         end
 
