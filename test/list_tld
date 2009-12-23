@@ -115,7 +115,7 @@ eg;;;
 er;;;
 es;;;
 et;;;
-#Whois::Server.define :tld, ".eu", "whois.eu"
+eu;whois.eu;google.eu;u34jedzcq.eu
 #Whois::Server.define :tld, ".fi", "whois.ficora.fi"
 #Whois::Server.define :tld, ".fj", "whois.usp.ac.fj"
 fk;;;

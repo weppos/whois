@@ -13,6 +13,8 @@
 
 * ADDED: Simple .ch TLD parser.
 
+* ADDED: Simple .eu TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
