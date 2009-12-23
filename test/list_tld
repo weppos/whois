@@ -254,7 +254,7 @@ sd;;;
 sj;;;
 #Whois::Server.define :tld, ".sk", "whois.sk-nic.sk"
 #Whois::Server.define :tld, ".sl", "whois.nic.sl"
-#Whois::Server.define :tld, ".sm", "whois.ripe.net"
+sm;whois.ripe.net;google.sm;u34jedzcq.sm
 #Whois::Server.define :tld, ".sn", "whois.nic.sn"
 #Whois::Server.define :tld, ".so", nil, {:adapter=>Whois::Server::Adapters::None}
 #Whois::Server.define :tld, ".sr", "whois.register.sr"

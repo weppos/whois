@@ -31,12 +31,13 @@
 
 * ADDED: Simple .no TLD parser.
 
+* ADDED: Simple .sm TLD parser.
+
 * ADDED: Simple .tl TLD parser.
 
 * ADDED: Simple .us TLD parser.
 
 * ADDED: .cc TLD parser.
-
 
 
 == Release 0.9.0
