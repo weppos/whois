@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.asias parser
+      # = whois.nic.asia parser
       #
-      # Parser for the whois.nic.asias server.
+      # Parser for the whois.nic.asia server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
