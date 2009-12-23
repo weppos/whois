@@ -27,6 +27,8 @@
 
 * ADDED: Simple .mu TLD parser.
 
+* ADDED: Simple .nl TLD parser.
+
 * ADDED: .cc TLD parser.
 
 

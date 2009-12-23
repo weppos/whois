@@ -1,0 +1,67 @@
+   Domain name:
+      google.nl
+
+   Status: active
+
+   Registrant:
+      GOO001748-MARKM
+      Google Inc.
+      Amphitheatre Parkway 1600
+      94043
+      MOUNTAIN VIEW CA
+      United States of America
+
+   Domicile:
+      Kruisstraat 2
+      2312BH  LEIDEN
+      Netherlands
+
+   Administrative contact:
+      GOO007083-MARKM
+      GI Google Inc.
+      +1 (0)6502530000
+      ccops@markmonitor.com
+
+   Registrar:
+      MarkMonitor International LTD
+      22-26 Albert Embankment
+      SE1 7TJ
+      London
+      United Kingdom of Great Britain & N. Ireland
+
+   Technical contact(s):
+      JOH004771-MARKM
+      M Serlin
+      +1 (0)2083895740
+      ccops@markmonitor.com
+
+   Domain nameservers:
+      ns1.google.com        
+      ns2.google.com        
+      ns3.google.com        
+      ns4.google.com        
+
+   Date registered: 27-05-1999
+   Record last updated: 11-02-2009
+
+   Record maintained by: NL Domain Registry
+
+   Copyright notice
+   No part of this publication may be reproduced, published, stored in a
+   retrieval system, or transmitted, in any form or by any means, electronic,
+   mechanical, recording, or otherwise, without prior permission of the
+   Foundation for Internet Domain Registration in the Netherlands (SIDN).
+   Registrars are bound by these restrictions without any limitations,
+   except in case of reasonable and necessary reproductions or publications
+   and solely for those business activities as mentioned in the 'General
+   terms and Conditions for Registrars'.
+   
+   Any use of this material to target advertising, commercial speech or
+   similar activities is explicitly forbidden and will be prosecuted. The
+   Stichting Internet Domeinregistratie Nederland requests to be notified
+   of any such activities or suspicions thereof.
+   (c) The Foundation for Internet Domain Registration in the Netherlands
+   (SIDN) Dutch Copyright Act, protection of authors' rights (Section 10,
+   subsection 1, clause 1).
+   
+
