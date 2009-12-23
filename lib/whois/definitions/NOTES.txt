@@ -1,0 +1,2 @@
+mn    whois.nic.mn      # http://www.iana.org/domains/root/db/mn.html tested and not working. maintenance page
+so    whois.nic.so      # http://www.iana.org/domains/root/db/so.html doesn't work
