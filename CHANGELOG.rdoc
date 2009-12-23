@@ -33,6 +33,8 @@
 
 * ADDED: Simple .tl TLD parser.
 
+* ADDED: Simple .us TLD parser.
+
 * ADDED: .cc TLD parser.
 
 
