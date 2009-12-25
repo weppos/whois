@@ -1,4 +1,0 @@
-whois.nic.fr serves multiple TLD:
-* .fr http://www.iana.org/domains/root/db/fr.html
-* .pm http://www.iana.org/domains/root/db/pm.html
-* .re http://www.iana.org/domains/root/db/re.html

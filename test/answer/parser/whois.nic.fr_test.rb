@@ -8,42 +8,127 @@ class AnswerParserWhoisNicFrTest < Whois::Answer::Parser::TestCase
     @host   = "whois.nic.fr"
   end
 
+end
+
+class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
 
   def test_status
     assert_equal  :available,
-                  @klass.new(load_part('/available.txt')).status
+                  @klass.new(load_part('/fr/available.txt')).status
     assert_equal  :active,
-                  @klass.new(load_part('/registered.txt')).status
+                  @klass.new(load_part('/fr/registered.txt')).status
   end
 
   def test_available?
-    assert !@klass.new(load_part('/registered.txt')).available?
-    assert  @klass.new(load_part('/available.txt')).available?
+    assert !@klass.new(load_part('/fr/registered.txt')).available?
+    assert  @klass.new(load_part('/fr/available.txt')).available?
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
-    assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/fr/available.txt')).registered?
+    assert  @klass.new(load_part('/fr/registered.txt')).registered?
   end
 
 
   def test_created_on
     assert_equal  Time.parse("2000-07-27"),
-                  @klass.new(load_part('/registered.txt')).created_on
+                  @klass.new(load_part('/fr/registered.txt')).created_on
     assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+                  @klass.new(load_part('/fr/available.txt')).created_on
   end
 
   def test_updated_on
     assert_equal  Time.parse("2009-06-03"),
-                  @klass.new(load_part('/registered.txt')).updated_on
+                  @klass.new(load_part('/fr/registered.txt')).updated_on
     assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+                  @klass.new(load_part('/fr/available.txt')).updated_on
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fr/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fr/available.txt')).expires_on }
+  end
+
+end
+
+class AnswerParserWhoisNicFrPmTest < AnswerParserWhoisNicFrTest
+
+  def test_status
+    assert_equal  :available,
+                  @klass.new(load_part('/pm/available.txt')).status
+    assert_equal  :active,
+                  @klass.new(load_part('/pm/registered.txt')).status
+  end
+
+  def test_available?
+    assert !@klass.new(load_part('/pm/registered.txt')).available?
+    assert  @klass.new(load_part('/pm/available.txt')).available?
+  end
+
+  def test_registered?
+    assert !@klass.new(load_part('/pm/available.txt')).registered?
+    assert  @klass.new(load_part('/pm/registered.txt')).registered?
+  end
+
+
+  def test_created_on
+    assert_equal  Time.parse("1995-01-01"),
+                  @klass.new(load_part('/pm/registered.txt')).created_on
+    assert_equal  nil,
+                  @klass.new(load_part('/pm/available.txt')).created_on
+  end
+
+  def test_updated_on
+    assert_equal  Time.parse("2004-09-17"),
+                  @klass.new(load_part('/pm/registered.txt')).updated_on
+    assert_equal  nil,
+                  @klass.new(load_part('/pm/available.txt')).updated_on
+  end
+
+  def test_expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/pm/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/pm/available.txt')).expires_on }
+  end
+
+end
+
+class AnswerParserWhoisNicFrReTest < AnswerParserWhoisNicFrTest
+
+  def test_status
+    assert_equal  :available,
+                  @klass.new(load_part('/re/available.txt')).status
+    assert_equal  :active,
+                  @klass.new(load_part('/re/registered.txt')).status
+  end
+
+  def test_available?
+    assert !@klass.new(load_part('/re/registered.txt')).available?
+    assert  @klass.new(load_part('/re/available.txt')).available?
+  end
+
+  def test_registered?
+    assert !@klass.new(load_part('/re/available.txt')).registered?
+    assert  @klass.new(load_part('/re/registered.txt')).registered?
+  end
+
+
+  def test_created_on
+    assert_equal  Time.parse("1995-01-01"),
+                  @klass.new(load_part('/re/registered.txt')).created_on
+    assert_equal  nil,
+                  @klass.new(load_part('/re/available.txt')).created_on
+  end
+
+  def test_updated_on
+    assert_equal  Time.parse("2009-03-12"),
+                  @klass.new(load_part('/re/registered.txt')).updated_on
+    assert_equal  nil,
+                  @klass.new(load_part('/re/available.txt')).updated_on
+  end
+
+  def test_expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/re/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/re/available.txt')).expires_on }
   end
 
 end
