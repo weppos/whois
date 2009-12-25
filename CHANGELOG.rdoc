@@ -45,6 +45,8 @@
 
 * ADDED: Simple .mobi parser.
 
+* ADDED: Simple .museum parser.
+
 * ADDED: .cc, .jobs parsers (verisign).
 
 

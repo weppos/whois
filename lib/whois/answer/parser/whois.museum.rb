@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.asia parser
+      # = whois.museum parser
       #
-      # Parser for the whois.nic.asia server.
+      # Parser for the whois.museum server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,16 +32,18 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicAsia < Base
+      class WhoisMuseum < Base
 
         register_method :status do
-          @status ||= if content.to_s =~ /Domain Status:(.*?)\r\n/
-            $1.downcase.to_sym
+          @status ||= if available?
+            :available
+          else
+            :registered
           end
         end
 
         register_method :available? do
-          @available ||= (content.to_s.strip == "NOT FOUND")
+          @available ||= (content.to_s =~ /NOT FOUND/)
         end
 
         register_method :registered? do
@@ -50,19 +52,19 @@ module Whois
 
 
         register_method :created_on do
-          @created_on ||= if content.to_s =~ /Domain Create Date:(.*?)\r\n/
+          @created_on ||= if content.to_s =~ /Created On:(.*?)\r\n/
             Time.parse($1)
           end
         end
         
         register_method :updated_on do
-          @updated_on ||= if content.to_s =~ /Domain Last Updated Date:(.*?)\r\n/
+          @updated_on ||= if content.to_s =~ /Last Updated On:(.*?)\r\n/
             Time.parse($1)
           end
         end
         
         register_method :expires_on do
-          @expires_on ||= if content.to_s =~ /Domain Expiration Date:(.*?)\r\n/
+          @expires_on ||= if content.to_s =~ /Expiration Date:(.*?)\r\n/
             Time.parse($1)
           end
         end
