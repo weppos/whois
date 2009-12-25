@@ -243,7 +243,6 @@ rs;;;
 rw;;;
 #Whois::Server.define :tld, ".sa", "saudinic.net.sa"
 #Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
-#Whois::Server.define :tld, ".sc", "whois.afilias-grs.info"
 sc;whois.afilias-grs.info;google.sc;u34jedzcq.sc
 sd;;;
 #Whois::Server.define :tld, ".se", "whois.nic-se.se"
