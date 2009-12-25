@@ -3,6 +3,8 @@
 
 == next mini
 
+* SERVER: Changed .biz TLD server to whois.biz (see http://www.iana.org/domains/root/db/biz.html)
+
 * ADDED: Simple .at parser.
 
 * ADDED: Simple .be parser.

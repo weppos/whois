@@ -33,7 +33,7 @@ Whois::Server.define :tld, ".in-addr.arpa", nil
 Whois::Server.define :tld, ".arpa", "whois.iana.org"
 Whois::Server.define :tld, ".aero", "whois.aero"
 Whois::Server.define :tld, ".asia", "whois.nic.asia"
-Whois::Server.define :tld, ".biz", "whois.nic.biz"
+Whois::Server.define :tld, ".biz", "whois.biz"
 Whois::Server.define :tld, ".cat", "whois.cat", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-C US-ASCII ace %s"}
 Whois::Server.define :tld, ".coop", "whois.nic.coop"
 Whois::Server.define :tld, ".info", "whois.afilias.info"
