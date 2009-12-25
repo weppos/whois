@@ -176,7 +176,6 @@ ky;;;
 #Whois::Server.define :tld, ".la", "whois.nic.la"
 lb;;;
 lc;whois.afilias-grs.info;nic.lc;u34jedzcq.lc
-#Whois::Server.define :tld, ".lc", "whois.afilias-grs.info"
 #Whois::Server.define :tld, ".li", "whois.nic.li"
 #Whois::Server.define :tld, ".lk", "whois.nic.lk"
 lr;;;
