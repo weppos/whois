@@ -34,32 +34,32 @@ module Whois
       #
       class WhoisBiz < Base
 
-        register_method :status do
+        property_supported :status do
           @status ||= content.to_s.scan(/Domain Status:\s+(.*?)\n/).flatten
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= !!(content.to_s =~ /Not found:/)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           @created_on ||= if content.to_s =~ /Domain Registration Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
-        register_method :updated_on do
+        property_supported :updated_on do
           @updated_on ||= if content.to_s =~ /Domain Last Updated Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
-        register_method :expires_on do
+        property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /Domain Expiration Date:\s+(.*)\n/
             Time.parse($1)
           end

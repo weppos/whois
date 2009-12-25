@@ -53,6 +53,12 @@
 
 * ADDED: .cc, .jobs parsers (verisign).
 
+* ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
+  Parsers now can mark a property as supported or not supported using 
+  'property_supported' and 'property_not_supported' methods
+  in order to distinguish between properties not supported by the answer
+  and methods that still need to be implemented because the parser is incomplete.
+
 * REMOVED: Deprecated #supported? method
 
 

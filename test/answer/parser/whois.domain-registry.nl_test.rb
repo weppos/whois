@@ -42,10 +42,8 @@ class AnswerParserWhoisDomainRegistryNlTest < Whois::Answer::Parser::TestCase
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
   end
 
 end

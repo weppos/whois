@@ -114,7 +114,7 @@ module Whois
     # along with corresponding values.
     def properties
       list = Parser.properties.inject([]) do |l,a|
-        l.concat([a, send(a)]) if property_supported?(a)
+        l.concat([a, send(a)]) if property_available?(a)
         l
       end
       Hash[*list]
@@ -123,9 +123,10 @@ module Whois
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
     # See also <tt>Whois::Answer::Parser.supported?</tt>.
-    def property_supported?(property)
-      parser.property_supported?(property)
+    def property_available?(property)
+      parser.property_available?(property)
     end
+    alias :property_supported? :property_available?
 
 
     protected

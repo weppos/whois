@@ -23,47 +23,47 @@ module Whois
       class WhoisDenicDe < Base
         include Ast
 
-        register_method :disclaimer do
+        property_supported :disclaimer do
           node("Disclaimer")
         end
 
 
-        register_method :domain do
+        property_supported :domain do
           node("Domain")
         end
 
-        register_method :domain_id do
+        property_supported :domain_id do
           nil
         end
 
 
-        register_method :status do
+        property_supported :status do
           node("Status")
         end
 
-        register_method :available? do
+        property_supported :available? do
           node("NotFound") && !node("Invalid")
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !(node("NotFound") || node("Invalid"))
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           nil
         end
 
-        register_method :updated_on do
+        property_supported :updated_on do
           node("Changed") { |raw| Time.parse(raw) }
         end
 
-        register_method :expires_on do
+        property_supported :expires_on do
           nil
         end
 
 
-        register_method :registrar do
+        property_supported :registrar do
           node("Zone-C") do |raw|
             Answer::Registrar.new(
                 :id => nil,
@@ -74,20 +74,20 @@ module Whois
           end
         end
 
-        register_method :registrant do
+        property_supported :registrant do
           node("Holder")
         end
 
-        register_method :admin do
+        property_supported :admin do
           node("Admin-C")
         end
 
-        register_method :technical do
+        property_supported :technical do
           node("Tech-C")
         end
 
 
-        register_method :nameservers do
+        property_supported :nameservers do
           node("Nserver")
         end
 

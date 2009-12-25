@@ -53,54 +53,95 @@ class AnswerParserTest < Test::Unit::TestCase
   def test_property_supported_with_zero_parts
     answer = Whois::Answer.new(nil, [])
     parser = @klass.new(answer)
-    assert !parser.property_supported?(:disclaimer)
+    assert !parser.property_available?(:disclaimer)
   end
 
   def test_property_supported_with_one_part_supported
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
-    assert  parser.property_supported?(:disclaimer)
+    assert  parser.property_available?(:disclaimer)
   end
 
   def test_property_supported_with_one_part_unsupported
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "invalid.nic.it")])
     parser = @klass.new(answer)
-    assert !parser.property_supported?(:disclaimer)
+    assert !parser.property_available?(:disclaimer)
   end
 
   def test_property_supported_with_two_parts
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
     parser = @klass.new(answer)
-    assert  parser.property_supported?(:disclaimer)
+    assert  parser.property_available?(:disclaimer)
   end
 
 
-  (Whois::Answer::Parser.properties - [:referral_url, :referral_whois]).each do |method|
-    define_method "test_should_delegate_#{method}_to_parsers_first_parser_if_supported" do
-      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-      parser = @klass.new(answer)
-      parser.parsers.first.expects(method).returns(:value)
-      assert_equal :value, parser.send(method)
+  class Whois::Answer::Parser::TestParserSupported < Whois::Answer::Parser::Base
+    property_supported :status do
+      :status_supported
+    end
+    property_supported :created_on do
+      :created_on_supported
+    end
+    property_supported :updated_on do
+      :updated_on_supported
+    end
+    property_supported :expires_on do
+      :expires_on_supported
     end
   end
-
-  [:referral_url, :referral_whois].each do |method|
-    define_method "test_should_delegate_#{method}_to_parsers_raise_unless_supported" do
-      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-      parser = @klass.new(answer)
-      assert_raise(Whois::PropertyNotSupported) { parser.send(method) }
+  class Whois::Answer::Parser::TestParserUndefined < Whois::Answer::Parser::Base
+    property_supported :status do
+      :status_undefined
     end
+    # not defined          :created_on
+    # not defined          :updated_on
+    # not defined          :expires_on
+  end
+  class Whois::Answer::Parser::TestParserUnsupported < Whois::Answer::Parser::Base
+    property_not_supported :status
+    property_not_supported :created_on
+    property_not_supported :updated_on
+    property_not_supported :expires_on
   end
 
-  Whois::Answer::Parser.properties.each do |method|
-    define_method "test_should_delegate_#{method}_to_parser_raise_with_no_zero_parts" do
-      answer = Whois::Answer.new(nil, [])
-      parser = @klass.new(answer)
-      assert_raise(Whois::ParserError) { parser.send(method) }
-    end
+  def test_delegate_property_to_parsers_should_delegate_to_first_with_all_supported
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "test.parser.supported"), Whois::Answer::Part.new("", "test.parser.undefined")])
+    parser = @klass.new(answer)
+    assert_equal :status_undefined, parser.status
+
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "test.parser.undefined"), Whois::Answer::Part.new("", "test.parser.supported")])
+    parser = @klass.new(answer)
+    assert_equal :status_supported, parser.status
   end
 
-  def test_should_not_delegate_unallowed_method_to_parser
+  def test_delegate_property_to_parsers_should_delegate_to_first_with_one_supported
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "test.parser.supported"), Whois::Answer::Part.new("", "test.parser.undefined")])
+    parser = @klass.new(answer)
+    assert_equal :created_on_supported, parser.created_on
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "test.parser.supported"), Whois::Answer::Part.new("", "test.parser.unsupported")])
+    parser = @klass.new(answer)
+    assert_equal :created_on_supported, parser.created_on
+  end
+
+  def test_delegate_property_to_parsers_should_raise_unless_supported
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "test.parser.unsupported"), Whois::Answer::Part.new("", "test.parser.unsupported")])
+    parser = @klass.new(answer)
+    assert_raise(Whois::PropertyNotSupported) { parser.created_on }
+  end
+
+  def test_delegate_property_to_parsers_should_raise_unless_available
+    answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "test.parser.undefined"), Whois::Answer::Part.new("", "test.parser.undefined")])
+    parser = @klass.new(answer)
+    assert_raise(Whois::PropertyNotAvailable) { parser.created_on }
+  end
+
+  def test_delegate_property_to_parsers_should_raise_with_zero_parts
+    answer = Whois::Answer.new(nil, [])
+    parser = @klass.new(answer)
+    assert_raise(Whois::ParserError) { parser.created_on }
+  end
+
+  def test_delegate_property_to_parser_should_not_delegate_unallowed_methods
     answer = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
     parser = @klass.new(answer)
     parser.parsers.expects("unallowed_method").never

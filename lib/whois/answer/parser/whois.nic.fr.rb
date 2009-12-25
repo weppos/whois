@@ -34,7 +34,7 @@ module Whois
       #
       class WhoisNicFr < Base
 
-        register_method :status do
+        property_supported :status do
           @status ||= if content.to_s =~ /status:\s+(.*)\n/
             $1.downcase.to_sym
           else
@@ -42,23 +42,23 @@ module Whois
           end
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= !!(content.to_s =~ /No entries found in the AFNIC Database/)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           @created_on ||= if content.to_s =~ /created:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
         end
         
-        register_method :updated_on do
+        property_supported :updated_on do
           @updated_on ||= if content.to_s =~ /last-update:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
@@ -66,7 +66,7 @@ module Whois
         end
         
         # TODO: NotAvailable (or anniversary?)
-        register_method :expires_on do
+        property_supported :expires_on do
           nil
         end
 

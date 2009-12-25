@@ -34,7 +34,7 @@ module Whois
       #
       class WhoisIanaOrg < Base
 
-        register_method :status do
+        property_supported :status do
           if available?
             :available
           else
@@ -42,29 +42,29 @@ module Whois
           end
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= !!(content.to_s =~ /Domain (.*?) not found/)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           @created_on ||= if content.to_s =~ /\nRegistration Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
         
-        register_method :updated_on do
+        property_supported :updated_on do
           @updated_on ||= if content.to_s =~ /\nLast Updated Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
         
         # TODO: NotAvailable
-        register_method :expires_on do
+        property_supported :expires_on do
           nil
         end
 

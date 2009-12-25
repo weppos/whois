@@ -34,7 +34,7 @@ module Whois
       #
       class WhoisDomainregistryIe < Base
 
-        register_method :status do
+        property_supported :status do
           @status ||= if content.to_s =~ /status:\s+(.*)\n/
             $1.downcase.to_sym
           else
@@ -42,26 +42,26 @@ module Whois
           end
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= !!(content.to_s =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
         # TODO: NotAvailable
-        register_method :created_on do
+        property_supported :created_on do
           nil
         end
         
         # TODO: NotAvailable
-        register_method :updated_on do
+        property_supported :updated_on do
           nil
         end
         
-        register_method :expires_on do
+        property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /renewal:\s+(.*)\n/
             Time.parse($1)
           end

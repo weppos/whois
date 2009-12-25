@@ -34,22 +34,22 @@ module Whois
       #
       class WhoisRegisterBg < Base
 
-        register_method :status do
+        property_supported :status do
           @status ||= if content.to_s =~ /registration status:\s+(.*?)\n/
             $1.downcase.to_sym
           end
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= (content.to_s =~ /Domain name (.+?) does not exist/)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           @created_on ||= if content.to_s =~ /activated on:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")
             # => ArgumentError: argument out of range
@@ -58,11 +58,11 @@ module Whois
         end
         
         # TODO: NotAvailable
-        register_method :updated_on do
+        property_supported :updated_on do
           nil
         end
         
-        register_method :expires_on do
+        property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /expires at:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")
             # => ArgumentError: argument out of range

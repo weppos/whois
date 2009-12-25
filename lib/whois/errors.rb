@@ -80,8 +80,13 @@ module Whois
   end
 
   # Raised when you are trying to access a property that is not supported
-  # by any of the parsers available for current WHOIS answer.
+  # for the current WHOIS answer.
   class PropertyNotSupported < ParserError
+  end
+
+  # Raised when you are trying to access a property that is not supported
+  # by any of the parsers available for current WHOIS answer.
+  class PropertyNotAvailable < ParserError
   end
 
 end

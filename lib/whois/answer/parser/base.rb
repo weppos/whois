@@ -50,44 +50,6 @@ module Whois
           end
         end
 
-        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
-        # is supported by current parser.
-        #
-        #   parser.property_supported? :disclaimer
-        #   # => false
-        #
-        #   parser.register_method(:disclaimer) {}
-        #   parser.property_supported? :disclaimer
-        #   # => true
-        #
-        # This method is different than <tt>respond_to?</tt>.
-        # While <tt>respond_to?</tt> always returns true for any registrable property,
-        # including those not effectively implemented,
-        # this method only returns <tt>true</tt> if the parser implements <tt>property</tt>.
-        # Also, <tt>property_supported?</tt> returns <tt>false</tt> if <tt>property</tt> exists as a method
-        # but it's not a property method.
-        #
-        #   parser.respond_to?(:disclaimer)
-        #   # => true
-        #   parser.property_supported?(:disclaimer)
-        #   # => false
-        #
-        #   parser.register_method(:disclaimer) {}
-        #   parser.respond_to?(:disclaimer)
-        #   # => true
-        #   parser.property_supported?(:disclaimer)
-        #   # => true
-        #
-        #   parser.respond_to?(:contact)
-        #   # => true
-        #   parser.property_supported?(:contact)
-        #   # => false
-        #
-        def property_supported?(property)
-          method_registered?(property.to_s.to_sym)
-        end
-
-
         # This is an internal method primaly used as a common access point
         # to get the content to be parsed as a string.
         #
@@ -104,74 +66,140 @@ module Whois
         end
 
 
-        @@method_registry = {}
+        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+        # is available for the current parser.
+        def property_available?(property)
+          self.class.property_registered?(property, :supported)
+        end
+        alias :property_supported? :property_available?
+
+
+
+        @@property_registry = {}
 
         #
         # :call-seq:
-        #   method_registry => hash
-        #   method_registry(:key) => array
+        #   property_registry => hash
+        #   property_registry(ParserClass) => hash
         #
-        # Returns the <tt>@@method_registry</tt> if <tt>key</tt> is nil,
-        # otherwise returns the value in <tt>@@method_registry</tt> for given <tt>key</tt>.
+        # Returns the <tt>@@property_registry</tt> if <tt>klass</tt> is nil,
+        # otherwise returns the value in <tt>@@property_registry</tt> for given <tt>klass</tt>.
+        # <tt>klass</tt> is expected to be a class name.
+        # 
+        # Returned value is always a hash. If <tt>@@property_registry[klass]</tt> 
+        # doesn't exist, this method automatically initializes it to an empty Hash.
         #
-        # <tt>@@method_registry</tt> is always a Hash while <tt>@@method_registry[:key]</tt>
-        # is always an array. If <tt>@@method_registry[:key]</tt> doesn't exist, this method
-        # automatically initializes it to an empty array.
-        #
-        def self.method_registry(key = nil)
-          if key.nil?
-            @@method_registry
+        def self.property_registry(klass = nil)
+          if klass.nil?
+            @@property_registry
           else
-            @@method_registry[key] ||= []
+            @@property_registry[klass] ||= {}
           end
         end
 
-        # Returns true if <tt>method</tt> is registered for current class.
+        # Returns the status for <tt>property</tt> passed as symbol.
         #
-        #   method_registered?(:disclaimer)
+        #   property_status(:disclaimer)
+        #   # => nil
+        #
+        #   register_property(:discaimer, :supported) {}
+        #   property_status(:disclaimer)
+        #   # => :supported
+        #
+        def self.property_status(property)
+          property = property.to_s.to_sym
+          property_registry(self)[property]
+        end
+
+        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+        # is registered in the <tt>property_registry</tt> for current parser.
+        #
+        #   property_registered?(:disclaimer)
         #   # => false
         #
-        #   register_method(:discaimer) {}
-        #   method_registered?(:disclaimer)
+        #   register_property(:discaimer) {}
+        #   property_registered?(:disclaimer)
         #   # => true
         #
-        def self.method_registered?(method)
-          method_registry(self).include?(method)
+        def self.property_registered?(property, status = :any)
+          property = property.to_s.to_sym
+          if status == :any
+            property_registry(self).key?(property)
+          else
+            property_registry(self)[property] == status
+          end
         end
 
         #
         # :call-seq:
-        #   register_method(:method) { }
-        #   register_method(:method) { |parameter| ... }
-        #   register_method(:method) { |parameter, ...| ... }
+        #   register_property(:property, :status) { }
+        #   register_property(:property, :status) { |parameter| ... }
+        #   register_property(:property, :status) { |parameter, ...| ... }
         #
-        # Creates <tt>method</tt> with the content of <tt>block</tt>
-        # and automatically registers <tt>method</tt> for current class.
+        # This method creates a new method called <tt>property</tt>
+        # with the content of <tt>block</tt> and registers
+        # the <tt>property</tt> in the <tt>property_registry</tt>
+        # with given <tt>status</tt>.
         #
-        #   register_method(:discaimer) do
+        #   register_property(:disclaimer, :supported) do
         #     ...
         #   end
-        #
-        #   register_method(:changed?) do |other|
-        #     ...
-        #   end
-        #
-        #   method_registered?(:disclaimer)
+        #   
+        #   # def disclaimer
+        #   #   ...
+        #   # end
+        #   
+        #   property_registered?(:disclaimer)
         #   # => true
+        #   
+        #   
+        #   register_property(:changed?, :implemented) do |other|
+        #     ...
+        #   end
+        #   
+        #   # def changed?(other)
+        #   #   ...
+        #   # end
         #
-        def self.register_method(method, &block)
-          method_registry(self) << method
-          define_method(method, &block)
+        def self.register_property(property, status, &block)
+          property = property.to_s.to_sym
+          property_registry(self).merge!({ property => status })
+          define_method(property, &block)
         end
 
-        # Instance-level version of <tt>Base.method_registered?</tt>.
-        def method_registered?(method)
-          self.class.method_registered?(method)
+
+        # Registers a <tt>property</tt> as <tt>:supported</tt>
+        # and defines a method with the content of the block.
+        # 
+        #   # Defines a supported property called :disclaimer.
+        #   property_supported(:disclaimer) do
+        #     ...
+        #   end
+        #   
+        #   # def disclaimer
+        #   #   ...
+        #   # end
+        # 
+        def self.property_supported(property, &block)
+          register_property(property, :supported, &block)
         end
 
-        # Instance-level version of <tt>Base.register_method</tt>.
-        def register_method(method, &block)
-          self.class.register_method(method, &block)
+        # Registers a <tt>property</tt> as <tt>:supported</tt>
+        # and defines a method which will raise a <tt>PropertyNotSupported</tt> error.
+        # 
+        #   # Defines an unsupported property called :disclaimer.
+        #   property_not_supported(:disclaimer) do
+        #     ...
+        #   end
+        #   
+        #   # def disclaimer
+        #   #   raise PropertyNotSupported
+        #   # end
+        # 
+        def self.property_not_supported(property)
+          register_property(property, :implemented) do
+            raise PropertyNotSupported
+          end
         end
 
       end

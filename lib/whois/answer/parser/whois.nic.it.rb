@@ -30,61 +30,61 @@ module Whois
         include Ast
 
         # Returns the registry disclaimer that comes with the answer.
-        register_method :disclaimer do
+        property_supported :disclaimer do
           node("Disclaimer")
         end
 
 
         # If available, returns the domain name as stored by the registry.
-        register_method :domain do
+        property_supported :domain do
           node("Domain") { |raw| raw.downcase }
         end
 
         # If available, returns the unique domain ID set by the registry.
-        register_method :domain_id do
+        property_supported :domain_id do
           nil
         end
 
 
         # Returns the record status or an array of status,
         # in case the registry supports it.
-        register_method :status do
+        property_supported :status do
           node("Status") { |raw| raw.downcase.to_sym }
         end
 
         # Returns whether this record is available.
-        register_method :available? do
+        property_supported :available? do
           node("Status") == "AVAILABLE"
         end
 
         # Returns whether this record is registered.
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
         # If available, returns a Time object representing the date
         # the record was created, according to the registry answer.
-        register_method :created_on do
+        property_supported :created_on do
           node("Created") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
         # the record was last updated, according to the registry answer.
-        register_method :updated_on do
+        property_supported :updated_on do
           node("Last Update") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
         # the record is set to expire, according to the registry answer.
-        register_method :expires_on do
+        property_supported :expires_on do
           node("Expire Date") { |raw| Time.parse(raw) }
         end
 
 
         # If available, returns a <tt>Whois::Answer::Registrar</tt> record
         # containing the registrar details extracted from the registry answer.
-        register_method :registrar do
+        property_supported :registrar do
           node("Registrar") do |raw|
             Answer::Registrar.new(
               :id           => raw["Name"],
@@ -96,19 +96,19 @@ module Whois
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the registrant details extracted from the registry answer.
-        register_method :registrant do
+        property_supported :registrant do
           contact("Registrant")
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the admin contact details extracted from the registry answer.
-        register_method :admin do
+        property_supported :admin do
           contact("Admin Contact")
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the technical contact details extracted from the registry answer.
-        register_method :technical do
+        property_supported :technical do
           contact("Technical Contacts")
         end
 
@@ -124,7 +124,7 @@ module Whois
         #   nameserver
         #   # => ["ns2.google.com", "ns1.google.com", "ns3.google.com"]
         #
-        register_method :nameservers do
+        property_supported :nameservers do
           node("Nameservers")
         end
 
@@ -139,12 +139,12 @@ module Whois
         #
         # This method should provide a bulletproof way to detect whether this answer
         # changed if compared with <tt>other</tt>.
-        register_method :changed? do |other|
+        property_supported :changed? do |other|
           !unchanged?(other)
         end
 
         # The opposite of <tt>changed?</tt>.
-        register_method :unchanged? do |other|
+        property_supported :unchanged? do |other|
           self == other ||
           self.content.to_s == other.content.to_s
           # (self == other)                 ||

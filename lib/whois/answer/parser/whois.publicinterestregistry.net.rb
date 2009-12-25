@@ -29,47 +29,47 @@ module Whois
       class WhoisPublicinterestregistryNet < Base
         include Ast
 
-        register_method :disclaimer do
+        property_supported :disclaimer do
           node("Disclaimer")
         end
 
 
-        register_method :domain do
+        property_supported :domain do
           node("Domain Name") { |value| value.downcase }
         end
 
-        register_method :domain_id do
+        property_supported :domain_id do
           node("Domain ID")
         end
 
 
-        register_method :status do
+        property_supported :status do
           node("Status")
         end
 
-        register_method :available? do
+        property_supported :available? do
           node("Domain ID").nil?
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           node("Created On") { |value| Time.parse(value) }
         end
 
-        register_method :updated_on do
+        property_supported :updated_on do
           node("Last Updated On") { |value| Time.parse(value) }
         end
 
-        register_method :expires_on do
+        property_supported :expires_on do
           node("Expiration Date") { |value| Time.parse(value) }
         end
 
         
-        register_method :registrar do
+        property_supported :registrar do
           node("Sponsoring Registrar") do |registrar|
             id, name = if registrar =~ /(.*?)\((.*?)\)/
               [$2.strip, $1.strip]
@@ -83,29 +83,29 @@ module Whois
           end
         end
 
-        register_method :registrant do
+        property_supported :registrant do
           contact("Registrant")
         end
 
-        register_method :admin do
+        property_supported :admin do
           contact("Admin")
         end
 
-        register_method :technical do
+        property_supported :technical do
           contact("Tech")
         end
 
 
-        register_method :nameservers do
+        property_supported :nameservers do
           node("Name Server") { |server| server.reject { |value| value.empty? }.map { |value| value.downcase }}
         end
 
 
-        register_method :changed? do |other|
+        property_supported :changed? do |other|
           !unchanged?(other)
         end
 
-        register_method :unchanged? do |other|
+        property_supported :unchanged? do |other|
           self == other ||
           self.content.to_s == other.content.to_s
         end

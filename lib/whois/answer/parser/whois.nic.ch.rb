@@ -34,7 +34,7 @@ module Whois
       #
       class WhoisNicCh < Base
 
-        register_method :status do
+        property_supported :status do
           @status ||= if available?
             :available
           else
@@ -42,27 +42,27 @@ module Whois
           end
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= (content.to_s =~ /We do not have an entry/)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
         # TODO: NotAvailable
-        register_method :created_on do
+        property_supported :created_on do
           nil
         end
         
         # TODO: NotAvailable
-        register_method :updated_on do
+        property_supported :updated_on do
           nil
         end
         
         # TODO: NotAvailable
-        register_method :expires_on do
+        property_supported :expires_on do
           nil
         end
 

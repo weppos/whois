@@ -56,24 +56,41 @@ module Whois
       # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
       # is supported by any available parser.
       # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
-      def property_supported?(property)
-        parsers.any? { |parser| parser.property_supported?(property) }
+      def property_available?(property)
+        parsers.any? { |parser| parser.property_available?(property) }
       end
+      alias :property_supported? :property_available?
 
 
-      protected
+      private
 
         def method_missing(method, *args, &block)
           if Parser.properties.include?(method)
-            if parsers.empty?
-              raise ParserError, "Unable to select a parser because the answer is empty"
-            elsif parser = select_parser(method)
-              parser.send(method, *args, &block)
-            else
-              raise PropertyNotSupported, "Unable to find a parser for `#{method}'"
-            end
+            delegate_to_parsers(method, *args, &block)
           else
             super
+          end
+        end
+
+        def delegate_to_parsers(method, *args, &block)
+          # Raise an error without any parser
+          if parsers.empty?
+            raise ParserError, "Unable to select a parser because the answer is empty"
+
+          # Select a parser where the property is supported
+          # and call the method.
+          elsif parser = select_parser(method, :supported)
+            parser.send(method, *args, &block)
+
+          # Select a parser where the property is defined
+          # (but not supported) and call the method.
+          # The call is expected to raise an exception.
+          elsif parser = select_parser(method)
+            parser.send(method, *args, &block)
+
+          # The property is not supported not defined.
+          else
+            raise PropertyNotAvailable, "Unable to find a parser for `#{method}'"
           end
         end
 
@@ -93,9 +110,9 @@ module Whois
           answer.parts.reverse.map { |part| self.class.parser_for(part) }
         end
 
-        def select_parser(method)
+        def select_parser(property, status = :any)
           parsers.each do |parser|
-            return parser if parser.method_registered?(method)
+            return parser if parser.class.property_registered?(property, status)
           end
           nil
         end

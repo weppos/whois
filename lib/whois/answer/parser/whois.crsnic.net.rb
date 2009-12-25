@@ -30,56 +30,56 @@ module Whois
       class WhoisCrsnicNet < Base
         include Ast
 
-        register_method :disclaimer do
+        property_supported :disclaimer do
           node("Disclaimer")
         end
 
 
-        register_method :domain do
+        property_supported :domain do
           node("Domain Name") { |raw| raw.downcase }
         end
 
-        register_method :domain_id do
+        property_supported :domain_id do
           nil
         end
 
 
-        register_method :referral_whois do
+        property_supported :referral_whois do
           node("Whois Server")
         end
 
-        register_method :referral_url do
+        property_supported :referral_url do
           node("Referral URL")
         end
 
 
-        register_method :status do
+        property_supported :status do
           node("Status")
         end
 
-        register_method :available? do
+        property_supported :available? do
           node("Registrar").nil?
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           node("Creation Date") { |raw| Time.parse(raw) }
         end
 
-        register_method :updated_on do
+        property_supported :updated_on do
           node("Updated Date") { |raw| Time.parse(raw) }
         end
 
-        register_method :expires_on do
+        property_supported :expires_on do
           node("Expiration Date") { |raw| Time.parse(raw) }
         end
 
 
-        register_method :registrar do
+        property_supported :registrar do
           # Return nil because when the response contains more than one registrar section
           # the response can be messy. See, for instance, the Verisign response for google.com.
           nil

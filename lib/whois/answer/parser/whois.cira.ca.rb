@@ -34,7 +34,7 @@ module Whois
       #
       class WhoisCiraCa < Base
 
-        register_method :status do
+        property_supported :status do
           @status ||= if content.to_s =~ /Domain status:\s+(.*?)\n/
             case $1.downcase.to_sym
               when :exist then :registered
@@ -43,28 +43,28 @@ module Whois
           end
         end
 
-        register_method :available? do
+        property_supported :available? do
           @available ||= (status == :available)
         end
 
-        register_method :registered? do
+        property_supported :registered? do
           !available?
         end
 
 
-        register_method :created_on do
+        property_supported :created_on do
           @created_on ||= if content.to_s =~ /Approval date:\s+(.*?)\n/
             Time.parse($1)
           end
         end
         
-        register_method :updated_on do
+        property_supported :updated_on do
           @updated_on ||= if content.to_s =~ /Updated date:\s+(.*?)\n/
             Time.parse($1)
           end
         end
         
-        register_method :expires_on do
+        property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /Renewal date:\s+(.*?)\n/
             Time.parse($1)
           end

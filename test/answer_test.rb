@@ -87,9 +87,9 @@ class AnswerTest < Test::Unit::TestCase
 
   def test_properties
     answer = @klass.new(nil, [])
-    answer.parser.expects(:property_supported?).with(:domain).returns(true)
-    answer.parser.expects(:property_supported?).with(:domain_id).returns(true)
-    answer.parser.expects(:property_supported?).with(Not(any_of(:domain, :domain_id))).at_least(1).returns(false)
+    answer.parser.expects(:property_available?).with(:domain).returns(true)
+    answer.parser.expects(:property_available?).with(:domain_id).returns(true)
+    answer.parser.expects(:property_available?).with(Not(any_of(:domain, :domain_id))).at_least(1).returns(false)
     answer.parser.expects(:domain).returns("foo.com")
     answer.parser.expects(:domain_id).returns(27)
     
@@ -99,10 +99,10 @@ class AnswerTest < Test::Unit::TestCase
     assert_equal 27, properties[:domain_id]
   end
 
-  def test_property_supported?
+  def test_property_available?
     answer = @klass.new(nil, [])
-    answer.parser.expects(:property_supported?).with(:disclaimer).returns(:value)
-    assert_equal :value, answer.property_supported?(:disclaimer)
+    answer.parser.expects(:property_available?).with(:disclaimer).returns(:value)
+    assert_equal :value, answer.property_available?(:disclaimer)
   end
 
 
