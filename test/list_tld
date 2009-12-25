@@ -75,7 +75,7 @@ bi;;;
 bm;;;
 bn;;;
 bo;;;
-#Whois::Server.define :tld, ".br", "whois.nic.br"
+br;whois.registro.br;registro.br;u34jedzcq.br
 bs;;;
 bt;;;
 bv;;;
