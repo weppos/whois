@@ -1,0 +1,16 @@
+
+% Whois Server Version 2.17/2009-12-18 - whois.rotld.ro
+
+% Rights restricted by copyright.
+% Specifically, this data MAY ONLY be used for Internet operational
+% purposes. It may not be used for targeted advertising or any
+% other purpose.
+
+% Este INTERZISA folosirea datelor de pe acest server in oricare
+% alt scop decat operarea retelei. In special este INTERZISA
+% folosirea lor in scopuri publicitare.
+
+% Top Level Domain : ro
+% Maintainance : www.rotld.ro
+
+% No entries found for the selected source(s).

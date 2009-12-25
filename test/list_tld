@@ -236,7 +236,7 @@ ps;;;
 py;;;
 qa;;;
 re;whois.nic.fr;nic.re;u34jedzcq.re
-#Whois::Server.define :tld, ".ro", "whois.rotld.ro"
+ro;whois.rotld.ro;google.ro;u34jedzcq.ro
 rs;;;
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 #Whois::Server.define :tld, ".ru", "whois.ripn.net"

@@ -51,6 +51,8 @@
 
 * ADDED: Simple .io parser.
 
+* ADDED: Simple .ro parser.
+
 * ADDED: .cc, .jobs parsers (verisign).
 
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
