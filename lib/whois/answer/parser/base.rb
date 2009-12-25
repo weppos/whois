@@ -87,11 +87,6 @@ module Whois
           method_registered?(property.to_s.to_sym)
         end
 
-        def supported?(*args)
-          ::Whois.deprecate "supported? is deprecated. Use property_supported? instead."
-          property_supported?(*args)
-        end
-
 
         # This is an internal method primaly used as a common access point
         # to get the content to be parsed as a string.

@@ -127,11 +127,6 @@ module Whois
       parser.property_supported?(property)
     end
 
-    def supported?(*args)
-      ::Whois.deprecate "supported? is deprecated. Use property_supported? instead."
-      property_supported?(*args)
-    end
-
 
     protected
       

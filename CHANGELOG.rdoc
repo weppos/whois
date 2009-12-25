@@ -53,6 +53,8 @@
 
 * ADDED: .cc, .jobs parsers (verisign).
 
+* REMOVED: Deprecated #supported? method
+
 
 == Release 0.9.0
 
