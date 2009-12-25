@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.afilias.info parser
+      # = whois.dotmobiregistry.net parser
       #
-      # Parser for the whois.afilias.info server.
+      # Parser for the whois.dotmobiregistry.net server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,14 +32,14 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisAfiliasInfo < Base
+      class WhoisDotmobiregistryNet < Base
 
         register_method :status do
           @status ||= content.to_s.scan(/Status:(.*?)\r\n/).flatten
         end
 
         register_method :available? do
-          @available ||= (content.to_s.strip == "NOT FOUND")
+          @available ||= (content.to_s =~ /Not found:/)
         end
 
         register_method :registered? do

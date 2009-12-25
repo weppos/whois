@@ -1,1 +1,3 @@
 .us == .biz
+.mobi == .info (afilias)
+ (afilias)

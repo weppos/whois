@@ -43,6 +43,8 @@
 
 * ADDED: Simple .biz parser.
 
+* ADDED: Simple .mobi parser.
+
 * ADDED: .cc, .jobs parsers (verisign).
 
 

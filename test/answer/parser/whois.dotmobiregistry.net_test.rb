@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.afilias.info.rb'
+require 'whois/answer/parser/whois.dotmobiregistry.net.rb'
 
-class AnswerParserWhoisAfiliasInfoTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisDotmobiregistryNetTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisAfiliasInfo
-    @host   = "whois.afilias.info"
+    @klass  = Whois::Answer::Parser::WhoisDotmobiregistryNet
+    @host   = "whois.dotmobiregistry.net"
   end
 
 
@@ -28,21 +28,21 @@ class AnswerParserWhoisAfiliasInfoTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_equal  Time.parse("2001-07-31 23:57:50 UTC"),
+    assert_equal  Time.parse("2006-05-11 21:08:42 UTC"),
                   @klass.new(load_part('/registered.txt')).created_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).created_on
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-03-05 22:39:19 UTC"),
+    assert_equal  Time.parse("2009-04-09 09:17:18 UTC"),
                   @klass.new(load_part('/registered.txt')).updated_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).updated_on
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-07-31 23:57:50 UTC"),
+    assert_equal  Time.parse("2010-05-11 21:08:42 UTC"),
                   @klass.new(load_part('/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
