@@ -1,0 +1,37 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: This output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to 'nic.gm'
+
+domain:         nic.gm
+descr:          Network Info Centre in The Gambia domain
+admin-c:        JG716-RIPE
+tech-c:         JG716-RIPE
+zone-c:         JG716-RIPE
+nserver:        ns1.commit.gm
+nserver:        ns1.sol.no
+mnt-by:         GM-TLD-MNT
+remarks:        Unmaintained sub domain object.
+remarks:        Parent TLD object maintainer added by RIPE NCC.
+remarks:        For more information see:
+remarks:        http://www.ripe.net/db/support/security/domain/syntax.html
+source:         RIPE # Filtered
+
+person:         Jorn Grotnes
+address:        Nextsite Systems
+address:        Gjerdrumsgata 50B
+address:        2000 LILLESTROM
+address:        NORWAY
+phone:          + 47 93007731
+fax-no:         + 47 94740047
+e-mail:         jgr@nextsite.com
+nic-hdl:        JG716-RIPE
+source:         RIPE # Filtered
+
+

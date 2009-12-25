@@ -3,43 +3,43 @@
 
 == next mini
 
-* ADDED: Simple .at TLD parser.
+* ADDED: Simple .at parser.
 
-* ADDED: Simple .be TLD parser.
+* ADDED: Simple .be parser.
 
-* ADDED: Simple .bg TLD parser.
+* ADDED: Simple .bg parser.
 
-* ADDED: Simple .ca TLD parser.
+* ADDED: Simple .ca parser.
 
-* ADDED: Simple .ch TLD parser.
+* ADDED: Simple .ch parser.
 
-* ADDED: Simple .eu TLD parser.
+* ADDED: Simple .eu parser.
 
-* ADDED: Simple .gl TLD parser.
+* ADDED: Simple .gl parser.
 
-* ADDED: Simple .im TLD parser.
+* ADDED: Simple .im parser.
 
-* ADDED: Simple .is TLD parser.
+* ADDED: Simple .is parser.
 
-* ADDED: Simple .ly TLD parser.
+* ADDED: Simple .ly parser.
 
-* ADDED: Simple .me TLD parser.
+* ADDED: Simple .me parser.
 
-* ADDED: Simple .mu TLD parser.
+* ADDED: Simple .mu parser.
 
-* ADDED: Simple .nl TLD parser.
+* ADDED: Simple .nl parser.
 
-* ADDED: Simple .no TLD parser.
+* ADDED: Simple .no parser.
 
-* ADDED: Simple .sm TLD parser.
+* ADDED: Simple .fo, .gm, .mc, .sm, .va parsers (whois.ripe.net).
 
-* ADDED: Simple .tl TLD parser.
+* ADDED: Simple .tl parser.
 
-* ADDED: Simple .tel TLD parser.
+* ADDED: Simple .tel parser.
 
-* ADDED: Simple .us TLD parser.
+* ADDED: Simple .us parser.
 
-* ADDED: .cc, .jobs TLD parser.
+* ADDED: .cc, .jobs parsers (verisign).
 
 
 == Release 0.9.0
