@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.domain-registry.nl parser
+      # = whois.nic.io parser
       #
-      # Parser for the whois.domain-registry.nl server.
+      # Parser for the whois.nic.io server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,10 +32,10 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisDomainRegistryNl < Base
+      class WhoisNicIo < Base
 
         register_method :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -43,7 +43,7 @@ module Whois
         end
 
         register_method :available? do
-          @available ||= !(content.to_s =~ /Status: active/)
+          @available ||= !!(content.to_s =~ /- Available/)
         end
 
         register_method :registered? do
@@ -51,16 +51,14 @@ module Whois
         end
 
 
+        # TODO: NotAvailable
         register_method :created_on do
-          @created_on ||= if content.to_s =~ /Date registered:\s+(.*)\n/
-            Time.parse($1)
-          end
+          nil
         end
 
+        # TODO: NotAvailable
         register_method :updated_on do
-          @updated_on ||= if content.to_s =~ /Record last updated:\s+(.*)\n/
-            Time.parse($1)
-          end
+          nil
         end
 
         # TODO: NotAvailable

@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.nic.im.rb'
+require 'whois/answer/parser/whois.nic.io.rb'
 
-class AnswerParserWhoisNicImTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisNicIoTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisNicIm
-    @host   = "whois.nic.im"
+    @klass  = Whois::Answer::Parser::WhoisNicIo
+    @host   = "whois.nic.io"
   end
 
 
@@ -42,7 +42,7 @@ class AnswerParserWhoisNicImTest < Whois::Answer::Parser::TestCase
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-07-30 23:59:56"),
+    assert_equal  nil,
                   @klass.new(load_part('/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on

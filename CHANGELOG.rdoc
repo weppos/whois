@@ -47,6 +47,8 @@
 
 * ADDED: Simple .museum parser.
 
+* ADDED: Simple .io parser.
+
 * ADDED: .cc, .jobs parsers (verisign).
 
 

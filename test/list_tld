@@ -152,7 +152,8 @@ ie;whois.domainregistry.ie;google.ie;u34jedzcq.ie
 #Whois::Server.define :tld, ".il", "whois.isoc.org.il"
 im;whois.nic.im;google.im;u34jedzcq.im
 #Whois::Server.define :tld, ".in", "whois.registry.in"
-#Whois::Server.define :tld, ".io", "whois.nic.io"
+#Whois::Server.define :tld, ".io", ""
+io;whois.nic.io;drop.io;u34jedzcq.ie
 iq;;;
 #Whois::Server.define :tld, ".ir", "whois.nic.ir"
 #Whois::Server.define :tld, ".is", "whois.isnet.is"
