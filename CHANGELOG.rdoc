@@ -3,6 +3,8 @@
 
 == next mini
 
+* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
+
 * SERVER: Changed .biz TLD server to whois.biz (see http://www.iana.org/domains/root/db/biz.html)
 
 * ADDED: Simple .at parser.

@@ -150,7 +150,7 @@ module Whois
       #
       def self.host_to_parser(host)
         host.to_s.
-          gsub(/\./, '_').
+          gsub(/[.-]/, '_').
           gsub(/(?:^|_)(.)/)  { $1.upcase }
       end
 

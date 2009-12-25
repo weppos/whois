@@ -136,16 +136,26 @@ class AnswerParserTest < Test::Unit::TestCase
   end
 
 
-  def test_parser_klass
+  def test_self_parser_klass
     assert_equal "Whois::Answer::Parser::WhoisNicIt", @klass.parser_klass("whois.nic.it").name
   end
 
-  def test_parser_klass_with_preloaded_class
+  def test_self_parser_klass_with_preloaded_class
     @klass.class_eval <<-RUBY
       class WhoisFooBar
       end
     RUBY
     assert_equal "Whois::Answer::Parser::WhoisFooBar", @klass.parser_klass("whois.foo.bar").name
+  end
+
+  def test_self_parser_klass_should_return_blank_class_if_parser_doesnt_exist
+    assert_equal "Whois::Answer::Parser::Blank", @klass.parser_klass("whois.missing").name
+  end
+
+  def test_self_host_to_parser
+    assert_equal "WhoisIt", @klass.host_to_parser("whois.it")
+    assert_equal "WhoisNicIt", @klass.host_to_parser("whois.nic.it")
+    assert_equal "WhoisDomainRegistryNl", @klass.host_to_parser("whois.domain-registry.nl")
   end
 
 end
