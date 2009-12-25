@@ -41,6 +41,8 @@
 
 * ADDED: Simple .us parser.
 
+* ADDED: Simple .biz parser.
+
 * ADDED: .cc, .jobs parsers (verisign).
 
 
