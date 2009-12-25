@@ -56,12 +56,9 @@ module Whois
             Time.parse($1.gsub("/", "-"))
           end
         end
-        
-        # TODO: NotAvailable
-        property_supported :updated_on do
-          nil
-        end
-        
+
+        property_not_supported :updated_on
+
         property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /expires at:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")

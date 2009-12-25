@@ -59,6 +59,8 @@
   in order to distinguish between properties not supported by the answer
   and methods that still need to be implemented because the parser is incomplete.
 
+* CHANGED: All not supported properties now raise a PropertyNotSupported error instead of returning nil.
+
 * REMOVED: Deprecated #supported? method
 
 

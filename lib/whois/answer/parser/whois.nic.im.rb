@@ -51,15 +51,9 @@ module Whois
         end
 
 
-        # TODO: NotAvailable
-        property_supported :created_on do
-          nil
-        end
+        property_not_supported :created_on
 
-        # TODO: NotAvailable
-        property_supported :updated_on do
-          nil
-        end
+        property_not_supported :updated_on
 
         property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /Expiry Date:\s+(.*?)\n/

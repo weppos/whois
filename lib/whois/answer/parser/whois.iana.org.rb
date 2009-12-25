@@ -63,10 +63,7 @@ module Whois
           end
         end
         
-        # TODO: NotAvailable
-        property_supported :expires_on do
-          nil
-        end
+        property_not_supported :expires_on
 
       end
       

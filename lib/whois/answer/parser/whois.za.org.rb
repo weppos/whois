@@ -62,11 +62,8 @@ module Whois
             Time.parse($1)
           end
         end
-        
-        # TODO: NotAvailable
-        property_supported :expires_on do
-          nil
-        end
+
+        property_not_supported :expires_on
 
       end
       

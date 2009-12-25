@@ -37,24 +37,18 @@ class AnswerParserWhoisRipeNetFoTest < AnswerParserWhoisRipeNetTest
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fo/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fo/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fo/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fo/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fo/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fo/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/available.txt')).expires_on }
   end
 
 end
@@ -80,24 +74,18 @@ class AnswerParserWhoisRipeNetGmTest < AnswerParserWhoisRipeNetTest
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/gm/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/gm/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/gm/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/gm/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/gm/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/gm/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/available.txt')).expires_on }
   end
 
 end
@@ -123,24 +111,18 @@ class AnswerParserWhoisRipeNetMcTest < AnswerParserWhoisRipeNetTest
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mc/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mc/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mc/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mc/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mc/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mc/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/available.txt')).expires_on }
   end
 
 end
@@ -166,24 +148,18 @@ class AnswerParserWhoisRipeNetSmTest < AnswerParserWhoisRipeNetTest
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/sm/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/sm/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/sm/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/sm/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/sm/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/sm/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/available.txt')).expires_on }
   end
 
 end
@@ -209,24 +185,18 @@ class AnswerParserWhoisRipeNetVaTest < AnswerParserWhoisRipeNetTest
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/va/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/va/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/va/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/va/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/va/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/va/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/available.txt')).expires_on }
   end
 
 end

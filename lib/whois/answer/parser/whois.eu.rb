@@ -51,20 +51,11 @@ module Whois
         end
 
 
-        # TODO: NotAvailable
-        property_supported :created_on do
-          nil
-        end
-        
-        # TODO: NotAvailable
-        property_supported :updated_on do
-          nil
-        end
-        
-        # TODO: NotAvailable
-        property_supported :expires_on do
-          nil
-        end
+        property_not_supported :created_on
+
+        property_not_supported :updated_on
+
+        property_not_supported :expires_on
 
       end
       

@@ -28,17 +28,13 @@ class AnswerParserWhoisNicImTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).updated_on }
   end
 
   def test_expires_on

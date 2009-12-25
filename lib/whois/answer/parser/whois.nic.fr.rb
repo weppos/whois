@@ -57,18 +57,15 @@ module Whois
             Time.parse("#{y}-#{m}-#{d}")
           end
         end
-        
+
         property_supported :updated_on do
           @updated_on ||= if content.to_s =~ /last-update:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
         end
-        
-        # TODO: NotAvailable (or anniversary?)
-        property_supported :expires_on do
-          nil
-        end
+
+        property_not_supported :expires_on
 
       end
       

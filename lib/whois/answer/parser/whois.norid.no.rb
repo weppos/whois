@@ -63,9 +63,7 @@ module Whois
           end
         end
 
-        property_supported :expires_on do
-          nil
-        end
+        property_not_supported :expires_on
 
       end
       

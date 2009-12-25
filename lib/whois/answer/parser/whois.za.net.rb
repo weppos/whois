@@ -56,17 +56,14 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_supported :updated_on do
           @updated_on ||= if content.to_s =~ /Record Last Updated\s+:\s+(.*)\n/
             Time.parse($1)
           end
         end
-        
-        # TODO: NotAvailable
-        property_supported :expires_on do
-          nil
-        end
+
+        property_not_supported :expires_on
 
       end
       
