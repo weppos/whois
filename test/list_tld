@@ -44,7 +44,7 @@ museum;whois.museum;musedoma.museum;u34jedzcq.museum
 name;whois.nicc.name;carletti.name;u34jedzcq.name
 #Whois::Server.define :tld, ".pro", "whois.registrypro.pro"
 tel;whois.nic.tel;weppos.tel;u34jedzcq.tel
-#Whois::Server.define :tld, ".travel", "whois.nic.travel"
+travel;whois.nic.travel;travel.travel;u34jedzcq.travel
 #Whois::Server.define :tld, ".ac", "whois.nic.ac"
 ad;;;
 #Whois::Server.define :tld, ".ae", "whois.aeda.net.ae"
