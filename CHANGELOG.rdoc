@@ -7,6 +7,8 @@
 
 * SERVER: Changed .biz TLD server to whois.biz (see http://www.iana.org/domains/root/db/biz.html)
 
+* SERVER: Changed .br TLD server to whois.registro.br (see http://www.iana.org/domains/root/db/rb.html)
+
 * ADDED: Simple .at parser.
 
 * ADDED: Simple .be parser.
