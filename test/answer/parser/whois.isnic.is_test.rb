@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.isnet.is.rb'
+require 'whois/answer/parser/whois.isnic.is.rb'
 
-class AnswerParserWhoisIsnetIsTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisIsnicIsTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisIsnetIs
-    @host   = "whois.isnet.is"
+    @klass  = Whois::Answer::Parser::WhoisIsnicIs
+    @host   = "whois.isnic.is"
   end
 
 
@@ -35,10 +35,8 @@ class AnswerParserWhoisIsnetIsTest < Whois::Answer::Parser::TestCase
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).updated_on }
   end
 
   def test_expires_on

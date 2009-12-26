@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.isnet.is parser
+      # = whois.isnic.is parser
       #
-      # Parser for the whois.isnet.is server.
+      # Parser for the whois.isnic.is server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisIsnetIs < Base
+      class WhoisIsnicIs < Base
 
         property_supported :status do
           if available?
@@ -57,9 +57,7 @@ module Whois
           end
         end
         
-        property_supported :updated_on do
-          nil
-        end
+        property_not_supported :updated_on
         
         property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /expires:\s+(.*)\n/

@@ -154,7 +154,7 @@ Whois::Server.define :tld, ".in", "whois.registry.in"
 Whois::Server.define :tld, ".io", "whois.nic.io"
 Whois::Server.define :tld, ".iq", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".ir", "whois.nic.ir"
-Whois::Server.define :tld, ".is", "whois.isnet.is"
+Whois::Server.define :tld, ".is", "whois.isnic.is"
 Whois::Server.define :tld, ".it", "whois.nic.it"
 Whois::Server.define :tld, ".je", "whois.je"
 Whois::Server.define :tld, ".jm", nil, {:adapter=>Whois::Server::Adapters::None}
