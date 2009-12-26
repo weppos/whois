@@ -80,6 +80,7 @@
 .bh	NONE		# www.inet.com.bh
 .bi	WEB http://whois.nic.bi/register/whois.hei	# whois.nic.bi wrong referral?
 .bj	whois.nic.bj
+#.bl
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 .bn	NONE		# www.brunet.bn
 .bo	WEB http://www.nic.bo/
@@ -156,7 +157,7 @@
 .hr	WEB http://www.dns.hr/pretrazivanje.html
 .ht	whois.nic.ht
 .hu	whois.nic.hu
-.id	whois.idnic.net.id
+.id	whois.pandi.or.id
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	whois.nic.im
@@ -164,7 +165,7 @@
 .io	whois.nic.io
 .iq	NONE		# http://www.cmc.iq/english/iq/iqregister1.htm
 .ir	whois.nic.ir
-.is	whois.isnet.is
+.is	whois.isnic.is
 .it	whois.nic.it
 .je	whois.je
 .jm	NONE		# NIC? uwimona.edu.jm http://nic.jm
@@ -196,11 +197,12 @@
 .mc	whois.ripe.net
 .md	WEB http://www.dns.md/wh1.php # whois.nic.md is restricted
 .me	whois.meregistry.net	# afilias
+#.mf
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	WEB http://dns.marnet.net.mk/registar.php
 .ml	NONE		# NIC? www.sotelma.ml
-.mm	whois.nic.mm
+.mm	NONE		# NO NIC
 .mn	AFILIAS
 .mo	WEB http://www.monic.net.mo/
 .mp	NONE		# get.mp
@@ -212,7 +214,7 @@
 .mv	NONE		# NIC? www.dhiraagu.com.mv
 .mw	WEB http://www.registrar.mw/
 .mx	whois.nic.mx
-.my	whois.mynic.net.my
+.my	whois.domainregistry.my
 .mz	NONE		# NIC? www.uem.mz
 .na	whois.na-nic.com.na
 .nc	whois.cctld.nc
@@ -240,7 +242,7 @@
 .pr	whois.nic.pr
 .ps	WEB http://www.nic.ps/whois/whois.html
 .pt	whois.dns.pt
-.pw	whois.nic.pw
+.pw	NONE		# NO NIC
 .py	WEB http://www.nic.py/consultas.html
 .qa	NONE		# http://www.qtel.com.qa/InternetFeatures.do
 .re	whois.nic.fr
@@ -250,7 +252,7 @@
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
 .sa	saudinic.net.sa
-.sb	whois.nic.net.sb
+.sb	whois.coccaregistry.net
 .sc	AFILIAS		# www.nic.sc
 .sd	NONE		# http://isoc.sd/ (CHECK LATER)
 .se	whois.nic-se.se
@@ -263,7 +265,7 @@
 .sm	whois.ripe.net
 .sn	whois.nic.sn
 .so	NONE		# www.nic.so (CHECK LATER, recently delegated)
-.sr	whois.register.sr
+.sr	NONE		# www.register.sr
 .st	whois.nic.st
 .su	whois.ripn.net
 .sv	WEB http://www.uca.edu.sv/dns/	# http://www.svnet.org.sv/
@@ -274,13 +276,13 @@
 .tf	whois.nic.tf
 .tg	WEB http://www.nic.tg/
 .th	whois.thnic.net
-.tj	whois.nic.tj
+.tj	WEB http://www.nic.tj/whois.html
 .tk	whois.dot.tk
 .tl	whois.nic.tl
 .tm	whois.nic.tm
 .tn	WEB http://whois.ati.tn/
 .to	whois.tonic.to
-.tp	whois.nic.tp
+.tp	NONE			# phase out in progress
 .tr	whois.nic.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
 .tv	VERISIGN whois.nic.tv
@@ -300,6 +302,7 @@
 .parliament.uk NONE
 .police.uk NONE
 .uk	whois.nic.uk
+#.um
 .fed.us	whois.nic.gov
 .us	whois.nic.us
 .com.uy	WEB https://nic.anteldata.com.uy/dns/
@@ -312,10 +315,10 @@
 .vi	WEB http://www.nic.vi/whoisform.htm
 .vn	WEB http://www.vnnic.vn/english/
 .vu	WEB http://www.vunic.vu/whois.html
-.wf	whois.nic.wf
+.wf	whois.nic.fr
 .ws	whois.samoanic.ws
 .ye	NONE		# NIC? www.nominet.org.ye http://www.y.net.ye/services/domain_name.htm
-.yt	whois.nic.yt
+.yt	whois.nic.fr
 .yu	NONE		# www.nic.yu - phase out date: 30 March 2009
 .ac.za	whois.ac.za
 .co.za	whois.coza.net.za
@@ -340,7 +343,7 @@
 -cz	whois.nic.cz
 -dk	whois.dk-hostmaster.dk
 -il	whois.isoc.org.il
--is	whois.isnet.is
+-is	whois.isnic.is
 -kg	whois.domain.kg
 -ti	whois.telstra.net
 -tw	whois.twnic.net

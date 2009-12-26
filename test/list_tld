@@ -147,7 +147,7 @@ hn;whois.afilias-grs.info;google.hn;u34jedzcq.hn
 hr;;;
 #Whois::Server.define :tld, ".ht", "whois.nic.ht"
 hu;whois.nic.hu;google.hu;u34jedzcq.hu
-#Whois::Server.define :tld, ".id", "whois.idnic.net.id"
+#Whois::Server.define :tld, ".id", "whois.pandi.or.id"
 ie;whois.domainregistry.ie;google.ie;u34jedzcq.ie
 #Whois::Server.define :tld, ".il", "whois.isoc.org.il"
 im;whois.nic.im;google.im;u34jedzcq.im
@@ -155,7 +155,6 @@ im;whois.nic.im;google.im;u34jedzcq.im
 io;whois.nic.io;drop.io;u34jedzcq.io
 iq;;;
 #Whois::Server.define :tld, ".ir", "whois.nic.ir"
-#Whois::Server.define :tld, ".is", "whois.isnet.is"
 is;whois.isnet.is;google.is;u34jedzcq.is
 it;whois.nic.it;google.it;u34jedzcq.it
 #Whois::Server.define :tld, ".je", "whois.je"
@@ -192,7 +191,7 @@ me;whois.meregistry.net;google.me;u34jedzcq.me
 mh;;;
 mk;;;
 ml;;;
-#Whois::Server.define :tld, ".mm", "whois.nic.mm"
+mm;;;
 mn;whois.afilias-grs.info;google.mn;u34jedzcq.mn
 mo;;;
 mp;;;
@@ -204,7 +203,7 @@ mu;whois.nic.mu;google.mu;u34jedzcq.mu
 mv;;;
 mw;;;
 #Whois::Server.define :tld, ".mx", "whois.nic.mx"
-#Whois::Server.define :tld, ".my", "whois.mynic.net.my"
+#Whois::Server.define :tld, ".my", "whois.domainregistry.my"
 mz;;;
 #Whois::Server.define :tld, ".na", "whois.na-nic.com.na"
 #Whois::Server.define :tld, ".nc", "whois.cctld.nc"
@@ -232,7 +231,7 @@ pn;;;
 #Whois::Server.define :tld, ".pr", "whois.nic.pr"
 ps;;;
 #Whois::Server.define :tld, ".pt", "whois.dns.pt"
-#Whois::Server.define :tld, ".pw", "whois.nic.pw"
+pw;;;
 py;;;
 qa;;;
 re;whois.nic.fr;nic.re;u34jedzcq.re
@@ -242,7 +241,7 @@ rs;;;
 #Whois::Server.define :tld, ".ru", "whois.ripn.net"
 rw;;;
 #Whois::Server.define :tld, ".sa", "saudinic.net.sa"
-#Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
+#Whois::Server.define :tld, ".sb", "whois.coccaregistry.net"
 sc;whois.afilias-grs.info;google.sc;u34jedzcq.sc
 sd;;;
 #Whois::Server.define :tld, ".se", "whois.nic-se.se"
@@ -255,7 +254,7 @@ sj;;;
 sm;whois.ripe.net;google.sm;u34jedzcq.sm
 #Whois::Server.define :tld, ".sn", "whois.nic.sn"
 so;;;
-#Whois::Server.define :tld, ".sr", "whois.register.sr"
+sr;;;
 #Whois::Server.define :tld, ".st", "whois.nic.st"
 #Whois::Server.define :tld, ".su", "whois.ripn.net"
 sv;;;
@@ -266,13 +265,13 @@ td;;;
 #Whois::Server.define :tld, ".tf", "whois.nic.tf"
 tg;;;
 #Whois::Server.define :tld, ".th", "whois.thnic.net"
-#Whois::Server.define :tld, ".tj", "whois.nic.tj"
+tj;;;
 #Whois::Server.define :tld, ".tk", "whois.dot.tk"
 tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl
 #Whois::Server.define :tld, ".tm", "whois.nic.tm"
 tn;;;
 #Whois::Server.define :tld, ".to", "whois.tonic.to"
-#Whois::Server.define :tld, ".tp", "whois.nic.tp"
+tp;;;
 #Whois::Server.define :tld, ".tr", "whois.nic.tr"
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
@@ -304,10 +303,10 @@ vc;whois.afilias-grs.info;google.vc;u34jedzcq.vc
 vi;;;
 vn;;;
 vu;;;
-#Whois::Server.define :tld, ".wf", "whois.nic.wf"
+#Whois::Server.define :tld, ".wf", "whois.nic.fr"
 #Whois::Server.define :tld, ".ws", "whois.samoanic.ws"
 ye;;;
-#Whois::Server.define :tld, ".yt", "whois.nic.yt"
+#Whois::Server.define :tld, ".yt", "whois.nic.fr"
 yu;;;
 #Whois::Server.define :tld, ".ac.za", "whois.ac.za"
 #Whois::Server.define :tld, ".co.za", "whois.coza.net.za"

@@ -1,0 +1,37 @@
+# server name		charset		optional parameters
+whois.corenic.net	utf-8		-C UTF-8
+whois.cat		utf-8		-C UTF-8
+whois.museum		utf-8		-C UTF-8
+
+whois.nic.br		iso-8859-1
+whois.cira.ca		iso-8859-1
+whois.nic.ch		utf-8
+whois.nic.cl		iso-8859-1
+whois.cnnic.net.cn	utf-8
+whois.nic.cz		utf-8
+whois.denic.de		utf-8
+whois.enum.denic.de	utf-8
+whois.dk-hostmaster.dk	utf-8		--charset=utf-8
+whois.eenet.ee		iso-8859-1
+whois.eu		utf-8
+whois.ficora.fi		iso-8859-1
+whois.nic.fr		iso-8859-1
+whois.hkdnr.net.hk	utf-8
+whois.nic.hu		iso-8859-1
+whois.isnic.is		iso-8859-1
+whois.jprs.jp		iso-2022-jp
+whois.nic.ad.jp		iso-2022-jp
+whois.nic.or.kr		euc-kr
+whois.nic.li		utf-8
+whois.domreg.lt		utf-8
+whois.dns.lu		iso-8859-1
+whois.nic.mu		utf-8
+whois.norid.no		iso-8859-1
+whois.nic.nu		utf-8
+whois.dns.pt		iso-8859-1
+whois.nic-se.se		utf-8
+whois.nic.tr		utf-8
+whois.twnic.net		utf-8
+whois.net.ua		koi8-u
+whois.nic.org.uy	utf-8
+

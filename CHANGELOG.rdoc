@@ -13,6 +13,10 @@
 
 * SERVERS: Updated the .bd, .bi, .cm, .ge, .gf, .ki, .kn, .ls, .mq, .np and .tr TLD definitions (whois 4.7.37).
 
+* SERVERS: Sync definitions with Debian whois 5.0.0.
+
+* SERVERS: Updated the .id, .is, .mm, .my, .pw, .sb, .sr, .tj, .tp, .wf, .yt TLD definitions (whois 5.0.0).
+
 * FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
 
 * ADDED: Simple .at TLD parser.

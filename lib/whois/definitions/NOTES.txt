@@ -6,3 +6,5 @@ fo    whois.ripe.net    # http://www.iana.org/domains/root/db/fo.html empty, but
 gm    whois.ripe.net    # http://www.iana.org/domains/root/db/gm.html empty, but whois.ripe.net works
 mc    whois.ripe.net    # http://www.iana.org/domains/root/db/mc.html empty, but whois.ripe.net works
 va    whois.ripe.net    # http://www.iana.org/domains/root/db/va.html empty, but whois.ripe.net works
+wf    whois.nic.fr      # http://www.iana.org/domains/root/db/wf.html provides whois.nic.wf, but using whois.nic.fr for compatibility with debian whois and to reuse parser
+yt    whois.nic.fr      # http://www.iana.org/domains/root/db/wf.html provides whois.nic.yt, but using whois.nic.fr for compatibility with debian whois and to reuse parser
