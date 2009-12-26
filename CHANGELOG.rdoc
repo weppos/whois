@@ -41,7 +41,7 @@
 
 * ADDED: Simple .me TLD parser.
 
-* ADDED: Simple .mu TLD parser.
+* ADDED: Simple .mu, .ki TLD parser (whois.nic.mu).
 
 * ADDED: Simple .nl TLD parser.
 
