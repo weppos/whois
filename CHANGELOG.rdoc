@@ -7,15 +7,15 @@
 
 * SERVER: Changed .br TLD server to whois.registro.br (see http://www.iana.org/domains/root/db/rb.html)
 
-* SERVERS: Sync definitions with Debian whois 4.7.37.
+* SERVER: Sync definitions with Debian whois 4.7.37.
 
-* SERVERS: Added new IPv4 allocations (whois 4.7.37).
+* SERVER: Added new IPv4 allocations (whois 4.7.37).
 
-* SERVERS: Updated the .bd, .bi, .cm, .ge, .gf, .ki, .kn, .ls, .mq, .np and .tr TLD definitions (whois 4.7.37).
+* SERVER: Updated the .bd, .bi, .cm, .ge, .gf, .ki, .kn, .ls, .mq, .np and .tr TLD definitions (whois 4.7.37).
 
-* SERVERS: Sync definitions with Debian whois 5.0.0.
+* SERVER: Sync definitions with Debian whois 5.0.0.
 
-* SERVERS: Updated the .id, .is, .mm, .my, .pw, .sb, .sr, .tj, .tp, .wf, .yt TLD definitions (whois 5.0.0).
+* SERVER: Updated the .id, .is, .mm, .my, .pw, .sb, .sr, .tj, .tp, .wf, .yt TLD definitions (whois 5.0.0).
 
 * FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
 
@@ -216,15 +216,15 @@ API might change at any time without previous notice.
 
 == Release 0.5.2
 
-* SERVERS: Sync definitions with Debian whois 4.7.36.
+* SERVER: Sync definitions with Debian whois 4.7.36.
 
-* SERVERS: Added new IPv4 allocations (whois 4.7.36).
+* SERVER: Added new IPv4 allocations (whois 4.7.36).
 
-* SERVERS: Added .ls, .mg, .mk, .tz and .uy TLD definitions (whois 4.7.36).
+* SERVER: Added .ls, .mg, .mk, .tz and .uy TLD definitions (whois 4.7.36).
 
-* SERVERS: Updated .jobs, .ms and .ph TLD definitions (whois 4.7.36).
+* SERVER: Updated .jobs, .ms and .ph TLD definitions (whois 4.7.36).
 
-* SERVERS: Removed .td TLD definition (whois 4.7.36).
+* SERVER: Removed .td TLD definition (whois 4.7.36).
 
 * ADDED: Whois::Client.new now accepts a block and yields self.
 
@@ -260,9 +260,9 @@ API might change at any time without previous notice.
 * FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
 
 
-* SERVERS: Updated .tv TLD definition (closes #261).
+* SERVER: Updated .tv TLD definition (closes #261).
 
-* SERVERS: Updated .ae TLD definition (closes #270).
+* SERVER: Updated .ae TLD definition (closes #270).
 
 
 == Release 0.1.1
