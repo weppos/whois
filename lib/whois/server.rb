@@ -16,6 +16,7 @@
 
 require 'ipaddr'
 require 'whois/server/adapters/base'
+require 'whois/server/adapters/arpa'
 require 'whois/server/adapters/afilias'
 require 'whois/server/adapters/formatted'
 require 'whois/server/adapters/none'

@@ -23,13 +23,13 @@ Whois::Server.define :tld, ".za.net", "whois.za.net"
 Whois::Server.define :tld, ".net", "whois.crsnic.net", {:adapter=>Whois::Server::Adapters::Verisign}
 Whois::Server.define :tld, ".eu.org", "whois.eu.org"
 Whois::Server.define :tld, ".za.org", "whois.za.org"
-Whois::Server.define :tld, ".org", "whois.publicinterestregistry.net"
+Whois::Server.define :tld, ".org", "whois.publicinterestregistry.net", {:adapter=>Whois::Server::Adapters::Pir}
 Whois::Server.define :tld, ".edu", "whois.educause.edu"
 Whois::Server.define :tld, ".gov", "whois.nic.gov"
 Whois::Server.define :tld, ".int", "whois.iana.org"
 Whois::Server.define :tld, ".mil", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".e164.arpa", "whois.ripe.net"
-Whois::Server.define :tld, ".in-addr.arpa", nil
+Whois::Server.define :tld, ".in-addr.arpa", nil, {:adapter=>Whois::Server::Adapters::Arpa}
 Whois::Server.define :tld, ".arpa", "whois.iana.org"
 Whois::Server.define :tld, ".aero", "whois.aero"
 Whois::Server.define :tld, ".asia", "whois.nic.asia"
@@ -126,7 +126,6 @@ Whois::Server.define :tld, ".gb", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".gd", "whois.adamsnames.tc"
 Whois::Server.define :tld, ".ge", nil, {:web=>"http://www.registration.ge/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".gf", nil, {:web=>"http://www.nic.gf/?id=whois", :adapter=>Whois::Server::Adapters::Web}
-Whois::Server.define :tld, ".gf", "whois.nplus.gf"
 Whois::Server.define :tld, ".gg", "whois.gg"
 Whois::Server.define :tld, ".gh", nil, {:web=>"http://www.nic.gh/customer/search_c.htm", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".gi", "whois.afilias-grs.info", {:adapter=>Whois::Server::Adapters::Afilias}
