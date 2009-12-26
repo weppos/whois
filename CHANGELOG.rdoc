@@ -3,63 +3,69 @@
 
 == next mini
 
-* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
-
 * SERVER: Changed .biz TLD server to whois.biz (see http://www.iana.org/domains/root/db/biz.html)
 
 * SERVER: Changed .br TLD server to whois.registro.br (see http://www.iana.org/domains/root/db/rb.html)
 
-* ADDED: Simple .at parser.
+* SERVERS: Sync definitions with Debian whois 4.7.37.
 
-* ADDED: Simple .be parser.
+* SERVERS: Added new IPv4 allocations (whois 4.7.37).
 
-* ADDED: Simple .bg parser.
+* SERVERS: Updated the .bd, .bi, .cm, .ge, .gf, .ki, .kn, .ls, .mq, .np and .tr TLD definitions (whois 4.7.37).
 
-* ADDED: Simple .ca parser.
+* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
 
-* ADDED: Simple .ch parser.
+* ADDED: Simple .at TLD parser.
 
-* ADDED: Simple .eu parser.
+* ADDED: Simple .be TLD parser.
 
-* ADDED: Simple .gl parser.
+* ADDED: Simple .bg TLD parser.
 
-* ADDED: Simple .im parser.
+* ADDED: Simple .ca TLD parser.
 
-* ADDED: Simple .is parser.
+* ADDED: Simple .ch TLD parser.
 
-* ADDED: Simple .ly parser.
+* ADDED: Simple .eu TLD parser.
 
-* ADDED: Simple .me parser.
+* ADDED: Simple .gl TLD parser.
 
-* ADDED: Simple .mu parser.
+* ADDED: Simple .im TLD parser.
 
-* ADDED: Simple .nl parser.
+* ADDED: Simple .is TLD parser.
 
-* ADDED: Simple .no parser.
+* ADDED: Simple .ly TLD parser.
 
-* ADDED: Simple .fo, .gm, .mc, .sm, .va parsers (whois.ripe.net).
+* ADDED: Simple .me TLD parser.
 
-* ADDED: Simple .tl parser.
+* ADDED: Simple .mu TLD parser.
 
-* ADDED: Simple .tel parser.
+* ADDED: Simple .nl TLD parser.
 
-* ADDED: Simple .us parser.
+* ADDED: Simple .no TLD parser.
 
-* ADDED: Simple .biz parser.
+* ADDED: Simple .fo, .gm, .mc, .sm, .va TLD parsers (whois.ripe.net).
 
-* ADDED: Simple .mobi parser.
+* ADDED: Simple .tl TLD parser.
 
-* ADDED: Simple .museum parser.
+* ADDED: Simple .tel TLD parser.
 
-* ADDED: Simple .io parser.
+* ADDED: Simple .us TLD parser.
 
-* ADDED: Simple .ro parser.
+* ADDED: Simple .biz TLD parser.
 
-* ADDED: Simple .br parser.
+* ADDED: Simple .mobi TLD parser.
 
-* ADDED: Simple .travel parser.
+* ADDED: Simple .museum TLD parser.
 
-* ADDED: .cc, .jobs parsers (verisign).
+* ADDED: Simple .io TLD parser.
+
+* ADDED: Simple .ro TLD parser.
+
+* ADDED: Simple .br TLD parser.
+
+* ADDED: Simple .travel TLD parser.
+
+* ADDED: .cc, .jobs TLD parsers (verisign).
 
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
@@ -114,7 +120,7 @@
 
 * ADDED: Simple .asia TLD parser.
 
-* ADDED: Simple .bz/.gi/.hn/.lc/.mn/.sc/.vc TLD parser.
+* ADDED: Simple .bz, .gi, .hn, .lc, .mn, .sc and .vc TLD parser.
 
 * ADDED: .tv TLD parser.
 
@@ -206,16 +212,6 @@ API might change at any time without previous notice.
 
 == Release 0.5.2
 
-* ADDED: Whois::Client.new now accepts a block and yields self.
-
-    client = Whois::Client.new do |c|
-      c.timeout = nil
-    end
-    client.query("google.com")
-
-* FIXED: DeprecatedWhoisTest are flagged with need_connectivity method because they require connectivity.
-
-
 * SERVERS: Sync definitions with Debian whois 4.7.36.
 
 * SERVERS: Added new IPv4 allocations (whois 4.7.36).
@@ -225,6 +221,15 @@ API might change at any time without previous notice.
 * SERVERS: Updated .jobs, .ms and .ph TLD definitions (whois 4.7.36).
 
 * SERVERS: Removed .td TLD definition (whois 4.7.36).
+
+* ADDED: Whois::Client.new now accepts a block and yields self.
+
+    client = Whois::Client.new do |c|
+      c.timeout = nil
+    end
+    client.query("google.com")
+
+* FIXED: DeprecatedWhoisTest are flagged with need_connectivity method because they require connectivity.
 
 
 == Release 0.5.1

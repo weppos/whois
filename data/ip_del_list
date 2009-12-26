@@ -6,9 +6,11 @@
 #
 # http://www.iana.org/assignments/ipv4-address-space
 #
+2.0.0.0/8	ripe
 24.132.0.0/14	ripe
 41.0.0.0/8	afrinic
 43.0.0.0/8	v6nic
+46.0.0.0/8	ripe
 51.0.0.0/8	ripe
 # whois -r -K -h whois.apnic.net -i admin-c IM76-AP
 59.0.0.0/11	whois.nic.or.kr

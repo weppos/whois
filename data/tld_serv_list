@@ -73,12 +73,12 @@
 .az	WEB http://www.nic.az/AzCheck.htm
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://www.barbadosdomains.net/search_domain.php
-.bd	www.whois.com.bd # http://www.btcl.net.bd/faq_dotbd.php
+.bd	WEB http://www.whois.com.bd/ # http://www.btcl.net.bd/faq_dotbd.php www.register.com.bd FIXME APPARENTLY NOT OFFICIAL!
 .be	whois.dns.be
-.bf	NONE		# NIC? http://www.onatel.bf/
+.bf	NONE		# http://www.artel.bf/ http://www.onatel.bf/internet/domaine.htm
 .bg	whois.register.bg
 .bh	NONE		# www.inet.com.bh
-.bi	WEB http://www.nic.bi/Nic_search.asp
+.bi	WEB http://whois.nic.bi/register/whois.hei	# whois.nic.bi wrong referral?
 .bj	whois.nic.bj
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 .bn	NONE		# www.brunet.bn
@@ -100,7 +100,7 @@
 .ci	www.nic.ci
 .ck	whois.nic.ck
 .cl	whois.nic.cl
-.cm	NONE		# NIC? http://info.intelcam.cm http://www.camnet.cm/
+.cm	WEB http://netcom.cm/whois.php
 .edu.cn	whois.edu.cn
 .cn	whois.cnnic.net.cn
 .uk.co	whois.uk.co
@@ -117,9 +117,9 @@
 .dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
 .dz	WEB https://www.nic.dz/
-.ec	WEB http://www.nic.ec/whois/eng/whois.asp
+.ec	WEB http://www.nic.ec/whois/eng/whois.asp # whois.nic.ec is restricted
 .ee	whois.eenet.ee
-.eg	NONE		# http://lookup.egregistry.eg/
+.eg	NONE		# http://lookup.egregistry.eg/english.aspx
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
 .es	WEB https://www.nic.es/
@@ -134,8 +134,8 @@
 .ga	NONE		# www.nic.ga
 .gb	NONE
 .gd	whois.adamsnames.tc
-.ge	WEB http://whois.sanet.ge/
-.gf	whois.nplus.gf
+.ge	WEB http://www.registration.ge/
+.gf	WEB http://www.nic.gf/?id=whois
 .gg	whois.gg
 .gh	WEB http://www.nic.gh/customer/search_c.htm
 .gi	AFILIAS
@@ -148,7 +148,7 @@
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/whois.htm
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
-.gw	NONE		# www.nic.gw
+.gw	NONE		# www.gwregister.com
 .gy	whois.registry.gy
 .hk	whois.hkdnr.net.hk
 .hm	whois.registry.hm
@@ -172,10 +172,10 @@
 .jp	whois.jprs.jp
 .ke	whois.kenic.or.ke
 .kg	whois.domain.kg
-.kh	NONE		# http://www.mptc.gov.kh/ http://www.nic.net.kh/
-.ki	WEB http://www.ki/dns/
+.kh	NONE		# http://www.mptc.gov.kh/DomainNameRegistrationForm.aspx http://www.nic.net.kh/
+.ki	whois.nic.mu
 .km	NONE		# www.domaine.km
-.kn	NONE		# www.dot.kn
+.kn	WEB http://www.nic.kn/
 .kp	whois.kcce.kp
 .kr	whois.nic.or.kr
 .kw	WEB http://www.kw/
@@ -187,7 +187,7 @@
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
-.ls	WEB http://www.co.ls/data/leo2.asp
+.ls	WEB http://www.co.ls/data/co.asp
 .lt	whois.domreg.lt
 .lu	whois.dns.lu
 .lv	whois.nic.lv
@@ -204,7 +204,7 @@
 .mn	AFILIAS
 .mo	WEB http://www.monic.net.mo/
 .mp	NONE		# get.mp
-.mq	whois.nic.mq
+.mq	NONE		# whois.nic.mq
 .mr	NONE		# www.nic.mr
 .ms	whois.nic.ms
 .mt	WEB https://www.nic.org.mt/dotmt/ # whois.nic.org.mt is restricted
@@ -222,7 +222,7 @@
 .ni	WEB http://www.nic.ni/consulta.htm
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
-.np	WEB http://www.mos.com.np/domsearch.html
+.np	WEB http://register.mos.com.np/userSearchInc.asp
 .nr	WEB http://www.cenpac.net.nr/dns/whois.html
 .nu	whois.nic.nu
 .nz	whois.srs.net.nz
@@ -281,9 +281,8 @@
 .tn	WEB http://whois.ati.tn/
 .to	whois.tonic.to
 .tp	whois.nic.tp
-.tr	whois.metu.edu.tr
+.tr	whois.nic.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
-#.tv	whois.nic.tv
 .tv	VERISIGN whois.nic.tv
 .tw	whois.twnic.net
 .tz	WEB http://whois.tznic.or.tz/
@@ -317,7 +316,7 @@
 .ws	whois.samoanic.ws
 .ye	NONE		# NIC? www.nominet.org.ye http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.yt
-.yu	NONE		# www.nic.yu - phase out date: 30 September 2009
+.yu	NONE		# www.nic.yu - phase out date: 30 March 2009
 .ac.za	whois.ac.za
 .co.za	whois.coza.net.za
 .gov.za	whois.gov.za

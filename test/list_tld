@@ -65,7 +65,7 @@ ax;;;
 az;;;
 ba;;;
 bb;;;
-#Whois::Server.define :tld, ".bd", "www.whois.com.bd"
+bd;;;
 be;whois.dns.be;google.be;u34jedzcq.be
 bf;;;
 bg;whois.register.bg;google.bg;u34jedzcq.bg
@@ -126,7 +126,7 @@ ga;;;
 gb;;;
 #Whois::Server.define :tld, ".gd", "whois.adamsnames.tc"
 ge;;;
-#Whois::Server.define :tld, ".gf", "whois.nplus.gf"
+gf;;;
 #Whois::Server.define :tld, ".gg", "whois.gg"
 gh;;;
 gi;whois.afilias-grs.info;sapphire.gi;u34jedzcq.gi
@@ -165,7 +165,7 @@ jo;;;
 #Whois::Server.define :tld, ".ke", "whois.kenic.or.ke"
 #Whois::Server.define :tld, ".kg", "whois.domain.kg"
 kh;;;
-ki;;;
+#Whois::Server.define :tld, ".ki", "whois.nic.mu"
 km;;;
 kn;;;
 #Whois::Server.define :tld, ".kp", "whois.kcce.kp"
@@ -196,7 +196,7 @@ ml;;;
 mn;whois.afilias-grs.info;google.mn;u34jedzcq.mn
 mo;;;
 mp;;;
-#Whois::Server.define :tld, ".mq", "whois.nic.mq"
+mq;;;
 mr;;;
 #Whois::Server.define :tld, ".ms", "whois.nic.ms"
 mt;;;
@@ -273,7 +273,7 @@ tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl
 tn;;;
 #Whois::Server.define :tld, ".to", "whois.tonic.to"
 #Whois::Server.define :tld, ".tp", "whois.nic.tp"
-#Whois::Server.define :tld, ".tr", "whois.metu.edu.tr"
+#Whois::Server.define :tld, ".tr", "whois.nic.tr"
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
 #Whois::Server.define :tld, ".tw", "whois.twnic.net"
