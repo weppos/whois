@@ -17,6 +17,8 @@
 
 * SERVER: Updated the .id, .is, .mm, .my, .pw, .sb, .sr, .tj, .tp, .wf, .yt TLD definitions (whois 5.0.0).
 
+* SERVER: .dk TLD server requires --show-handles option (closes #426)
+
 * FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
 
 * ADDED: Simple .at TLD parser.

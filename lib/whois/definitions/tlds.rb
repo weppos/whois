@@ -104,7 +104,7 @@ Whois::Server.define :tld, ".cy", nil, {:web=>"http://www.nic.cy/nslookup/online
 Whois::Server.define :tld, ".cz", "whois.nic.cz"
 Whois::Server.define :tld, ".de", "whois.denic.de", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-T dn,ace -C US-ASCII %s"}
 Whois::Server.define :tld, ".dj", "whois.domain.dj"
-Whois::Server.define :tld, ".dk", "whois.dk-hostmaster.dk"
+Whois::Server.define :tld, ".dk", "whois.dk-hostmaster.dk", {:adapter=>Whois::Server::Adapters::Formatted, :format => "--show-handles %s"}
 Whois::Server.define :tld, ".dm", "whois.nic.dm"
 Whois::Server.define :tld, ".do", nil, {:web=>"http://www.nic.do/whois-h.php3", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".dz", nil, {:web=>"https://www.nic.dz/", :adapter=>Whois::Server::Adapters::Web}
