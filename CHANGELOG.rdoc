@@ -21,6 +21,8 @@
 
 * FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
 
+* FIXED: In case of exception, the CLI doesn't exit nicely (closes #333)
+
 * ADDED: Simple .at TLD parser.
 
 * ADDED: Simple .be TLD parser.
