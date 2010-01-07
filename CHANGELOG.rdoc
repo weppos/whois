@@ -83,6 +83,8 @@
 
 * CHANGED: All not supported properties now raise a PropertyNotSupported error instead of returning nil.
 
+* CHANGED: Increased DEFAULT_TIMEOUT to 10 seconds
+
 * REMOVED: Deprecated #supported? method
 
 
