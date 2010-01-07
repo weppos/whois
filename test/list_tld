@@ -105,7 +105,7 @@ cy;;;
 #Whois::Server.define :tld, ".cz", "whois.nic.cz"
 de;whois.denic.de;google.de;u34jedzcq.de
 #Whois::Server.define :tld, ".dj", "whois.domain.dj"
-#Whois::Server.define :tld, ".dk", "whois.dk-hostmaster.dk"
+dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
 #Whois::Server.define :tld, ".dm", "whois.nic.dm"
 do;;;
 dz;;;

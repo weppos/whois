@@ -71,6 +71,8 @@
 
 * ADDED: Simple .travel TLD parser.
 
+* ADDED: Simple .dk TLD parser [thanks to Mikkel Kristensen].
+
 * ADDED: .cc, .jobs TLD parsers (verisign).
 
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
