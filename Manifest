@@ -57,6 +57,7 @@ lib/whois/answer/parser/whois.nic.tel.rb
 lib/whois/answer/parser/whois.nic.tl.rb
 lib/whois/answer/parser/whois.nic.travel.rb
 lib/whois/answer/parser/whois.nic.tv.rb
+lib/whois/answer/parser/whois.nic.uk.rb
 lib/whois/answer/parser/whois.nic.us.rb
 lib/whois/answer/parser/whois.norid.no.rb
 lib/whois/answer/parser/whois.publicinterestregistry.net.rb
@@ -127,6 +128,7 @@ test/answer/parser/whois.nic.tel_test.rb
 test/answer/parser/whois.nic.tl_test.rb
 test/answer/parser/whois.nic.travel_test.rb
 test/answer/parser/whois.nic.tv_test.rb
+test/answer/parser/whois.nic.uk_test.rb
 test/answer/parser/whois.nic.us_test.rb
 test/answer/parser/whois.norid.no_test.rb
 test/answer/parser/whois.publicinterestregistry.net_test.rb
@@ -227,6 +229,10 @@ test/testcases/responses/whois.nic.fr/pm/available.txt
 test/testcases/responses/whois.nic.fr/pm/registered.txt
 test/testcases/responses/whois.nic.fr/re/available.txt
 test/testcases/responses/whois.nic.fr/re/registered.txt
+test/testcases/responses/whois.nic.fr/wf/available.txt
+test/testcases/responses/whois.nic.fr/wf/registered.txt
+test/testcases/responses/whois.nic.fr/yt/available.txt
+test/testcases/responses/whois.nic.fr/yt/registered.txt
 test/testcases/responses/whois.nic.gl/available.txt
 test/testcases/responses/whois.nic.gl/registered.txt
 test/testcases/responses/whois.nic.gov/available.txt
@@ -259,6 +265,9 @@ test/testcases/responses/whois.nic.travel/available.txt
 test/testcases/responses/whois.nic.travel/registered.txt
 test/testcases/responses/whois.nic.tv/available.txt
 test/testcases/responses/whois.nic.tv/registered.txt
+test/testcases/responses/whois.nic.uk/available.txt
+test/testcases/responses/whois.nic.uk/invalid.txt
+test/testcases/responses/whois.nic.uk/registered.txt
 test/testcases/responses/whois.nic.us/available.txt
 test/testcases/responses/whois.nic.us/registered.txt
 test/testcases/responses/whois.norid.no/available.txt

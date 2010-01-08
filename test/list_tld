@@ -290,7 +290,7 @@ tz;;;
 .nls.uk;;;
 .parliament.uk;;;
 .police.uk;;;
-#Whois::Server.define :tld, ".uk", "whois.nic.uk"
+uk;whois.nic.uk;google.co.uk;u34jedzcq.co.uk
 #Whois::Server.define :tld, ".fed.us", "whois.nic.gov"
 us;whois.nic.us;google.us;u34jedzcq.us
 #Whois::Server.define :tld, ".com.uy", nil, {:web=>"https://nic.anteldata.com.uy/dns/", :adapter=>Whois::Server::Adapters::Web}
