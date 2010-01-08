@@ -53,6 +53,7 @@ lib/whois/answer/parser/whois.nic.it.rb
 lib/whois/answer/parser/whois.nic.ly.rb
 lib/whois/answer/parser/whois.nic.mu.rb
 lib/whois/answer/parser/whois.nic.name.rb
+lib/whois/answer/parser/whois.nic.nu.rb
 lib/whois/answer/parser/whois.nic.tel.rb
 lib/whois/answer/parser/whois.nic.tl.rb
 lib/whois/answer/parser/whois.nic.travel.rb
@@ -123,6 +124,7 @@ test/answer/parser/whois.nic.it_test.rb
 test/answer/parser/whois.nic.ly_test.rb
 test/answer/parser/whois.nic.mu_test.rb
 test/answer/parser/whois.nic.name_test.rb
+test/answer/parser/whois.nic.nu_test.rb
 test/answer/parser/whois.nic.tel_test.rb
 test/answer/parser/whois.nic.tl_test.rb
 test/answer/parser/whois.nic.travel_test.rb
@@ -251,6 +253,8 @@ test/testcases/responses/whois.nic.mu/mu/registered.txt
 test/testcases/responses/whois.nic.name/available.txt
 test/testcases/responses/whois.nic.name/registered.txt
 test/testcases/responses/whois.nic.name/reserved.txt
+test/testcases/responses/whois.nic.nu/available.txt
+test/testcases/responses/whois.nic.nu/registered.txt
 test/testcases/responses/whois.nic.tel/available.txt
 test/testcases/responses/whois.nic.tel/registered.txt
 test/testcases/responses/whois.nic.tl/available.txt
@@ -289,3 +293,4 @@ test/whois_test.rb
 utils/bm_delegation_vs_inheritance.rb
 utils/bm_shell_vs_pure.rb
 utils/tlds.txt
+whois.gemspec
