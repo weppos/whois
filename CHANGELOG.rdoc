@@ -73,6 +73,8 @@
 
 * ADDED: Simple .travel TLD parser.
 
+* ADDED: Simple .wf, .yt TLD parser (whois.nic.fr).
+
 * ADDED: Simple .dk TLD parser [thanks to Mikkel Kristensen].
 
 * ADDED: .cc, .jobs TLD parsers (verisign).

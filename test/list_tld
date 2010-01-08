@@ -303,10 +303,10 @@ vc;whois.afilias-grs.info;google.vc;u34jedzcq.vc
 vi;;;
 vn;;;
 vu;;;
-#Whois::Server.define :tld, ".wf", "whois.nic.fr"
+wf;whois.nic.fr;nic.wf;u34jedzcq.wf
 #Whois::Server.define :tld, ".ws", "whois.samoanic.ws"
 ye;;;
-#Whois::Server.define :tld, ".yt", "whois.nic.fr"
+yt;whois.nic.fr;nic.yt;u34jedzcq.yt
 yu;;;
 #Whois::Server.define :tld, ".ac.za", "whois.ac.za"
 #Whois::Server.define :tld, ".co.za", "whois.coza.net.za"
