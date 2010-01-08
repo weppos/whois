@@ -81,6 +81,8 @@
 
 * ADDED: Simple .uk TLD parser (whois.nic.uk).
 
+* ADDED: Simple .ws TLD parser (whois.samoanic.ws).
+
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
   'property_supported' and 'property_not_supported' methods

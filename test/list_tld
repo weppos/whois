@@ -304,7 +304,7 @@ vi;;;
 vn;;;
 vu;;;
 wf;whois.nic.fr;nic.wf;u34jedzcq.wf
-#Whois::Server.define :tld, ".ws", "whois.samoanic.ws"
+ws;whois.samoanic.ws;google.ws;u34jedzcq.ws
 ye;;;
 yt;whois.nic.fr;nic.yt;u34jedzcq.yt
 yu;;;

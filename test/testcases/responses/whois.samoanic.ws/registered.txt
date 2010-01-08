@@ -1,0 +1,34 @@
+
+
+Welcome to the .WS Whois Server
+
+Use of this service for any purpose other
+than determining the availability of a domain
+in the .WS TLD to be registered is strictly
+prohibited.
+
+  Domain Name: GOOGLE.WS
+
+  Registrar Name: .WS Registry
+  Registrar Email: support@website.ws
+  Registrar Telephone: ---
+  Registrar Whois: whois.website.ws
+
+  Registrant Name: Google, Inc.
+  Registrant Email: ---
+
+  Administrative Contact Email: kulpreet@google.com
+  Administrative Contact Telephone: 6503300100
+
+  Domain Created: 2002-03-03
+  Domain Last Updated: 2008-12-08
+  Domain Currently Expires: 2010-03-03
+
+  Current Nameservers:
+
+    ns1.google.com
+    ns2.google.com
+    ns3.google.com
+    ns4.google.com
+
+
