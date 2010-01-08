@@ -119,4 +119,9 @@ EOS
                   @klass.new(load_part('/available.txt')).registrar
   end
 
+  def test_nameservers
+    assert_equal  %w(ns1.google.com ns2.google.com ns3.google.com ns4.google.com),
+                  @klass.new(load_part('/registered.txt')).nameservers
+  end
+
 end
