@@ -1,0 +1,20 @@
+% By submitting a query to RIPN's Whois Service
+% you agree to abide by the following terms of use:
+% http://www.ripn.net/about/servpol.html#3.2 (in Russian) 
+% http://www.ripn.net/about/en/servpol.html#3.2 (in English).
+
+domain:     GOOGLE.SU
+nserver:    ns1073.hostgator.com.
+nserver:    ns1074.hostgator.com.
+state:      REGISTERED, DELEGATED, UNVERIFIED
+person:     Private Person
+phone:      +7 495 9681807
+fax-no:     +7 495 9681807
+e-mail:     cis@cis.su
+registrar:  RUCENTER-REG-FID
+created:    2005.10.16
+paid-till:  2010.10.16
+source:     TCI
+
+Last updated on 2010.01.09 16:21:33 MSK/MSD
+

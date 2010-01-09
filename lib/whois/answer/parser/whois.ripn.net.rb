@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Mikkel Kristensen <mikkel@tdx.dk>, Simone Carletti <weppos@weppos.net>
+# Author::      Simone Carletti <weppos@weppos.net>
 # License::     MIT License
 #
 #--
@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.dk-hostmaster.dk
+      # = whois.ripn.net parser
       #
-      # Parser for the whois.dk-hostmaster.dk server.
+      # Parser for the whois.ripn.net server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,16 +32,18 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisDkHostmasterDk < Base
+      class WhoisRipnNet < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /Status:\s+(.*)\n/
-            $1.downcase.to_sym
+          @status ||= if content.to_s =~ /state:\s+(.*?)\n/
+            $1.split(",").map { |status| status.strip }
+          else
+            []
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /No entries found for the selected source/)
+          @available ||= !!(content.to_s =~ /No entries found/)
         end
 
         property_supported :registered? do
@@ -50,7 +52,7 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /Registered:\s+(.*)\n/
+          @created_on ||= if content.to_s =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -58,14 +60,9 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Expires:\s+(.*)\n/
+          @expires_on ||= if content.to_s =~ /paid-till:\s+(.*)\n/
             Time.parse($1)
           end
-        end
-
-
-        property_supported :nameservers do
-          @nameservers ||= content.to_s.scan(/Hostname:\s+(.*)\n/).flatten
         end
 
       end

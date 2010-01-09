@@ -238,7 +238,7 @@ re;whois.nic.fr;nic.re;u34jedzcq.re
 ro;whois.rotld.ro;google.ro;u34jedzcq.ro
 rs;;;
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
-#Whois::Server.define :tld, ".ru", "whois.ripn.net"
+ru;whois.ripn.net;google.ru;u34jedzcq.ru
 rw;;;
 #Whois::Server.define :tld, ".sa", "saudinic.net.sa"
 #Whois::Server.define :tld, ".sb", "whois.coccaregistry.net"
@@ -256,7 +256,7 @@ sm;whois.ripe.net;google.sm;u34jedzcq.sm
 so;;;
 sr;;;
 #Whois::Server.define :tld, ".st", "whois.nic.st"
-#Whois::Server.define :tld, ".su", "whois.ripn.net"
+su;whois.ripn.net;google.su;u34jedzcq.su
 sv;;;
 sy;;;
 sz;;;

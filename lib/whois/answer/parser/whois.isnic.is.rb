@@ -56,9 +56,9 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_not_supported :updated_on
-        
+
         property_supported :expires_on do
           @expires_on ||= if content.to_s =~ /expires:\s+(.*)\n/
             Time.parse($1)
