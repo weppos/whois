@@ -124,7 +124,7 @@ fo;whois.ripe.net;nic.fo;u34jedzcq.fo
 fr;whois.nic.fr;google.fr;u34jedzcq.fr
 ga;;;
 gb;;;
-#Whois::Server.define :tld, ".gd", "whois.adamsnames.tc"
+gd;whois.adamsnames.tc;google.gd;u34jedzcq.gd
 ge;;;
 gf;;;
 #Whois::Server.define :tld, ".gg", "whois.gg"
@@ -260,7 +260,7 @@ sr;;;
 sv;;;
 sy;;;
 sz;;;
-#Whois::Server.define :tld, ".tc", "whois.adamsnames.tc"
+tc;whois.adamsnames.tc;google.tc;u34jedzcq.tc
 td;;;
 #Whois::Server.define :tld, ".tf", "whois.nic.tf"
 tg;;;
@@ -299,7 +299,7 @@ us;whois.nic.us;google.us;u34jedzcq.us
 va;whois.ripe.net;vatican.va;u34jedzcq.va
 vc;whois.afilias-grs.info;google.vc;u34jedzcq.vc
 #Whois::Server.define :tld, ".ve", "whois.nic.ve"
-#Whois::Server.define :tld, ".vg", "whois.adamsnames.tc"
+vg;whois.adamsnames.tc;google.vg;u34jedzcq.vg
 vi;;;
 vn;;;
 vu;;;
