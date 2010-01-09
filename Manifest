@@ -323,3 +323,7 @@ test/testcases/responses/whois.za.org/registered.txt
 test/whois_test.rb
 utils/bm_delegation_vs_inheritance.rb
 utils/bm_shell_vs_pure.rb
+<<<<<<< HEAD
+=======
+utils/tlds.txt
+>>>>>>> d20cfe5... Added nameservers to whois.nic.tv
