@@ -77,7 +77,10 @@ module Whois
         property_supported :expires_on do
           node("Expiration Date") { |raw| Time.parse(raw) }
         end
-
+        
+        property_supported :nameservers do
+          node("Name Server") { |raw| raw.map { |value| value.downcase }}
+        end
 
         property_supported :registrar do
           # Return nil because when the response contains more than one registrar section

@@ -215,7 +215,7 @@ nl;whois.domain-registry.nl;google.nl;u34jedzcq.nl
 no;whois.norid.no;google.no;u34jedzcq.no
 np;;;
 nr;;;
-#Whois::Server.define :tld, ".nu", "whois.nic.nu"
+nu;whois.nic.nu;google.nu;u34jedzcq.nu
 #Whois::Server.define :tld, ".nz", "whois.srs.net.nz"
 om;;;
 pa;;;

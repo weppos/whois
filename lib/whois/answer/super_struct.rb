@@ -24,7 +24,7 @@ require 'ostruct'
 #
 # Compared with the original version, it provides the following additional features:
 # * ability to initialize an instance from Hash
-# * ability to pass a block on creation  
+# * ability to pass a block on creation
 #
 class SuperStruct < Struct
 

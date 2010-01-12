@@ -110,13 +110,17 @@ EOS
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
   end
-
-
+  
   def test_registrar
     assert_equal  nil,
                   @klass.new(load_part('/registered.txt')).registrar
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).registrar
+  end
+  
+  def test_nameservers
+    assert_equal  %w(ns1.slicehost.net ns2.slicehost.net),
+                  @klass.new(load_part('/registered.txt')).nameservers
   end
 
 end

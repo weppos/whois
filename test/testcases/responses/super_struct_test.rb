@@ -2,16 +2,15 @@ require 'test_helper'
 
 class SuperStructTest < Test::Unit::TestCase
 
-  Supereroe = Class.new(SuperStruct.new(:name, :supername))
+  SuperEroe = Class.new(SuperStruct.new(:name, :supername))
 
-  
   def setup
-    @klass = Supereroe
+    @klass = SuperEroe
   end
 
   def test_initialize_with_block
     @klass.new do |instance|
-      assert_instance_of  Supereroe, instance
+      assert_instance_of  SuperEroe, instance
       assert_kind_of      SuperStruct, instance
     end
   end

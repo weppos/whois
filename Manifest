@@ -41,6 +41,7 @@ lib/whois/answer/parser/whois.iana.org.rb
 lib/whois/answer/parser/whois.isnic.is.rb
 lib/whois/answer/parser/whois.meregistry.net.rb
 lib/whois/answer/parser/whois.museum.rb
+lib/whois/answer/parser/whois.nic-se.se.rb
 lib/whois/answer/parser/whois.nic.asia.rb
 lib/whois/answer/parser/whois.nic.cc.rb
 lib/whois/answer/parser/whois.nic.ch.rb
@@ -54,6 +55,7 @@ lib/whois/answer/parser/whois.nic.it.rb
 lib/whois/answer/parser/whois.nic.ly.rb
 lib/whois/answer/parser/whois.nic.mu.rb
 lib/whois/answer/parser/whois.nic.name.rb
+lib/whois/answer/parser/whois.nic.nu.rb
 lib/whois/answer/parser/whois.nic.tel.rb
 lib/whois/answer/parser/whois.nic.tl.rb
 lib/whois/answer/parser/whois.nic.travel.rb
@@ -65,6 +67,7 @@ lib/whois/answer/parser/whois.publicinterestregistry.net.rb
 lib/whois/answer/parser/whois.register.bg.rb
 lib/whois/answer/parser/whois.registro.br.rb
 lib/whois/answer/parser/whois.ripe.net.rb
+lib/whois/answer/parser/whois.ripn.net.rb
 lib/whois/answer/parser/whois.rotld.ro.rb
 lib/whois/answer/parser/whois.samoanic.ws.rb
 lib/whois/answer/parser/whois.za.net.rb
@@ -114,6 +117,7 @@ test/answer/parser/whois.iana.org_test.rb
 test/answer/parser/whois.isnic.is_test.rb
 test/answer/parser/whois.meregistry.net_test.rb
 test/answer/parser/whois.museum_test.rb
+test/answer/parser/whois.nic-se.se_test.rb
 test/answer/parser/whois.nic.asia_test.rb
 test/answer/parser/whois.nic.cc_test.rb
 test/answer/parser/whois.nic.ch_test.rb
@@ -127,6 +131,7 @@ test/answer/parser/whois.nic.it_test.rb
 test/answer/parser/whois.nic.ly_test.rb
 test/answer/parser/whois.nic.mu_test.rb
 test/answer/parser/whois.nic.name_test.rb
+test/answer/parser/whois.nic.nu_test.rb
 test/answer/parser/whois.nic.tel_test.rb
 test/answer/parser/whois.nic.tl_test.rb
 test/answer/parser/whois.nic.travel_test.rb
@@ -138,6 +143,7 @@ test/answer/parser/whois.publicinterestregistry.net_test.rb
 test/answer/parser/whois.register.bg_test.rb
 test/answer/parser/whois.registro.br_test.rb
 test/answer/parser/whois.ripe.net_test.rb
+test/answer/parser/whois.ripn.net_test.rb
 test/answer/parser/whois.rotld.ro_test.rb
 test/answer/parser/whois.samoanic.ws_test.rb
 test/answer/parser/whois.za.net_test.rb
@@ -227,6 +233,8 @@ test/testcases/responses/whois.meregistry.net/available.txt
 test/testcases/responses/whois.meregistry.net/registered.txt
 test/testcases/responses/whois.museum/available.txt
 test/testcases/responses/whois.museum/registered.txt
+test/testcases/responses/whois.nic-se.se/available.txt
+test/testcases/responses/whois.nic-se.se/registered.txt
 test/testcases/responses/whois.nic.asia/available.txt
 test/testcases/responses/whois.nic.asia/registered.txt
 test/testcases/responses/whois.nic.cc/available.txt
@@ -267,6 +275,8 @@ test/testcases/responses/whois.nic.mu/mu/registered.txt
 test/testcases/responses/whois.nic.name/available.txt
 test/testcases/responses/whois.nic.name/registered.txt
 test/testcases/responses/whois.nic.name/reserved.txt
+test/testcases/responses/whois.nic.nu/available.txt
+test/testcases/responses/whois.nic.nu/registered.txt
 test/testcases/responses/whois.nic.tel/available.txt
 test/testcases/responses/whois.nic.tel/registered.txt
 test/testcases/responses/whois.nic.tl/available.txt
@@ -298,6 +308,10 @@ test/testcases/responses/whois.ripe.net/sm/available.txt
 test/testcases/responses/whois.ripe.net/sm/registered.txt
 test/testcases/responses/whois.ripe.net/va/available.txt
 test/testcases/responses/whois.ripe.net/va/registered.txt
+test/testcases/responses/whois.ripn.net/ru/available.txt
+test/testcases/responses/whois.ripn.net/ru/registered.txt
+test/testcases/responses/whois.ripn.net/su/available.txt
+test/testcases/responses/whois.ripn.net/su/registered.txt
 test/testcases/responses/whois.rotld.ro/available.txt
 test/testcases/responses/whois.rotld.ro/registered.txt
 test/testcases/responses/whois.samoanic.ws/available.txt
@@ -309,4 +323,3 @@ test/testcases/responses/whois.za.org/registered.txt
 test/whois_test.rb
 utils/bm_delegation_vs_inheritance.rb
 utils/bm_shell_vs_pure.rb
-utils/tlds.txt
