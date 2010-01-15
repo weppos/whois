@@ -89,6 +89,8 @@
 
 * ADDED: Simple .cat TLD parser (whois.cat).
 
+* ADDED: Simple .cd TLD parser (whois.nic.cd).
+
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
   'property_supported' and 'property_not_supported' methods

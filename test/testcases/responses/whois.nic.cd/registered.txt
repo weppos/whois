@@ -1,0 +1,85 @@
+
+----------------------------------------------------------------------  
+ WHOIS Server
+---------------------------------------------------------------------- 
+
+The following data is provided for information purposes only.
+
+Registrar:   MarkMonitor Inc 
+Registrant:  Google Inc.
+
+
+    Domain Name:		GOOGLE.CD
+    Creation Date:		30-Sep-2006 22:26:42
+    Expiration Date:	01-Oct-2010 00:00:00
+    Domain Status:		CLIENT TRANSFER PROHIBITED
+    Domain Status:		CLIENT DELETE PROHIBITED
+
+
+    Owner/Main Contact:
+
+        Name:           Google Inc. (O-GOO25)        
+        Registered Address(line1):	1600 Amphitheatre Parkway
+        Registered Address(line2):	
+        Registered Address(line3):	
+        Registered State:		
+        Registered Country:		US
+        Registered Postalcode:	94043
+
+
+
+    Administrative Contact:
+          
+        Name:           MarkMonitor (P-BWD27)        
+        Registered Address(line1):	12438 W. Bridger Street, Suite 100
+        Registered Address(line2):	
+        Registered Address(line3):	
+        Registered State:		
+        Registered Country:		US
+        Registered Postalcode:	83713
+
+
+
+    Technical Contact:
+        
+        Name:           Google Inc. (O-GOO25)        
+        Registered Address(line1):	1600 Amphitheatre Parkway
+        Registered Address(line2):	
+        Registered Address(line3):	
+        Registered State:		
+        Registered Country:		US
+        Registered Postalcode:	94043
+
+        Telephone:			+165.02530000
+        Facsimile:			+165.06188571  
+        EMAIL:				dns-admin@google.com
+
+
+
+    Billing Contact:
+          
+        Name:           Markmonitor (O-MAR356)        
+        Registered Address(line1):	PMB 155, 10400 Overland Rd.
+        Registered Address(line2):	
+        Registered Address(line3): 	
+        Registered State:		
+        Registered Country:		US
+        Registered Postalcode:	83709-1433
+
+
+
+    Name Servers:
+        NS1.GOOGLE.COM
+        NS2.GOOGLE.COM
+        NS3.GOOGLE.COM
+        NS4.GOOGLE.COM
+
+
+         
+
+
+
+
+
+
+
