@@ -35,7 +35,7 @@ arpa;whois.iana.org;ip6.arpa;u34jedzcq.arpa
 aero;whois.aero;srilankan.aero;u34jedzcq.aero
 asia;whois.nic.asia;srilankan.aero;u34jedzcq.asia
 biz;whois.biz;google.biz;u34jedzcq.biz
-#Whois::Server.define :tld, ".cat", "whois.cat", {:adapter=>Whois::Server::Adapters::Formatted, :format => "-C US-ASCII ace %s"}
+cat;whois.cat;gencat.cat;u34jedzcq.cat
 #Whois::Server.define :tld, ".coop", "whois.nic.coop"
 info;whois.afilias.info;google.info;u34jedzcq.info
 jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
