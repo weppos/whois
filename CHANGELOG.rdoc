@@ -93,6 +93,8 @@
 
 * ADDED: Simple .pro TLD parser (whois.registrypro.pro).
 
+* ADDED: Simple .ae TLD parser (whois.aeda.net.ae).
+
 * ADDED: .cc, .jobs TLD parsers (verisign).
 
 * ADDED: .ac TLD parser (whois.nic.ac).

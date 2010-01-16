@@ -47,7 +47,7 @@ tel;whois.nic.tel;weppos.tel;u34jedzcq.tel
 travel;whois.nic.travel;travel.travel;u34jedzcq.travel
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
-#Whois::Server.define :tld, ".ae", "whois.aeda.net.ae"
+ae;whois.aeda.net.ae;google.ae;u34jedzcq.ae
 #Whois::Server.define :tld, ".af", "whois.nic.af"
 #Whois::Server.define :tld, ".ag", "whois.nic.ag"
 #Whois::Server.define :tld, ".ai", "whois.ai"

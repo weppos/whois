@@ -23,6 +23,7 @@ lib/whois/answer/parser/blank.rb
 lib/whois/answer/parser/jobswhois.verisign-grs.com.rb
 lib/whois/answer/parser/scanners/verisign.rb
 lib/whois/answer/parser/whois.adamsnames.tc.rb
+lib/whois/answer/parser/whois.aeda.net.ae.rb
 lib/whois/answer/parser/whois.aero.rb
 lib/whois/answer/parser/whois.afilias-grs.info.rb
 lib/whois/answer/parser/whois.afilias.info.rb
@@ -104,6 +105,7 @@ test/answer/parser/base_test.rb
 test/answer/parser/blank_test.rb
 test/answer/parser/jobswhois.verisign-grs.com_test.rb
 test/answer/parser/whois.adamsnames.tc_test.rb
+test/answer/parser/whois.aeda.net.ae_test.rb
 test/answer/parser/whois.aero_test.rb
 test/answer/parser/whois.afilias-grs.info_test.rb
 test/answer/parser/whois.afilias.info_test.rb
@@ -190,6 +192,8 @@ test/testcases/responses/whois.adamsnames.tc/tc/available.txt
 test/testcases/responses/whois.adamsnames.tc/tc/registered.txt
 test/testcases/responses/whois.adamsnames.tc/vg/available.txt
 test/testcases/responses/whois.adamsnames.tc/vg/registered.txt
+test/testcases/responses/whois.aeda.net.ae/available.txt
+test/testcases/responses/whois.aeda.net.ae/registered.txt
 test/testcases/responses/whois.aero/available.txt
 test/testcases/responses/whois.aero/registered.txt
 test/testcases/responses/whois.afilias-grs.info/bz/available.txt
