@@ -91,6 +91,8 @@
 
 * ADDED: Simple .cd TLD parser (whois.nic.cd).
 
+* ADDED: Simple .coop TLD parser (whois.nic.coop).
+
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
   'property_supported' and 'property_not_supported' methods

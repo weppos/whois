@@ -27,6 +27,7 @@ lib/whois/answer/parser/whois.aero.rb
 lib/whois/answer/parser/whois.afilias-grs.info.rb
 lib/whois/answer/parser/whois.afilias.info.rb
 lib/whois/answer/parser/whois.biz.rb
+lib/whois/answer/parser/whois.cat.rb
 lib/whois/answer/parser/whois.cira.ca.rb
 lib/whois/answer/parser/whois.crsnic.net.rb
 lib/whois/answer/parser/whois.denic.de.rb
@@ -44,7 +45,9 @@ lib/whois/answer/parser/whois.museum.rb
 lib/whois/answer/parser/whois.nic-se.se.rb
 lib/whois/answer/parser/whois.nic.asia.rb
 lib/whois/answer/parser/whois.nic.cc.rb
+lib/whois/answer/parser/whois.nic.cd.rb
 lib/whois/answer/parser/whois.nic.ch.rb
+lib/whois/answer/parser/whois.nic.coop.rb
 lib/whois/answer/parser/whois.nic.fr.rb
 lib/whois/answer/parser/whois.nic.gl.rb
 lib/whois/answer/parser/whois.nic.gov.rb
@@ -103,6 +106,7 @@ test/answer/parser/whois.aero_test.rb
 test/answer/parser/whois.afilias-grs.info_test.rb
 test/answer/parser/whois.afilias.info_test.rb
 test/answer/parser/whois.biz_test.rb
+test/answer/parser/whois.cat_test.rb
 test/answer/parser/whois.cira.ca_test.rb
 test/answer/parser/whois.crsnic.net_test.rb
 test/answer/parser/whois.denic.de_test.rb
@@ -120,7 +124,9 @@ test/answer/parser/whois.museum_test.rb
 test/answer/parser/whois.nic-se.se_test.rb
 test/answer/parser/whois.nic.asia_test.rb
 test/answer/parser/whois.nic.cc_test.rb
+test/answer/parser/whois.nic.cd_test.rb
 test/answer/parser/whois.nic.ch_test.rb
+test/answer/parser/whois.nic.coop_test.rb
 test/answer/parser/whois.nic.fr_test.rb
 test/answer/parser/whois.nic.gl_test.rb
 test/answer/parser/whois.nic.gov_test.rb
@@ -200,6 +206,8 @@ test/testcases/responses/whois.afilias.info/available.txt
 test/testcases/responses/whois.afilias.info/registered.txt
 test/testcases/responses/whois.biz/available.txt
 test/testcases/responses/whois.biz/registered.txt
+test/testcases/responses/whois.cat/available.txt
+test/testcases/responses/whois.cat/registered.txt
 test/testcases/responses/whois.cira.ca/available.txt
 test/testcases/responses/whois.cira.ca/registered.txt
 test/testcases/responses/whois.crsnic.net/MULTIPLE.txt
@@ -239,8 +247,12 @@ test/testcases/responses/whois.nic.asia/available.txt
 test/testcases/responses/whois.nic.asia/registered.txt
 test/testcases/responses/whois.nic.cc/available.txt
 test/testcases/responses/whois.nic.cc/registered.txt
+test/testcases/responses/whois.nic.cd/available.txt
+test/testcases/responses/whois.nic.cd/registered.txt
 test/testcases/responses/whois.nic.ch/available.txt
 test/testcases/responses/whois.nic.ch/registered.txt
+test/testcases/responses/whois.nic.coop/available.txt
+test/testcases/responses/whois.nic.coop/registered.txt
 test/testcases/responses/whois.nic.fr/fr/available.txt
 test/testcases/responses/whois.nic.fr/fr/registered.txt
 test/testcases/responses/whois.nic.fr/pm/available.txt

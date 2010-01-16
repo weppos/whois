@@ -1,0 +1,33 @@
+.coop registry WHOIS server
+
+For help on using this server use "?" (without the quotes).
+For more .coop information browse to http://www.coop
+
+No domain records were found to match "u34jedzcq.coop"
+
+--------------------------------------------------------------------------------
+
+The .coop registry WHOIS database provides information for .coop registered
+names only. Although every effort is made to maintain the accuracy of the WHOIS
+data, accuracy cannot be guaranteed.
+
+This service is intended only for query-based access. You agree that you will
+use this data only for lawful purposes and that, under no circumstances will you
+use this data to: (a) allow, enable, or otherwise support the transmission by
+e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or
+solicitations to entities other than the data recipient's own existing
+customers; or (b) enable high volume, automated, electronic processes that send
+queries or data to the systems of Registry Operator or any ICANN-Accredited
+Registrar, except as reasonably necessary to register domain names or modify
+existing registrations. The compilation, repackaging, dissemination or other use
+of this Data is expressly prohibited without the prior written consent of
+dotCoop. All rights reserved. dotCoop reserves the right to modify these terms
+at any time. By submitting this query, you agree to abide by this policy.
+
+BY USING THE WHOIS SERVICE AND THE DATA CONTAINED HEREIN OR IN ANY REPORT
+GENERATED WITH RESPECT THERETO, IT IS ACCEPTED THAT DOTCOOP IS NOT LIABLE FOR
+ANY DAMAGES OF ANY KIND ARISING OUT OF, OR IN CONNECTION WITH, THE REPORT OR THE
+INFORMATION PROVIDED BY THE WHOIS SERVICE, NOR OMISSIONS OR MISSING INFORMATION.
+THE RESULTS OF ANY WHOIS REPORT OR INFORMATION PROVIDED BY THE WHOIS SERVICE
+CANNOT BE RELIED UPON IN CONTEMPLATION OF LEGAL PROCEEDINGS WITHOUT FURTHER
+VERIFICATION, NOR DO SUCH RESULTS CONSTITUTE A LEGAL OPINION.

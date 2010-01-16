@@ -36,7 +36,7 @@ aero;whois.aero;srilankan.aero;u34jedzcq.aero
 asia;whois.nic.asia;srilankan.aero;u34jedzcq.asia
 biz;whois.biz;google.biz;u34jedzcq.biz
 cat;whois.cat;gencat.cat;u34jedzcq.cat
-#Whois::Server.define :tld, ".coop", "whois.nic.coop"
+coop;whois.nic.coop;calgary.coop;u34jedzcq.coop
 info;whois.afilias.info;google.info;u34jedzcq.info
 jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
 mobi;whois.dotmobiregistry.net;google.mobi;u34jedzcq.mobi

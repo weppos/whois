@@ -1,0 +1,123 @@
+.coop registry WHOIS server
+
+For help on using this server use "?" (without the quotes).
+For more .coop information browse to http://www.coop
+
+The domain records that match "calgary.coop" are listed below.
+
+--------------------------------------------------------------------------------
+
+Domain ID:               7441D-COOP
+Domain Name:             calgary.coop
+Expiry Date:             31 Jan 2012 22:12:44 UTC
+Domain Status:           ok
+Sponsoring registrar:    domains.coop
+Sponsoring registrar ID: 465
+Created by:              DCLLC
+Created by ID:           0
+Last updated by:         domains.coop
+Last updated by ID:      465
+Created:                 31 Jan 2002 22:12:44 UTC
+Last updated:            17 Jan 2007 23:58:04 UTC
+Last transferred:        
+
+Contact Type:            registrant
+Contact ID:              54100C-COOP
+Name:                    Net Admin
+Organisation:            Calgary Co operative Association Limited
+Street 1:                2735 39 Avenue NE
+Street 2:                
+Street 3:                
+City:                    Calgary
+State/Province:          AB
+Postal code:             T1Y 7C7
+Country:                 Canada
+Voice:                   +1.4032196025
+Voice extn:              
+Fax:                     +1.4032995416
+Fax extn:                
+Email:                   netadmin@calgarycoop.com
+
+Contact Type:            admin
+Contact ID:              54100C-COOP
+Name:                    Net Admin
+Organisation:            Calgary Co operative Association Limited
+Street 1:                2735 39 Avenue NE
+Street 2:                
+Street 3:                
+City:                    Calgary
+State/Province:          AB
+Postal code:             T1Y 7C7
+Country:                 Canada
+Voice:                   +1.4032196025
+Voice extn:              
+Fax:                     +1.4032995416
+Fax extn:                
+Email:                   netadmin@calgarycoop.com
+
+Contact Type:            billing
+Contact ID:              54100C-COOP
+Name:                    Net Admin
+Organisation:            Calgary Co operative Association Limited
+Street 1:                2735 39 Avenue NE
+Street 2:                
+Street 3:                
+City:                    Calgary
+State/Province:          AB
+Postal code:             T1Y 7C7
+Country:                 Canada
+Voice:                   +1.4032196025
+Voice extn:              
+Fax:                     +1.4032995416
+Fax extn:                
+Email:                   netadmin@calgarycoop.com
+
+Contact Type:            tech
+Contact ID:              54100C-COOP
+Name:                    Net Admin
+Organisation:            Calgary Co operative Association Limited
+Street 1:                2735 39 Avenue NE
+Street 2:                
+Street 3:                
+City:                    Calgary
+State/Province:          AB
+Postal code:             T1Y 7C7
+Country:                 Canada
+Voice:                   +1.4032196025
+Voice extn:              
+Fax:                     +1.4032995416
+Fax extn:                
+Email:                   netadmin@calgarycoop.com
+
+Host ID:                 59300H-COOP
+Host Name:               ns1.calgarycoop.net
+
+Host ID:                 59301H-COOP
+Host Name:               ns2.calgarycoop.net
+
+--------------------------------------------------------------------------------
+
+The .coop registry WHOIS database provides information for .coop registered
+names only. Although every effort is made to maintain the accuracy of the WHOIS
+data, accuracy cannot be guaranteed.
+
+This service is intended only for query-based access. You agree that you will
+use this data only for lawful purposes and that, under no circumstances will you
+use this data to: (a) allow, enable, or otherwise support the transmission by
+e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or
+solicitations to entities other than the data recipient's own existing
+customers; or (b) enable high volume, automated, electronic processes that send
+queries or data to the systems of Registry Operator or any ICANN-Accredited
+Registrar, except as reasonably necessary to register domain names or modify
+existing registrations. The compilation, repackaging, dissemination or other use
+of this Data is expressly prohibited without the prior written consent of
+dotCoop. All rights reserved. dotCoop reserves the right to modify these terms
+at any time. By submitting this query, you agree to abide by this policy.
+
+BY USING THE WHOIS SERVICE AND THE DATA CONTAINED HEREIN OR IN ANY REPORT
+GENERATED WITH RESPECT THERETO, IT IS ACCEPTED THAT DOTCOOP IS NOT LIABLE FOR
+ANY DAMAGES OF ANY KIND ARISING OUT OF, OR IN CONNECTION WITH, THE REPORT OR THE
+INFORMATION PROVIDED BY THE WHOIS SERVICE, NOR OMISSIONS OR MISSING INFORMATION.
+THE RESULTS OF ANY WHOIS REPORT OR INFORMATION PROVIDED BY THE WHOIS SERVICE
+CANNOT BE RELIED UPON IN CONTEMPLATION OF LEGAL PROCEEDINGS WITHOUT FURTHER
+VERIFICATION, NOR DO SUCH RESULTS CONSTITUTE A LEGAL OPINION.
