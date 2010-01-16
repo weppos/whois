@@ -87,6 +87,9 @@ class AnswerTest < Test::Unit::TestCase
 
 
   class Whois::Answer::Parser::WhoisParserFake < Whois::Answer::Parser::Base
+    property_supported :status do
+      nil
+    end
     property_supported :created_on do
       Date.parse("2010-10-20")
     end
@@ -96,6 +99,7 @@ class AnswerTest < Test::Unit::TestCase
 
   def test_property_supported?
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert  answer.property_supported?(:status)
     assert  answer.property_supported?(:created_on)
     assert !answer.property_supported?(:updated_on)
     assert !answer.property_supported?(:expires_on)
@@ -106,17 +110,18 @@ class AnswerTest < Test::Unit::TestCase
     properties = answer.properties
 
     assert_equal Whois::Answer::Parser.properties.size, properties.keys.size
+    assert_equal nil,                       properties[:status]
     assert_equal Date.parse("2010-10-20"),  properties[:created_on]
     assert_equal nil,                       properties[:updated_on]
     assert_equal nil,                       properties[:expires_on]
   end
 
-  def test_should_delegate_supported_property_to_parser
+  def test_should_return_value_with_supported_property_getter
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
     assert_equal Date.parse("2010-10-20"), answer.created_on
   end
 
-  def test_should_return_nil_with_not_supported_property
+  def test_should_return_nil_with_not_supported_property_getter
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
     assert_equal nil, answer.updated_on
   end
@@ -124,6 +129,26 @@ class AnswerTest < Test::Unit::TestCase
   def test_should_return_nil_with_not_implemented_property
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
     assert_equal nil, answer.expires_on
+  end
+
+  def test_should_return_false_with_supported_property_getter_and_not_value
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert !answer.status?
+  end
+
+  def test_should_return_true_with_supported_property_getter_and_value
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert  answer.created_on?
+  end
+
+  def test_should_return_false_with_not_supported_property_exists
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert !answer.updated_on?
+  end
+
+  def test_should_return_false_with_not_implemented_property_exists
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert !answer.expires_on?
   end
 
 end

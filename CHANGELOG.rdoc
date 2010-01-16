@@ -105,6 +105,14 @@
   in order to distinguish between properties not supported by the answer
   and methods that still need to be implemented because the parser is incomplete.
 
+* ADDED: Whois#Answer.property? returns whether property has a value.
+
+   a = Whois.query "google.it"
+   a.created_on?
+   # => true
+   a.domain_id?
+   # => false
+
 * CHANGED: All not supported properties now raise a PropertyNotSupported error instead of returning nil.
 
 * CHANGED: Depending on where you ask for a property, the library now returns the most expected value according to property status.

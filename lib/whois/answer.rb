@@ -127,7 +127,7 @@ module Whois
 
 
     protected
-      
+
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
         if Parser.properties.include?(method)
@@ -136,6 +136,8 @@ module Whois
           else
             nil
           end
+        elsif method.to_s =~ /([a-z_]+)\?/ and Parser.properties.include?($1.to_sym)
+          !send($1, *args, &block).nil?
         else
           super
         end
