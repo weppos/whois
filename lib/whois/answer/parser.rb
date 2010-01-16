@@ -56,10 +56,9 @@ module Whois
       # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
       # is supported by any available parser.
       # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
-      def property_available?(property)
-        parsers.any? { |parser| parser.property_available?(property) }
+      def property_supported?(property)
+        parsers.any? { |parser| parser.property_supported?(property) }
       end
-      alias :property_supported? :property_available?
 
 
       private
@@ -88,7 +87,7 @@ module Whois
           elsif parser = select_parser(method)
             parser.send(method, *args, &block)
 
-          # The property is not supported not defined.
+          # The property is not supported nor defined.
           else
             raise PropertyNotAvailable, "Unable to find a parser for `#{method}'"
           end

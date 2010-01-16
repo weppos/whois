@@ -37,44 +37,6 @@ module Whois
       #
       class Base
 
-        attr_reader :part
-
-
-        def initialize(part)
-          @part = part
-        end
-
-        ::Whois::Answer::Parser.properties.each do |method|
-          define_method(method) do
-            raise PropertyNotImplemented, "You should overwrite this method."
-          end
-        end
-
-        # This is an internal method primaly used as a common access point
-        # to get the content to be parsed as a string.
-        #
-        # The main reason behind this method is because I changed the internal
-        # representation of the data to be parsed more than once
-        # and I always had to rewrite all single parsers in order to reflect these changes.
-        # Now, as far as the parser access the data via the content method,
-        # there's no need to change each single implementation in case the content source changes.
-        #
-        # That said, the only constraints about this method is to return the data to be parsed as string.
-        #
-        def content
-          part.response
-        end
-
-
-        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
-        # is available for the current parser.
-        def property_available?(property)
-          self.class.property_registered?(property, :supported)
-        end
-        alias :property_supported? :property_available?
-
-
-
         @@property_registry = {}
 
         #
@@ -168,38 +130,92 @@ module Whois
         end
 
 
-        # Registers a <tt>property</tt> as <tt>:supported</tt>
-        # and defines a method with the content of the block.
-        # 
-        #   # Defines a supported property called :disclaimer.
-        #   property_supported(:disclaimer) do
+        # Registers a <tt>property</tt> as <tt>:not_implemented</tt>
+        # and defines a method which will raise a <tt>PropertyNotImplemented</tt> error.
+        #
+        #   # Defines a not implemented property called :disclaimer.
+        #   property_not_implemented(:disclaimer) do
         #     ...
         #   end
-        #   
+        #
         #   # def disclaimer
-        #   #   ...
+        #   #   raise PropertyNotImplemented, "You should overwrite this method."
         #   # end
-        # 
-        def self.property_supported(property, &block)
-          register_property(property, :supported, &block)
+        #
+        def self.property_not_implemented(property)
+          register_property(property, :not_implemented) do
+            raise PropertyNotSupported
+          end
         end
 
-        # Registers a <tt>property</tt> as <tt>:supported</tt>
+        # Registers a <tt>property</tt> as <tt>:not_supported</tt>
         # and defines a method which will raise a <tt>PropertyNotSupported</tt> error.
-        # 
+        #
         #   # Defines an unsupported property called :disclaimer.
         #   property_not_supported(:disclaimer) do
         #     ...
         #   end
-        #   
+        #
         #   # def disclaimer
         #   #   raise PropertyNotSupported
         #   # end
-        # 
+        #
         def self.property_not_supported(property)
-          register_property(property, :implemented) do
+          register_property(property, :not_supported) do
             raise PropertyNotSupported
           end
+        end
+        
+        # Registers a <tt>property</tt> as <tt>:supported</tt>
+        # and defines a method with the content of the block.
+        #
+        #   # Defines a supported property called :disclaimer.
+        #   property_supported(:disclaimer) do
+        #     ...
+        #   end
+        #
+        #   # def disclaimer
+        #   #   ...
+        #   # end
+        #
+        def self.property_supported(property, &block)
+          register_property(property, :supported, &block)
+        end
+
+
+
+        def initialize(part)
+          @part = part
+        end
+
+        ::Whois::Answer::Parser.properties.each do |property|
+          property_not_implemented(property)
+        end
+
+        def part
+          @part
+        end
+
+        # This is an internal method primaly used as a common access point
+        # to get the content to be parsed as a string.
+        #
+        # The main reason behind this method is because I changed the internal
+        # representation of the data to be parsed more than once
+        # and I always had to rewrite all single parsers in order to reflect these changes.
+        # Now, as far as the parser access the data via the content method,
+        # there's no need to change each single implementation in case the content source changes.
+        #
+        # That said, the only constraints about this method is to return the data to be parsed as string.
+        #
+        def content
+          part.response
+        end
+
+
+        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+        # is supported by the current parser.
+        def property_supported?(property)
+          self.class.property_registered?(property, :supported)
         end
 
       end

@@ -107,6 +107,20 @@
 
 * CHANGED: All not supported properties now raise a PropertyNotSupported error instead of returning nil.
 
+* CHANGED: Depending on where you ask for a property, the library now returns the most expected value according to property status.
+  If you try to access a property from the answer object, Whois::Answer always returns the value if the property is defined,
+  nil otherwise no matter if the property is not supported or undefined.
+
+    a = Whois.query "google.ac"
+    a.nameservers
+    # => nil even if not supported
+
+  If you want a more granular level of response, you can access the underling parser implementation.
+
+    a = Whois.query "google.ac"
+    a.parser.nameservers
+    # => PropertyNotSupported
+
 * CHANGED: Increased DEFAULT_TIMEOUT to 10 seconds
 
 * REMOVED: Deprecated #supported? method

@@ -113,20 +113,17 @@ module Whois
     # Returns a Hash containing all supported properties for this Answer
     # along with corresponding values.
     def properties
-      list = Parser.properties.inject([]) do |l,a|
-        l.concat([a, send(a)]) if property_available?(a)
-        l
-      end
-      Hash[*list]
+      hash = {}
+      Parser.properties.each { |property| hash[property] = send(property) }
+      hash
     end
 
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
     # See also <tt>Whois::Answer::Parser.supported?</tt>.
-    def property_available?(property)
-      parser.property_available?(property)
+    def property_supported?(property)
+      parser.property_supported?(property)
     end
-    alias :property_supported? :property_available?
 
 
     protected
@@ -134,12 +131,16 @@ module Whois
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
         if Parser.properties.include?(method)
-          parser.send(method, *args, &block)
+          if property_supported?(method)
+            parser.send(method, *args, &block)
+          else
+            nil
+          end
         else
           super
         end
       end
-      
+
   end
 
 end

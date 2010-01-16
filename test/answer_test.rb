@@ -85,34 +85,45 @@ class AnswerTest < Test::Unit::TestCase
     assert_instance_of Whois::Answer::Parser, answer.parser
   end
 
-  def test_properties
-    answer = @klass.new(nil, [])
-    answer.parser.expects(:property_available?).with(:domain).returns(true)
-    answer.parser.expects(:property_available?).with(:domain_id).returns(true)
-    answer.parser.expects(:property_available?).with(Not(any_of(:domain, :domain_id))).at_least(1).returns(false)
-    answer.parser.expects(:domain).returns("foo.com")
-    answer.parser.expects(:domain_id).returns(27)
-    
-    properties = answer.properties
-    assert_equal 2, properties.keys.length
-    assert_equal "foo.com", properties[:domain]
-    assert_equal 27, properties[:domain_id]
-  end
 
-  def test_property_available?
-    answer = @klass.new(nil, [])
-    answer.parser.expects(:property_available?).with(:disclaimer).returns(:value)
-    assert_equal :value, answer.property_available?(:disclaimer)
-  end
-
-
-  Whois::Answer::Parser.properties.each do |method|
-    define_method "test_should_delegate_#{method}_to_parser" do
-      answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-      parser = answer.parser
-      parser.expects(method).returns(:value)
-      assert_equal :value, answer.send(method)
+  class Whois::Answer::Parser::WhoisParserFake < Whois::Answer::Parser::Base
+    property_supported :created_on do
+      Date.parse("2010-10-20")
     end
+    property_not_supported :updated_on
+    # property_not_defined :expires_on
+  end
+
+  def test_property_supported?
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert  answer.property_supported?(:created_on)
+    assert !answer.property_supported?(:updated_on)
+    assert !answer.property_supported?(:expires_on)
+  end
+
+  def test_properties
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    properties = answer.properties
+
+    assert_equal Whois::Answer::Parser.properties.size, properties.keys.size
+    assert_equal Date.parse("2010-10-20"),  properties[:created_on]
+    assert_equal nil,                       properties[:updated_on]
+    assert_equal nil,                       properties[:expires_on]
+  end
+
+  def test_should_delegate_supported_property_to_parser
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert_equal Date.parse("2010-10-20"), answer.created_on
+  end
+
+  def test_should_return_nil_with_not_supported_property
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert_equal nil, answer.updated_on
+  end
+
+  def test_should_return_nil_with_not_implemented_property
+    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
+    assert_equal nil, answer.expires_on
   end
 
 end
