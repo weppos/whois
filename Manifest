@@ -69,6 +69,7 @@ lib/whois/answer/parser/whois.norid.no.rb
 lib/whois/answer/parser/whois.publicinterestregistry.net.rb
 lib/whois/answer/parser/whois.register.bg.rb
 lib/whois/answer/parser/whois.registro.br.rb
+lib/whois/answer/parser/whois.registrypro.pro.rb
 lib/whois/answer/parser/whois.ripe.net.rb
 lib/whois/answer/parser/whois.ripn.net.rb
 lib/whois/answer/parser/whois.rotld.ro.rb
@@ -148,6 +149,7 @@ test/answer/parser/whois.norid.no_test.rb
 test/answer/parser/whois.publicinterestregistry.net_test.rb
 test/answer/parser/whois.register.bg_test.rb
 test/answer/parser/whois.registro.br_test.rb
+test/answer/parser/whois.registrypro.pro_test.rb
 test/answer/parser/whois.ripe.net_test.rb
 test/answer/parser/whois.ripn.net_test.rb
 test/answer/parser/whois.rotld.ro_test.rb
@@ -310,6 +312,8 @@ test/testcases/responses/whois.register.bg/available.txt
 test/testcases/responses/whois.register.bg/registered.txt
 test/testcases/responses/whois.registro.br/available.txt
 test/testcases/responses/whois.registro.br/registered.txt
+test/testcases/responses/whois.registrypro.pro/available.txt
+test/testcases/responses/whois.registrypro.pro/registered.txt
 test/testcases/responses/whois.ripe.net/fo/available.txt
 test/testcases/responses/whois.ripe.net/fo/registered.txt
 test/testcases/responses/whois.ripe.net/gm/available.txt

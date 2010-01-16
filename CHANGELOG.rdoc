@@ -93,6 +93,8 @@
 
 * ADDED: Simple .coop TLD parser (whois.nic.coop).
 
+* ADDED: Simple .pro TLD parser (whois.registrypro.pro).
+
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
   'property_supported' and 'property_not_supported' methods

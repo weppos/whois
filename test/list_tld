@@ -42,7 +42,7 @@ jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
 mobi;whois.dotmobiregistry.net;google.mobi;u34jedzcq.mobi
 museum;whois.museum;musedoma.museum;u34jedzcq.museum
 name;whois.nicc.name;carletti.name;u34jedzcq.name
-#Whois::Server.define :tld, ".pro", "whois.registrypro.pro"
+pro;whois.registrypro.pro;registry.pro;u34jedzcq.pro
 tel;whois.nic.tel;weppos.tel;u34jedzcq.tel
 travel;whois.nic.travel;travel.travel;u34jedzcq.travel
 #Whois::Server.define :tld, ".ac", "whois.nic.ac"
