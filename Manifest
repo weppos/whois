@@ -43,6 +43,7 @@ lib/whois/answer/parser/whois.isnic.is.rb
 lib/whois/answer/parser/whois.meregistry.net.rb
 lib/whois/answer/parser/whois.museum.rb
 lib/whois/answer/parser/whois.nic-se.se.rb
+lib/whois/answer/parser/whois.nic.ac.rb
 lib/whois/answer/parser/whois.nic.asia.rb
 lib/whois/answer/parser/whois.nic.cc.rb
 lib/whois/answer/parser/whois.nic.cd.rb
@@ -123,6 +124,7 @@ test/answer/parser/whois.isnic.is_test.rb
 test/answer/parser/whois.meregistry.net_test.rb
 test/answer/parser/whois.museum_test.rb
 test/answer/parser/whois.nic-se.se_test.rb
+test/answer/parser/whois.nic.ac_test.rb
 test/answer/parser/whois.nic.asia_test.rb
 test/answer/parser/whois.nic.cc_test.rb
 test/answer/parser/whois.nic.cd_test.rb
@@ -245,6 +247,8 @@ test/testcases/responses/whois.museum/available.txt
 test/testcases/responses/whois.museum/registered.txt
 test/testcases/responses/whois.nic-se.se/available.txt
 test/testcases/responses/whois.nic-se.se/registered.txt
+test/testcases/responses/whois.nic.ac/available.txt
+test/testcases/responses/whois.nic.ac/registered.txt
 test/testcases/responses/whois.nic.asia/available.txt
 test/testcases/responses/whois.nic.asia/registered.txt
 test/testcases/responses/whois.nic.cc/available.txt

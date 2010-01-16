@@ -77,8 +77,6 @@
 
 * ADDED: Simple .dk TLD parser [thanks to Mikkel Kristensen].
 
-* ADDED: .cc, .jobs TLD parsers (verisign).
-
 * ADDED: Simple .uk TLD parser (whois.nic.uk).
 
 * ADDED: Simple .ws TLD parser (whois.samoanic.ws).
@@ -94,6 +92,10 @@
 * ADDED: Simple .coop TLD parser (whois.nic.coop).
 
 * ADDED: Simple .pro TLD parser (whois.registrypro.pro).
+
+* ADDED: .cc, .jobs TLD parsers (verisign).
+
+* ADDED: .ac TLD parser (whois.nic.ac).
 
 * ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
