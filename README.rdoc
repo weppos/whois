@@ -161,9 +161,10 @@ Author:: {Simone Carletti}[http://www.simonecarletti.com/] <weppos@weppos.net>
 
 == Thanks to
 
-* {Cyril Mougel}[http://blog.shingara.fr/] <cyril.mougel@gmail.com> Author of the initial Whois GEM
-* {Gábor Vészi}[http://well.done.hu/] .hu whois parser
-* {Aaron Mueller}[http://aaron-mueller.de/] .de whois parser
+* {Cyril Mougel}[http://blog.shingara.fr/] - Author of the initial Whois GEM
+* {Gábor Vészi}[http://well.done.hu/] - .hu whois parser
+* {Aaron Mueller}[http://aaron-mueller.de/] - .de whois parser
+* Mikkel Mondrup Kristensen - Improvements and updates to many WHOIS parsers
 
 
 == FeedBack and Bug reports
