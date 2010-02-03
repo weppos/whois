@@ -21,11 +21,11 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.author        = "Simone Carletti"
   p.email         = "weppos@weppos.net"
   p.summary       = "An intelligent pure Ruby WHOIS client and parser."
-  p.url           = "http://code.simonecarletti.com/whois"
+  p.url           = "http://www.ruby-whois.org"
   p.project       = RUBYFORGE_PROJECT
   p.description   = <<-EOD
     Whois is an intelligent WHOIS client and parser written in pure Ruby. \
-    It can query registry data for ipv4, ipv6 and top level domains, \
+    It can query registry data for IPv4, IPv6 and top level domains, \
     parse and convert responses into easy-to-use Ruby objects.
   EOD
 

@@ -4,7 +4,7 @@ Whois is an intelligent pure Ruby WHOIS client and parser.
 
 It is a OS-independent library and doesn't require external C libraries or Gems: it is a 100% Ruby software with all the advantages and disadvantages that it involves.
 
-This software was developed to power RoboDomain[http://www.robodomain.com] and, since July 2009, it ran more than thousands requests.
+This software was developed to power {RoboDomain}[http://www.robodomain.com] and, since July 2009, it ran more than thousands requests.
 
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change Whois interfaces without notice and at any time causing queries to specific hosts to stop working.
 
@@ -24,7 +24,7 @@ An extensive test suite is available to verify the library correctness but you m
 
 * Ruby >= 1.8.6 (not tested with previous versions)
 
-Whois has been {successfully tested}[http://code.simonecarletti.com/wiki/whois/Platforms] against the following Ruby platforms:
+Whois has been {successfully tested}[http://www.ruby-whois.org/documentation/installation.html] against the following Ruby platforms:
 
 * Ruby 1.8.6 / 1.8.7 / 1.9.1
 * MacRuby 0.4
@@ -44,7 +44,7 @@ You might need administrator privileges on your system to install it.
 
 == Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The {documentation}[http://code.simonecarletti.com/wiki/whois] provides a more accurate explanation including tutorials, more examples and technical details about the client/server/answer/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The {documentation}[http://www.ruby-whois.org/documentation.html] provides a more accurate explanation including tutorials, more examples and technical details about the client/server/answer/parser architecture.
 
 === Querying the Server
 
@@ -170,15 +170,14 @@ Author:: {Simone Carletti}[http://www.simonecarletti.com/] <weppos@weppos.net>
 
 If you use this library and find yourself missing any functionality I have missed, please {let me know}[mailto:weppos@weppos.net].
 
-Bug reports and Feature suggestions {are welcomed}[http://code.simonecarletti.com/projects/whois/issues].
+Bug reports and Feature suggestions {are welcomed}[http://github.com/weppos/whois/issues].
 
 
-== Resources
+== More
 
-* {Homepage}[http://code.simonecarletti.com/whois]
-* {GitHub}[http://github.com/weppos/whois]
-* {RubyForge}[http://rubyforge.org/projects/whois/]
-* {API}[http://whois.rubyforge.org/]
+* {Homepage}[http://ruby-whois.org]
+* {GitHub Repository}[http://github.com/weppos/whois]
+* {API Documentation}[http://whois.rubyforge.org/]
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
 
