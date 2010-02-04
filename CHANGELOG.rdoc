@@ -113,6 +113,8 @@
    a.domain_id?
    # => false
 
+* ADDED: Whois::WebInterfaceError now exposes #url attribute.
+
 * CHANGED: All not supported properties now raise a PropertyNotSupported error instead of returning nil.
 
 * CHANGED: Depending on where you ask for a property, the library now returns the most expected value according to property status.

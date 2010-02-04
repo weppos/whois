@@ -36,8 +36,7 @@ module Whois
         # WebInterfaceError:: for every request
         #
         def request(qstring)
-          raise WebInterfaceError,  "This TLD has no whois server, " +
-                                    "but you can access the whois database at `#{options[:web]}'"
+          raise WebInterfaceError, options[:web]
         end
         
       end

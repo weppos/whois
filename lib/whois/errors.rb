@@ -46,6 +46,11 @@ module Whois
   # standard whois interface via port 43. This is the case of some
   # specific domains that only provide a web–based WHOIS interface. (\x01)
   class WebInterfaceError < InterfaceNotSupported
+    attr_reader :url
+    def initialize(url)
+      @url = url
+      super("This TLD has no whois server, but you can access the whois database at `#{@url}'")
+    end
   end
 
   # Server Known object, Definition unavailable
