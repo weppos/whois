@@ -182,5 +182,5 @@ See the CHANGELOG.rdoc file for details.
 
 == License
 
-Copyright (c) 2009 Simone Carletti, Whois is released under the MIT license.
+Copyright (c) 2009-2010 Simone Carletti, Whois is released under the MIT license.
 
