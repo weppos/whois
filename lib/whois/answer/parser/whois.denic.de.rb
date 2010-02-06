@@ -50,17 +50,13 @@ module Whois
         end
 
 
-        property_supported :created_on do
-          nil
-        end
+        property_not_supported :created_on
 
         property_supported :updated_on do
           node("Changed") { |raw| Time.parse(raw) }
         end
 
-        property_supported :expires_on do
-          nil
-        end
+        property_not_supported :expires_on
 
 
         property_supported :registrar do

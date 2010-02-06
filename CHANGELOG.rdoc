@@ -25,6 +25,8 @@
 
 * FIXED: Some tests are not compatible with Ruby 1.9
 
+* FIXED: Flagged created_on and expires_on properties as not supported for .de TLD.
+
 * ADDED: Simple .at TLD parser.
 
 * ADDED: Simple .be TLD parser.

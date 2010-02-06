@@ -106,10 +106,8 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
 
   def test_created
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).created_on }
   end
 
   def test_updated_on
@@ -120,10 +118,8 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
   end
 
 
@@ -277,24 +273,21 @@ assurance and to bar you from using its whois query.
   end
 
 
-  def test_created_on_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).created_on
+  def test_created_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/1-10-0_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/1-10-0_available.txt')).expires_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse('2009-02-28 12:03:09'),
+    assert_equal  Time.parse('2009-02-28 12:03:09 +01:00'),
                   @klass.new(load_part('/1-10-0_registered.txt')).updated_on
-  end
-
-  def test_updated_on_with_available
     assert_equal  nil,
                   @klass.new(load_part('/1-10-0_available.txt')).updated_on
   end
 
-  def test_expires_on_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).expires_on
+  def test_expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/1-10-0_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/1-10-0_available.txt')).expires_on }
   end
 
 
