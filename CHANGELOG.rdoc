@@ -133,7 +133,9 @@
 
 * CHANGED: Increased DEFAULT_TIMEOUT to 10 seconds
 
-* REMOVED: Deprecated #supported? method
+* REMOVED: Removed Deprecated #supported? method
+
+* REMOVED: Removed Deprecated compatibility layer to Whois 0.4.2
 
 
 == Release 0.9.0

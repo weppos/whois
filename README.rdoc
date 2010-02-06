@@ -128,30 +128,23 @@ Off course, you can customize the timeout value setting a different value. If ti
 
 == Acknowledgments
 
-First of all, I would like to express my most sincere thanks to Cyril Mougel, the author of the first Ruby Whois GEM that has been available since 2007. Cyril has been kind enough to yield me the privilege of using the RubyForge Whois project and the Whois package name to publish this library.
-To express all my gratitude, the Release 0.5.0 of the new Ruby Whois is 100% compatible with Cyril's Whois (as of release 0.4.2).
+First of all, I would like to express my most sincere thanks to Cyril Mougel, the author of the first Ruby Whois GEM that has been available since 2007. Cyril has been kind enough to yield me the privilege of using the RubyForge Whois project and the Whois package name to publish this library. To express all my gratitude, the release 0.5.0 and all sub sequential versions of the new Whois up to 0.9.x are 100% compatible with Cyril's Whois.
 
-Whois is largely inspired by other notable Whois projects, most of all the Debian Whois library written and mainained by Marco D'Itri. Other good ideas and design decisions come from the PERL Net::DRI package.
+Whois is largely inspired by other notable Whois projects, most of all the Debian Whois library written and maintained by Marco D'Itri. Other good ideas and design decisions come from the PERL Net::DRI package.
 
 I would lie if I say I'm completely unaware of the other Ruby Whois projects. Before starting this Ruby Whois library I deeply investigated the available resources and, despite none of them was a good candidate for a refactoring, some of them expose a really cool API.
 They didn't directly influence this library or any design decision, but they have been a really interesting code-reading.
 
-The parser architecture (yet to come) has been inspired by the PHPWhois[http://phpwhois.sourceforge.net/] project. The authors puts lot of effort to create whois-specific parsers normalizing the different responses in a single tree-based structure. So far, this is the only one opensource project that offers such this feature in all the programming language ecosystem.
+The parser architecture has been inspired by the PHPWhois[http://phpwhois.sourceforge.net/] project. The authors puts lot of effort to create whois-specific parsers normalizing the different responses in a single tree-based structure. So far, this is the only one opensource project that offers such this feature in all the programming language ecosystem.
 
 Despite I spent weeks reading source code from the available whois libraries, Ruby Whois has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
 
-== Notice for users of Whois 0.4 (or previous version)
+== Note for Whois 0.4 users
 
 As of release 0.5.0, the Whois GEM has been completely rewritten. As I explained in the Acknowledgment section, Cyril Mougel (the author of the original Whois package) yield me the privilege to use the Whois RubyForge project for my new Whois client.
 
-My Whois client provides all the features offered by Cyril's library, with some nice additions like the ability to get top level domain query information. All existing users won't be affected by this change since the new Whois library comes with a compatibility adapter that translates all the requests from the deprecated interface to the new one.
-
-The adapter will be removed in a future version so make sure to check your application for deprecation warnings and fix them before upgrading to a newest release that doesn't belong to the 0.5.x series.
-
-Ruby Whois 0.4.2 is released under the MIT license.
-
-Copyright (c) 2007 by Cyril Mougel (cyril.mougel@gmail.com)
+All versions between Whois 0.5.0 and 0.9.x include a compatibility adapter and the corresponding deprecation warnings to help you migrate to the new API. Starting from Whois 1.0.0, the library is no longer backward compatible with Cyril's Whois.
 
 
 == Author
@@ -178,7 +171,7 @@ Bug reports and Feature suggestions {are welcomed}[http://github.com/weppos/whoi
 
 * {Homepage}[http://ruby-whois.org]
 * {GitHub Repository}[http://github.com/weppos/whois]
-* {API Documentation}[http://whois.rubyforge.org/]
+* {API Documentation}[http://whois.rubyforge.org]
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
 

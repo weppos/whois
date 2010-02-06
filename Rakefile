@@ -1,9 +1,9 @@
 $:.unshift(File.dirname(__FILE__) + "/lib")
 
+require 'whois'
 require 'rubygems'
 require 'rake'
 require 'echoe'
-require 'whois'
 require 'rake/rdoctask'
 require 'hanna/rdoctask'
 
