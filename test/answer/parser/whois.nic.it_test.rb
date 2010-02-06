@@ -53,22 +53,25 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
+  # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_created_on
-    assert_equal  Time.parse("1999-12-10 00:00:00 +0100"),
+    assert_equal  Time.parse("1999-12-10 00:00:00"),
                   @klass.new(load_part('/registered.txt')).created_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).created_on
   end
 
+  # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_updated_on
-    assert_equal  Time.parse("2008-11-27 16:47:22 +0100"),
+    assert_equal  Time.parse("2008-11-27 16:47:22"),
                   @klass.new(load_part('/registered.txt')).updated_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).updated_on
   end
 
+  # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_expires_on
-    assert_equal  Time.parse("2009-11-27"),
+    assert_equal  Time.parse("2009-11-27 00:00:00"),
                   @klass.new(load_part('/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
