@@ -67,10 +67,10 @@ module Whois
     #   # => #<Whois::Answer>
     #
     def query(qstring)
-      qstring = qstring.to_s
+      string = qstring.to_s
       Timeout::timeout(timeout) do
-        @server = Server.guess(qstring)
-        @server.query(qstring)
+        @server = Server.guess(string)
+        @server.query(string)
       end
     end
 

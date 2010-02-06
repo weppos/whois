@@ -1,13 +1,13 @@
 % Whois server 1.99C
 
-Rights restricted by copyright. Szerzõi jog fenntartva.
+Rights restricted by copyright. SzerzÃµi jog fenntartva.
 -Legal usage of this service requires that you agree to
 abide by the rules and conditions set forth at
 http://www.domain.hu/domain/English/domainsearch/feltetelek.html
 -A szolgaltatas csak a
-http://www.domain.hu/domain/domainsearch/feltetelek.html címen
-elérhetõ feltételek elfogadása és betartása mellett
-használható legálisan.
+http://www.domain.hu/domain/domainsearch/feltetelek.html cÃ­men
+elÃ©rhetÃµ feltÃ©telek elfogadÃ¡sa Ã©s betartÃ¡sa mellett
+hasznÃ¡lhatÃ³ legÃ¡lisan.
 
 domain:         google.hu
 org:            org_name_eng: Google, Inc.
@@ -30,7 +30,7 @@ changed:        2009.08.25 10:11:32
 registrar:      1960108002
 
 person:         3C Kft. (Registrar)
-address:        Konkoly Thege út 29-33.
+address:        Konkoly Thege Ãºt 29-33.
 address:        H-1121 Budapest
 address:        HU
 phone:          +36 1 275 52 00
@@ -56,7 +56,7 @@ hun-id:         2000578125
 
 org:            org_name_eng: 3C Ltd.
 org:            org_name_hun: 3C Kft. (Registrar)
-address:        Konkoly Thege út 29-33.
+address:        Konkoly Thege Ãºt 29-33.
 address:        H-1121 Budapest
 address:        HU
 phone:          +36 1 275 52 00

@@ -23,6 +23,8 @@
 
 * FIXED: In case of exception, the CLI doesn't exit nicely (closes #333)
 
+* FIXED: Some tests are not compatible with Ruby 1.9
+
 * ADDED: Simple .at TLD parser.
 
 * ADDED: Simple .be TLD parser.

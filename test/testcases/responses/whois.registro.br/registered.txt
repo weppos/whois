@@ -11,7 +11,7 @@
 % Use https://registro.br/cgi-bin/avail/ for domain availability.
 
 domain:      registro.br
-owner:       Núcleo de Informação e Coordenação do Ponto BR (662379)
+owner:       NÃºcleo de InformaÃ§Ã£o e CoordenaÃ§Ã£o do Ponto BR (662379)
 
 % Security and mail abuse issues should also be addressed to
 % cert.br, http://www.cert.br/, respectivelly to cert@cert.br

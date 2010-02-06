@@ -10,8 +10,8 @@
 % Information related to 'nic.mc'
 
 domain:       nic.mc
-descr:        Ministère d'Etat
-descr:        Direction des Télécommunications
+descr:        MinistÃ¨re d'Etat
+descr:        Direction des TÃ©lÃ©communications
 admin-c:      CP621-RIPE
 tech-c:       CP621-RIPE
 zone-c:       CP621-RIPE
@@ -22,9 +22,9 @@ mnt-by:       MC-NIC-MNT
 source:       RIPE # Filtered
 
 person:       Christian Palmaro
-address:      Ministère d'Etat
-address:      Direction des Télécommunications
-address:      23, avenue Prince Héréditaire Albert
+address:      MinistÃ¨re d'Etat
+address:      Direction des TÃ©lÃ©communications
+address:      23, avenue Prince HÃ©rÃ©ditaire Albert
 address:      98000 Monaco
 phone:        +377 93 15 88 00
 fax-no:       +377 97 98 56 57

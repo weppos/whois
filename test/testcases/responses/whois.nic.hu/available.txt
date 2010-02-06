@@ -1,12 +1,12 @@
 % Whois server 1.99C
 
-Rights restricted by copyright. Szerzıi jog fenntartva.
+Rights restricted by copyright. Szerz√µi jog fenntartva.
 -Legal usage of this service requires that you agree to
 abide by the rules and conditions set forth at
 http://www.domain.hu/domain/English/domainsearch/feltetelek.html
 -A szolgaltatas csak a
-http://www.domain.hu/domain/domainsearch/feltetelek.html cÌmen
-elÈrhetı feltÈtelek elfogad·sa Ès betart·sa mellett
-haszn·lhatÛ leg·lisan.
+http://www.domain.hu/domain/domainsearch/feltetelek.html c√≠men
+el√©rhet√µ felt√©telek elfogad√°sa √©s betart√°sa mellett
+haszn√°lhat√≥ leg√°lisan.
 
-Nincs tal·lat / No match
+Nincs tal√°lat / No match

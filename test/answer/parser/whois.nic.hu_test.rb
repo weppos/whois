@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require 'test_helper'
 require 'whois/answer/parser/whois.nic.hu.rb'
 
@@ -11,15 +13,15 @@ class AnswerParserWhoisNicHuTest < Test::Unit::TestCase
   end
 
   def test_disclaimer
-    expected = (<<-EOS).strip
-Rights restricted by copyright. Szerzõi jog fenntartva.
+    expected = <<-EOS.strip
+Rights restricted by copyright. SzerzÃµi jog fenntartva.
 -Legal usage of this service requires that you agree to
 abide by the rules and conditions set forth at
 http://www.domain.hu/domain/English/domainsearch/feltetelek.html
 -A szolgaltatas csak a
-http://www.domain.hu/domain/domainsearch/feltetelek.html címen
-elérhetõ feltételek elfogadása és betartása mellett
-használható legálisan.
+http://www.domain.hu/domain/domainsearch/feltetelek.html cÃ­men
+elÃ©rhetÃµ feltÃ©telek elfogadÃ¡sa Ã©s betartÃ¡sa mellett
+hasznÃ¡lhatÃ³ legÃ¡lisan.
 EOS
     assert_equal  expected,
                   @klass.new(load_part('/available.txt')).disclaimer
@@ -120,7 +122,7 @@ EOS
     assert_instance_of Whois::Answer::Contact, admin
     assert_equal '2000466366', admin.id
     assert_equal '3C Kft. (Registrar)', admin.name
-    assert_equal 'Konkoly Thege út 29-33.', admin.address
+    assert_equal 'Konkoly Thege Ãºt 29-33.', admin.address
     assert_equal 'H-1121', admin.zip
     assert_equal 'Budapest', admin.city
     assert_equal 'HU', admin.country_code
@@ -183,7 +185,7 @@ EOS
     assert_equal '1960108002', registrar_contact.id
     assert_equal '3C Kft. (Registrar)', registrar_contact.name
     assert_equal '3C Ltd.', registrar_contact.organization
-    assert_equal 'Konkoly Thege út 29-33.', registrar_contact.address
+    assert_equal 'Konkoly Thege Ãºt 29-33.', registrar_contact.address
     assert_equal 'H-1121', registrar_contact.zip
     assert_equal 'Budapest', registrar_contact.city
     assert_equal 'HU', registrar_contact.country_code

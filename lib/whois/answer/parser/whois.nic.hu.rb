@@ -206,17 +206,19 @@ module Whois
               false
             end
 
+            # FIXME: Requires UTF-8 Encoding (see #11)
             def parse_not_found
-              if @input.match?(/\nNincs tal.lat \/ No match\n/)
-                @input.scan(/\nNincs tal.lat \/ No match\n/)
+              if @input.match?(/\nNincs (.*?) \/ No match\n/)
+                @input.scan(/\nNincs (.*?) \/ No match\n/)
                 return @ast['NotFound'] = true
               end
               @ast['NotFound'] = false
             end
 
+            # FIXME: Requires UTF-8 Encoding (see #11)
             def parse_in_progress
-              if @input.match?(/Regisztr.ci. folyamatban \/ Registration in progress\n/)
-                 @input.scan(/Regisztr.ci. folyamatban \/ Registration in progress\n/)
+              if @input.match?(/(.*?) folyamatban \/ Registration in progress\n/)
+                 @input.scan(/(.*?) folyamatban \/ Registration in progress\n/)
                  return @ast['InProgress'] = true
               end
               @ast['InProgress'] = false

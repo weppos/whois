@@ -70,7 +70,11 @@ module Whois
         end
 
         property_supported :nameservers do
-          @nameservers ||= content.to_s.scan(/Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m).to_s.split || []
+          @nameservers ||= if content =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
+            $1.split.map { |s| s.strip }
+          else
+            []
+          end
         end
 
       end
