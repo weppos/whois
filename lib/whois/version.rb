@@ -17,8 +17,8 @@
 module Whois
 
   module Version
-    MAJOR = 0
-    MINOR = 9
+    MAJOR = 1
+    MINOR = 0
     TINY  = 0
     ALPHA = nil
 

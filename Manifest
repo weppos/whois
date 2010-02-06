@@ -99,7 +99,6 @@ lib/whois/server/adapters/standard.rb
 lib/whois/server/adapters/verisign.rb
 lib/whois/server/adapters/web.rb
 lib/whois/version.rb
-lib/whois/whois.rb
 tasks/server.rake
 test/answer/parser/base_test.rb
 test/answer/parser/blank_test.rb
@@ -164,6 +163,7 @@ test/answer/parser_test.rb
 test/answer_test.rb
 test/client_test.rb
 test/deprecated_test.rb
+test/errors_test.rb
 test/integration_test.rb
 test/list_tld
 test/server/adapters/afilias_test.rb
@@ -344,6 +344,5 @@ test/testcases/responses/whois.za.net/available.txt
 test/testcases/responses/whois.za.net/registered.txt
 test/testcases/responses/whois.za.org/available.txt
 test/testcases/responses/whois.za.org/registered.txt
-test/whois_test.rb
 utils/bm_delegation_vs_inheritance.rb
 utils/bm_shell_vs_pure.rb

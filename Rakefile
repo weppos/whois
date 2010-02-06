@@ -31,10 +31,10 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
 
   p.need_zip      = true
 
-  p.development_dependencies += ["rake  ~>0.8",
-                                 "hanna ~>0.1.12",
-                                 "echoe ~>3.1",
-                                 "mocha ~>0.9"]
+  p.development_dependencies += ["rake  0.8.7",
+                                 "hanna 0.1.12",
+                                 "echoe 4.1",
+                                 "mocha 0.9.8"]
 
   p.rdoc_options  = ["--inline-source", "-T", "hanna"]
   p.rcov_options  = ["-Itest -x mocha,rcov,Rakefile"]
