@@ -19,7 +19,7 @@ module Whois
   module Version
     MAJOR = 1
     MINOR = 0
-    TINY  = 0
+    TINY  = 1
     ALPHA = nil
 
     STRING = [MAJOR, MINOR, TINY, ALPHA].compact.join('.')
