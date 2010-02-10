@@ -218,6 +218,14 @@ module Whois
           self.class.property_registered?(property, :supported)
         end
 
+
+        protected
+
+          def content_for_scanner
+            @content_for_scanner ||= content.to_s.gsub(/\r\n/, "\n")
+          end
+
+
       end
 
     end

@@ -24,6 +24,12 @@ class AnswerParserBaseTest < Test::Unit::TestCase
     assert_equal @part.response, parser.content
   end
 
+  def test_content_for_scanner
+    parser = @klass.new(Whois::Answer::Part.new("This is\r\nthe response.", "whois.foo.com"))
+    assert_equal "This is\nthe response.", parser.send(:content_for_scanner)
+    assert_equal "This is\nthe response.", parser.instance_variable_get(:"@content_for_scanner")
+  end
+
 
   def test_property_supported?
     klass = Class.new(@klass) do

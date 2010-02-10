@@ -114,7 +114,7 @@ module Whois
         protected
 
           def parse
-            Scanner.new(content.to_s).parse
+            Scanner.new(content_for_scanner).parse
           end
 
           def contact(element)
@@ -141,7 +141,7 @@ module Whois
         class Scanner
 
           def initialize(content)
-            @input = StringScanner.new(content.to_s)
+            @input = StringScanner.new(content)
           end
 
           def parse
@@ -164,7 +164,7 @@ module Whois
 
             def trim_newline
               # The last line is \r\n\n
-              @input.scan(/\r\n+/)
+              @input.scan(/\n+/)
             end
 
             def parse_not_found
@@ -174,7 +174,7 @@ module Whois
             def parse_disclaimer
               if @input.match?(/NOTICE:/)
                 lines = []
-                while !@input.match?(/\r\n/) && @input.scan(/(.*)\r\n/)
+                while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
                   lines << @input[1].strip
                 end
                 @ast["Disclaimer"] = lines.join(" ")
@@ -184,7 +184,7 @@ module Whois
             end
 
             def parse_pair
-              if @input.scan(/(.*?):(.*?)\r\n/)
+              if @input.scan(/(.*?):(.*?)\n/)
                 key, value = @input[1].strip, @input[2].strip
                 if @ast[key].nil?
                   @ast[key] = value

@@ -35,13 +35,13 @@ module Whois
       class WhoisCat < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /Status:\s+(.*)\r\n/
+          @status ||= if content_for_scanner =~ /Status:\s+(.*)\n/
             $1.downcase.to_sym
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /Object (.*?) NOT FOUND/)
+          @available ||= !!(content_for_scanner =~ /Object (.*?) NOT FOUND/)
         end
 
         property_supported :registered? do
@@ -50,19 +50,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /Created On:\s+(.*)\r\n/
+          @created_on ||= if content_for_scanner =~ /Created On:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /Last Updated On:\s+(.*)\r\n/
+          @updated_on ||= if content_for_scanner =~ /Last Updated On:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Expiration Date:\s+(.*)\r\n/
+          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
             Time.parse($1)
           end
         end

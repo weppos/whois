@@ -22,8 +22,7 @@ module Whois
         class VerisignScanner
 
           def initialize(content)
-            content = content.to_s.gsub("\r", "")
-            @input = StringScanner.new(content.to_s)
+            @input = StringScanner.new(content)
           end
 
           def parse

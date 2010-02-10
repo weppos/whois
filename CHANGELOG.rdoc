@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* CHANGED: Changed Parsers to use a normalized content version called Whois::Parser::Base#content_for_scanner
+
+
 == Release 1.0.0
 
 * SERVER: Changed .biz TLD server to whois.biz (see http://www.iana.org/domains/root/db/biz.html)

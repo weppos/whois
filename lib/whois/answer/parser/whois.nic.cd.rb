@@ -35,11 +35,11 @@ module Whois
       class WhoisNicCd < Base
 
         property_supported :status do
-          content.to_s.scan(/\s+Domain Status:\s+(.*?)\n/).flatten
+          content_for_scanner.scan(/\s+Domain Status:\s+(.*?)\n/).flatten
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s.strip == "Domain Not Found")
+          @available ||= !!(content_for_scanner.strip == "Domain Not Found")
         end
 
         property_supported :registered? do
@@ -48,7 +48,7 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /\s+Creation Date:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /\s+Creation Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -56,7 +56,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /\s+Expiration Date:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /\s+Expiration Date:\s+(.*)\n/
             Time.parse($1)
           end
         end

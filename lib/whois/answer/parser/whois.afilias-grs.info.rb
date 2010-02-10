@@ -35,11 +35,11 @@ module Whois
       class WhoisAfiliasGrsInfo < Base
 
         property_supported :status do
-          @status ||= content.to_s.scan(/Status:(.*?)[\r\n]+/).flatten
+          @status ||= content_for_scanner.scan(/Status:(.*?)\n+/).flatten
         end
 
         property_supported :available? do
-          @available ||= (content.to_s.strip == "NOT FOUND")
+          @available ||= (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
@@ -48,19 +48,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /Created On:(.*?)[\r\n]+/
+          @created_on ||= if content_for_scanner =~ /Created On:(.*?)\n+/
             Time.parse($1)
           end
         end
         
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /Last Updated On:(.*?)[\r\n]+/
+          @updated_on ||= if content_for_scanner =~ /Last Updated On:(.*?)\n+/
             Time.parse($1)
           end
         end
         
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Expiration Date:(.*?)[\r\n]+/
+          @expires_on ||= if content_for_scanner =~ /Expiration Date:(.*?)\n+/
             Time.parse($1)
           end
         end

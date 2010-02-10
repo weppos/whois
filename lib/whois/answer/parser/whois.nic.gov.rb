@@ -35,7 +35,7 @@ module Whois
       class WhoisNicGov < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /Status:\s(.*?)[\r\n]+/
+          @status ||= if content_for_scanner =~ /Status:\s(.*?)\n+/
             $1.downcase.to_sym
           end
         end
@@ -45,7 +45,7 @@ module Whois
         end
 
         property_supported :registered? do
-          @registered ||= (content.to_s =~ /Domain Name:/)
+          @registered ||= (content_for_scanner =~ /Domain Name:/)
         end
 
 

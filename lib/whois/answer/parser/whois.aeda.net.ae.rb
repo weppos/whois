@@ -35,11 +35,11 @@ module Whois
       class WhoisAedaNetAe < Base
 
         property_supported :status do
-          @status ||= content.to_s.scan(/Status:\s+(.*?)\r\n/).flatten
+          @status ||= content_for_scanner.scan(/Status:\s+(.*?)\n/).flatten
         end
 
         property_supported :available? do
-          @available ||= content.to_s.strip == "No Data Found"
+          @available ||= content_for_scanner.strip == "No Data Found"
         end
 
         property_supported :registered? do
@@ -55,7 +55,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content.to_s.scan(/Name Server:\s+(.*?)\r\n/).flatten
+          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.*?)\n/).flatten
         end
 
       end

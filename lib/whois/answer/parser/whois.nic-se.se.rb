@@ -35,13 +35,13 @@ module Whois
       class WhoisNicSeSe < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /state:\s+(.*)\r\n/
+          @status ||= if content_for_scanner =~ /state:\s+(.*)\n/
             $1.downcase.to_sym
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /" not found./)
+          @available ||= !!(content_for_scanner =~ /" not found./)
         end
 
         property_supported :registered? do
@@ -49,25 +49,25 @@ module Whois
         end
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /created:\s+(.*)\r\n/
+          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /expires:\s+(.*)\r\n/
+          @expires_on ||= if content_for_scanner =~ /expires:\s+(.*)\n/
             Time.parse($1)
           end
         end
         
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /modified:\s+(.*?)\r\n/
+          @updated_on ||= if content_for_scanner =~ /modified:\s+(.*?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :nameservers do
-          @nameservers ||= content.to_s.scan(/nserver:\s+(.*)\r\n/).flatten
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.*)\n/).flatten
         end
 
       end
