@@ -89,7 +89,7 @@ module Whois
         protected
 
           def parse
-            Scanners::VerisignScanner.new(content.to_s).parse
+            Scanners::VerisignScanner.new(content_for_scanner).parse
           end
 
       end

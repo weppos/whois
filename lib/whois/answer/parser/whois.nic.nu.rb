@@ -35,13 +35,13 @@ module Whois
       class WhoisNicNu < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /Record status:\s+(.*)\n/
+          @status ||= if content_for_scanner =~ /Record status:\s+(.*)\n/
             $1.downcase.to_sym
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /NO MATCH for domain/)
+          @available ||= !!(content_for_scanner =~ /NO MATCH for domain/)
         end
 
         property_supported :registered? do
@@ -50,7 +50,7 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /Record created on (.*).\n/
+          @created_on ||= if content_for_scanner =~ /Record created on (.*).\n/
             Time.parse($1)
           end
         end
@@ -58,13 +58,13 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Record expires on (.*).\n/
+          @expires_on ||= if content_for_scanner =~ /Record expires on (.*).\n/
             Time.parse($1)
           end
         end
         
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /Record last updated on (.*?).\n/
+          @updated_on ||= if content_for_scanner =~ /Record last updated on (.*?).\n/
             Time.parse($1)
           end
         end

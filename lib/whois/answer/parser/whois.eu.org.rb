@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /Key not found/)
+          @available ||= !!(content_for_scanner =~ /Key not found/)
         end
 
         property_supported :registered? do

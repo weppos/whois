@@ -35,7 +35,7 @@ module Whois
       class WhoisCiraCa < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /Domain status:\s+(.*?)\n/
+          @status ||= if content_for_scanner =~ /Domain status:\s+(.*?)\n/
             case $1.downcase.to_sym
               when :exist then :registered
               when :avail then :available
@@ -53,19 +53,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /Approval date:\s+(.*?)\n/
+          @created_on ||= if content_for_scanner =~ /Approval date:\s+(.*?)\n/
             Time.parse($1)
           end
         end
         
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /Updated date:\s+(.*?)\n/
+          @updated_on ||= if content_for_scanner =~ /Updated date:\s+(.*?)\n/
             Time.parse($1)
           end
         end
         
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Renewal date:\s+(.*?)\n/
+          @expires_on ||= if content_for_scanner =~ /Renewal date:\s+(.*?)\n/
             Time.parse($1)
           end
         end

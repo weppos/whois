@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /was not found/)
+          @available ||= !!(content_for_scanner =~ /was not found/)
         end
 
         property_supported :registered? do
@@ -56,7 +56,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Expiry Date:\s+(.*?)\n/
+          @expires_on ||= if content_for_scanner =~ /Expiry Date:\s+(.*?)\n/
             Time.parse($1.gsub("/", "-"))
           end
         end

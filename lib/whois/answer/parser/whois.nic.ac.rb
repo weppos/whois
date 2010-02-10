@@ -32,7 +32,7 @@ module Whois
 
         property_supported :domain do
           @domain ||= Proc.new do
-            content.to_s =~ /Domain "(.*?)"/
+            content_for_scanner =~ /Domain "(.*?)"/
             $1.downcase
           end.call
         end
@@ -49,7 +49,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !(content.to_s =~ /Not available/)
+          @available ||= !(content_for_scanner =~ /Not available/)
         end
 
         property_supported :registered? do
@@ -82,7 +82,7 @@ module Whois
 
         property_supported :unchanged? do |other|
           self == other ||
-          self.content.to_s == other.content.to_s
+          self.content_for_scanner == other.content_for_scanner
         end
 
       end

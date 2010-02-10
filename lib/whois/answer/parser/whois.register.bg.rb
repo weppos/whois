@@ -35,13 +35,13 @@ module Whois
       class WhoisRegisterBg < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /registration status:\s+(.*?)\n/
+          @status ||= if content_for_scanner =~ /registration status:\s+(.*?)\n/
             $1.downcase.to_sym
           end
         end
 
         property_supported :available? do
-          @available ||= (content.to_s =~ /Domain name (.+?) does not exist/)
+          @available ||= (content_for_scanner =~ /Domain name (.+?) does not exist/)
         end
 
         property_supported :registered? do
@@ -50,7 +50,7 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /activated on:\s+(.*?)\n/
+          @created_on ||= if content_for_scanner =~ /activated on:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")
             # => ArgumentError: argument out of range
             Time.parse($1.gsub("/", "-"))
@@ -60,7 +60,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /expires at:\s+(.*?)\n/
+          @expires_on ||= if content_for_scanner =~ /expires at:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")
             # => ArgumentError: argument out of range
             Time.parse($1.gsub("/", "-"))

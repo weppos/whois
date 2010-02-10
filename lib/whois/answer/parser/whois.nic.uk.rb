@@ -35,13 +35,13 @@ module Whois
       class WhoisNicUk < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /\s+Registration status:\s+\n(.*?)\n/
+          @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.*?)\n/
             $1.strip
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /This domain name has not been registered/)
+          @available ||= !!(content_for_scanner =~ /This domain name has not been registered/)
         end
 
         property_supported :registered? do
@@ -53,24 +53,24 @@ module Whois
         end
 
         def invalid?
-          @invalid ||= !!(content.to_s =~ /This domain cannot be registered/)
+          @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /\s+Registered on:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /\s+Registered on:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /\s+Last updated:\s+(.*)\n/
+          @updated_on ||= if content_for_scanner =~ /\s+Last updated:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /\s+Renewal date:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /\s+Renewal date:\s+(.*)\n/
             Time.parse($1)
           end
         end

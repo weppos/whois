@@ -35,7 +35,7 @@ module Whois
       class WhoisNicFr < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /status:\s+(.*)\n/
+          @status ||= if content_for_scanner =~ /status:\s+(.*)\n/
             $1.downcase.to_sym
           else
             :available
@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /No entries found in the AFNIC Database/)
+          @available ||= !!(content_for_scanner =~ /No entries found in the AFNIC Database/)
         end
 
         property_supported :registered? do
@@ -52,14 +52,14 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /created:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /last-update:\s+(.*)\n/
+          @updated_on ||= if content_for_scanner =~ /last-update:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end

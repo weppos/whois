@@ -35,7 +35,7 @@ module Whois
       class WhoisDomainregistryIe < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /status:\s+(.*)\n/
+          @status ||= if content_for_scanner =~ /status:\s+(.*)\n/
             $1.downcase.to_sym
           else
             :available
@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
+          @available ||= !!(content_for_scanner =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
         end
 
         property_supported :registered? do
@@ -56,7 +56,7 @@ module Whois
         property_not_supported :updated_on
         
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /renewal:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /renewal:\s+(.*)\n/
             Time.parse($1)
           end
         end

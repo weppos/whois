@@ -35,13 +35,13 @@ module Whois
       class WhoisNicCoop < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /Status:\s+(.*)\r\n/
+          @status ||= if content_for_scanner =~ /Status:\s+(.*)\n/
             $1.downcase.to_sym
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /No domain records were found to match/)
+          @available ||= !!(content_for_scanner =~ /No domain records were found to match/)
         end
 
         property_supported :registered? do
@@ -50,19 +50,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /Created:\s+(.*)\r\n/
+          @created_on ||= if content_for_scanner =~ /Created:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /Last updated:\s+(.*)\r\n/
+          @updated_on ||= if content_for_scanner =~ /Last updated:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /Expiry Date:\s+(.*)\r\n/
+          @expires_on ||= if content_for_scanner =~ /Expiry Date:\s+(.*)\n/
             Time.parse($1)
           end
         end

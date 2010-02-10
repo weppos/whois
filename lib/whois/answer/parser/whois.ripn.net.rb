@@ -35,7 +35,7 @@ module Whois
       class WhoisRipnNet < Base
 
         property_supported :status do
-          @status ||= if content.to_s =~ /state:\s+(.*?)\n/
+          @status ||= if content_for_scanner =~ /state:\s+(.*?)\n/
             $1.split(",").map { |status| status.strip }
           else
             []
@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /No entries found/)
+          @available ||= !!(content_for_scanner =~ /No entries found/)
         end
 
         property_supported :registered? do
@@ -52,7 +52,7 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /created:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -60,7 +60,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /paid-till:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /paid-till:\s+(.*)\n/
             Time.parse($1)
           end
         end

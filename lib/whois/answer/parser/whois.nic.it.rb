@@ -158,7 +158,7 @@ module Whois
         protected
 
           def parse
-            Scanner.new(content.to_s).parse
+            Scanner.new(content_for_scanner).parse
           end
 
           def contact(element)
@@ -181,7 +181,7 @@ module Whois
         class Scanner
 
           def initialize(content)
-            @input = StringScanner.new(content.to_s)
+            @input = StringScanner.new(content)
           end
 
           def parse

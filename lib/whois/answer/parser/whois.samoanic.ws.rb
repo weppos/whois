@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content.to_s =~ /No match for/)
+          @available ||= !!(content_for_scanner =~ /No match for/)
         end
 
         property_supported :registered? do
@@ -52,19 +52,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content.to_s =~ /\s+Domain Created:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /\s+Domain Created:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content.to_s =~ /\s+Domain Last Updated:\s+(.*)\n/
+          @updated_on ||= if content_for_scanner =~ /\s+Domain Last Updated:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content.to_s =~ /\s+Domain Currently Expires:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /\s+Domain Currently Expires:\s+(.*)\n/
             Time.parse($1)
           end
         end
