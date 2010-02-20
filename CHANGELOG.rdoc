@@ -1,6 +1,13 @@
 = Changelog
 
 
+== master
+
+* SERVER: Added web address for the .eg TLD [axic]
+
+* SERVER: Updated web address for the .gt TLD [axic]
+
+
 == Release 1.0.2
 
 * CHANGED: Changed Parsers to use a normalized content version called Whois::Parser::Base#content_for_scanner (Dho! I forgot to save some files on TextMate)
