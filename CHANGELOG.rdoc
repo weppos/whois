@@ -7,6 +7,10 @@
 
 * SERVER: Updated web address for the .gt TLD [axic]
 
+* FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
+
+* ADDED: Support for Contact ZIP property for the whois.nic.it parser [axic]
+
 
 == Release 1.0.2
 

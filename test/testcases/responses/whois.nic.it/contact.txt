@@ -1,0 +1,58 @@
+
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://www.nic.it/cgi-bin/Whois/whois.cgi                         *
+*********************************************************************
+
+Domain:             html.it
+Status:             ACTIVE
+Created:            1998-08-05 00:00:00
+Last Update:        2009-07-01 00:02:38
+Expire Date:        2010-06-15
+
+Registrant
+  Name:             HTML.it srl
+  Organization:     HTML.it srl
+  ContactID:        HTML1-ITNIC
+  Address:          Viale Alessandrino, 595
+                    Roma
+                    00172
+                    RM
+                    IT
+  Created:          2007-03-01 10:28:08
+  Last Update:      2007-03-01 10:28:08
+
+Admin Contact
+  Name:             Massimiliano Valente
+  ContactID:        MV943-ITNIC
+  Address:          Viale Alessandrino, 595
+                    Roma
+                    00172
+                    RM
+                    IT
+  Created:          2006-09-01 00:00:00
+  Last Update:      2007-03-01 07:37:14
+
+Technical Contacts
+  Name:             Massimiliano Valente
+  ContactID:        MV943-ITNIC
+  Address:          Viale Alessandrino, 595
+                    Roma
+                    00172
+                    RM
+                    IT
+  Created:          2006-09-01 00:00:00
+  Last Update:      2007-03-01 07:37:14
+
+Registrar
+  Organization:     ITnet s.r.l.
+  Name:             ITNET-MNT
+
+Nameservers
+  dns.it.net
+  dns2.it.net
+

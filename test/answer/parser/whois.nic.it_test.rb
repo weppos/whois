@@ -92,6 +92,21 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_contact
+    contact = @klass.new(load_part('/contact.txt')).registrant
+    assert_instance_of Whois::Answer::Contact, contact
+    assert_equal "HTML1-ITNIC", contact.id
+    assert_equal "HTML.it srl", contact.name
+    assert_equal "HTML.it srl", contact.organization
+    assert_equal "Viale Alessandrino, 595", contact.address
+    assert_equal "Roma", contact.city
+    assert_equal "00172", contact.zip
+    assert_equal nil, contact.country
+    assert_equal "IT", contact.country_code
+    assert_equal Time.parse("2007-03-01 10:28:08"), contact.created_on
+    assert_equal Time.parse("2007-03-01 10:28:08"), contact.updated_on
+  end
+
   def test_registrant
     contact = @klass.new(load_part('/registered.txt')).registrant
     assert_instance_of Whois::Answer::Contact, contact
@@ -100,6 +115,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     assert_equal nil, contact.organization
     assert_equal "30 Herbert Street", contact.address
     assert_equal "Dublin", contact.city
+    assert_equal "2", contact.zip
     assert_equal nil, contact.country
     assert_equal "IE", contact.country_code
     assert_equal Time.parse("2008-11-27 16:47:22"), contact.created_on
@@ -111,7 +127,6 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
                   @klass.new(load_part('/available.txt')).registrant
   end
 
-
   def test_admin
     contact = @klass.new(load_part('/registered.txt')).admin
     assert_instance_of Whois::Answer::Contact, contact
@@ -120,6 +135,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     assert_equal "Tu Tsao", contact.organization
     assert_equal "30 Herbert Street", contact.address
     assert_equal "Dublin", contact.city
+    assert_equal "2", contact.zip
     assert_equal nil, contact.country
     assert_equal "IE", contact.country_code
     assert_equal Time.parse("2008-11-27 16:47:22"), contact.created_on
@@ -131,7 +147,6 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
                   @klass.new(load_part('/available.txt')).admin
   end
 
-
   def test_technical
     contact = @klass.new(load_part('/registered.txt')).technical
     assert_instance_of Whois::Answer::Contact, contact
@@ -140,6 +155,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     assert_equal nil, contact.organization
     assert_equal nil, contact.address
     assert_equal nil, contact.city
+    assert_equal nil, contact.zip
     assert_equal nil, contact.country
     assert_equal nil, contact.country_code
     assert_equal nil, contact.created_on
@@ -155,9 +171,6 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_nameservers
     assert_equal  %w(ns1.google.com ns4.google.com ns2.google.com ns3.google.com),
                   @klass.new(load_part('/registered.txt')).nameservers
-  end
-
-  def test_nameservers_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).nameservers
   end
