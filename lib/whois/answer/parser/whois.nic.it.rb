@@ -170,6 +170,7 @@ module Whois
                 :organization => raw["Organization"],
                 :address      => address[0],
                 :city         => address[1],
+                :zip          => address[2],
                 :country_code => address[4],
                 :created_on   => raw["Created"] ? Time.parse(raw["Created"]) : nil,
                 :updated_on   => raw["Last Update"] ? Time.parse(raw["Created"]) : nil
