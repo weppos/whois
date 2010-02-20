@@ -136,7 +136,7 @@ Whois::Server.define :tld, ".gp", "whois.nic.gp"
 Whois::Server.define :tld, ".gq", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".gr", nil, {:web=>"https://grweb.ics.forth.gr/Whois?lang=en", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".gs", "whois.nic.gs"
-Whois::Server.define :tld, ".gt", nil, {:web=>"http://www.gt/whois.htm", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".gt", nil, {:web=>"http://www.gt/whois.html", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".gu", nil, {:web=>"http://gadao.gov.gu/domainsearch.htm", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".gw", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".gy", "whois.registry.gy"
