@@ -110,7 +110,7 @@ Whois::Server.define :tld, ".do", nil, {:web=>"http://www.nic.do/whois-h.php3", 
 Whois::Server.define :tld, ".dz", nil, {:web=>"https://www.nic.dz/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".ec", "whois.nic.ec"
 Whois::Server.define :tld, ".ee", "whois.eenet.ee"
-Whois::Server.define :tld, ".eg", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, ".eg", nil, {:web=>"http://lookup.egregistry.eg/english.aspx", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".er", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".es", nil, {:web=>"https://www.nic.es/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".et", nil, {:adapter=>Whois::Server::Adapters::None}
