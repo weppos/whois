@@ -7,6 +7,8 @@
 
 * SERVER: Updated web address for the .gt TLD [axic]
 
+* SERVER: Updated web address for the .co TLD (closes #13)
+
 * FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
 
 * FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)

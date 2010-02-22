@@ -95,7 +95,7 @@ Whois::Server.define :tld, ".cm", nil, {:web=>"http://netcom.cm/whois.php", :ada
 Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 Whois::Server.define :tld, ".cn", "whois.cnnic.net.cn"
 Whois::Server.define :tld, ".uk.co", "whois.uk.co"
-Whois::Server.define :tld, ".co", nil, {:web=>"https://www.nic.co/", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".co", nil, {:web=>"https://www.whois.co/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".cr", nil, {:web=>"http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".cu", nil, {:web=>"http://www.nic.cu/consult.html", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".cv", nil, {:adapter=>Whois::Server::Adapters::None}
