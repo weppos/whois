@@ -38,11 +38,11 @@
 
 * SERVER: Updated the .id, .is, .mm, .my, .pw, .sb, .sr, .tj, .tp, .wf, .yt TLD definitions (whois 5.0.0).
 
-* SERVER: .dk TLD server requires --show-handles option (closes #426)
+* SERVER: .dk TLD server requires --show-handles option (closes REDMINE-426)
 
-* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes #389)
+* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes REDMINE-389)
 
-* FIXED: In case of exception, the CLI doesn't exit nicely (closes #333)
+* FIXED: In case of exception, the CLI doesn't exit nicely (closes REDMINE-333)
 
 * FIXED: Some tests are not compatible with Ruby 1.9
 
@@ -165,21 +165,21 @@
 
 == Release 0.9.0
 
-* SERVER: .ec TLD has a whois server (closes #322)
+* SERVER: .ec TLD has a whois server (closes REDMINE-322)
 
-* SERVER: .gl TLD has a whois server (closes #323)
+* SERVER: .gl TLD has a whois server (closes REDMINE-323)
 
-* SERVER: .md TLD has a whois server (closes #325)
+* SERVER: .md TLD has a whois server (closes REDMINE-325)
 
 * SERVER: Changed .edu TLD server to whois.educause.edu (see http://www.iana.org/domains/root/db/edu.html)
 
-* FIXED: TLD definitions for whois.afilias-grs.info missing proper adapter (closes #342)
+* FIXED: TLD definitions for whois.afilias-grs.info missing proper adapter (closes REDMINE-342)
 
-* FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes #344)
+* FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes REDMINE-344)
 
-* FIXED: Whois::Client doesn't cast qstring to_s (closes #339)
+* FIXED: Whois::Client doesn't cast qstring to_s (closes REDMINE-339)
 
-* FIXED: Whois::Parser doesn't detect preloaded parsers. Improved performances skipping unnecessary 'require'. (closes #340)
+* FIXED: Whois::Parser doesn't detect preloaded parsers. Improved performances skipping unnecessary 'require'. (closes REDMINE-340)
 
 * ADDED: Simple .fr TLD parser.
 
@@ -211,7 +211,7 @@
 
 * ADDED: .hu TLD parser.
 
-* ADDED: Ability to pass timeout option to 'ruby-whois' (closes #334)
+* ADDED: Ability to pass timeout option to 'ruby-whois' (closes REDMINE-334)
 
 * ADDED: Whois::Answer#properties returns an Hash of :key => value
 
@@ -226,16 +226,16 @@
 
 == Release 0.8.1
 
-* FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes #314)
+* FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes REDMINE-314)
 
-* FIXED: In case of thin server the client should select the closest whois server match (closes #264)
+* FIXED: In case of thin server the client should select the closest whois server match (closes REDMINE-264)
 
 * ADDED: ability to check whether a property is supported via answer.supported? or parser.supported?
 
 
 == Release 0.8.0
 
-* FIXED: Server definition with :format doesn't use the Formatted adapter (closes #305)
+* FIXED: Server definition with :format doesn't use the Formatted adapter (closes REDMINE-305)
 
 * ADDED: whois.denic.de (.de TLD) parser [Aaron Mueller]
 
@@ -290,9 +290,9 @@ API might change at any time without previous notice.
 
 == Release 0.5.3
 
-* FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes #300)
+* FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes REDMINE-300)
 
-* FIXED: In some rare circumstances the server guessing fails to return the right server but returns an other server instead (closes #260).
+* FIXED: In some rare circumstances the server guessing fails to return the right server but returns an other server instead (closes REDMINE-260).
 
 
 == Release 0.5.2
@@ -319,31 +319,31 @@ API might change at any time without previous notice.
 
 == Release 0.5.1
 
-* ADDED: Whois binary (closes #271).
+* ADDED: Whois binary (closes REDMINE-271).
 
 * FIXED: 'rake coverage' task crashes.
 
-* FIXED: In case of thin server the client should concatenate all responses (closes #259).
+* FIXED: In case of thin server the client should concatenate all responses (closes REDMINE-259).
 
 
 == Release 0.5.0
 
-* ADDED: Support for IPv4 and IPv6 (closes #265).
+* ADDED: Support for IPv4 and IPv6 (closes REDMINE-265).
 
-* ADDED: Compatibility with existing GEM Whois 0.4.2 (closes #266).
+* ADDED: Compatibility with existing GEM Whois 0.4.2 (closes REDMINE-266).
 
-* ADDED: Deprecation warning for all the features that will be removed in Whois 0.6.0 (closes #266).
+* ADDED: Deprecation warning for all the features that will be removed in Whois 0.6.0 (closes REDMINE-266).
 
-* ADDED: Default timeout for any Whois query run from the client interface (closes #269).
+* ADDED: Default timeout for any Whois query run from the client interface (closes REDMINE-269).
 
 * FIXED: Whois#whois defined as instance method but modules can't have instances!
 
 * FIXED: Whois::Server::Adapters::Verisign adapter always use "whois.crsnic.net" regardless the adapter set in the server definition.
 
 
-* SERVER: Updated .tv TLD definition (closes #261).
+* SERVER: Updated .tv TLD definition (closes REDMINE-261).
 
-* SERVER: Updated .ae TLD definition (closes #270).
+* SERVER: Updated .ae TLD definition (closes REDMINE-270).
 
 
 == Release 0.1.1
