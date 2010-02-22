@@ -79,7 +79,12 @@ module Whois
         end
         
         property_supported :nameservers do
-          node("Name Server") { |raw| raw.map { |value| value.downcase }}
+          @nameservers ||= node("Name Server") do |values|
+            values.map do |value|
+              value.downcase unless value =~ / /
+            end.compact
+          end
+          @nameservers ||= []
         end
 
         property_supported :registrar do

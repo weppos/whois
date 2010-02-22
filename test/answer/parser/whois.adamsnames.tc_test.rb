@@ -51,7 +51,7 @@ class AnswerParserWhoisAdamsnamesTcGdTest < AnswerParserWhoisAdamsnamesTcTest
     expected  = %w( ns1.google.com ns2.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
-    
+
     parser    = @klass.new(load_part('/gd/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers

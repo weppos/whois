@@ -41,6 +41,7 @@ module Whois
               parse_disclaimer  ||
               parse_notice      ||
               parse_pair        ||
+              skip_iana_service ||
               trim_last_update  ||
               trim_fuffa        ||
               error("Unexpected token")
@@ -57,6 +58,13 @@ module Whois
             def trim_fuffa
               @input.scan(/^\w(.*)\n/) ||
               (@input.scan(/^\w(.*)/) and @input.eos?)
+            end
+
+            def skip_iana_service
+              if @input.match?(/IANA Whois Service/)
+                @ast["IANA"] = true
+                @input.terminate
+              end
             end
 
             def parse_not_found

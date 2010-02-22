@@ -13,6 +13,8 @@
 
 * FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
 
+* FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
+
 * ADDED: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
 * ADDED: Support for 'nameservers' property for the whois.adamsnames.tc parser.
