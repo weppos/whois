@@ -83,8 +83,18 @@ module Whois
         end
 
 
+        # Nameservers are listed in the following formats:
+        # 
+        #   Nserver:     ns1.prodns.de 213.160.64.75
+        #   Nserver:     ns1.prodns.de
+        # 
+        # In both cases, always return only the name.
         property_supported :nameservers do
-          node("Nserver")
+          node("Nserver") do |values|
+            values.map do |value|
+              value.split(" ").first
+            end
+          end
         end
 
         

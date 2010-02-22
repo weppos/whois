@@ -9,6 +9,8 @@
 
 * FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
 
+* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
+
 * ADDED: Support for Contact ZIP property for the whois.nic.it parser [axic]
 
 

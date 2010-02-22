@@ -132,7 +132,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
     assert_equal(nil, registrar.url)
   end
 
-  def test_registrar_for_available
+  def test_registrar_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).registrar
   end
@@ -142,7 +142,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
                   @klass.new(load_part('/registered.txt')).registrant
   end
 
-  def test_registrant_for_available
+  def test_registrant_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).registrant
   end
@@ -152,7 +152,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
                   @klass.new(load_part('/registered.txt')).admin
   end
 
-  def test_admin_for_available
+  def test_admin_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).admin
   end
@@ -174,7 +174,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
     assert_equal('dns-admin@google.com', contact.email)
   end
 
-  def test_technical_for_available
+  def test_technical_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).technical
   end
@@ -185,7 +185,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
                   @klass.new(load_part('/registered.txt')).nameservers
   end
 
-  def test_nameservers_for_available
+  def test_nameservers_with_available
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).nameservers
   end
@@ -300,7 +300,7 @@ assurance and to bar you from using its whois query.
     assert_equal(nil, registrar.url)
   end
 
-  def test_registrar_for_available
+  def test_registrar_with_available
     assert_equal  nil,
                   @klass.new(load_part('/1-10-0_available.txt')).registrar
   end
@@ -322,7 +322,7 @@ assurance and to bar you from using its whois query.
     assert_equal(nil, contact.email)
   end
 
-  def test_registrant_for_available
+  def test_registrant_with_available
     assert_equal  nil,
                   @klass.new(load_part('/1-10-0_available.txt')).registrant
   end
@@ -344,7 +344,7 @@ assurance and to bar you from using its whois query.
     assert_equal(nil, contact.email)
   end
 
-  def test_admin_for_available
+  def test_admin_with_available
     assert_equal  nil,
                   @klass.new(load_part('/1-10-0_available.txt')).admin
   end
@@ -366,20 +366,25 @@ assurance and to bar you from using its whois query.
     assert_equal('dns-admin@google.com', contact.email)
   end
 
-  def test_technical_for_available
+  def test_technical_with_available
     assert_equal  nil,
                   @klass.new(load_part('/1-10-0_available.txt')).technical
   end
 
 
   def test_nameservers
-    assert_equal  %w(ns1.google.com ns4.google.com ns3.google.com ns2.google.com),
+    assert_equal  %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ),
                   @klass.new(load_part('/1-10-0_registered.txt')).nameservers
   end
 
-  def test_nameservers_for_available
+  def test_nameservers_with_available
     assert_equal  nil,
                   @klass.new(load_part('/1-10-0_available.txt')).nameservers
+  end
+
+  def test_nameservers_with_ip
+    assert_equal  %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de ),
+                  @klass.new(load_part('/nameservers_with_ip.txt')).nameservers
   end
 
 end
