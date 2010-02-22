@@ -13,7 +13,9 @@
 
 * FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
 
-* ADDED: Support for Contact ZIP property for the whois.nic.it parser [axic]
+* ADDED: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
+
+* ADDED: Support for 'nameservers' property for the whois.adamsnames.tc parser.
 
 
 == Release 1.0.2

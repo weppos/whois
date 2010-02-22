@@ -45,6 +45,20 @@ class AnswerParserWhoisAdamsnamesTcGdTest < AnswerParserWhoisAdamsnamesTcTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gd/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/gd/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+    
+    parser    = @klass.new(load_part('/gd/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+
 end
 
 class AnswerParserWhoisAdamsnamesTcTcTest < AnswerParserWhoisAdamsnamesTcTest
@@ -82,6 +96,19 @@ class AnswerParserWhoisAdamsnamesTcTcTest < AnswerParserWhoisAdamsnamesTcTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/tc/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/tc/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+    
+    parser    = @klass.new(load_part('/tc/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisAdamsnamesTcVgTest < AnswerParserWhoisAdamsnamesTcTest
@@ -117,6 +144,19 @@ class AnswerParserWhoisAdamsnamesTcVgTest < AnswerParserWhoisAdamsnamesTcTest
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/vg/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/vg/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/vg/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+    
+    parser    = @klass.new(load_part('/vg/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
