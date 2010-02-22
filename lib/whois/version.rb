@@ -19,10 +19,9 @@ module Whois
   module Version
     MAJOR = 1
     MINOR = 0
-    TINY  = 2
-    ALPHA = nil
+    PATCH = 2
 
-    STRING = [MAJOR, MINOR, TINY, ALPHA].compact.join('.')
+    STRING = [MAJOR, MINOR, PATCH].compact.join('.')
   end
 
   VERSION = Version::STRING
