@@ -220,11 +220,13 @@ test/testcases/responses/whois.cira.ca/available.txt
 test/testcases/responses/whois.cira.ca/registered.txt
 test/testcases/responses/whois.crsnic.net/MULTIPLE.txt
 test/testcases/responses/whois.crsnic.net/available.txt
+test/testcases/responses/whois.crsnic.net/nameservers_with_nonameserver.txt
 test/testcases/responses/whois.crsnic.net/registered.txt
 test/testcases/responses/whois.denic.de/1-10-0_available.txt
 test/testcases/responses/whois.denic.de/1-10-0_registered.txt
 test/testcases/responses/whois.denic.de/available.txt
 test/testcases/responses/whois.denic.de/error_invalid_domain_name.txt
+test/testcases/responses/whois.denic.de/nameservers_with_ip.txt
 test/testcases/responses/whois.denic.de/registered.txt
 test/testcases/responses/whois.dk-hostmaster.dk/available.txt
 test/testcases/responses/whois.dk-hostmaster.dk/registered.txt
@@ -285,6 +287,7 @@ test/testcases/responses/whois.nic.im/registered.txt
 test/testcases/responses/whois.nic.io/available.txt
 test/testcases/responses/whois.nic.io/registered.txt
 test/testcases/responses/whois.nic.it/available.txt
+test/testcases/responses/whois.nic.it/contact.txt
 test/testcases/responses/whois.nic.it/registered.txt
 test/testcases/responses/whois.nic.it/status_active.txt
 test/testcases/responses/whois.nic.it/status_available.txt

@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.0.3
 
 * SERVER: Added web address for the .eg TLD [axic]
 
@@ -18,6 +18,8 @@
 * ADDED: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
 * ADDED: Support for 'nameservers' property for the whois.adamsnames.tc parser.
+
+* ADDED: Compatibility with semver.org
 
 
 == Release 1.0.2
