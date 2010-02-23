@@ -159,7 +159,7 @@ Whois::Server.define :tld, ".it", "whois.nic.it"
 Whois::Server.define :tld, ".je", "whois.je"
 Whois::Server.define :tld, ".jm", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".jo", nil, {:web=>"http://www.dns.jo/Whois.aspx", :adapter=>Whois::Server::Adapters::Web}
-Whois::Server.define :tld, ".jp", "whois.jprs.jp"
+Whois::Server.define :tld, ".jp", "whois.jprs.jp", {:adapter=>Whois::Server::Adapters::Formatted, :format => "%s/e"}
 Whois::Server.define :tld, ".ke", "whois.kenic.or.ke"
 Whois::Server.define :tld, ".kg", "whois.domain.kg"
 Whois::Server.define :tld, ".kh", nil, {:adapter=>Whois::Server::Adapters::None}
