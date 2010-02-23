@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* CHANGED: Suppress Japanese output for the .js TLD [axic]
+
+
 == Release 1.0.3
 
 * SERVER: Added web address for the .eg TLD [axic]
