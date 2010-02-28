@@ -12,6 +12,7 @@ data/make_servers_charset.pl
 data/make_tld_serv.pl
 data/servers_charset_list
 data/tld_serv_list
+lib/core_ext.rb
 lib/whois.rb
 lib/whois/answer.rb
 lib/whois/answer/contact.rb
