@@ -79,7 +79,7 @@ module Whois
     #   # => "First answer.\nSecond answer."
     #
     def content
-      @content ||= parts.map { |part| part.response }.join("\n")
+      @content ||= parts.map(&:response).join("\n")
     end
 
     # Returns whether this answer changed compared to <tt>other</tt>.
