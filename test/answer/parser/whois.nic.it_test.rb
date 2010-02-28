@@ -169,10 +169,15 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_nameservers
-    assert_equal  %w(ns1.google.com ns4.google.com ns2.google.com ns3.google.com),
-                  @klass.new(load_part('/registered.txt')).nameservers
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns4.google.com ns2.google.com ns3.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 

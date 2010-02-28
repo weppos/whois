@@ -3,6 +3,8 @@
 
 == master
 
+* FIXED: Normalize 'nameservers' property return value. Always return an Array even if there's no nameserver.
+
 * CHANGED: Suppress Japanese output for the .js TLD [axic]
 
 

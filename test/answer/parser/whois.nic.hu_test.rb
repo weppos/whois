@@ -3,14 +3,13 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.nic.hu.rb'
 
-class AnswerParserWhoisNicHuTest < Test::Unit::TestCase
-
-  TESTCASE_PATH = File.expand_path(File.dirname(__FILE__) + '/../../testcases/responses/whois.nic.hu')
+class AnswerParserWhoisNicHuTest < Whois::Answer::Parser::TestCase
 
   def setup
     @klass  = Whois::Answer::Parser::WhoisNicHu
     @host   = "whois.nic.hu"
   end
+
 
   def test_disclaimer
     expected = <<-EOS.strip
@@ -88,15 +87,6 @@ EOS
                   @klass.new(load_part('/available.txt')).registrant
     assert_equal  nil,
                   @klass.new(load_part('/in_progress.txt')).registrant
-  end
-
-  def test_nameserver
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).nameservers
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).nameservers
-    assert_equal  %w(ns1.google.com ns2.google.com ns3.google.com ns4.google.com),
-                  @klass.new(load_part('/registered.txt')).nameservers.sort
   end
 
   def test_created_on
@@ -215,14 +205,21 @@ EOS
                   @klass.new(load_part('/in_progress.txt')).registrar
   end
 
-  protected
+  def test_nameserver
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
 
-    def load_part(path)
-      part(File.read(TESTCASE_PATH + path), @host)
-    end
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
 
-    def part(*args)
-      Whois::Answer::Part.new(*args)
-    end
+    parser    = @klass.new(load_part('/in_progress.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
 
 end

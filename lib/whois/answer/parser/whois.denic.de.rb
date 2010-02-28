@@ -90,11 +90,12 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          node("Nserver") do |values|
+          @nameservers ||= node("Nserver") do |values|
             values.map do |value|
               value.split(" ").first
             end
           end
+          @nameservers ||= []
         end
 
         

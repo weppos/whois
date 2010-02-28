@@ -181,13 +181,22 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
 
   def test_nameservers
-    assert_equal  %w(ns1.google.com ns4.google.com ns3.google.com ns2.google.com),
-                  @klass.new(load_part('/registered.txt')).nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
-  def test_nameservers_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).nameservers
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/nameservers_with_ip.txt'))
+    expected  = %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
@@ -373,18 +382,15 @@ assurance and to bar you from using its whois query.
 
 
   def test_nameservers
-    assert_equal  %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ),
-                  @klass.new(load_part('/1-10-0_registered.txt')).nameservers
-  end
+    parser    = @klass.new(load_part('/1-10-0_registered.txt'))
+    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
 
-  def test_nameservers_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).nameservers
-  end
-
-  def test_nameservers_with_ip
-    assert_equal  %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de ),
-                  @klass.new(load_part('/nameservers_with_ip.txt')).nameservers
+    parser    = @klass.new(load_part('/1-10-0_available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

@@ -120,12 +120,12 @@ module Whois
         # ==== Examples
         #
         #   nameserver
-        #   # => nil
+        #   # => []
         #   nameserver
         #   # => ["ns2.google.com", "ns1.google.com", "ns3.google.com"]
         #
         property_supported :nameservers do
-          node("Nameservers")
+          @nameservers ||= node("Nameservers") || []
         end
 
 

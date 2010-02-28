@@ -98,12 +98,6 @@ module Whois
           end
         end
 
-        # If available, returns an array of name servers entries for this domain
-        # if any name server is available in the registry answer.
-        property_supported :nameservers do
-          node('nameserver')
-        end
-
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the admin contact details extracted from the registry answer.
         property_supported :admin do
@@ -137,6 +131,14 @@ module Whois
             )
           end
         end
+
+
+        # If available, returns an array of name servers entries for this domain
+        # if any name server is available in the registry answer.
+        property_supported :nameservers do
+          @nameservers ||= node('nameserver') || []
+        end
+
 
         protected
 

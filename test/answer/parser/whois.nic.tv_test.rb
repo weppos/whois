@@ -119,8 +119,15 @@ EOS
   end
   
   def test_nameservers
-    assert_equal  %w(ns1.slicehost.net ns2.slicehost.net),
-                  @klass.new(load_part('/registered.txt')).nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.slicehost.net ns2.slicehost.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

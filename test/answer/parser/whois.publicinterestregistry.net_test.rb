@@ -176,13 +176,15 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_nameservers
-    assert_equal  %w(ns2.google.com ns1.google.com ns3.google.com ns4.google.com),
-                  @klass.new(load_part('/registered.txt')).nameservers
-  end
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns2.google.com ns1.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
 
-  def test_nameservers_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).nameservers
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
