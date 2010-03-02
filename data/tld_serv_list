@@ -113,7 +113,7 @@
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
 .cz	whois.nic.cz
 .de	whois.denic.de
-.dj	whois.domain.dj
+.dj	NONE
 .dk	whois.dk-hostmaster.dk
 .dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
@@ -202,7 +202,7 @@
 .mh	NONE		# www.nic.net.mh
 .mk	WEB http://dns.marnet.net.mk/registar.php
 .ml	NONE		# NIC? www.sotelma.ml
-.mm	NONE		# NO NIC
+.mm	NONE		# www.nic.mm
 .mn	AFILIAS
 .mo	WEB http://www.monic.net.mo/
 .mp	NONE		# get.mp
@@ -242,7 +242,7 @@
 .pr	whois.nic.pr
 .ps	WEB http://www.nic.ps/whois/whois.html
 .pt	whois.dns.pt
-.pw	NONE		# NO NIC
+.pw	NONE		# http://www.pwregistry.pw/
 .py	WEB http://www.nic.py/consultas.html
 .qa	NONE		# http://www.qtel.com.qa/InternetFeatures.do
 .re	whois.nic.fr
@@ -272,7 +272,7 @@
 .sy	NONE		# NIC? www.ste.gov.sy
 .sz	NONE		# http://www.sispa.org.sz/
 .tc	whois.adamsnames.tc
-.td	NONE		# NIC? http://www.sotel.td/ was http://www.nic.td/
+.td	NONE		# NIC? http://www.sotel.td/ was http://www.nic.td/ . http://www.tit.td/ ?
 .tf	whois.nic.tf
 .tg	WEB http://www.nic.tg/
 .th	whois.thnic.net
