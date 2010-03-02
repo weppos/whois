@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* ADDED: Support for 'nameservers' property for the whois.afilias.info parser. (closes #15)
+
+
 == Release 1.0.4
 
 * FIXED: Normalize 'nameservers' property return value. Always return an Array even if there's no nameserver.
