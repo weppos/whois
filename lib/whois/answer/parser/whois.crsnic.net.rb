@@ -80,7 +80,7 @@ module Whois
         
         property_supported :nameservers do
           @nameservers ||= node("Name Server") do |values|
-            values.map do |value|
+            [*values].map do |value|
               value.downcase unless value =~ / /
             end.compact
           end
