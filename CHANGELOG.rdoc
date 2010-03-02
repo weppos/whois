@@ -5,6 +5,8 @@
 
 * ADDED: Support for 'nameservers' property for the whois.afilias.info parser. (closes #15)
 
+* ADDED: Support for 'nameservers' property for the whois.nic.tel parser. (closes #17)
+
 
 == Release 1.0.4
 

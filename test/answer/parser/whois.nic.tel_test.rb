@@ -48,4 +48,17 @@ class AnswerParserWhoisNicTelTest < Whois::Answer::Parser::TestCase
                   @klass.new(load_part('/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( a0.cth.dns.nic.tel d0.cth.dns.nic.tel n0.cth.dns.nic.tel s0.cth.dns.nic.tel t0.cth.dns.nic.tel )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
