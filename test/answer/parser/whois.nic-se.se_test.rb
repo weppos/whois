@@ -48,11 +48,24 @@ class AnswerParserWhoisNicSeSeTest < Whois::Answer::Parser::TestCase
                   @klass.new(load_part('/available.txt')).expires_on
   end
 
+
   def test_nameservers
-    assert_equal  %w(ns1.google.com ns2.google.com ns3.google.com ns4.google.com),
-                  @klass.new(load_part('/registered.txt')).nameservers
-    assert_equal  %w(),
-                  @klass.new(load_part('/available.txt')).nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/nameservers_with_ip.txt'))
+    expected  = %w( ns2.loopia.se ns4.loopia.se ns3.loopia.se ns1.loopia.se )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

@@ -66,8 +66,14 @@ module Whois
           end
         end
 
+        # Nameservers are listed in the following formats:
+        # 
+        #   nserver:  ns2.loopia.se
+        #   nserver:  ns2.loopia.se 93.188.0.21
+        # 
+        # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.*)\n/).flatten
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

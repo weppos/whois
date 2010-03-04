@@ -19,6 +19,8 @@
 
 * FIXED: whois.crsnic.net server crashes trying to return nameservers with reserved IANA domains and Ruby 1.9.1.
 
+* FIXED: With some .se domains, whois.nic-se.se parser returns invalid values for nameservers.
+
 
 == Release 1.0.4
 
