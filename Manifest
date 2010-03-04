@@ -253,6 +253,7 @@ test/testcases/responses/whois.meregistry.net/registered.txt
 test/testcases/responses/whois.museum/available.txt
 test/testcases/responses/whois.museum/registered.txt
 test/testcases/responses/whois.nic-se.se/available.txt
+test/testcases/responses/whois.nic-se.se/nameservers_with_ip.txt
 test/testcases/responses/whois.nic-se.se/registered.txt
 test/testcases/responses/whois.nic.ac/available.txt
 test/testcases/responses/whois.nic.ac/registered.txt
