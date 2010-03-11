@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.aero parser
+      # = whois.nic.ve parser
       #
-      # Parser for the whois.aero server.
+      # Parser for the whois.nic.ve server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,16 +32,16 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisAero < Base
+      class WhoisNicVe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:(.*?)\n+/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /Estatus del dominio: (.*?)\n/
+            $1
           end
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "NOT FOUND")
+          @available ||= (content_for_scanner =~ /No match for/)
         end
 
         property_supported :registered? do
@@ -50,21 +50,25 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created On:(.*?)\n+/
+          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.*?)\n+/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Updated On:(.*?)\n+/
+          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.*?)\n+/
             Time.parse($1)
           end
         end
 
-        property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires On:(.*?)\n+/
-            Time.parse($1)
+        property_not_supported :expires_on
+
+
+        property_supported :nameservers do
+          @nameservers ||= if content_for_scanner =~ (/Servidor\(es\) de Nombres de Dominio:\n\n((?:\s+\s-\s(.*?)\n)+)/)
+            $1.scan(/-\s(.*?)\n/).flatten
           end
+          @nameservers ||= []
         end
 
       end

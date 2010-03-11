@@ -298,7 +298,7 @@ us;whois.nic.us;google.us;u34jedzcq.us
 #Whois::Server.define :tld, ".uz", "whois.cctld.uz"
 va;whois.ripe.net;vatican.va;u34jedzcq.va
 vc;whois.afilias-grs.info;google.vc;u34jedzcq.vc
-#Whois::Server.define :tld, ".ve", "whois.nic.ve"
+ve;whois.nic.ve;ula.ve;u34jedzcq.ve
 vg;whois.adamsnames.tc;google.vg;u34jedzcq.vg
 vi;;;
 vn;;;

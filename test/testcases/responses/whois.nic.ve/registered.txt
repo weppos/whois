@@ -1,0 +1,48 @@
+
+Servidor Whois de NIC-Venezuela (.VE)
+
+Este servidor contiene informacion autoritativa exclusivamente de dominios .VE
+Cualquier consulta sobre este servicio, puede hacerla al correo electronico whois@nic.ve
+
+Titular: 
+Universidad de los Andes  (ula.ve-dom)		fobispo@nic.ve
+   ULA 
+   Merida
+   Merida, Merida  VE
+   +582127718584 (FAX) +582127718599
+
+   Nombre de Dominio: ula.ve
+
+   Contacto Administrativo: 
+      Universidad de los Andes  (ula.ve-adm)		fobispo@nic.ve
+      ULA 
+      Merida
+      Merida, Merida  VE
+      +582127718584 (FAX) +582127718599
+   
+   Contacto Tecnico: 
+      Universidad de los Andes  (ula.ve-tec)		fobispo@nic.ve
+      ULA 
+      Merida
+      Merida, Merida  VE
+      +582127718584 (FAX) +582127718599
+   
+   Contacto de Cobranza: 
+      Universidad de los Andes  (ula.ve-bil)		fobispo@nic.ve
+      ULA 
+      Merida
+      Merida, Merida  VE
+      +582127718584 (FAX) +582127718599
+
+   Ultima Actualizacion: 2005-11-17 21:16:31
+   Fecha de Creacion: 2005-11-15 14:40:48
+
+   Estatus del dominio: ACTIVO
+
+   Servidor(es) de Nombres de Dominio:
+
+   - avalon.ula.ve
+   - azmodan.ula.ve
+
+NIC-Venezuela - CONATEL
+http://www.nic.ve

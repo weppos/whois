@@ -2,6 +2,8 @@
 
 == master
 
+* ADDED: Added simple .ve TLD parser (whois.nic.ve).
+
 * FIXED: With some .eu domains, whois.eu parser returns invalid values for nameservers.
 
 
