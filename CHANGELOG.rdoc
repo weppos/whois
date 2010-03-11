@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* FIXED: With some .eu domains, whois.eu parser returns invalid values for nameservers.
+
 
 == Release 1.0.5
 

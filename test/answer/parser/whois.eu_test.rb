@@ -55,4 +55,11 @@ class AnswerParserWhoisEuTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/nameservers_with_ip.txt'))
+    expected  = %w( dns1.servicemagic.eu dns2.servicemagic.eu )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
