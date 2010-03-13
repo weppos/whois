@@ -48,14 +48,6 @@ module Whois
           !available?
         end
 
-        def valid?
-          !invalid?
-        end
-
-        def invalid?
-          @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
-        end
-
 
         property_supported :created_on do
           @created_on ||= if content_for_scanner =~ /\s+Registered on:\s+(.*)\n/
@@ -75,8 +67,17 @@ module Whois
           end
         end
 
+
+        def valid?
+          !invalid?
+        end
+
+        def invalid?
+          @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
+        end
+
       end
-      
+
     end
   end
 end  
