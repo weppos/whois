@@ -78,6 +78,13 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          # Return nil because when the response contains more than one registrar section
+          # the response can be messy. See, for instance, the Verisign response for google.com.
+          nil
+        end
+
+
         property_supported :nameservers do
           @nameservers ||= node("Name Server") do |values|
             [*values].map do |value|
@@ -85,13 +92,6 @@ module Whois
             end.compact
           end
           @nameservers ||= []
-        end
-
-
-        property_supported :registrar do
-          # Return nil because when the response contains more than one registrar section
-          # the response can be messy. See, for instance, the Verisign response for google.com.
-          nil
         end
 
 
