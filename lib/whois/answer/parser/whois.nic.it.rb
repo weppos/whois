@@ -41,9 +41,7 @@ module Whois
         end
 
         # If available, returns the unique domain ID set by the registry.
-        property_supported :domain_id do
-          nil
-        end
+        property_not_supported :domain_id
 
 
         # Returns the record status or an array of status,
