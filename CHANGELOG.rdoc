@@ -8,6 +8,8 @@
 
 * CHANGED: jobswhois.verisign-grs.com now correctly raises PropertyNotSupported when a property is not supported.
 
+* CHANGED: whois.crsnic.net now correctly raises PropertyNotSupported when a property is not supported.
+
 
 == Release 1.0.5
 
