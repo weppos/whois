@@ -32,9 +32,7 @@ module Whois
           node("Domain")
         end
 
-        property_supported :domain_id do
-          nil
-        end
+        property_not_supported :domain_id
 
 
         property_supported :status do

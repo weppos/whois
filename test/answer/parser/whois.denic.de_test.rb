@@ -80,10 +80,8 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).domain_id
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
   end
 
 
@@ -95,13 +93,13 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_registered?
-    assert  !@klass.new(load_part('/available.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
   end
 
   def test_available?
     assert  @klass.new(load_part('/available.txt')).available?
-    assert  !@klass.new(load_part('/registered.txt')).available?
+    assert !@klass.new(load_part('/registered.txt')).available?
   end
 
 
@@ -257,10 +255,8 @@ assurance and to bar you from using its whois query.
   end
 
   def test_domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_registered.txt')).domain_id
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
   end
 
 
