@@ -39,9 +39,8 @@ module Whois
           node("Domain Name") { |raw| raw.downcase }
         end
 
-        property_supported :domain_id do
-          nil
-        end
+        property_not_supported :domain_id
+
 
 
         property_supported :referral_whois do
@@ -77,6 +76,7 @@ module Whois
         property_supported :expires_on do
           node("Expiration Date") { |raw| Time.parse(raw) }
         end
+
 
         property_supported :registrar do
           # Return nil because when the response contains more than one registrar section

@@ -18,6 +18,8 @@
 
 * CHANGED: whois.nic.it now correctly raises PropertyNotSupported when a property is not supported.
 
+* CHANGED: whois.nic.tv now correctly raises PropertyNotSupported when a property is not supported.
+
 
 == Release 1.0.5
 
