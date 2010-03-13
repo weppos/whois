@@ -29,23 +29,20 @@ module Whois
       class WhoisNicHu < Base
         include Ast
 
-        # Returns the registry disclaimer that comes with the answer.
         property_supported :disclaimer do
           node('Disclaimer')
         end
 
-        # If available, returns the domain name as stored by the registry.
+
         property_supported :domain do
           node('Domain')
         end
 
-        # If available, returns the unique domain ID set by the registry.
         property_supported :domain_id do
           node('hun-id')
         end
 
-        # Returns the record status: <tt>:available</tt>, <tt>:in_progress</tt>
-        # or <tt>:registered</tt>.
+
         property_supported :status do
           if node('NotFound')
             :available
@@ -56,30 +53,36 @@ module Whois
           end
         end
 
-        # Returns whether this record is available.
         property_supported :available? do
           @available ||= status == :available
         end
 
-        # Returns whether this record is registered.
         property_supported :registered? do
           @registered ||= status == :registered
         end
 
-        # If available, returns a Time object representing the date
-        # the record was created, according to the registry answer.
+
         property_supported :created_on do
           node('registered') { |raw| Time.parse(raw) }
         end
 
-        # If available, returns a Time object representing the date
-        # the record was last updated, according to the registry answer.
         property_supported :updated_on do
           node('changed') { |raw| Time.parse(raw) }
         end
 
-        # If available, returns a <tt>Whois::Answer::Contact</tt> record
-        # containing the registrant details extracted from the registry answer.
+        property_not_supported :expires_on
+
+
+        property_supported :registrar do
+          if c = registrar_contact
+            Answer::Registrar.new(
+              :id => c[:id],
+              :name => c[:name],
+              :organization => c[:organization]
+            )
+          end
+        end
+
         property_supported :registrant do
           if registered?
             a1 = (node('address') || [])[1].split(/\s/)
@@ -98,38 +101,12 @@ module Whois
           end
         end
 
-        # If available, returns a <tt>Whois::Answer::Contact</tt> record
-        # containing the admin contact details extracted from the registry answer.
         property_supported :admin do
           contact('admin-c')
         end
 
-        # If available, returns a <tt>Whois::Answer::Contact</tt> record
-        # containing the technical contact details extracted from the registry answer.
         property_supported :technical do
           contact('tech-c')
-        end
-
-        # If available, returns a <tt>Whois::Answer::Contact</tt> record
-        # containing the zone contact details extracted from the registry answer.
-        property_supported :zone_contact do
-          contact('zone-c')
-        end
-
-        # If available, returns a <tt>Whois::Answer::Contact</tt> record
-        # containing the registrar contact details extracted from the registry answer.
-        property_supported :registrar_contact do
-          contact('registrar')
-        end
-
-        property_supported :registrar do
-          if rc = registrar_contact
-            Answer::Registrar.new(
-              :id => rc[:id],
-              :name => rc[:name],
-              :organization => rc[:organization]
-            )
-          end
         end
 
 
@@ -137,6 +114,15 @@ module Whois
         # if any name server is available in the registry answer.
         property_supported :nameservers do
           @nameservers ||= node('nameserver') || []
+        end
+
+
+        def registrar_contact
+          contact('registrar')
+        end
+
+        def zone_contact
+          contact('zone-c')
         end
 
 

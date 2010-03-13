@@ -107,6 +107,13 @@ EOS
                   @klass.new(load_part('/registered.txt')).updated_on
   end
 
+  def test_expires_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/in_progress.txt')).expires_on }
+  end
+
+
   def test_admin_with_registered
     admin = @klass.new(load_part('/registered.txt')).admin
     assert_instance_of Whois::Answer::Contact, admin
@@ -146,6 +153,38 @@ EOS
                   @klass.new(load_part('/available.txt')).technical
     assert_equal  nil,
                   @klass.new(load_part('/in_progress.txt')).technical
+  end
+
+  def test_registrar_with_registered
+    registrar = @klass.new(load_part('/registered.txt')).registrar
+    assert_instance_of Whois::Answer::Registrar, registrar
+    assert_equal '1960108002', registrar.id
+    assert_equal '3C Kft. (Registrar)', registrar.name
+    assert_equal '3C Ltd.', registrar.organization
+  end
+
+  def test_registrar_with_unregistered
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).registrar
+    assert_equal  nil,
+                  @klass.new(load_part('/in_progress.txt')).registrar
+  end
+
+  def test_nameserver
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/in_progress.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
   def test_zone_contact_with_registered
@@ -188,38 +227,6 @@ EOS
                   @klass.new(load_part('/available.txt')).registrar_contact
     assert_equal  nil,
                   @klass.new(load_part('/in_progress.txt')).registrar_contact
-  end
-
-  def test_registrar_with_registered
-    registrar = @klass.new(load_part('/registered.txt')).registrar
-    assert_instance_of Whois::Answer::Registrar, registrar
-    assert_equal '1960108002', registrar.id
-    assert_equal '3C Kft. (Registrar)', registrar.name
-    assert_equal '3C Ltd.', registrar.organization
-  end
-
-  def test_registrar_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).registrar
-  end
-
-  def test_nameserver
-    parser    = @klass.new(load_part('/registered.txt'))
-    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
-
-    parser    = @klass.new(load_part('/available.txt'))
-    expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
-
-    parser    = @klass.new(load_part('/in_progress.txt'))
-    expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
