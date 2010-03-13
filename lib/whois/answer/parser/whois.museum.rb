@@ -56,13 +56,13 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_supported :updated_on do
           @updated_on ||= if content_for_scanner =~ /Last Updated On:(.*?)\n/
             Time.parse($1)
           end
         end
-        
+
         property_supported :expires_on do
           @expires_on ||= if content_for_scanner =~ /Expiration Date:(.*?)\n/
             Time.parse($1)
@@ -70,7 +70,7 @@ module Whois
         end
 
       end
-      
+
     end
   end
 end  

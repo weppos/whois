@@ -68,7 +68,7 @@ module Whois
         property_not_supported :expires_on
 
       end
-      
+
     end
   end
 end  

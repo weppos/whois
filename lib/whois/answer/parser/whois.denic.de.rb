@@ -96,7 +96,7 @@ module Whois
           @nameservers ||= []
         end
 
-        
+
         protected
 
           def parse

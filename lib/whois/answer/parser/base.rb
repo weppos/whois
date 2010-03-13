@@ -165,7 +165,7 @@ module Whois
             raise PropertyNotSupported
           end
         end
-        
+
         # Registers a <tt>property</tt> as <tt>:supported</tt>
         # and defines a method with the content of the block.
         #

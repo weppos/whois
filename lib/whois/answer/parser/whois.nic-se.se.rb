@@ -48,6 +48,7 @@ module Whois
           !available?
         end
 
+
         property_supported :created_on do
           @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
@@ -59,12 +60,13 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_supported :updated_on do
           @updated_on ||= if content_for_scanner =~ /modified:\s+(.*?)\n/
             Time.parse($1)
           end
         end
+
 
         # Nameservers are listed in the following formats:
         # 
@@ -77,7 +79,7 @@ module Whois
         end
 
       end
-      
+
     end
   end
 end
