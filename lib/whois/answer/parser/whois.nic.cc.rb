@@ -39,9 +39,7 @@ module Whois
           node("Domain Name") { |raw| raw.downcase }
         end
 
-        property_supported :domain_id do
-          nil
-        end
+        property_not_supported :domain_id
 
 
         property_supported :referral_whois do

@@ -12,6 +12,8 @@
 
 * CHANGED: whois.denic.de now correctly raises PropertyNotSupported when a property is not supported.
 
+* CHANGED: whois.nic.cc now correctly raises PropertyNotSupported when a property is not supported.
+
 
 == Release 1.0.5
 

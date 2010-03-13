@@ -50,10 +50,8 @@ EOS
   end
 
   def test_domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain_id
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
   end
 
 
