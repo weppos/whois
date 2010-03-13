@@ -55,30 +55,28 @@ module Whois
           end
         end
 
-        property_not_supported :updated_on
-
-        property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Record expires on (.*).\n/
-            Time.parse($1)
-          end
-        end
-        
         property_supported :updated_on do
           @updated_on ||= if content_for_scanner =~ /Record last updated on (.*?).\n/
             Time.parse($1)
           end
         end
 
-        property_supported :nameservers do
-          @nameservers ||= if content =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
-            $1.split.map(&:strip)
-          else
-            []
+        property_supported :expires_on do
+          @expires_on ||= if content_for_scanner =~ /Record expires on (.*).\n/
+            Time.parse($1)
           end
         end
 
+
+        property_supported :nameservers do
+          @nameservers ||= if content =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
+            $1.split.map(&:strip)
+          end
+          @nameservers ||= []
+        end
+
       end
-      
+
     end
   end
 end
