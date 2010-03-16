@@ -127,8 +127,10 @@ EOS
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
+  end
 
-    parser    = @klass.new(load_part('/nameservers_with_nonameserver.txt'))
+  def test_nameservers_with_no_nameserver
+    parser    = @klass.new(load_part('/nameservers_with_no_nameserver.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
