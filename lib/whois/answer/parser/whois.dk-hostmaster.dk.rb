@@ -72,4 +72,4 @@ module Whois
 
     end
   end
-end  
+end
