@@ -68,6 +68,7 @@ lib/whois/answer/parser/whois.nic.travel.rb
 lib/whois/answer/parser/whois.nic.tv.rb
 lib/whois/answer/parser/whois.nic.uk.rb
 lib/whois/answer/parser/whois.nic.us.rb
+lib/whois/answer/parser/whois.nic.ve.rb
 lib/whois/answer/parser/whois.norid.no.rb
 lib/whois/answer/parser/whois.publicinterestregistry.net.rb
 lib/whois/answer/parser/whois.register.bg.rb
@@ -149,6 +150,7 @@ test/answer/parser/whois.nic.travel_test.rb
 test/answer/parser/whois.nic.tv_test.rb
 test/answer/parser/whois.nic.uk_test.rb
 test/answer/parser/whois.nic.us_test.rb
+test/answer/parser/whois.nic.ve_test.rb
 test/answer/parser/whois.norid.no_test.rb
 test/answer/parser/whois.publicinterestregistry.net_test.rb
 test/answer/parser/whois.register.bg_test.rb
@@ -221,7 +223,7 @@ test/testcases/responses/whois.cira.ca/available.txt
 test/testcases/responses/whois.cira.ca/registered.txt
 test/testcases/responses/whois.crsnic.net/MULTIPLE.txt
 test/testcases/responses/whois.crsnic.net/available.txt
-test/testcases/responses/whois.crsnic.net/nameservers_with_nonameserver.txt
+test/testcases/responses/whois.crsnic.net/nameservers_with_no_nameserver.txt
 test/testcases/responses/whois.crsnic.net/registered.txt
 test/testcases/responses/whois.denic.de/1-10-0_available.txt
 test/testcases/responses/whois.denic.de/1-10-0_registered.txt
@@ -242,6 +244,7 @@ test/testcases/responses/whois.educause.edu/registered.txt
 test/testcases/responses/whois.eu.org/available.txt
 test/testcases/responses/whois.eu.org/registered.txt
 test/testcases/responses/whois.eu/available.txt
+test/testcases/responses/whois.eu/nameservers_with_ip.txt
 test/testcases/responses/whois.eu/registered.txt
 test/testcases/responses/whois.iana.org/MULTIPLE.txt
 test/testcases/responses/whois.iana.org/available.txt
@@ -317,6 +320,8 @@ test/testcases/responses/whois.nic.uk/invalid.txt
 test/testcases/responses/whois.nic.uk/registered.txt
 test/testcases/responses/whois.nic.us/available.txt
 test/testcases/responses/whois.nic.us/registered.txt
+test/testcases/responses/whois.nic.ve/available.txt
+test/testcases/responses/whois.nic.ve/registered.txt
 test/testcases/responses/whois.norid.no/available.txt
 test/testcases/responses/whois.norid.no/registered.txt
 test/testcases/responses/whois.publicinterestregistry.net/available.txt
