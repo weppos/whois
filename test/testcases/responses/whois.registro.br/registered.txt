@@ -5,13 +5,13 @@
 %  being prohibited its distribution, comercialization or
 %  reproduction, in particular, to use it for advertising or
 %  any similar purpose.
-%  2009-12-25 20:11:54 (BRST -02:00)
+%  2010-03-16 14:47:50 (BRT -03:00)
 
 % Query rate limit exceeded. Reduced information.
 % Use https://registro.br/cgi-bin/avail/ for domain availability.
 
 domain:      registro.br
-owner:       NÃºcleo de InformaÃ§Ã£o e CoordenaÃ§Ã£o do Ponto BR (662379)
+owner:       Núcleo de Informação e Coordenação do Ponto BR (662379)
 
 % Security and mail abuse issues should also be addressed to
 % cert.br, http://www.cert.br/, respectivelly to cert@cert.br

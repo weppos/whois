@@ -57,6 +57,9 @@ module Whois
 
         property_not_supported :expires_on
 
+
+        property_not_supported :nameservers
+
       end
 
     end

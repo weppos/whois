@@ -44,4 +44,17 @@ class AnswerParserWhoisDomainregistryIeTest < Whois::Answer::Parser::TestCase
                   @klass.new(load_part('/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end

@@ -93,13 +93,13 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
   def test_available?
-    assert  @klass.new(load_part('/available.txt')).available?
     assert !@klass.new(load_part('/registered.txt')).available?
+    assert  @klass.new(load_part('/available.txt')).available?
   end
 
 

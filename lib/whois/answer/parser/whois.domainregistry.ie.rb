@@ -54,15 +54,20 @@ module Whois
         property_not_supported :created_on
 
         property_not_supported :updated_on
-        
+
         property_supported :expires_on do
           @expires_on ||= if content_for_scanner =~ /renewal:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
+
+        property_supported :nameservers do
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
+        end
+
       end
 
     end
   end
-end  
+end

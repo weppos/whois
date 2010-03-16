@@ -22,8 +22,8 @@ class AnswerParserWhoisEuTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 

@@ -45,10 +45,10 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain_id
     assert_equal  "D2244233-LROR",
                   @klass.new(load_part('/registered.txt')).domain_id
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).domain_id
   end
 
 
@@ -65,8 +65,8 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 

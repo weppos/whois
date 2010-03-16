@@ -22,8 +22,8 @@ class AnswerParserWhoisZaNetTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 
@@ -44,6 +44,19 @@ class AnswerParserWhoisZaNetTest < Whois::Answer::Parser::TestCase
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns3.zoneedit.com ns5.zoneedit.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

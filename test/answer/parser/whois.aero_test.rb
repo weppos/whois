@@ -22,8 +22,8 @@ class AnswerParserWhoisAeroTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 
@@ -46,6 +46,19 @@ class AnswerParserWhoisAeroTest < Whois::Answer::Parser::TestCase
                   @klass.new(load_part('/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( dns2.srilankan.aero dns1.srilankan.aero s1.ns.slt.lk s2.ns.slt.lk )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

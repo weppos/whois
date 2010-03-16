@@ -49,6 +49,19 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fr/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/fr/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/fr/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisNicFrPmTest < AnswerParserWhoisNicFrTest
@@ -88,6 +101,19 @@ class AnswerParserWhoisNicFrPmTest < AnswerParserWhoisNicFrTest
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/pm/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/pm/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/pm/registered.txt'))
+    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/pm/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
@@ -131,6 +157,19 @@ class AnswerParserWhoisNicFrReTest < AnswerParserWhoisNicFrTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/re/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/pm/registered.txt'))
+    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/pm/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisNicFrWfTest < AnswerParserWhoisNicFrTest
@@ -172,6 +211,19 @@ class AnswerParserWhoisNicFrWfTest < AnswerParserWhoisNicFrTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/wf/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/wf/registered.txt'))
+    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/wf/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisNicFrYtTest < AnswerParserWhoisNicFrTest
@@ -211,6 +263,19 @@ class AnswerParserWhoisNicFrYtTest < AnswerParserWhoisNicFrTest
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/yt/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/yt/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/yt/registered.txt'))
+    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/yt/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

@@ -42,4 +42,10 @@ class AnswerParserWhoisNicIoTest < Whois::Answer::Parser::TestCase
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).nameservers }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).nameservers }
+  end
+
 end

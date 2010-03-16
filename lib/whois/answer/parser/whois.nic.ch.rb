@@ -57,8 +57,16 @@ module Whois
 
         property_not_supported :expires_on
 
+
+        property_supported :nameservers do
+          @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
+            $1.split("\n")
+          end
+          @nameservers ||= []
+        end
+
       end
 
     end
   end
-end  
+end

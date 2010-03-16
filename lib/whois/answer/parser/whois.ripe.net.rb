@@ -57,8 +57,19 @@ module Whois
 
         property_not_supported :expires_on
 
+
+        # Nameservers are listed in the following formats:
+        # 
+        #   nserver:      ns.nic.mc
+        #   nserver:      ns.nic.mc 195.78.6.131
+        # 
+        # In both cases, always return only the name.
+        property_supported :nameservers do
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.downcase }
+        end
+
       end
 
     end
   end
-end  
+end

@@ -84,6 +84,12 @@ module Whois
         end
 
 
+        property_supported :nameservers do
+          @nameservers ||= node("Name Server") { |values| [*values].map(&:downcase) }
+          @nameservers ||= []
+        end
+
+
         protected
 
           def parse

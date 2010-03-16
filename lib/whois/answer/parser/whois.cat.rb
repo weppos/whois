@@ -67,6 +67,16 @@ module Whois
           end
         end
 
+        # Nameservers are listed in the following formats:
+        # 
+        #   Name Server: dns2.gencat.cat 83.247.132.4
+        #   Name Server: dns.gencat.net
+        # 
+        # In both cases, always return only the name.
+        property_supported :nameservers do
+          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
+        end
+
       end
 
     end

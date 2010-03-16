@@ -51,6 +51,19 @@ class AnswerParserWhoisNicMuKiTest < AnswerParserWhoisNicMuTest
                   @klass.new(load_part('/ki/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisNicMuMuTest < AnswerParserWhoisNicMuTest
@@ -92,6 +105,19 @@ class AnswerParserWhoisNicMuMuTest < AnswerParserWhoisNicMuTest
                   @klass.new(load_part('/mu/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/mu/available.txt')).expires_on
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

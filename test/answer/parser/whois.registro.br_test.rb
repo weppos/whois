@@ -22,8 +22,8 @@ class AnswerParserWhoisRegistroBrTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 
@@ -40,6 +40,12 @@ class AnswerParserWhoisRegistroBrTest < Whois::Answer::Parser::TestCase
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).nameservers }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).nameservers }
   end
 
 end

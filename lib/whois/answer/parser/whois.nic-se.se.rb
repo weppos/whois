@@ -75,7 +75,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

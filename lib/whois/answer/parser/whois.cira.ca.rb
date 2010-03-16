@@ -70,6 +70,14 @@ module Whois
           end
         end
 
+
+        property_supported :nameservers do
+          @nameservers ||= if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
+            $1.split("\n").map { |value| value.split(" ").first }
+          end
+          @nameservers ||= []
+        end
+
       end
 
     end

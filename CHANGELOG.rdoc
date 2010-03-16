@@ -4,6 +4,8 @@
 
 * ADDED: Added simple .ve TLD parser (whois.nic.ve).
 
+* ADDED: Added support for 'nameservers' property for all existing parsers.
+
 * FIXED: With some .eu domains, whois.eu parser returns invalid values for nameservers.
 
 * CHANGED: jobswhois.verisign-grs.com now correctly raises PropertyNotSupported when a property is not supported.
@@ -44,9 +46,9 @@
 
 == Release 1.0.4
 
-* FIXED: Normalize 'nameservers' property return value. Always return an Array even if there's no nameserver.
-
 * ADDED: Added Symbol.to_proc core extension to ensure compatibility with Ruby 1.8.6.
+
+* FIXED: Normalize 'nameservers' property return value. Always return an Array even if there's no nameserver.
 
 * CHANGED: Suppress Japanese output for the .js TLD [axic]
 
@@ -59,17 +61,17 @@
 
 * SERVER: Updated web address for the .co TLD (closes #13)
 
-* FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
-
-* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
-
-* FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
-
 * ADDED: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
 * ADDED: Support for 'nameservers' property for the whois.adamsnames.tc parser.
 
 * ADDED: Compatibility with semver.org
+
+* FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
+
+* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
+
+* FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
 
 
 == Release 1.0.2
@@ -99,14 +101,6 @@
 * SERVER: Updated the .id, .is, .mm, .my, .pw, .sb, .sr, .tj, .tp, .wf, .yt TLD definitions (whois 5.0.0).
 
 * SERVER: .dk TLD server requires --show-handles option (closes REDMINE-426)
-
-* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes REDMINE-389)
-
-* FIXED: In case of exception, the CLI doesn't exit nicely (closes REDMINE-333)
-
-* FIXED: Some tests are not compatible with Ruby 1.9
-
-* FIXED: Flagged created_on and expires_on properties as not supported for .de TLD.
 
 * ADDED: Simple .at TLD parser.
 
@@ -199,6 +193,14 @@
    # => false
 
 * ADDED: Whois::WebInterfaceError now exposes #url attribute.
+
+* FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes REDMINE-389)
+
+* FIXED: In case of exception, the CLI doesn't exit nicely (closes REDMINE-333)
+
+* FIXED: Some tests are not compatible with Ruby 1.9
+
+* FIXED: Flagged created_on and expires_on properties as not supported for .de TLD.
 
 * CHANGED: All not supported properties now raise a PropertyNotSupported error instead of returning nil.
 

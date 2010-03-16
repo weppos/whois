@@ -49,6 +49,19 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
                   @klass.new(load_part('/ru/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/ru/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/ru/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 
@@ -89,6 +102,19 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
                   @klass.new(load_part('/su/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/su/available.txt')).expires_on
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/su/registered.txt'))
+    expected  = %w( ns1073.hostgator.com ns1074.hostgator.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/su/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

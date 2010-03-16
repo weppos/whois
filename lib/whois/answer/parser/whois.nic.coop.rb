@@ -67,8 +67,13 @@ module Whois
           end
         end
 
+
+        property_supported :nameservers do
+          @nameservers ||= content_for_scanner.scan(/Host Name:\s+(.+)\n/).flatten
+        end
+
       end
 
     end
   end
-end  
+end

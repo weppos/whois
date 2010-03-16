@@ -68,6 +68,14 @@ module Whois
         end
 
 
+        property_supported :nameservers do
+          @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
+            $1.split("\n").map { |value| value.split(" ").first.downcase }
+          end
+          @nameservers ||= []
+        end
+
+
         def valid?
           !invalid?
         end
@@ -80,4 +88,4 @@ module Whois
 
     end
   end
-end  
+end

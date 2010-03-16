@@ -9,7 +9,6 @@ class AnswerParserWhoisRipeNetTest < Whois::Answer::Parser::TestCase
     @host   = "whois.ripe.net"
   end
 
-
   def test_true
     assert true
   end
@@ -51,6 +50,19 @@ class AnswerParserWhoisRipeNetFoTest < AnswerParserWhoisRipeNetTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/fo/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/fo/registered.txt'))
+    expected  = %w( ns3.zoneedit.com ns4.zoneedit.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/fo/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisRipeNetGmTest < AnswerParserWhoisRipeNetTest
@@ -86,6 +98,19 @@ class AnswerParserWhoisRipeNetGmTest < AnswerParserWhoisRipeNetTest
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gm/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/gm/registered.txt'))
+    expected  = %w( ns1.commit.gm ns1.sol.no )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/gm/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
@@ -125,6 +150,19 @@ class AnswerParserWhoisRipeNetMcTest < AnswerParserWhoisRipeNetTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/mc/available.txt')).expires_on }
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/mc/registered.txt'))
+    expected  = %w( ns.nic.mc bow.rain.fr ns.ripe.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/mc/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisRipeNetSmTest < AnswerParserWhoisRipeNetTest
@@ -160,6 +198,19 @@ class AnswerParserWhoisRipeNetSmTest < AnswerParserWhoisRipeNetTest
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sm/available.txt')).expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/sm/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/sm/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
@@ -199,5 +250,17 @@ class AnswerParserWhoisRipeNetVaTest < AnswerParserWhoisRipeNetTest
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/va/available.txt')).expires_on }
   end
 
-end
 
+  def test_nameservers
+    parser    = @klass.new(load_part('/va/registered.txt'))
+    expected  = %w( john.vatican.va ns2.nic.it seth.namex.it osiris.namex.it michael.vatican.va )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/va/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end

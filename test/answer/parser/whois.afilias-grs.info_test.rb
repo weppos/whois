@@ -51,6 +51,19 @@ class AnswerParserWhoisAfiliasGrsInfoBzTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/bz/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/bz/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/bz/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisAfiliasGrsInfoGiTest < AnswerParserWhoisAfiliasGrsInfoTest
@@ -92,6 +105,19 @@ class AnswerParserWhoisAfiliasGrsInfoGiTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/gi/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/gi/available.txt')).expires_on
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/gi/registered.txt'))
+    expected  = %w( ns1-a.sapphire.gi ns2-a.sapphire.gi )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/gi/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
@@ -137,6 +163,19 @@ class AnswerParserWhoisAfiliasGrsInfoHnTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/hn/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/hn/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/hn/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisAfiliasGrsInfoLcTest < AnswerParserWhoisAfiliasGrsInfoTest
@@ -178,6 +217,19 @@ class AnswerParserWhoisAfiliasGrsInfoLcTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/lc/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/lc/available.txt')).expires_on
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/lc/registered.txt'))
+    expected  = %w( ns1.nic.ag ns.patricklay.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/lc/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
@@ -223,6 +275,19 @@ class AnswerParserWhoisAfiliasGrsInfoMnTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/mn/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/mn/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/mn/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisAfiliasGrsInfoScTest < AnswerParserWhoisAfiliasGrsInfoTest
@@ -266,6 +331,19 @@ class AnswerParserWhoisAfiliasGrsInfoScTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/sc/available.txt')).expires_on
   end
 
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/sc/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/sc/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 class AnswerParserWhoisAfiliasGrsInfoVcTest < AnswerParserWhoisAfiliasGrsInfoTest
@@ -307,6 +385,19 @@ class AnswerParserWhoisAfiliasGrsInfoVcTest < AnswerParserWhoisAfiliasGrsInfoTes
                   @klass.new(load_part('/vc/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/vc/available.txt')).expires_on
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/vc/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/vc/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

@@ -22,8 +22,8 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
     assert  @klass.new(load_part('/registered.txt')).registered?
+    assert !@klass.new(load_part('/available.txt')).registered?
   end
 
 
@@ -44,6 +44,20 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
+  end
+
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( max.nra.nato.int ns1.cs.uc1.ac.uk ns1.drenet.dnd.ca relay.mod.uk maxima.nra.nato.int ns.namsa.nato.int ns.saclantc.nato.int ns.nc3a.nato.int )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end

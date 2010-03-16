@@ -70,10 +70,8 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ (/Nameservers:\n((?:\t.*\n)+)/)
-            $1.split("\n").map do |value|
-              value.strip.split(" ").first
-            end
+          @nameservers ||= if content_for_scanner =~ /Nameservers:\n((.+\n)+)\n/
+            $1.split("\n").map { |value| value.strip.split(" ").first }
           end
           @nameservers ||= []
         end
@@ -82,4 +80,4 @@ module Whois
 
     end
   end
-end  
+end
