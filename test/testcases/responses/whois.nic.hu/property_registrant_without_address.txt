@@ -1,0 +1,58 @@
+% Whois server 1.99C
+
+Rights restricted by copyright. Szerzõi jog fenntartva.
+-Legal usage of this service requires that you agree to
+abide by the rules and conditions set forth at
+http://www.domain.hu/domain/English/domainsearch/feltetelek.html
+-A szolgaltatas csak a
+http://www.domain.hu/domain/domainsearch/feltetelek.html címen
+elérhetõ feltételek elfogadása és betartása mellett
+használható legálisan.
+
+domain:         js.hu
+org:            Private person
+org:            org_name_hun: Buruzs Tamás
+hun-id:         0000273611
+admin-c:        2000230092
+tech-c:         2960712001
+zone-c:         2960712001
+nameserver:     a.ns.e-media.hu
+nameserver:     b.ns.e-media.hu
+registered:     2001.01.18 02:00:41
+changed:        2001.10.10 21:59:01
+registrar:      1990917022
+
+person:         Buruzs Tamás
+address:        Pöttyös u. 3. 
+address:        1098 Budapest
+address:        HU
+phone:          (20) 996-8428
+fax-no:         
+hun-id:         2000230092
+
+person:         Barna György
+address:        Városmajor u. 1/c.
+address:        1122 Budapest
+address:        HU
+phone:          (70) 3-11111-7
+fax-no:         (1) 438-4568
+e-mail:         barna83456@kibernet.hu
+hun-id:         2960712001
+
+person:         Barna György
+address:        Városmajor u. 1/c.
+address:        1122 Budapest
+address:        HU
+phone:          (70) 3-11111-7
+fax-no:         (1) 438-4568
+hun-id:         2960712001
+
+org:            org_name_eng: CyberNet Ltd.
+org:            org_name_hun: KiberNet Kft. (Registrar)
+address:        Városmajor u. 1/c
+address:        1122 Budapest
+address:        HU
+phone:          +36 1 4384567
+fax-no:         +36 1 4384568
+hun-id:         1990917022
+

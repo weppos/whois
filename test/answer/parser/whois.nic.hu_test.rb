@@ -114,25 +114,64 @@ EOS
 
 
   def test_registrant_with_registered
-    registrant = @klass.new(load_part('/registered.txt')).registrant
-    assert_instance_of Whois::Answer::Contact, registrant
-    assert_equal 'Google, Inc.', registrant.name
-    assert_equal 'Google, Inc.', registrant.organization
-    assert_equal 'Amphitheatre Pkwy 1600.', registrant.address
-    assert_equal 'CA-94043', registrant.zip
-    assert_equal 'Mountain View', registrant.city
-    assert_equal 'US', registrant.country_code
-    assert_equal '+1 650 253 0000', registrant.phone
-    assert_equal '+1 650 253 0001', registrant.fax
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.registrant
+    assert_instance_of Whois::Answer::Contact, result
+    assert_equal  result, parser.registrant
+    assert_equal  result, parser.instance_eval { @registrant }
  end
 
   def test_registrant_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrant
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).registrant
+    parser    = @klass.new(load_part('/available.txt'))
+    result    = nil
+    assert_equal  result, parser.registrant
+    assert_equal  result, parser.instance_eval { @registrant }
+
+    parser    = @klass.new(load_part('/in_progress.txt'))
+    result    = nil
+    assert_equal  result, parser.registrant
+    assert_equal  result, parser.instance_eval { @registrant }
   end
 
+  def test_registrant_as_company
+    parser    = @klass.new(load_part('/property_registrant_as_company.txt'))
+    result    = parser.registrant
+
+    assert_instance_of Whois::Answer::Contact,  result
+    assert_equal 'Google, Inc.',                result.name
+    assert_equal 'Google, Inc.',                result.organization
+    assert_equal 'Amphitheatre Pkwy 1600.',     result.address
+    assert_equal 'CA-94043',                    result.zip
+    assert_equal 'Mountain View',               result.city
+    assert_equal 'US',                          result.country_code
+    assert_equal '+1 650 253 0000',             result.phone
+    assert_equal '+1 650 253 0001',             result.fax
+  end
+
+  def test_registrant_as_private_person
+    parser    = @klass.new(load_part('/property_registrant_as_private_person.txt'))
+    result    = parser.registrant
+
+    assert_instance_of Whois::Answer::Contact,  result
+    assert_match /Buruzs/,                      result.name             # UTF-8 hack
+    assert_equal nil,                           result.organization
+    assert_equal nil,                           result.address
+    assert_equal nil,                           result.zip
+    assert_equal nil,                           result.city
+    assert_equal nil,                           result.country_code
+    assert_equal nil,                           result.phone
+    assert_equal nil,                           result.fax
+  end
+
+  def test_registrant_without_address
+    parser    = @klass.new(load_part('/property_registrant_without_address.txt'))
+    result    = parser.registrant
+
+    assert_equal nil, result.address
+    assert_equal nil, result.zip
+    assert_equal nil, result.city
+    assert_equal nil, result.country_code
+  end
 
   def test_admin_with_registered
     admin = @klass.new(load_part('/registered.txt')).admin

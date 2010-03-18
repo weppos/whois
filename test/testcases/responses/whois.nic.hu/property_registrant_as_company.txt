@@ -1,0 +1,65 @@
+% Whois server 1.99C
+
+Rights restricted by copyright. Szerzõi jog fenntartva.
+-Legal usage of this service requires that you agree to
+abide by the rules and conditions set forth at
+http://www.domain.hu/domain/English/domainsearch/feltetelek.html
+-A szolgaltatas csak a
+http://www.domain.hu/domain/domainsearch/feltetelek.html címen
+elérhetõ feltételek elfogadása és betartása mellett
+használható legálisan.
+
+domain:         google.hu
+org:            org_name_eng: Google, Inc.
+org:            org_name_hun: Google, Inc.
+address:        Amphitheatre Pkwy 1600.
+address:        CA-94043 Mountain View
+address:        US
+phone:          +1 650 253 0000
+fax-no:         +1 650 253 0001
+hun-id:         0000219547
+admin-c:        2000466366
+tech-c:         2000578125
+zone-c:         2000578125
+nameserver:     ns1.google.com
+nameserver:     ns4.google.com
+nameserver:     ns3.google.com
+nameserver:     ns2.google.com
+registered:     2000.03.25 23:20:39
+changed:        2009.08.25 10:11:32
+registrar:      1960108002
+
+person:         3C Kft. (Registrar)
+address:        Konkoly Thege út 29-33.
+address:        H-1121 Budapest
+address:        HU
+phone:          +36 1 275 52 00
+fax-no:         +36 1 275 58 87
+hun-id:         2000466366
+
+person:         Markmonitor
+address:        Overland Road 10400, PMB155
+address:        ID-83709 Boise
+address:        US
+phone:          + 1 208 389 5798
+fax-no:         + 1 208 389 5771
+e-mail:         ccops@markmonitor.com
+hun-id:         2000578125
+
+person:         Markmonitor
+address:        Overland Road 10400, PMB155
+address:        ID-83709 Boise
+address:        US
+phone:          + 1 208 389 5798
+fax-no:         + 1 208 389 5771
+hun-id:         2000578125
+
+org:            org_name_eng: 3C Ltd.
+org:            org_name_hun: 3C Kft. (Registrar)
+address:        Konkoly Thege út 29-33.
+address:        H-1121 Budapest
+address:        HU
+phone:          +36 1 275 52 00
+fax-no:         +36 1 275 58 87
+hun-id:         1960108002
+

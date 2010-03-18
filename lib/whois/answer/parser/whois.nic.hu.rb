@@ -84,21 +84,21 @@ module Whois
         end
 
         property_supported :registrant do
-          if registered?
-            a1 = (node('address') || [])[1].split(/\s/)
-            zip = a1.shift
-            city = a1.join(' ')
-            Answer::Contact.new(
-              :name => node('name'),
-              :organization => node('org'),
-              :address => node('address')[0],
-              :city => city,
-              :zip => zip,
-              :country_code => node('address')[2],
-              :phone => node('phone'),
-              :fax => node('fax-no')
-            )
-          end
+          return unless registered?
+          return @registrant if @registrant
+
+          address, city, zip, country_code = decompose_address(node('address'))
+
+          @registrant = Answer::Contact.new(
+            :name         => node('name'),
+            :organization => node('org'),
+            :address      => address,
+            :city         => city,
+            :zip          => zip,
+            :country_code => country_code,
+            :phone        => node('phone'),
+            :fax          => node('fax-no')
+          )
         end
 
         property_supported :admin do
@@ -138,6 +138,21 @@ module Whois
                 raw.each { |k,v| c[k.to_sym] = v }
               end
             end
+          end
+
+          # Depending on record type, the address can be <tt>nil</tt>
+          # or an array containing different address parts.
+          def decompose_address(parts)
+            addresses = parts || []
+            address, city, zip, country_code = nil, nil, nil, nil
+
+            if !addresses.empty?
+              address       = addresses[0]                if addresses[0]
+              zip, city     = addresses[1].split(" ", 2)  if addresses[1]
+              country_code  = addresses[2]                if addresses[2]
+            end
+
+            [address, city, zip, country_code]
           end
 
 
