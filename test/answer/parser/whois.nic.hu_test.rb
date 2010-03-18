@@ -30,6 +30,26 @@ EOS
                   @klass.new(load_part('/registered.txt')).disclaimer
   end
 
+
+  def test_domain
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).domain
+    assert_equal  'ezitvps.hu',
+                  @klass.new(load_part('/in_progress.txt')).domain
+    assert_equal  'google.hu',
+                  @klass.new(load_part('/registered.txt')).domain
+  end
+
+  def test_domain_id
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).domain_id
+    assert_equal  nil,
+                  @klass.new(load_part('/in_progress.txt')).domain_id
+    assert_equal  '0000219547',
+                  @klass.new(load_part('/registered.txt')).domain_id
+  end
+
+
   def test_status
     assert_equal  :available,
                   @klass.new(load_part('/available.txt')).status
@@ -51,43 +71,6 @@ EOS
     assert  @klass.new(load_part('/registered.txt')).registered?
   end
 
-  def test_domain
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain
-    assert_equal  'ezitvps.hu',
-                  @klass.new(load_part('/in_progress.txt')).domain
-    assert_equal  'google.hu',
-                  @klass.new(load_part('/registered.txt')).domain
-  end
-
-  def test_id
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).domain_id
-    assert_equal  '0000219547',
-                  @klass.new(load_part('/registered.txt')).domain_id
-  end
-
-  def test_registrant_with_registered
-    registrant = @klass.new(load_part('/registered.txt')).registrant
-    assert_instance_of Whois::Answer::Contact, registrant
-    assert_equal 'Google, Inc.', registrant.name
-    assert_equal 'Google, Inc.', registrant.organization
-    assert_equal 'Amphitheatre Pkwy 1600.', registrant.address
-    assert_equal 'CA-94043', registrant.zip
-    assert_equal 'Mountain View', registrant.city
-    assert_equal 'US', registrant.country_code
-    assert_equal '+1 650 253 0000', registrant.phone
-    assert_equal '+1 650 253 0001', registrant.fax
- end
-
-  def test_registrant_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrant
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).registrant
-  end
 
   def test_created_on
     assert_equal  nil,
@@ -111,6 +94,43 @@ EOS
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/in_progress.txt')).expires_on }
+  end
+
+
+  def test_registrar_with_registered
+    registrar = @klass.new(load_part('/registered.txt')).registrar
+    assert_instance_of Whois::Answer::Registrar, registrar
+    assert_equal '1960108002', registrar.id
+    assert_equal '3C Kft. (Registrar)', registrar.name
+    assert_equal '3C Ltd.', registrar.organization
+  end
+
+  def test_registrar_with_unregistered
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).registrar
+    assert_equal  nil,
+                  @klass.new(load_part('/in_progress.txt')).registrar
+  end
+
+
+  def test_registrant_with_registered
+    registrant = @klass.new(load_part('/registered.txt')).registrant
+    assert_instance_of Whois::Answer::Contact, registrant
+    assert_equal 'Google, Inc.', registrant.name
+    assert_equal 'Google, Inc.', registrant.organization
+    assert_equal 'Amphitheatre Pkwy 1600.', registrant.address
+    assert_equal 'CA-94043', registrant.zip
+    assert_equal 'Mountain View', registrant.city
+    assert_equal 'US', registrant.country_code
+    assert_equal '+1 650 253 0000', registrant.phone
+    assert_equal '+1 650 253 0001', registrant.fax
+ end
+
+  def test_registrant_with_unregistered
+    assert_equal  nil,
+                  @klass.new(load_part('/available.txt')).registrant
+    assert_equal  nil,
+                  @klass.new(load_part('/in_progress.txt')).registrant
   end
 
 
@@ -155,20 +175,6 @@ EOS
                   @klass.new(load_part('/in_progress.txt')).technical
   end
 
-  def test_registrar_with_registered
-    registrar = @klass.new(load_part('/registered.txt')).registrar
-    assert_instance_of Whois::Answer::Registrar, registrar
-    assert_equal '1960108002', registrar.id
-    assert_equal '3C Kft. (Registrar)', registrar.name
-    assert_equal '3C Ltd.', registrar.organization
-  end
-
-  def test_registrar_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).registrar
-  end
 
   def test_nameserver
     parser    = @klass.new(load_part('/registered.txt'))
@@ -186,6 +192,7 @@ EOS
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
+
 
   def test_zone_contact_with_registered
     zone_contact = @klass.new(load_part('/registered.txt')).zone_contact
