@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.0.7
 
 * FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (closes #19).
 

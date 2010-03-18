@@ -286,6 +286,9 @@ test/testcases/responses/whois.nic.gov/available.txt
 test/testcases/responses/whois.nic.gov/registered.txt
 test/testcases/responses/whois.nic.hu/available.txt
 test/testcases/responses/whois.nic.hu/in_progress.txt
+test/testcases/responses/whois.nic.hu/property_registrant_as_company.txt
+test/testcases/responses/whois.nic.hu/property_registrant_as_private_person.txt
+test/testcases/responses/whois.nic.hu/property_registrant_without_address.txt
 test/testcases/responses/whois.nic.hu/registered.txt
 test/testcases/responses/whois.nic.im/available.txt
 test/testcases/responses/whois.nic.im/registered.txt
