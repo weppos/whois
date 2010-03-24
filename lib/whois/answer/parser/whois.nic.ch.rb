@@ -58,9 +58,15 @@ module Whois
         property_not_supported :expires_on
 
 
+        # Nameservers are listed in the following formats:
+        # 
+        #   Nserver:     ns1.prodns.de 213.160.64.75
+        #   Nserver:     ns1.prodns.de
+        # 
+        # In both cases, always return only the name.
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
-            $1.split("\n")
+            $1.split("\n").map { |value| value.split("\t").first }.uniq
           end
           @nameservers ||= []
         end
