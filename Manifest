@@ -78,6 +78,7 @@ lib/whois/answer/parser/whois.ripe.net.rb
 lib/whois/answer/parser/whois.ripn.net.rb
 lib/whois/answer/parser/whois.rotld.ro.rb
 lib/whois/answer/parser/whois.samoanic.ws.rb
+lib/whois/answer/parser/whois.srs.net.nz.rb
 lib/whois/answer/parser/whois.za.net.rb
 lib/whois/answer/parser/whois.za.org.rb
 lib/whois/answer/part.rb
@@ -160,6 +161,7 @@ test/answer/parser/whois.ripe.net_test.rb
 test/answer/parser/whois.ripn.net_test.rb
 test/answer/parser/whois.rotld.ro_test.rb
 test/answer/parser/whois.samoanic.ws_test.rb
+test/answer/parser/whois.srs.net.nz_test.rb
 test/answer/parser/whois.za.net_test.rb
 test/answer/parser/whois.za.org_test.rb
 test/answer/parser_test.rb
@@ -267,6 +269,7 @@ test/testcases/responses/whois.nic.cc/registered.txt
 test/testcases/responses/whois.nic.cd/available.txt
 test/testcases/responses/whois.nic.cd/registered.txt
 test/testcases/responses/whois.nic.ch/available.txt
+test/testcases/responses/whois.nic.ch/property_nameservers_with_ip.txt
 test/testcases/responses/whois.nic.ch/registered.txt
 test/testcases/responses/whois.nic.coop/available.txt
 test/testcases/responses/whois.nic.coop/registered.txt
@@ -353,6 +356,9 @@ test/testcases/responses/whois.rotld.ro/available.txt
 test/testcases/responses/whois.rotld.ro/registered.txt
 test/testcases/responses/whois.samoanic.ws/available.txt
 test/testcases/responses/whois.samoanic.ws/registered.txt
+test/testcases/responses/whois.srs.net.nz/available.txt
+test/testcases/responses/whois.srs.net.nz/invalid.txt
+test/testcases/responses/whois.srs.net.nz/registered.txt
 test/testcases/responses/whois.za.net/available.txt
 test/testcases/responses/whois.za.net/registered.txt
 test/testcases/responses/whois.za.org/available.txt
