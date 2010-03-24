@@ -60,8 +60,8 @@ module Whois
 
         # Nameservers are listed in the following formats:
         # 
-        #   Nserver:     ns1.prodns.de 213.160.64.75
-        #   Nserver:     ns1.prodns.de
+        #   ns1.citrin.ch
+        #   ns1.citrin.ch  [193.247.72.8]
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
