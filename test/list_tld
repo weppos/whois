@@ -179,7 +179,7 @@ lc;whois.afilias-grs.info;nic.lc;u34jedzcq.lc
 #Whois::Server.define :tld, ".lk", "whois.nic.lk"
 lr;;;
 ls;;;
-#Whois::Server.define :tld, ".lt", "whois.domreg.lt"
+lt;whois.domreg.lt;google.lt;u34jedzcq.lt
 #Whois::Server.define :tld, ".lu", "whois.dns.lu"
 #Whois::Server.define :tld, ".lv", "whois.nic.lv"
 ly;whois.nic.ly;google.ly;u34jedzcq.ly

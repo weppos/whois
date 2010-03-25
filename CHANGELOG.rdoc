@@ -3,6 +3,8 @@
 
 == master
 
+* ADDED: Added simple .lt TLD parser (whois.domreg.lt).
+
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 
