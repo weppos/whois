@@ -66,8 +66,14 @@ module Whois
         end
 
 
+        # Nameservers are listed in the following formats:
+        # 
+        #   nserver:     ns.masterhost.ru.
+        #   nserver:     ns.masterhost.ru. 217.16.20.30
+        # 
+        # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.chomp(".") }
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.chomp(".") }
         end
 
       end

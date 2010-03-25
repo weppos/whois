@@ -62,6 +62,13 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/ru/property_nameservers_with_ip.txt'))
+    expected  = %w( ns.masterhost.ru ns1.masterhost.ru ns2.masterhost.ru )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
 
 

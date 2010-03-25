@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
+
+
 == Release 1.0.8
 
 * ADDED: Added simple .nz TLD parser (whois.srs.net.nz).
