@@ -181,7 +181,7 @@ lr;;;
 ls;;;
 lt;whois.domreg.lt;google.lt;u34jedzcq.lt
 #Whois::Server.define :tld, ".lu", "whois.dns.lu"
-#Whois::Server.define :tld, ".lv", "whois.nic.lv"
+lv;whois.nic.lv;google.lv;u34jedzcq.lv
 ly;whois.nic.ly;google.ly;u34jedzcq.ly
 #Whois::Server.define :tld, ".ma", "whois.iam.net.ma"
 mc;whois.ripe.net;nic.mc;u34jedzcq.mc

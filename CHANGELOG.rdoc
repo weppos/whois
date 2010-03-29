@@ -9,6 +9,8 @@
 
 * ADDED: Added simple .cn TLD parser (whois.cnnic.net.cn).
 
+* ADDED: Added simple .lv TLD parser (whois.nic.lv).
+
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 

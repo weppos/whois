@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.ly parser
+      # = whois.nic.lv parser
       #
-      # Parser for the whois.nic.ly server.
+      # Parser for the whois.nic.lv server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicLy < Base
+      class WhoisNicLv < Base
 
         property_supported :status do
           if available?
@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "Not found")
+          @available ||= !!(content_for_scanner =~ /%ERR - Nothing found/)
         end
 
         property_supported :registered? do
@@ -51,30 +51,19 @@ module Whois
         end
 
 
-        property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created:\s+(.*)\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Updated:\s+(.*)\n/
-            Time.parse($1)
+          @updated_on ||= if content_for_scanner =~ /changed:\s+(.*)\n/
+            Time.parse($1.split(" ", 2).last)
           end
         end
 
-        property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expired:\s+(.*)\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :expires_on
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
-            $1.split("\n").map(&:strip)
-          end
-          @nameservers ||= []
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
         end
 
       end
