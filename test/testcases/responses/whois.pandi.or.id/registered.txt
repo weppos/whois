@@ -1,0 +1,33 @@
+% This is the register.net.id Whois server.
+% For more detailed information, please check the website
+% https://register.net.id
+
+% Note: this output has been filtered.
+
+% Information related to 'google.co.id'
+
+domain:  google.co.id
+org:  PT IP Mirror Indonesia
+desc:  Firma Hukum KINANTAN on behalf of GOOGLE, Inc
+admin-c:  janna1
+tech-c:  janna1
+bill-c:  janna1
+nserver: ns1.google.com
+nserver: ns2.google.com
+nserver: ns3.google.com
+nserver: ns4.google.com
+created: 2004-12-18
+expires: 2010-08-31
+last-update: 2006-07-24
+domain-status: Object is active
+source:  register.net.id # Filtered
+
+nic-hdl:  janna1
+person:  Janna Lam
+address:  JL.Hang Kesturi KM 4 Kabil Industrial Estate Kabil
+phone:  +62.0778711099
+e-mail:  idreg01@ipmirror.com
+org: PT. IP Mirror Indonesia
+source:  SAMPLE # Filtered
+
+

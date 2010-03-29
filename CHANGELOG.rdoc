@@ -13,6 +13,8 @@
 
 * ADDED: Added simple .si TLD parser (whois.arnes.si).
 
+* ADDED: Added simple .id TLD parser (whois.pandi.or.id).
+
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 

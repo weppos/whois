@@ -1,0 +1,9 @@
+% This is the register.net.id Whois server.
+% For more detailed information, please check the website
+% https://register.net.id
+
+%ERROR:101: no entries found
+%
+% No entries found in the selected source(s).
+
+
