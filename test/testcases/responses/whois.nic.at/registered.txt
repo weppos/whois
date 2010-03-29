@@ -1,0 +1,65 @@
+% Copyright (c)2010 by NIC.AT (1)                                       
+%
+% Restricted rights.
+%
+% Except  for  agreed Internet  operational  purposes, no  part  of this
+% information  may  be reproduced,  stored  in  a  retrieval  system, or
+% transmitted, in  any  form  or by  any means,  electronic, mechanical,
+% recording, or otherwise, without prior  permission of NIC.AT on behalf
+% of itself and/or the copyright  holders.  Any use of this  material to
+% target advertising  or similar activities is explicitly  forbidden and
+% can be prosecuted.
+%
+% It is furthermore strictly forbidden to use the Whois-Database in such
+% a  way  that  jeopardizes or  could jeopardize  the  stability  of the
+% technical  systems of  NIC.AT  under any circumstances. In particular,
+% this includes  any misuse  of the  Whois-Database and  any  use of the
+% Whois-Database which disturbs its operation.
+%
+% Should the  user violate  these points,  NIC.AT reserves  the right to
+% deactivate  the  Whois-Database   entirely  or  partly  for  the user.
+% Moreover,  the  user  shall be  held liable  for  any  and all  damage
+% arising from a violation of these points.
+
+domain:         google.at
+registrant:     GI1919751-NICAT
+admin-c:        GI1919751-NICAT
+tech-c:         GI1919751-NICAT
+tech-c:         NN1946949-NICAT
+nserver:        ns1.google.com
+remarks:        216.239.32.10
+nserver:        ns2.google.com
+remarks:        216.239.34.10
+nserver:        ns3.google.com
+remarks:        216.239.36.10
+nserver:        ns4.google.com
+remarks:        216.239.38.10
+changed:        20061004 14:57:26
+source:         AT-DOM
+
+personname:     
+organization:   Google Inc.
+street address: 1600 Amphitheatre Parkway
+postal code:    USA-94043
+city:           Mountain View, CA
+country:        United States
+phone:          +16506234000
+fax-no:         +16506188571
+e-mail:         dns-admin@google.com
+nic-hdl:        GI1919751-NICAT
+changed:        20050617 21:36:20
+source:         AT-DOM
+
+personname:     Host Master
+organization:   MarkMonitor
+street address: 10400 Overland Rd. PMB 155
+postal code:    83709
+city:           Boise
+country:        United States
+phone:          +12083895740
+fax-no:         +12083895799
+e-mail:         ccops@markmonitor.com
+nic-hdl:        NN1946949-NICAT
+changed:        20050712 17:38:47
+source:         AT-DOM
+

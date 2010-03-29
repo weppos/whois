@@ -5,6 +5,8 @@
 
 * ADDED: Added simple .lt TLD parser (whois.domreg.lt).
 
+* ADDED: Added simple .at TLD parser (whois.nic.at).
+
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 
