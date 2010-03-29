@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is ARNES whois database
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rights restricted by copyright.
+% See http://www.arnes.si/domene/whois-legal.html
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The WHOIS service offered by Arnes, .si Registry, is
+% provided for information purposes only. It allows persons
+% to check whether a specific domain name is still available
+% or not and to obtain information related to the registration
+% records of existing domain names.
+%
+% Arnes cannot be held liable should the stored information
+% prove to be wrong, incomplete or inaccurate in any sense.
+%
+% By submitting a query you agree not to use the information
+% made available to:
+%      o Allow, enable or otherwise support the transmission
+%        of unsolicited, commercial advertising or other solicitations
+%        whether via email or otherwise;
+%      o Target advertising in any possible way;
+%      o Cause nuisance in any possible way to the registrants
+%        by sending (whether by automated, electronic processes
+%        capable of enabling high volumes or other possible
+%        means) messages to them.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+domain:			google.si
+registrar:		AOI d.o.o.
+registrar-url:		http://www.aoi.eu/arneswhois
+nameserver:		ns1.google.com
+nameserver:		ns2.google.com
+nameserver:		ns3.google.com
+nameserver:		ns4.google.com
+tech-c:			O157350
+registrant:		G58334
+status:			ok
+created:		2005-04-04
+expire:			2010-07-19
+source:			ARNES
+
+organization:		MARK - INVENTA d.o.o.
+nic-hdl:		G58334
+email:			mark-inventa@siol.net
+phone:			+386.14266503
+fax-no:			+386.12527202
+address:		Rimska 6
+address:		1000 Ljubljana
+address:		SI
+source:			ARNES
+
+email:			ccops@markmonitor.com
+nic-hdl:		O157350
+source:			ARNES
+

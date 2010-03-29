@@ -11,6 +11,8 @@
 
 * ADDED: Added simple .lv TLD parser (whois.nic.lv).
 
+* ADDED: Added simple .si TLD parser (whois.arnes.si).
+
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 

@@ -247,7 +247,7 @@ sd;;;
 #Whois::Server.define :tld, ".se", "whois.nic-se.se"
 #Whois::Server.define :tld, ".sg", "whois.nic.net.sg"
 #Whois::Server.define :tld, ".sh", "whois.nic.sh"
-#Whois::Server.define :tld, ".si", "whois.arnes.si"
+si;whois.arnes.si;google.si;u34jedzcq.si
 sj;;;
 #Whois::Server.define :tld, ".sk", "whois.sk-nic.sk"
 #Whois::Server.define :tld, ".sl", "whois.nic.sl"
