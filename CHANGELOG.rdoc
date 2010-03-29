@@ -1,11 +1,13 @@
 = Changelog
 
 
-== master
+== Release 1.0.9
 
 * ADDED: Added simple .lt TLD parser (whois.domreg.lt).
 
 * ADDED: Added simple .at TLD parser (whois.nic.at).
+
+* ADDED: Added simple .cn TLD parser (whois.cnnic.net.cn).
 
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
