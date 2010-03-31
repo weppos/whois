@@ -16,12 +16,13 @@
 
 require 'whois/answer/part'
 require 'whois/answer'
+require 'socket'
 
 
 module Whois
   class Server
     module Adapters
-      
+
       class Base
 
         # Default Whois request port.
@@ -67,7 +68,7 @@ module Whois
             # @buffer = []
             # result
           end
-          
+
           # Store an answer part in <tt>@buffer</tt>.
           def append_to_buffer(response, host)
             @buffer << ::Whois::Answer::Part.new(response, host)

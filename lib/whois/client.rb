@@ -14,7 +14,6 @@
 #++
 
 
-require 'socket'
 require 'timeout'
 
 
