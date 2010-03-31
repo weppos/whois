@@ -168,7 +168,7 @@ ki;whois.nic.mu;google.ki;u34jedzcq.ki
 km;;;
 kn;;;
 #Whois::Server.define :tld, ".kp", "whois.kcce.kp"
-#Whois::Server.define :tld, ".kr", "whois.nic.or.kr"
+kr;whois.nic.or.kr;google.kr;u34jedzcq.kr
 kw;;;
 ky;;;
 #Whois::Server.define :tld, ".kz", "whois.nic.kz"

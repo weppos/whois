@@ -1,6 +1,12 @@
 = Changelog
 
 
+== master
+
+* ADDED: Added simple .kr TLD parser (whois.nic.or.kr).
+
+
+
 == Release 1.0.9
 
 * ADDED: Added simple .lt TLD parser (whois.domreg.lt).

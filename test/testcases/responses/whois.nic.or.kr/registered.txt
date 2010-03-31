@@ -1,0 +1,48 @@
+
+query: google.kr
+
+# KOREAN
+
+µµ¸ÞÀÎÀÌ¸§                : google.kr
+µî·ÏÀÎ                    : ±¸±ÛÄÚ¸®¾ÆÀ¯ÇÑÈ¸»ç
+µî·ÏÀÎ ÁÖ¼Ò               : ¼­¿ïÆ¯º°½Ã °­³²±¸ »ï¼º1µ¿ ¾Æ¼ÀÅ¸¿ö 37Ãþ
+µî·ÏÀÎ ¿ìÆí¹øÈ£           : 135798
+Ã¥ÀÓÀÚ                    : Domain Admin
+Ã¥ÀÓÀÚ ÀüÀÚ¿ìÆí           : dns-admin@google.com
+Ã¥ÀÓÀÚ ÀüÈ­¹øÈ£           : 02-557-4259
+µî·ÏÀÏ                    : 2007. 03. 02.
+ÃÖ±Ù Á¤º¸ º¯°æÀÏ          : 2007. 10. 06.
+»ç¿ë Á¾·áÀÏ               : 2011. 03. 02.
+Á¤º¸°ø°³¿©ºÎ              : Y
+µî·Ï´ëÇàÀÚ                : (ÁÖ)ÈÄÀÌÁî(http://whois.co.kr)
+
+1Â÷ ³×ÀÓ¼­¹ö Á¤º¸
+   È£½ºÆ®ÀÌ¸§             : ns1.google.com
+
+2Â÷ ³×ÀÓ¼­¹ö Á¤º¸
+   È£½ºÆ®ÀÌ¸§             : ns2.google.com
+
+³×ÀÓ¼­¹ö ÀÌ¸§ÀÌ .krÀÌ ¾Æ´Ñ °æ¿ì´Â IPÁÖ¼Ò°¡ º¸ÀÌÁö ¾Ê½À´Ï´Ù.
+
+# ENGLISH
+
+Domain Name               : google.kr
+Registrant                : Google Korea, LLC
+Registrant Address        : 37th Floor Asem Tower, Samsong 1-dong, Kangnam-gu, Seoul
+Registrant Zip Code       : 135798
+Administrative Contact(AC): Domain Admin
+AC E-Mail                 : dns-admin@google.com
+AC Phone Number           : 02-557-4259
+Registered Date           : 2007. 03. 02.
+Last updated Date         : 2007. 10. 06.
+Expiration Date           : 2011. 03. 02.
+Publishes                 : Y
+Authorized Agency         : Whois Corp.(http://whois.co.kr)
+
+Primary Name Server
+   Host Name              : ns1.google.com
+
+Secondary Name Server
+   Host Name              : ns2.google.com
+
+
