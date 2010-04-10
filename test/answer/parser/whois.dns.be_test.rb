@@ -1,18 +1,18 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.eu.rb'
+require 'whois/answer/parser/whois.dns.be.rb'
 
-class AnswerParserWhoisEuTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisDnsBeTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisEu
-    @host   = "whois.eu"
+    @klass  = Whois::Answer::Parser::WhoisDnsBe
+    @host   = "whois.dns.be"
   end
 
 
   def test_status
-    assert_equal  :registered,
+    assert_equal  "REGISTERED",
                   @klass.new(load_part('/registered.txt')).status
-    assert_equal  :available,
+    assert_equal  "FREE",
                   @klass.new(load_part('/available.txt')).status
   end
 
@@ -28,8 +28,15 @@ class AnswerParserWhoisEuTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).created_on }
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2000-12-12 00:00:00")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
@@ -51,13 +58,6 @@ class AnswerParserWhoisEuTest < Whois::Answer::Parser::TestCase
 
     parser    = @klass.new(load_part('/available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
-  end
-
-  def test_nameservers_with_ip
-    parser    = @klass.new(load_part('/nameservers_with_ip.txt'))
-    expected  = %w( dns1.servicemagic.eu dns2.servicemagic.eu )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
