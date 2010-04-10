@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/whois.cnnic.cn.rb'
 
 
 module Whois
@@ -25,47 +26,9 @@ module Whois
       # = whois.cnnic.net.cn parser
       #
       # Parser for the whois.cnnic.net.cn server.
+      # Aliases the whois.cnnic.cn parser.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
-      class WhoisCnnicNetCn < Base
-
-        property_supported :status do
-          @status ||= content_for_scanner.scan(/Domain Status:\s+(.*?)\n/).flatten
-        end
-
-        property_supported :available? do
-          @available ||= (content_for_scanner.strip == "no matching record")
-        end
-
-        property_supported :registered? do
-          !available?
-        end
-
-
-        property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Registration Date:\s+(.*)\n/
-            Time.parse($1)
-          end
-        end
-
-        property_not_supported :updated_on
-
-        property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
-            Time.parse($1)
-          end
-        end
-
-
-        property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:(.*)\n/).flatten.map(&:downcase)
-        end
-
+      class WhoisCnnicNetCn < WhoisCnnicCn
       end
 
     end
