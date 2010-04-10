@@ -74,8 +74,9 @@ module Whois
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.downcase }
+          else
+            []
           end
-          @nameservers ||= []
         end
 
       end

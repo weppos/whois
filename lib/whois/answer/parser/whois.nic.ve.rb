@@ -67,8 +67,9 @@ module Whois
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ (/Servidor\(es\) de Nombres de Dominio:\n\n((?:\s+\s-\s(.*?)\n)+)/)
             $1.scan(/-\s(.*?)\n/).flatten
+          else
+            []
           end
-          @nameservers ||= []
         end
 
       end

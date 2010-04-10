@@ -69,8 +69,9 @@ module Whois
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Domain Name Servers listed in order:\n\n((.+\n)+)\n/
             $1.split("\n").map(&:strip).reject(&:empty?).compact
+          else
+            []
           end
-          @nameservers ||= []
         end
 
       end

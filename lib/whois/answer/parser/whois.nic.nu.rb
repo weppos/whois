@@ -71,8 +71,9 @@ module Whois
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
             $1.split.map(&:strip)
+          else
+            []
           end
-          @nameservers ||= []
         end
 
       end
