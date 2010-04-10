@@ -3,32 +3,32 @@
 
 == master
 
-* ADDED: Added simple .kr TLD parser (whois.nic.or.kr).
+* NEW: Added simple .kr TLD parser (whois.nic.or.kr).
 
-* ADDED: Added simple .be TLD parser (whois.dns.be).
+* NEW: Added simple .be TLD parser (whois.dns.be).
 
 
 
 == Release 1.0.9
 
-* ADDED: Added simple .lt TLD parser (whois.domreg.lt).
+* NEW: Added simple .lt TLD parser (whois.domreg.lt).
 
-* ADDED: Added simple .at TLD parser (whois.nic.at).
+* NEW: Added simple .at TLD parser (whois.nic.at).
 
-* ADDED: Added simple .cn TLD parser (whois.cnnic.net.cn).
+* NEW: Added simple .cn TLD parser (whois.cnnic.net.cn).
 
-* ADDED: Added simple .lv TLD parser (whois.nic.lv).
+* NEW: Added simple .lv TLD parser (whois.nic.lv).
 
-* ADDED: Added simple .si TLD parser (whois.arnes.si).
+* NEW: Added simple .si TLD parser (whois.arnes.si).
 
-* ADDED: Added simple .id TLD parser (whois.pandi.or.id).
+* NEW: Added simple .id TLD parser (whois.pandi.or.id).
 
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 
 == Release 1.0.8
 
-* ADDED: Added simple .nz TLD parser (whois.srs.net.nz).
+* NEW: Added simple .nz TLD parser (whois.srs.net.nz).
 
 * FIXED: With some .ch domains, whois.nic.ch parser returns invalid or duplicate values for nameservers.
 
@@ -40,9 +40,9 @@
 
 == Release 1.0.6
 
-* ADDED: Added simple .ve TLD parser (whois.nic.ve).
+* NEW: Added simple .ve TLD parser (whois.nic.ve).
 
-* ADDED: Added support for 'nameservers' property for all existing parsers.
+* NEW: Added support for 'nameservers' property for all existing parsers.
 
 * FIXED: With some .eu domains, whois.eu parser returns invalid values for nameservers.
 
@@ -69,13 +69,13 @@
 
 * SERVER: Updated the .dj TLD definition (whois 5.0.1).
 
-* ADDED: Support for 'nameservers' property for the whois.afilias.info parser. (closes #15)
+* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (closes #15)
 
-* ADDED: Support for 'nameservers' property for the whois.nic.tel parser. (closes #17)
+* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (closes #17)
 
-* ADDED: Support for 'nameservers' property for the whois.eu parser. (closes #16)
+* NEW: Support for 'nameservers' property for the whois.eu parser. (closes #16)
 
-* ADDED: Support for 'nameservers' property for the whois.meregistry.net parser.
+* NEW: Support for 'nameservers' property for the whois.meregistry.net parser.
 
 * FIXED: whois.crsnic.net server crashes trying to return nameservers with reserved IANA domains and Ruby 1.9.1.
 
@@ -84,7 +84,7 @@
 
 == Release 1.0.4
 
-* ADDED: Added Symbol.to_proc core extension to ensure compatibility with Ruby 1.8.6.
+* NEW: Added Symbol.to_proc core extension to ensure compatibility with Ruby 1.8.6.
 
 * FIXED: Normalize 'nameservers' property return value. Always return an Array even if there's no nameserver.
 
@@ -99,11 +99,11 @@
 
 * SERVER: Updated web address for the .co TLD (closes #13)
 
-* ADDED: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
+* NEW: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
-* ADDED: Support for 'nameservers' property for the whois.adamsnames.tc parser.
+* NEW: Support for 'nameservers' property for the whois.adamsnames.tc parser.
 
-* ADDED: Compatibility with semver.org
+* NEW: Compatibility with semver.org
 
 * FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
 
@@ -140,89 +140,89 @@
 
 * SERVER: .dk TLD server requires --show-handles option (closes REDMINE-426)
 
-* ADDED: Simple .at TLD parser.
+* NEW: Simple .at TLD parser.
 
-* ADDED: Simple .be TLD parser.
+* NEW: Simple .be TLD parser.
 
-* ADDED: Simple .bg TLD parser.
+* NEW: Simple .bg TLD parser.
 
-* ADDED: Simple .ca TLD parser.
+* NEW: Simple .ca TLD parser.
 
-* ADDED: Simple .ch TLD parser.
+* NEW: Simple .ch TLD parser.
 
-* ADDED: Simple .eu TLD parser.
+* NEW: Simple .eu TLD parser.
 
-* ADDED: Simple .gl TLD parser.
+* NEW: Simple .gl TLD parser.
 
-* ADDED: Simple .im TLD parser.
+* NEW: Simple .im TLD parser.
 
-* ADDED: Simple .is TLD parser.
+* NEW: Simple .is TLD parser.
 
-* ADDED: Simple .ly TLD parser.
+* NEW: Simple .ly TLD parser.
 
-* ADDED: Simple .me TLD parser.
+* NEW: Simple .me TLD parser.
 
-* ADDED: Simple .mu, .ki TLD parser (whois.nic.mu).
+* NEW: Simple .mu, .ki TLD parser (whois.nic.mu).
 
-* ADDED: Simple .nl TLD parser.
+* NEW: Simple .nl TLD parser.
 
-* ADDED: Simple .no TLD parser.
+* NEW: Simple .no TLD parser.
 
-* ADDED: Simple .fo, .gm, .mc, .sm, .va TLD parsers (whois.ripe.net).
+* NEW: Simple .fo, .gm, .mc, .sm, .va TLD parsers (whois.ripe.net).
 
-* ADDED: Simple .tl TLD parser.
+* NEW: Simple .tl TLD parser.
 
-* ADDED: Simple .tel TLD parser.
+* NEW: Simple .tel TLD parser.
 
-* ADDED: Simple .us TLD parser.
+* NEW: Simple .us TLD parser.
 
-* ADDED: Simple .biz TLD parser.
+* NEW: Simple .biz TLD parser.
 
-* ADDED: Simple .mobi TLD parser.
+* NEW: Simple .mobi TLD parser.
 
-* ADDED: Simple .museum TLD parser.
+* NEW: Simple .museum TLD parser.
 
-* ADDED: Simple .io TLD parser.
+* NEW: Simple .io TLD parser.
 
-* ADDED: Simple .ro TLD parser.
+* NEW: Simple .ro TLD parser.
 
-* ADDED: Simple .br TLD parser.
+* NEW: Simple .br TLD parser.
 
-* ADDED: Simple .travel TLD parser.
+* NEW: Simple .travel TLD parser.
 
-* ADDED: Simple .wf, .yt TLD parser (whois.nic.fr).
+* NEW: Simple .wf, .yt TLD parser (whois.nic.fr).
 
-* ADDED: Simple .dk TLD parser [thanks to Mikkel Kristensen].
+* NEW: Simple .dk TLD parser [thanks to Mikkel Kristensen].
 
-* ADDED: Simple .uk TLD parser (whois.nic.uk).
+* NEW: Simple .uk TLD parser (whois.nic.uk).
 
-* ADDED: Simple .ws TLD parser (whois.samoanic.ws).
+* NEW: Simple .ws TLD parser (whois.samoanic.ws).
 
-* ADDED: Simple .gd, vg, tc TLD parser (whois.adamsnames.tc).
+* NEW: Simple .gd, vg, tc TLD parser (whois.adamsnames.tc).
 
-* ADDED: Simple .su, .ru TLD parser (whois.ripn.net).
+* NEW: Simple .su, .ru TLD parser (whois.ripn.net).
 
-* ADDED: Simple .cat TLD parser (whois.cat).
+* NEW: Simple .cat TLD parser (whois.cat).
 
-* ADDED: Simple .cd TLD parser (whois.nic.cd).
+* NEW: Simple .cd TLD parser (whois.nic.cd).
 
-* ADDED: Simple .coop TLD parser (whois.nic.coop).
+* NEW: Simple .coop TLD parser (whois.nic.coop).
 
-* ADDED: Simple .pro TLD parser (whois.registrypro.pro).
+* NEW: Simple .pro TLD parser (whois.registrypro.pro).
 
-* ADDED: Simple .ae TLD parser (whois.aeda.net.ae).
+* NEW: Simple .ae TLD parser (whois.aeda.net.ae).
 
-* ADDED: .cc, .jobs TLD parsers (verisign).
+* NEW: .cc, .jobs TLD parsers (verisign).
 
-* ADDED: .ac TLD parser (whois.nic.ac).
+* NEW: .ac TLD parser (whois.nic.ac).
 
-* ADDED: Added ability to flag a property as :defined, :implemented and :supported. 
+* NEW: Added ability to flag a property as :defined, :implemented and :supported. 
   Parsers now can mark a property as supported or not supported using 
   'property_supported' and 'property_not_supported' methods
   in order to distinguish between properties not supported by the answer
   and methods that still need to be implemented because the parser is incomplete.
 
-* ADDED: Whois#Answer.property? returns whether property has a value.
+* NEW: Whois#Answer.property? returns whether property has a value.
 
    a = Whois.query "google.it"
    a.created_on?
@@ -230,7 +230,7 @@
    a.domain_id?
    # => false
 
-* ADDED: Whois::WebInterfaceError now exposes #url attribute.
+* NEW: Whois::WebInterfaceError now exposes #url attribute.
 
 * FIXED: Whois hosts containing a - are not correctly converted into a Ruby class, ex. whois.domain-registry.nl (closes REDMINE-389)
 
@@ -281,39 +281,39 @@
 
 * FIXED: Whois::Parser doesn't detect preloaded parsers. Improved performances skipping unnecessary 'require'. (closes REDMINE-340)
 
-* ADDED: Simple .fr TLD parser.
+* NEW: Simple .fr TLD parser.
 
-* ADDED: Simple .name TLD parser.
+* NEW: Simple .name TLD parser.
 
-* ADDED: Simple .ie TLD parser.
+* NEW: Simple .ie TLD parser.
 
-* ADDED: Simple .edu TLD parser.
+* NEW: Simple .edu TLD parser.
 
-* ADDED: Simple .info TLD parser.
+* NEW: Simple .info TLD parser.
 
-* ADDED: Simple .gov TLD parser.
+* NEW: Simple .gov TLD parser.
 
-* ADDED: Simple .za.net TLD parser.
+* NEW: Simple .za.net TLD parser.
 
-* ADDED: Simple .eu.org TLD parser.
+* NEW: Simple .eu.org TLD parser.
 
-* ADDED: Simple .za.org TLD parser.
+* NEW: Simple .za.org TLD parser.
 
-* ADDED: Simple .int/.arpa TLD parser.
+* NEW: Simple .int/.arpa TLD parser.
 
-* ADDED: Simple .aero TLD parser.
+* NEW: Simple .aero TLD parser.
 
-* ADDED: Simple .asia TLD parser.
+* NEW: Simple .asia TLD parser.
 
-* ADDED: Simple .bz, .gi, .hn, .lc, .mn, .sc and .vc TLD parser.
+* NEW: Simple .bz, .gi, .hn, .lc, .mn, .sc and .vc TLD parser.
 
-* ADDED: .tv TLD parser.
+* NEW: .tv TLD parser.
 
-* ADDED: .hu TLD parser.
+* NEW: .hu TLD parser.
 
-* ADDED: Ability to pass timeout option to 'ruby-whois' (closes REDMINE-334)
+* NEW: Ability to pass timeout option to 'ruby-whois' (closes REDMINE-334)
 
-* ADDED: Whois::Answer#properties returns an Hash of :key => value
+* NEW: Whois::Answer#properties returns an Hash of :key => value
 
 * CHANGED: Removed Whois::BUILD and Whois::STATUS constants. Added Whois::Version::ALPHA constant to be used when I need to package prereleases (see RubyGem --prerelease flag).
 
@@ -330,18 +330,18 @@
 
 * FIXED: In case of thin server the client should select the closest whois server match (closes REDMINE-264)
 
-* ADDED: ability to check whether a property is supported via answer.supported? or parser.supported?
+* NEW: ability to check whether a property is supported via answer.supported? or parser.supported?
 
 
 == Release 0.8.0
 
 * FIXED: Server definition with :format doesn't use the Formatted adapter (closes REDMINE-305)
 
-* ADDED: whois.denic.de (.de TLD) parser [Aaron Mueller]
+* NEW: whois.denic.de (.de TLD) parser [Aaron Mueller]
 
-* ADDED: introduced support for multipart answers and Parser proxy class. This is useful in case of thin servers such as .com or .net because the parser needs to know all different responses in order to load all single scanners.
+* NEW: introduced support for multipart answers and Parser proxy class. This is useful in case of thin servers such as .com or .net because the parser needs to know all different responses in order to load all single scanners.
 
-* ADDED: whois.crsnic.net (.com, .net, ... TLDs) parser.
+* NEW: whois.crsnic.net (.com, .net, ... TLDs) parser.
 
 * CHANGED: extracted all scanners into separated classes in order to make easier extract shared features.
 
@@ -352,7 +352,7 @@
 
 == Release 0.6.0
 
-* ADDED: new more convenient method to query a whois server in addition to the existing Whois::whois method.
+* NEW: new more convenient method to query a whois server in addition to the existing Whois::whois method.
 
     Whois::query("domain.com")
     # same as Whois::whois but added to normalize application interfaces.
@@ -363,7 +363,7 @@
     Whois::registered?("domain.com")
     # returns true if the domain is registered.
 
-* ADDED: Experimental support for whois response parsing. This release is shipped with two parsers for the .it and .net TLD.
+* NEW: Experimental support for whois response parsing. This release is shipped with two parsers for the .it and .net TLD.
 
     r = Whois::query("google.it")
     r.available?
@@ -407,7 +407,7 @@ API might change at any time without previous notice.
 
 * SERVER: Removed .td TLD definition (whois 4.7.36).
 
-* ADDED: Whois::Client.new now accepts a block and yields self.
+* NEW: Whois::Client.new now accepts a block and yields self.
 
     client = Whois::Client.new do |c|
       c.timeout = nil
@@ -419,7 +419,7 @@ API might change at any time without previous notice.
 
 == Release 0.5.1
 
-* ADDED: Whois binary (closes REDMINE-271).
+* NEW: Whois binary (closes REDMINE-271).
 
 * FIXED: 'rake coverage' task crashes.
 
@@ -428,13 +428,13 @@ API might change at any time without previous notice.
 
 == Release 0.5.0
 
-* ADDED: Support for IPv4 and IPv6 (closes REDMINE-265).
+* NEW: Support for IPv4 and IPv6 (closes REDMINE-265).
 
-* ADDED: Compatibility with existing GEM Whois 0.4.2 (closes REDMINE-266).
+* NEW: Compatibility with existing GEM Whois 0.4.2 (closes REDMINE-266).
 
-* ADDED: Deprecation warning for all the features that will be removed in Whois 0.6.0 (closes REDMINE-266).
+* NEW: Deprecation warning for all the features that will be removed in Whois 0.6.0 (closes REDMINE-266).
 
-* ADDED: Default timeout for any Whois query run from the client interface (closes REDMINE-269).
+* NEW: Default timeout for any Whois query run from the client interface (closes REDMINE-269).
 
 * FIXED: Whois#whois defined as instance method but modules can't have instances!
 
