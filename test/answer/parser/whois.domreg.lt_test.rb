@@ -64,5 +64,4 @@ class AnswerParserWhoisDomregLtTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
-
 end

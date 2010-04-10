@@ -11,6 +11,8 @@
 
 * FIXED: With some .lt domains, whois.domreg.lt parser returns invalid values for nameservers.
 
+* FIXED: With some .bg domains, whois.register.bg parser returns invalid values for nameservers.
+
 
 == Release 1.0.9
 
