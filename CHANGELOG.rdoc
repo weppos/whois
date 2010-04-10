@@ -9,6 +9,8 @@
 
 * FIXED: .cn server was changed by mistake in commit:81b3e253785e59aca542b6165ab1b9769c6acdd7 from whois.cnnic.net.cn to whois.cnnic.cn. This caused the parser lookup to fail.
 
+* FIXED: With some .lt domains, whois.domreg.lt parser returns invalid values for nameservers.
+
 
 == Release 1.0.9
 

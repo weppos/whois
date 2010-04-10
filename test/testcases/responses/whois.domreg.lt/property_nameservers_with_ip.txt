@@ -1,0 +1,32 @@
+% Hello, this is the DOMREG whois service.
+%
+% By submitting a query you agree not to use the information made
+% available to:
+% - allow, enable or otherwise support the transmission of unsolicited,
+%   commercial advertising or other solicitations whether via email or
+%   otherwise;
+% - target advertising in any possible way;
+% - to cause nuisance in any possible way to the registrants by sending
+%   (whether by automated, electronic processes capable of enabling
+%   high volumes or other possible means) messages to them.
+%
+% Version 0.3
+%
+% For more information please visit http://whois.domreg.lt
+%
+Domain:			serveriai.lt
+Status:			registered
+Registered:		2003-11-17
+%
+Registrar:		UAB "Interneto vizija"
+Registrar website:	http://www.iv.lt/
+Registrar email:	hostmaster@iv.lt
+%
+%
+Contact organization:	UAB "Interneto vizija"
+Contact email:		hostmaster@iv.lt
+%
+Nameserver:		ns1.serveriai.lt	[79.98.25.142]
+Nameserver:		ns2.serveriai.lt	[174.36.250.192]
+Nameserver:		ns3.serveriai.lt	[79.98.29.142]
+Nameserver:		ns4.serveriai.lt	[67.228.39.192]
