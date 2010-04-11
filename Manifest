@@ -32,10 +32,12 @@ lib/whois/answer/parser/whois.arnes.si.rb
 lib/whois/answer/parser/whois.biz.rb
 lib/whois/answer/parser/whois.cat.rb
 lib/whois/answer/parser/whois.cira.ca.rb
+lib/whois/answer/parser/whois.cnnic.cn.rb
 lib/whois/answer/parser/whois.cnnic.net.cn.rb
 lib/whois/answer/parser/whois.crsnic.net.rb
 lib/whois/answer/parser/whois.denic.de.rb
 lib/whois/answer/parser/whois.dk-hostmaster.dk.rb
+lib/whois/answer/parser/whois.dns.be.rb
 lib/whois/answer/parser/whois.domain-registry.nl.rb
 lib/whois/answer/parser/whois.domainregistry.ie.rb
 lib/whois/answer/parser/whois.domreg.lt.rb
@@ -67,6 +69,7 @@ lib/whois/answer/parser/whois.nic.ly.rb
 lib/whois/answer/parser/whois.nic.mu.rb
 lib/whois/answer/parser/whois.nic.name.rb
 lib/whois/answer/parser/whois.nic.nu.rb
+lib/whois/answer/parser/whois.nic.or.kr.rb
 lib/whois/answer/parser/whois.nic.tel.rb
 lib/whois/answer/parser/whois.nic.tl.rb
 lib/whois/answer/parser/whois.nic.travel.rb
@@ -121,10 +124,12 @@ test/answer/parser/whois.arnes.si_test.rb
 test/answer/parser/whois.biz_test.rb
 test/answer/parser/whois.cat_test.rb
 test/answer/parser/whois.cira.ca_test.rb
+test/answer/parser/whois.cnnic.cn_test.rb
 test/answer/parser/whois.cnnic.net.cn_test.rb
 test/answer/parser/whois.crsnic.net_test.rb
 test/answer/parser/whois.denic.de_test.rb
 test/answer/parser/whois.dk-hostmaster.dk_test.rb
+test/answer/parser/whois.dns.be_test.rb
 test/answer/parser/whois.domain-registry.nl_test.rb
 test/answer/parser/whois.domainregistry.ie_test.rb
 test/answer/parser/whois.domreg.lt_test.rb
@@ -156,6 +161,7 @@ test/answer/parser/whois.nic.ly_test.rb
 test/answer/parser/whois.nic.mu_test.rb
 test/answer/parser/whois.nic.name_test.rb
 test/answer/parser/whois.nic.nu_test.rb
+test/answer/parser/whois.nic.or.kr_test.rb
 test/answer/parser/whois.nic.tel_test.rb
 test/answer/parser/whois.nic.tl_test.rb
 test/answer/parser/whois.nic.travel_test.rb
@@ -200,6 +206,7 @@ test/testcases/referrals/crsnic.com_more_servers.txt
 test/testcases/referrals/crsnic.com_one_server.txt
 test/testcases/referrals/niccc.cc.txt
 test/testcases/referrals/pir.org.txt
+test/testcases/responses/UTF8.txt
 test/testcases/responses/jobswhois.verisign-grs.com/available.txt
 test/testcases/responses/jobswhois.verisign-grs.com/registered.txt
 test/testcases/responses/super_struct_test.rb
@@ -237,8 +244,8 @@ test/testcases/responses/whois.cat/available.txt
 test/testcases/responses/whois.cat/registered.txt
 test/testcases/responses/whois.cira.ca/available.txt
 test/testcases/responses/whois.cira.ca/registered.txt
-test/testcases/responses/whois.cnnic.net.cn/available.txt
-test/testcases/responses/whois.cnnic.net.cn/registered.txt
+test/testcases/responses/whois.cnnic.cn/available.txt
+test/testcases/responses/whois.cnnic.cn/registered.txt
 test/testcases/responses/whois.crsnic.net/MULTIPLE.txt
 test/testcases/responses/whois.crsnic.net/available.txt
 test/testcases/responses/whois.crsnic.net/nameservers_with_no_nameserver.txt
@@ -251,11 +258,14 @@ test/testcases/responses/whois.denic.de/nameservers_with_ip.txt
 test/testcases/responses/whois.denic.de/registered.txt
 test/testcases/responses/whois.dk-hostmaster.dk/available.txt
 test/testcases/responses/whois.dk-hostmaster.dk/registered.txt
+test/testcases/responses/whois.dns.be/available.txt
+test/testcases/responses/whois.dns.be/registered.txt
 test/testcases/responses/whois.domain-registry.nl/available.txt
 test/testcases/responses/whois.domain-registry.nl/registered.txt
 test/testcases/responses/whois.domainregistry.ie/available.txt
 test/testcases/responses/whois.domainregistry.ie/registered.txt
 test/testcases/responses/whois.domreg.lt/available.txt
+test/testcases/responses/whois.domreg.lt/property_nameservers_with_ip.txt
 test/testcases/responses/whois.domreg.lt/registered.txt
 test/testcases/responses/whois.dotmobiregistry.net/available.txt
 test/testcases/responses/whois.dotmobiregistry.net/registered.txt
@@ -335,6 +345,8 @@ test/testcases/responses/whois.nic.name/registered.txt
 test/testcases/responses/whois.nic.name/reserved.txt
 test/testcases/responses/whois.nic.nu/available.txt
 test/testcases/responses/whois.nic.nu/registered.txt
+test/testcases/responses/whois.nic.or.kr/available.txt
+test/testcases/responses/whois.nic.or.kr/registered.txt
 test/testcases/responses/whois.nic.tel/available.txt
 test/testcases/responses/whois.nic.tel/registered.txt
 test/testcases/responses/whois.nic.tl/available.txt
@@ -357,6 +369,7 @@ test/testcases/responses/whois.pandi.or.id/registered.txt
 test/testcases/responses/whois.publicinterestregistry.net/available.txt
 test/testcases/responses/whois.publicinterestregistry.net/registered.txt
 test/testcases/responses/whois.register.bg/available.txt
+test/testcases/responses/whois.register.bg/property_nameservers_with_ip.txt
 test/testcases/responses/whois.register.bg/registered.txt
 test/testcases/responses/whois.registro.br/available.txt
 test/testcases/responses/whois.registro.br/registered.txt

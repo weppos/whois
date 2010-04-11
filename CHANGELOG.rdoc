@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.0.10
 
 * NEW: Added simple .kr TLD parser (whois.nic.or.kr).
 
