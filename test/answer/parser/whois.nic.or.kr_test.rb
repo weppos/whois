@@ -1,10 +1,10 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.nic.or.kr.rb'
 
-class AnswerParserWhoisNicOrKzTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisNicOrKrTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisNicOrKz
+    @klass  = Whois::Answer::Parser::WhoisNicOrKr
     @host   = "whois.nic.or.kr"
   end
 

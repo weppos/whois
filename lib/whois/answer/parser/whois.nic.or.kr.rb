@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicOrKz < Base
+      class WhoisNicOrKr < Base
 
         property_supported :status do
           @status ||= if available?
