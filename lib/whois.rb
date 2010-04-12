@@ -24,9 +24,9 @@ require 'whois/answer'
 
 module Whois
 
-  NAME            = 'Whois'
-  GEM             = 'whois'
-  AUTHORS         = ['Simone Carletti <weppos@weppos.net>']
+  NAME            = "Whois"
+  GEM             = "whois"
+  AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
 
 
   # Queries the right whois server for <tt>qstring</tt> and returns

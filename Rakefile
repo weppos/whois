@@ -1,27 +1,27 @@
-$:.unshift(File.dirname(__FILE__) + "/lib")
-
-require 'whois'
-require 'rubygems'
-require 'rake'
-require 'echoe'
+require "rubygems"
+require "rake"
+require "echoe"
 begin
-  require 'hanna/rdoctask'
+  require "hanna/rdoctask"
   hanna = false
 rescue LoadError
-  require 'rake/rdoctask'
+  require "rake/rdoctask"
   hanna = true
 end
 
+$:.unshift(File.dirname(__FILE__) + "/lib")
+require "whois"
+
 # Common package properties
-PKG_NAME    = ENV['PKG_NAME']    || Whois::GEM
-PKG_VERSION = ENV['PKG_VERSION'] || Whois::VERSION
-RUBYFORGE_PROJECT = 'whois'
+PKG_NAME    = ENV["PKG_NAME"]    || Whois::GEM
+PKG_VERSION = ENV["PKG_VERSION"] || Whois::VERSION
+RUBYFORGE_PROJECT = "whois"
 
 if ENV['SNAPSHOT'].to_i == 1
   PKG_VERSION << "." << Time.now.utc.strftime("%Y%m%d%H%M%S")
 end
- 
- 
+
+
 Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.author        = "Simone Carletti"
   p.email         = "weppos@weppos.net"
@@ -53,7 +53,7 @@ task :console do
 end
 
 begin
-  require 'code_statistics'
+  require "code_statistics"
   desc "Show library's code statistics"
   task :stats do
     CodeStatistics.new(["Whois", "lib"],
