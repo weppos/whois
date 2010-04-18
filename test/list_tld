@@ -49,7 +49,7 @@ ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
 ae;whois.aeda.net.ae;google.ae;u34jedzcq.ae
 af;whois.nic.af;google.af;u34jedzcq.af
-#Whois::Server.define :tld, ".ag", "whois.nic.ag"
+af;whois.nic.ag;google.ag;u34jedzcq.ag
 #Whois::Server.define :tld, ".ai", "whois.ai"
 al;;;
 #Whois::Server.define :tld, ".am", "whois.nic.am"

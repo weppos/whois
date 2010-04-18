@@ -5,6 +5,8 @@
 
 * NEW: Added simple .af TLD parser (whois.nic.af).
 
+* NEW: Added simple .ag TLD parser (whois.nic.ag).
+
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 

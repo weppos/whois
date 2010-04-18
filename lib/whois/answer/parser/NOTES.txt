@@ -6,6 +6,7 @@ whois.dotmobyregistry.net (.mobi)
 whois.afilias.info (.info)
 whois.afilias-grs.info (.bz, .gi, .hn, .lc, .mn, .sc, .vc)
 whois.aero (.aero)
+whois.nic.af (.af)
 
 
 whois.museum (.museum)
