@@ -11,6 +11,8 @@
 
 * NEW: Added simple .hk TLD parser (whois.hkdnr.net.hk).
 
+* NEW: Added simple .lu TLD parser (whois.dns.lu).
+
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 
