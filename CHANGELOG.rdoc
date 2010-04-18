@@ -7,6 +7,8 @@
 
 * NEW: Added simple .ag TLD parser (whois.nic.ag).
 
+* NEW: Added simple .ai TLD parser (whois.ai).
+
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 
