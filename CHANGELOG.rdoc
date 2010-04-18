@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.0.11
 
 * NEW: Added simple .af TLD parser (whois.nic.af).
 
