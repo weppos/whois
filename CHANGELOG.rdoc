@@ -3,6 +3,8 @@
 
 == master
 
+* NEW: Added simple .af TLD parser (whois.nic.af).
+
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 
