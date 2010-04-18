@@ -37,7 +37,7 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.need_zip      = true
 
   p.development_dependencies += ["rake  0.8.7",
-                                 "echoe 4.1",
+                                 "echoe 4.3",
                                  "mocha 0.9.8"]
 
   p.rdoc_options  = []
