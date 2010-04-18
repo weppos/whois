@@ -13,6 +13,8 @@
 
 * NEW: Added simple .lu TLD parser (whois.dns.lu).
 
+* NEW: Added simple .mx TLD parser (whois.nic.mx).
+
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 

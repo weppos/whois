@@ -202,7 +202,7 @@ mt;;;
 mu;whois.nic.mu;google.mu;u34jedzcq.mu
 mv;;;
 mw;;;
-#Whois::Server.define :tld, ".mx", "whois.nic.mx"
+mx;whois.nic.mx;google.mx;u34jedzcq.mx
 #Whois::Server.define :tld, ".my", "whois.domainregistry.my"
 mz;;;
 #Whois::Server.define :tld, ".na", "whois.na-nic.com.na"
