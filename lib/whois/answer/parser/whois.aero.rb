@@ -35,8 +35,8 @@ module Whois
       class WhoisAero < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:(.*?)\n+/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /Domain Status:(.*?)\n/
+            $1
           end
         end
 
@@ -50,19 +50,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created On:(.*?)\n+/
+          @created_on ||= if content_for_scanner =~ /Created On:(.*?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Updated On:(.*?)\n+/
+          @updated_on ||= if content_for_scanner =~ /Updated On:(.*?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires On:(.*?)\n+/
+          @expires_on ||= if content_for_scanner =~ /Expires On:(.*?)\n/
             Time.parse($1)
           end
         end

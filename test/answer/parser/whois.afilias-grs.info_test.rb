@@ -13,10 +13,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoBzTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_part('/bz/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/bz/available.txt')).status
+    parser    = @klass.new(load_part('/bz/registered.txt'))
+    expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/bz/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -69,10 +74,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoGiTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["OK"],
-                  @klass.new(load_part('/gi/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/gi/available.txt')).status
+    parser    = @klass.new(load_part('/gi/registered.txt'))
+    expected  = ["OK"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/gi/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -125,10 +135,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoHnTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_part('/hn/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/hn/available.txt')).status
+    parser    = @klass.new(load_part('/hn/registered.txt'))
+    expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/hn/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -181,10 +196,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoLcTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["OK"],
-                  @klass.new(load_part('/lc/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/lc/available.txt')).status
+    parser    = @klass.new(load_part('/lc/registered.txt'))
+    expected  = ["OK"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/lc/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -237,10 +257,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoMnTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_part('/mn/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/mn/available.txt')).status
+    parser    = @klass.new(load_part('/mn/registered.txt'))
+    expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/mn/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -293,10 +318,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoScTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_part('/sc/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/sc/available.txt')).status
+    parser    = @klass.new(load_part('/sc/registered.txt'))
+    expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/sc/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -349,10 +379,15 @@ end
 class AnswerParserWhoisAfiliasGrsInfoVcTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_part('/vc/registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('/vc/available.txt')).status
+    parser    = @klass.new(load_part('/vc/registered.txt'))
+    expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/vc/available.txt'))
+    expected  = []
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?

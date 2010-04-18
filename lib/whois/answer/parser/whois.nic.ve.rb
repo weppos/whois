@@ -50,13 +50,13 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.*?)\n+/
+          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.*?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.*?)\n+/
+          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.*?)\n/
             Time.parse($1)
           end
         end

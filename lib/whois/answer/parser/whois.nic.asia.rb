@@ -36,7 +36,7 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Domain Status:(.*?)\n/
-            $1.downcase.to_sym
+            $1
           end
         end
 

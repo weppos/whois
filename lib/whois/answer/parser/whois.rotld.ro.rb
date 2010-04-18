@@ -35,10 +35,8 @@ module Whois
       class WhoisRotldRo < Base
 
         property_supported :status do
-          if available?
-            :available
-          else
-            :registered
+          @status ||= if content_for_scanner =~ /Domain Status:\s(.*?)\n/
+            $1
           end
         end
 

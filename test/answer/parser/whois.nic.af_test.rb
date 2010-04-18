@@ -10,10 +10,15 @@ class AnswerParserWhoisNicAfTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    assert_equal  "Active",
-                  @klass.new(load_part('/registered.txt')).status
-    assert_equal  "Not Registered",
-                  @klass.new(load_part('/available.txt')).status
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "Active"
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = "Not Registered"
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
