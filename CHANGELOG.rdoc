@@ -9,6 +9,8 @@
 
 * NEW: Added simple .ai TLD parser (whois.ai).
 
+* NEW: Added simple .hk TLD parser (whois.hkdnr.net.hk).
+
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 
