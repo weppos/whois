@@ -7,7 +7,7 @@ whois.afilias.info (.info)
 whois.afilias-grs.info (.bz, .gi, .hn, .lc, .mn, .sc, .vc)
 whois.aero (.aero)
 whois.nic.af (.af)
-
+whois.registry.in (.in)
 
 whois.museum (.museum)
 whois.cat (.cat)
