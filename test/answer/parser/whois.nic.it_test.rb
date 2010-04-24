@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.nic.it.rb'
+require 'whois/answer/parser/whois.nic.it'
 
 class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 

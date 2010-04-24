@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.meregistry.net.rb'
+require 'whois/answer/parser/whois.meregistry.net'
 
 class AnswerParserWhoisMeregistryNetTest < Whois::Answer::Parser::TestCase
 

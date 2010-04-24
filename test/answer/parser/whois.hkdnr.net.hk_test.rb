@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.hkdnr.net.hk.rb'
+require 'whois/answer/parser/whois.hkdnr.net.hk'
 
 class AnswerParserWhoisHkdnrNetHkTest < Whois::Answer::Parser::TestCase
 

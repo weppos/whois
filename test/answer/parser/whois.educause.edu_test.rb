@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.educause.edu.rb'
+require 'whois/answer/parser/whois.educause.edu'
 
 class AnswerParserWhoisEducauseEduTest < Whois::Answer::Parser::TestCase
 

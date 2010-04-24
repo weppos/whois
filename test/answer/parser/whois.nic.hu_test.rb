@@ -1,7 +1,7 @@
 # coding: utf-8
 
 require 'test_helper'
-require 'whois/answer/parser/whois.nic.hu.rb'
+require 'whois/answer/parser/whois.nic.hu'
 
 class AnswerParserWhoisNicHuTest < Whois::Answer::Parser::TestCase
 

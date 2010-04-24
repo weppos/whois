@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.za.org.rb'
+require 'whois/answer/parser/whois.za.org'
 
 class AnswerParserWhoisZaOrgTest < Whois::Answer::Parser::TestCase
 

@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.dk-hostmaster.dk.rb'
+require 'whois/answer/parser/whois.dk-hostmaster.dk'
 
 class AnswerParserWhoisDkHostmasterDkTest < Whois::Answer::Parser::TestCase
 

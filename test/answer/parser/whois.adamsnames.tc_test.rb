@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.adamsnames.tc.rb'
+require 'whois/answer/parser/whois.adamsnames.tc'
 
 class AnswerParserWhoisAdamsnamesTcTest < Whois::Answer::Parser::TestCase
 

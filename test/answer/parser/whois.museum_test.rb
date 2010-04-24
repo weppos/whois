@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.museum.rb'
+require 'whois/answer/parser/whois.museum'
 
 class AnswerParserWhoisMuseumTest < Whois::Answer::Parser::TestCase
 

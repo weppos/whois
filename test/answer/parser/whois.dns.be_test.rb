@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.dns.be.rb'
+require 'whois/answer/parser/whois.dns.be'
 
 class AnswerParserWhoisDnsBeTest < Whois::Answer::Parser::TestCase
 

@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.registrypro.pro.rb'
+require 'whois/answer/parser/whois.registrypro.pro'
 
 class AnswerParserWhoisRegistryproProTest < Whois::Answer::Parser::TestCase
 

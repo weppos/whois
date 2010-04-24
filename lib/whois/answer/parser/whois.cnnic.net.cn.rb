@@ -15,7 +15,7 @@
 
 
 require 'whois/answer/parser/base'
-require 'whois/answer/parser/whois.cnnic.cn.rb'
+require 'whois/answer/parser/whois.cnnic.cn'
 
 
 module Whois

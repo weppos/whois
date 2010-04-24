@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.cira.ca.rb'
+require 'whois/answer/parser/whois.cira.ca'
 
 class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
 

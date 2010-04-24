@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.ripn.net.rb'
+require 'whois/answer/parser/whois.ripn.net'
 
 class AnswerParserWhoisRipnNetTest < Whois::Answer::Parser::TestCase
 

@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/jobswhois.verisign-grs.com.rb'
+require 'whois/answer/parser/jobswhois.verisign-grs.com'
 
 class AnswerParserJobswhoisVerisignGrsComTest < Whois::Answer::Parser::TestCase
 

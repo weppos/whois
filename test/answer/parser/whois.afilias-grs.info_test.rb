@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.afilias-grs.info.rb'
+require 'whois/answer/parser/whois.afilias-grs.info'
 
 class AnswerParserWhoisAfiliasGrsInfoTest < Whois::Answer::Parser::TestCase
 

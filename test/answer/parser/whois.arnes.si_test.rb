@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.arnes.si.rb'
+require 'whois/answer/parser/whois.arnes.si'
 
 class AnswerParserWhoisArnesSiTest < Whois::Answer::Parser::TestCase
 

@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.srs.net.nz.rb'
+require 'whois/answer/parser/whois.srs.net.nz'
 
 class AnswerParserWhoisSrsNetNzTest < Whois::Answer::Parser::TestCase
 

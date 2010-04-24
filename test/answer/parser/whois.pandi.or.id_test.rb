@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.pandi.or.id.rb'
+require 'whois/answer/parser/whois.pandi.or.id'
 
 class AnswerParserWhoisPandiOrIdTest < Whois::Answer::Parser::TestCase
 
