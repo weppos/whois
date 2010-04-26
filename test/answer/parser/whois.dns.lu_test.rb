@@ -67,4 +67,11 @@ class AnswerParserWhoisDnsLuTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/property_nameservers_with_ip.txt'))
+    expected  = %w( ns1.arbed.lu ns1.pt.lu ns2.arbed.lu )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end

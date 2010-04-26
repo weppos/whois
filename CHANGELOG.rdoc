@@ -5,6 +5,8 @@
 
 * NEW: Added simple .in TLD parser (whois.registry.in).
 
+* FIXED: With some .lu domains, whois.dns.lu parser returns invalid values for nameservers.
+
 
 == Release 1.0.11
 
