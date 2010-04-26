@@ -5,6 +5,8 @@
 
 * NEW: Added simple .in TLD parser (whois.registry.in).
 
+* NEW: Added simple .jp TLD parser (whois.jprs.jp).
+
 * FIXED: With some .lu domains, whois.dns.lu parser returns invalid values for nameservers.
 
 

@@ -160,7 +160,7 @@ it;whois.nic.it;google.it;u34jedzcq.it
 #Whois::Server.define :tld, ".je", "whois.je"
 jm;;;
 jo;;;
-#Whois::Server.define :tld, ".jp", "whois.jprs.jp"
+jp;whois.jprs.jp;google.jp;u34jedzcq.jp
 #Whois::Server.define :tld, ".ke", "whois.kenic.or.ke"
 #Whois::Server.define :tld, ".kg", "whois.domain.kg"
 kh;;;
