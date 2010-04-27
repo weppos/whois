@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* NEW: Added simple .am TLD parser (whois.nic.am).
+
+
 == Release 1.0.12
 
 * NEW: Added simple .in TLD parser (whois.registry.in).

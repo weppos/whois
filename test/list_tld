@@ -52,7 +52,7 @@ af;whois.nic.af;google.af;u34jedzcq.af
 af;whois.nic.ag;google.ag;u34jedzcq.ag
 ai;whois.ai;google.ai;u34jedzcq.ai
 al;;;
-#Whois::Server.define :tld, ".am", "whois.nic.am"
+am;whois.nic.am;google.am;u34jedzcq.am
 an;;;
 ao;;;
 aq;;;

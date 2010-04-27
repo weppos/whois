@@ -1,0 +1,42 @@
+
+
+   Domain name: google.am
+   Registrar:   abcdomain
+   Status:      active
+
+   Registrant:
+      Google, Inc.
+      165 University Avenue
+      Palo Alto, CA,  94301
+      US
+
+   Administrative contact:
+      Google, Inc.
+      Google, Inc.
+      165 University Avenue
+      Palo Alto, CA, 94301
+      US
+      ray@google.com
+      +1 650 330 0100 - 1005
+      +1 650 618 1499
+
+   Technical contact:
+      Domain Provisioning
+      MarkMonitor
+      PMB 155 10400 Overland Road
+      Boise, 83709
+      US
+      ccops@markmonitor.com
+      1 208 389 5740
+      1 208 389 5799
+
+   DNS servers:
+      ns1.google.com
+      ns2.google.com
+      ns3.google.com
+      ns4.google.com
+
+   Registered:    1999-06-05
+   Last modified: 2010-03-16
+   Expires:       2011-04-15
+
