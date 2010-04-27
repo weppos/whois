@@ -7,6 +7,8 @@
 
 * NEW: Added simple .as TLD parser (whois.nic.as).
 
+* NEW: Added simple .au TLD parser (whois.ausregistry.net.au).
+
 
 == Release 1.0.12
 

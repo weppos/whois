@@ -59,7 +59,7 @@ aq;;;
 ar;;;
 as;whois.nic.as;google.as;u34jedzcq.as
 at;whois.nic.at;google.at;u34jedzcq.at
-#Whois::Server.define :tld, ".au", "whois.ausregistry.net.au"
+au;whois.ausregistry.net.au;google.com.au;u34jedzcq.com.au
 aw;;;
 ax;;;
 az;;;

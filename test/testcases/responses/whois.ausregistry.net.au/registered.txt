@@ -1,0 +1,23 @@
+Domain Name:                     google.com.au
+Last Modified:                   12-Oct-2009 16:05:44 UTC
+Registrar ID:                    TPP Internet
+Registrar Name:                  TPP Internet
+Status:                          ok
+
+Registrant:                      Google INC
+Eligibility Type:                Trademark Owner
+Eligibility Name:                GOOGLE
+Eligibility ID:                  TM 788234
+
+Registrant Contact ID:           TPP139202-R
+Registrant Contact Name:         Domain Admin
+Registrant Contact Email:        Visit whois.ausregistry.com.au for Web based WhoIs
+
+Tech Contact ID:                 TPP139936-C
+Tech Contact Name:               Domain Admin
+Tech Contact Email:              Visit whois.ausregistry.com.au for Web based WhoIs
+
+Name Server:                     ns1.google.com
+Name Server:                     ns2.google.com
+Name Server:                     ns3.google.com
+Name Server:                     ns4.google.com
