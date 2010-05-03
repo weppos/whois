@@ -223,10 +223,35 @@ module Whois
         # Returns an array of all supported contacts.
         def contacts
           contacts = []
-          contacts.concat([*registrant])  if property_supported?(:registrant)
-          contacts.concat([*admin])       if property_supported?(:admin)
-          contacts.concat([*technical])   if property_supported?(:technical)
+          contacts.concat([*registrant_contact])  if property_supported?(:registrant_contact)
+          contacts.concat([*admin_contact])       if property_supported?(:admin_contact)
+          contacts.concat([*technical_contact])   if property_supported?(:technical_contact)
           contacts.compact
+        end
+
+
+        # @deprecated {#registrant} is deprecated
+        #   and will be removed in a future version.
+        #   Use {#registrant_contact}.
+        def registrant
+          Whois.deprecate "Whois::Answer::Parser::Base#registrant is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#registrant_contact."
+          registrant_contact
+        end
+
+        # @deprecated {#admin} is deprecated
+        #   and will be removed in a future version.
+        #   Use {#admin_contact}.
+        def admin
+          Whois.deprecate "Whois::Answer::Parser::Base#admin is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#admin_contact."
+          admin_contact
+        end
+
+        # @deprecated {#technical} is deprecated
+        #   and will be removed in a future version.
+        #   Use {#technical_contact}.
+        def technical
+          Whois.deprecate "Whois::Answer::Parser::Base#technical is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#technical_contact."
+          technical_contact
         end
 
 

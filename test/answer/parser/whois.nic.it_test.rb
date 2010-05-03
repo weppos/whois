@@ -90,79 +90,106 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_contact
-    contact = @klass.new(load_part('/contact.txt')).registrant
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "HTML1-ITNIC", contact.id
-    assert_equal "HTML.it srl", contact.name
-    assert_equal "HTML.it srl", contact.organization
-    assert_equal "Viale Alessandrino, 595", contact.address
-    assert_equal "Roma", contact.city
-    assert_equal "00172", contact.zip
-    assert_equal nil, contact.country
-    assert_equal "IT", contact.country_code
-    assert_equal Time.parse("2007-03-01 10:28:08"), contact.created_on
-    assert_equal Time.parse("2007-03-01 10:28:08"), contact.updated_on
+  def test_registrant_contact_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = parser.registrant_contact
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "GOOG175-ITNIC", expected.id
   end
 
-  def test_registrant
-    contact = @klass.new(load_part('/registered.txt')).registrant
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "GOOG175-ITNIC", contact.id
-    assert_equal "Google Ireland Holdings", contact.name
-    assert_equal nil, contact.organization
-    assert_equal "30 Herbert Street", contact.address
-    assert_equal "Dublin", contact.city
-    assert_equal "2", contact.zip
-    assert_equal nil, contact.country
-    assert_equal "IE", contact.country_code
-    assert_equal Time.parse("2008-11-27 16:47:22"), contact.created_on
-    assert_equal Time.parse("2008-11-27 16:47:22"), contact.updated_on
+  def test_registrant_contact_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
-  def test_registrant_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrant
+  def test_registrant_contact
+    parser    = @klass.new(load_part('/property_registrant_contact.txt'))
+    result    = parser.registrant_contact
+
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "HTML1-ITNIC",                     result.id
+    assert_equal "HTML.it srl",                     result.name
+    assert_equal "HTML.it srl",                     result.organization
+    assert_equal "Viale Alessandrino, 595",         result.address
+    assert_equal "Roma",                            result.city
+    assert_equal "00172",                           result.zip
+    assert_equal nil,                               result.country
+    assert_equal "IT",                              result.country_code
+    assert_equal Time.parse("2007-03-01 10:28:08"), result.created_on
+    assert_equal Time.parse("2007-03-01 10:28:08"), result.updated_on
   end
 
-  def test_admin
-    contact = @klass.new(load_part('/registered.txt')).admin
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "TT4277-ITNIC", contact.id
-    assert_equal "Tsao Tu", contact.name
-    assert_equal "Tu Tsao", contact.organization
-    assert_equal "30 Herbert Street", contact.address
-    assert_equal "Dublin", contact.city
-    assert_equal "2", contact.zip
-    assert_equal nil, contact.country
-    assert_equal "IE", contact.country_code
-    assert_equal Time.parse("2008-11-27 16:47:22"), contact.created_on
-    assert_equal Time.parse("2008-11-27 16:47:22"), contact.updated_on
+  def test_admin_contact_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = parser.admin_contact
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "TT4277-ITNIC", expected.id
   end
 
-  def test_admin_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).admin
+  def test_admin_contact_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
-  def test_technical
-    contact = @klass.new(load_part('/registered.txt')).technical
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "TS7016-ITNIC", contact.id
-    assert_equal "Technical Services", contact.name
-    assert_equal nil, contact.organization
-    assert_equal nil, contact.address
-    assert_equal nil, contact.city
-    assert_equal nil, contact.zip
-    assert_equal nil, contact.country
-    assert_equal nil, contact.country_code
-    assert_equal nil, contact.created_on
-    assert_equal nil, contact.updated_on
+  def test_admin_contact
+    parser    = @klass.new(load_part('/property_admin_contact.txt'))
+    result    = parser.admin_contact
+
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "TT4277-ITNIC",                    result.id
+    assert_equal "Tsao Tu",                         result.name
+    assert_equal "Tu Tsao",                         result.organization
+    assert_equal "30 Herbert Street",               result.address
+    assert_equal "Dublin",                          result.city
+    assert_equal "2",                               result.zip
+    assert_equal nil,                               result.country
+    assert_equal "IE",                              result.country_code
+    assert_equal Time.parse("2008-11-27 16:47:22"), result.created_on
+    assert_equal Time.parse("2008-11-27 16:47:22"), result.updated_on
   end
 
-  def test_technical_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).technical
+  def test_technical_contact_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = parser.technical_contact
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "TS7016-ITNIC", expected.id
+  end
+
+  def test_technical_contact_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
+  end
+
+  def test_technical_contact
+    parser    = @klass.new(load_part('/property_technical_contact.txt'))
+    result    = parser.technical_contact
+
+    assert_instance_of Whois::Answer::Contact,  result
+    assert_equal "TS7016-ITNIC",                result.id
+    assert_equal "Technical Services",          result.name
+    assert_equal nil,                           result.organization
+    assert_equal nil,                           result.address
+    assert_equal nil,                           result.city
+    assert_equal nil,                           result.zip
+    assert_equal nil,                           result.country
+    assert_equal nil,                           result.country_code
+    assert_equal nil,                           result.created_on
+    assert_equal nil,                           result.updated_on
   end
 
 

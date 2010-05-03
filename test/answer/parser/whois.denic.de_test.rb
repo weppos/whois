@@ -135,46 +135,67 @@ http://www.denic.de/en/background/whois-service/webwhois.html
                   @klass.new(load_part('/available.txt')).registrar
   end
 
-  def test_registrant
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).registrant
+  def test_registrant_contact_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
-  def test_registrant_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrant
+  def test_registrant_contact_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
-  def test_admin
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).admin
+  def test_admin_contact_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
-  def test_admin_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).admin
+  def test_admin_contact_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
-  def test_technical
-    contact = @klass.new(load_part('/registered.txt')).technical
-    assert_instance_of(Whois::Answer::Contact, contact)
-    assert_equal(nil, contact.id)
-    assert_equal('Google Inc.', contact.name)
-    assert_equal(nil, contact.organization)
-    assert_equal(['Google Inc.', '1600 Amphitheatre Parkway'], contact.address)
-    assert_equal('Mountain View', contact.city)
-    assert_equal(nil, contact.state)
-    assert_equal('94043', contact.zip)
-    assert_equal(nil, contact.country)
-    assert_equal('US', contact.country_code)
-    assert_equal('+1-6503300100', contact.phone)
-    assert_equal('+1-6506188571', contact.fax)
-    assert_equal('dns-admin@google.com', contact.email)
+  def test_technical_contact_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = parser.technical_contact
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
   end
 
-  def test_technical_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).technical
+  def test_technical_contact_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
+  end
+
+  def test_technical_contact
+    parser    = @klass.new(load_part('/property_technical_contact.txt'))
+    result    = parser.technical_contact
+
+    assert_instance_of Whois::Answer::Contact, result
+    assert_equal nil,                     result.id
+    assert_equal 'Google Inc.',           result.name
+    assert_equal nil,                     result.organization
+    assert_equal ['Google Inc.', '1600 Amphitheatre Parkway'], result.address
+    assert_equal 'Mountain View',         result.city
+    assert_equal nil,                     result.state
+    assert_equal '94043',                 result.zip
+    assert_equal nil,                     result.country
+    assert_equal 'US',                    result.country_code
+    assert_equal '+1-6503300100',         result.phone
+    assert_equal '+1-6506188571',         result.fax
+    assert_equal 'dns-admin@google.com',  result.email
   end
 
 
@@ -296,7 +317,7 @@ assurance and to bar you from using its whois query.
   end
 
 
-  def test_registrar
+  def test_registrar_with_registered
     registrar = @klass.new(load_part('/1-10-0_registered.txt')).registrar
     assert_instance_of(Whois::Answer::Registrar, registrar)
     assert_equal(nil, registrar.id)
@@ -310,8 +331,8 @@ assurance and to bar you from using its whois query.
                   @klass.new(load_part('/1-10-0_available.txt')).registrar
   end
 
-  def test_registrant
-    contact = @klass.new(load_part('/1-10-0_registered.txt')).registrant
+  def test_registrant_contact_with_registered
+    contact = @klass.new(load_part('/1-10-0_registered.txt')).registrant_contact
     assert_instance_of(Whois::Answer::Contact, contact)
     assert_equal(nil, contact.id)
     assert_equal('Google Inc.', contact.name)
@@ -327,13 +348,13 @@ assurance and to bar you from using its whois query.
     assert_equal(nil, contact.email)
   end
 
-  def test_registrant_with_available
+  def test_registrant_contact_with_available
     assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).registrant
+                  @klass.new(load_part('/1-10-0_available.txt')).registrant_contact
   end
 
-  def test_admin
-    contact = @klass.new(load_part('/1-10-0_registered.txt')).admin
+  def test_admin_contact_with_registered
+    contact = @klass.new(load_part('/1-10-0_registered.txt')).admin_contact
     assert_instance_of(Whois::Answer::Contact, contact)
     assert_equal(nil, contact.id)
     assert_equal('Lena Tangermann', contact.name)
@@ -349,13 +370,13 @@ assurance and to bar you from using its whois query.
     assert_equal(nil, contact.email)
   end
 
-  def test_admin_with_available
+  def test_admin_contact_with_available
     assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).admin
+                  @klass.new(load_part('/1-10-0_available.txt')).admin_contact
   end
 
-  def test_technical
-    contact = @klass.new(load_part('/1-10-0_registered.txt')).technical
+  def test_technical_contact_with_registered
+    contact = @klass.new(load_part('/1-10-0_registered.txt')).technical_contact
     assert_instance_of(Whois::Answer::Contact, contact)
     assert_equal(nil, contact.id)
     assert_equal('Google Inc.', contact.name)
@@ -371,9 +392,9 @@ assurance and to bar you from using its whois query.
     assert_equal('dns-admin@google.com', contact.email)
   end
 
-  def test_technical_with_available
+  def test_technical_contact_with_available
     assert_equal  nil,
-                  @klass.new(load_part('/1-10-0_available.txt')).technical
+                  @klass.new(load_part('/1-10-0_available.txt')).technical_contact
   end
 
 

@@ -23,7 +23,9 @@ module Whois
     class Parser
 
       METHODS = [
-        :contacts
+        :contacts,
+        # deprecated methods
+        :registrant, :admin, :technical,
       ]
 
       @@properties = [
@@ -33,7 +35,7 @@ module Whois
         :status, :available?, :registered?,
         :created_on, :updated_on, :expires_on,
         :registrar,
-        :registrant, :admin, :technical,
+        :registrant_contact, :admin_contact, :technical_contact,
         :nameservers,
       ]
 
@@ -76,6 +78,8 @@ module Whois
 
         def method_missing(method, *args, &block)
           if Parser.properties.include?(method)
+            delegate_to_parsers(method, *args, &block)
+          elsif Parser::METHODS.include?(method)
             delegate_to_parsers(method, *args, &block)
           else
             super

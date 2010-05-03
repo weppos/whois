@@ -11,6 +11,8 @@
 
 * NEW: New methods Whois::Answer#contacts, Whois::Answer::Parser#contacts, and Whois::Answer::Parser::Base#contacts returns all supported contacts.
 
+* CHANGED: Renamed Whois::Answer::Parser::Base#(admin|technical|registrant) to Whois::Answer::Parser::Base#(admin|technical|registrant)_contact.
+
 
 == Release 1.0.12
 

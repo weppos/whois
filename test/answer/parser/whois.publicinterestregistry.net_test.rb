@@ -92,7 +92,7 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
 
-  def test_registrar
+  def test_registrar_with_registered
     registrar = @klass.new(load_part('/registered.txt')).registrar
     assert_instance_of Whois::Answer::Registrar, registrar
     assert_equal "R37-LROR", registrar.id
@@ -101,13 +101,15 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_registrar_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrar
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
   end
 
 
-  def test_registrant
-    contact = @klass.new(load_part('/registered.txt')).registrant
+  def test_registrant_contact_with_available
+    contact = @klass.new(load_part('/registered.txt')).registrant_contact
     assert_instance_of Whois::Answer::Contact, contact
     assert_equal "mmr-32097", contact.id
     assert_equal "DNS Admin", contact.name
@@ -123,14 +125,15 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal "dns-admin@google.com", contact.email
   end
 
-  def test_registrant_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrant
+  def test_registrant_contact_with_available
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
-
-  def test_admin
-    contact = @klass.new(load_part('/registered.txt')).admin
+  def test_admin_contact_with_registered
+    contact = @klass.new(load_part('/registered.txt')).admin_contact
     assert_instance_of Whois::Answer::Contact, contact
     assert_equal "mmr-32097", contact.id
     assert_equal "DNS Admin", contact.name
@@ -146,14 +149,15 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal "dns-admin@google.com", contact.email
   end
 
-  def test_admin_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).admin
+  def test_admin_contact_with_available
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
-
-  def test_technical
-    contact = @klass.new(load_part('/registered.txt')).technical
+  def test_technical_contact_with_registered
+    contact = @klass.new(load_part('/registered.txt')).technical_contact
     assert_instance_of Whois::Answer::Contact, contact
     assert_equal "mmr-32097", contact.id
     assert_equal "DNS Admin", contact.name
@@ -169,9 +173,11 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal "dns-admin@google.com", contact.email
   end
 
-  def test_technical_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).technical
+  def test_technical_contact_with_available
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
   end
 
 

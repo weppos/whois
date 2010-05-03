@@ -55,9 +55,9 @@ class AnswerParserBaseTest < Test::Unit::TestCase
     c2 = "2nd"
     c3 = "3rd"
     klass = Class.new(@klass) do
-      register_property(:registrant, :supported) { [c1, c2] }
-      register_property(:admin, :supported) { nil }
-      register_property(:technical, :supported) { c3 }
+      register_property(:registrant_contact, :supported) { [c1, c2] }
+      register_property(:admin_contact, :supported) { nil }
+      register_property(:technical_contact, :supported) { c3 }
     end
     assert_equal [c1, c2, c3], klass.new(@part).contacts
   end

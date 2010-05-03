@@ -94,20 +94,20 @@ module Whois
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the registrant details extracted from the registry answer.
-        property_supported :registrant do
-          contact("Registrant")
+        property_supported :registrant_contact do
+          @registrant_contact ||= contact("Registrant")
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the admin contact details extracted from the registry answer.
-        property_supported :admin do
-          contact("Admin Contact")
+        property_supported :admin_contact do
+          @admin_contact ||= contact("Admin Contact")
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the technical contact details extracted from the registry answer.
-        property_supported :technical do
-          contact("Technical Contacts")
+        property_supported :technical_contact do
+          @technical_contact ||= contact("Technical Contacts")
         end
 
 

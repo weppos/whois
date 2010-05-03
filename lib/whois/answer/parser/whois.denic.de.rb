@@ -68,16 +68,16 @@ module Whois
           end
         end
 
-        property_supported :registrant do
-          node("Holder")
+        property_supported :registrant_contact do
+          @registrant_contact ||= node("Holder")
         end
 
-        property_supported :admin do
-          node("Admin-C")
+        property_supported :admin_contact do
+          @admin_contact ||= node("Admin-C")
         end
 
-        property_supported :technical do
-          node("Tech-C")
+        property_supported :technical_contact do
+          @technical_contact ||= node("Tech-C")
         end
 
 

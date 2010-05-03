@@ -66,11 +66,11 @@ module Whois
 
         property_not_supported :registrar
 
-        property_not_supported :registrant
+        property_not_supported :registrant_contact
 
-        property_not_supported :admin
+        property_not_supported :admin_contact
 
-        property_not_supported :technical
+        property_not_supported :technical_contact
 
 
         property_not_supported :nameservers

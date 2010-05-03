@@ -6,13 +6,13 @@ class AnswerParserTest < Test::Unit::TestCase
   end
 
   class Whois::Answer::Parser::WhoisAnswerParser2Fake < Whois::Answer::Parser::Base
-    property_supported(:technical)   { "p2-t1" }
-    property_supported(:admin)       { "p2-a1" }
-    property_supported(:registrant)  { nil }
+    property_supported(:technical_contact)   { "p2-t1" }
+    property_supported(:admin_contact)       { "p2-a1" }
+    property_supported(:registrant_contact)  { nil }
   end
 
   class Whois::Answer::Parser::WhoisAnswerParser3Fake < Whois::Answer::Parser::Base
-    property_supported(:technical)   { "p3-t1" }
+    property_supported(:technical_contact)   { "p3-t1" }
   end
 
 

@@ -13,12 +13,12 @@ class AnswerParserWhoisNicAcTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = "google.ac"
     assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_variable_get(:"@domain")
+    assert_equal  expected, parser.instance_eval { @domain }
 
     parser    = @klass.new(load_part('/available.txt'))
     expected  = "u34jedzcq.ac"
     assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_variable_get(:"@domain")
+    assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
@@ -31,12 +31,12 @@ class AnswerParserWhoisNicAcTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = :registered
     assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_variable_get(:"@status")
+    assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/available.txt'))
     expected  = :available
     assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_variable_get(:"@status")
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -71,19 +71,19 @@ class AnswerParserWhoisNicAcTest < Whois::Answer::Parser::TestCase
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).registrar }
   end
 
-  def test_registrant
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).registrant }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).registrant }
+  def test_registrant_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).registrant_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).registrant_contact }
   end
 
-  def test_admin
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).admin }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).admin }
+  def test_admin_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).admin_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).admin_contact }
   end
 
-  def test_technical
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).technical }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).technical }
+  def test_technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).technical_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).technical_contact }
   end
 
 

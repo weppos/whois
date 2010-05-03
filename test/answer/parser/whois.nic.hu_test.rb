@@ -113,29 +113,29 @@ EOS
   end
 
 
-  def test_registrant_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
-    result    = parser.registrant
-    assert_instance_of Whois::Answer::Contact, result
-    assert_equal  result, parser.registrant
-    assert_equal  result, parser.instance_eval { @registrant }
+  def test_registrant_contact_with_registered
+    parser      = @klass.new(load_part('/registered.txt'))
+    expected    = parser.registrant_contact
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
  end
 
-  def test_registrant_with_unregistered
-    parser    = @klass.new(load_part('/available.txt'))
-    result    = nil
-    assert_equal  result, parser.registrant
-    assert_equal  result, parser.instance_eval { @registrant }
+  def test_registrant_contact_with_unregistered
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
 
-    parser    = @klass.new(load_part('/in_progress.txt'))
-    result    = nil
-    assert_equal  result, parser.registrant
-    assert_equal  result, parser.instance_eval { @registrant }
+    parser      = @klass.new(load_part('/in_progress.txt'))
+    expected    = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant }
   end
 
-  def test_registrant_as_company
+  def test_registrant_contact_as_company
     parser    = @klass.new(load_part('/property_registrant_as_company.txt'))
-    result    = parser.registrant
+    result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,  result
     assert_equal 'Google, Inc.',                result.name
@@ -148,9 +148,9 @@ EOS
     assert_equal '+1 650 253 0001',             result.fax
   end
 
-  def test_registrant_as_private_person
+  def test_registrant_contact_as_private_person
     parser    = @klass.new(load_part('/property_registrant_as_private_person.txt'))
-    result    = parser.registrant
+    result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,  result
     assert_match /Buruzs/,                      result.name             # UTF-8 hack
@@ -163,9 +163,9 @@ EOS
     assert_equal nil,                           result.fax
   end
 
-  def test_registrant_without_address
+  def test_registrant_contact_without_address
     parser    = @klass.new(load_part('/property_registrant_without_address.txt'))
-    result    = parser.registrant
+    result    = parser.registrant_contact
 
     assert_equal nil, result.address
     assert_equal nil, result.zip
@@ -173,8 +173,8 @@ EOS
     assert_equal nil, result.country_code
   end
 
-  def test_admin_with_registered
-    admin = @klass.new(load_part('/registered.txt')).admin
+  def test_admin_contact_with_registered
+    admin = @klass.new(load_part('/registered.txt')).admin_contact
     assert_instance_of Whois::Answer::Contact, admin
     assert_equal '2000466366', admin.id
     assert_equal '3C Kft. (Registrar)', admin.name
@@ -186,15 +186,20 @@ EOS
     assert_equal '+36 1 275 58 87', admin.fax
   end
 
-  def test_admin_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).admin
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).admin
+  def test_admin_contact_with_unregistered
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
+
+    parser      = @klass.new(load_part('/in_progress.txt'))
+    expected    = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
-  def test_technical_with_registered
-    technical = @klass.new(load_part('/registered.txt')).technical
+  def test_technical_contact_with_registered
+    technical = @klass.new(load_part('/registered.txt')).technical_contact
     assert_instance_of Whois::Answer::Contact, technical
     assert_equal '2000578125', technical.id
     assert_equal 'Markmonitor', technical.name
@@ -207,11 +212,16 @@ EOS
     assert_equal 'ccops@markmonitor.com', technical.email
   end
 
-  def test_technical_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).technical
-    assert_equal  nil,
-                  @klass.new(load_part('/in_progress.txt')).technical
+  def test_technical_contact_with_unregistered
+    parser      = @klass.new(load_part('/available.txt'))
+    expected    = nil
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
+
+    parser      = @klass.new(load_part('/in_progress.txt'))
+    expected    = nil
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
   end
 
 

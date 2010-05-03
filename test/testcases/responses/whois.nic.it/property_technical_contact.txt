@@ -1,0 +1,53 @@
+
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://www.nic.it/cgi-bin/Whois/whois.cgi                         *
+*********************************************************************
+
+Domain:             google.it
+Status:             ACTIVE
+Created:            1999-12-10 00:00:00
+Last Update:        2008-11-27 16:47:22
+Expire Date:        2009-11-27
+
+Registrant
+  Name:             Google Ireland Holdings
+  ContactID:        GOOG175-ITNIC
+  Address:          30 Herbert Street
+                    Dublin
+                    2
+                    IE
+                    IE
+  Created:          2008-11-27 16:47:22
+  Last Update:      2008-11-27 16:47:22
+
+Admin Contact
+  Name:             Tsao Tu
+  ContactID:        TT4277-ITNIC
+  Organization:     Tu Tsao
+  Address:          30 Herbert Street
+                    Dublin
+                    2
+                    IE
+                    IE
+  Created:          2008-11-27 16:47:22
+  Last Update:      2008-11-27 16:47:22
+
+Technical Contacts
+  Name:             Technical Services
+  ContactID:        TS7016-ITNIC
+
+Registrar
+  Organization:     Register.it s.p.a.
+  Name:             REGISTER-MNT
+
+Nameservers
+  ns1.google.com
+  ns4.google.com
+  ns2.google.com
+  ns3.google.com
+

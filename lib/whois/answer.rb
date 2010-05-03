@@ -134,7 +134,7 @@ module Whois
 
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
-        if Parser.properties.include?(method)
+        if (Parser.properties + Parser::METHODS).include?(method)
           self.class.class_eval foo = %{
             def #{method}(*args, &block)
               if property_supported?(:#{method})
@@ -146,7 +146,7 @@ module Whois
           }, __FILE__, __LINE__
           send(method, *args, &block)
 
-        elsif method.to_s =~ /([a-z_]+)\?/ and Parser.properties.include?($1.to_sym)
+        elsif method.to_s =~ /([a-z_]+)\?/ and (Parser.properties + Parser::METHODS).include?($1.to_sym)
           self.class.class_eval %{
             def #{$1}?
               !#{$1}.nil?

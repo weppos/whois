@@ -83,15 +83,15 @@ module Whois
           end
         end
 
-        property_supported :registrant do
+        property_supported :registrant_contact do
           contact("Registrant")
         end
 
-        property_supported :admin do
+        property_supported :admin_contact do
           contact("Admin")
         end
 
-        property_supported :technical do
+        property_supported :technical_contact do
           contact("Tech")
         end
 

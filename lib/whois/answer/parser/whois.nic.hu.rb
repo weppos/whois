@@ -83,13 +83,13 @@ module Whois
           end
         end
 
-        property_supported :registrant do
+        property_supported :registrant_contact do
           return unless registered?
-          return @registrant if @registrant
+          return @registrant_contact if @registrant_contact
 
           address, city, zip, country_code = decompose_address(node('address'))
 
-          @registrant = Answer::Contact.new(
+          @registrant_contact = Answer::Contact.new(
             :name         => node('name'),
             :organization => node('org'),
             :address      => address,
@@ -101,12 +101,12 @@ module Whois
           )
         end
 
-        property_supported :admin do
-          contact('admin-c')
+        property_supported :admin_contact do
+          @admin_contact ||= contact('admin-c')
         end
 
-        property_supported :technical do
-          contact('tech-c')
+        property_supported :technical_contact do
+          @tecnical_contact ||= contact('tech-c')
         end
 
 
