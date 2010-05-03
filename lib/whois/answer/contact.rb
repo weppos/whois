@@ -23,29 +23,30 @@ module Whois
     #
     # = Contacts
     #
-    # Holds the details of a Contact extracted from the WHOIS answer.
+    # Holds the details of a <tt>Contact</tt> extracted from the WHOIS <tt>Answer</tt>.
     #
-    # A Contact is composed by the following attributes:
+    # A <tt>Contact</tt> is composed by the following attributes:
     #
-    # <tt>:id</tt>::
-    # <tt>:name</tt>::
-    # <tt>:organization</tt>::
-    # <tt>:address</tt>::
-    # <tt>:city</tt>::
-    # <tt>:zip</tt>::
-    # <tt>:state</tt>::
-    # <tt>:country</tt>::
-    # <tt>:country_code</tt>::
-    # <tt>:phone</tt>::
-    # <tt>:fax</tt>::
-    # <tt>:email</tt>::
-    # <tt>:created_on</tt>::
-    # <tt>:updated_on</tt>::
+    #  * <tt>:id</tt>:
+    #  * <tt>:type</tt>: the contact type.
+    #  * <tt>:name</tt>:
+    #  * <tt>:organization</tt>:
+    #  * <tt>:address</tt>:
+    #  * <tt>:city</tt>:
+    #  * <tt>:zip</tt>:
+    #  * <tt>:state</tt>:
+    #  * <tt>:country</tt>:
+    #  * <tt>:country_code</tt>:
+    #  * <tt>:phone</tt>:
+    #  * <tt>:fax</tt>:
+    #  * <tt>:email</tt>:
+    #  * <tt>:created_on</tt>:
+    #  * <tt>:updated_on</tt>:
     #
     # Be aware that every WHOIS server can return a different number of details
     # or no details at all.
     #
-    class Contact < SuperStruct.new(:id, :name, :organization,
+    class Contact < SuperStruct.new(:id, :name, :organization, :type,
                                     :address, :city, :zip, :state, :country, :country_code,
                                     :phone, :fax, :email,
                                     :created_on, :updated_on)

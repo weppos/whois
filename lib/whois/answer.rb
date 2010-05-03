@@ -82,6 +82,7 @@ module Whois
       @content ||= parts.map(&:response).join("\n")
     end
 
+
     # Returns whether this answer changed compared to <tt>other</tt>.
     #
     # Comparing the Answer contents is not always as trivial as it seems.
@@ -102,6 +103,9 @@ module Whois
       parser.unchanged?(other.parser)
     end
 
+    def contacts
+      parser.contacts
+    end
 
 
     # Lazy-loads and returns a <tt>Whois::Answer::Parser</tt> proxy for current answer.

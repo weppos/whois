@@ -188,10 +188,6 @@ module Whois
           @part = part
         end
 
-        ::Whois::Answer::Parser.properties.each do |property|
-          property_not_implemented(property)
-        end
-
         def part
           @part
         end
@@ -216,6 +212,21 @@ module Whois
         # is supported by the current parser.
         def property_supported?(property)
           self.class.property_registered?(property, :supported)
+        end
+
+
+        ::Whois::Answer::Parser.properties.each do |property|
+          property_not_implemented(property)
+        end
+
+
+        # Returns an array of all supported contacts.
+        def contacts
+          contacts = []
+          contacts.concat([*registrant])  if property_supported?(:registrant)
+          contacts.concat([*admin])       if property_supported?(:admin)
+          contacts.concat([*technical])   if property_supported?(:technical)
+          contacts.compact
         end
 
 

@@ -77,6 +77,13 @@ class AnswerTest < Test::Unit::TestCase
   end
 
 
+  def test_contacts
+    answer = @klass.new(@server, @parts)
+    answer.parser.expects(:contacts).returns([])
+    assert_equal [], answer.contacts
+  end
+
+
   def test_parser
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
     assert_instance_of Whois::Answer::Parser, answer.parser

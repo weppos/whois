@@ -22,13 +22,18 @@ module Whois
     #
     class Parser
 
+      METHODS = [
+        :contacts
+      ]
+
       @@properties = [
         :disclaimer,
         :domain, :domain_id,
         :referral_whois, :referral_url,
         :status, :available?, :registered?,
         :created_on, :updated_on, :expires_on,
-        :registrar, :registrant, :admin, :technical,
+        :registrar,
+        :registrant, :admin, :technical,
         :nameservers,
       ]
 
@@ -58,6 +63,12 @@ module Whois
       # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
       def property_supported?(property)
         parsers.any? { |parser| parser.property_supported?(property) }
+      end
+
+
+      # Collects and returns all the contacts from all parsers.
+      def contacts
+        parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
       end
 
 

@@ -45,6 +45,24 @@ class AnswerParserBaseTest < Test::Unit::TestCase
   end
 
 
+  def test_contacts_should_return_empty_array_with_all_unsupported
+    parser = @klass.new(@part)
+    assert_equal [], parser.contacts
+  end
+
+  def test_contacts_should_return_all_supported_contacts
+    c1 = "1st"
+    c2 = "2nd"
+    c3 = "3rd"
+    klass = Class.new(@klass) do
+      register_property(:registrant, :supported) { [c1, c2] }
+      register_property(:admin, :supported) { nil }
+      register_property(:technical, :supported) { c3 }
+    end
+    assert_equal [c1, c2, c3], klass.new(@part).contacts
+  end
+
+
   def test_self_property_registry
     assert_instance_of Hash, @klass.property_registry
   end
