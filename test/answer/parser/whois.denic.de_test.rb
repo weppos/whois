@@ -212,7 +212,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_nameservers_with_ip
-    parser    = @klass.new(load_part('/nameservers_with_ip.txt'))
+    parser    = @klass.new(load_part('/property_nameservers_with_ip.txt'))
     expected  = %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
