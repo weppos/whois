@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.1.0
 
 * NEW: Added simple .am TLD parser (whois.nic.am).
 
