@@ -63,8 +63,8 @@ module Whois
   def self.available?(qstring)
     query(qstring).available?
   rescue ParserNotFound => e
-    $stderr.puts  "This method is not supported for this kind of object.\n" +
-                  "Use Whois.query('#{qstring}') instead."
+    warn  "This method is not supported for this kind of object.\n" +
+          "Use Whois.query('#{qstring}') instead."
     nil
   end
 
@@ -87,8 +87,8 @@ module Whois
   def self.registered?(qstring)
     query(qstring).registered?
   rescue ParserNotFound => e
-    $stderr.puts  "This method is not supported for this kind of object.\n" +
-                  "Use Whois.query('#{qstring}') instead."
+    warn  "This method is not supported for this kind of object.\n" +
+          "Use Whois.query('#{qstring}') instead."
     nil
   end
 
@@ -101,7 +101,7 @@ module Whois
 
   def self.deprecate(message = nil)
     message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
-    $stderr.puts("DEPRECATION WARNING: #{message}")
+    warn("DEPRECATION WARNING: #{message}")
   end
 
 end
