@@ -9,6 +9,8 @@
 
 * NEW: Added simple .au TLD parser (whois.ausregistry.net.au).
 
+* NEW: Added simple .st TLD parser (whois.nic.st).
+
 * NEW: New methods Whois::Answer#contacts, Whois::Answer::Parser#contacts, and Whois::Answer::Parser::Base#contacts returns all supported contacts.
 
 * CHANGED: Renamed Whois::Answer::Parser::Base#(admin|technical|registrant) to Whois::Answer::Parser::Base#(admin|technical|registrant)_contact.
