@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.1.1
 
 * FIXED: Deprecated methods Whois::Answer::Parser::Base#(admin|technical|registrant) didn't figure as supported with Whois::Answer#property_supported?(:method)
 
