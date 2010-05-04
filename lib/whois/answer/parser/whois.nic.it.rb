@@ -31,13 +31,13 @@ module Whois
 
         # Returns the registry disclaimer that comes with the answer.
         property_supported :disclaimer do
-          node("Disclaimer")
+          @disclaimer ||= node("Disclaimer")
         end
 
 
         # If available, returns the domain name as stored by the registry.
         property_supported :domain do
-          node("Domain") { |raw| raw.downcase }
+          @domain ||= node("Domain") { |raw| raw.downcase }
         end
 
         # If available, returns the unique domain ID set by the registry.
@@ -47,7 +47,7 @@ module Whois
         # Returns the record status or an array of status,
         # in case the registry supports it.
         property_supported :status do
-          node("Status") { |raw| raw.downcase.to_sym }
+          @status ||= node("Status") { |raw| raw.downcase.to_sym }
         end
 
         # Returns whether this record is available.
@@ -64,26 +64,26 @@ module Whois
         # If available, returns a Time object representing the date
         # the record was created, according to the registry answer.
         property_supported :created_on do
-          node("Created") { |raw| Time.parse(raw) }
+          @created_on ||= node("Created") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
         # the record was last updated, according to the registry answer.
         property_supported :updated_on do
-          node("Last Update") { |raw| Time.parse(raw) }
+          @updated_on ||= node("Last Update") { |raw| Time.parse(raw) }
         end
         
         # If available, returns a Time object representing the date
         # the record is set to expire, according to the registry answer.
         property_supported :expires_on do
-          node("Expire Date") { |raw| Time.parse(raw) }
+          @expires_on ||= node("Expire Date") { |raw| Time.parse(raw) }
         end
 
 
         # If available, returns a <tt>Whois::Answer::Registrar</tt> record
         # containing the registrar details extracted from the registry answer.
         property_supported :registrar do
-          node("Registrar") do |raw|
+          @registrar ||= node("Registrar") do |raw|
             Answer::Registrar.new(
               :id           => raw["Name"],
               :name         => raw["Name"],

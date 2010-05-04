@@ -10,7 +10,8 @@ class AnswerParserWhoisPublicinterestregistryNetTest < Whois::Answer::Parser::Te
 
 
   def test_disclaimer
-    expected = <<-EOS.strip
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = <<-EOS.strip
 NOTICE: Access to .ORG WHOIS information is provided to assist persons in \
 determining the contents of a domain name registration record in the Public Interest Registry \
 registry database. The data in this record is provided by Public Interest Registry \
@@ -27,36 +28,51 @@ necessary to register domain names or modify existing registrations.  All \
 rights reserved. Public Interest Registry reserves the right to modify these terms at any \
 time. By submitting this query, you agree to abide by this policy.
     EOS
-    assert_equal  expected,
-                  @klass.new(load_part('/registered.txt')).disclaimer
-  end
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
 
-  def test_disclaimer_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).disclaimer
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
   end
 
 
   def test_domain
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain
-    assert_equal  "google.org",
-                  @klass.new(load_part('/registered.txt')).domain
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "google.org"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
-    assert_equal  "D2244233-LROR",
-                  @klass.new(load_part('/registered.txt')).domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).domain_id
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "D2244233-LROR"
+    assert_equal  expected, parser.domain_id
+    assert_equal  expected, parser.instance_eval { @domain_id }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.domain_id
+    assert_equal  expected, parser.instance_eval { @domain_id }
   end
 
 
   def test_status
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).status
-    assert_equal  ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"],
-                  @klass.new(load_part('/registered.txt')).status
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -71,33 +87,50 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_created_on
-    assert_equal  Time.parse("1998-10-21 04:00:00 UTC"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("1998-10-21 04:00:00 UTC")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-03-04 12:07:19 UTC"),
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2009-03-04 12:07:19 UTC")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2012-10-20 04:00:00 UTC"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2012-10-20 04:00:00 UTC")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
   def test_registrar_with_registered
-    registrar = @klass.new(load_part('/registered.txt')).registrar
-    assert_instance_of Whois::Answer::Registrar, registrar
-    assert_equal "R37-LROR", registrar.id
-    assert_equal "MarkMonitor Inc.", registrar.name
-    assert_equal nil, registrar.organization
+    parser      = @klass.new(load_part('/registered.txt'))
+    expected    = parser.registrar
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    assert_instance_of Whois::Answer::Registrar, expected
+    assert_equal "R37-LROR", expected.id
   end
 
   def test_registrar_with_available
@@ -107,22 +140,25 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal  expected, parser.instance_eval { @registrar }
   end
 
+  def test_registrar
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.registrar
 
-  def test_registrant_contact_with_available
-    contact = @klass.new(load_part('/registered.txt')).registrant_contact
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "mmr-32097", contact.id
-    assert_equal "DNS Admin", contact.name
-    assert_equal "Google Inc.", contact.organization
-    assert_equal "1600 Amphitheatre Parkway", contact.address
-    assert_equal "Mountain View", contact.city
-    assert_equal "CA", contact.state
-    assert_equal "94043", contact.zip
-    assert_equal nil, contact.country
-    assert_equal "US", contact.country_code
-    assert_equal "+1.6506234000", contact.phone
-    assert_equal "+1.6506188571", contact.fax
-    assert_equal "dns-admin@google.com", contact.email
+    assert_instance_of Whois::Answer::Registrar,      result
+    assert_equal "R37-LROR",                          result.id
+    assert_equal "MarkMonitor Inc.",                  result.name
+    assert_equal nil,                                 result.organization
+  end
+
+
+  def test_registrant_contact_with_registered
+    parser      = @klass.new(load_part('/registered.txt'))
+    expected    = parser.registrant_contact
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "mmr-32097", expected.id
   end
 
   def test_registrant_contact_with_available
@@ -132,21 +168,33 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
+  def test_registrant_contact
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.registrant_contact
+
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "mmr-32097",                       result.id
+    assert_equal "DNS Admin",                       result.name
+    assert_equal "Google Inc.",                     result.organization
+    assert_equal "1600 Amphitheatre Parkway",       result.address
+    assert_equal "Mountain View",                   result.city
+    assert_equal "CA",                              result.state
+    assert_equal "94043",                           result.zip
+    assert_equal nil,                               result.country
+    assert_equal "US",                              result.country_code
+    assert_equal "+1.6506234000",                   result.phone
+    assert_equal "+1.6506188571",                   result.fax
+    assert_equal "dns-admin@google.com",            result.email
+  end
+
   def test_admin_contact_with_registered
-    contact = @klass.new(load_part('/registered.txt')).admin_contact
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "mmr-32097", contact.id
-    assert_equal "DNS Admin", contact.name
-    assert_equal "Google Inc.", contact.organization
-    assert_equal "1600 Amphitheatre Parkway", contact.address
-    assert_equal "Mountain View", contact.city
-    assert_equal "CA", contact.state
-    assert_equal "94043", contact.zip
-    assert_equal nil, contact.country
-    assert_equal "US", contact.country_code
-    assert_equal "+1.6506234000", contact.phone
-    assert_equal "+1.6506188571", contact.fax
-    assert_equal "dns-admin@google.com", contact.email
+    parser      = @klass.new(load_part('/registered.txt'))
+    expected    = parser.admin_contact
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "mmr-32097", expected.id
   end
 
   def test_admin_contact_with_available
@@ -156,21 +204,33 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
+  def test_admin_contact
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.admin_contact
+
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "mmr-32097",                       result.id
+    assert_equal "DNS Admin",                       result.name
+    assert_equal "Google Inc.",                     result.organization
+    assert_equal "1600 Amphitheatre Parkway",       result.address
+    assert_equal "Mountain View",                   result.city
+    assert_equal "CA",                              result.state
+    assert_equal "94043",                           result.zip
+    assert_equal nil,                               result.country
+    assert_equal "US",                              result.country_code
+    assert_equal "+1.6506234000",                   result.phone
+    assert_equal "+1.6506188571",                   result.fax
+    assert_equal "dns-admin@google.com",            result.email
+  end
+
   def test_technical_contact_with_registered
-    contact = @klass.new(load_part('/registered.txt')).technical_contact
-    assert_instance_of Whois::Answer::Contact, contact
-    assert_equal "mmr-32097", contact.id
-    assert_equal "DNS Admin", contact.name
-    assert_equal "Google Inc.", contact.organization
-    assert_equal "1600 Amphitheatre Parkway", contact.address
-    assert_equal "Mountain View", contact.city
-    assert_equal "CA", contact.state
-    assert_equal "94043", contact.zip
-    assert_equal nil, contact.country
-    assert_equal "US", contact.country_code
-    assert_equal "+1.6506234000", contact.phone
-    assert_equal "+1.6506188571", contact.fax
-    assert_equal "dns-admin@google.com", contact.email
+    parser      = @klass.new(load_part('/registered.txt'))
+    expected    = parser.technical_contact
+    assert_equal  expected, parser.technical_contact
+    assert_equal  expected, parser.instance_eval { @technical_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "mmr-32097", expected.id
   end
 
   def test_technical_contact_with_available
@@ -178,6 +238,25 @@ time. By submitting this query, you agree to abide by this policy.
     expected    = nil
     assert_equal  expected, parser.technical_contact
     assert_equal  expected, parser.instance_eval { @technical_contact }
+  end
+
+  def test_technical_contact
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.technical_contact
+
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "mmr-32097",                       result.id
+    assert_equal "DNS Admin",                       result.name
+    assert_equal "Google Inc.",                     result.organization
+    assert_equal "1600 Amphitheatre Parkway",       result.address
+    assert_equal "Mountain View",                   result.city
+    assert_equal "CA",                              result.state
+    assert_equal "94043",                           result.zip
+    assert_equal nil,                               result.country
+    assert_equal "US",                              result.country_code
+    assert_equal "+1.6506234000",                   result.phone
+    assert_equal "+1.6506188571",                   result.fax
+    assert_equal "dns-admin@google.com",            result.email
   end
 
 

@@ -30,21 +30,21 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          node("Disclaimer")
+          @disclaimer ||= node("Disclaimer")
         end
 
 
         property_supported :domain do
-          node("Domain Name") { |value| value.downcase }
+          @domain ||= node("Domain Name") { |value| value.downcase }
         end
 
         property_supported :domain_id do
-          node("Domain ID")
+          @domain_id ||= node("Domain ID")
         end
 
 
         property_supported :status do
-          node("Status")
+          @status ||= node("Status")
         end
 
         property_supported :available? do
@@ -57,20 +57,20 @@ module Whois
 
 
         property_supported :created_on do
-          node("Created On") { |value| Time.parse(value) }
+          @created_on ||= node("Created On") { |value| Time.parse(value) }
         end
 
         property_supported :updated_on do
-          node("Last Updated On") { |value| Time.parse(value) }
+          @updated_on ||= node("Last Updated On") { |value| Time.parse(value) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |value| Time.parse(value) }
+          @expires_on ||= node("Expiration Date") { |value| Time.parse(value) }
         end
 
-        
+
         property_supported :registrar do
-          node("Sponsoring Registrar") do |registrar|
+          @registrar ||= node("Sponsoring Registrar") do |registrar|
             id, name = if registrar =~ /(.*?)\((.*?)\)/
               [$2.strip, $1.strip]
             else
@@ -84,15 +84,15 @@ module Whois
         end
 
         property_supported :registrant_contact do
-          contact("Registrant")
+          @registrant_contact ||= contact("Registrant")
         end
 
         property_supported :admin_contact do
-          contact("Admin")
+          @admin_contact ||= contact("Admin")
         end
 
         property_supported :technical_contact do
-          contact("Tech")
+          @technical_contact ||= contact("Tech")
         end
 
         # @deprecated

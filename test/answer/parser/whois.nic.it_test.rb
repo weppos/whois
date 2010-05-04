@@ -10,21 +10,28 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_disclaimer
-    assert_equal  "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi",
-                  @klass.new(load_part('/registered.txt')).disclaimer
-  end
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi"
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
 
-  def test_disclaimer_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).disclaimer
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
   end
 
 
   def test_domain
-    assert_equal  "google.it",
-                  @klass.new(load_part('/available.txt')).domain
-    assert_equal  "google.it",
-                  @klass.new(load_part('/registered.txt')).domain
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "google.it"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = "google.it"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
@@ -34,10 +41,15 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    assert_equal  :available,
-                  @klass.new(load_part('/status_available.txt')).status
-    assert_equal  :active,
-                  @klass.new(load_part('/status_active.txt')).status
+    parser    = @klass.new(load_part('/property_status_active.txt'))
+    expected  = :active
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/property_status_available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -53,40 +65,69 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_created_on
-    assert_equal  Time.parse("1999-12-10 00:00:00"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("1999-12-10 00:00:00")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_updated_on
-    assert_equal  Time.parse("2008-11-27 16:47:22"),
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2008-11-27 16:47:22")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_expires_on
-    assert_equal  Time.parse("2009-11-27 00:00:00"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2009-11-27 00:00:00")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
   def test_registrar
-    registrar = @klass.new(load_part('/registered.txt')).registrar
-    assert_instance_of Whois::Answer::Registrar, registrar
-    assert_equal "REGISTER-MNT", registrar.id
-    assert_equal "REGISTER-MNT", registrar.name
-    assert_equal "Register.it s.p.a.", registrar.organization
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = parser.registrar
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    assert_instance_of Whois::Answer::Registrar, expected
+    assert_equal "REGISTER-MNT", expected.id
   end
 
   def test_registrar_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrar
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+  end
+
+  def test_registrar
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.registrar
+
+    assert_instance_of Whois::Answer::Registrar,  result
+    assert_equal "REGISTER-MNT",                  result.id
+    assert_equal "REGISTER-MNT",                  result.name
+    assert_equal "Register.it s.p.a.",            result.organization
   end
 
 
