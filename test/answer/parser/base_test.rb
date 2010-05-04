@@ -51,15 +51,15 @@ class AnswerParserBaseTest < Test::Unit::TestCase
   end
 
   def test_contacts_should_return_all_supported_contacts
-    c1 = "1st"
-    c2 = "2nd"
-    c3 = "3rd"
+    c1 = Whois::Answer::Contact.new(:id => "1st", :name => "foo")
+    c2 = Whois::Answer::Contact.new(:id => "2nd", :name => "foo")
+    c3 = Whois::Answer::Contact.new(:id => "3rd", :name => "foo")
     klass = Class.new(@klass) do
       register_property(:registrant_contact, :supported) { [c1, c2] }
       register_property(:admin_contact, :supported) { nil }
       register_property(:technical_contact, :supported) { c3 }
     end
-    assert_equal [c1, c2, c3], klass.new(@part).contacts
+    assert_equal ["1st", "2nd", "3rd"], klass.new(@part).contacts.map(&:id)
   end
 
 

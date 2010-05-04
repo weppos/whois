@@ -5,6 +5,8 @@
 
 * NEW: Whois::Answer::Contact#type property returns the type of the contact (ADMIN, TECHNICAL, ...).
 
+* FIXED: Whois::Answer::Parser::Base#contacts decomposes each Contact property in a single contact.
+
 
 == Release 1.1.1
 

@@ -224,9 +224,9 @@ module Whois
         # Returns an array of all supported contacts.
         def contacts
           contacts = []
-          contacts.concat([*registrant_contact])  if property_supported?(:registrant_contact)
-          contacts.concat([*admin_contact])       if property_supported?(:admin_contact)
-          contacts.concat([*technical_contact])   if property_supported?(:technical_contact)
+          contacts.concat(registrant_contact.is_a?(Array) ? registrant_contact : [registrant_contact]) if property_supported?(:registrant_contact)
+          contacts.concat(admin_contact.is_a?(Array) ? admin_contact : [admin_contact]) if property_supported?(:admin_contact)
+          contacts.concat(technical_contact.is_a?(Array) ? technical_contact : [technical_contact]) if property_supported?(:technical_contact)
           contacts.compact
         end
 
