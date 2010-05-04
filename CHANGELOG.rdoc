@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.1.2
 
 * NEW: Whois::Answer::Contact#type property returns the type of the contact (ADMIN, TECHNICAL, ...).
 
