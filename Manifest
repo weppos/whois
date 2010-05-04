@@ -375,10 +375,10 @@ test/testcases/responses/whois.nic.io/registered.txt
 test/testcases/responses/whois.nic.it/available.txt
 test/testcases/responses/whois.nic.it/property_admin_contact.txt
 test/testcases/responses/whois.nic.it/property_registrant_contact.txt
+test/testcases/responses/whois.nic.it/property_status_active.txt
+test/testcases/responses/whois.nic.it/property_status_available.txt
 test/testcases/responses/whois.nic.it/property_technical_contact.txt
 test/testcases/responses/whois.nic.it/registered.txt
-test/testcases/responses/whois.nic.it/status_active.txt
-test/testcases/responses/whois.nic.it/status_available.txt
 test/testcases/responses/whois.nic.lv/available.txt
 test/testcases/responses/whois.nic.lv/registered.txt
 test/testcases/responses/whois.nic.ly/available.txt
