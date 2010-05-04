@@ -126,7 +126,8 @@ module Whois
         def self.register_property(property, status, &block)
           property = property.to_s.to_sym
           property_registry(self).merge!({ property => status })
-          define_method(property, &block)
+          define_method(property, &block) if block_given?
+          self
         end
 
 
