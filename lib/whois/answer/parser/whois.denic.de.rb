@@ -80,6 +80,13 @@ module Whois
           @technical_contact ||= node("Tech-C")
         end
 
+        # @deprecated
+        register_property :registrant, :supported
+        # @deprecated
+        register_property :admin, :supported
+        # @deprecated
+        register_property :technical, :supported
+
 
         # Nameservers are listed in the following formats:
         # 

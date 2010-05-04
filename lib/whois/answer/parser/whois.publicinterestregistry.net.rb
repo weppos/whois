@@ -95,6 +95,13 @@ module Whois
           contact("Tech")
         end
 
+        # @deprecated
+        register_property :registrant, :supported
+        # @deprecated
+        register_property :admin, :supported
+        # @deprecated
+        register_property :technical, :supported
+
 
         property_supported :nameservers do
           @nameservers ||= node("Name Server") { |server| server.reject(&:empty?).map(&:downcase) }

@@ -109,9 +109,14 @@ module Whois
           @tecnical_contact ||= contact('tech-c')
         end
 
+        # @deprecated
+        register_property :registrant, :supported
+        # @deprecated
+        register_property :admin, :supported
+        # @deprecated
+        register_property :technical, :supported
 
-        # If available, returns an array of name servers entries for this domain
-        # if any name server is available in the registry answer.
+
         property_supported :nameservers do
           @nameservers ||= node('nameserver') || []
         end

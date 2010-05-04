@@ -110,6 +110,13 @@ module Whois
           @technical_contact ||= contact("Technical Contacts")
         end
 
+        # @deprecated
+        register_property :registrant, :supported
+        # @deprecated
+        register_property :admin, :supported
+        # @deprecated
+        register_property :technical, :supported
+
 
         # If available, returns an array of name servers entries for this domain
         # if any name server is available in the registry answer.
