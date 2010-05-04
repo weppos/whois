@@ -28,7 +28,7 @@ module Whois
     # A <tt>Contact</tt> is composed by the following attributes:
     #
     #  * <tt>:id</tt>:
-    #  * <tt>:type</tt>: the contact type.
+    #  * <tt>:type</tt>: the contact type (1 = registrant, 2 = admin, 3 = technical).
     #  * <tt>:name</tt>:
     #  * <tt>:organization</tt>:
     #  * <tt>:address</tt>:
@@ -46,10 +46,15 @@ module Whois
     # Be aware that every WHOIS server can return a different number of details
     # or no details at all.
     #
-    class Contact < SuperStruct.new(:id, :name, :organization, :type,
+    class Contact < SuperStruct.new(:id, :type, :name, :organization,
                                     :address, :city, :zip, :state, :country, :country_code,
                                     :phone, :fax, :email,
                                     :created_on, :updated_on)
+
+      TYPE_REGISTRANT = 1
+      TYPE_ADMIN = 2
+      TYPE_TECHNICAL = 3
+
     end
 
   end

@@ -61,23 +61,23 @@ module Whois
           node("Zone-C") do |raw|
             Answer::Registrar.new(
                 :id => nil,
-                :name => raw.name,
-                :organization => raw.organization,
+                :name => raw["name"],
+                :organization => raw["organization"],
                 :url => nil
             )
           end
         end
 
         property_supported :registrant_contact do
-          @registrant_contact ||= node("Holder")
+          @registrant_contact ||= contact("Holder", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= node("Admin-C")
+          @admin_contact ||= contact("Admin-C", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contact do
-          @technical_contact ||= node("Tech-C")
+          @technical_contact ||= contact("Tech-C", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
         # @deprecated
@@ -108,6 +108,14 @@ module Whois
 
           def parse
             Scanner.new(content_for_scanner).parse
+          end
+
+          def contact(element, type)
+            node(element) do |raw|
+              Answer::Contact.new(raw) do |c|
+                c.type = type
+              end
+            end
           end
 
 
@@ -176,22 +184,22 @@ module Whois
                 contact = {}
                 while parse_pair(contact)
                 end
-                @ast[contact_name] = Answer::Contact.new(
-                    :id => nil,
-                    :name => contact['Name'],
-                    :organization => contact['Organisation'],
-                    :address => contact['Address'],
-                    :city => contact['City'],
-                    :zip => contact['Pcode'],
-                    :state => nil,
-                    :country => nil,
-                    :country_code => contact['Country'],
-                    :phone => contact['Phone'],
-                    :fax => contact['Fax'],
-                    :email => contact['Email'],
-                    :created_on => nil,
-                    :updated_on => contact['Changed']
-                )
+                @ast[contact_name] = {
+                  "id" => nil,
+                  "name" => contact['Name'],
+                  "organization" => contact['Organisation'],
+                  "address" => contact['Address'],
+                  "city" => contact['City'],
+                  "zip" => contact['Pcode'],
+                  "state" => nil,
+                  "country" => nil,
+                  "country_code" => contact['Country'],
+                  "phone" => contact['Phone'],
+                  "fax" => contact['Fax'],
+                  "email" => contact['Email'],
+                  "created_on" => nil,
+                  "updated_on" => contact['Changed']
+                }
                 true
               else
                 false

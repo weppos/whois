@@ -87,26 +87,27 @@ module Whois
           return unless registered?
           return @registrant_contact if @registrant_contact
 
-          address, city, zip, country_code = decompose_address(node('address'))
+          address, city, zip, country_code = decompose_address(node("address"))
 
-          @registrant_contact = Answer::Contact.new(
-            :name         => node('name'),
-            :organization => node('org'),
+          @registrant_contact = Whois::Answer::Contact.new(
+            :type         => Whois::Answer::Contact::TYPE_REGISTRANT,
+            :name         => node("name"),
+            :organization => node("org"),
             :address      => address,
             :city         => city,
             :zip          => zip,
             :country_code => country_code,
-            :phone        => node('phone'),
-            :fax          => node('fax-no')
+            :phone        => node("phone"),
+            :fax          => node("fax-no")
           )
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= contact('admin-c')
+          @admin_contact ||= contact("admin-c", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contact do
-          @tecnical_contact ||= contact('tech-c')
+          @tecnical_contact ||= contact("tech-c", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
         # @deprecated
@@ -118,16 +119,16 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= node('nameserver') || []
+          @nameservers ||= node("nameserver") || []
         end
 
 
         def registrar_contact
-          contact('registrar')
+          contact("registrar", nil)
         end
 
         def zone_contact
-          contact('zone-c')
+          contact("zone-c", nil)
         end
 
 
@@ -137,9 +138,10 @@ module Whois
             Scanner.new(content_for_scanner).parse
           end
 
-          def contact(element)
+          def contact(element, type)
             node(node(element)) do |raw|
-              Answer::Contact.new do |c|
+              Whois::Answer::Contact.new do |c|
+                c.type = type
                 raw.each { |k,v| c[k.to_sym] = v }
               end
             end

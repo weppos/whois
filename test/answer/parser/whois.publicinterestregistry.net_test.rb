@@ -174,6 +174,7 @@ time. By submitting this query, you agree to abide by this policy.
 
     assert_instance_of Whois::Answer::Contact,      result
     assert_equal "mmr-32097",                       result.id
+    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, result.type
     assert_equal "DNS Admin",                       result.name
     assert_equal "Google Inc.",                     result.organization
     assert_equal "1600 Amphitheatre Parkway",       result.address
@@ -210,6 +211,7 @@ time. By submitting this query, you agree to abide by this policy.
 
     assert_instance_of Whois::Answer::Contact,      result
     assert_equal "mmr-32097",                       result.id
+    assert_equal Whois::Answer::Contact::TYPE_ADMIN, result.type
     assert_equal "DNS Admin",                       result.name
     assert_equal "Google Inc.",                     result.organization
     assert_equal "1600 Amphitheatre Parkway",       result.address
@@ -246,6 +248,7 @@ time. By submitting this query, you agree to abide by this policy.
 
     assert_instance_of Whois::Answer::Contact,      result
     assert_equal "mmr-32097",                       result.id
+    assert_equal Whois::Answer::Contact::TYPE_TECHNICAL, result.type
     assert_equal "DNS Admin",                       result.name
     assert_equal "Google Inc.",                     result.organization
     assert_equal "1600 Amphitheatre Parkway",       result.address

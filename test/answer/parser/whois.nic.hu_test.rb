@@ -138,6 +138,7 @@ EOS
     result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,  result
+    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, result.type
     assert_equal 'Google, Inc.',                result.name
     assert_equal 'Google, Inc.',                result.organization
     assert_equal 'Amphitheatre Pkwy 1600.',     result.address
@@ -153,6 +154,7 @@ EOS
     result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,  result
+    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, result.type
     assert_match /Buruzs/,                      result.name             # UTF-8 hack
     assert_equal nil,                           result.organization
     assert_equal nil,                           result.address
@@ -174,16 +176,17 @@ EOS
   end
 
   def test_admin_contact_with_registered
-    admin = @klass.new(load_part('/registered.txt')).admin_contact
-    assert_instance_of Whois::Answer::Contact, admin
-    assert_equal '2000466366', admin.id
-    assert_equal '3C Kft. (Registrar)', admin.name
-    assert_equal 'Konkoly Thege út 29-33.', admin.address
-    assert_equal 'H-1121', admin.zip
-    assert_equal 'Budapest', admin.city
-    assert_equal 'HU', admin.country_code
-    assert_equal '+36 1 275 52 00', admin.phone
-    assert_equal '+36 1 275 58 87', admin.fax
+    result = @klass.new(load_part('/registered.txt')).admin_contact
+    assert_instance_of Whois::Answer::Contact,    result
+    assert_equal Whois::Answer::Contact::TYPE_ADMIN, result.type
+    assert_equal '2000466366',                    result.id
+    assert_equal '3C Kft. (Registrar)',           result.name
+    assert_equal 'Konkoly Thege út 29-33.',       result.address
+    assert_equal 'H-1121',                        result.zip
+    assert_equal 'Budapest',                      result.city
+    assert_equal 'HU',                            result.country_code
+    assert_equal '+36 1 275 52 00',               result.phone
+    assert_equal '+36 1 275 58 87',               result.fax
   end
 
   def test_admin_contact_with_unregistered
@@ -199,17 +202,18 @@ EOS
   end
 
   def test_technical_contact_with_registered
-    technical = @klass.new(load_part('/registered.txt')).technical_contact
-    assert_instance_of Whois::Answer::Contact, technical
-    assert_equal '2000578125', technical.id
-    assert_equal 'Markmonitor', technical.name
-    assert_equal 'Overland Road 10400, PMB155', technical.address
-    assert_equal 'ID-83709', technical.zip
-    assert_equal 'Boise', technical.city
-    assert_equal 'US', technical.country_code
-    assert_equal '+ 1 208 389 5798', technical.phone
-    assert_equal '+ 1 208 389 5771', technical.fax
-    assert_equal 'ccops@markmonitor.com', technical.email
+    result = @klass.new(load_part('/registered.txt')).technical_contact
+    assert_instance_of Whois::Answer::Contact,    result
+    assert_equal Whois::Answer::Contact::TYPE_TECHNICAL, result.type
+    assert_equal '2000578125',                    result.id
+    assert_equal 'Markmonitor',                   result.name
+    assert_equal 'Overland Road 10400, PMB155',   result.address
+    assert_equal 'ID-83709',                      result.zip
+    assert_equal 'Boise',                         result.city
+    assert_equal 'US',                            result.country_code
+    assert_equal '+ 1 208 389 5798',              result.phone
+    assert_equal '+ 1 208 389 5771',              result.fax
+    assert_equal 'ccops@markmonitor.com',         result.email
   end
 
   def test_technical_contact_with_unregistered

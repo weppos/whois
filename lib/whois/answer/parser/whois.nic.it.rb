@@ -95,19 +95,19 @@ module Whois
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the registrant details extracted from the registry answer.
         property_supported :registrant_contact do
-          @registrant_contact ||= contact("Registrant")
+          @registrant_contact ||= contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the admin contact details extracted from the registry answer.
         property_supported :admin_contact do
-          @admin_contact ||= contact("Admin Contact")
+          @admin_contact ||= contact("Admin Contact", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         # If available, returns a <tt>Whois::Answer::Contact</tt> record
         # containing the technical contact details extracted from the registry answer.
         property_supported :technical_contact do
-          @technical_contact ||= contact("Technical Contacts")
+          @technical_contact ||= contact("Technical Contacts", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
         # @deprecated
@@ -166,11 +166,12 @@ module Whois
             Scanner.new(content_for_scanner).parse
           end
 
-          def contact(element)
+          def contact(element, type)
             node(element) do |raw|
               address = (raw["Address"] || "").split("\n")
               Answer::Contact.new(
                 :id           => raw["ContactID"],
+                :type         => type,
                 :name         => raw["Name"],
                 :organization => raw["Organization"],
                 :address      => address[0],

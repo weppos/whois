@@ -185,6 +185,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
     assert_instance_of Whois::Answer::Contact, result
     assert_equal nil,                     result.id
+    assert_equal Whois::Answer::Contact::TYPE_TECHNICAL, result.type
     assert_equal 'Google Inc.',           result.name
     assert_equal nil,                     result.organization
     assert_equal ['Google Inc.', '1600 Amphitheatre Parkway'], result.address

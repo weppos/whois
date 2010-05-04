@@ -76,7 +76,7 @@ module Whois
             else
               [nil, registrar]
             end
-            Answer::Registrar.new(
+            Whois::Answer::Registrar.new(
               :id           => id,
               :name         => name
             )
@@ -84,15 +84,15 @@ module Whois
         end
 
         property_supported :registrant_contact do
-          @registrant_contact ||= contact("Registrant")
+          @registrant_contact ||= contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= contact("Admin")
+          @admin_contact ||= contact("Admin", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contact do
-          @technical_contact ||= contact("Tech")
+          @technical_contact ||= contact("Tech", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
         # @deprecated
@@ -125,10 +125,11 @@ module Whois
             Scanner.new(content_for_scanner).parse
           end
 
-          def contact(element)
+          def contact(element, type)
             node("#{element} ID") do |registrant_id|
-              Answer::Contact.new(
+              Whois::Answer::Contact.new(
                 :id           => registrant_id,
+                :type         => type,
                 :name         => node("#{element} Name"),
                 :organization => node("#{element} Organization"),
                 :address      => [node("#{element} Street1"),

@@ -103,7 +103,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_registrar
+  def test_registrar_with_registered
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = parser.registrar
     assert_equal  expected, parser.registrar
@@ -154,6 +154,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
     assert_instance_of Whois::Answer::Contact,      result
     assert_equal "HTML1-ITNIC",                     result.id
+    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, result.type
     assert_equal "HTML.it srl",                     result.name
     assert_equal "HTML.it srl",                     result.organization
     assert_equal "Viale Alessandrino, 595",         result.address
@@ -188,6 +189,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
     assert_instance_of Whois::Answer::Contact,      result
     assert_equal "TT4277-ITNIC",                    result.id
+    assert_equal Whois::Answer::Contact::TYPE_ADMIN, result.type
     assert_equal "Tsao Tu",                         result.name
     assert_equal "Tu Tsao",                         result.organization
     assert_equal "30 Herbert Street",               result.address
@@ -222,6 +224,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
     assert_instance_of Whois::Answer::Contact,  result
     assert_equal "TS7016-ITNIC",                result.id
+    assert_equal Whois::Answer::Contact::TYPE_TECHNICAL, result.type
     assert_equal "Technical Services",          result.name
     assert_equal nil,                           result.organization
     assert_equal nil,                           result.address
