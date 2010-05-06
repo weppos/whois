@@ -56,8 +56,8 @@ module Whois
     def ==(other)
       (other.equal?(self)) ||
       # This option should be deprecated
-      (other.instance_of?(String) && other == self.to_s) ||
-      (other.instance_of?(Answer) && other.to_s == self.to_s)
+      (other.is_a?(String) && other == self.to_s) ||
+      (other.is_a?(Answer) && other.to_s == self.to_s)
     end
 
     # Delegates to ==.

@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* CHANGED: Whois::Answer#== and Whois::Answer#eql? should be able to compare Whois::Answer with subclasses.
+
+
 == Release 1.1.2
 
 * NEW: Whois::Answer::Contact#type property returns the type of the contact (ADMIN, TECHNICAL, ...).
