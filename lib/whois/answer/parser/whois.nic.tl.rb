@@ -35,7 +35,7 @@ module Whois
       class WhoisNicTl < Base
 
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
