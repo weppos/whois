@@ -3,6 +3,8 @@
 
 == master
 
+* NEW: Added simple .tk TLD parser (whois.dot.tk).
+
 * CHANGED: Whois::Answer#== and Whois::Answer#eql? should be able to compare Whois::Answer with subclasses.
 
 
