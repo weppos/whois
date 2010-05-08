@@ -26,13 +26,26 @@ module Whois
       #
       # Parser for the whois.nic.sn server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisNicSn < Base
+
+        property_not_supported :disclaimer
+
+        property_supported :domain do
+          @domain ||= if registered? and content_for_scanner =~ /Domain:\s+(.*)\n/
+            $1
+          elsif available? and content_for_scanner =~ /Domain (.+?) not found/
+            $1
+          end
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
 
         property_supported :status do
           @status ||= if available?
@@ -47,7 +60,7 @@ module Whois
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -62,9 +75,52 @@ module Whois
         property_not_supported :expires_on
 
 
+        property_supported :registrar do
+          @registrar ||= if content_for_scanner =~ /Registrar:\s+(.*)\n/
+            Whois::Answer::Registrar.new(:id => $1, :name => $1)
+          end
+        end
+
+
+        property_supported :registrant_contact do
+          @registrant_contact ||= if content_for_scanner =~ /Owner's handle:\s+(.*)\n/
+            contact($1)
+          end
+        end
+
+        property_supported :admin_contact do
+          @admin_contact ||= if content_for_scanner =~ /Administrative Contact's handle:\s+(.*)\n/
+            contact($1)
+          end
+        end
+
+        property_supported :technical_contact do
+          @technical_contact ||= if content_for_scanner =~ /Technical Contact's handle:\s+(.*)\n/
+            contact($1)
+          end
+        end
+
+
         property_supported :nameservers do
           @nameservers ||= content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten
         end
+
+
+        property_supported :changed? do |other|
+          !unchanged?(other)
+        end
+
+        property_supported :unchanged? do |other|
+          (self.equal? other) ||
+          (self.content == other.content)
+        end
+
+
+        private
+
+          def contact(string)
+            Whois::Answer::Contact.new(:id => string, :name => string)
+          end
 
       end
 
