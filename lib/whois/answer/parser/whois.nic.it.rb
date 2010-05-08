@@ -41,16 +41,21 @@ module Whois
         property_not_supported :domain_id
 
 
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
         property_supported :status do
           @status ||= node("Status") { |raw| raw.downcase.to_sym }
         end
 
         property_supported :available? do
-          node("Status") == "AVAILABLE"
+          @available ||= node("Status") == "AVAILABLE"
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

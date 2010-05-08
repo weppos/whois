@@ -40,6 +40,17 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_url }
+  end
+
+
   def test_status
     parser    = @klass.new(load_part('/property_status_active.txt'))
     expected  = :active
@@ -53,13 +64,27 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_available?
-    assert !@klass.new(load_part('/registered.txt')).available?
-    assert  @klass.new(load_part('/available.txt')).available?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/registered.txt')).registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -250,74 +275,24 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_changed_question_check_self
-    parser = @klass.new(load_part('/registered.txt'))
-    assert !parser.changed?(parser)
+  def test_changed_with_self
+    parser1  = @klass.new(load_part('/registered.txt'))
+    assert !parser1.changed?(parser1)
+    assert  parser1.unchanged?(parser1)
   end
 
-  def test_changed_question_check_internals
-    parser = @klass.new(load_part('/registered.txt'))
-    assert parser.changed?(@klass.new(load_part('/available.txt')))
+  def test_changed_with_equal_content
+    parser1  = @klass.new(load_part('/registered.txt'))
+    parser2  = @klass.new(load_part('/registered.txt'))
+    assert !parser1.changed?(parser2)
+    assert  parser1.unchanged?(parser2)
   end
 
-  def test_changed_question_check_self_with_available
-    parser = @klass.new(part(<<-RESPONSE, @host))
-Domain:             google.it
-Status:             AVAILABLE
-    RESPONSE
-
-    assert !parser.changed?(parser)
-  end
-
-  def test_changed_question_check_internals_with_available
-    parser = @klass.new(part(<<-RESPONSE, @host))
-Domain:             google.it
-Status:             AVAILABLE
-    RESPONSE
-
-    assert  parser.changed?(@klass.new(part(<<-RESPONSE, @host)))
-Domain:             weppos.it
-Status:             AVAILABLE
-    RESPONSE
-    assert !parser.changed?(@klass.new(part(<<-RESPONSE, @host)))
-Domain:             google.it
-Status:             AVAILABLE
-    RESPONSE
-  end
-
-  def test_unchanged_question_check_self
-    parser = @klass.new(load_part('/registered.txt'))
-    assert parser.unchanged?(parser)
-  end
-
-  def test_unchanged_question_check_internals
-    parser = @klass.new(load_part('/registered.txt'))
-    assert parser.unchanged?(@klass.new(load_part('/registered.txt')))
-  end
-
-  def test_unchanged_question_check_self_with_available
-    parser = @klass.new(part(<<-RESPONSE, @host))
-Domain:             google.it
-Status:             AVAILABLE
-    RESPONSE
-
-    assert  parser.unchanged?(parser)
-  end
-
-  def test_unchanged_question_check_internals_with_available
-    parser = @klass.new(part(<<-RESPONSE, @host))
-Domain:             google.it
-Status:             AVAILABLE
-    RESPONSE
-
-    assert  parser.unchanged?(@klass.new(part(<<-RESPONSE, @host)))
-Domain:             google.it
-Status:             AVAILABLE
-    RESPONSE
-    assert !parser.unchanged?(@klass.new(part(<<-RESPONSE, @host)))
-Domain:             weppos.it
-Status:             AVAILABLE
-    RESPONSE
+  def test_changed_with_different_content
+    parser1  = @klass.new(load_part('/registered.txt'))
+    parser2  = @klass.new(load_part('/available.txt'))
+    assert  parser1.changed?(parser2)
+    assert !parser1.unchanged?(parser2)
   end
 
 end
