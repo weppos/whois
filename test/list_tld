@@ -252,7 +252,7 @@ sj;;;
 #Whois::Server.define :tld, ".sk", "whois.sk-nic.sk"
 #Whois::Server.define :tld, ".sl", "whois.nic.sl"
 sm;whois.ripe.net;google.sm;u34jedzcq.sm
-#Whois::Server.define :tld, ".sn", "whois.nic.sn"
+sn;whois.nic.sn;google.sn;u34jedzcq.sn
 so;;;
 sr;;;
 st;whois.nic.st;google.st;u34jedzcq.st

@@ -5,6 +5,8 @@
 
 * NEW: Added simple .tk TLD parser (whois.dot.tk).
 
+* NEW: Added simple .sn TLD parser (whois.nic.sn).
+
 * CHANGED: Whois::Answer#== and Whois::Answer#eql? should be able to compare Whois::Answer with subclasses.
 
 
