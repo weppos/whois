@@ -124,6 +124,7 @@ class AnswerTest < Test::Unit::TestCase
     assert !answer.property_supported?(:expires_on)
   end
 
+  # DEPRECATED
   def test_properties
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
     properties = answer.properties

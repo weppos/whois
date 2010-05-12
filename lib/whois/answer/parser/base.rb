@@ -216,7 +216,7 @@ module Whois
         end
 
 
-        ::Whois::Answer::Parser.properties.each do |property|
+        Whois::Answer::Parser::PROPERTIES.each do |property|
           property_not_implemented(property)
         end
 

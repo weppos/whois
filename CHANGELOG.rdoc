@@ -9,6 +9,8 @@
 
 * CHANGED: Whois::Answer#== and Whois::Answer#eql? should be able to compare Whois::Answer with subclasses.
 
+* CHANGED: Deprecate Whois::Answer::Parser.properties. Use Whois::Answer::Parser::PROPERTIES instead.
+
 
 == Release 1.1.2
 

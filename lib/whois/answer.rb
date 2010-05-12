@@ -118,7 +118,7 @@ module Whois
     # along with corresponding values.
     def properties
       hash = {}
-      Parser.properties.each { |property| hash[property] = send(property) }
+      Parser::PROPERTIES.each { |property| hash[property] = send(property) }
       hash
     end
 
@@ -134,7 +134,7 @@ module Whois
 
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
-        if (Parser.properties + Parser::METHODS).include?(method)
+        if (Parser::PROPERTIES + Parser::METHODS).include?(method)
           self.class.class_eval foo = %{
             def #{method}(*args, &block)
               if property_supported?(:#{method})

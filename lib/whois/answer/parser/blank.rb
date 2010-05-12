@@ -32,7 +32,7 @@ module Whois
       #
       class Blank < Base
 
-        ::Whois::Answer::Parser.properties.each do |method|
+        Whois::Answer::Parser::PROPERTIES.each do |method|
           define_method(method) do
             raise ParserNotFound, "Unable to find a parser for the server `#{part.host}'"
           end

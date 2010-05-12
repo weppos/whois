@@ -28,7 +28,7 @@ module Whois
         :registrant, :admin, :technical,
       ]
 
-      @@properties = [
+      PROPERTIES = [
         :disclaimer,
         :domain, :domain_id,
         :referral_whois, :referral_url,
@@ -38,13 +38,6 @@ module Whois
         :registrant_contact, :admin_contact, :technical_contact,
         :nameservers,
       ]
-
-      # Returns an array containing the name of all properties
-      # that can be registered and should be implemented by
-      # server-specific parsers.
-      def self.properties
-        @@properties
-      end
 
       attr_reader :answer
 
@@ -77,9 +70,9 @@ module Whois
       private
 
         def method_missing(method, *args, &block)
-          if Parser.properties.include?(method)
+          if PROPERTIES.include?(method)
             delegate_to_parsers(method, *args, &block)
-          elsif Parser::METHODS.include?(method)
+          elsif METHODS.include?(method)
             delegate_to_parsers(method, *args, &block)
           else
             super
@@ -239,6 +232,12 @@ module Whois
       def self.autoload(name)
         file = "whois/answer/parser/#{name}"
         require file
+      end
+
+
+      def self.properties # :nodoc
+        Whois.deprecate("Whois::Answer::Parser.properties is deprecated. Use the Whois::Answer::Parser::PROPERTIES constant.")
+        PROPERTIES
       end
 
     end
