@@ -122,7 +122,7 @@ module Whois
           answer.parts.reverse.map { |part| self.class.parser_for(part) }
         end
 
-        # Selects the first parser in <tt>#parsers</tt>
+        # Protected: Selects the first parser in <tt>#parsers</tt>
         # where <tt>given</tt> matches <tt>status</tt>.
         #
         # property - The Symbol property to search for
@@ -148,7 +148,7 @@ module Whois
         end
 
 
-      # Protected: Returns the proper parser instance for given <tt>part</tt>.
+      # Public: Returns the proper parser instance for given <tt>part</tt>.
       # The parser class is selected according to the
       # value of the <tt>#host</tt> attribute for given <tt>part</tt>.
       #
@@ -170,7 +170,7 @@ module Whois
         parser_klass(part.host).new(part)
       end
 
-      # Protected: Detects the proper parser class according to given <tt>host</tt>
+      # Public: Detects the proper parser class according to given <tt>host</tt>
       # and returns the class constant.
       #
       # This method autoloads missing parser classes. If you want to define
@@ -206,7 +206,7 @@ module Whois
         Parser::Blank
       end
 
-      # Protected: Converts <tt>host</tt> to the corresponding parser class name.
+      # Public: Converts <tt>host</tt> to the corresponding parser class name.
       #
       # host - A String with the host
       #
@@ -224,7 +224,7 @@ module Whois
           gsub(/(?:^|_)(.)/)  { $1.upcase }
       end
 
-      # Protected: Requires the file at <tt>whois/answer/parser/#{name}</tt>.
+      # Public: Requires the file at <tt>whois/answer/parser/#{name}</tt>.
       #
       # name - A string with the file name
       #
