@@ -146,7 +146,7 @@ module Whois
           }, __FILE__, __LINE__
           send(method, *args, &block)
 
-        elsif method.to_s =~ /([a-z_]+)\?/ and (Parser.properties + Parser::METHODS).include?($1.to_sym)
+        elsif method.to_s =~ /([a-z_]+)\?/ and (Parser::PROPERTIES + Parser::METHODS).include?($1.to_sym)
           self.class.class_eval %{
             def #{$1}?
               !#{$1}.nil?

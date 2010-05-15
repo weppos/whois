@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* FIXED: Usage of deprecated method Whois::Answer::Parser.properties
+
+
 == Release 1.1.3
 
 * NEW: Added simple .tk TLD parser (whois.dot.tk).
