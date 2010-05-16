@@ -7,6 +7,8 @@
 
 * FIXED: Usage of deprecated method Whois::Answer::Parser.properties
 
+* FIXED: Verisign parsers don't return the correct Referral URL when there's more than one response entry in the answer
+
 
 == Release 1.1.3
 

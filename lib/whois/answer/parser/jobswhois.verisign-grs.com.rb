@@ -47,7 +47,9 @@ module Whois
         end
 
         property_supported :referral_url do
-          node("Referral URL")
+          @referral_url ||= node("Referral URL") do |raw|
+            last_useful_item(raw)
+          end
         end
 
 

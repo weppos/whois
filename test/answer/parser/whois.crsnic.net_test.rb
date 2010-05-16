@@ -62,11 +62,25 @@ EOS
                   @klass.new(load_part('/available.txt')).referral_whois
   end
 
-  def test_referral_url
-    assert_equal  "http://www.markmonitor.com",
-                  @klass.new(load_part('/registered.txt')).referral_url
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).referral_url
+  def test_referral_url_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "http://www.markmonitor.com"
+    assert_equal  expected, parser.referral_url
+    assert_equal  expected, parser.instance_eval { @referral_url }
+  end
+
+  def test_referral_url_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.referral_url
+    assert_equal  expected, parser.instance_eval { @referral_url }
+  end
+
+  def test_referral_url_with_multiple_entries
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "http://www.markmonitor.com"
+    assert_equal  expected, parser.referral_url
+    assert_equal  expected, parser.instance_eval { @referral_url }
   end
 
 
