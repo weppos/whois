@@ -238,6 +238,7 @@ test/testcases/referrals/niccc.cc.txt
 test/testcases/referrals/pir.org.txt
 test/testcases/responses/UTF8.txt
 test/testcases/responses/jobswhois.verisign-grs.com/available.txt
+test/testcases/responses/jobswhois.verisign-grs.com/property_registrar.txt
 test/testcases/responses/jobswhois.verisign-grs.com/registered.txt
 test/testcases/responses/super_struct_test.rb
 test/testcases/responses/whois.adamsnames.tc/gd/available.txt
@@ -284,6 +285,7 @@ test/testcases/responses/whois.crsnic.net/MULTIPLE.txt
 test/testcases/responses/whois.crsnic.net/available.txt
 test/testcases/responses/whois.crsnic.net/nameservers_with_no_nameserver.txt
 test/testcases/responses/whois.crsnic.net/registered.txt
+test/testcases/responses/whois.crsnic.net/registered_with_multiple_entries.txt
 test/testcases/responses/whois.denic.de/1-10-0_available.txt
 test/testcases/responses/whois.denic.de/1-10-0_registered.txt
 test/testcases/responses/whois.denic.de/available.txt

@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.1.4
 
 * NEW: Added registrar support to Verisign parsers
 
