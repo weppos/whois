@@ -65,8 +65,8 @@ module Whois
           def with_buffer(&block)
             @buffer = []
             result = yield(@buffer)
-            # @buffer = []
-            # result
+            @buffer = []
+            result
           end
 
           # Store an answer part in <tt>@buffer</tt>.

@@ -7,6 +7,8 @@
 
 * FIXED: Occasionally the library raises a "superclass mismatch for class DateTime (TypeError)" error.
 
+* CHANGED: Cleanup Whois::Adapter::Base @buffer after a successful request.
+
 
 == Release 1.1.4
 
