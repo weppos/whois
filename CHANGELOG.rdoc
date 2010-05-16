@@ -1,6 +1,10 @@
 = Changelog
 
 
+== master
+
+* FIXED: Occasionally the library raises a "superclass mismatch for class DateTime (TypeError)" error.
+
 == Release 1.1.4
 
 * NEW: Added registrar support to Verisign parsers

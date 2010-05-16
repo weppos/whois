@@ -18,6 +18,9 @@ unless :to_proc.respond_to?(:to_proc)
   end
 end
 
+
+require 'date'
+
 class DateTime
   # Ruby 1.9 has DateTime#to_time which internally relies on Time. We define our own #to_time which allows
   # DateTimes outside the range of what can be created with Time.
