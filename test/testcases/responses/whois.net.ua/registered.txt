@@ -16,7 +16,7 @@ nserver:    ns4.google.com
 nserver:    ns3.google.com
 nserver:    ns1.google.com
 mnt-by:     IMENA-UANIC (ua.imena)
-remark:     Доменное имя зарегистрировано в интересах клиента
+remark:     ц╓ц▐ц█ц┘ц▌ц▌ц▐ц┘ ц┴ц█ц▒ ц ц│ц▓ц┘ц┤ц┴ц⌠ц■ц▓ц┴ц▓ц▐ц≈ц│ц▌ц▐ ц≈ ц┴ц▌ц■ц┘ц▓ц┘ц⌠ц│ц┬ ц▀ц▄ц┴ц┘ц▌ц■ц│
 remark:     The domain name has been registered on behalf of a client
 changed:    IMENA-UANIC 20091201121041
 source:     UANIC
