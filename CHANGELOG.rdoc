@@ -3,7 +3,10 @@
 
 == master
 
+* NEW: Added simple .ua TLD parser (whois.net.ua).
+
 * FIXED: Occasionally the library raises a "superclass mismatch for class DateTime (TypeError)" error.
+
 
 == Release 1.1.4
 
