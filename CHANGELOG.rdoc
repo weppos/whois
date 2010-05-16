@@ -9,6 +9,8 @@
 
 * FIXED: Verisign parsers don't return the correct Referral URL when there's more than one response entry in the answer
 
+* FIXED: Whois::Answer::Parsers::WhoisDotTk is not compatible with Ruby 1.9
+
 
 == Release 1.1.3
 

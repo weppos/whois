@@ -34,7 +34,7 @@ class AnswerParserWhoisDotTkTest < Whois::Answer::Parser::TestCase
 
   def test_created_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2001-12-18")
+    expected  = Time.utc(2001, 12, 18)
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
@@ -51,7 +51,7 @@ class AnswerParserWhoisDotTkTest < Whois::Answer::Parser::TestCase
 
   def test_expires_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2012-03-02")
+    expected  = Time.utc(2012, 03, 02)
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
