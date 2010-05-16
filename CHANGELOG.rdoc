@@ -3,6 +3,8 @@
 
 == master
 
+* NEW: Added registrar support to Verisign parsers
+
 * FIXED: Usage of deprecated method Whois::Answer::Parser.properties
 
 

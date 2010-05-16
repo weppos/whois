@@ -79,9 +79,9 @@ module Whois
 
 
         property_supported :registrar do
-          # Return nil because when the response contains more than one registrar section
-          # the response can be messy. See, for instance, the Verisign response for google.com.
-          nil
+          @registrar ||= node("Registrar") do |raw|
+            Whois::Answer::Registrar.new(:name => last_useful_item(raw), :organization => last_useful_item(raw), :url => referral_url)
+          end
         end
 
 
@@ -99,6 +99,12 @@ module Whois
 
           def parse
             Scanners::VerisignScanner.new(content_for_scanner).parse
+          end
+
+          # In case of "Response SPAM", the responde include more than one item
+          # for the same value and the value becomes an Array.
+          def last_useful_item(values)
+            values.is_a?(Array) ? values.last : values
           end
 
       end

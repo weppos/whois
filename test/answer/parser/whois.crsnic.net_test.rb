@@ -110,12 +110,45 @@ EOS
   end
 
 
-  def test_registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrar
+  def test_registrar_with_registered
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = parser.registrar
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    assert_instance_of Whois::Answer::Registrar, expected
+    assert_equal "MARKMONITOR INC.",             expected.name
   end
+
+  def test_registrar_with_available
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+  end
+
+  def test_registrar
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.registrar
+
+    assert_instance_of Whois::Answer::Registrar,  result
+    assert_equal nil,                             result.id
+    assert_equal "MARKMONITOR INC.",              result.name
+    assert_equal "MARKMONITOR INC.",              result.organization
+    assert_equal "http://www.markmonitor.com",    result.url
+  end
+
+  def test_registrar_with_multiple_entries
+    parser    = @klass.new(load_part('/registered_with_multiple_entries.txt'))
+    result    = parser.registrar
+
+    assert_instance_of Whois::Answer::Registrar,  result
+    assert_equal nil,                             result.id
+    assert_equal "MARKMONITOR INC.",              result.name
+    assert_equal "MARKMONITOR INC.",              result.organization
+    assert_equal "http://www.markmonitor.com",    result.url
+  end
+
 
   def test_nameservers
     parser    = @klass.new(load_part('/registered.txt'))
