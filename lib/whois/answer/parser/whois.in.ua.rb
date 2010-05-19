@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.net.ua parser
+      # = whois.in.ua parser
       #
-      # Parser for the whois.net.ua server.
+      # Parser for the whois.in.ua server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNetUa < Base
+      class WhoisInUa < Base
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /status:\s+(.*)\n/

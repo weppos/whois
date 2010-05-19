@@ -276,6 +276,7 @@ Whois::Server.define :tld, ".tt", nil, {:web=>"http://www.nic.tt/cgi-bin/search.
 Whois::Server.define :tld, ".tv", "whois.nic.tv", {:adapter=>Whois::Server::Adapters::Verisign}
 Whois::Server.define :tld, ".tw", "whois.twnic.net"
 Whois::Server.define :tld, ".tz", nil, {:web=>"http://whois.tznic.or.tz/", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".in.ua", "whois.in.ua"
 Whois::Server.define :tld, ".ua", "whois.net.ua"
 Whois::Server.define :tld, ".ug", "www.registry.co.ug"
 Whois::Server.define :tld, ".ac.uk", "whois.ja.net"

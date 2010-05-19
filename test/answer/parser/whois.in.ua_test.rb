@@ -53,7 +53,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_updated_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.utc(2009, 12, 01, 12, 10, 41)
+    expected  = Time.utc(2010, 02, 14, 22, 22, 14)
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
@@ -65,7 +65,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_expires_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.utc(2010, 12, 04)
+    expected  = Time.utc(2011, 02, 14)
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
@@ -77,20 +77,13 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/registered.txt'))
-    expected  = %w( ns2.google.com ns4.google.com ns3.google.com ns1.google.com )
+    parser    = @klass.new(load_part('/property_nameservers_with_trailing_space.txt'))
+    expected  = %w( ns10.uadns.com ns11.uadns.com ns12.uadns.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
     parser    = @klass.new(load_part('/available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
-  end
-
-  def test_nameservers_uppercase
-    parser    = @klass.new(load_part('/property_nameservers_uppercase.txt'))
-    expected  = %w( ns10.uadns.com ns11.uadns.com ns12.uadns.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
