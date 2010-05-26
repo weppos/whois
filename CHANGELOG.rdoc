@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.1.6
 
 * NEW: Added simple .in.ua TLD parser (whois.in.ua). It seems that .in.ua is handled separately from .ua.
 
