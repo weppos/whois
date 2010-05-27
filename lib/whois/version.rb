@@ -19,7 +19,7 @@ module Whois
   module Version
     MAJOR = 1
     MINOR = 1
-    PATCH = 6
+    PATCH = 7
 
     STRING = [MAJOR, MINOR, PATCH].compact.join('.')
   end
