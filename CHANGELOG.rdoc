@@ -7,6 +7,8 @@
 
 * NEW: Added simple .ht TLD parser (whois.nic.ht).
 
+* NEW: Added simple .tr TLD parser (whois.nic.tr).
+
 
 == Release 1.1.7
 

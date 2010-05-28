@@ -272,7 +272,7 @@ tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl
 tn;;;
 #Whois::Server.define :tld, ".to", "whois.tonic.to"
 tp;;;
-#Whois::Server.define :tld, ".tr", "whois.nic.tr"
+tr;whois.nic.tr;google.com.tr;u34jedzcq.com.tr
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
 #Whois::Server.define :tld, ".tw", "whois.twnic.net"
