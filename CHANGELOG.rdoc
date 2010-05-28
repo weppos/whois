@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* NEW: Added simple .pt TLD parser (whois.dns.pt).
+
+
 == Release 1.1.7
 
 * FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (closes #24)

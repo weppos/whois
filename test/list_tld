@@ -230,7 +230,7 @@ pm;whois.nic.fr;nic.pm;u34jedzcq.pm
 pn;;;
 #Whois::Server.define :tld, ".pr", "whois.nic.pr"
 ps;;;
-#Whois::Server.define :tld, ".pt", "whois.dns.pt"
+pt;whois.dns.pt;google.pt;u34jedzcq.pt
 pw;;;
 py;;;
 qa;;;
