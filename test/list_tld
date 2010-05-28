@@ -145,7 +145,7 @@ hk;whois.hkdnr.net.hk;google.hk;u34jedzcq.hk
 #Whois::Server.define :tld, ".hm", "whois.registry.hm"
 hn;whois.afilias-grs.info;google.hn;u34jedzcq.hn
 hr;;;
-#Whois::Server.define :tld, ".ht", "whois.nic.ht"
+ht;whois.nic.ht;google.ht;u34jedzcq.ht
 hu;whois.nic.hu;google.hu;u34jedzcq.hu
 id;whois.pandi.or.id;google.co.id;u34jedzcq.co.id
 ie;whois.domainregistry.ie;google.ie;u34jedzcq.ie

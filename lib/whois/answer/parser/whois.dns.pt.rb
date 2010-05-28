@@ -36,7 +36,7 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ / Status:\s+(.*)\n/
-            $1.split("-").first
+            $1
           end
         end
 

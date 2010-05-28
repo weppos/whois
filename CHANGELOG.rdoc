@@ -5,6 +5,8 @@
 
 * NEW: Added simple .pt TLD parser (whois.dns.pt).
 
+* NEW: Added simple .ht TLD parser (whois.nic.ht).
+
 
 == Release 1.1.7
 
