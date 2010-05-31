@@ -199,7 +199,7 @@ module Whois
         false
       end
 
-    end
+  end
 
 end
 
