@@ -1,4 +1,4 @@
-Nome de domÌnio / Domain Name: google.pt
+Nome de dom√≠nio / Domain Name: google.pt
 Data de registo / Creation Date (dd/mm/yyyy): 09/01/2003
 Estado / Status: ACTIVE
 
@@ -14,11 +14,11 @@ Entidade Gestora / Billing Contact
    Markmonitor - CCOPS
    Email: ccops@markmonitor.com
 
-Respons·vel Administrativo / Admin Contact
+Respons√°vel Administrativo / Admin Contact
    Markmonitor - CCOPS
    Email: ccops@markmonitor.com
 
-Respons·vel TÈcnico / Tech Contact
+Respons√°vel T√©cnico / Tech Contact
    Markmonitor - CCOPS
    Email: ccops@markmonitor.com
 

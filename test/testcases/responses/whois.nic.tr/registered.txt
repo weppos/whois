@@ -19,22 +19,22 @@ Fax			: Hidden upon user request
 
 ** Technical Contact:
 NIC Handle		: btl1-metu
-Organization Name	: BERİL TEKNOLOJİ LTD. ŞTİ.
-Address			: Ceyhun Atuf Kansu Cad. Bayraktar İş Merkezi
+Organization Name	: BERÃL TEKNOLOJÃ LTD. ÃTÃ.
+Address			: Ceyhun Atuf Kansu Cad. Bayraktar ÃÃ¾ Merkezi
 			  No:114 G-4 Balgat
 			  Ankara,06520
-			  Türkiye
+			  TÃ¼rkiye
 Phone			: + 90-312-4733035-
 Fax			: + 90-312-4733039-
 
 
 ** Billing Contact:
 NIC Handle		: btl1-metu
-Organization Name	: BERİL TEKNOLOJİ LTD. ŞTİ.
-Address			: Ceyhun Atuf Kansu Cad. Bayraktar İş Merkezi
+Organization Name	: BERÃL TEKNOLOJÃ LTD. ÃTÃ.
+Address			: Ceyhun Atuf Kansu Cad. Bayraktar ÃÃ¾ Merkezi
 			  No:114 G-4 Balgat
 			  Ankara,06520
-			  Türkiye
+			  TÃ¼rkiye
 Phone			: + 90-312-4733035-
 Fax			: + 90-312-4733039-
 

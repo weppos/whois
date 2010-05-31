@@ -4,3 +4,5 @@ The following responses has been manually converted into UTF-8.
 
 * whois.nic.or.kr
 * whois.net.ua
+* whois.nic.tr
+* whois.dns.pt
