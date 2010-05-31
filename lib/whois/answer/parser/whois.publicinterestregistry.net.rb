@@ -177,12 +177,11 @@ module Whois
             end
 
             def trim_newline
-              # The last line is \r\n\n
-              @input.scan(/\n+/)
+              @input.skip(/\n+/)
             end
 
             def parse_not_found
-              @input.scan(/^NOT FOUND\n/)
+              @input.skip(/^NOT FOUND\n/)
             end
 
             def parse_throttle
