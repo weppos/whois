@@ -30,7 +30,7 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          @disclaimer ||= node("Disclaimer")
+          @disclaimer ||= node("disclaimer")
         end
 
 
@@ -168,7 +168,7 @@ module Whois
           private
 
             def parse_content
-              trim_newline      ||
+              trim_empty_line   ||
               parse_not_found   ||
               parse_throttle    ||
               parse_disclaimer  ||
@@ -176,8 +176,8 @@ module Whois
               error("Unexpected token")
             end
 
-            def trim_newline
-              @input.skip(/\n+/)
+            def trim_empty_line
+              @input.skip(/^\n/)
             end
 
             def parse_not_found
@@ -197,14 +197,14 @@ module Whois
                 while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
                   lines << @input[1].strip
                 end
-                @ast["Disclaimer"] = lines.join(" ")
+                @ast["disclaimer"] = lines.join(" ")
               else
                 false
               end
             end
 
             def parse_pair
-              if @input.scan(/(.*?):(.*?)\n/)
+              if @input.scan(/(.+?):(.*?)\n/)
                 key, value = @input[1].strip, @input[2].strip
                 if @ast[key].nil?
                   @ast[key] = value
