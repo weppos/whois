@@ -9,6 +9,12 @@ class AnswerParserWhoisPublicinterestregistryNetTest < Whois::Answer::Parser::Te
   end
 
 
+  def test_throttle
+    parser = @klass.new(load_part('/throttle.txt'))
+    assert parser.throttle?
+  end
+
+
   def test_disclaimer
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = <<-EOS.strip

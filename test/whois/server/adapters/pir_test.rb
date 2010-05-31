@@ -21,7 +21,7 @@ class ServerAdaptersPirTest < Test::Unit::TestCase
   end
 
   def test_query_with_referral
-    referral = File.read(File.dirname(__FILE__) + "/../../testcases/referrals/pir.org.txt")
+    referral = File.read(File.dirname(__FILE__) + "/../../../testcases/referrals/pir.org.txt")
     response = "Match for DOMAIN.FOO."
     expected = referral + "\n" + response
     @server.expects(:ask_the_socket).with("FULL domain.foo", "whois.publicinterestregistry.net", 43).returns(referral)
