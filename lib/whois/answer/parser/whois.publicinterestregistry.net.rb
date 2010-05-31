@@ -118,6 +118,10 @@ module Whois
           self.content.to_s == other.content.to_s
         end
 
+        def throttle?
+          !!node("status-throttle")
+        end
+
 
         protected
 
@@ -160,12 +164,13 @@ module Whois
             end
             @ast
           end
-          
+
           private
 
             def parse_content
               trim_newline      ||
               parse_not_found   ||
+              parse_throttle    ||
               parse_disclaimer  ||
               parse_pair        ||
               error("Unexpected token")
@@ -177,11 +182,18 @@ module Whois
             end
 
             def parse_not_found
-              @input.scan(/NOT FOUND\n/)
+              @input.scan(/^NOT FOUND\n/)
+            end
+
+            def parse_throttle
+              if @input.match?(/^WHOIS LIMIT EXCEEDED/)
+                @ast["status-throttle"] = true
+                @input.skip(/^.+\n/)
+              end
             end
 
             def parse_disclaimer
-              if @input.match?(/NOTICE:/)
+              if @input.match?(/^NOTICE:/)
                 lines = []
                 while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
                   lines << @input[1].strip
@@ -210,7 +222,7 @@ module Whois
               if @input.eos?
                 raise "Unexpected end of input."
               else
-                raise "#{message}: #{@input.peek(@input.string.length)}"
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
               end
             end
 

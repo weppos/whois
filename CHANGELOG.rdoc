@@ -6,6 +6,8 @@
 
 * FIXED: Unexpected token error when trying to parse a .hu whois response. The whois.nic.hu has changed response format.
 
+* FIXED: RuntimeError "Unexpected token: WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS" for whois.publicinternetregistry.com
+
 * CHANGED: Lazy-load adapters using Ruby autoload feature.
 
 
