@@ -4,6 +4,8 @@
 
 * FIXED: With some .tr domains, whois.nic.tr parser returns inconsistent values for nameservers.
 
+* FIXED: Unexpected token error when trying to parse a .hu whois response. The whois.nic.hu has changed response format.
+
 
 == Release 1.1.8
 

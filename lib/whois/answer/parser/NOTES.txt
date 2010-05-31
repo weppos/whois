@@ -16,6 +16,7 @@ whois.cat (.cat)
 == Property Proposals
 
 * changed_by
+* version
 
 
 == Feature Proposals
