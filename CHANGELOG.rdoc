@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* FIXED: With some .tr domains, whois.nic.tr parser returns inconsistent values for nameservers.
+
 
 == Release 1.1.8
 

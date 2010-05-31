@@ -70,7 +70,7 @@ module Whois
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ / Domain Servers:\n((.+\n)+)\n/
-            $1.split("\n")
+            $1.split("\n").map(&:strip)
           else
             []
           end

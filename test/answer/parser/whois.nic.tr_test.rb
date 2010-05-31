@@ -88,4 +88,11 @@ class AnswerParserWhoisNicTrTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers_with_trailing_space
+    parser    = @klass.new(load_part('/property_nameservers_with_trailing_space.txt'))
+    expected  = %w( ns1.phpsunucu.com ns2.phpsunucu.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
