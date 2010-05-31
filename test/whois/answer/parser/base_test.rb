@@ -63,6 +63,11 @@ class AnswerParserBaseTest < Test::Unit::TestCase
   end
 
 
+  def test_throttle_question
+    assert !@klass.new(@part).throttle?
+  end
+
+
   def test_self_property_registry
     assert_instance_of Hash, @klass.property_registry
   end

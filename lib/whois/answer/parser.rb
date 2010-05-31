@@ -23,7 +23,7 @@ module Whois
     class Parser
 
       METHODS = [
-        :contacts,
+        :contacts, :throttle?,
         # deprecated methods
         :registrant, :admin, :technical,
       ]

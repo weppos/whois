@@ -221,13 +221,25 @@ module Whois
         end
 
 
-        # Returns an array of all supported contacts.
+        # Gets all supported contacts merged into a single Array.
+        #
+        # Returns an Array of Whois::Aswer::Contact.
         def contacts
           contacts = []
           contacts.concat(registrant_contact.is_a?(Array) ? registrant_contact : [registrant_contact]) if property_supported?(:registrant_contact)
           contacts.concat(admin_contact.is_a?(Array) ? admin_contact : [admin_contact]) if property_supported?(:admin_contact)
           contacts.concat(technical_contact.is_a?(Array) ? technical_contact : [technical_contact]) if property_supported?(:technical_contact)
           contacts.compact
+        end
+
+        # Checks whether this is a throttle response.
+        # The default implementation always returns false.
+        #
+        # This method is intended to be overrridden by child classes.
+        #
+        # Returns false by default.
+        def throttle?
+          false
         end
 
 

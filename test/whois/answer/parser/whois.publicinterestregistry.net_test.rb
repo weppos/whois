@@ -9,12 +9,6 @@ class AnswerParserWhoisPublicinterestregistryNetTest < Whois::Answer::Parser::Te
   end
 
 
-  def test_throttle
-    parser = @klass.new(load_part('/throttle.txt'))
-    assert parser.throttle?
-  end
-
-
   def test_disclaimer
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = <<-EOS.strip
@@ -279,6 +273,12 @@ time. By submitting this query, you agree to abide by this policy.
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+
+  def test_throttle_question
+    parser = @klass.new(load_part('/throttle.txt'))
+    assert parser.throttle?
   end
 
 end

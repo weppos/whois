@@ -134,8 +134,8 @@ module Whois
 
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
-        if (Parser::PROPERTIES + Parser::METHODS).include?(method)
-          self.class.class_eval foo = %{
+        if Parser::PROPERTIES.include?(method)
+          self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
             def #{method}(*args, &block)
               if property_supported?(:#{method})
                 parser.#{method}(*args, &block)
@@ -143,15 +143,25 @@ module Whois
                 nil
               end
             end
-          }, __FILE__, __LINE__
+          RUBY
+          send(method, *args, &block)
+
+        elsif Parser::METHODS.include?(method)
+          self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
+            def #{method}(*args, &block)
+              if parser.respond_to?(:#{method})
+                parser.#{method}(*args, &block)
+              end
+            end
+          RUBY
           send(method, *args, &block)
 
         elsif method.to_s =~ /([a-z_]+)\?/ and (Parser::PROPERTIES + Parser::METHODS).include?($1.to_sym)
-          self.class.class_eval %{
+          self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
             def #{$1}?
               !#{$1}.nil?
             end
-          }, __FILE__, __LINE__
+          RUBY
           send($1)
 
         else
