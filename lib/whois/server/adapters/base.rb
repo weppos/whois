@@ -87,7 +87,7 @@ module Whois
           ensure                            # and I really want to use read instead of gets.
             client.close if client          # If != client something went wrong.
           end
-        
+
       end
 
     end

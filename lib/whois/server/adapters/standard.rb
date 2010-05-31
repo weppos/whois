@@ -29,12 +29,12 @@ module Whois
       # This adapter also supports an optional port number.
       #
       class Standard < Base
-        
+
         def request(qstring)
           response = query_the_socket(qstring, host)
           append_to_buffer response, host
         end
-        
+
       end
 
     end

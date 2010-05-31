@@ -17,13 +17,15 @@
 module Whois
   class Server
     module Adapters
-      
+
       class NotImplemented < Base
-        
+
+        # Returns nothing.
+        # Raises Whois::ServerNotImplemented for every request.
         def request(qstring)
           raise ServerNotImplemented, "The `#{host}' feature has not been implemented yet."
         end
-        
+
       end
 
     end

@@ -33,16 +33,15 @@ module Whois
       # adapter raises a <tt>Whois::NoInterfaceError</tt> exception.
       #
       class None < Base
-        
+
         # Always raises a <tt>Whois::NoInterfaceError</tt> exception.
         #
-        # ==== Raises
-        # NoInterfaceError:: for every request
-        #
+        # Returns nothing.
+        # Raises Whois::NoInterfaceError for every request.
         def request(qstring)
           raise NoInterfaceError, "This `#{type}' has no whois server"
         end
-        
+
       end
 
     end

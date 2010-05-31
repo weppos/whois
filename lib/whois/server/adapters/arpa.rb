@@ -17,15 +17,15 @@
 module Whois
   class Server
     module Adapters
-      
+
       class Arpa < Base
-        
+
         def request(qstring)
           Server.guess(inaddr_to_ip(qstring)).query(qstring)
         end
-        
+
         protected
-        
+
           # "127.1.168.192.in-addr.arpa" => "192.168.1.127"
           # "1.168.192.in-addr.arpa" => "192.168.1.0"
           # "168.192.in-addr.arpa" => "192.168.0.0"
@@ -45,7 +45,7 @@ module Whois
               end
             end.join(".")
           end
-        
+
       end
 
     end

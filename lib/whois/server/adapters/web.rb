@@ -17,7 +17,7 @@
 module Whois
   class Server
     module Adapters
-      
+
       #
       # = Web Adapter
       #
@@ -28,17 +28,16 @@ module Whois
       # adapter a little more specific.
       #
       class Web < Base
-        
+
         # Always raises a <tt>Whois::WebInterfaceError</tt> exception
         # including the web address for the WHOIS inteface.
         #
-        # ==== Raises
-        # WebInterfaceError:: for every request
-        #
+        # Returns nothing.
+        # Raises Whois::WebInterfaceError for every request.
         def request(qstring)
           raise WebInterfaceError, options[:web]
         end
-        
+
       end
 
     end

@@ -17,9 +17,9 @@
 module Whois
   class Server
     module Adapters
-      
+
       class Verisign < Base
-        
+
         def request(qstring)
           response = ask_the_socket("=#{qstring}", host, DEFAULT_WHOIS_PORT)
           append_to_buffer response, host

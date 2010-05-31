@@ -15,22 +15,26 @@
 
 
 require 'ipaddr'
-require 'whois/server/adapters/base'
-require 'whois/server/adapters/arpa'
-require 'whois/server/adapters/afilias'
-require 'whois/server/adapters/formatted'
-require 'whois/server/adapters/none'
-require 'whois/server/adapters/not_implemented'
-require 'whois/server/adapters/pir'
-require 'whois/server/adapters/standard'
-require 'whois/server/adapters/verisign'
-require 'whois/server/adapters/web'
 
 
 module Whois
-  
+
   class Server
-    
+
+    module Adapters
+      autoload :Base,             "whois/server/adapters/base"
+      autoload :Arpa,             "whois/server/adapters/arpa"
+      autoload :Afilias,          "whois/server/adapters/afilias"
+      autoload :Formatted,        "whois/server/adapters/formatted"
+      autoload :None,             "whois/server/adapters/none"
+      autoload :NotImplemented,   "whois/server/adapters/not_implemented"
+      autoload :Pir,              "whois/server/adapters/pir"
+      autoload :Standard,         "whois/server/adapters/standard"
+      autoload :Verisign,         "whois/server/adapters/verisign"
+      autoload :Web,              "whois/server/adapters/web"
+    end
+
+
     @@definitions = {}
 
     # Searches the /definitions folder for definition files and loads them.
@@ -141,7 +145,7 @@ module Whois
       # Gave Over
       raise ServerNotFound, "Unable to find a whois server for `#{qstring}'"
     end
-    
+
 
     private
 

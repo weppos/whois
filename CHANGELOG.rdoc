@@ -6,6 +6,8 @@
 
 * FIXED: Unexpected token error when trying to parse a .hu whois response. The whois.nic.hu has changed response format.
 
+* CHANGED: Lazy-load adapters using Ruby autoload feature.
+
 
 == Release 1.1.8
 
