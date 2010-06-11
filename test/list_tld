@@ -110,7 +110,7 @@ dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
 do;;;
 dz;;;
 #Whois::Server.define :tld, ".ec", "whois.nic.ec"
-#Whois::Server.define :tld, ".ee", "whois.eenet.ee"
+ee;whois.eenet.ee;google.ee;u34jedzcq.ee
 eg;;;
 er;;;
 es;;;

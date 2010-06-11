@@ -1,6 +1,11 @@
 = Changelog
 
 
+== Release 1.1.8
+
+* NEW: Added simple .ee TLD parser (whois.eenet.ee).
+
+
 == Release 1.2.0
 
 * NEW: Whois::Answer#throttle? returns true in case of throttle response (see whois.publicinternetregistry.com for a real example)
