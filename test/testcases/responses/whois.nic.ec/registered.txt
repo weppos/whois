@@ -30,7 +30,7 @@ ns4.google.com
 Mas informacion en: http://www.nic.ec
 More information in: http://www.nic.ec/eng
 
-Los datos detallados a continuación por NIC.EC es informacion publica cuyo proposito es
+Los datos detallados a continuaciÃ³n por NIC.EC es informacion publica cuyo proposito es
 unicamente informativo que sirve para la obtencion de la informacion acerca de o
 relacionado con los registros de un Nombre de Dominio. Los datos se muestran de acuerdo
 a los datos de NIC.EC en la ultima actualizacion de su base de datos. Al realizar una
