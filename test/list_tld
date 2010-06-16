@@ -294,8 +294,8 @@ ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
 uk;whois.nic.uk;google.co.uk;u34jedzcq.co.uk
 #Whois::Server.define :tld, ".fed.us", "whois.nic.gov"
 us;whois.nic.us;google.us;u34jedzcq.us
-#Whois::Server.define :tld, ".com.uy", nil, {:web=>"https://nic.anteldata.com.uy/dns/", :adapter=>Whois::Server::Adapters::Web}
-#Whois::Server.define :tld, ".uy", "whois.nic.org.uy"
+.com.uy;;;
+uy;whois.nic.org.uy;seciu.edu.uy;u34jedzcq.edu.uy
 uz;whois.cctld.uz;google.uz;u34jedzcq.uz
 va;whois.ripe.net;vatican.va;u34jedzcq.va
 vc;whois.afilias-grs.info;google.vc;u34jedzcq.vc

@@ -12,6 +12,9 @@ whois.registry.in (.in)
 whois.museum (.museum)
 whois.cat (.cat)
 
+.ve
+.uy
+
 
 == Property Proposals
 

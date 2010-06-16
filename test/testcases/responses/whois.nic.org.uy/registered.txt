@@ -1,0 +1,48 @@
+
+Servidor Whois de NIC-Uruguay (.UY)
+
+Este servidor contiene informacion autoritativa exclusivamente de dominios .UY
+Cualquier consulta sobre este servicio, puede hacerla al correo electronico dns-adm@seciu.edu.uy
+
+Titular: 
+Servicio Central de Informática - Universidad de la República  (seciu.edu.uy-uynic)		info@seciu.edu.uy
+   Servicio Central de Informática - Universidad de la República
+   Colonia 2066, CP 1200
+   Montevideo  UY
+   598 2  4083901
+
+   Nombre de Dominio: seciu.edu.uy
+
+   Contacto Administrativo: 
+      Roberto Goinheix  (rg2-uynic)		dns-adm@seciu.edu.uy
+      Roberto Goinheix
+      Colonia 2066 - Montevideo, Uruguay
+      Colonia 2066 - Montevideo, Uruguay  UY
+      598 2  408.39.01
+   
+   Contacto Tecnico: 
+      Sergio Ramirez  (sr3-uynic)		sramirez@seciu.edu.uy
+      ORG
+      Colonia 2066 - Montevideo CP 11200, Uruguay
+      Colonia 2066 - Montevideo, Estado  UY
+      598 2  408 39 01 x+598 2 (FAX) 598 - +598 2
+   
+   Contacto de Cobranza: 
+      Roberto Goinheix  (rg2-uynic)		dns-adm@seciu.edu.uy
+      Roberto Goinheix
+      Colonia 2066 - Montevideo, Uruguay
+      Colonia 2066 - Montevideo, Uruguay  UY
+      598 2  408.39.01
+
+   Ultima Actualizacion: 2009-11-04 16:23:11
+   Fecha de Creacion: 2001-06-15 00:00:00
+
+   Estatus del dominio: ACTIVO
+
+   Servidor(es) de Nombres de Dominio:
+
+   - seciu.edu.uy
+   - tacuabe.rau.edu.uy
+
+NIC-Uruguay - SeCIU - UdelaR
+http://www.nic.org.uy

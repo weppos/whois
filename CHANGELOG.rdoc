@@ -13,6 +13,8 @@
 
 * NEW: Added simple .uz TLD parser (whois.nic.uz).
 
+* NEW: Added simple .uy TLD parser (whois.nic.org.uy).
+
 
 == Release 1.2.0
 

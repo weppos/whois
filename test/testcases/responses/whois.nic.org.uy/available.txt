@@ -1,0 +1,10 @@
+
+Servidor Whois de NIC-Uruguay (.UY)
+
+Este servidor contiene informacion autoritativa exclusivamente de dominios .UY
+Cualquier consulta sobre este servicio, puede hacerla al correo electronico dns-adm@seciu.edu.uy
+
+No match for "u34jedzcq.edu.uy".
+
+NIC-Uruguay - SeCIU - UdelaR
+http://www.nic.org.uy
