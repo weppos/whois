@@ -1,7 +1,7 @@
 = Changelog
 
 
-== Release 1.1.8
+== master
 
 * NEW: Added simple .ee TLD parser (whois.eenet.ee).
 
@@ -10,6 +10,8 @@
 * NEW: Added simple .la TLD parser (whois.nic.la).
 
 * NEW: Added simple .ec TLD parser (whois.nic.ec).
+
+* NEW: Added simple .uz TLD parser (whois.nic.uz).
 
 
 == Release 1.2.0

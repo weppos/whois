@@ -1,0 +1,12 @@
+
+% UzWhois Server Version 1.0
+
+% Domain names in the .uz domain can now be registered
+% with many different competing registrars. Go to http://www.cctld.uz/
+% for detailed information.
+
+Sorry, but domain: "u34jedzcq.uz", not found in database
+
+%  The Whois Server (ver. 1.0) of ccTLD.UZ
+%  (c) 2005, Center UZINFOCOM
+
