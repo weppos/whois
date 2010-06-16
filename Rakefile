@@ -9,8 +9,15 @@ rescue LoadError
   hanna = true
 end
 
+module Rake
+  def self.remove_task(task_name)
+    Rake.application.instance_variable_get('@tasks').delete(task_name.to_s)
+  end
+end
+
 $:.unshift(File.dirname(__FILE__) + "/lib")
 require "whois"
+
 
 # Common package properties
 PKG_NAME    = ENV["PKG_NAME"]    || Whois::GEM
@@ -62,6 +69,13 @@ begin
 rescue LoadError
   puts "CodeStatistics (Rails) is not available"
 end
+
+Rake.remove_task(:publish_docs)
+desc "Publish documentation to the site"
+task :publish_docs => [:clean, :docs] do
+  sh "rsync -avz --delete doc/ weppos@dads:/home/weppos/ruby-whois.org/api"
+end
+
 
 Dir["tasks/**/*.rake"].each do |file|
   load(file)
