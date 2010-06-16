@@ -35,7 +35,7 @@ module Whois
       class WhoisNicOrgUy < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Estatus del dominio: (.*)\n/
+          @status ||= if content_for_scanner =~ /Estatus del dominio: (.*?)\n/
             $1
           end
         end

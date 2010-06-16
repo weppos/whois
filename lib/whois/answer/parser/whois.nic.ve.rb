@@ -41,11 +41,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner =~ /No match for/)
+          @available ||= !!(content_for_scanner =~ /No match for "(.*?)"/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -65,7 +65,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ (/Servidor\(es\) de Nombres de Dominio:\n\n((?:\s+\s-\s(.*?)\n)+)/)
+          @nameservers ||= if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
             $1.scan(/-\s(.*?)\n/).flatten
           else
             []
