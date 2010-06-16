@@ -5,6 +5,8 @@
 
 * NEW: Added simple .ee TLD parser (whois.eenet.ee).
 
+* NEW: Added simple .kz TLD parser (whois.nic.kz).
+
 
 == Release 1.2.0
 

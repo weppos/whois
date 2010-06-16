@@ -171,7 +171,7 @@ kn;;;
 kr;whois.nic.or.kr;google.kr;u34jedzcq.kr
 kw;;;
 ky;;;
-#Whois::Server.define :tld, ".kz", "whois.nic.kz"
+kz;whois.nic.kz;google.kz;u34jedzcq.kz
 #Whois::Server.define :tld, ".la", "whois.nic.la"
 lb;;;
 lc;whois.afilias-grs.info;nic.lc;u34jedzcq.lc
