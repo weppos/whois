@@ -1,0 +1,40 @@
+
+Dominio: google.ec
+
+Fecha de Creacion:   16/Oct/2003
+Fecha de Expiracion: 16/Oct/2010
+Ultima Modificacion: 15/Sep/2009
+
+Registrante (Registrant)
+Organizacion: Google Inc.
+Pais:         United States
+
+Contacto Administrativo (Administrative Contact)
+Organizacion: MarkMonitor
+Pais:         United States
+
+Contacto Tecnico (Technical Contact)
+Organizacion: MarkMonitor
+Pais:         United States
+
+Contacto Facturacion (Billing Contact)
+Organizacion: MarkMonitor
+Pais:         United States
+
+Servidores de dominio (Name Servers)
+ns1.google.com
+ns2.google.com
+ns3.google.com
+ns4.google.com
+
+Mas informacion en: http://www.nic.ec
+More information in: http://www.nic.ec/eng
+
+Los datos detallados a continuación por NIC.EC es informacion publica cuyo proposito es
+unicamente informativo que sirve para la obtencion de la informacion acerca de o
+relacionado con los registros de un Nombre de Dominio. Los datos se muestran de acuerdo
+a los datos de NIC.EC en la ultima actualizacion de su base de datos. Al realizar una
+busqueda de WHOIS de un dominio, usted declara y acepta que los datos seran utilizados
+solo para fines legales y que no utilizara los datos para envios masivos no solicitados
+de correo electronico o para publicidad o fines comerciales no solicitados.
+

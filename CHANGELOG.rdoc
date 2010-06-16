@@ -9,6 +9,8 @@
 
 * NEW: Added simple .la TLD parser (whois.nic.la).
 
+* NEW: Added simple .ec TLD parser (whois.nic.ec).
+
 
 == Release 1.2.0
 
