@@ -70,7 +70,7 @@ module Whois
   # This is a technical limitation. Browse the lib/whois/answer/parsers folder
   # to view all available parsers.
   #
-  # Returns a Boolean representing whether the domain is available.
+  # Returns a <tt>true</tt> if the domain is available.
   def self.available?(qstring)
     query(qstring).available?
   rescue ParserNotFound => e
@@ -100,7 +100,7 @@ module Whois
   # This is a technical limitation. Browse the lib/whois/answer/parsers folder
   # to view all available parsers.
   #
-  # Returns a Boolean representing whether the domain is registered.
+  # Returns <tt>true</tt> if the domain is registered.
   def self.registered?(qstring)
     query(qstring).registered?
   rescue ParserNotFound => e
