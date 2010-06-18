@@ -235,7 +235,7 @@ module Whois
       end
 
 
-      def self.properties # :nodoc
+      def self.properties # :nodoc:
         Whois.deprecate("Whois::Answer::Parser.properties is deprecated. Use the Whois::Answer::Parser::PROPERTIES constant.")
         PROPERTIES
       end

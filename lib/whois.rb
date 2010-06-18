@@ -29,8 +29,12 @@ module Whois
   AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
 
 
-  # Queries the right whois server for <tt>qstring</tt> and returns
-  # a <tt>Whois::Answer</tt> instance containing the response from the server.
+  # Queries the right WHOIS server for <tt>qstring</tt> and returns
+  # the response from the server.
+  #
+  # qstring - The String to be sent as query parameter.
+  #
+  # Examples
   #
   #   Whois.query("google.com")
   #   # => #<Whois::Answer>
@@ -40,13 +44,18 @@ module Whois
   #   Whois::Client.new.query("google.com")
   #   # => #<Whois::Answer>
   #
-  def self.whois(qstring)
+  # Returns a <tt>Whois::Answer</tt> instance.
+  def self.query(qstring)
     query(qstring)
   end
 
-  # Returns <tt>true</tt> whether <tt>qstring</tt> is available.
-  # <tt>qstring</tt> is intended to be a domain name,
-  # otherwise this method may return unexpected responses.
+  # Checks whether the object represented by <tt>qstring</tt> is available.
+  #
+  # qstring - The String to be sent as query parameter.
+  #   It is intented to be a domain name, otherwise this method
+  #   may return unexpected responses.
+  #
+  # Examples
   #
   #   Whois.available?("google.com")
   #   # => false
@@ -55,11 +64,13 @@ module Whois
   #   # => true
   #
   # Warning: this method is only available if a Whois parser exists
-  # for <tt>qstring</tt> top level domain. Otherwise you'll get a warning message
+  # for the top level domain of <tt>qstring</tt>.
+  # If no parser exists for <tt>qstring</tt>, you'll receive a warning message
   # and the method will return <tt>nil</tt>.
   # This is a technical limitation. Browse the lib/whois/answer/parsers folder
   # to view all available parsers.
   #
+  # Returns a Boolean representing whether the domain is available.
   def self.available?(qstring)
     query(qstring).available?
   rescue ParserNotFound => e
@@ -68,9 +79,13 @@ module Whois
     nil
   end
 
-  # Returns <tt>true</tt> whether <tt>qstring</tt> is registered.
-  # <tt>qstring</tt> is intended to be a domain name,
-  # otherwise this method may return unexpected responses.
+  # Checks whether the object represented by <tt>qstring</tt> is registered.
+  #
+  # qstring - The String to be sent as query parameter.
+  #           It is intented to be a domain name, otherwise this method
+  #           may return unexpected responses.
+  #
+  # Examples
   #
   #   Whois.registered?("google.com")
   #   # => true
@@ -79,11 +94,13 @@ module Whois
   #   # => false
   #
   # Warning: this method is only available if a Whois parser exists
-  # for <tt>qstring</tt> top level domain. Otherwise you'll get a warning message
+  # for the top level domain of <tt>qstring</tt>.
+  # If no parser exists for <tt>qstring</tt>, you'll receive a warning message
   # and the method will return <tt>nil</tt>.
   # This is a technical limitation. Browse the lib/whois/answer/parsers folder
   # to view all available parsers.
   #
+  # Returns a Boolean representing whether the domain is registered.
   def self.registered?(qstring)
     query(qstring).registered?
   rescue ParserNotFound => e
@@ -93,13 +110,15 @@ module Whois
   end
 
 
-  # See Whois#whois.
-  def self.query(qstring)
+  # See <tt>Whois#query</tt>.
+  #
+  # Returns a <tt>Whois::Answer</tt> instance.
+  def self.whois(qstring)
     Client.new.query(qstring)
   end
 
 
-  def self.deprecate(message = nil)
+  def self.deprecate(message = nil) # :nodoc:
     message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
     warn("DEPRECATION WARNING: #{message}")
   end

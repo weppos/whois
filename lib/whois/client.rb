@@ -21,7 +21,7 @@ module Whois
 
   class Client
 
-    # The maximum time to run a whois query expressed in seconds
+    # The Integer maximum time to run a whois query, expressed in seconds.
     DEFAULT_TIMEOUT = 10
 
     attr_accessor :timeout
@@ -31,23 +31,30 @@ module Whois
     # :call-seq:
     #   new { |client| ... } => client
     #   new(options = {}) { |client| ... } => client
-    # 
-    # Initializes a new Whois::Client with <tt>options</tt>.
-    # 
-    # If block is given, yields self.
-    # 
+    #
+    # Initializes a new <tt>Whois::Client</tt> with <tt>options</tt>.
+    #
+    # options - The Hash options used to refine the selection (default: {}):
+    #           :timeout - The Integer script timeout, expressed in seconds (default: DEFAULT_TIMEOUT).
+    #
+    # If <tt>block</tt> is given, yields <tt>self</tt>.
+    #
+    # Examples
+    #
     #   client = Whois::Client.new do |c|
     #     c.timeout = nil
     #   end
     #   client.query("google.com")
     #
+    #
+    # Returns a <tt>Whois::Client</tt>.
     def initialize(options = {}, &block)
       self.timeout = options[:timeout] || DEFAULT_TIMEOUT
       yield(self) if block_given?
     end
 
 
-    class Query # :nodoc
+    class Query # :nodoc:
       # IPv6?
       # RPSL?
       # email?
@@ -59,12 +66,17 @@ module Whois
     end
 
 
-    # Queries the right whois server for <tt>qstring</tt> and returns
-    # a <tt>Whois::Answer</tt> instance containing the response from the server.
+    # Queries the right WHOIS server for <tt>qstring</tt> and returns
+    # the response from the server.
+    #
+    # qstring - The String to be sent as query parameter.
+    #
+    # Examples
     #
     #   client.query("google.com")
     #   # => #<Whois::Answer>
     #
+    # Returns a <tt>Whois::Answer</tt> instance.
     def query(qstring)
       string = qstring.to_s
       Timeout::timeout(timeout) do
