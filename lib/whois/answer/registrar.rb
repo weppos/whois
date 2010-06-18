@@ -27,10 +27,10 @@ module Whois
     #
     # A Registrar is composed by the following attributes:
     #
-    # <tt>:id</tt>::
-    # <tt>:name</tt>::
-    # <tt>:organization</tt>::
-    # <tt>:url</tt>::
+    # * <tt>:id</tt>::
+    # * <tt>:name</tt>::
+    # * <tt>:organization</tt>::
+    # * <tt>:url</tt>::
     #
     # Be aware that every WHOIS server can return a different number of details
     # or no details at all.
