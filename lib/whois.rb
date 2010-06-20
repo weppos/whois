@@ -46,7 +46,7 @@ module Whois
   #
   # Returns a <tt>Whois::Answer</tt> instance.
   def self.query(qstring)
-    query(qstring)
+    Client.new.query(qstring)
   end
 
   # Checks whether the object represented by <tt>qstring</tt> is available.
@@ -114,7 +114,7 @@ module Whois
   #
   # Returns a <tt>Whois::Answer</tt> instance.
   def self.whois(qstring)
-    Client.new.query(qstring)
+    query(qstring)
   end
 
 
