@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]
+
 
 == Release 1.2.1
 
