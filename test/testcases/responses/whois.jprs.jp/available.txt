@@ -1,8 +1,0 @@
-[ JPRS database provides information on network administration. Its use is    ]
-[ restricted to network administration purposes. For further information,     ]
-[ use 'whois -h whois.jprs.jp help'. To suppress Japanese output, add'/e'     ]
-[ at the end of command, e.g. 'whois -h whois.jprs.jp xxx/e'.                 ]
-
-No match!!
-
-

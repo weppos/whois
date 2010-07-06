@@ -35,7 +35,7 @@ module Whois
       class WhoisJprsJp < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /\[Status\]\s+(.*)\n/
+          @status ||= if content_for_scanner =~ /\[Stat(?:us|e)\]\s+(.*)\n/
             $1
           end
         end
@@ -51,14 +51,14 @@ module Whois
 
         # TODO: timezone ('Asia/Tokyo')
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /\[Created on\]\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /\[(?:Created on|Registered Date)\]\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         # TODO: timezone ('Asia/Tokyo')
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /\[Last Updated\]\s+(.*)\n/
+          @updated_on ||= if content_for_scanner =~ /\[Last Updated?\]\s+(.*)\n/m
             Time.parse($1)
           end
         end
