@@ -1,13 +1,7 @@
-.us == .biz == .travel
-
-== afilias
-
-whois.dotmobyregistry.net (.mobi)
-whois.afilias.info (.info)
-whois.afilias-grs.info (.bz, .gi, .hn, .lc, .mn, .sc, .vc)
-whois.aero (.aero)
-whois.nic.af (.af)
-whois.registry.in (.in)
+.us
+.biz
+.travel
+whois.nic.co (.co)
 
 whois.museum (.museum)
 whois.cat (.cat)
@@ -15,13 +9,16 @@ whois.cat (.cat)
 .ve
 .uy
 
+(afilias)
+whois.dotmobyregistry.net (.mobi)
+whois.afilias.info (.info)
+whois.afilias-grs.info (.bz, .gi, .hn, .lc, .mn, .sc, .vc)
+whois.aero (.aero)
+whois.nic.af (.af)
+whois.registry.in (.in)
+
 
 == Property Proposals
 
 * changed_by
 * version
-
-
-== Feature Proposals
-
-* .org -> LIMIT EXCEEDED

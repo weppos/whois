@@ -6,6 +6,8 @@
 
 * FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]
 
+* CHANGED: The .co TLD now has a WHOIS interface (whois.nic.co). Added simple .co parser.
+
 
 == Release 1.2.1
 
