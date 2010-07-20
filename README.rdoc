@@ -24,7 +24,7 @@ An extensive test suite is available to verify the library correctness but you m
 
 * Ruby >= 1.8.6
 
-Whois has been {successfully tested}[http://www.ruby-whois.org/documentation/installation.html] against the following Ruby platforms:
+Whois has been {successfully tested}[http://www.ruby-whois.org/manual/installation.html] against the following Ruby platforms:
 
 * Ruby 1.8.6 / 1.8.7 / 1.9.1 / 1.9.2
 * MacRuby
