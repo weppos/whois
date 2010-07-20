@@ -1,6 +1,6 @@
 tld;registry;available;unavailable
-#Whois::Server.define :tld, ".br.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".cn.com", "whois.centralnic.net"
+br.com;whois.centralnic.net;billboard.br.com;u34jedzcq.br.com
+cn.com;whois.centralnic.net;gsn.cn.com;u34jedzcq.cn.com
 #Whois::Server.define :tld, ".de.com", "whois.centralnic.net"
 #Whois::Server.define :tld, ".eu.com", "whois.centralnic.net"
 #Whois::Server.define :tld, ".gb.com", "whois.centralnic.net"

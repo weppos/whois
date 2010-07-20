@@ -7,6 +7,13 @@
 * FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]
 
 
+== master
+
+cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, za.com, jpn.com, web.com
+
+* NEW: Added simple br.com,  TLD parser (whois.eenet.ee).
+
+
 == Release 1.2.1
 
 * NEW: Added simple .ee TLD parser (whois.eenet.ee).

@@ -1,0 +1,19 @@
+  Domain Name: billboard.br.com
+  Registrar: H292913 (Domain Administrator, Network Solutions LLC)
+
+  Whois server: whois.grs.centralnic.com
+
+  Record created on: 17 April 2009
+  Record expires on: 17 April 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.UOLHOSTIDC.COM.BR
+  NS2.UOLHOSTIDC.COM.BR
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

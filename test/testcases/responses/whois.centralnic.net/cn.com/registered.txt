@@ -1,0 +1,50 @@
+  Domain Name: gsn.cn.com
+
+  Registrant:
+    GSN Electronics Incorporation Pte Ltd (H1062079) abuse@gsn.in
+    
+    Straits Trading Building 9 Battery Road 16-08
+    Singapore
+    049910
+    SG (Singapore)
+    Tel: +65.62336919
+
+  Administrative Contact:
+    Pauline Ang (H161687) abuse@gsn.in
+    GSN Electronics Incorporation Pte Ltd
+    Straits Trading Building 9 Battery Road 16-08
+    Singapore
+    049910
+    SG (Singapore)
+    Tel: +65.62336919
+
+  Technical Contact:
+
+    Handle ID: H94152. This handle is an individual who has elected
+    to have their details omitted from the whois database.
+
+  Registrar:
+    Hostmaster (H67436) centralnic@bot.udag.net
+    United Domains AG
+    Gautinger Strasse 10, 
+    Starnberg
+    D-82319
+    DE (Germany)
+    Tel: +498151368670
+    Fax: +4981513686777
+    URL: http://www.united-domains.de
+
+  Record created on: 23 November 2005
+  Record expires on: 23 November 2010
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.METEOS.IT
+  NS2.METEOS.IT
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com
