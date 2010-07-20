@@ -8,6 +8,8 @@
 
 * SERVER: Added/Updated the .priv.at, .dj, .ls TLD definition (whois 5.0.6).
 
+* SERVER: Added xn--mgbaam7a8h (United Arabs Emirates), .xn--mgberp4a5d4ar (Saudi Arabia), .xn--p1ai (Russian Federation), .xn--fiqs8s (China), .xn--fiqz9s (China) and .xn--wgbh1c (Egypt) TLD servers. (whois 5.0.6).
+
 * NEW: Added .to TLD parser (whois.tonic.to).
 
 * FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]

@@ -316,3 +316,9 @@ Whois::Server.define :tld, ".org.za", nil, {:web=>"http://www.org.za/", :adapter
 Whois::Server.define :tld, ".za", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".zm", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".zw", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
+Whois::Server.define :tld, ".xn--fiqz9s", "cwhois.cnnic.cn"
+Whois::Server.define :tld, ".xn--mgbaam7a8h", "whois.aeda.net.ae"
+Whois::Server.define :tld, ".xn--mgberp4a5d4ar", "whois.nic.net.sa"
+Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
+Whois::Server.define :tld, ".xn--p1ai", "whois.ripn.net"
