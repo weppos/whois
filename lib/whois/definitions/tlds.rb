@@ -308,7 +308,6 @@ Whois::Server.define :tld, ".wf", "whois.nic.fr"
 Whois::Server.define :tld, ".ws", "whois.samoanic.ws"
 Whois::Server.define :tld, ".ye", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".yt", "whois.nic.fr"
-Whois::Server.define :tld, ".yu", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".ac.za", "whois.ac.za"
 Whois::Server.define :tld, ".co.za", "whois.coza.net.za"
 Whois::Server.define :tld, ".gov.za", "whois.gov.za"
