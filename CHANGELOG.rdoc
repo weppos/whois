@@ -20,6 +20,8 @@
 
 * CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (closes #29)
 
+* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (closes #27)
+
 
 == Release 1.2.1
 
