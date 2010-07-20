@@ -18,6 +18,8 @@
 
 * CHANGED: The .co TLD now has a WHOIS interface (whois.nic.co). Added simple .co parser.
 
+* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (closes #29)
+
 
 == Release 1.2.1
 

@@ -241,7 +241,7 @@ rs;;;
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 ru;whois.ripn.net;google.ru;u34jedzcq.ru
 rw;;;
-#Whois::Server.define :tld, ".sa", "saudinic.net.sa"
+sa;whois.nic.net.sa;saudigazette.com.sa;u34jedzcq.com.sa
 #Whois::Server.define :tld, ".sb", "whois.coccaregistry.net"
 sc;whois.afilias-grs.info;google.sc;u34jedzcq.sc
 sd;;;
@@ -282,16 +282,16 @@ in.ua;whois.in.ua;google.in.ua;u34jedzcq.in.ua
 ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
 #Whois::Server.define :tld, ".ug", "www.registry.co.ug"
 #Whois::Server.define :tld, ".ac.uk", "whois.ja.net"
-.bl.uk;;;
-.british-library.uk;;;
+bl.uk;;;
+british-library.uk;;;
 #Whois::Server.define :tld, ".gov.uk", "whois.ja.net"
-.icnet.uk;;;
-.jet.uk;;;
-.mod.uk;;;
-.nhs.uk;;;
-.nls.uk;;;
-.parliament.uk;;;
-.police.uk;;;
+icnet.uk;;;
+jet.uk;;;
+mod.uk;;;
+nhs.uk;;;
+nls.uk;;;
+parliament.uk;;;
+police.uk;;;
 uk;whois.nic.uk;google.co.uk;u34jedzcq.co.uk
 #Whois::Server.define :tld, ".fed.us", "whois.nic.gov"
 us;whois.nic.us;google.us;u34jedzcq.us
