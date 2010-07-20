@@ -1,6 +1,7 @@
 = Changelog
 
-== master
+
+== Release 1.2.2
 
 * SERVER: Sync definitions with Debian whois 5.0.6.
 
