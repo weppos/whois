@@ -2,6 +2,8 @@
 
 == master
 
+* NEW: Added .to TLD parser (whois.tonic.to).
+
 * FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]
 
 

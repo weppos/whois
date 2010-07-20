@@ -1,0 +1,3 @@
+Tonic whoisd V1.1
+go ns-1.myphotoalbum.com
+go ns-2.myphotoalbum.com

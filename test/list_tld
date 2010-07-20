@@ -270,7 +270,7 @@ tk;whois.dot.tk;thinkcode.tk;u34jedzcq.tk
 tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl
 #Whois::Server.define :tld, ".tm", "whois.nic.tm"
 tn;;;
-#Whois::Server.define :tld, ".to", "whois.tonic.to"
+to;whois.tonic.to;go.to;u34jedzcq.to
 tp;;;
 tr;whois.nic.tr;google.com.tr;u34jedzcq.com.tr
 tt;;;
