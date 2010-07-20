@@ -1,3 +1,4 @@
+# http://www.iana.org/domains/root/db/
 # NIC? means I have not been able to find the registry
 
 .br.com	whois.centralnic.net
@@ -66,6 +67,7 @@
 .aq	NONE		# 2day.com
 .ar	WEB http://www.nic.ar/
 .as	whois.nic.as
+.priv.at whois.nic.priv.at	# "unofficial" SLD
 .at	whois.nic.at
 .au	whois.ausregistry.net.au
 .aw	NONE		# http://www.setarnet.aw/domreg.html
@@ -103,7 +105,7 @@
 .cl	whois.nic.cl
 .cm	WEB http://netcom.cm/whois.php
 .edu.cn	whois.edu.cn
-.cn	whois.cnnic.net.cn
+.cn	whois.cnnic.cn
 .uk.co	whois.uk.co
 .co	WEB https://www.nic.co/
 .cr	WEB http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do
@@ -113,7 +115,7 @@
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
 .cz	whois.nic.cz
 .de	whois.denic.de
-.dj	NONE
+.dj	WEB http://www.nic.dj/whois.php	# BROKEN 2010-05-06
 .dk	whois.dk-hostmaster.dk
 .dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
@@ -140,14 +142,14 @@
 .gg	whois.gg
 .gh	WEB http://www.nic.gh/customer/search_c.htm
 .gi	AFILIAS
-.gl	NONE		# www.nic.gl
+.gl	whois.nic.gl
 .gm	whois.ripe.net	# www.nic.gm
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	whois.nic.gp
 .gq	NONE		# NO NIC http://www.getesa.gq/
 .gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
 .gs	whois.nic.gs
-.gt	WEB http://www.gt/whois.htm
+.gt	WEB http://www.gt/whois.html
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
 .gw	NONE		# www.gwregister.com
 .gy	whois.registry.gy
@@ -188,7 +190,7 @@
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
-.ls	WEB http://www.co.ls/data/co.asp
+.ls	WEB http://www.co.ls/co.asp
 .lt	whois.domreg.lt
 .lu	whois.dns.lu
 .lv	whois.nic.lv
@@ -251,7 +253,7 @@
 .edu.ru	whois.informika.ru
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
-.sa	saudinic.net.sa
+.sa	whois.nic.net.sa
 .sb	whois.coccaregistry.net
 .sc	AFILIAS		# www.nic.sc
 .sd	NONE		# http://isoc.sd/ (CHECK LATER)
@@ -319,7 +321,6 @@
 .ws	whois.samoanic.ws
 .ye	NONE		# NIC? www.nominet.org.ye http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.fr
-.yu	NONE		# www.nic.yu - phase out date: 30 March 2009
 .ac.za	whois.ac.za
 .co.za	whois.coza.net.za
 .gov.za	whois.gov.za
@@ -328,6 +329,13 @@
 .za	NONE		# http://www.internet.org.za/slds.html many more SLD...
 .zm	NONE		# http://www.zamnet.zm/ser-isp/dnr.htm
 .zw	NONE		# http://www.zispa.co.zw/
+
+.xn--fiqs8s		cwhois.cnnic.cn		# China
+.xn--fiqz9s		cwhois.cnnic.cn		# China
+.xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
+.xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
+.xn--wgbh1c		whois.dotmasr.eg	# Egypt
+.xn--p1ai		whois.ripn.net		# Russian Federation
 
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com

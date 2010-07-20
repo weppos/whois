@@ -8,8 +8,10 @@
 #
 1.0.0.0/8	apnic
 2.0.0.0/8	ripe
+14.0.0.0/8	apnic
 24.132.0.0/14	ripe
 27.0.0.0/8	apnic
+31.0.0.0/8	ripe
 41.0.0.0/8	afrinic
 43.0.0.0/8	v6nic
 46.0.0.0/8	ripe
@@ -29,14 +31,16 @@
 78.0.0.0/7	ripe
 80.0.0.0/4	ripe			# => 95.255.255.255
 96.0.0.0/6	arin			# => 99.255.255.255
+107.0.0.0/8	arin
 108.0.0.0/8	arin
 109.0.0.0/8	ripe
 110.0.0.0/7	apnic
 96.0.0.0/4	UNALLOCATED		# => 112.215.255.255
-118.32.0.0/11	whois.nic.or.kr
-119.192.0.0/11	whois.nic.or.kr
+112.160.0.0/11	whois.nic.or.kr
 115.0.0.0/12	whois.nic.or.kr
 115.16.0.0/13	whois.nic.or.kr
+118.32.0.0/11	whois.nic.or.kr
+119.192.0.0/11	whois.nic.or.kr
 112.0.0.0/5	apnic
 121.128.0.0/10	whois.nic.or.kr
 125.128.0.0/11	whois.nic.or.kr
@@ -100,9 +104,14 @@
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
 #171.0.0.0/8	apnic
+175.192.0.0/10	whois.nic.or.kr
 175.0.0.0/8	apnic
+176.0.0.0/8	ripe
+177.0.0.0/8	lacnic
 178.0.0.0/8	ripe
 180.0.0.0/8	apnic
+181.0.0.0/8	lacnic
+183.96.0.0/11	whois.nic.or.kr
 182.0.0.0/7	apnic
 186.0.0.0/7	lacnic
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE
@@ -232,6 +241,5 @@
 222.120.0.0/15	whois.nic.or.kr
 222.122.0.0/16	whois.nic.or.kr
 222.232.0.0/13	whois.nic.or.kr
-223.0.0.0/8	UNALLOCATED	# returned from APNIC to IANA
 220.0.0.0/6	apnic
 # that's all... here starts the multicast space
