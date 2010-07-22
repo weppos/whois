@@ -179,10 +179,6 @@ module Whois
 
           private
 
-            def trim_empty_line
-              @input.scan(/^\n/)
-            end
-
             def parse_content
               parse_version     ||
               parse_disclaimer  ||
@@ -199,6 +195,18 @@ module Whois
 
               trim_empty_line   ||
               error("Unexpected token")
+            end
+
+            def trim_empty_line
+              @input.skip(/^\n/)
+            end
+
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+              end
             end
 
 
@@ -352,10 +360,6 @@ module Whois
                 end
               end
               true
-            end
-
-            def error(message)
-              raise "#{message}: `#{@input.peek(@input.string.length)}'"
             end
 
         end

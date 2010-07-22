@@ -36,7 +36,7 @@ module Whois
           private
 
             def parse_content
-              trim_newline      ||
+              trim_empty_line   ||
               parse_not_found   ||
               parse_disclaimer  ||
               parse_notice      ||
@@ -44,12 +44,22 @@ module Whois
               skip_iana_service ||
               trim_last_update  ||
               trim_fuffa        ||
+
               error("Unexpected token")
             end
 
-            def trim_newline
-              @input.scan(/\n/)
+            def trim_empty_line
+              @input.skip(/^\n/)
             end
+
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+              end
+            end
+
 
             def trim_last_update
               @input.scan(/>>>(.*?)<<<\n/)
@@ -81,8 +91,6 @@ module Whois
                   lines << @input[1].strip
                 end
                 @ast["Notice"] = lines.join(" ")
-              else
-                false
               end
             end
 
@@ -93,8 +101,6 @@ module Whois
                   lines << @input[1].strip
                 end
                 @ast["Disclaimer"] = lines.join(" ")
-              else
-                false
               end
             end
 
@@ -107,13 +113,7 @@ module Whois
                   @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
                   @ast[key] << value
                 end
-              else
-                false
               end
-            end
-
-            def error(message)
-              raise "#{message}: #{@input.peek(@input.string.length)}"
             end
 
         end

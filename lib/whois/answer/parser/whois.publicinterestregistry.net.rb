@@ -168,17 +168,27 @@ module Whois
           private
 
             def parse_content
-              trim_empty_line   ||
               parse_not_found   ||
               parse_throttle    ||
               parse_disclaimer  ||
               parse_pair        ||
+
+              trim_empty_line   ||
               error("Unexpected token")
             end
 
             def trim_empty_line
               @input.skip(/^\n/)
             end
+
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+              end
+            end
+
 
             def parse_not_found
               @input.skip(/^NOT FOUND\n/)
@@ -214,14 +224,6 @@ module Whois
                 end
               else
                 false
-              end
-            end
-
-            def error(message)
-              if @input.eos?
-                raise "Unexpected end of input."
-              else
-                raise "#{message}: `#{@input.peek(@input.string.length)}'"
               end
             end
 

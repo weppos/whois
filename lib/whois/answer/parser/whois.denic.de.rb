@@ -128,7 +128,7 @@ module Whois
           def parse
             @ast = {}
             while !@input.eos?
-              trim_newline  ||
+#              trim_empty_line  ||
               parse_content
             end
             @ast
@@ -136,19 +136,29 @@ module Whois
 
           private
 
-            def trim_newline
-              @input.scan(/\n/)
+            def parse_content
+              parse_disclaimer  ||
+              parse_invalid     ||
+              parse_not_found   ||
+              parse_pair(@ast)  ||
+              parse_contact     ||
+
+              trim_empty_line   ||
+              error("Unexpected token")
+            end
+  
+            def trim_empty_line
+              @input.skip(/^\n/)
             end
 
-            def parse_content
-              parse_disclaimer ||
-              parse_invalid ||
-              parse_not_found ||
-              parse_pair(@ast) ||
-              parse_contact ||
-              trim_newline ||
-              error('Unexpected token')
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+              end
             end
+
 
             def parse_disclaimer
               if @input.match?(/% Copyright \(c\) *\d{4} by DENIC\n/)
@@ -157,7 +167,7 @@ module Whois
                 while @input.match?(/%/) && @input.scan(/%(.*)\n/)
                   lines << @input[1].strip unless @input[1].strip == ""
                 end
-                @ast['Disclaimer'] = lines.join(" ")
+                @ast["Disclaimer"] = lines.join(" ")
                 true
               end
               false
@@ -208,22 +218,17 @@ module Whois
 
             def parse_not_found
               if @input.match?(/% Object "(.*)" not found in database\n/)
-                6.times { @input.scan(/%(.*)\n/) } # strip junk
-                return @ast['NotFound'] = true
+                while @input.scan(/%(.*)\n/)  # strip junk
+                end
+                @ast["NotFound"] = true
               end
-              @ast['NotFound'] = false
             end
 
             def parse_invalid
               if @input.match?(/% ".*" is not a valid domain name\n/)
-                 @input.scan(/%.*\n/)
-                 return @ast['Invalid'] = true
+                @input.scan(/%.*\n/)
+                @ast["Invalid"] = true
               end 
-              @ast['Invalid'] = false
-            end 
-
-            def error(message)
-              raise "#{message}: #{@input.peek(@input.string.length)}"
             end
 
         end
