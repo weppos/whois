@@ -19,7 +19,7 @@ module Whois
     class Parser
       module Scanners
         
-        class VerisignScanner
+        class Verisign
 
           def initialize(content)
             @input = StringScanner.new(content)

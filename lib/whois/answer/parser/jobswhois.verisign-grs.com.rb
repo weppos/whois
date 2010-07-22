@@ -95,7 +95,7 @@ module Whois
         protected
 
           def parse
-            Scanners::VerisignScanner.new(content_for_scanner).parse
+            Scanners::Verisign.new(content_for_scanner).parse
           end
 
           # In case of "Response SPAM", the responde include more than one item

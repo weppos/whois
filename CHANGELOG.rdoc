@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* CHANGED: Renamed Scanners::VerisignScanner to Scanners::Verisign.
+
 
 == Release 1.2.2
 
