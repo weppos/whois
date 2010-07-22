@@ -98,7 +98,7 @@ module Whois
             Scanners::Verisign.new(content_for_scanner).parse
           end
 
-          # In case of "Response SPAM", the responde include more than one item
+          # In case of "SPAM Response", the response contains more than one item
           # for the same value and the value becomes an Array.
           def last_useful_item(values)
             values.is_a?(Array) ? values.last : values
