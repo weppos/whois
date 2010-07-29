@@ -157,8 +157,7 @@ module Whois
           end
         end
         raise AllocationUnknown,
-                "IP Allocation for `#{qstring}' unknown." +
-                "Server definitions might be outdated."
+                "IP Allocation for `#{qstring}' unknown. Server definitions might be outdated."
       end
 
       def self.find_for_ipv4(qstring)
@@ -169,8 +168,7 @@ module Whois
           end
         end
         raise AllocationUnknown,
-                "IP Allocation for `#{qstring}' unknown." +
-                "Server definitions might be outdated."
+                "IP Allocation for `#{qstring}' unknown. Server definitions might be outdated."
       end
 
       def self.find_for_email(qstring)
