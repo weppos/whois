@@ -43,19 +43,19 @@ class ServerTest < Test::Unit::TestCase
     assert_equal Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo"), Whois::Server.guess("192.168.1.1")
   end
 
-  def test_find_for_ipv4_should_lookup_definition_and_raise_if_not_found
+  def test_find_for_ipv4_should_raise_if_definition_is_not_found
     Whois::Server.define(:ipv4, "192.168.1.0/10", "whois.foo")
 
     assert_raise(Whois::AllocationUnknown) { Whois::Server.guess("192.168.0.1") }
   end
 
-  def test_find_for_ipv6_should_lookup_definition
+  def test_find_for_ipv6_should_lookup_definition_and_return_adapter
     Whois::Server.define(:ipv6, "2001:0200::/23", "whois.foo")
 
     assert_equal Whois::Server.factory(:ipv6, "2001:0200::/23", "whois.foo"), Whois::Server.guess("2001:0200::1")
   end
 
-  def test_find_for_ipv4_should_lookup_definition_and_raise_if_not_found
+  def test_find_for_ipv4_should_raise_if_definition_is_not_found
     Whois::Server.define(:ipv6, "2001:0200::/23", "whois.foo")
 
     assert_raise(Whois::AllocationUnknown) { Whois::Server.guess("2002:0300::1") }
