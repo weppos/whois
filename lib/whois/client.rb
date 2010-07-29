@@ -46,7 +46,6 @@ module Whois
     #   end
     #   client.query("google.com")
     #
-    #
     # Returns a <tt>Whois::Client</tt>.
     def initialize(options = {}, &block)
       self.timeout = options[:timeout] || DEFAULT_TIMEOUT
