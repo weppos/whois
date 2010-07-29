@@ -41,6 +41,24 @@ module Whois
           @options    = options || {}
         end
 
+        # Returns true if the <tt>other</tt> is the same object,
+        # or <tt>other</tt> attributes matches this object attributes.
+        def ==(other)
+          (self.equal?(other)) ||
+          (
+            self.type == other.type &&
+            self.allocation == other.allocation &&
+            self.host == other.host &&
+            self.options == other.options
+          )
+        end
+
+        # Delegates to ==.
+        def eql?(other)
+          self == other
+        end
+
+
         # Performs a Whois query for <tt>qstring</tt> 
         # using current server adapter and returns a <tt>Whois::Response</tt>
         # instance with the result of the request.

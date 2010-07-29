@@ -2,6 +2,14 @@
 
 == master
 
+* ADDED: Ability to compare two Server adapters for equality.
+
+    Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
+    # => true
+
+    Whois::Server.factory(:ipv4, "192.168.1.0", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
+    # => false
+
 * CHANGED: Renamed Scanners::VerisignScanner to Scanners::Verisign.
 
 
