@@ -18,17 +18,17 @@ class ServerTest < Test::Unit::TestCase
   end
 
   def test_guess_should_recognize_ipv4
-    Whois::Server.expects(:find_for_ipv4).with("192.168.1.1").returns(true)
+    Whois::Server.expects(:find_for_ip).with("192.168.1.1").returns(true)
     assert Whois::Server.guess("192.168.1.1")
   end
 
   def test_guess_should_recognize_ipv6
-    Whois::Server.expects(:find_for_ipv6).with("2001:0db8:85a3:0000:0000:8a2e:0370:7334").returns(true)
+    Whois::Server.expects(:find_for_ip).with("2001:0db8:85a3:0000:0000:8a2e:0370:7334").returns(true)
     assert Whois::Server.guess("2001:0db8:85a3:0000:0000:8a2e:0370:7334")
   end
 
   def test_guess_should_recognize_ipv6_with_zeros_group
-    Whois::Server.expects(:find_for_ipv6).with("2002::1").returns(true)
+    Whois::Server.expects(:find_for_ip).with("2002::1").returns(true)
     assert Whois::Server.guess("2002::1")
   end
 

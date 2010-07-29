@@ -122,21 +122,16 @@ module Whois
     #   When unable to find an appropriate whois server for <tt>qstring</tt>.
     #
     def self.guess(qstring)
-      # IPv6 address (secure match)
-      if valid_ipv6?(qstring)
-        return find_for_ipv6(qstring)
-      end
-
-      # IPv4 address (secure match)
-      if valid_ipv4?(qstring)
-        return find_for_ipv4(qstring)
+      # IP address (secure match)
+      if valid_ip?(qstring)
+        return find_for_ip(qstring)
       end
 
       # Email Address (secure match)
       if qstring =~ /@/
         return find_for_email(qstring)
       end
-      
+
       # TLD
       if server = find_for_tld(qstring)
         return server
@@ -149,22 +144,12 @@ module Whois
 
     private
 
-      def self.find_for_ipv6(qstring)
+      def self.find_for_ip(qstring)
         ip = IPAddr.new(qstring)
-        definitions(:ipv6).each do |definition|
+        type = ip.ipv4? ? :ipv4 : :ipv6
+        definitions(type).each do |definition|
           if IPAddr.new(definition.first).include?(ip)
-            return factory(:ipv6, *definition)
-          end
-        end
-        raise AllocationUnknown,
-                "IP Allocation for `#{qstring}' unknown. Server definitions might be outdated."
-      end
-
-      def self.find_for_ipv4(qstring)
-        ip = IPAddr.new(qstring)
-        definitions(:ipv4).each do |definition|
-          if IPAddr.new(definition.first).include?(ip)
-            return factory(:ipv4, *definition)
+            return factory(type, *definition)
           end
         end
         raise AllocationUnknown,
@@ -180,6 +165,10 @@ module Whois
           return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ qstring
         end
         nil
+      end
+
+      def self.valid_ip?(addr)
+        valid_ipv4?(addr) || valid_ipv6?(addr)
       end
 
       def self.valid_ipv4?(addr)
