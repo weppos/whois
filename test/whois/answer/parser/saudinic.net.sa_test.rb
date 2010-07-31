@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'whois/answer/parser/saudinic.net.sa'
-require 'test/whois/answer/parser/whois.nic.net.sa_test'
+require 'whois/answer/parser/whois.nic.net.sa_test'
 
 class AnswerParserSaudinicNetSaTest < AnswerParserWhoisNicNetSaTest
 
