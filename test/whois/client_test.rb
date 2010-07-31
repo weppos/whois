@@ -26,7 +26,7 @@ class ClientTest < Test::Unit::TestCase
 
   def test_query_should_cast_qstring_to_string
     server = Object.new
-    # I can't use the String because Array#to_s behaves differentl
+    # I can't use the String because Array#to_s behaves differently
     # on Ruby 1.8.7 and Ruby 1.9.1
     # http://redmine.ruby-lang.org/issues/show/2617
     server.expects(:query).with(instance_of(String))
@@ -39,14 +39,18 @@ class ClientTest < Test::Unit::TestCase
   end
 
   def test_query_with_domain_with_no_whois
-    error = assert_raise(Whois::NoInterfaceError) { @client.query("weppos.ad") }
+    Whois::Server.define(:tld, ".nowhois", nil, :adapter => Whois::Server::Adapters::None)
+
+    error = assert_raise(Whois::NoInterfaceError) { @client.query("domain.nowhois") }
     assert_match /no whois server/, error.message
   end
 
   def test_query_with_domain_with_web_whois
-    error = assert_raise(Whois::WebInterfaceError) { @client.query("weppos.ar") }
+    Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :web => "www.nic.test")
+
+    error = assert_raise(Whois::WebInterfaceError) { @client.query("domain.webwhois") }
     assert_match /no whois server/, error.message
-    assert_match /www\.nic\.ar/, error.message
+    assert_match /www\.nic\.test/,  error.message
   end
 
   def test_query_with_timeout
