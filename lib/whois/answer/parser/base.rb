@@ -17,6 +17,7 @@
 require 'time'
 require 'whois/answer/contact'
 require 'whois/answer/registrar'
+require 'whois/answer/nameserver'
 require 'whois/answer/parser/ast'
 
 

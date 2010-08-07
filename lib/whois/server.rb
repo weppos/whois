@@ -114,6 +114,7 @@ module Whois
     # * ipv6
     # * ipv4
     # * top level domains
+    # * domain names
     # * emails
     #
     # ==== Raises
@@ -122,6 +123,12 @@ module Whois
     #   When unable to find an appropriate whois server for <tt>qstring</tt>.
     #
     def self.guess(qstring)
+      
+      # Top Level Domain match (com, net, .nl, .de, ...)
+      if qstring =~ /^\.?[a-z]+$/
+        return Adapters::Standard.new(:iana, ".", "whois.iana.org")
+      end
+      
       # IP address (secure match)
       if valid_ip?(qstring)
         return find_for_ip(qstring)
@@ -132,7 +139,7 @@ module Whois
         return find_for_email(qstring)
       end
 
-      # TLD
+      # domain name match
       if server = find_for_tld(qstring)
         return server
       end
