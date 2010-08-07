@@ -40,7 +40,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /This query returned 0 objects./)
+          @available ||= !!(content_for_scanner =~ /This query returned 0 objects.|organisation: Not assigned/)
         end
 
         property_supported :registered? do
@@ -60,11 +60,11 @@ module Whois
         end
         
         property_supported :created_on do
-          @created_on ||= node("dates") { |raw| Time.parse(raw["created"]) }
+          @created_on ||= node("dates") { |raw| Time.parse(raw["created"]) if raw.has_key? "created" }
         end
 
         property_supported :updated_on do
-          @updated_on ||= node("dates") { |raw| Time.parse(raw["changed"]) }
+          @updated_on ||= node("dates") { |raw| Time.parse(raw["changed"]) if raw.has_key? "changed" }
         end
         
         property_not_supported :expires_on
@@ -83,7 +83,7 @@ module Whois
             node(element) do |raw|
 
               address = (raw["address"] || "").split("\n")
-              Answer::Contact.new(
+              contact = Answer::Contact.new(
                 :type         => type,
                 :name         => raw["name"],
                 :organization => raw["organisation"],
@@ -92,9 +92,13 @@ module Whois
                 :zip          => address[2],
                 :country      => address[3],
                 :phone        => raw["phone"],
-                :fax          => raw["fax"],
-                :email        => raw["email"]
+                :fax          => raw["fax-no"],
+                :email        => raw["e-mail"]
               )
+              
+              return nil if contact.organization == "Not assigned"
+                
+              contact
             end
           end
 
@@ -104,7 +108,6 @@ module Whois
             node(element) do |raw|
               nameservers_lines = (raw["nserver"] || "").split("\n")
               nameservers_lines.each  { |nameserver|  
-                puts nameserver
                 ns = nameserver.split(" ")
                 nameservers << Answer::Nameserver.new(
                   :name         => ns[0],

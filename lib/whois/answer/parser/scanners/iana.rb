@@ -53,7 +53,7 @@ module Whois
                 section = case @input[1].strip
                 when 'contact'
                   @input[2].strip # use the contact type name as identifier
-                when 'created'
+                when 'created', 'changed'
                   'dates'
                 when 'nserver'
                   'nameservers'
