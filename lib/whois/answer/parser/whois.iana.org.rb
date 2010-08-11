@@ -87,10 +87,10 @@ module Whois
                 :type         => type,
                 :name         => raw["name"],
                 :organization => raw["organisation"],
-                :address      => address[0],
+                :address      => address.first,
                 :city         => address[1],
                 :zip          => address[2],
-                :country      => address[3],
+                :country      => address.last,
                 :phone        => raw["phone"],
                 :fax          => raw["fax-no"],
                 :email        => raw["e-mail"]
