@@ -125,7 +125,7 @@ module Whois
     def self.guess(qstring)
       
       # Top Level Domain match (.com, .net, .nl, .de, ...)
-      if qstring =~ /^\.[a-z]+$/
+      if qstring =~ /^\.(xn--)?[a-z0-9]+$/
         return Adapters::Standard.new(:iana, ".", "whois.iana.org")
       end
       
