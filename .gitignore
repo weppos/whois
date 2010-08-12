@@ -2,5 +2,5 @@
 nbproject
 .idea
 pkg
-doc
+rdoc
 coverage
