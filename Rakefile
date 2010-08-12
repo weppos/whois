@@ -129,7 +129,7 @@ end
 
 desc "Publish documentation to the site"
 task :publish_rdoc => [:clobber_rdoc, :rdoc] do
-  sh "rsync -avz --delete doc/ weppos@dads:/home/weppos/ruby-whois.org/api"
+  sh "rsync -avz --delete rdoc/ weppos@dads:/home/weppos/ruby-whois.org/api"
 end
 
 desc "Open an irb session preloaded with this library"
