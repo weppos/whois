@@ -1,7 +1,5 @@
 require 'test_helper'
 require 'whois/answer/parser/whois.iana.org'
-require 'whois/answer/nameserver.rb'
-require 'whois/answer/contact.rb'
 
 class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
 
