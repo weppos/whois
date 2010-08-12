@@ -51,7 +51,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= node("Status") == "AVAILABLE"
+          @available  ||= node("Status") == "AVAILABLE"
         end
 
         property_supported :registered? do

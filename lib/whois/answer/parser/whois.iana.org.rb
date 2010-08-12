@@ -27,12 +27,11 @@ module Whois
       #
       # Parser for the whois.iana.org server.
       #
-      #
       class WhoisIanaOrg < Base
         include Ast
-        
+
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -40,13 +39,14 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /This query returned 0 objects.|organisation: Not assigned/)
+          @available  ||= !!(content_for_scanner =~ /This query returned 0 objects|organisation: Not assigned/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
-        
+
+
         property_supported :registrant_contact do
           @registrant_contact ||= contact("organisation", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
@@ -58,7 +58,8 @@ module Whois
         property_supported :technical_contact do
           @technical_contact ||= contact("technical", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
-        
+
+
         property_supported :created_on do
           @created_on ||= node("dates") { |raw| Time.parse(raw["created"]) if raw.has_key? "created" }
         end
@@ -66,12 +67,14 @@ module Whois
         property_supported :updated_on do
           @updated_on ||= node("dates") { |raw| Time.parse(raw["changed"]) if raw.has_key? "changed" }
         end
-        
+
         property_not_supported :expires_on
+
 
         property_supported :nameservers do
           @nameservers ||= nameserver("nameservers") || []
         end
+
 
         protected
 
@@ -95,24 +98,24 @@ module Whois
                 :fax          => raw["fax-no"],
                 :email        => raw["e-mail"]
               )
-              
+
               return nil if contact.organization == "Not assigned"
-                
+
               contact
             end
           end
 
           def nameserver(element)
             nameservers = []
-            
+
             node(element) do |raw|
               nameservers_lines = (raw["nserver"] || "").split("\n")
-              nameservers_lines.each  { |nameserver|  
+              nameservers_lines.each  { |nameserver|
                 ns = nameserver.split(" ")
                 nameservers << Answer::Nameserver.new(
                   :name         => ns[0],
                   :ipv4         => ns[1],
-                  :ipv6         => ns[2] 
+                  :ipv6         => ns[2]
                 )
               }
             end
