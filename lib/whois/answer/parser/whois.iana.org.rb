@@ -84,44 +84,31 @@ module Whois
 
           def contact(element, type)
             node(element) do |raw|
-
-              address = (raw["address"] || "").split("\n")
-              contact = Answer::Contact.new(
-                :type         => type,
-                :name         => raw["name"],
-                :organization => raw["organisation"],
-                :address      => address.first,
-                :city         => address[1],
-                :zip          => address[2],
-                :country      => address.last,
-                :phone        => raw["phone"],
-                :fax          => raw["fax-no"],
-                :email        => raw["e-mail"]
-              )
-
-              return nil if contact.organization == "Not assigned"
-
-              contact
+              if raw["organisation"] != "Not assigned"
+                address = (raw["address"] || "").split("\n")
+                Answer::Contact.new(
+                  :type         => type,
+                  :name         => raw["name"],
+                  :organization => raw["organisation"],
+                  :address      => address[0],
+                  :city         => address[1],
+                  :zip          => address[2],
+                  :country      => address[3],
+                  :phone        => raw["phone"],
+                  :fax          => raw["fax-no"],
+                  :email        => raw["e-mail"]
+                )
+              end
             end
           end
 
           def nameserver(element)
-            nameservers = []
-
             node(element) do |raw|
-              nameservers_lines = (raw["nserver"] || "").split("\n")
-              nameservers_lines.each  { |nameserver|
-                ns = nameserver.split(" ")
-                nameservers << Answer::Nameserver.new(
-                  :name         => ns[0].downcase,
-                  :ipv4         => ns[1],
-                  :ipv6         => ns[2]
-                )
-              }
+              (raw["nserver"] || "").split("\n").map do |nameserver|
+                Answer::Nameserver.new(*nameserver.downcase.split(" "))
+              end
             end
-            nameservers
           end
-
 
       end
 
