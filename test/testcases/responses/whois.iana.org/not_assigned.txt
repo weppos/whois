@@ -1,0 +1,17 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+domain:       EH
+
+organisation: Not assigned
+
+contact:      administrative
+organisation: Not assigned
+
+contact:      technical
+organisation: Not assigned
+
+changed:      1999-09-27
+source:       IANA
+
