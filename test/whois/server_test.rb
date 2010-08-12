@@ -11,13 +11,18 @@ class ServerTest < Test::Unit::TestCase
   end
 
 
+  def test_guess_should_recognize_tld
+    Whois::Server.expects(:find_for_tld).never
+    assert Whois::Server.guess(".com")
+  end
+
   def test_guess_should_recognize_email
     Whois::Server.expects(:find_for_email).with("email@example.org").returns(true)
     assert Whois::Server.guess("email@example.org")
   end
 
-  def test_guess_should_recognize_tld
-    Whois::Server.expects(:find_for_tld).with("google.com").returns(true)
+  def test_guess_should_recognize_domain
+    Whois::Server.expects(:find_for_domain).with("google.com").returns(true)
     assert Whois::Server.guess("google.com")
   end
 
@@ -40,6 +45,27 @@ class ServerTest < Test::Unit::TestCase
     assert_raise(Whois::ServerNotFound){ Whois::Server.guess("xyz") }
   end
 
+
+  def test_guess_with_tld_should_return_iana_adapter
+    assert_equal Whois::Server.factory(:iana, ".", "whois.iana.org"), Whois::Server.guess(".test")
+  end
+
+  def test_guess_with_idn_tld_should_return_iana_adapter
+    assert_equal Whois::Server.factory(:iana, ".", "whois.iana.org"), Whois::Server.guess(".xn--fiqs8s")
+  end
+
+  def test_find_for_domain_should_lookup_definition_and_return_adapter
+    Whois::Server.define(:tld, ".test", "whois.test")
+
+    assert_equal Whois::Server.factory(:tld, ".test", "whois.test"), Whois::Server.guess("example.test")
+  end
+
+  def test_find_for_domain_should_not_consider_dot_as_regexp_instruction
+    Whois::Server.define(:tld, ".no.com", "whois.no.com")
+    Whois::Server.define(:tld, ".com", "whois.com")
+
+    assert_equal Whois::Server.factory(:tld, ".com", "whois.com"), Whois::Server.guess("antoniocangiano.com")
+  end
 
   def test_find_for_ipv4_should_lookup_definition_and_return_adapter
     Whois::Server.define(:ipv4, "192.168.1.0/10", "whois.test")
@@ -69,13 +95,6 @@ class ServerTest < Test::Unit::TestCase
     Whois::Server.define(:ipv6, "::192.168.1.1", "whois.test")
 
     assert_equal Whois::Server.factory(:ipv6, "::192.168.1.1", "whois.test"), Whois::Server.guess("::192.168.1.1")
-  end
-
-  def test_find_for_tld_should_not_consider_dot_as_regexp_instruction
-    Whois::Server.define(:tld, ".no.com", "whois.no.com")
-    Whois::Server.define(:tld, ".com", "whois.com")
-
-    assert_equal "whois.com", Whois::Server.guess("antoniocangiano.com").host
   end
 
 
@@ -125,6 +144,5 @@ class ServerTest < Test::Unit::TestCase
     server = Whois::Server.factory(:tld, ".foo", "whois.foo", :adapter => Whois::Server::Adapters::None, :foo => "bar")
     assert_equal server.options, { :foo => "bar" } 
   end
-
 
 end
