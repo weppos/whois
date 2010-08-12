@@ -6,29 +6,27 @@ require 'mocha'
 require 'whois'
 
 
-module ConnectivityTestHelper
-  def self.included(base)
-    base.extend ClassMethods
-  end
-
-  module ClassMethods
-
-    def need_connectivity(&block)
-      if connectivity_available?
-        yield
-      end
-    end
-
-    def connectivity_available?
-      ENV["ONLINE"].to_i == 1
-    end
-
-  end
-end
-
-
 class Test::Unit::TestCase
-  include ConnectivityTestHelper
+
+  def self.need_connectivity(&block)
+    if connectivity_available?
+      yield
+    end
+  end
+
+  def self.connectivity_available?
+    ENV["ONLINE"].to_i == 1
+  end
+
+
+  def with_definitions(&block)
+    @_definitions = Whois::Server.definitions
+    Whois::Server.send :class_variable_set, :@@definitions, { :tld => [], :ipv4 =>[], :ipv6 => [] }
+    yield
+  ensure
+    Whois::Server.send :class_variable_set, :@@definitions, @_definitions
+  end
+
 end
 
 
@@ -52,5 +50,5 @@ class Whois::Answer::Parser::TestCase < Test::Unit::TestCase
     def part(*args)
       Whois::Answer::Part.new(*args)
     end
-  
+
 end
