@@ -182,22 +182,22 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
   def test_nameservers_with_registered
     nameservers = [
       Whois::Answer::Nameserver.new(
-        :name         => "MAX.NRA.NATO.INT",
+        :name         => "max.nra.nato.int",
         :ipv4         => "192.101.252.69",
         :ipv6         => nil
       ),
       Whois::Answer::Nameserver.new(
-        :name         => "MAXIMA.NRA.NATO.INT",
+        :name         => "maxima.nra.nato.int",
         :ipv4         => "193.110.130.68",
         :ipv6         => nil
       ),
       Whois::Answer::Nameserver.new(
-        :name         => "NS.NAMSA.NATO.INT",
+        :name         => "ns.namsa.nato.int",
         :ipv4         => "208.161.248.15",
         :ipv6         => nil
       ),
       Whois::Answer::Nameserver.new(
-        :name         => "NS.NC3A.NATO.INT",
+        :name         => "ns.nc3a.nato.int",
         :ipv4         => "195.169.116.6",
         :ipv6         => nil
       )

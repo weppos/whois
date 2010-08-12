@@ -113,7 +113,7 @@ module Whois
               nameservers_lines.each  { |nameserver|
                 ns = nameserver.split(" ")
                 nameservers << Answer::Nameserver.new(
-                  :name         => ns[0],
+                  :name         => ns[0].downcase,
                   :ipv4         => ns[1],
                   :ipv6         => ns[2]
                 )
