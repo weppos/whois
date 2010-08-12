@@ -15,7 +15,7 @@ An extensive test suite is available to verify the library correctness but you m
 * Intelligent Ruby client
 * Flexible and extensible configuration with support for user-defined servers
 * Powerful whois response parser
-* Support for IPv6, IPv4 and top level domain whois queries
+* Support for IPv6, IPv4, TLD and domain WHOIS queries
 * Object oriented design
 * Compatible with Ruby 1.8.6 and newer, including Ruby 1.9
 
@@ -48,21 +48,26 @@ Note. This section covers only the essentials for getting started with the Whois
 
 === Querying the Server
 
-Whois provides the ability to get WHOIS information for hostnames, IPv4 and IPv6 addresses. The client is smart enough to guess the best WHOIS server according to given query, send the request and return the response.
+Whois provides the ability to get WHOIS information for TLD, domain names, IPv4 and IPv6 addresses. The client is smart enough to guess the best WHOIS server according to given query, send the request and return the response.
 
 Check out the following examples:
 
-  # Domain Whois
+  # Domain WHOIS
   w = Whois::Client.new
   w.query("google.com")
   # => #<Whois::Answer>
 
-  # IPv4 Whois
+  # TLD WHOIS
+  w = Whois::Client.new
+  w.query(".com")
+  # => #<Whois::Answer>
+
+  # IPv4 WHOIS
   w = Whois::Client.new
   w.query("74.125.67.100")
   # => #<Whois::Answer>
 
-  # IPv6 Whois
+  # IPv6 WHOIS
   w = Whois::Client.new
   w.query("2001:db8::1428:57ab")
   # => #<Whois::Answer>
@@ -71,6 +76,7 @@ The query method is stateless. For this reason, you can safely re-use the same c
 
   w = Whois::Client.new
   w.query("google.com")
+  w.query(".com")
   w.query("74.125.67.100")
   w.query("2001:db8::1428:57ab")
   w.query("google.it")
@@ -79,6 +85,17 @@ If you just need a WHOIS response and you don't care about a full control of the
 
   Whois.whois("google.com")
   # => #<Whois::Answer>
+
+Did I mention you can even use blocks?
+
+  Whois::Client.new do |w|
+    w.query("google.com")
+    w.query(".com")
+    w.query("74.125.67.100")
+    w.query("2001:db8::1428:57ab")
+    w.query("google.it")
+  end
+
 
 === Consuming the Answer
 
