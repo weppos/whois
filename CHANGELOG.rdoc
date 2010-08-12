@@ -21,6 +21,8 @@
 
 * CHANGED: Renamed Scanners::VerisignScanner to Scanners::Verisign.
 
+* CHANGED: Excluded test folder from the packaged .gem file to reduce the size of the final packaged library.
+
 
 == Release 1.2.2
 
