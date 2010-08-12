@@ -193,18 +193,18 @@ module Whois
     #   but the object type doesn't have any supported WHOIS adapter associated.
     #
     def self.guess(qstring)
-      # Top Level Domain match (.com, .net, .nl, .de, ...)
-      if qstring =~ /^\.(xn--)?[a-z0-9]+$/
-        return Adapters::Standard.new(:iana, ".", "whois.iana.org")
+      # Top Level Domain match
+      if matches_tld?(qstring)
+        return factory(:iana, ".", "whois.iana.org")
       end
       
       # IP address (secure match)
-      if valid_ip?(qstring)
+      if matches_ip?(qstring)
         return find_for_ip(qstring)
       end
 
       # Email Address (secure match)
-      if qstring =~ /@/
+      if matches_email?(qstring)
         return find_for_email(qstring)
       end
 
@@ -219,6 +219,19 @@ module Whois
 
 
     private
+
+      def self.matches_tld?(string)
+        string =~ /^\.(xn--)?[a-z0-9]+$/
+      end
+
+      def self.matches_ip?(string)
+        valid_ipv4?(string) || valid_ipv6?(string)
+      end
+
+      def self.matches_email?(string)
+        string =~ /@/
+      end
+
 
       def self.find_for_ip(qstring)
         ip = IPAddr.new(qstring)
@@ -242,10 +255,6 @@ module Whois
         nil
       end
 
-
-      def self.valid_ip?(addr)
-        valid_ipv4?(addr) || valid_ipv6?(addr)
-      end
 
       def self.valid_ipv4?(addr)
         if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
