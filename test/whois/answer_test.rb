@@ -130,18 +130,6 @@ class AnswerTest < Test::Unit::TestCase
     assert !answer.property_supported?(:expires_on)
   end
 
-  # DEPRECATED
-  def test_properties
-    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
-    properties = answer.properties
-
-    assert_equal Whois::Answer::Parser.properties.size, properties.keys.size
-    assert_equal nil,                       properties[:status]
-    assert_equal Date.parse("2010-10-20"),  properties[:created_on]
-    assert_equal nil,                       properties[:updated_on]
-    assert_equal nil,                       properties[:expires_on]
-  end
-
   def test_should_return_value_with_supported_property_getter
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.parser.fake")])
     assert_equal Date.parse("2010-10-20"), answer.created_on

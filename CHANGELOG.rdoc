@@ -1,5 +1,11 @@
 = Changelog
 
+
+== master
+
+* REMOVED: Deprecated Whois::Answer::Parser.properties method.
+
+
 == Release 1.3.0
 
 * ADDED: Ability to query IANA for TLD WHOIS information. [aadlani]
