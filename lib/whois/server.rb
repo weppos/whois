@@ -195,7 +195,7 @@ module Whois
     def self.guess(qstring)
       # Top Level Domain match
       if matches_tld?(qstring)
-        return factory(:iana, ".", "whois.iana.org")
+        return factory(:tld, ".", "whois.iana.org")
       end
       
       # IP address (secure match)

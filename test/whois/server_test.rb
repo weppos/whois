@@ -47,11 +47,11 @@ class ServerTest < Test::Unit::TestCase
 
 
   def test_guess_with_tld_should_return_iana_adapter
-    assert_equal Whois::Server.factory(:iana, ".", "whois.iana.org"), Whois::Server.guess(".test")
+    assert_equal Whois::Server.factory(:tld, ".", "whois.iana.org"), Whois::Server.guess(".test")
   end
 
   def test_guess_with_idn_tld_should_return_iana_adapter
-    assert_equal Whois::Server.factory(:iana, ".", "whois.iana.org"), Whois::Server.guess(".xn--fiqs8s")
+    assert_equal Whois::Server.factory(:tld, ".", "whois.iana.org"), Whois::Server.guess(".xn--fiqs8s")
   end
 
   def test_find_for_domain_should_lookup_definition_and_return_adapter
