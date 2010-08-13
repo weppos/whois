@@ -66,8 +66,7 @@ module Whois
     end
 
 
-    # Returns the content of this answer as a string.
-    # This method joins all answer parts into a single string
+    # This method joins and returns all answer parts into a single string
     # and separates each response with a newline character.
     #
     #   answer = Whois::Answer.new([Whois::Answer::Part.new("First answer.")])
@@ -77,6 +76,10 @@ module Whois
     #   answer = Whois::Answer.new([Whois::Answer::Part.new("First answer."), Whois::Answer::Part.new("Second answer.")])
     #   answer.content
     #   # => "First answer.\nSecond answer."
+    #
+    # ==== Returns
+    #
+    # String:: The content of this answer.
     #
     def content
       @content ||= parts.map(&:response).join("\n")
@@ -125,6 +128,15 @@ module Whois
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
     # See also <tt>Whois::Answer::Parser.supported?</tt>.
+    #
+    # ==== Parameters
+    #
+    # property::  A Symbol with the property name to check.
+    #
+    # ==== Returns
+    #
+    # Boolean
+    #
     def property_supported?(property)
       parser.property_supported?(property)
     end

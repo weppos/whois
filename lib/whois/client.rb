@@ -34,19 +34,24 @@ module Whois
     #
     # Initializes a new <tt>Whois::Client</tt> with <tt>options</tt>.
     #
-    # options - The Hash options used to refine the selection (default: {}):
+    # ==== Parameters
+    #
+    # options:: The Hash options used to refine the selection (default: {}):
     #           :timeout - The Integer script timeout, expressed in seconds (default: DEFAULT_TIMEOUT).
     #
     # If <tt>block</tt> is given, yields <tt>self</tt>.
     #
-    # Examples
+    # ==== Returns
+    #
+    # Whois::Client:: The client instance.
+    #
+    # ==== Examples
     #
     #   client = Whois::Client.new do |c|
     #     c.timeout = nil
     #   end
     #   client.query("google.com")
     #
-    # Returns a <tt>Whois::Client</tt>.
     def initialize(options = {}, &block)
       self.timeout = options[:timeout] || DEFAULT_TIMEOUT
       yield(self) if block_given?
@@ -68,14 +73,19 @@ module Whois
     # Queries the right WHOIS server for <tt>qstring</tt> and returns
     # the response from the server.
     #
-    # qstring - The String to be sent as query parameter.
+    # ==== Parameters
     #
-    # Examples
+    # qstring:: The String to be sent as query parameter.
+    #
+    # ==== Returns
+    #
+    # Whois::Answer:: The answer object containing the WHOIS response.
+    #
+    # ==== Examples
     #
     #   client.query("google.com")
     #   # => #<Whois::Answer>
     #
-    # Returns a <tt>Whois::Answer</tt> instance.
     def query(qstring)
       string = qstring.to_s
       Timeout::timeout(timeout) do

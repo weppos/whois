@@ -58,16 +58,16 @@ module Whois
   #
   # Warning: this method is only available if a Whois parser exists
   # for the top level domain of <tt>qstring</tt>.
-  # If no parser exists for <tt>qstring</tt>, you'll receive a warning message
-  # and the method will return <tt>nil</tt>.
-  # This is a technical limitation. Browse the lib/whois/answer/parsers folder
-  # to view all available parsers.
+  # If no parser exists for <tt>qstring</tt>, you'll receive a 
+  # warning message and the method will return <tt>nil</tt>.
+  # This is a technical limitation. Browse the lib/whois/answer/parsers
+  # folder to view all available parsers.
   #
   # ==== Parameters
   #
   # qstring:: The String to be sent as query parameter.
-  #   It is intended to be a domain name, otherwise this method
-  #   may return unexpected responses.
+  #           It is intended to be a domain name, otherwise this method
+  #           may return unexpected responses.
   #
   # ==== Returns
   #
@@ -101,8 +101,8 @@ module Whois
   # ==== Parameters
   #
   # qstring:: The String to be sent as query parameter.
-  #   It is intended to be a domain name, otherwise this method
-  #   may return unexpected responses.
+  #           It is intended to be a domain name, otherwise this method
+  #           may return unexpected responses.
   #
   # ==== Returns
   #
