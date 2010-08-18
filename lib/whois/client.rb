@@ -36,7 +36,7 @@ module Whois
     #
     # ==== Parameters
     #
-    # options:: The Hash options used to refine the selection (default: {}):
+    # options:: Hash of options (default: {}):
     #           :timeout - The Integer script timeout, expressed in seconds (default: DEFAULT_TIMEOUT).
     #
     # If <tt>block</tt> is given, yields <tt>self</tt>.

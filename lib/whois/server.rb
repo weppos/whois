@@ -89,7 +89,7 @@ module Whois
     #               this server is responsible for.
     # host::        The server hostname.
     #               Use nil if unknown or not available.
-    # options::     Hash of options to customize Adapter behavior.
+    # options::     Hash of options (default: {}).
     #               The <tt>:adapter</tt> option has a special meaning
     #               and determines the adapter Class to use.
     #               Defaults to </tt>Whois::Server::Adapters::Standard</tt>
@@ -153,7 +153,7 @@ module Whois
     #               this server is responsible for.
     # host::        The server hostname.
     #               Use nil if unknown or not available.
-    # options::     Hash of options to customize Adapter behavior.
+    # options::     Hash of options (default: {}).
     #               The <tt>:adapter</tt> option has a special meaning
     #               and determines the adapter Class to use.
     #               Defaults to </tt>Whois::Server::Adapters::Standard</tt>
