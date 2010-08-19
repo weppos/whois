@@ -127,9 +127,11 @@ rescue LoadError
   puts "CodeStatistics (Rails) is not available"
 end
 
-desc "Publish documentation to the site"
-task :publish_rdoc => [:clobber_rdoc, :rdoc] do
-  sh "rsync -avz --delete rdoc/ weppos@dads:/home/weppos/ruby-whois.org/api"
+namespace :rdoc do
+  desc "Publish RDoc documentation to the site"
+  task :publish => [:clobber_rdoc, :rdoc] do
+    sh "rsync -avz --delete rdoc/ weppos@dads:/home/weppos/ruby-whois.org/api"
+  end
 end
 
 desc "Open an irb session preloaded with this library"

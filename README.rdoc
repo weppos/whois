@@ -24,7 +24,7 @@ An extensive test suite is available to verify the library correctness but you m
 
 * Ruby >= 1.8.6
 
-Whois has been {successfully tested}[http://www.ruby-whois.org/manual/installation.html] against the following Ruby platforms:
+Whois has been {successfully tested}[http://www.ruby-whois.org/manual/installation.html] against the following Ruby interpreters:
 
 * Ruby 1.8.6 / 1.8.7 / 1.9.1 / 1.9.2
 * MacRuby
@@ -184,8 +184,8 @@ Bug reports and Feature suggestions {are welcomed}[http://github.com/weppos/whoi
 == More
 
 * {Homepage}[http://www.ruby-whois.org]
-* {GitHub Repository}[http://github.com/weppos/whois]
-* {API Documentation}[http://www.ruby-whois.org/api/]
+* {Repository}[http://github.com/weppos/whois]
+* {API Documentation}[http://www.ruby-whois.org/api/] (RDoc)
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
 
