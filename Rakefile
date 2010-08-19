@@ -132,7 +132,7 @@ begin
   end
 rescue LoadError
   task :clobber_rcov
-  puts "RCov is not available"
+  # puts "RCov is not available"
 end
 
 begin
@@ -143,7 +143,7 @@ begin
                        ["Tests", "test"]).to_s
   end
 rescue LoadError
-  puts "CodeStatistics (Rails) is not available"
+  # puts "CodeStatistics (Rails) is not available"
 end
 
 namespace :rdoc do
