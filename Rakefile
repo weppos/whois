@@ -21,23 +21,8 @@ if ENV['SNAPSHOT'].to_i == 1
 end
 
 
-# Run all the tests in the /test folder
-Rake::TestTask.new do |t|
-  t.libs << "test"
-  t.test_files = FileList["test/**/*_test.rb"]
-  t.verbose = true
-end
-
-# Generate documentation
-Rake::RDocTask.new do |rd|
-  rd.main = "README.rdoc"
-  rd.rdoc_files.include("*.rdoc", "lib/**/*.rb")
-  rd.rdoc_dir = "rdoc"
-end
-
 # Run test by default.
 task :default => ["test"]
-
 
 # This builds the actual gem. For details of what all these options
 # mean, and other ones you can add, check the documentation here:
@@ -90,6 +75,40 @@ task :gemspec do
   file = File.dirname(__FILE__) + "/#{spec.name}.gemspec"
   File.open(file, "w") {|f| f << spec.to_ruby }
 end
+
+
+# Generate documentation
+Rake::RDocTask.new do |rd|
+  rd.main = "README.rdoc"
+  rd.rdoc_files.include("*.rdoc", "lib/**/*.rb")
+  rd.rdoc_dir = "rdoc"
+end
+
+# Run all the tests in the /test folder
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList["test/**/*_test.rb"]
+  t.verbose = true
+end
+
+task "ensure_rvm" do
+  raise "RVM is not available" unless File.exist?(File.expand_path("~/.rvm/scripts/rvm"))
+end
+
+RUBIES = %w(1.8.6-p399 1.8.7-p249 1.9.1-p378 1.9.2-rc2 rbx-1.0.1-20100603 jruby-1.5.1 ree-1.8.7-2010.02)
+
+desc "Run tests for all rubies"
+task "test_rubies" => "ensure_rvm" do
+  sh "rvm #{RUBIES.join(",")} rake test"
+end
+
+RUBIES.each do |ruby|
+  desc "Run tests on Ruby #{ruby}"
+  task "test_ruby_#{ruby}"=> "ensure_rvm" do
+    sh "rvm #{ruby} rake test"
+  end
+end
+
 
 desc "Remove any temporary products, including gemspec"
 task :clean => [:clobber] do
