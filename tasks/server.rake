@@ -3,7 +3,7 @@ namespace :server do
   desc "server:convert_file_tlds"
   task :convert_file_tlds do
     list = parse_list_tld
-    File.open("data/tlds.txt", "w+") do |f| 
+    File.open("data/c/tlds.txt", "w+") do |f| 
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -12,7 +12,7 @@ namespace :server do
   desc "server:convert_file_ipv4"
   task :convert_file_ipv4 do
     list = parse_list_ipv4
-    File.open("data/ipv4.txt", "w+") do |f|
+    File.open("data/c/ipv4.txt", "w+") do |f|
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -21,7 +21,7 @@ namespace :server do
   desc "server:convert_file_ipv6"
   task :convert_file_ipv6 do
     list = parse_list_ipv6
-    File.open("data/ipv6.txt", "w+") do |f|
+    File.open("data/c/ipv6.txt", "w+") do |f|
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -29,7 +29,7 @@ namespace :server do
 
 
   def parse_list_tld
-    File.readlines("data/tld_serv_list").map do |line|
+    File.readlines("data/c/tld_serv_list").map do |line|
       line.chomp!
       line.gsub!(/^\s*(.*)\s*$/, '\1')
       line.gsub!(/\s*#.*$/, '')
@@ -58,7 +58,7 @@ Whois::Server.define :tld, #{extension.inspect}, \
   end
 
   def parse_list_ipv4
-    File.readlines("data/ip_del_list").map do |line|
+    File.readlines("data/c/ip_del_list").map do |line|
       line.chomp!
       line.gsub!(/^\s*(.*)\s*$/, '\1')
       line.gsub!(/\s*#.*$/, '')
@@ -81,7 +81,7 @@ Whois::Server.define :ipv4, #{range.inspect}, \
   end
 
   def parse_list_ipv6
-    File.readlines("data/ip6_del_list").map do |line|
+    File.readlines("data/c/ip6_del_list").map do |line|
       line.chomp!
       line.gsub!(/^\s*(.*)\s*$/, '\1')
       line.gsub!(/\s*#.*$/, '')
