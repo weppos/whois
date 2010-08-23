@@ -139,7 +139,7 @@ begin
   require "code_statistics"
   desc "Show library's code statistics"
   task :stats do
-    CodeStatistics.new(["Public Suffix Service", "lib"],
+    CodeStatistics.new(["Whois", "lib"],
                        ["Tests", "test"]).to_s
   end
 rescue LoadError
