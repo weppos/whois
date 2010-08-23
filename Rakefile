@@ -95,7 +95,7 @@ task "ensure_rvm" do
   raise "RVM is not available" unless File.exist?(File.expand_path("~/.rvm/scripts/rvm"))
 end
 
-RUBIES = %w(1.8.6-p399 1.8.7-p249 1.9.1-p378 1.9.2-rc2 rbx-1.0.1-20100603 jruby-1.5.1 ree-1.8.7-2010.02)
+RUBIES = %w(1.8.6-p399 1.8.7-p249 1.9.1-p378 1.9.2-p0 rbx-1.0.1-20100603 jruby-1.5.2 ree-1.8.7-2010.02)
 
 desc "Run tests for all rubies"
 task "test_rubies" => "ensure_rvm" do
