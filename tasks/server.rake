@@ -49,11 +49,7 @@ namespace :server do
         else                    [instructions]
       end
 
-      <<-RUBY
-Whois::Server.define :tld, #{extension.inspect}, \
-#{server.inspect}\
-#{options.nil? ? "" : ", " + options.inspect}
-      RUBY
+      %Q{Whois::Server.define :tld, #{value_to_string(extension)}, #{value_to_string(server)}#{options.nil? ? "" : ", " + options_to_string(options)}\n}
     end
   end
 
@@ -73,11 +69,7 @@ Whois::Server.define :tld, #{extension.inspect}, \
         else                     ["whois.#{server}.net"]
       end
 
-      <<-RUBY
-Whois::Server.define :ipv4, #{range.inspect}, \
-#{server.inspect}\
-#{options.nil? ? "" : ", " + options.inspect}
-      RUBY
+      %Q{Whois::Server.define :ipv4, #{value_to_string(range)}, #{value_to_string(server)}#{options.nil? ? "" : ", " + options_to_string(options)}\n}
     end
   end
 
@@ -99,11 +91,21 @@ Whois::Server.define :ipv4, #{range.inspect}, \
         else                     ["whois.#{server}.net"]
       end
 
-      <<-RUBY
-Whois::Server.define :ipv6, #{range.inspect}, \
-#{server.inspect}\
-#{options.nil? ? "" : ", " + options.inspect}
-      RUBY
+      %Q{Whois::Server.define :ipv6, #{value_to_string(range)}, #{value_to_string(server)}#{options.nil? ? "" : ", " + options_to_string(options)}\n}
+    end
+  end
+
+  def options_to_string(options)
+    options.is_a?(Hash) ? options.map do |k, v|
+      ":#{k} => " + (v.is_a?(Hash) ? ('{ ' + options_to_string(v) + ' }') : "#{value_to_string(v)}")
+    end.join(", ") : options.to_s
+  end
+
+  def value_to_string(value)
+    case value
+      when NilClass then "nil"
+      when String   then '"' + value.to_s + '"'
+      else value.to_s
     end
   end
 
