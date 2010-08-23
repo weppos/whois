@@ -75,7 +75,7 @@ bi;;;
 #Whois::Server.define :tld, ".bj", "whois.nic.bj"
 bm;;;
 bn;;;
-bo;;;
+#Whois::Server.define :tld, ".bo", "whois.nic.bo"
 br;whois.registro.br;registro.br;u34jedzcq.br
 bs;;;
 bt;;;
@@ -93,7 +93,7 @@ ch;whois.nic.ch;google.ch;u34jedzcq.ch
 #Whois::Server.define :tld, ".ci", "www.nic.ci"
 #Whois::Server.define :tld, ".ck", "whois.nic.ck"
 #Whois::Server.define :tld, ".cl", "whois.nic.cl"
-cm;;;
+#Whois::Server.define :tld, ".cm", "whois.netcom.cm"
 #Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 cn;whois.cnnic.cn;google.cn;u34jedzcq.cn
 #Whois::Server.define :tld, ".uk.co", "whois.uk.co"
@@ -109,7 +109,7 @@ dj;;;
 dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
 #Whois::Server.define :tld, ".dm", "whois.nic.dm"
 do;;;
-dz;;;
+#Whois::Server.define :tld, ".dz", "whois.nic.dz"
 ec;whois.nic.ec;google.ec;u34jedzcq.ec
 ee;whois.eenet.ee;google.ee;u34jedzcq.ee
 eg;;;
@@ -277,7 +277,7 @@ tr;whois.nic.tr;google.com.tr;u34jedzcq.com.tr
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
 #Whois::Server.define :tld, ".tw", "whois.twnic.net"
-tz;;;
+#Whois::Server.define :tld, ".tz", "whois.tznic.or.tz"
 in.ua;whois.in.ua;google.in.ua;u34jedzcq.in.ua
 ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
 #Whois::Server.define :tld, ".ug", "www.registry.co.ug"
@@ -318,7 +318,16 @@ zm;;;
 zw;;;
 #Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
 #Whois::Server.define :tld, ".xn--fiqz9s", "cwhois.cnnic.cn"
+#Whois::Server.define :tld, ".xn--fzc2c9e2c", nil, {:adapter=>Whois::Server::Adapters::None}
+#Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
+#Whois::Server.define :tld, ".xn--kprw13d", "whois.twnic.net.tw"
+#Whois::Server.define :tld, ".xn--kpry57d", "whois.twnic.net.tw"
 #Whois::Server.define :tld, ".xn--mgbaam7a8h", "whois.aeda.net.ae"
+#Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, {:adapter=>Whois::Server::Adapters::None}
 #Whois::Server.define :tld, ".xn--mgberp4a5d4ar", "whois.nic.net.sa"
-#Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
+#Whois::Server.define :tld, ".xn--o3cw4h", "whois.thnic.co.th"
 #Whois::Server.define :tld, ".xn--p1ai", "whois.ripn.net"
+#Whois::Server.define :tld, ".xn--pgbs0dh", nil, {:adapter=>Whois::Server::Adapters::None}
+#Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
+#Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, {:adapter=>Whois::Server::Adapters::None}
+#Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
