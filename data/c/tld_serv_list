@@ -75,7 +75,7 @@
 .az	WEB http://www.nic.az/AzCheck.htm
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://www.barbadosdomains.net/search_domain.php
-.bd	WEB http://www.whois.com.bd/ # http://www.btcl.net.bd/faq_dotbd.php www.register.com.bd FIXME APPARENTLY NOT OFFICIAL!
+.bd	WEB http://whois.btcl.net.bd/
 .be	whois.dns.be
 .bf	NONE		# http://www.artel.bf/ http://www.onatel.bf/internet/domaine.htm
 .bg	whois.register.bg
@@ -85,7 +85,7 @@
 #.bl
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 .bn	NONE		# www.brunet.bn
-.bo	WEB http://www.nic.bo/
+.bo	whois.nic.bo
 .br	whois.nic.br
 .bs	WEB http://www.nic.bs/cgi-bin/search.pl
 .bt	WEB http://www.nic.bt/
@@ -103,13 +103,13 @@
 .ci	www.nic.ci
 .ck	whois.nic.ck
 .cl	whois.nic.cl
-.cm	WEB http://netcom.cm/whois.php
+.cm	whois.netcom.cm
 .edu.cn	whois.edu.cn
 .cn	whois.cnnic.cn
 .uk.co	whois.uk.co
-.co	WEB https://www.nic.co/
+.co	WEB http://www.whois.co/
 .cr	WEB http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do
-.cu	WEB http://www.nic.cu/consult.html
+.cu	WEB http://www.nic.cu/
 .cv	NONE		# www.dns.cv?
 .cx	whois.nic.cx
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
@@ -119,7 +119,7 @@
 .dk	whois.dk-hostmaster.dk
 .dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
-.dz	WEB https://www.nic.dz/
+.dz	whois.nic.dz
 .ec	WEB http://www.nic.ec/whois/eng/whois.asp # whois.nic.ec is restricted
 .ee	whois.eenet.ee
 .eg	NONE		# http://lookup.egregistry.eg/english.aspx
@@ -147,13 +147,13 @@
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	whois.nic.gp
 .gq	NONE		# NO NIC http://www.getesa.gq/
-.gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
+.gr	WEB https://grweb.ics.forth.gr/whois_en.jsp
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/whois.html
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
 .gw	NONE		# www.gwregister.com
 .gy	whois.registry.gy
-.hk	whois.hkdnr.net.hk
+.hk	whois.hkirc.hk
 .hm	whois.registry.hm
 .hn	AFILIAS		# www.nic.hn
 .hr	WEB http://www.dns.hr/pretrazivanje.html
@@ -185,7 +185,7 @@
 .ky	WEB http://kynseweb.messagesecure.com/kywebadmin/ # http://www.icta.ky/
 .kz	whois.nic.kz
 .la	whois.nic.la
-.lb	WEB http://www.aub.edu.lb/lbdr/search.html
+.lb	WEB http://www.aub.edu.lb/lbdr/
 .lc	AFILIAS
 .li	whois.nic.li
 .lk	whois.nic.lk
@@ -223,7 +223,7 @@
 .ne	NONE		# NIC? http://www.intnet.ne
 .nf	whois.nic.nf
 .ng	whois.register.net.ng
-.ni	WEB http://www.nic.ni/consulta.htm
+.ni	WEB http://www.nic.ni/
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
 .np	WEB http://register.mos.com.np/userSearchInc.asp
@@ -252,7 +252,7 @@
 .rs	WEB http://www.nic.rs/en/whois
 .edu.ru	whois.informika.ru
 .ru	whois.ripn.net
-.rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
+.rw	WEB http://www.nic.rw/cgi-bin/whois.pl
 .sa	whois.nic.net.sa
 .sb	whois.coccaregistry.net
 .sc	AFILIAS		# www.nic.sc
@@ -288,8 +288,8 @@
 .tr	whois.nic.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
 .tv	VERISIGN whois.nic.tv
-.tw	whois.twnic.net
-.tz	WEB http://whois.tznic.or.tz/
+.tw	whois.twnic.net.tw
+.tz	whois.tznic.or.tz
 .ua	whois.net.ua
 .ug	www.registry.co.ug	# this is a whois server too
 .ac.uk	whois.ja.net
@@ -332,10 +332,13 @@
 
 .xn--fiqs8s		cwhois.cnnic.cn		# China
 .xn--fiqz9s		cwhois.cnnic.cn		# China
+.xn--j6w193g		whois.hkirc.hk		# Hong Kong
+.xn--kprw13d		whois.twnic.net.tw	# Taiwan
+.xn--kpry57d		whois.twnic.net.tw	# Taiwan
 .xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
 .xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
-.xn--wgbh1c		whois.dotmasr.eg	# Egypt
 .xn--p1ai		whois.ripn.net		# Russian Federation
+.xn--wgbh1c		whois.dotmasr.eg	# Egypt
 
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com
@@ -354,7 +357,7 @@
 -is	whois.isnic.is
 -kg	whois.domain.kg
 -ti	whois.telstra.net
--tw	whois.twnic.net
+-tw	whois.twnic.net.tw
 -6bone	whois.6bone.net
 -coop	whois.nic.coop
 -cknic	whois.nic.ck

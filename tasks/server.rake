@@ -69,6 +69,7 @@ Whois::Server.define :tld, #{extension.inspect}, \
       server, options = case server
         when /\./           then [server]
         when "UNALLOCATED"  then [nil, { :adapter => Whois::Server::Adapters::None }]
+        when "UNKNOWN"      then [nil, { :adapter => Whois::Server::Adapters::None }]
         else                     ["whois.#{server}.net"]
       end
 

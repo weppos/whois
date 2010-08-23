@@ -6,15 +6,23 @@
 #
 # http://www.iana.org/assignments/ipv4-address-space
 #
+0.0.0.0/8	UNKNOWN
 1.0.0.0/8	apnic
 2.0.0.0/8	ripe
+5.0.0.0/8	UNALLOCATED
 14.0.0.0/8	apnic
+23.0.0.0/8	UNALLOCATED
 24.132.0.0/14	ripe
 27.0.0.0/8	apnic
 31.0.0.0/8	ripe
+36.0.0.0/8	UNALLOCATED
+37.0.0.0/8	UNALLOCATED
+39.0.0.0/8	UNALLOCATED
 41.0.0.0/8	afrinic
-43.0.0.0/8	v6nic
+42.0.0.0/8	UNALLOCATED
+43.0.0.0/8	whois.nic.ad.jp
 46.0.0.0/8	ripe
+49.0.0.0/8	apnic
 51.0.0.0/8	ripe
 # whois -r -K -h whois.apnic.net -i admin-c IM76-AP
 59.0.0.0/11	whois.nic.or.kr
@@ -31,6 +39,7 @@
 78.0.0.0/7	ripe
 80.0.0.0/4	ripe			# => 95.255.255.255
 96.0.0.0/6	arin			# => 99.255.255.255
+101.0.0.0/8	apnic
 107.0.0.0/8	arin
 108.0.0.0/8	arin
 109.0.0.0/8	ripe
@@ -109,10 +118,12 @@
 176.0.0.0/8	ripe
 177.0.0.0/8	lacnic
 178.0.0.0/8	ripe
+179.0.0.0/8	UNALLOCATED
 180.0.0.0/8	apnic
 181.0.0.0/8	lacnic
 183.96.0.0/11	whois.nic.or.kr
 182.0.0.0/7	apnic
+185.0.0.0/8	UNALLOCATED
 186.0.0.0/7	lacnic
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE
 189.0.0.0/8	lacnic

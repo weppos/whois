@@ -15,6 +15,10 @@
     * .xn--xkc2al3hye2a (.இலங்கை, Sri Lanka)
     * .xn--ygbi2ammx (.فلسطين, Palestinian Territory, Occupied)
 
+* SERVER: Sync definitions with Debian whois 5.0.7:
+    * Added new IPv4 allocations.
+    * Updated the .bd, .bo, .cm, .cu, .dz, .gr, .lb, .ni, .rw, .tw, and .tz TLD servers.
+
 * REMOVED: Deprecated Whois::Answer::Parser.properties method.
 
 

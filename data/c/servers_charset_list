@@ -17,7 +17,7 @@ whois.eenet.ee		iso-8859-1
 whois.eu		utf-8
 whois.ficora.fi		iso-8859-1
 whois.nic.fr		iso-8859-1
-whois.hkdnr.net.hk	utf-8
+whois.hkirc.hk		utf-8
 whois.nic.hu		iso-8859-1
 whois.isnic.is		iso-8859-1
 whois.jprs.jp		iso-2022-jp
@@ -32,7 +32,7 @@ whois.nic.nu		utf-8
 whois.dns.pt		iso-8859-1
 whois.nic-se.se		utf-8
 whois.nic.tr		utf-8
-whois.twnic.net		utf-8
+whois.twnic.net.tw	utf-8
 whois.net.ua		koi8-u
 whois.nic.org.uy	utf-8
 

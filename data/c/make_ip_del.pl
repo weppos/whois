@@ -15,6 +15,8 @@ while (<>) {
 		((~(0xffffffff >> $m)) & 0xffffffff) . 'UL, "';
 	if ($s =~ /\./) {
 		print $s;
+	} elsif ($s eq 'UNKNOWN') {
+		print "\\005";
 	} elsif ($s eq 'UNALLOCATED') {
 		print "\\006";
 	} else {
