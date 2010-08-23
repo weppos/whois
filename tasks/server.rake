@@ -1,9 +1,9 @@
 namespace :server do
-  
+
   desc "server:convert_file_tlds"
   task :convert_file_tlds do
     list = parse_list_tld
-    File.open("lib/whois/definitions/tlds.txt", "w+") do |f| 
+    File.open("data/tlds.txt", "w+") do |f| 
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -12,7 +12,7 @@ namespace :server do
   desc "server:convert_file_ipv4"
   task :convert_file_ipv4 do
     list = parse_list_ipv4
-    File.open("lib/whois/definitions/ipv4.txt", "w+") do |f|
+    File.open("data/ipv4.txt", "w+") do |f|
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -21,7 +21,7 @@ namespace :server do
   desc "server:convert_file_ipv6"
   task :convert_file_ipv6 do
     list = parse_list_ipv6
-    File.open("lib/whois/definitions/ipv6.txt", "w+") do |f|
+    File.open("data/ipv6.txt", "w+") do |f|
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
