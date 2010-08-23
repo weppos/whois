@@ -42,7 +42,7 @@ class AnswerParserWhoisCatTest < Whois::Answer::Parser::TestCase
   end
 
   def test_expires_on
-    assert_equal  Time.parse("010-02-14 09:12:37 GMT"),
+    assert_equal  Time.parse("2010-02-14 09:12:37 GMT"),
                   @klass.new(load_part('/registered.txt')).expires_on
     assert_equal  nil,
                   @klass.new(load_part('/available.txt')).expires_on
