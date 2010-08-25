@@ -5,6 +5,8 @@
 
 * FIXED: .nl TLD parser doesn't understand quarantine status (closes #34)
 
+* CHANGED: Parser aliases are now created aliasing constants instead subclassing.
+
 
 == Release 1.3.1
 

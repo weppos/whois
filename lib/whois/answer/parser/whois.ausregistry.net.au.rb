@@ -21,14 +21,9 @@ module Whois
   class Answer
     class Parser
 
-      #
-      # = whois.ausregistry.net.au parser
-      #
-      # Parser for the whois.ausregistry.net.au server.
-      # Aliases the whois.audns.net.au.
-      #
-      class WhoisAusregistryNetAu < WhoisAudnsNetAu
-      end
+      # Parser for the <tt>whois.ausregistry.net.au</tt> server.
+      # Aliases the <tt>whois.audns.net.au</tt>.
+      WhoisAusregistryNetAu = WhoisAudnsNetAu
 
     end
   end
