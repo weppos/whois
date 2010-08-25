@@ -9,6 +9,8 @@
 
 * CHANGED: Updated .hk parser to whois.hkirc.hk (closes #30)
 
+* CHANGED: Updated .tw parser to whois.twnic.net.tw (closes #31)
+
 
 == Release 1.3.1
 

@@ -276,7 +276,7 @@ tp;;;
 tr;whois.nic.tr;google.com.tr;u34jedzcq.com.tr
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
-#Whois::Server.define :tld, ".tw", "whois.twnic.net"
+#Whois::Server.define :tld, ".tw", "whois.twnic.net.tw"
 #Whois::Server.define :tld, ".tz", "whois.tznic.or.tz"
 in.ua;whois.in.ua;google.in.ua;u34jedzcq.in.ua
 ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
