@@ -141,7 +141,7 @@ Whois::Server.define :tld, ".gt", nil, {:adapter=>Whois::Server::Adapters::Web, 
 Whois::Server.define :tld, ".gu", nil, {:adapter=>Whois::Server::Adapters::Web, :web=>"http://gadao.gov.gu/domainsearch.htm"}
 Whois::Server.define :tld, ".gw", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".gy", "whois.registry.gy"
-Whois::Server.define :tld, ".hk", "whois.hkdnr.net.hk"
+Whois::Server.define :tld, ".hk", "whois.hkirc.hk"
 Whois::Server.define :tld, ".hm", "whois.registry.hm"
 Whois::Server.define :tld, ".hn", "whois.afilias-grs.info", {:adapter=>Whois::Server::Adapters::Afilias}
 Whois::Server.define :tld, ".hr", nil, {:web=>"http://www.dns.hr/pretrazivanje.html", :adapter=>Whois::Server::Adapters::Web}
