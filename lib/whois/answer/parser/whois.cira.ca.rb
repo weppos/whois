@@ -36,19 +36,22 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Domain status:\s+(.*?)\n/
-            case $1.downcase.to_sym
-              when :exist then :registered
-              when :avail then :available
+            case $1.downcase
+              when "exist"  then :registered
+              when "avail"  then :available
+              else
+                raise ParserError, "Unknown status `#{$1}'. " +
+                      "Please report the issue at http://github.com/weppos/whois/issues"
             end
           end
         end
 
         property_supported :available? do
-          @available ||= (status == :available)
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
