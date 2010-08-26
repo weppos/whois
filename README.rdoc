@@ -16,19 +16,20 @@ An extensive test suite is available to verify the library correctness but you m
 * Flexible and extensible interface (e.g. You can define custom servers on the fly)
 * Object oriented design, featuring 10 different design patterns
 * Pure Ruby library, without any external dependency other than Ruby itself
-* Compatible with Ruby 1.8.6 and greater, including Ruby 1.9 branch
-* Successfully tested against multiple Ruby platforms and versions including Ruby, Ruby Enterprise Edition and MacRuby
+* Compatible with {Ruby 1.8.6 and greater}[http://www.ruby-whois.org/manual/installation.html#s-requirements], including Ruby 1.9 branch
+* Successfully tested against multiple Ruby versions and interpreters, including Ruby, Ruby Enterprise Edition, jRuby, and MacRuby
 
 
 == Requirements
 
 * Ruby >= 1.8.6
 
-Whois has been {successfully tested}[http://www.ruby-whois.org/manual/installation.html] against the following Ruby interpreters:
+Whois has been successfully tested against several Ruby interpreters, including
 
-* Ruby 1.8.6 / 1.8.7 / 1.9.1 / 1.9.2
-* MacRuby
+* Ruby 1.8.6 / 1.8.7 / 1.9.1 / 1.9.2 (MRI)
 * Ruby Enterprise Edition
+* MacRuby
+* jRuby
 
 Do you run any other Ruby platform or version? Are you experiencing any problem? Join our {discussion group}[http://groups.google.com/group/ruby-whois].
 
