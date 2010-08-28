@@ -82,6 +82,12 @@ module Whois
           end
         end
 
+        property_supported :registrar do
+          @registrar ||= if content_for_scanner =~ /Registrar:\n.*Name:\s+([^\s]+)/ 
+            Whois::Answer::Registrar.new(:name => $1, :organization => $1)
+          end
+        end
+
       end
 
     end
