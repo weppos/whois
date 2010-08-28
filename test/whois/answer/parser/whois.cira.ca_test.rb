@@ -95,7 +95,7 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
-    def test_registrar_with_registered
+  def test_registrar_with_registered
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = parser.registrar
     assert_equal  expected, parser.registrar
@@ -119,7 +119,7 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     assert_instance_of Whois::Answer::Registrar,  result
     assert_equal nil,                             result.id
     assert_equal "Webnames.ca",                   result.name
-    assert_equal "Webnames.ca",                  result.organization
-    #assert_equal "http://www.encirca.com",        result.url
+    assert_equal "Webnames.ca",                   result.organization
   end
+
 end
