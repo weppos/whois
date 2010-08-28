@@ -74,20 +74,21 @@ module Whois
         end
 
 
-        property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
-            $1.split("\n").map { |value| value.split(" ").first }
-          else
-            []
-          end
-        end
-
         property_supported :registrar do
           @registrar ||= if content_for_scanner =~ /^Registrar:\n(.*\n?)^\n/m
             match = $1
             id    = match =~ /Number:\s+(.*)$/ ? $1.strip : nil
             name  = match =~ /Name:\s+(.*)$/   ? $1.strip : nil
             Whois::Answer::Registrar.new(:id => id, :name => name, :organization => name)
+          end
+        end
+
+
+        property_supported :nameservers do
+          @nameservers ||= if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
+            $1.split("\n").map { |value| value.split(" ").first }
+          else
+            []
           end
         end
 
