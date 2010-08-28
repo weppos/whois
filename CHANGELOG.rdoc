@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* ADDED: Ability to parse Registrar for .ca TLD parser [aeden]
+
+
 == Release 1.3.2
 
 * FIXED: .nl TLD parser doesn't understand quarantine status (closes #34)
