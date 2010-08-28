@@ -102,7 +102,7 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @registrar }
 
     assert_instance_of Whois::Answer::Registrar, expected
-    assert_equal "Webnames.ca", expected.name
+    assert_equal "Webnames.ca Inc.", expected.name
   end
 
   def test_registrar_with_available
@@ -117,9 +117,9 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,  result
-    assert_equal nil,                             result.id
-    assert_equal "Webnames.ca",                   result.name
-    assert_equal "Webnames.ca",                   result.organization
+    assert_equal "70",                            result.id
+    assert_equal "Webnames.ca Inc.",              result.name
+    assert_equal "Webnames.ca Inc.",              result.organization
   end
 
 end
