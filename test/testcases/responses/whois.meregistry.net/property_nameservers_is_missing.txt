@@ -1,0 +1,95 @@
+WHOIS TERMS & CONDITIONS: Access to .ME WHOIS information is provided to 
+assist persons in determining the contents of a domain name registration 
+record in the .ME registry database. The data in this record is provided by 
+.ME Registry for informational purposes only, and .ME Registry does not 
+guarantee its accuracy. This service is intended only for query-based 
+access. You agree that you will use this data only for lawful purposes 
+and that, under no circumstances will you use this data to: (a) allow, 
+enable, or otherwise support the transmission by e-mail, telephone, 
+facsimile, or other electronic processes of mass unsolicited, commercial 
+advertising or solicitations to entities other than the data recipient's own 
+existing customers; or (b) enable high volume, automated, electronic 
+processes that send queries or data to the systems of Registry Operator, 
+except as reasonably necessary to register domain names or modify existing 
+registrations. All rights reserved. .ME Registry reserves the right to modify 
+these terms at any time. By submitting this query, you agree to abide by this 
+policy.
+
+Domain ID:D82062-ME
+Domain Name:WOSSNA.ME
+Domain Create Date:17-Jul-2008 15:54:20 UTC
+Domain Last Updated Date:16-Aug-2010 02:15:52 UTC
+Domain Expiration Date:17-Jul-2011 15:54:20 UTC
+Last Transferred Date:
+Trademark Name:
+Trademark Country:
+Trademark Number:
+Date Trademark Applied For:
+Date Trademark Registered:
+Sponsoring Registrar:Gandi SAS R114-ME (81)
+Created by:Gandi SAS R114-ME (81)
+Last Updated by Registrar:Gandi SAS R114-ME (81)
+Domain Status:CLIENT TRANSFER PROHIBITED
+Domain Status:INACTIVE
+Domain Status:PENDING DELETE
+Registrant ID:GM937-GANDI
+Registrant Name:Graeme Mathieson
+Registrant Organization:
+Registrant Address:12d Monktonhall Terrace
+Registrant Address2:
+Registrant Address3:
+Registrant City:Musselburgh
+Registrant State/Province:
+Registrant Country/Economy:GB
+Registrant Postal Code:EH21 6ER
+Registrant Phone:+44.7949077744
+Registrant Phone Ext.:
+Registrant FAX:
+Registrant FAX Ext.:
+Registrant E-mail:mathie@rubaidh.com
+Admin ID:GM2519-GANDI
+Admin Name:Graeme Mathieson
+Admin Organization:Rubaidh Ltd
+Admin Address:Stuart House
+Admin Address2:Eskmills
+Admin Address3:
+Admin City:Musselburgh
+Admin State/Province:
+Admin Country/Economy:GB
+Admin Postal Code:EH21 7PB
+Admin Phone:+44.1312735271
+Admin Phone Ext.:
+Admin FAX:
+Admin FAX Ext.:
+Admin E-mail:support@rubaidh.com
+Tech ID:GM2519-GANDI
+Tech Name:Graeme Mathieson
+Tech Organization:Rubaidh Ltd
+Tech Address:Stuart House
+Tech Address2:Eskmills
+Tech Address3:
+Tech City:Musselburgh
+Tech State/Province:
+Tech Country/Economy:GB
+Tech Postal Code:EH21 7PB
+Tech Phone:+44.1312735271
+Tech Phone Ext.:
+Tech FAX:
+Tech FAX Ext.:
+Tech E-mail:support@rubaidh.com
+Nameservers:
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+
+

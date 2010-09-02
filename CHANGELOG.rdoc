@@ -9,6 +9,8 @@
 
 * FIXED: With some .mx domains, whois.nic.mx parser returns invalid values for nameservers.
 
+* FIXED: With some .me domains, whois.meregistry.net parser returns invalid values for nameservers.
+
 
 == Release 1.3.2
 
