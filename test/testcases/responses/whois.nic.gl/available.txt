@@ -14,10 +14,9 @@ that apply to Tele Greenland or its computer systems.
 
 The compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
-
-This service is rate limited, if you feel you have legitimate reasons for 
-extended usage, please contact gl-admin@tele.gl.
-
 Domain Information
 Query: u34jedzcq.gl
 Status: Not Registered
+
+
+

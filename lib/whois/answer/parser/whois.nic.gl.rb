@@ -44,11 +44,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= (status == :available)
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
