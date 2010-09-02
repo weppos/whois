@@ -5,6 +5,8 @@
 
 * ADDED: Ability to parse Registrar for .ca TLD parser [aeden]
 
+* FIXED: With some .nl domains, whois.domain-registry.nl parser returns invalid values for nameservers.
+
 
 == Release 1.3.2
 
