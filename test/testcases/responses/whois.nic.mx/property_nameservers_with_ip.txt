@@ -1,0 +1,56 @@
+
+Domain Name: mpsnet.net.mx
+
+Created On:      16-abr-1997
+Expiration Date: 15-abr-2011
+Last Updated On: 31-mar-2009
+Registrar: NIC Mexico
+URL: http://www.nic.mx
+
+Registrant:
+   Name:         MPSNet Dominios
+   City:         Mexico
+   State:        Distrito Federal
+   Country:      Mexico
+
+Administrative Contact:
+   Name:         Internet Engine S.A de C.V
+   City:         D.F.
+   State:        Distrito Federal
+   Country:      Mexico
+
+Technical Contact:
+   Name:         Internet Engine S.A de C.V
+   City:         D.F.
+   State:        Distrito Federal
+   Country:      Mexico
+
+Billing Contact:
+   Name:         Internet Engine S.A de C.V
+   City:         D.F.
+   State:        Distrito Federal
+   Country:      Mexico
+
+Name Servers:
+   DNS:          dns1.mpsnet.net.mx       200.4.48.15
+   DNS:          dns2.mpsnet.net.mx       200.4.48.16
+
+
+La informacion que ha solicitado se provee exclusivamente para fines
+relacionados con la delegacion de nombres de dominio y la operacion del DNS
+administrado por NIC Mexico.
+
+Queda absolutamente prohibido su uso para otros propositos, incluyendo el envio
+de Correos Electronicos no solicitados con fines publicitarios o de promocion
+de productos y servicios (SPAM) sin mediar la autorizacion de los afectados y
+de NIC Mexico.
+
+La base de datos generada a partir del sistema de delegacion, esta protegida
+por las leyes de Propiedad Intelectual y todos los tratados internacionales
+sobre la materia.
+
+Si necesita mayor informacion sobre los registros aqui mostrados, favor de
+comunicarse a ayuda@nic.mx.
+
+Si desea notificar sobre correo no solicitado o accesos no autorizados, favor
+de enviar su mensaje a abuse@nic.mx.
