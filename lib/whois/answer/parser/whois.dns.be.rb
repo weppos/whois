@@ -41,11 +41,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= (status == "FREE")
+          @available  ||= (status == "FREE")
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
