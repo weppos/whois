@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* FIXED: With some .be domains, whois.dns.be parser returns invalid values for nameservers.
+
 
 == Release 1.3.3
 
