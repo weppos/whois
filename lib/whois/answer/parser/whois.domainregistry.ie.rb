@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
+          @available  ||= !!(content_for_scanner =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -63,7 +63,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+([^\s]+)(?:.*)\n/).flatten
         end
 
       end
