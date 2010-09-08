@@ -54,7 +54,7 @@ module Whois
 
         property_supported :updated_on do
           @updated_on ||= if content_for_scanner =~ /Updated:\s+(.+)$/
-            DateTime.strptime($1, '%d/%m/%Y %H:%M:%S %Z')
+            DateTime.strptime($1, '%d/%m/%Y %H:%M:%S').to_time
           end
         end
 

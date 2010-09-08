@@ -46,7 +46,7 @@ class AnswerParserWhoisCoUgTest < Whois::Answer::Parser::TestCase
 
   def test_updated_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = DateTime.new(2009, 11, 10, 14, 6, 58, 'EAT')
+    expected  = Time.gm(2009, 11, 10, 14, 6, 58)
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
