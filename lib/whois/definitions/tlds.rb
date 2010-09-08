@@ -279,7 +279,7 @@ Whois::Server.define :tld, ".tw", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".tz", "whois.tznic.or.tz"
 Whois::Server.define :tld, ".in.ua", "whois.in.ua"
 Whois::Server.define :tld, ".ua", "whois.net.ua"
-Whois::Server.define :tld, ".ug", "www.registry.co.ug"
+Whois::Server.define :tld, ".ug", "whois.co.ug"
 Whois::Server.define :tld, ".ac.uk", "whois.ja.net"
 Whois::Server.define :tld, ".bl.uk", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".british-library.uk", nil, {:adapter=>Whois::Server::Adapters::None}
