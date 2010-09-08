@@ -20,6 +20,12 @@ require 'whois/answer/parser/base'
 module Whois
   class Answer
     class Parser
+
+      #
+      # = whois.denic.de parser
+      #
+      # Parser for the whois.denic.de server.
+      #
       class WhoisDenicDe < Base
         include Ast
 
