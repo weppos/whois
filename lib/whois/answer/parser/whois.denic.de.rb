@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Aaron Mueller <mail@aaron-mueller.de>, Simone Carletti <weppos@weppos.net>
+# Author::      Simone Carletti <weppos@weppos.net>, Aaron Mueller <mail@aaron-mueller.de>
 # License::     MIT License
 #
 #--

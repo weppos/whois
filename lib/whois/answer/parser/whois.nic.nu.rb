@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Mikkel Kristensen <mikkel@tdx.dk>, Simone Carletti <weppos@weppos.net>
+# Author::      Simone Carletti <weppos@weppos.net>, Mikkel Kristensen <mikkel@tdx.dk>
 # License::     MIT License
 #
 #--

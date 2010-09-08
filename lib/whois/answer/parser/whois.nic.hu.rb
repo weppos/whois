@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Gábor Vészi <veszig@done.hu>, Simone Carletti <weppos@weppos.net>
+# Author::      Simone Carletti <weppos@weppos.net>, Gábor Vészi <veszig@done.hu>
 # License::     MIT License
 #
 #--
