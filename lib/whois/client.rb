@@ -27,12 +27,10 @@ module Whois
     attr_accessor :timeout
 
 
+    # Initializes a new <tt>Whois::Client</tt> with <tt>options</tt>.
     #
-    # :call-seq:
     #   new { |client| ... } => client
     #   new(options = {}) { |client| ... } => client
-    #
-    # Initializes a new <tt>Whois::Client</tt> with <tt>options</tt>.
     #
     # ==== Parameters
     #
@@ -55,18 +53,6 @@ module Whois
     def initialize(options = {}, &block)
       self.timeout = options[:timeout] || DEFAULT_TIMEOUT
       yield(self) if block_given?
-    end
-
-
-    class Query # :nodoc:
-      # IPv6?
-      # RPSL?
-      # email?
-      # NSIC?
-      # ASP32?
-      # IP?
-      # domain?
-      # network?
     end
 
 

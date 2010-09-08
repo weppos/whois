@@ -96,6 +96,15 @@ module Whois
     #
     # This method should provide a bulletproof way to detect whether this answer
     # changed if compared with <tt>other</tt>.
+    #
+    # ==== Parameters
+    #
+    # other:: The Whois::Answer to compare.
+    #
+    # ==== Returns
+    #
+    # Boolean
+    #
     def changed?(other)
       !unchanged?(other)
     end
@@ -111,14 +120,24 @@ module Whois
     end
 
 
-    # Lazy-loads and returns a <tt>Whois::Answer::Parser</tt> proxy for current answer.
+    # Lazy-loads and returns the parser proxy for current answer.
+    #
+    # ==== Returns
+    #
+    # Whois::Answer::Parser
+    #
     def parser
       @parser ||= Parser.new(self)
     end
 
 
-    # Returns a Hash containing all supported properties for this Answer
+    # Returns a Hash containing all supported properties for this answer
     # along with corresponding values.
+    #
+    # ==== Returns
+    #
+    # Hash
+    #
     def properties
       hash = {}
       Parser::PROPERTIES.each { |property| hash[property] = send(property) }
