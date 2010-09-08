@@ -1,5 +1,11 @@
 = Changelog
 
+
+== master
+
+* NEW: Added simple .ug TLD parser (whois.co.ug) (closes #35). [DerGuteMoritz]
+
+
 == Release 1.3.4
 
 * FIXED: With some .ie domains, whois.dns.be parser returns invalid values for nameservers.
@@ -9,7 +15,7 @@
 
 == Release 1.3.3
 
-* ADDED: Ability to parse Registrar for .ca TLD parser [aeden]
+* NEW: Ability to parse Registrar for .ca TLD parser. [aeden]
 
 * FIXED: With some .nl domains, whois.domain-registry.nl parser returns invalid values for nameservers.
 
@@ -20,13 +26,13 @@
 
 == Release 1.3.2
 
-* FIXED: .nl TLD parser doesn't understand quarantine status (closes #34)
+* FIXED: .nl TLD parser doesn't understand quarantine status (closes #34).
 
 * CHANGED: Parser aliases are now created aliasing constants instead subclassing.
 
-* CHANGED: Updated .hk parser to whois.hkirc.hk (closes #30)
+* CHANGED: Updated .hk parser to whois.hkirc.hk (closes #30).
 
-* CHANGED: Updated .tw parser to whois.twnic.net.tw (closes #31)
+* CHANGED: Updated .tw parser to whois.twnic.net.tw (closes #31).
 
 
 == Release 1.3.1
@@ -52,7 +58,7 @@
 
 == Release 1.3.0
 
-* ADDED: Ability to query IANA for TLD WHOIS information. [aadlani]
+* NEW: Ability to query IANA for TLD WHOIS information. [aadlani]
 
     Whois.query(".com")
     # => IANA WHOIS response for .com TLD
@@ -60,8 +66,7 @@
     Whois.query(".invalid")
     # => IANA WHOIS response for unassigned TLD
 
-
-* ADDED: Ability to compare two Server adapters for equality.
+* NEW: Ability to compare two Server adapters for equality.
 
     Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
     # => true
@@ -88,13 +93,13 @@
 
 * NEW: Added .to TLD parser (whois.tonic.to).
 
-* FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]
+* FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains. [milk1000cc]
 
 * CHANGED: The .co TLD now has a WHOIS interface (whois.nic.co). Added simple .co parser.
 
-* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (closes #29)
+* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (closes #29).
 
-* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (closes #27)
+* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (closes #27).
 
 
 == Release 1.2.1

@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Moritz Heidkamp <moritz.heidkamp@bevuta.com>
+# Author::      Simone Carletti <weppos@weppos.net>, Moritz Heidkamp <moritz.heidkamp@bevuta.com>
 # License::     MIT License
 #
 #--

@@ -33,7 +33,6 @@ class AnswerParserWhoisCoUgTest < Whois::Answer::Parser::TestCase
 
   def test_created_on
     parser    = @klass.new(load_part('/registered.txt'))
-    
     expected  = Time.mktime(2001, 4, 2, 0, 0, 0)
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
