@@ -280,7 +280,7 @@ tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
 #Whois::Server.define :tld, ".tz", "whois.tznic.or.tz"
 in.ua;whois.in.ua;google.in.ua;u34jedzcq.in.ua
 ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
-#Whois::Server.define :tld, ".ug", "www.registry.co.ug"
+ug;whois.co.ug;google.co.ug;u34jedzcq.co.ug
 #Whois::Server.define :tld, ".ac.uk", "whois.ja.net"
 bl.uk;;;
 british-library.uk;;;
