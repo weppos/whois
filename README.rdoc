@@ -11,27 +11,22 @@ An extensive test suite is available to verify the library correctness but you m
 
 == Features
 
-* Ability to query registry data for IPv4, IPv6, TLDs, and domain names
-* Ability to parse WHOIS responses
-* Flexible and extensible interface (e.g. You can define custom servers on the fly)
+* Ability to query registry data for {IPv4, IPv6, TLDs, and domain names}[http://www.ruby-whois.org/manual/usage.html#usage-objects]
+* Ability to {parse WHOIS responses}[http://www.ruby-whois.org/manual/parser.html]
+* Flexible and extensible interface (e.g. You can define {custom servers}[http://www.ruby-whois.org/manual/server.html] on the fly)
 * Object oriented design, featuring 10 different design patterns
 * Pure Ruby library, without any external dependency other than Ruby itself
-* Compatible with {Ruby 1.8.6 and greater}[http://www.ruby-whois.org/manual/installation.html#s-requirements], including Ruby 1.9 branch
-* Successfully tested against multiple Ruby versions and interpreters, including Ruby, Ruby Enterprise Edition, JRuby, and MacRuby
+* Compatible with {Ruby 1.8.6 and greater}[http://www.ruby-whois.org/manual/installation.html#installation-requirements], including Ruby 1.9 branch
+* Successfully tested against several {Ruby implementations}[http://www.ruby-whois.org/manual/interpreters.html]
 
 
 == Requirements
 
 * Ruby >= 1.8.6
 
-Whois has been successfully tested against several Ruby interpreters, including
-
-* Ruby 1.8.6 / 1.8.7 / 1.9.1 / 1.9.2 (MRI)
-* Ruby Enterprise Edition
-* MacRuby
-* JRuby
-
-Do you run any other Ruby platform or version? Are you experiencing any problem? Join our {discussion group}[http://groups.google.com/group/ruby-whois].
+In addition to the standard Ruby interpreter (MRI),
+Whois has been successfully tested against several
+{Ruby implementations}[http://www.ruby-whois.org/manual/interpreters.html].
 
 
 == Installation
