@@ -3,7 +3,9 @@
 
 == master
 
-* NEW: Added simple .ug TLD parser (whois.co.ug) (closes #35). [DerGuteMoritz]
+* SERVER: Updated the .so TLD definition (#36).
+
+* NEW: Added simple .ug TLD parser (whois.co.ug) (#35). [DerGuteMoritz]
 
 
 == Release 1.3.4
@@ -26,13 +28,13 @@
 
 == Release 1.3.2
 
-* FIXED: .nl TLD parser doesn't understand quarantine status (closes #34).
+* FIXED: .nl TLD parser doesn't understand quarantine status (#34).
 
 * CHANGED: Parser aliases are now created aliasing constants instead subclassing.
 
-* CHANGED: Updated .hk parser to whois.hkirc.hk (closes #30).
+* CHANGED: Updated .hk parser to whois.hkirc.hk (#30).
 
-* CHANGED: Updated .tw parser to whois.twnic.net.tw (closes #31).
+* CHANGED: Updated .tw parser to whois.twnic.net.tw (#31).
 
 
 == Release 1.3.1
@@ -97,9 +99,9 @@
 
 * CHANGED: The .co TLD now has a WHOIS interface (whois.nic.co). Added simple .co parser.
 
-* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (closes #29).
+* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (#29).
 
-* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (closes #27).
+* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (#27).
 
 
 == Release 1.2.1
@@ -141,7 +143,7 @@
 
 == Release 1.1.7
 
-* FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (closes #24)
+* FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (#24)
 
 
 == Release 1.1.6
@@ -272,7 +274,7 @@
 
 == Release 1.0.7
 
-* FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (closes #19).
+* FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (#19).
 
 
 == Release 1.0.6
@@ -306,11 +308,11 @@
 
 * SERVER: Updated the .dj TLD definition (whois 5.0.1).
 
-* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (closes #15)
+* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (#15)
 
-* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (closes #17)
+* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (#17)
 
-* NEW: Support for 'nameservers' property for the whois.eu parser. (closes #16)
+* NEW: Support for 'nameservers' property for the whois.eu parser. (#16)
 
 * NEW: Support for 'nameservers' property for the whois.meregistry.net parser.
 
@@ -334,7 +336,7 @@
 
 * SERVER: Updated web address for the .gt TLD [axic]
 
-* SERVER: Updated web address for the .co TLD (closes #13)
+* SERVER: Updated web address for the .co TLD (#13)
 
 * NEW: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
@@ -344,7 +346,7 @@
 
 * FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
 
-* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
+* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (#14)
 
 * FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
 

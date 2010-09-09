@@ -253,7 +253,7 @@ Whois::Server.define :tld, ".sk", "whois.sk-nic.sk"
 Whois::Server.define :tld, ".sl", "whois.nic.sl"
 Whois::Server.define :tld, ".sm", "whois.ripe.net"
 Whois::Server.define :tld, ".sn", "whois.nic.sn"
-Whois::Server.define :tld, ".so", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, ".so", "whois.nic.so"
 Whois::Server.define :tld, ".sr", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".st", "whois.nic.st"
 Whois::Server.define :tld, ".su", "whois.ripn.net"
