@@ -52,6 +52,7 @@ spec = Gem::Specification.new do |s|
 
   # Add any extra files to include in the gem (like your README)
   s.files             = %w() + Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*")
+  s.executables       = ["ruby-whois"]
   s.require_paths     = ["lib"]
 
   # If you want to depend on other gems, add them here, along with any
