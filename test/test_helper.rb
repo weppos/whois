@@ -1,9 +1,7 @@
-$:.unshift(File.dirname(__FILE__) + '/../lib')
-
-require 'rubygems'
 require 'test/unit'
-require 'mocha'
 require 'whois'
+require 'rubygems'
+require 'mocha'
 
 
 class Test::Unit::TestCase
