@@ -82,7 +82,7 @@ module Whois
     # String:: The content of this answer.
     #
     def content
-      @content ||= parts.map(&:response).join("\n")
+      @content ||= parts.map(&:body).join("\n")
     end
 
 

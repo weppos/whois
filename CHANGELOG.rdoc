@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* CHANGED: Deprecated Whois::Answer::Part#response.
+
+
 == Release 1.3.5
 
 * SERVER: Updated the .so TLD definition (#36).

@@ -206,7 +206,7 @@ module Whois
         # That said, the only constraints about this method is to return the data to be parsed as string.
         #
         def content
-          part.response
+          part.body
         end
 
 
