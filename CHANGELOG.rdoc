@@ -5,6 +5,8 @@
 
 * CHANGED: Deprecated Whois::Answer::Part#response.
 
+* FIXED: whois.denic.de parser is not compatible with Denic response v 2.0.
+
 
 == Release 1.3.5
 
