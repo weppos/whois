@@ -1,5 +1,6 @@
 require "rubygems"
 require "rake/testtask"
+require "rspec/core/rake_task"
 require "rake/gempackagetask"
 begin
   require "hanna/rdoctask"
@@ -22,7 +23,7 @@ end
 
 
 # Run test by default.
-task :default => ["test"]
+task :default => [:rspec, :test]
 
 # This builds the actual gem. For details of what all these options
 # mean, and other ones you can add, check the documentation here:
@@ -60,6 +61,7 @@ spec = Gem::Specification.new do |s|
   # s.add_dependency("some_other_gem", "~> 0.1.0")
 
   # If your tests use any gems, include them here
+  s.add_development_dependency("rspec", "~> 2.0.0.beta.22")
   s.add_development_dependency("mocha")
 end
 
@@ -85,6 +87,9 @@ Rake::RDocTask.new do |rd|
   rd.rdoc_dir = "rdoc"
 end
 
+# Run all the specs in the /spec folder
+RSpec::Core::RakeTask.new(:rspec)
+
 # Run all the tests in the /test folder
 Rake::TestTask.new do |t|
   t.libs << "test"
@@ -100,13 +105,13 @@ RUBIES = %w(1.8.6-p399 1.8.7-p249 1.9.1-p378 1.9.2-p0 jruby-1.5.2 ree-1.8.7-2010
 
 desc "Run tests for all rubies"
 task "test_rubies" => "ensure_rvm" do
-  sh "rvm #{RUBIES.join(",")} rake test"
+  sh "rvm #{RUBIES.join(",")} rake default"
 end
 
 RUBIES.each do |ruby|
   desc "Run tests on Ruby #{ruby}"
   task "test_ruby_#{ruby}"=> "ensure_rvm" do
-    sh "rvm #{ruby} rake test"
+    sh "rvm #{ruby} rake default"
   end
 end
 
