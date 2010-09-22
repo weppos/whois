@@ -30,7 +30,7 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          node("Disclaimer")
+          @disclaimer ||= node("Disclaimer")
         end
 
 
