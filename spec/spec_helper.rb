@@ -11,7 +11,20 @@ module Helpers
   end
 end
 
+module ConnectivityHelpers
+  def need_connectivity(&block)
+    if connectivity_available?
+      yield
+    end
+  end
+
+  def connectivity_available?
+    ENV["ONLINE"].to_i == 1
+  end
+end
+
 RSpec.configure do |config|
   config.mock_with :mocha
   config.include Helpers
+  config.extend ConnectivityHelpers
 end
