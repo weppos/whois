@@ -58,7 +58,7 @@ ao;;;
 aq;;;
 ar;;;
 as;whois.nic.as;google.as;u34jedzcq.as
-#Whois::Server.define :tld, ".priv.at", "whois.nic.priv.at"
+priv.at;whois.nic.priv.at;nic.priv.at;u34jedzcq.priv.at
 at;whois.nic.at;google.at;u34jedzcq.at
 au;whois.audns.net.au;google.com.au;u34jedzcq.com.au
 aw;;;
