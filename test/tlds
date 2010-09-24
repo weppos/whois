@@ -101,7 +101,7 @@ co;whois.nic.co;t.co;u34jedzcq.co
 cr;;;
 cu;;;
 cv;;;
-#Whois::Server.define :tld, ".cx", "whois.nic.cx"
+cx;whois.nic.cx;google.cx;u34jedzcq.cx
 cy;;;
 #Whois::Server.define :tld, ".cz", "whois.nic.cz"
 de;whois.denic.de;google.de;u34jedzcq.de

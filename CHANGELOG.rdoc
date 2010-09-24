@@ -5,6 +5,8 @@
 
 * NEW: Added simple .priv.at TLD parser (whois.nic.priv.at).
 
+* NEW: Added simple .cx TLD parser (whois.nic.cx).
+
 
 == Release 1.3.6
 
