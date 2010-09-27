@@ -77,10 +77,12 @@ module Whois
         end
 
 
+        # NEWPROPERTY
         def valid?
           !invalid?
         end
 
+        # NEWPROPERTY
         def invalid?
           @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
         end

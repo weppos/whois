@@ -110,12 +110,14 @@ module Whois
         end
 
 
+        # NEWPROPERTY
         def version
           @version ||= if content_for_scanner =~ /^% Version: (.+)$/
             $1
           end
         end
 
+        # NEWPROPERTY
         def invalid?
           @invalid ||= (!!node("Invalid") || node("Status") == "invalid")
         end
