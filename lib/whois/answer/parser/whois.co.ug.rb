@@ -39,12 +39,13 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No entries found for the selected source/)
+          @available  ||= !!(content_for_scanner =~ /No entries found for the selected source/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
+
 
         property_supported :created_on do
           @created_on ||= if content_for_scanner =~ /Registered:\s+(.+)$/
