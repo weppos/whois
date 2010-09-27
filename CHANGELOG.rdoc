@@ -13,6 +13,8 @@
 
 * NEW: Added simple .co.ca TLD parser (whois.co.ca).
 
+* NEW: Added simple .ck TLD parser (whois.nic.ck).
+
 
 == Release 1.3.6
 
