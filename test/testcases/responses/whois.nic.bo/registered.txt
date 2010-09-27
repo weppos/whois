@@ -1,0 +1,47 @@
+Dominio: google.bo
+
+TITULAR:
+Organizacion: Google Inc.
+Nombre: Google Inc
+Email: mail en nameaction.com
+Pais: Estados Unidos de America
+Ciudad: Mountain View
+Direccion: 1600 Amphitheatre Parkway Mountain View
+Telefono: 16502530000
+
+
+CONTACTO ADMINISTRATIVO:
+Organizacion: NAMEACTION INC.
+Nombre: Juan Enrique Sánchez
+Email: mail en nameaction.com
+Pais: Chile
+Ciudad: Santiago
+Direccion: Providencia 201, of 201
+Telefono: 562-2691300
+
+
+CONTACTO TECNICO:
+Organizacion: MarkMonitor
+Nombre: MarkMonitor
+Email: mail en nameaction.com
+Pais: USA
+Ciudad: Boise, Idaho  83704
+Direccion: 391 N. Ancestor Place
+Telefono: +1208389 5783
+
+
+CONTACTO FINANCIERO:
+Organizacion: NameAction Inc
+Nombre: NameAction Inc.
+Email: mail en nameaction.com
+Pais: Chile
+Ciudad: Santiago
+Direccion: Providencia 201 of. 22
+Telefono: +5622691300
+
+
+Fecha de registro: 2006-08-22
+Fecha de vencimiento: 2011-08-22
+
+
+whois.nic.bo solo acepta consultas con dominios .bo

@@ -75,7 +75,7 @@ bi;;;
 #Whois::Server.define :tld, ".bj", "whois.nic.bj"
 bm;;;
 bn;;;
-#Whois::Server.define :tld, ".bo", "whois.nic.bo"
+bo;whois.nic.bo;google.br;u34jedzcq.bo
 br;whois.registro.br;registro.br;u34jedzcq.br
 bs;;;
 bt;;;

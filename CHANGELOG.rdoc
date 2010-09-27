@@ -7,6 +7,8 @@
 
 * NEW: Added simple .cx TLD parser (whois.nic.cx).
 
+* NEW: Added simple .bo TLD parser (whois.nic.bo).
+
 
 == Release 1.3.6
 
