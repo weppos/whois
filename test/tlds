@@ -83,7 +83,7 @@ bv;;;
 by;;;
 bw;;;
 bz;whois.afilias-grs.info;google.bz;u34jedzcq.bz
-#Whois::Server.define :tld, ".co.ca", "whois.co.ca"
+co.ca;whois.co.ca;internet.co.ca;u34jedzcq.co.ca
 ca;whois.cira.ca;google.ca;u34jedzcq.ca
 cc;whois.nic.cc;google.cc;u34jedzcq.cc
 cd;whois.nic.cd;google.cd;u34jedzcq.cd

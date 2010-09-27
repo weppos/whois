@@ -11,6 +11,8 @@
 
 * NEW: Added simple .bo TLD parser (whois.nic.bo).
 
+* NEW: Added simple .co.ca TLD parser (whois.co.ca).
+
 
 == Release 1.3.6
 
