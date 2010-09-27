@@ -89,7 +89,7 @@ Whois::Server.define :tld, ".cd", "whois.nic.cd"
 Whois::Server.define :tld, ".cf", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".cg", nil, {:web=>"http://www.nic.cg/cgi-bin/whois.pl", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".ch", "whois.nic.ch"
-Whois::Server.define :tld, ".ci", "www.nic.ci"
+Whois::Server.define :tld, ".ci", "whois.nic.ci"
 Whois::Server.define :tld, ".ck", "whois.nic.ck"
 Whois::Server.define :tld, ".cl", "whois.nic.cl"
 Whois::Server.define :tld, ".cm", "whois.netcom.cm"
