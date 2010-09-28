@@ -2,9 +2,10 @@
 
 The following responses has been manually converted into UTF-8.
 
-* whois.nic.or.kr
-* whois.net.ua
-* whois.nic.tr
 * whois.dns.pt
-* whois.nic.ec
 * whois.eenet.ee
+* whois.net.ua
+* whois.nic.cl
+* whois.nic.ec
+* whois.nic.or.kr
+* whois.nic.tr
