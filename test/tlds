@@ -93,7 +93,7 @@ ch;whois.nic.ch;google.ch;u34jedzcq.ch
 #Whois::Server.define :tld, ".ci", "www.nic.ci"
 ck;whois.nic.ck;google.co.ck;u34jedzcq.co.ck
 cl;whois.nic.cl;google.cl;u34jedzcq.cl
-#Whois::Server.define :tld, ".cm", "whois.netcom.cm"
+cm;whois.netcom.cm;google.cm;u34jedzcq.cm
 #Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 cn;whois.cnnic.cn;google.cn;u34jedzcq.cn
 #Whois::Server.define :tld, ".uk.co", "whois.uk.co"

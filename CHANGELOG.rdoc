@@ -17,6 +17,8 @@
 
 * NEW: Added simple .cl TLD parser (whois.nic.cl).
 
+* NEW: Added simple .cm TLD parser (whois.netcom.cm).
+
 
 == Release 1.3.6
 
