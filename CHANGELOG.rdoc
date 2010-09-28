@@ -21,6 +21,8 @@
 
 * NEW: Added simple .cm TLD parser (whois.netcom.cm).
 
+* NEW: Added simple .cz TLD parser (whois.nic.cz).
+
 * CHANGED: Standardized whois.nic.af #status property, it now returns symbols instead of strings.
 
 * CHANGED: Standardized whois.arnes.si #status property, it now returns symbols instead of strings.

@@ -102,7 +102,7 @@ cu;;;
 cv;;;
 cx;whois.nic.cx;google.cx;u34jedzcq.cx
 cy;;;
-#Whois::Server.define :tld, ".cz", "whois.nic.cz"
+cz;whois.nic.cz;google.cz;u34jedzcq.cz
 de;whois.denic.de;google.de;u34jedzcq.de
 dj;;;
 dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
