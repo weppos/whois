@@ -95,7 +95,6 @@ Whois::Server.define :tld, ".cl", "whois.nic.cl"
 Whois::Server.define :tld, ".cm", "whois.netcom.cm"
 Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 Whois::Server.define :tld, ".cn", "whois.cnnic.cn"
-Whois::Server.define :tld, ".uk.co", "whois.uk.co"
 Whois::Server.define :tld, ".co", "whois.nic.co"
 Whois::Server.define :tld, ".cr", nil, {:web=>"http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".cu", nil, {:adapter=>Whois::Server::Adapters::Web, :web=>"http://www.nic.cu/"}

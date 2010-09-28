@@ -96,7 +96,6 @@ cl;whois.nic.cl;google.cl;u34jedzcq.cl
 cm;whois.netcom.cm;google.cm;u34jedzcq.cm
 #Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 cn;whois.cnnic.cn;google.cn;u34jedzcq.cn
-#Whois::Server.define :tld, ".uk.co", "whois.uk.co"
 co;whois.nic.co;t.co;u34jedzcq.co
 cr;;;
 cu;;;

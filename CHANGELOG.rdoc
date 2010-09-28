@@ -5,6 +5,8 @@
 
 * SERVER: Updated the .ci TLD definition.
 
+* SERVER: Removed the .co.uk TLD definition.
+
 * NEW: Added simple .priv.at TLD parser (whois.nic.priv.at).
 
 * NEW: Added simple .cx TLD parser (whois.nic.cx).
