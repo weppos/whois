@@ -35,17 +35,23 @@ module Whois
       class WhoisNicAf < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.*)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Status:\s+(.*?)\n/
+            case $1.downcase
+              when "active"         then :registered
+              when "not registered" then :available
+              else
+                raise ParserError, "Unknown status `#{$1}'. " +
+                      "Please report the issue at http://github.com/weppos/whois/issues"
+            end
           end
         end
 
         property_supported :available? do
-          @available ||= (status == "Not Registered")
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

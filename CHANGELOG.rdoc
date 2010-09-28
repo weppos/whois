@@ -19,6 +19,8 @@
 
 * NEW: Added simple .cm TLD parser (whois.netcom.cm).
 
+* CHANGED: Standardized whois.nic.af #status property, it now returns symbols instead of strings.
+
 
 == Release 1.3.6
 
