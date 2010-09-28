@@ -35,17 +35,24 @@ module Whois
       class WhoisArnesSi < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.*)\n/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
+            case $1.downcase
+              when "ok"   then :registered
+              else
+                raise ParserError, "Unknown status `#{$1}'. " +
+                      "Please report the issue at http://github.com/weppos/whois/issues"
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /% No entries found/)
+          @available  ||= !!(content_for_scanner =~ /% No entries found/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
