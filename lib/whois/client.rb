@@ -72,10 +72,12 @@ module Whois
     #   client.query("google.com")
     #   # => #<Whois::Answer>
     #
-    def query(qstring)
+    def query(qstring, options = { })
       string = qstring.to_s
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
+        # for some reason, a few tests fail without the respond_to? check
+        @server.options.merge!(options) if @server.respond_to?(:options)
         @server.query(string)
       end
     end

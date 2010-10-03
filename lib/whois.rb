@@ -35,6 +35,7 @@ module Whois
   # ==== Parameters
   #
   # qstring:: The String to be sent as query parameter.
+  # options:: Options passed to the server adapter.
   #
   # ==== Returns
   #
@@ -50,8 +51,8 @@ module Whois
   #   Whois::Client.new.query("google.com")
   #   # => #<Whois::Answer>
   #
-  def self.query(qstring)
-    Client.new.query(qstring)
+  def self.query(qstring, options = { })
+    Client.new.query(qstring, options)
   end
 
   # Checks whether the object represented by <tt>qstring</tt> is available.
@@ -126,8 +127,8 @@ module Whois
 
 
   # See <tt>Whois#query</tt>.
-  def self.whois(qstring)
-    query(qstring)
+  def self.whois(qstring, options = { })
+    query(qstring, options)
   end
 
 

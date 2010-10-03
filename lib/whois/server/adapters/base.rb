@@ -123,7 +123,7 @@ module Whois
         private
 
           def ask_the_socket(qstring, host, port)
-            client = TCPSocket.open(host, port)
+            client = TCPSocket.open(host, port, options[:bind_address])
             client.write("#{qstring}\r\n")  # I could use put(foo) and forget the \n
             client.read                     # but write/read is more symmetric than puts/read
           ensure                            # and I really want to use read instead of gets.
