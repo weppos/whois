@@ -3,8 +3,9 @@ require 'whois'
 require 'rubygems'
 require 'mocha'
 
-
 class Test::Unit::TestCase
+
+  TEST_ROOT = File.expand_path("../", __FILE__)
 
   def self.need_connectivity(&block)
     if connectivity_available?
@@ -23,6 +24,11 @@ class Test::Unit::TestCase
     yield
   ensure
     Whois::Server.send :class_variable_set, :@@definitions, @_definitions
+  end
+
+
+  def fixture(*name)
+    File.join(TEST_ROOT, "testcases", name)
   end
 
 end
