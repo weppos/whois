@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances when the response from the Verisign database returns a "not defined" value for the Referral Whois Server (#42)
+
 
 == Release 1.3.7
 
