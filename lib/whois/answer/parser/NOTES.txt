@@ -20,6 +20,10 @@ whois.registry.in (.in)
 whois.nic.af (.af)
 whois.nic.gs (.gs)
 
+whois.pandi.or.id
+whois.nic.ir
+ripe.net
+
 == Property Proposals
 
 * changed_by

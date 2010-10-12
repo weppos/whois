@@ -1,0 +1,33 @@
+% This is the IRNIC Whois server v1.6.2.
+% Available on web at http://whois.nic.ir/
+% Find the terms and conditions of use on http://www.nic.ir/
+% 
+% This server uses UTF-8 as the encoding for requests and responses.
+
+% NOTE: This output has been filtered.
+
+% Information related to 'google.ir'
+
+
+domain:		google.ir
+ascii:		google.ir
+remarks:	(Domain Holder) Google Inc.
+remarks:	(Domain Holder Address) 1600 Amphitheatre ParkwayMountain View, CA 94043, USA
+holder-c:	---
+admin-c:	la50-irnic
+tech-c:		la50-irnic
+nserver:	ns3.google.com
+nserver:	ns4.google.com
+nserver:	ns1.google.com
+nserver:	ns2.google.com
+last-updated:	2008-11-09
+source:		IRNIC # Filtered
+
+nic-hdl:	la50-irnic
+org:		Law office Dr Laghaee
+e-mail:		legal@laghaee.com
+address:	Vali-Asr Ave, Shahid Atefi West, No. 27, third floor,, Tehran, Tehran, IR
+phone:		+98 21 2205 0579
+fax-no:		+98 21 2205 0150
+source:		IRNIC # Filtered
+
