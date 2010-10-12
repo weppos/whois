@@ -5,6 +5,10 @@
 * SERVER: Sync definitions with Debian whois 5.0.8:
     * Updated the .bb, .ps, and .lk TLD definitions.
 
+* NEW: Added simple .dz TLD parser (whois.nic.dz).
+
+* NEW: Added simple .fi TLD parser (whois.ficora.fi).
+
 * FIXED: The Verisign WHOIS adapter crashes in some rare circumstances when the response from the Verisign database returns a "not defined" value for the Referral Whois Server (#42)
 
 
