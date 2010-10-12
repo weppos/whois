@@ -35,17 +35,24 @@ module Whois
       class WhoisPandiOrId < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /domain-status:\s+(.*)\n/
-            $1
+          @status ||= if content_for_scanner =~ /domain-status:\s+(.+)\n/
+            case $1.downcase
+              when "object is active" then :registered
+              else
+                raise ParserError, "Unknown status `#{$1}'. " <<
+                      "Please report the issue at http://github.com/weppos/whois/issues"
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
+          @available  ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
