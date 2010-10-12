@@ -176,7 +176,7 @@ la;whois.nic.la;google.la;u34jedzcq.la
 lb;;;
 lc;whois.afilias-grs.info;nic.lc;u34jedzcq.lc
 #Whois::Server.define :tld, ".li", "whois.nic.li"
-#Whois::Server.define :tld, ".lk", "whois.nic.lk"
+lk;;;
 lr;;;
 ls;;;
 lt;whois.domreg.lt;google.lt;u34jedzcq.lt
@@ -229,7 +229,7 @@ pk;;;
 pm;whois.nic.fr;nic.pm;u34jedzcq.pm
 pn;;;
 #Whois::Server.define :tld, ".pr", "whois.nic.pr"
-ps;;;
+#Whois::Server.define :tld, ".ps", "whois.pnina.ps"
 pt;whois.dns.pt;google.pt;u34jedzcq.pt
 pw;;;
 py;;;

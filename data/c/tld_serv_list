@@ -74,7 +74,7 @@
 .ax	NONE		# www.ax
 .az	WEB http://www.nic.az/AzCheck.htm
 .ba	WEB http://www.nic.ba/stream/whois/
-.bb	WEB http://www.barbadosdomains.net/search_domain.php
+.bb	WEB http://whois.telecoms.gov.bb/search_domain.php
 .bd	WEB http://whois.btcl.net.bd/
 .be	whois.dns.be
 .bf	NONE		# http://www.artel.bf/ http://www.onatel.bf/internet/domaine.htm
@@ -188,7 +188,7 @@
 .lb	WEB http://www.aub.edu.lb/lbdr/
 .lc	AFILIAS
 .li	whois.nic.li
-.lk	whois.nic.lk
+.lk	NONE
 .lr	NONE		# http://www.psg.com/dns/lr/
 .ls	WEB http://www.co.ls/co.asp
 .lt	whois.domreg.lt
@@ -242,7 +242,7 @@
 .pm	whois.nic.fr
 .pn	WEB http://www.pitcairn.pn/PnRegistry/
 .pr	whois.nic.pr
-.ps	WEB http://www.nic.ps/whois/whois.html
+.ps	whois.pnina.ps
 .pt	whois.dns.pt
 .pw	NONE		# http://www.pwregistry.pw/
 .py	WEB http://www.nic.py/consultas.html
@@ -277,7 +277,7 @@
 .td	NONE		# NIC? http://www.sotel.td/ was http://www.nic.td/ . http://www.tit.td/ ?
 .tf	whois.nic.tf
 .tg	WEB http://www.nic.tg/
-.th	whois.thnic.net
+.th	whois.thnic.co.th
 .tj	WEB http://www.nic.tj/whois.html
 .tk	whois.dot.tk
 .tl	whois.nic.tl
@@ -291,7 +291,7 @@
 .tw	whois.twnic.net.tw
 .tz	whois.tznic.or.tz
 .ua	whois.net.ua
-.ug	whois.co.ug
+.ug	www.registry.co.ug	# this is a whois server too
 .ac.uk	whois.ja.net
 .bl.uk	NONE
 .british-library.uk NONE
@@ -330,15 +330,21 @@
 .zm	NONE		# http://www.zamnet.zm/ser-isp/dnr.htm
 .zw	NONE		# http://www.zispa.co.zw/
 
-.xn--fiqs8s		cwhois.cnnic.cn		# China
-.xn--fiqz9s		cwhois.cnnic.cn		# China
+.xn--fiqs8s		cwhois.cnnic.cn		# China, Simplified Chinese
+.xn--fiqz9s		cwhois.cnnic.cn		# China, Traditional Chinese
+.xn--fzc2c9e2c		NONE			# Sri Lanka, Sinhala
 .xn--j6w193g		whois.hkirc.hk		# Hong Kong
-.xn--kprw13d		whois.twnic.net.tw	# Taiwan
-.xn--kpry57d		whois.twnic.net.tw	# Taiwan
+.xn--kprw13d		whois.twnic.net.tw	# Taiwan, Simplified Chinese
+.xn--kpry57d		whois.twnic.net.tw	# Taiwan, Traditional Chinese
 .xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
+.xn--mgbayh7gpa		NONE			# Jordan
 .xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
+.xn--o3cw4h		whois.thnic.co.th	# Thailand
 .xn--p1ai		whois.ripn.net		# Russian Federation
+.xn--pgbs0dh		NONE			# Tunisia
 .xn--wgbh1c		whois.dotmasr.eg	# Egypt
+.xn--xkc2al3hye2a	NONE			# Sri Lanka, Tamil
+.xn--ygbi2ammx		whois.pnina.ps		# Palestinian Territory
 
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com
