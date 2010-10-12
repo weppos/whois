@@ -1,0 +1,10 @@
+
+
+Java Whois Server 0.3.2.2    (c) 2006 - 2010 Klaus Zerwes zero-sys.net
+
+--------------DZ NIC Whois Server ------------------
+
+NO OBJECT FOUND!
+object:..................u34jedzcq.dz
+type:....................templates
+

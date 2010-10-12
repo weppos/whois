@@ -108,7 +108,7 @@ dj;;;
 dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
 #Whois::Server.define :tld, ".dm", "whois.nic.dm"
 do;;;
-#Whois::Server.define :tld, ".dz", "whois.nic.dz"
+dz;whois.nic.dz;google.dz;u34jedzcq.dz
 ec;whois.nic.ec;google.ec;u34jedzcq.ec
 ee;whois.eenet.ee;google.ee;u34jedzcq.ee
 eg;;;

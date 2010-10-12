@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.nic.name'
+require 'whois/answer/parser/whois.nic.dz'
 
-class AnswerParserWhoisNicNameTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisNicDzTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisNicName
-    @host   = "whois.nic.name"
+    @klass  = Whois::Answer::Parser::WhoisNicDz
+    @host   = "whois.nic.dz"
   end
 
 

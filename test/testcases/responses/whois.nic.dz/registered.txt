@@ -1,0 +1,25 @@
+
+
+Java Whois Server 0.3.2.2    (c) 2006 - 2010 Klaus Zerwes zero-sys.net
+
+--------------DZ NIC Whois Server ------------------
+
+DOMAINE:.................google.dz
+REGISTRAR:...............
+DATE DE CREATION:........
+ETAT:....................actif
+IP:......................193.194.64.84
+ORGANISME:...............Google Inc
+CONTACT ADMIN:...........Domain Administrator
+ORGANISME ADMIN:.........Google INC
+ADRESSE ADMIN:........... 1600Amphitheatre Parkway, Mountain View, CA 94043 US
+TEL ADMIN:...............+16503300100
+FAX ADMIN:...............+16506188571
+EMAIL ADMIN:.............dns-admin@google.com
+CONTACT TECH:............Domain Administrator
+ORGANISME TECH:..........Google Inc
+ADRESSE TECH:............1600Amphitheatre Parkway, Mountain View, CA 94043 US
+TEL TECH:................+16503300100
+FAX TECH:................+16506188571
+EMAIL TECH:..............dns-admin@google.com
+
