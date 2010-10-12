@@ -40,7 +40,7 @@ module Whois
               when "active"         then :registered
               when "not registered" then :available
               else
-                raise ParserError, "Unknown status `#{$1}'. " +
+                raise ParserError, "Unknown status `#{$1}'. " <<
                       "Please report the issue at http://github.com/weppos/whois/issues"
             end
           end
