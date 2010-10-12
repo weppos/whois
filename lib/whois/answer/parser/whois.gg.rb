@@ -50,7 +50,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^\*\* No information found in WHOIS \*\*$/)
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
