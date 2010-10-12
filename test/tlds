@@ -117,7 +117,7 @@ es;;;
 et;;;
 eu;whois.eu;google.eu;u34jedzcq.eu
 fi;whois.ficora.fi;google.fi;u34jedzcq.fi
-#Whois::Server.define :tld, ".fj", "whois.usp.ac.fj"
+fi;whois.usp.ac.fj;google.com.fj;u34jedzcq.fj
 fk;;;
 fm;;;
 fo;whois.ripe.net;nic.fo;u34jedzcq.fo
