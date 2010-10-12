@@ -13,6 +13,8 @@
 
 * NEW: Added simple .gg TLD parser (whois.gg).
 
+* NEW: Added simple .gs TLD parser (whois.nic.gs).
+
 * FIXED: The Verisign WHOIS adapter crashes in some rare circumstances when the response from the Verisign database returns a "not defined" value for the Referral Whois Server (#42)
 
 

@@ -136,7 +136,7 @@ gn;;;
 #Whois::Server.define :tld, ".gp", "whois.nic.gp"
 gq;;;
 gr;;;
-#Whois::Server.define :tld, ".gs", "whois.nic.gs"
+gs;whois.nic.gs;google.gs;u34jedzcq.gs
 gt;;;
 gu;;;
 gw;;;

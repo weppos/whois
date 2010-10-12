@@ -17,6 +17,8 @@ whois.aero (.aero)
 whois.nic.af (.af)
 whois.registry.in (.in)
 
+whois.nic.af (.af)
+whois.nic.gs (.gs)
 
 == Property Proposals
 
