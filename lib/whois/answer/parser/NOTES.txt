@@ -24,6 +24,9 @@ whois.pandi.or.id
 whois.nic.ir
 ripe.net
 
+whois.gg
+whois.je
+
 == Property Proposals
 
 * changed_by

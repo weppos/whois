@@ -157,7 +157,7 @@ iq;;;
 ir;whois.nic.ir;google.ir;u34jedzcq.ir
 is;whois.isnic.is;google.is;u34jedzcq.is
 it;whois.nic.it;google.it;u34jedzcq.it
-#Whois::Server.define :tld, ".je", "whois.je"
+je;whois.je;google.je;u34jedzcq.je
 jm;;;
 jo;;;
 jp;whois.jprs.jp;google.jp;u34jedzcq.jp

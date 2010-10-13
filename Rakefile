@@ -30,7 +30,6 @@ task :default => ["test"]
 #   http://rubygems.org/read/chapter/20
 #
 spec = Gem::Specification.new do |s|
-
   s.name              = PKG_NAME
   s.version           = PKG_VERSION
   s.summary           = "An intelligent pure Ruby WHOIS client and parser."
