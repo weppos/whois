@@ -39,8 +39,7 @@ module Whois
             case $1.downcase
               when "object is active" then :registered
               else
-                raise ParserError, "Unknown status `#{$1}'. " <<
-                      "Please report the issue at http://github.com/weppos/whois/issues"
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available

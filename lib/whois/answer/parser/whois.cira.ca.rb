@@ -44,8 +44,10 @@ module Whois
               when "exist"      then :registered
               when "avail"      then :available
               else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'")
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 

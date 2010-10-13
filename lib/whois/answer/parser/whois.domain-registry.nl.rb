@@ -40,8 +40,7 @@ module Whois
               when "active"         then :registered
               when "in quarantine"  then :quarantine
               else
-                raise ParserError, "Unknown status `#{$1}'. " <<
-                      "Please report the issue at http://github.com/weppos/whois/issues"
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available

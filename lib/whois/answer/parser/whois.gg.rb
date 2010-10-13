@@ -40,12 +40,10 @@ module Whois
               when "0"              then :available
               when "1"              then :registered
               else
-                raise ParserError, "Unknown status `#{$1}'. " <<
-                      "Please report the issue at http://github.com/weppos/whois/issues"
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
-            raise ParserError, "Unable to parse status. " <<
-                  "Please report the issue at http://github.com/weppos/whois/issues"
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 
