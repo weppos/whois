@@ -1,6 +1,6 @@
 = Changelog
 
-== master
+== Release 1.3.9
 
 * SERVER: Sync definitions with Debian whois 5.0.8:
     * Updated the .bb, .ps, and .lk TLD definitions.
