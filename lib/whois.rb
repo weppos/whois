@@ -136,4 +136,10 @@ module Whois
     warn("DEPRECATION WARNING: #{message}")
   end
 
+  def self.bug!(error, message) # :nodoc:
+    raise error, message.dup        <<
+      " Please report the issue at" <<
+      " http://github.com/weppos/whois/issues"
+  end
+
 end
