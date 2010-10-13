@@ -20,6 +20,9 @@ whois.registry.in (.in)
 whois.nic.af (.af)
 whois.nic.gs (.gs)
 
+whois.nic.af
+whois.kenic.or.ke
+
 whois.pandi.or.id
 whois.nic.ir
 ripe.net

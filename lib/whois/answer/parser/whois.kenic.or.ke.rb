@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.af parser
+      # = whois.kenic.or.ke parser
       #
-      # Parser for the whois.nic.af server.
+      # Parser for the whois.kenic.or.ke server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicAf < Base
+      class WhoisKenicOrKe < Base
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/

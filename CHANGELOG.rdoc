@@ -4,6 +4,8 @@
 
 * NEW: Added simple .je TLD parser (whois.je).
 
+* NEW: Added simple .ke TLD parser (whois.kenic.or.ke).
+
 
 == Release 1.3.9
 
