@@ -6,6 +6,8 @@
 
 * NEW: Added simple .ke TLD parser (whois.kenic.or.ke).
 
+* NEW: Added simple .li TLD parser (whois.nic.li).
+
 
 == Release 1.3.9
 
