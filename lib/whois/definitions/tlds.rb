@@ -291,7 +291,6 @@ Whois::Server.define :tld, ".nls.uk", nil, {:adapter=>Whois::Server::Adapters::N
 Whois::Server.define :tld, ".parliament.uk", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".police.uk", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".uk", "whois.nic.uk"
-Whois::Server.define :tld, ".fed.us", "whois.nic.gov"
 Whois::Server.define :tld, ".us", "whois.nic.us"
 Whois::Server.define :tld, ".com.uy", nil, {:web=>"https://nic.anteldata.com.uy/dns/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".uy", "whois.nic.org.uy"

@@ -2,6 +2,8 @@
 
 == master
 
+* SERVER: Removed the .fed.us TLD definition.
+
 * NEW: Added simple .je TLD parser (whois.je).
 
 * NEW: Added simple .ke TLD parser (whois.kenic.or.ke).

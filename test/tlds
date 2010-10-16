@@ -292,7 +292,6 @@ nls.uk;;;
 parliament.uk;;;
 police.uk;;;
 uk;whois.nic.uk;google.co.uk;u34jedzcq.co.uk
-#Whois::Server.define :tld, ".fed.us", "whois.nic.gov"
 us;whois.nic.us;google.us;u34jedzcq.us
 .com.uy;;;
 uy;whois.nic.org.uy;seciu.edu.uy;u34jedzcq.edu.uy
