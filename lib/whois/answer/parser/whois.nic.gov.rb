@@ -41,11 +41,11 @@ module Whois
         end
 
         property_supported :available? do
-          !registered?
+          @registered ||= !registered?
         end
 
         property_supported :registered? do
-          @registered ||= (content_for_scanner =~ /Domain Name:/)
+          @registered ||= !!(content_for_scanner =~ /Domain Name:/)
         end
 
 
