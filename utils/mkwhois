@@ -12,7 +12,7 @@ r = Whois.query(d)
 
 if r.parts.size == 1
   r.parts.each do |part|
-    p = File.expand_path("../../test/testcases/responses/#{part.host}", __FILE__)
+    p = File.expand_path("../../test/fixtures/responses/#{part.host}", __FILE__)
     FileUtils.mkdir_p(p)
     File.open("#{p}/#{n}", "w+") { |f| f.write(part.body) }
     puts "Saved #{p}/#{n}"

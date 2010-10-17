@@ -28,7 +28,7 @@ class Test::Unit::TestCase
 
 
   def fixture(*name)
-    File.join(TEST_ROOT, "testcases", name)
+    File.join(TEST_ROOT, "fixtures", name)
   end
 
 end
@@ -41,7 +41,7 @@ class Whois::Answer::Parser::TestCase < Test::Unit::TestCase
   end
 
   def testcase_path
-    File.expand_path(File.dirname(__FILE__) + "/testcases/responses/#{@host}")
+    File.expand_path(File.dirname(__FILE__) + "/fixtures/responses/#{@host}")
   end
 
 

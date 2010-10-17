@@ -21,7 +21,7 @@ class ServerAdaptersAfiliasTest < Test::Unit::TestCase
   end
 
   def test_query_with_referral
-    referral = File.read(File.dirname(__FILE__) + "/../../../testcases/referrals/afilias.bz.txt")
+    referral = File.read(File.dirname(__FILE__) + "/../../../fixtures/referrals/afilias.bz.txt")
     response = "Match for DOMAIN.FOO."
     expected = referral + "\n" + response
     @server.expects(:ask_the_socket).with("domain.foo", "whois.afilias-grs.info", 43).returns(referral)
