@@ -16,6 +16,8 @@
     $ ruby-whois hosteurope.de
     % Error: 55000000013 Invalid charset for response
 
+* CHANGED: Standardized whois.nic.gov #status property.
+
 
 == Release 1.3.9
 
