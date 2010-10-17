@@ -10,6 +10,12 @@
 
 * NEW: Added simple .li TLD parser (whois.nic.li).
 
+* CHANGED: Force whois.denic.de WHOIS output to be always UTF-8,
+  otherwise some queries will fail (#51)
+
+    $ ruby-whois hosteurope.de
+    % Error: 55000000013 Invalid charset for response
+
 
 == Release 1.3.9
 
@@ -30,14 +36,17 @@
 
 * NEW: Added simple .ir TLD parser (whois.nic.ir).
 
-* CHANGED: Standardized whois.pandi.or.id #status property, it now returns symbols instead of strings.
+* CHANGED: Standardized whois.pandi.or.id #status property,
+  it now returns symbols instead of strings.
 
 * FIXED: Compatibility with the new whois.cira.ca record schema.
 
 
 == Release 1.3.8
 
-* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances when the response from the Verisign database returns a "not defined" value for the Referral Whois Server (#42)
+* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
+  when the response from the Verisign database returns a "not defined" value
+  for the Referral Whois Server (#42)
 
 
 == Release 1.3.7
@@ -62,9 +71,11 @@
 
 * NEW: Added simple .cz TLD parser (whois.nic.cz).
 
-* CHANGED: Standardized whois.nic.af #status property, it now returns symbols instead of strings.
+* CHANGED: Standardized whois.nic.af #status property,
+  it now returns symbols instead of strings.
 
-* CHANGED: Standardized whois.arnes.si #status property, it now returns symbols instead of strings.
+* CHANGED: Standardized whois.arnes.si #status property,
+  it now returns symbols instead of strings.
 
 
 == Release 1.3.6

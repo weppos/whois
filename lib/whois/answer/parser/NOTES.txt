@@ -29,8 +29,3 @@ ripe.net
 
 whois.gg
 whois.je
-
-== Property Proposals
-
-* changed_by
-* version
