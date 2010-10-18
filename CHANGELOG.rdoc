@@ -5,6 +5,9 @@
 * CHANGED: Standardized whois.aero #status property,
   it now returns symbols instead of strings.
 
+* CHANGED: Standardized whois.aeda.net.ae #status property,
+  it now returns symbols instead of strings.
+
 
 == Release 1.3.10
 
