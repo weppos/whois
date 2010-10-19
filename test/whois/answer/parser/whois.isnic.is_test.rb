@@ -47,10 +47,15 @@ class AnswerParserWhoisIsnicIsTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_equal  Time.parse("2002-05-22"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2002-05-22")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
@@ -59,10 +64,15 @@ class AnswerParserWhoisIsnicIsTest < Whois::Answer::Parser::TestCase
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-05-22"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2010-05-22")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 

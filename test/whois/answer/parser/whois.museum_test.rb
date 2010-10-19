@@ -47,24 +47,39 @@ class AnswerParserWhoisMuseumTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_equal  Time.parse("2001-11-10 15:23:42 GMT"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2001-11-10 15:23:42 GMT")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2002-04-04 17:48:43 GMT"),
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2002-04-04 17:48:43 GMT")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2003-07-31 11:00:00 GMT"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2003-07-31 11:00:00 GMT")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
