@@ -48,11 +48,11 @@ module Whois
         end
 
         property_supported :available? do
-          node("Domain ID").nil?
+          @available  ||= node("Domain ID").nil?
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

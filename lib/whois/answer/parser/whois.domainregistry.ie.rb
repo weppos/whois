@@ -35,8 +35,12 @@ module Whois
       class WhoisDomainregistryIe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.*)\n/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
+            case $1.downcase
+              when "active" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
           else
             :available
           end

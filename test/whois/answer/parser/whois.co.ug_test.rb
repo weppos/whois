@@ -11,12 +11,12 @@ class AnswerParserWhoisCoUgTest < Whois::Answer::Parser::TestCase
 
   def test_status
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = "ACTIVE"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -81,6 +81,7 @@ class AnswerParserWhoisCoUgTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
   end
+
 
   def test_nameservers
     parser    = @klass.new(load_part('/registered.txt'))

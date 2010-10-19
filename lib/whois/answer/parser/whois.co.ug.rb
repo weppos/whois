@@ -35,7 +35,15 @@ module Whois
       class WhoisCoUg < Base
 
         property_supported :status do
-          @status ||= content_for_scanner[/^Status:\s+(.+)$/, 1]
+          @status ||= if content_for_scanner =~ /^Status:\s+(.+?)\n/
+            case $1.downcase
+              when "active" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
+          end
         end
 
         property_supported :available? do

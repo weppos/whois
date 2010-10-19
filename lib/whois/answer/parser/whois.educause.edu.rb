@@ -35,7 +35,7 @@ module Whois
       class WhoisEducauseEdu < Base
 
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No Match/)
+          @available  ||= !!(content_for_scanner =~ /No Match/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

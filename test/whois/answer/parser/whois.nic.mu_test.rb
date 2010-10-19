@@ -13,20 +13,39 @@ end
 class AnswerParserWhoisNicMuKiTest < AnswerParserWhoisNicMuTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/ki/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/ki/available.txt')).status
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/ki/registered.txt')).available?
-    assert  @klass.new(load_part('/ki/available.txt')).available?
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/ki/available.txt')).registered?
-    assert  @klass.new(load_part('/ki/registered.txt')).registered?
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -69,20 +88,39 @@ end
 class AnswerParserWhoisNicMuMuTest < AnswerParserWhoisNicMuTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/mu/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/mu/available.txt')).status
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/mu/registered.txt')).available?
-    assert  @klass.new(load_part('/mu/available.txt')).available?
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/mu/available.txt')).registered?
-    assert  @klass.new(load_part('/mu/registered.txt')).registered?
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 

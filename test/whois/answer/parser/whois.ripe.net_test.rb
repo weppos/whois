@@ -18,20 +18,39 @@ end
 class AnswerParserWhoisRipeNetFoTest < AnswerParserWhoisRipeNetTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/fo/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/fo/available.txt')).status
+    parser    = @klass.new(load_part('/fo/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/fo/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/fo/registered.txt')).available?
-    assert  @klass.new(load_part('/fo/available.txt')).available?
+    parser    = @klass.new(load_part('/fo/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/fo/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/fo/registered.txt')).registered?
-    assert !@klass.new(load_part('/fo/available.txt')).registered?
+    parser    = @klass.new(load_part('/fo/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/fo/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -68,20 +87,39 @@ end
 class AnswerParserWhoisRipeNetGmTest < AnswerParserWhoisRipeNetTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/gm/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/gm/available.txt')).status
+    parser    = @klass.new(load_part('/gm/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/gm/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/gm/registered.txt')).available?
-    assert  @klass.new(load_part('/gm/available.txt')).available?
+    parser    = @klass.new(load_part('/gm/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/gm/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/gm/registered.txt')).registered?
-    assert !@klass.new(load_part('/gm/available.txt')).registered?
+    parser    = @klass.new(load_part('/gm/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/gm/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -118,20 +156,39 @@ end
 class AnswerParserWhoisRipeNetMcTest < AnswerParserWhoisRipeNetTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/mc/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/mc/available.txt')).status
+    parser    = @klass.new(load_part('/mc/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/mc/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/mc/registered.txt')).available?
-    assert  @klass.new(load_part('/mc/available.txt')).available?
+    parser    = @klass.new(load_part('/mc/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/mc/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/mc/registered.txt')).registered?
-    assert !@klass.new(load_part('/mc/available.txt')).registered?
+    parser    = @klass.new(load_part('/mc/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/mc/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -168,20 +225,39 @@ end
 class AnswerParserWhoisRipeNetSmTest < AnswerParserWhoisRipeNetTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/sm/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/sm/available.txt')).status
+    parser    = @klass.new(load_part('/sm/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/sm/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/sm/registered.txt')).available?
-    assert  @klass.new(load_part('/sm/available.txt')).available?
+    parser    = @klass.new(load_part('/sm/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/sm/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/sm/registered.txt')).registered?
-    assert !@klass.new(load_part('/sm/available.txt')).registered?
+    parser    = @klass.new(load_part('/sm/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/sm/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -218,20 +294,39 @@ end
 class AnswerParserWhoisRipeNetVaTest < AnswerParserWhoisRipeNetTest
 
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/va/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/va/available.txt')).status
+    parser    = @klass.new(load_part('/va/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/va/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/va/registered.txt')).available?
-    assert  @klass.new(load_part('/va/available.txt')).available?
+    parser    = @klass.new(load_part('/va/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/va/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/va/registered.txt')).registered?
-    assert !@klass.new(load_part('/va/available.txt')).registered?
+    parser    = @klass.new(load_part('/va/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/va/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 

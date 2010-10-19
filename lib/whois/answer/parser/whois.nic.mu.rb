@@ -35,20 +35,22 @@ module Whois
       class WhoisNicMu < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.*?)\n/
-            case $1.downcase.to_sym
-              when :"active"          then :registered
-              when :"not registered"  then :available
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "active"         then :registered
+              when "not registered" then :available
             end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 
         property_supported :available? do
-          @available ||= (status == :available)
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

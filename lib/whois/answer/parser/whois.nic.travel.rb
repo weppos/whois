@@ -35,15 +35,23 @@ module Whois
       class WhoisNicTravel < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Domain Status:\s+(.*?)\n/).flatten
+          @status ||= if content_for_scanner =~ /Domain Status:\s+(.+?)\n/
+            case $1.downcase
+              when "ok" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
+          end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Not found:/)
+          @available  ||= !!(content_for_scanner =~ /Not found:/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

@@ -35,8 +35,14 @@ module Whois
       class WhoisInUa < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.*)\n/
-            $1.split("-").first
+          @status ||= if content_for_scanner =~ /status:\s+(.+?)\n/
+            case $1.split("-").first.downcase
+              when "ok" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 

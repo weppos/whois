@@ -11,12 +11,12 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
 
   def test_status
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = "ACTIVO"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end

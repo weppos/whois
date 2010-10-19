@@ -36,16 +36,23 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /\[Stat(?:us|e)\]\s+(.*)\n/
-            $1
+            case $1.split(" ").first.downcase
+              when "active" then :registered
+              when "connected" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No match!!/)
+          @available  ||= !!(content_for_scanner =~ /No match!!/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

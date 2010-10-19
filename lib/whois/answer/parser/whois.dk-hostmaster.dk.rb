@@ -35,17 +35,23 @@ module Whois
       class WhoisDkHostmasterDk < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.*)\n/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "active" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No entries found for the selected source/)
+          @available  ||= !!(content_for_scanner =~ /No entries found for the selected source/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

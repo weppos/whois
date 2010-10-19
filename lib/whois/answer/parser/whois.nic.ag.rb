@@ -39,11 +39,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "NOT FOUND")
+          @available  ||= (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

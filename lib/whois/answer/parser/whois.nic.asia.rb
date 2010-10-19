@@ -35,17 +35,23 @@ module Whois
       class WhoisNicAsia < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:(.*?)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Domain Status:(.+?)\n/
+            case $1.downcase
+              when "ok" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "NOT FOUND")
+          @available  ||= (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

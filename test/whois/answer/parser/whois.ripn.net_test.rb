@@ -20,13 +20,27 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
   end
 
   def test_available?
-    assert !@klass.new(load_part('/ru/registered.txt')).available?
-    assert  @klass.new(load_part('/ru/available.txt')).available?
+    parser    = @klass.new(load_part('/ru/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/ru/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/ru/registered.txt')).registered?
-    assert !@klass.new(load_part('/ru/available.txt')).registered?
+    parser    = @klass.new(load_part('/ru/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/ru/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -82,13 +96,27 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
   end
 
   def test_available?
-    assert !@klass.new(load_part('/su/registered.txt')).available?
-    assert  @klass.new(load_part('/su/available.txt')).available?
+    parser    = @klass.new(load_part('/su/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/su/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/su/registered.txt')).registered?
-    assert !@klass.new(load_part('/su/available.txt')).registered?
+    parser    = @klass.new(load_part('/su/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/su/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 

@@ -35,8 +35,14 @@ module Whois
       class WhoisNicVe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Estatus del dominio: (.*?)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Estatus del dominio: (.+?)\n/
+            case $1.downcase
+              when "activo" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 

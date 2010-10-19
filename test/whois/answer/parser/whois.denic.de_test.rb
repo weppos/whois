@@ -69,17 +69,17 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
   def test_status
     parser    = @klass.new(load_part('/2.0/registered.txt'))
-    expected  = "connect"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/2.0/available.txt'))
-    expected  = "free"
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/2.0/invalid.txt'))
-    expected  = "invalid"
+    expected  = :invalid
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -337,12 +337,12 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
   def test_status
     parser    = @klass.new(load_part('/1.11.0/registered.txt'))
-    expected  = "connect"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/1.11.0/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -567,12 +567,12 @@ assurance and to bar you from using its whois query.
 
   def test_status
     parser    = @klass.new(load_part('/1.10.0/registered.txt'))
-    expected  = "connect"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/1.10.0/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end

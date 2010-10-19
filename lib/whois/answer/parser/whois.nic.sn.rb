@@ -46,7 +46,6 @@ module Whois
         property_not_supported :referral_url
 
 
-
         property_supported :status do
           @status ||= if available?
             :available

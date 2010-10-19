@@ -11,7 +11,7 @@ class AnswerParserWhoisDomainregistryIeTest < Whois::Answer::Parser::TestCase
 
   def test_status
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = :active
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 

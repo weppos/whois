@@ -2,11 +2,44 @@
 
 == master
 
-* CHANGED: Standardized whois.aero #status property,
-  it now returns symbols instead of strings.
+* CHANGED: Standardized #status property for the following parsers (#5)
+  * whois.aero
+  * whois.aeda.net.ae
+  * whois.audns.net.au
+  * whois.cat
+  * whois.cctld.uz
+  * whois.co.ug
+  * whois.denic.de
+  * whois.dk-hostmaster.dk
+  * whois.dns.be
+  * whois.dns.lu
+  * whois.dns.pt
+  * whois.domainregistry.ie
+  * whois.in.ua
+  * whois.jprs.jp
+  * whois.net.ua
+  * whois.nic-se.se
+  * whois.nic.am
+  * whois.nic.asia
+  * whois.nic.at
+  * whois.nic.coop
+  * whois.nic.fr
+  * whois.nic.ht
+  * whois.nic.kz
+  * whois.nic.la
+  * whois.nic.mu
+  * whois.nic.nu
+  * whois.nic.org.uy
+  * whois.nic.travel
+  * whois.nic.uk
+  * whois.nic.ve
+  * whois.norid.no
+  * whois.register.bg
+  * whois.registry.in
+  * whois.rotld.ro
+  * whois.srs.net.nz
 
-* CHANGED: Standardized whois.aeda.net.ae #status property,
-  it now returns symbols instead of strings.
+* FIXED: Property cache is missing for some parsers (#18)
 
 
 == Release 1.3.10

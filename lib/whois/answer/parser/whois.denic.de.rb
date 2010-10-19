@@ -42,7 +42,21 @@ module Whois
 
 
         property_supported :status do
-          @status ||= node("Status")
+          @status ||= if node("Status")
+            case node("Status")
+              when "connect"    then :registered
+              when "free"       then :available
+              when "invalid"    then :invalid
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            if version < "2.0"
+              :available
+            else
+              Whois.bug!(ParserError, "Unable to parse status.")
+            end
+          end
         end
 
         property_supported :available? do

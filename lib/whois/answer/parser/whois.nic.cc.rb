@@ -52,15 +52,15 @@ module Whois
 
 
         property_supported :status do
-          node("Status")
+          @status ||= node("Status")
         end
 
         property_supported :available? do
-          node("Registrar").nil?
+          @available  ||= node("Registrar").nil?
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

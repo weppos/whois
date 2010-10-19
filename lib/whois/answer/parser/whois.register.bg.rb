@@ -35,17 +35,23 @@ module Whois
       class WhoisRegisterBg < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /registration status:\s+(.*?)\n/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /registration status:\s+(.+?)\n/
+            case $1.downcase
+              when "registered" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner =~ /Domain name (.+?) does not exist/)
+          @available  ||= !!(content_for_scanner =~ /Domain name (.+?) does not exist/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

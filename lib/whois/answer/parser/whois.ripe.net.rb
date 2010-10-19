@@ -35,7 +35,7 @@ module Whois
       class WhoisRipeNet < Base
 
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -47,7 +47,7 @@ module Whois
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

@@ -35,17 +35,23 @@ module Whois
       class WhoisRotldRo < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:\s(.*?)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Domain Status:\s(.+?)\n/
+            case $1.downcase
+              when "ok" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No entries found/)
+          @available  ||= !!(content_for_scanner =~ /No entries found/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

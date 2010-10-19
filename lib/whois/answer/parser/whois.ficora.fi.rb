@@ -35,9 +35,9 @@ module Whois
       class WhoisFicoraFi < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.*?)\n/
+          @status ||= if content_for_scanner =~ /status:\s+(.+?)\n/
             case $1.downcase
-              when "granted"        then :registered
+              when "granted" then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

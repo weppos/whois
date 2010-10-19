@@ -35,15 +35,23 @@ module Whois
       class WhoisRegistryIn < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Status:(.*?)\n/).flatten
+          @status ||= if content_for_scanner =~ /Status:(.+?)\n/
+            case $1.downcase
+              when "ok" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
+          end
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "NOT FOUND")
+          @available  ||= (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

@@ -36,16 +36,22 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Record status:\s+(.*)\n/
-            $1.downcase.to_sym
+            case $1.downcase
+              when "active" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /NO MATCH for domain/)
+          @available  ||= !!(content_for_scanner =~ /NO MATCH for domain/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

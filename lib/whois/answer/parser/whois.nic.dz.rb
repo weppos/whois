@@ -35,9 +35,9 @@ module Whois
       class WhoisNicDz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /ETAT:\.+(.*?)\n/
+          @status ||= if content_for_scanner =~ /ETAT:\.+(.+?)\n/
             case $1.downcase
-              when "actif"          then :registered
+              when "actif" then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

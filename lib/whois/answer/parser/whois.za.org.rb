@@ -35,7 +35,7 @@ module Whois
       class WhoisZaOrg < Base
 
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No such domain:/)
+          @available  ||= !!(content_for_scanner =~ /No such domain:/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered  ||= !available?
         end
 
 
@@ -56,7 +56,7 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_supported :updated_on do
           @updated_on ||= if content_for_scanner =~ /Record Last Updated\s+:\s+(.*)\n/
             Time.parse($1)

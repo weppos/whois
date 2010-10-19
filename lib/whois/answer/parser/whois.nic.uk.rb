@@ -35,17 +35,23 @@ module Whois
       class WhoisNicUk < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.*?)\n/
-            $1.strip
+          @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
+            case $1.downcase
+              when "registered until renewal date." then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /This domain name has not been registered/)
+          @available  ||= !!(content_for_scanner =~ /This domain name has not been registered/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
