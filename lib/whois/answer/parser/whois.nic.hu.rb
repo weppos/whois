@@ -123,10 +123,12 @@ module Whois
         end
 
 
+        # NEWPROPERTY
         def registrar_contact
           contact("registrar", nil)
         end
 
+        # NEWPROPERTY
         def zone_contact
           contact("zone-c", nil)
         end
