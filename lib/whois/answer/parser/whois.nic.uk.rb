@@ -32,12 +32,16 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
+      # @see http://www.nominet.org.uk/other/whois/detailedinstruct/
+      #
       class WhoisNicUk < Base
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
             case $1.downcase
               when "registered until renewal date." then :registered
+              # NEWSTATUS
+              when "renewal required."              then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -76,7 +80,7 @@ module Whois
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.split(" ").first.downcase }
+            $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map(&:strip)
           else
             []
           end
@@ -85,7 +89,7 @@ module Whois
 
         # NEWPROPERTY
         def valid?
-          !invalid?
+          @valid ||= !invalid?
         end
 
         # NEWPROPERTY
