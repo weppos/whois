@@ -93,6 +93,10 @@ module Whois
           @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
         end
 
+        # NEWPROPERTY
+        # def suspended?
+        # end
+
       end
 
     end

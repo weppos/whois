@@ -105,10 +105,12 @@ module Whois
         end
 
 
+        # NEWPROPERTY
         property_supported :changed? do |other|
           !unchanged?(other)
         end
 
+        # NEWPROPERTY
         property_supported :unchanged? do |other|
           (self.equal? other) ||
           (self.content == other.content)
