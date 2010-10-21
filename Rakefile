@@ -33,32 +33,27 @@ spec = Gem::Specification.new do |s|
   s.name              = PKG_NAME
   s.version           = PKG_VERSION
   s.summary           = "An intelligent pure Ruby WHOIS client and parser."
-  s.author            = "Simone Carletti"
-  s.email             = "weppos@weppos.net"
-  s.homepage          = "http://www.ruby-whois.org"
   s.description       = <<-EOD
     Whois is an intelligent WHOIS client and parser written in pure Ruby. \
     It can query registry data for IPv4, IPv6 and top level domains, \
     parse and convert responses into easy-to-use Ruby objects.
   EOD
+
+  s.required_ruby_version = ">= 1.8.7"
+
+  s.author            = "Simone Carletti"
+  s.email             = "weppos@weppos.net"
+  s.homepage          = "http://www.ruby-whois.org"
   s.rubyforge_project = RUBYFORGE_PROJECT
 
   s.has_rdoc          = true
-  # You should probably have a README of some kind. Change the filename
-  # as appropriate
   s.extra_rdoc_files  = Dir.glob("*.rdoc")
   s.rdoc_options      = %w(--main README.rdoc)
 
-  # Add any extra files to include in the gem (like your README)
-  s.files             = %w() + Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*")
+  s.files             = Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*")
   s.executables       = ["ruby-whois"]
   s.require_paths     = ["lib"]
 
-  # If you want to depend on other gems, add them here, along with any
-  # relevant versions
-  # s.add_dependency("some_other_gem", "~> 0.1.0")
-
-  # If your tests use any gems, include them here
   s.add_development_dependency("mocha")
 end
 
@@ -95,7 +90,7 @@ task "ensure_rvm" do
   raise "RVM is not available" unless File.exist?(File.expand_path("~/.rvm/scripts/rvm"))
 end
 
-RUBIES = %w(1.8.6-p399 1.8.7-p302 1.9.1-p378 1.9.2-p0 jruby-1.5.3 ree-1.8.7-2010.02)
+RUBIES = %w( 1.8.7-p302 1.9.1-p378 1.9.2-p0 jruby-1.5.3 ree-1.8.7-2010.02 )
 
 desc "Run tests for all rubies"
 task "test_rubies" => "ensure_rvm" do

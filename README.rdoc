@@ -22,7 +22,10 @@ An extensive test suite is available to verify the library correctness but you m
 
 == Requirements
 
-* Ruby >= 1.8.6
+* Ruby >= 1.8.7
+
+Whois >= 1.5 requires Ruby 1.8.7 or newer.
+For older versions of Ruby, see the CHANGELOG.rdoc file.
 
 In addition to the standard Ruby interpreter (MRI),
 Whois has been successfully tested against several
