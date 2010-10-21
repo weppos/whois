@@ -82,10 +82,12 @@ module Whois
         property_not_supported :nameservers
 
 
+        # NEWPROPERTY
         property_supported :changed? do |other|
           !unchanged?(other)
         end
 
+        # NEWPROPERTY
         property_supported :unchanged? do |other|
           (self === other) ||
           (self.content == other.content)
@@ -94,12 +96,12 @@ module Whois
 
         protected
 
-        # Very often the .to server returns a partial response, which is a response
-        # containing an emtpy line.
-        # It seems to be a very poorly-designed throttle mecanism.
-        def incomplete_response?
-          content_for_scanner.strip == ""
-        end
+          # Very often the .to server returns a partial response, which is a response
+          # containing an emtpy line.
+          # It seems to be a very poorly-designed throttle mecanism.
+          def incomplete_response?
+            content_for_scanner.strip == ""
+          end
 
       end
 
