@@ -2,6 +2,16 @@
 
 == master
 
+* REMOVED: Remove deprecated Whois::Answer::Parser::Base methods:
+  * #registrant
+  * #admin
+  * #technical
+
+* REMOVED: Remove deprecated Whois::Answer::Part#response property.
+
+
+== Release 1.3.10
+
 * CHANGED: Standardized #status property for the following parsers (#5)
   * whois.aero
   * whois.aeda.net.ae
@@ -46,13 +56,6 @@
 
 * FIXED: The whois.nic.uk parser fails to parse #nameservers when
   the domain is suspended.
-
-* REMOVED: Remove deprecated Whois::Answer::Parser::Base methods:
-  * #registrant
-  * #admin
-  * #technical
-
-* REMOVED: Remove deprecated Whois::Answer::Part#response property.
 
 
 == Release 1.3.10
