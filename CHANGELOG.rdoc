@@ -1,6 +1,6 @@
 = Changelog
 
-== master
+== Release 1.3.11
 
 * CHANGED: Standardized #status property for the following parsers (#5)
   * whois.aero
