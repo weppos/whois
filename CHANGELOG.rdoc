@@ -41,6 +41,9 @@
 
 * FIXED: Property cache is missing for some parsers (#18)
 
+* FIXED: Sometimes whois.jprs.js parser may raise an Argument out of range
+  error trying to parse the #updated_on property.
+
 
 == Release 1.3.10
 

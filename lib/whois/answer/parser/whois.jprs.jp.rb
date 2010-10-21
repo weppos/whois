@@ -65,7 +65,7 @@ module Whois
 
         # TODO: timezone ('Asia/Tokyo')
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /\[Last Updated?\]\s+(.*)\n/m
+          @updated_on ||= if content_for_scanner =~ /\[Last Updated?\]\s+(.*)\n/
             Time.parse($1)
           end
         end
