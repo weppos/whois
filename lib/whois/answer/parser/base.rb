@@ -233,6 +233,8 @@ module Whois
           contacts.compact
         end
 
+        # NEWPROPERTY
+        #
         # Checks whether this is a throttle response.
         # The default implementation always returns false.
         #
