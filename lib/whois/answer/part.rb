@@ -34,21 +34,6 @@ module Whois
     # * host - The host which returned the body.
     #
     class Part < SuperStruct.new(:body, :host)
-
-      def response=(value) # :nodoc:
-        Whois.deprecate \
-          "Whois::Answer::Part#response= is deprecated " \
-          "and will be removed in Whois 1.5. Use Whois::Answer::Part#body=."
-        self.body = value
-      end
-
-      def response # :nodoc:
-        Whois.deprecate \
-          "Whois::Answer::Part#response is deprecated " \
-          "and will be removed in Whois 1.5. Use Whois::Answer::Part#body."
-        self.body
-      end
-
     end
 
   end

@@ -52,6 +52,8 @@
   * #admin
   * #technical
 
+* REMOVED: Remove deprecated Whois::Answer::Part#response property.
+
 
 == Release 1.3.10
 

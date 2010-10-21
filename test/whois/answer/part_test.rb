@@ -40,20 +40,4 @@ class Whois::Answer::PartTest < Test::Unit::TestCase
     assert_equal "whois.example.test",      instance.host
   end
 
-
-  def test_deprecated_response_setter
-    instance = @klass.new(:host => "whois.example.test")
-    instance.response = "This is a WHOIS record."
-
-    assert_equal "This is a WHOIS record.", instance.body
-    assert_equal "whois.example.test",      instance.host
-  end
-
-  def test_deprecated_response_getter
-    instance = @klass.new(:body => "This is a WHOIS record.", :host => "whois.example.test")
-
-    assert_equal "This is a WHOIS record.", instance.response
-    assert_equal "whois.example.test",      instance.host
-  end
-
 end

@@ -55,7 +55,7 @@ module Whois
     # or is a string and has the same content.
     def ==(other)
       (other.equal?(self)) ||
-      # This option should be deprecated
+      # TODO: This option should be deprecated
       (other.is_a?(String) && other == self.to_s) ||
       (other.is_a?(Answer) && other.to_s == self.to_s)
     end
