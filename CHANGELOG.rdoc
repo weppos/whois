@@ -41,8 +41,11 @@
 
 * FIXED: Property cache is missing for some parsers (#18)
 
-* FIXED: Sometimes whois.jprs.js parser may raise an Argument out of range
-  error trying to parse the #updated_on property.
+* FIXED: In some circumstances the whois.jprs.js parser may raise 
+  an Argument out of range error trying to parse the #updated_on property.
+
+* FIXED: The whois.nic.uk parser fails to parse #nameservers when
+  the domain is suspended.
 
 * REMOVED: Remove deprecated Whois::Answer::Parser::Base methods:
   * #registrant
