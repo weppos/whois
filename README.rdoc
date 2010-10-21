@@ -156,13 +156,6 @@ The parser architecture has been inspired by the PHPWhois[http://phpwhois.source
 Despite I spent weeks reading source code from the available whois libraries, Ruby Whois has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
 
-== Note for Whois 0.4 users
-
-As of release 0.5.0, the Whois GEM has been completely rewritten. As I explained in the Acknowledgment section, Cyril Mougel (the author of the original Whois package) yield me the privilege to use the Whois RubyForge project for my new Whois client.
-
-All versions between Whois 0.5.0 and 0.9.x include a compatibility adapter and the corresponding deprecation warnings to help you migrate to the new API. Starting from Whois 1.0.0, the library is no longer backward compatible with Cyril's Whois.
-
-
 == Author
 
 Author:: {Simone Carletti}[http://www.simonecarletti.com/] <weppos@weppos.net>
