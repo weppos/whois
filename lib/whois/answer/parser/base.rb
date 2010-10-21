@@ -244,31 +244,6 @@ module Whois
         end
 
 
-        # @deprecated {#registrant} is deprecated
-        #   and will be removed in a future version.
-        #   Use {#registrant_contact}.
-        def registrant
-          Whois.deprecate "Whois::Answer::Parser::Base#registrant is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#registrant_contact."
-          registrant_contact
-        end
-
-        # @deprecated {#admin} is deprecated
-        #   and will be removed in a future version.
-        #   Use {#admin_contact}.
-        def admin
-          Whois.deprecate "Whois::Answer::Parser::Base#admin is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#admin_contact."
-          admin_contact
-        end
-
-        # @deprecated {#technical} is deprecated
-        #   and will be removed in a future version.
-        #   Use {#technical_contact}.
-        def technical
-          Whois.deprecate "Whois::Answer::Parser::Base#technical is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#technical_contact."
-          technical_contact
-        end
-
-
         protected
 
           def content_for_scanner

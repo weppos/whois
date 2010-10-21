@@ -110,13 +110,6 @@ module Whois
           @tecnical_contact ||= contact("tech-c", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
-        # @deprecated
-        register_property :registrant, :supported
-        # @deprecated
-        register_property :admin, :supported
-        # @deprecated
-        register_property :technical, :supported
-
 
         property_supported :nameservers do
           @nameservers ||= node("nameserver") || []

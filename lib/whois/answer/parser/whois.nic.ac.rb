@@ -72,13 +72,6 @@ module Whois
 
         property_not_supported :technical_contact
 
-        # @deprecated
-        register_property :registrant, :not_supported
-        # @deprecated
-        register_property :admin, :not_supported
-        # @deprecated
-        register_property :technical, :not_supported
-
 
         property_not_supported :nameservers
 
