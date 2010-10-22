@@ -11,12 +11,20 @@ class AnswerParserWhoisRegistryInTest < Whois::Answer::Parser::TestCase
 
   def test_status
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = :registered
+    expected  = %w( ok )
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/available.txt'))
-    expected  = :available
+    expected  = nil
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  # TEST:REGRESSION
+  def test_status_multiple
+    parser    = @klass.new(load_part('/property_status_multiple.txt'))
+    expected  = [ "client delete prohibited", "client renew prohibited", "client transfer prohibited", "client update prohibited" ]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end

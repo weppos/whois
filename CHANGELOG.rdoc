@@ -6,6 +6,8 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * CHANGED: Ruby 1.8.7 or newer is required.
 
+* FIXED: Fixed Unknown status `CLIENT DELETE PROHIBITED' for whois.registry.in.
+
 * REMOVED: Remove deprecated Whois::Answer::Parser::Base methods:
   * #registrant
   * #admin
