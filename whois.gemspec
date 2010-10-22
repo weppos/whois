@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{whois}
-  s.version = "1.3.10"
+  s.version = "1.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simone Carletti"]
-  s.date = %q{2010-10-17}
+  s.date = %q{2010-10-22}
   s.default_executable = %q{ruby-whois}
   s.description = %q{    Whois is an intelligent WHOIS client and parser written in pure Ruby.     It can query registry data for IPv4, IPv6 and top level domains,     parse and convert responses into easy-to-use Ruby objects.
 }
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://www.ruby-whois.org}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
+  s.required_ruby_version = Gem::Requirement.new(">= 1.8.7")
   s.rubyforge_project = %q{whois}
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{An intelligent pure Ruby WHOIS client and parser.}
