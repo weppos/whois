@@ -4,6 +4,8 @@
 
 * NEW: Added simple .kg TLD parser (whois.domain.kg).
 
+* NEW: Added simple .md TLD parser (whois.nic.md).
+
 * FIXED: Fixed Unknown status `Renewal request being processed.' for whois.nic.uk.
 
 
