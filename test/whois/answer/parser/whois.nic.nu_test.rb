@@ -47,32 +47,52 @@ class AnswerParserWhoisNicNuTest < Whois::Answer::Parser::TestCase
 
 
   def test_created_on
-    assert_equal  Time.parse("1999-06-07"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("1999-06-07")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-05-11"),
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2009-05-11")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-06-07"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2010-06-07")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
   def test_nameservers
-    assert_equal  %w(ns1.google.com ns2.google.com ns3.google.com ns4.google.com),
-                  @klass.new(load_part('/registered.txt')).nameservers
-    assert_equal  %w(),
-                  @klass.new(load_part('/available.txt')).nameservers
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
