@@ -1,0 +1,34 @@
+% This is the .kg ccTLD Whois server
+% Register your own domain at http://www.domain.kg
+
+Domain GOOGLE.KG
+
+Administrative Contact:
+   Google Inc. (8386-KG),   ccops@markmonitor.com
+   1600 Amphitheatre Parkway
+   phone: +1.6502530000
+   fax: +1.6506188571
+
+Technical Contact:
+   Markmonitor (5935-KG),   ccops@markmonitor.com
+   10400 Overland Rd. PMB 155
+   phone: +12083895740
+   fax: +12083895799
+
+Billing Contact:
+   Markmonitor (5935-KG),   ccops@markmonitor.com
+   10400 Overland Rd. PMB 155
+   phone: +12083895740
+   fax: +12083895799
+
+Record created: Tue Feb 10 09:42:42 2004
+Record last updated on Mon Apr 19 21:47:14 2010
+Record expires on Sun Mar 27 23:59:00 2011
+
+Name servers in the listed order:
+
+NS1.GOOGLE.COM
+NS2.GOOGLE.COM
+
+NS4.GOOGLE.COM
+

@@ -162,7 +162,7 @@ jm;;;
 jo;;;
 jp;whois.jprs.jp;google.jp;u34jedzcq.jp
 ke;whois.kenic.or.ke;google.co.ke;u34jedzcq.ke
-#Whois::Server.define :tld, ".kg", "whois.domain.kg"
+kg;whois.domain.kg;google.kg;u34jedzcq.kg
 kh;;;
 ki;whois.nic.mu;google.ki;u34jedzcq.ki
 km;;;

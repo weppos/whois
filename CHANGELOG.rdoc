@@ -2,7 +2,9 @@
 
 == master
 
-FIXED: Fixed Unknown status `Renewal request being processed.' for whois.nic.uk.
+* NEW: Added simple .kg TLD parser (whois.domain.kg).
+
+* FIXED: Fixed Unknown status `Renewal request being processed.' for whois.nic.uk.
 
 
 == Release 1.5.0
