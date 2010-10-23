@@ -20,7 +20,12 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/suspended.txt'))
+    parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/property_status_processing_renewal.txt'))
     expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
@@ -37,7 +42,12 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/suspended.txt'))
+    parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/property_status_processing_renewal.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
@@ -54,7 +64,12 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/suspended.txt'))
+    parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/property_status_processing_renewal.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -146,7 +161,7 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
 
   # TEST:REGRESSION
   def test_nameservers_with_suspended
-    parser    = @klass.new(load_part('/suspended.txt'))
+    parser    = @klass.new(load_part('/property_status_suspended.txt'))
     expected  = %w( )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }

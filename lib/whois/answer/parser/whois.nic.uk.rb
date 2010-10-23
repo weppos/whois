@@ -39,9 +39,10 @@ module Whois
         property_supported :status do
           @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
             case $1.downcase
-              when "registered until renewal date." then :registered
+              when "registered until renewal date."   then :registered
+              when "renewal request being processed." then :registered
               # NEWSTATUS
-              when "renewal required."              then :registered
+              when "renewal required."                then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
