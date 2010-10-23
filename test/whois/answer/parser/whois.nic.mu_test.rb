@@ -50,24 +50,39 @@ class AnswerParserWhoisNicMuKiTest < AnswerParserWhoisNicMuTest
 
 
   def test_created_on
-    assert_equal  Time.parse("2006-05-15"),
-                  @klass.new(load_part('/ki/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/ki/available.txt')).created_on
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = Time.parse("2006-05-15")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-09-30"),
-                  @klass.new(load_part('/ki/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/ki/available.txt')).updated_on
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = Time.parse("2009-09-30")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-11-27"),
-                  @klass.new(load_part('/ki/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/ki/available.txt')).expires_on
+    parser    = @klass.new(load_part('/ki/registered.txt'))
+    expected  = Time.parse("2010-11-27")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/ki/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
@@ -125,24 +140,39 @@ class AnswerParserWhoisNicMuMuTest < AnswerParserWhoisNicMuTest
 
 
   def test_created_on
-    assert_equal  Time.parse("2000-12-21"),
-                  @klass.new(load_part('/mu/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mu/available.txt')).created_on
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = Time.parse("2000-12-21")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-12-04"),
-                  @klass.new(load_part('/mu/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mu/available.txt')).updated_on
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = Time.parse("2009-12-04")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-12-20"),
-                  @klass.new(load_part('/mu/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/mu/available.txt')).expires_on
+    parser    = @klass.new(load_part('/mu/registered.txt'))
+    expected  = Time.parse("2010-12-20")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/mu/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
