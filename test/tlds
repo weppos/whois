@@ -187,7 +187,7 @@ ly;whois.nic.ly;google.ly;u34jedzcq.ly
 mc;whois.ripe.net;nic.mc;u34jedzcq.mc
 md;whois.nic.md;google.md;u34jedzcq.md
 me;whois.meregistry.net;google.me;u34jedzcq.me
-#Whois::Server.define :tld, ".mg", "whois.nic.mg"
+mg;whois.nic.mg;google.mg;u34jedzcq.mg
 mh;;;
 mk;;;
 ml;;;

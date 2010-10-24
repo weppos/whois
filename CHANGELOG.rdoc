@@ -4,6 +4,8 @@
 
 * NEW: Added .md TLD parser (whois.nic.md).
 
+* NEW: Added .mg TLD parser (whois.nic.mg).
+
 
 == Release 1.5.1
 

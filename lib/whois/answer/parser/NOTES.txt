@@ -29,3 +29,8 @@ ripe.net
 
 whois.gg
 whois.je
+
+whois.nic.cx
+whois.nic.gl
+whois.nic.gs
+whois.nic.mg
