@@ -2,6 +2,8 @@
 
 == master
 
+* SERVER: Updated the .nc TLD definition.
+
 * NEW: Added .md TLD parser (whois.nic.md).
 
 * NEW: Added .mg TLD parser (whois.nic.mg).
