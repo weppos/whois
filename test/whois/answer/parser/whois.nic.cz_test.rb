@@ -95,4 +95,11 @@ class AnswerParserWhoisNicCzTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/property_nameservers_with_ip.txt'))
+    expected  = %w( ns.albatani.cz ns.albatani.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end

@@ -8,6 +8,8 @@
 
 * FIXED: Fixed Unknown status `Renewal request being processed.' for whois.nic.uk.
 
+* FIXED: With some .cz domains, whois.nic.cz parser returns invalid values for nameservers.
+
 
 == Release 1.5.0
 
