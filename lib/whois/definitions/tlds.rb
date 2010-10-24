@@ -163,7 +163,7 @@ Whois::Server.define :tld, ".jp", "whois.jprs.jp", {:adapter=>Whois::Server::Ada
 Whois::Server.define :tld, ".ke", "whois.kenic.or.ke"
 Whois::Server.define :tld, ".kg", "whois.domain.kg"
 Whois::Server.define :tld, ".kh", nil, {:adapter=>Whois::Server::Adapters::None}
-Whois::Server.define :tld, ".ki", "whois.nic.mu"
+Whois::Server.define :tld, ".ki", "whois.nic.ki"
 Whois::Server.define :tld, ".km", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".kn", nil, {:web=>"http://www.nic.kn/", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".kp", "whois.kcce.kp"

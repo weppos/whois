@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'whois/answer/parser/whois.nic.mu'
+require 'whois/answer/parser/whois.nic.ki'
 
-class AnswerParserWhoisNicMuTest < Whois::Answer::Parser::TestCase
+class AnswerParserWhoisNicKiTest < Whois::Answer::Parser::TestCase
 
   def setup
-    @klass  = Whois::Answer::Parser::WhoisNicMu
-    @host   = "whois.nic.mu"
+    @klass  = Whois::Answer::Parser::WhoisNicKi
+    @host   = "whois.nic.ki"
   end
 
 
@@ -48,7 +48,7 @@ class AnswerParserWhoisNicMuTest < Whois::Answer::Parser::TestCase
 
   def test_created_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2000-12-21")
+    expected  = Time.parse("2006-05-15")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
@@ -60,7 +60,7 @@ class AnswerParserWhoisNicMuTest < Whois::Answer::Parser::TestCase
 
   def test_updated_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2009-12-04")
+    expected  = Time.parse("2010-03-21")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
@@ -72,7 +72,7 @@ class AnswerParserWhoisNicMuTest < Whois::Answer::Parser::TestCase
 
   def test_expires_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2010-12-20")
+    expected  = Time.parse("2010-11-27")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
