@@ -38,6 +38,8 @@ module Whois
           @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
               when "active" then :registered
+              # NEWSTATUS
+              when "frozen" then :frozen
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -69,6 +71,7 @@ module Whois
           end
         end
 
+        # TODO: Use anniversary
         property_not_supported :expires_on
 
 

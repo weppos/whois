@@ -261,7 +261,7 @@ sy;;;
 sz;;;
 tc;whois.adamsnames.tc;google.tc;u34jedzcq.tc
 td;;;
-#Whois::Server.define :tld, ".tf", "whois.nic.tf"
+tf;whois.nic.fr;google.tf;u34jedzcq.rf
 tg;;;
 #Whois::Server.define :tld, ".th", "whois.thnic.net"
 tj;;;

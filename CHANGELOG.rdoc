@@ -14,6 +14,8 @@
 
 * SERVER: Updated the .ki/.mu TLD definition.
 
+* SERVER: Updated the .tf TLD definition.
+
 * NEW: Added .md TLD parser (whois.nic.md).
 
 * NEW: Added simple .mg TLD parser (whois.nic.mg).

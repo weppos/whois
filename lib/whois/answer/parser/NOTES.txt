@@ -9,21 +9,22 @@ whois.cat
 .ve
 .uy
 
-(afilias)
+# afilias
 whois.dotmobyregistry.net
 whois.afilias.info
 whois.afilias-grs.info
 whois.aero
+
 whois.nic.af
-whois.registry.in
 whois.nic.mu
 whois.nic.gl
 whois.nic.gs
 whois.nic.mg
 whois.na-nic.com.na
 kero.yachay.pe
+whois.kenic.or.ke
 
-http://coccaregistry.net/index.php/whois.html
+# http://coccaregistry.net/index.php/whois.html
 whois.nic.cx
 whois.nic.gs
 whois.nic.ki
@@ -32,8 +33,13 @@ whois.nic.net.sb
 whois.nic.tl
 whois.nic.ms
 
-whois.nic.af
-whois.kenic.or.ke
+# AFNIC
+whois.nic.fr
+whois.nic.pm (CNAME whois.nic.fr)
+whois.nic.re (CNAME whois.nic.fr)
+whois.nic.wf (CNAME whois.nic.fr)
+whois.nic.tf (CNAME whois.nic.fr)
+whois.nic.yt (CNAME whois.nic.fr)
 
 whois.pandi.or.id
 whois.nic.ir

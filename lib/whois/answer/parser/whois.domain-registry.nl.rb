@@ -38,6 +38,7 @@ module Whois
           @status ||= if content_for_scanner =~ /Status:\s+(.*?)\n/
             case $1.downcase
               when "active"         then :registered
+              # NEWSTATUS
               when "in quarantine"  then :quarantine
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
