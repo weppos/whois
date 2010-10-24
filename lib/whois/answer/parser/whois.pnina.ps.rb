@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.gs parser
+      # = whois.pnina.ps parser
       #
-      # Parser for the whois.nic.gs server.
+      # Parser for the whois.pnina.ps server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicGs < Base
+      class WhoisPninaPs < Base
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
@@ -62,11 +62,7 @@ module Whois
           end
         end
 
-        property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Modified:\s+(.+?)\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :updated_on
 
         property_supported :expires_on do
           @expires_on ||= if content_for_scanner =~ /Expires:\s+(.+?)\n/

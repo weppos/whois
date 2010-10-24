@@ -26,6 +26,8 @@
 
 * NEW: Added simple .pe TLD parser (kero.yachay.pe).
 
+* NEW: Added simple .ps TLD parser (whois.pnina.ps).
+
 
 == Release 1.5.1
 
