@@ -45,5 +45,8 @@ whois.pandi.or.id
 whois.nic.ir
 ripe.net
 
+whois.nic.ac
+whois.nic.io
+
 whois.gg
 whois.je

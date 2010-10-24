@@ -30,14 +30,19 @@ module Whois
 
         property_not_supported :disclaimer
 
+
         property_supported :domain do
-          @domain ||= Proc.new do
-            content_for_scanner =~ /Domain "(.*?)"/
+          @domain ||= if content_for_scanner =~ /Domain "(.+?)"/
             $1.downcase
-          end.call
+          end
         end
 
         property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
 
 
         property_supported :status do
@@ -49,7 +54,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !(content_for_scanner =~ /Not available/)
+          @available  ||= !!(content_for_scanner =~ /- Available/)
         end
 
         property_supported :registered? do
@@ -77,13 +82,13 @@ module Whois
 
 
         # NEWPROPERTY
-        property_supported :changed? do |other|
+        def changed?(other)
           !unchanged?(other)
         end
 
         # NEWPROPERTY
-        property_supported :unchanged? do |other|
-          self == other ||
+        def unchanged?(other)
+          self.equal?(other) ||
           self.content_for_scanner == other.content_for_scanner
         end
 

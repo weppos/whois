@@ -9,6 +9,12 @@ class AnswerParserWhoisNicAcTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_disclaimer
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).disclaimer }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).disclaimer }
+  end
+
+
   def test_domain
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = "google.ac"
@@ -24,6 +30,17 @@ class AnswerParserWhoisNicAcTest < Whois::Answer::Parser::TestCase
   def test_domain_id
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
+  end
+
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_url }
   end
 
 

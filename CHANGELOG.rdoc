@@ -16,8 +16,6 @@
 
 * SERVER: Updated the .tf TLD definition.
 
-* NEW: Added .md TLD parser (whois.nic.md).
-
 * NEW: Added simple .mg TLD parser (whois.nic.mg).
 
 * NEW: Added simple .ms TLD parser (whois.nic.ms).
@@ -35,6 +33,10 @@
 * NEW: Added simple .ps TLD parser (whois.pnina.ps).
 
 * NEW: Added simple .ki TLD parser (whois.pnina.ps).
+
+* CHANGED: Completed .md TLD parser (whois.nic.md).
+
+* CHANGED: Completed .io TLD parser (whois.nic.io).
 
 
 == Release 1.5.1
