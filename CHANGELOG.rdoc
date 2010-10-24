@@ -24,6 +24,8 @@
 
 * NEW: Added simple .ng TLD parser (whois.nic.net.ng).
 
+* NEW: Added simple .pe TLD parser (kero.yachay.pe).
+
 
 == Release 1.5.1
 

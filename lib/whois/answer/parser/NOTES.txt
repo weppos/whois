@@ -29,6 +29,7 @@ whois.nic.gs
 whois.nic.mg
 whois.nic.ms
 whois.na-nic.com.na
+kero.yachay.pe
 
 whois.nic.af
 whois.kenic.or.ke

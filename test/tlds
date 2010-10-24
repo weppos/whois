@@ -209,17 +209,16 @@ na;whois.na-nic.com.na;google.na;u34jedzcq.na
 nc;;;
 ne;;;
 nf;whois.nic.net.nf;google.nf;u34jedzcq.nf
-ng;whois.nic.net.ng;google.ng;u34jedzcq.ng
+ng;whois.nic.net.ng;nic.net.ng;u34jedzcq.ng
 ni;;;
 nl;whois.domain-registry.nl;google.nl;u34jedzcq.nl
 no;whois.norid.no;google.no;u34jedzcq.no
 np;;;
 nr;;;
 nu;whois.nic.nu;google.nu;u34jedzcq.nu
-nz;whois.srs.net.nz;google.co.nz;u34jedzcq.co.nz
 om;;;
 pa;;;
-#Whois::Server.define :tld, ".pe", "whois.nic.pe"
+pe;kero.yachay.pe;google.pe;u34jedzcq.pe
 pf;;;
 pg;;;
 ph;;;
