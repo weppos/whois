@@ -36,6 +36,8 @@
 
 * NEW: Added .tm TLD parser (whois.nic.tm).
 
+* NEW: Added .tz TLD parser (whois.tznic.or.tz).
+
 * CHANGED: Completed .md TLD parser (whois.nic.md).
 
 * CHANGED: Completed .io TLD parser (whois.nic.io).
