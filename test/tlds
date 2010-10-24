@@ -208,7 +208,7 @@ mz;;;
 na;whois.na-nic.com.na;google.na;u34jedzcq.na
 nc;;;
 ne;;;
-#Whois::Server.define :tld, ".nf", "whois.nic.nf"
+nf;whois.nic.net.nf;google.nf;u34jedzcq.nf
 #Whois::Server.define :tld, ".ng", "whois.register.net.ng"
 ni;;;
 nl;whois.domain-registry.nl;google.nl;u34jedzcq.nl

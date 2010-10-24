@@ -4,15 +4,19 @@
 
 * SERVER: Updated the .nc TLD definition.
 
+* SERVER: Updated the .nf TLD definition.
+
 * NEW: Added .md TLD parser (whois.nic.md).
 
-* NEW: Added .mg TLD parser (whois.nic.mg).
+* NEW: Added simple .mg TLD parser (whois.nic.mg).
 
-* NEW: Added .ms TLD parser (whois.nic.ms).
+* NEW: Added simple .ms TLD parser (whois.nic.ms).
 
-* NEW: Added .ms TLD parser (whois.domainregistry.my).
+* NEW: Added simple .ms TLD parser (whois.domainregistry.my).
 
-* NEW: Added .na TLD parser (whois.na-nic.com.na).
+* NEW: Added simple .na TLD parser (whois.na-nic.com.na).
+
+* NEW: Added simple .nf TLD parser (whois.nic.net.nf).
 
 
 == Release 1.5.1

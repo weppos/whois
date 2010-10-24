@@ -1,24 +1,34 @@
 .us
 .biz
 .travel
-whois.nic.co (.co)
+whois.nic.co
 
-whois.museum (.museum)
-whois.cat (.cat)
+whois.museum
+whois.cat
 
 .ve
 .uy
 
 (afilias)
-whois.dotmobyregistry.net (.mobi)
-whois.afilias.info (.info)
-whois.afilias-grs.info (.bz, .gi, .hn, .lc, .mn, .sc, .vc)
-whois.aero (.aero)
-whois.nic.af (.af)
-whois.registry.in (.in)
+whois.dotmobyregistry.net
+whois.afilias.info
+whois.afilias-grs.info
+whois.aero
+whois.nic.af
+whois.registry.in
 
-whois.nic.af (.af)
-whois.nic.gs (.gs)
+whois.nic.af
+whois.nic.gs
+whois.nic.net.nf
+whois.nic.tl
+whois.nic.mu
+
+whois.nic.cx
+whois.nic.gl
+whois.nic.gs
+whois.nic.mg
+whois.nic.ms
+whois.na-nic.com.na
 
 whois.nic.af
 whois.kenic.or.ke
@@ -29,10 +39,3 @@ ripe.net
 
 whois.gg
 whois.je
-
-whois.nic.cx
-whois.nic.gl
-whois.nic.gs
-whois.nic.mg
-whois.nic.ms
-whois.na-nic.com.na
