@@ -240,7 +240,7 @@ Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 Whois::Server.define :tld, ".ru", "whois.ripn.net"
 Whois::Server.define :tld, ".rw", nil, {:adapter=>Whois::Server::Adapters::Web, :web=>"http://www.nic.rw/cgi-bin/whois.pl"}
 Whois::Server.define :tld, ".sa", "saudinic.net.sa"
-Whois::Server.define :tld, ".sb", "whois.coccaregistry.net"
+Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
 Whois::Server.define :tld, ".sc", "whois.afilias-grs.info", {:adapter=>Whois::Server::Adapters::Afilias}
 Whois::Server.define :tld, ".sd", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".se", "whois.nic-se.se"

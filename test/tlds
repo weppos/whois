@@ -240,7 +240,7 @@ rs;;;
 ru;whois.ripn.net;google.ru;u34jedzcq.ru
 rw;;;
 sa;whois.nic.net.sa;saudigazette.com.sa;u34jedzcq.com.sa
-#Whois::Server.define :tld, ".sb", "whois.coccaregistry.net"
+#Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
 sc;whois.afilias-grs.info;google.sc;u34jedzcq.sc
 sd;;;
 se;whois.nic-se.se;google.se;u34jedzcq.se

@@ -10,6 +10,8 @@
 
 * SERVER: Updated the .pe TLD definition.
 
+* SERVER: Updated the .sb TLD definition.
+
 * NEW: Added .md TLD parser (whois.nic.md).
 
 * NEW: Added simple .mg TLD parser (whois.nic.mg).
