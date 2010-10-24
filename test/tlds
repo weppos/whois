@@ -197,7 +197,7 @@ mo;;;
 mp;;;
 mq;;;
 mr;;;
-#Whois::Server.define :tld, ".ms", "whois.nic.ms"
+ms;whois.nic.ms;google.ms;u34jedzcq.ms
 mt;;;
 mu;whois.nic.mu;google.mu;u34jedzcq.mu
 mv;;;
