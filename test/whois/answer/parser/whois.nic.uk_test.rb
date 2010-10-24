@@ -25,6 +25,11 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
+    parser    = @klass.new(load_part('/property_status_processing_registration.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
     parser    = @klass.new(load_part('/property_status_processing_renewal.txt'))
     expected  = :registered
     assert_equal  expected, parser.status
@@ -47,6 +52,11 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
+    parser    = @klass.new(load_part('/property_status_processing_registration.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
     parser    = @klass.new(load_part('/property_status_processing_renewal.txt'))
     expected  = false
     assert_equal  expected, parser.available?
@@ -65,6 +75,11 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @registered }
 
     parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/property_status_processing_registration.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
