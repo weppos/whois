@@ -8,6 +8,8 @@
 
 * NEW: Added .ms TLD parser (whois.nic.ms).
 
+* NEW: Added .ms TLD parser (whois.domainregistry.my).
+
 
 == Release 1.5.1
 

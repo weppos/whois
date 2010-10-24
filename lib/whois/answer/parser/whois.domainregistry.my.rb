@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.educause.edu parser
+      # = whois.domainregistry.my parser
       #
-      # Parser for the whois.educause.edu server.
+      # Parser for the whois.domainregistry.my server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisEducauseEdu < Base
+      class WhoisDomainregistryMy < Base
 
         property_supported :status do
           @status ||= if available?
@@ -43,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No Match/)
+          @available  ||= !!(content_for_scanner =~ /Domain Name [^ ]+ does not exist in database/)
         end
 
         property_supported :registered? do
@@ -52,30 +52,26 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Domain record activated:\s+(.+?)\n/
+          @created_on ||= if content_for_scanner =~ /\[Record Created\]\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Domain record last updated:\s+(.+?)\n/
+          @updated_on ||= if content_for_scanner =~ /\[Record Last Modified\]\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Domain expires:\s+(.+?)\n/
+          @expires_on ||= if content_for_scanner =~ /\[Record Expired\]\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.split(" ").first.downcase }
-          else
-            []
-          end
+          @nameservers ||= content_for_scanner.scan(/\[(?:Primary|Secondary) Name Server\](?:.+?)\n(.+\n)/).flatten.map { |value| value.split(" ").first }
         end
 
       end
