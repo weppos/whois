@@ -6,6 +6,8 @@
 
 * SERVER: Updated the .nf TLD definition.
 
+* SERVER: Updated the .ng TLD definition.
+
 * NEW: Added .md TLD parser (whois.nic.md).
 
 * NEW: Added simple .mg TLD parser (whois.nic.mg).
@@ -17,6 +19,8 @@
 * NEW: Added simple .na TLD parser (whois.na-nic.com.na).
 
 * NEW: Added simple .nf TLD parser (whois.nic.net.nf).
+
+* NEW: Added simple .ng TLD parser (whois.nic.net.ng).
 
 
 == Release 1.5.1

@@ -209,7 +209,7 @@ na;whois.na-nic.com.na;google.na;u34jedzcq.na
 nc;;;
 ne;;;
 nf;whois.nic.net.nf;google.nf;u34jedzcq.nf
-#Whois::Server.define :tld, ".ng", "whois.register.net.ng"
+ng;whois.nic.net.ng;google.ng;u34jedzcq.ng
 ni;;;
 nl;whois.domain-registry.nl;google.nl;u34jedzcq.nl
 no;whois.norid.no;google.no;u34jedzcq.no

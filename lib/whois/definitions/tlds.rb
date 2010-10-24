@@ -208,7 +208,7 @@ Whois::Server.define :tld, ".na", "whois.na-nic.com.na"
 Whois::Server.define :tld, ".nc", nil, {:web=>"http://www.domaine.nc/en/whois.html", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".ne", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".nf", "whois.nic.net.nf"
-Whois::Server.define :tld, ".ng", "whois.register.net.ng"
+Whois::Server.define :tld, ".ng", "whois.nic.net.ng"
 Whois::Server.define :tld, ".ni", nil, {:adapter=>Whois::Server::Adapters::Web, :web=>"http://www.nic.ni/"}
 Whois::Server.define :tld, ".nl", "whois.domain-registry.nl"
 Whois::Server.define :tld, ".no", "whois.norid.no"
