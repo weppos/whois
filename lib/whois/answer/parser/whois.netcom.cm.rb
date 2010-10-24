@@ -42,6 +42,8 @@ module Whois
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 

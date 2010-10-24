@@ -35,11 +35,15 @@ module Whois
       class WhoisNicGl < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.*?)\n/
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "active"           then :registered
-              when "not registered"   then :available
+              when "active"         then :registered
+              when "not registered" then :available
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 
@@ -53,19 +57,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created:\s+(.*?)\n/
+          @created_on ||= if content_for_scanner =~ /Created:\s+(.+?)\n/
             Time.parse($1)
           end
         end
         
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Modified:\s+(.*?)\n/
+          @updated_on ||= if content_for_scanner =~ /Modified:\s+(.+?)\n/
             Time.parse($1)
           end
         end
         
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires:\s+(.*?)\n/
+          @expires_on ||= if content_for_scanner =~ /Expires:\s+(.+?)\n/
             Time.parse($1)
           end
         end
