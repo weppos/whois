@@ -1,6 +1,6 @@
 = Changelog
 
-== master
+== Release 1.5.1
 
 * NEW: Added simple .kg TLD parser (whois.domain.kg).
 
