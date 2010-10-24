@@ -10,6 +10,8 @@
 
 * NEW: Added .ms TLD parser (whois.domainregistry.my).
 
+* NEW: Added .na TLD parser (whois.na-nic.com.na).
+
 
 == Release 1.5.1
 

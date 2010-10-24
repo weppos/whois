@@ -35,3 +35,4 @@ whois.nic.gl
 whois.nic.gs
 whois.nic.mg
 whois.nic.ms
+whois.na-nic.com.na
