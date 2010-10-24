@@ -218,7 +218,7 @@ Whois::Server.define :tld, ".nu", "whois.nic.nu"
 Whois::Server.define :tld, ".nz", "whois.srs.net.nz"
 Whois::Server.define :tld, ".om", nil, {:web=>"http://www.omnic.om/onlineUser/WHOISLookup.jsp", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".pa", nil, {:web=>"http://www.nic.pa/", :adapter=>Whois::Server::Adapters::Web}
-Whois::Server.define :tld, ".pe", "whois.nic.pe"
+Whois::Server.define :tld, ".pe", "kero.yachay.pe"
 Whois::Server.define :tld, ".pf", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".pg", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".ph", nil, {:web=>"http://www.dot.ph/", :adapter=>Whois::Server::Adapters::Web}
