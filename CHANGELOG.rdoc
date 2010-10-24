@@ -34,6 +34,8 @@
 
 * NEW: Added simple .ki TLD parser (whois.pnina.ps).
 
+* NEW: Added .tm TLD parser (whois.nic.tm).
+
 * CHANGED: Completed .md TLD parser (whois.nic.md).
 
 * CHANGED: Completed .io TLD parser (whois.nic.io).

@@ -47,6 +47,7 @@ ripe.net
 
 whois.nic.ac
 whois.nic.io
+whois.nic.tm
 
 whois.gg
 whois.je
