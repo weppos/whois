@@ -36,9 +36,9 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Status:\s+(.*?)\n/
-            case $1.downcase.to_sym
-              when :"active"          then :registered
-              when :"not registered"  then :available
+            case $1.downcase
+              when "active"           then :registered
+              when "not registered"   then :available
             end
           end
         end

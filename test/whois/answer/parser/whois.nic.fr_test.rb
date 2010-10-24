@@ -50,17 +50,27 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
 
 
   def test_created_on
-    assert_equal  Time.parse("2000-07-27"),
-                  @klass.new(load_part('/fr/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fr/available.txt')).created_on
+    parser    = @klass.new(load_part('/fr/registered.txt'))
+    expected  = Time.parse("2000-07-27")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/fr/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-06-03"),
-                  @klass.new(load_part('/fr/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/fr/available.txt')).updated_on
+    parser    = @klass.new(load_part('/fr/registered.txt'))
+    expected  = Time.parse("2009-06-03")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/fr/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
@@ -123,17 +133,27 @@ class AnswerParserWhoisNicFrPmTest < AnswerParserWhoisNicFrTest
 
 
   def test_created_on
-    assert_equal  Time.parse("1995-01-01"),
-                  @klass.new(load_part('/pm/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/pm/available.txt')).created_on
+    parser    = @klass.new(load_part('/pm/registered.txt'))
+    expected  = Time.parse("1995-01-01")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/pm/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2004-09-17"),
-                  @klass.new(load_part('/pm/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/pm/available.txt')).updated_on
+    parser    = @klass.new(load_part('/pm/registered.txt'))
+    expected  = Time.parse("2004-09-17")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/pm/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
@@ -196,17 +216,27 @@ class AnswerParserWhoisNicFrReTest < AnswerParserWhoisNicFrTest
 
 
   def test_created_on
-    assert_equal  Time.parse("1995-01-01"),
-                  @klass.new(load_part('/re/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/re/available.txt')).created_on
+    parser    = @klass.new(load_part('/re/registered.txt'))
+    expected  = Time.parse("1995-01-01")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/re/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-03-12"),
-                  @klass.new(load_part('/re/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/re/available.txt')).updated_on
+    parser    = @klass.new(load_part('/re/registered.txt'))
+    expected  = Time.parse("2009-03-12")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/re/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
@@ -269,17 +299,27 @@ class AnswerParserWhoisNicFrWfTest < AnswerParserWhoisNicFrTest
 
 
   def test_created_on
-    assert_equal  Time.parse("1995-01-01"),
-                  @klass.new(load_part('/wf/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/wf/available.txt')).created_on
+    parser    = @klass.new(load_part('/wf/registered.txt'))
+    expected  = Time.parse("1995-01-01")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/wf/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2004-09-17"),
-                  @klass.new(load_part('/wf/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/wf/available.txt')).updated_on
+    parser    = @klass.new(load_part('/wf/registered.txt'))
+    expected  = Time.parse("2004-09-17")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/wf/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
@@ -342,17 +382,27 @@ class AnswerParserWhoisNicFrYtTest < AnswerParserWhoisNicFrTest
 
 
   def test_created_on
-    assert_equal  Time.parse("1995-01-01"),
-                  @klass.new(load_part('/yt/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/yt/available.txt')).created_on
+    parser    = @klass.new(load_part('/yt/registered.txt'))
+    expected  = Time.parse("1995-01-01")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/yt/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2004-09-17"),
-                  @klass.new(load_part('/yt/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/yt/available.txt')).updated_on
+    parser    = @klass.new(load_part('/yt/registered.txt'))
+    expected  = Time.parse("2004-09-17")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/yt/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on

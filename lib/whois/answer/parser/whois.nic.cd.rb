@@ -35,7 +35,7 @@ module Whois
       class WhoisNicCd < Base
 
         property_supported :status do
-          content_for_scanner.scan(/\s+Domain Status:\s+(.+?)\n/).flatten
+          @status ||= content_for_scanner.scan(/\s+Domain Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do
