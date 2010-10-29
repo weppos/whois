@@ -47,7 +47,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No match for "(.*?)"/)
+          @available ||= !!(content_for_scanner =~ /No match for "(.+?)"/)
         end
 
         property_supported :registered? do
@@ -56,19 +56,22 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.*?)\n/
+          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.*?)\n/
+          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.+?)\n/
             Time.parse($1)
           end
         end
 
-        property_not_supported :expires_on
-
+        property_supported :expires_on do
+          @expires_on ||= if content_for_scanner =~ /Fecha de Vencimiento: (.+?)\n/
+            Time.parse($1)
+          end
+        end
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/

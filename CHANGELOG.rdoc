@@ -45,6 +45,8 @@
 
 * FIXED: Fixed Unknown status `Registration request being processed.' for whois.nic.uk.
 
+* FIXED: whois.nic.ve supports expires_on.
+
 
 == Release 1.5.1
 
