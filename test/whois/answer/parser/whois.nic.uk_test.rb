@@ -174,10 +174,16 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
-  # TEST:REGRESSION
   def test_nameservers_with_suspended
     parser    = @klass.new(load_part('/property_status_suspended.txt'))
     expected  = %w( )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/property_nameservers_with_ip.txt'))
+    expected  = %w( ns0.netbenefit.co.uk ns1.netbenefit.co.uk )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end

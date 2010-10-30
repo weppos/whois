@@ -1,0 +1,48 @@
+
+    Domain name:
+        netbenefit.co.uk
+
+    Registrant:
+        Netbenefit (UK) Ltd
+
+    Registrant type:
+        UK Limited Company, (Company number: 3365497)
+
+    Registrant's address:
+        3rd Floor Prospero House
+        241 Borough High Street
+        London
+        SE1 1GB
+        United Kingdom
+
+    Registrar:
+        NetNames Limited [Tag = NETNAMES]
+        URL: http://www.netnames.co.uk
+
+    Relevant dates:
+        Registered on: before Aug-1996
+        Renewal date:  20-Aug-2012
+        Last updated:  30-Jul-2010
+
+    Registration status:
+        Registered until renewal date.
+
+    Name servers:
+        ns0.netbenefit.co.uk      212.53.64.30
+        ns1.netbenefit.co.uk      212.53.77.30
+
+    WHOIS lookup made at 21:49:35 30-Oct-2010
+
+-- 
+This WHOIS information is provided for free by Nominet UK the central registry
+for .uk domain names. This information and the .uk WHOIS are:
+
+    Copyright Nominet UK 1996 - 2010.
+
+You may not access the .uk WHOIS or use any data from it except as permitted
+by the terms of use available in full at http://www.nominet.org.uk/whois, which
+includes restrictions on: (A) use of the data for advertising, or its
+repackaging, recompilation, redistribution or reuse (B) obscuring, removing
+or hiding any or all of this notice and (C) exceeding query rate or volume
+limits. The data is provided on an 'as-is' basis and may lag behind the
+register. Access may be withdrawn or restricted at any time. 

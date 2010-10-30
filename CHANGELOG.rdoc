@@ -47,6 +47,8 @@
 
 * FIXED: whois.nic.ve supports expires_on.
 
+* FIXED: With some .uk domains, whois.nic.uk parser returns invalid values for nameservers.
+
 
 == Release 1.5.1
 
