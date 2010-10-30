@@ -35,15 +35,7 @@ module Whois
       class WhoisAudnsNetAu < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
-          end
+          @status ||= content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do

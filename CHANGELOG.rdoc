@@ -49,6 +49,8 @@
 
 * FIXED: With some .uk domains, whois.nic.uk parser returns invalid values for nameservers.
 
+* FIXED: whois.audns.net.au record can contain multiple statuses.
+
 
 == Release 1.5.1
 
