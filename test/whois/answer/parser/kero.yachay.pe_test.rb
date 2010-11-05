@@ -10,13 +10,18 @@ class AnswerParserKeroYachayPeTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('/property_status_registered.txt'))
     expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('/property_status_available.txt'))
     expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/property_status_inactive.txt'))
+    expected  = :inactive
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end

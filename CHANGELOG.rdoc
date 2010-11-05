@@ -1,6 +1,11 @@
 = Changelog
 
 
+== master
+
+* FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
+
+
 == Release 1.6.0
 
 * SERVER: Updated the .nc TLD definition.

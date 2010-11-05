@@ -39,6 +39,7 @@ module Whois
             case $1.downcase
               when "active"         then :registered
               when "not registered" then :available
+              when "inactive"       then :inactive
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
