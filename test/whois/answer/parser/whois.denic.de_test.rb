@@ -153,8 +153,10 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_registrar_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/2.0/available.txt')).registrar
+    parser    = @klass.new(load_part('/2.0/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
   end
 
   def test_registrant_contact_with_registered
@@ -659,8 +661,10 @@ assurance and to bar you from using its whois query.
   end
 
   def test_registrant_contact_with_available
-    assert_equal  nil,
-                  @klass.new(load_part('/1.10.0/available.txt')).registrant_contact
+    parser    = @klass.new(load_part('/1.10.0/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
   def test_admin_contact_with_registered

@@ -31,12 +31,12 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          node("Disclaimer")
+          @disclaimer ||= node("Disclaimer")
         end
 
 
         property_supported :domain do
-          node("Domain Name") { |raw| raw.downcase }
+          @domain ||= node("Domain Name") { |raw| raw.downcase }
         end
 
         property_not_supported :domain_id
@@ -44,7 +44,7 @@ module Whois
 
 
         property_supported :referral_whois do
-          node("Whois Server")
+          @referral_whois ||= node("Whois Server")
         end
 
         property_supported :referral_url do
@@ -68,15 +68,15 @@ module Whois
 
 
         property_supported :created_on do
-          node("Creation Date") { |raw| Time.parse(raw) }
+          @created_on ||= node("Creation Date") { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          node("Updated Date") { |raw| Time.parse(raw) }
+          @updated_on ||= node("Updated Date") { |raw| Time.parse(raw) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |raw| Time.parse(raw) }
+          @expires_on ||= node("Expiration Date") { |raw| Time.parse(raw) }
         end
 
 

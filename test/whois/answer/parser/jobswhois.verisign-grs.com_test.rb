@@ -35,18 +35,27 @@ operational stability.  VeriSign may restrict or terminate your access to the \
 Whois database for failure to abide by these terms of use. VeriSign \
 reserves the right to modify these terms at any time. 
 EOS
-    assert_equal  expected,
-                  @klass.new(load_part('/registered.txt')).disclaimer
-    assert_equal  expected,
-                  @klass.new(load_part('/available.txt')).disclaimer
+
+    parser    = @klass.new(load_part('/registered.txt'))
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
   end
 
 
   def test_domain
-    assert_equal  "goto.jobs",
-                  @klass.new(load_part('/registered.txt')).domain
-    assert_equal  "u34jedzcq.jobs",
-                  @klass.new(load_part('/available.txt')).domain
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "goto.jobs"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = "u34jedzcq.jobs"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
@@ -56,10 +65,15 @@ EOS
 
 
   def test_referral_whois
-    assert_equal  "whois.encirca.com",
-                  @klass.new(load_part('/registered.txt')).referral_whois
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).referral_whois
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "whois.encirca.com"
+    assert_equal  expected, parser.referral_whois
+    assert_equal  expected, parser.instance_eval { @referral_whois }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.referral_whois
+    assert_equal  expected, parser.instance_eval { @referral_whois }
   end
 
   def test_referral_url_with_registered
@@ -78,10 +92,15 @@ EOS
 
 
   def test_status
-    assert_equal  "ACTIVE",
-                  @klass.new(load_part('/registered.txt')).status
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).status
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "ACTIVE"
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -110,24 +129,39 @@ EOS
 
 
   def test_created_on
-    assert_equal  Time.parse("2006-02-21"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2006-02-21")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-02-20"),
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2009-02-20")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-02-21"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2010-02-21")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 

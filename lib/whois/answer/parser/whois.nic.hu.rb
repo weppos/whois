@@ -30,7 +30,7 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          node("disclaimer")
+          @disclaimer ||= node("disclaimer")
         end
 
 
@@ -39,12 +39,12 @@ module Whois
         end
 
         property_supported :domain_id do
-          node('hun-id')
+          @domain_id ||= node('hun-id')
         end
 
 
         property_supported :status do
-          if node('NotFound')
+          @status ||= if node('NotFound')
             :available
           elsif node('InProgress')
             :in_progress
@@ -63,11 +63,11 @@ module Whois
 
 
         property_supported :created_on do
-          node('registered') { |raw| Time.parse(raw) }
+          @created_on ||= node('registered') { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          node('changed') { |raw| Time.parse(raw) }
+          @updated_on ||= node('changed') { |raw| Time.parse(raw) }
         end
 
         property_not_supported :expires_on
