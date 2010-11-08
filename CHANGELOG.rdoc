@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.6.1
 
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
