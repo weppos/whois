@@ -222,6 +222,7 @@ pg;;;
 ph;;;
 pk;;;
 #Whois::Server.define :tld, ".co.pl", "whois.co.pl"
+co.pl;whois.co.pl;coco.co.pl;u34jedzcq.co.pl
 pl;whois.dns.pl;google.pl;u34jedzcq.pl
 pm;whois.nic.fr;nic.pm;u34jedzcq.pm
 pn;;;

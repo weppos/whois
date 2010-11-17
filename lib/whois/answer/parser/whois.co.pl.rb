@@ -22,16 +22,20 @@ module Whois
     class Parser
 
       #
-      # = whois.org.za parser
+      # = whois.co.pl parser
       #
-      # Parser for the whois.org.za server.
+      # Parser for the whois.co.pl server.
       #
-      class WhoisOrgZa < Base
+      class WhoisCoPl < Base
 
         property_not_supported :disclaimer
 
 
-        property_not_supported :domain
+        property_supported :domain do
+          @domain ||= if content_for_scanner =~ /domain:\s+(.+?)\n/
+            $1
+          end
+        end
 
         property_not_supported :domain_id
 
@@ -50,7 +54,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||=  !!(content_for_scanner =~ /^(.+): Available/)
+          @available ||=  !!(content_for_scanner =~ /^% Unfortunately, No Results Were Found/)
         end
 
         property_supported :registered? do
@@ -60,7 +64,11 @@ module Whois
 
         property_not_supported :created_on
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          @updated_on ||= if content_for_scanner =~ /changed:\s+(.+?)\n/
+            Time.parse($1)
+          end
+        end
 
         property_not_supported :expires_on
 
@@ -75,7 +83,9 @@ module Whois
         property_not_supported :technical_contact
 
 
-        property_not_supported :nameservers
+        property_supported :nameservers do
+          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
+        end
 
 
         # NEWPROPERTY

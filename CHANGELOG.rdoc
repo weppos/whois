@@ -37,6 +37,8 @@
 
 * NEW: Added simple .pl TLD parser (whois.dns.pl).
 
+* NEW: Added .co.pl TLD parser (whois.co.pl).
+
 * FIXED: The CLI help message uses whois instead or ruby-whois.
 
 
