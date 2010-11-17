@@ -1,7 +1,7 @@
 = Changelog
 
 
-== Release 1.6.1
+== master
 
 * SERVER: Updated the .sg TLD definition.
 
@@ -28,6 +28,9 @@
 * NEW: Added simple .gov.za TLD parser (whois.gov.za).
 
 * NEW: Added .co.za TLD parser (whois.coza.net.za).
+
+
+== Release 1.6.1
 
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
