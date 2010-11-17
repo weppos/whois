@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.cnnic.cn parser
+      # = whois.nic.sl parser
       #
-      # Parser for the whois.cnnic.cn server.
+      # Parser for the whois.nic.sl server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,14 +32,18 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisCnnicCn < Base
+      class WhoisNicSl < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Domain Status:\s+(.+)\n/).flatten
+          @status ||= if available?
+            :available
+          else
+            :registered
+          end
         end
 
         property_supported :available? do
-          @available  ||= (content_for_scanner.strip == "no matching record")
+          @available  ||= !!(content_for_scanner =~ /Domain not found, marked private, or error in your query/)
         end
 
         property_supported :registered? do
@@ -48,22 +52,28 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Registration Date:\s+(.+)\n/
+          @created_on ||= if content_for_scanner =~ /^Registration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          @expires_on ||= if content_for_scanner =~ /^Last Updated:\s+(.+)\n/
+            if $1 != "0000-00-00"
+              Time.parse($1)
+            end
+          end
+        end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
+          @expires_on ||= if content_for_scanner =~ /^Expiration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:(.+)\n/).flatten.map(&:downcase)
+          @nameservers ||= content_for_scanner.scan(/^Name Server:\s+(.+)\n/).flatten.map(&:downcase)
         end
 
       end
