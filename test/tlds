@@ -29,8 +29,6 @@ edu;whois.educause.edu;google.edu;u34jedzcq.edu
 gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
 int;whois.iana.org;nato.int;u34jedzcq.int
 mil;;;
-#.e164.arpa;;;
-#.in-addr.arpa;;;
 arpa;whois.iana.org;ip6.arpa;u34jedzcq.arpa
 aero;whois.aero;srilankan.aero;u34jedzcq.aero
 asia;whois.nic.asia;srilankan.aero;u34jedzcq.asia
@@ -90,7 +88,7 @@ cd;whois.nic.cd;google.cd;u34jedzcq.cd
 cf;;;
 cg;;;
 ch;whois.nic.ch;google.ch;u34jedzcq.ch
-#Whois::Server.define :tld, ".ci", "www.nic.ci"
+ci;www.nic.ci;google.ci;u34jedzcq.ci
 ck;whois.nic.ck;google.co.ck;u34jedzcq.co.ck
 cl;whois.nic.cl;google.cl;u34jedzcq.cl
 cm;whois.netcom.cm;google.cm;u34jedzcq.cm

@@ -29,6 +29,8 @@
 
 * NEW: Added .co.za TLD parser (whois.coza.net.za).
 
+* NEW: Added simple .ci TLD parser (whois.nic.ci). (#39)
+
 
 == Release 1.6.1
 
