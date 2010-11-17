@@ -244,7 +244,7 @@ Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
 Whois::Server.define :tld, ".sc", "whois.afilias-grs.info", {:adapter=>Whois::Server::Adapters::Afilias}
 Whois::Server.define :tld, ".sd", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".se", "whois.nic-se.se"
-Whois::Server.define :tld, ".sg", "whois.nic.net.sg"
+Whois::Server.define :tld, ".sg", "whois.sgnic.sg"
 Whois::Server.define :tld, ".sh", "whois.nic.sh"
 Whois::Server.define :tld, ".si", "whois.arnes.si"
 Whois::Server.define :tld, ".sj", nil, {:adapter=>Whois::Server::Adapters::None}

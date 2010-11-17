@@ -3,6 +3,8 @@
 
 == Release 1.6.1
 
+* SERVER: Updated the .sg TLD definition.
+
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
 
@@ -38,7 +40,7 @@
 
 * NEW: Added simple .ps TLD parser (whois.pnina.ps).
 
-* NEW: Added simple .ki TLD parser (whois.pnina.ps).
+* NEW: Added simple .ki TLD parser (whois.nic.ki).
 
 * NEW: Added .tm TLD parser (whois.nic.tm).
 
