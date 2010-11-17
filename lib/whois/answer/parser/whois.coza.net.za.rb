@@ -22,11 +22,11 @@ module Whois
     class Parser
 
       #
-      # = whois.org.za parser
+      # = whois.coza.net.za parser
       #
-      # Parser for the whois.org.za server.
+      # Parser for the whois.coza.net.za server.
       #
-      class WhoisOrgZa < Base
+      class WhoisCozaNetZa < Base
 
         property_not_supported :disclaimer
 
@@ -50,7 +50,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||=  !!(content_for_scanner =~ /^(.+): Available/)
+          @available ||=  content_for_scanner.strip == "Available"
         end
 
         property_supported :registered? do
