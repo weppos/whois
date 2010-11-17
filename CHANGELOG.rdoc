@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 1.6.2
 
 * SERVER: Updated the .sg TLD definition.
 
