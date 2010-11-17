@@ -48,7 +48,7 @@ class AnswerParserWhoisGovZaTest < Whois::Answer::Parser::TestCase
 
   def test_created_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2003-11-10")
+    expected  = Time.parse("2003-11-01")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
