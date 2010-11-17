@@ -308,7 +308,7 @@ ye;;;
 yt;whois.nic.fr;nic.yt;u34jedzcq.yt
 #Whois::Server.define :tld, ".ac.za", "whois.ac.za"
 #Whois::Server.define :tld, ".co.za", "whois.coza.net.za"
-#Whois::Server.define :tld, ".gov.za", "whois.gov.za"
+gov.za;whois.gov.za;dha.gov.za;u34jedzcq.gov.za
 org.za;whois.org.za;joburg.org.za;u34jedzcq.org.za
 za;;;
 zm;;;

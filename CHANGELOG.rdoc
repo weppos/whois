@@ -25,6 +25,8 @@
 
 * NEW: Added .org.za TLD parser (whois.org.za).
 
+* NEW: Added .gov.za TLD parser (whois.gov.za).
+
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
 
