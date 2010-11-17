@@ -181,7 +181,7 @@ lt;whois.domreg.lt;google.lt;u34jedzcq.lt
 lu;whois.dns.lu;google.lu;u34jedzcq.lu
 lv;whois.nic.lv;google.lv;u34jedzcq.lv
 ly;whois.nic.ly;google.ly;u34jedzcq.ly
-#Whois::Server.define :tld, ".ma", "whois.iam.net.ma"
+ma;whois.iam.net.ma;google.ma;u34jedzcq.ma
 mc;whois.ripe.net;nic.mc;u34jedzcq.mc
 md;whois.nic.md;google.md;u34jedzcq.md
 me;whois.meregistry.net;google.me;u34jedzcq.me

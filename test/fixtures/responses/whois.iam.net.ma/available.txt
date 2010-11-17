@@ -1,0 +1,2 @@
+%rwhois V-1.5:003fff:00 mail1.iam.net.ma (by Network Solutions, Inc. V-1.5.9)
+%error 230 No Objects Found
