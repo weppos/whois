@@ -1,0 +1,7 @@
+%
+% whois.sk-nic.sk - whois server for TLD .sk
+%
+
+
+Not found.
+

@@ -7,6 +7,8 @@
 
 * NEW: Added .sh TLD parser (whois.nic.sh).
 
+* NEW: Added simple .sk TLD parser (whois.sgnic.sg).
+
 * SERVER: Updated the .sg TLD definition.
 
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.

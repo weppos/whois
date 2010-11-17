@@ -248,7 +248,7 @@ sg;whois.sgnic.sg;google.sg;u34jedzcq.sg
 sh;whois.nic.sh;google.sh;u34jedzcq.sh
 si;whois.arnes.si;google.si;u34jedzcq.si
 sj;;;
-#Whois::Server.define :tld, ".sk", "whois.sk-nic.sk"
+sk;whois.sk-nic.sk;google.sk;u34jedzcq.sk
 #Whois::Server.define :tld, ".sl", "whois.nic.sl"
 sm;whois.ripe.net;google.sm;u34jedzcq.sm
 sn;whois.nic.sn;google.sn;u34jedzcq.sn
