@@ -226,7 +226,7 @@ co.pl;whois.co.pl;coco.co.pl;u34jedzcq.co.pl
 pl;whois.dns.pl;google.pl;u34jedzcq.pl
 pm;whois.nic.fr;nic.pm;u34jedzcq.pm
 pn;;;
-#Whois::Server.define :tld, ".pr", "whois.nic.pr"
+pr;whois.nic.pr;google.pr;u34jedzcq.pr
 ps;whois.pnina.ps;google.ps;u34jedzcq.ps
 pt;whois.dns.pt;google.pt;u34jedzcq.pt
 pw;;;
