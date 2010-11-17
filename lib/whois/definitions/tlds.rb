@@ -309,7 +309,7 @@ Whois::Server.define :tld, ".yt", "whois.nic.fr"
 Whois::Server.define :tld, ".ac.za", "whois.ac.za"
 Whois::Server.define :tld, ".co.za", "whois.coza.net.za"
 Whois::Server.define :tld, ".gov.za", "whois.gov.za"
-Whois::Server.define :tld, ".org.za", nil, {:web=>"http://www.org.za/", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".org.za", "whois.org.za"
 Whois::Server.define :tld, ".za", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".zm", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".zw", nil, {:adapter=>Whois::Server::Adapters::None}

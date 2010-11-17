@@ -7,6 +7,8 @@
 
 * SERVER: Updated the .th TLD definition.
 
+* SERVER: Updated the .org.za TLD definition.
+
 * NEW: Added simple .sg TLD parser (whois.sgnic.sg).
 
 * NEW: Added .sh TLD parser (whois.nic.sh).
