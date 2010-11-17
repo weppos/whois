@@ -23,6 +23,8 @@
 
 * NEW: Added simple .ac.uk, .gov.uk TLD parser (whois.ja.net).
 
+* NEW: Added .org.za TLD parser (whois.org.za).
+
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
 
