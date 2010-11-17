@@ -263,7 +263,7 @@ tc;whois.adamsnames.tc;google.tc;u34jedzcq.tc
 td;;;
 tf;whois.nic.fr;google.tf;u34jedzcq.rf
 tg;;;
-#Whois::Server.define :tld, ".th", "whois.thnic.net"
+th;whois.thnic.co.th;google.co.th;u34jedzcq.co.th
 tj;;;
 tk;whois.dot.tk;thinkcode.tk;u34jedzcq.tk
 tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl

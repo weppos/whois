@@ -263,7 +263,7 @@ Whois::Server.define :tld, ".tc", "whois.adamsnames.tc"
 Whois::Server.define :tld, ".td", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".tf", "whois.nic.fr"
 Whois::Server.define :tld, ".tg", nil, {:web=>"http://www.nic.tg/", :adapter=>Whois::Server::Adapters::Web}
-Whois::Server.define :tld, ".th", "whois.thnic.net"
+Whois::Server.define :tld, ".th", "whois.thnic.co.th"
 Whois::Server.define :tld, ".tj", nil, {:web=>"http://www.nic.tj/whois.html", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".tk", "whois.dot.tk"
 Whois::Server.define :tld, ".tl", "whois.nic.tl"
