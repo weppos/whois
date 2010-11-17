@@ -31,6 +31,8 @@
 
 * NEW: Added simple .ci TLD parser (whois.nic.ci). (#39)
 
+* FIXED: The CLI help message uses whois instead or ruby-whois.
+
 
 == Release 1.6.1
 
