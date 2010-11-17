@@ -17,6 +17,8 @@
 
 * NEW: Added simple .th TLD parser (whois.thnic.co.th).
 
+* NEW: Added simple .tw TLD parser (whois.twnic.net.tw).
+
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
 

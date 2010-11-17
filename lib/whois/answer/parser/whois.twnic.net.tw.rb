@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.nu
+      # = whois.twnic.net.tw
       #
-      # Parser for the whois.nic.nu server.
+      # Parser for the whois.twnic.net.tw server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,22 +32,18 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicNu < Base
+      class WhoisTwnicNetTw < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Record status:\s+(.*)\n/
-            case $1.downcase
-              when "active" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
+          @status ||= if available?
             :available
+          else
+            :registered
           end
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /NO MATCH for domain/)
+          @available  ||= !!(content_for_scanner.strip == "No Found")
         end
 
         property_supported :registered? do
@@ -56,27 +52,23 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Record created on (.+?).\n/
+          @created_on ||= if content_for_scanner =~ /Record created on ([^ ]+) .+\n/
             Time.parse($1)
           end
         end
 
-        property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Record last updated on (.+?).\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Record expires on (.+?).\n/
+          @expires_on ||= if content_for_scanner =~ /Record expires on ([^ ]+) .+\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
-            $1.split.map(&:strip)
+          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
+            $1.split("\n").map { |value| value.strip }
           else
             []
           end
