@@ -1,0 +1,39 @@
+
+Domain:
+	lboro.ac.uk
+
+Registered For:
+	Loughborough University
+
+Domain Owner:
+	Loughborough University
+
+Registered By:
+	The JNT Association
+
+Servers:
+	agate.lut.ac.uk	158.125.1.100
+	bgate.lut.ac.uk	
+	cgate.lut.ac.uk	
+	ns3.ja.net	
+
+Registrant Contact:
+	M S Cook
+
+Registrant Address:
+	Computing Services, Loughborough University, Loughborough, Leicestershire
+	LE11 3TU
+	United Kingdom
+	+44 1509 223498 (Phone)
+	+44 1509 223989 (FAX)
+	m.s.cook@lboro.ac.uk
+
+Renewal date:
+	Saturday 16th Jun 2012
+
+Entry updated:
+	Sunday 16th May 2010
+
+Entry created:
+	Friday 7th November 2003
+

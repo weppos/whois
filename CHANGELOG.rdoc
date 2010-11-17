@@ -19,6 +19,8 @@
 
 * NEW: Added simple .tw TLD parser (whois.twnic.net.tw).
 
+* NEW: Added simple .ac.uk, .gov.uk TLD parser (whois.ja.net).
+
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
 
