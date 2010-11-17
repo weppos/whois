@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.nic.cd parser
+      # = whois.sgnic.sg parser
       #
-      # Parser for the whois.nic.cd server.
+      # Parser for the whois.sgnic.sg server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,7 +32,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisNicCd < Base
+      class WhoisSgnicSg < Base
 
         property_supported :status do
           @status ||= content_for_scanner.scan(/^\s+Domain Status:\s+(.+?)\n/).flatten

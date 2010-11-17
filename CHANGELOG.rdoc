@@ -3,6 +3,8 @@
 
 == Release 1.6.1
 
+* NEW: Added simple .sg TLD parser (whois.sgnic.sg).
+
 * SERVER: Updated the .sg TLD definition.
 
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
