@@ -35,6 +35,8 @@
 
 * NEW: Added simple .hm TLD parser (whois.registry.hm). (#46)
 
+* NEW: Added simple .pl TLD parser (whois.dns.pl).
+
 * FIXED: The CLI help message uses whois instead or ruby-whois.
 
 

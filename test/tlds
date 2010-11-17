@@ -222,7 +222,7 @@ pg;;;
 ph;;;
 pk;;;
 #Whois::Server.define :tld, ".co.pl", "whois.co.pl"
-#Whois::Server.define :tld, ".pl", "whois.dns.pl"
+pl;whois.dns.pl;google.pl;u34jedzcq.pl
 pm;whois.nic.fr;nic.pm;u34jedzcq.pm
 pn;;;
 #Whois::Server.define :tld, ".pr", "whois.nic.pr"
