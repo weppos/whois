@@ -53,6 +53,7 @@ whois.sgnic.sg
 whois.nic.ac
 whois.nic.io
 whois.nic.tm
+whois.nic.sh
 
 whois.gg
 whois.je
