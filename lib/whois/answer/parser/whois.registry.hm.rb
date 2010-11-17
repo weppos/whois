@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       #
-      # = whois.aero parser
+      # = whois.registry.hm parser
       #
-      # Parser for the whois.aero server.
+      # Parser for the whois.registry.hm server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -32,22 +32,18 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisAero < Base
+      class WhoisRegistryHm < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
+          @status ||= if available?
             :available
+          else
+            :registered
           end
         end
 
         property_supported :available? do
-          @available  ||= (content_for_scanner.strip == "NOT FOUND")
+          @available  ||= !!(content_for_scanner =~ /^Domain not found/)
         end
 
         property_supported :registered? do
@@ -56,26 +52,24 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created On:(.+?)\n/
-            Time.parse($1)
+          @created_on ||= if content_for_scanner =~ /Domain creation date: (.+?)\n/
+            # Change dd/mm/yy to yyyy-mm-dd to prevent
+            # argument out of range
+            Time.parse($1.split("/").reverse.join("-"))
           end
         end
 
-        property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Updated On:(.+?)\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires On:(.+?)\n/
-            Time.parse($1)
+          @expires_on ||= if content_for_scanner =~ /Domain expiration date: (.+?)\n/
+            Time.parse($1.split("/").reverse.join("-"))
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:([^\s]+)\n/).flatten.map(&:downcase)
+          @nameservers ||= content_for_scanner.scan(/Name Server: ([^\s]+)\n/).flatten.map(&:downcase)
         end
 
       end

@@ -33,6 +33,8 @@
 
 * NEW: Added simple .gy TLD parser (whois.registry.gy). (#45)
 
+* NEW: Added simple .hm TLD parser (whois.registry.hm). (#46)
+
 * FIXED: The CLI help message uses whois instead or ruby-whois.
 
 

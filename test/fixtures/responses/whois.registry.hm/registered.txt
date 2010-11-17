@@ -1,0 +1,78 @@
+
+
+WHOIS Server Version 2.0.0
+
+   Domain name:  GOOGLE.HM
+   Registrar:    HM Domain Registry
+   Referral URL: http://www.registry.hm/ 
+
+   Domain Registrant:
+      John G Rose
+      1058 Jasmine St.
+      Denver CO 80220
+      US
+
+
+   Adminstrative Contact: ROS00074(johnrose@polyplexic.com)
+      John Rose
+      Sigma Polyplexic
+      1058 Jasmine St.
+      Denver CO 80220
+      US
+      Telephone: 2129996566
+      Fax: 
+
+
+   Technical Contact: ROS00074(johnrose@polyplexic.com)
+      John Rose
+      Sigma Polyplexic
+      1058 Jasmine St.
+      Denver CO 80220
+      US
+      Telephone: 2129996566
+      Fax: 
+
+
+   Billing Contact: ROS00074(johnrose@polyplexic.com)
+      John Rose
+      Sigma Polyplexic
+      1058 Jasmine St.
+      Denver CO 80220
+      US
+      Telephone: 2129996566
+      Fax: 
+
+
+   Name Server: NS1.EVERYDNS.NET
+   Name Server: NS2.EVERYDNS.NET
+
+Domain creation date: 28/04/2003
+Domain expiration date: 28/04/2020
+
+
+This data is copyright 2007 HM Domain Registry.
+
+NOTICE AND TERMS OF USE: You are not authorized to access or query our 
+WHOIS database through the use of high-volume, automated, electronic 
+processes. This data is provided for information purposes only, and to assist 
+persons in obtaining information about or related to a domain name registration 
+record. We do not guarantee its accuracy. 
+
+By submitting a WHOIS query, you agree to abide by the following terms of use: 
+You agree that you may use this Data only for lawful purposes and that 
+under no circumstances will you use this Data to: (1) allow, enable, or 
+otherwise support the transmission of mass unsolicited, commercial advertising 
+or solicitations via e-mail, telephone, or facsimile; or (2) enable high 
+volume, automated, electronic processes to send queries or data to our systems 
+or to any Registry Operator or ICANN-Accredited Registrar.
+
+The compilation, repackaging, dissemination or other use of this Data is 
+expressly prohibited without our prior written consent. You agree not to use
+high-volume, automated, electronic processes to access or query the 
+WHOIS database. We reserve the right to terminate your access to the 
+WHOIS database in its sole discretion, including without limitation, for 
+excessive querying of the WHOIS database or for failure to otherwise 
+abide by this policy. We reserve the right to modify these terms without 
+notice.
+
+http://www.registry.hm/

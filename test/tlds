@@ -140,7 +140,7 @@ gu;;;
 gw;;;
 gy;whois.registry.gy;google.gy;u34jedzcq.gy
 hk;whois.hkirc.hk;google.hk;u34jedzcq.hk
-#Whois::Server.define :tld, ".hm", "whois.registry.hm"
+hm;whois.registry.hm;google.hm;u34jedzcq.hm
 hn;whois.afilias-grs.info;google.hn;u34jedzcq.hn
 hr;;;
 ht;whois.nic.ht;google.ht;u34jedzcq.ht
