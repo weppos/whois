@@ -31,6 +31,8 @@
 
 * NEW: Added simple .ci TLD parser (whois.nic.ci). (#39)
 
+* NEW: Added simple .gy TLD parser (whois.registry.gy). (#45)
+
 * FIXED: The CLI help message uses whois instead or ruby-whois.
 
 
