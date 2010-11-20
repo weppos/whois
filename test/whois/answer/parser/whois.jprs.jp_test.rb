@@ -59,6 +59,16 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/jp/reserved.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/jp/lack-of-created-and-expires.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
@@ -71,6 +81,11 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
 
     parser    = @klass.new(load_part('/jp/available.txt'))
     expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/jp/reserved.txt'))
+    expected  = Time.parse("2001/02/21 00:00:00 JST")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
@@ -90,6 +105,21 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
     assert_equal  expected, parser.instance_eval { @expires_on }
 
     parser    = @klass.new(load_part('/jp/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jp/reserved.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jp/lack-of-created-and-expires.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jp/lack-of-expires.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
