@@ -4,6 +4,8 @@
 
 * FIXED: whois.nic.kz doesn't recognize multiline status
 
+* FIXED: jprs.jp domain parser bug with empty date fields (#60)
+
 
 == Release 1.6.2
 
