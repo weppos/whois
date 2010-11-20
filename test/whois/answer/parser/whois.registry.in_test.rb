@@ -21,8 +21,7 @@ class AnswerParserWhoisRegistryInTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @status }
   end
 
-  # TEST:REGRESSION
-  def test_status_multiple
+  def test_status_multiple_values
     parser    = @klass.new(load_part('/property_status_multiple.txt'))
     expected  = [ "client delete prohibited", "client renew prohibited", "client transfer prohibited", "client update prohibited" ]
     assert_equal  expected, parser.status

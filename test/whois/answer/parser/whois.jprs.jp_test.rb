@@ -90,7 +90,6 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
-  # TEST:REGRESSION
   def test_updated_on_should_not_raise_outofrange
     parser    = @klass.new(load_part('/jp/error_out-of-range.txt'))
     expected  = Time.parse("2010-10-18 11:30:47 JST")
