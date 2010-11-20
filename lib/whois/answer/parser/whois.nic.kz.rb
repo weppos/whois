@@ -35,14 +35,10 @@ module Whois
       class WhoisNicKz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain status : (.*)\n/
-            case $1.strip.downcase
-              when /^ok/ then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
+          @status ||= if content_for_scanner =~ /Domain status : ((.+\n)+)\s+\n/
+            $1.split("\n").map { |value| value.split("-").first.strip }
           else
-            :available
+            nil
           end
         end
 
