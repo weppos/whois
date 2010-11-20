@@ -1,6 +1,7 @@
 = Changelog
 
-== master
+
+== Release 1.6.3
 
 * FIXED: whois.nic.kz doesn't recognize multiline status
 
