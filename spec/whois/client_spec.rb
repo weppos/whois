@@ -2,22 +2,22 @@ require "spec_helper"
 
 describe Whois::Client do
 
-  before :each do
+  before(:each) do
     @client = Whois::Client.new
   end
 
   context ".new" do
-    it "should initialize" do
+    it "initializes the instance" do
       client = Whois::Client.new
       client.should be_instance_of(Whois::Client)
     end
 
-    it "should initialize with timeout" do
+    it "accepts a timeout option" do
       client = Whois::Client.new(:timeout => 100)
       client.timeout.should == 100
     end
 
-    it "should initialize with block" do
+    it "accepts a block" do
       Whois::Client.new do |client|
         client.should be_instance_of(Whois::Client)
       end
@@ -25,7 +25,7 @@ describe Whois::Client do
   end
 
   context "#query" do
-    it "should coerce qstring to string" do
+    it "coerces qstring to string" do
       server = Object.new
       # I can't use the String because Array#to_s behaves differently
       # on Ruby 1.8.7 and Ruby 1.9.1
@@ -35,28 +35,29 @@ describe Whois::Client do
       @client.query(["google", ".", "com"])
     end
 
-    it "should detect email" do
-      lambda { @client.query("weppos@weppos.net") }.should
-        raise_error(Whois::ServerNotSupported)
+    it "detects email" do
+      lambda do
+        @client.query("weppos@weppos.net")
+      end.should raise_error(Whois::ServerNotSupported)
     end
 
-    it "should work with domain with no whois" do
+    it "works with domain with no whois" do
       Whois::Server.define(:tld, ".nowhois", nil, :adapter => Whois::Server::Adapters::None)
 
-      lambda { @client.query("domain.nowhois") }.should
-        raise_error(Whois::NoInterfaceError, /no whois server/)
+      lambda do
+        @client.query("domain.nowhois")
+      end.should raise_error(Whois::NoInterfaceError, /no whois server/)
     end
 
-    it "should work with domain with web whois" do
+    it "works with domain with web whois" do
       Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :web => "www.nic.test")
 
-      lambda { @client.query("domain.webwhois") }.should raise_error(Whois::WebInterfaceError) do |error|
-        error.message.should match(/no whois server/)
-        error.message.should match(/www\.nic\.test/)
-      end
+      lambda do
+        @client.query("domain.webwhois")
+      end.should raise_error(Whois::WebInterfaceError, /www\.nic\.test/)
     end
 
-    it "should raise if timeout is exceeded" do
+    it "raises if timeout is exceeded" do
       server = Class.new do
         def query(*args)
           sleep(2)
@@ -67,7 +68,7 @@ describe Whois::Client do
       lambda { @client.query("foo.com") }.should raise_error(Timeout::Error)
     end
 
-    it "should not raise if timeout is not exceeded" do
+    it "doesn't raise if timeout is not exceeded" do
       server = Class.new do
         def query(*args)
           sleep(1)
@@ -78,7 +79,7 @@ describe Whois::Client do
       lambda { @client.query("foo.com") }.should_not raise_error
     end
 
-    it "should support unlimited timeout" do
+    it "supports unlimited timeout" do
       server = Class.new do
         def query(*args)
           sleep(1)
@@ -91,11 +92,14 @@ describe Whois::Client do
 
   end
 
+  # FIXME: use RSpec metadata
   need_connectivity do
-    specify "#query with domain" do
-      answer = @client.query("weppos.it")
-      assert answer.match?(/Domain:\s+weppos\.it/)
-      assert answer.match?(/Created:/)
+    describe "#query" do
+      it "sends a query for given domain" do
+        answer = @client.query("weppos.it")
+        assert answer.match?(/Domain:\s+weppos\.it/)
+        assert answer.match?(/Created:/)
+      end
     end
   end
 
