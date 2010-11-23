@@ -88,4 +88,11 @@ class AnswerParserWhoisPninaPsTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers_with_nodns
+    parser    = @klass.new(load_part('/property_nameservers_with_nodns.txt'))
+    expected  = %w( ns1.pnn-ps.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
