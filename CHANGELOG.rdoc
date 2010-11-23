@@ -1,6 +1,6 @@
 = Changelog
 
-== master
+== Release 1.6.4
 
 * FIXED: With some .pl domains, whois.dns.pl parser returns invalid values for nameservers.
 
