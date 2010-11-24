@@ -21,6 +21,13 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @status }
   end
 
+  def test_status_suspended
+    parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    expected  = :suspended
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
   def test_available?
     parser    = @klass.new(load_part('/registered.txt'))
     expected  = false

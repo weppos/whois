@@ -38,6 +38,7 @@ module Whois
           @status ||= if content_for_scanner =~ /Estatus del dominio: (.+?)\n/
             case $1.downcase
               when "activo" then :registered
+              when "suspendido" then :suspended
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -80,6 +81,11 @@ module Whois
             []
           end
         end
+
+
+        # NEWPROPERTY
+        # def suspended?
+        # end
 
       end
 
