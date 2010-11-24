@@ -16,34 +16,34 @@
 
 module Whois
 
-  # The base error class for all Whois error classes.
+  # The base error class for all <tt>Whois</tt> error classes.
   class Error < StandardError
   end
-  
-  
-  # Generic Server exception class.
+
+
+  # Generic <tt>Whois::Server</tt> exception class.
   class ServerError < Error
   end
-  
+
   # Server Definition not found
-  
+
   # Raised when the class hasn't been able to select a valid server
   # probably because definitions are outdated.
   class ServerNotFound < ServerError
   end
-  
+
   # Server Definition found
-  
+
   class InterfaceNotSupported < ServerError
   end
-  
+
   # Raised when a server is known to not be available for this kind of object
   # or because this specific object doesn't support WHOIS. (\x03)
   class NoInterfaceError < InterfaceNotSupported
   end
-  
+
   # Raised when the class has found a server but it doesn't support the
-  # standard whois interface via port 43. This is the case of some
+  # standard WHOIS interface via port 43. This is the case of some
   # specific domains that only provide a web–based WHOIS interface. (\x01)
   class WebInterfaceError < InterfaceNotSupported
     attr_reader :url
@@ -61,19 +61,19 @@ module Whois
   class ServerNotImplemented < ServerError
   end
 
-  # Raised when no whois server is known for this kind of object. (\x05)
+  # Raised when no WHOIS server is known for this kind of object. (\x05)
   class ServerNotSupported < ServerError
   end
-  
-  # Raised when unknown AS numer of IP network. (\x06)
+
+  # Raised when unknown AS number of IP network. (\x06)
   class AllocationUnknown < ServerError
   end
-  
-  
-  # Generic Parser exception class.
+
+
+  # Generic <tt>Whois::Answer::Parser</tt> exception class.
   class ParserError < Error
   end
-  
+
   # Raised when the class hasn't been able to load a valid parser
   # according to current settings.
   class ParserNotFound < ParserError

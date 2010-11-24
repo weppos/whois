@@ -35,18 +35,25 @@ module Whois
       class WhoisSrsNetNz < Base
 
         property_supported :status do
-          @status ||= Proc.new do
-            content_for_scanner =~ /query_status:\s(.+)\n/
-            $1.split(" ", 2).last
-          end.call
+          @status ||= if content_for_scanner =~ /query_status:\s(.+)\n/
+            case $1.downcase
+              when /active/               then :registered
+              when /available/            then :available
+              when /invalid characters/   then :invalid
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
+          end
         end
 
         property_supported :available? do
-          @available ||= (status == "Available")
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          @registered ||= (status == "Active")
+          @registered ||= (status == :registered)
         end
 
 

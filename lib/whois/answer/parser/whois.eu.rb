@@ -35,7 +35,7 @@ module Whois
       class WhoisEu < Base
 
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Status:\s+AVAILABLE/)
+          @available  ||= !!(content_for_scanner =~ /Status:\s+AVAILABLE/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

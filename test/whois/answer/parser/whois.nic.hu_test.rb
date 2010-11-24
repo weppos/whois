@@ -70,53 +70,107 @@ EOS
   end
 
   def test_domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/available.txt')).domain_id
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).domain_id
-    assert_equal  '0000219547',
-                  @klass.new(load_part('/v1.99/registered.txt')).domain_id
+    parser    = @klass.new(load_part('/v1.99/registered.txt'))
+    expected  = "0000219547"
+    assert_equal  expected, parser.domain_id
+    assert_equal  expected, parser.instance_eval { @domain_id }
+
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.domain_id
+    assert_equal  expected, parser.instance_eval { @domain_id }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = nil
+    assert_equal  expected, parser.domain_id
+    assert_equal  expected, parser.instance_eval { @domain_id }
   end
 
 
   def test_status
-    assert_equal  :available,
-                  @klass.new(load_part('/v1.99/available.txt')).status
-    assert_equal  :in_progress,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).status
-    assert_equal  :registered,
-                  @klass.new(load_part('/v1.99/registered.txt')).status
+    parser    = @klass.new(load_part('/v1.99/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = :in_progress
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert  @klass.new(load_part('/v1.99/available.txt')).available?
-    assert !@klass.new(load_part('/v1.99/in_progress.txt')).available?
-    assert !@klass.new(load_part('/v1.99/registered.txt')).available?
+    parser    = @klass.new(load_part('/v1.99/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert !@klass.new(load_part('/v1.99/available.txt')).registered?
-    assert !@klass.new(load_part('/v1.99/in_progress.txt')).registered?
-    assert  @klass.new(load_part('/v1.99/registered.txt')).registered?
+    parser    = @klass.new(load_part('/v1.99/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
   def test_created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/available.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).created_on
-    assert_equal  Time.parse("2000-03-25 23:20:39"),
-                  @klass.new(load_part('/v1.99/registered.txt')).created_on
+    parser    = @klass.new(load_part('/v1.99/registered.txt'))
+    expected  = Time.parse("2000-03-25 23:20:39")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/available.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).updated_on
-    assert_equal  Time.parse("2009-08-25 10:11:32"),
-                  @klass.new(load_part('/v1.99/registered.txt')).updated_on
+    parser    = @klass.new(load_part('/v1.99/registered.txt'))
+    expected  = Time.parse("2009-08-25 10:11:32")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
@@ -135,10 +189,15 @@ EOS
   end
 
   def test_registrar_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/available.txt')).registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).registrar
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
   end
 
 
@@ -291,10 +350,15 @@ EOS
   end
 
   def test_zone_contact_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/available.txt')).zone_contact
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).zone_contact
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.zone_contact
+    assert_equal  expected, parser.instance_eval { @zone_contact }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = nil
+    assert_equal  expected, parser.zone_contact
+    assert_equal  expected, parser.instance_eval { @zone_contact }
   end
 
   def test_registrar_contact_with_registered
@@ -312,10 +376,15 @@ EOS
   end
 
   def test_registrar_contact_with_unregistered
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/available.txt')).registrar_contact
-    assert_equal  nil,
-                  @klass.new(load_part('/v1.99/in_progress.txt')).registrar_contact
+    parser    = @klass.new(load_part('/v1.99/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar_contact
+    assert_equal  expected, parser.instance_eval { @registrar_contact }
+
+    parser    = @klass.new(load_part('/v1.99/in_progress.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar_contact
+    assert_equal  expected, parser.instance_eval { @registrar_contact }
   end
 
 end

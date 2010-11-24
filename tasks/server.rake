@@ -1,9 +1,9 @@
 namespace :server do
-  
+
   desc "server:convert_file_tlds"
   task :convert_file_tlds do
     list = parse_list_tld
-    File.open("lib/whois/definitions/tlds.txt", "w+") do |f| 
+    File.open("data/c/tlds.txt", "w+") do |f| 
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -12,7 +12,7 @@ namespace :server do
   desc "server:convert_file_ipv4"
   task :convert_file_ipv4 do
     list = parse_list_ipv4
-    File.open("lib/whois/definitions/ipv4.txt", "w+") do |f|
+    File.open("data/c/ipv4.txt", "w+") do |f|
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -21,7 +21,7 @@ namespace :server do
   desc "server:convert_file_ipv6"
   task :convert_file_ipv6 do
     list = parse_list_ipv6
-    File.open("lib/whois/definitions/ipv6.txt", "w+") do |f|
+    File.open("data/c/ipv6.txt", "w+") do |f|
       f.write(list)
     end
     puts "Created file with #{list.size} servers."
@@ -29,7 +29,7 @@ namespace :server do
 
 
   def parse_list_tld
-    File.readlines("data/tld_serv_list").map do |line|
+    File.readlines("data/c/tld_serv_list").map do |line|
       line.chomp!
       line.gsub!(/^\s*(.*)\s*$/, '\1')
       line.gsub!(/\s*#.*$/, '')
@@ -49,16 +49,12 @@ namespace :server do
         else                    [instructions]
       end
 
-      <<-RUBY
-Whois::Server.define :tld, #{extension.inspect}, \
-#{server.inspect}\
-#{options.nil? ? "" : ", " + options.inspect}
-      RUBY
+      %Q{Whois::Server.define :tld, #{value_to_string(extension)}, #{value_to_string(server)}#{options.nil? ? "" : ", " + options_to_string(options)}\n}
     end
   end
 
   def parse_list_ipv4
-    File.readlines("data/ip_del_list").map do |line|
+    File.readlines("data/c/ip_del_list").map do |line|
       line.chomp!
       line.gsub!(/^\s*(.*)\s*$/, '\1')
       line.gsub!(/\s*#.*$/, '')
@@ -69,19 +65,16 @@ Whois::Server.define :tld, #{extension.inspect}, \
       server, options = case server
         when /\./           then [server]
         when "UNALLOCATED"  then [nil, { :adapter => Whois::Server::Adapters::None }]
+        when "UNKNOWN"      then [nil, { :adapter => Whois::Server::Adapters::None }]
         else                     ["whois.#{server}.net"]
       end
 
-      <<-RUBY
-Whois::Server.define :ipv4, #{range.inspect}, \
-#{server.inspect}\
-#{options.nil? ? "" : ", " + options.inspect}
-      RUBY
+      %Q{Whois::Server.define :ipv4, #{value_to_string(range)}, #{value_to_string(server)}#{options.nil? ? "" : ", " + options_to_string(options)}\n}
     end
   end
 
   def parse_list_ipv6
-    File.readlines("data/ip6_del_list").map do |line|
+    File.readlines("data/c/ip6_del_list").map do |line|
       line.chomp!
       line.gsub!(/^\s*(.*)\s*$/, '\1')
       line.gsub!(/\s*#.*$/, '')
@@ -98,11 +91,21 @@ Whois::Server.define :ipv4, #{range.inspect}, \
         else                     ["whois.#{server}.net"]
       end
 
-      <<-RUBY
-Whois::Server.define :ipv6, #{range.inspect}, \
-#{server.inspect}\
-#{options.nil? ? "" : ", " + options.inspect}
-      RUBY
+      %Q{Whois::Server.define :ipv6, #{value_to_string(range)}, #{value_to_string(server)}#{options.nil? ? "" : ", " + options_to_string(options)}\n}
+    end
+  end
+
+  def options_to_string(options)
+    options.is_a?(Hash) ? options.map do |k, v|
+      ":#{k} => " + (v.is_a?(Hash) ? ('{ ' + options_to_string(v) + ' }') : "#{value_to_string(v)}")
+    end.join(", ") : options.to_s
+  end
+
+  def value_to_string(value)
+    case value
+      when NilClass then "nil"
+      when String   then '"' + value.to_s + '"'
+      else value.to_s
     end
   end
 

@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Object_Not_Found/)
+          @available  ||= !!(content_for_scanner =~ /Object_Not_Found/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -74,7 +74,7 @@ module Whois
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
-            $1.scan(/DNS:\s+(.*)\n/).flatten.map(&:strip)
+            $1.scan(/DNS:\s+(.*)\n/).flatten.map { |value| value.strip.split(/\s+/).first }
           else
             []
           end

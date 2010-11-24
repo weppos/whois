@@ -1,10 +1,20 @@
+Whois::Server.define :ipv4, "0.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
 Whois::Server.define :ipv4, "1.0.0.0/8", "whois.apnic.net"
 Whois::Server.define :ipv4, "2.0.0.0/8", "whois.ripe.net"
+Whois::Server.define :ipv4, "5.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
+Whois::Server.define :ipv4, "14.0.0.0/8", "whois.apnic.net"
+Whois::Server.define :ipv4, "23.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
 Whois::Server.define :ipv4, "24.132.0.0/14", "whois.ripe.net"
 Whois::Server.define :ipv4, "27.0.0.0/8", "whois.apnic.net"
+Whois::Server.define :ipv4, "31.0.0.0/8", "whois.ripe.net"
+Whois::Server.define :ipv4, "36.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
+Whois::Server.define :ipv4, "37.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
+Whois::Server.define :ipv4, "39.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
 Whois::Server.define :ipv4, "41.0.0.0/8", "whois.afrinic.net"
-Whois::Server.define :ipv4, "43.0.0.0/8", "whois.v6nic.net"
+Whois::Server.define :ipv4, "42.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
+Whois::Server.define :ipv4, "43.0.0.0/8", "whois.nic.ad.jp"
 Whois::Server.define :ipv4, "46.0.0.0/8", "whois.ripe.net"
+Whois::Server.define :ipv4, "49.0.0.0/8", "whois.apnic.net"
 Whois::Server.define :ipv4, "51.0.0.0/8", "whois.ripe.net"
 Whois::Server.define :ipv4, "59.0.0.0/11", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "58.0.0.0/7", "whois.apnic.net"
@@ -20,14 +30,17 @@ Whois::Server.define :ipv4, "77.0.0.0/8", "whois.ripe.net"
 Whois::Server.define :ipv4, "78.0.0.0/7", "whois.ripe.net"
 Whois::Server.define :ipv4, "80.0.0.0/4", "whois.ripe.net"
 Whois::Server.define :ipv4, "96.0.0.0/6", "whois.arin.net"
+Whois::Server.define :ipv4, "101.0.0.0/8", "whois.apnic.net"
+Whois::Server.define :ipv4, "107.0.0.0/8", "whois.arin.net"
 Whois::Server.define :ipv4, "108.0.0.0/8", "whois.arin.net"
 Whois::Server.define :ipv4, "109.0.0.0/8", "whois.ripe.net"
 Whois::Server.define :ipv4, "110.0.0.0/7", "whois.apnic.net"
-Whois::Server.define :ipv4, "96.0.0.0/4", nil, {:adapter=>Whois::Server::Adapters::None}
-Whois::Server.define :ipv4, "118.32.0.0/11", "whois.nic.or.kr"
-Whois::Server.define :ipv4, "119.192.0.0/11", "whois.nic.or.kr"
+Whois::Server.define :ipv4, "96.0.0.0/4", nil, :adapter => Whois::Server::Adapters::None
+Whois::Server.define :ipv4, "112.160.0.0/11", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "115.0.0.0/12", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "115.16.0.0/13", "whois.nic.or.kr"
+Whois::Server.define :ipv4, "118.32.0.0/11", "whois.nic.or.kr"
+Whois::Server.define :ipv4, "119.192.0.0/11", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "112.0.0.0/5", "whois.apnic.net"
 Whois::Server.define :ipv4, "121.128.0.0/10", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "125.128.0.0/11", "whois.nic.or.kr"
@@ -88,10 +101,17 @@ Whois::Server.define :ipv4, "165.148.0.0/15", "whois.afrinic.net"
 Whois::Server.define :ipv4, "169.208.0.0/12", "whois.apnic.net"
 Whois::Server.define :ipv4, "171.16.0.0/12", "whois.ripe.net"
 Whois::Server.define :ipv4, "171.32.0.0/15", "whois.ripe.net"
+Whois::Server.define :ipv4, "175.192.0.0/10", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "175.0.0.0/8", "whois.apnic.net"
+Whois::Server.define :ipv4, "176.0.0.0/8", "whois.ripe.net"
+Whois::Server.define :ipv4, "177.0.0.0/8", "whois.lacnic.net"
 Whois::Server.define :ipv4, "178.0.0.0/8", "whois.ripe.net"
+Whois::Server.define :ipv4, "179.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
 Whois::Server.define :ipv4, "180.0.0.0/8", "whois.apnic.net"
+Whois::Server.define :ipv4, "181.0.0.0/8", "whois.lacnic.net"
+Whois::Server.define :ipv4, "183.96.0.0/11", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "182.0.0.0/7", "whois.apnic.net"
+Whois::Server.define :ipv4, "185.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
 Whois::Server.define :ipv4, "186.0.0.0/7", "whois.lacnic.net"
 Whois::Server.define :ipv4, "188.0.0.0/8", "whois.ripe.net"
 Whois::Server.define :ipv4, "189.0.0.0/8", "whois.lacnic.net"
@@ -214,5 +234,4 @@ Whois::Server.define :ipv4, "222.112.0.0/13", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "222.120.0.0/15", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "222.122.0.0/16", "whois.nic.or.kr"
 Whois::Server.define :ipv4, "222.232.0.0/13", "whois.nic.or.kr"
-Whois::Server.define :ipv4, "223.0.0.0/8", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :ipv4, "220.0.0.0/6", "whois.apnic.net"

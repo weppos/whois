@@ -35,8 +35,10 @@ module Whois
       class WhoisNicKz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain status : (.*)\n/
-            $1.strip
+          @status ||= if content_for_scanner =~ /Domain status : ((.+\n)+)\s+\n/
+            $1.split("\n").map { |value| value.split("-").first.strip }
+          else
+            nil
           end
         end
 

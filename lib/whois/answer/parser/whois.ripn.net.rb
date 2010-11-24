@@ -35,7 +35,7 @@ module Whois
       class WhoisRipnNet < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /state:\s+(.*?)\n/
+          @status ||= if content_for_scanner =~ /state:\s+(.+?)\n/
             $1.split(",").map(&:strip)
           else
             []
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No entries found/)
+          @available  ||= !!(content_for_scanner =~ /No entries found/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

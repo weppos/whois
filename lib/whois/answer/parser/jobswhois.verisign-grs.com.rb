@@ -31,19 +31,19 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          node("Disclaimer")
+          @disclaimer ||= node("Disclaimer")
         end
 
 
         property_supported :domain do
-          node("Domain Name") { |raw| raw.downcase }
+          @domain ||= node("Domain Name") { |raw| raw.downcase }
         end
 
         property_not_supported :domain_id
 
 
         property_supported :referral_whois do
-          node("Whois Server")
+          @referral_whois ||= node("Whois Server")
         end
 
         property_supported :referral_url do
@@ -54,28 +54,28 @@ module Whois
 
 
         property_supported :status do
-          node("Status")
+          @status ||= node("Status")
         end
 
         property_supported :available? do
-          node("Registrar").nil?
+          @available  ||= node("Registrar").nil?
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
         property_supported :created_on do
-          node("Creation Date") { |raw| Time.parse(raw) }
+          @created_on ||= node("Creation Date") { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          node("Updated Date") { |raw| Time.parse(raw) }
+          @updated_on ||= node("Updated Date") { |raw| Time.parse(raw) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |raw| Time.parse(raw) }
+          @expires_on ||= node("Expiration Date") { |raw| Time.parse(raw) }
         end
 
 
@@ -95,10 +95,10 @@ module Whois
         protected
 
           def parse
-            Scanners::VerisignScanner.new(content_for_scanner).parse
+            Scanners::Verisign.new(content_for_scanner).parse
           end
 
-          # In case of "Response SPAM", the responde include more than one item
+          # In case of "SPAM Response", the response contains more than one item
           # for the same value and the value becomes an Array.
           def last_useful_item(values)
             values.is_a?(Array) ? values.last : values

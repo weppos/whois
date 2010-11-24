@@ -35,20 +35,20 @@ module Whois
       class WhoisCnnicCn < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Domain Status:\s+(.*?)\n/).flatten
+          @status ||= content_for_scanner.scan(/Domain Status:\s+(.+)\n/).flatten
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "no matching record")
+          @available  ||= (content_for_scanner.strip == "no matching record")
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Registration Date:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /Registration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
@@ -56,14 +56,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:(.*)\n/).flatten.map(&:downcase)
+          @nameservers ||= content_for_scanner.scan(/Name Server:(.+)\n/).flatten.map(&:downcase)
         end
 
       end

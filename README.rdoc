@@ -2,7 +2,7 @@
 
 Whois is an intelligent pure Ruby WHOIS client and parser.
 
-It is a OS-independent library and doesn't require external C libraries or Gems: it is a 100% Ruby software with all the advantages and disadvantages that it involves.
+It is a OS-independent library and doesn't require external C libraries or Gems: it is a 100% Ruby software.
 
 This software was developed to power {RoboDomain}[http://www.robodomain.com] and, since July 2009, it ran more than thousands requests.
 
@@ -11,26 +11,25 @@ An extensive test suite is available to verify the library correctness but you m
 
 == Features
 
-* Pure Ruby library without any external dependency other than Ruby itself
-* Intelligent Ruby client
-* Flexible and extensible configuration with support for user-defined servers
-* Powerful whois response parser
-* Support for IPv6, IPv4 and top level domain whois queries
-* Object oriented design
-* Compatible with Ruby 1.8.6 and newer, including Ruby 1.9
+* Ability to query registry data for {IPv4, IPv6, TLDs, and domain names}[http://www.ruby-whois.org/manual/usage.html#usage-objects]
+* Ability to {parse WHOIS responses}[http://www.ruby-whois.org/manual/parser.html]
+* Flexible and extensible interface (e.g. You can define {custom servers}[http://www.ruby-whois.org/manual/server.html] on the fly)
+* Object oriented design, featuring 10 different design patterns
+* Pure Ruby library, without any external dependency other than Ruby itself
+* Compatible with {Ruby 1.8.6 and greater}[http://www.ruby-whois.org/manual/installation.html#installation-requirements], including Ruby 1.9 branch
+* Successfully tested against several {Ruby implementations}[http://www.ruby-whois.org/manual/interpreters.html]
 
 
 == Requirements
 
-* Ruby >= 1.8.6 (not tested with previous versions)
+* Ruby >= 1.8.7
 
-Whois has been {successfully tested}[http://www.ruby-whois.org/documentation/installation.html] against the following Ruby platforms:
+Whois >= 1.5 requires Ruby 1.8.7 or newer.
+For older versions of Ruby, see the CHANGELOG.rdoc file.
 
-* Ruby 1.8.6 / 1.8.7 / 1.9.1
-* MacRuby 0.4
-* Ruby Enterprise Edition
-
-Do you run any other Ruby platform or version? Are you experiencing any problem? Join our {discussion group}[http://groups.google.com/group/ruby-whois].
+In addition to the standard Ruby interpreter (MRI),
+Whois has been successfully tested against several
+{Ruby implementations}[http://www.ruby-whois.org/manual/interpreters.html].
 
 
 == Installation
@@ -48,21 +47,26 @@ Note. This section covers only the essentials for getting started with the Whois
 
 === Querying the Server
 
-Whois provides the ability to get WHOIS information for hostnames, IPv4 and IPv6 addresses. The client is smart enough to guess the best WHOIS server according to given query, send the request and return the response.
+Whois provides the ability to get WHOIS information for TLD, domain names, IPv4 and IPv6 addresses. The client is smart enough to guess the best WHOIS server according to given query, send the request and return the response.
 
 Check out the following examples:
 
-  # Domain Whois
+  # Domain WHOIS
   w = Whois::Client.new
   w.query("google.com")
   # => #<Whois::Answer>
 
-  # IPv4 Whois
+  # TLD WHOIS
+  w = Whois::Client.new
+  w.query(".com")
+  # => #<Whois::Answer>
+
+  # IPv4 WHOIS
   w = Whois::Client.new
   w.query("74.125.67.100")
   # => #<Whois::Answer>
 
-  # IPv6 Whois
+  # IPv6 WHOIS
   w = Whois::Client.new
   w.query("2001:db8::1428:57ab")
   # => #<Whois::Answer>
@@ -71,6 +75,7 @@ The query method is stateless. For this reason, you can safely re-use the same c
 
   w = Whois::Client.new
   w.query("google.com")
+  w.query(".com")
   w.query("74.125.67.100")
   w.query("2001:db8::1428:57ab")
   w.query("google.it")
@@ -79,6 +84,17 @@ If you just need a WHOIS response and you don't care about a full control of the
 
   Whois.whois("google.com")
   # => #<Whois::Answer>
+
+Did I mention you can even use blocks?
+
+  Whois::Client.new do |w|
+    w.query("google.com")
+    w.query(".com")
+    w.query("74.125.67.100")
+    w.query("2001:db8::1428:57ab")
+    w.query("google.it")
+  end
+
 
 === Consuming the Answer
 
@@ -140,13 +156,6 @@ The parser architecture has been inspired by the PHPWhois[http://phpwhois.source
 Despite I spent weeks reading source code from the available whois libraries, Ruby Whois has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
 
-== Note for Whois 0.4 users
-
-As of release 0.5.0, the Whois GEM has been completely rewritten. As I explained in the Acknowledgment section, Cyril Mougel (the author of the original Whois package) yield me the privilege to use the Whois RubyForge project for my new Whois client.
-
-All versions between Whois 0.5.0 and 0.9.x include a compatibility adapter and the corresponding deprecation warnings to help you migrate to the new API. Starting from Whois 1.0.0, the library is no longer backward compatible with Cyril's Whois.
-
-
 == Author
 
 Author:: {Simone Carletti}[http://www.simonecarletti.com/] <weppos@weppos.net>
@@ -166,9 +175,9 @@ Bug reports and Feature suggestions {are welcomed}[http://github.com/weppos/whoi
 
 == More
 
-* {Homepage}[http://ruby-whois.org]
-* {GitHub Repository}[http://github.com/weppos/whois]
-* {API Documentation}[http://whois.rubyforge.org]
+* {Homepage}[http://www.ruby-whois.org]
+* {Repository}[http://github.com/weppos/whois]
+* {API Documentation}[http://www.ruby-whois.org/api/] (RDoc)
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
 
 

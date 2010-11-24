@@ -35,13 +35,20 @@ module Whois
       class WhoisNicHt < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.*)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "active"         then :registered
+              when "not registered" then :available
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 
         property_supported :available? do
-          @available ||= (status == "Not Registered")
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do

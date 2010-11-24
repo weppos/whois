@@ -1,0 +1,9 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 0 objects.
+%
+% You queried for dsa.intd but this server does not have
+% any data for dsa.intd.
+%
+% If you need further information please check the web site
+% or use -h for help

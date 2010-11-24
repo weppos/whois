@@ -51,7 +51,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= node("Status") == "AVAILABLE"
+          @available  ||= node("Status") == "AVAILABLE"
         end
 
         property_supported :registered? do
@@ -94,13 +94,6 @@ module Whois
         property_supported :technical_contact do
           @technical_contact ||= contact("Technical Contacts", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
-
-        # @deprecated
-        register_property :registrant, :supported
-        # @deprecated
-        register_property :admin, :supported
-        # @deprecated
-        register_property :technical, :supported
 
 
         property_supported :nameservers do

@@ -1,27 +1,59 @@
-.us == .biz == .travel
+.us
+.biz
+.travel
+whois.nic.co
 
-== afilias
-
-whois.dotmobyregistry.net (.mobi)
-whois.afilias.info (.info)
-whois.afilias-grs.info (.bz, .gi, .hn, .lc, .mn, .sc, .vc)
-whois.aero (.aero)
-whois.nic.af (.af)
-whois.registry.in (.in)
-
-whois.museum (.museum)
-whois.cat (.cat)
+whois.museum
+whois.cat
 
 .ve
 .uy
 
+# afilias
+whois.dotmobyregistry.net
+whois.afilias.info
+whois.afilias-grs.info
+whois.aero
 
-== Property Proposals
+whois.nic.af
+whois.nic.mu
+whois.nic.gl
+whois.nic.gs
+whois.nic.mg
+whois.na-nic.com.na
+kero.yachay.pe
+whois.kenic.or.ke
 
-* changed_by
-* version
+# http://coccaregistry.net/index.php/whois.html
+whois.nic.cx
+whois.nic.gs
+whois.nic.ki
+whois.nic.net.nf
+whois.nic.net.sb
+whois.nic.tl
+whois.nic.ms
 
+# AFNIC
+whois.nic.fr
+whois.nic.pm (CNAME whois.nic.fr)
+whois.nic.re (CNAME whois.nic.fr)
+whois.nic.wf (CNAME whois.nic.fr)
+whois.nic.tf (CNAME whois.nic.fr)
+whois.nic.yt (CNAME whois.nic.fr)
 
-== Feature Proposals
+whois.nic.cz
+whois.tznic.or.tz
+whois.pandi.or.id
+whois.nic.ir
+ripe.net
 
-* .org -> LIMIT EXCEEDED
+whois.nic.cd
+whois.sgnic.sg
+
+whois.nic.ac
+whois.nic.io
+whois.nic.tm
+whois.nic.sh
+
+whois.gg
+whois.je

@@ -14,7 +14,6 @@
 #++
 
 
-require 'whois/answer/parser/base'
 require 'whois/answer/parser/whois.cnnic.cn'
 
 
@@ -22,14 +21,9 @@ module Whois
   class Answer
     class Parser
 
-      #
-      # = whois.cnnic.net.cn parser
-      #
-      # Parser for the whois.cnnic.net.cn server.
-      # Aliases the whois.cnnic.cn parser.
-      #
-      class WhoisCnnicNetCn < WhoisCnnicCn
-      end
+      # Parser for the <tt>whois.cnnic.net.cn</tt> server.
+      # Aliases the <tt>whois.cnnic.cn</tt> parser.
+      WhoisCnnicNetCn = WhoisCnnicCn
 
     end
   end

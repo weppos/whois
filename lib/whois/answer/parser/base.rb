@@ -17,6 +17,7 @@
 require 'time'
 require 'whois/answer/contact'
 require 'whois/answer/registrar'
+require 'whois/answer/nameserver'
 require 'whois/answer/parser/ast'
 
 
@@ -205,7 +206,7 @@ module Whois
         # That said, the only constraints about this method is to return the data to be parsed as string.
         #
         def content
-          part.response
+          part.body
         end
 
 
@@ -232,6 +233,8 @@ module Whois
           contacts.compact
         end
 
+        # NEWPROPERTY
+        #
         # Checks whether this is a throttle response.
         # The default implementation always returns false.
         #
@@ -240,31 +243,6 @@ module Whois
         # Returns false by default.
         def throttle?
           false
-        end
-
-
-        # @deprecated {#registrant} is deprecated
-        #   and will be removed in a future version.
-        #   Use {#registrant_contact}.
-        def registrant
-          Whois.deprecate "Whois::Answer::Parser::Base#registrant is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#registrant_contact."
-          registrant_contact
-        end
-
-        # @deprecated {#admin} is deprecated
-        #   and will be removed in a future version.
-        #   Use {#admin_contact}.
-        def admin
-          Whois.deprecate "Whois::Answer::Parser::Base#admin is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#admin_contact."
-          admin_contact
-        end
-
-        # @deprecated {#technical} is deprecated
-        #   and will be removed in a future version.
-        #   Use {#technical_contact}.
-        def technical
-          Whois.deprecate "Whois::Answer::Parser::Base#technical is deprecated and will be removed in a future version. Use Whois::Answer::Parser::Base#technical_contact."
-          technical_contact
         end
 
 

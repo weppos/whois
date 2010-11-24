@@ -10,11 +10,11 @@ require 'whois'
 options = OpenStruct.new
 OptionParser.new do |opts|
   opts.banner     = "Whois: an intelligent pure Ruby Whois client"
-  opts.define_head  "Usage: whois [options] object"
+  opts.define_head  "Usage: ruby-whois [options] object"
   opts.separator    ""
   opts.separator    "Examples:"
-  opts.separator    " whois ruby-lang.com"
-  opts.separator    " whois 213.149.247.64"
+  opts.separator    " ruby-whois ruby-lang.com"
+  opts.separator    " ruby-whois 213.149.247.64"
   opts.separator    ""
   opts.separator    "Options:"
 

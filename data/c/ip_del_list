@@ -1,0 +1,256 @@
+# WARNING! Netblocks 128.0.0.0/2, 192.0.0.0/8, 196.0.0.0/8 and 198.0.0.0/8
+# contain historical allocations now scattered among all the RIRs.
+# Do not even try submitting such networks for inclusion in this list
+# unless they are very big and contains multiple assignments to different
+# customers documented in the whois database.
+#
+# http://www.iana.org/assignments/ipv4-address-space
+#
+0.0.0.0/8	UNKNOWN
+1.0.0.0/8	apnic
+2.0.0.0/8	ripe
+5.0.0.0/8	UNALLOCATED
+14.0.0.0/8	apnic
+23.0.0.0/8	UNALLOCATED
+24.132.0.0/14	ripe
+27.0.0.0/8	apnic
+31.0.0.0/8	ripe
+36.0.0.0/8	UNALLOCATED
+37.0.0.0/8	UNALLOCATED
+39.0.0.0/8	UNALLOCATED
+41.0.0.0/8	afrinic
+42.0.0.0/8	UNALLOCATED
+43.0.0.0/8	whois.nic.ad.jp
+46.0.0.0/8	ripe
+49.0.0.0/8	apnic
+51.0.0.0/8	ripe
+# whois -r -K -h whois.apnic.net -i admin-c IM76-AP
+59.0.0.0/11	whois.nic.or.kr
+58.0.0.0/7	apnic
+61.72.0.0/13	whois.nic.or.kr
+61.80.0.0/14	whois.nic.or.kr
+61.84.0.0/15	whois.nic.or.kr
+61.112.0.0/12	whois.nic.ad.jp
+61.192.0.0/12	whois.nic.ad.jp		# => 61.207.255.255
+61.208.0.0/13	whois.nic.ad.jp		# => 61.215.255.255
+60.0.0.0/7	apnic
+62.0.0.0/8	ripe
+77.0.0.0/8	ripe
+78.0.0.0/7	ripe
+80.0.0.0/4	ripe			# => 95.255.255.255
+96.0.0.0/6	arin			# => 99.255.255.255
+101.0.0.0/8	apnic
+107.0.0.0/8	arin
+108.0.0.0/8	arin
+109.0.0.0/8	ripe
+110.0.0.0/7	apnic
+96.0.0.0/4	UNALLOCATED		# => 112.215.255.255
+112.160.0.0/11	whois.nic.or.kr
+115.0.0.0/12	whois.nic.or.kr
+115.16.0.0/13	whois.nic.or.kr
+118.32.0.0/11	whois.nic.or.kr
+119.192.0.0/11	whois.nic.or.kr
+112.0.0.0/5	apnic
+121.128.0.0/10	whois.nic.or.kr
+125.128.0.0/11	whois.nic.or.kr
+120.0.0.0/6	apnic
+124.0.0.0/7	apnic
+126.0.0.0/8	apnic
+0.0.0.0/1	arin	# all other A class addresses are managed by ARIN
+133.0.0.0/8	whois.nic.ad.jp
+139.20.0.0/14	ripe
+139.24.0.0/14	ripe
+139.28.0.0/15	ripe
+141.0.0.0/10	ripe
+141.86.0.0/16	arin
+141.64.0.0/11	ripe
+141.96.0.0/14	ripe
+141.100.0.0/16	ripe
+145.0.0.0/8	ripe
+146.48.0.0/16	ripe
+149.202.0.0/15	ripe
+149.204.0.0/16	ripe
+149.206.0.0/15	ripe
+149.208.0.0/12	ripe
+149.224.0.0/12	ripe
+149.240.0.0/13	ripe
+149.248.0.0/14	ripe
+150.183.0.0/16	whois.nic.or.kr
+150.254.0.0/16	ripe
+150.0.0.0/8	apnic
+151.0.0.0/10	ripe
+151.64.0.0/11	ripe
+151.96.0.0/14	ripe
+151.100.0.0/16	ripe
+#153.0.0.0/8	apnic
+154.0.0.0/8	afrinic
+155.232.0.0/13	afrinic
+155.240.0.0/16	afrinic
+160.216.0.0/14	ripe
+160.220.0.0/16	ripe
+160.44.0.0/14	ripe
+160.48.0.0/12	ripe
+160.115.0.0/16	afrinic
+160.116.0.0/14	afrinic
+160.120.0.0/14	afrinic
+160.124.0.0/16	afrinic
+163.156.0.0/14	ripe
+163.160.0.0/12	ripe
+163.195.0.0/16	afrinic
+163.196.0.0/14	afrinic
+163.200.0.0/14	afrinic
+#163.0.0.0/8	apnic
+164.0.0.0/11	ripe
+164.32.0.0/13	ripe
+164.40.0.0/16	ripe
+164.128.0.0/12	ripe
+164.146.0.0/15	afrinic
+164.148.0.0/14	afrinic
+165.143.0.0/16	afrinic
+165.144.0.0/14	afrinic
+165.148.0.0/15	afrinic
+169.208.0.0/12	apnic
+171.16.0.0/12	ripe
+171.32.0.0/15	ripe
+#171.0.0.0/8	apnic
+175.192.0.0/10	whois.nic.or.kr
+175.0.0.0/8	apnic
+176.0.0.0/8	ripe
+177.0.0.0/8	lacnic
+178.0.0.0/8	ripe
+179.0.0.0/8	UNALLOCATED
+180.0.0.0/8	apnic
+181.0.0.0/8	lacnic
+183.96.0.0/11	whois.nic.or.kr
+182.0.0.0/7	apnic
+185.0.0.0/8	UNALLOCATED
+186.0.0.0/7	lacnic
+188.0.0.0/8	ripe # transferred from ARIN to to RIPE
+189.0.0.0/8	lacnic
+190.0.0.0/7	lacnic
+## All other B class addresses are supposed to be allocated by ARIN
+## We know that many of them are not, but they can't all be listed here
+128.0.0.0/2	arin
+
+## The C classes space is cleanly delegated and the data here should be complete
+192.71.0.0/16	ripe
+192.72.253.0/24	arin
+192.72.254.0/24	arin	# how annoying...
+192.72.0.0/16	apnic
+192.106.0.0/16	ripe
+192.114.0.0/15	ripe
+192.116.0.0/15	ripe
+192.118.0.0/16	ripe
+192.162.0.0/16	ripe
+192.164.0.0/14	ripe
+192.0.0.0/8	arin	# the swamp
+193.0.0.0/8	ripe
+194.0.0.0/7	ripe
+196.0.0.0/7	afrinic
+198.0.0.0/7	arin
+
+200.17.0.0/16	whois.nic.br
+200.18.0.0/15	whois.nic.br
+200.20.0.0/16	whois.nic.br
+200.96.0.0/13	whois.nic.br
+200.128.0.0/9	whois.nic.br
+200.0.0.0/7	lacnic
+202.11.0.0/16	whois.nic.ad.jp
+202.13.0.0/16	whois.nic.ad.jp
+202.15.0.0/16	whois.nic.ad.jp
+202.16.0.0/14	whois.nic.ad.jp
+202.20.128.0/17	whois.nic.or.kr
+202.23.0.0/16	whois.nic.ad.jp
+202.24.0.0/15	whois.nic.ad.jp
+202.26.0.0/16	whois.nic.ad.jp
+202.30.0.0/15	whois.nic.or.kr
+202.32.0.0/14	whois.nic.ad.jp
+202.48.0.0/16	whois.nic.ad.jp
+202.39.128.0/17	twnic
+202.208.0.0/12	whois.nic.ad.jp
+202.224.0.0/11	whois.nic.ad.jp # => 202.255.255.255
+203.0.0.0/10	apnic
+203.66.0.0/16	twnic
+203.69.0.0/16	twnic
+203.74.0.0/15	twnic
+203.136.0.0/14	whois.nic.ad.jp
+203.140.0.0/15	whois.nic.ad.jp
+203.178.0.0/15	whois.nic.ad.jp
+203.180.0.0/14	whois.nic.ad.jp
+203.224.0.0/11	whois.nic.or.kr # => 203.255.255.255
+202.0.0.0/7	apnic
+204.0.0.0/14	rwhois.gin.ntt.net	# rwhois too
+204.0.0.0/6	arin
+208.0.0.0/7	arin
+209.94.192.0/19	lacnic
+210.59.128.0/17	twnic
+210.61.0.0/16	twnic
+210.62.252.0/22	twnic
+210.65.0.0/16	twnic
+210.71.128.0/16	twnic
+210.90.0.0/15	whois.nic.or.kr
+210.92.0.0/14	whois.nic.or.kr
+210.96.0.0/11	whois.nic.or.kr # => 210.127.255.255
+210.128.0.0/11	whois.nic.ad.jp
+210.160.0.0/12	whois.nic.ad.jp
+210.178.0.0/15	whois.nic.or.kr
+210.180.0.0/14	whois.nic.or.kr
+210.188.0.0/14	whois.nic.ad.jp
+210.196.0.0/14	whois.nic.ad.jp
+210.204.0.0/14	whois.nic.or.kr
+210.216.0.0/13	whois.nic.or.kr	# => 210.223.255.255
+210.224.0.0/12	whois.nic.ad.jp	# => 210.239.255.255
+# some more TWNIC blocks are scattered here
+210.240.0.0/16	twnic
+210.241.0.0/15	twnic
+210.241.224.0/19 twnic
+210.242.0.0/15	twnic
+210.248.0.0/13	whois.nic.ad.jp
+211.0.0.0/12	whois.nic.ad.jp
+211.16.0.0/14	whois.nic.ad.jp
+211.20.0.0/15	twnic
+211.22.0.0/16	twnic
+211.32.0.0/11	whois.nic.or.kr	# => 211.63.255.255
+211.75.0.0/16	twnic
+211.72.0.0/16	twnic
+211.104.0.0/13	whois.nic.or.kr
+211.112.0.0/13	whois.nic.or.kr	# => 211.119.255.255
+211.120.0.0/13	whois.nic.ad.jp
+211.128.0.0/13	whois.nic.ad.jp
+211.168.0.0/13	whois.nic.or.kr
+211.176.0.0/12	whois.nic.or.kr
+211.192.0.0/10  whois.nic.or.kr # => 211.255.255.255
+210.0.0.0/7	apnic
+213.154.32.0/19	afrinic
+213.154.64.0/19	afrinic
+212.0.0.0/7	ripe
+214.0.0.0/7	arin	# DoD
+216.0.0.0/8	arin
+217.0.0.0/8	ripe
+218.36.0.0/14	whois.nic.or.kr
+218.40.0.0/13	whois.nic.ad.jp
+218.48.0.0/13	whois.nic.or.kr
+219.96.0.0/11	whois.nic.ad.jp
+218.144.0.0/12	whois.nic.or.kr
+218.160.0.0/12	twnic
+218.216.0.0/13	whois.nic.ad.jp
+218.224.0.0/13	whois.nic.ad.jp
+218.232.0.0/13	whois.nic.or.kr
+219.240.0.0/15	whois.nic.or.kr
+219.248.0.0/13	whois.nic.or.kr
+218.0.0.0/7	apnic
+220.64.0.0/11	whois.nic.or.kr
+220.96.0.0/14	whois.nic.ad.jp
+220.103.0.0/16	whois.nic.or.kr
+220.104.0.0/13	whois.nic.ad.jp
+220.149.0.0/16	whois.nic.or.kr
+221.138.0.0/13	whois.nic.or.kr
+221.144.0.0/12	whois.nic.or.kr
+221.160.0.0/13	whois.nic.or.kr
+222.96.0.0/12	whois.nic.or.kr
+222.112.0.0/13	whois.nic.or.kr
+222.120.0.0/15	whois.nic.or.kr
+222.122.0.0/16	whois.nic.or.kr
+222.232.0.0/13	whois.nic.or.kr
+220.0.0.0/6	apnic
+# that's all... here starts the multicast space

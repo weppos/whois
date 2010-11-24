@@ -1,0 +1,41 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+domain:       NATO.INT
+
+organisation: North Atlantic Treaty Organization
+address:      Blvd Leopold III
+address:      1110 Brussels
+address:      Brussels
+address:      Belgium
+
+contact:      administrative
+name:         Aidan Murdock
+address:      SHAPE
+address:      NCSA/SDD/SAL
+address:      Casteau Hainaut 7010
+address:      Belgium
+phone:        +32 65 44 7244
+fax-no:       +32 65 44 7221
+e-mail:       aidan.murdock@ncsa.nato.int
+
+contact:      technical
+name:         Jack Smits
+address:      SHAPE
+address:      NCSA/SMD
+address:      Casteau Hainaut 7010
+address:      Belgium
+phone:        +32 65 44 7534
+fax-no:       +32 65 44 7556
+e-mail:       jack.smits@ncsa.nato.int
+
+nserver:      MAX.NRA.NATO.INT 192.101.252.69
+nserver:      MAXIMA.NRA.NATO.INT 193.110.130.68
+nserver:      NS.NAMSA.NATO.INT 208.161.248.15
+nserver:      NS.NC3A.NATO.INT 195.169.116.6
+
+created:      1997-08-26
+changed:      2009-11-10
+source:       IANA
+

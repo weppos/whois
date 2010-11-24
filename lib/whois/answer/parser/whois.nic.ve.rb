@@ -35,13 +35,20 @@ module Whois
       class WhoisNicVe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Estatus del dominio: (.*?)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Estatus del dominio: (.+?)\n/
+            case $1.downcase
+              when "activo" then :registered
+              when "suspendido" then :suspended
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No match for "(.*?)"/)
+          @available ||= !!(content_for_scanner =~ /No match for "(.+?)"/)
         end
 
         property_supported :registered? do
@@ -50,19 +57,22 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.*?)\n/
+          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.*?)\n/
+          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.+?)\n/
             Time.parse($1)
           end
         end
 
-        property_not_supported :expires_on
-
+        property_supported :expires_on do
+          @expires_on ||= if content_for_scanner =~ /Fecha de Vencimiento: (.+?)\n/
+            Time.parse($1)
+          end
+        end
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
@@ -71,6 +81,11 @@ module Whois
             []
           end
         end
+
+
+        # NEWPROPERTY
+        # def suspended?
+        # end
 
       end
 

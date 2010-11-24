@@ -1,0 +1,70 @@
+% Copyright KENIC
+
+%  The data below is provided for information purposes
+%  and to assist persons in obtaining information about or
+%  related to domain name registrations.
+%  By submitting a whois query, you agree to use this data
+%  only for lawful purposes.
+
+
+% remarks:     Security issues should also be addressed to noc@kenic.or.ke
+% remarks:     Mail abuse issues should also be addressed to abuse@kenic.or.ke
+ 
+% whois.kenic.or.ke accepts only direct match queries.
+% Types of queries are: domains (.KE) and POCs.
+
+
+
+Domain Information
+Query: google.co.ke
+Created: 18 Apr 2003
+Expires: 01 Jan 2011
+Modified: 22 Mar 2010
+Status: Active
+Registrar: EAC directory
+Name Servers:
+    ns1.google.com
+    ns2.google.com
+    ns3.google.com
+    ns4.google.com
+
+Registrant:
+    Google Inc.
+    Google Inc.
+    1600 Amphitheatre Parkway
+    P.O. Box 2400
+    Mountain ViewCA 94043
+    US
+    Voice: 1.6506234000
+
+Administrative Contact:
+    Google Inc.
+    E. Bayshore Pkwy
+    P.O. Box 2400
+    Mountain View94043
+    KE
+    dns-admin@GOOGLE.COM
+    Voice: +1 650 3300100
+
+Technical Contact:
+    Google Inc.
+    Google Inc.
+    1600 Amphitheatre Parkway
+    P.O. Box 2400
+    Mountain ViewCA 94043
+    US
+    dns-admin@google.com
+    Voice: 1.6506234000
+
+Billing Contact:
+    EAC Directory
+    EAC Directory Limited
+    Kiungani Road, OFF Mombasa Road
+    Opposite Nation Newspapers
+    Next to Mastermind
+    NairobiP.O. Box 3543- 00200
+    KE
+    info@EACDIRECTORY.COM
+    Voice: +254 20 2441914
+
+

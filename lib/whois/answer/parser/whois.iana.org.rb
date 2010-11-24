@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/iana'
 
 
 module Whois
@@ -26,16 +27,11 @@ module Whois
       #
       # Parser for the whois.iana.org server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisIanaOrg < Base
+        include Ast
 
         property_supported :status do
-          if available?
+          @status ||= if available?
             :available
           else
             :registered
@@ -43,32 +39,76 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Domain (.*?) not found/)
+          @available  ||= !!(content_for_scanner =~ /This query returned 0 objects|organisation: Not assigned/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
+        end
+
+
+        property_supported :registrant_contact do
+          @registrant_contact ||= contact("organisation", Whois::Answer::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contact do
+          @admin_contact ||= contact("administrative", Whois::Answer::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contact do
+          @technical_contact ||= contact("technical", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /\nRegistration Date:\s+(.*)\n/
-            Time.parse($1)
-          end
+          @created_on ||= node("dates") { |raw| Time.parse(raw["created"]) if raw.has_key? "created" }
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /\nLast Updated Date:\s+(.*)\n/
-            Time.parse($1)
-          end
+          @updated_on ||= node("dates") { |raw| Time.parse(raw["changed"]) if raw.has_key? "changed" }
         end
 
         property_not_supported :expires_on
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Nameserver:\s(.*)\n/).flatten.map { |value| value.chomp(".") }
+          @nameservers ||= nameserver("nameservers") || []
         end
+
+
+        protected
+
+          def parse
+            Scanners::Iana.new(content_for_scanner).parse
+          end
+
+          def contact(element, type)
+            node(element) do |raw|
+              if raw["organisation"] != "Not assigned"
+                address = (raw["address"] || "").split("\n")
+                Answer::Contact.new(
+                  :type         => type,
+                  :name         => raw["name"],
+                  :organization => raw["organisation"],
+                  :address      => address[0],
+                  :city         => address[1],
+                  :zip          => address[2],
+                  :country      => address[3],
+                  :phone        => raw["phone"],
+                  :fax          => raw["fax-no"],
+                  :email        => raw["e-mail"]
+                )
+              end
+            end
+          end
+
+          def nameserver(element)
+            node(element) do |raw|
+              (raw["nserver"] || "").split("\n").map do |nameserver|
+                Answer::Nameserver.new(*nameserver.downcase.split(" "))
+              end
+            end
+          end
 
       end
 

@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Gábor Vészi <veszig@done.hu>, Simone Carletti <weppos@weppos.net>
+# Author::      Simone Carletti <weppos@weppos.net>, Gábor Vészi <veszig@done.hu>
 # License::     MIT License
 #
 #--
@@ -30,7 +30,7 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          node("disclaimer")
+          @disclaimer ||= node("disclaimer")
         end
 
 
@@ -39,12 +39,12 @@ module Whois
         end
 
         property_supported :domain_id do
-          node('hun-id')
+          @domain_id ||= node('hun-id')
         end
 
 
         property_supported :status do
-          if node('NotFound')
+          @status ||= if node('NotFound')
             :available
           elsif node('InProgress')
             :in_progress
@@ -63,11 +63,11 @@ module Whois
 
 
         property_supported :created_on do
-          node('registered') { |raw| Time.parse(raw) }
+          @created_on ||= node('registered') { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          node('changed') { |raw| Time.parse(raw) }
+          @updated_on ||= node('changed') { |raw| Time.parse(raw) }
         end
 
         property_not_supported :expires_on
@@ -110,23 +110,18 @@ module Whois
           @tecnical_contact ||= contact("tech-c", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
-        # @deprecated
-        register_property :registrant, :supported
-        # @deprecated
-        register_property :admin, :supported
-        # @deprecated
-        register_property :technical, :supported
-
 
         property_supported :nameservers do
           @nameservers ||= node("nameserver") || []
         end
 
 
+        # NEWPROPERTY
         def registrar_contact
           contact("registrar", nil)
         end
 
+        # NEWPROPERTY
         def zone_contact
           contact("zone-c", nil)
         end
@@ -179,10 +174,6 @@ module Whois
 
           private
 
-            def trim_empty_line
-              @input.scan(/^\n/)
-            end
-
             def parse_content
               parse_version     ||
               parse_disclaimer  ||
@@ -199,6 +190,18 @@ module Whois
 
               trim_empty_line   ||
               error("Unexpected token")
+            end
+
+            def trim_empty_line
+              @input.skip(/^\n/)
+            end
+
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+              end
             end
 
 
@@ -352,10 +355,6 @@ module Whois
                 end
               end
               true
-            end
-
-            def error(message)
-              raise "#{message}: `#{@input.peek(@input.string.length)}'"
             end
 
         end

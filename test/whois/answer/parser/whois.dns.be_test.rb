@@ -10,20 +10,39 @@ class AnswerParserWhoisDnsBeTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    assert_equal  "REGISTERED",
-                  @klass.new(load_part('/registered.txt')).status
-    assert_equal  "FREE",
-                  @klass.new(load_part('/available.txt')).status
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/registered.txt')).available?
-    assert  @klass.new(load_part('/available.txt')).available?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/registered.txt')).registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -58,6 +77,13 @@ class AnswerParserWhoisDnsBeTest < Whois::Answer::Parser::TestCase
 
     parser    = @klass.new(load_part('/available.txt'))
     expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+  def test_nameservers_with_ip
+    parser    = @klass.new(load_part('/property_nameservers_with_ip.txt'))
+    expected  = %w( ns3.register.be ns1.register.be ns2.register.be )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end

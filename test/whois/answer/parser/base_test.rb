@@ -21,7 +21,7 @@ class AnswerParserBaseTest < Test::Unit::TestCase
 
   def test_content
     parser = @klass.new(@part)
-    assert_equal @part.response, parser.content
+    assert_equal @part.body, parser.content
   end
 
   def test_content_for_scanner

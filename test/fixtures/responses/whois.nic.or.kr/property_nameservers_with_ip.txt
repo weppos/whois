@@ -1,0 +1,52 @@
+
+query: lg.co.kr
+
+# KOREAN
+
+µµ¸ÞÀÎÀÌ¸§                : lg.co.kr
+µî·ÏÀÎ                    : ÁÖ½ÄÈ¸»ç ¿¤Áö
+µî·ÏÀÎ ÁÖ¼Ò               : ¼­¿ï½Ã ¿µµîÆ÷±¸ ¿©ÀÇµµµ¿ 20,  LGÆ®À©Å¸¿ö
+µî·ÏÀÎ ¿ìÆí¹øÈ£           : 150721
+Ã¥ÀÓÀÚ                    : µµ¸ÞÀÎ°ü¸®ÀÚ
+Ã¥ÀÓÀÚ ÀüÀÚ¿ìÆí           : lgcorpbmt@lg.com
+Ã¥ÀÓÀÚ ÀüÈ­¹øÈ£           : 82-02-3773-2322
+µî·ÏÀÏ                    : 1995. 03. 20.
+ÃÖ±Ù Á¤º¸ º¯°æÀÏ          : 2010. 07. 05.
+»ç¿ë Á¾·áÀÏ               : 2010. 10. 15.
+Á¤º¸°ø°³¿©ºÎ              : Y
+µî·Ï´ëÇàÀÚ                : (ÁÖ)ÈÄÀÌÁî(http://whois.co.kr)
+
+1Â÷ ³×ÀÓ¼­¹ö Á¤º¸
+   È£½ºÆ®ÀÌ¸§             : prmns.lg.co.kr
+   IP ÁÖ¼Ò                : 165.243.5.15
+
+2Â÷ ³×ÀÓ¼­¹ö Á¤º¸
+   È£½ºÆ®ÀÌ¸§             : secns.lg.co.kr
+   IP ÁÖ¼Ò                : 203.247.133.133
+
+³×ÀÓ¼­¹ö ÀÌ¸§ÀÌ .krÀÌ ¾Æ´Ñ °æ¿ì´Â IPÁÖ¼Ò°¡ º¸ÀÌÁö ¾Ê½À´Ï´Ù.
+
+# ENGLISH
+
+Domain Name               : lg.co.kr
+Registrant                : LG Co., Ltd.
+Registrant Address        : LG Twintower 20, Youido-dong, Youngdeungpo-gu Seoul
+Registrant Zip Code       : 150721
+Administrative Contact(AC): Domain-Manager
+AC E-Mail                 : lgcorpbmt@lg.com
+AC Phone Number           : 82-02-3773-2322
+Registered Date           : 1995. 03. 20.
+Last updated Date         : 2010. 07. 05.
+Expiration Date           : 2010. 10. 15.
+Publishes                 : Y
+Authorized Agency         : Whois Corp.(http://whois.co.kr)
+
+Primary Name Server
+   Host Name              : prmns.lg.co.kr
+   IP Address             : 165.243.5.15
+
+Secondary Name Server
+   Host Name              : secns.lg.co.kr
+   IP Address             : 203.247.133.133
+
+

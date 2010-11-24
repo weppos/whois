@@ -41,13 +41,45 @@ module Whois
           @options    = options || {}
         end
 
+        # Checks self and other for equality.
+        #
+        # other - The Whois::Server::Adapter::* to check.
+        #
+        # Returns true if the <tt>other</tt> is the same object,
+        # or <tt>other</tt> attributes matches this object attributes.
+        def ==(other)
+          (self.equal?(other)) ||
+          (
+            self.type == other.type &&
+            self.allocation == other.allocation &&
+            self.host == other.host &&
+            self.options == other.options
+          )
+        end
+
+        # Delegates to #==.
+        #
+        # other - The Whois::Server::Adapter::* to check.
+        #
+        # Returns true or false.
+        def eql?(other)
+          self == other
+        end
+
+
         # Performs a Whois query for <tt>qstring</tt> 
         # using current server adapter and returns a <tt>Whois::Response</tt>
         # instance with the result of the request.
         #
-        # server.query("google.com")
-        # # => Whois::Response
+        # qstring - The String to be sent as query parameter.
         #
+        # Internally, this method calls #request
+        # using the Template Method design pattern.
+        #
+        #   server.query("google.com")
+        #   # => Whois::Answer
+        #
+        # Returns a Whois::Answer.
         def query(qstring)
           with_buffer do |buffer|
             request(qstring)
@@ -55,6 +87,16 @@ module Whois
           end
         end
 
+        # Performs the real WHOIS request.
+        #
+        # qstring - The String to be sent as query parameter.
+        #
+        # This method is not implemented in Whois::Adapter::Base class,
+        # it is intended to be overwritten in the concrete subclasses.
+        # This is the heart of the Template Method design pattern.
+        #
+        # Raises NotImplementedError.
+        # Returns nothing.
         def request(qstring)
           raise NotImplementedError
         end

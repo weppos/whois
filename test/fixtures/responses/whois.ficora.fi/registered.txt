@@ -1,0 +1,19 @@
+
+domain:   google.fi
+descr:    Google Finland Oy
+descr:    20450009
+address:  hallinto
+address:  c/o Asianajotoimisto Hannes Snellman Oy
+address:  00130
+address:  Helsinki
+phone:    228 841
+status:   Granted
+created:  30.6.2006
+expires:  4.7.2012
+nserver: ns1.google.com [OK]  
+nserver: ns2.google.com [OK]  
+nserver: ns3.google.com [OK]  
+nserver: ns4.google.com [OK]  
+
+More information is available at https://domain.ficora.fi/
+Copyright (c) Finnish Communications Regulatory Authority

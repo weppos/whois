@@ -1,0 +1,82 @@
+Domain Name:                                 T.CO
+Domain ID:                                   D740225-CO
+Sponsoring Registrar:                        RESTRICTED AND RESERVED NAMES .COINTERNET
+Sponsoring Registrar IANA ID:                672943168
+Registrar URL (registration services):       www.cointernet.com.co
+Domain Status:                               serverTransferProhibited
+Registrant ID:                               COFOUNDERS
+Registrant Name:                             .CO Founders program
+Registrant Organization:                     .CO Internet S.A.S.
+Registrant Address1:                         Calle 100# 8a-49 Torre B Oficina 507
+Registrant City:                             Bogota
+Registrant Postal Code:                      00000
+Registrant Country:                          Colombia
+Registrant Country Code:                     CO
+Registrant Phone Number:                     +571.6169916
+Registrant Email:                            cofounders@cointernet.co
+Administrative Contact ID:                   COFOUNDERS
+Administrative Contact Name:                 .CO Founders program
+Administrative Contact Organization:         .CO Internet S.A.S.
+Administrative Contact Address1:             Calle 100# 8a-49 Torre B Oficina 507
+Administrative Contact City:                 Bogota
+Administrative Contact Postal Code:          00000
+Administrative Contact Country:              Colombia
+Administrative Contact Country Code:         CO
+Administrative Contact Phone Number:         +571.6169916
+Administrative Contact Email:                cofounders@cointernet.co
+Billing Contact ID:                          COFOUNDERS
+Billing Contact Name:                        .CO Founders program
+Billing Contact Organization:                .CO Internet S.A.S.
+Billing Contact Address1:                    Calle 100# 8a-49 Torre B Oficina 507
+Billing Contact City:                        Bogota
+Billing Contact Postal Code:                 00000
+Billing Contact Country:                     Colombia
+Billing Contact Country Code:                CO
+Billing Contact Phone Number:                +571.6169916
+Billing Contact Email:                       cofounders@cointernet.co
+Technical Contact ID:                        COFOUNDERS
+Technical Contact Name:                      .CO Founders program
+Technical Contact Organization:              .CO Internet S.A.S.
+Technical Contact Address1:                  Calle 100# 8a-49 Torre B Oficina 507
+Technical Contact City:                      Bogota
+Technical Contact Postal Code:               00000
+Technical Contact Country:                   Colombia
+Technical Contact Country Code:              CO
+Technical Contact Phone Number:              +571.6169916
+Technical Contact Email:                     cofounders@cointernet.co
+Name Server:                                 NS1.P26.DYNECT.NET
+Name Server:                                 NS2.P26.DYNECT.NET
+Name Server:                                 NS3.P26.DYNECT.NET
+Name Server:                                 NS4.P26.DYNECT.NET
+Created by Registrar:                        INJECTCSR
+Last Updated by Registrar:                   NEULEVELCSR
+Domain Registration Date:                    Mon Apr 26 07:50:40 GMT 2010
+Domain Expiration Date:                      Thu Apr 25 23:59:59 GMT 2013
+Domain Last Updated Date:                    Tue Jul 06 18:54:16 GMT 2010
+
+>>>> Whois database was last updated on: Tue Jul 20 09:39:19 GMT 2010 <<<<
+.CO Internet, S.A.S., the Administrator for .CO, has collected this
+information for the WHOIS database through Accredited Registrars.
+This information is provided to you for informational purposes only and is
+designed to assist persons in determining contents of a domain name
+registration record in the .CO Internet registry database. .CO Internet makes this
+information available to you "as is" and does not guarantee its accuracy.
+By submitting a WHOIS query, you agree that you will use this data only for
+lawful purposes and that, under no circumstances will you use this data:
+(1) to allow, enable, or otherwise support the transmission of mass
+unsolicited, commercial advertising or solicitations via direct mail,
+electronic mail, or by telephone; (2) in contravention of any applicable
+data and privacy protection laws; or (3) to enable high volume, automated,
+electronic processes that apply to the registry (or its systems). Compilation,
+repackaging, dissemination, or other use of the WHOIS database in its
+entirety, or of a substantial portion thereof, is not allowed without
+.CO Internet’s prior written permission. .CO Internet reserves the right to modify or
+change these conditions at any time without prior or subsequent notification
+of any kind. By executing this query, in any manner whatsoever, you agree to
+abide by these terms.
+ 
+NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT INDICATIVE
+OF THE AVAILABILITY OF A DOMAIN NAME.
+ 
+All domain names are subject to certain additional domain name registration
+rules.  For details, please visit our site at www.whois.co <http://www.whois.co> .

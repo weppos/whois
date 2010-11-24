@@ -14,24 +14,38 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
 
   def test_status
     parser    = @klass.new(load_part('/jp/registered.txt'))
-    expected  = "Active"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/jp/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/jp/registered.txt')).available?
-    assert  @klass.new(load_part('/jp/available.txt')).available?
+    parser    = @klass.new(load_part('/jp/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/jp/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/jp/registered.txt')).registered?
-    assert !@klass.new(load_part('/jp/available.txt')).registered?
+    parser    = @klass.new(load_part('/jp/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/jp/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -42,6 +56,16 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
     assert_equal  expected, parser.instance_eval { @created_on }
 
     parser    = @klass.new(load_part('/jp/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/jp/reserved.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/jp/lack-of-created-and-expires.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
@@ -59,6 +83,18 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/jp/reserved.txt'))
+    expected  = Time.parse("2001/02/21 00:00:00 JST")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+  end
+
+  def test_updated_on_should_not_raise_outofrange
+    parser    = @klass.new(load_part('/jp/error_out-of-range.txt'))
+    expected  = Time.parse("2010-10-18 11:30:47 JST")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
@@ -68,6 +104,21 @@ class AnswerParserWhoisJprsJpJpTest < AnswerParserWhoisJprsJpTest
     assert_equal  expected, parser.instance_eval { @expires_on }
 
     parser    = @klass.new(load_part('/jp/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jp/reserved.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jp/lack-of-created-and-expires.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jp/lack-of-expires.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -91,24 +142,38 @@ class AnswerParserWhoisJprsJpNeJpTest < AnswerParserWhoisJprsJpTest
 
   def test_status
     parser    = @klass.new(load_part('/ne.jp/registered.txt'))
-    expected  = "Connected (2010/09/30)"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/ne.jp/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/ne.jp/registered.txt')).available?
-    assert  @klass.new(load_part('/ne.jp/available.txt')).available?
+    parser    = @klass.new(load_part('/ne.jp/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/ne.jp/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/ne.jp/registered.txt')).registered?
-    assert !@klass.new(load_part('/ne.jp/available.txt')).registered?
+    parser    = @klass.new(load_part('/ne.jp/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/ne.jp/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 

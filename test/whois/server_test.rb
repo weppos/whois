@@ -3,32 +3,41 @@ require 'test_helper'
 class ServerTest < Test::Unit::TestCase
 
   def setup
-    Whois::Server.class_eval { class_variable_set("@@definitions", { :tld => [], :ipv4 =>[], :ipv6 => [] }) }  
+    Whois::Server.class_eval { class_variable_set("@@definitions", { :tld => [], :ipv4 =>[], :ipv6 => [] }) }
   end
 
- 
+  def teardown
+    Whois::Server.definitions.clear
+  end
+
+
+  def test_guess_should_recognize_tld
+    Whois::Server.expects(:find_for_tld).never
+    assert Whois::Server.guess(".com")
+  end
+
   def test_guess_should_recognize_email
     Whois::Server.expects(:find_for_email).with("email@example.org").returns(true)
     assert Whois::Server.guess("email@example.org")
   end
 
-  def test_guess_should_recognize_tld
-    Whois::Server.expects(:find_for_tld).with("google.com").returns(true)
+  def test_guess_should_recognize_domain
+    Whois::Server.expects(:find_for_domain).with("google.com").returns(true)
     assert Whois::Server.guess("google.com")
   end
 
   def test_guess_should_recognize_ipv4
-    Whois::Server.expects(:find_for_ipv4).with("192.168.1.1").returns(true)
+    Whois::Server.expects(:find_for_ip).with("192.168.1.1").returns(true)
     assert Whois::Server.guess("192.168.1.1")
   end
 
   def test_guess_should_recognize_ipv6
-    Whois::Server.expects(:find_for_ipv6).with("2001:0db8:85a3:0000:0000:8a2e:0370:7334").returns(true)
+    Whois::Server.expects(:find_for_ip).with("2001:0db8:85a3:0000:0000:8a2e:0370:7334").returns(true)
     assert Whois::Server.guess("2001:0db8:85a3:0000:0000:8a2e:0370:7334")
   end
 
   def test_guess_should_recognize_ipv6_with_zeros_group
-    Whois::Server.expects(:find_for_ipv6).with("2002::1").returns(true)
+    Whois::Server.expects(:find_for_ip).with("2002::1").returns(true)
     assert Whois::Server.guess("2002::1")
   end
 
@@ -37,20 +46,55 @@ class ServerTest < Test::Unit::TestCase
   end
 
 
-  def test_find_for_tld_should_not_consider_dot_as_regexp_instruction
+  def test_guess_with_tld_should_return_iana_adapter
+    assert_equal Whois::Server.factory(:tld, ".", "whois.iana.org"), Whois::Server.guess(".test")
+  end
+
+  def test_guess_with_idn_tld_should_return_iana_adapter
+    assert_equal Whois::Server.factory(:tld, ".", "whois.iana.org"), Whois::Server.guess(".xn--fiqs8s")
+  end
+
+  def test_find_for_domain_should_lookup_definition_and_return_adapter
+    Whois::Server.define(:tld, ".test", "whois.test")
+
+    assert_equal Whois::Server.factory(:tld, ".test", "whois.test"), Whois::Server.guess("example.test")
+  end
+
+  def test_find_for_domain_should_not_consider_dot_as_regexp_instruction
     Whois::Server.define(:tld, ".no.com", "whois.no.com")
     Whois::Server.define(:tld, ".com", "whois.com")
-    assert_equal "whois.com", Whois::Server.guess("antoniocangiano.com").host
+
+    assert_equal Whois::Server.factory(:tld, ".com", "whois.com"), Whois::Server.guess("antoniocangiano.com")
+  end
+
+  def test_find_for_ipv4_should_lookup_definition_and_return_adapter
+    Whois::Server.define(:ipv4, "192.168.1.0/10", "whois.test")
+
+    assert_equal Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.test"), Whois::Server.guess("192.168.1.1")
+  end
+
+  def test_find_for_ipv4_should_raise_if_definition_is_not_found
+    Whois::Server.define(:ipv4, "192.168.1.0/10", "whois.test")
+
+    assert_raise(Whois::AllocationUnknown) { Whois::Server.guess("192.192.0.1") }
+  end
+
+  def test_find_for_ipv6_should_lookup_definition_and_return_adapter
+    Whois::Server.define(:ipv6, "2001:0200::/23", "whois.test")
+
+    assert_equal Whois::Server.factory(:ipv6, "2001:0200::/23", "whois.test"), Whois::Server.guess("2001:0200::1")
+  end
+
+  def test_find_for_ipv6_should_raise_if_definition_is_not_found
+    Whois::Server.define(:ipv6, "::1", "whois.test")
+
+    assert_raise(Whois::AllocationUnknown) { Whois::Server.guess("2002:0300::1") }
   end
 
   def test_find_for_ipv6_should_factory_ipv6_with_ipv4_compatibility
-    Whois::Server.define(:ipv6, "::192.168.1.1", "whois.foo")
-    Whois::Server.expects(:factory).with(:ipv6, any_parameters).returns(true)
-    assert Whois::Server.guess("::192.168.1.1")
-  end
+    Whois::Server.define(:ipv6, "::192.168.1.1", "whois.test")
 
-  def test_guess_should_raise_servernotfound_with_unrecognized_query
-    assert_raise(Whois::ServerNotFound) { Whois::Server.guess("xyz") }
+    assert_equal Whois::Server.factory(:ipv6, "::192.168.1.1", "whois.test"), Whois::Server.guess("::192.168.1.1")
   end
 
 
@@ -100,6 +144,5 @@ class ServerTest < Test::Unit::TestCase
     server = Whois::Server.factory(:tld, ".foo", "whois.foo", :adapter => Whois::Server::Adapters::None, :foo => "bar")
     assert_equal server.options, { :foo => "bar" } 
   end
-
 
 end

@@ -1,0 +1,32 @@
+Domain Name: google.com.tw
+   Registrant:
+      Google Inc.
+      DNS Admin  dns-admin@google.com
+      +1.6502530000
+      +1.6506188571
+      1600 Amphitheatre Parkway  
+      Mountain View, CA
+      US
+
+   Administrative Contact:
+      DNS Admin  dns-admin@google.com
+      +1.6502530000
+      +1.6506188571
+
+   Technical Contact:
+      DNS Admin  dns-admin@google.com
+      +1.6502530000
+      +1.6506188571
+
+   Record expires on 2011-11-09 (YYYY-MM-DD)
+   Record created on 2000-08-29 (YYYY-MM-DD)
+
+   Domain servers in listed order:
+      ns1.google.com      
+      ns2.google.com      
+      ns3.google.com      
+      ns4.google.com      
+
+Registration Service Provider: Markmonitor, Inc.
+
+[Provided by NeuStar Registry Gateway Services]

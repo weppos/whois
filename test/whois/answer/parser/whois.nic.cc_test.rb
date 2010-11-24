@@ -35,18 +35,27 @@ operational stability.  VeriSign may restrict or terminate your access to the \
 Whois database for failure to abide by these terms of use. VeriSign \
 reserves the right to modify these terms at any time. 
 EOS
-    assert_equal  expected,
-                  @klass.new(load_part('/registered.txt')).disclaimer
-    assert_equal  expected,
-                  @klass.new(load_part('/available.txt')).disclaimer
+
+    parser    = @klass.new(load_part('/registered.txt'))
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    assert_equal  expected, parser.disclaimer
+    assert_equal  expected, parser.instance_eval { @disclaimer }
   end
 
 
   def test_domain
-    assert_equal  "google.cc",
-                  @klass.new(load_part('/registered.txt')).domain
-    assert_equal  "u34jedzcq.cc",
-                  @klass.new(load_part('/available.txt')).domain
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "google.cc"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = "u34jedzcq.cc"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
@@ -56,65 +65,114 @@ EOS
 
 
   def test_referral_whois
-    assert_equal  "whois.markmonitor.com",
-                  @klass.new(load_part('/registered.txt')).referral_whois
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).referral_whois
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "whois.markmonitor.com"
+    assert_equal  expected, parser.referral_whois
+    assert_equal  expected, parser.instance_eval { @referral_whois }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.referral_whois
+    assert_equal  expected, parser.instance_eval { @referral_whois }
   end
 
   def test_referral_url
-    assert_equal  "http://www.markmonitor.com",
-                  @klass.new(load_part('/registered.txt')).referral_url
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).referral_url
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "http://www.markmonitor.com"
+    assert_equal  expected, parser.referral_url
+    assert_equal  expected, parser.instance_eval { @referral_url }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.referral_url
+    assert_equal  expected, parser.instance_eval { @referral_url }
   end
 
 
   def test_status
-    assert_equal  ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED", "CLIENT-DELETE-PROHIBITED"],
-                  @klass.new(load_part('/registered.txt')).status
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).status
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED", "CLIENT-DELETE-PROHIBITED"]
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/registered.txt')).available?
-    assert  @klass.new(load_part('/available.txt')).available?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/registered.txt')).registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
   def test_created_on
-    assert_equal  Time.parse("1999-06-07"),
-                  @klass.new(load_part('/registered.txt')).created_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).created_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("1999-06-07")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    assert_equal  Time.parse("2009-05-06"),
-                  @klass.new(load_part('/registered.txt')).updated_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).updated_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2009-05-06")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_equal  Time.parse("2010-06-07"),
-                  @klass.new(load_part('/registered.txt')).expires_on
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).expires_on
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = Time.parse("2010-06-07")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
 
   def test_registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/registered.txt')).registrar
-    assert_equal  nil,
-                  @klass.new(load_part('/available.txt')).registrar
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
   end
 
 

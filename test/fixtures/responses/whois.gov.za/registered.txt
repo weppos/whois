@@ -1,0 +1,30 @@
+1a. Domain Name  : dha.gov.za
+1b. Select One : New Domain name
+2a. Department Name / Registrant : Department of Home Affairs
+2b. Postal Address  : Private Bag x114, Pretoria
+2c. Postal Code  : 0001
+3a. Admin Contact Name : Serfontein. MJ
+3b. Title\Position  : Data Technologist
+3c. Department : Department of Home Affairs 
+3d. Telephone :  012 3148318
+3e. Fax :  012 3252427
+3f. Postal Address  : Private Bag x114, Pretoria
+3g. Postal Code  :  0001
+3h. Cell Phone : 
+3i. Email  : marykes@dbs1.pwv.gov.za
+4a. Tech Contact Name  : Phillip Brussow
+4b. Title\Position  :  LAN Manager
+4c. Department : Department of Home Affairs 
+4d. Telephone : 012 3148131 
+4e. Fax :  012 325 2427
+4f. Postal Address  :  Private Bag X1114, Pretoria
+4g. Postal Code  : 0001
+4h. Cell Phone: 
+4i. Email  : philip@dbs1.pwv.gov.za 
+5a. Server hostname : mail.dha.gov.za 
+5b. Server IP Address : 10.130.66.50 
+8a. Place  : Pretoria 
+8b. Date : 10 November 2003 
+8c. Name of Applicant  :  H. Slabberts
+ 
+**End**

@@ -1,6 +1,8 @@
 .DS_Store
 nbproject
 .idea
+.rbc
 pkg
-doc
+rdoc
 coverage
+.autotest

@@ -9,21 +9,75 @@ class AnswerParserWhoisNicIoTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_disclaimer
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).disclaimer }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).disclaimer }
+  end
+
+
+  def test_domain
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = "drop.io"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = "u34jedzcq.io"
+    assert_equal  expected, parser.domain
+    assert_equal  expected, parser.instance_eval { @domain }
+  end
+
+  def test_domain_id
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
+  end
+
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_url }
+  end
+
+
   def test_status
-    assert_equal  :registered,
-                  @klass.new(load_part('/registered.txt')).status
-    assert_equal  :available,
-                  @klass.new(load_part('/available.txt')).status
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    assert !@klass.new(load_part('/registered.txt')).available?
-    assert  @klass.new(load_part('/available.txt')).available?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    assert  @klass.new(load_part('/registered.txt')).registered?
-    assert !@klass.new(load_part('/available.txt')).registered?
+    parser    = @klass.new(load_part('/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
   end
 
 
@@ -43,9 +97,61 @@ class AnswerParserWhoisNicIoTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_registrar
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).registrar }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).registrar }
+  end
+
+  def test_registrant_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).registrant_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).registrant_contact }
+  end
+
+  def test_admin_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).admin_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).admin_contact }
+  end
+
+  def test_technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).technical_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).technical_contact }
+  end
+
+
   def test_nameservers
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).nameservers }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).nameservers }
+  end
+
+
+  def test_changed?
+    parser_r1 = @klass.new(load_part('/registered.txt'))
+    parser_r2 = @klass.new(load_part('/registered.txt'))
+    parser_a1 = @klass.new(load_part('/available.txt'))
+    parser_a2 = @klass.new(load_part('/available.txt'))
+
+    assert !parser_r1.changed?(parser_r1)
+    assert !parser_r1.changed?(parser_r2)
+    assert  parser_r1.changed?(parser_a1)
+
+    assert !parser_a1.changed?(parser_a1)
+    assert !parser_a1.changed?(parser_a2)
+    assert  parser_a1.changed?(parser_r1)
+  end
+
+  def test_unchanged?
+    parser_r1 = @klass.new(load_part('/registered.txt'))
+    parser_r2 = @klass.new(load_part('/registered.txt'))
+    parser_a1 = @klass.new(load_part('/available.txt'))
+    parser_a2 = @klass.new(load_part('/available.txt'))
+
+    assert  parser_r1.unchanged?(parser_r1)
+    assert  parser_r1.unchanged?(parser_r2)
+    assert !parser_r1.unchanged?(parser_a1)
+
+    assert  parser_a1.unchanged?(parser_a1)
+    assert  parser_a1.unchanged?(parser_a2)
+    assert !parser_a1.unchanged?(parser_r1)
   end
 
 end

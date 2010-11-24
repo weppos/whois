@@ -1,0 +1,45 @@
+
+Servidor Whois de NIC-Venezuela (.VE)
+
+Este servidor contiene informacion autoritativa exclusivamente de dominios .VE
+Cualquier consulta sobre este servicio, puede hacerla al correo electronico whois@nic.ve
+
+Titular: 
+Instra  Corporation Pty Ltd  (zumba.com.ve-dom)		instracorp@nameaction.com.ve
+   Instra Corporation Pty Ltd
+   GPO Box 988
+   Melbourne  AU
+   3-97831800 x61 (FAX) 3-97836844
+
+   Nombre de Dominio: zumba.com.ve
+
+   Contacto Administrativo: 
+      Instra  Corporation Pty Ltd  (zumba.com.ve-adm)		instracorp@nameaction.com.ve
+      Instra Corporation Pty Ltd
+      GPO Box 988
+      Melbourne  AU
+      3-97831800 x61 (FAX) 3-97836844
+   
+   Contacto Tecnico: 
+      Instra  Corporation Pty Ltd  (zumba.com.ve-tec)		instracorp@nameaction.com.ve
+      Instra Corporation Pty Ltd
+      GPO Box 988
+      Melbourne  AU
+      3-97831800 x61 (FAX) 3-97836844
+   
+   Contacto de Cobranza: 
+      Juan Enrique Sanchez Serrano  (zumba.com.ve-bil)		mail@nameaction.com
+      NameAction Inc
+      Av. Providencia 201, Of. 22
+      Santiago  CL
+      2691300 x562 (FAX) 3437840
+
+   Fecha de Vencimiento: 2011-10-27 12:23:43
+   Ultima Actualizacion: 
+   Fecha de Creacion: 2010-10-27 12:23:43
+
+   Estatus del dominio: ACTIVO
+
+
+NIC-Venezuela - CONATEL
+http://www.nic.ve

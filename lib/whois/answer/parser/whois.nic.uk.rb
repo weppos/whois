@@ -32,20 +32,32 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
+      # @see http://www.nominet.org.uk/other/whois/detailedinstruct/
+      #
       class WhoisNicUk < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.*?)\n/
-            $1.strip
+          @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
+            case $1.downcase
+              when "registered until renewal date."         then :registered
+              when "registration request being processed."  then :registered
+              when "renewal request being processed."       then :registered
+              # NEWSTATUS
+              when "renewal required."                      then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /This domain name has not been registered/)
+          @available  ||= !!(content_for_scanner =~ /This domain name has not been registered/)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -70,20 +82,28 @@ module Whois
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.split(" ").first.downcase }
+            $1.split("\n").
+              reject { |value| value =~ /No name servers listed/ }.
+              map { |value| value.strip.split(/\s+/).first }
           else
             []
           end
         end
 
 
+        # NEWPROPERTY
         def valid?
-          !invalid?
+          @valid ||= !invalid?
         end
 
+        # NEWPROPERTY
         def invalid?
           @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
         end
+
+        # NEWPROPERTY
+        # def suspended?
+        # end
 
       end
 

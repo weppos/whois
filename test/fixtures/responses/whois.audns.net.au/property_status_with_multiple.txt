@@ -1,0 +1,22 @@
+Domain Name:                     pinewood.com.au
+Last Modified:                   11-Oct-2010 00:00:33 UTC
+Registrar ID:                    Melbourne IT
+Registrar Name:                  Melbourne IT
+Status:                          serverHold (Expired)
+Status:                          serverUpdateProhibited (Expired)
+
+Registrant:                      PINEWOOD PROLAB PTY LTD
+Registrant ID:                   ACN 120 562 905
+Eligibility Type:                Company
+
+Registrant Contact ID:           Z116060879386417
+Registrant Contact Name:         PETER TONOLI
+Registrant Contact Email:        Visit whois.ausregistry.com.au for Web based WhoIs
+
+Tech Contact ID:                 Z116060879386417
+Tech Contact Name:               PETER TONOLI
+Tech Contact Email:              Visit whois.ausregistry.com.au for Web based WhoIs
+
+Name Server:                     ns1.dreamhost.com
+Name Server:                     ns2.dreamhost.com
+Name Server:                     ns3.dreamhost.com

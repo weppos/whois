@@ -1,10 +1,385 @@
 = Changelog
 
-== master
+== Release 1.6.4
+
+* FIXED: With some .pl domains, whois.dns.pl parser returns invalid values for nameservers.
+
+* FIXED: The whois.pnina.ps server injects a NODNS.NS string when a nameserver is not set. The parser should ignore it.
+
+* FIXED: whois.nic.ve must support :suspended status.
+
+
+== Release 1.6.3
+
+* FIXED: whois.nic.kz doesn't recognize multiline status
+
+* FIXED: jprs.jp domain parser bug with empty date fields (#60)
+
+
+== Release 1.6.2
+
+* SERVER: Updated the .sg TLD definition.
+
+* SERVER: Updated the .th TLD definition.
+
+* SERVER: Updated the .org.za TLD definition.
+
+* NEW: Added simple .sg TLD parser (whois.sgnic.sg).
+
+* NEW: Added .sh TLD parser (whois.nic.sh).
+
+* NEW: Added simple .sk TLD parser (whois.sgnic.sg).
+
+* NEW: Added simple .sl TLD parser (whois.nic.sl).
+
+* NEW: Added simple .th TLD parser (whois.thnic.co.th).
+
+* NEW: Added simple .tw TLD parser (whois.twnic.net.tw).
+
+* NEW: Added simple .ac.uk, .gov.uk TLD parser (whois.ja.net).
+
+* NEW: Added .org.za TLD parser (whois.org.za).
+
+* NEW: Added simple .gov.za TLD parser (whois.gov.za).
+
+* NEW: Added .co.za TLD parser (whois.coza.net.za).
+
+* NEW: Added simple .ci TLD parser (whois.nic.ci). (#39)
+
+* NEW: Added simple .gy TLD parser (whois.registry.gy). (#45)
+
+* NEW: Added simple .hm TLD parser (whois.registry.hm). (#46)
+
+* NEW: Added simple .pl TLD parser (whois.dns.pl).
+
+* NEW: Added .co.pl TLD parser (whois.co.pl).
+
+* NEW: Added simple .pr TLD parser (whois.nic.pr).
+
+* FIXED: The CLI help message uses whois instead or ruby-whois.
+
+
+== Release 1.6.1
+
+* FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
+
+
+== Release 1.6.0
+
+* SERVER: Updated the .nc TLD definition.
+
+* SERVER: Updated the .nf TLD definition.
+
+* SERVER: Updated the .ng TLD definition.
+
+* SERVER: Updated the .pe TLD definition.
+
+* SERVER: Updated the .sb TLD definition.
+
+* SERVER: Updated the .ki/.mu TLD definition.
+
+* SERVER: Updated the .tf TLD definition.
+
+* NEW: Added simple .mg TLD parser (whois.nic.mg).
+
+* NEW: Added simple .ms TLD parser (whois.nic.ms).
+
+* NEW: Added simple .ms TLD parser (whois.domainregistry.my).
+
+* NEW: Added simple .na TLD parser (whois.na-nic.com.na).
+
+* NEW: Added simple .nf TLD parser (whois.nic.net.nf).
+
+* NEW: Added simple .ng TLD parser (whois.nic.net.ng).
+
+* NEW: Added simple .pe TLD parser (kero.yachay.pe).
+
+* NEW: Added simple .ps TLD parser (whois.pnina.ps).
+
+* NEW: Added simple .ki TLD parser (whois.nic.ki).
+
+* NEW: Added .tm TLD parser (whois.nic.tm).
+
+* NEW: Added .tz TLD parser (whois.tznic.or.tz).
+
+* CHANGED: Completed .md TLD parser (whois.nic.md).
+
+* CHANGED: Completed .io TLD parser (whois.nic.io).
+
+* FIXED: Fixed Unknown status `Registration request being processed.' for whois.nic.uk.
+
+* FIXED: whois.nic.ve supports expires_on.
+
+* FIXED: With some .uk domains, whois.nic.uk parser returns invalid values for nameservers.
+
+* FIXED: whois.audns.net.au record can contain multiple statuses.
+
+
+== Release 1.5.1
+
+* NEW: Added simple .kg TLD parser (whois.domain.kg).
+
+* NEW: Added .md TLD parser (whois.nic.md).
+
+* FIXED: Fixed Unknown status `Renewal request being processed.' for whois.nic.uk.
+
+* FIXED: With some .cz domains, whois.nic.cz parser returns invalid values for nameservers.
+
+
+== Release 1.5.0
+
+WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
+
+* CHANGED: Ruby 1.8.7 or newer is required.
+
+* FIXED: Fixed Unknown status `CLIENT DELETE PROHIBITED' for whois.registry.in.
+
+* REMOVED: Remove deprecated Whois::Answer::Parser::Base methods:
+  * #registrant
+  * #admin
+  * #technical
+
+* REMOVED: Remove deprecated Whois::Answer::Part#response property.
+
+
+== Release 1.3.10
+
+* CHANGED: Standardized #status property for the following parsers (#5)
+  * whois.aero
+  * whois.aeda.net.ae
+  * whois.audns.net.au
+  * whois.cat
+  * whois.cctld.uz
+  * whois.co.ug
+  * whois.denic.de
+  * whois.dk-hostmaster.dk
+  * whois.dns.be
+  * whois.dns.lu
+  * whois.dns.pt
+  * whois.domainregistry.ie
+  * whois.in.ua
+  * whois.jprs.jp
+  * whois.net.ua
+  * whois.nic-se.se
+  * whois.nic.am
+  * whois.nic.asia
+  * whois.nic.at
+  * whois.nic.coop
+  * whois.nic.fr
+  * whois.nic.ht
+  * whois.nic.kz
+  * whois.nic.la
+  * whois.nic.mu
+  * whois.nic.nu
+  * whois.nic.org.uy
+  * whois.nic.travel
+  * whois.nic.uk
+  * whois.nic.ve
+  * whois.norid.no
+  * whois.register.bg
+  * whois.registry.in
+  * whois.rotld.ro
+  * whois.srs.net.nz
+
+* FIXED: Property cache is missing for some parsers (#18)
+
+* FIXED: In some circumstances the whois.jprs.js parser may raise 
+  an Argument out of range error trying to parse the #updated_on property.
+
+* FIXED: The whois.nic.uk parser fails to parse #nameservers when
+  the domain is suspended.
+
+
+== Release 1.3.10
+
+* SERVER: Removed the .fed.us TLD definition.
+
+* NEW: Added simple .je TLD parser (whois.je).
+
+* NEW: Added simple .ke TLD parser (whois.kenic.or.ke).
+
+* NEW: Added simple .li TLD parser (whois.nic.li).
+
+* CHANGED: Force whois.denic.de WHOIS output to be always UTF-8,
+  otherwise some queries will fail (#51)
+
+    $ ruby-whois hosteurope.de
+    % Error: 55000000013 Invalid charset for response
+
+* CHANGED: Standardized whois.nic.gov #status property.
+
+
+== Release 1.3.9
+
+* SERVER: Sync definitions with Debian whois 5.0.8:
+    * Updated the .bb, .ps, and .lk TLD definitions.
+
+* NEW: Added simple .dz TLD parser (whois.nic.dz).
+
+* NEW: Added simple .fi TLD parser (whois.ficora.fi).
+
+* NEW: Added simple .fj TLD parser (whois.usp.ac.fj).
+
+* NEW: Added simple .gg TLD parser (whois.gg).
+
+* NEW: Added simple .gs TLD parser (whois.nic.gs).
+
+* NEW: Added simple .il TLD parser (whois.isoc.org.il).
+
+* NEW: Added simple .ir TLD parser (whois.nic.ir).
+
+* CHANGED: Standardized whois.pandi.or.id #status property,
+  it now returns symbols instead of strings.
+
+* FIXED: Compatibility with the new whois.cira.ca record schema.
+
+
+== Release 1.3.8
+
+* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
+  when the response from the Verisign database returns a "not defined" value
+  for the Referral Whois Server (#42)
+
+
+== Release 1.3.7
+
+* SERVER: Updated the .ci TLD definition.
+
+* SERVER: Removed the .co.uk TLD definition.
+
+* NEW: Added simple .priv.at TLD parser (whois.nic.priv.at).
+
+* NEW: Added simple .cx TLD parser (whois.nic.cx).
+
+* NEW: Added simple .bo TLD parser (whois.nic.bo).
+
+* NEW: Added simple .co.ca TLD parser (whois.co.ca).
+
+* NEW: Added simple .ck TLD parser (whois.nic.ck).
+
+* NEW: Added simple .cl TLD parser (whois.nic.cl).
+
+* NEW: Added simple .cm TLD parser (whois.netcom.cm).
+
+* NEW: Added simple .cz TLD parser (whois.nic.cz).
+
+* CHANGED: Standardized whois.nic.af #status property,
+  it now returns symbols instead of strings.
+
+* CHANGED: Standardized whois.arnes.si #status property,
+  it now returns symbols instead of strings.
+
+
+== Release 1.3.6
+
+* CHANGED: Deprecated Whois::Answer::Part#response.
+
+* FIXED: whois.denic.de parser is not compatible with Denic response v 2.0.
+
+
+== Release 1.3.5
+
+* SERVER: Updated the .so TLD definition (#36).
+
+* NEW: Added simple .ug TLD parser (whois.co.ug) (#35). [DerGuteMoritz]
+
+* FIXED: ruby-whois executable is not installed when the Gem is installed.
+
+
+== Release 1.3.4
+
+* FIXED: With some .ie domains, whois.dns.be parser returns invalid values for nameservers.
+
+* FIXED: With some .be domains, whois.dmainregistry.ie parser returns invalid values for nameservers.
+
+
+== Release 1.3.3
+
+* NEW: Ability to parse Registrar for .ca TLD parser. [aeden]
+
+* FIXED: With some .nl domains, whois.domain-registry.nl parser returns invalid values for nameservers.
+
+* FIXED: With some .mx domains, whois.nic.mx parser returns invalid values for nameservers.
+
+* FIXED: With some .me domains, whois.meregistry.net parser returns invalid values for nameservers.
+
+
+== Release 1.3.2
+
+* FIXED: .nl TLD parser doesn't understand quarantine status (#34).
+
+* CHANGED: Parser aliases are now created aliasing constants instead subclassing.
+
+* CHANGED: Updated .hk parser to whois.hkirc.hk (#30).
+
+* CHANGED: Updated .tw parser to whois.twnic.net.tw (#31).
+
+
+== Release 1.3.1
+
+* SERVER: Added the following 10 new IDN TLD:
+    * .xn--fzc2c9e2c (.ලංකා, Sri Lanka)
+    * .xn--j6w193g (.香港, Hong Kong)
+    * .xn--kprw13d (.台灣, Taiwan)
+    * .xn--kpry57d (.台湾, Taiwan)
+    * .xn--mgbayh7gpa (.الاردن, Jordan)
+    * .xn--o3cw4h (.ไทย, Thailand)
+    * .xn--pgbs0dh (.تونس, Tunisia)
+    * .xn--wgbh1c (.مصر, Egypt)
+    * .xn--xkc2al3hye2a (.இலங்கை, Sri Lanka)
+    * .xn--ygbi2ammx (.فلسطين, Palestinian Territory, Occupied)
+
+* SERVER: Sync definitions with Debian whois 5.0.7:
+    * Added new IPv4 allocations.
+    * Updated the .bd, .bo, .cm, .cu, .dz, .gr, .lb, .ni, .rw, .tw, and .tz TLD servers.
+
+* REMOVED: Deprecated Whois::Answer::Parser.properties method.
+
+
+== Release 1.3.0
+
+* NEW: Ability to query IANA for TLD WHOIS information. [aadlani]
+
+    Whois.query(".com")
+    # => IANA WHOIS response for .com TLD
+
+    Whois.query(".invalid")
+    # => IANA WHOIS response for unassigned TLD
+
+* NEW: Ability to compare two Server adapters for equality.
+
+    Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
+    # => true
+
+    Whois::Server.factory(:ipv4, "192.168.1.0", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
+    # => false
+
+* CHANGED: Renamed Scanners::VerisignScanner to Scanners::Verisign.
+
+* CHANGED: Excluded test folder from the packaged .gem file to reduce the size of the final packaged library.
+
+
+== Release 1.2.2
+
+* SERVER: Sync definitions with Debian whois 5.0.6.
+
+* SERVER: Added new IPv4, IPv6 allocations (whois 5.0.6).
+
+* SERVER: Added/Updated the .priv.at, .dj, .ls TLD definition (whois 5.0.6).
+
+* SERVER: Added xn--mgbaam7a8h (United Arabs Emirates), .xn--mgberp4a5d4ar (Saudi Arabia), .xn--p1ai (Russian Federation), .xn--fiqs8s (China), .xn--fiqz9s (China) and .xn--wgbh1c (Egypt) TLD servers. (whois 5.0.6).
+
+* SERVER: Killed .yu TLD, phased out on 30 March 2009 (whois 5.0.6).
 
 * NEW: Added .to TLD parser (whois.tonic.to).
 
-* FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains [milk1000cc]
+* FIXED: whois.jprs.jp doesn't fully understand answers for .net.jp domains. [milk1000cc]
+
+* CHANGED: The .co TLD now has a WHOIS interface (whois.nic.co). Added simple .co parser.
+
+* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (#29).
+
+* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (#27).
 
 
 == master
@@ -53,7 +428,7 @@ cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, 
 
 == Release 1.1.7
 
-* FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (closes #24)
+* FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (#24)
 
 
 == Release 1.1.6
@@ -184,7 +559,7 @@ cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, 
 
 == Release 1.0.7
 
-* FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (closes #19).
+* FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (#19).
 
 
 == Release 1.0.6
@@ -218,11 +593,11 @@ cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, 
 
 * SERVER: Updated the .dj TLD definition (whois 5.0.1).
 
-* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (closes #15)
+* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (#15)
 
-* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (closes #17)
+* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (#17)
 
-* NEW: Support for 'nameservers' property for the whois.eu parser. (closes #16)
+* NEW: Support for 'nameservers' property for the whois.eu parser. (#16)
 
 * NEW: Support for 'nameservers' property for the whois.meregistry.net parser.
 
@@ -246,7 +621,7 @@ cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, 
 
 * SERVER: Updated web address for the .gt TLD [axic]
 
-* SERVER: Updated web address for the .co TLD (closes #13)
+* SERVER: Updated web address for the .co TLD (#13)
 
 * NEW: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
@@ -256,7 +631,7 @@ cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, 
 
 * FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
 
-* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (closes #14)
+* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (#14)
 
 * FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
 

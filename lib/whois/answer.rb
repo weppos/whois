@@ -55,7 +55,7 @@ module Whois
     # or is a string and has the same content.
     def ==(other)
       (other.equal?(self)) ||
-      # This option should be deprecated
+      # TODO: This option should be deprecated
       (other.is_a?(String) && other == self.to_s) ||
       (other.is_a?(Answer) && other.to_s == self.to_s)
     end
@@ -66,8 +66,7 @@ module Whois
     end
 
 
-    # Returns the content of this answer as a string.
-    # This method joins all answer parts into a single string
+    # This method joins and returns all answer parts into a single string
     # and separates each response with a newline character.
     #
     #   answer = Whois::Answer.new([Whois::Answer::Part.new("First answer.")])
@@ -78,8 +77,12 @@ module Whois
     #   answer.content
     #   # => "First answer.\nSecond answer."
     #
+    # ==== Returns
+    #
+    # String:: The content of this answer.
+    #
     def content
-      @content ||= parts.map(&:response).join("\n")
+      @content ||= parts.map(&:body).join("\n")
     end
 
 
@@ -93,6 +96,15 @@ module Whois
     #
     # This method should provide a bulletproof way to detect whether this answer
     # changed if compared with <tt>other</tt>.
+    #
+    # ==== Parameters
+    #
+    # other:: The Whois::Answer to compare.
+    #
+    # ==== Returns
+    #
+    # Boolean
+    #
     def changed?(other)
       !unchanged?(other)
     end
@@ -108,14 +120,24 @@ module Whois
     end
 
 
-    # Lazy-loads and returns a <tt>Whois::Answer::Parser</tt> proxy for current answer.
+    # Lazy-loads and returns the parser proxy for current answer.
+    #
+    # ==== Returns
+    #
+    # Whois::Answer::Parser
+    #
     def parser
       @parser ||= Parser.new(self)
     end
 
 
-    # Returns a Hash containing all supported properties for this Answer
+    # Returns a Hash containing all supported properties for this answer
     # along with corresponding values.
+    #
+    # ==== Returns
+    #
+    # Hash
+    #
     def properties
       hash = {}
       Parser::PROPERTIES.each { |property| hash[property] = send(property) }
@@ -125,6 +147,15 @@ module Whois
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
     # See also <tt>Whois::Answer::Parser.supported?</tt>.
+    #
+    # ==== Parameters
+    #
+    # property::  A Symbol with the property name to check.
+    #
+    # ==== Returns
+    #
+    # Boolean
+    #
     def property_supported?(property)
       parser.property_supported?(property)
     end

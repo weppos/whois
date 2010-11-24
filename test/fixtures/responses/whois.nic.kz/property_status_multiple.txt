@@ -1,0 +1,39 @@
+Whois Server for the KZ top level domain name.
+This server is maintained by KazNIC Organization, a ccTLD manager for Kazakhstan Republic.
+
+Domain Name............: tabu.kz
+
+Organization Using Domain Name
+Name...................: Alexey Chumakov
+Organization Name......: Alexey Chumakov
+Street Address.........: UA 13-25-27
+City...................: Tashkent
+State..................: 
+Postal Code............: 700194
+Country................: UZ
+
+Administrative Contact/Agent
+NIC Handle.............: HOSTERKZ-59014
+Name...................: Hostmaster
+Phone Number...........: +7.7212501060 
+Fax Number.............: +7.7212501060 
+Email Address..........: kohaner@gmail.com
+
+Nameserver in listed order
+
+Primary server.........: ns1.regi.kz
+Primary ip address.....: 212.154.192.96
+
+Secondary server.......: ns2.regi.kz
+Secondary ip address...: 95.57.119.96
+
+
+Domain created: 2010-10-04 17:24:09.0
+Last modified : 2010-10-04 17:32:58.0
+Domain status : clientDeleteProhibited - 
+                clientRenewProhibited - 
+                clientTransferProhibited - 
+                
+Registar created: HOSTER.KZ
+Current Registar: HOSTER.KZ
+

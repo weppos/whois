@@ -35,17 +35,24 @@ module Whois
       class WhoisDnsBe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+)\n/
-            $1
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "registered" then :registered
+              when "free"       then :available
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            Whois.bug!(ParserError, "Unable to parse status.")
           end
         end
 
         property_supported :available? do
-          @available ||= (status == "FREE")
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -62,7 +69,7 @@ module Whois
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Nameservers:\n((.+\n)+)\n/
-            $1.split("\n").map(&:strip)
+            $1.split("\n").map { |value| value.strip.split(" ").first }
           else
             []
           end

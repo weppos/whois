@@ -35,15 +35,15 @@ module Whois
       class WhoisNicAg < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Status:(.*?)\n+/).flatten
+          @status ||= content_for_scanner.scan(/Status:(.+?)\n+/).flatten
         end
 
         property_supported :available? do
-          @available ||= (content_for_scanner.strip == "NOT FOUND")
+          @available  ||= (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

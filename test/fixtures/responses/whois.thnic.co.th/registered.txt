@@ -1,0 +1,27 @@
+
+Whois Server Version 1.5
+
+Domain: GOOGLE.CO.TH
+ACE: GOOGLE.CO.TH
+Registrar: T.H.NIC Co., Ltd.
+Name Server: NS1.GOOGLE.COM
+Name Server: NS2.GOOGLE.COM
+Name Server: NS3.GOOGLE.COM
+Name Server: NS4.GOOGLE.COM
+Status: ACTIVE
+Updated Date: 23 Sep 2010
+Created Date: 8 Oct 2004
+Renew Date: 8 Oct 2010
+Exp Date: 7 Oct 2011
+Domain Holder: Google Inc.
+            2400 Bayshore Parkway, Mountain Veiw, CA
+            94043
+            US
+
+Tech Contact: 81878
+Google Inc.
+1600 Amphitheatre Parkway,Building 41, Mountain View,CA 94043, U.S.A., California
+94043
+US
+
+

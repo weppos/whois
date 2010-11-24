@@ -11,12 +11,19 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
 
   def test_status
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = "ACTIVO"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/available.txt'))
-    expected  = nil
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_status_suspended
+    parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    expected  = :suspended
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -48,7 +55,7 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
 
   def test_created_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2005-11-15 14:40:48")
+    expected  = Time.parse("2010-10-27 12:23:43")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
@@ -60,7 +67,7 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
 
   def test_updated_on
     parser    = @klass.new(load_part('/registered.txt'))
-    expected  = Time.parse("2005-11-17 21:16:31")
+    expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
@@ -68,21 +75,59 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/property_updated_on.txt'))
+    expected  = Time.parse("2005-11-17 21:16:31")
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+  end
+
+  def test_updated_on_blank
+    parser    = @klass.new(load_part('/property_updated_on_blank.txt'))
+    expected  = nil
+    assert_equal  expected, parser.updated_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).expires_on }
+    # parser    = @klass.new(load_part('/registered.txt'))
+    # expected  = Time.parse("2011-10-27 12:23:43")
+    # assert_equal  expected, parser.expires_on
+    # assert_equal  expected, parser.instance_eval { @updated_on }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
+  end
+
+  def test_expires_on_missing
+    parser    = @klass.new(load_part('/property_expires_on_missing.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/registered.txt'))
-    expected  = %w( avalon.ula.ve azmodan.ula.ve )
+    # parser    = @klass.new(load_part('/registered.txt'))
+    # expected  = %w( avalon.ula.ve azmodan.ula.ve )
+    # assert_equal  expected, parser.nameservers
+    # assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/available.txt'))
+    expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('/property_nameservers.txt'))
+    expected  = %w( avalon.ula.ve azmodan.ula.ve )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+  def test_nameservers_missing
+    parser    = @klass.new(load_part('/property_nameservers_missing.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }

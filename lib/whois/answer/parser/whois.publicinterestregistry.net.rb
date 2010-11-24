@@ -48,11 +48,11 @@ module Whois
         end
 
         property_supported :available? do
-          node("Domain ID").nil?
+          @available  ||= node("Domain ID").nil?
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -95,13 +95,6 @@ module Whois
           @technical_contact ||= contact("Tech", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
-        # @deprecated
-        register_property :registrant, :supported
-        # @deprecated
-        register_property :admin, :supported
-        # @deprecated
-        register_property :technical, :supported
-
 
         property_supported :nameservers do
           @nameservers ||= node("Name Server") { |server| server.reject(&:empty?).map(&:downcase) }
@@ -109,15 +102,18 @@ module Whois
         end
 
 
+        # NEWPROPERTY
         property_supported :changed? do |other|
           !unchanged?(other)
         end
 
+        # NEWPROPERTY
         property_supported :unchanged? do |other|
           self == other ||
           self.content.to_s == other.content.to_s
         end
 
+        # NEWPROPERTY
         def throttle?
           !!node("status-throttle")
         end
@@ -168,17 +164,27 @@ module Whois
           private
 
             def parse_content
-              trim_empty_line   ||
               parse_not_found   ||
               parse_throttle    ||
               parse_disclaimer  ||
               parse_pair        ||
+
+              trim_empty_line   ||
               error("Unexpected token")
             end
 
             def trim_empty_line
               @input.skip(/^\n/)
             end
+
+            def error(message)
+              if @input.eos?
+                raise "Unexpected end of input."
+              else
+                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+              end
+            end
+
 
             def parse_not_found
               @input.skip(/^NOT FOUND\n/)
@@ -214,14 +220,6 @@ module Whois
                 end
               else
                 false
-              end
-            end
-
-            def error(message)
-              if @input.eos?
-                raise "Unexpected end of input."
-              else
-                raise "#{message}: `#{@input.peek(@input.string.length)}'"
               end
             end
 

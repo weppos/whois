@@ -35,17 +35,23 @@ module Whois
       class WhoisNicGov < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s(.*?)\n+/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "active" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          !registered?
+          @available  ||= !registered?
         end
 
         property_supported :registered? do
-          @registered ||= (content_for_scanner =~ /Domain Name:/)
+          @registered ||= !!(content_for_scanner =~ /Domain Name:/)
         end
 
 

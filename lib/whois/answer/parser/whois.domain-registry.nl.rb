@@ -35,19 +35,24 @@ module Whois
       class WhoisDomainRegistryNl < Base
 
         property_supported :status do
-          if available?
-            :available
+          @status ||= if content_for_scanner =~ /Status:\s+(.*?)\n/
+            case $1.downcase
+              when "active"         then :registered
+              when "in quarantine"  then :quarantine
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
           else
-            :registered
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !(content_for_scanner =~ /Status: active/)
+          @available  ||= (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= [:registered, :quarantine].include?(status)
         end
 
 
@@ -68,7 +73,7 @@ module Whois
 
         property_supported :nameservers do
           @nameservers ||= if content_for_scanner =~ /Domain nameservers:\n((.+\n)+)\n/
-            $1.split("\n").map(&:strip)
+            $1.split("\n").map { |value| value.strip.split(/\s+/).first }
           else
             []
           end

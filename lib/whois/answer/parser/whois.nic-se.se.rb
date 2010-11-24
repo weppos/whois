@@ -6,7 +6,7 @@
 #
 # Category::    Net
 # Package::     Whois
-# Author::      Mikkel Kristensen <mikkel@tdx.dk>, Simone Carletti <weppos@weppos.net>
+# Author::      Simone Carletti <weppos@weppos.net>, Mikkel Kristensen <mikkel@tdx.dk>
 # License::     MIT License
 #
 #--
@@ -35,17 +35,23 @@ module Whois
       class WhoisNicSeSe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /state:\s+(.*)\n/
-            $1.downcase.to_sym
+          @status ||= if content_for_scanner =~ /state:\s+(.+?)\n/
+            case $1.downcase
+              when "active" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
           end
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /" not found./)
+          @available  ||= !!(content_for_scanner =~ /" not found./)
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 

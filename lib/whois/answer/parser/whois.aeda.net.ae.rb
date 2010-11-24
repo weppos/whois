@@ -35,15 +35,23 @@ module Whois
       class WhoisAedaNetAe < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Status:\s+(.*?)\n/).flatten
+          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "ok" then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
+          end
         end
 
         property_supported :available? do
-          @available ||= content_for_scanner.strip == "No Data Found"
+          @available  ||= content_for_scanner.strip == "No Data Found"
         end
 
         property_supported :registered? do
-          !available?
+          @registered ||= !available?
         end
 
 
@@ -55,7 +63,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.*?)\n/).flatten
+          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.+?)\n/).flatten
         end
 
       end
