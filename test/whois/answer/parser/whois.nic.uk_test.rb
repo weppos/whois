@@ -21,6 +21,7 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/property_status_suspended.txt'))
+    # NEWSTATUS
     expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }

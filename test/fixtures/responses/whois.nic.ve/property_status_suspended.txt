@@ -1,0 +1,49 @@
+
+Servidor Whois de NIC-Venezuela (.VE)
+
+Este servidor contiene informacion autoritativa exclusivamente de dominios .VE
+Cualquier consulta sobre este servicio, puede hacerla al correo electronico whois@nic.ve
+
+Titular: 
+Rafael Perez   (aloespa.com.ve-dom)		registro@tepuynet.com
+   Rafael Perez 
+   Caracas
+   Caracas, D. Federal  VE
+   
+
+   Nombre de Dominio: aloespa.com.ve
+
+   Contacto Administrativo: 
+      Tepuynet  (aloespa.com.ve-adm)		registro@tepuynet.com
+      Tepuynet C.A.  
+      Av. Bolivar Norte Torre Banaven, Piso 9 Ofic. 9-9
+      Valencia, Carabobo  VE
+      2418246437 (FAX) 2418246437
+   
+   Contacto Tecnico: 
+      Tepuynet  (aloespa.com.ve-tec)		registro@tepuynet.com
+      Tepuynet C.A.  
+      Av. Bolivar Norte Torre Banaven, Piso 9 Ofic. 9-9
+      Valencia, Carabobo  VE
+      2418246437 (FAX) 2418246437
+   
+   Contacto de Cobranza: 
+      Tepuynet  (aloespa.com.ve-bil)		registro@tepuynet.com
+      Tepuynet C.A.  
+      Av. Bolivar Norte Torre Banaven, Piso 9 Ofic. 9-9
+      Valencia, Carabobo  VE
+      2418246437 (FAX) 2418246437
+
+   Fecha de Vencimiento: 2010-11-21 15:21:32
+   Ultima Actualizacion: 2006-06-08 21:54:41
+   Fecha de Creacion: 2005-11-21 15:21:32
+
+   Estatus del dominio: SUSPENDIDO
+
+   Servidor(es) de Nombres de Dominio:
+
+   - ns10.tepuyserver.net
+   - ns9.tepuyserver.net
+
+NIC-Venezuela - CONATEL
+http://www.nic.ve
