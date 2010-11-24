@@ -1,0 +1,70 @@
+  Domain Name: xxx.hu.com
+
+  Registrant:
+    DIANAMIC ABRASIVE PRODUCTS INC (37300766) no.valid.email@worldnic.com
+    DIANAMIC ABRASIVE PRODUCTS INC
+    2566 INDUSTRIAL ROW DRIVE
+    TROY
+    MI
+    48084
+    US (United States)
+    Tel: +1.248280118
+
+  Administrative Contact:
+    DIANAMIC ABRASIVE PRODUCTS INC (37300766) no.valid.email@worldnic.com
+    DIANAMIC ABRASIVE PRODUCTS INC
+    2566 INDUSTRIAL ROW DRIVE
+    TROY
+    MI
+    48084
+    US (United States)
+    Tel: +1.248280118
+
+  Technical Contact:
+    DIANAMIC ABRASIVE PRODUCTS INC (37300766) no.valid.email@worldnic.com
+    DIANAMIC ABRASIVE PRODUCTS INC
+    2566 INDUSTRIAL ROW DRIVE
+    TROY
+    MI
+    48084
+    US (United States)
+    Tel: +1.248280118
+
+  Billing Contact:
+    George Collins (37300767) skeparnias@aol.com
+    Dianamic
+    2566 INDUSTRIAL ROW DRIVE
+    TROY
+    MI
+    48084
+    US (United States)
+    Tel: +1.2482801185
+    Fax: +1.2482802733
+
+  Registrar:
+    Domain Administrator (H292913) GTLD-Admin@networksolutions.com
+    Network Solutions LLC
+    13861 Sunrise Valley Drive
+    Suite 300
+    Herndon
+    VA
+    20171
+    US (United States)
+    Tel: +1.5707088788
+    Fax: +1.7036685817
+    URL: http://www.networksolutions.com/
+
+  Record created on: 27 August 2008
+  Record expires on: 27 August 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS27.WORLDNIC.COM
+  NS28.WORLDNIC.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

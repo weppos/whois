@@ -1,0 +1,57 @@
+  Domain Name: history.uk.com
+
+  Registrant:
+    Mr. Ray Hatley (H1045821) ray@hatley.co.uk
+    
+    Tallow House
+    65-66 Lower Galdeford
+    Ludlow
+    Shropshire
+    SY8 1RU
+    UK (United Kingdom)
+    Tel: 01584 873633
+
+  Administrative Contact:
+    Mr. Ray Hatley (H305798) ray@hatley.co.uk
+    
+    Tallow House
+    65-66 Lower Galdeford
+    Ludlow
+    Shropshire
+    SY8 1RU
+    UK (United Kingdom)
+    Tel: 01584 873633
+
+  Technical Contact:
+    Mr Simon Williams (H78362) simon@e-velocity.co.uk
+    E-VELOCITY LTD
+    P.O Box 3295
+    Brighton
+    BN50 9EY
+    UK (United Kingdom)
+    Tel: 01273 684969
+
+  Registrar:
+    Mr Simon Williams (H78362) simon@e-velocity.co.uk
+    E-VELOCITY LTD
+    P.O Box 3295
+    Brighton
+    BN50 9EY
+    UK (United Kingdom)
+    Tel: 01273 684969
+    URL: http://www.e-velocity.co.uk/
+
+  Record created on: 31 August 2001
+  Record expires on: 31 August 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.MYHOSTCP.COM
+  NS2.MYHOSTCP.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

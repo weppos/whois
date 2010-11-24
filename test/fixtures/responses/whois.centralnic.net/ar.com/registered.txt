@@ -1,0 +1,60 @@
+  Domain Name: hotel.ar.com
+
+  Registrant:
+    Reserved Domains (H1323241) domains@centralnic.com
+    CentralNic Ltd
+    35-39 Moorgate
+    London
+    EC2R 6AR
+    UK (United Kingdom)
+    Tel: +44.8700170900
+    Fax: +44.8700170901
+
+  Administrative Contact:
+    Reserved Domains (H1323241) domains@centralnic.com
+    CentralNic Ltd
+    35-39 Moorgate
+    London
+    EC2R 6AR
+    UK (United Kingdom)
+    Tel: +44.8700170900
+    Fax: +44.8700170901
+
+  Technical Contact:
+    Reserved Domains (H1323241) domains@centralnic.com
+    CentralNic Ltd
+    35-39 Moorgate
+    London
+    EC2R 6AR
+    UK (United Kingdom)
+    Tel: +44.8700170900
+    Fax: +44.8700170901
+
+  Registrar:
+    Reserved Domains (H1323241) domains@centralnic.com
+    CentralNic Ltd
+    35-39 Moorgate
+    London
+    EC2R 6AR
+    UK (United Kingdom)
+    Tel: +44.8700170900
+    Fax: +44.8700170901
+
+  Record created on: 25 April 2008
+  Record expires on: 25 April 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS0.CENTRALNIC-DNS.COM
+  NS1.CENTRALNIC-DNS.COM
+  NS2.CENTRALNIC-DNS.COM
+  NS3.CENTRALNIC-DNS.COM
+  NS4.CENTRALNIC-DNS.COM
+  NS5.CENTRALNIC-DNS.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

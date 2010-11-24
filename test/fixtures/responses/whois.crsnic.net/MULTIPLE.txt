@@ -1,3 +1,0 @@
-whois.crsnic.net serves multiple TLD:
-* .com http://www.iana.org/domains/root/db/net.html
-* .net http://www.iana.org/domains/root/db/com.html

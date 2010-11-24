@@ -1,24 +1,26 @@
 tld;registry;available;unavailable
+ae.org;whois.centralnic.net;qrops.ae.org;u34jedzcq.ae.org
+ar.com;whois.centralnic.net;hotel.ar.com;u34jedzcq.ar.com
 br.com;whois.centralnic.net;billboard.br.com;u34jedzcq.br.com
 cn.com;whois.centralnic.net;gsn.cn.com;u34jedzcq.cn.com
-#Whois::Server.define :tld, ".de.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".eu.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".gb.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".gb.net", "whois.centralnic.net"
-#Whois::Server.define :tld, ".hu.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".no.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".qc.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".ru.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".sa.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".se.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".se.net", "whois.centralnic.net"
-#Whois::Server.define :tld, ".uk.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".uk.net", "whois.centralnic.net"
-#Whois::Server.define :tld, ".us.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".uy.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".za.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".jpn.com", "whois.centralnic.net"
-#Whois::Server.define :tld, ".web.com", "whois.centralnic.net"
+de.com;whois.centralnic.net;boerse.de.com;u34jedzcq.de.com
+eu.com;whois.centralnic.net;walkabout.eu.com;u34jedzcq.eu.com
+gb.com;whois.centralnic.net;hotel.gb.com;u34jedzcq.gb.com
+gb.net;whois.centralnic.net;hotel.gb.net;u34jedzcq.gb.net
+hu.com;whois.centralnic.net;xxx.hu.com;u34jedzcq.hu.com
+jpn.com;whois.centralnic.net;koi.jpn.com;u34jedzcq.jpn.com
+kr.com;whois.centralnic.net;academyart.kr.com;u34jedzcq.kr.com
+no.com;whois.centralnic.net;mrsa.no.com;u34jedzcq.no.com
+qc.com;whois.centralnic.net;ceo.qc.com;u34jedzcq.qc.com
+ru.com;whois.centralnic.net;srk.ru.com;u34jedzcq.ru.com
+sa.com;whois.centralnic.net;fynbos.sa.com;u34jedzcq.sa.com
+se.com;whois.centralnic.net;hotel.se.com;u34jedzcq.se.com
+se.net;whois.centralnic.net;hotel.se.net;u34jedzcq.se.net
+uk.com;whois.centralnic.net;history.uk.com;u34jedzcq.uk.com
+uk.net;whois.centralnic.net;paramount.uk.net;u34jedzcq.uk.net
+us.com;whois.centralnic.net;college.us.com;u34jedzcq.us.com
+uy.com;whois.centralnic.net;ctrl.uy.com;u34jedzcq.uy.com
+za.com;whois.centralnic.net;siyenza.za.com;u34jedzcq.za.com
 com;whois.crsnic.net;google.com;u34jedzcq.com
 za.net;whois.za.net;karnaugh.za.net;u34jedzcq.za.net
 net;whois.crsnic.net;google.net;u34jedzcq.net
