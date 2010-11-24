@@ -1,5 +1,12 @@
 = Changelog
 
+== master
+
+* SERVER: Added .ae.org, .ar.com, .kr.com TLD definitions (whois.centralnic.net).
+
+* SERVER: Removed invalid .web.com TLD definition (whois.centralnic.net).
+
+
 == Release 1.6.4
 
 * FIXED: With some .pl domains, whois.dns.pl parser returns invalid values for nameservers.
@@ -380,13 +387,6 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (#29).
 
 * CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (#27).
-
-
-== master
-
-cn.com, de.com, eu.com, gb.com, gb.net, hu.com, no.com, qc.com, ru.com, sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, za.com, jpn.com, web.com
-
-* NEW: Added simple br.com,  TLD parser (whois.eenet.ee).
 
 
 == Release 1.2.1
