@@ -8,7 +8,7 @@ class AnswerParserWhoisNicHuTest < Whois::Answer::Parser::TestCase
   def setup
     @klass  = Whois::Answer::Parser::WhoisNicHu
     @host   = "whois.nic.hu"
-    @schema = "current"
+    @schema = "schema-current"
   end
 
   def test_domain
@@ -30,7 +30,7 @@ class AnswerParserWhoisNicHu_v199_Test < Whois::Answer::Parser::TestCase
   def setup
     @klass  = Whois::Answer::Parser::WhoisNicHu
     @host   = "whois.nic.hu"
-    @schema = "v1.99"
+    @schema = "schema-1.99"
   end
 
 

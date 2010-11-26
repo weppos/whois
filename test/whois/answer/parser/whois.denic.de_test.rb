@@ -6,7 +6,7 @@ class AnswerParserWhoisDenicDe_2_0_Test < Whois::Answer::Parser::TestCase
   def setup
     @klass  = Whois::Answer::Parser::WhoisDenicDe
     @host   = "whois.denic.de"
-    @schema = "2.0"
+    @schema = "schema-2.0"
   end
 
 
@@ -252,7 +252,7 @@ class AnswerParserWhoisDenicDe_1_11_0_Test < Whois::Answer::Parser::TestCase
   def setup
     @klass  = Whois::Answer::Parser::WhoisDenicDe
     @host   = "whois.denic.de"
-    @schema = "1.11.0"
+    @schema = "schema-1.11.0"
   end
 
 
@@ -507,7 +507,7 @@ class AnswerParserWhoisDenicDe_1_10_0_Test < Whois::Answer::Parser::TestCase
   def setup
     @klass  = Whois::Answer::Parser::WhoisDenicDe
     @host   = "whois.denic.de"
-    @schema = "1.10.0"
+    @schema = "schema-1.10.0"
   end
 
 
