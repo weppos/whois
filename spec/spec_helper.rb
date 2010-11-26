@@ -1,7 +1,14 @@
 require "rspec"
 require "whois"
 
+unless defined?(SPEC_ROOT)
+  SPEC_ROOT = Pathname.new(File.dirname(__FILE__))
+end
+
 module Helpers
+
+  # Temporary resets Server @@definitions
+  # to let the test setup a custom definition list.
   def with_definitions(&block)
     @_definitions = Whois::Server.definitions
     Whois::Server.send :class_variable_set, :@@definitions, { :tld => [], :ipv4 =>[], :ipv6 => [] }
@@ -9,6 +16,14 @@ module Helpers
   ensure
     Whois::Server.send :class_variable_set, :@@definitions, @_definitions
   end
+
+  # Gets the currently described class.
+  # Conversely to +subject+, it returns the class
+  # instead of an instance.
+  def klass
+    described_class
+  end
+
 end
 
 module ConnectivityHelpers
