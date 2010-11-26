@@ -36,62 +36,62 @@ Whois database for failure to abide by these terms of use. VeriSign \
 reserves the right to modify these terms at any time.
 EOS
 
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     assert_equal  expected, parser.disclaimer
     assert_equal  expected, parser.instance_eval { @disclaimer }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     assert_equal  expected, parser.disclaimer
     assert_equal  expected, parser.instance_eval { @disclaimer }
   end
 
 
   def test_domain
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.net"
     assert_equal  expected, parser.domain
     assert_equal  expected, parser.instance_eval { @domain }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = "googlelkjhgfdfghjklkjhgf.net"
     assert_equal  expected, parser.domain
     assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).domain_id }
   end
 
 
   def test_referral_whois
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "whois.markmonitor.com"
     assert_equal  expected, parser.referral_whois
     assert_equal  expected, parser.instance_eval { @referral_whois }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.referral_whois
     assert_equal  expected, parser.instance_eval { @referral_whois }
   end
 
   def test_referral_url_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "http://www.markmonitor.com"
     assert_equal  expected, parser.referral_url
     assert_equal  expected, parser.instance_eval { @referral_url }
   end
 
   def test_referral_url_with_available
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.referral_url
     assert_equal  expected, parser.instance_eval { @referral_url }
   end
 
   def test_referral_url_with_multiple_entries
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "http://www.markmonitor.com"
     assert_equal  expected, parser.referral_url
     assert_equal  expected, parser.instance_eval { @referral_url }
@@ -99,36 +99,36 @@ EOS
 
 
   def test_status
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -136,36 +136,36 @@ EOS
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("1999-03-15")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2009-02-10")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2010-03-15")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -173,7 +173,7 @@ EOS
 
 
   def test_registrar_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.registrar
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
@@ -183,14 +183,14 @@ EOS
   end
 
   def test_registrar_with_available
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
   end
 
   def test_registrar
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,  result
@@ -201,7 +201,7 @@ EOS
   end
 
   def test_registrar_with_multiple_entries
-    parser    = @klass.new(load_part('/registered_with_multiple_entries.txt'))
+    parser    = @klass.new(load_part('registered_with_multiple_entries.txt'))
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,  result
@@ -213,19 +213,19 @@ EOS
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
   def test_nameservers_with_no_nameserver
-    parser    = @klass.new(load_part('/nameservers_with_no_nameserver.txt'))
+    parser    = @klass.new(load_part('nameservers_with_no_nameserver.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }

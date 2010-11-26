@@ -1,7 +1,8 @@
-require 'test/unit'
-require 'whois'
-require 'rubygems'
-require 'mocha'
+require "pathname"
+require "test/unit"
+require "whois"
+require "rubygems"
+require "mocha"
 
 class Test::Unit::TestCase
 
@@ -27,8 +28,8 @@ class Test::Unit::TestCase
   end
 
 
-  def fixture(*name)
-    File.join(TEST_ROOT, "fixtures", name)
+  def fixture(*names)
+    File.join(TEST_ROOT, "fixtures", *names)
   end
 
 end
@@ -40,15 +41,11 @@ class Whois::Answer::Parser::TestCase < Test::Unit::TestCase
     true
   end
 
-  def testcase_path
-    File.expand_path(File.dirname(__FILE__) + "/fixtures/responses/#{@host}")
-  end
-
 
   protected
 
     def load_part(path)
-      part(File.read(testcase_path + path), @host)
+      part(File.read(fixture("responses", @host.to_s, @suffix.to_s, path)), @host)
     end
 
     def part(*args)

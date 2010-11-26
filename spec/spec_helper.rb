@@ -2,7 +2,7 @@ require "rspec"
 require "whois"
 
 unless defined?(SPEC_ROOT)
-  SPEC_ROOT = Pathname.new(File.dirname(__FILE__))
+  SPEC_ROOT = File.expand_path("../", __FILE__)
 end
 
 module Helpers
@@ -22,6 +22,10 @@ module Helpers
   # instead of an instance.
   def klass
     described_class
+  end
+
+  def fixture(*names)
+    File.join(TEST_ROOT, "fixtures", *names)
   end
 
 end

@@ -13,36 +13,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoBzTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -50,36 +50,36 @@ class AnswerParserWhoisAfiliasGrsInfoBzTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = Time.parse("2006-02-12 18:08:52 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = Time.parse("2009-01-21 13:29:10 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = Time.parse("2011-02-12 18:08:52 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -87,12 +87,12 @@ class AnswerParserWhoisAfiliasGrsInfoBzTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/bz/registered.txt'))
+    parser    = @klass.new(load_part('bz/registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/bz/available.txt'))
+    parser    = @klass.new(load_part('bz/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -103,36 +103,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoGiTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = ["OK"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -140,36 +140,36 @@ class AnswerParserWhoisAfiliasGrsInfoGiTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = Time.parse("2004-12-20 13:34:34 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = Time.parse("2008-12-20 19:25:54 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = Time.parse("2009-12-20 13:34:34 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -177,12 +177,12 @@ class AnswerParserWhoisAfiliasGrsInfoGiTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/gi/registered.txt'))
+    parser    = @klass.new(load_part('gi/registered.txt'))
     expected  = %w( ns1-a.sapphire.gi ns2-a.sapphire.gi )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/gi/available.txt'))
+    parser    = @klass.new(load_part('gi/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -193,36 +193,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoHnTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -230,36 +230,36 @@ class AnswerParserWhoisAfiliasGrsInfoHnTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = Time.parse("2003-03-07 05:00:00 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = Time.parse("2009-01-30 16:14:32 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = Time.parse("2010-03-07 05:00:00 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -267,12 +267,12 @@ class AnswerParserWhoisAfiliasGrsInfoHnTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/hn/registered.txt'))
+    parser    = @klass.new(load_part('hn/registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/hn/available.txt'))
+    parser    = @klass.new(load_part('hn/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -283,36 +283,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoLcTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = ["OK"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -320,36 +320,36 @@ class AnswerParserWhoisAfiliasGrsInfoLcTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = Time.parse("2002-12-08 00:00:00 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = Time.parse("2008-12-08 19:25:09 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = Time.parse("2009-12-08 00:00:00 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -357,12 +357,12 @@ class AnswerParserWhoisAfiliasGrsInfoLcTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/lc/registered.txt'))
+    parser    = @klass.new(load_part('lc/registered.txt'))
     expected  = %w( ns1.nic.ag ns.patricklay.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/lc/available.txt'))
+    parser    = @klass.new(load_part('lc/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -373,36 +373,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoMnTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -410,36 +410,36 @@ class AnswerParserWhoisAfiliasGrsInfoMnTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = Time.parse("2003-04-07 00:00:00 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = Time.parse("2009-04-03 15:50:32 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = Time.parse("2010-04-07 00:00:00 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -447,12 +447,12 @@ class AnswerParserWhoisAfiliasGrsInfoMnTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/mn/registered.txt'))
+    parser    = @klass.new(load_part('mn/registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/mn/available.txt'))
+    parser    = @klass.new(load_part('mn/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -463,36 +463,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoScTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -500,36 +500,36 @@ class AnswerParserWhoisAfiliasGrsInfoScTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = Time.parse("2004-02-03 19:19:12 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = Time.parse("2009-01-09 21:53:27 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = Time.parse("2010-02-03 19:19:12 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -537,12 +537,12 @@ class AnswerParserWhoisAfiliasGrsInfoScTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/sc/registered.txt'))
+    parser    = @klass.new(load_part('sc/registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/sc/available.txt'))
+    parser    = @klass.new(load_part('sc/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -553,36 +553,36 @@ end
 class AnswerParserWhoisAfiliasGrsInfoVcTest < AnswerParserWhoisAfiliasGrsInfoTest
 
   def test_status
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = []
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -590,36 +590,36 @@ class AnswerParserWhoisAfiliasGrsInfoVcTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = Time.parse("2005-06-29 00:58:18 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = Time.parse("2009-02-17 17:43:40 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = Time.parse("2011-06-29 00:58:18 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -627,12 +627,12 @@ class AnswerParserWhoisAfiliasGrsInfoVcTest < AnswerParserWhoisAfiliasGrsInfoTes
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/vc/registered.txt'))
+    parser    = @klass.new(load_part('vc/registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/vc/available.txt'))
+    parser    = @klass.new(load_part('vc/available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }

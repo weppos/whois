@@ -10,7 +10,7 @@ class AnswerParserWhoisPublicinterestregistryNetTest < Whois::Answer::Parser::Te
 
 
   def test_disclaimer
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = <<-EOS.strip
 NOTICE: Access to .ORG WHOIS information is provided to assist persons in \
 determining the contents of a domain name registration record in the Public Interest Registry \
@@ -31,7 +31,7 @@ time. By submitting this query, you agree to abide by this policy.
     assert_equal  expected, parser.disclaimer
     assert_equal  expected, parser.instance_eval { @disclaimer }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.disclaimer
     assert_equal  expected, parser.instance_eval { @disclaimer }
@@ -39,24 +39,24 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_domain
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.org"
     assert_equal  expected, parser.domain
     assert_equal  expected, parser.instance_eval { @domain }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.domain
     assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "D2244233-LROR"
     assert_equal  expected, parser.domain_id
     assert_equal  expected, parser.instance_eval { @domain_id }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.domain_id
     assert_equal  expected, parser.instance_eval { @domain_id }
@@ -64,36 +64,36 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_status
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -101,36 +101,36 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_created_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("1998-10-21 04:00:00 UTC")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2009-03-04 12:07:19 UTC")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2012-10-20 04:00:00 UTC")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -138,7 +138,7 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_registrar_with_registered
-    parser      = @klass.new(load_part('/registered.txt'))
+    parser      = @klass.new(load_part('registered.txt'))
     expected    = parser.registrar
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
@@ -148,14 +148,14 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_registrar_with_available
-    parser      = @klass.new(load_part('/available.txt'))
+    parser      = @klass.new(load_part('available.txt'))
     expected    = nil
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
   end
 
   def test_registrar
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,      result
@@ -166,7 +166,7 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_registrant_contact_with_registered
-    parser      = @klass.new(load_part('/registered.txt'))
+    parser      = @klass.new(load_part('registered.txt'))
     expected    = parser.registrant_contact
     assert_equal  expected, parser.registrant_contact
     assert_equal  expected, parser.instance_eval { @registrant_contact }
@@ -176,14 +176,14 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_registrant_contact_with_available
-    parser      = @klass.new(load_part('/available.txt'))
+    parser      = @klass.new(load_part('available.txt'))
     expected    = nil
     assert_equal  expected, parser.registrant_contact
     assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
   def test_registrant_contact
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -203,7 +203,7 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_admin_contact_with_registered
-    parser      = @klass.new(load_part('/registered.txt'))
+    parser      = @klass.new(load_part('registered.txt'))
     expected    = parser.admin_contact
     assert_equal  expected, parser.admin_contact
     assert_equal  expected, parser.instance_eval { @admin_contact }
@@ -213,14 +213,14 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_admin_contact_with_available
-    parser      = @klass.new(load_part('/available.txt'))
+    parser      = @klass.new(load_part('available.txt'))
     expected    = nil
     assert_equal  expected, parser.admin_contact
     assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
   def test_admin_contact
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     result    = parser.admin_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -240,7 +240,7 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_technical_contact_with_registered
-    parser      = @klass.new(load_part('/registered.txt'))
+    parser      = @klass.new(load_part('registered.txt'))
     expected    = parser.technical_contact
     assert_equal  expected, parser.technical_contact
     assert_equal  expected, parser.instance_eval { @technical_contact }
@@ -250,14 +250,14 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_technical_contact_with_available
-    parser      = @klass.new(load_part('/available.txt'))
+    parser      = @klass.new(load_part('available.txt'))
     expected    = nil
     assert_equal  expected, parser.technical_contact
     assert_equal  expected, parser.instance_eval { @technical_contact }
   end
 
   def test_technical_contact
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     result    = parser.technical_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -278,12 +278,12 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns2.google.com ns1.google.com ns3.google.com ns4.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -291,7 +291,7 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_throttle_question
-    parser = @klass.new(load_part('/throttle.txt'))
+    parser = @klass.new(load_part('throttle.txt'))
     assert parser.throttle?
   end
 

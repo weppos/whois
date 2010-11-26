@@ -10,12 +10,12 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_disclaimer
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi"
     assert_equal  expected, parser.disclaimer
     assert_equal  expected, parser.instance_eval { @disclaimer }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.disclaimer
     assert_equal  expected, parser.instance_eval { @disclaimer }
@@ -23,65 +23,65 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_domain
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.it"
     assert_equal  expected, parser.domain
     assert_equal  expected, parser.instance_eval { @domain }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = "google.it"
     assert_equal  expected, parser.domain
     assert_equal  expected, parser.instance_eval { @domain }
   end
 
   def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).domain_id }
   end
 
 
   def test_referral_whois
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_whois }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_whois }
   end
 
   def test_referral_url
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/registered.txt')).referral_url }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/available.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_url }
   end
 
 
   def test_status
-    parser    = @klass.new(load_part('/property_status_active.txt'))
+    parser    = @klass.new(load_part('property_status_active.txt'))
     expected  = :active
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('/property_status_available.txt'))
+    parser    = @klass.new(load_part('property_status_available.txt'))
     expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = false
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
@@ -90,12 +90,12 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_created_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("1999-12-10 00:00:00")
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.created_on
     assert_equal  expected, parser.instance_eval { @created_on }
@@ -103,12 +103,12 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_updated_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2008-11-27 16:47:22")
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.updated_on
     assert_equal  expected, parser.instance_eval { @updated_on }
@@ -116,12 +116,12 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_expires_on
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2009-11-27 00:00:00")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
@@ -129,7 +129,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_registrar_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.registrar
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
@@ -139,14 +139,14 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registrar_with_available
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
   end
 
   def test_registrar
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,  result
@@ -157,7 +157,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.registrant_contact
     assert_equal  expected, parser.registrant_contact
     assert_equal  expected, parser.instance_eval { @registrant_contact }
@@ -167,14 +167,14 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.registrant_contact
     assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
   def test_registrant_contact
-    parser    = @klass.new(load_part('/property_registrant_contact.txt'))
+    parser    = @klass.new(load_part('property_registrant_contact.txt'))
     result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -192,7 +192,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_admin_contact_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.admin_contact
     assert_equal  expected, parser.admin_contact
     assert_equal  expected, parser.instance_eval { @admin_contact }
@@ -202,14 +202,14 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_admin_contact_with_available
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.admin_contact
     assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
   def test_admin_contact
-    parser    = @klass.new(load_part('/property_admin_contact.txt'))
+    parser    = @klass.new(load_part('property_admin_contact.txt'))
     result    = parser.admin_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -227,7 +227,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_technical_contact_with_registered
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.technical_contact
     assert_equal  expected, parser.technical_contact
     assert_equal  expected, parser.instance_eval { @technical_contact }
@@ -237,14 +237,14 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
   def test_technical_contact_with_available
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal  expected, parser.technical_contact
     assert_equal  expected, parser.instance_eval { @technical_contact }
   end
 
   def test_technical_contact
-    parser    = @klass.new(load_part('/property_technical_contact.txt'))
+    parser    = @klass.new(load_part('property_technical_contact.txt'))
     result    = parser.technical_contact
 
     assert_instance_of Whois::Answer::Contact,  result
@@ -263,12 +263,12 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('/registered.txt'))
+    parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns4.google.com ns2.google.com ns3.google.com )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
-    parser    = @klass.new(load_part('/available.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
@@ -276,21 +276,21 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
 
 
   def test_changed_with_self
-    parser1  = @klass.new(load_part('/registered.txt'))
+    parser1  = @klass.new(load_part('registered.txt'))
     assert !parser1.changed?(parser1)
     assert  parser1.unchanged?(parser1)
   end
 
   def test_changed_with_equal_content
-    parser1  = @klass.new(load_part('/registered.txt'))
-    parser2  = @klass.new(load_part('/registered.txt'))
+    parser1  = @klass.new(load_part('registered.txt'))
+    parser2  = @klass.new(load_part('registered.txt'))
     assert !parser1.changed?(parser2)
     assert  parser1.unchanged?(parser2)
   end
 
   def test_changed_with_different_content
-    parser1  = @klass.new(load_part('/registered.txt'))
-    parser2  = @klass.new(load_part('/available.txt'))
+    parser1  = @klass.new(load_part('registered.txt'))
+    parser2  = @klass.new(load_part('available.txt'))
     assert  parser1.changed?(parser2)
     assert !parser1.unchanged?(parser2)
   end
