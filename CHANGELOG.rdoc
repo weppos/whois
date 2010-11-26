@@ -6,7 +6,10 @@
 
 * SERVER: Removed invalid .web.com TLD definition (whois.centralnic.net).
 
-* NEW: Added simple br.com,  TLD parser (whois.eenet.ee).
+* NEW: Added simple ae.org, ar.com, br.com, cn.com, de.com, eu.com,
+  gb.com, gb.net, hu.com, jpn.com, kr.com, no.com, qc.com, ru.com,
+  sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, web.com,
+  za.com TLD parser (whois.centralnic.net).
 
 
 == Release 1.6.4

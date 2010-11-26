@@ -9,38 +9,196 @@ class AnswerParserWhoisCentralnicNetTest < Whois::Answer::Parser::TestCase
   end
 
 end
+
+class AnswerParserWhoisCentralnicNetAeOrgTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ae.org/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ae.org/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ae.org/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ae.org/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/ae.org/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/ae.org/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/ae.org/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/ae.org/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/ae.org/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/ae.org/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/ae.org/registered.txt'))
+    expected  = Time.parse("2010-10-11")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/ae.org/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ae.org/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ae.org/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/ae.org/registered.txt'))
+    expected  = Time.parse("2012-10-11")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/ae.org/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/ae.org/registered.txt'))
+    expected  = %w( ns1.dmnreseller.com ns2.dmnreseller.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/ae.org/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetArComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ar.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ar.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ar.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ar.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/ar.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/ar.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/ar.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/ar.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/ar.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/ar.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/ar.com/registered.txt'))
+    expected  = Time.parse("2008-04-25")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/ar.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ar.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ar.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/ar.com/registered.txt'))
+    expected  = Time.parse("2011-04-25")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/ar.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/ar.com/registered.txt'))
+    expected  = %w( ns0.centralnic-dns.com ns1.centralnic-dns.com ns2.centralnic-dns.com ns3.centralnic-dns.com ns4.centralnic-dns.com ns5.centralnic-dns.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/ar.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
 class AnswerParserWhoisCentralnicNetBrComTest < AnswerParserWhoisCentralnicNetTest
-
-  def test_disclaimer
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
-
-    parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
-  end
-
-
-  def test_domain
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = "billboard.br.com"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
-
-    parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = "u34jedzcq.br.com"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
-  end
-
-  def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/br.com/registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/br.com/available.txt')).domain_id }
-  end
-
 
   def test_referral_whois
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/br.com/registered.txt')).referral_whois }
@@ -55,12 +213,12 @@ class AnswerParserWhoisCentralnicNetBrComTest < AnswerParserWhoisCentralnicNetTe
 
   def test_status
     parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = "Live"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -120,80 +278,9 @@ class AnswerParserWhoisCentralnicNetBrComTest < AnswerParserWhoisCentralnicNetTe
   end
 
 
-  def test_registrar_with_registered
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = parser.registrar
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
-
-    assert_instance_of Whois::Answer::Registrar, expected
-    assert_equal "H292913", expected.id
-  end
-
-  def test_registrar_with_available
-    parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
-  end
-
-  def test_registrar
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    result    = parser.registrar
-
-    assert_instance_of Whois::Answer::Registrar,  result
-    assert_equal "H292913", result.id
-    assert_equal "Domain Administrator, Network Solutions LLC", result.name
-    assert_equal "Domain Administrator, Network Solutions LLC", result.organization
-  end
-
-
-  def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
-  end
-
-  def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
-  end
-
-  def test_admin_contact_with_registered
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
-  end
-
-  def test_admin_contact_with_available
-    parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
-  end
-
-  def test_technical_contact_with_registered
-    parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
-  end
-
-  def test_technical_contact_with_available
-    parser    = @klass.new(load_part('/br.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
-  end
-
-
   def test_nameservers
     parser    = @klass.new(load_part('/br.com/registered.txt'))
-    expected  = %w( ns1.uolhostidc.com.br ns2.uolhostidc.com.br )
+    expected  = %w( ns1.terra.com.br ns2.terra.com.br )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
 
@@ -203,61 +290,9 @@ class AnswerParserWhoisCentralnicNetBrComTest < AnswerParserWhoisCentralnicNetTe
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
-
-  def test_changed_with_self
-    parser1  = @klass.new(load_part('/br.com/registered.txt'))
-    assert !parser1.changed?(parser1)
-    assert  parser1.unchanged?(parser1)
-  end
-
-  def test_changed_with_equal_content
-    parser1  = @klass.new(load_part('/br.com/registered.txt'))
-    parser2  = @klass.new(load_part('/br.com/registered.txt'))
-    assert !parser1.changed?(parser2)
-    assert  parser1.unchanged?(parser2)
-  end
-
-  def test_changed_with_different_content
-    parser1  = @klass.new(load_part('/br.com/registered.txt'))
-    parser2  = @klass.new(load_part('/br.com/available.txt'))
-    assert  parser1.changed?(parser2)
-    assert !parser1.unchanged?(parser2)
-  end
-
 end
 
 class AnswerParserWhoisCentralnicNetCnComTest < AnswerParserWhoisCentralnicNetTest
-
-  def test_disclaimer
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
-
-    parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
-  end
-
-
-  def test_domain
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = "gsn.cn.com"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
-
-    parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = "u34jedzcq.cn.com"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
-  end
-
-  def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/cn.com/registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/cn.com/available.txt')).domain_id }
-  end
-
 
   def test_referral_whois
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/cn.com/registered.txt')).referral_whois }
@@ -272,12 +307,12 @@ class AnswerParserWhoisCentralnicNetCnComTest < AnswerParserWhoisCentralnicNetTe
 
   def test_status
     parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = "Live"
+    expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
     parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = nil
+    expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -326,7 +361,7 @@ class AnswerParserWhoisCentralnicNetCnComTest < AnswerParserWhoisCentralnicNetTe
 
   def test_expires_on
     parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = Time.parse("2010-11-23")
+    expected  = Time.parse("2011-11-23")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
@@ -334,77 +369,6 @@ class AnswerParserWhoisCentralnicNetCnComTest < AnswerParserWhoisCentralnicNetTe
     expected  = nil
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
-  end
-
-
-  def test_registrar_with_registered
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = parser.registrar
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
-
-    assert_instance_of Whois::Answer::Registrar, expected
-    assert_equal "H292913", expected.id
-  end
-
-  def test_registrar_with_available
-    parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
-  end
-
-  def test_registrar
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    result    = parser.registrar
-
-    assert_instance_of Whois::Answer::Registrar,  result
-    assert_equal "H292913", result.id
-    assert_equal "Domain Administrator, Network Solutions LLC", result.name
-    assert_equal "Domain Administrator, Network Solutions LLC", result.organization
-  end
-
-
-  def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
-  end
-
-  def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
-  end
-
-  def test_admin_contact_with_registered
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
-  end
-
-  def test_admin_contact_with_available
-    parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
-  end
-
-  def test_technical_contact_with_registered
-    parser    = @klass.new(load_part('/cn.com/registered.txt'))
-    expected  = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
-  end
-
-  def test_technical_contact_with_available
-    parser    = @klass.new(load_part('/cn.com/available.txt'))
-    expected  = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
   end
 
 
@@ -420,25 +384,1696 @@ class AnswerParserWhoisCentralnicNetCnComTest < AnswerParserWhoisCentralnicNetTe
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+end
 
-  def test_changed_with_self
-    parser1  = @klass.new(load_part('/cn.com/registered.txt'))
-    assert !parser1.changed?(parser1)
-    assert  parser1.unchanged?(parser1)
+class AnswerParserWhoisCentralnicNetDeComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/de.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/de.com/available.txt')).referral_whois }
   end
 
-  def test_changed_with_equal_content
-    parser1  = @klass.new(load_part('/cn.com/registered.txt'))
-    parser2  = @klass.new(load_part('/cn.com/registered.txt'))
-    assert !parser1.changed?(parser2)
-    assert  parser1.unchanged?(parser2)
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/de.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/de.com/available.txt')).referral_url }
   end
 
-  def test_changed_with_different_content
-    parser1  = @klass.new(load_part('/cn.com/registered.txt'))
-    parser2  = @klass.new(load_part('/cn.com/available.txt'))
-    assert  parser1.changed?(parser2)
-    assert !parser1.unchanged?(parser2)
+
+  def test_status
+    parser    = @klass.new(load_part('/de.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/de.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/de.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/de.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/de.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/de.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/de.com/registered.txt'))
+    expected  = Time.parse("2010-03-02")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/de.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/de.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/de.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/de.com/registered.txt'))
+    expected  = Time.parse("2011-03-02")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/de.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/de.com/registered.txt'))
+    expected  = %w( ns.udagdns.de ns.udagdns.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/de.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetEuComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/eu.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/eu.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/eu.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/eu.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/eu.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/eu.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/eu.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/eu.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/eu.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/eu.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/eu.com/registered.txt'))
+    expected  = Time.parse("2001-08-14")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/eu.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/eu.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/eu.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/eu.com/registered.txt'))
+    expected  = Time.parse("2011-08-14")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/eu.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/eu.com/registered.txt'))
+    expected  = %w( ns1.itransactuk.net ns2.itransactuk.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/eu.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetGbComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/gb.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/gb.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/gb.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/gb.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/gb.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/gb.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/gb.com/registered.txt'))
+    expected  = Time.parse("2006-04-23")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/gb.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/gb.com/registered.txt'))
+    expected  = Time.parse("2011-04-23")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/gb.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/gb.com/registered.txt'))
+    expected  = %w( a.ns14.net b.ns14.net c.ns14.net d.ns14.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/gb.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetGbNetTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.net/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.net/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.net/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.net/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/gb.net/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/gb.net/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/gb.net/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/gb.net/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/gb.net/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/gb.net/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/gb.net/registered.txt'))
+    expected  = Time.parse("2008-12-04")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/gb.net/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.net/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/gb.net/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/gb.net/registered.txt'))
+    expected  = Time.parse("2010-12-04")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/gb.net/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/gb.net/registered.txt'))
+    expected  = %w( a.ns14.net b.ns14.net c.ns14.net d.ns14.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/gb.net/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetHuComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/hu.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/hu.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/hu.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/hu.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/hu.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/hu.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/hu.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/hu.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/hu.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/hu.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/hu.com/registered.txt'))
+    expected  = Time.parse("2008-08-27")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/hu.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/hu.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/hu.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/hu.com/registered.txt'))
+    expected  = Time.parse("2011-08-27")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/hu.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/hu.com/registered.txt'))
+    expected  = %w( ns27.worldnic.com ns28.worldnic.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/hu.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetJpnComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/jpn.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/jpn.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/jpn.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/jpn.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/jpn.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/jpn.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/jpn.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/jpn.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/jpn.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/jpn.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/jpn.com/registered.txt'))
+    expected  = Time.parse("2007-06-29")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/jpn.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/jpn.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/jpn.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/jpn.com/registered.txt'))
+    expected  = Time.parse("2011-06-29")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/jpn.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/jpn.com/registered.txt'))
+    expected  = %w( ns1.diywebbuilder.org ns2.diywebbuilder.org )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/jpn.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetKrComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/kr.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/kr.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/kr.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/kr.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/kr.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/kr.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/kr.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/kr.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/kr.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/kr.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/kr.com/registered.txt'))
+    expected  = Time.parse("2008-06-11")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/kr.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/kr.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/kr.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/kr.com/registered.txt'))
+    expected  = Time.parse("2011-06-11")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/kr.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/kr.com/registered.txt'))
+    expected  = %w( ns1.academyart.edu ns2.academyart.edu )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/kr.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetNoComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/no.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/no.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/no.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/no.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/no.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/no.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/no.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/no.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/no.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/no.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/no.com/registered.txt'))
+    expected  = Time.parse("2004-06-07")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/no.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/no.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/no.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/no.com/registered.txt'))
+    expected  = Time.parse("2012-06-07")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/no.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/no.com/registered.txt'))
+    expected  = %w( ns1.ukdnsservers.co.uk ns2.ukdnsservers.co.uk )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/no.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetQcComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/qc.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/qc.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/qc.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/qc.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/qc.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/qc.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/qc.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/qc.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/qc.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/qc.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/qc.com/registered.txt'))
+    expected  = Time.parse("2004-10-08")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/qc.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/qc.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/qc.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/qc.com/registered.txt'))
+    expected  = Time.parse("2012-10-08")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/qc.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/qc.com/registered.txt'))
+    expected  = %w( ns1.mydomain.com ns2.mydomain.com ns3.mydomain.com ns4.mydomain.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/qc.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetRuComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ru.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ru.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ru.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ru.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/ru.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/ru.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/ru.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/ru.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/ru.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/ru.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/ru.com/registered.txt'))
+    expected  = Time.parse("2006-07-31")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/ru.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ru.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/ru.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/ru.com/registered.txt'))
+    expected  = Time.parse("2012-07-31")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/ru.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/ru.com/registered.txt'))
+    expected  = %w( ns12.zoneedit.com ns7.zoneedit.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/ru.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetSaComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sa.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sa.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sa.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sa.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/sa.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/sa.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/sa.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/sa.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/sa.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/sa.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/sa.com/registered.txt'))
+    expected  = Time.parse("2007-09-27")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/sa.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sa.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/sa.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/sa.com/registered.txt'))
+    expected  = Time.parse("2011-09-27")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/sa.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/sa.com/registered.txt'))
+    expected  = %w( ns1191.websitewelcome.com ns1192.websitewelcome.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/sa.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetSeComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/se.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/se.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/se.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/se.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/se.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/se.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/se.com/registered.txt'))
+    expected  = Time.parse("2008-05-10")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/se.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/se.com/registered.txt'))
+    expected  = Time.parse("2011-05-10")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/se.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/se.com/registered.txt'))
+    expected  = %w( ns1.domaindiscount24.net ns2.domaindiscount24.net ns3.domaindiscount24.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/se.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetSeNetTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.net/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.net/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.net/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.net/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/se.net/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/se.net/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/se.net/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/se.net/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/se.net/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/se.net/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/se.net/registered.txt'))
+    expected  = Time.parse("2008-05-10")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/se.net/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.net/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/se.net/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/se.net/registered.txt'))
+    expected  = Time.parse("2011-05-10")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/se.net/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/se.net/registered.txt'))
+    expected  = %w( ns1.domaindiscount24.net ns2.domaindiscount24.net ns3.domaindiscount24.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/se.net/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetUkComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/uk.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/uk.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/uk.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/uk.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/uk.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/uk.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/uk.com/registered.txt'))
+    expected  = Time.parse("2001-08-31")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/uk.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/uk.com/registered.txt'))
+    expected  = Time.parse("2011-08-31")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/uk.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/uk.com/registered.txt'))
+    expected  = %w( ns1.myhostcp.com ns2.myhostcp.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/uk.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetUkNetTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.net/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.net/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.net/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.net/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/uk.net/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/uk.net/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/uk.net/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/uk.net/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/uk.net/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/uk.net/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/uk.net/registered.txt'))
+    expected  = Time.parse("2006-02-28")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/uk.net/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.net/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uk.net/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/uk.net/registered.txt'))
+    expected  = Time.parse("2012-02-28")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/uk.net/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/uk.net/registered.txt'))
+    expected  = %w( ns1.myhostcp.com ns2.myhostcp.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/uk.net/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetUsComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/us.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/us.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/us.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/us.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/us.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/us.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/us.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/us.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/us.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/us.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/us.com/registered.txt'))
+    expected  = Time.parse("2003-10-20")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/us.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/us.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/us.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/us.com/registered.txt'))
+    expected  = Time.parse("2014-10-20")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/us.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/us.com/registered.txt'))
+    expected  = %w( ns1.p17.dynect.net ns2.p17.dynect.net ns3.p17.dynect.net ns4.p17.dynect.net )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/us.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetUyComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uy.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uy.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uy.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uy.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/uy.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/uy.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/uy.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/uy.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/uy.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/uy.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/uy.com/registered.txt'))
+    expected  = Time.parse("2009-05-04")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/uy.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uy.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/uy.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/uy.com/registered.txt'))
+    expected  = Time.parse("2011-05-04")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/uy.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/uy.com/registered.txt'))
+    expected  = %w( ns79.worldnic.com ns80.worldnic.com )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/uy.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+end
+
+class AnswerParserWhoisCentralnicNetZaComTest < AnswerParserWhoisCentralnicNetTest
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/za.com/registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/za.com/available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/za.com/registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/za.com/available.txt')).referral_url }
+  end
+
+
+  def test_status
+    parser    = @klass.new(load_part('/za.com/registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('/za.com/available.txt'))
+    expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+  end
+
+  def test_available?
+    parser    = @klass.new(load_part('/za.com/registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('/za.com/available.txt'))
+    expected  = true
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
+  end
+
+  def test_registered?
+    parser    = @klass.new(load_part('/za.com/registered.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('/za.com/available.txt'))
+    expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+  end
+
+
+  def test_created_on
+    parser    = @klass.new(load_part('/za.com/registered.txt'))
+    expected  = Time.parse("2004-11-17")
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+
+    parser    = @klass.new(load_part('/za.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.created_on
+    assert_equal  expected, parser.instance_eval { @created_on }
+  end
+
+  def test_updated_on
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/za.com/registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('/za.com/available.txt')).updated_on }
+  end
+
+  def test_expires_on
+    parser    = @klass.new(load_part('/za.com/registered.txt'))
+    expected  = Time.parse("2013-11-17")
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+
+    parser    = @klass.new(load_part('/za.com/available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.expires_on
+    assert_equal  expected, parser.instance_eval { @expires_on }
+  end
+
+
+  def test_nameservers
+    parser    = @klass.new(load_part('/za.com/registered.txt'))
+    expected  = %w( ns1a.your-server.co.za nsa.second-ns.co.za )
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('/za.com/available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
 end
