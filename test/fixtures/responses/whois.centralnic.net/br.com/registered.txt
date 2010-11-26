@@ -1,0 +1,73 @@
+  Domain Name: billboard.br.com
+
+  Registrant:
+    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
+    
+    Rua Iguatemi, 192
+    Cj 141/142
+    Sao Paulo
+    Sao Paulo
+    01451-010
+    BR (Brazil)
+    Tel: +55.1130787711
+
+  Administrative Contact:
+    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
+    
+    Rua Iguatemi, 192
+    Cj 141/142
+    Sao Paulo
+    Sao Paulo
+    01451-010
+    BR (Brazil)
+    Tel: +55.1130787711
+
+  Technical Contact:
+    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
+    
+    Rua Iguatemi, 192
+    Cj 141/142
+    Sao Paulo
+    Sao Paulo
+    01451-010
+    BR (Brazil)
+    Tel: +55.1130787711
+
+  Billing Contact:
+    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
+    
+    Rua Iguatemi, 192
+    Cj 141/142
+    Sao Paulo
+    Sao Paulo
+    01451-010
+    BR (Brazil)
+    Tel: +55.1130787711
+
+  Registrar:
+    Domain Administrator (H292913) GTLD-Admin@networksolutions.com
+    Network Solutions LLC
+    13861 Sunrise Valley Drive
+    Suite 300
+    Herndon
+    VA
+    20171
+    US (United States)
+    Tel: +1.5707088788
+    Fax: +1.7036685817
+    URL: http://www.networksolutions.com/
+
+  Record created on: 17 April 2009
+  Record expires on: 17 April 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.TERRA.COM.BR
+  NS2.TERRA.COM.BR
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

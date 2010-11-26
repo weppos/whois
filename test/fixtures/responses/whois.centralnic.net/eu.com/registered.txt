@@ -1,0 +1,57 @@
+  Domain Name: walkabout.eu.com
+
+  Registrant:
+    Regent Inns Plc (H1045382) john.boyle@regent-inns.plc.uk
+    
+    77 Muswell Hill
+    London
+    N10 3PJ
+    UK (United Kingdom)
+    Tel: +442083753155
+    Fax: +442083753001
+
+  Administrative Contact:
+    John Boyle (H64717) john.boyle@regent-inns.plc.uk
+    Regent Inns Plc
+    77 Muswell Hill
+    London
+    N10 3PJ
+    UK (United Kingdom)
+    Tel: +442083753155
+    Fax: +442083753001
+
+  Technical Contact:
+    Constantine Pagonis (H126914) constantine@itransact.ltd.uk
+    iTransact Ltd
+    PO Box 430
+    Cambridge
+    Cambs
+    CB1 2WE
+    UK (United Kingdom)
+    Tel: 01223 700322
+
+  Registrar:
+    Constantine Pagonis (H126914) constantine@itransact.ltd.uk
+    iTransact Ltd
+    PO Box 430
+    Cambridge
+    Cambs
+    CB1 2WE
+    UK (United Kingdom)
+    Tel: 01223 700322
+    URL: www.itransact.ltd.uk
+
+  Record created on: 14 August 2001
+  Record expires on: 14 August 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.ITRANSACTUK.NET
+  NS2.ITRANSACTUK.NET
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

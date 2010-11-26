@@ -12,10 +12,10 @@ r = Whois.query(d)
 
 if r.parts.size == 1
   r.parts.each do |part|
-    p = File.expand_path("../../test/fixtures/responses/#{part.host}", __FILE__)
-    FileUtils.mkdir_p(p)
-    File.open("#{p}/#{n}", "w+") { |f| f.write(part.body) }
-    puts "Saved #{p}/#{n}"
+    p = File.expand_path("../../test/fixtures/responses/#{part.host}/#{n}", __FILE__)
+    FileUtils.mkdir_p(File.dirname(p))
+    File.open(p, "w+") { |f| f.write(part.body) }
+    puts "Saved #{p}"
   end
 else
   raise("Multipart")

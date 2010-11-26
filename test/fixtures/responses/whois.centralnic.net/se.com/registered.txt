@@ -1,0 +1,72 @@
+  Domain Name: hotel.se.com
+
+  Registrant:
+    Boris Schleinkofer (P-37417656) schleinkofer@ps-consulting-ag.com
+    P.S. Consulting AG
+    Hacklthaler Strasse 21c / 1.UG
+    Kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Administrative Contact:
+    Boris Schleinkofer (P-37417656) schleinkofer@ps-consulting-ag.com
+    P.S. Consulting AG
+    Hacklthaler Strasse 21c / 1.UG
+    Kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Technical Contact:
+    Boris Schleinkofer (P-37417656) schleinkofer@ps-consulting-ag.com
+    P.S. Consulting AG
+    Hacklthaler Strasse 21c / 1.UG
+    Kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Billing Contact:
+    Boris Schleinkofer (P-37417656) schleinkofer@ps-consulting-ag.com
+    P.S. Consulting AG
+    Hacklthaler Strasse 21c / 1.UG
+    Kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Registrar:
+    Domain Administrator (7091-KS) afilias-grs@registry-auto.rrpproxy.net
+    Key Systems GmbH
+    Im Oberen Werk 1
+    St. Ingbert
+    66386
+    DE (Germany)
+    Tel: +49.68949396850
+    Fax: +49 (0)68949396851
+    URL: http://www.key-systems.net/
+
+  Record created on: 10 May 2008
+  Record expires on: 10 May 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.DOMAINDISCOUNT24.NET
+  NS2.DOMAINDISCOUNT24.NET
+  NS3.DOMAINDISCOUNT24.NET
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

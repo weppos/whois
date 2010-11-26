@@ -1,0 +1,73 @@
+  Domain Name: ctrl.uy.com
+
+  Registrant:
+    RITELUR S.A. (2934100) hubert@ghmuruguay.com
+    RITELUR S.A.
+    Minas 1036
+    MONTEVIDEO
+    MONTEVIDEO
+    11200
+    UY (Uruguay)
+    Tel: +1.59824102917
+    Fax: +1.5982410291720
+
+  Administrative Contact:
+    RITELUR S.A. (2934100) hubert@ghmuruguay.com
+    RITELUR S.A.
+    Minas 1036
+    MONTEVIDEO
+    MONTEVIDEO
+    11200
+    UY (Uruguay)
+    Tel: +1.59824102917
+    Fax: +1.5982410291720
+
+  Technical Contact:
+    RITELUR S.A. (2934100) hubert@ghmuruguay.com
+    RITELUR S.A.
+    Minas 1036
+    MONTEVIDEO
+    MONTEVIDEO
+    11200
+    UY (Uruguay)
+    Tel: +1.59824102917
+    Fax: +1.5982410291720
+
+  Billing Contact:
+    HUBERT MESTRE (2934101) hubert.mestre@yahoo.com
+    Ritelur S.A.
+    Minas 1036
+    MONTEVIDEO
+    MONTEVIDEO
+    11200
+    UY (Uruguay)
+    Tel: +1.59824102917
+    Fax: +1.59824102917
+
+  Registrar:
+    Domain Administrator (H292913) GTLD-Admin@networksolutions.com
+    Network Solutions LLC
+    13861 Sunrise Valley Drive
+    Suite 300
+    Herndon
+    VA
+    20171
+    US (United States)
+    Tel: +1.5707088788
+    Fax: +1.7036685817
+    URL: http://www.networksolutions.com/
+
+  Record created on: 04 May 2009
+  Record expires on: 04 May 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS79.WORLDNIC.COM
+  NS80.WORLDNIC.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

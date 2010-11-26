@@ -1,0 +1,59 @@
+  Domain Name: paramount.uk.net
+
+  Registrant:
+    Century Leisure plc (H1056361) pierre@centuryclub.co.uk
+    
+    61 Shaftesbury Avenue
+    London
+    W1D 6LG
+    UK (United Kingdom)
+    Tel: +44 20 75343080
+
+  Administrative Contact:
+    Pierre Condou (H239313) pierre@centuryclub.co.uk
+    Century Leisure plc
+    61 Shaftesbury Avenue
+    London
+    W1D 6LG
+    UK (United Kingdom)
+    Tel: +44 20 75343080
+
+  Technical Contact:
+    Domain Admin (I6467) hosting-domains@webfusion.com
+    Webfusion
+    5 Roundwood Avenue
+    Stockley Park
+    Uxbridge
+    Middlesex
+    UB11 1FF
+    UK (United Kingdom)
+    Tel: 08712 309525
+    Fax: 08701 650437
+
+  Registrar:
+    Domain Admin (I6467) hosting-domains@webfusion.com
+    Webfusion
+    5 Roundwood Avenue
+    Stockley Park
+    Uxbridge
+    Middlesex
+    UB11 1FF
+    UK (United Kingdom)
+    Tel: 08712 309525
+    Fax: 08701 650437
+    URL: http://www.123-reg.co.uk
+
+  Record created on: 28 February 2006
+  Record expires on: 28 February 2012
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.MYHOSTCP.COM
+  NS2.MYHOSTCP.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

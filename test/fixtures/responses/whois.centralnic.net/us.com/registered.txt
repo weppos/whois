@@ -1,0 +1,61 @@
+  Domain Name: college.us.com
+
+  Registrant:
+    Vantage Media Corporation (H1044037) domainadmin@vantagemedia.com
+    
+    2101 Rosecrans Ave.
+    Suite 2000
+    90245
+    US (United States)
+    Tel: 310-219-6200
+    Fax: 866-589-7214
+
+  Administrative Contact:
+    Domain Administrator (H143205) domainadmin@vantagemedia.com
+    Vantage Media LLC
+    2101 Rosecrans Ave.
+    Suite 2000
+    90245
+    US (United States)
+    Tel: 310-219-6200
+    Fax: 866-589-7214
+
+  Technical Contact:
+    Domain Administrator (H143205) domainadmin@vantagemedia.com
+    Vantage Media LLC
+    2101 Rosecrans Ave.
+    Suite 2000
+    90245
+    US (United States)
+    Tel: 310-219-6200
+    Fax: 866-589-7214
+
+  Billing Contact:
+    Domain Administrator (H143205) domainadmin@vantagemedia.com
+    Vantage Media LLC
+    2101 Rosecrans Ave.
+    Suite 2000
+    90245
+    US (United States)
+    Tel: 310-219-6200
+    Fax: 866-589-7214
+
+  Registrar:
+    No registrar listed. This domain is registered directly with CentralNic.
+
+  Record created on: 20 October 2003
+  Record expires on: 20 October 2014
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.P17.DYNECT.NET
+  NS2.P17.DYNECT.NET
+  NS3.P17.DYNECT.NET
+  NS4.P17.DYNECT.NET
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

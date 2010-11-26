@@ -1,0 +1,59 @@
+  Domain Name: mrsa.no.com
+
+  Registrant:
+    The Training Foundation (H1048884) info@trainingfoundation.com
+    
+    Foundation House  Millburn Hill Road Coventry England
+    CV4 7EZ
+    UK (United Kingdom)
+    Tel: +44.4402476411288
+    Fax: +44.4402476693050
+
+  Administrative Contact:
+    Stephen Norton (H107714) info@trainingfoundation.com
+    The Training Foundation
+    Foundation House  Millburn Hill Road Coventry England
+    CV4 7EZ
+    UK (United Kingdom)
+    Tel: +44.4402476411288
+    Fax: +44.4402476693050
+
+  Technical Contact:
+    Paul Lomax (I5482) domadmin@domain-parking.net
+    Fibranet Services Ltd
+    P O Box 95
+    2a Lord Street
+    Douglas
+    Isle of Man
+    IM99 1HP
+    UK (United Kingdom)
+    Tel: +44 1624 693900
+    Fax: +44 1624 693901
+
+  Registrar:
+    Paul Lomax (I5482) domadmin@domain-parking.net
+    Fibranet Services Ltd
+    P O Box 95
+    2a Lord Street
+    Douglas
+    Isle of Man
+    IM99 1HP
+    UK (United Kingdom)
+    Tel: +44 1624 693900
+    Fax: +44 1624 693901
+    URL: www.freeparking.co.uk
+
+  Record created on: 07 June 2004
+  Record expires on: 07 June 2012
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.UKDNSSERVERS.CO.UK
+  NS2.UKDNSSERVERS.CO.UK
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

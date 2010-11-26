@@ -87,7 +87,6 @@ module Whois
           @registrant_contact ||= contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
-
         property_supported :admin_contact do
           @admin_contact ||= contact("Admin Contact", Whois::Answer::Contact::TYPE_ADMIN)
         end
