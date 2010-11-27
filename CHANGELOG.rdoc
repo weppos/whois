@@ -11,6 +11,8 @@
   sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, web.com,
   za.com TLD parser (whois.centralnic.net).
 
+* FIXED: whois.dns.pt must support :reserved status.
+
 
 == Release 1.6.4
 

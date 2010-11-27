@@ -35,9 +35,10 @@ module Whois
       class WhoisDnsPt < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ / Status:\s+(.+)\n/
+          @status ||= if content_for_scanner =~ /^Estado \/ Status:\s+(.+)\n/
             case $1.downcase
               when "active" then :registered
+              when "reserved" then :reserved
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

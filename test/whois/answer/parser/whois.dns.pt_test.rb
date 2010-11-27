@@ -19,6 +19,11 @@ class AnswerParserWhoisDnsPtTest < Whois::Answer::Parser::TestCase
     expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = :reserved
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -31,6 +36,11 @@ class AnswerParserWhoisDnsPtTest < Whois::Answer::Parser::TestCase
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
@@ -41,6 +51,11 @@ class AnswerParserWhoisDnsPtTest < Whois::Answer::Parser::TestCase
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
   end
@@ -76,6 +91,11 @@ class AnswerParserWhoisDnsPtTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
 
     parser    = @klass.new(load_part('available.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+
+    parser    = @klass.new(load_part('reserved.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
