@@ -22,42 +22,74 @@ module Whois
 
   class Answer
 
+    # @return [Whois::Server] The server that originated this answer.
     attr_reader :server
+
+    # @return [Array<Whois::Answer::Part>] The parts that compose this answer.
     attr_reader :parts
 
+
+    # Initializes a new instance with given +server+ and +parts+.
+    #
+    # @param  [Whois::Server] server
+    # @param  [Array<Whois::Answer::Part>] parts
+    #
     def initialize(server, parts)
       @parts  = parts
       @server = server
     end
 
 
+    # Returns a String representation of this answer.
+    #
+    # @return [String] The answer content.
     def to_s
       content.to_s
     end
 
+    # Returns a human-readable representation of this answer.
+    #
+    # @return [String] The result of #inspect on content.
     def inspect
       content.inspect
     end
 
     # Invokes <tt>match</tt> on answer <tt>@content</tt>
-    # and returns the <tt>MatchData</tt> or <tt>nil</tt>.
+    # and returns the match as <tt>MatchData</tt> or <tt>nil</tt>.
+    #
+    # @param  [RegExp, String] match
+    # @return [MatchData] If pattern matches {#content}
+    # @return [nil] If pattern doesn't match {#content}
+    #
+    # @see String#match
+    #
     def match(pattern)
       content.match(pattern)
     end
 
     # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
     # matches <tt>@content</tt>, <tt>false</tt> otherwise.
+    #
+    # @param  [RegExp, String] match
+    # @return [Boolean]
+    #
+    # @see #match
+    #
     def match?(pattern)
       !content.match(pattern).nil?
     end
 
     # Returns true if the <tt>object</tt> is the same object,
     # or is a string and has the same content.
+    #
+    # @param  [Whois::Answer] other The answer to compare.
+    # @return [Boolean]
+    #
     def ==(other)
-      (other.equal?(self)) ||
+      (self.equal?(other)) ||
       # TODO: This option should be deprecated
-      (other.is_a?(String) && other == self.to_s) ||
-      (other.is_a?(Answer) && other.to_s == self.to_s)
+      (other.is_a?(String) && to_s == other) ||
+      (other.is_a?(Answer) && to_s == other.to_s)
     end
 
     alias_method :eql?, :==
