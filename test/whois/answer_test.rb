@@ -95,12 +95,6 @@ class AnswerTest < Test::Unit::TestCase
     assert_equal [], answer.contacts
   end
 
-  def test_throttle_question
-    answer = @klass.new(@server, @parts)
-    answer.parser.expects(:throttle?).returns(true)
-    assert_equal true, answer.throttle?
-  end
-
 
   def test_parser
     answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])

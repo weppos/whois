@@ -77,18 +77,6 @@ module Whois
 
         property_not_supported :nameservers
 
-
-        # NEWPROPERTY
-        property_supported :changed? do |other|
-          !unchanged?(other)
-        end
-
-        # NEWPROPERTY
-        property_supported :unchanged? do |other|
-          (self === other) ||
-          (self.content == other.content)
-        end
-
       end
 
     end

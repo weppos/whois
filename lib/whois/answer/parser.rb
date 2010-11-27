@@ -23,9 +23,9 @@ module Whois
     class Parser
 
       METHODS = [
-        :contacts, :throttle?,
-        # deprecated methods
-        :registrant, :admin, :technical,
+        :changed?, :unchanged?,
+        :contacts,
+        # :throttle?,
       ]
 
       PROPERTIES = [
@@ -61,9 +61,58 @@ module Whois
       end
 
 
-      # Collects and returns all the contacts from all parsers.
+      # Loop through all the answer parts to check if at least
+      # one part changed.
+      #
+      # @param  [Whois::Answer::Parser] other The other parser instance to compare.
+      # @return [Boolean]
+      #
+      # @see Whois::Answer#changed?
+      # @see Whois::Answer::Parser::Base#changed?
+      #
+      def changed?(other)
+        !unchanged?(other)
+      end
+
+      # The opposite of {#changed?}.
+      #
+      # @param  [Whois::Answer::Parser] other The other parser instance to compare.
+      # @return [Boolean]
+      #
+      # @see Whois::Answer#unchanged?
+      # @see Whois::Answer::Parser::Base#unchanged?
+      #
+      def unchanged?(other)
+        unless other.is_a?(self.class)
+          raise(ArgumentError, "Can't compare `#{self.class}' with `#{other.class}'")
+        end
+
+        equal?(other) ||
+        parsers.size == other.parsers.size &&
+          all_with_args?(parsers, other.parsers) { |one, two| one.unchanged?(two) }
+      end
+
+      # Collects and returns all the contacts from all the answer parts.
+      #
+      # @return [Array<Whois::Aswer::Contact>]
+      #
+      # @see Whois::Answer#contacts?
+      # @see Whois::Answer::Parser::Base#contacts?
+      #
       def contacts
         parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
+      end
+
+      # Loop through all the answer parts to check if at least
+      # one part is a throttle response.
+      #
+      # @return [Boolean]
+      #
+      # @see Whois::Answer#throttle?
+      # @see Whois::Answer::Parser::Base#throttle?
+      #
+      def throttle?
+        parsers.any?(&:throttle?)
       end
 
 
@@ -154,6 +203,17 @@ module Whois
             return parser if parser.class.property_registered?(property, status)
           end
           nil
+        end
+
+        def all_with_args?(*args, &block)
+          count = args.first.size
+          index = 0
+
+          while index < count
+            return false unless yield(*args.map { |arg| arg[index] })
+            index += 1
+          end
+          true
         end
 
 

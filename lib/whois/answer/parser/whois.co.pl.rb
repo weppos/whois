@@ -87,18 +87,6 @@ module Whois
           @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
         end
 
-
-        # NEWPROPERTY
-        property_supported :changed? do |other|
-          !unchanged?(other)
-        end
-
-        # NEWPROPERTY
-        property_supported :unchanged? do |other|
-          (self === other) ||
-          (self.content == other.content)
-        end
-
       end
 
     end

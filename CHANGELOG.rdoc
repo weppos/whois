@@ -13,12 +13,16 @@
 
 * FIXED: whois.dns.pt must support :reserved status.
 
+* FIXED: Converted #changed? and #unchanged? properties to methods
+  and normalized their behavior.
+
 
 == Release 1.6.4
 
 * FIXED: With some .pl domains, whois.dns.pl parser returns invalid values for nameservers.
 
-* FIXED: The whois.pnina.ps server injects a NODNS.NS string when a nameserver is not set. The parser should ignore it.
+* FIXED: The whois.pnina.ps server injects a NODNS.NS string when a nameserver is not set.
+  The parser should ignore it.
 
 * FIXED: whois.nic.ve must support :suspended status.
 

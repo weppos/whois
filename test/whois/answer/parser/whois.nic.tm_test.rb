@@ -123,35 +123,4 @@ class AnswerParserWhoisNicTmTest < Whois::Answer::Parser::TestCase
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).nameservers }
   end
 
-
-  def test_changed?
-    parser_r1 = @klass.new(load_part('registered.txt'))
-    parser_r2 = @klass.new(load_part('registered.txt'))
-    parser_a1 = @klass.new(load_part('available.txt'))
-    parser_a2 = @klass.new(load_part('available.txt'))
-
-    assert !parser_r1.changed?(parser_r1)
-    assert !parser_r1.changed?(parser_r2)
-    assert  parser_r1.changed?(parser_a1)
-
-    assert !parser_a1.changed?(parser_a1)
-    assert !parser_a1.changed?(parser_a2)
-    assert  parser_a1.changed?(parser_r1)
-  end
-
-  def test_unchanged?
-    parser_r1 = @klass.new(load_part('registered.txt'))
-    parser_r2 = @klass.new(load_part('registered.txt'))
-    parser_a1 = @klass.new(load_part('available.txt'))
-    parser_a2 = @klass.new(load_part('available.txt'))
-
-    assert  parser_r1.unchanged?(parser_r1)
-    assert  parser_r1.unchanged?(parser_r2)
-    assert !parser_r1.unchanged?(parser_a1)
-
-    assert  parser_a1.unchanged?(parser_a1)
-    assert  parser_a1.unchanged?(parser_a2)
-    assert !parser_a1.unchanged?(parser_r1)
-  end
-
 end

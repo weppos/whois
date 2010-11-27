@@ -166,25 +166,4 @@ class AnswerParserWhoisNicSnTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
-
-  def test_changed_with_self
-    parser1  = @klass.new(load_part('registered.txt'))
-    assert !parser1.changed?(parser1)
-    assert  parser1.unchanged?(parser1)
-  end
-
-  def test_changed_with_equal_content
-    parser1  = @klass.new(load_part('registered.txt'))
-    parser2  = @klass.new(load_part('registered.txt'))
-    assert !parser1.changed?(parser2)
-    assert  parser1.unchanged?(parser2)
-  end
-
-  def test_changed_with_different_content
-    parser1  = @klass.new(load_part('registered.txt'))
-    parser2  = @klass.new(load_part('available.txt'))
-    assert  parser1.changed?(parser2)
-    assert !parser1.unchanged?(parser2)
-  end
-
 end

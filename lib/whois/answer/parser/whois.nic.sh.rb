@@ -80,18 +80,6 @@ module Whois
 
         property_not_supported :nameservers
 
-
-        # NEWPROPERTY
-        def changed?(other)
-          !unchanged?(other)
-        end
-
-        # NEWPROPERTY
-        def unchanged?(other)
-          self.equal?(other) ||
-          self.content_for_scanner == other.content_for_scanner
-        end
-
       end
 
     end

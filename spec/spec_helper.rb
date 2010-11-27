@@ -17,6 +17,16 @@ module Helpers
     Whois::Server.send :class_variable_set, :@@definitions, @_definitions
   end
 
+  # Temporary resets parser @@registry
+  # to let the test setup a custom registry.
+  def with_registry(&block)
+    @_property_registry = Whois::Answer::Parser::Base.send :class_variable_get, :@@property_registry
+    Whois::Answer::Parser::Base.send :class_variable_set, :@@property_registry, {}
+    yield
+  ensure
+    Whois::Answer::Parser::Base.send :class_variable_set, :@@property_registry, @_property_registry
+  end
+
   # Gets the currently described class.
   # Conversely to +subject+, it returns the class
   # instead of an instance.

@@ -103,17 +103,6 @@ module Whois
 
 
         # NEWPROPERTY
-        property_supported :changed? do |other|
-          !unchanged?(other)
-        end
-
-        # NEWPROPERTY
-        property_supported :unchanged? do |other|
-          self == other ||
-          self.content.to_s == other.content.to_s
-        end
-
-        # NEWPROPERTY
         def throttle?
           !!node("status-throttle")
         end

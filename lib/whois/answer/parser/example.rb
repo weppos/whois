@@ -160,30 +160,6 @@ module Whois
           @nameservers ||= []
         end
 
-
-        # Public: Checks whether this answer is different than <tt>other</tt>.
-        #
-        # Comparing the Answer contents is not always as trivial as it seems.
-        # Whois servers sometimes inject dynamic method into the whois answer such as
-        # the timestamp the request was generated.
-        # This causes two answers to be different even if they actually should be considered equal
-        # because the registry data didn't change.
-        #
-        # This method should provide a bulletproof way to detect whether this answer
-        # changed if compared with <tt>other</tt>.
-        #
-        # Returns true/false depending whether this answer is different than <tt>other</tt>.
-        property_supported :changed? do |other|
-          !unchanged?(other)
-        end
-
-        # Public: The opposite of <tt>#changed?</tt>.
-        #
-        # Returns true/false depending whether this answer is not different than <tt>other</tt>.
-        property_supported :unchanged? do |other|
-          false
-        end
-
       end
 
     end

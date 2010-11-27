@@ -101,16 +101,6 @@ module Whois
         end
 
 
-        property_supported :changed? do |other|
-          !unchanged?(other)
-        end
-
-        property_supported :unchanged? do |other|
-          (self === other) ||
-          (self.content == other.content)
-        end
-
-
         protected
 
           def parse
