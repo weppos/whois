@@ -54,6 +54,11 @@ module Whois
     Client.new.query(qstring)
   end
 
+  class << self
+    alias_method :whois, :query
+  end
+
+
   # Checks whether the object represented by <tt>qstring</tt> is available.
   #
   # Warning: this method is only available if a Whois parser exists
@@ -82,11 +87,12 @@ module Whois
   #   # => true
   #
   def self.available?(qstring)
-    query(qstring).available?
-  rescue ParserNotFound => e
-    warn  "This method is not supported for this kind of object.\n" +
-          "Use Whois.query('#{qstring}') instead."
-    nil
+    result = query(qstring).available?
+    if result.nil?
+      warn  "This method is not supported for this kind of object.\n" +
+            "Use Whois.query('#{qstring}') instead."
+    end
+    result
   end
 
   # Checks whether the object represented by <tt>qstring</tt> is registered.
@@ -117,17 +123,12 @@ module Whois
   #   # => false
   #
   def self.registered?(qstring)
-    query(qstring).registered?
-  rescue ParserNotFound => e
-    warn  "This method is not supported for this kind of object.\n" +
-          "Use Whois.query('#{qstring}') instead."
-    nil
-  end
-
-
-  # See <tt>Whois#query</tt>.
-  def self.whois(qstring)
-    query(qstring)
+    result = query(qstring).registered?
+    if result.nil?
+      warn  "This method is not supported for this kind of object.\n" +
+            "Use Whois.query('#{qstring}') instead."
+    end
+    result
   end
 
 

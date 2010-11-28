@@ -34,6 +34,7 @@ describe Whois do
       with_definitions do
         Whois::Server.define(:tld, ".test", "missing.parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).returns("1 == 2")
+        Whois.expects(:warn)
 
         Whois.available?("example.test").should be_nil
       end
@@ -63,6 +64,7 @@ describe Whois do
       with_definitions do
         Whois::Server.define(:tld, ".test", "missing.parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).returns("1 == 2")
+        Whois.expects(:warn)
 
         Whois.registered?("example.test").should be_nil
       end

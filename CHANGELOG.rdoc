@@ -16,6 +16,8 @@
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
+* FIXED: Make sure a warning is issued when #registered? or #available? returns nil.
+
 
 == Release 1.6.4
 
