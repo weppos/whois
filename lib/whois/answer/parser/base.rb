@@ -284,10 +284,10 @@ module Whois
         # @abstract This method returns false by default.
         #
         # @return [false]
-          #
-          # @see Whois::Answer#throttle?
-          # @see Whois::Answer::Parser#throttle?
-          #
+        #
+        # @see Whois::Answer#throttle?
+        # @see Whois::Answer::Parser#throttle?
+        #
         def throttle?
           false
         end
