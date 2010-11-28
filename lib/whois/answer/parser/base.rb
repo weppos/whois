@@ -186,6 +186,9 @@ module Whois
         end
 
 
+        # @return [Whois::Answer::Part] The part referenced by this parser.
+        attr_reader :part
+
         # Initializes a new parser with given +part+.
         #
         # @param  [Whois::Answer::Part] part
@@ -194,21 +197,21 @@ module Whois
           @part = part
         end
 
-        def part
-          @part
-        end
-
         # This is an internal method primary used as a common access point
         # to get the content to be parsed as a string.
         #
-        # The main reason behind this method is because I changed the internal
-        # representation of the data to be parsed more than once
-        # and I always had to rewrite all single parsers in order to reflect these changes.
+        # The main reason behind this method is because, in the past,
+        # the internal representation of the data to be parsed changed
+        # several times, and I always had to rewrite all single parsers
+        # in order to reflect these changes.
         # Now, as far as the parser access the data via the content method,
-        # there's no need to change each single implementation in case the content source changes.
+        # there's no need to change each single implementation
+        # in case the content source changes.
         #
-        # That said, the only constraints about this method is to return the data to be parsed as string.
+        # That said, the only constraints about this method
+        # is to return the data to be parsed as string.
         #
+        # @return [String] The part body.
         def content
           part.body
         end
