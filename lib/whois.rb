@@ -29,26 +29,18 @@ module Whois
   AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
 
 
-  # Queries the right WHOIS server for <tt>qstring</tt> and returns
+  # Queries the WHOIS server for <tt>qstring</tt> and returns
   # the response from the server.
   #
-  # ==== Parameters
+  # @param  [String] qstring The string to be sent as query parameter.
+  # @return [Whois::Answer] The answer containing the response from the WHOIS server.
   #
-  # qstring:: The String to be sent as query parameter.
-  #
-  # ==== Returns
-  #
-  # Whois::Answer:: The answer containing the response from the WHOIS server.
-  #
-  # ==== Examples
-  #
+  # @example
   #   Whois.query("google.com")
   #   # => #<Whois::Answer>
   #
-  # This is equivalent to
-  #
+  #   # Equivalent to
   #   Whois::Client.new.query("google.com")
-  #   # => #<Whois::Answer>
   #
   def self.query(qstring)
     Client.new.query(qstring)
@@ -68,21 +60,16 @@ module Whois
   # This is a technical limitation. Browse the lib/whois/answer/parsers
   # folder to view all available parsers.
   #
-  # ==== Parameters
+  # @param  [String] qstring The string to be sent as query parameter.
+  #         It is intended to be a domain name, otherwise this method
+  #         may return unexpected responses.
+  # @return [Boolean]
   #
-  # qstring:: The String to be sent as query parameter.
-  #           It is intended to be a domain name, otherwise this method
-  #           may return unexpected responses.
-  #
-  # ==== Returns
-  #
-  # Boolean
-  #
-  # ==== Examples
-  #
+  # @example
   #   Whois.available?("google.com")
   #   # => false
   #   
+  # @example
   #   Whois.available?("google-is-not-available-try-again-later.com")
   #   # => true
   #
@@ -104,21 +91,16 @@ module Whois
   # This is a technical limitation. Browse the lib/whois/answer/parsers folder
   # to view all available parsers.
   #
-  # ==== Parameters
+  # @param  [String] qstring The string to be sent as query parameter.
+  #         It is intended to be a domain name, otherwise this method
+  #         may return unexpected responses.
+  # @return [Boolean]
   #
-  # qstring:: The String to be sent as query parameter.
-  #           It is intended to be a domain name, otherwise this method
-  #           may return unexpected responses.
-  #
-  # ==== Returns
-  #
-  # Boolean
-  #
-  # ==== Examples
-  #
+  # @example
   #   Whois.registered?("google.com")
   #   # => true
   #   
+  # @example
   #   Whois.registered?("google-is-not-available-try-again-later.com")
   #   # => false
   #
@@ -132,12 +114,28 @@ module Whois
   end
 
 
-  def self.deprecate(message = nil) # :nodoc:
+  # Echoes a deprecation warning message.
+  #
+  # @param  [String] message The message to display.
+  # @return [void]
+  #
+  # @api internal
+  # @private
+  def self.deprecate(message = nil)
     message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
     warn("DEPRECATION WARNING: #{message}")
   end
 
-  def self.bug!(error, message) # :nodoc:
+  # Appends "Please report issue to" to the message
+  # and raises a new +error+ with the final message.
+  #
+  # @param  [Exception] error
+  # @param  [String] message
+  # @return [void]
+  #
+  # @api internal
+  # @private
+  def self.bug!(error, message)
     raise error, message.dup        <<
       " Please report the issue at" <<
       " http://github.com/weppos/whois/issues"

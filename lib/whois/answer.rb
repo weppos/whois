@@ -58,8 +58,8 @@ module Whois
     # and returns the match as <tt>MatchData</tt> or <tt>nil</tt>.
     #
     # @param  [RegExp, String] match
-    # @return [MatchData] If pattern matches {#content}
-    # @return [nil] If pattern doesn't match {#content}
+    # @return [MatchData] If pattern matches #content
+    # @return [nil] If pattern doesn't match #content
     #
     # @see String#match
     #
