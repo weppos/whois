@@ -1,8 +1,8 @@
 .DS_Store
-nbproject
+.autotest
 .idea
-.rbc
+.yardoc
 pkg
 rdoc
+doc
 coverage
-.autotest
