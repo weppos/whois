@@ -34,7 +34,7 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
   end
 
   def test_query_with_referral_not_defined_should_ignore_referral
-    response1 = File.read(fixture("referrals/crsnic.com_server_not_defined.txt"))
+    response1 = File.read(fixture("referrals/crsnic.com_referral_not_defined.txt"))
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(response1)
     @server.expects(:ask_the_socket).never
 
@@ -43,7 +43,7 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
   end
 
   def test_query_with_referral_should_extract_the_closest_referral_server_with_more_servers
-    response1 = File.read(fixture("referrals/crsnic.com_many_servers.txt"))
+    response1 = File.read(fixture("referrals/crsnic.com_referral_multiple.txt"))
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(response1)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.markmonitor.com", 43).returns("")
 
@@ -52,7 +52,7 @@ class ServerAdaptersVerisignTest < Test::Unit::TestCase
   end
 
   def test_query_with_referral_should_extract_the_closest_referral_server_with_more_servers
-    response1 = File.read(fixture("referrals/crsnic.com_one_server.txt"))
+    response1 = File.read(fixture("referrals/crsnic.com_referral.txt"))
     @server.expects(:ask_the_socket).with("=domain.foo", "whois.foo", 43).returns(response1)
     @server.expects(:ask_the_socket).with("domain.foo", "whois.godaddy.com", 43).returns("")
 
