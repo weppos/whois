@@ -188,4 +188,11 @@ EOS
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_nameservers
+    parser    = @klass.new(load_part('property_nameserver_no_nameserver.txt'))
+    expected  = %w()
+    assert_equal  expected, parser.nameservers
+    assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
 end
