@@ -1,0 +1,37 @@
+Whois Server for the KZ top level domain name.
+This server is maintained by KazNIC Organization, a ccTLD manager for Kazakhstan Republic.
+
+Domain Name............: google.kz
+
+Organization Using Domain Name
+Name...................: Google Inc.
+Organization Name......: Google Inc.
+Street Address.........: 2400 E. Bayshore Pkwy
+City...................: Mountain View
+State..................: CA
+Postal Code............: 94043
+Country................: US
+
+Administrative Contact/Agent
+NIC Handle.............: DA141-SL
+Name...................: DNS Admin
+Phone Number...........: +1.6503300100 
+Fax Number.............: +1.6506181499 
+Email Address..........: dns-admin@google.com
+
+Nameserver in listed order
+
+Primary server.........: ns1.google.com
+Primary ip address.....: 216.239.32.10
+
+Secondary server.......: ns2.google.com
+Secondary ip address...: 216.239.34.10
+
+
+Domain created: 1999-06-07 20:01:43.0
+Last modified : 2009-08-21 09:11:45.0
+Domain status : ok - Normal state.
+                
+Registar created: KAZNIC
+Current Registar: KAZNIC
+

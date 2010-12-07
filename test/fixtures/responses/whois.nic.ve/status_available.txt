@@ -1,0 +1,10 @@
+
+Servidor Whois de NIC-Venezuela (.VE)
+
+Este servidor contiene informacion autoritativa exclusivamente de dominios .VE
+Cualquier consulta sobre este servicio, puede hacerla al correo electronico whois@nic.ve
+
+No match for "u34jedzcq.ve".
+
+NIC-Venezuela - CONATEL
+http://www.nic.ve
