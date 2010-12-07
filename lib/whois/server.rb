@@ -98,7 +98,7 @@ module Whois
     #         The type of WHOIS server to define.
     #         Known values are :tld, :ipv4, :ipv6.
     # @param  [String] allocation
-    #         The allocation, range or hostname this server is responsible for.
+    #         The allocation, range or hostname, this server is responsible for.
     # @param  [String, nil] host
     #         The server hostname. Use nil if unknown or not available.
     # @param  [Hash] options Optional definition properties.
@@ -157,7 +157,7 @@ module Whois
     #         The type of WHOIS server to define.
     #         Known values are :tld, :ipv4, :ipv6.
     # @param  [String] allocation
-    #         The allocation, range or hostname this server is responsible for.
+    #         The allocation, range or hostname, this server is responsible for.
     # @param  [String, nil] host
     #         The server hostname. Use nil if unknown or not available.
     # @param  [Hash] options Optional definition properties.

@@ -28,12 +28,31 @@ module Whois
         # Default Whois request port.
         DEFAULT_WHOIS_PORT = 43
 
+        # @return [Symbol] The type of WHOIS server
         attr_reader :type
+        # @return [String] The allocation this server is responsible for.
         attr_reader :allocation
+        # @return [String, nil] The server hostname.
         attr_reader :host
+        # @return [Hash] Optional adapter properties.
         attr_reader :options
+
+        # Temporary internal response buffer.
+        #
+        # @api internal
+        # @return [Array]
         attr_reader :buffer
 
+
+        # @param  [Symbol] type
+        #         The type of WHOIS adapter to define.
+        #         Known values are :tld, :ipv4, :ipv6.
+        # @param  [String] allocation
+        #         The allocation, range or hostname, this server is responsible for.
+        # @param  [String, nil] host
+        #         The server hostname. Use nil if unknown or not available.
+        # @param  [Hash] options Optional adapter properties.
+        #
         def initialize(type, allocation, host, options = {})
           @type       = type
           @allocation = allocation
@@ -43,10 +62,10 @@ module Whois
 
         # Checks self and other for equality.
         #
-        # other - The Whois::Server::Adapter::* to check.
+        # @param  [The Whois::Server::Adapters::Base] other
         #
-        # Returns true if the <tt>other</tt> is the same object,
-        # or <tt>other</tt> attributes matches this object attributes.
+        # @return [Boolean] Returns true if the other is the same object,
+        #         or <tt>other</tt> attributes matches this object attributes.
         def ==(other)
           (self.equal?(other)) ||
           (
@@ -60,19 +79,19 @@ module Whois
         alias_method :eql?, :==
 
 
-        # Performs a Whois query for <tt>qstring</tt> 
-        # using current server adapter and returns a <tt>Whois::Response</tt>
-        # instance with the result of the request.
+        # Performs a Whois query for <tt>qstring</tt>
+        # using the current server adapter.
         #
-        # qstring - The String to be sent as query parameter.
+        # @param  [String] qstring The string to be sent as query parameter.
         #
-        # Internally, this method calls #request
+        # @return [Whois::Answer]
+        #
+        # Internally, this method calls {#request}
         # using the Template Method design pattern.
         #
         #   server.query("google.com")
         #   # => Whois::Answer
         #
-        # Returns a Whois::Answer.
         def query(qstring)
           with_buffer do |buffer|
             request(qstring)
@@ -82,14 +101,15 @@ module Whois
 
         # Performs the real WHOIS request.
         #
-        # qstring - The String to be sent as query parameter.
-        #
-        # This method is not implemented in Whois::Adapter::Base class,
+        # This method is not implemented in {Whois::Server::Adapters::Base} class,
         # it is intended to be overwritten in the concrete subclasses.
         # This is the heart of the Template Method design pattern.
         #
-        # Raises NotImplementedError.
-        # Returns nothing.
+        # @param  [String] qstring The string to be sent as query parameter.
+        #
+        # @raise  [NotImplementedError]
+        # @return [void]
+        # @abstract
         def request(qstring)
           raise NotImplementedError
         end
@@ -97,14 +117,9 @@ module Whois
 
         protected
 
-          def with_buffer(&block)
-            @buffer = []
-            result = yield(@buffer)
-            @buffer = []
-            result
-          end
-
-          # Store an answer part in <tt>@buffer</tt>.
+          # Store an answer part in {#buffer}.
+          #
+          # @return [void]
           def append_to_buffer(response, host)
             @buffer << ::Whois::Answer::Part.new(response, host)
           end
@@ -114,6 +129,13 @@ module Whois
           end
 
         private
+
+          def with_buffer(&block)
+            @buffer = []
+            result = yield(@buffer)
+            @buffer = []
+            result
+          end
 
           def ask_the_socket(qstring, host, port)
             client = TCPSocket.open(host, port)
