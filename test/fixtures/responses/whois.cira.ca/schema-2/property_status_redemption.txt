@@ -1,0 +1,40 @@
+Domain name:           glu.ca
+Domain status:         redemption
+Creation date:         2004/10/30
+Expiry date:           2010/10/29
+Updated date:          2010/12/04
+
+Registrar:
+    Name:              Webnames.ca Inc.
+    Number:            70
+
+Registrant:
+    Name:              Sanamato Inc.
+
+Administrative contact:
+    Name:              Ross Vito
+    Postal address:    405 Queen Street South, P.O. Box 75004 
+                       Bolton ON L7E2B5 Canada
+    Phone:             1 (647) 964-4544
+    Fax:
+    Email:             mail@sanamato.com
+
+Technical contact:
+    Name:              Ross Vito
+    Postal address:    405 Queen Street South, P.O. Box 75004 
+                       Bolton ON L7E2B5 Canada
+    Phone:             1 (647) 964-4544
+    Fax:
+    Email:             mail@sanamato.com
+
+Name servers:
+    ns1.webnames.ca    65.39.140.92
+    ns2.webnames.ca    64.85.60.137
+    ns3.webnames.ca    64.34.130.218
+
+% WHOIS look-up made at 2010-12-07 21:24:18 (GMT)
+%
+% Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
+% Notice, available at http://www.cira.ca/legal-notice/?lang=en 
+%
+% (c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/) 

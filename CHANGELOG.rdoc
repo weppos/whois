@@ -6,6 +6,8 @@
 
 * FIXED: whois.dns.pt must support :reserved status.
 
+* FIXED: whois.cira.ca must support :redemption status as :registered.
+
 
 == Release 1.6.4
 
