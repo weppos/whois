@@ -13,14 +13,17 @@
   sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, web.com,
   za.com TLD parser (whois.centralnic.net).
 
-* FIXED: whois.dns.pt must support :reserved status.
-
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
 * FIXED: Make sure a warning is issued when #registered? or #available? returns nil.
 
 * FIXED: Fixed a bug with the whois.crsnic.net where the name server contains "no nameserver" instead of a valid host.
+
+
+== Release 1.6.5
+
+* FIXED: whois.dns.pt must support :reserved status.
 
 * FIXED: whois.cira.ca must support :redemption status as :registered.
 
