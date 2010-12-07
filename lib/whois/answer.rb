@@ -49,15 +49,15 @@ module Whois
 
     # Returns a human-readable representation of this answer.
     #
-    # @return [String] The result of #inspect on content.
+    # @return [String] The result of {#inspect} on content.
     def inspect
       content.inspect
     end
 
-    # Invokes <tt>match</tt> on answer <tt>@content</tt>
+    # Invokes {#match} on answer {#content}
     # and returns the match as <tt>MatchData</tt> or <tt>nil</tt>.
     #
-    # @param  [RegExp, String] match
+    # @param  [Regexp, String] match
     # @return [MatchData] If pattern matches #content
     # @return [nil] If pattern doesn't match #content
     #
@@ -67,10 +67,10 @@ module Whois
       content.match(pattern)
     end
 
-    # Invokes <tt>match</tt> and returns <tt>true</tt> if <tt>pattern</tt>
-    # matches <tt>@content</tt>, <tt>false</tt> otherwise.
+    # Invokes {#match} and returns <tt>true</tt> if <tt>pattern</tt>
+    # matches {#content}, <tt>false</tt> otherwise.
     #
-    # @param  [RegExp, String] match
+    # @param  [Regexp, String] match
     # @return [Boolean]
     #
     # @see #match
@@ -125,7 +125,7 @@ module Whois
     # Returns a Hash containing all supported properties for this answer
     # along with corresponding values.
     #
-    # @return [Hash]
+    # @return [{ Symbol => Object }]
     def properties
       hash = {}
       Parser::PROPERTIES.each { |property| hash[property] = send(property) }
@@ -134,9 +134,8 @@ module Whois
 
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
-    # See also <tt>Whois::Answer::Parser.supported?</tt>.
     #
-    # @param  [Symbol] property - The name of the property to check.
+    # @param  [Symbol] property The name of the property to check.
     # @return [Boolean]
     #
     # @see Whois::Answer::Parser#property_supported?
@@ -146,9 +145,9 @@ module Whois
     end
 
 
-    # Checks whether this Answer is different than +other+.
+    # Checks whether this {Answer} is different than +other+.
     #
-    # Comparing the Answer content is not as trivial as you may think.
+    # Comparing the {Answer} content is not as trivial as you may think.
     # WHOIS servers can inject into the WHOIS response strings that changes at every request,
     # such as the timestamp the request was generated or the number of requests left
     # for your current IP.
@@ -186,9 +185,9 @@ module Whois
 
     # Collects and returns all the contacts.
     #
-    # @return [Array<Whois::Aswer::Contact>]
+    # @return [Array<Whois::Answer::Contact>]
     #
-    # @see Whois::Answer::Parser#contacts?
+    # @see Whois::Answer::Parser#contacts
     #
     def contacts
       parser.contacts

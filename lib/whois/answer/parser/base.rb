@@ -265,7 +265,7 @@ module Whois
 
         # Collects and returns all the available contacts.
         #
-        # @return [Array<Whois::Aswer::Contact>]
+        # @return [Array<Whois::Answer::Contact>]
         #
         # @see Whois::Answer#contacts
         # @see Whois::Answer::Parser#contacts
@@ -281,9 +281,9 @@ module Whois
         # Checks whether this is a throttle response.
         # The default implementation always returns +false+.
         #
-        # @abstract This method returns false by default.
-        #
         # @return [false]
+        #
+        # @abstract This method returns false by default.
         #
         # @see Whois::Answer#throttle?
         # @see Whois::Answer::Parser#throttle?

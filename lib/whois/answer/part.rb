@@ -23,12 +23,12 @@ module Whois
     #
     # = Part
     #
-    # A single <tt>Whois::Answer</tt> fragment. For instance,
-    # in case of thin server, a <tt>Whois::Answer</tt> may be composed by
+    # A single {Whois::Answer} fragment. For instance,
+    # in case of thin server, a {Whois::Answer} can be composed by
     # one or more parts corresponding to all responses
     # returned by the WHOIS servers.
     #
-    # A <tt>Part</tt> is composed by the following attributes:
+    # A part is composed by the following attributes:
     #
     # * body - The body containing the whois output.
     # * host - The host which returned the body.

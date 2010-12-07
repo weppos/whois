@@ -16,6 +16,7 @@
 
 module Whois
 
+  # Holds information about library version.
   module Version
     MAJOR = 1
     MINOR = 6
@@ -25,6 +26,7 @@ module Whois
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join(".")
   end
 
+  # The current library version.
   VERSION = Version::STRING
 
 end

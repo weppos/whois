@@ -23,7 +23,7 @@ module Whois
     #
     # = Registrar
     #
-    # Holds the details of the Registrar extracted from the WHOIS answer.
+    # Holds the details of the Registrar extracted from the WHOIS response.
     #
     # A Registrar is composed by the following attributes:
     #

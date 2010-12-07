@@ -23,7 +23,7 @@ module Whois
     #
     # = Nameserver
     #
-    # Holds the details of the Name Servers extracted from the WHOIS answer.
+    # Holds the details of the Name Servers extracted from the WHOIS response.
     #
     # A Nameserver is composed by the following attributes:
     #

@@ -19,8 +19,16 @@ require 'ipaddr'
 
 module Whois
 
+  # The {Whois::Server} class has two important roles:
+  #
+  # 1. it acts as a database for the WHOIS server definitions
+  # 2. it is responsible for selecting the right adapter used to handle the query to the WHOIS server(s).
+  #
   class Server
 
+    # The {Whois::Server::Adapters} module is a namespace for all
+    # WHOIS server adapters. Each adapter is a subclass of {Whois::Server::Adapters::Base},
+    # customized to handle WHOIS queries for a type or a group of servers.
     module Adapters
       autoload :Base,             "whois/server/adapters/base"
       autoload :Arpa,             "whois/server/adapters/arpa"
@@ -35,11 +43,17 @@ module Whois
     end
 
 
+    # The WHOIS server definitions.
+    #
+    # @return [{ Symbol => Array }] The definition Hash.
+    # @private
     @@definitions = {}
 
-    # Searches the /definitions folder for definition files and loads them.
+    # Searches the +/definitions+ folder for definition files and loads them.
     # This method is automatically invoked when this file is parsed
     # by the Ruby interpreter (scroll down to the bottom of this file).
+    #
+    # @return [void]
     def self.load_definitions
       Dir[File.dirname(__FILE__) + '/definitions/*.rb'].each { |file| load(file) }
     end
@@ -47,23 +61,22 @@ module Whois
     # Lookup and returns the definition list for given <tt>type</tt>,
     # or all definitions if <tt>type</tt> is <tt>nil</tt>.
     #
-    # ==== Parameters
-    #
-    # type::  The type of WHOIS server to lookup.
+    # @param  [Symbol] type The type of WHOIS server to lookup.
     #         Known values are :tld, :ipv4, :ipv6.
     #
-    # ==== Returns
+    # @return [{ Symbol => Array }]
+    #         The definition Hash if +type+ is +nil+.
+    # @return [Array<Hash>]
+    #         The definitions for given +type+ if +type+ is not +nil+ and +type+ exists.
+    # @return [nil]
+    #         The definitions for given +type+ if +type+ is not +nil+ and +type+ doesn't exist.
     #
-    # Hash::  If the method is called without specifying a <tt>type</tt>.
-    # Array:: If the method is called specifying a <tt>type</tt>,
-    #         and the <tt>type</tt> exists.
-    # nil::   If the method is called specifying a <tt>type</tt>,
-    #         and the <tt>type</tt> doesn't exist.
-    #
-    # ==== Examples
+    # @example Return the definition database.
     #
     #   Whois::Server.definitions
     #   # => { :tld => [...], :ipv4 => [], ... }
+    #
+    # @example Return the definitions for given key.
     #
     #   Whois::Server.definitions(:tld)
     #   # => [...]
@@ -81,26 +94,22 @@ module Whois
 
     # Defines a new server for <tt>:type</tt> queries.
     #
-    # ==== Parameters
+    # @param  [Symbol] type
+    #         The type of WHOIS server to define.
+    #         Known values are :tld, :ipv4, :ipv6.
+    # @param  [String] allocation
+    #         The allocation, range or hostname this server is responsible for.
+    # @param  [String, nil] host
+    #         The server hostname. Use nil if unknown or not available.
+    # @param  [Hash] options Optional definition properties.
+    # @option options [Class] :adapter (Whois::Server::Adapters::Standard)
+    #         This option has a special meaning and determines the adapter Class to use.
+    #         Defaults to {Whois::Server::Adapters::Standard} unless specified.
+    #         All the other options are passed directly to the adapter which can decide how to use them.
     #
-    # type::        The type of WHOIS server to define.
-    #               Known values are :tld, :ipv4, :ipv6.
-    # allocation::  The allocation, range or hostname
-    #               this server is responsible for.
-    # host::        The server hostname.
-    #               Use nil if unknown or not available.
-    # options::     Hash of options (default: {}).
-    #               The <tt>:adapter</tt> option has a special meaning
-    #               and determines the adapter Class to use.
-    #               Defaults to </tt>Whois::Server::Adapters::Standard</tt>
-    #               unless specified. All the other options are passed
-    #               directly to the adapter which can decide how to use them.
+    # @return [void]
     #
-    # ==== Returns
-    #
-    # Nothing.
-    #
-    # ==== Examples
+    # @example
     #
     #   # Define a server for the .it extension
     #   Whois::Server.define :tld, ".it", "whois.nic.it"
@@ -128,7 +137,7 @@ module Whois
     # Creates a new server adapter from given arguments
     # and returns the server instance.
     #
-    # By default, returns a new Whois::Servers::Adapter::Standard instance.
+    # By default, returns a new {Whois::Server::Adapters::Standard} instance.
     # You can customize the behavior passing a custom adapter class
     # as <tt>:adapter</tt> option.
     #
@@ -140,30 +149,25 @@ module Whois
     #   # => #<Whois::Servers::Adapter::Custom>
     #
     # Please note that any adapter is responsible for a limited set
-    # of queries, which should be included in the range
-    # of the <tt>allocation</tt> parameter.
-    # Use <tt>Whois::Server#guess</tt> if you are not sure which adapter
+    # of queries, which should be included in the range of the <tt>allocation</tt> parameter.
+    # Use {Whois::Server.guess} if you are not sure which adapter
     # is the right one for a specific string.
     #
-    # ==== Parameters
+    # @param  [Symbol] type
+    #         The type of WHOIS server to define.
+    #         Known values are :tld, :ipv4, :ipv6.
+    # @param  [String] allocation
+    #         The allocation, range or hostname this server is responsible for.
+    # @param  [String, nil] host
+    #         The server hostname. Use nil if unknown or not available.
+    # @param  [Hash] options Optional definition properties.
+    # @option options [Class] :adapter (Whois::Server::Adapters::Standard)
+    #         This option has a special meaning and determines the adapter Class to use.
+    #         Defaults to {Whois::Server::Adapters::Standard} unless specified.
+    #         All the other options are passed directly to the adapter which can decide how to use them.
     #
-    # type::        The type of WHOIS server to define.
-    #               Known values are :tld, :ipv4, :ipv6.
-    # allocation::  The allocation, range or hostname
-    #               this server is responsible for.
-    # host::        The server hostname.
-    #               Use nil if unknown or not available.
-    # options::     Hash of options (default: {}).
-    #               The <tt>:adapter</tt> option has a special meaning
-    #               and determines the adapter Class to use.
-    #               Defaults to </tt>Whois::Server::Adapters::Standard</tt>
-    #               unless specified. All the other options are passed
-    #               directly to the adapter which can decide how to use them.
-    #
-    # ==== Returns
-    #
-    # Whois::Server::Adapters::Standard::
-    #   An adapter that can be used to perform queries.
+    # @return [Whois::Server::Adapters::Standard]
+    #         An adapter that can be used to perform queries.
     #
     def self.factory(type, allocation, host, options = {})
       options = options.dup
@@ -182,25 +186,21 @@ module Whois
     #
     # Note that not all query types actually have a corresponding adapter.
     # For instance, the following request will result in a
-    # <tt>Whois::ServerNotSupported</tt> exception.
+    # {Whois::ServerNotSupported} exception.
     #
     #   Whois::Server.guess "mail@example.com"
     #
-    # ==== Returns
+    # @return [Whois::Server::Adapters::Base]
+    #         The adapter that can be used to perform
+    #         WHOIS queries for <tt>qstring</tt>.
     #
-    # Whois::Server::Adapters::Base::
-    #   The adapter that can be used to perform
-    #   WHOIS queries for <tt>qstring</tt>.
-    #
-    # ==== Raises
-    #
-    # Whois::ServerNotFound::
-    #   When unable to find an appropriate WHOIS adapter
-    #   for <tt>qstring</tt>. Most of the cases, the <tt>qstring</tt>
-    #   haven't been recognised as one of the supported query types.
-    # Whois::ServerNotSupported::
-    #   When the <tt>qstring</tt> type is detected,
-    #   but the object type doesn't have any supported WHOIS adapter associated.
+    # @raise  [Whois::ServerNotFound]
+    #         When unable to find an appropriate WHOIS adapter
+    #         for <tt>qstring</tt>. Most of the cases, the <tt>qstring</tt>
+    #         haven't been recognised as one of the supported query types.
+    # @raise  [Whois::ServerNotSupported]
+    #         When the <tt>qstring</tt> type is detected,
+    #         but the object type doesn't have any supported WHOIS adapter associated.
     #
     def self.guess(qstring)
       # Top Level Domain match

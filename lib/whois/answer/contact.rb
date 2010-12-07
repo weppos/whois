@@ -21,11 +21,11 @@ module Whois
   class Answer
 
     #
-    # = Contacts
+    # = Contact
     #
-    # Holds the details of a <tt>Contact</tt> extracted from the WHOIS <tt>Answer</tt>.
+    # Holds the details of a {Whois::Answer::Contact} extracted from the WHOIS response.
     #
-    # A <tt>Contact</tt> is composed by the following attributes:
+    # A contact is composed by the following attributes:
     #
     # * <tt>:id</tt>:
     # * <tt>:type</tt>: the contact type (1 = registrant, 2 = admin, 3 = technical).

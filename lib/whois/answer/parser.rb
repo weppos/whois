@@ -39,9 +39,14 @@ module Whois
         :nameservers,
       ]
 
+      # @return [Whois::Answer] The answer referenced by this parser.
       attr_reader :answer
 
 
+      # Initializes and return a new parser from +answer+.
+      #
+      # @param  [Whois::Answer]
+      #
       def initialize(answer)
         @answer = answer
       end
@@ -49,13 +54,20 @@ module Whois
       # Returns an array with all host-specific parsers initialized for the parts
       # contained into this parser.
       # The array is lazy-initialized.
+      #
+      # @return [Array<Whois::Answer::Parser::Base>]
+      #
       def parsers
         @parsers ||= init_parsers
       end
 
       # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
       # is supported by any available parser.
-      # See also <tt>Whois::Answer::Parser::Base.supported?</tt>.
+      #
+      # @return [Boolean]
+      #
+      # @see Whois::Answer::Parser::Base.property_supported?
+      #
       def property_supported?(property)
         parsers.any? { |parser| parser.property_supported?(property) }
       end
@@ -94,10 +106,10 @@ module Whois
 
       # Collects and returns all the contacts from all the answer parts.
       #
-      # @return [Array<Whois::Aswer::Contact>]
+      # @return [Array<Whois::Answer::Contact>]
       #
-      # @see Whois::Answer#contacts?
-      # @see Whois::Answer::Parser::Base#contacts?
+      # @see Whois::Answer#contacts
+      # @see Whois::Answer::Parser::Base#contacts
       #
       def contacts
         parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
@@ -155,15 +167,12 @@ module Whois
         # and returns the final array of server-specific parsers.
         #
         # Parsers are initialized in reverse order for performance reason.
-        # See also <tt>#select_parser</tt>.
         #
-        # ==== Returns
+        # @return [Array<Class>] An array of Class,
+        #         where each item is the parts reverse-N specific parser {Class}.
+        #         Each {Class} is expected to be a child of {Whois::Answer::Parser::Base}.
         #
-        # Returns an Array of Class,
-        # where each item is the parts reverse-N specific parser Class.
-        # Each Class is expected to be a child of Whois::Answer::Parser::Base.
-        #
-        # ==== Examples
+        # @example
         #
         #   parser.parts
         #   # => [whois.foo.com, whois.bar.com]
@@ -171,26 +180,24 @@ module Whois
         #   parser.parsers
         #   # => [Whois::Answer::Parser::WhoisBarCom, Whois::Answer::Parser::WhoisFooCom]
         #
+        # @see Whois::Answer::Parser#select_parser
+        #
         def init_parsers
           answer.parts.reverse.map { |part| self.class.parser_for(part) }
         end
 
-        # Selects the first parser in <tt>#parsers</tt>
-        # where <tt>given</tt> matches <tt>status</tt>.
+        # Selects the first parser in {#parsers}
+        # where given property matches <tt>status</tt>.
         #
-        # ==== Parameters
+        # @param  [Symbol] property The property to search for.
+        # @param  [Symbol] status The status value.
         #
-        # property::  The Symbol property to search for.
-        # status::    The Symbol status (default: :any).
+        # @return [Whois::Answer::Parser::Base]
+        #         The parser which satisfies given requirement.
+        # @return [nil]
+        #         If the parser wasn't found.
         #
-        # ==== Returns
-        #
-        # Whois::Answer::Parser::Base::
-        #   The parser which satisfies given requirement.
-        # nil::
-        #   If the parser wasn't found.
-        #
-        # ==== Examples
+        # @example
         #
         #   select_parser(:nameservers)
         #   # => #<Whois::Answer::Parser::WhoisExampleCom>
@@ -221,24 +228,21 @@ module Whois
       # The parser class is selected according to the
       # value of the <tt>#host</tt> attribute for given <tt>part</tt>.
       #
-      # ==== Parameters
-      # 
-      # part:: The Whois::Answer::Parser::Part to get the parser for.
+      # @param  [Whois::Answer::Part] part The part to get the parser for.
       #
-      # ==== Returns
-      #
-      # Returns an instance of the specific parser for given part.
-      # The instance is expected to be a child of Whois::Answer::Parser::Base.
+      # @return [Whois::Answer::Parser::Base]
+      #         An instance of the specific parser for given part.
+      #         The instance is expected to be a child of {Whois::Answer::Parser::Base}.
       # 
-      # ==== Examples
+      # @example
       #
       #   # Parser for a known host
       #   Parser.parser_for("whois.example.com")
-      #   #<Whois::Answer::Parser::WhoisExampleCom>
+      #   # => #<Whois::Answer::Parser::WhoisExampleCom>
       #
       #   # Parser for an unknown host
       #   Parser.parser_for("missing.example.com")
-      #   #<Whois::Answer::Parser::Blank>
+      #   # => #<Whois::Answer::Parser::Blank>
       #
       def self.parser_for(part)
         parser_klass(part.host).new(part)
@@ -251,19 +255,15 @@ module Whois
       # a custom parser, simple make sure the class is loaded in the Ruby
       # environment before this method is called.
       #
-      # ==== Parameters
+      # @param  [String] host The server host.
       #
-      # host:: A String with the host.
+      # @return [Class] The instance of Class representing the parser Class
+      #         corresponding to <tt>host</tt>. If <tt>host</tt> doesn't have
+      #         a specific parser implementation, then returns
+      #         the {Whois::Answer::Parser::Blank} {Class}.
+      #         The {Class} is expected to be a child of {Whois::Answer::Parser::Base}.
       #
-      # ==== Returns
-      #
-      # Returns an instance of Class representing the parser Class
-      # corresponding to <tt>host</tt>.
-      # If <tt>host</tt> doesn't have a specific parser implementation,
-      # then returns the Whois::Answer::Parser::Blank Class.
-      # The Class is expected to be a child of Whois::Answer::Parser::Base.
-      #
-      # ==== Examples
+      # @example
       #
       #   Parser.parser_klass("missing.example.com")
       #   # => Whois::Answer::Parser::Blank
@@ -287,11 +287,10 @@ module Whois
 
       # Converts <tt>host</tt> to the corresponding parser class name.
       #
-      # ==== Parameters
+      # @param  [String] host The server host.
+      # @return [String] The class name.
       #
-      # host:: A String with the host.
-      #
-      # ==== Examples
+      # @example
       #
       #   Parser.host_to_parser("whois.nic.it")
       #   # => "WhoisNicIt"
@@ -299,7 +298,6 @@ module Whois
       #   Parser.host_to_parser("whois.nic-info.it")
       #   # => "WhoisNicInfoIt"
       #
-      # Returns a String with the class name.
       def self.host_to_parser(host)
         host.to_s.
           gsub(/[.-]/, '_').
@@ -308,13 +306,9 @@ module Whois
 
       # Requires the file at <tt>whois/answer/parser/#{name}</tt>.
       #
-      # ==== Parameters
+      # @param  [String] name The file name to load.
       #
-      # name:: A string with the file name.
-      #
-      # ==== Returns
-      #
-      # Nothing.
+      # @return [void]
       #
       def self.autoload(name)
         file = "whois/answer/parser/#{name}"

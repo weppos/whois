@@ -21,29 +21,26 @@ module Whois
 
   class Client
 
-    # The Integer maximum time to run a whois query, expressed in seconds.
+    # The maximum time to run a WHOIS query, expressed in seconds.
+    #
+    # @return [Fixnum] Timeout value in seconds.
     DEFAULT_TIMEOUT = 10
 
+    # @return [Fixnum, nil] The current timeout value, expressed in seconds.
     attr_accessor :timeout
 
 
     # Initializes a new <tt>Whois::Client</tt> with <tt>options</tt>.
     #
-    #   new { |client| ... } => client
-    #   new(options = {}) { |client| ... } => client
-    #
-    # ==== Parameters
-    #
-    # options:: Hash of options (default: {}):
-    #           :timeout - The Integer script timeout, expressed in seconds (default: DEFAULT_TIMEOUT).
-    #
     # If <tt>block</tt> is given, yields <tt>self</tt>.
     #
-    # ==== Returns
+    # @param  [Hash] options Hash of options.
+    # @option options [Fixnum, nil] :timeout (DEFAULT_TIMEOUT)
+    #         The script timeout, expressed in seconds.
     #
-    # Whois::Client:: The client instance.
+    # @yield  [self]
     #
-    # ==== Examples
+    # @example
     #
     #   client = Whois::Client.new do |c|
     #     c.timeout = nil
@@ -59,15 +56,12 @@ module Whois
     # Queries the right WHOIS server for <tt>qstring</tt> and returns
     # the response from the server.
     #
-    # ==== Parameters
+    # @param  [String] qstring The string to be sent as query parameter.
+    # @return [Whois::Answer] The answer object containing the WHOIS response.
     #
-    # qstring:: The String to be sent as query parameter.
+    # @raise  [Timeout::Error]
     #
-    # ==== Returns
-    #
-    # Whois::Answer:: The answer object containing the WHOIS response.
-    #
-    # ==== Examples
+    # @example
     #
     #   client.query("google.com")
     #   # => #<Whois::Answer>

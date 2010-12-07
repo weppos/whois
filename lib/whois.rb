@@ -126,7 +126,7 @@ module Whois
     warn("DEPRECATION WARNING: #{message}")
   end
 
-  # Appends "Please report issue to" to the message
+  # Appends <em>Please report issue to</em> to the message
   # and raises a new +error+ with the final message.
   #
   # @param  [Exception] error
