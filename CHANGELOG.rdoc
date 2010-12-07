@@ -22,6 +22,8 @@
 
 * FIXED: Fixed a bug with the whois.crsnic.net where the name server contains "no nameserver" instead of a valid host.
 
+* FIXED: whois.cira.ca must support :redemption status as :registered.
+
 
 == Release 1.6.4
 
