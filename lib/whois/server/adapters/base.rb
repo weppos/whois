@@ -57,14 +57,7 @@ module Whois
           )
         end
 
-        # Delegates to #==.
-        #
-        # other - The Whois::Server::Adapter::* to check.
-        #
-        # Returns true or false.
-        def eql?(other)
-          self == other
-        end
+        alias_method :eql?, :==
 
 
         # Performs a Whois query for <tt>qstring</tt> 
