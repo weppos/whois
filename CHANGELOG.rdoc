@@ -20,6 +20,8 @@
 
 * FIXED: Fixed a bug with the whois.crsnic.net where the name server contains "no nameserver" instead of a valid host.
 
+* FIXED: whois.nic-se.se must support :inactive status.
+
 
 == Release 1.6.5
 
