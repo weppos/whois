@@ -18,17 +18,30 @@ module Whois
   class Server
     module Adapters
 
+      #
+      # = Verisign Adapter
+      #
+      # Provides ability to query Verisign WHOIS interfaces.
+      #
       class Verisign < Base
 
-        def request(qstring)
-          response = ask_the_socket("=#{qstring}", host, DEFAULT_WHOIS_PORT)
+        # Executes a WHOIS query to the Verisign WHOIS interface,
+        # resolving any intermediate referral,
+        # and appends the response to the client buffer.
+        #
+        # @param  [String] string
+        # @return [void]
+        #
+        def request(string)
+          response = ask_the_socket("=#{string}", host, DEFAULT_WHOIS_PORT)
           append_to_buffer response, host
 
           if endpoint = extract_referral(response)
-            response = ask_the_socket(qstring, endpoint, DEFAULT_WHOIS_PORT)
+            response = ask_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
             append_to_buffer response, endpoint
           end
         end
+
 
         private
 

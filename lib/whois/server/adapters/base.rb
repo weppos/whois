@@ -82,7 +82,7 @@ module Whois
         # Performs a Whois query for <tt>qstring</tt>
         # using the current server adapter.
         #
-        # @param  [String] qstring The string to be sent as query parameter.
+        # @param  [String] string The string to be sent as query parameter.
         #
         # @return [Whois::Answer]
         #
@@ -92,10 +92,10 @@ module Whois
         #   server.query("google.com")
         #   # => Whois::Answer
         #
-        def query(qstring)
+        def query(string)
           with_buffer do |buffer|
-            request(qstring)
-            Answer.new(self, buffer)
+            request(string)
+            Whois::Answer.new(self, buffer)
           end
         end
 
@@ -105,12 +105,12 @@ module Whois
         # it is intended to be overwritten in the concrete subclasses.
         # This is the heart of the Template Method design pattern.
         #
-        # @param  [String] qstring The string to be sent as query parameter.
+        # @param  [String] string The string to be sent as query parameter.
         #
         # @raise  [NotImplementedError]
         # @return [void]
         # @abstract
-        def request(qstring)
+        def request(string)
           raise NotImplementedError
         end
 
@@ -121,7 +121,7 @@ module Whois
           #
           # @return [void]
           def append_to_buffer(response, host)
-            @buffer << ::Whois::Answer::Part.new(response, host)
+            @buffer << Whois::Answer::Part.new(response, host)
           end
 
           def query_the_socket(qstring, host, port = nil)

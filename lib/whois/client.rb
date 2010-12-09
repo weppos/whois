@@ -56,7 +56,7 @@ module Whois
     # Queries the right WHOIS server for <tt>qstring</tt> and returns
     # the response from the server.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] object The string to be sent as query parameter.
     # @return [Whois::Answer] The answer object containing the WHOIS response.
     #
     # @raise  [Timeout::Error]
@@ -66,8 +66,8 @@ module Whois
     #   client.query("google.com")
     #   # => #<Whois::Answer>
     #
-    def query(qstring)
-      string = qstring.to_s
+    def query(object)
+      string = object.to_s
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
         @server.query(string)

@@ -24,17 +24,20 @@ module Whois
       # Special adapter intended to be used when you can only access
       # the WHOIS database via an online interface.
       #
-      # This adapter should be considered a <tt>Whois::Server::Adapters::None</tt>
-      # adapter a little more specific.
+      # This adapter should be considered like a {Whois::Server::Adapters::None}
+      # adapter, just a little bit more specific.
       #
       class Web < Base
 
-        # Always raises a <tt>Whois::WebInterfaceError</tt> exception
+        # Always raises a {Whois::WebInterfaceError} exception
         # including the web address for the WHOIS inteface.
         #
-        # Returns nothing.
-        # Raises Whois::WebInterfaceError for every request.
-        def request(qstring)
+        # @param  [String] string
+        # @return [void]
+        #
+        # @raise  [Whois::WebInterfaceError] For every request.
+        #
+        def request(string)
           raise WebInterfaceError, options[:web]
         end
 

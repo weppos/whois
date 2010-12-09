@@ -190,6 +190,8 @@ module Whois
     #
     #   Whois::Server.guess "mail@example.com"
     #
+    #
+    # @param  [String] string
     # @return [Whois::Server::Adapters::Base]
     #         The adapter that can be used to perform
     #         WHOIS queries for <tt>qstring</tt>.
@@ -202,29 +204,29 @@ module Whois
     #         When the <tt>qstring</tt> type is detected,
     #         but the object type doesn't have any supported WHOIS adapter associated.
     #
-    def self.guess(qstring)
+    def self.guess(string)
       # Top Level Domain match
-      if matches_tld?(qstring)
+      if matches_tld?(string)
         return factory(:tld, ".", "whois.iana.org")
       end
       
       # IP address (secure match)
-      if matches_ip?(qstring)
-        return find_for_ip(qstring)
+      if matches_ip?(string)
+        return find_for_ip(string)
       end
 
       # Email Address (secure match)
-      if matches_email?(qstring)
-        return find_for_email(qstring)
+      if matches_email?(string)
+        return find_for_email(string)
       end
 
       # Domain Name match
-      if server = find_for_domain(qstring)
+      if server = find_for_domain(string)
         return server
       end
 
       # Gave Over
-      raise ServerNotFound, "Unable to find a whois server for `#{qstring}'"
+      raise ServerNotFound, "Unable to find a whois server for `#{string}'"
     end
 
 

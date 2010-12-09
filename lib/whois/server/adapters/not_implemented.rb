@@ -20,9 +20,14 @@ module Whois
 
       class NotImplemented < Base
 
-        # Returns nothing.
-        # Raises Whois::ServerNotImplemented for every request.
-        def request(qstring)
+        # Always raises a {Whois::ServerNotImplemented} exception.
+        #
+        # @param  [String] string
+        # @return [void]
+        #
+        # @raise  [Whois::ServerNotImplemented] For every request.
+        #
+        def request(string)
           raise ServerNotImplemented, "The `#{host}' feature has not been implemented yet."
         end
 

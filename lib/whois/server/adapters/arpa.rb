@@ -20,11 +20,12 @@ module Whois
 
       class Arpa < Base
 
-        def request(qstring)
-          Server.guess(inaddr_to_ip(qstring)).query(qstring)
+        def request(string)
+          Server.guess(inaddr_to_ip(string)).query(string)
         end
 
-        protected
+
+        private
 
           # "127.1.168.192.in-addr.arpa" => "192.168.1.127"
           # "1.168.192.in-addr.arpa" => "192.168.1.0"

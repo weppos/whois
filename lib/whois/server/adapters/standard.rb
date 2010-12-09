@@ -22,16 +22,40 @@ module Whois
       # = Standard Adapter
       #
       # Provides ability to query standard WHOIS interfaces.
-      # A standard WHOIS interface accepts socket requests containing the name of the domain
-      # and returns a single response containing the answer for given query.
+      # A standard WHOIS interface accepts socket requests
+      # containing the name of the domain and returns a single response
+      # containing the answer for given query.
       #
-      # By default the interface should listen on port 43.
+      #   a = Standard.new(:tld, ".it", "whois.nic.it")
+      #   a.request("example.it")
+      #
+      # By default, WHOIS interfaces listen on port 43.
       # This adapter also supports an optional port number.
+      #
+      #   a = Standard.new(:tld, ".it", "whois.nic.it", :port => 20)
+      #   a.request("example.it")"
+      #
+      # == Options
+      #
+      # The following options can be supplied to customize the creation
+      # of a new instance:
+      #
+      # * +:port+ - Specifies a port number different than 43
       #
       class Standard < Base
 
-        def request(qstring)
-          response = query_the_socket(qstring, host)
+        # Executes a WHOIS query to the WHOIS interface
+        # listening at +host+ and appends the response
+        # to the client buffer.
+        #
+        # The standard port of a WHOIS request is 43.
+        # You can customize it by passing a +:port+ option.
+        #
+        # @param  [String] string
+        # @return [void]
+        #
+        def request(string)
+          response = query_the_socket(string, host)
           append_to_buffer response, host
         end
 
