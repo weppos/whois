@@ -4,6 +4,8 @@
 
 * FIXED: whois.nic-se.se must support :inactive status.
 
+* FIXED: whois.cira.ca must support "auto-renew grace" status.
+
 
 == Release 1.6.5
 

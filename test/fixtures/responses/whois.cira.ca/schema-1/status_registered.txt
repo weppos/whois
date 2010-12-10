@@ -45,4 +45,3 @@ Name servers:
 % Notice, available at http://www.cira.ca/legal-notice/?lang=en 
 %
 % (c) 2007 Canadian Internet Registration Authority, (http://www.cira.ca/) 
-

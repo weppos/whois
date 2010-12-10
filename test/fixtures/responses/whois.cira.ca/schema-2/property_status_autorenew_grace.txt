@@ -1,0 +1,43 @@
+Domain name:           abbylane.pe.ca
+Domain status:         auto-renew grace
+Creation date:         2000/10/26
+Expiry date:           2011/11/30
+
+Registrar:
+    Name:              easyDNS Technologies Inc.
+    Number:            88
+
+Registrant:
+    Name:              Abbylane Summer Homes
+
+Administrative contact:
+    Name:              Jeff Carmody
+    Postal address:    Abbylane Summer Homes
+                       8 Birchill Drive 
+                       Ch-town PE C1A 6W5 Canada
+    Phone:             +1 902-621-0244
+    Fax:               +1 902-566-0823
+    Email:             jeff@abbylane.pe.ca
+
+Technical contact:
+    Name:              Jeff Carmody
+    Postal address:    550 University Ave 
+                       Charlottetown PE C1A4p3 Canada
+    Phone:             +1 902 566 0829
+    Fax:               +1 902-628-4355
+    Email:             jeff@abbylane.pe.ca
+
+Name servers:
+    ns1.easydns.com
+    ns2.easydns.com
+    ns3.easydns.org
+    ns6.easydns.net
+    remote1.easydns.com
+    remote2.easydns.com
+
+% WHOIS look-up made at 2010-12-10 22:01:40 (GMT)
+%
+% Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
+% Notice, available at http://www.cira.ca/legal-notice/?lang=en 
+%
+% (c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/) 
