@@ -18,20 +18,17 @@
 # The data is in the UTF-8 character set and the result is
 # printed with eight bits.
 
-state:            active
-domain:           loopia.se
-holder:           looloo8804-00001
+state:            system
+domain:           example.se
+holder:           -
 admin-c:          -
 tech-c:           -
 billing-c:        -
-created:          2003-09-15
-modified:         2010-02-15
-expires:          2020-09-15
-transferred:      2009-03-09
-nserver:          ns2.loopia.se 93.188.0.21
-nserver:          ns4.loopia.se 93.188.0.20
-nserver:          ns3.loopia.se 93.188.0.21
-nserver:          ns1.loopia.se 93.188.0.20
+created:          2000-11-01
+modified:         -
+expires:          2006-04-18
+nserver:          -
 dnssec:           unsigned delegation
-status:           ok
-registrar:        Loopia AB
+status:           inactive
+registrar:        CoreRegistry
+reason:           SE Blocked, Example and test domains

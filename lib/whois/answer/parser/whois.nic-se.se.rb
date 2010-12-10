@@ -35,9 +35,11 @@ module Whois
       class WhoisNicSeSe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /state:\s+(.+?)\n/
+          # Two keys available: state and status.
+          @status ||= if content_for_scanner =~ /status:\s+(.+?)\n/
             case $1.downcase
-              when "active" then :registered
+              when "ok" then :registered
+              when "inactive" then :inactive
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
