@@ -32,6 +32,11 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('property_status_autorenew_grace.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
   end
 
   def test_available?
@@ -49,6 +54,11 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     expected  = false
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('property_status_autorenew_grace.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
@@ -63,6 +73,11 @@ class AnswerParserWhoisCiraCaTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @registered }
 
     parser    = @klass.new(load_part('property_status_redemption.txt'))
+    expected  = true
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('property_status_autorenew_grace.txt'))
     expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }

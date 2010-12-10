@@ -38,9 +38,10 @@ module Whois
           @status ||= if content_for_scanner =~ /Domain status:\s+(.*?)\n/
             case $1.downcase
               # schema-2
-              when "registered" then :registered
-              when "redemption" then :registered
-              when "available"  then :available
+              when "registered"       then :registered
+              when "redemption"       then :registered
+              when "auto-renew grace" then :registered
+              when "available"        then :available
               # schema-1
               when "exist"      then :registered
               when "avail"      then :available
