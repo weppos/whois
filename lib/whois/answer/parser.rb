@@ -17,8 +17,14 @@
 module Whois
   class Answer
 
+    # The parsing controller that stays behind the {Whois::Answer}.
     #
-    # = Parser
+    # It provides object-oriented access to a WHOIS response.
+    # The list of properties and methods is available
+    # in the following constants:
+    #
+    # * {Whois::Answer::METHODS}
+    # * {Whois::Answer::PROPERTIES}
     #
     class Parser
 

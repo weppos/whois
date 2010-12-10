@@ -20,20 +20,19 @@ require 'whois/answer/super_struct'
 module Whois
   class Answer
 
-    #
-    # = Registrar
-    #
     # Holds the details of the Registrar extracted from the WHOIS response.
     #
-    # A Registrar is composed by the following attributes:
+    # A registrar is composed by the several attributes,
+    # accessible through corresponding getter / setter methods.
     #
-    # * <tt>:id</tt>:
-    # * <tt>:name</tt>:
-    # * <tt>:organization</tt>:
-    # * <tt>:url</tt>:
+    # Please note that a response is not required to provide
+    # all the attributes. When an attribute is not available,
+    # the corresponding value is set to nil.
     #
-    # Be aware that every WHOIS server can return a different number of details
-    # or no details at all.
+    # @attr [String] id
+    # @attr [String] name
+    # @attr [String] organization
+    # @attr [String] url
     #
     class Registrar < SuperStruct.new(:id, :name, :organization, :url)
     end

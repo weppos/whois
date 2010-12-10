@@ -20,31 +20,30 @@ require 'whois/answer/super_struct'
 module Whois
   class Answer
 
+    # Holds the details of a contact extracted from the WHOIS response.
     #
-    # = Contact
+    # A contact is composed by the several attributes,
+    # accessible through corresponding getter / setter methods.
     #
-    # Holds the details of a {Whois::Answer::Contact} extracted from the WHOIS response.
+    # Please note that a response is not required to provide
+    # all the attributes. When an attribute is not available,
+    # the corresponding value is set to nil.
     #
-    # A contact is composed by the following attributes:
-    #
-    # * <tt>:id</tt>:
-    # * <tt>:type</tt>: the contact type (1 = registrant, 2 = admin, 3 = technical).
-    # * <tt>:name</tt>:
-    # * <tt>:organization</tt>:
-    # * <tt>:address</tt>:
-    # * <tt>:city</tt>:
-    # * <tt>:zip</tt>:
-    # * <tt>:state</tt>:
-    # * <tt>:country</tt>:
-    # * <tt>:country_code</tt>:
-    # * <tt>:phone</tt>:
-    # * <tt>:fax</tt>:
-    # * <tt>:email</tt>:
-    # * <tt>:created_on</tt>:
-    # * <tt>:updated_on</tt>:
-    #
-    # Be aware that every WHOIS server can return a different number of details
-    # or no details at all.
+    # @attr [String] id
+    # @attr [String] type
+    # @attr [String] name
+    # @attr [String] organization
+    # @attr [String] address
+    # @attr [String] city
+    # @attr [String] zip
+    # @attr [String] state
+    # @attr [String] country
+    # @attr [String] country_code
+    # @attr [String] phone
+    # @attr [String] fax
+    # @attr [String] email
+    # @attr [Time] created_on
+    # @attr [Time] updated_on
     #
     class Contact < SuperStruct.new(:id, :type, :name, :organization,
                                     :address, :city, :zip, :state, :country, :country_code,

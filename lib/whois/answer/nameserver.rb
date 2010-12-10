@@ -20,19 +20,18 @@ require 'whois/answer/super_struct'
 module Whois
   class Answer
 
-    #
-    # = Nameserver
-    #
     # Holds the details of the Name Servers extracted from the WHOIS response.
     #
-    # A Nameserver is composed by the following attributes:
+    # A name server is composed by the several attributes,
+    # accessible through corresponding getter / setter methods.
     #
-    # * <tt>:name</tt>:
-    # * <tt>:ipv4</tt>:
-    # * <tt>:ipv6</tt>:
+    # Please note that a response is not required to provide
+    # all the attributes. When an attribute is not available,
+    # the corresponding value is set to nil.
     #
-    # Be aware that every WHOIS server can return a different number of details
-    # or no details at all.
+    # @attr [String] name
+    # @attr [String] ipv4
+    # @attr [String] ipv6
     #
     class Nameserver < SuperStruct.new(:name, :ipv4, :ipv6)
     end
