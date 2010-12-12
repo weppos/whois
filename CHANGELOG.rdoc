@@ -1,6 +1,6 @@
 = Changelog
 
-== master
+== Release 1.6.6
 
 * NEW: Backported whois.centralnic.net support from version 2.0.
 
