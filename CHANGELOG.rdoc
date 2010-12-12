@@ -2,6 +2,10 @@
 
 == master
 
+* SERVER: Added .ae.org, .ar.com, .kr.com TLD definitions (whois.centralnic.net).
+
+* SERVER: Removed invalid .web.com TLD definition (whois.centralnic.net).
+
 * FIXED: whois.nic-se.se must support :inactive status.
 
 * FIXED: whois.cira.ca must support "auto-renew grace" status.
