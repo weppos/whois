@@ -1,0 +1,53 @@
+  Domain Name: boerse.de.com
+
+  Registrant:
+    Christopher Bergmann (H1094739) info@webdesign-er.com
+    
+    Maueraeckerstr. 27, Unterreichenbach
+    75399
+    DE (Germany)
+    Tel: +49.72358308
+
+  Administrative Contact:
+    Christopher Bergmann (H884756) info@webdesign-er.com
+    
+    Maueraeckerstr. 27, Unterreichenbach
+    75399
+    DE (Germany)
+    Tel: +49.72358308
+
+  Technical Contact:
+    Hostmaster (H67436) centralnic@bot.udag.net
+    United Domains AG
+    Gautinger Strasse 10, 
+    Starnberg
+    D-82319
+    DE (Germany)
+    Tel: +498151368670
+    Fax: +4981513686777
+
+  Registrar:
+    Hostmaster (H67436) centralnic@bot.udag.net
+    United Domains AG
+    Gautinger Strasse 10, 
+    Starnberg
+    D-82319
+    DE (Germany)
+    Tel: +498151368670
+    Fax: +4981513686777
+    URL: http://www.united-domains.de
+
+  Record created on: 02 March 2010
+  Record expires on: 02 March 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS.UDAGDNS.DE
+  NS.UDAGDNS.NET
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

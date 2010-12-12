@@ -1,0 +1,52 @@
+  Domain Name: fynbos.sa.com
+
+  Registrant:
+    Maarten Groos (H323273) maarten@farm215.co.za
+    
+    farm 215 fynbos reserve
+    PO Box 1314
+    Gansbaai
+    Western Cape
+    7220
+    ZA (South Africa)
+    Tel: +27 28 388 09 20
+
+  Technical Contact:
+    Jordan Gross (C30342) hostmaster@hostroute.com
+    Ultraspeed UK Ltd
+    Unit 11 Jacks place
+    6 corbet place
+    London
+    London
+    E1 6NN
+    UK (United Kingdom)
+    Tel: 0845 862 0210
+    Fax: 020 3216 0030
+
+  Registrar:
+    Jordan Gross (C30342) hostmaster@hostroute.com
+    Ultraspeed UK Ltd
+    Unit 11 Jacks place
+    6 corbet place
+    London
+    London
+    E1 6NN
+    UK (United Kingdom)
+    Tel: 0845 862 0210
+    Fax: 020 3216 0030
+    URL: http://www.nameroute.co.uk/
+
+  Record created on: 27 September 2007
+  Record expires on: 27 September 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1191.WEBSITEWELCOME.COM
+  NS1192.WEBSITEWELCOME.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

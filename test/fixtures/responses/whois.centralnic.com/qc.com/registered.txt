@@ -1,0 +1,53 @@
+  Domain Name: ceo.qc.com
+
+  Registrant:
+    helene (H1062277) docjgs@videotron.ca
+    
+    309 Laurendeau, Magog Qc
+    J1X 3W4
+    CA (Canada)
+    Tel: 8198438380
+
+  Administrative Contact:
+    helene viens (H114589) docjgs@videotron.ca
+    
+    309 Laurendeau, Magog Qc
+    J1X 3W4
+    CA (Canada)
+    Tel: 8198438380
+
+  Technical Contact:
+    helene viens (H114590) docjgs@videotron.ca
+    
+    309 Laurendeau, Magog Qc
+    J1X 3W4
+    CA (Canada)
+    Tel: 8198438380
+
+  Registrar:
+    Accounts Department (H87003) support@registerapi.com
+    Registerapi
+    8100 NE Parkway Drive, Suite 300 
+    Vancouver WA
+    98662
+    US (United States)
+    Tel: 1 (360) 253 2210, ext. Account
+    Fax: 1 (360) 253-4234
+    URL: http://www.dotster.com/
+
+  Record created on: 08 October 2004
+  Record expires on: 08 October 2012
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.MYDOMAIN.COM
+  NS2.MYDOMAIN.COM
+  NS3.MYDOMAIN.COM
+  NS4.MYDOMAIN.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

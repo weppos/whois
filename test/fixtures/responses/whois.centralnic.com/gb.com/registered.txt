@@ -1,0 +1,73 @@
+  Domain Name: hotel.gb.com
+
+  Registrant:
+    boris schleinkofer (INX-9925147com) schleinkofer@ps-consulting-ag.com
+    p.s. consulting ag
+    hacklthalerstrasse 21c
+    kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Administrative Contact:
+    boris schleinkofer (INX-9925147com) schleinkofer@ps-consulting-ag.com
+    p.s. consulting ag
+    hacklthalerstrasse 21c
+    kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Technical Contact:
+    boris schleinkofer (INX-9925147com) schleinkofer@ps-consulting-ag.com
+    p.s. consulting ag
+    hacklthalerstrasse 21c
+    kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Billing Contact:
+    boris schleinkofer (INX-9925147com) schleinkofer@ps-consulting-ag.com
+    p.s. consulting ag
+    hacklthalerstrasse 21c
+    kirchdorf
+    bayern
+    83527
+    DE (Germany)
+    Tel: +49.8072370230
+    Fax: +49.80723702399
+
+  Registrar:
+    Domain Administrator (7145-IX) nic-la@domains.internetx.de
+    InternetX GmbH
+    Maximilianstr. 6
+    Regensburg
+    93047
+    DE (Germany)
+    Tel: +49-941-595590
+    Fax: +49-941-59579054
+    URL: http://www.internetx.de/
+
+  Record created on: 23 April 2006
+  Record expires on: 23 April 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  A.NS14.NET
+  B.NS14.NET
+  C.NS14.NET
+  D.NS14.NET
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

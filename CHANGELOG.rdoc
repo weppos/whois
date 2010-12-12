@@ -2,9 +2,7 @@
 
 == master
 
-* SERVER: Added .ae.org, .ar.com, .kr.com TLD definitions (whois.centralnic.net).
-
-* SERVER: Removed invalid .web.com TLD definition (whois.centralnic.net).
+* NEW: Backported whois.centralnic.net support from version 2.0.
 
 * FIXED: whois.nic-se.se must support :inactive status.
 

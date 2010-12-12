@@ -1,0 +1,69 @@
+  Domain Name: qrops.ae.org
+
+  Registrant:
+    Domain Admin (H280468) contact@privacyprotect.org
+    PrivacyProtect.org
+    P.O. Box 97
+    Note - All Postal Mails Rejected, visit Privacyprotect.org
+    Moergestel
+    5066 ZH
+    NL (Netherlands)
+    Tel: +45.36946676
+
+  Administrative Contact:
+    Domain Admin (H280468) contact@privacyprotect.org
+    PrivacyProtect.org
+    P.O. Box 97
+    Note - All Postal Mails Rejected, visit Privacyprotect.org
+    Moergestel
+    5066 ZH
+    NL (Netherlands)
+    Tel: +45.36946676
+
+  Technical Contact:
+    Domain Admin (H280468) contact@privacyprotect.org
+    PrivacyProtect.org
+    P.O. Box 97
+    Note - All Postal Mails Rejected, visit Privacyprotect.org
+    Moergestel
+    5066 ZH
+    NL (Netherlands)
+    Tel: +45.36946676
+
+  Billing Contact:
+    Domain Admin (H280468) contact@privacyprotect.org
+    PrivacyProtect.org
+    P.O. Box 97
+    Note - All Postal Mails Rejected, visit Privacyprotect.org
+    Moergestel
+    5066 ZH
+    NL (Netherlands)
+    Tel: +45.36946676
+
+  Registrar:
+    Bhavin Turakhia (H269407) tldadmin@directi.com
+    Public Domain Registry Inc.
+    Directiplex, Next to Andheri Subway
+    Old Nagardas Road, Andheri (East)
+    Mumbai
+    MH
+    400069
+    IN (India)
+    Tel: +912230797500
+    Fax: +13202105146
+    URL: www.publicdomainregistry.com
+
+  Record created on: 11 October 2010
+  Record expires on: 11 October 2012
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.DMNRESELLER.COM
+  NS2.DMNRESELLER.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

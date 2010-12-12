@@ -1,0 +1,62 @@
+  Domain Name: srk.ru.com
+
+  Registrant:
+    Anthony Lloyd, SRK Consulting (UK) Limited (H1037013) alloyd@srk.co.uk
+    
+    5th Floor
+    Churchill House
+    17 Churchill Way
+    Cardiff
+    CF10 2HH
+    UK (United Kingdom)
+    Tel: 02920348150
+
+  Administrative Contact:
+    Anthony Lloyd (H265405) alloyd@srk.co.uk
+    SRK Consulting (UK) Limited
+    5th Floor
+    Churchill House
+    17 Churchill Way
+    Cardiff
+    CF10 2HH
+    UK (United Kingdom)
+    Tel: 02920348150
+
+  Technical Contact:
+    Anthony Lloyd (H265405) alloyd@srk.co.uk
+    SRK Consulting (UK) Limited
+    5th Floor
+    Churchill House
+    17 Churchill Way
+    Cardiff
+    CF10 2HH
+    UK (United Kingdom)
+    Tel: 02920348150
+
+  Billing Contact:
+    A R Lloyd (H265406) alloyd@srk.co.uk
+    SRK Consulting (UK) Limited
+    Windsor Court
+    1-3 Windsor Place
+    Cardiff
+    CF10 3BX
+    UK (United Kingdom)
+    Tel: 02920348150
+
+  Registrar:
+    No registrar listed. This domain is registered directly with CentralNic.
+
+  Record created on: 31 July 2006
+  Record expires on: 31 July 2012
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS12.ZONEEDIT.COM
+  NS7.ZONEEDIT.COM
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

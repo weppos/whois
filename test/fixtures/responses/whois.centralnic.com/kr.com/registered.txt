@@ -1,0 +1,71 @@
+  Domain Name: academyart.kr.com
+
+  Registrant:
+    Academy of  Art College (41619876) clefferts@academyart.edu
+    Academy of  Art College
+    79 NEW MONTGOMERY ST
+    SAN FRANCISCO
+    CA
+    94105
+    US (United States)
+    Tel: +1.415618350
+
+  Administrative Contact:
+    Academy of  Art College (41619876) clefferts@academyart.edu
+    Academy of  Art College
+    79 NEW MONTGOMERY ST
+    SAN FRANCISCO
+    CA
+    94105
+    US (United States)
+    Tel: +1.415618350
+
+  Technical Contact:
+    Academy of  Art College (41619876) clefferts@academyart.edu
+    Academy of  Art College
+    79 NEW MONTGOMERY ST
+    SAN FRANCISCO
+    CA
+    94105
+    US (United States)
+    Tel: +1.415618350
+
+  Billing Contact:
+    Art College Academy of (41619877) TChampion@academyart.edu
+    Academy of Art
+    79 New Montgomery, 3rd Floor
+    IT Department
+    SAN FRANCISCO
+    CA
+    94105
+    US (United States)
+    Tel: +1.41561862226
+    Fax: +1.4156186279
+
+  Registrar:
+    Domain Administrator (H292913) GTLD-Admin@networksolutions.com
+    Network Solutions LLC
+    13861 Sunrise Valley Drive
+    Suite 300
+    Herndon
+    VA
+    20171
+    US (United States)
+    Tel: +1.5707088788
+    Fax: +1.7036685817
+    URL: http://www.networksolutions.com/
+
+  Record created on: 11 June 2008
+  Record expires on: 11 June 2011
+  Status: Live
+
+  Domain servers in listed order:
+
+  NS1.ACADEMYART.EDU
+  NS2.ACADEMYART.EDU
+
+This whois service is provided by CentralNic Ltd and only contains information
+pertaining to Internet domain names we have registered for our customers. By
+using this service you are agreeing (1) not to use any information presented
+here for any purpose other than determining ownership of domain names (2) not
+to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com
