@@ -22,6 +22,11 @@
 
 * FIXED: Fixed a bug with the whois.crsnic.net where the name server contains "no nameserver" instead of a valid host.
 
+
+== Release 1.6.6
+
+* NEW: Backported whois.centralnic.net support from version 2.0.
+
 * FIXED: whois.nic-se.se must support :inactive status.
 
 * FIXED: whois.cira.ca must support "auto-renew grace" status.
