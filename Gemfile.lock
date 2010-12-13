@@ -5,18 +5,18 @@ GEM
     mocha (0.9.10)
       rake
     rake (0.8.7)
-    rspec (2.2.0)
-      rspec-core (~> 2.2)
-      rspec-expectations (~> 2.2)
-      rspec-mocks (~> 2.2)
-    rspec-core (2.2.1)
-    rspec-expectations (2.2.0)
+    rspec (2.3.0)
+      rspec-core (~> 2.3.0)
+      rspec-expectations (~> 2.3.0)
+      rspec-mocks (~> 2.3.0)
+    rspec-core (2.3.0)
+    rspec-expectations (2.3.0)
       diff-lcs (~> 1.1.2)
-    rspec-mocks (2.2.0)
+    rspec-mocks (2.3.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   mocha
-  rspec (~> 2.2.0)
+  rspec (~> 2.3.0)
