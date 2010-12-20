@@ -2,25 +2,24 @@ require "spec_helper"
 
 describe Whois::Client do
 
-  context ".new" do
-    it "creates a new instance" do
-      client = klass.new
-      client.should be_instance_of(klass)
+  context "#initialize" do
+    it "accepts a zero parameters" do
+      lambda { klass.new }.should_not raise_error
     end
 
-    it "accepts a timeout option with a value in seconds" do
+    it "accepts a settings parameter" do
+      lambda { klass.new({ :foo => "bar" }) }.should_not raise_error
+    end
+
+
+    it "accepts a timeout setting with a value in seconds" do
       client = klass.new(:timeout => 100)
       client.timeout.should == 100
     end
 
-    it "accepts a timeout option with a nil value" do
+    it "accepts a timeout setting with a nil value" do
       client = klass.new(:timeout => nil)
       client.timeout.should be_nil
-    end
-
-    it "defaults timeout option to DEFAULT_TIMEOUT" do
-      client = klass.new
-      client.timeout.should == klass::DEFAULT_TIMEOUT
     end
 
     it "accepts a block" do
@@ -28,10 +27,21 @@ describe Whois::Client do
         client.should be_instance_of(klass)
       end
     end
+
+
+    it "defaults timeout setting to DEFAULT_TIMEOUT" do
+      client = klass.new
+      client.timeout.should == klass::DEFAULT_TIMEOUT
+    end
+
+    it "sets settings to given argument, except timeout" do
+      client = klass.new(:timeout => nil, :foo => "bar")
+      client.settings.should == { :foo => "bar" }
+    end
   end
 
   context "#query" do
-    it "coerces qstring to string" do
+    it "coerces the argument to string" do
       server = Object.new
       # I can't use the String because Array#to_s behaves differently
       # on Ruby 1.8.7 and Ruby 1.9.1

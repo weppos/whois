@@ -29,14 +29,17 @@ module Whois
     # @return [Fixnum, nil] The current timeout value, expressed in seconds.
     attr_accessor :timeout
 
+    # @return [Hash] The current client settings.
+    attr_accessor :settings
+
 
     # Initializes a new <tt>Whois::Client</tt> with <tt>settings</tt>.
     #
     # If <tt>block</tt> is given, yields <tt>self</tt>.
     #
-    # @param  [Hash] options Hash of options.
+    # @param  [Hash] settings Hash of settings to customize the client behavior.
     # @option settings [Fixnum, nil] :timeout (DEFAULT_TIMEOUT)
-    #         The script timeout, expressed in seconds.
+    #         The timeout for a WHOIS query, expressed in seconds.
     #
     # @yield  [self]
     #
@@ -55,15 +58,18 @@ module Whois
     #
     def initialize(settings = {}, &block)
       settings = settings.dup
-      self.timeout = settings.key?(:timeout) ? settings.delete(:timeout) : DEFAULT_TIMEOUT
+
+      self.timeout  = settings.key?(:timeout) ? settings.delete(:timeout) : DEFAULT_TIMEOUT
+      self.settings = settings
+
       yield(self) if block_given?
     end
 
 
-    # Queries the right WHOIS server for <tt>qstring</tt> and returns
-    # the response from the server.
+    # Queries the right WHOIS server for <tt>object</tt>
+    # and returns the response from the server.
     #
-    # @param  [String] object The string to be sent as query parameter.
+    # @param  [#to_s] object The string to be sent as query parameter.
     # @return [Whois::Answer] The answer object containing the WHOIS response.
     #
     # @raise  [Timeout::Error]
