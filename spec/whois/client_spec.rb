@@ -3,14 +3,24 @@ require "spec_helper"
 describe Whois::Client do
 
   context ".new" do
-    it "initializes the instance" do
+    it "creates a new instance" do
       client = klass.new
       client.should be_instance_of(klass)
     end
 
-    it "accepts a timeout option" do
+    it "accepts a timeout option with a value in seconds" do
       client = klass.new(:timeout => 100)
       client.timeout.should == 100
+    end
+
+    it "accepts a timeout option with a nil value" do
+      client = klass.new(:timeout => nil)
+      client.timeout.should be_nil
+    end
+
+    it "defaults timeout option to DEFAULT_TIMEOUT" do
+      client = klass.new
+      client.timeout.should == klass::DEFAULT_TIMEOUT
     end
 
     it "accepts a block" do

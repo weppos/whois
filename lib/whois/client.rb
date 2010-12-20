@@ -30,25 +30,32 @@ module Whois
     attr_accessor :timeout
 
 
-    # Initializes a new <tt>Whois::Client</tt> with <tt>options</tt>.
+    # Initializes a new <tt>Whois::Client</tt> with <tt>settings</tt>.
     #
     # If <tt>block</tt> is given, yields <tt>self</tt>.
     #
     # @param  [Hash] options Hash of options.
-    # @option options [Fixnum, nil] :timeout (DEFAULT_TIMEOUT)
+    # @option settings [Fixnum, nil] :timeout (DEFAULT_TIMEOUT)
     #         The script timeout, expressed in seconds.
     #
     # @yield  [self]
     #
-    # @example
-    #
-    #   client = Whois::Client.new do |c|
-    #     c.timeout = nil
-    #   end
+    # @example Creating a new client
+    #   client = Whois::Client.new
     #   client.query("google.com")
     #
-    def initialize(options = {}, &block)
-      self.timeout = options[:timeout] || DEFAULT_TIMEOUT
+    # @example Creating a new client with custom settings
+    #   client = Whois::Client.new(:timeout => nil)
+    #   client.query("google.com")
+    #
+    # @example Creating a new client an yielding the instance
+    #   Whois::Client.new do |c|
+    #     c.query("google.com")
+    #   end
+    #
+    def initialize(settings = {}, &block)
+      settings = settings.dup
+      self.timeout = settings.key?(:timeout) ? settings.delete(:timeout) : DEFAULT_TIMEOUT
       yield(self) if block_given?
     end
 
