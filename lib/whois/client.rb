@@ -40,21 +40,31 @@ module Whois
     # @param  [Hash] settings Hash of settings to customize the client behavior.
     # @option settings [Fixnum, nil] :timeout (DEFAULT_TIMEOUT)
     #         The timeout for a WHOIS query, expressed in seconds.
+    # @option settings [String] :bind_host (nil)
+    #         Providing an IP address or hostname will bind the Socket connection
+    #         to the specific local host.
+    # @option settings [Fixnum] :bind_port (nil)
+    #         Providing port number will bind the Socket connection
+    #         to the specific local port.
     #
     # @yield  [self]
     #
-    # @example Creating a new client
+    # @example Creating a new Client
     #   client = Whois::Client.new
     #   client.query("google.com")
     #
-    # @example Creating a new client with custom settings
+    # @example Creating a new Client with custom settings
     #   client = Whois::Client.new(:timeout => nil)
     #   client.query("google.com")
     #
-    # @example Creating a new client an yielding the instance
+    # @example Creating a new Client an yield the instance
     #   Whois::Client.new do |c|
     #     c.query("google.com")
     #   end
+    #
+    # @example Binding the requests to a custom local IP
+    #   client = Whois::Client.new(:bind_host => "127.0.0.1", :bind_port => 80)
+    #   client.query("google.com")
     #
     def initialize(settings = {}, &block)
       settings = settings.dup

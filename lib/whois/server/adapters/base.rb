@@ -79,7 +79,7 @@ module Whois
         alias_method :eql?, :==
 
 
-        # Merges given +settings+ into current {options}.
+        # Merges given +settings+ into current {#options}.
         #
         # @param  [Hash] settings
         # @return [Hash] The updated options for this object.
@@ -88,7 +88,7 @@ module Whois
         end
 
 
-        # Performs a Whois query for <tt>qstring</tt>
+        # Performs a Whois query for <tt>string</tt>
         # using the current server adapter.
         #
         # @param  [String] string The string to be sent as query parameter.
@@ -129,14 +129,12 @@ module Whois
           # Store an answer part in {#buffer}.
           #
           # @return [void]
+          # @api public
           def append_to_buffer(response, host)
             @buffer << Whois::Answer::Part.new(response, host)
           end
 
-          def query_the_socket(query, host, port = nil)
-            ask_the_socket(query, host, port || options[:port] || DEFAULT_WHOIS_PORT)
-          end
-
+          # @api internal
           def with_buffer(&block)
             @buffer = []
             result = yield(@buffer)
@@ -144,8 +142,25 @@ module Whois
             result
           end
 
-          def ask_the_socket(query, host, port)
-            client = TCPSocket.open(host, port)
+          # @api public
+          def query_the_socket(query, host, port = nil)
+            ask_the_socket(
+              query,
+              host,
+              port || options[:port] || DEFAULT_WHOIS_PORT,
+              options[:bind_host],
+              options[:bind_port]
+            )
+          end
+
+          # This method handles the lowest connection
+          # to the WHOIS server.
+          #
+          # This is for internal use only!
+          #
+          # @api internal
+          def ask_the_socket(query, host, port, local_host, local_port)
+            client = TCPSocket.open(host, port, local_host, local_port)
             client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
             client.read                     # but write/read is more symmetric than puts/read
           ensure                            # and I really want to use read instead of gets.
