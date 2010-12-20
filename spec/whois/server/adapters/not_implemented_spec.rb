@@ -6,6 +6,7 @@ describe Whois::Server::Adapters::NotImplemented do
     @definition = [:ipv6, "2001:0000::/32", "teredo", { :adapter => Whois::Server::Adapters::NotImplemented }]
   end
 
+
   describe "#query" do
     it "raises Whois::ServerNotImplemented" do
       lambda do

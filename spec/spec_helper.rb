@@ -46,7 +46,7 @@ module Helpers
     end
 
     def fixture(*names)
-      File.join(TEST_ROOT, "fixtures", *names)
+      File.join(SPEC_ROOT, "..", "test", "fixtures", *names)
     end
 
 end
