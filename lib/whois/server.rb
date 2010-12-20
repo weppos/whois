@@ -175,7 +175,7 @@ module Whois
     end
     
     
-    # Parses <tt>qstring</tt> and tries to guess the right server.
+    # Parses <tt>string</tt> and tries to guess the right server.
     #
     # It successfully detects the following query types:
     # * ipv6
@@ -194,14 +194,14 @@ module Whois
     # @param  [String] string
     # @return [Whois::Server::Adapters::Base]
     #         The adapter that can be used to perform
-    #         WHOIS queries for <tt>qstring</tt>.
+    #         WHOIS queries for <tt>string</tt>.
     #
     # @raise  [Whois::ServerNotFound]
     #         When unable to find an appropriate WHOIS adapter
-    #         for <tt>qstring</tt>. Most of the cases, the <tt>qstring</tt>
+    #         for <tt>string</tt>. Most of the cases, the <tt>string</tt>
     #         haven't been recognised as one of the supported query types.
     # @raise  [Whois::ServerNotSupported]
-    #         When the <tt>qstring</tt> type is detected,
+    #         When the <tt>string</tt> type is detected,
     #         but the object type doesn't have any supported WHOIS adapter associated.
     #
     def self.guess(string)
@@ -226,7 +226,7 @@ module Whois
       end
 
       # Gave Over
-      raise ServerNotFound, "Unable to find a whois server for `#{string}'"
+      raise ServerNotFound, "Unable to find a WHOIS server for `#{string}'"
     end
 
 
@@ -245,24 +245,24 @@ module Whois
       end
 
 
-      def self.find_for_ip(qstring)
-        ip = IPAddr.new(qstring)
+      def self.find_for_ip(string)
+        ip = IPAddr.new(string)
         type = ip.ipv4? ? :ipv4 : :ipv6
         definitions(type).each do |definition|
           if IPAddr.new(definition.first).include?(ip)
             return factory(type, *definition)
           end
         end
-        raise AllocationUnknown, "IP Allocation for `#{qstring}' unknown. Server definitions might be outdated."
+        raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
       end
 
-      def self.find_for_email(qstring)
+      def self.find_for_email(string)
         raise ServerNotSupported, "No WHOIS server is known for email objects"
       end
 
-      def self.find_for_domain(qstring)
+      def self.find_for_domain(string)
         definitions(:tld).each do |definition|
-          return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ qstring
+          return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
         end
         nil
       end

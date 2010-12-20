@@ -2,25 +2,24 @@ require "spec_helper"
 
 describe Whois::Client do
 
-  context ".new" do
-    it "creates a new instance" do
-      client = klass.new
-      client.should be_instance_of(klass)
+  context "#initialize" do
+    it "accepts a zero parameters" do
+      lambda { klass.new }.should_not raise_error
     end
 
-    it "accepts a timeout option with a value in seconds" do
+    it "accepts a settings parameter" do
+      lambda { klass.new({ :foo => "bar" }) }.should_not raise_error
+    end
+
+
+    it "accepts a timeout setting with a value in seconds" do
       client = klass.new(:timeout => 100)
       client.timeout.should == 100
     end
 
-    it "accepts a timeout option with a nil value" do
+    it "accepts a timeout setting with a nil value" do
       client = klass.new(:timeout => nil)
       client.timeout.should be_nil
-    end
-
-    it "defaults timeout option to DEFAULT_TIMEOUT" do
-      client = klass.new
-      client.timeout.should == klass::DEFAULT_TIMEOUT
     end
 
     it "accepts a block" do
@@ -28,17 +27,30 @@ describe Whois::Client do
         client.should be_instance_of(klass)
       end
     end
+
+
+    it "defaults timeout setting to DEFAULT_TIMEOUT" do
+      client = klass.new
+      client.timeout.should == klass::DEFAULT_TIMEOUT
+    end
+
+    it "sets settings to given argument, except timeout" do
+      client = klass.new(:timeout => nil, :foo => "bar")
+      client.settings.should == { :foo => "bar" }
+    end
   end
 
   context "#query" do
-    it "coerces qstring to string" do
-      server = Object.new
-      # I can't use the String because Array#to_s behaves differently
+    it "coerces the argument to string" do
+      # I can't use the String in place of instance_of(String)
+      # because Array#to_s behaves differently
       # on Ruby 1.8.7 and Ruby 1.9.1
       # http://redmine.ruby-lang.org/issues/show/2617
+
+      server = Whois::Server::Adapters::Base.new(:tld, ".test", "example.test")
       server.expects(:query).with(instance_of(String))
       Whois::Server.expects(:guess).with(instance_of(String)).returns(server)
-      klass.new.query(["google", ".", "com"])
+      klass.new.query(["google", ".", "test"])
     end
 
     it "detects email" do
@@ -64,36 +76,36 @@ describe Whois::Client do
     end
 
     it "raises if timeout is exceeded" do
-      server = Class.new do
+      adapter = Class.new(Whois::Server::Adapters::Base) do
         def query(*args)
           sleep(2)
         end
       end
-      Whois::Server.expects(:guess).returns(server.new)
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
 
       client = klass.new(:timeout => 1)
       lambda { client.query("foo.com") }.should raise_error(Timeout::Error)
     end
 
     it "doesn't raise if timeout is not exceeded" do
-      server = Class.new do
+      adapter = Class.new(Whois::Server::Adapters::Base) do
         def query(*args)
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(server.new)
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
 
       client = klass.new(:timeout => 5)
       lambda { client.query("foo.com") }.should_not raise_error
     end
 
     it "supports unlimited timeout" do
-      server = Class.new do
+      adapter = Class.new(Whois::Server::Adapters::Base) do
         def query(*args)
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(server.new)
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
 
       client = klass.new.tap { |c| c.timeout = nil }
       lambda { client.query("foo.com") }.should_not raise_error
