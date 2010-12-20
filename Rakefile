@@ -161,17 +161,6 @@ rescue LoadError
   # puts "RCov is not available"
 end
 
-begin
-  require "code_statistics"
-  desc "Show library's code statistics"
-  task :stats do
-    CodeStatistics.new(["Whois", "lib"],
-                       ["Tests", "test"]).to_s
-  end
-rescue LoadError
-  # puts "CodeStatistics (Rails) is not available"
-end
-
 
 desc "Open an irb session preloaded with this library"
 task :console do
