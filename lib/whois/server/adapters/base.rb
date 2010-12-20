@@ -79,6 +79,15 @@ module Whois
         alias_method :eql?, :==
 
 
+        # Merges given +settings+ into current {options}.
+        #
+        # @param  [Hash] settings
+        # @return [Hash] The updated options for this object.
+        def configure(settings)
+          options.merge!(settings)
+        end
+
+
         # Performs a Whois query for <tt>qstring</tt>
         # using the current server adapter.
         #
@@ -124,8 +133,8 @@ module Whois
             @buffer << Whois::Answer::Part.new(response, host)
           end
 
-          def query_the_socket(qstring, host, port = nil)
-            ask_the_socket(qstring, host, port || options[:port] || DEFAULT_WHOIS_PORT)
+          def query_the_socket(query, host, port = nil)
+            ask_the_socket(query, host, port || options[:port] || DEFAULT_WHOIS_PORT)
           end
 
           def with_buffer(&block)
@@ -135,9 +144,9 @@ module Whois
             result
           end
 
-          def ask_the_socket(qstring, host, port)
+          def ask_the_socket(query, host, port)
             client = TCPSocket.open(host, port)
-            client.write("#{qstring}\r\n")  # I could use put(foo) and forget the \n
+            client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
             client.read                     # but write/read is more symmetric than puts/read
           ensure                            # and I really want to use read instead of gets.
             client.close if client          # If != client something went wrong.

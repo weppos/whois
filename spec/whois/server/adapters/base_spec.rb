@@ -62,6 +62,23 @@ describe Whois::Server::Adapters::Base do
     end
   end
 
+
+  describe "#configure" do
+    it "merges settings with current options" do
+      a = klass.new(:tld, ".test", "whois.test", { :hello => "world" })
+      a.configure(:foo => "bar")
+      a.options.should == { :hello => "world", :foo => "bar" }
+    end
+
+    it "gives higher priority to settings argument" do
+      a = klass.new(:tld, ".test", "whois.test", { :foo => "bar" })
+      a.options.should == { :foo => "bar" }
+      a.configure(:foo => "baz")
+      a.options.should == { :foo => "baz" }
+    end
+  end
+
+
   describe "#query" do
     it "raises NotImplementedError" do
       lambda { klass.new(*@definition).query("example.test") }.should raise_error(NotImplementedError)

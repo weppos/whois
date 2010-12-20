@@ -83,6 +83,7 @@ module Whois
       string = object.to_s
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
+        @server.configure(settings)
         @server.query(string)
       end
     end
