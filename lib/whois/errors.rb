@@ -59,7 +59,7 @@ module Whois
     # @param [String] url The URL of the web-based WHOIS interface.
     def initialize(url)
       @url = url
-      super("This TLD has no whois server, but you can access the whois database at `#{@url}'")
+      super("This TLD has no WHOIS server, but you can access the WHOIS database at `#{@url}'")
     end
 
   end

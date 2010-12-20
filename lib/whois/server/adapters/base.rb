@@ -25,7 +25,7 @@ module Whois
 
       class Base
 
-        # Default Whois request port.
+        # Default WHOIS request port.
         DEFAULT_WHOIS_PORT = 43
 
         # @return [Symbol] The type of WHOIS server
@@ -115,7 +115,7 @@ module Whois
         end
 
 
-        protected
+        private
 
           # Store an answer part in {#buffer}.
           #
@@ -127,8 +127,6 @@ module Whois
           def query_the_socket(qstring, host, port = nil)
             ask_the_socket(qstring, host, port || options[:port] || DEFAULT_WHOIS_PORT)
           end
-
-        private
 
           def with_buffer(&block)
             @buffer = []
