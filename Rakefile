@@ -49,7 +49,7 @@ spec = Gem::Specification.new do |s|
 
   s.has_rdoc          = true
   s.extra_rdoc_files  = Dir.glob("*.rdoc")
-  s.rdoc_options      = %w(--main README.rdoc)
+  s.rdoc_options      = %w( --main README.rdoc )
 
   s.files             = Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*")
   s.executables       = ["ruby-whois"]
@@ -78,13 +78,6 @@ task :gemspec do
   File.open(file, "w") {|f| f << spec.to_ruby }
 end
 
-
-# Generate documentation
-Rake::RDocTask.new do |rd|
-  rd.main = "README.rdoc"
-  rd.rdoc_files.include("*.rdoc", "lib/**/*.rb")
-  rd.rdoc_dir = "rdoc"
-end
 
 # Run all the specs in the /spec folder
 RSpec::Core::RakeTask.new(:rspec)
@@ -121,10 +114,38 @@ task :clean => [:clobber] do
 end
 
 desc "Remove any generated file"
-task :clobber => [:clobber_rdoc, :clobber_rcov, :clobber_package]
+task :clobber => [:clobber_rcov, :clobber_package]
 
 desc "Package the library and generates the gemspec"
 task :package => [:gemspec]
+
+
+begin
+  require "yard"
+  require "yard/rake/yardoc_task"
+
+  YARD::Rake::YardocTask.new(:yardoc) do |y|
+    y.options = ["--output-dir", "yardoc"]
+  end
+
+  namespace :yardoc do
+    desc "Publish YARD documentation to the site"
+    task :publish => ["yardoc:clobber", "yardoc"] do
+      ENV["username"] || raise(ArgumentError, "Missing ssh username")
+      sh "rsync -avz --delete yardoc/ #{ENV["username"]}@alamak:/home/#{ENV["username"]}/ruby-whois.org/api"
+    end
+
+    desc "Remove YARD products"
+    task :clobber do
+      rm_r "yardoc" rescue nil
+    end
+  end
+
+  task :clobber => "yardoc:clobber"
+rescue LoadError
+  puts "YARD is not available"
+end
+
 
 begin
   require "rcov/rcovtask"
@@ -151,12 +172,6 @@ rescue LoadError
   # puts "CodeStatistics (Rails) is not available"
 end
 
-namespace :rdoc do
-  desc "Publish RDoc documentation to the site"
-  task :publish => [:clobber_rdoc, :rdoc] do
-    sh "rsync -avz --delete rdoc/ weppos@dads:/home/weppos/ruby-whois.org/api"
-  end
-end
 
 desc "Open an irb session preloaded with this library"
 task :console do
