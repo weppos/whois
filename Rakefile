@@ -62,6 +62,7 @@ spec = Gem::Specification.new do |s|
   # If your tests use any gems, include them here
   s.add_development_dependency("rspec", "~> 2.3.0")
   s.add_development_dependency("mocha")
+  s.add_development_dependency("yard")
 end
 
 # This task actually builds the gem. We also regenerate a static
