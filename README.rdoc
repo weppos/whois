@@ -98,9 +98,9 @@ Did I mention you can even use blocks?
 
 === Consuming the Answer
 
-As of release 0.8, a WHOIS query no longer returns a simple string. Instead, you get a full <tt>Whois::Answer</tt> instance and this is just the beginning of the story.
+Any WHOIS query returns a <tt>Whois::Answer</tt>. This object looks like a String, but it's way more powerful.
 
-<tt>Whois::Answer</tt> is a super powerful object. It encapsulates the full WHOIS answer and it provides you the ability to parse the WHOIS response with a full object oriented notation.
+<tt>Whois::Answer</tt> encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
 
   a = Whois.whois("google.it")
   # => #<Whois::Answer>
