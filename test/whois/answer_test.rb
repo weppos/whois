@@ -50,38 +50,6 @@ class AnswerTest < Test::Unit::TestCase
     assert !@answer.match?(/google/)
   end
 
-  def test_equality_with_check_self
-    assert_equal @answer, @answer
-    assert  @answer.eql?(@answer)
-  end
-
-  def test_equality_with_check_self_class
-    assert_equal @answer, @answer.dup
-    assert  @answer.eql?(@answer.dup)
-  end
-
-  def test_equality_with_check_self_subclass
-    child = Class.new(@klass)
-    
-    assert_equal @answer, child.new(@answer.server, @answer.parts)
-    assert  @answer.eql?(child.new(@answer.server, @answer.parts))
-  end
-
-  def test_equality_with_check_string
-    assert_equal      @answer, @content
-    assert_not_equal  @content, @answer
-    assert  @answer.eql?(@content)
-    assert !@content.eql?(@answer)
-  end
-
-  def test_equality_check_content
-    other = @klass.new(@server, @parts)
-    assert_equal @answer, other
-    assert_equal other, @answer
-    assert @answer.eql?(other)
-    assert other.eql?(@answer)
-  end
-
 
   def test_content
     answer = @klass.new(@server, @parts)

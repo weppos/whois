@@ -47,6 +47,14 @@ describe Whois::Server::Adapters::Base do
       (one.eql? two).should be_true
     end
 
+    it "returns true when other has descendant class and has the same attributes" do
+      subklass = Class.new(klass)
+      one, two = klass.new(*@definition), subklass.new(*@definition)
+
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
     it "returns false when other has different class and has the same attributes" do
       one, two = klass.new(*@definition), Struct.new(:type, :allocation, :host, :options).new(*@definition)
 

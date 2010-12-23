@@ -54,6 +54,28 @@ module Whois
       content.inspect
     end
 
+    # Returns true if the <tt>object</tt> is the same object,
+    # or is a string and has the same content.
+    #
+    # @param  [Whois::Answer] other The answer to compare.
+    # @return [Boolean]
+    def ==(other)
+      if equal?(other)
+        return true
+      end
+      if other.is_a?(self.class)
+        return to_s == other.to_s
+      end
+      if other.is_a?(String)
+        Whois.deprecate "Comparing an answer with a String is deprecated and will be removed in Whois 2.1."
+        return to_s == other.to_s
+      end
+      false
+    end
+
+    alias_method :eql?, :==
+
+
     # Invokes {#match} on answer {#content}
     # and returns the match as <tt>MatchData</tt> or <tt>nil</tt>.
     #
@@ -78,22 +100,6 @@ module Whois
     def match?(pattern)
       !content.match(pattern).nil?
     end
-
-    # Returns true if the <tt>object</tt> is the same object,
-    # or is a string and has the same content.
-    #
-    # @param  [Whois::Answer] other The answer to compare.
-    # @return [Boolean]
-    #
-    def ==(other)
-      (self.equal?(other)) ||
-      # TODO: This option should be deprecated
-      (other.is_a?(String) && to_s == other) ||
-      (other.is_a?(Answer) && to_s == other.to_s)
-    end
-
-    alias_method :eql?, :==
-
 
     # Joins and returns all answer parts into a single string
     # and separates each response with a newline character.

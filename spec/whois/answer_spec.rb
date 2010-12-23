@@ -13,6 +13,71 @@ describe Whois::Answer do
   end
 
 
+  describe "#==" do
+    it "returns true when other is the same instance" do
+      one = two = klass.new(@server, @parts)
+
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
+    it "returns true when other has same class and has the same parts" do
+      one, two = klass.new(@server, @parts), klass.new(@server, @parts)
+
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
+    it "returns true when other has descendant class and has the same parts" do
+      subklass = Class.new(klass)
+      one, two = klass.new(@server, @parts), subklass.new(@server, @parts)
+
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
+    it "returns true when other has same class and has equal parts" do
+      one, two = klass.new(@server, @parts), klass.new(@server, @parts.dup)
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
+    it "returns true when other has same class, different server and the same parts" do
+      one, two = klass.new(@server, @parts), klass.new(nil, @parts)
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
+    it "returns false when other has different class and has the same parts" do
+      one, two = klass.new(@server, @parts), Struct.new(:server, :parts).new(@server, @parts)
+
+      (one == two).should be_false
+      (one.eql? two).should be_false
+    end
+
+    it "returns false when other has different parts" do
+      one, two = klass.new(@server, @parts), klass.new(@server, [])
+
+      (one == two).should be_false
+      (one.eql? two).should be_false
+    end
+
+    it "returns true when other is string and has the same content", :deprecated => true do
+      one, two = klass.new(@server, @parts), klass.new(@server, @parts).to_s
+
+      (one == two).should be_true
+      (one.eql? two).should be_true
+    end
+
+    it "returns false when other is string and has different content", :deprecated => true do
+      one, two = klass.new(@server, @parts), "different"
+
+      (one == two).should be_false
+      (one.eql? two).should be_false
+    end
+  end
+
+
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do

@@ -19,6 +19,8 @@
 
 * CHANGED: Whois::Server::Adapter::Base#== now returns false if other is not the same instance of self.
 
+* CHANGED: Deprecated the comparison of Whois::Answer with String.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
