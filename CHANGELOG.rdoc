@@ -17,6 +17,8 @@
 
 * CHANGED: Switched from RDoc to YARDoc (#3).
 
+* CHANGED: Whois::Server::Adapter::Base#== now returns false if other is not the same instance of self.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 

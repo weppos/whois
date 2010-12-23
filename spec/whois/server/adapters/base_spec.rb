@@ -40,11 +40,18 @@ describe Whois::Server::Adapters::Base do
       (one.eql? two).should be_true
     end
 
-    it "returns true when other has the same attributes" do
+    it "returns true when other has same class and has the same attributes" do
       one, two = klass.new(*@definition), klass.new(*@definition)
 
       (one == two).should be_true
       (one.eql? two).should be_true
+    end
+
+    it "returns false when other has different class and has the same attributes" do
+      one, two = klass.new(*@definition), Struct.new(:type, :allocation, :host, :options).new(*@definition)
+
+      (one == two).should be_false
+      (one.eql? two).should be_false
     end
 
     it "returns false when other has different attributes" do
