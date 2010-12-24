@@ -90,21 +90,26 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-task "ensure_rvm" do
-  raise "RVM is not available" unless File.exist?(File.expand_path("~/.rvm/scripts/rvm"))
-end
+namespace :test do
 
-RUBIES = %w( 1.8.7-p302 1.9.1-p378 1.9.2-p0 jruby-1.5.3 ree-1.8.7-2010.02 )
+  RUBIES = %w( 1.8.7-p302 1.9.1-p378 1.9.2-p0 jruby-1.5.3 ree-1.8.7-2010.02 )
 
-desc "Run tests for all rubies"
-task "test_rubies" => "ensure_rvm" do
-  sh "rvm #{RUBIES.join(",")} rake default"
-end
+  desc "Run tests for all rubies"
+  task :rubies => :ensure_rvm do
+    sh "rvm #{RUBIES.join(",")} rake default"
+  end
 
-RUBIES.each do |ruby|
-  desc "Run tests on Ruby #{ruby}"
-  task "test_ruby_#{ruby}"=> "ensure_rvm" do
-    sh "rvm #{ruby} rake default"
+  task :ensure_rvm do
+    File.exist?(File.expand_path("~/.rvm/scripts/rvm")) || abort("RVM is not available")
+  end
+
+  namespace :ruby do
+    RUBIES.each do |ruby|
+      desc "Run tests against Ruby #{ruby}"
+      task ruby => "test:ensure_rvm" do
+        sh "rvm #{ruby} rake default"
+      end
+    end
   end
 end
 
