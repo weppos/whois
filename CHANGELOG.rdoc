@@ -21,6 +21,8 @@
 
 * CHANGED: Deprecated the comparison of Whois::Answer with String.
 
+* CHANGED: Removed official support for Ruby 1.9.1.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
