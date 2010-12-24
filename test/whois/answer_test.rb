@@ -14,30 +14,6 @@ class AnswerTest < Test::Unit::TestCase
   end
 
 
-  def test_initialize
-    answer = @klass.new(@server, @parts)
-    assert_instance_of @klass, answer
-    assert_equal @server, answer.server
-    assert_equal @parts, answer.parts
-  end
-
-  def test_initialize_should_require_server
-    assert_raise(ArgumentError) { @klass.new }
-  end
-
-  def test_initialize_should_require_parts
-    assert_raise(ArgumentError) { @klass.new(@server) }
-  end
-
-
-  def test_to_s
-    assert_equal @content, @answer.to_s
-  end
-
-  def test_inspect
-    assert_equal @content.inspect, @answer.inspect
-  end
-
   def test_match
     # Force .to_a otherwise Match will be compared as Object instance
     # and the test will fail because they actually are different instances.
@@ -51,25 +27,10 @@ class AnswerTest < Test::Unit::TestCase
   end
 
 
-  def test_content
-    answer = @klass.new(@server, @parts)
-    assert_equal @content, answer.content
-  end
-
-
   def test_contacts
     answer = @klass.new(@server, @parts)
     answer.parser.expects(:contacts).returns([])
     assert_equal [], answer.contacts
-  end
-
-
-  def test_parser
-    answer = @klass.new(nil, [Whois::Answer::Part.new("", "whois.nic.it")])
-    assert_instance_of Whois::Answer::Parser, answer.parser
-
-    answer = @klass.new(nil, [])
-    assert_instance_of Whois::Answer::Parser, answer.parser
   end
 
 

@@ -8,10 +8,50 @@ describe Whois::Answer do
         Whois::Answer::Part.new("This is a answer from foo.", "foo.example.test"),
         Whois::Answer::Part.new("This is a answer from bar.", "bar.example.test")
     ]
-    @content  = "This is a answer from foo.\nThis is a answer from bar."
-    @answer   = klass.new(@server, @parts)
+    @content  = @parts.map(&:body).join("\n")
   end
 
+
+  describe "#initialize" do
+    it "requires a server and parts" do
+      lambda { klass.new }.should raise_error(ArgumentError)
+      lambda { klass.new(@server) }.should raise_error(ArgumentError)
+      lambda { klass.new(@server, @parts) }.should_not raise_error
+    end
+    
+    it "sets server and parts from arguments" do
+      instance = klass.new(@server, @parts)
+      instance.server.should be(@server)
+      instance.parts.should be(@parts)
+
+      instance = klass.new(nil, nil)
+      instance.server.should be_nil
+      instance.parts.should be_nil
+    end
+  end
+
+
+  describe "#to_s" do
+    it "delegates to #content" do
+      klass.new(nil, [@parts[0]]).to_s.should == @parts[0].body
+      klass.new(nil, @parts).to_s.should == @parts.map(&:body).join("\n")
+      klass.new(nil, []).to_s.should == ""
+    end
+  end
+
+  describe "#inspect" do
+    it "inspects the answer content" do
+      klass.new(nil, [@parts[0]]).inspect.should == @parts[0].body.inspect
+    end
+
+    it "joins multiple parts" do
+      klass.new(nil, @parts).inspect.should == @parts.map(&:body).join("\n").inspect
+    end
+
+    it "returns an empty string when no parts" do
+      klass.new(nil, []).inspect.should == "".inspect
+    end
+  end
 
   describe "#==" do
     it "returns true when other is the same instance" do
@@ -74,6 +114,39 @@ describe Whois::Answer do
 
       (one == two).should be_false
       (one.eql? two).should be_false
+    end
+  end
+
+
+  describe "#content" do
+    it "returns the part body" do
+      klass.new(nil, [@parts[0]]).content.should == @parts[0].body
+    end
+
+    it "joins multiple parts" do
+      klass.new(nil, @parts).content.should == @parts.map(&:body).join("\n")
+    end
+
+    it "returns an empty string when no parts" do
+      klass.new(nil, []).content.should == ""
+    end
+  end
+
+  describe "#parser" do
+    it "returns a Parser" do
+      klass.new(nil, @parts).parser.should be_a(Whois::Answer::Parser)
+    end
+
+    it "initializes the parser with self" do
+      answer = klass.new(nil, @parts)
+      answer.parser.answer.should be(answer)
+    end
+
+    it "memoizes the value" do
+      answer = klass.new(nil, @parts)
+      answer.instance_eval { @parser }.should be_nil
+      parser = answer.parser
+      answer.instance_eval { @parser }.should be(parser)
     end
   end
 
