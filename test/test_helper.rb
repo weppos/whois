@@ -29,7 +29,7 @@ class Test::Unit::TestCase
 
 
   def fixture(*names)
-    File.join(TEST_ROOT, "fixtures", *names)
+    File.join(TEST_ROOT, "..", "spec", "fixtures", *names)
   end
 
 end
