@@ -14,26 +14,6 @@ class AnswerTest < Test::Unit::TestCase
   end
 
 
-  def test_match
-    # Force .to_a otherwise Match will be compared as Object instance
-    # and the test will fail because they actually are different instances.
-    assert_equal @content.match(/domain\.foo/).to_a, @answer.match(/domain\.foo/).to_a
-    assert_equal @content.match(/google/), @answer.match(/google/)
-  end
-
-  def test_match?
-    assert  @answer.match?(/domain\.foo/)
-    assert !@answer.match?(/google/)
-  end
-
-
-  def test_contacts
-    answer = @klass.new(@server, @parts)
-    answer.parser.expects(:contacts).returns([])
-    assert_equal [], answer.contacts
-  end
-
-
   class Whois::Answer::Parser::WhoisParserFake < Whois::Answer::Parser::Base
     property_supported :status do
       nil

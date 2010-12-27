@@ -118,6 +118,23 @@ describe Whois::Answer do
   end
 
 
+  describe "match" do
+    it "delegates to content" do
+      klass.new(@server, @parts).match(/answer/).should be_a(MatchData)
+      klass.new(@server, @parts).match(/answer/)[0].should == "answer"
+
+      klass.new(@server, @parts).match(/nomatch/).should be_nil
+    end
+  end
+
+  describe "match" do
+    it "calls match and checks for match" do
+      klass.new(@server, @parts).match?(/answer/).should  == true
+      klass.new(@server, @parts).match?(/nomatch/).should == false
+    end
+  end
+
+
   describe "#content" do
     it "returns the part body" do
       klass.new(nil, [@parts[0]]).content.should == @parts[0].body
@@ -185,6 +202,14 @@ describe Whois::Answer do
       instance.parser.expects(:unchanged?).with(other.parser)
 
       instance.unchanged?(other)
+    end
+  end
+
+  describe "#contacts" do
+    it "delegates to parser" do
+      answer = klass.new(nil, [])
+      answer.parser.expects(:contacts).returns([:one, :two])
+      answer.contacts.should == [:one, :two]
     end
   end
 
