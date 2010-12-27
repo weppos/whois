@@ -90,8 +90,8 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-namespace :test do
 
+namespace :test do
   RUBIES = %w( 1.8.7-p302 1.9.2-p0 jruby-1.5.6 ree-1.8.7-2010.02 )
 
   desc "Run tests for all rubies"

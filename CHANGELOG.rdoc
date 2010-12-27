@@ -32,6 +32,9 @@
 
 * FIXED: Fixed a bug which prevents a client to be created with nil timeout.
 
+* FIXED: The very first time a Whois::Answer method/property question method is invoked,
+  the corresponding method is called instead of the question one.
+
 
 == Release 1.6.6
 

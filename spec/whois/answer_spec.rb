@@ -197,4 +197,58 @@ describe Whois::Answer do
     end
   end
 
+
+  describe "method_missing" do
+    context "when a parser property"
+    context "when a parser method"
+
+    context "when a parser question method/property" do
+      it "calls the corresponding no-question method" do
+        answer = klass.new(nil, [])
+        answer.expects(:status)
+        answer.status?
+      end
+
+      it "returns true if the property is not nil" do
+        answer = klass.new(nil, [])
+        answer.expects(:status).returns("available")
+        answer.status?.should == true
+      end
+
+      it "returns false if the property is nil" do
+        answer = klass.new(nil, [])
+        answer.expects(:status).returns(nil)
+        answer.status?.should == false
+      end
+    end
+
+    context "when a simple method" do
+      it "passes the request to super" do
+        Object.class_eval do
+          def happy; "yes"; end
+        end
+
+        answer = klass.new(nil, [])
+        lambda do
+          answer.happy.should == "yes"
+        end.should_not raise_error
+        lambda do
+          answer.sad
+        end.should raise_error(NoMethodError)
+      end
+
+      it "doesn't catch all methods" do
+        lambda do
+          klass.new(nil, []).i_am_not_defined
+        end.should raise_error(NoMethodError)
+      end
+
+      it "doesn't catch all question methods" do
+        lambda do
+          klass.new(nil, []).i_am_not_defined?
+        end.should raise_error(NoMethodError)
+      end
+    end
+  end
+
 end

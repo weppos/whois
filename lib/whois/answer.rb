@@ -210,40 +210,52 @@ module Whois
     end
 
 
-    protected
+    private
+
+      # @api internal
+      def self.define_property_method(method)
+        class_eval <<-RUBY, __FILE__, __LINE__ + 1
+          def #{method}(*args, &block)
+            if property_supported?(:#{method})
+              parser.#{method}(*args, &block)
+            else
+              nil
+            end
+          end
+        RUBY
+      end
+
+      # @api internal
+      def self.define_method_method(method)
+        class_eval <<-RUBY, __FILE__, __LINE__ + 1
+          def #{method}(*args, &block)
+            if parser.respond_to?(:#{method})
+              parser.#{method}(*args, &block)
+            end
+          end
+        RUBY
+      end
+
+      # @api internal
+      def self.define_question_method(method)
+        class_eval <<-RUBY, __FILE__, __LINE__ + 1
+          def #{method}?
+            !#{method}.nil?
+          end
+        RUBY
+      end
 
       # Delegates all method calls to the internal parser.
       def method_missing(method, *args, &block)
         if Parser::PROPERTIES.include?(method)
-          self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
-            def #{method}(*args, &block)
-              if property_supported?(:#{method})
-                parser.#{method}(*args, &block)
-              else
-                nil
-              end
-            end
-          RUBY
+          self.class.define_property_method(method)
           send(method, *args, &block)
-
         elsif Parser::METHODS.include?(method)
-          self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
-            def #{method}(*args, &block)
-              if parser.respond_to?(:#{method})
-                parser.#{method}(*args, &block)
-              end
-            end
-          RUBY
+          self.class.define_method_method(method)
           send(method, *args, &block)
-
         elsif method.to_s =~ /([a-z_]+)\?/ and (Parser::PROPERTIES + Parser::METHODS).include?($1.to_sym)
-          self.class.class_eval <<-RUBY, __FILE__, __LINE__ + 1
-            def #{$1}?
-              !#{$1}.nil?
-            end
-          RUBY
-          send($1)
-
+          self.class.define_question_method($1)
+          send(method)
         else
           super
         end
