@@ -21,9 +21,6 @@ module Whois
   class Answer
     class Parser
 
-      #
-      # = whois.eenet.ee parser
-      #
       # Parser for the whois.eenet.ee server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
@@ -31,6 +28,9 @@ module Whois
       # Please consider to contribute implementing missing methods.
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
+      #
+      # @deprecated The official .ee TLD host is now whois.tld.ee.
+      #             This parser only exists for BC.
       #
       class WhoisEenetEe < Base
 
