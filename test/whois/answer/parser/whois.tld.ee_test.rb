@@ -8,6 +8,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     @host   = "whois.tld.ee"
   end
 
+
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = :registered
@@ -79,7 +80,8 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
   end
-  
+
+
   def test_registrar
     parser    = @klass.new(load_part('registered.txt'))
     expected  = 'fraktal'
@@ -91,7 +93,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.registrar
     assert_equal  expected, parser.instance_eval { @registrar }
   end
-  
+
   def test_admin_contact
     parser    = @klass.new(load_part('registered.txt'))
     result    = parser.admin_contact
@@ -99,11 +101,11 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     assert_equal "CID:FRAKTAL:7",                 result.id
     assert_equal "Tõnu Runnel",                   result.name
     assert_equal "Fraktal OÜ",                    result.organization
-    
+
     parser    = @klass.new(load_part('available.txt'))
     assert_nil  parser.admin_contact
   end
-  
+
   def test_registrant_contact
     parser    = @klass.new(load_part('registered.txt'))
     result    = parser.registrant_contact
@@ -111,20 +113,22 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     assert_equal "CID:FRAKTAL:1",                 result.id
     assert_equal "Priit Haamer",                  result.name
     assert_nil result.organization
-    
+
     parser    = @klass.new(load_part('available.txt'))
     assert_nil  parser.registrant_contact
   end
+
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns3.edicy.net ns4.edicy.net )
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
-  
+
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
+
 end

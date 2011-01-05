@@ -54,7 +54,8 @@ module Whois
         property_supported :registered? do
           @registered ||= !available?
         end
-        
+
+
         property_supported :created_on do
           @created_on ||= if content_for_scanner =~ /registered:\s+(.*)\n/
             Time.parse($1)
@@ -72,13 +73,14 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
+
         property_supported :registrar do
           @registrar ||= if content_for_scanner =~ /registrar:\s+(.*)\n/
             $1
           end
         end
-        
+
         property_supported :admin_contact do
           @admin_contact ||= if content_for_scanner =~ /admin-c:\s+(.*)\n/
             contact($1, Whois::Answer::Contact::TYPE_ADMIN)
@@ -92,54 +94,57 @@ module Whois
         end
 
         property_not_supported :technical_contact
-        
+
+
         property_supported :nameservers do
           @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.split(" ").first }
-        end        
-        
-        protected
-        
-        def parse
-          Scanner.new(content_for_scanner).parse
         end
-      
-        def contact(element, type)
-          node(element) do |raw|
-            Answer::Contact.new(
-              :id             => element,
-              :type           => type,
-              :name           => raw['name'],
-              :organization   => raw['org'],
-              :created_on     => Time.parse(raw['created'])
-            )
-          end
-        end
-        
-        class Scanner
 
-          def initialize(content)
-            @input = StringScanner.new(content)
-          end
+
+        protected
 
           def parse
-            @ast = Hash.new
-            while !@input.eos?
-              if @input.scan(/contact:\s+(.*)\n/)
-                section = @input[1].strip
-                content = Hash.new
-
-                while @input.scan(/(.*?):\s+(.*?)\n/)
-                  content[@input[1]] = @input[2]
-                end
-                
-                @ast[section] = content
-              else
-                @input.scan(/(.*)\n/)
-              end
-            end
-            @ast
+            Scanner.new(content_for_scanner).parse
           end
-        end
+
+          def contact(element, type)
+            node(element) do |raw|
+              Answer::Contact.new(
+                :id             => element,
+                :type           => type,
+                :name           => raw['name'],
+                :organization   => raw['org'],
+                :created_on     => Time.parse(raw['created'])
+              )
+            end
+          end
+
+          class Scanner
+
+            def initialize(content)
+              @input = StringScanner.new(content)
+            end
+
+            def parse
+              @ast = Hash.new
+              while !@input.eos?
+                if @input.scan(/contact:\s+(.*)\n/)
+                  section = @input[1].strip
+                  content = Hash.new
+
+                  while @input.scan(/(.*?):\s+(.*?)\n/)
+                    content[@input[1]] = @input[2]
+                  end
+
+                  @ast[section] = content
+                else
+                  @input.scan(/(.*)\n/)
+                end
+              end
+              @ast
+            end
+          end
+        
       end
     end
   end

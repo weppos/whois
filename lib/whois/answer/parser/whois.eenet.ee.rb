@@ -27,6 +27,7 @@ module Whois
       # Alias for whois.tld.ee parser.
       #
       WhoisEenetEe = WhoisTldEe
+
     end
   end
 end
