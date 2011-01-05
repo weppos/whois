@@ -110,28 +110,63 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_admin_contact
+  def test_registrant_contact_with_registered
     parser    = @klass.new(load_part('registered.txt'))
-    result    = parser.admin_contact
-    assert_instance_of Whois::Answer::Contact,    result
-    assert_equal "CID:FRAKTAL:7",                 result.id
-    assert_equal "Tõnu Runnel",                   result.name
-    assert_equal "Fraktal OÜ",                    result.organization
+    expected  = parser.registrant_contact
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
 
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "CID:FRAKTAL:1", expected.id
+  end
+
+  def test_registrant_contact_with_available
     parser    = @klass.new(load_part('available.txt'))
-    assert_nil  parser.admin_contact
+    expected  = nil
+    assert_equal  expected, parser.registrant_contact
+    assert_equal  expected, parser.instance_eval { @registrant_contact }
   end
 
   def test_registrant_contact
     parser    = @klass.new(load_part('registered.txt'))
     result    = parser.registrant_contact
-    assert_instance_of Whois::Answer::Contact,    result
-    assert_equal "CID:FRAKTAL:1",                 result.id
-    assert_equal "Priit Haamer",                  result.name
-    assert_nil result.organization
 
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "CID:FRAKTAL:1",                   result.id
+    assert_equal "Priit Haamer",                    result.name
+    assert_equal nil,                               result.organization
+  end
+
+  def test_admin_contact_with_registered
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = parser.admin_contact
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
+
+    assert_instance_of Whois::Answer::Contact, expected
+    assert_equal "CID:FRAKTAL:7", expected.id
+  end
+
+  def test_admin_contact_with_available
     parser    = @klass.new(load_part('available.txt'))
-    assert_nil  parser.registrant_contact
+    expected  = nil
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
+  end
+
+  def test_admin_contact
+    parser    = @klass.new(load_part('registered.txt'))
+    result    = parser.admin_contact
+
+    assert_instance_of Whois::Answer::Contact,      result
+    assert_equal "CID:FRAKTAL:7",                   result.id
+    assert_equal "Tõnu Runnel",                     result.name
+    assert_equal "Fraktal OÜ",                      result.organization
+  end
+
+  def test_technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).technical_contact }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).technical_contact }
   end
 
 

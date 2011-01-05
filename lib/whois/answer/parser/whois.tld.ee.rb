@@ -147,7 +147,7 @@ module Whois
               @ast
             end
           end
-        
+
       end
     end
   end
