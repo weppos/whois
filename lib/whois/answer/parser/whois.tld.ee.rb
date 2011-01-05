@@ -77,7 +77,10 @@ module Whois
 
         property_supported :registrar do
           @registrar ||= if content_for_scanner =~ /registrar:\s+(.*)\n/
-            $1
+            Whois::Answer::Registrar.new(
+                :id => $1,
+                :name => $1
+            )
           end
         end
 
