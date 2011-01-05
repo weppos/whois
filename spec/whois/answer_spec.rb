@@ -168,6 +168,97 @@ describe Whois::Answer do
   end
 
 
+  describe "#properties" do
+    it "returns a Hash" do
+      klass.new(nil, []).properties.should be_a(Hash)
+    end
+
+    it "returns both nil and not-nil values" do
+      r = klass.new(nil, [])
+      r.expects(:domain).returns("")
+      r.expects(:created_on).returns(nil)
+      r.expects(:expires_on).returns(Time.parse("2010-10-10"))
+      p = r.properties
+      p[:domain].should == ""
+      p[:created_on].should == nil
+      p[:expires_on].should == Time.parse("2010-10-10")
+    end
+
+    it "fetches all parser property" do
+      klass.new(nil, []).properties.keys.should =~ Whois::Answer::Parser::PROPERTIES 
+    end
+  end
+
+
+  class Whois::Answer::Parser::WhoisPropertiesTest < Whois::Answer::Parser::Base
+    property_supported :status do
+      nil
+    end
+    property_supported :created_on do
+      Date.parse("2010-10-20")
+    end
+    property_not_supported :updated_on
+    # property_not_defined :expires_on
+  end
+
+  describe "#property_supported?" do
+    it "returns true if the property is supported" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.property_supported?(:status).should == true
+      r.property_supported?(:created_on).should == true
+    end
+
+    it "returns false if the property is not supported" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.property_supported?(:updated_on).should == false
+    end
+
+    it "returns false if the property is not defined" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.property_supported?(:expires_on).should == false
+    end
+  end
+
+  describe "property" do
+    it "returns value when the property is supported" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.created_on.should == Date.parse("2010-10-20")
+    end
+
+    it "returns nil when the property is not supported" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.updated_on.should be_nil
+    end
+
+    it "returns nil when the property is not implemented" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.expires_on.should be_nil
+    end
+  end
+
+  describe "property?" do
+    it "returns true when the property is supported and has no value" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.status?.should == false
+    end
+
+    it "returns false when the property is supported and has q value" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.created_on?.should == true
+    end
+
+    it "returns false when the property is not supported" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.updated_on?.should == false
+    end
+
+    it "returns false when the property is not implemented" do
+      r = klass.new(nil, [Whois::Answer::Part.new("", "whois.properties.test")])
+      r.expires_on?.should == false
+    end
+  end
+
+
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do

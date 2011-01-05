@@ -8,7 +8,7 @@ describe Whois::Answer::Parser::Base do
 
 
   describe ".property_registry" do
-    it "returns the @@registry variable when no argument is passed" do
+    it "returns the @@registry variable when class argument is not passed" do
       with_registry do
         klass.property_registry.should == klass.send(:class_variable_get, :@@property_registry)
       end
