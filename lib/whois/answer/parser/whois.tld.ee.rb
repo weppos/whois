@@ -86,7 +86,7 @@ module Whois
         end
 
         property_supported :registrant_contact do
-          @admin_contact ||= if content_for_scanner =~ /registrant:\s+(.*)\n/
+          @registrant_contact ||= if content_for_scanner =~ /registrant:\s+(.*)\n/
             contact($1, Whois::Answer::Contact::TYPE_REGISTRANT)
           end
         end

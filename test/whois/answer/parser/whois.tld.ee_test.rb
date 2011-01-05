@@ -44,7 +44,6 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     assert_equal  expected, parser.instance_eval { @registered }
   end
 
-
   def test_created_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2010-07-04 07:10:32")
