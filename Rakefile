@@ -2,11 +2,6 @@ require "rubygems"
 require "rake/testtask"
 require "rspec/core/rake_task"
 require "rake/gempackagetask"
-begin
-  require "hanna/rdoctask"
-rescue LoadError
-  require "rake/rdoctask"
-end
 
 $:.unshift(File.dirname(__FILE__) + "/lib")
 require "whois"
