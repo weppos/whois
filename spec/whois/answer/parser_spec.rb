@@ -19,7 +19,7 @@ describe Whois::Answer::Parser do
     end
   end
 
-  
+
   describe "property lookup" do
     class Whois::Answer::Parser::ParserSupportedTest < Whois::Answer::Parser::Base
       property_supported :status do
@@ -94,7 +94,18 @@ describe Whois::Answer::Parser do
       end.should raise_error(NoMethodError)
     end
   end
-  
+
+
+  describe "#parsers" do
+    it "returns 0 parsers when 0 parts" do
+      answer = Whois::Answer.new(nil, [])
+      parser = @klass.new(answer)
+      parser.parsers.should have(0).parsers
+      parser.parsers.should == []
+    end
+  end
+
+
 
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
