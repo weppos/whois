@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    whois (1.6.5)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -5,20 +10,21 @@ GEM
     mocha (0.9.10)
       rake
     rake (0.8.7)
-    rspec (2.3.0)
-      rspec-core (~> 2.3.0)
-      rspec-expectations (~> 2.3.0)
-      rspec-mocks (~> 2.3.0)
-    rspec-core (2.3.0)
-    rspec-expectations (2.3.0)
+    rspec (2.4.0)
+      rspec-core (~> 2.4.0)
+      rspec-expectations (~> 2.4.0)
+      rspec-mocks (~> 2.4.0)
+    rspec-core (2.4.0)
+    rspec-expectations (2.4.0)
       diff-lcs (~> 1.1.2)
-    rspec-mocks (2.3.0)
-    yard (0.6.3)
+    rspec-mocks (2.4.0)
+    yard (0.6.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   mocha
-  rspec (~> 2.3.0)
+  rspec (~> 2.4.0)
+  whois!
   yard
