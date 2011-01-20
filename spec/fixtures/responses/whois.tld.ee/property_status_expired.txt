@@ -1,0 +1,27 @@
+%  This Whois Server contains information on 
+% Estonian Top Level Domain ee TLD
+
+domain:       tenerife.ee
+registrant:   CID:EEDIRECT:410154
+admin-c:      CID:EEDIRECT:410154
+nsset:        NSSID:EEDIRECT:405838
+registrar:    eedirect
+status:       Expired
+registered:   04.07.2010 05:05:30
+expire:       05.01.2011
+
+contact:      CID:EEDIRECT:410154
+org:          ARUMÄE MAJA OÜ
+name:         Marko Põlluäär
+e-mail:       Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS
+registrar:    eedirect
+created:      04.07.2010 05:05:30
+
+nsset:        NSSID:EEDIRECT:405838
+nserver:      ns1550.hostgator.com (174.132.145.195)
+nserver:      ns1549.hostgator.com (174.132.145.194)
+tech-c:       CID:EEDIRECT:410154
+registrar:    eedirect
+created:      04.07.2010 05:05:30
+
+

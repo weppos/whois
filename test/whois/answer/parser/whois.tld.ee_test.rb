@@ -10,13 +10,19 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    parser    = @klass.new(load_part('status_registered.txt'))
+    parser    = @klass.new(load_part('property_status_paid.txt'))
     expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('status_available.txt'))
+    parser    = @klass.new(load_part('property_status_missing.txt'))
     expected  = :available
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('property_status_expired.txt'))
+    # NEWSTATUS
+    expected  = :expired
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
   end
@@ -31,6 +37,11 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('status_expired.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
@@ -41,6 +52,11 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('status_expired.txt'))
+    expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
   end

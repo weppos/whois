@@ -39,6 +39,8 @@
 
 * FIXED: whois.cat must support multiple statuses.
 
+* FIXED: whois.tld.ee must support :expired status.
+
 
 == Release 1.6.6
 
