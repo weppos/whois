@@ -99,7 +99,7 @@ describe Whois::Answer::Parser do
   describe "#parsers" do
     it "returns 0 parsers when 0 parts" do
       answer = Whois::Answer.new(nil, [])
-      parser = @klass.new(answer)
+      parser = klass.new(answer)
       parser.parsers.should have(0).parsers
       parser.parsers.should == []
     end
