@@ -1,0 +1,83 @@
+% puntCAT Whois Server Copyright (C) 2007 Fundacio puntCAT
+%
+% NOTICE: Access to puntCAT Whois information is provided to assist in
+% determining the contents of an object name registration record in the
+% puntCAT database. The data in this record is provided by puntCAT for
+% informational purposes only, and puntCAT does not guarantee its
+% accuracy. This service is intended only for query-based access. You
+% agree that you will use this data only for lawful purposes and that,
+% under no circumstances will you use this data to: (a) allow, enable,
+% or otherwise support the transmission by e-mail, telephone or
+% facsimile of unsolicited, commercial advertising or solicitations; or
+% (b) enable automated, electronic processes that send queries or data
+% to the systems of puntCAT or registry operators, except as reasonably
+% necessary to register object names or modify existing registrations.
+% All rights reserved. puntCAT reserves the right to modify these terms at
+% any time. By submitting this query, you agree to abide by this policy.
+%
+Domain ID: REG-D3862
+Domain Name: gencat.cat
+Domain Name ACE: gencat.cat
+Domain Language: ca
+Registrar ID: R-2001 (Nominalia)
+Created On: 2006-02-14 09:12:37 GMT
+Last Updated On: 2009-03-31 16:22:42 GMT
+Expiration Date: 2010-02-14 09:12:37 GMT
+Status: ok
+Registrant ID: NOM_P_15605701
+Registrant Name: Generalitat de Catalunya Departament de la Presidencia
+Registrant Organization: 
+Registrant Street: Via Laietana, 14
+Registrant City: Barcelona
+Registrant State/Province: BARCELONA
+Registrant Postal Code: 08003
+Registrant Country: ES
+Registrant Phone: +34.935676330
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: jcolomer@gencat.net
+Admin ID: NOM_8727301
+Admin Name: Marta Continente Gonzalo
+Admin Organization: Generalitat de Catalunya Departament de la Presidencia (2)
+Admin Street: Via Laietana, 14
+Admin City: Barcelona
+Admin State/Province: BARCELONA
+Admin Postal Code: 08003
+Admin Country: ES
+Admin Phone: +34.935676330
+Admin Phone Ext: 
+Admin Fax: +34.935676331
+Admin Fax Ext: 
+Admin Email: dominisgencat@gencat.net
+Tech ID: NOM_8727401
+Tech Name: Jaume Colomer Garcia
+Tech Organization: Generalitat de Catalunya - Departament de la Presidencia
+Tech Street: Via Laietana, 14
+Tech City: Barcelona
+Tech State/Province: BARCELONA
+Tech Postal Code: 08003
+Tech Country: ES
+Tech Phone: +34.935676330
+Tech Phone Ext: 
+Tech Fax: +34.935676331
+Tech Fax Ext: 
+Tech Email: dominisgencat@gencat.net
+Billing ID: NOM_8727401
+Billing Name: Jaume Colomer Garcia
+Billing Organization: Generalitat de Catalunya - Departament de la Presidencia
+Billing Street: Via Laietana, 14
+Billing City: Barcelona
+Billing State/Province: BARCELONA
+Billing Postal Code: 08003
+Billing Country: ES
+Billing Phone: +34.935676330
+Billing Phone Ext: 
+Billing Fax: +34.935676331
+Billing Fax Ext: 
+Billing Email: dominisgencat@gencat.net
+Name Server: dns2.gencat.cat 83.247.132.4
+Name Server ACE: dns2.gencat.cat 83.247.132.4
+Name Server: dns.gencat.net 
+Name Server ACE: dns.gencat.net 
+

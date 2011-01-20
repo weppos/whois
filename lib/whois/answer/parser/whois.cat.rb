@@ -36,13 +36,7 @@ module Whois
 
         property_supported :status do
           @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
+            [*$1.split(", ")]
           end
         end
 

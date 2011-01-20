@@ -37,6 +37,8 @@
 * FIXED: The very first time a Whois::Answer method/property question method is invoked,
   the corresponding method is called instead of the question one.
 
+* FIXED: whois.cat must support multiple statuses.
+
 
 == Release 1.6.6
 
