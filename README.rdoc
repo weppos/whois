@@ -175,7 +175,7 @@ Bug reports and Feature suggestions {are welcomed}[http://github.com/weppos/whoi
 
 == More
 
-* {Homepage}[http://www.ruby-whois.org]
+* {Homepage}[http://www.ruby-whois.org/]
 * {Repository}[http://github.com/weppos/whois]
 * {API Documentation}[http://www.ruby-whois.org/api/] (RDoc)
 * {Discussion Group}[http://groups.google.com/group/ruby-whois]
