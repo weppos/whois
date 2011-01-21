@@ -87,7 +87,7 @@ end
 
 
 namespace :test do
-  RUBIES = %w( 1.8.7-p302 1.9.2-p0 jruby-1.5.6 ree-1.8.7-2010.02 )
+  RUBIES = %w( 1.8.7-p330 1.9.2-p0 jruby-1.5.6 ree-1.8.7-2010.02 )
 
   desc "Run tests for all rubies"
   task :rubies => :ensure_rvm do
