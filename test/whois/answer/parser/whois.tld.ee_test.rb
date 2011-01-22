@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'test_helper'
 require 'whois/answer/parser/whois.tld.ee'
 
