@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -wKU
 
-$:.unshift(File.dirname(__FILE__) + "/../lib")
+$:.unshift(File.expand_path("../../lib", __FILE__))
 
 require 'optparse'
 require 'ostruct'

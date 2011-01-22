@@ -1,5 +1,5 @@
-require "rspec"
-require "whois"
+require 'rspec'
+require 'whois'
 
 unless defined?(SPEC_ROOT)
   SPEC_ROOT = File.expand_path("../", __FILE__)
