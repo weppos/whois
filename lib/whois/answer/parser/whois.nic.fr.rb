@@ -38,6 +38,7 @@ module Whois
           @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
               when "active" then :registered
+              when "registered" then :registered
               # NEWSTATUS
               when "frozen" then :frozen
               else

@@ -41,6 +41,8 @@
 
 * FIXED: whois.tld.ee must support :expired status.
 
+* FIXED: whois.nic.fr must support :registered status.
+
 
 == Release 1.6.6
 

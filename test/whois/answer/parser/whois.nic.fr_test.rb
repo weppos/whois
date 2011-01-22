@@ -19,12 +19,17 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('property_status_active.txt'))
     expected  = :registered
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('property_status_registered.txt'))
+    expected  = :registered
+    assert_equal  expected, parser.status
+    assert_equal  expected, parser.instance_eval { @status }
+
+    parser    = @klass.new(load_part('property_status_missing.txt'))
     expected  = :available
     assert_equal  expected, parser.status
     assert_equal  expected, parser.instance_eval { @status }
@@ -40,6 +45,11 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
     expected  = true
     assert_equal  expected, parser.available?
     assert_equal  expected, parser.instance_eval { @available }
+
+    parser    = @klass.new(load_part('property_status_registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.available?
+    assert_equal  expected, parser.instance_eval { @available }
   end
 
   def test_registered?
@@ -50,6 +60,11 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
+    assert_equal  expected, parser.registered?
+    assert_equal  expected, parser.instance_eval { @registered }
+
+    parser    = @klass.new(load_part('property_status_registered.txt'))
+    expected  = true
     assert_equal  expected, parser.registered?
     assert_equal  expected, parser.instance_eval { @registered }
   end
