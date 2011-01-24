@@ -47,7 +47,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
+          @available  ||= !!(content_for_scanner =~ /^%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do

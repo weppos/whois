@@ -59,19 +59,19 @@ module Whois
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /registered:\s+(.*)\n/
+          @created_on ||= if content_for_scanner =~ /registered:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /changed:\s+(.*)\n/
+          @updated_on ||= if content_for_scanner =~ /changed:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /expire:\s+(.*)\n/
+          @expires_on ||= if content_for_scanner =~ /expire:\s+(.+?)\n/
             Time.parse($1)
           end
         end
