@@ -38,6 +38,8 @@ module Whois
           @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
               when "paid and in zone" then :registered
+              # NEWSTATUS
+              when "expired" then :expired
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -47,7 +49,7 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
+          @available  ||= !!(content_for_scanner =~ /^%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do
