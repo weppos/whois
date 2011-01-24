@@ -28,6 +28,10 @@ module Whois
         # Default WHOIS request port.
         DEFAULT_WHOIS_PORT = 43
 
+        # Default bind hostname.
+        DEFAULT_BIND_HOST = "0.0.0.0"
+
+
         # @return [Symbol] The type of WHOIS server
         attr_reader :type
         # @return [String] The allocation this server is responsible for.
@@ -150,7 +154,7 @@ module Whois
               query,
               host,
               port || options[:port] || DEFAULT_WHOIS_PORT,
-              options[:bind_host],
+              options[:bind_host] || DEFAULT_BIND_HOST,
               options[:bind_port]
             )
           end
@@ -162,6 +166,7 @@ module Whois
           #
           # @api internal
           def ask_the_socket(query, host, port, local_host, local_port)
+            args   = [host, port, local_host, local_port].compact
             client = TCPSocket.open(host, port, local_host, local_port)
             client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
             client.read                     # but write/read is more symmetric than puts/read

@@ -12,7 +12,7 @@ describe Whois::Server::Adapters::Formatted do
       response = "Whois Response"
       expected = response
       server = klass.new(*@definition)
-      server.expects(:ask_the_socket).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43, nil, nil).returns(response)
+      server.expects(:ask_the_socket).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns(response)
 
       record = server.query("domain.de")
       record.to_s.should  == expected
@@ -33,7 +33,7 @@ describe Whois::Server::Adapters::Formatted do
       it "sends the request to given port" do
         response = "Whois Response"
         server = klass.new(:tld, ".de", "whois.denic.de", { :format => "-T dn,ace -C US-ASCII %s", :port => 20 })
-        server.expects(:ask_the_socket).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 20, nil, nil).returns(response)
+        server.expects(:ask_the_socket).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 20, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns(response)
 
         server.query("domain.de")
       end

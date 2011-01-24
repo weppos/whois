@@ -6,7 +6,7 @@ describe Whois do
     it "works" do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
-        Whois::Server::Adapters::Standard.any_instance.expects(:ask_the_socket).with("example.it", "whois.nic.it", 43, nil, nil).returns(<<-EOS)
+        Whois::Server::Adapters::Standard.any_instance.expects(:ask_the_socket).with("example.it", "whois.nic.it", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns(<<-EOS)
   Domain:             example.it
   Status:             AVAILABLE
         EOS
