@@ -45,6 +45,8 @@
 
 * FIXED: whois.nic.cz must support :expired status.
 
+* FIXED: With some .tr domains, whois.nic.tr parser returns invalid values for nameservers.
+
 
 == Release 1.6.6
 
