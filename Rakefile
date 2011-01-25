@@ -46,7 +46,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files  = Dir.glob("*.rdoc")
   s.rdoc_options      = %w( --main README.rdoc )
 
-  s.files             = Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*")
+  s.files             = Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*") + %w( LICENSE )
   s.executables       = ["ruby-whois"]
   s.require_paths     = ["lib"]
 
