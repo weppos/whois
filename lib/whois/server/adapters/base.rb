@@ -108,7 +108,7 @@ module Whois
         #   # => Whois::Answer
         #
         def query(string)
-          with_buffer do |buffer|
+          buffer_start do |buffer|
             request(string)
             Whois::Answer.new(self, buffer)
           end
@@ -136,15 +136,15 @@ module Whois
           #
           # @return [void]
           # @api public
-          def append_to_buffer(response, host)
+          def buffer_append(response, host)
             @buffer << Whois::Answer::Part.new(response, host)
           end
 
           # @api internal
-          def with_buffer(&block)
+          def buffer_start(&block)
             @buffer = []
             result = yield(@buffer)
-            @buffer = []
+            @buffer = [] # reset
             result
           end
 

@@ -34,11 +34,11 @@ module Whois
         #
         def request(string)
           response = query_the_socket(string, "whois.afilias-grs.info", DEFAULT_WHOIS_PORT)
-          append_to_buffer response, "whois.afilias-grs.info"
+          buffer_append response, "whois.afilias-grs.info"
 
           if endpoint = extract_referral(response)
             response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
-            append_to_buffer response, endpoint
+            buffer_append response, endpoint
           end
         end
 

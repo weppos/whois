@@ -56,7 +56,7 @@ module Whois
         #
         def request(string)
           response = query_the_socket(string, host)
-          append_to_buffer response, host
+          buffer_append response, host
         end
 
       end

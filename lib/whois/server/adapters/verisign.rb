@@ -34,11 +34,11 @@ module Whois
         #
         def request(string)
           response = query_the_socket("=#{string}", host, DEFAULT_WHOIS_PORT)
-          append_to_buffer response, host
+          buffer_append response, host
 
           if endpoint = extract_referral(response)
             response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
-            append_to_buffer response, endpoint
+            buffer_append response, endpoint
           end
         end
 

@@ -25,6 +25,8 @@
 
 * CHANGED: Removed official support for Ruby 1.9.1.
 
+* CHANGED: Renamed Whois::Server::Adapters::Base#append_to_buffer to buffer_append.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
@@ -46,6 +48,10 @@
 * FIXED: whois.nic.cz must support :expired status.
 
 * FIXED: With some .tr domains, whois.nic.tr parser returns invalid values for nameservers.
+
+=== BC
+
+* Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.
 
 
 == Release 1.6.6

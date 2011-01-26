@@ -34,11 +34,11 @@ module Whois
         #
         def request(string)
           response = query_the_socket("FULL #{string}", "whois.publicinterestregistry.net", DEFAULT_WHOIS_PORT)
-          append_to_buffer response, "whois.publicinterestregistry.net"
+          buffer_append response, "whois.publicinterestregistry.net"
 
           if endpoint = extract_referral(response)
             response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
-            append_to_buffer response, endpoint
+            buffer_append response, endpoint
           end
         end
 
