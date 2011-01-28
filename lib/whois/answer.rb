@@ -199,15 +199,16 @@ module Whois
       parser.contacts
     end
 
+
     # Checks whether this is a throttle response.
     #
     # @return [Boolean]
     #
     # @see Whois::Answer::Parser#throttle?
     #
-    def throttle?
-      parser.throttle?
-    end
+    # def throttle?
+    #   parser.throttle?
+    # end
 
 
     private

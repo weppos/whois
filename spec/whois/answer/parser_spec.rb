@@ -164,6 +164,12 @@ describe Whois::Answer::Parser do
   end
 
 
+  # describe "#throttle?" do
+  #   it "" do
+  #   end
+  # end
+
+
   describe ".parser_klass" do
     it "returns the parser hostname converted into a class" do
       require 'whois/answer/parser/whois.crsnic.net'

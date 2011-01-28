@@ -304,14 +304,15 @@ describe Whois::Answer do
     end
   end
 
-  describe "#throttle?" do
-    it "delegates to #parser" do
-      instance = klass.new(nil, @parts)
-      instance.parser.expects(:throttle?)
 
-      instance.throttle?
-    end
-  end
+  # describe "#throttle?" do
+  #   it "delegates to #parser" do
+  #     i = klass.new(nil, @parts)
+  #     i.parser.expects(:throttle?)
+  # 
+  #     i.throttle?
+  #   end
+  # end
 
 
   describe "method_missing" do

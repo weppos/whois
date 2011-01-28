@@ -106,8 +106,7 @@ module Whois
         end
 
         equal?(other) ||
-        parsers.size == other.parsers.size &&
-          all_with_args?(parsers, other.parsers) { |one, two| one.unchanged?(two) }
+        parsers.size == other.parsers.size && all_with_args?(parsers, other.parsers) { |one, two| one.unchanged?(two) }
       end
 
       # Collects and returns all the contacts from all the answer parts.
@@ -121,6 +120,7 @@ module Whois
         parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
       end
 
+
       # Loop through all the answer parts to check if at least
       # one part is a throttle response.
       #
@@ -129,9 +129,9 @@ module Whois
       # @see Whois::Answer#throttle?
       # @see Whois::Answer::Parser::Base#throttle?
       #
-      def throttle?
-        parsers.any?(&:throttle?)
-      end
+      # def throttle?
+      #   parsers.any?(&:throttle?)
+      # end
 
 
       private

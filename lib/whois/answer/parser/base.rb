@@ -278,6 +278,7 @@ module Whois
           contacts.compact
         end
 
+
         # Checks whether this is a throttle response.
         # The default implementation always returns +nil+.
         #
@@ -291,10 +292,6 @@ module Whois
         def throttle?
           nil
         end
-
-
-
-
 
 
         protected
