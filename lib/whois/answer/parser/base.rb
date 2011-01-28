@@ -293,6 +293,20 @@ module Whois
           nil
         end
 
+        # Checks whether this is an incomplete response.
+        # The default implementation always returns +nil+.
+        #
+        # @return [nil, false]
+        #
+        # @abstract This method returns nil by default.
+        #
+        # @see Whois::Answer#incomplete?
+        # @see Whois::Answer::Parser#incomplete?
+        #
+        def incomplete?
+          nil
+        end
+
 
         protected
 

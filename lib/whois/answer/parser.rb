@@ -31,7 +31,7 @@ module Whois
       METHODS = [
         :changed?, :unchanged?,
         :contacts,
-        # :throttle?,
+        # :throttle?, :incomplete?,
       ]
 
       PROPERTIES = [
@@ -121,7 +121,7 @@ module Whois
       end
 
 
-      # Loop through all the answer parts to check if at least
+      # Loop through all the parts to check if at least
       # one part is a throttle response.
       #
       # @return [Boolean]
@@ -129,9 +129,21 @@ module Whois
       # @see Whois::Answer#throttle?
       # @see Whois::Answer::Parser::Base#throttle?
       #
-      # def throttle?
-      #   parsers.any?(&:throttle?)
-      # end
+      def throttle?
+        parsers.any?(&:throttle?)
+      end
+
+      # Loop through all the parts to check if at least
+      # one part is an incomplete response.
+      #
+      # @return [Boolean]
+      #
+      # @see Whois::Answer#incomplete?
+      # @see Whois::Answer::Parser::Base#incomplete?
+      #
+      def incomplete?
+        parsers.any?(&:incomplete?)
+      end
 
 
       private

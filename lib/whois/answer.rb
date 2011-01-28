@@ -206,9 +206,19 @@ module Whois
     #
     # @see Whois::Answer::Parser#throttle?
     #
-    # def throttle?
-    #   parser.throttle?
-    # end
+    def throttle?
+      parser.throttle?
+    end
+
+    # Checks whether this is an incomplete response.
+    #
+    # @return [Boolean]
+    #
+    # @see Whois::Answer::Parser#incomplete?
+    #
+    def incomplete?
+      parser.incomplete?
+    end
 
 
     private

@@ -42,8 +42,8 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if incomplete_response?
-            :unknown
+          @status ||= if incomplete?
+            :incomplete
           else
             if available?
               :available
@@ -54,11 +54,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||=  (!incomplete_response? && !!(content_for_scanner =~ /No match for/))
+          @available ||=  (!incomplete? && !!(content_for_scanner =~ /No match for/))
         end
 
         property_supported :registered? do
-          @registered ||= (!incomplete_response? && !available?)
+          @registered ||= (!incomplete? && !available?)
         end
 
 
@@ -82,13 +82,24 @@ module Whois
         property_not_supported :nameservers
 
 
+        # Very often the .to server returns a partial response,
+        # which is a response containing an empty line.
+        # It seems to be a very poorly-designed throttle mechanism.
+        #
+        # @return [Boolean]
+        #
+        # @see Whois::Answer::Parser::Base#incomplete?
+        #
+        def incomplete?
+          content_for_scanner.strip == ""
+        end
+
+
         protected
 
-          # Very often the .to server returns a partial response, which is a response
-          # containing an emtpy line.
-          # It seems to be a very poorly-designed throttle mecanism.
           def incomplete_response?
-            content_for_scanner.strip == ""
+            Whois.deprecate "#{self.class}#incomplete? will be removed in Whois 2.1. Please use #{self.class}#incomplete?."
+            incomplete?
           end
 
       end

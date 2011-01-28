@@ -146,6 +146,7 @@ describe Whois::Answer::Parser::Base do
     end
   end
 
+
   describe "#throttle?" do
     it "returns nil" do
       i = klass.new(@part)
@@ -155,6 +156,18 @@ describe Whois::Answer::Parser::Base do
     it "is false" do
       i = klass.new(@part)
       i.throttle?.should be_false
+    end
+  end
+
+  describe "#incomplete?" do
+    it "returns nil" do
+      i = klass.new(@part)
+      i.incomplete?.should be_nil
+    end
+
+    it "is false" do
+      i = klass.new(@part)
+      i.incomplete?.should be_false
     end
   end
 

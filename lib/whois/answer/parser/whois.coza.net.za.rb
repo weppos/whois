@@ -77,16 +77,6 @@ module Whois
 
         property_not_supported :nameservers
 
-
-        protected
-
-          # Very often the .to server returns a partial response, which is a response
-          # containing an emtpy line.
-          # It seems to be a very poorly-designed throttle mecanism.
-          def incomplete_response?
-            content_for_scanner.strip == ""
-          end
-
       end
 
     end

@@ -164,10 +164,48 @@ describe Whois::Answer::Parser do
   end
 
 
-  # describe "#throttle?" do
-  #   it "" do
-  #   end
-  # end
+  describe "#throttle?" do
+    it "returns false when all parts are not throttled" do
+      i = double_parser
+      i.parsers[0].expects(:throttle?).returns(false)
+      i.parsers[1].expects(:throttle?).returns(false)
+      i.throttle?.should == false
+    end
+
+    it "returns true when at least one part is throttled" do
+      i = double_parser
+      i.parsers[0].expects(:throttle?).returns(false)
+      i.parsers[1].expects(:throttle?).returns(true)
+      i.throttle?.should == true
+
+      i = double_parser
+      i.parsers[0].expects(:throttle?).returns(true)
+      i.parsers[1].expects(:throttle?).never
+      i.throttle?.should == true
+    end
+  end
+
+
+  describe "#incomplete?" do
+    it "returns false when all parts are complete" do
+      i = double_parser
+      i.parsers[0].expects(:incomplete?).returns(false)
+      i.parsers[1].expects(:incomplete?).returns(false)
+      i.incomplete?.should == false
+    end
+
+    it "returns true when at least one part is incomplete" do
+      i = double_parser
+      i.parsers[0].expects(:incomplete?).returns(false)
+      i.parsers[1].expects(:incomplete?).returns(true)
+      i.incomplete?.should == true
+
+      i = double_parser
+      i.parsers[0].expects(:incomplete?).returns(true)
+      i.parsers[1].expects(:incomplete?).never
+      i.incomplete?.should == true
+    end
+  end
 
 
   describe ".parser_klass" do
@@ -200,5 +238,12 @@ describe Whois::Answer::Parser do
       klass.host_to_parser("whois.domain-registry.nl").should == "WhoisDomainRegistryNl"
     end
   end
+
+
+  private
+
+    def double_parser
+      klass.new(Whois::Answer.new(nil, [Whois::Answer::Part.new("successful", "whois.test"), Whois::Answer::Part.new("successful", "whois.test")]))
+    end
 
 end
