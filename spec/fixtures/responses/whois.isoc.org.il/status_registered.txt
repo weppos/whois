@@ -1,0 +1,84 @@
+
+% The data in the WHOIS database of the .il registry is provided
+% by ISOC-IL for information purposes, and to assist persons in 
+% obtaining information about or related to a domain name 
+% registration record. ISOC-IL does not guarantee its accuracy.
+% By submitting a WHOIS query, you agree that you will use this
+% Data only for lawful purposes and that, under no circumstances
+% will you use this Data to: (1) allow, enable, or otherwise 
+% support the transmission of mass unsolicited, commercial 
+% advertising or solicitations via e-mail (spam); 
+% or  (2) enable high volume, automated, electronic processes that 
+% apply to ISOC-IL (or its systems).
+% ISOC-IL reserves the right to modify these terms at any time.
+% By submitting this query, you agree to abide by this policy.
+ 
+domain:       isoc.org.il
+descr:        Israel Internet Association (ISOC-IL)
+descr:        6 Bareket st., POB 7210
+descr:        Petach Tikva
+descr:        49517
+descr:        Israel
+phone:        +972 3 9700900
+fax-no:       +972 3 9700901
+e-mail:       info-domains AT isoc.org.il
+admin-c:      II-DS1453-IL
+tech-c:       II-AB17965-IL
+zone-c:       II-DS1453-IL
+nserver:      ns.isoc.org.il 
+nserver:      grappa.isoc.org.il 
+nserver:      aristo.tau.ac.il 
+nserver:      relay.huji.ac.il 
+nserver:      drns.isoc.org.il 
+nserver:      sps-pb.isc.org 
+validity:     N/A
+status:       Transfer Locked
+changed:      registrar AT ns.il 19960111 (Assigned)
+changed:      registrar AT ns.il 19960623 (Changed)
+changed:      registrar AT ns.il 19990812 (Changed)
+changed:      domain-registrar AT isoc.org.il 20020617 (Changed)
+changed:      domain-registrar AT isoc.org.il 20020618 (Changed)
+changed:      domain-registrar AT isoc.org.il 20030629 (Changed)
+changed:      domain-registrar AT isoc.org.il 20040420 (Changed)
+changed:      domain-registrar AT isoc.org.il 20040420 (Changed)
+changed:      domain-registrar AT isoc.org.il 20050816 (Changed)
+changed:      domain-registrar AT isoc.org.il 20060611 (Changed)
+changed:      domain-registrar AT isoc.org.il 20090706 (Changed)
+changed:      domain-registrar AT isoc.org.il 20100207 (Changed)
+changed:      domain-registrar AT isoc.org.il 20100509 (Changed)
+changed:      domain-registrar AT isoc.org.il 20100511 (Changed)
+changed:      domain-registrar AT isoc.org.il 20101007 (Changed)
+
+person:       Doron Shikmoni
+address:      Israel Internet Association (ISOC-IL)
+address:      6 Bareket st., POB 7210
+address:      Petach Tikva
+address:      49517
+address:      Israel
+phone:        +972 3 9700900
+fax-no:       +972 3 9700901
+e-mail:       doron AT isoc.org.il
+nic-hdl:      II-DS1453-IL
+changed:      hank AT vm.tau.ac.il 19980702
+changed:      registrar AT ns.il 19990812
+changed:      domain-registrar AT isoc.org.il 20040420
+changed:      domain-registrar AT isoc.org.il 20040420
+changed:      Managing Registrar 20090706
+
+person:       Ariel Biener
+address:      Israel Internet Associaiton (ISOC-IL)
+address:      6 Bareket st., POB 7210
+address:      Petach Tikva
+address:      49517
+address:      Israel
+phone:        +972 3 9700900
+fax-no:       +972 3 9700901
+e-mail:       ariel AT isoc.org.il
+nic-hdl:      II-AB17965-IL
+changed:      Managing Registrar 20100207
+changed:      domain-registrar AT isoc.org.il 20100207
+
+registrar name: Israel Internet Association ISOC-IL
+registrar info: www.isoc.org.il
+
+% Rights to the data above are restricted by copyright.

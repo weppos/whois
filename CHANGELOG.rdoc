@@ -49,6 +49,8 @@
 
 * FIXED: With some .tr domains, whois.nic.tr parser returns invalid values for nameservers.
 
+* FIXED: whois.isoc.org.il must support "transfer allowed" status.
+
 === BC
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.

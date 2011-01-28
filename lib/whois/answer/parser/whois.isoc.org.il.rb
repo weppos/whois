@@ -38,6 +38,7 @@ module Whois
           @status ||= if content_for_scanner =~ /status:\s+(.*?)\n/
             case $1.downcase
               when "transfer locked" then :registered
+              when "transfer allowed" then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
