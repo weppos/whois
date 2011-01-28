@@ -279,18 +279,22 @@ module Whois
         end
 
         # Checks whether this is a throttle response.
-        # The default implementation always returns +false+.
+        # The default implementation always returns +nil+.
         #
-        # @return [false]
+        # @return [nil, false]
         #
-        # @abstract This method returns false by default.
+        # @abstract This method returns nil by default.
         #
         # @see Whois::Answer#throttle?
         # @see Whois::Answer::Parser#throttle?
         #
         def throttle?
-          false
+          nil
         end
+
+
+
+
 
 
         protected

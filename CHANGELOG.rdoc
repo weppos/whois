@@ -27,6 +27,9 @@
 
 * CHANGED: Renamed Whois::Server::Adapters::Base#append_to_buffer to buffer_append.
 
+* CHANGED: Whois::Answer::Parser::Base#throttle? returns false to differentiate
+  the abstract method from a real implementation (that returns true/false).
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 

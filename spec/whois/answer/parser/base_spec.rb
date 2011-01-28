@@ -35,18 +35,18 @@ describe Whois::Answer::Parser::Base do
 
   describe "#property_supported?" do
     it "returns false if the property is not supported" do
-      pclass = Class.new(klass) do
+      k = Class.new(klass) do
       end
-      pclass.new(@part).property_supported?(:disclaimer).should be_false
-      pclass.new(@part).respond_to?(:disclaimer).should be_true
+      k.new(@part).property_supported?(:disclaimer).should be_false
+      k.new(@part).respond_to?(:disclaimer).should be_true
     end
 
     it "returns true if the property is supported" do
-      pclass = Class.new(klass) do
+      k = Class.new(klass) do
         register_property(:disclaimer, :supported) {}
       end
-      pclass.new(@part).property_supported?(:disclaimer).should be_true
-      pclass.new(@part).respond_to?(:disclaimer).should be_true
+      k.new(@part).property_supported?(:disclaimer).should be_true
+      k.new(@part).respond_to?(:disclaimer).should be_true
     end
   end
 
@@ -64,22 +64,22 @@ describe Whois::Answer::Parser::Base do
 
   describe "#content" do
     it "returns the part body" do
-      instance = klass.new(@part)
-      instance.content.should be(@part.body)
+      i = klass.new(@part)
+      i.content.should be(@part.body)
     end
   end
 
   describe "#content_for_scanner" do
     it "returns the part body with line feed normalized" do
-      instance = klass.new(Whois::Answer::Part.new("This is\r\nthe response.", "whois.example.test"))
-      instance.send(:content_for_scanner).should == "This is\nthe response."
+      i = klass.new(Whois::Answer::Part.new("This is\r\nthe response.", "whois.example.test"))
+      i.send(:content_for_scanner).should == "This is\nthe response."
     end
 
     it "caches the result" do
-      instance = klass.new(Whois::Answer::Part.new("This is\r\nthe response.", "whois.example.test"))
-      instance.instance_eval { @content_for_scanner }.should be_nil
-      instance.send(:content_for_scanner)
-      instance.instance_eval { @content_for_scanner }.should == "This is\nthe response."
+      i = klass.new(Whois::Answer::Part.new("This is\r\nthe response.", "whois.example.test"))
+      i.instance_eval { @content_for_scanner }.should be_nil
+      i.send(:content_for_scanner)
+      i.instance_eval { @content_for_scanner }.should == "This is\nthe response."
     end
   end
 
@@ -108,20 +108,20 @@ describe Whois::Answer::Parser::Base do
     end
 
     it "returns true if self and other references the same object" do
-      instance = klass.new(@part)
-      instance.unchanged?(instance).should be_true
+      i = klass.new(@part)
+      i.unchanged?(i).should be_true
     end
 
     it "returns true if the content_for_scanner is the same" do
-      instance = klass.new(Whois::Answer::Part.new("This is the\nresponse 1.", "whois.example.test"))
-      other    = klass.new(Whois::Answer::Part.new("This is the\r\nresponse 1.", "whois.example.test"))
-      instance.unchanged?(other).should be_true
+      i = klass.new(Whois::Answer::Part.new("This is the\nresponse 1.", "whois.example.test"))
+      o = klass.new(Whois::Answer::Part.new("This is the\r\nresponse 1.", "whois.example.test"))
+      i.unchanged?(o).should be_true
     end
 
     it "returns false if the content_for_scanner is not the same" do
-      instance = klass.new(Whois::Answer::Part.new("This is the response 1.", "whois.example.test"))
-      other    = klass.new(Whois::Answer::Part.new("This is the response 2.", "whois.example.test"))
-      instance.unchanged?(other).should be_false
+      i = klass.new(Whois::Answer::Part.new("This is the response 1.", "whois.example.test"))
+      o = klass.new(Whois::Answer::Part.new("This is the response 2.", "whois.example.test"))
+      i.unchanged?(o).should be_false
     end
   end
 
@@ -130,26 +130,31 @@ describe Whois::Answer::Parser::Base do
       c1 = Whois::Answer::Contact.new(:id => "1st", :name => "foo")
       c2 = Whois::Answer::Contact.new(:id => "2nd", :name => "foo")
       c3 = Whois::Answer::Contact.new(:id => "3rd", :name => "foo")
-      pclass = Class.new(klass) do
+      k = Class.new(klass) do
         register_property(:registrant_contact, :supported) { [c1, c2] }
         register_property(:admin_contact, :supported) { nil }
         register_property(:technical_contact, :supported) { c3 }
       end
 
-      instance = pclass.new(@part)
-      instance.contacts.should == [c1, c2, c3]
+      i = k.new(@part)
+      i.contacts.should == [c1, c2, c3]
     end
 
     it "returns an empty array when no contact is supported" do
-      instance = klass.new(@part)
-      instance.contacts.should == []
+      i = klass.new(@part)
+      i.contacts.should == []
     end
   end
 
   describe "#throttle?" do
-    it "returns false" do
-      instance = klass.new(@part)
-      instance.throttle?.should be_false
+    it "returns nil" do
+      i = klass.new(@part)
+      i.throttle?.should be_nil
+    end
+
+    it "is false" do
+      i = klass.new(@part)
+      i.throttle?.should be_false
     end
   end
 
