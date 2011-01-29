@@ -74,7 +74,7 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
 
   def test_expires_on
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = Time.parse("2010-03-05")
+    expected  = Time.parse("2011-03-05")
     assert_equal  expected, parser.expires_on
     assert_equal  expected, parser.instance_eval { @expires_on }
 
