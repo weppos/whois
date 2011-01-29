@@ -51,7 +51,7 @@ module Whois
           @ast ||= parse
         end
 
-        def node(key, &block)
+        def node(key)
           if block_given?
             value = ast[key]
             value = yield(value) unless value.nil?

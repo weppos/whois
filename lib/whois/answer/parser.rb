@@ -218,7 +218,7 @@ module Whois
           nil
         end
 
-        def all_with_args?(*args, &block)
+        def all_with_args?(*args)
           count = args.first.size
           index = 0
 

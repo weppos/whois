@@ -141,7 +141,7 @@ module Whois
           end
 
           # @api internal
-          def buffer_start(&block)
+          def buffer_start
             @buffer = []
             result = yield(@buffer)
             @buffer = [] # reset

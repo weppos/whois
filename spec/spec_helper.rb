@@ -11,7 +11,7 @@ module Helpers
 
     # Temporary resets Server @@definitions
     # to let the test setup a custom definition list.
-    def with_definitions(&block)
+    def with_definitions
       definitions_setup
       yield
     ensure
@@ -30,7 +30,7 @@ module Helpers
 
   # Temporary resets parser @@registry
     # to let the test setup a custom registry.
-    def with_registry(&block)
+    def with_registry
       @_property_registry = Whois::Answer::Parser::Base.send :class_variable_get, :@@property_registry
       Whois::Answer::Parser::Base.send :class_variable_set, :@@property_registry, {}
       yield
@@ -52,7 +52,7 @@ module Helpers
 end
 
 module ConnectivityHelpers
-  def need_connectivity(&block)
+  def need_connectivity
     if connectivity_available?
       yield
     end

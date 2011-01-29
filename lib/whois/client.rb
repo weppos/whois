@@ -66,7 +66,7 @@ module Whois
     #   client = Whois::Client.new(:bind_host => "127.0.0.1", :bind_port => 80)
     #   client.query("google.com")
     #
-    def initialize(settings = {}, &block)
+    def initialize(settings = {})
       settings = settings.dup
 
       self.timeout  = settings.key?(:timeout) ? settings.delete(:timeout) : DEFAULT_TIMEOUT
