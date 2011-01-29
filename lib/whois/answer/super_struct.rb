@@ -47,7 +47,7 @@ class SuperStruct < Struct
   #   Struct.new(attributes)
   #   # => #<Struct foo=1, bar="baz">
   #
-  def initialize(*args, &block)
+  def initialize(*args)
     if args.first.is_a? Hash
       initialize_with_hash(args.first)
     else

@@ -1,10 +1,9 @@
 % By submitting a query to RIPN's Whois Service
 % you agree to abide by the following terms of use:
-% http://www.ripn.net/about/servpol.html#3.2 (in Russian) 
+% http://www.ripn.net/about/servpol.html#3.2 (in Russian)
 % http://www.ripn.net/about/en/servpol.html#3.2 (in English).
 
 domain:     GOOGLE.RU
-type:       CORPORATE
 nserver:    ns1.google.com.
 nserver:    ns2.google.com.
 nserver:    ns3.google.com.
@@ -17,8 +16,8 @@ e-mail:     dns-admin@google.com
 e-mail:     ccops@markmonitor.com
 registrar:  RUCENTER-REG-RIPN
 created:    2004.03.04
-paid-till:  2010.03.05
+paid-till:  2011.03.05
 source:     TCI
 
-Last updated on 2010.01.09 16:10:08 MSK/MSD
+Last updated on 2011.01.29 11:43:42 MSK/MSD
 

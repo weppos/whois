@@ -8,7 +8,7 @@ class Test::Unit::TestCase
 
   TEST_ROOT = File.expand_path("../", __FILE__)
 
-  def self.need_connectivity(&block)
+  def self.need_connectivity
     if connectivity_available?
       yield
     end
@@ -19,7 +19,7 @@ class Test::Unit::TestCase
   end
 
 
-  def with_definitions(&block)
+  def with_definitions
     @_definitions = Whois::Server.definitions
     Whois::Server.send :class_variable_set, :@@definitions, { :tld => [], :ipv4 =>[], :ipv6 => [] }
     yield
