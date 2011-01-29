@@ -84,6 +84,17 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
+  def test_registrar
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = Whois::Answer::Registrar.new(:id => "RUCENTER-REG-RIPN")
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+  end
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
@@ -181,6 +192,17 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
     assert_equal  expected, parser.instance_eval { @expires_on }
   end
 
+  def test_registrar
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = Whois::Answer::Registrar.new(:id => "RUCENTER-REG-FID")
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+  end
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))

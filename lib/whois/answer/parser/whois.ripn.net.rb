@@ -65,6 +65,11 @@ module Whois
           end
         end
 
+        property_supported :registrar do
+          @registrar ||= if content_for_scanner =~ /registrar:\s+(.*)\n/
+            Answer::Registrar.new(:id => $1)
+          end
+        end
 
         # Nameservers are listed in the following formats:
         # 
