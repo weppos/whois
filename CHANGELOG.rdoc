@@ -8,6 +8,9 @@
 
 * SERVER: Updated .ee TLD definition and corresponding parser (#64).
 
+* SERVER: Sync definitions with Debian whois 5.0.10:
+    * Added new IPv4 allocations.
+
 * NEW: Added simple ae.org, ar.com, br.com, cn.com, de.com, eu.com,
   gb.com, gb.net, hu.com, jpn.com, kr.com, no.com, qc.com, ru.com,
   sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, web.com,

@@ -9,17 +9,16 @@
 0.0.0.0/8	UNKNOWN
 1.0.0.0/8	apnic
 2.0.0.0/8	ripe
-5.0.0.0/8	UNALLOCATED
+5.0.0.0/8	ripe
 14.0.0.0/8	apnic
-23.0.0.0/8	UNALLOCATED
 24.132.0.0/14	ripe
 27.0.0.0/8	apnic
 31.0.0.0/8	ripe
-36.0.0.0/8	UNALLOCATED
-37.0.0.0/8	UNALLOCATED
+36.0.0.0/8	apnic
+37.0.0.0/8	ripe
 39.0.0.0/8	UNALLOCATED
 41.0.0.0/8	afrinic
-42.0.0.0/8	UNALLOCATED
+42.0.0.0/8	apnic
 43.0.0.0/8	whois.nic.ad.jp
 46.0.0.0/8	ripe
 49.0.0.0/8	apnic
@@ -39,7 +38,9 @@
 78.0.0.0/7	ripe
 80.0.0.0/4	ripe			# => 95.255.255.255
 96.0.0.0/6	arin			# => 99.255.255.255
+100.0.0.0/8	arin
 101.0.0.0/8	apnic
+105.0.0.0/8	afrinic
 107.0.0.0/8	arin
 108.0.0.0/8	arin
 109.0.0.0/8	ripe
