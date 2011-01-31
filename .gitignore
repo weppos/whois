@@ -6,3 +6,4 @@ pkg
 rdoc
 doc
 coverage
+*.rbc
