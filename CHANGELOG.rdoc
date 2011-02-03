@@ -11,6 +11,8 @@
 * SERVER: Sync definitions with Debian whois 5.0.10:
     * Added new IPv4 allocations.
 
+* SERVER: Added the .xn--wgbl6a TLD definition (#63).
+
 * NEW: Added simple ae.org, ar.com, br.com, cn.com, de.com, eu.com,
   gb.com, gb.net, hu.com, jpn.com, kr.com, no.com, qc.com, ru.com,
   sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, web.com,

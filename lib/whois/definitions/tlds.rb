@@ -328,5 +328,6 @@ Whois::Server.define :tld, ".xn--o3cw4h", "whois.thnic.co.th"
 Whois::Server.define :tld, ".xn--p1ai", "whois.ripn.net"
 Whois::Server.define :tld, ".xn--pgbs0dh", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
+Whois::Server.define :tld, ".xn--wgbl6a", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
