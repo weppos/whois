@@ -18,6 +18,8 @@
 
 * NEW: Added ability to bind a WHOIS query to a specific local address and port (#40).
 
+* NEW: Added simple .so TLD parser (whois.nic.so) (#57).
+
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
 * CHANGED: Switched from RDoc to YARDoc (#3).
