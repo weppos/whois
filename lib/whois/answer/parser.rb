@@ -149,6 +149,17 @@ module Whois
         @answer = answer
       end
 
+      # Checks if this class respond to given method.
+      #
+      # Overrides the default implementation to add support
+      # for {PROPERTIES} and {METHODS}.
+      #
+      # @returns [Boolean]
+      def respond_to?(symbol, include_private = false)
+        super || PROPERTIES.include?(symbol) || METHODS.include?(symbol)
+      end
+
+
       # Returns an array with all host-specific parsers initialized for the parts
       # contained into this parser.
       # The array is lazy-initialized.

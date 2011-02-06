@@ -67,6 +67,9 @@
 
 * FIXED: whois.isoc.org.il must support "transfer allowed" status.
 
+* FIXED: Whois::Answer#respond_to? and Whois::Answer::Parser#respond_to?
+  should keep METHODS and PROPERTIES into consideration.
+
 === BC
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.

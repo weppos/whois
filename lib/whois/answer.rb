@@ -40,6 +40,16 @@ module Whois
     end
 
 
+    # Checks if this class respond to given method.
+    #
+    # Overrides the default implementation to add support
+    # for {PROPERTIES} and {METHODS}.
+    #
+    # @returns [Boolean]
+    def respond_to?(symbol, include_private = false)
+      super || Parser::PROPERTIES.include?(symbol) || Parser::METHODS.include?(symbol)
+    end
+
     # Returns a String representation of this answer.
     #
     # @return [String] The answer content.
