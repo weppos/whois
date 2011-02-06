@@ -43,7 +43,7 @@ describe Whois::Answer::Parser::Base do
 
     it "returns true if the property is supported" do
       k = Class.new(klass) do
-        register_property(:disclaimer, :supported) {}
+        property_register(:disclaimer, :supported) {}
       end
       k.new(@part).property_supported?(:disclaimer).should be_true
       k.new(@part).respond_to?(:disclaimer).should be_true
@@ -131,9 +131,9 @@ describe Whois::Answer::Parser::Base do
       c2 = Whois::Answer::Contact.new(:id => "2nd", :name => "foo")
       c3 = Whois::Answer::Contact.new(:id => "3rd", :name => "foo")
       k = Class.new(klass) do
-        register_property(:registrant_contact, :supported) { [c1, c2] }
-        register_property(:admin_contact, :supported) { nil }
-        register_property(:technical_contact, :supported) { c3 }
+        property_register(:registrant_contact, :supported) { [c1, c2] }
+        property_register(:admin_contact, :supported) { nil }
+        property_register(:technical_contact, :supported) { c3 }
       end
 
       i = k.new(@part)

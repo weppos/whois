@@ -37,7 +37,9 @@
 * CHANGED: Whois::Answer::Parser::Base#throttle? returns false to differentiate
   the abstract method from a real implementation (that returns true/false).
 
-* CHANGED: Remove &block from method definition to avoid creating block objects when yield is used (#66)
+* CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (#66)
+
+* CHANGED: Renamed Whois::Answer::Parser::Base.register_property to Whois::Answer::Parser::Base.property_register.
 
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.

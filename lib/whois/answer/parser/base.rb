@@ -65,7 +65,7 @@ module Whois
         #   property_status(:disclaimer)
         #   # => nil
         #
-        #   register_property(:discaimer, :supported) {}
+        #   property_register(:discaimer, :supported) {}
         #   property_status(:disclaimer)
         #   # => :supported
         #
@@ -80,7 +80,7 @@ module Whois
         #   property_registered?(:disclaimer)
         #   # => false
         #
-        #   register_property(:discaimer) {}
+        #   property_register(:discaimer) {}
         #   property_registered?(:disclaimer)
         #   # => true
         #
@@ -95,16 +95,16 @@ module Whois
 
         #
         # :call-seq:
-        #   register_property(:property, :status) { }
-        #   register_property(:property, :status) { |parameter| ... }
-        #   register_property(:property, :status) { |parameter, ...| ... }
+        #   property_register(:property, :status) { }
+        #   property_register(:property, :status) { |parameter| ... }
+        #   property_register(:property, :status) { |parameter, ...| ... }
         #
         # This method creates a new method called <tt>property</tt>
         # with the content of <tt>block</tt> and registers
         # the <tt>property</tt> in the <tt>property_registry</tt>
         # with given <tt>status</tt>.
         #
-        #   register_property(:disclaimer, :supported) do
+        #   property_register(:disclaimer, :supported) do
         #     ...
         #   end
         #   
@@ -115,11 +115,17 @@ module Whois
         #   property_registered?(:disclaimer)
         #   # => true
         #
-        def self.register_property(property, status, &block)
+        def self.property_register(property, status, &block)
           property = property.to_s.to_sym
           property_registry(self).merge!({ property => status })
           define_method(property, &block) if block_given?
           self
+        end
+
+        # @deprecated Use {Whois::Answer::Parser::Base.property_register}.
+        def self.register_property(property, status, &block)
+          Whois.deprecate "#{self.class}.register_property will be removed in Whois 2.1. Use #{self.class}.property_register."
+          property_register(property, status, &block)
         end
 
 
@@ -136,7 +142,7 @@ module Whois
         #   # end
         #
         def self.property_not_implemented(property)
-          register_property(property, :not_implemented) do
+          property_register(property, :not_implemented) do
             raise PropertyNotSupported
           end
         end
@@ -154,7 +160,7 @@ module Whois
         #   # end
         #
         def self.property_not_supported(property)
-          register_property(property, :not_supported) do
+          property_register(property, :not_supported) do
             raise PropertyNotSupported
           end
         end
@@ -172,7 +178,7 @@ module Whois
         #   # end
         #
         def self.property_supported(property, &block)
-          register_property(property, :supported, &block)
+          property_register(property, :supported, &block)
         end
 
         # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
