@@ -133,8 +133,7 @@ module Whois
       # @return [void]
       #
       def self.autoload(name)
-        file = "whois/answer/parser/#{name}"
-        require file
+        require "whois/answer/parser/#{name}"
       end
 
 
