@@ -45,6 +45,99 @@ module Whois
         :nameservers,
       ]
 
+
+      # Returns the proper parser instance for given <tt>part</tt>.
+      # The parser class is selected according to the
+      # value of the <tt>#host</tt> attribute for given <tt>part</tt>.
+      #
+      # @param  [Whois::Answer::Part] part The part to get the parser for.
+      #
+      # @return [Whois::Answer::Parser::Base]
+      #         An instance of the specific parser for given part.
+      #         The instance is expected to be a child of {Whois::Answer::Parser::Base}.
+      #
+      # @example
+      #
+      #   # Parser for a known host
+      #   Parser.parser_for("whois.example.com")
+      #   # => #<Whois::Answer::Parser::WhoisExampleCom>
+      #
+      #   # Parser for an unknown host
+      #   Parser.parser_for("missing.example.com")
+      #   # => #<Whois::Answer::Parser::Blank>
+      #
+      def self.parser_for(part)
+        parser_klass(part.host).new(part)
+      end
+
+      # Detects the proper parser class according to given <tt>host</tt>
+      # and returns the class constant.
+      #
+      # This method autoloads missing parser classes. If you want to define
+      # a custom parser, simple make sure the class is loaded in the Ruby
+      # environment before this method is called.
+      #
+      # @param  [String] host The server host.
+      #
+      # @return [Class] The instance of Class representing the parser Class
+      #         corresponding to <tt>host</tt>. If <tt>host</tt> doesn't have
+      #         a specific parser implementation, then returns
+      #         the {Whois::Answer::Parser::Blank} {Class}.
+      #         The {Class} is expected to be a child of {Whois::Answer::Parser::Base}.
+      #
+      # @example
+      #
+      #   Parser.parser_klass("missing.example.com")
+      #   # => Whois::Answer::Parser::Blank
+      #
+      #   # Define a custom parser for missing.example.com
+      #   class Whois::Answer::Parser::MissingExampleCom
+      #   end
+      #
+      #   Parser.parser_klass("missing.example.com")
+      #   # => Whois::Answer::Parser::MissingExampleCom
+      #
+      def self.parser_klass(host)
+        name = host_to_parser(host)
+        Parser.const_defined?(name) || autoload(host)
+        Parser.const_get(name)
+
+      rescue LoadError
+        Parser.const_defined?("Blank") || autoload("blank")
+        Parser::Blank
+      end
+
+      # Converts <tt>host</tt> to the corresponding parser class name.
+      #
+      # @param  [String] host The server host.
+      # @return [String] The class name.
+      #
+      # @example
+      #
+      #   Parser.host_to_parser("whois.nic.it")
+      #   # => "WhoisNicIt"
+      #
+      #   Parser.host_to_parser("whois.nic-info.it")
+      #   # => "WhoisNicInfoIt"
+      #
+      def self.host_to_parser(host)
+        host.to_s.
+          gsub(/[.-]/, '_').
+          gsub(/(?:^|_)(.)/)  { $1.upcase }
+      end
+
+      # Requires the file at <tt>whois/answer/parser/#{name}</tt>.
+      #
+      # @param  [String] name The file name to load.
+      #
+      # @return [void]
+      #
+      def self.autoload(name)
+        file = "whois/answer/parser/#{name}"
+        require file
+      end
+
+
       # @return [Whois::Answer] The answer referenced by this parser.
       attr_reader :answer
 
@@ -240,98 +333,6 @@ module Whois
           end
           true
         end
-
-
-      # Returns the proper parser instance for given <tt>part</tt>.
-      # The parser class is selected according to the
-      # value of the <tt>#host</tt> attribute for given <tt>part</tt>.
-      #
-      # @param  [Whois::Answer::Part] part The part to get the parser for.
-      #
-      # @return [Whois::Answer::Parser::Base]
-      #         An instance of the specific parser for given part.
-      #         The instance is expected to be a child of {Whois::Answer::Parser::Base}.
-      # 
-      # @example
-      #
-      #   # Parser for a known host
-      #   Parser.parser_for("whois.example.com")
-      #   # => #<Whois::Answer::Parser::WhoisExampleCom>
-      #
-      #   # Parser for an unknown host
-      #   Parser.parser_for("missing.example.com")
-      #   # => #<Whois::Answer::Parser::Blank>
-      #
-      def self.parser_for(part)
-        parser_klass(part.host).new(part)
-      end
-
-      # Detects the proper parser class according to given <tt>host</tt>
-      # and returns the class constant.
-      #
-      # This method autoloads missing parser classes. If you want to define
-      # a custom parser, simple make sure the class is loaded in the Ruby
-      # environment before this method is called.
-      #
-      # @param  [String] host The server host.
-      #
-      # @return [Class] The instance of Class representing the parser Class
-      #         corresponding to <tt>host</tt>. If <tt>host</tt> doesn't have
-      #         a specific parser implementation, then returns
-      #         the {Whois::Answer::Parser::Blank} {Class}.
-      #         The {Class} is expected to be a child of {Whois::Answer::Parser::Base}.
-      #
-      # @example
-      #
-      #   Parser.parser_klass("missing.example.com")
-      #   # => Whois::Answer::Parser::Blank
-      #
-      #   # Define a custom parser for missing.example.com
-      #   class Whois::Answer::Parser::MissingExampleCom
-      #   end
-      #
-      #   Parser.parser_klass("missing.example.com")
-      #   # => Whois::Answer::Parser::MissingExampleCom
-      #
-      def self.parser_klass(host)
-        name = host_to_parser(host)
-        Parser.const_defined?(name) || autoload(host)
-        Parser.const_get(name)
-
-      rescue LoadError
-        Parser.const_defined?("Blank") || autoload("blank")
-        Parser::Blank
-      end
-
-      # Converts <tt>host</tt> to the corresponding parser class name.
-      #
-      # @param  [String] host The server host.
-      # @return [String] The class name.
-      #
-      # @example
-      #
-      #   Parser.host_to_parser("whois.nic.it")
-      #   # => "WhoisNicIt"
-      #
-      #   Parser.host_to_parser("whois.nic-info.it")
-      #   # => "WhoisNicInfoIt"
-      #
-      def self.host_to_parser(host)
-        host.to_s.
-          gsub(/[.-]/, '_').
-          gsub(/(?:^|_)(.)/)  { $1.upcase }
-      end
-
-      # Requires the file at <tt>whois/answer/parser/#{name}</tt>.
-      #
-      # @param  [String] name The file name to load.
-      #
-      # @return [void]
-      #
-      def self.autoload(name)
-        file = "whois/answer/parser/#{name}"
-        require file
-      end
 
     end
 
