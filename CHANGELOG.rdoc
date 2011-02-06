@@ -41,6 +41,8 @@
 
 * CHANGED: Renamed Whois::Answer::Parser::Base.register_property to Whois::Answer::Parser::Base.property_register.
 
+* CHANGED: Whois::Answer::Parser creates a missing method the first time it is invoked to increase performance.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 

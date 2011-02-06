@@ -240,11 +240,22 @@ module Whois
 
       private
 
+        # @api internal
+        def self.define_missing_method(method)
+          class_eval <<-RUBY, __FILE__, __LINE__ + 1
+            def #{method}(*args, &block)
+              delegate_to_parsers(:#{method}, *args, &block)
+            end
+          RUBY
+        end
+
         def method_missing(method, *args, &block)
           if PROPERTIES.include?(method)
-            delegate_to_parsers(method, *args, &block)
+            self.class.define_missing_method(method)
+            send(method, *args, &block)
           elsif METHODS.include?(method)
-            delegate_to_parsers(method, *args, &block)
+            self.class.define_missing_method(method)
+            send(method, *args, &block)
           else
             super
           end
