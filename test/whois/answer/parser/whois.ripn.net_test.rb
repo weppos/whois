@@ -115,6 +115,21 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     assert_equal  expected, parser.instance_eval { @nameservers }
   end
 
+  def test_admin_contact
+    parser    = @klass.new(load_part('registered.txt'))
+
+    expected  = Whois::Answer::Contact.new(
+      :type         => Whois::Answer::Contact::TYPE_ADMIN,
+      :organization => 'Google Inc',
+      :phone        => '+1 650 330 0100',
+      :fax          => '+1 650 618 8571',
+      :email        => 'dns-admin@google.com',
+    )
+
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
+  end
+
 end
 
 
@@ -214,6 +229,21 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
     expected  = %w()
     assert_equal  expected, parser.nameservers
     assert_equal  expected, parser.instance_eval { @nameservers }
+  end
+
+  def test_admin_contact
+    parser    = @klass.new(load_part('registered.txt'))
+
+    expected  = Whois::Answer::Contact.new(
+      :type         => Whois::Answer::Contact::TYPE_ADMIN,
+      :name         => 'Private Person',
+      :phone        => '+7 495 9681807',
+      :fax          => '+7 495 9681807',
+      :email        => 'cis@cis.su',
+    )
+
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
 end
