@@ -48,8 +48,8 @@ module Whois
         # Returns the <tt>@@property_registry</tt> if <tt>klass</tt> is nil,
         # otherwise returns the value in <tt>@@property_registry</tt> for given <tt>klass</tt>.
         # <tt>klass</tt> is expected to be a class name.
-        # 
-        # Returned value is always a hash. If <tt>@@property_registry[klass]</tt> 
+        #
+        # Returned value is always a hash. If <tt>@@property_registry[klass]</tt>
         # doesn't exist, this method automatically initializes it to an empty Hash.
         #
         def self.property_registry(klass = nil)
@@ -93,32 +93,51 @@ module Whois
           end
         end
 
-        #
-        # :call-seq:
-        #   property_register(:property, :status) { }
-        #   property_register(:property, :status) { |parameter| ... }
-        #   property_register(:property, :status) { |parameter, ...| ... }
-        #
-        # This method creates a new method called <tt>property</tt>
+        # Creates a new method called <tt>property</tt>
         # with the content of <tt>block</tt> and registers
-        # the <tt>property</tt> in the <tt>property_registry</tt>
+        # the <tt>property</tt> in the {@@property_registry}
         # with given <tt>status</tt>.
+        #
+        # @param  [Symbol] property
+        # @param  [Symbol] status
+        #
+        # @return [void]
+        #
+        #
+        # @example Defining a simple property
         #
         #   property_register(:disclaimer, :supported) do
         #     ...
         #   end
-        #   
-        #   # def disclaimer
-        #   #   ...
-        #   # end
-        #   
+        #
+        #   respond_to?(:disclaimer)
+        #   # =>true
+        #
         #   property_registered?(:disclaimer)
         #   # => true
+        #
+        # @example Defining a property with arguments
+        #
+        #   property_register(:disclaimer, :supported) do |arg1|
+        #     ...
+        #   end
         #
         def self.property_register(property, status, &block)
           property = property.to_s.to_sym
           property_registry(self).merge!({ property => status })
-          define_method(property, &block) if block_given?
+
+          if block_given?
+            define_method("internal_#{property}", &block)
+
+            class_eval <<-RUBY, __FILE__, __LINE__ + 1
+              private :"internal_#{property}"
+
+              def #{property}(*args)
+                cached_properties_fetch(:#{property}) { internal_#{property}(*args) }
+              end
+            RUBY
+          end
+
           self
         end
 
@@ -201,7 +220,9 @@ module Whois
         #
         def initialize(part)
           @part = part
+          @cached_properties = {}
         end
+
 
         # This is an internal method primary used as a common access point
         # to get the content to be parsed as a string.
@@ -224,10 +245,16 @@ module Whois
 
 
 
+        # @group Methods
+
         Whois::Answer::Parser::PROPERTIES.each do |property|
           property_not_implemented(property)
         end
 
+        # @properties
+
+
+        # @group Methods
 
         # Checks whether the content of this part is different than +other+.
         #
@@ -284,6 +311,10 @@ module Whois
           contacts.compact
         end
 
+        # @endgroup
+
+
+        # @group Response
 
         # Checks whether this is a throttle response.
         # The default implementation always returns +nil+.
@@ -313,11 +344,20 @@ module Whois
           nil
         end
 
+        # @endgroup
+
 
         protected
 
           def content_for_scanner
             @content_for_scanner ||= content.to_s.gsub(/\r\n/, "\n")
+          end
+
+          def cached_properties_fetch(key)
+            if !@cached_properties.key?(key)
+              @cached_properties[key] = yield
+            end
+            @cached_properties[key]
           end
 
       end
