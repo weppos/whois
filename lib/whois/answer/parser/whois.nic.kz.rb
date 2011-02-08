@@ -35,7 +35,7 @@ module Whois
       class WhoisNicKz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain status : ((.+\n)+)\s+\n/
+          if content_for_scanner =~ /Domain status : ((.+\n)+)\s+\n/
             $1.split("\n").map { |value| value.split("-").first.strip }
           else
             nil
@@ -43,22 +43,22 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Nothing found for this query/)
+          !!(content_for_scanner =~ /Nothing found for this query/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Domain created: (.*)\n/
+          if content_for_scanner =~ /Domain created: (.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Last modified : (.*)\n/
+          if content_for_scanner =~ /Last modified : (.*)\n/
             Time.parse($1)
           end
         end
@@ -67,7 +67,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/^\w+ server\.+:\s(.*)\n/).flatten
+          content_for_scanner.scan(/^\w+ server\.+:\s(.*)\n/).flatten
         end
 
       end

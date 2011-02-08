@@ -35,7 +35,7 @@ module Whois
       class WhoisIsocOrgIl < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.*?)\n/
+          if content_for_scanner =~ /status:\s+(.*?)\n/
             case $1.downcase
               when "transfer locked" then :registered
               when "transfer allowed" then :registered
@@ -48,11 +48,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= (status == :available)
+          (status == :available)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -60,7 +60,7 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /changed:\s+(.+)\n/
+          if content_for_scanner =~ /changed:\s+(.+)\n/
             t = content_for_scanner.scan(/changed:\s+(?:.+?) (\d+) \(Changed\)\n/).flatten.last
             Time.parse(t)
           end
@@ -70,7 +70,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

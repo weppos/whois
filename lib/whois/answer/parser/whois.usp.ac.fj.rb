@@ -35,7 +35,7 @@ module Whois
       class WhoisUspAcFj < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "active" then :registered
               else
@@ -47,11 +47,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^The domain (.+?) was not found!$/)
+          !!(content_for_scanner =~ /^The domain (.+?) was not found!$/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -60,14 +60,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires:\s+(.*)\n/
+          if content_for_scanner =~ /Expires:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers:\n\n((.+\n)+)\n/
+          if content_for_scanner =~ /Domain servers:\n\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.downcase }
           else
             []

@@ -59,13 +59,11 @@ class AnswerParserWhoisNicBoTest < Whois::Answer::Parser::TestCase
   def test_created_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2006-08-22")
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_variable_get(:"@created_on")
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_variable_get(:"@created_on")
+    assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
@@ -76,13 +74,11 @@ class AnswerParserWhoisNicBoTest < Whois::Answer::Parser::TestCase
   def test_expires_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2011-08-22")
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_variable_get(:"@expires_on")
+    assert_equal_and_cached expected, parser, :expires_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_variable_get(:"@expires_on")
+    assert_equal_and_cached expected, parser, :expires_on
   end
 
 

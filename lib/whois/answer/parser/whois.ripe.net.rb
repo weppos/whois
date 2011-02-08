@@ -35,7 +35,7 @@ module Whois
       class WhoisRipeNet < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
+          !!(content_for_scanner =~ /%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -65,7 +65,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.downcase }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.downcase }
         end
 
       end

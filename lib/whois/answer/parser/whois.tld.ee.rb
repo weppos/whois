@@ -36,7 +36,7 @@ module Whois
         include Ast
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
+          if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
               when "paid and in zone" then :registered
               # NEWSTATUS
@@ -50,35 +50,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /^%ERROR:101: no entries found/)
+          !!(content_for_scanner =~ /^%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /registered:\s+(.+?)\n/
+          if content_for_scanner =~ /registered:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /changed:\s+(.+?)\n/
+          if content_for_scanner =~ /changed:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /expire:\s+(.+?)\n/
+          if content_for_scanner =~ /expire:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :registrar do
-          @registrar ||= if content_for_scanner =~ /registrar:\s+(.*)\n/
+          if content_for_scanner =~ /registrar:\s+(.*)\n/
             Whois::Answer::Registrar.new(
                 :id => $1,
                 :name => $1
@@ -87,13 +87,13 @@ module Whois
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= if content_for_scanner =~ /admin-c:\s+(.*)\n/
+          if content_for_scanner =~ /admin-c:\s+(.*)\n/
             contact($1, Whois::Answer::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :registrant_contact do
-          @registrant_contact ||= if content_for_scanner =~ /registrant:\s+(.*)\n/
+          if content_for_scanner =~ /registrant:\s+(.*)\n/
             contact($1, Whois::Answer::Contact::TYPE_REGISTRANT)
           end
         end
@@ -102,7 +102,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.split(" ").first }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.split(" ").first }
         end
 
 

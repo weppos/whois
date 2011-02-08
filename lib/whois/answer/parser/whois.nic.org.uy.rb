@@ -35,7 +35,7 @@ module Whois
       class WhoisNicOrgUy < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Estatus del dominio: (.+?)\n/
+          if content_for_scanner =~ /Estatus del dominio: (.+?)\n/
             case $1.downcase
               when "activo" then :registered
               else
@@ -47,22 +47,22 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No match for "(.*?)"/)
+          !!(content_for_scanner =~ /No match for "(.*?)"/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Fecha de Creacion: (.*)\n/
+          if content_for_scanner =~ /Fecha de Creacion: (.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Ultima Actualizacion: (.*)\n/
+          if content_for_scanner =~ /Ultima Actualizacion: (.*)\n/
             Time.parse($1)
           end
         end
@@ -71,7 +71,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
+          if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
             $1.scan(/-\s(.*?)\n/).flatten
           else
             []

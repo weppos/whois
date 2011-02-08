@@ -35,7 +35,7 @@ module Whois
       class WhoisKr < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,35 +43,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /domain name is not registered/)
+          !!(content_for_scanner =~ /domain name is not registered/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Registered Date\s+:\s+(.+)\n/
+          if content_for_scanner =~ /Registered Date\s+:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Last updated Date\s+:\s+(.+)\n/
+          if content_for_scanner =~ /Last updated Date\s+:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration Date\s+:\s+(.+)\n/
+          if content_for_scanner =~ /Expiration Date\s+:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/\s+Host Name\s+:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/\s+Host Name\s+:\s+(.+)\n/).flatten
         end
 
       end

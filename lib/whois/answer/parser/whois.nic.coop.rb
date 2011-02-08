@@ -35,7 +35,7 @@ module Whois
       class WhoisNicCoop < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "ok" then :registered
               else
@@ -47,35 +47,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No domain records were found to match/)
+          !!(content_for_scanner =~ /No domain records were found to match/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created:\s+(.*)\n/
+          if content_for_scanner =~ /Created:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Last updated:\s+(.*)\n/
+          if content_for_scanner =~ /Last updated:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiry Date:\s+(.*)\n/
+          if content_for_scanner =~ /Expiry Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Host Name:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/Host Name:\s+(.+)\n/).flatten
         end
 
       end

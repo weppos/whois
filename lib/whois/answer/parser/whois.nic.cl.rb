@@ -35,7 +35,7 @@ module Whois
       class WhoisNicCl < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||=  !!(content_for_scanner =~ /^(.+?): no existe$/)
+           !!(content_for_scanner =~ /^(.+?): no existe$/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -55,7 +55,7 @@ module Whois
 
         # TODO: custom date format with foreigh month names
         # property_supported :updated_on do
-        #   @updated_on ||= if content_for_scanner =~ /changed:\s+(.*)\n/
+        #   if content_for_scanner =~ /changed:\s+(.*)\n/
         #     Time.parse($1.split(" ", 2).last)
         #   end
         # end
@@ -64,7 +64,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Servidores de nombre \(Domain servers\):\n((.+\n)+)\n/
+          if content_for_scanner =~ /Servidores de nombre \(Domain servers\):\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.split(" ").first }
           else
             []

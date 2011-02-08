@@ -35,7 +35,7 @@ module Whois
       class WhoisRegistryHm < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^Domain not found/)
+          !!(content_for_scanner =~ /^Domain not found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Domain creation date: (.+?)\n/
+          if content_for_scanner =~ /Domain creation date: (.+?)\n/
             # Change dd/mm/yy to yyyy-mm-dd to prevent
             # argument out of range
             Time.parse($1.split("/").reverse.join("-"))
@@ -62,14 +62,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Domain expiration date: (.+?)\n/
+          if content_for_scanner =~ /Domain expiration date: (.+?)\n/
             Time.parse($1.split("/").reverse.join("-"))
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server: ([^\s]+)\n/).flatten.map(&:downcase)
+          content_for_scanner.scan(/Name Server: ([^\s]+)\n/).flatten.map(&:downcase)
         end
 
       end

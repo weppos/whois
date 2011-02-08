@@ -33,7 +33,7 @@ module Whois
         # Returns a String with the disclaimer if available,
         # <tt>nil</tt> otherwise.
         property_supported :disclaimer do
-          @disclaimer ||= nil
+          nil
         end
 
 
@@ -42,7 +42,7 @@ module Whois
         # Returns a String with the domain name if available,
         # <tt>nil</tt> otherwise.
         property_supported :domain do
-          @domain ||= nil
+          nil
         end
 
         # Public: Gets the unique domain ID as stored by the registry.
@@ -50,7 +50,7 @@ module Whois
         # Returns a String with the domain ID if available,
         # <tt>nil</tt> otherwise.
         property_supported :domain_id do
-          @domain_id ||= nil
+          nil
         end
 
 
@@ -59,21 +59,21 @@ module Whois
         # Returns a String/Array with the record status if available,
         # <tt>nil</tt> otherwise.
         property_supported :status do
-          @status ||= nil
+          nil
         end
 
         # Public: Checks whether this record is available.
         #
         # Returns true/false depending whether this record is available.
         property_supported :available? do
-          @available ||= nil
+          nil
         end
 
         # Public: Checks whether this record is registered.
         #
         # Returns true/false depending this record is available.
         property_supported :registered? do
-          @registered ||= nil
+          nil
         end
 
 
@@ -83,7 +83,7 @@ module Whois
         # Returns a Time object representing the date the record was created or
         # <tt>nil</tt> otherwise.
         property_supported :created_on do
-          @created_on ||= nil
+          nil
         end
 
         # Public: Gets the date the record was last updated,
@@ -92,7 +92,7 @@ module Whois
         # Returns a Time object representing the date the record was last updated or
         # <tt>nil</tt> if not available.
         property_supported :updated_on do
-          @updated_on ||= nil
+          nil
         end
 
         # Public: Gets the date the record is set to expire,
@@ -101,7 +101,7 @@ module Whois
         # Returns a Time object representing the date the record is set to expire or
         # <tt>nil</tt> if not available.
         property_supported :expires_on do
-          @expires_on ||= nil
+          nil
         end
 
 
@@ -111,7 +111,7 @@ module Whois
         # Returns an instance of <tt>Whois::Answer::Registrar</tt> representing the registrar or
         # <tt>nil</tt> if not available.
         property_supported :registrar do
-          @registrar ||= nil
+          nil
         end
 
 
@@ -121,7 +121,7 @@ module Whois
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the registrant contact or
         # <tt>nil</tt> if not available.
         property_supported :registrant_contact do
-          @registrant_contact ||= nil
+          nil
         end
 
         # Public: Gets the administrative contact object containing the details of the record administrator
@@ -130,7 +130,7 @@ module Whois
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the administrative contact or
         # <tt>nil</tt> if not available.
         property_supported :admin_contact do
-          @admin_contact ||= nil
+          nil
         end
 
         # Public: Gets the technical contact object containing the details of the technical representative
@@ -139,7 +139,7 @@ module Whois
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the technical contact or
         # <tt>nil</tt> if not available.
         property_supported :technical_contact do
-          @technical_contact ||= nil
+          nil
         end
 
 
@@ -157,7 +157,7 @@ module Whois
         # Returns an Array of lower case String where each String is a name server entry,
         # an empty Array if no name server was found.
         property_supported :nameservers do
-          @nameservers ||= []
+          []
         end
 
       end

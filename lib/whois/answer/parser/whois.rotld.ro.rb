@@ -35,7 +35,7 @@ module Whois
       class WhoisRotldRo < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:\s(.+?)\n/
+          if content_for_scanner =~ /Domain Status:\s(.+?)\n/
             case $1.downcase
               when "ok" then :registered
               else
@@ -47,11 +47,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No entries found/)
+          !!(content_for_scanner =~ /No entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -63,7 +63,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten
         end
 
       end

@@ -35,7 +35,7 @@ module Whois
       class WhoisEducauseEdu < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,35 +43,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No Match/)
+          !!(content_for_scanner =~ /No Match/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Domain record activated:\s+(.+?)\n/
+          if content_for_scanner =~ /Domain record activated:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Domain record last updated:\s+(.+?)\n/
+          if content_for_scanner =~ /Domain record last updated:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Domain expires:\s+(.+?)\n/
+          if content_for_scanner =~ /Domain expires:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/
+          if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/
             $1.split("\n").map { |value| value.split(" ").first.downcase }
           else
             []

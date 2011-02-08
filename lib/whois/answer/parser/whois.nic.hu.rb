@@ -30,21 +30,21 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          @disclaimer ||= node("disclaimer")
+          node("disclaimer")
         end
 
 
         property_supported :domain do
-          @domain ||= node("domain")
+          node("domain")
         end
 
         property_supported :domain_id do
-          @domain_id ||= node('hun-id')
+          node('hun-id')
         end
 
 
         property_supported :status do
-          @status ||= if node('NotFound')
+          if node('NotFound')
             :available
           elsif node('InProgress')
             :in_progress
@@ -54,20 +54,20 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= status == :available
+          status == :available
         end
 
         property_supported :registered? do
-          @registered ||= status == :registered
+          status == :registered
         end
 
 
         property_supported :created_on do
-          @created_on ||= node('registered') { |raw| Time.parse(raw) }
+          node('registered') { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          @updated_on ||= node('changed') { |raw| Time.parse(raw) }
+          node('changed') { |raw| Time.parse(raw) }
         end
 
         property_not_supported :expires_on
@@ -85,11 +85,10 @@ module Whois
 
         property_supported :registrant_contact do
           return unless registered?
-          return @registrant_contact if @registrant_contact
 
           address, city, zip, country_code = decompose_address(node("address"))
 
-          @registrant_contact = Whois::Answer::Contact.new(
+          Whois::Answer::Contact.new(
             :type         => Whois::Answer::Contact::TYPE_REGISTRANT,
             :name         => node("name"),
             :organization => node("org"),
@@ -103,16 +102,16 @@ module Whois
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= contact("admin-c", Whois::Answer::Contact::TYPE_ADMIN)
+          contact("admin-c", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contact do
-          @tecnical_contact ||= contact("tech-c", Whois::Answer::Contact::TYPE_TECHNICAL)
+          contact("tech-c", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= node("nameserver") || []
+          node("nameserver") || []
         end
 
 

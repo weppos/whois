@@ -35,7 +35,7 @@ module Whois
       class WhoisSkNicSk < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /^Domain-status\s+(.+)\n/
+          if content_for_scanner =~ /^Domain-status\s+(.+)\n/
             case $1.downcase
               when "dom_ok" then :registered
               else
@@ -47,31 +47,31 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^Not found/)
+          !!(content_for_scanner =~ /^Not found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /^Last-update\s+(.*)\n/
+          if content_for_scanner =~ /^Last-update\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /^Valid-date\s+(.*)\n/
+          if content_for_scanner =~ /^Valid-date\s+(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/dns_name\s+(.+)\n/).flatten
+          content_for_scanner.scan(/dns_name\s+(.+)\n/).flatten
         end
 
       end

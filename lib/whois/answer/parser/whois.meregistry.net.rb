@@ -35,39 +35,39 @@ module Whois
       class WhoisMeregistryNet < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Domain Status:(.*?)\n/).flatten
+          content_for_scanner.scan(/Domain Status:(.*?)\n/).flatten
         end
 
         property_supported :available? do
-          @available  ||= (content_for_scanner.strip == "NOT FOUND")
+          (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Domain Create Date:(.*)\n/
+          if content_for_scanner =~ /Domain Create Date:(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Domain Last Updated Date:(.*)\n/
+          if content_for_scanner =~ /Domain Last Updated Date:(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Domain Expiration Date:(.*)\n/
+          if content_for_scanner =~ /Domain Expiration Date:(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Nameservers:([^ ]+?)\n/).flatten.map(&:downcase)
+          content_for_scanner.scan(/Nameservers:([^ ]+?)\n/).flatten.map(&:downcase)
         end
 
       end

@@ -35,7 +35,7 @@ module Whois
       class WhoisDnsLu < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /domaintype:\s+(.+)\n/
+          if content_for_scanner =~ /domaintype:\s+(.+)\n/
             case $1.downcase
               when "active" then :registered
               else
@@ -47,16 +47,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /% No such domain/)
+          !!(content_for_scanner =~ /% No such domain/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /registered:\s+(.*)\n/
+          if content_for_scanner =~ /registered:\s+(.*)\n/
             # Force the parser to use the dd/mm/yyyy format.
             Time.utc(*$1.split("/").reverse)
           end
@@ -68,7 +68,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

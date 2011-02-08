@@ -35,7 +35,7 @@ module Whois
       class WhoisRegisterBg < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /registration status:\s+(.+?)\n/
+          if content_for_scanner =~ /registration status:\s+(.+?)\n/
             case $1.downcase
               when "registered" then :registered
               else
@@ -47,16 +47,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /Domain name (.+?) does not exist/)
+          !!(content_for_scanner =~ /Domain name (.+?) does not exist/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /activated on:\s+(.*?)\n/
+          if content_for_scanner =~ /activated on:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")
             # => ArgumentError: argument out of range
             Time.parse($1.gsub("/", "-"))
@@ -66,7 +66,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /expires at:\s+(.*?)\n/
+          if content_for_scanner =~ /expires at:\s+(.*?)\n/
             # Time.parse("30/06/2003 00:00:00")
             # => ArgumentError: argument out of range
             Time.parse($1.gsub("/", "-"))
@@ -75,7 +75,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /NAME SERVER INFORMATION:\n((.+\n)+)\s+\n/
+          if content_for_scanner =~ /NAME SERVER INFORMATION:\n((.+\n)+)\s+\n/
             $1.split("\n").map { |value| value.strip.split(" ").first }
           else
             []

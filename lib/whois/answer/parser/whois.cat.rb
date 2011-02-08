@@ -35,34 +35,34 @@ module Whois
       class WhoisCat < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             [*$1.split(", ")]
           end
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /Object (.*?) NOT FOUND/)
+          !!(content_for_scanner =~ /Object (.*?) NOT FOUND/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created On:\s+(.*)\n/
+          if content_for_scanner =~ /Created On:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Last Updated On:\s+(.*)\n/
+          if content_for_scanner =~ /Last Updated On:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
+          if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -74,7 +74,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/Name Server:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

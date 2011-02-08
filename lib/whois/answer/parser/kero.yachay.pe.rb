@@ -35,7 +35,7 @@ module Whois
       class KeroYachayPe < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "active"         then :registered
               when "not registered" then :available
@@ -49,11 +49,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= (status == :available)
+          (status == :available)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -65,7 +65,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
+          if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             $1.split("\n").map(&:strip)
           else
             []

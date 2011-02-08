@@ -35,7 +35,7 @@ module Whois
       class WhoisCentralnicCom < Base
 
         # property_supported :disclaimer do
-        #   @disclaimer ||= if content_for_scanner =~ /(This whois service is provided by .*)\n/m
+        #   if content_for_scanner =~ /(This whois service is provided by .*)\n/m
         #     $1.gsub("\n", " ")
         #   else
         #     raise ParserError, "Unexpected response trying to parse `:disclaimer' property. The parser might be outdated."
@@ -44,7 +44,7 @@ module Whois
 
 
         # property_supported :domain do
-        #   @domain ||= if content_for_scanner =~ /Domain Name: (.*)\n/
+        #   if content_for_scanner =~ /Domain Name: (.*)\n/
         #     $1.strip
         #   elsif content_for_scanner =~ /^No match for (.*)\n/
         #     $1.strip
@@ -62,7 +62,7 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status: (.+?)\n/
+          if content_for_scanner =~ /Status: (.+?)\n/
             case $1.downcase
               when "live" then :registered
               when "live, renewal in progress" then :registered
@@ -75,16 +75,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /^No match for/)
+          !!(content_for_scanner =~ /^No match for/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Record created on: (.+)\n/
+          if content_for_scanner =~ /Record created on: (.+)\n/
             Time.parse($1)
           end
         end
@@ -92,14 +92,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Record expires on: (.+)\n/
+          if content_for_scanner =~ /Record expires on: (.+)\n/
             Time.parse($1)
           end
         end
 
 
         # property_supported :registrar do
-        #   @registrar ||= if content_for_scanner =~ /Registrar: (.*) \((.*)\)\n/
+        #   if content_for_scanner =~ /Registrar: (.*) \((.*)\)\n/
         #     Answer::Registrar.new(
         #       :id           => $1,
         #       :name         => $2,
@@ -110,7 +110,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:\n\n((.+\n)+)\n/
+          if content_for_scanner =~ /Domain servers in listed order:\n\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.downcase }
           else
             []

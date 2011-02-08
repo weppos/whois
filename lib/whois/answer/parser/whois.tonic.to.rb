@@ -42,7 +42,7 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if incomplete?
+          if incomplete?
             :incomplete
           else
             if available?
@@ -54,11 +54,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||=  (!incomplete? && !!(content_for_scanner =~ /No match for/))
+           (!incomplete? && !!(content_for_scanner =~ /No match for/))
         end
 
         property_supported :registered? do
-          @registered ||= (!incomplete? && !available?)
+          (!incomplete? && !available?)
         end
 
 

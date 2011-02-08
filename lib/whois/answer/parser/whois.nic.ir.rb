@@ -35,7 +35,7 @@ module Whois
       class WhoisNicIr < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,18 +43,18 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
+          !!(content_for_scanner =~ /%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /last-updated:\s+(.*)\n/
+          if content_for_scanner =~ /last-updated:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -63,7 +63,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
         end
 
       end

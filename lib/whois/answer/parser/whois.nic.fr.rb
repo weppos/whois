@@ -35,7 +35,7 @@ module Whois
       class WhoisNicFr < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
+          if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
               when "active" then :registered
               when "registered" then :registered
@@ -50,23 +50,23 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No entries found in the AFNIC Database/)
+          !!(content_for_scanner =~ /No entries found in the AFNIC Database/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
+          if content_for_scanner =~ /created:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /last-update:\s+(.*)\n/
+          if content_for_scanner =~ /last-update:\s+(.*)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
@@ -77,7 +77,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

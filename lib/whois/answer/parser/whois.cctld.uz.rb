@@ -35,7 +35,7 @@ module Whois
       class WhoisCctldUz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /^Status: (.+?)\n/
+          if content_for_scanner =~ /^Status: (.+?)\n/
             case $1.downcase
               when "active" then :registered
               else
@@ -47,16 +47,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /not found in database/)
+          !!(content_for_scanner =~ /not found in database/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /^Creation Date:(.*)\n/
+          if content_for_scanner =~ /^Creation Date:(.*)\n/
             Time.parse($1)
           end
         end
@@ -64,14 +64,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /^Expiration Date:(.*)\n/
+          if content_for_scanner =~ /^Expiration Date:(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
+          if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.chomp(".") }
           else
             []

@@ -35,7 +35,7 @@ module Whois
       class WhoisAero < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain Status:(.+?)\n/
+          if content_for_scanner =~ /Domain Status:(.+?)\n/
             case $1.downcase
               when "ok" then :registered
               else
@@ -47,35 +47,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= (content_for_scanner.strip == "NOT FOUND")
+          (content_for_scanner.strip == "NOT FOUND")
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created On:(.+?)\n/
+          if content_for_scanner =~ /Created On:(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Updated On:(.+?)\n/
+          if content_for_scanner =~ /Updated On:(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires On:(.+?)\n/
+          if content_for_scanner =~ /Expires On:(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:([^\s]+)\n/).flatten.map(&:downcase)
+          content_for_scanner.scan(/Name Server:([^\s]+)\n/).flatten.map(&:downcase)
         end
 
       end

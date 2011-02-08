@@ -59,13 +59,11 @@ class AnswerParserWhoisWhoisAedaNetAeTest < Whois::Answer::Parser::TestCase
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_variable_get(:"@nameservers")
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_variable_get(:"@nameservers")
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end

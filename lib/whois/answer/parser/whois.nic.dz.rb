@@ -35,7 +35,7 @@ module Whois
       class WhoisNicDz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /ETAT:\.+(.+?)\n/
+          if content_for_scanner =~ /ETAT:\.+(.+?)\n/
             case $1.downcase
               when "actif" then :registered
               else
@@ -47,11 +47,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^NO OBJECT FOUND!$/)
+          !!(content_for_scanner =~ /^NO OBJECT FOUND!$/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 

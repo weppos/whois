@@ -35,7 +35,7 @@ module Whois
       class WhoisNicGov < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.+?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "active" then :registered
               else
@@ -47,11 +47,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !registered?
+          !registered?
         end
 
         property_supported :registered? do
-          @registered ||= !!(content_for_scanner =~ /Domain Name:/)
+          !!(content_for_scanner =~ /Domain Name:/)
         end
 
 

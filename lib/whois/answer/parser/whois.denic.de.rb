@@ -30,19 +30,19 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          @disclaimer ||= node("Disclaimer")
+          node("Disclaimer")
         end
 
 
         property_supported :domain do
-          @domain ||= node("Domain")
+          node("Domain")
         end
 
         property_not_supported :domain_id
 
 
         property_supported :status do
-          @status ||= if node("Status")
+          if node("Status")
             case node("Status")
               when "connect"    then :registered
               when "free"       then :available
@@ -60,18 +60,18 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !invalid? && (!!node("NotFound") || node("Status") == "free")
+          !invalid? && (!!node("NotFound") || node("Status") == "free")
         end
 
         property_supported :registered? do
-          @registered ||= !invalid? && !available?
+          !invalid? && !available?
         end
 
 
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= node("Changed") { |raw| Time.parse(raw) }
+          node("Changed") { |raw| Time.parse(raw) }
         end
 
         property_not_supported :expires_on
@@ -89,15 +89,15 @@ module Whois
         end
 
         property_supported :registrant_contact do
-          @registrant_contact ||= contact("Holder", Whois::Answer::Contact::TYPE_REGISTRANT)
+          contact("Holder", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= contact("Admin-C", Whois::Answer::Contact::TYPE_ADMIN)
+          contact("Admin-C", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contact do
-          @technical_contact ||= contact("Tech-C", Whois::Answer::Contact::TYPE_TECHNICAL)
+          contact("Tech-C", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -108,25 +108,28 @@ module Whois
         #
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= node("Nserver") do |values|
+          node("Nserver") do |values|
             values.map do |value|
               value.split(" ").first.chomp(".")
             end
-          end
-          @nameservers ||= []
+          end || []
         end
 
 
         # NEWPROPERTY
         def version
-          @version ||= if content_for_scanner =~ /^% Version: (.+)$/
-            $1
+          cached_properties_fetch :version do
+            if content_for_scanner =~ /^% Version: (.+)$/
+              $1
+            end
           end
         end
 
         # NEWPROPERTY
         def invalid?
-          @invalid ||= (!!node("Invalid") || node("Status") == "invalid")
+          cached_properties_fetch :invalid? do
+            !!node("Invalid") || node("Status") == "invalid"
+          end
         end
 
 

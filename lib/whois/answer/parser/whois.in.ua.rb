@@ -35,7 +35,7 @@ module Whois
       class WhoisInUa < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.+?)\n/
+          if content_for_scanner =~ /status:\s+(.+?)\n/
             case $1.split("-").first.downcase
               when "ok" then :registered
               else
@@ -47,25 +47,25 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /No entries found for domain/)
+          !!(content_for_scanner =~ /No entries found for domain/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /changed:\s+(.*)\n/
+          if content_for_scanner =~ /changed:\s+(.*)\n/
             time = $1.split(" ").last
             DateTime.strptime(time, "%Y%m%d%H%M%S").to_time
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /status:\s+(.*)\n/
+          if content_for_scanner =~ /status:\s+(.*)\n/
             time = $1.split(" ").last
             DateTime.strptime(time, "%Y%m%d%H%M%S").to_time
           end
@@ -73,7 +73,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.downcase }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.downcase }
         end
 
       end

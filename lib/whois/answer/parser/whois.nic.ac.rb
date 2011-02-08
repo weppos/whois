@@ -32,7 +32,7 @@ module Whois
 
 
         property_supported :domain do
-          @domain ||= if content_for_scanner =~ /Domain "(.+?)"/
+          if content_for_scanner =~ /Domain "(.+?)"/
             $1.downcase
           end
         end
@@ -46,7 +46,7 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -54,11 +54,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /- Available/)
+          !!(content_for_scanner =~ /- Available/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 

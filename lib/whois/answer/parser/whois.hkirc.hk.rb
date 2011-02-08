@@ -35,7 +35,7 @@ module Whois
       class WhoisHkircHk < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= (content_for_scanner.strip == "Domain Not Found")
+          (content_for_scanner.strip == "Domain Not Found")
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Domain Name Commencement Date:\s(.*?)\n/
+          if content_for_scanner =~ /Domain Name Commencement Date:\s(.*?)\n/
             Time.parse($1)
           end
         end
@@ -60,14 +60,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiry Date:\s(.*?)\n/
+          if content_for_scanner =~ /Expiry Date:\s(.*?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name Servers Information:\n\n((.+\n)+)\n/
+          if content_for_scanner =~ /Name Servers Information:\n\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.downcase }
           else
             []

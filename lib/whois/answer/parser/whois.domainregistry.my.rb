@@ -35,7 +35,7 @@ module Whois
       class WhoisDomainregistryMy < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,35 +43,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /Domain Name [^ ]+ does not exist in database/)
+          !!(content_for_scanner =~ /Domain Name [^ ]+ does not exist in database/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /\[Record Created\]\s+(.+?)\n/
+          if content_for_scanner =~ /\[Record Created\]\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /\[Record Last Modified\]\s+(.+?)\n/
+          if content_for_scanner =~ /\[Record Last Modified\]\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /\[Record Expired\]\s+(.+?)\n/
+          if content_for_scanner =~ /\[Record Expired\]\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/\[(?:Primary|Secondary) Name Server\](?:.+?)\n(.+\n)/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/\[(?:Primary|Secondary) Name Server\](?:.+?)\n(.+\n)/).flatten.map { |value| value.split(" ").first }
         end
 
       end

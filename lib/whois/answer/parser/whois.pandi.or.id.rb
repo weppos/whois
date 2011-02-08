@@ -35,7 +35,7 @@ module Whois
       class WhoisPandiOrId < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /domain-status:\s+(.+)\n/
+          if content_for_scanner =~ /domain-status:\s+(.+)\n/
             case $1.downcase
               when "object is active" then :registered
               else
@@ -47,35 +47,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /%ERROR:101: no entries found/)
+          !!(content_for_scanner =~ /%ERROR:101: no entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
+          if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /last-update:\s+(.*)\n/
+          if content_for_scanner =~ /last-update:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /expires:\s+(.*)\n/
+          if content_for_scanner =~ /expires:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
         end
 
       end

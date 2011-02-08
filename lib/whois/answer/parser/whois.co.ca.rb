@@ -35,7 +35,7 @@ module Whois
       class WhoisCoCa < Base
 
         property_supported :status do
-          @status ||= case
+          case
             when available? then :available
             when reserved?  then :reserved
             else                 :registered
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^(.+) is available/)
+          !!(content_for_scanner =~ /^(.+) is available/)
         end
 
         property_supported :registered? do
-          @registered ||= !(available? || reserved?)
+          !(available? || reserved?)
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /date_approved:\s+(.+)\n/
+          if content_for_scanner =~ /date_approved:\s+(.+)\n/
             Time.parse($1)
           end
         end
@@ -60,14 +60,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /date_renewal:\s+(.+)\n/
+          if content_for_scanner =~ /date_renewal:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/ns[\d]_hostname:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/ns[\d]_hostname:\s+(.+)\n/).flatten
         end
 
 

@@ -35,7 +35,7 @@ module Whois
       class WhoisNicCh < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /We do not have an entry/)
+          !!(content_for_scanner =~ /We do not have an entry/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -65,7 +65,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
+          if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
             $1.split("\n").map { |value| value.split("\t").first }.uniq
           else
             []

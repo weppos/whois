@@ -35,7 +35,7 @@ module Whois
       class WhoisTwnicNetTw < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner.strip == "No Found")
+          !!(content_for_scanner.strip == "No Found")
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Record created on ([^ ]+) .+\n/
+          if content_for_scanner =~ /Record created on ([^ ]+) .+\n/
             Time.parse($1)
           end
         end
@@ -60,14 +60,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Record expires on ([^ ]+) .+\n/
+          if content_for_scanner =~ /Record expires on ([^ ]+) .+\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
+          if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip }
           else
             []

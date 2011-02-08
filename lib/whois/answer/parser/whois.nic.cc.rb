@@ -31,49 +31,49 @@ module Whois
         include Ast
 
         property_supported :disclaimer do
-          @disclaimer ||= node("Disclaimer")
+          node("Disclaimer")
         end
 
 
         property_supported :domain do
-          @domain||= node("Domain Name") { |raw| raw.downcase }
+          node("Domain Name") { |raw| raw.downcase }
         end
 
         property_not_supported :domain_id
 
 
         property_supported :referral_whois do
-          @referral_whois ||= node("Whois Server")
+          node("Whois Server")
         end
 
         property_supported :referral_url do
-          @referral_url ||= node("Referral URL")
+          node("Referral URL")
         end
 
 
         property_supported :status do
-          @status ||= node("Status")
+          node("Status")
         end
 
         property_supported :available? do
-          @available  ||= node("Registrar").nil?
+          node("Registrar").nil?
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= node("Creation Date") { |raw| Time.parse(raw) }
+          node("Creation Date") { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          @updated_on ||= node("Updated Date") { |raw| Time.parse(raw) }
+          node("Updated Date") { |raw| Time.parse(raw) }
         end
 
         property_supported :expires_on do
-          @expires_on ||= node("Expiration Date") { |raw| Time.parse(raw) }
+          node("Expiration Date") { |raw| Time.parse(raw) }
         end
 
 
@@ -85,10 +85,9 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= node("Name Server") do |values|
+          node("Name Server") do |values|
             [*values].map(&:downcase).reject { |value| value == "no nameserver" }
-          end
-          @nameservers ||= []
+          end || []
         end
 
 
