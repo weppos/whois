@@ -175,6 +175,7 @@ EOS
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns2.registry.jobs ns1.registry.jobs )
+    expected  = [nameserver("ns2.registry.jobs"), nameserver("ns1.registry.jobs")]
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
