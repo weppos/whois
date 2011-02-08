@@ -18,13 +18,11 @@ class AnswerParserWhoisNicMdTest < Whois::Answer::Parser::TestCase
   def test_domain
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.md"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
@@ -47,50 +45,42 @@ class AnswerParserWhoisNicMdTest < Whois::Answer::Parser::TestCase
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2006-05-02")
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
@@ -101,13 +91,11 @@ class AnswerParserWhoisNicMdTest < Whois::Answer::Parser::TestCase
   def test_expires_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2011-05-02")
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
   end
 
 
@@ -120,15 +108,13 @@ class AnswerParserWhoisNicMdTest < Whois::Answer::Parser::TestCase
   def test_registrant_contact_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Whois::Answer::Contact.new(nil, Whois::Answer::Contact::TYPE_REGISTRANT, "Google Inc.")
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_admin_contact
@@ -145,13 +131,11 @@ class AnswerParserWhoisNicMdTest < Whois::Answer::Parser::TestCase
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end

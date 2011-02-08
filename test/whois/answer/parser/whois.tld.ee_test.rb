@@ -14,97 +14,81 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_status
     parser    = @klass.new(load_part('property_status_paid.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('property_status_missing.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('property_status_expired.txt'))
     # NEWSTATUS
     expected  = :expired
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('status_expired.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('status_expired.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
   def test_created_on
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2010-07-04 07:10:32")
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2010-12-10 13:37:11")
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2011-12-10")
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
   end
 
 
   def test_registrar_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.registrar
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
 
     assert_instance_of Whois::Answer::Registrar, expected
     assert_equal "fraktal", expected.id
@@ -113,8 +97,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_registrar_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrar
@@ -131,8 +114,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_registrant_contact_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.registrant_contact
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
 
     assert_instance_of Whois::Answer::Contact, expected
     assert_equal "CID:FRAKTAL:1", expected.id
@@ -141,8 +123,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_registrant_contact_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact
@@ -158,8 +139,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_admin_contact_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.admin_contact
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
+    assert_equal_and_cached expected, parser, :admin_contact
 
     assert_instance_of Whois::Answer::Contact, expected
     assert_equal "CID:FRAKTAL:7", expected.id
@@ -168,8 +148,7 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_admin_contact_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
+    assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_admin_contact
@@ -191,13 +170,11 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns3.edicy.net ns4.edicy.net )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end

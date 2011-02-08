@@ -32,6 +32,14 @@ class Test::Unit::TestCase
     File.join(TEST_ROOT, "..", "spec", "fixtures", *names)
   end
 
+
+  def assert_equal_and_cached(expected, instance, property)
+    cache = instance.instance_variable_get(:"@cached_properties")
+    assert_equal expected, instance.send(property)
+    assert cache.key?(property)
+    assert_equal expected, instance.send(property)
+  end
+
 end
 
 

@@ -12,26 +12,22 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_disclaimer
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "Please note that the following result could be a subgroup of the data contained in the database. Additional information can be visualized at: http://www.nic.it/cgi-bin/Whois/whois.cgi"
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
+    assert_equal_and_cached expected, parser, :disclaimer
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
+    assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
   def test_domain
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.it"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = "google.it"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
@@ -54,37 +50,31 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_status
     parser    = @klass.new(load_part('property_status_active.txt'))
     expected  = :active
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('property_status_available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
@@ -92,47 +82,40 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_created_on
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("1999-12-10 00:00:00")
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
   end
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_updated_on
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2008-11-27 16:47:22")
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
   end
 
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_expires_on
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2009-11-27 00:00:00")
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
   end
 
 
   def test_registrar_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.registrar
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
 
     assert_instance_of Whois::Answer::Registrar, expected
     assert_equal "REGISTER-MNT", expected.id
@@ -141,8 +124,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_registrar_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrar
@@ -159,8 +141,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_registrant_contact_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.registrant_contact
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
 
     assert_instance_of Whois::Answer::Contact, expected
     assert_equal "GOOG175-ITNIC", expected.id
@@ -169,8 +150,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_registrant_contact_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact
@@ -194,8 +174,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_admin_contact_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.admin_contact
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
+    assert_equal_and_cached expected, parser, :admin_contact
 
     assert_instance_of Whois::Answer::Contact, expected
     assert_equal "TT4277-ITNIC", expected.id
@@ -204,8 +183,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_admin_contact_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
+    assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_admin_contact
@@ -229,8 +207,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_technical_contact_with_registered
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.technical_contact
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
+    assert_equal_and_cached expected, parser, :technical_contact
 
     assert_instance_of Whois::Answer::Contact, expected
     assert_equal "TS7016-ITNIC", expected.id
@@ -239,8 +216,7 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_technical_contact_with_available
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
+    assert_equal_and_cached expected, parser, :technical_contact
   end
 
   def test_technical_contact
@@ -265,13 +241,11 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns4.google.com ns2.google.com ns3.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end

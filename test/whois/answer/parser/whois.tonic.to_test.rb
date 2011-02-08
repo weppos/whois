@@ -40,42 +40,35 @@ class AnswerParserWhoisTonicToTest < Whois::Answer::Parser::TestCase
   def test_status
     parser    = @klass.new(load_part('is_incomplete.txt'))
     expected  = :incomplete
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
   def test_incomplete?

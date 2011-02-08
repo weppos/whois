@@ -93,12 +93,16 @@ module Whois
 
         # NEWPROPERTY
         def valid?
-          @valid ||= !invalid?
+          cached_properties_fetch(:valid?) do
+            !invalid?
+          end
         end
 
         # NEWPROPERTY
         def invalid?
-          @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
+          cached_properties_fetch(:invalid?) do
+            !!(content_for_scanner =~ /This domain cannot be registered/)
+          end
         end
 
         # NEWPROPERTY

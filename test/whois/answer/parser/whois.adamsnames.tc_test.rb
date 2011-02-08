@@ -21,37 +21,31 @@ class AnswerParserWhoisAdamsnamesTcGdTest < AnswerParserWhoisAdamsnamesTcTest
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
@@ -74,13 +68,11 @@ class AnswerParserWhoisAdamsnamesTcGdTest < AnswerParserWhoisAdamsnamesTcTest
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end
@@ -96,37 +88,31 @@ class AnswerParserWhoisAdamsnamesTcTcTest < AnswerParserWhoisAdamsnamesTcTest
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
@@ -149,13 +135,11 @@ class AnswerParserWhoisAdamsnamesTcTcTest < AnswerParserWhoisAdamsnamesTcTest
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
     
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end
@@ -171,37 +155,31 @@ class AnswerParserWhoisAdamsnamesTcVgTest < AnswerParserWhoisAdamsnamesTcTest
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
@@ -224,13 +202,11 @@ class AnswerParserWhoisAdamsnamesTcVgTest < AnswerParserWhoisAdamsnamesTcTest
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
     
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end

@@ -118,12 +118,16 @@ module Whois
 
         # NEWPROPERTY
         def registrar_contact
-          contact("registrar", nil)
+          cached_properties_fetch(:registrar_contact) do
+            contact("registrar", nil)
+          end
         end
 
         # NEWPROPERTY
         def zone_contact
-          contact("zone-c", nil)
+          cached_properties_fetch(:zone_contact) do
+            contact("zone-c", nil)
+          end
         end
 
 
