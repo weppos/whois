@@ -34,6 +34,21 @@ module Whois
     # @attr [String] ipv6
     #
     class Nameserver < SuperStruct.new(:name, :ipv4, :ipv6)
+
+      # Returns a string representation of this object
+      # composed by the host +name+.
+      #
+      # @example
+      #   Nameserver.new(:name => "ns.example.com").to_s
+      #   # => "ns.example.com"
+      #   Nameserver.new.to_s
+      #   # => ""
+      #
+      # @return [String] The string representation.
+      def to_s
+        name.to_s
+      end
+
     end
 
   end
