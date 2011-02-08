@@ -32,7 +32,7 @@ module Whois
 
 
         property_supported :domain do
-          @domain ||= if content_for_scanner =~ /Domain name:\s(.+?)\n/
+          if content_for_scanner =~ /Domain name:\s(.+?)\n/
             $1
           end
         end
@@ -46,7 +46,7 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -54,16 +54,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner.strip == "No match for")
+          !!(content_for_scanner.strip == "No match for")
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created:\s(.+?)\n/
+          if content_for_scanner =~ /Created:\s(.+?)\n/
             Time.parse($1)
           end
         end
@@ -71,7 +71,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration date:\s+(.+?)\n/
+          if content_for_scanner =~ /Expiration date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
@@ -81,7 +81,7 @@ module Whois
 
 
         property_supported :registrant_contact do
-          @registrant_contact ||= if content_for_scanner =~ /Registrant:\s+(.+?)\n/
+          if content_for_scanner =~ /Registrant:\s+(.+?)\n/
             Whois::Answer::Contact.new(
               nil,
               Whois::Answer::Contact::TYPE_REGISTRANT,
@@ -96,7 +96,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name server:\s(.+?)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/Name server:\s(.+?)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

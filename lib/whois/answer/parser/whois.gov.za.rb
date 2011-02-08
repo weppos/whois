@@ -35,7 +35,7 @@ module Whois
       class WhoisGovZa < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^No match found for/)
+          !!(content_for_scanner =~ /^No match found for/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Date : (.+)\n/
+          if content_for_scanner =~ /Date : (.+)\n/
             Time.parse($1)
           end
         end

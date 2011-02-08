@@ -35,22 +35,22 @@ module Whois
       class WhoisAudnsNetAu < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
+          content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do
-          @available  ||= (content_for_scanner.strip == "No Data Found")
+          (content_for_scanner.strip == "No Data Found")
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Last Modified:\s+(.*)\n/
+          if content_for_scanner =~ /Last Modified:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -59,7 +59,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten
         end
 
       end

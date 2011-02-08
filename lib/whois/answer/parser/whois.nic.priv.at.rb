@@ -35,7 +35,7 @@ module Whois
       class WhoisNicPrivAt < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,18 +43,18 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^% No entries found/)
+          !!(content_for_scanner =~ /^% No entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_not_supported :created_on
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /changed:\s+(.+)\n/
+          if content_for_scanner =~ /changed:\s+(.+)\n/
             Time.parse($1.strip.split(" ").last)
           end
         end

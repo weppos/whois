@@ -31,7 +31,7 @@ module Whois
         include Ast
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -39,40 +39,40 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /This query returned 0 objects|organisation: Not assigned/)
+          !!(content_for_scanner =~ /This query returned 0 objects|organisation: Not assigned/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :registrant_contact do
-          @registrant_contact ||= contact("organisation", Whois::Answer::Contact::TYPE_REGISTRANT)
+          contact("organisation", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= contact("administrative", Whois::Answer::Contact::TYPE_ADMIN)
+          contact("administrative", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contact do
-          @technical_contact ||= contact("technical", Whois::Answer::Contact::TYPE_TECHNICAL)
+          contact("technical", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :created_on do
-          @created_on ||= node("dates") { |raw| Time.parse(raw["created"]) if raw.has_key? "created" }
+          node("dates") { |raw| Time.parse(raw["created"]) if raw.has_key? "created" }
         end
 
         property_supported :updated_on do
-          @updated_on ||= node("dates") { |raw| Time.parse(raw["changed"]) if raw.has_key? "changed" }
+          node("dates") { |raw| Time.parse(raw["changed"]) if raw.has_key? "changed" }
         end
 
         property_not_supported :expires_on
 
 
         property_supported :nameservers do
-          @nameservers ||= nameserver("nameservers") || []
+          nameserver("nameservers") || []
         end
 
 

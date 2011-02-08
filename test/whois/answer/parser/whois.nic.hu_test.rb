@@ -14,13 +14,11 @@ class AnswerParserWhoisNicHuTest < Whois::Answer::Parser::TestCase
   def test_domain
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.hu"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
   end
 
 end
@@ -57,122 +55,101 @@ EOS
   def test_domain
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.hu"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = "ezitvps.hu"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "0000219547"
-    assert_equal  expected, parser.domain_id
-    assert_equal  expected, parser.instance_eval { @domain_id }
+    assert_equal_and_cached expected, parser, :domain_id
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.domain_id
-    assert_equal  expected, parser.instance_eval { @domain_id }
+    assert_equal_and_cached expected, parser, :domain_id
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = nil
-    assert_equal  expected, parser.domain_id
-    assert_equal  expected, parser.instance_eval { @domain_id }
+    assert_equal_and_cached expected, parser, :domain_id
   end
 
 
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = :registered
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = :available
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = :in_progress
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2000-03-25 23:20:39")
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2009-08-25 10:11:32")
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = nil
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
@@ -193,13 +170,11 @@ EOS
   def test_registrar_with_unregistered
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
   end
 
 
@@ -207,20 +182,17 @@ EOS
     parser      = @klass.new(load_part('registered.txt'))
     expected    = parser.registrant_contact
     assert_instance_of Whois::Answer::Contact, expected
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
  end
 
   def test_registrant_contact_with_unregistered
     parser      = @klass.new(load_part('available.txt'))
     expected    = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant_contact }
+    assert_equal_and_cached expected, parser, :registrant_contact
 
     parser      = @klass.new(load_part('in_progress.txt'))
     expected    = nil
-    assert_equal  expected, parser.registrant_contact
-    assert_equal  expected, parser.instance_eval { @registrant }
+    assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact_as_company
@@ -282,13 +254,11 @@ EOS
   def test_admin_contact_with_unregistered
     parser      = @klass.new(load_part('available.txt'))
     expected    = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
+    assert_equal_and_cached expected, parser, :admin_contact
 
     parser      = @klass.new(load_part('in_progress.txt'))
     expected    = nil
-    assert_equal  expected, parser.admin_contact
-    assert_equal  expected, parser.instance_eval { @admin_contact }
+    assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_technical_contact_with_registered
@@ -309,31 +279,26 @@ EOS
   def test_technical_contact_with_unregistered
     parser      = @klass.new(load_part('available.txt'))
     expected    = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
+    assert_equal_and_cached expected, parser, :technical_contact
 
     parser      = @klass.new(load_part('in_progress.txt'))
     expected    = nil
-    assert_equal  expected, parser.technical_contact
-    assert_equal  expected, parser.instance_eval { @technical_contact }
+    assert_equal_and_cached expected, parser, :technical_contact
   end
 
 
   def test_nameserver
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 
@@ -354,18 +319,17 @@ EOS
   def test_zone_contact_with_unregistered
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.zone_contact
-    assert_equal  expected, parser.instance_eval { @zone_contact }
+    assert_equal_and_cached expected, parser, :zone_contact
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = nil
-    assert_equal  expected, parser.zone_contact
-    assert_equal  expected, parser.instance_eval { @zone_contact }
+    assert_equal_and_cached expected, parser, :zone_contact
   end
 
   def test_registrar_contact_with_registered
     registrar_contact = @klass.new(load_part('registered.txt')).registrar_contact
     assert_instance_of Whois::Answer::Contact, registrar_contact
+
     assert_equal '1960108002', registrar_contact.id
     assert_equal '3C Kft. (Registrar)', registrar_contact.name
     assert_equal '3C Ltd.', registrar_contact.organization
@@ -380,13 +344,11 @@ EOS
   def test_registrar_contact_with_unregistered
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar_contact
-    assert_equal  expected, parser.instance_eval { @registrar_contact }
+    assert_equal_and_cached expected, parser, :registrar_contact
 
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar_contact
-    assert_equal  expected, parser.instance_eval { @registrar_contact }
+    assert_equal_and_cached expected, parser, :registrar_contact
   end
 
 end

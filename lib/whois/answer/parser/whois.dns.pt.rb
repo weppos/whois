@@ -35,7 +35,7 @@ module Whois
       class WhoisDnsPt < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /^Estado \/ Status:\s+(.+)\n/
+          if content_for_scanner =~ /^Estado \/ Status:\s+(.+)\n/
             case $1.downcase
               when "active" then :registered
               when "reserved" then :reserved
@@ -48,16 +48,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /^.* no match$/)
+          !!(content_for_scanner =~ /^.* no match$/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ / Creation Date .+?:\s+(.*)\n/
+          if content_for_scanner =~ / Creation Date .+?:\s+(.*)\n/
             DateTime.strptime($1, "%d/%m/%Y").to_time
           end
         end
@@ -68,7 +68,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map { |value| value.chomp(".") }
+          content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map { |value| value.chomp(".") }
         end
 
       end

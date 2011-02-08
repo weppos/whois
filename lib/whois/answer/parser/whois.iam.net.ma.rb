@@ -35,7 +35,7 @@ module Whois
       class WhoisIamNetMa < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,22 +43,22 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^%error 230 No Objects Found/)
+          !!(content_for_scanner =~ /^%error 230 No Objects Found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /domain:Created:(.+?)\n/
+          if content_for_scanner =~ /domain:Created:(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /domain:Updated:(.+?)\n/
+          if content_for_scanner =~ /domain:Updated:(.+?)\n/
             Time.parse($1)
           end
         end

@@ -35,7 +35,7 @@ module Whois
       class WhoisEenetEe < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,22 +43,22 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /^NOT FOUND:/)
+          !!(content_for_scanner =~ /^NOT FOUND:/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Record created on (.*)\n/
+          if content_for_scanner =~ /Record created on (.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Record changed on (.*)\n/
+          if content_for_scanner =~ /Record changed on (.*)\n/
             Time.parse($1)
           end
         end
@@ -67,7 +67,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers:\n((.+\n)+)\n/
+          if content_for_scanner =~ /Domain servers:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.chomp(".") }
           else
             []

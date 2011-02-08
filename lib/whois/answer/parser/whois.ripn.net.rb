@@ -35,7 +35,7 @@ module Whois
       class WhoisRipnNet < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /state:\s+(.+?)\n/
+          if content_for_scanner =~ /state:\s+(.+?)\n/
             $1.split(",").map(&:strip)
           else
             []
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No entries found/)
+          !!(content_for_scanner =~ /No entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
+          if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -60,7 +60,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /paid-till:\s+(.*)\n/
+          if content_for_scanner =~ /paid-till:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -73,7 +73,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.chomp(".") }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.chomp(".") }
         end
 
       end

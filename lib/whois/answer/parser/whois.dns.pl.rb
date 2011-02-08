@@ -35,7 +35,7 @@ module Whois
       class WhoisDnsPl < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,22 +43,22 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^No information available about domain name/)
+          !!(content_for_scanner =~ /^No information available about domain name/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /created:\s+(.+?)\n/
+          if content_for_scanner =~ /created:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /last modified:\s+(.+?)\n/
+          if content_for_scanner =~ /last modified:\s+(.+?)\n/
             Time.parse($1)
           end
         end
@@ -67,7 +67,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nameservers:\s+(.+)\n(.+)\n/).flatten.map do |value|
+          content_for_scanner.scan(/nameservers:\s+(.+)\n(.+)\n/).flatten.map do |value|
             value \
               .split(" ").first \
               .strip.chomp(".")

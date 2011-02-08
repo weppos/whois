@@ -31,7 +31,7 @@ module Whois
         property_not_supported :disclaimer
 
         property_supported :domain do
-          @domain ||= if registered? and content_for_scanner =~ /Domain:\s+(.*)\n/
+          if registered? and content_for_scanner =~ /Domain:\s+(.*)\n/
             $1
           elsif available? and content_for_scanner =~ /Domain (.+?) not found/
             $1
@@ -47,7 +47,7 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -55,16 +55,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available ||= !!(content_for_scanner =~ /Domain (.+?) not found/)
+          !!(content_for_scanner =~ /Domain (.+?) not found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created:\s+(.*)\n/
+          if content_for_scanner =~ /Created:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -75,33 +75,33 @@ module Whois
 
 
         property_supported :registrar do
-          @registrar ||= if content_for_scanner =~ /Registrar:\s+(.*)\n/
+          if content_for_scanner =~ /Registrar:\s+(.*)\n/
             Whois::Answer::Registrar.new(:id => $1, :name => $1)
           end
         end
 
 
         property_supported :registrant_contact do
-          @registrant_contact ||= if content_for_scanner =~ /Owner's handle:\s+(.*)\n/
+          if content_for_scanner =~ /Owner's handle:\s+(.*)\n/
             contact($1)
           end
         end
 
         property_supported :admin_contact do
-          @admin_contact ||= if content_for_scanner =~ /Administrative Contact's handle:\s+(.*)\n/
+          if content_for_scanner =~ /Administrative Contact's handle:\s+(.*)\n/
             contact($1)
           end
         end
 
         property_supported :technical_contact do
-          @technical_contact ||= if content_for_scanner =~ /Technical Contact's handle:\s+(.*)\n/
+          if content_for_scanner =~ /Technical Contact's handle:\s+(.*)\n/
             contact($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten
         end
 
 

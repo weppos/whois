@@ -35,7 +35,7 @@ module Whois
       class WhoisRegistroBr < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /No match for domain/)
+          !!(content_for_scanner =~ /No match for domain/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 

@@ -35,7 +35,7 @@ module Whois
       class WhoisNicPr < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,16 +43,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !(content_for_scanner =~ /^Domain: (.+?)\n/)
+          !(content_for_scanner =~ /^Domain: (.+?)\n/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Created on:(.+?)\n/
+          if content_for_scanner =~ /Created on:(.+?)\n/
             Time.parse($1)
           end
         end
@@ -60,7 +60,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expires on:(.+?)\n/
+          if content_for_scanner =~ /Expires on:(.+?)\n/
             Time.parse($1)
           end
         end

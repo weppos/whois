@@ -36,7 +36,7 @@ module Whois
 
         property_supported :status do
           # Two keys available: state and status.
-          @status ||= if content_for_scanner =~ /status:\s+(.+?)\n/
+          if content_for_scanner =~ /status:\s+(.+?)\n/
             case $1.downcase
               when "ok" then :registered
               when "inactive" then :inactive
@@ -49,28 +49,28 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /" not found./)
+          !!(content_for_scanner =~ /" not found./)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
+          if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /expires:\s+(.*)\n/
+          if content_for_scanner =~ /expires:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /modified:\s+(.*?)\n/
+          if content_for_scanner =~ /modified:\s+(.*?)\n/
             Time.parse($1)
           end
         end
@@ -83,7 +83,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first }
         end
 
       end

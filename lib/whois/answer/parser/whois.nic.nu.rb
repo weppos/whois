@@ -35,7 +35,7 @@ module Whois
       class WhoisNicNu < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Record status:\s+(.*)\n/
+          if content_for_scanner =~ /Record status:\s+(.*)\n/
             case $1.downcase
               when "active" then :registered
               else
@@ -47,35 +47,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /NO MATCH for domain/)
+          !!(content_for_scanner =~ /NO MATCH for domain/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Record created on (.+?).\n/
+          if content_for_scanner =~ /Record created on (.+?).\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Record last updated on (.+?).\n/
+          if content_for_scanner =~ /Record last updated on (.+?).\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Record expires on (.+?).\n/
+          if content_for_scanner =~ /Record expires on (.+?).\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
+          if content_for_scanner =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
             $1.split.map(&:strip)
           else
             []

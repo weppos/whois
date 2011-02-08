@@ -35,39 +35,39 @@ module Whois
       class WhoisNicSo < Base
 
         property_supported :status do
-          @status ||= content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
+          content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^Not found: (.+?)$/)
+          !!(content_for_scanner =~ /^Not found: (.+?)$/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Creation Date:\s+(.+)\n/
+          if content_for_scanner =~ /Creation Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Last Updated On:\s+(.+)\n/
+          if content_for_scanner =~ /Last Updated On:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
+          if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten
         end
 
       end

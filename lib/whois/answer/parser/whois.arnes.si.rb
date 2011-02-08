@@ -35,7 +35,7 @@ module Whois
       class WhoisArnesSi < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /status:\s+(.+)\n/
+          if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
               when "ok"   then :registered
               else
@@ -47,16 +47,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /% No entries found/)
+          !!(content_for_scanner =~ /% No entries found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /created:\s+(.*)\n/
+          if content_for_scanner =~ /created:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -64,14 +64,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /expire:\s+(.*)\n/
+          if content_for_scanner =~ /expire:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/nameserver:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/nameserver:\s+(.+)\n/).flatten
         end
 
       end

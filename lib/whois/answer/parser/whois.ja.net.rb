@@ -35,7 +35,7 @@ module Whois
       class WhoisJaNet < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,35 +43,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^No such domain (.+)/)
+          !!(content_for_scanner =~ /^No such domain (.+)/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /^Entry created:\n\s+(.+?)\n/
+          if content_for_scanner =~ /^Entry created:\n\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /^Entry updated:\n\s+(.+?)\n/
+          if content_for_scanner =~ /^Entry updated:\n\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /^Renewal date:\n\s+(.+?)\n/
+          if content_for_scanner =~ /^Renewal date:\n\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /^Servers:\n((.+\n)+)\n/
+          if content_for_scanner =~ /^Servers:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.split("\t").first }
           else
             []

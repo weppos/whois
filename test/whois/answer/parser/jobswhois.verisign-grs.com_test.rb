@@ -37,25 +37,21 @@ reserves the right to modify these terms at any time.
 EOS
 
     parser    = @klass.new(load_part('registered.txt'))
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
+    assert_equal_and_cached expected, parser, :disclaimer
 
     parser    = @klass.new(load_part('available.txt'))
-    assert_equal  expected, parser.disclaimer
-    assert_equal  expected, parser.instance_eval { @disclaimer }
+    assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
   def test_domain
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "goto.jobs"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = "u34jedzcq.jobs"
-    assert_equal  expected, parser.domain
-    assert_equal  expected, parser.instance_eval { @domain }
+    assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
@@ -67,109 +63,92 @@ EOS
   def test_referral_whois
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "whois.encirca.com"
-    assert_equal  expected, parser.referral_whois
-    assert_equal  expected, parser.instance_eval { @referral_whois }
+    assert_equal_and_cached expected, parser, :referral_whois
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.referral_whois
-    assert_equal  expected, parser.instance_eval { @referral_whois }
+    assert_equal_and_cached expected, parser, :referral_whois
   end
 
   def test_referral_url_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "http://www.encirca.com"
-    assert_equal  expected, parser.referral_url
-    assert_equal  expected, parser.instance_eval { @referral_url }
+    assert_equal_and_cached expected, parser, :referral_url
   end
 
   def test_referral_url_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.referral_url
-    assert_equal  expected, parser.instance_eval { @referral_url }
+    assert_equal_and_cached expected, parser, :referral_url
   end
 
 
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "ACTIVE"
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.status
-    assert_equal  expected, parser.instance_eval { @status }
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = true
-    assert_equal  expected, parser.available?
-    assert_equal  expected, parser.instance_eval { @available }
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
-    assert_equal  expected, parser.registered?
-    assert_equal  expected, parser.instance_eval { @registered }
+    assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2006-02-21")
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.created_on
-    assert_equal  expected, parser.instance_eval { @created_on }
+    assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2009-02-20")
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.updated_on
-    assert_equal  expected, parser.instance_eval { @updated_on }
+    assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2010-02-21")
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.expires_on
-    assert_equal  expected, parser.instance_eval { @expires_on }
+    assert_equal_and_cached expected, parser, :expires_on
   end
 
 
   def test_registrar_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.registrar
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
 
     assert_instance_of Whois::Answer::Registrar, expected
     assert_equal "ENCIRCA, INC", expected.name
@@ -178,8 +157,7 @@ EOS
   def test_registrar_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal  expected, parser.registrar
-    assert_equal  expected, parser.instance_eval { @registrar }
+    assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrar
@@ -197,20 +175,17 @@ EOS
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
     expected  = %w( ns2.registry.jobs ns1.registry.jobs )
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
   def test_nameservers_with_no_nameserver
     parser    = @klass.new(load_part('property_nameserver_no_nameserver.txt'))
     expected  = %w()
-    assert_equal  expected, parser.nameservers
-    assert_equal  expected, parser.instance_eval { @nameservers }
+    assert_equal_and_cached expected, parser, :nameservers
   end
 
 end

@@ -37,7 +37,7 @@ module Whois
       class WhoisNicUk < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
+          if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
             case $1.downcase
               when "registered until renewal date."         then :registered
               when "registration request being processed."  then :registered
@@ -53,35 +53,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /This domain name has not been registered/)
+          !!(content_for_scanner =~ /This domain name has not been registered/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /\s+Registered on:\s+(.*)\n/
+          if content_for_scanner =~ /\s+Registered on:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /\s+Last updated:\s+(.*)\n/
+          if content_for_scanner =~ /\s+Last updated:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /\s+Renewal date:\s+(.*)\n/
+          if content_for_scanner =~ /\s+Renewal date:\s+(.*)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
+          if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
             $1.split("\n").
               reject { |value| value =~ /No name servers listed/ }.
               map { |value| value.strip.split(/\s+/).first }
@@ -93,12 +93,16 @@ module Whois
 
         # NEWPROPERTY
         def valid?
-          @valid ||= !invalid?
+          cached_properties_fetch(:valid?) do
+            !invalid?
+          end
         end
 
         # NEWPROPERTY
         def invalid?
-          @invalid ||= !!(content_for_scanner =~ /This domain cannot be registered/)
+          cached_properties_fetch(:invalid?) do
+            !!(content_for_scanner =~ /This domain cannot be registered/)
+          end
         end
 
         # NEWPROPERTY

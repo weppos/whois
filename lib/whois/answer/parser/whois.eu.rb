@@ -35,7 +35,7 @@ module Whois
       class WhoisEu < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /Status:\s+AVAILABLE/)
+          !!(content_for_scanner =~ /Status:\s+AVAILABLE/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -70,7 +70,7 @@ module Whois
         # 
         # In both cases, always return only the name.
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Nameservers:\n((.+\n)+)\n/
+          if content_for_scanner =~ /Nameservers:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.split(" ").first }
           else
             []

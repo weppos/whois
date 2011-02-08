@@ -35,7 +35,7 @@ module Whois
       class WhoisNicBo < Base
 
         property_supported :domain do
-          @domain ||= if content_for_scanner =~ /Dominio:(.*)\n/
+          if content_for_scanner =~ /Dominio:(.*)\n/
             $1.strip
           end
         end
@@ -44,7 +44,7 @@ module Whois
 
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -52,16 +52,16 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= domain.nil?
+          domain.nil?
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Fecha de registro:(.*)\n/
+          if content_for_scanner =~ /Fecha de registro:(.*)\n/
             Time.parse($1)
           end
         end
@@ -69,7 +69,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Fecha de vencimiento:(.*)\n/
+          if content_for_scanner =~ /Fecha de vencimiento:(.*)\n/
             Time.parse($1)
           end
         end

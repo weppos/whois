@@ -35,7 +35,7 @@ module Whois
       class WhoisCiraCa < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Domain status:\s+(.*?)\n/
+          if content_for_scanner =~ /Domain status:\s+(.*?)\n/
             case $1.downcase
               # schema-2
               when "registered"       then :registered
@@ -54,17 +54,17 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= (status == :available)
+          (status == :available)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
           # schema-2
-          @created_on ||= if content_for_scanner =~ /Creation date:\s+(.*?)\n/
+          if content_for_scanner =~ /Creation date:\s+(.*?)\n/
             Time.parse($1)
           # schema-1
           elsif content_for_scanner =~ /Approval date:\s+(.*?)\n/
@@ -74,14 +74,14 @@ module Whois
 
         # TODO: Not supported in schema-2?
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /Updated date:\s+(.*?)\n/
+          if content_for_scanner =~ /Updated date:\s+(.*?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
           # schema-2
-          @expires_on ||= if content_for_scanner =~ /Expiry date:\s+(.*?)\n/
+          if content_for_scanner =~ /Expiry date:\s+(.*?)\n/
             Time.parse($1)
           # schema-1
           elsif content_for_scanner =~ /Renewal date:\s+(.*?)\n/
@@ -91,7 +91,7 @@ module Whois
 
 
         property_supported :registrar do
-          @registrar ||= if content_for_scanner =~ /^Registrar:\n(.*\n?)^\n/m
+          if content_for_scanner =~ /^Registrar:\n(.*\n?)^\n/m
             match = $1
             id    = match =~ /Number:\s+(.*)$/ ? $1.strip : nil
             name  = match =~ /Name:\s+(.*)$/   ? $1.strip : nil
@@ -101,7 +101,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
+          if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
             $1.split("\n").map { |value| value.split(" ").first }
           else
             []

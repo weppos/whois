@@ -16,19 +16,49 @@ describe Whois::Answer::Parser::Base do
 
     it "returns the hash for given class when class argument is passed" do
       with_registry do
-        test_parser = Class.new(klass)
-        klass.send(:class_variable_set, :@@property_registry, { test_parser => {} })
+        pklass = Class.new(klass)
+        klass.send(:class_variable_set, :@@property_registry, { pklass => {} })
 
-        klass.property_registry[test_parser].should == Hash.new
+        klass.property_registry[pklass].should == Hash.new
       end
     end
 
     it "lazy initializes the hash for given class" do
       with_registry do
-        test_parser = Class.new(klass)
+        pklass = Class.new(klass)
         klass.send(:class_variable_set, :@@property_registry, Hash.new)
-        klass.property_registry[test_parser]
+        klass.property_registry[pklass]
         klass.send(:class_variable_get, :@@property_registry).should == {}
+      end
+    end
+  end
+
+  describe ".property_register" do
+    it "defines a public method called PROPERTY when block is given" do
+      with_registry do
+        pklass = Class.new(klass)
+        pklass.public_instance_methods.should_not include(:greetings)
+        pklass.property_register(:greetings, :supported) {}
+        pklass.public_instance_methods.should include(:greetings)
+
+        pklass = Class.new(klass)
+        pklass.public_instance_methods.should_not include(:greetings)
+        pklass.property_register(:greetings, :supported)
+        pklass.public_instance_methods.should_not include(:greetings)
+      end
+    end
+
+    it "defines a private method called internal_PROPERTY when block is given" do
+      with_registry do
+        pklass = Class.new(klass)
+        pklass.private_instance_methods.should_not include(:internal_greetings)
+        pklass.property_register(:greetings, :supported) {}
+        pklass.private_instance_methods.should include(:internal_greetings)
+
+        pklass = Class.new(klass)
+        pklass.private_instance_methods.should_not include(:internal_greetings)
+        pklass.property_register(:greetings, :supported)
+        pklass.private_instance_methods.should_not include(:internal_greetings)
       end
     end
   end

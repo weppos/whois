@@ -35,22 +35,22 @@ module Whois
       class WhoisDomregLt < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status:\s+(.*)\n/
+          if content_for_scanner =~ /Status:\s+(.*)\n/
             $1.to_sym
           end
         end
 
         property_supported :available? do
-          @available  ||= (status == :available)
+          (status == :available)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /Registered:\s+(.*)\n/
+          if content_for_scanner =~ /Registered:\s+(.*)\n/
             Time.parse($1)
           end
         end
@@ -61,7 +61,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Nameserver:\s+(.*)\n/).flatten.map { |value| value.split("\t").first }
+          content_for_scanner.scan(/Nameserver:\s+(.*)\n/).flatten.map { |value| value.split("\t").first }
         end
 
       end

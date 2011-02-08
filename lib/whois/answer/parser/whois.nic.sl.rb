@@ -35,7 +35,7 @@ module Whois
       class WhoisNicSl < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,22 +43,22 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /Domain not found, marked private, or error in your query/)
+          !!(content_for_scanner =~ /Domain not found, marked private, or error in your query/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /^Registration Date:\s+(.+)\n/
+          if content_for_scanner =~ /^Registration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @expires_on ||= if content_for_scanner =~ /^Last Updated:\s+(.+)\n/
+          if content_for_scanner =~ /^Last Updated:\s+(.+)\n/
             if $1 != "0000-00-00"
               Time.parse($1)
             end
@@ -66,14 +66,14 @@ module Whois
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /^Expiration Date:\s+(.+)\n/
+          if content_for_scanner =~ /^Expiration Date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/^Name Server:\s+(.+)\n/).flatten.map(&:downcase)
+          content_for_scanner.scan(/^Name Server:\s+(.+)\n/).flatten.map(&:downcase)
         end
 
       end

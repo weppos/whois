@@ -35,7 +35,7 @@ module Whois
       class WhoisNicIm < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /was not found/)
+          !!(content_for_scanner =~ /was not found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -56,14 +56,14 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /Expiry Date:\s+(.*?)\n/
+          if content_for_scanner =~ /Expiry Date:\s+(.*?)\n/
             Time.parse($1.gsub("/", "-"))
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/Name Server:\s(.*)\n/).flatten.map { |value| value.chomp(".") }
+          content_for_scanner.scan(/Name Server:\s(.*)\n/).flatten.map { |value| value.chomp(".") }
         end
 
       end

@@ -35,7 +35,7 @@ module Whois
       class WhoisAdamsnamesTc < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /is not registered/)
+          !!(content_for_scanner =~ /is not registered/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -59,7 +59,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/\s+ns\s+(.*?)\s+\n/).flatten
+          content_for_scanner.scan(/\s+ns\s+(.*?)\s+\n/).flatten
         end
 
       end

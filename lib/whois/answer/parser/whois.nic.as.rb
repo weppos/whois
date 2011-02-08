@@ -35,7 +35,7 @@ module Whois
       class WhoisNicAs < Base
 
         property_supported :status do
-          @status ||= if available?
+          if available?
             :available
           else
             :registered
@@ -43,11 +43,11 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /Domain Not Found/)
+          !!(content_for_scanner =~ /Domain Not Found/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
@@ -59,7 +59,7 @@ module Whois
 
 
         property_supported :nameservers do
-          @nameservers ||= if content_for_scanner =~ /Nameservers:\s((.+\n)+)\n/
+          if content_for_scanner =~ /Nameservers:\s((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.split(" ").first }.compact
           else
             []

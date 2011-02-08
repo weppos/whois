@@ -35,7 +35,7 @@ module Whois
       class WhoisSrsNetNz < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /query_status:\s(.+)\n/
+          if content_for_scanner =~ /query_status:\s(.+)\n/
             case $1.downcase
               when /active/               then :registered
               when /available/            then :available
@@ -49,35 +49,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= (status == :available)
+          (status == :available)
         end
 
         property_supported :registered? do
-          @registered ||= (status == :registered)
+          (status == :registered)
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /domain_dateregistered:\s(.+)\n/
+          if content_for_scanner =~ /domain_dateregistered:\s(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /domain_datelastmodified:\s(.+)\n/
+          if content_for_scanner =~ /domain_datelastmodified:\s(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /domain_datebilleduntil:\s(.+)\n/
+          if content_for_scanner =~ /domain_datebilleduntil:\s(.+)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/ns_name_[\d]+:\s(.+)\n/).flatten
+          content_for_scanner.scan(/ns_name_[\d]+:\s(.+)\n/).flatten
         end
 
       end

@@ -35,7 +35,7 @@ module Whois
       class WhoisThnicCoTh < Base
 
         property_supported :status do
-          @status ||= if content_for_scanner =~ /Status: (.+?)\n/
+          if content_for_scanner =~ /Status: (.+?)\n/
             case $1.downcase
               when "active" then :registered
               else
@@ -47,35 +47,35 @@ module Whois
         end
 
         property_supported :available? do
-          @available  ||= !!(content_for_scanner =~ /^% No entries found for the selected source/)
+          !!(content_for_scanner =~ /^% No entries found for the selected source/)
         end
 
         property_supported :registered? do
-          @registered ||= !available?
+          !available?
         end
 
 
         property_supported :created_on do
-          @created_on ||= if content_for_scanner =~ /^Created Date: (.+?)\n/
+          if content_for_scanner =~ /^Created Date: (.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          @updated_on ||= if content_for_scanner =~ /^Updated Date: (.+?)\n/
+          if content_for_scanner =~ /^Updated Date: (.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          @expires_on ||= if content_for_scanner =~ /^Exp Date: (.+?)\n/
+          if content_for_scanner =~ /^Exp Date: (.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :nameservers do
-          @nameservers ||= content_for_scanner.scan(/^Name Server: (.+)\n/).flatten.map(&:downcase)
+          content_for_scanner.scan(/^Name Server: (.+)\n/).flatten.map(&:downcase)
         end
 
       end
