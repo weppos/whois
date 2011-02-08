@@ -2,11 +2,11 @@
 
 == master
 
-* SERVER: Added .ae.org, .ar.com, .kr.com TLD definitions (whois.centralnic.net).
+* SERVER: Added .AE.ORG, .AR.COM, .KR.COM TLD definitions (whois.centralnic.net).
 
-* SERVER: Removed invalid .web.com TLD definition (whois.centralnic.net).
+* SERVER: Removed invalid .WEB.COM TLD definition (whois.centralnic.net).
 
-* SERVER: Updated .ee TLD definition and corresponding parser (#64).
+* SERVER: Updated .EE TLD definition and corresponding parser (#64).
 
 * SERVER: Sync definitions with Debian whois 5.0.10:
     * Added new IPv4 allocations.
@@ -24,14 +24,16 @@
     * .XN--XKC2DL3A5EE0H (இந்தியா, India)
     * .XN--YFRO4I67O (新加坡, Singapore)
 
-* NEW: Added simple ae.org, ar.com, br.com, cn.com, de.com, eu.com,
-  gb.com, gb.net, hu.com, jpn.com, kr.com, no.com, qc.com, ru.com,
-  sa.com, se.com, se.net, uk.com, uk.net, us.com, uy.com, web.com,
-  za.com TLD parser (whois.centralnic.net).
+* SERVER: Changed .KR TLD definition to whois.kr.
+
+* NEW: Added simple AE.ORG, AR.COM, BR.COM, CN.COM, DE.COM, EU.COM,
+  GB.COM, GB.NET, HU.COM, JPN.COM, KR.COM, NO.COM, QC.COM, RU.COM,
+  SA.COM, SE.COM, SE.NET, UK.COM, UK.NET, US.COM, UY.COM, WEB.COM,
+  ZA.COM TLD parser (whois.centralnic.net).
 
 * NEW: Added ability to bind a WHOIS query to a specific local address and port (#40).
 
-* NEW: Added simple .so TLD parser (whois.nic.so) (#57).
+* NEW: Added simple .SO TLD parser (whois.nic.so) (#57).
 
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
