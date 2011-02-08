@@ -315,9 +315,13 @@ Whois::Server.define :tld, ".org.za", "whois.org.za"
 Whois::Server.define :tld, ".za", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".zm", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".zw", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, ".xn--3e0b707e", "whois.kr"
+Whois::Server.define :tld, ".xn--45brj9c", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
 Whois::Server.define :tld, ".xn--fiqz9s", "cwhois.cnnic.cn"
+Whois::Server.define :tld, ".xn--fpcrj9c3d", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--fzc2c9e2c", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, ".xn--gecrj9c", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
 Whois::Server.define :tld, ".xn--kprw13d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--kpry57d", "whois.twnic.net.tw"
@@ -331,3 +335,9 @@ Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
 Whois::Server.define :tld, ".xn--wgbl6a", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
+Whois::Server.define :tld, "xn--h2brj9c", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, "xn--mgbbh1a71e", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, "xn--ogbpf8fl", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, "xn--s9brj9c", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, "xn--xkc2dl3a5ee0h", nil, {:adapter=>Whois::Server::Adapters::None}
+Whois::Server.define :tld, "xn--yfro4i67o", "whois.sgnic.sg"

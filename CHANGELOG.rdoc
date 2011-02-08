@@ -11,7 +11,18 @@
 * SERVER: Sync definitions with Debian whois 5.0.10:
     * Added new IPv4 allocations.
 
-* SERVER: Added the .xn--wgbl6a TLD definition (#63).
+* SERVER: Added the following 11 new IDN TLD:
+    * .XN--WGBL6A (قطر, Qatar) (#63)
+    * .XN--3E0B707E (한국, Korea, Republic of)
+    * .XN--45BRJ9C (.ভারত, India)
+    * .XN--FPCRJ9C3D (భారత్, India)
+    * .XN--GECRJ9C (ભારત, India)
+    * .XN--H2BRJ9C (भारत, India)
+    * .XN--MGBBH1A71E (بھارت, India)
+    * .XN--OGBPF8FL (سورية, Syrian Arab Republic)
+    * .XN--S9BRJ9C (ਭਾਰਤ, India)
+    * .XN--XKC2DL3A5EE0H (இந்தியா, India)
+    * .XN--YFRO4I67O (新加坡, Singapore)
 
 * NEW: Added simple ae.org, ar.com, br.com, cn.com, de.com, eu.com,
   gb.com, gb.net, hu.com, jpn.com, kr.com, no.com, qc.com, ru.com,
