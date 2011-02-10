@@ -11,7 +11,7 @@
 * SERVER: Sync definitions with Debian whois 5.0.10:
     * Added new IPv4 allocations.
 
-* SERVER: Added the following 11 new IDN TLD:
+* SERVER: Added the following 12 new IDN TLD:
     * .XN--WGBL6A (قطر, Qatar) (#63)
     * .XN--3E0B707E (한국, Korea, Republic of)
     * .XN--45BRJ9C (.ভারত, India)
@@ -23,6 +23,7 @@
     * .XN--S9BRJ9C (ਭਾਰਤ, India)
     * .XN--XKC2DL3A5EE0H (இந்தியா, India)
     * .XN--YFRO4I67O (新加坡, Singapore)
+    * .XN--CLCHC0EA0B2G2A9GCD (சிங்கப்பூர், Singapore)
 
 * SERVER: Changed .KR TLD definition to whois.kr.
 

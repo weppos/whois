@@ -341,3 +341,4 @@ Whois::Server.define :tld, "xn--ogbpf8fl", nil, {:adapter=>Whois::Server::Adapte
 Whois::Server.define :tld, "xn--s9brj9c", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, "xn--xkc2dl3a5ee0h", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, "xn--yfro4i67o", "whois.sgnic.sg"
+Whois::Server.define :tld, "xn--clchc0ea0b2g2a9gcd", "whois.sgnic.sg"
