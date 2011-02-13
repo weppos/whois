@@ -38,6 +38,8 @@
 
 * NEW: Property memoization (#18)
 
+* NEW: whois.ripn.net now supports #registry and #admin_contact (#72).
+
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
 * CHANGED: Switched from RDoc to YARDoc (#3).
