@@ -23,6 +23,11 @@ module Whois
       #
       # Provides ability to query PIR WHOIS interfaces.
       #
+      # The following WHOIS servers are currently known
+      # to require the Pir adapter:
+      #
+      # - whois.publicinterestregistry.net
+      #
       class Pir < Base
 
         # Executes a WHOIS query to the PIR WHOIS interface,
@@ -33,8 +38,8 @@ module Whois
         # @return [void]
         #
         def request(string)
-          response = query_the_socket("FULL #{string}", "whois.publicinterestregistry.net", DEFAULT_WHOIS_PORT)
-          buffer_append response, "whois.publicinterestregistry.net"
+          response = query_the_socket("FULL #{string}", host, DEFAULT_WHOIS_PORT)
+          buffer_append response, host
 
           if endpoint = extract_referral(response)
             response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)

@@ -23,6 +23,14 @@ module Whois
       #
       # Provides ability to query Verisign WHOIS interfaces.
       #
+      # The following WHOIS servers are currently known
+      # to require the Verisign adapter:
+      #
+      # - whois.nic.tv
+      # - whois.crsnic.net
+      # - jobswhois.verisign-grs.com
+      # - whois.nic.cc
+      #
       class Verisign < Base
 
         # Executes a WHOIS query to the Verisign WHOIS interface,

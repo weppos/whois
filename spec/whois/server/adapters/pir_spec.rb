@@ -3,7 +3,7 @@ require "spec_helper"
 describe Whois::Server::Adapters::Pir do
 
   before(:each) do
-    @definition = [:tld, ".test", "whois.test", {}]
+    @definition = [:tld, ".test", "whois.publicinterestregistry.net", {}]
     @server = klass.new(*@definition)
   end
 

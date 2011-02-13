@@ -3,7 +3,7 @@ require "spec_helper"
 describe Whois::Server::Adapters::Afilias do
 
   before(:each) do
-    @definition = [:tld, ".test", "whois.test", {}]
+    @definition = [:tld, ".test", "whois.afilias-grs.info", {}]
     @server = klass.new(*@definition)
   end
 
