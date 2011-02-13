@@ -47,7 +47,14 @@ module Whois
 
 
         property_supported :status do
-          node("Status") { |raw| raw.downcase.to_sym }
+          case node("Status").to_s.downcase
+          when "ok", "active"
+            :registered
+          when "available"
+            :available
+          else
+            Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
+          end
         end
 
         property_supported :available? do

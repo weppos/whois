@@ -61,6 +61,8 @@
 
 * CHANGED: Whois::Answer::Parser creates a missing method the first time it is invoked to increase performance.
 
+* CHANGED: whois.nic.it parser raises on invalid #status.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
