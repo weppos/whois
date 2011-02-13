@@ -182,6 +182,24 @@ module Whois
       end
 
 
+      # @group Methods
+
+      # Collects and returns all the contacts from all the answer parts.
+      #
+      # @return [Array<Whois::Answer::Contact>]
+      #
+      # @see Whois::Answer#contacts
+      # @see Whois::Answer::Parser::Base#contacts
+      #
+      def contacts
+        parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
+      end
+
+      # @endgroup
+
+
+      # @group Response
+
       # Loop through all the answer parts to check if at least
       # one part changed.
       #
@@ -209,20 +227,8 @@ module Whois
         end
 
         equal?(other) ||
-        parsers.size == other.parsers.size && all_with_args?(parsers, other.parsers) { |one, two| one.unchanged?(two) }
+        parsers.size == other.parsers.size && all_in_parallel?(parsers, other.parsers) { |one, two| one.unchanged?(two) }
       end
-
-      # Collects and returns all the contacts from all the answer parts.
-      #
-      # @return [Array<Whois::Answer::Contact>]
-      #
-      # @see Whois::Answer#contacts
-      # @see Whois::Answer::Parser::Base#contacts
-      #
-      def contacts
-        parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
-      end
-
 
       # Loop through all the parts to check if at least
       # one part is a throttle response.
@@ -247,6 +253,8 @@ module Whois
       def incomplete?
         parsers.any?(&:incomplete?)
       end
+
+      # @endgroup
 
 
       private
@@ -344,7 +352,7 @@ module Whois
           nil
         end
 
-        def all_with_args?(*args)
+        def all_in_parallel?(*args)
           count = args.first.size
           index = 0
 

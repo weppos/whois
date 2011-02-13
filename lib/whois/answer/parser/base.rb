@@ -244,8 +244,7 @@ module Whois
         end
 
 
-
-        # @group Methods
+        # @group Properties
 
         Whois::Answer::Parser::PROPERTIES.each do |property|
           property_not_implemented(property)
@@ -255,6 +254,26 @@ module Whois
 
 
         # @group Methods
+
+        # Collects and returns all the available contacts.
+        #
+        # @return [Array<Whois::Answer::Contact>]
+        #
+        # @see Whois::Answer#contacts
+        # @see Whois::Answer::Parser#contacts
+        #
+        def contacts
+          contacts = []
+          [:registrant_contact, :admin_contact, :technical_contact].each do |property|
+            contacts << send(property) if property_supported?(property)
+          end
+          contacts.flatten.compact
+        end
+
+        # @endgroup
+
+
+        # @group Response
 
         # Checks whether the content of this part is different than +other+.
         #
@@ -295,26 +314,6 @@ module Whois
           equal?(other) ||
           content_for_scanner == other.content_for_scanner
         end
-
-        # Collects and returns all the available contacts.
-        #
-        # @return [Array<Whois::Answer::Contact>]
-        #
-        # @see Whois::Answer#contacts
-        # @see Whois::Answer::Parser#contacts
-        #
-        def contacts
-          contacts = []
-          [:registrant_contact, :admin_contact, :technical_contact].each do |property|
-            contacts << send(property) if property_supported?(property)
-          end
-          contacts.flatten.compact
-        end
-
-        # @endgroup
-
-
-        # @group Response
 
         # Checks whether this is a throttle response.
         # The default implementation always returns +nil+.
