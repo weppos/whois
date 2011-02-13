@@ -71,16 +71,15 @@ module Whois
     # @return [Boolean]
     def ==(other)
       if equal?(other)
-        return true
-      end
-      if other.is_a?(self.class)
-        return to_s == other.to_s
-      end
-      if other.is_a?(String)
+        true
+      elsif other.is_a?(self.class)
+        to_s == other.to_s
+      elsif other.is_a?(String)
         Whois.deprecate "Comparing an answer with a String is deprecated and will be removed in Whois 2.1."
-        return to_s == other.to_s
+        to_s == other.to_s
+      else
+        false
       end
-      false
     end
 
     alias_method :eql?, :==

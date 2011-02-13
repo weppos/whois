@@ -74,6 +74,17 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     assert_equal_and_cached expected, parser, :expires_on
   end
 
+  def test_registrar
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = Whois::Answer::Registrar.new(:id => "RUCENTER-REG-RIPN")
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+  end
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
@@ -89,6 +100,21 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
     expected  = %w( ns.masterhost.ru ns1.masterhost.ru ns2.masterhost.ru )
     assert_equal_and_cached expected, parser, :nameservers
+  end
+
+  def test_admin_contact
+    parser    = @klass.new(load_part('registered.txt'))
+
+    expected  = Whois::Answer::Contact.new(
+      :type         => Whois::Answer::Contact::TYPE_ADMIN,
+      :organization => 'Google Inc',
+      :phone        => '+1 650 330 0100',
+      :fax          => '+1 650 618 8571',
+      :email        => 'dns-admin@google.com',
+    )
+
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
 end
@@ -158,6 +184,17 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
     assert_equal_and_cached expected, parser, :expires_on
   end
 
+  def test_registrar
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = Whois::Answer::Registrar.new(:id => "RUCENTER-REG-FID")
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal  expected, parser.registrar
+    assert_equal  expected, parser.instance_eval { @registrar }
+  end
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
@@ -167,6 +204,21 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
+  end
+
+  def test_admin_contact
+    parser    = @klass.new(load_part('registered.txt'))
+
+    expected  = Whois::Answer::Contact.new(
+      :type         => Whois::Answer::Contact::TYPE_ADMIN,
+      :name         => 'Private Person',
+      :phone        => '+7 495 9681807',
+      :fax          => '+7 495 9681807',
+      :email        => 'cis@cis.su',
+    )
+
+    assert_equal  expected, parser.admin_contact
+    assert_equal  expected, parser.instance_eval { @admin_contact }
   end
 
 end
