@@ -40,6 +40,9 @@
 
 * NEW: whois.ripn.net now supports #registry and #admin_contact (#72).
 
+* NEW: Added support for $ gem test and Gem Testers
+  See http://www.engineyard.com/blog/2011/introducing-gem-testers/
+
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
 * CHANGED: Switched from RDoc to YARDoc (#3).
@@ -52,8 +55,7 @@
 
 * CHANGED: Renamed Whois::Server::Adapters::Base#append_to_buffer to buffer_append.
 
-* CHANGED: Whois::Answer::Parser::Base#throttle? returns false to differentiate
-  the abstract method from a real implementation (that returns true/false).
+* CHANGED: Whois::Answer::Parser::Base#throttle? returns false to differentiate the abstract method from a real implementation (that returns true/false).
 
 * CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (#66)
 

@@ -18,7 +18,8 @@ end
 
 
 # Run test by default.
-task :default => [:rspec, :test]
+task :default => :test
+task :test => [:rspec, :testunit]
 
 # This builds the actual gem. For details of what all these options
 # mean, and other ones you can add, check the documentation here:
@@ -46,7 +47,9 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files  = Dir.glob("*.rdoc")
   s.rdoc_options      = %w( --main README.rdoc )
 
-  s.files             = Dir.glob("*.{rdoc,gemspec}") + Dir.glob("{bin,lib}/**/*") + %w( LICENSE )
+  s.files             = %w( Rakefile LICENSE .gemtest .rspec .yardopts ) +
+                        Dir.glob("*.{rdoc,gemspec}") +
+                        Dir.glob("{bin,lib,test,spec}/**/*")
   s.executables       = ["ruby-whois"]
   s.require_paths     = ["lib"]
 
@@ -79,7 +82,7 @@ end
 RSpec::Core::RakeTask.new(:rspec)
 
 # Run all the tests in the /test folder
-Rake::TestTask.new do |t|
+Rake::TestTask.new(:testunit) do |t|
   t.libs << "test"
   t.test_files = FileList["test/**/*_test.rb"]
   t.verbose = true
