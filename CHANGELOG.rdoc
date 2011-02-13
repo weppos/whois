@@ -86,6 +86,8 @@
 * FIXED: Whois::Answer#respond_to? and Whois::Answer::Parser#respond_to?
   should keep METHODS and PROPERTIES into consideration.
 
+* FIXED: whois.nic.fr must support "redemption" status.
+
 === BC
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.

@@ -40,6 +40,8 @@ module Whois
               when "active" then :registered
               when "registered" then :registered
               # NEWSTATUS
+              when "redemption" then :redemption
+              # NEWSTATUS
               when "frozen" then :frozen
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")

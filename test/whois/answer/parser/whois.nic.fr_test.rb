@@ -30,6 +30,10 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
     parser    = @klass.new(load_part('property_status_missing.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
+
+    parser    = @klass.new(load_part('property_status_redemption.txt'))
+    expected  = :redemption
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
@@ -44,6 +48,10 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
     parser    = @klass.new(load_part('property_status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
+
+    parser    = @klass.new(load_part('property_status_redemption.txt'))
+    expected  = false
+    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
@@ -56,6 +64,10 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
     assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('property_status_registered.txt'))
+    expected  = true
+    assert_equal_and_cached expected, parser, :registered?
+
+    parser    = @klass.new(load_part('property_status_redemption.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
   end

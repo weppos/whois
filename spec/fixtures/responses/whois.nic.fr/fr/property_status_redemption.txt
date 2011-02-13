@@ -1,0 +1,82 @@
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
+%% Rights restricted by copyright.
+%% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
+%%
+%% Use '-h' option to obtain more information about this service.
+%%
+%% [80.117.224.117 REQUEST] >> behotel.fr
+%%
+%% RL Net [##########] - RL IP [#########.]
+%%
+
+domain:      behotel.fr
+status:      REDEMPTION
+pending:     DELETE
+hold:        YES
+holder-c:    AS1245-FRNIC
+admin-c:     AS1245-FRNIC
+tech-c:      OVH5-FRNIC
+zone-c:      NFC1-FRNIC
+registrar:   OVH
+anniversary: 11/01
+created:     11/01/2010
+last-update: 09/02/2011
+deleted:     09/02/2011
+source:      FRNIC
+
+registrar:   OVH
+type:        Isp Option 1
+address:     2 Rue Kellermann
+address:     BP 80157
+address:     ROUBAIX CEDEX 1
+country:     FR
+phone:       +33 8 99 70 17 61
+fax-no:      +33 3 20 83 99 28
+e-mail:      support@ovh.com
+website:     http://www.ovh.fr
+anonymous:   NO
+registered:  21/10/1999
+source:      FRNIC
+
+nic-hdl:     AS1245-FRNIC
+type:        ORGANIZATION
+contact:     AUTREMENT SAS
+address:     AUTREMENT SAS
+address:     27, rue Fongate
+address:     13006 Marseille
+country:     FR
+phone:       +33 9 64 18 77 98
+fax-no:      +33 4 96 17 57 51
+e-mail:      nic-admin@autrementlemail.com
+changed:     11/01/2010 nic@nic.fr
+anonymous:   NO
+obsoleted:   NO
+idstatus:    ok
+source:      FRNIC
+
+nic-hdl:     OVH5-FRNIC
+type:        ROLE
+contact:     OVH NET
+address:     OVH
+address:     140, quai du Sartel
+address:     59100 Roubaix
+country:     FR
+phone:       +33 8 99 70 17 61
+e-mail:      tech@ovh.net
+trouble:     Information: http://www.ovh.fr
+trouble:     Questions:  mailto:tech@ovh.net
+trouble:     Spam: mailto:abuse@ovh.net
+admin-c:     OK217-FRNIC
+tech-c:      OK217-FRNIC
+notify:      tech@ovh.net
+changed:     11/10/2006 tech@ovh.net
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+
