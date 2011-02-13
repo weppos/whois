@@ -67,7 +67,7 @@ module Whois
   # @endgroup
 
 
-  # @group Server known object, definition unavailable
+  # @group Server definition not available
 
   # Raised when we know about a specific functionality
   # but this functionality has not been implemented yet.
