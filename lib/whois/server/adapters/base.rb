@@ -134,10 +134,13 @@ module Whois
 
           # Store an answer part in {#buffer}.
           #
+          # @param  [String] body
+          # @param  [String] host
           # @return [void]
+          #
           # @api public
-          def buffer_append(response, host)
-            @buffer << Whois::Answer::Part.new(response, host)
+          def buffer_append(body, host)
+            @buffer << Whois::Answer::Part.new(body, host)
           end
 
           # @api internal
