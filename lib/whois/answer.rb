@@ -136,17 +136,6 @@ module Whois
       @parser ||= Parser.new(self)
     end
 
-
-    # Returns a Hash containing all supported properties for this answer
-    # along with corresponding values.
-    #
-    # @return [{ Symbol => Object }]
-    def properties
-      hash = {}
-      Parser::PROPERTIES.each { |property| hash[property] = send(property) }
-      hash
-    end
-
     # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
     # is supported by any available parser for this answer.
     #
@@ -159,6 +148,38 @@ module Whois
       parser.property_supported?(property)
     end
 
+
+    # @group Properties
+
+    # Returns a Hash containing all supported properties for this answer
+    # along with corresponding values.
+    #
+    # @return [{ Symbol => Object }]
+    def properties
+      hash = {}
+      Parser::PROPERTIES.each { |property| hash[property] = send(property) }
+      hash
+    end
+
+    # @endgroup
+
+
+    # @group Methods
+
+    # Collects and returns all the contacts.
+    #
+    # @return [Array<Whois::Answer::Contact>]
+    #
+    # @see Whois::Answer::Parser#contacts
+    #
+    def contacts
+      parser.contacts
+    end
+
+    # @endgroup
+
+
+    # @group Response
 
     # Checks whether this {Answer} is different than +other+.
     #
@@ -198,16 +219,6 @@ module Whois
       parser.unchanged?(other.parser)
     end
 
-    # Collects and returns all the contacts.
-    #
-    # @return [Array<Whois::Answer::Contact>]
-    #
-    # @see Whois::Answer::Parser#contacts
-    #
-    def contacts
-      parser.contacts
-    end
-
 
     # Checks whether this is a throttle response.
     #
@@ -228,6 +239,8 @@ module Whois
     def incomplete?
       parser.incomplete?
     end
+
+    # @endgroup
 
 
     private

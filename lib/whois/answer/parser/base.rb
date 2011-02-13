@@ -250,7 +250,7 @@ module Whois
           property_not_implemented(property)
         end
 
-        # @properties
+        # @endgroup
 
 
         # @group Methods
