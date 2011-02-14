@@ -76,8 +76,14 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.split(" ").first }
+        property_supported :nameservers do
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+            if line =~ /(.+) \((.+)\)/
+              Answer::Nameserver.new($1, $2)
+            else
+              Answer::Nameserver.new(line.strip)
+            end
+          end
         end
 
       end

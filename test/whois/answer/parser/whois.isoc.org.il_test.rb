@@ -75,7 +75,7 @@ class AnswerParserWhoisIsocOrgIl < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = %w( ns.isoc.org.il grappa.isoc.org.il aristo.tau.ac.il relay.huji.ac.il drns.isoc.org.il sps-pb.isc.org )
+    expected  = %w( ns.isoc.org.il grappa.isoc.org.il aristo.tau.ac.il relay.huji.ac.il drns.isoc.org.il sps-pb.isc.org ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('status_available.txt'))

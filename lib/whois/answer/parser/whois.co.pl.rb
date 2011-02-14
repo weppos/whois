@@ -83,8 +83,10 @@ module Whois
         property_not_supported :technical_contact
 
 
-        property_supported :nameservers do # TODO
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten
+        property_supported :nameservers do
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |name|
+            Answer::Nameserver.new(name)
+          end
         end
 
       end

@@ -63,7 +63,7 @@ class AnswerParserWhoisDnsLuTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -73,7 +73,9 @@ class AnswerParserWhoisDnsLuTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers_with_ip
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
-    expected  = %w( ns1.arbed.lu ns1.pt.lu ns2.arbed.lu )
+    names     = %w( ns1.arbed.lu ns1.pt.lu ns2.arbed.lu )
+    ipv4s     = ["194.154.218.10", nil, "194.154.218.12"]
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 

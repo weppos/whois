@@ -68,7 +68,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns2.google.com ns4.google.com ns3.google.com ns1.google.com )
+    expected  = %w( ns2.google.com ns4.google.com ns3.google.com ns1.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -78,7 +78,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers_uppercase
     parser    = @klass.new(load_part('property_nameservers_uppercase.txt'))
-    expected  = %w( ns10.uadns.com ns11.uadns.com ns12.uadns.com )
+    expected  = %w( ns10.uadns.com ns11.uadns.com ns12.uadns.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 
