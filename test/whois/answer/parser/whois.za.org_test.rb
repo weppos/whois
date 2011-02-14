@@ -68,7 +68,7 @@ class AnswerParserWhoisZaOrgTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( blade.wcic.co.za sabertooth.wcic.co.za ns2.iafrica.com )
+    expected  = %w( blade.wcic.co.za sabertooth.wcic.co.za ns2.iafrica.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
