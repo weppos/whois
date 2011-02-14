@@ -115,7 +115,7 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
     names     = %w( ns.masterhost.ru. ns1.masterhost.ru. ns2.masterhost.ru. )
     ips       = %w( 217.16.20.30      217.16.16.30       217.16.22.30       )
-    expected  = Hash[hosts.zip(ips)].map do |name, ip|
+    expected  = Hash[names.zip(ips)].map do |name, ip|
       Whois::Answer::Nameserver.new(name, ip)
     end
     assert_equal_and_cached expected, parser, :nameservers
