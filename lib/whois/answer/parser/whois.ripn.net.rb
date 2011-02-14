@@ -87,10 +87,10 @@ module Whois
         # 
         #   nserver:     ns.masterhost.ru.
         #   nserver:     ns.masterhost.ru. 217.16.20.30
-        # 
-        # In both cases, always return only the name.
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.chomp(".") }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+            Answer::Nameserver.new *line.split(" ")
+          end
         end
 
       end
