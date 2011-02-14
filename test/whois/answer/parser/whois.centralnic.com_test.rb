@@ -88,7 +88,7 @@ class AnswerParserWhoisCentralnicComAeOrgTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.dmnreseller.com ns2.dmnreseller.com )
+    expected  = %w( ns1.dmnreseller.com ns2.dmnreseller.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -176,7 +176,7 @@ class AnswerParserWhoisCentralnicComArComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns0.centralnic-dns.com ns1.centralnic-dns.com ns2.centralnic-dns.com ns3.centralnic-dns.com ns4.centralnic-dns.com ns5.centralnic-dns.com )
+    expected  = %w( ns0.centralnic-dns.com ns1.centralnic-dns.com ns2.centralnic-dns.com ns3.centralnic-dns.com ns4.centralnic-dns.com ns5.centralnic-dns.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -264,7 +264,7 @@ class AnswerParserWhoisCentralnicComBrComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.terra.com.br ns2.terra.com.br )
+    expected  = %w( ns1.terra.com.br ns2.terra.com.br ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -352,7 +352,7 @@ class AnswerParserWhoisCentralnicComCnComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.meteos.it ns2.meteos.it )
+    expected  = %w( ns1.meteos.it ns2.meteos.it ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -440,7 +440,7 @@ class AnswerParserWhoisCentralnicComDeComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns.udagdns.de ns.udagdns.net )
+    expected  = %w( ns.udagdns.de ns.udagdns.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -528,7 +528,7 @@ class AnswerParserWhoisCentralnicComEuComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.itransactuk.net ns2.itransactuk.net )
+    expected  = %w( ns1.itransactuk.net ns2.itransactuk.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -616,7 +616,7 @@ class AnswerParserWhoisCentralnicComGbComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( a.ns14.net b.ns14.net c.ns14.net d.ns14.net )
+    expected  = %w( a.ns14.net b.ns14.net c.ns14.net d.ns14.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -704,7 +704,7 @@ class AnswerParserWhoisCentralnicComGbNetTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( a.ns14.net b.ns14.net c.ns14.net d.ns14.net )
+    expected  = %w( a.ns14.net b.ns14.net c.ns14.net d.ns14.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -792,7 +792,7 @@ class AnswerParserWhoisCentralnicComHuComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns27.worldnic.com ns28.worldnic.com )
+    expected  = %w( ns27.worldnic.com ns28.worldnic.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -880,7 +880,7 @@ class AnswerParserWhoisCentralnicComJpnComTest < AnswerParserWhoisCentralnicComT
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.diywebbuilder.org ns2.diywebbuilder.org )
+    expected  = %w( ns1.diywebbuilder.org ns2.diywebbuilder.org ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -968,7 +968,7 @@ class AnswerParserWhoisCentralnicComKrComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.academyart.edu ns2.academyart.edu )
+    expected  = %w( ns1.academyart.edu ns2.academyart.edu ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1056,7 +1056,7 @@ class AnswerParserWhoisCentralnicComNoComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.ukdnsservers.co.uk ns2.ukdnsservers.co.uk )
+    expected  = %w( ns1.ukdnsservers.co.uk ns2.ukdnsservers.co.uk ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1144,7 +1144,7 @@ class AnswerParserWhoisCentralnicComQcComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.mydomain.com ns2.mydomain.com ns3.mydomain.com ns4.mydomain.com )
+    expected  = %w( ns1.mydomain.com ns2.mydomain.com ns3.mydomain.com ns4.mydomain.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1232,7 +1232,7 @@ class AnswerParserWhoisCentralnicComRuComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns12.zoneedit.com ns7.zoneedit.com )
+    expected  = %w( ns12.zoneedit.com ns7.zoneedit.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1320,7 +1320,7 @@ class AnswerParserWhoisCentralnicComSaComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1191.websitewelcome.com ns1192.websitewelcome.com )
+    expected  = %w( ns1191.websitewelcome.com ns1192.websitewelcome.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1408,7 +1408,7 @@ class AnswerParserWhoisCentralnicComSeComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.domaindiscount24.net ns2.domaindiscount24.net ns3.domaindiscount24.net )
+    expected  = %w( ns1.domaindiscount24.net ns2.domaindiscount24.net ns3.domaindiscount24.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1496,7 +1496,7 @@ class AnswerParserWhoisCentralnicComSeNetTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.domaindiscount24.net ns2.domaindiscount24.net ns3.domaindiscount24.net )
+    expected  = %w( ns1.domaindiscount24.net ns2.domaindiscount24.net ns3.domaindiscount24.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1584,7 +1584,7 @@ class AnswerParserWhoisCentralnicComUkComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.myhostcp.com ns2.myhostcp.com )
+    expected  = %w( ns1.myhostcp.com ns2.myhostcp.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1672,7 +1672,7 @@ class AnswerParserWhoisCentralnicComUkNetTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.myhostcp.com ns2.myhostcp.com )
+    expected  = %w( ns1.myhostcp.com ns2.myhostcp.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1760,7 +1760,7 @@ class AnswerParserWhoisCentralnicComUsComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.p17.dynect.net ns2.p17.dynect.net ns3.p17.dynect.net ns4.p17.dynect.net )
+    expected  = %w( ns1.p17.dynect.net ns2.p17.dynect.net ns3.p17.dynect.net ns4.p17.dynect.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1848,7 +1848,7 @@ class AnswerParserWhoisCentralnicComUyComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns79.worldnic.com ns80.worldnic.com )
+    expected  = %w( ns79.worldnic.com ns80.worldnic.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -1936,7 +1936,7 @@ class AnswerParserWhoisCentralnicComZaComTest < AnswerParserWhoisCentralnicComTe
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1a.your-server.co.za nsa.second-ns.co.za )
+    expected  = %w( ns1a.your-server.co.za nsa.second-ns.co.za ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
