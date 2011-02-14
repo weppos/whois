@@ -61,13 +61,13 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_supported :updated_on do
           if content_for_scanner =~ /Modified:\s+(.+?)\n/
             Time.parse($1)
           end
         end
-        
+
         property_supported :expires_on do
           if content_for_scanner =~ /Expires:\s+(.+?)\n/
             Time.parse($1)
@@ -75,12 +75,12 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
+        property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
-            $1.split("\n").map(&:strip)
-          else
-            []
-          end
+            $1.split("\n").map do |name|
+              Answer::Nameserver.new(name.strip)
+            end
+          end || []
         end
 
       end

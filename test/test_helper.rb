@@ -32,8 +32,8 @@ class Test::Unit::TestCase
     File.join(TEST_ROOT, "..", "spec", "fixtures", *names)
   end
 
-  def nameserver(params = {})
-    Whois::Answer::Nameserver.new(params)
+  def nameserver(*params)
+    Whois::Answer::Nameserver.new(*params)
   end
 
 

@@ -73,7 +73,9 @@ class AnswerParserWhoisEducauseEduTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns3.educause.edu ns4.educause.edu ns5.educause.edu )
+    names     = %w( ns3.educause.edu ns4.educause.edu ns5.educause.edu )
+    ipv4s     = %w( 198.59.61.50     192.52.179.69    198.59.61.50     )
+    expected  = Hash[names.zip(ipv4s)].map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

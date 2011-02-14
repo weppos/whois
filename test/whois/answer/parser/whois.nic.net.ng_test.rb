@@ -73,7 +73,7 @@ class AnswerParserWhoisNicNetNgTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( rns1.nic.net.ng rns2.nic.net.ng rns3.nic.net.ng rns4.nic.net.ng )
+    expected  = %w( rns1.nic.net.ng rns2.nic.net.ng rns3.nic.net.ng rns4.nic.net.ng ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

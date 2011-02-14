@@ -68,7 +68,7 @@ class AnswerParserWhoisPninaPsTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com ns3.google.com )
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -78,7 +78,7 @@ class AnswerParserWhoisPninaPsTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers_with_nodns
     parser    = @klass.new(load_part('property_nameservers_with_nodns.txt'))
-    expected  = %w( ns1.pnn-ps.com )
+    expected  = %w( ns1.pnn-ps.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 

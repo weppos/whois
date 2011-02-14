@@ -70,12 +70,13 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
+        property_supported :nameservers do
           if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.split(" ").first.downcase }
-          else
-            []
-          end
+            $1.split("\n").map do |line|
+              name, ipv4 = line.strip.split(/\s+/)
+              Answer::Nameserver.new(name.downcase, ipv4)
+            end
+          end || []
         end
 
       end
