@@ -70,7 +70,7 @@ module Whois
         property_not_supported :expires_on
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
             $1.scan(/-\s(.*?)\n/).flatten
           else

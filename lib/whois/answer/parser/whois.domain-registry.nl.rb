@@ -71,7 +71,7 @@ module Whois
         property_not_supported :expires_on
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           if content_for_scanner =~ /Domain nameservers:\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.split(/\s+/).first }
           else

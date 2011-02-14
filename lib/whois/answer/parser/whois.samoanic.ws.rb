@@ -70,7 +70,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           if content_for_scanner =~ /Current Nameservers:\n\n((.+\n)+)\n/
             $1.split("\n").map { |value| value.strip.downcase }
           else

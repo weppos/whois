@@ -103,7 +103,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           node("Nameservers") || []
         end
 

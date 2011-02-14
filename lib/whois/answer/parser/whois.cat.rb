@@ -73,7 +73,7 @@ module Whois
         #   Name Server: dns.gencat.net
         # 
         # In both cases, always return only the name.
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           content_for_scanner.scan(/Name Server:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
         end
 

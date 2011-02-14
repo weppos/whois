@@ -107,7 +107,7 @@ module Whois
         #   Nserver:     ns1.prodns.de.
         #
         # In both cases, always return only the name.
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           node("Nserver") do |values|
             values.map do |value|
               value.split(" ").first.chomp(".")

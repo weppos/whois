@@ -64,7 +64,7 @@ module Whois
         #   nserver:      ns.nic.mc 195.78.6.131
         # 
         # In both cases, always return only the name.
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.downcase }
         end
 

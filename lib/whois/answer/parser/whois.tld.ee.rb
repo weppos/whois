@@ -101,7 +101,7 @@ module Whois
         property_not_supported :technical_contact
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.strip.split(" ").first }
         end
 

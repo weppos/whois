@@ -87,7 +87,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           node("Name Server") do |values|
             [*values].map do |value|
               value.downcase unless value =~ / /

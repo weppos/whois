@@ -64,7 +64,7 @@ module Whois
         #   ns1.citrin.ch  [193.247.72.8]
         # 
         # In both cases, always return only the name.
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
             $1.split("\n").map { |value| value.split("\t").first }.uniq
           else

@@ -70,7 +70,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           content_for_scanner.scan(/\s+Host Name\s+:\s+(.+)\n/).flatten
         end
 

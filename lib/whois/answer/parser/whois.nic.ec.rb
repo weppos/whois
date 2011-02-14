@@ -70,7 +70,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           if content_for_scanner =~ /Servidores de dominio \(Name Servers\)\n((.+\n)+)\n/
             $1.split("\n")
           else

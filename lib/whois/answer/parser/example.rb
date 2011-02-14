@@ -28,7 +28,7 @@ module Whois
       #
       class WhoisExampleCom < Base
 
-        # Public: Gets the registry disclaimer that comes with the answer.
+        # Gets the registry disclaimer that comes with the answer.
         #
         # Returns a String with the disclaimer if available,
         # <tt>nil</tt> otherwise.
@@ -37,7 +37,7 @@ module Whois
         end
 
 
-        # Public: Gets the domain name as stored by the registry.
+        # Gets the domain name as stored by the registry.
         #
         # Returns a String with the domain name if available,
         # <tt>nil</tt> otherwise.
@@ -45,7 +45,7 @@ module Whois
           nil
         end
 
-        # Public: Gets the unique domain ID as stored by the registry.
+        # Gets the unique domain ID as stored by the registry.
         #
         # Returns a String with the domain ID if available,
         # <tt>nil</tt> otherwise.
@@ -54,7 +54,7 @@ module Whois
         end
 
 
-        # Public: Gets the record status or statuses.
+        # Gets the record status or statuses.
         #
         # Returns a String/Array with the record status if available,
         # <tt>nil</tt> otherwise.
@@ -62,14 +62,14 @@ module Whois
           nil
         end
 
-        # Public: Checks whether this record is available.
+        # Checks whether this record is available.
         #
         # Returns true/false depending whether this record is available.
         property_supported :available? do
           nil
         end
 
-        # Public: Checks whether this record is registered.
+        # Checks whether this record is registered.
         #
         # Returns true/false depending this record is available.
         property_supported :registered? do
@@ -77,7 +77,7 @@ module Whois
         end
 
 
-        # Public: Gets the date the record was created,
+        # Gets the date the record was created,
         # according to the registry answer.
         #
         # Returns a Time object representing the date the record was created or
@@ -86,7 +86,7 @@ module Whois
           nil
         end
 
-        # Public: Gets the date the record was last updated,
+        # Gets the date the record was last updated,
         # according to the registry answer.
         #
         # Returns a Time object representing the date the record was last updated or
@@ -95,7 +95,7 @@ module Whois
           nil
         end
 
-        # Public: Gets the date the record is set to expire,
+        # Gets the date the record is set to expire,
         # according to the registry answer.
         #
         # Returns a Time object representing the date the record is set to expire or
@@ -105,7 +105,7 @@ module Whois
         end
 
 
-        # Public: Gets the registrar object containing the registrar details
+        # Gets the registrar object containing the registrar details
         # extracted from the registry answer.
         #
         # Returns an instance of <tt>Whois::Answer::Registrar</tt> representing the registrar or
@@ -115,7 +115,7 @@ module Whois
         end
 
 
-        # Public: Gets the registrant contact object containing the details of the record owner
+        # Gets the registrant contact object containing the details of the record owner
         # extracted from the registry answer.
         #
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the registrant contact or
@@ -124,7 +124,7 @@ module Whois
           nil
         end
 
-        # Public: Gets the administrative contact object containing the details of the record administrator
+        # Gets the administrative contact object containing the details of the record administrator
         # extracted from the registry answer.
         #
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the administrative contact or
@@ -133,7 +133,7 @@ module Whois
           nil
         end
 
-        # Public: Gets the technical contact object containing the details of the technical representative
+        # Gets the technical contact object containing the details of the technical representative
         # extracted from the registry answer.
         #
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the technical contact or
@@ -143,19 +143,20 @@ module Whois
         end
 
 
-        # Public: Gets the list of name server entries for this record,
+        # Gets the list of name server entries for this record,
         # extracted from the registry answer.
         #
-        # Examples
+        # @example
         #
         #   nameserver
         #   # => []
         #   nameserver
-        #   # => ["ns2.google.com", "ns1.google.com", "ns3.google.com"]
+        #   # => [
+        #   #     #<struct Whois::Answer::Nameserver name="ns1.google.com">,
+        #   #     #<struct Whois::Answer::Nameserver name="ns2.google.com">
+        #   #    ]
         #
-        #
-        # Returns an Array of lower case String where each String is a name server entry,
-        # an empty Array if no name server was found.
+        # @returns [Array<Whois::Answer::Nameserver>]
         property_supported :nameservers do
           []
         end

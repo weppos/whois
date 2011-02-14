@@ -87,7 +87,7 @@ module Whois
         # 
         #   nserver:     ns.masterhost.ru.
         #   nserver:     ns.masterhost.ru. 217.16.20.30
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             name, ip = line.split(" ")
             Answer::Nameserver.new(name.chomp('.'), ip)

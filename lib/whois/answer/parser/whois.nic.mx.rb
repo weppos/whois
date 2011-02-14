@@ -72,7 +72,7 @@ module Whois
           end
         end
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             $1.scan(/DNS:\s+(.*)\n/).flatten.map { |value| value.strip.split(/\s+/).first }
           else

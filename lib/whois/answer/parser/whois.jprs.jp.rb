@@ -78,7 +78,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           content_for_scanner.scan(/\[Name Server\][ \t]+(.*?)\n/).flatten
         end
 

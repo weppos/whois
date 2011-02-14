@@ -96,7 +96,7 @@ module Whois
         end
 
 
-        property_supported :nameservers do
+        property_supported :nameservers do # TODO
           node("Name Server") do |server|
             server.reject(&:empty?).map(&:downcase)
           end || []
