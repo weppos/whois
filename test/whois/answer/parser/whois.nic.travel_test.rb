@@ -73,7 +73,7 @@ class AnswerParserWhoisNicTravelTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( netsys.com ns01-mia.theglobe.com )
+    expected  = %w( netsys.com ns01-mia.theglobe.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

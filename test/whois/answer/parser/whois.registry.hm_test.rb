@@ -68,7 +68,7 @@ class AnswerParserWhoisRegistryHmTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.everydns.net ns2.everydns.net )
+    expected  = %w( ns1.everydns.net ns2.everydns.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
