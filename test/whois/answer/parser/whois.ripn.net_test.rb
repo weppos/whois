@@ -101,7 +101,7 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com. ns2.google.com. ns3.google.com. ns4.google.com. ).map do |ns|
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map do |ns|
       Whois::Answer::Nameserver.new(ns)
     end
     assert_equal_and_cached expected, parser, :nameservers
@@ -113,7 +113,7 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
 
   def test_nameservers_with_ip
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
-    names     = %w( ns.masterhost.ru. ns1.masterhost.ru. ns2.masterhost.ru. )
+    names     = %w( ns.masterhost.ru  ns1.masterhost.ru  ns2.masterhost.ru  )
     ips       = %w( 217.16.20.30      217.16.16.30       217.16.22.30       )
     expected  = Hash[names.zip(ips)].map do |name, ip|
       Whois::Answer::Nameserver.new(name, ip)
@@ -215,7 +215,7 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1073.hostgator.com. ns1074.hostgator.com. ).map do |ns|
+    expected  = %w( ns1073.hostgator.com ns1074.hostgator.com ).map do |ns|
       Whois::Answer::Nameserver.new(ns)
     end
     assert_equal_and_cached expected, parser, :nameservers
