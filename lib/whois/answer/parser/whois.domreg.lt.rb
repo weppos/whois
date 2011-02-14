@@ -60,8 +60,14 @@ module Whois
         property_not_supported :expires_on
 
 
-        property_supported :nameservers do # TODO
-          content_for_scanner.scan(/Nameserver:\s+(.*)\n/).flatten.map { |value| value.split("\t").first }
+        property_supported :nameservers do
+          content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |line|
+            if line =~ /(.+)\t\[(.+)\]/
+              Answer::Nameserver.new($1, $2)
+            else
+              Answer::Nameserver.new(line.strip)
+            end
+          end
         end
 
       end
