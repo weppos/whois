@@ -10,14 +10,14 @@
    Whois Server: www.whois.uz
    Referral URL: http://www.cctld.uz/
    Name Server: ns1.google.com. not.defined.
-   Name Serever: ns2.google.com. not.defined.
+   Name Server: ns2.google.com. not.defined.
    Status: ACTIVE
    Updated Date: 26-mar-2010
    Creation Date: 13-Apr-2006
    Expiration Date: 01-may-2011
 
 
-% >>> Last update of whois database: Wed, 16 Jun 2010 15:37:09 +0500 <<<
+% >>> Last update of whois database: Tue, 15 Feb 2011 3:01:31 +0500 <<<
 
 % NOTICE: The expiration date displayed in this record is the date the
 % registrar's sponsorship of the domain name registration in the registry is
