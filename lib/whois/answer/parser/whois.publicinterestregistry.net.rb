@@ -98,7 +98,9 @@ module Whois
 
         property_supported :nameservers do
           node("Name Server") do |server|
-            server.reject(&:empty?).map(&:downcase)
+            server.reject(&:empty?).map do |name|
+              Answer::Nameserver.new(name.downcase)
+            end
           end || []
         end
 

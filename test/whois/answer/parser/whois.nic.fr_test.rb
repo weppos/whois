@@ -101,7 +101,7 @@ class AnswerParserWhoisNicFrFrTest < AnswerParserWhoisNicFrTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -178,7 +178,10 @@ class AnswerParserWhoisNicFrPmTest < AnswerParserWhoisNicFrTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    names     = %w( ns1.nic.fr           ns2.nic.fr           ns3.nic.fr           )
+    ipv4s     = %w( 192.93.0.1           192.93.0.4           192.134.0.49         )
+    ipv6s     = %w( 2001:660:3005:1::1:1 2001:660:3005:1::1:2 2001:660:3006:1::1:1 )
+    expected  = names.zip(ipv4s, ipv6s).map { |name, ipv4, ipv6| nameserver(name, ipv4, ipv6) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -255,7 +258,10 @@ class AnswerParserWhoisNicFrReTest < AnswerParserWhoisNicFrTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    names     = %w( ns1.nic.fr           ns2.nic.fr           ns3.nic.fr           )
+    ipv4s     = %w( 192.93.0.1           192.93.0.4           192.134.0.49         )
+    ipv6s     = %w( 2001:660:3005:1::1:1 2001:660:3005:1::1:2 2001:660:3006:1::1:1 )
+    expected  = names.zip(ipv4s, ipv6s).map { |name, ipv4, ipv6| nameserver(name, ipv4, ipv6) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -332,7 +338,10 @@ class AnswerParserWhoisNicFrTfTest < AnswerParserWhoisNicFrTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    names     = %w( ns1.nic.fr           ns2.nic.fr           ns3.nic.fr           )
+    ipv4s     = %w( 192.134.4.1          192.93.0.4           192.134.0.49         )
+    ipv6s     = %w( 2001:660:3003:2::4:1 2001:660:3005:1::1:2 2001:660:3006:1::1:1 )
+    expected  = names.zip(ipv4s, ipv6s).map { |name, ipv4, ipv6| nameserver(name, ipv4, ipv6) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -409,7 +418,10 @@ class AnswerParserWhoisNicFrWfTest < AnswerParserWhoisNicFrTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    names     = %w( ns1.nic.fr           ns2.nic.fr           ns3.nic.fr           )
+    ipv4s     = %w( 192.93.0.1           192.93.0.4           192.134.0.49         )
+    ipv6s     = %w( 2001:660:3005:1::1:1 2001:660:3005:1::1:2 2001:660:3006:1::1:1 )
+    expected  = names.zip(ipv4s, ipv6s).map { |name, ipv4, ipv6| nameserver(name, ipv4, ipv6) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -486,7 +498,10 @@ class AnswerParserWhoisNicFrYtTest < AnswerParserWhoisNicFrTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.nic.fr ns2.nic.fr ns3.nic.fr )
+    names     = %w( ns1.nic.fr           ns2.nic.fr           ns3.nic.fr           )
+    ipv4s     = %w( 192.93.0.1           192.93.0.4           192.134.0.49         )
+    ipv6s     = %w( 2001:660:3005:1::1:1 2001:660:3005:1::1:2 2001:660:3006:1::1:1 )
+    expected  = names.zip(ipv4s, ipv6s).map { |name, ipv4, ipv6| nameserver(name, ipv4, ipv6) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

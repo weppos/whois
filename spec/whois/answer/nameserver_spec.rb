@@ -7,7 +7,7 @@ describe Whois::Answer::Nameserver do
   end
 
 
-  describe ".new" do
+  describe "#initialize" do
     it "accepts an empty value" do
       lambda do
         i = klass.new
@@ -47,6 +47,14 @@ describe Whois::Answer::Nameserver do
       i.name.should == "ns1.example.com"
       i.ipv4.should == "127.0.0.1"
       i.ipv6.should be_nil
+    end
+  end
+
+  describe "#to_s" do
+    it "returns the string representation of this object" do
+      klass.new(:name => "ns1.example.com").to_s.should == "ns1.example.com"
+      klass.new(:name => nil).to_s.should == ""
+      klass.new.to_s.should == ""
     end
   end
 

@@ -73,7 +73,7 @@ class AnswerParserWhoisRegistryproProTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( a.gtld.pro b.gtld.pro c.gtld.pro d.gtld.pro )
+    expected  = %w( a.gtld.pro b.gtld.pro c.gtld.pro d.gtld.pro ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

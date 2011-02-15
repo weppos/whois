@@ -73,7 +73,9 @@ class AnswerParserWhoisMuseumTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( nic.frd.se nic.museum )
+    names     = %w( nic.frd.se nic.museum )
+    ipv4s     = [nil, "130.242.24.5"]
+    expected  = Hash[names.zip(ipv4s)].map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

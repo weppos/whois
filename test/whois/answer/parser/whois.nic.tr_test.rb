@@ -68,7 +68,7 @@ class AnswerParserWhoisNicTrTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com )
+    expected  = %w( ns1.google.com ns2.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -78,13 +78,15 @@ class AnswerParserWhoisNicTrTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers_with_trailing_space
     parser    = @klass.new(load_part('property_nameservers_with_trailing_space.txt'))
-    expected  = %w( ns1.phpsunucu.com ns2.phpsunucu.com )
+    expected  = %w( ns1.phpsunucu.com ns2.phpsunucu.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 
   def test_nameservers_with_ip
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
-    expected  = %w( titan.radore.com janus.radore.com mimas.rh.com.tr )
+    names     = %w( titan.radore.com janus.radore.com mimas.rh.com.tr )
+    ipv4s     = [nil, nil, "77.75.34.2"]
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 

@@ -70,13 +70,15 @@ module Whois
         end
 
         # Nameservers are listed in the following formats:
-        # 
+        #
         #   Name Server: nic.frd.se
         #   Name Server: nic.museum 130.242.24.5
-        # 
-        # In both cases, always return only the name.
+        #
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s+(.*)\n/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |line|
+            name, ipv4 = line.split(/\s+/)
+            Answer::Nameserver.new(name, ipv4)
+          end
         end
 
       end

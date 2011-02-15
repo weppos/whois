@@ -68,7 +68,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('property_nameservers_with_trailing_space.txt'))
-    expected  = %w( ns10.uadns.com ns11.uadns.com ns12.uadns.com )
+    expected  = %w( ns10.uadns.com ns11.uadns.com ns12.uadns.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

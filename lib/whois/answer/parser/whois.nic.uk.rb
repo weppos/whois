@@ -82,12 +82,10 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
-            $1.split("\n").
-              reject { |value| value =~ /No name servers listed/ }.
-              map { |value| value.strip.split(/\s+/).first }
-          else
-            []
-          end
+            $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|
+              Answer::Nameserver.new(*line.strip.split(/\s+/))
+            end
+          end || []
         end
 
 

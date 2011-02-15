@@ -73,7 +73,9 @@ class AnswerParserWhoisDomainregistryMyTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com )
+    names     = %w( ns1.google.com ns2.google.com )
+    ipv4s     = %w( 216.239.32.10  216.239.34.10  )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

@@ -71,7 +71,10 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/\[(?:Primary|Secondary) Name Server\](?:.+?)\n(.+\n)/).flatten.map { |value| value.split(" ").first }
+          content_for_scanner.scan(/\[(?:Primary|Secondary) Name Server\](?:.+?)\n(.+\n)/).flatten.map do |line|
+            name, ipv4 = line.strip.split(/\s+/)
+            Answer::Nameserver.new(name, ipv4)
+          end
         end
 
       end

@@ -59,13 +59,15 @@ module Whois
 
 
         # Nameservers are listed in the following formats:
-        # 
+        #
         #   nserver:      ns.nic.mc
         #   nserver:      ns.nic.mc 195.78.6.131
-        # 
-        # In both cases, always return only the name.
+        #
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map { |value| value.split(" ").first.downcase }
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+            name, ipv4 = line.split(/\s+/)
+            Answer::Nameserver.new(name.downcase, ipv4)
+          end
         end
 
       end

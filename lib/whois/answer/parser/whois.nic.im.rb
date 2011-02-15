@@ -63,7 +63,9 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s(.*)\n/).flatten.map { |value| value.chomp(".") }
+          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
+            Answer::Nameserver.new(name.chomp("."))
+          end
         end
 
       end

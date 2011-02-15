@@ -67,10 +67,13 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nameservers:\s+(.+)\n(.+)\n/).flatten.map do |value|
-            value \
-              .split(" ").first \
-              .strip.chomp(".")
+          content_for_scanner.scan(/nameservers:\s+(.+)\n(.+)\n/).flatten.map do |line|
+            line.strip!
+            if line =~ /(.+) \[(.+)\]/
+              Answer::Nameserver.new($1.chomp("."), $2)
+            else
+              Answer::Nameserver.new(line.chomp("."))
+            end
           end
         end
 

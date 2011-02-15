@@ -111,7 +111,9 @@ module Whois
 
 
         property_supported :nameservers do
-          node("nameserver") || []
+          (node("nameserver") || []).map do |name|
+            Answer::Nameserver.new(name)
+          end
         end
 
 

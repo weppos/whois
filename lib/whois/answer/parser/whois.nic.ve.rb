@@ -76,10 +76,10 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
-            $1.scan(/-\s(.*?)\n/).flatten
-          else
-            []
-          end
+            $1.scan(/-\s(.*?)\n/).flatten.map do |name|
+              Answer::Nameserver.new(name)
+            end
+          end || []
         end
 
 

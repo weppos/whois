@@ -109,7 +109,7 @@ class AnswerParserWhoisNicVeTest < Whois::Answer::Parser::TestCase
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('property_nameservers.txt'))
-    expected  = %w( avalon.ula.ve azmodan.ula.ve )
+    expected  = %w( avalon.ula.ve azmodan.ula.ve ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 

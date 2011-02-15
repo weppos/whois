@@ -43,6 +43,8 @@
 * NEW: Added support for $ gem test and Gem Testers
   See http://www.engineyard.com/blog/2011/introducing-gem-testers/
 
+* NEW: Whois::Answer::Nameserver#to_s returns the #name for BC with string-based nameservers.
+
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
 * CHANGED: Switched from RDoc to YARDoc (#3).
@@ -64,6 +66,8 @@
 * CHANGED: Whois::Answer::Parser creates a missing method the first time it is invoked to increase performance.
 
 * CHANGED: whois.nic.it parser raises on invalid #status.
+
+* CHANGED: Change #nameservers property to return an Array of Nameserver (#76, see #71, see #64).
 
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.

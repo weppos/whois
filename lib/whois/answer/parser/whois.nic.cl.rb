@@ -53,7 +53,7 @@ module Whois
 
         property_not_supported :created_on
 
-        # TODO: custom date format with foreigh month names
+        # TODO: custom date format with foreign month names
         # property_supported :updated_on do
         #   if content_for_scanner =~ /changed:\s+(.*)\n/
         #     Time.parse($1.split(" ", 2).last)
@@ -65,10 +65,12 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /Servidores de nombre \(Domain servers\):\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.split(" ").first }
-          else
-            []
-          end
+            $1.split("\n").map do |line|
+              line.strip!
+              line =~ /(.+) \((.+)\)/
+              Answer::Nameserver.new($1, $2)
+            end
+          end || []
         end
 
       end

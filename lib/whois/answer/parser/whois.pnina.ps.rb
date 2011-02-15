@@ -73,10 +73,10 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.strip.downcase }.delete_if { |value| value =~ /nodns\.ns$/  }
-          else
-            []
-          end
+            $1.split("\n").delete_if { |value| value =~ /nodns\.ns$/i  }.map do |name|
+              Answer::Nameserver.new(name.strip)
+            end
+          end || []
         end
 
       end

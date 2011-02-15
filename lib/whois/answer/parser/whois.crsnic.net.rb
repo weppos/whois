@@ -89,9 +89,9 @@ module Whois
 
         property_supported :nameservers do
           node("Name Server") do |values|
-            [*values].map do |value|
-              value.downcase unless value =~ / /
-            end.compact
+            [*values].reject { |value| value =~ / / }.map do |name|
+              Answer::Nameserver.new(name.downcase)
+            end
           end || []
         end
 

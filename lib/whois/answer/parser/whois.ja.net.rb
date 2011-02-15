@@ -71,11 +71,11 @@ module Whois
 
 
         property_supported :nameservers do
-          if content_for_scanner =~ /^Servers:\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.strip.split("\t").first }
-          else
-            []
-          end
+          if content_for_scanner =~ /Servers:\n((.+\n)+)\n/
+            $1.split("\n").map do |line|
+              Answer::Nameserver.new(*line.strip.split("\t"))
+            end
+          end || []
         end
 
       end

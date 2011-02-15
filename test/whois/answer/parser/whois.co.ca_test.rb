@@ -80,7 +80,7 @@ class AnswerParserWhoisCoCaTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.canadawebhosting.com ns2.canadawebhosting.com )
+    expected  = %w( ns1.canadawebhosting.com ns2.canadawebhosting.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

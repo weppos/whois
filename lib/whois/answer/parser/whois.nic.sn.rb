@@ -101,7 +101,9 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten
+          content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |name|
+            Answer::Nameserver.new(name)
+          end
         end
 
 

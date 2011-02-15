@@ -68,7 +68,7 @@ class AnswerParserWhoisRipeNetFoTest < AnswerParserWhoisRipeNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns3.zoneedit.com ns4.zoneedit.com )
+    expected  = %w( ns3.zoneedit.com ns4.zoneedit.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -135,7 +135,7 @@ class AnswerParserWhoisRipeNetGmTest < AnswerParserWhoisRipeNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.commit.gm ns1.sol.no )
+    expected  = %w( ns1.commit.gm ns1.sol.no ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -202,7 +202,9 @@ class AnswerParserWhoisRipeNetMcTest < AnswerParserWhoisRipeNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns.nic.mc bow.rain.fr ns.ripe.net )
+    names     = %w( ns.nic.mc    bow.rain.fr ns.ripe.net )
+    ipv4s     = %w( 195.78.6.131 194.51.3.49 193.0.0.194 )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -269,7 +271,7 @@ class AnswerParserWhoisRipeNetSmTest < AnswerParserWhoisRipeNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -336,7 +338,7 @@ class AnswerParserWhoisRipeNetVaTest < AnswerParserWhoisRipeNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( john.vatican.va ns2.nic.it seth.namex.it osiris.namex.it michael.vatican.va )
+    expected  = %w( john.vatican.va ns2.nic.it seth.namex.it osiris.namex.it michael.vatican.va ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

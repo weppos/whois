@@ -106,11 +106,11 @@ module Whois
         #   Nserver:     ns1.prodns.de. 213.160.64.75
         #   Nserver:     ns1.prodns.de.
         #
-        # In both cases, always return only the name.
         property_supported :nameservers do
           node("Nserver") do |values|
-            values.map do |value|
-              value.split(" ").first.chomp(".")
+            values.map do |line|
+              name, ipv4 = line.split(/\s+/)
+              Answer::Nameserver.new(name.chomp("."), ipv4)
             end
           end || []
         end

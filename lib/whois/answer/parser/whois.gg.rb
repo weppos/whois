@@ -65,10 +65,10 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /Registered Nameservers\n[-]+\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.chomp(".") }
-          else
-            []
-          end
+            $1.split("\n").map do |name|
+              Answer::Nameserver.new(name.chomp("."))
+            end
+          end || []
         end
 
       end

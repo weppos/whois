@@ -77,7 +77,9 @@ class AnswerParserWhoisCatTest < Whois::Answer::Parser::TestCase
 
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = %w( dns2.gencat.cat dns.gencat.net )
+    names     = %w( dns2.gencat.cat dns.gencat.net )
+    ipv4s     = %w( 83.247.132.4                   )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('status_available.txt'))

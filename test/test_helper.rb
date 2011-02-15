@@ -32,6 +32,10 @@ class Test::Unit::TestCase
     File.join(TEST_ROOT, "..", "spec", "fixtures", *names)
   end
 
+  def nameserver(*params)
+    Whois::Answer::Nameserver.new(*params)
+  end
+
 
   def assert_equal_and_cached(expected, instance, property)
     cache = instance.instance_variable_get(:"@cached_properties")
