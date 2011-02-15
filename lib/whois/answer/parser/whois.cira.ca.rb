@@ -100,12 +100,21 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
+        # Nameservers are listed in the following formats:
+        #
+        #       ns1.google.com
+        #       ns2.google.com
+        #
+        #       ns1.google.com                 216.239.32.10
+        #       ns2.google.com                 216.239.34.10
+        #
+        property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
-            $1.split("\n").map { |value| value.split(" ").first }
-          else
-            []
-          end
+            $1.split("\n").map do |line|
+              name, ipv4 = line.strip.split(/\s+/)
+              Answer::Nameserver.new(name, ipv4)
+            end
+          end || []
         end
 
 

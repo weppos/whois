@@ -71,8 +71,12 @@ module Whois
         property_not_supported :expires_on
 
 
-        property_supported :nameservers do # TODO
-          nameserver("nameservers") || []
+        property_supported :nameservers do
+          node("nameservers") do |raw|
+            (raw["nserver"] || "").split("\n").map do |line|
+              Answer::Nameserver.new(*line.downcase.split(/\s+/))
+            end
+          end || []
         end
 
 
@@ -98,14 +102,6 @@ module Whois
                   :fax          => raw["fax-no"],
                   :email        => raw["e-mail"]
                 )
-              end
-            end
-          end
-
-          def nameserver(element)
-            node(element) do |raw|
-              (raw["nserver"] || "").split("\n").map do |nameserver|
-                Answer::Nameserver.new(*nameserver.downcase.split(" "))
               end
             end
           end

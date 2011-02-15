@@ -82,7 +82,9 @@ class AnswerParserWhoisJaNetAcUkTest < AnswerParserWhoisJaNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( agate.lut.ac.uk bgate.lut.ac.uk cgate.lut.ac.uk ns3.ja.net )
+    names     = %w( agate.lut.ac.uk bgate.lut.ac.uk cgate.lut.ac.uk ns3.ja.net )
+    ipv4s     = %w( 158.125.1.100                                              )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -164,7 +166,7 @@ class AnswerParserWhoisJaNetGovUkTest < AnswerParserWhoisJaNetTest
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( eur5.akam.net eur6.akam.net ns1-173.akam.net ns1-31.akam.net usc4.akam.net use10.akam.net usw2.akam.net usw4.akam.net )
+    expected  = %w( eur5.akam.net eur6.akam.net ns1-173.akam.net ns1-31.akam.net usc4.akam.net use10.akam.net usw2.akam.net usw4.akam.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

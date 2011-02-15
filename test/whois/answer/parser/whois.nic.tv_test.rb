@@ -156,7 +156,7 @@ EOS
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.slicehost.net ns2.slicehost.net )
+    expected  = %w( ns1.slicehost.net ns2.slicehost.net ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

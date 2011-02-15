@@ -74,12 +74,12 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
+        property_supported :nameservers do
           if content_for_scanner =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
-            $1.split.map(&:strip)
-          else
-            []
-          end
+            $1.split.map do |name|
+              Answer::Nameserver.new(name)
+            end
+          end || []
         end
 
       end

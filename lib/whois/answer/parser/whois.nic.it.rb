@@ -103,8 +103,10 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
-          node("Nameservers") || []
+        property_supported :nameservers do
+          (node("Nameservers") || []).map do |name|
+            Answer::Nameserver.new(name)
+          end
         end
 
 

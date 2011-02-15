@@ -95,8 +95,10 @@ module Whois
         property_not_supported :technical_contact
 
 
-        property_supported :nameservers do # TODO
-          content_for_scanner.scan(/Name server:\s(.+?)\n/).flatten.map { |value| value.split(" ").first }
+        property_supported :nameservers do
+          content_for_scanner.scan(/Name server:\s(.+?)\n/).flatten.map do |line|
+             Answer::Nameserver.new(*line.split(/\s+/))
+          end
         end
 
       end

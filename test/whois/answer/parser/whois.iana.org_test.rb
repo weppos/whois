@@ -163,31 +163,10 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
   end
 
   def test_nameservers_with_registered
-    nameservers = [
-      Whois::Answer::Nameserver.new(
-        :name         => "max.nra.nato.int",
-        :ipv4         => "192.101.252.69",
-        :ipv6         => nil
-      ),
-      Whois::Answer::Nameserver.new(
-        :name         => "maxima.nra.nato.int",
-        :ipv4         => "193.110.130.68",
-        :ipv6         => nil
-      ),
-      Whois::Answer::Nameserver.new(
-        :name         => "ns.namsa.nato.int",
-        :ipv4         => "208.161.248.15",
-        :ipv6         => nil
-      ),
-      Whois::Answer::Nameserver.new(
-        :name         => "ns.nc3a.nato.int",
-        :ipv4         => "195.169.116.6",
-        :ipv6         => nil
-      )
-    ]
-
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = nameservers
+    names     = %w( max.nra.nato.int maxima.nra.nato.int ns.namsa.nato.int ns.nc3a.nato.int )
+    ipv4s     = %w( 192.101.252.69   193.110.130.68      208.161.248.15    195.169.116.6    )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 

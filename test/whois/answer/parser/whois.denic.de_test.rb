@@ -205,7 +205,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com )
+    expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -215,7 +215,9 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
   def test_nameservers_with_ip
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
-    expected  = %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de )
+    names     = %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de )
+    ipv4s     = %w( 213.160.64.75 213.160.65.75 83.133.190.12 )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 
@@ -438,7 +440,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
+    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))
@@ -448,7 +450,9 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
   def test_nameservers_with_ip
     parser    = @klass.new(load_part('property_nameservers_with_ip.txt'))
-    expected  = %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de )
+    names     = %w( ns1.prodns.de ns2.prodns.de ns3.prodns.de )
+    ipv4s     = %w( 213.160.64.75 213.160.65.75 83.133.190.12 )
+    expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
   end
 
@@ -658,7 +662,7 @@ assurance and to bar you from using its whois query.
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com )
+    expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
     parser    = @klass.new(load_part('available.txt'))

@@ -66,12 +66,12 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
+        property_supported :nameservers do
           if content_for_scanner =~ /Domain servers:\n\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.strip.downcase }
-          else
-            []
-          end
+            $1.split("\n").map do |name|
+              Answer::Nameserver.new(name.strip.downcase)
+            end
+          end || []
         end
 
       end
