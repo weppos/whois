@@ -67,12 +67,16 @@ module Whois
         property_not_supported :expires_on
 
 
-        property_supported :nameservers do # TODO
-          if content_for_scanner =~ /Nameservers:\n((.+\n)+)\n/
-            $1.split("\n").map { |value| value.strip.split(" ").first }
-          else
-            []
-          end
+        property_supported :nameservers do
+          if content_for_scanner =~ /Nameservers:\s((.+\n)+)\n/
+            $1.split("\n").map do |line|
+              if line.strip =~ /(.+) \((.+)\)/
+                Answer::Nameserver.new($1, $2)
+              else
+                Answer::Nameserver.new(line.strip)
+              end
+            end
+          end || []
         end
 
       end
