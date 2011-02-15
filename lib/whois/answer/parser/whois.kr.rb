@@ -70,8 +70,17 @@ module Whois
         end
 
 
-        property_supported :nameservers do # TODO
-          content_for_scanner.scan(/\s+Host Name\s+:\s+(.+)\n/).flatten
+        property_supported :nameservers do
+          content_for_scanner.scan(/^\w+ Name Server\n((?:.+\n)+)\n/).flatten.map do |group|
+            Answer::Nameserver.new.tap do |nameserver|
+              if group =~ /\s+Host Name\s+:\s+(.+)\n/
+                nameserver.name = $1
+              end
+              if group =~ /\s+IP Address\s+:\s+(.+)\n/
+                nameserver.ipv4 = $1
+              end
+            end
+          end
         end
 
       end

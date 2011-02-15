@@ -63,12 +63,21 @@ module Whois
         #   ns1.citrin.ch
         #   ns1.citrin.ch  [193.247.72.8]
         #
-        property_supported :nameservers do # TODO
+        property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
-            $1.split("\n").map { |value| value.split("\t").first }.uniq
-          else
-            []
-          end
+            list = {}
+            $1.split("\n").map do |line|
+              if line =~ /(.+)\t\[(.+)\]/
+                name, ip = $1, $2
+                list[name] ||= Answer::Nameserver.new(name)
+                list[name].ipv4 = ip if Whois::Server.valid_ipv4?(ip)
+                list[name].ipv6 = ip if Whois::Server.valid_ipv6?(ip)
+              else
+                list[line] ||= Answer::Nameserver.new(line)
+              end
+            end
+            list.values
+          end || []
         end
 
       end
