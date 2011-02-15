@@ -67,6 +67,8 @@
 
 * CHANGED: whois.nic.it parser raises on invalid #status.
 
+* CHANGED: Change #nameservers property to return an Array of Nameserver (#76, see #71, see #64).
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
