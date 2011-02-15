@@ -68,6 +68,13 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          if content_for_scanner =~ /Sponsoring Registrar:(.+)\s+\((R[0-9]+-AFIN)\)\n/
+            Answer::Registrar.new(:id => $2, :name => $1)
+          end
+        end
+
+
         property_supported :nameservers do
           content_for_scanner.scan(/Name Server:([^\s]+)\n/).flatten.map do |name|
             Answer::Nameserver.new(name.downcase)

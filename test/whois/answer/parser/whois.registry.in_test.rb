@@ -77,6 +77,20 @@ class AnswerParserWhoisRegistryInTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_registrar
+    parser    = @klass.new(load_part('status_registered.txt'))
+    expected  = Whois::Answer::Registrar.new(
+      :id => 'R84-AFIN',
+      :name => 'Mark Monitor'
+    )
+    assert_equal_and_cached expected, parser, :registrar
+
+    parser    = @klass.new(load_part('status_available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :registrar
+  end
+
+
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
