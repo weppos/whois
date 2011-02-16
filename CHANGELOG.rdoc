@@ -98,6 +98,8 @@
 
 * FIXED: whois.nic.fr must support "redemption" status.
 
+* FIXED: whois.nic.fr must support "ok / *" statuses.
+
 === BC
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.

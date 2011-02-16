@@ -56,6 +56,10 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
+    parser    = @klass.new(load_part('property_status_ok_autorenew.txt'))
+    expected  = :registered
+    assert_equal_and_cached expected, parser, :status
+
     parser    = @klass.new(load_part('property_status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status

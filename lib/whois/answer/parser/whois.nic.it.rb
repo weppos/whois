@@ -48,7 +48,7 @@ module Whois
 
         property_supported :status do
           case node("Status").to_s.downcase
-          when "ok", "active"
+          when /^ok/, "active"
             :registered
           when "available"
             :available
