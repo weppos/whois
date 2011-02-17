@@ -7,6 +7,38 @@ describe Whois::Answer::Parser do
   end
 
 
+  describe ".parser_klass" do
+    it "returns the parser hostname converted into a class" do
+      require 'whois/answer/parser/whois.crsnic.net'
+      klass.parser_klass("whois.crsnic.net").should == Whois::Answer::Parser::WhoisCrsnicNet
+    end
+
+    it "recognizes and lazy-loads classes" do
+      klass.parser_klass("whois.nic.it").name.should == "Whois::Answer::Parser::WhoisNicIt"
+    end
+
+    it "recognizes preloaded classes" do
+      klass.class_eval <<-RUBY
+        class PreloadedParserTest
+        end
+      RUBY
+      klass.parser_klass("preloaded.parser.test").name.should == "Whois::Answer::Parser::PreloadedParserTest"
+    end
+
+    it "returns the blank parser if the parser doesn't exist" do
+      klass.parser_klass("whois.missing.test").name.should == "Whois::Answer::Parser::Blank"
+    end
+  end
+
+  describe ".host_to_parser" do
+    it "works" do
+      klass.host_to_parser("whois.it").should == "WhoisIt"
+      klass.host_to_parser("whois.nic.it").should == "WhoisNicIt"
+      klass.host_to_parser("whois.domain-registry.nl").should == "WhoisDomainRegistryNl"
+    end
+  end
+
+
   describe "#initialize" do
     it "requires an answer" do
       lambda { klass.new }.should raise_error(ArgumentError)
@@ -103,8 +135,108 @@ describe Whois::Answer::Parser do
       parser.parsers.should have(0).parsers
       parser.parsers.should == []
     end
+
+    it "returns 1 parser when 1 part" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
+      parser = klass.new(answer)
+      parser.parsers.should have(1).parsers
+    end
+
+    it "returns 2 parsers when 2 part" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
+      parser = klass.new(answer)
+      parser.parsers.should have(2).parsers
+    end
+
+    it "initializes the parsers in reverse order" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
+      parser = klass.new(answer)
+      parser.parsers[0].should be_a(Whois::Answer::Parser::WhoisNicIt)
+      parser.parsers[1].should be_a(Whois::Answer::Parser::WhoisCrsnicNet)
+    end
+
+    it "returns the host parser when the part is supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
+      parser = klass.new(answer)
+      parser.parsers.first.should be_a(Whois::Answer::Parser::WhoisNicIt)
+    end
+
+    it "returns the Blank parser when the part is not supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "missing.nic.it")])
+      parser = klass.new(answer)
+      parser.parsers.first.should be_a(Whois::Answer::Parser::Blank)
+    end
   end
 
+  describe "#property_supported?" do
+    it "returns false when 0 parts" do
+      answer = Whois::Answer.new(nil, [])
+      klass.new(answer).property_supported?(:disclaimer).should be_false
+    end
+
+    it "returns true when 1 part supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.nic.it")])
+      klass.new(answer).property_supported?(:disclaimer).should be_true
+    end
+
+    it "returns false when 1 part supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "missing.nic.it")])
+      klass.new(answer).property_supported?(:disclaimer).should be_false
+    end
+
+    it "returns true when 2 parts" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "whois.crsnic.net"), Whois::Answer::Part.new(nil, "whois.nic.it")])
+      klass.new(answer).property_supported?(:disclaimer).should be_true
+    end
+
+    it "returns true when 1 part supported 1 part not supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "missing.nic.it"), Whois::Answer::Part.new(nil, "whois.nic.it")])
+      klass.new(answer).property_supported?(:disclaimer).should be_true
+    end
+  end
+
+
+  describe "#contacts" do
+    class Whois::Answer::Parser::Contacts1Test < Whois::Answer::Parser::Base
+    end
+
+    class Whois::Answer::Parser::Contacts2Test < Whois::Answer::Parser::Base
+      property_supported(:technical_contact)   { "p2-t1" }
+      property_supported(:admin_contact)       { "p2-a1" }
+      property_supported(:registrant_contact)  { nil }
+    end
+
+    class Whois::Answer::Parser::Contacts3Test< Whois::Answer::Parser::Base
+      property_supported(:technical_contact)   { "p3-t1" }
+    end
+
+    it "returns an empty array when 0 parts" do
+      answer = Whois::Answer.new(nil, [])
+      parser = klass.new(answer)
+      parser.contacts.should == []
+    end
+
+    it "returns an array of contact when 1 part is supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "contacts2.test")])
+      parser = klass.new(answer)
+      parser.contacts.should have(2).contacts
+      parser.contacts.should == %w( p2-a1 p2-t1 )
+    end
+
+    it "returns an array of contact when 1 part is not supported" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "contacts1.test")])
+      parser = klass.new(answer)
+      parser.contacts.should have(0).contacts
+      parser.contacts.should == %w()
+    end
+
+    it "merges the contacts and returns an array of contact when 2 parts" do
+      answer = Whois::Answer.new(nil, [Whois::Answer::Part.new(nil, "contacts2.test"), Whois::Answer::Part.new(nil, "contacts3.test")])
+      parser = klass.new(answer)
+      parser.contacts.should have(3).contacts
+      parser.contacts.should == %w( p3-t1 p2-a1 p2-t1 )
+    end
+  end
 
 
   describe "#changed?" do
@@ -163,7 +295,6 @@ describe Whois::Answer::Parser do
     end
   end
 
-
   describe "#throttle?" do
     it "returns false when all parts are not throttled" do
       i = double_parser
@@ -185,7 +316,6 @@ describe Whois::Answer::Parser do
     end
   end
 
-
   describe "#incomplete?" do
     it "returns false when all parts are complete" do
       i = double_parser
@@ -204,38 +334,6 @@ describe Whois::Answer::Parser do
       i.parsers[0].expects(:incomplete?).returns(true)
       i.parsers[1].expects(:incomplete?).never
       i.incomplete?.should == true
-    end
-  end
-
-
-  describe ".parser_klass" do
-    it "returns the parser hostname converted into a class" do
-      require 'whois/answer/parser/whois.crsnic.net'
-      klass.parser_klass("whois.crsnic.net").should == Whois::Answer::Parser::WhoisCrsnicNet
-    end
-
-    it "recognizes and lazy-loads classes" do
-      klass.parser_klass("whois.nic.it").name.should == "Whois::Answer::Parser::WhoisNicIt"
-    end
-
-    it "recognizes preloaded classes" do
-      klass.class_eval <<-RUBY
-        class PreloadedParserTest
-        end
-      RUBY
-      klass.parser_klass("preloaded.parser.test").name.should == "Whois::Answer::Parser::PreloadedParserTest"
-    end
-
-    it "returns the blank parser if the parser doesn't exist" do
-      klass.parser_klass("whois.missing.test").name.should == "Whois::Answer::Parser::Blank"
-    end
-  end
-
-  describe ".host_to_parser" do
-    it "works" do
-      klass.host_to_parser("whois.it").should == "WhoisIt"
-      klass.host_to_parser("whois.nic.it").should == "WhoisNicIt"
-      klass.host_to_parser("whois.domain-registry.nl").should == "WhoisDomainRegistryNl"
     end
   end
 
