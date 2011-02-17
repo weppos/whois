@@ -7,7 +7,7 @@ describe Whois::Server::Adapters::Base do
   end
 
 
-  describe ".new" do
+  describe "#initialize" do
     it "requires type, allocation, and host parameters" do
       lambda { klass.new(:tld) }.should raise_error(ArgumentError)
       lambda { klass.new(:tld, ".test") }.should raise_error(ArgumentError)

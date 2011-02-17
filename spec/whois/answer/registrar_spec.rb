@@ -7,7 +7,7 @@ describe Whois::Answer::Registrar do
   end
 
 
-  describe ".new" do
+  describe "#initialize" do
     it "accepts an empty value" do
       lambda do
         i = klass.new

@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Whois::WebInterfaceError do
 
-  describe ".new" do
+  describe "#initialize" do
     it "sets the URL" do
       klass.new("http://example.com").url.should == "http://example.com"
     end

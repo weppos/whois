@@ -81,7 +81,7 @@ describe Whois::Answer::Parser::Base do
   end
 
 
-  describe ".new" do
+  describe "#initialize" do
     it "requires a part" do
       lambda { klass.new }.should raise_error(ArgumentError)
       lambda { klass.new(@part) }.should_not raise_error
