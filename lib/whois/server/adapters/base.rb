@@ -31,6 +31,14 @@ module Whois
         # Default bind hostname.
         DEFAULT_BIND_HOST = "0.0.0.0"
 
+        # Array of connection errors to rescue and wrap into a {Whois::ConnectionError}
+        RESCUABLE_CONNECTION_ERRORS = [
+          Errno::ECONNRESET,
+          Errno::EHOSTUNREACH,
+          Errno::ECONNREFUSED,
+          SocketError,
+        ]
+
 
         # @return [Symbol] The type of WHOIS server
         attr_reader :type
@@ -160,6 +168,8 @@ module Whois
               options[:bind_host] || DEFAULT_BIND_HOST,
               options[:bind_port]
             )
+          rescue *RESCUABLE_CONNECTION_ERRORS => error
+            raise ConnectionError, "#{error.class}: #{error.message}"
           end
 
           # This method handles the lowest connection

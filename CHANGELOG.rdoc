@@ -69,6 +69,8 @@
 
 * CHANGED: Change #nameservers property to return an Array of Nameserver (#76, see #71, see #64).
 
+* CHANGED: Whois#query no longer raises Errno or SocketError. The errors are now rescued and re-raised as Whois::ConnectionError.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
@@ -104,6 +106,8 @@
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.
 
+* Whois#query no longer raises Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError.
+  The errors are now rescued and re-raised as Whois::ConnectionError.
 
 == Release 1.6.6
 

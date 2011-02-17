@@ -106,4 +106,15 @@ describe Whois::Server::Adapters::Base do
     end
   end
 
+  describe "#query_the_socket" do
+    [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
+      it "re-raises #{error} as Whois::ConnectionError" do
+        klass.any_instance.expects(:ask_the_socket).raises(error)
+        expect {
+          klass.new(*@definition).send(:query_the_socket, "example.com", "whois.test")
+        }.to raise_error(Whois::ConnectionError, "#{error}: #{error.new.message}")
+      end
+    end
+  end
+
 end
