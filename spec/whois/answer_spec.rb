@@ -48,7 +48,7 @@ describe Whois::Answer do
       klass.new(nil, @parts).inspect.should == @parts.map(&:body).join("\n").inspect
     end
 
-    it "returns an empty string when no parts" do
+    it "joins empty parts" do
       klass.new(nil, []).inspect.should == "".inspect
     end
   end

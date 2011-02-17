@@ -30,7 +30,7 @@ describe Whois do
       end
     end
 
-    it "returns nil with missing parser" do
+    it "returns nil when missing parser" do
       with_definitions do
         Whois::Server.define(:tld, ".test", "missing.parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).returns("1 == 2")
@@ -60,7 +60,7 @@ describe Whois do
       end
     end
 
-    it "returns nil with missing parser" do
+    it "returns nil when missing parser" do
       with_definitions do
         Whois::Server.define(:tld, ".test", "missing.parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).returns("1 == 2")

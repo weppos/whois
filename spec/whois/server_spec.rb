@@ -107,7 +107,7 @@ describe Whois::Server do
       s.type.should == :ipv6
     end
 
-    it "recognizes ipv6 with zero groups" do
+    it "recognizes ipv6 when zero groups" do
       s = Whois::Server.guess("2002::1")
       s.should be_a(Whois::Server::Adapters::Base)
       s.type.should == :ipv6
@@ -119,7 +119,7 @@ describe Whois::Server do
       end.should raise_error(Whois::ServerNotSupported, /email/)
     end
 
-    it "raises with unrecognized value" do
+    it "raises when unrecognized value" do
       lambda do
         s = Whois::Server.guess("invalid")
       end.should raise_error(Whois::ServerNotFound)

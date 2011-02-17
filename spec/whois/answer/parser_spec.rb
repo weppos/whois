@@ -105,21 +105,21 @@ describe Whois::Answer::Parser do
       end.should raise_error(Whois::PropertyNotSupported)
     end
 
-    it "raises if parsers are undefined" do
+    it "raises when parsers are undefined" do
       lambda do
         r = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "parser.undefined.test"), Whois::Answer::Part.new("", "parser.undefined.test")])
         klass.new(r).created_on
       end.should raise_error(Whois::PropertyNotAvailable)
     end
 
-    it "raises with zero parts" do
+    it "raises when zero parts" do
       lambda do
         r = Whois::Answer.new(nil, [])
         klass.new(r).created_on
       end.should raise_error(Whois::ParserError)
     end
 
-    it "doesn't delegate unknown properties" do
+    it "does not delegate unknown properties" do
       lambda do
         r = Whois::Answer.new(nil, [Whois::Answer::Part.new("", "parser.undefined.test")])
         klass.new(r).unknown_method
