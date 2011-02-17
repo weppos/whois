@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Whois::Client do
 
-  context "#initialize" do
+  describe "#initialize" do
     it "accepts a zero parameters" do
       lambda { klass.new }.should_not raise_error
     end
@@ -40,7 +40,7 @@ describe Whois::Client do
     end
   end
 
-  context "#query" do
+  describe "#query" do
     it "coerces the argument to string" do
       # I can't use the String in place of instance_of(String)
       # because Array#to_s behaves differently
@@ -87,7 +87,7 @@ describe Whois::Client do
       lambda { client.query("foo.com") }.should raise_error(Timeout::Error)
     end
 
-    it "doesn't raise if timeout is not exceeded" do
+    it "does not raise if timeout is not exceeded" do
       adapter = Class.new(Whois::Server::Adapters::Base) do
         def query(*args)
           sleep(1)
