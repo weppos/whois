@@ -21,21 +21,7 @@ module Whois
   end
 
 
-  # Generic <tt>Whois::Server</tt> exception class.
-  class ServerError < Error
-  end
-
-  # @group Server definition not found
-
-  # Raised when the class hasn't been able to select a valid server
-  # probably because definitions are outdated.
-  class ServerNotFound < ServerError
-  end
-
-  # @endgroup
-
-
-  # @group Server definition found
+  # @group Interface
 
   # Generic class for Not Supported interfaces.
   class InterfaceNotSupported < ServerError
@@ -67,26 +53,45 @@ module Whois
   # @endgroup
 
 
-  # @group Server definition not available
+  # @group Server
+
+  # Generic <tt>Whois::Server</tt> exception class.
+  class ServerError < Error
+  end
+
+
+  # Raised when the class hasn't been able to select a valid server
+  # probably because definitions are outdated.
+  #
+  # Definition is not recognized.
+  class ServerNotFound < ServerError
+  end
+
 
   # Raised when we know about a specific functionality
   # but this functionality has not been implemented yet.
   # This is usually the result of a porting from a third-party library.
+  #
+  # Definition is recognized.
   class ServerNotImplemented < ServerError
   end
 
   # Raised when no WHOIS server is known for this kind of object. (\x05)
+  #
+  # Definition is recognized.
   class ServerNotSupported < ServerError
   end
 
   # Raised when unknown AS number of IP network. (\x06)
+  #
+  # Definition is recognized.
   class AllocationUnknown < ServerError
   end
 
   # @endgroup
 
 
-  # @group Parser errors
+  # @group Parser
 
   # Generic <tt>Whois::Answer::Parser</tt> exception class.
   class ParserError < Error
