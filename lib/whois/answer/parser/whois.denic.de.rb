@@ -116,6 +116,18 @@ module Whois
         end
 
 
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   % Error: 55000000002 Connection refused; access control limit reached.
+        #
+        def throttled?
+          !!node("response-throttled")
+        end
+
+
         # NEWPROPERTY
         def version
           cached_properties_fetch :version do
@@ -166,6 +178,7 @@ module Whois
             private
 
               def parse_content
+                parse_throttled   ||
                 parse_disclaimer  ||
                 parse_invalid     ||    # 1.10.0, 1.11.0
                 parse_not_found   ||    # 1.10.0, 1.11.0
@@ -189,6 +202,13 @@ module Whois
                 end
               end
 
+
+              def parse_throttled
+                if @input.match?(/^% Error: 55000000002/)
+                  @ast["response-throttled"] = true
+                  @input.skip(/^.+\n/)
+                end
+              end
 
               def parse_disclaimer
                 if @input.match?(/% Copyright \(c\) *\d{4} by DENIC\n/)

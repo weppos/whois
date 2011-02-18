@@ -113,7 +113,7 @@ module Whois
         #   WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS
         #
         def throttled?
-          !!node("status-throttle")
+          !!node("response-throttled")
         end
 
 
@@ -163,7 +163,7 @@ module Whois
 
             def parse_content
               parse_not_found   ||
-              parse_throttle    ||
+              parse_throttled   ||
               parse_disclaimer  ||
               parse_pair        ||
 
@@ -188,9 +188,9 @@ module Whois
               @input.skip(/^NOT FOUND\n/)
             end
 
-            def parse_throttle
+            def parse_throttled
               if @input.match?(/^WHOIS LIMIT EXCEEDED/)
-                @ast["status-throttle"] = true
+                @ast["response-throttled"] = true
                 @input.skip(/^.+\n/)
               end
             end
