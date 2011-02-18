@@ -128,12 +128,17 @@ module Whois
 
           if block_given?
             define_method("internal_#{property}", &block)
+            private :"internal_#{property}"
 
-            class_eval <<-RUBY, __FILE__, __LINE__ + 1
-              private :"internal_#{property}"
-
+            class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status == :supported
               def #{property}(*args)
                 cached_properties_fetch(:#{property}) { internal_#{property}(*args) }
+              end
+            RUBY
+
+            class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status != :supported
+              def #{property}(*args)
+                internal_#{property}(*args)
               end
             RUBY
           end
