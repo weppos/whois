@@ -21,7 +21,11 @@ module Whois
   class Answer
     class Parser
       
-
+      #
+      # = whois.cnnic.cn parser
+      #
+      # Parser for the whois.cnnic.cn server.
+      #
       class WhoisCnnicCn < Base
         include Ast
         
