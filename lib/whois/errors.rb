@@ -124,4 +124,19 @@ module Whois
 
   # @endgroup
 
+
+  # @group Response
+
+  # Generic class for response errors.
+  class ResponseError < Error
+  end
+
+  # Raised when attempting to access a property when the response is throttled.
+  #
+  # @see Whois::Answer::Parser::Base#throttled?
+  class ResponseIsThrottled < ResponseError
+  end
+
+  # @endgroup
+
 end

@@ -113,6 +113,27 @@ describe Whois::Answer::Parser::Base do
     end
   end
 
+  describe "#is" do
+    it "calls the method if the object respond to the method" do
+      i = Class.new(klass) { def throttled?; true; end }.new(Whois::Answer::Part.new)
+      i.is(:throttled?)
+    end
+    it "does not call the method if the object does not respond to the method" do
+      i = Class.new(klass).new(Whois::Answer::Part.new)
+      i.is(:throttled?).should be_false
+    end
+  end
+
+  describe "#validate!" do
+    it "raises Whois::ResponseIsThrottled when the response is throttled" do
+      i = Class.new(klass) { def throttled?; true; end }.new(Whois::Answer::Part.new)
+      lambda { i.validate! }.should raise_error(Whois::ResponseIsThrottled)
+
+      i = Class.new(klass) { def throttled?; false; end }.new(Whois::Answer::Part.new)
+      lambda { i.validate! }.should_not raise_error
+    end
+  end
+
 
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
@@ -160,13 +181,12 @@ describe Whois::Answer::Parser::Base do
       c1 = Whois::Answer::Contact.new(:id => "1st", :name => "foo")
       c2 = Whois::Answer::Contact.new(:id => "2nd", :name => "foo")
       c3 = Whois::Answer::Contact.new(:id => "3rd", :name => "foo")
-      k = Class.new(klass) do
+      i  = Class.new(klass) do
         property_register(:registrant_contact, :supported) { [c1, c2] }
         property_register(:admin_contact, :supported) { nil }
         property_register(:technical_contact, :supported) { c3 }
-      end
+      end.new(@part)
 
-      i = k.new(@part)
       i.contacts.should == [c1, c2, c3]
     end
 
@@ -207,6 +227,39 @@ describe Whois::Answer::Parser::Base do
     #   i = klass.new(@part)
     #   i.incomplete?.should be_false
     # end
+  end
+
+end
+
+describe Whois::Answer::Parser::Base, "Parser Behavior" do
+
+  Klass = Class.new(Whois::Answer::Parser::Base) do
+    property_supported(:domain) { "example.com" }
+    property_not_supported(:domain_id)
+
+    def throttled?
+      part.host == "throttled.whois.test"
+    end
+  end
+
+  context "property supported" do
+    it "raises Whois::ResponseIsThrottled when the response is throttled" do
+      i = Klass.new(Whois::Answer::Part.new("", "throttled.whois.test"))
+      lambda { i.domain }.should raise_error(Whois::ResponseIsThrottled)
+
+      i = Klass.new(Whois::Answer::Part.new("", "success.whois.test"))
+      lambda { i.domain }.should_not raise_error
+    end
+  end
+
+  context "property not supported" do
+    it "raises Whois::ResponseIsThrottled when the response is throttled" do
+      i = Klass.new(Whois::Answer::Part.new("", "throttled.whois.test"))
+      lambda { i.domain_id }.should raise_error(Whois::PropertyNotSupported)
+
+      i = Klass.new(Whois::Answer::Part.new("", "success.whois.test"))
+      lambda { i.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
   end
 
 end

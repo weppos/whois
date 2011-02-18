@@ -132,7 +132,10 @@ module Whois
 
             class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status == :supported
               def #{property}(*args)
-                cached_properties_fetch(:#{property}) { internal_#{property}(*args) }
+                cached_properties_fetch(:#{property}) do
+                  validate!
+                  internal_#{property}(*args)
+                end
               end
             RUBY
 
@@ -253,6 +256,11 @@ module Whois
           respond_to?(symbol) && send(symbol)
         end
 
+        # @api internal
+        def validate!
+          raise ResponseIsThrottled if is(:throttled?)
+        end
+
 
         # @group Properties
 
@@ -339,9 +347,6 @@ module Whois
         def throttled?
         end
 
-        # Let it to be documented
-        undef :throttled?
-
         # Checks whether this is an incomplete response.
         # The default implementation always returns +nil+.
         #
@@ -356,8 +361,9 @@ module Whois
         def incomplete?
         end
 
-        # Let it to be documented
+        # Let them be documented
         undef :incomplete?
+        undef :throttled?
 
         # @endgroup
 
