@@ -323,14 +323,14 @@ module Whois
         # @abstract This method is just a stub.
         #           Define it in your parser class.
         #
-        # @see Whois::Answer#throttle?
-        # @see Whois::Answer::Parser#throttle?
+        # @see Whois::Answer#throttled?
+        # @see Whois::Answer::Parser#throttled?
         #
-        def throttle?
+        def throttled?
         end
 
         # Let it to be documented
-        undef :throttle?
+        undef :throttled?
 
         # Checks whether this is an incomplete response.
         # The default implementation always returns +nil+.

@@ -305,11 +305,11 @@ describe Whois::Answer do
   end
 
 
-  describe "#throttle?" do
+  describe "#throttled?" do
     it "delegates to #parser" do
       i = klass.new(nil, [])
-      i.parser.expects(:throttle?)
-      i.throttle?
+      i.parser.expects(:throttled?)
+      i.throttled?
     end
   end
 
