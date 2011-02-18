@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'whois/answer/parser/whois.publicinterestregistry.net'
+require 'whois/answer/parser/whois.domain-registry.nl'
 
-describe Whois::Answer::Parser::WhoisPublicinterestregistryNet do
+describe Whois::Answer::Parser::WhoisDomainRegistryNl do
 
   before(:each) do
-    @host   = "whois.publicinterestregistry.net"
+    @host   = "whois.domain-registry.nl"
   end
 
 
@@ -14,9 +14,14 @@ describe Whois::Answer::Parser::WhoisPublicinterestregistryNet do
         klass.new(load_part('status_registered.txt')).throttle?.should be_false
       end
     end
-    context "throttle response" do
+    context "throttled response" do
       it "returns true" do
-        klass.new(load_part('response_throttle.txt')).throttle?.should be_true
+        klass.new(load_part('response_throttled.txt')).throttle?.should be_true
+      end
+    end
+    context "daily throttled response" do
+      it "returns true" do
+        klass.new(load_part('response_throttled_daily.txt')).throttle?.should be_true
       end
     end
   end

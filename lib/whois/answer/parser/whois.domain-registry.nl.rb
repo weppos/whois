@@ -80,6 +80,28 @@ module Whois
           end || []
         end
 
+
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   whois.domain-registry.nl: only 1 request per second allowed, try again later
+        #
+        # @example
+        #   whois.domain-registry.nl: daily whois-limit exceeded
+        #
+        def throttle?
+          case content_for_scanner
+          when /^#{Regexp.escape("whois.domain-registry.nl: only 1 request per second allowed, try again later")}/
+            true
+          when /^#{Regexp.escape("whois.domain-registry.nl: daily whois-limit exceeded")}/
+            true
+          else
+            false
+          end
+        end
+
       end
 
     end
