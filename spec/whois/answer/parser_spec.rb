@@ -297,42 +297,30 @@ describe Whois::Answer::Parser do
 
   describe "#throttle?" do
     it "returns false when all parts are not throttled" do
-      i = double_parser
-      i.parsers[0].expects(:throttle?).returns(false)
-      i.parsers[1].expects(:throttle?).returns(false)
+      i = parsers("defined-false", "defined-false")
       i.throttle?.should == false
     end
 
     it "returns true when at least one part is throttled" do
-      i = double_parser
-      i.parsers[0].expects(:throttle?).returns(false)
-      i.parsers[1].expects(:throttle?).returns(true)
+      i = parsers("defined-false", "defined-true")
       i.throttle?.should == true
 
-      i = double_parser
-      i.parsers[0].expects(:throttle?).returns(true)
-      i.parsers[1].expects(:throttle?).never
+      i = parsers("defined-true", "defined-false")
       i.throttle?.should == true
     end
   end
 
   describe "#incomplete?" do
     it "returns false when all parts are complete" do
-      i = double_parser
-      i.parsers[0].expects(:incomplete?).returns(false)
-      i.parsers[1].expects(:incomplete?).returns(false)
+      i = parsers("defined-false", "defined-false")
       i.incomplete?.should == false
     end
 
     it "returns true when at least one part is incomplete" do
-      i = double_parser
-      i.parsers[0].expects(:incomplete?).returns(false)
-      i.parsers[1].expects(:incomplete?).returns(true)
+      i = parsers("defined-false", "defined-true")
       i.incomplete?.should == true
 
-      i = double_parser
-      i.parsers[0].expects(:incomplete?).returns(true)
-      i.parsers[1].expects(:incomplete?).never
+      i = parsers("defined-true", "defined-false")
       i.incomplete?.should == true
     end
   end
@@ -340,8 +328,29 @@ describe Whois::Answer::Parser do
 
   private
 
-    def double_parser
-      klass.new(Whois::Answer.new(nil, [Whois::Answer::Part.new("successful", "whois.test"), Whois::Answer::Part.new("successful", "whois.test")]))
+    class Whois::Answer::Parser::ResponseDefinedTrueTest < Whois::Answer::Parser::Base
+      def throttle?
+        true
+      end
+      def incomplete?
+        true
+      end
+    end
+
+    class Whois::Answer::Parser::ResponseDefinedFalseTest < Whois::Answer::Parser::Base
+      def throttle?
+        false
+      end
+      def incomplete?
+        false
+      end
+    end
+
+    class Whois::Answer::Parser::ResponseUndefinedTest < Whois::Answer::Parser::Base
+    end
+
+    def parsers(*types)
+      klass.new(Whois::Answer.new(nil, types.map { |type| Whois::Answer::Part.new("", "response-#{type}.test")  }))
     end
 
 end
