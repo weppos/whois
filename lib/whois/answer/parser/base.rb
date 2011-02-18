@@ -243,6 +243,11 @@ module Whois
           part.body
         end
 
+        # @api internal
+        def is(symbol)
+          respond_to?(symbol) && send(symbol)
+        end
+
 
         # @group Properties
 

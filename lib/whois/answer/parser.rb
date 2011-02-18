@@ -239,7 +239,7 @@ module Whois
       # @see Whois::Answer::Parser::Base#throttled?
       #
       def throttled?
-        any_and_respond?(parsers, :throttled?)
+        any_is?(parsers, :throttled?)
       end
 
       # Loop through all the parts to check if at least
@@ -251,7 +251,7 @@ module Whois
       # @see Whois::Answer::Parser::Base#incomplete?
       #
       def incomplete?
-        any_and_respond?(parsers, :incomplete?)
+        any_is?(parsers, :incomplete?)
       end
 
       # @endgroup
@@ -365,8 +365,8 @@ module Whois
         end
 
         # @api internal
-        def any_and_respond?(collection, symbol)
-          collection.any? { |item| item.respond_to?(symbol) && item.send(symbol) }
+        def any_is?(collection, symbol)
+          collection.any? { |item| item.is(symbol) }
         end
 
     end
