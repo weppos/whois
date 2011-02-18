@@ -320,28 +320,34 @@ module Whois
         #
         # @return [nil, false]
         #
-        # @abstract This method returns nil by default.
+        # @abstract This method is just a stub.
+        #           Define it in your parser class.
         #
         # @see Whois::Answer#throttle?
         # @see Whois::Answer::Parser#throttle?
         #
         def throttle?
-          nil
         end
+
+        # Let it to be documented
+        undef :throttle?
 
         # Checks whether this is an incomplete response.
         # The default implementation always returns +nil+.
         #
         # @return [nil, false]
         #
-        # @abstract This method returns nil by default.
+        # @abstract This method is just a stub.
+        #           Define it in your parser class.
         #
         # @see Whois::Answer#incomplete?
         # @see Whois::Answer::Parser#incomplete?
         #
         def incomplete?
-          nil
         end
+
+        # Let it to be documented
+        undef :incomplete?
 
         # @endgroup
 

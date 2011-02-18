@@ -239,7 +239,7 @@ module Whois
       # @see Whois::Answer::Parser::Base#throttle?
       #
       def throttle?
-        parsers.any?(&:throttle?)
+        any_and_respond?(parsers, :throttle?)
       end
 
       # Loop through all the parts to check if at least
@@ -251,7 +251,7 @@ module Whois
       # @see Whois::Answer::Parser::Base#incomplete?
       #
       def incomplete?
-        parsers.any?(&:incomplete?)
+        any_and_respond?(parsers, :incomplete?)
       end
 
       # @endgroup
@@ -352,6 +352,7 @@ module Whois
           nil
         end
 
+        # @api internal
         def all_in_parallel?(*args)
           count = args.first.size
           index = 0
@@ -361,6 +362,11 @@ module Whois
             index += 1
           end
           true
+        end
+
+        # @api internal
+        def any_and_respond?(collection, symbol)
+          collection.any? { |item| item.respond_to?(symbol) && item.send(symbol) }
         end
 
     end

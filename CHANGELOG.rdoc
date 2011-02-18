@@ -57,7 +57,8 @@
 
 * CHANGED: Renamed Whois::Server::Adapters::Base#append_to_buffer to buffer_append.
 
-* CHANGED: Whois::Answer::Parser::Base#throttle? returns false to differentiate the abstract method from a real implementation (that returns true/false).
+* CHANGED: Whois::Answer::Parser::Base#throttle? and Whois::Answer::Parser::Base#invalid? are not defined by default.
+           Define the method in the implementation, and Whois::Answer::Parser will automatically use it.
 
 * CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (#66)
 

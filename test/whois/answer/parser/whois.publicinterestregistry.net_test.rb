@@ -263,7 +263,7 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_throttle_question
-    parser = @klass.new(load_part('throttle.txt'))
+    parser = @klass.new(load_part('response_throttle.txt'))
     assert parser.throttle?
   end
 
