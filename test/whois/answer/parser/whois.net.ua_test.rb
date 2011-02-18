@@ -47,7 +47,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_updated_on
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = Time.utc(2009, 12, 01, 12, 10, 41)
+    expected  = Time.utc(2010, 11, 01, 17, 35, 34)
     assert_equal_and_cached expected, parser, :updated_on
 
     parser    = @klass.new(load_part('available.txt'))
@@ -57,7 +57,7 @@ class AnswerParserWhoisNetUaTest < Whois::Answer::Parser::TestCase
 
   def test_expires_on
     parser    = @klass.new(load_part('registered.txt'))
-    expected  = Time.utc(2010, 12, 04)
+    expected  = Time.utc(2011, 12, 04)
     assert_equal_and_cached expected, parser, :expires_on
 
     parser    = @klass.new(load_part('available.txt'))
