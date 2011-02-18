@@ -31,7 +31,7 @@ module Whois
       METHODS = [
         :changed?, :unchanged?,
         :contacts,
-        # :throttle?, :incomplete?,
+        # :throttled?, :incomplete?,
       ]
 
       PROPERTIES = [
@@ -235,11 +235,11 @@ module Whois
       #
       # @return [Boolean]
       #
-      # @see Whois::Answer#throttle?
-      # @see Whois::Answer::Parser::Base#throttle?
+      # @see Whois::Answer#throttled?
+      # @see Whois::Answer::Parser::Base#throttled?
       #
-      def throttle?
-        any_and_respond?(parsers, :throttle?)
+      def throttled?
+        any_and_respond?(parsers, :throttled?)
       end
 
       # Loop through all the parts to check if at least

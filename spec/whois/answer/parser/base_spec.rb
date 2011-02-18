@@ -177,19 +177,19 @@ describe Whois::Answer::Parser::Base do
   end
 
 
-  describe "#throttle?" do
+  describe "#throttled?" do
     it "is undefined" do
-      klass.new(@part).respond_to?(:throttle?).should be_false
+      klass.new(@part).respond_to?(:throttled?).should be_false
     end
 
     # it "returns nil" do
     #   i = klass.new(@part)
-    #   i.throttle?.should be_nil
+    #   i.throttled?.should be_nil
     # end
     #
     # it "is false" do
     #   i = klass.new(@part)
-    #   i.throttle?.should be_false
+    #   i.throttled?.should be_false
     # end
   end
 

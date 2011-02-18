@@ -18,7 +18,7 @@ class AnswerParserWhoisDomainRegistryNlTest < Whois::Answer::Parser::TestCase
     expected  = :available
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.newload_part('status_quarantine.txt'))
+    parser    = @klass.new(load_part('status_quarantine.txt'))
     expected  = :quarantine
     assert_equal_and_cached expected, parser, :status
   end
@@ -32,7 +32,7 @@ class AnswerParserWhoisDomainRegistryNlTest < Whois::Answer::Parser::TestCase
     expected  = true
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.newload_part('status_quarantine.txt'))
+    parser    = @klass.new(load_part('status_quarantine.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
   end
@@ -46,7 +46,7 @@ class AnswerParserWhoisDomainRegistryNlTest < Whois::Answer::Parser::TestCase
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.newload_part('status_quarantine.txt'))
+    parser    = @klass.new(load_part('status_quarantine.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
   end

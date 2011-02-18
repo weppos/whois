@@ -8,20 +8,20 @@ describe Whois::Answer::Parser::WhoisDomainRegistryNl do
   end
 
 
-  describe "#throttle?" do
+  describe "#throttled?" do
     context "valid response" do
       it "returns false" do
-        klass.new(load_part('status_registered.txt')).throttle?.should be_false
+        klass.new(load_part('status_registered.txt')).throttled?.should be_false
       end
     end
     context "throttled response" do
       it "returns true" do
-        klass.new(load_part('response_throttled.txt')).throttle?.should be_true
+        klass.new(load_part('response_throttled.txt')).throttled?.should be_true
       end
     end
     context "daily throttled response" do
       it "returns true" do
-        klass.new(load_part('response_throttled_daily.txt')).throttle?.should be_true
+        klass.new(load_part('response_throttled_daily.txt')).throttled?.should be_true
       end
     end
   end

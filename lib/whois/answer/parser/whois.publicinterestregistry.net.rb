@@ -112,7 +112,7 @@ module Whois
         # @example
         #   WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS
         #
-        def throttle?
+        def throttled?
           !!node("status-throttle")
         end
 
