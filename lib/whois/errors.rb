@@ -27,7 +27,7 @@ module Whois
 
   # @group Server
 
-  # Generic <tt>Whois::Server</tt> exception class.
+  # Generic class for server errors.
   class ServerError < Error
   end
 
@@ -65,7 +65,7 @@ module Whois
 
   # @group Interface
 
-  # Generic class for Not Supported interfaces.
+  # Generic class for interfaces not supported.
   class InterfaceNotSupported < ServerError
   end
 
@@ -97,12 +97,13 @@ module Whois
 
   # @group Parser
 
-  # Generic <tt>Whois::Answer::Parser</tt> exception class.
+  # Generic class for parser errors.
   class ParserError < Error
   end
 
-  # Raised when the class hasn't been able to load a valid parser
-  # according to current settings.
+  # Raised when the library hasn't been able to load a valid parser
+  # according to current settings and you're trying to access a property
+  # that requires a valid parser.
   class ParserNotFound < ParserError
   end
 
