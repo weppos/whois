@@ -60,6 +60,10 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
+    parser    = @klass.new(load_part('property_status_client.txt'))
+    expected  = :registered
+    assert_equal_and_cached expected, parser, :status
+
     parser    = @klass.new(load_part('property_status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
@@ -74,6 +78,10 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
+    parser    = @klass.new(load_part('property_status_client.txt'))
+    expected  = false
+    assert_equal_and_cached expected, parser, :available?
+
     parser    = @klass.new(load_part('property_status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
@@ -85,6 +93,10 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
     assert_equal_and_cached expected, parser, :registered?
 
     parser    = @klass.new(load_part('property_status_ok.txt'))
+    expected  = true
+    assert_equal_and_cached expected, parser, :registered?
+
+    parser    = @klass.new(load_part('property_status_client.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 

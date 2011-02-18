@@ -50,6 +50,8 @@ module Whois
           case node("Status").to_s.downcase
           when /^ok/, "active"
             :registered
+          when /\bclient/
+            :registered
           when "available"
             :available
           else
