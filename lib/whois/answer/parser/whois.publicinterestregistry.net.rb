@@ -77,8 +77,8 @@ module Whois
               [nil, registrar]
             end
             Whois::Answer::Registrar.new(
-              :id           => id,
-              :name         => name
+              :id   => id,
+              :name => name
             )
           end
         end
@@ -105,7 +105,13 @@ module Whois
         end
 
 
-        # NEWPROPERTY
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS
+        #
         def throttle?
           !!node("status-throttle")
         end

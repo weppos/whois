@@ -10,7 +10,7 @@ class AnswerParserWhoisPublicinterestregistryNetTest < Whois::Answer::Parser::Te
 
 
   def test_disclaimer
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = <<-EOS.strip
 NOTICE: Access to .ORG WHOIS information is provided to assist persons in \
 determining the contents of a domain name registration record in the Public Interest Registry \
@@ -30,97 +30,97 @@ time. By submitting this query, you agree to abide by this policy.
     EOS
     assert_equal_and_cached expected, parser, :disclaimer
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.org"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "D2244233-LROR"
     assert_equal_and_cached expected, parser, :domain_id
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain_id
   end
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("1998-10-21 04:00:00 UTC")
     assert_equal_and_cached expected, parser, :created_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2009-03-04 12:07:19 UTC")
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2012-10-20 04:00:00 UTC")
     assert_equal_and_cached expected, parser, :expires_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
   end
 
 
   def test_registrar_with_registered
-    parser      = @klass.new(load_part('registered.txt'))
+    parser      = @klass.new(load_part('status_registered.txt'))
     expected    = parser.registrar
     assert_equal_and_cached expected, parser, :registrar
 
@@ -129,13 +129,13 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_registrar_with_available
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrar
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,      result
@@ -146,7 +146,7 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_registrant_contact_with_registered
-    parser      = @klass.new(load_part('registered.txt'))
+    parser      = @klass.new(load_part('status_registered.txt'))
     expected    = parser.registrant_contact
     assert_equal_and_cached expected, parser, :registrant_contact
 
@@ -155,13 +155,13 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_registrant_contact_with_available
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     result    = parser.registrant_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -181,7 +181,7 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_admin_contact_with_registered
-    parser      = @klass.new(load_part('registered.txt'))
+    parser      = @klass.new(load_part('status_registered.txt'))
     expected    = parser.admin_contact
     assert_equal_and_cached expected, parser, :admin_contact
 
@@ -190,13 +190,13 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_admin_contact_with_available
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_admin_contact
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     result    = parser.admin_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -216,7 +216,7 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_technical_contact_with_registered
-    parser      = @klass.new(load_part('registered.txt'))
+    parser      = @klass.new(load_part('status_registered.txt'))
     expected    = parser.technical_contact
     assert_equal_and_cached expected, parser, :technical_contact
 
@@ -225,13 +225,13 @@ time. By submitting this query, you agree to abide by this policy.
   end
 
   def test_technical_contact_with_available
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :technical_contact
   end
 
   def test_technical_contact
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     result    = parser.technical_contact
 
     assert_instance_of Whois::Answer::Contact,      result
@@ -252,19 +252,13 @@ time. By submitting this query, you agree to abide by this policy.
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns2.google.com ns1.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
-  end
-
-
-  def test_throttle_question
-    parser = @klass.new(load_part('response_throttle.txt'))
-    assert parser.throttle?
   end
 
 end
