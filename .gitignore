@@ -7,3 +7,4 @@ rdoc
 doc
 coverage
 *.rbc
+utils/whois-utf8.rb
