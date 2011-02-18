@@ -121,7 +121,6 @@ module Whois
             private
 
               def parse_content
-                parse_disclaimer  ||
                 parse_pair        ||
                 parse_section     ||
                 error("Unexpected token")
@@ -135,19 +134,6 @@ module Whois
                 if @input.scan(/(.*?):(.*?)\n/)
                   key, value = @input[1].strip, @input[2].strip
                   @ast[key] = value
-                else
-                  false
-                end
-              end
-
-              def parse_disclaimer
-                if @input.match?(/\*(.*?)\*\n/)
-                  disclaimer = []
-                  while @input.scan(/\*(.*?)\*\n/)
-                    matched = @input[1].strip
-                    disclaimer << matched if matched =~ /\w+/
-                  end
-                  @ast["Disclaimer"] = disclaimer.join(" ")
                 else
                   false
                 end
