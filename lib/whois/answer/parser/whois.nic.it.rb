@@ -52,6 +52,8 @@ module Whois
             :registered
           when /\bclient/
             :registered
+          when "pendingdelete / redemptionperiod"
+            :registered
           when "available"
             :available
           else

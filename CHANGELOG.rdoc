@@ -103,7 +103,10 @@
 
 * FIXED: whois.nic.fr must support "redemption" status.
 
-* FIXED: whois.nic.it must support "ok / *", "client*" statuses.
+* FIXED: whois.nic.it must support the following new statuses:
+    - ok / *
+    - client*
+    - pendingDelete
 
 === BC
 

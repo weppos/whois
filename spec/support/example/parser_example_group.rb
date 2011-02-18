@@ -8,14 +8,15 @@ module ParserExampleGroup
     Whois::Answer::Part.new(*args)
   end
 
+end
 
-  def assert_equal_and_cached(expected, instance, property)
+RSpec::Matchers.define :support_property_and_cache do |property, expected|
+  match do |instance|
     cache = instance.instance_variable_get(:"@cached_properties")
     instance.send(property).should == expected
     cache.key?(property).should be_true
     instance.send(property).should == expected
   end
-
 end
 
 RSpec::configure do |c|

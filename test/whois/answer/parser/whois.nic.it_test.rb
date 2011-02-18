@@ -47,65 +47,6 @@ class AnswerParserWhoisNicItTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_status
-    parser    = @klass.new(load_part('property_status_active.txt'))
-    expected  = :registered
-    assert_equal_and_cached expected, parser, :status
-
-    parser    = @klass.new(load_part('property_status_ok.txt'))
-    expected  = :registered
-    assert_equal_and_cached expected, parser, :status
-
-    parser    = @klass.new(load_part('property_status_ok_autorenew.txt'))
-    expected  = :registered
-    assert_equal_and_cached expected, parser, :status
-
-    parser    = @klass.new(load_part('property_status_client.txt'))
-    expected  = :registered
-    assert_equal_and_cached expected, parser, :status
-
-    parser    = @klass.new(load_part('property_status_available.txt'))
-    expected  = :available
-    assert_equal_and_cached expected, parser, :status
-  end
-
-  def test_available?
-    parser    = @klass.new(load_part('property_status_active.txt'))
-    expected  = false
-    assert_equal_and_cached expected, parser, :available?
-
-    parser    = @klass.new(load_part('property_status_ok.txt'))
-    expected  = false
-    assert_equal_and_cached expected, parser, :available?
-
-    parser    = @klass.new(load_part('property_status_client.txt'))
-    expected  = false
-    assert_equal_and_cached expected, parser, :available?
-
-    parser    = @klass.new(load_part('property_status_available.txt'))
-    expected  = true
-    assert_equal_and_cached expected, parser, :available?
-  end
-
-  def test_registered?
-    parser    = @klass.new(load_part('property_status_active.txt'))
-    expected  = true
-    assert_equal_and_cached expected, parser, :registered?
-
-    parser    = @klass.new(load_part('property_status_ok.txt'))
-    expected  = true
-    assert_equal_and_cached expected, parser, :registered?
-
-    parser    = @klass.new(load_part('property_status_client.txt'))
-    expected  = true
-    assert_equal_and_cached expected, parser, :registered?
-
-    parser    = @klass.new(load_part('property_status_available.txt'))
-    expected  = false
-    assert_equal_and_cached expected, parser, :registered?
-  end
-
-
   # NOTE: Unfortunately, the whois.nic.it response doesn't include TimeZone
   def test_created_on
     parser    = @klass.new(load_part('status_registered.txt'))

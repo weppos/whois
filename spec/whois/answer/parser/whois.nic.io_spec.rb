@@ -7,6 +7,7 @@ describe Whois::Answer::Parser::WhoisNicIo do
     @host   = "whois.nic.io"
   end
 
+
   describe "#disclaimer" do
     context "status registered" do
       it "is not supported" do
@@ -36,17 +37,17 @@ describe Whois::Answer::Parser::WhoisNicIo do
 
   describe "#domain" do
     context "status registered" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = "drop.io"
-        assert_equal_and_cached expected, parser, :domain
+        parser.should support_property_and_cache(:domain, expected)
       end
     end
     context "status available" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = "u34jedzcq.io"
-        assert_equal_and_cached expected, parser, :domain
+        parser.should support_property_and_cache(:domain, expected)
       end
     end
   end
@@ -81,51 +82,51 @@ describe Whois::Answer::Parser::WhoisNicIo do
 
   describe "#status" do
     context "status registered" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = :registered
-        assert_equal_and_cached expected, parser, :status
+        parser.should support_property_and_cache(:status, expected)
       end
     end
     context "status available" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = :available
-        assert_equal_and_cached expected, parser, :status
+        parser.should support_property_and_cache(:status, expected)
       end
     end
   end
 
   describe "#available?" do
     context "status registered" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = false
-        assert_equal_and_cached expected, parser, :available?
+        parser.should support_property_and_cache(:available?, expected)
       end
     end
     context "status available" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = true
-        assert_equal_and_cached expected, parser, :available?
+        parser.should support_property_and_cache(:available?, expected)
       end
     end
   end
 
   describe "#registered?" do
     context "status registered" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = true
-        assert_equal_and_cached expected, parser, :registered?
+        parser.should support_property_and_cache(:registered?, expected)
       end
     end
     context "status available" do
-      it "is supported" do
+      it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = false
-        assert_equal_and_cached expected, parser, :registered?
+        parser.should support_property_and_cache(:registered?, expected)
       end
     end
   end
