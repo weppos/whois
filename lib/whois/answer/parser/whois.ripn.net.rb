@@ -65,11 +65,13 @@ module Whois
           end
         end
 
+
         property_supported :registrar do
           if content_for_scanner =~ /registrar:\s+(.*)\n/
             Answer::Registrar.new(:id => $1)
           end
         end
+
 
         property_supported :admin_contact do
           Answer::Contact.new(
@@ -84,7 +86,9 @@ module Whois
         end
 
         property_not_supported :registrant_contact
+
         property_not_supported :technical_contact
+
 
         # Nameservers are listed in the following formats:
         # 

@@ -38,7 +38,7 @@
 
 * NEW: Property memoization (#18)
 
-* NEW: whois.ripn.net now supports #registry and #admin_contact (#72).
+* NEW: whois.ripn.net now supports #registrar and #admin_contact (#72).
 
 * NEW: Added support for $ gem test and Gem Testers
   See http://www.engineyard.com/blog/2011/introducing-gem-testers/
@@ -46,6 +46,8 @@
 * NEW: Whois::Answer::Nameserver#to_s returns the #name for BC with string-based nameservers.
 
 * NEW: Added support for throttled response detection (#23, #54, #61)
+
+* NEW: whois.registry.in now supports #registrar (#78).
 
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
