@@ -32,18 +32,17 @@ module Whois
         property_not_supported :disclaimer
         
         property_supported :domain do
-          node('Domain Name') { |raw| raw.downcase }
+          node('Domain Name') { |raw| raw.downcase } unless available?
         end
         
         property_not_supported :domain_id
         
-        
         property_supported :status do
-          content_for_scanner.scan(/Domain Status:\s+(.+)\n/).flatten
+          node("Domain Status") unless available?
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "no matching record")
+          content_for_scanner.strip == "no matching record"
         end
 
         property_supported :registered? do
@@ -52,17 +51,13 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Registration Date:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("Registration Date") { |date| Time.parse(date) } unless available?
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("Expiration Date") { |date| Time.parse(date) } unless available?
         end
         
         property_supported :registrar do
@@ -130,7 +125,6 @@ module Whois
 
               def parse_content
                 parse_pair        ||
-                parse_section     ||
                 error("Unexpected token")
               end
 
@@ -139,80 +133,18 @@ module Whois
               end
 
               def parse_pair
-                if @input.scan(/(.*?):(.*?)\n/)
+                if @input.scan(/(.+?):(.*?)\n/)
                   key, value = @input[1].strip, @input[2].strip
-                  @ast[key] = value
+                  if @ast[key].nil?
+                    @ast[key] = value
+                  else
+                    @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
+                    @ast[key] << value
+                  end
                 else
                   false
                 end
               end
-
-              def parse_section
-                if @input.scan(/([^:]*?)\n/)
-                  section = @input[1].strip
-                  content = parse_section_pairs ||
-                            parse_section_items
-                  @input.match?(/\n+/) || error("Unexpected end of section")
-                  @ast[section] = content
-                else
-                  false
-                end
-              end
-
-                def parse_section_items
-                  if @input.match?(/(\s+)([^:]*?)\n/)
-                    items = []
-                    indentation = @input[1].length
-                    while item = parse_section_items_item(indentation)
-                      items << item
-                    end
-                    items
-                  else
-                    false
-                  end
-                end
-
-                  def parse_section_items_item(indentation)
-                    if @input.scan(/\s{#{indentation}}(.*)\n/)
-                      @input[1]
-                    else
-                      false
-                    end
-                  end
-
-                def parse_section_pairs
-                  contents = {}
-                  while content = parse_section_pair
-                    contents.merge!(content)
-                  end
-                  if !contents.empty?
-                    contents
-                  else
-                    false
-                  end
-                end
-
-                  def parse_section_pair
-                    if @input.scan(/(\s+)(.*?):(\s+)(.*?)\n/)
-                      key = @input[2].strip
-                      values = [@input[4].strip]
-                      indentation = @input[1].length + @input[2].length + 1 + @input[3].length
-                      while value = parse_section_pair_newlinevalue(indentation)
-                        values << value
-                      end
-                      { key => values.join("\n") }
-                    else
-                      false
-                    end
-                  end
-
-                    def parse_section_pair_newlinevalue(indentation)
-                      if @input.scan(/\s{#{indentation}}(.*)\n/)
-                        @input[1]
-                      else
-                        false
-                      end
-                    end
 
               def error(message)
                 if @input.eos?
@@ -222,7 +154,6 @@ module Whois
                 end
               end
           end
-        
       end
     end
   end

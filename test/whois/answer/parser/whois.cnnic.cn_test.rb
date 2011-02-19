@@ -19,7 +19,7 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     assert_equal  ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
                    "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"],
                   @klass.new(load_part('registered.txt')).status
-    assert_equal  [],
+    assert_equal  nil,
                   @klass.new(load_part('available.txt')).status
   end
 
