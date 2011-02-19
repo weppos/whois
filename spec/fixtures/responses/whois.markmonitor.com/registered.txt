@@ -1,0 +1,79 @@
+
+MarkMonitor is the Global Leader in Enterprise Brand Protection.
+
+Domain Management
+MarkMonitor Brand Protection™
+AntiFraud Solutions
+Corporate Consulting Services
+
+Visit MarkMonitor at www.markmonitor.com
+Contact us at 1 800 745 9229
+In Europe, at +44 (0) 20 7840 1300 
+
+
+The Data in MarkMonitor.com's WHOIS database is provided by MarkMonitor.com
+for information purposes, and to assist persons in obtaining information
+about or related to a domain name registration record.  MarkMonitor.com
+does not guarantee its accuracy.  By submitting a WHOIS query, you agree
+that you will use this Data only for lawful purposes and that, under no
+circumstances will you use this Data to: (1) allow, enable, or otherwise
+support the transmission of mass unsolicited, commercial advertising or
+solicitations via e-mail (spam); or  (2) enable high volume, automated,
+electronic processes that apply to MarkMonitor.com (or its systems).
+MarkMonitor.com reserves the right to modify these terms at any time.
+By submitting this query, you agree to abide by this policy.
+
+Registrant:
+        DNS Admin
+        Google Inc.
+        1600 Amphitheatre Parkway
+         Mountain View CA 94043
+        US
+        dns-admin@google.com +1.6506234000 Fax: +1.6506188571
+
+    Domain Name: google.net
+
+        Registrar Name: Markmonitor.com
+        Registrar Whois: whois.markmonitor.com
+        Registrar Homepage: http://www.markmonitor.com
+
+    Administrative Contact:
+        DNS Admin
+        Google Inc.
+        1600 Amphitheatre Parkway
+         Mountain View CA 94043
+        US
+        dns-admin@google.com +1.6506234000 Fax: +1.6506188571
+    Technical Contact, Zone Contact:
+        DNS Admin
+        Google Inc.
+        1600 Amphitheatre Parkway
+         Mountain View CA 94043
+        US
+        dns-admin@google.com +1.6506234000 Fax: +1.6506188571
+
+    Created on..............: 1999-03-15.
+    Expires on..............: 2012-03-14.
+    Record last updated on..: 2011-02-11.
+
+    Domain servers in listed order:
+
+    ns2.google.com
+    ns1.google.com
+    ns4.google.com
+    ns3.google.com
+    
+
+
+
+MarkMonitor is the Global Leader in Enterprise Brand Protection.
+
+Domain Management
+MarkMonitor Brand Protection™
+AntiFraud Solutions
+Corporate Consulting Services
+
+Visit MarkMonitor at www.markmonitor.com
+Contact us at 1 800 745 9229
+In Europe, at +44 (0) 20 7840 1300 
+--
