@@ -18,7 +18,7 @@ module Whois
   class Answer
     class Parser
       module Scanners
-        
+
         class Verisign
 
           def initialize(content)
@@ -117,7 +117,7 @@ module Whois
             end
 
         end
-        
+
       end
     end
   end

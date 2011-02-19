@@ -280,7 +280,7 @@ module Whois
                 if @input.match?(/% ".*" is not a valid domain name\n/)
                   @input.scan(/%.*\n/)
                   @ast["Invalid"] = true
-                end 
+                end
               end
 
               def parse_db_time

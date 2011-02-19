@@ -61,13 +61,13 @@ module Whois
             Time.parse($1)
           end
         end
-        
+
         property_supported :updated_on do
           if content_for_scanner =~ /Modified:\s+(.+?)\n/
             Time.parse($1)
           end
         end
-        
+
         property_supported :expires_on do
           if content_for_scanner =~ /Expires:\s+(.+?)\n/
             Time.parse($1)

@@ -24,15 +24,15 @@ class Baz
     @string   = mandatory.to_s
     @optional = optional
   end
-  
+
   def match(*args)
     @string.match(*args)
   end
-  
+
   def gsub(*args)
     @string.gsub(*args)
   end
-  
+
   def gsub!(*args)
     @string.gsub!(*args)
   end
@@ -47,12 +47,12 @@ end
 
 TIMES   = 100_000
 CONTENT = <<-LOREM
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident,
 sunt in culpa qui officia deserunt mollit anim id est laborum.
 LOREM
 
@@ -63,13 +63,13 @@ Benchmark.bmbm do |x|
       s =~ /Duis/
     end
   end
-  x.report("delegation  =~")  do 
+  x.report("delegation  =~")  do
     TIMES.times do
       s = Bar.new(CONTENT, Option.new)
       s =~ /Duis/
     end
   end
-  x.report("composition =~")  do 
+  x.report("composition =~")  do
     # TIMES.times do
     #   s = Baz.new(CONTENT, Option.new)
     #   s =~ /Duis/
@@ -81,13 +81,13 @@ Benchmark.bmbm do |x|
       s.match(/Status:/)
     end
   end
-  x.report("delegation  match")  do 
+  x.report("delegation  match")  do
     TIMES.times do
       s = Bar.new(CONTENT, Option.new)
       s.match(/Status:/)
     end
   end
-  x.report("composition match")  do 
+  x.report("composition match")  do
     TIMES.times do
       s = Baz.new(CONTENT, Option.new)
       s.match(/Status:/)
@@ -99,13 +99,13 @@ Benchmark.bmbm do |x|
       s.gsub(/ /, '_')
     end
   end
-  x.report("delegation  gsub")  do 
+  x.report("delegation  gsub")  do
     TIMES.times do
       s = Bar.new(CONTENT, Option.new)
       s.gsub(/ /, '_')
     end
   end
-  x.report("composition gsub")  do 
+  x.report("composition gsub")  do
     TIMES.times do
       s = Baz.new(CONTENT, Option.new)
       s.gsub(/ /, '_')
@@ -117,13 +117,13 @@ Benchmark.bmbm do |x|
       s.gsub!(/ /, '_')
     end
   end
-  x.report("delegation  gsub!")  do 
+  x.report("delegation  gsub!")  do
     TIMES.times do
       s = Bar.new(CONTENT, Option.new)
       s.gsub!(/ /, '_')
     end
   end
-  x.report("composition gsub!")  do 
+  x.report("composition gsub!")  do
     TIMES.times do
       s = Baz.new(CONTENT, Option.new)
       s.gsub!(/ /, '_')
@@ -135,13 +135,13 @@ Benchmark.bmbm do |x|
       s.optional.to_s
     end
   end
-  x.report("delegation  option")  do 
+  x.report("delegation  option")  do
     TIMES.times do
       s = Bar.new(CONTENT, Option.new)
       s.optional.to_s
     end
   end
-  x.report("composition option")  do 
+  x.report("composition option")  do
     TIMES.times do
       s = Baz.new(CONTENT, Option.new)
       s.optional.to_s

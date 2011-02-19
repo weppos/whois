@@ -91,7 +91,7 @@ module Whois
 
 
         # Nameservers are listed in the following formats:
-        # 
+        #
         #   nserver:     ns.masterhost.ru.
         #   nserver:     ns.masterhost.ru. 217.16.20.30
         #

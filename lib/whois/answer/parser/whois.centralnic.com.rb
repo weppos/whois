@@ -52,7 +52,7 @@ module Whois
         #     raise ParserError, "Unexpected response trying to parse `:domain' property. The parser might be outdated."
         #   end
         # end
-        # 
+        #
         # property_not_supported :domain_id
 
 

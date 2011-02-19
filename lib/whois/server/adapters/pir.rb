@@ -51,7 +51,7 @@ module Whois
         private
 
           def extract_referral(response)
-            if response =~ /Registrant Name:SEE SPONSORING REGISTRAR/ && 
+            if response =~ /Registrant Name:SEE SPONSORING REGISTRAR/ &&
                response =~ /Registrant Street1:Whois Server:(\S+)/
               $1
             end

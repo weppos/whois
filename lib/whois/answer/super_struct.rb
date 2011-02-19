@@ -63,5 +63,5 @@ class SuperStruct < Struct
         self[key] = value
       end
     end
-  
+
 end

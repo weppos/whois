@@ -173,8 +173,8 @@ module Whois
       options = options.dup
       (options.delete(:adapter) || Adapters::Standard).new(type, allocation, host, options)
     end
-    
-    
+
+
     # Parses <tt>string</tt> and tries to guess the right server.
     #
     # It successfully detects the following query types:
@@ -209,7 +209,7 @@ module Whois
       if matches_tld?(string)
         return factory(:tld, ".", "whois.iana.org")
       end
-      
+
       # IP address (secure match)
       if matches_ip?(string)
         return find_for_ip(string)
