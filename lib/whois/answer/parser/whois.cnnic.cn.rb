@@ -32,7 +32,7 @@ module Whois
         property_not_supported :disclaimer
         
         property_supported :domain do
-          node('Domain Name') { |raw| raw.downcase }
+          node('Domain Name') { |raw| raw.downcase }  unless available?
         end
         
         property_supported :domain_id do

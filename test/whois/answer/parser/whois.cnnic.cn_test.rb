@@ -12,6 +12,10 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.cn"
     assert_equal_and_cached expected, parser, :domain
+    
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :domain  
   end
   
   def test_domain_id
