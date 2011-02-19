@@ -28,6 +28,10 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = false
     assert_equal_and_cached expected, parser, :available?
     
+    parser    = @klass.new(load_part('registered_status_ok.txt'))
+    expected  = false
+    assert_equal_and_cached expected, parser, :available?
+    
     parser    = @klass.new(load_part('reserved.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
@@ -39,6 +43,10 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
 
   def test_registered?
     parser    = @klass.new(load_part('registered.txt'))
+    expected  = true
+    assert_equal_and_cached expected, parser, :registered?
+    
+    parser    = @klass.new(load_part('registered_status_ok.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
     
