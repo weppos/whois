@@ -83,6 +83,9 @@ module Whois
           )
         end
 
+        property_not_supported :registrant_contact
+        property_not_supported :technical_contact
+
         # Nameservers are listed in the following formats:
         # 
         #   nserver:     ns.masterhost.ru.

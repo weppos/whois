@@ -98,6 +98,14 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
+  def test_registrant_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).registrant_contact }
+  end
+
+  def test_technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).technical_contact }
+  end
+
 
   def test_nameservers
     parser    = @klass.new(load_part('registered.txt'))
@@ -206,6 +214,14 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
       :email        => 'cis@cis.su'
     )
     assert_equal_and_cached expected, parser, :admin_contact
+  end
+
+  def test_registrant_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).registrant_contact }
+  end
+
+  def test_technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).technical_contact }
   end
 
 
