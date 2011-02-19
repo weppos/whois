@@ -13,6 +13,16 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = "google.cn"
     assert_equal_and_cached expected, parser, :domain
   end
+  
+  def test_domain_id
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = "20030311s10001s00033735-cn"
+    assert_equal_and_cached expected, parser, :domain_id
+    
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :domain_id
+  end
 
 
   def test_status
@@ -24,6 +34,16 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     
     assert_equal  nil,
                   @klass.new(load_part('available.txt')).status
+  end
+  
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_url }
   end
 
   def test_available?
@@ -63,11 +83,13 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_created_on
+  def test_created_on_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2003-03-17 12:20:00")
     assert_equal_and_cached expected, parser, :created_on
-
+  end
+  
+  def test_created_on_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
@@ -78,11 +100,13 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
   end
 
-  def test_expires_on
+  def test_expires_on_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2012-03-17 12:48:00")
     assert_equal_and_cached expected, parser, :expires_on
-
+  end
+  
+  def test_expires_on_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
@@ -118,7 +142,6 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
   def test_registrant_contact_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    
     assert_equal_and_cached expected, parser, :registrant_contact
   end
   

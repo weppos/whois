@@ -32,13 +32,19 @@ module Whois
         property_not_supported :disclaimer
         
         property_supported :domain do
-          node('Domain Name') { |raw| raw.downcase } unless available?
+          node('Domain Name') { |raw| raw.downcase }
         end
         
-        property_not_supported :domain_id
+        property_supported :domain_id do
+          node("ROID") unless available?
+        end
+        
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
         
         property_supported :status do
-          node("Domain Status") unless available?
+          node("Domain Status")  unless available?
         end
 
         property_supported :available? do
@@ -57,7 +63,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          node("Expiration Date") { |date| Time.parse(date) } unless available?
+          node("Expiration Date") { |date| Time.parse(date) }  unless available?
         end
         
         property_supported :registrar do
@@ -71,11 +77,11 @@ module Whois
         end
 
         property_supported :registrant_contact do
-          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT) unless available?
+          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)  unless available?
         end
 
         property_supported :admin_contact do
-          contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN) unless available?
+          contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN)  unless available?
         end
 
         property_not_supported :technical_contact
