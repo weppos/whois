@@ -52,7 +52,7 @@ module Whois
             :registered
           when /\bclient/
             :registered
-          when "pendingdelete / redemptionperiod"
+          when "pendingdelete / redemptionperiod", "grace-period"
             :registered
           when "available"
             :available
