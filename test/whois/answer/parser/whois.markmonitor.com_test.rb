@@ -83,8 +83,8 @@ class AnswerParserWhoisMarkmonitorComTest < Whois::Answer::Parser::TestCase
 
   def test_contacts
     assert_equal @registrant, @registered.registrant_contact
-    assert_equal @admin, @registered.admin_contact
-    assert_equal @technical, @registered.technical_contact
+    assert_equal @admin,      @registered.admin_contact
+    assert_equal @technical,  @registered.technical_contact
   end
 
 
