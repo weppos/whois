@@ -27,7 +27,7 @@ module Whois
       # Parser for the whois.denic.de server.
       #
       class WhoisDenicDe < Base
-        include Ast
+        include Features::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")

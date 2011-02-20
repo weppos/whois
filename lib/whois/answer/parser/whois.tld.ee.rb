@@ -33,7 +33,7 @@ module Whois
       # and examples.
       #
       class WhoisTldEe < Base
-        include Ast
+        include Features::Ast
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/

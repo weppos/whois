@@ -28,7 +28,7 @@ module Whois
       # Parser for the whois.nic.tv server.
       #
       class WhoisNicTv < Base
-        include Ast
+        include Features::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")

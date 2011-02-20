@@ -27,7 +27,7 @@ module Whois
       # Parser for the whois.nic.it server.
       #
       class WhoisNicIt < Base
-        include Ast
+        include Features::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
