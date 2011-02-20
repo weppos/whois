@@ -96,6 +96,13 @@ module Whois
           end
         end
 
+
+        # NEWPROPERTY
+        def reserved?
+          content_for_scanner.strip == "the domain you want to register is reserved"
+        end
+
+
         protected
 
           def parse
@@ -109,10 +116,6 @@ module Whois
                 :organization => node("#{element} Organization"),
                 :email        => node("#{element} Email")
               )
-          end
-
-          def reserved?
-            content_for_scanner.strip == "the domain you want to register is reserved"
           end
 
           class Scanner

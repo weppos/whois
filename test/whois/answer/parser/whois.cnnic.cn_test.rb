@@ -7,22 +7,23 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     @klass  = Whois::Answer::Parser::WhoisCnnicCn
     @host   = "whois.cnnic.cn"
   end
-  
+
+
   def test_domain
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.cn"
     assert_equal_and_cached expected, parser, :domain
-    
+
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    assert_equal_and_cached expected, parser, :domain  
+    assert_equal_and_cached expected, parser, :domain
   end
-  
+
   def test_domain_id
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "20030311s10001s00033735-cn"
     assert_equal_and_cached expected, parser, :domain_id
-    
+
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain_id
@@ -33,13 +34,13 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     assert_equal  ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
                    "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"],
                   @klass.new(load_part('registered.txt')).status
-                  
+
     assert_equal  "ok", @klass.new(load_part('registered_status_ok.txt')).status
-    
+
     assert_equal  nil,
                   @klass.new(load_part('available.txt')).status
   end
-  
+
   def test_referral_whois
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_whois }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_whois }
@@ -50,15 +51,16 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_url }
   end
 
+
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
-    
+
     parser    = @klass.new(load_part('registered_status_ok.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
-    
+
     parser    = @klass.new(load_part('reserved.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
@@ -72,11 +74,11 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
-    
+
     parser    = @klass.new(load_part('registered_status_ok.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
-    
+
     parser    = @klass.new(load_part('reserved.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
@@ -92,7 +94,7 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = Time.parse("2003-03-17 12:20:00")
     assert_equal_and_cached expected, parser, :created_on
   end
-  
+
   def test_created_on_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
@@ -109,13 +111,14 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = Time.parse("2012-03-17 12:48:00")
     assert_equal_and_cached expected, parser, :expires_on
   end
-  
+
   def test_expires_on_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
   end
-  
+
+
   def test_registrar_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.registrar
@@ -131,7 +134,7 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
   end
-  
+
   def test_registrant_contact_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.registrant_contact
@@ -148,7 +151,7 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
-  
+
   def test_admin_contact_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = parser.admin_contact
@@ -165,7 +168,7 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     
     assert_equal_and_cached expected, parser, :admin_contact
   end
-  
+
   def test_technical_contact
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
@@ -180,6 +183,21 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
+  end
+
+
+  def test_reserved_question
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.reserved?
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = false
+    assert_equal  expected, parser.reserved?
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = true
+    assert_equal  expected, parser.reserved?
   end
 
 end
