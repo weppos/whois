@@ -37,14 +37,18 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
 
 
   def test_status
-    assert_equal  ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
-                   "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"],
-                  @klass.new(load_part('registered.txt')).status
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
+                 "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"]
+    assert_equal_and_cached expected, parser, :status
 
-    assert_equal  "ok", @klass.new(load_part('registered_status_ok.txt')).status
+    parser    = @klass.new(load_part('registered_status_ok.txt'))
+    expected  = "ok"
+    assert_equal_and_cached expected, parser, :status
 
-    assert_equal  nil,
-                  @klass.new(load_part('available.txt')).status
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_referral_whois
