@@ -9,6 +9,12 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_disclaimer
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).disclaimer }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).disclaimer }
+  end
+
+
   def test_domain
     parser    = @klass.new(load_part('registered.txt'))
     expected  = "google.cn"
