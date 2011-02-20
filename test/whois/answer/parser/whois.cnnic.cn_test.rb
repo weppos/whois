@@ -60,6 +60,10 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('reserved.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :status
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?

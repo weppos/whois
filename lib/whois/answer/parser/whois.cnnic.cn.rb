@@ -20,7 +20,7 @@ require 'whois/answer/parser/base'
 module Whois
   class Answer
     class Parser
-      
+
       #
       # = whois.cnnic.cn parser
       #
@@ -33,11 +33,11 @@ module Whois
 
 
         property_supported :domain do
-          node('Domain Name') { |raw| raw.downcase }  unless available?
+          node("Domain Name") { |value| value.downcase }
         end
 
         property_supported :domain_id do
-          node("ROID") unless available?
+          node("ROID")
         end
 
 
@@ -47,11 +47,11 @@ module Whois
 
 
         property_supported :status do
-          node("Domain Status")  unless available?
+          node("Domain Status")
         end
 
         property_supported :available? do
-          content_for_scanner.strip == "no matching record"
+          !!node("status-available")
         end
 
         property_supported :registered? do
@@ -60,31 +60,30 @@ module Whois
 
 
         property_supported :created_on do
-          node("Registration Date") { |date| Time.parse(date) } unless available?
+          node("Registration Date") { |value| Time.parse(value) }
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          node("Expiration Date") { |date| Time.parse(date) }  unless available?
+          node("Expiration Date") { |value| Time.parse(value) }
         end
 
         property_supported :registrar do
-          if registered?
-            sponsor = node("Sponsoring Registrar")
+          node("Sponsoring Registrar") do |value|
             Answer::Registrar.new(
-              :id =>    sponsor,
-              :name =>  sponsor
+              :id =>    value,
+              :name =>  value
             )
           end
         end
 
         property_supported :registrant_contact do
-          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)  unless available?
+          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contact do
-          contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN)  unless available?
+          contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         property_not_supported :technical_contact
@@ -99,7 +98,7 @@ module Whois
 
         # NEWPROPERTY
         def reserved?
-          content_for_scanner.strip == "the domain you want to register is reserved"
+          !!node("status-reserved")
         end
 
 
@@ -110,13 +109,19 @@ module Whois
           end
 
           def contact(element, type)
-              Answer::Contact.new(
-                :type         => type,
-                :name         => node("#{element} Name"),
-                :organization => node("#{element} Organization"),
-                :email        => node("#{element} Email")
-              )
+            n = node("#{element} Name")
+            o = node("#{element} Organization")
+            e = node("#{element} Email")
+            return if n.nil? && o.nil? && e.nil?
+
+            Answer::Contact.new(
+              :type         => type,
+              :name         => n,
+              :organization => o,
+              :email        => e
+            )
           end
+
 
           class Scanner
 
@@ -127,7 +132,6 @@ module Whois
             def parse
               @ast = {}
               while !@input.eos?
-                trim_newline  ||
                 parse_content
               end
               @ast
@@ -136,12 +140,27 @@ module Whois
             private
 
               def parse_content
+                parse_reserved    ||
+                parse_available   ||
                 parse_pair        ||
+                trim_newline      ||
                 error("Unexpected token")
               end
 
               def trim_newline
                 @input.scan(/\n/)
+              end
+
+              def parse_available
+                if @input.scan(/^no matching record\n/)
+                  @ast["status-available"] = true
+                end
+              end
+
+              def parse_reserved
+                if @input.scan(/^the domain you want to register is reserved\n/)
+                  @ast["status-reserved"] = true
+                end
               end
 
               def parse_pair
@@ -153,8 +172,6 @@ module Whois
                     @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
                     @ast[key] << value
                   end
-                else
-                  false
                 end
               end
 
