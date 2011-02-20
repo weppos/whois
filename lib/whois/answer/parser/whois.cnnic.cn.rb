@@ -74,7 +74,7 @@ module Whois
             sponsor = node("Sponsoring Registrar")
             Answer::Registrar.new(
               :id =>    sponsor,
-              :name =>  sponsor,
+              :name =>  sponsor
             )
           end
         end
