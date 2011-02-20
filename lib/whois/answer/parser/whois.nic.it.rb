@@ -164,8 +164,6 @@ module Whois
                 disclaimer << matched if matched =~ /\w+/
               end
               @ast["Disclaimer"] = disclaimer.join(" ")
-            else
-              false
             end
           end
 
@@ -173,8 +171,6 @@ module Whois
             if @input.scan(/(.*?):(.*?)\n/)
               key, value = @input[1].strip, @input[2].strip
               @ast[key] = value
-            else
-              false
             end
           end
 
@@ -185,8 +181,6 @@ module Whois
                         parse_section_items
               @input.match?(/\n+/) || error("Unexpected end of section")
               @ast[section] = content
-            else
-              false
             end
           end
 
@@ -198,16 +192,12 @@ module Whois
                   items << item
                 end
                 items
-              else
-                false
               end
             end
 
               def parse_section_items_item(indentation)
                 if @input.scan(/\s{#{indentation}}(.*)\n/)
                   @input[1]
-                else
-                  false
                 end
               end
 
@@ -232,16 +222,12 @@ module Whois
                     values << value
                   end
                   { key => values.join("\n") }
-                else
-                  false
                 end
               end
 
                 def parse_section_pair_newlinevalue(indentation)
                   if @input.scan(/\s{#{indentation}}(.*)\n/)
                     @input[1]
-                  else
-                    false
                   end
                 end
 
