@@ -19,6 +19,16 @@ RSpec::Matchers.define :support_property_and_cache do |property, expected|
   end
 end
 
+RSpec::Matchers.define :cache_property do |property|
+  match do |instance|
+    cache = instance.instance_variable_get(:"@cached_properties")
+    cache.key?(property).should be_false
+    value = instance.send(property)
+    cache.key?(property).should be_true
+    instance.send(property).should == value
+  end
+end
+
 RSpec::configure do |c|
   def c.escaped_path(*parts)
     Regexp.compile(parts.join('[\\\/]'))

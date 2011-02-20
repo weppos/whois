@@ -42,6 +42,10 @@ module SpecHelper
       File.join(SPEC_ROOT, "fixtures", *names)
     end
 
+    def nameserver(*params)
+      Whois::Answer::Nameserver.new(*params)
+    end
+
 end
 
 RSpec.configure do |config|
