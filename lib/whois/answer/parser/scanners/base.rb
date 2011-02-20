@@ -33,14 +33,23 @@ module Whois
             @ast
           end
 
-
+          # This method is the core of the parser.
+          #
+          # It should include the parser logic
+          # to analyze, trim or consume a line.
+          #
+          # @abstract Implement in your parser.
           def parse_content
             raise NotImplementedError
           end
 
 
+          def trim_empty_line
+            @input.skip(/^\n/)
+          end
+
           def trim_newline
-            @input.scan(/\n/)
+            @input.skip(/\n/)
           end
 
           def error!(message)

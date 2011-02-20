@@ -80,11 +80,17 @@ module Whois
         end
 
 
-        protected
+        # Initializes a new {Scanners::Iana} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::Iana.new(content_for_scanner).parse
+        end
 
-          def parse
-            Scanners::Iana.new(content_for_scanner).parse
-          end
+
+        protected
 
           def contact(element, type)
             node(element) do |raw|

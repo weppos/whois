@@ -103,7 +103,7 @@ module Whois
         end
 
 
-        # Initializes a new Scanner instance
+        # Initializes a new {Scanner} instance
         # passing the {Whois::Answer::Parser::Base#content_for_scanner}
         # and calls +parse+ on it.
         #
