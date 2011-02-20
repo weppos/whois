@@ -30,6 +30,7 @@ module Whois
       class WhoisCnnicCn < Base
         include Features::Ast
 
+
         property_not_supported :disclaimer
 
 
