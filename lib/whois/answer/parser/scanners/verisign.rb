@@ -42,8 +42,8 @@ module Whois
           end
 
           def skip_fuffa
-            (@input.scan(/^\w(.+)\n/)) ||
-            (@input.scan(/^\w(.+)/) and @input.eos?)
+            (@input.scan(/^\S(.+)\n/)) ||
+            (@input.scan(/^\S(.+)/) and @input.eos?)
           end
 
           def skip_iana_service
