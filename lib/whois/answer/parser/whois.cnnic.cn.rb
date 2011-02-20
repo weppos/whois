@@ -28,21 +28,24 @@ module Whois
       #
       class WhoisCnnicCn < Base
         include Ast
-        
+
         property_not_supported :disclaimer
-        
+
+
         property_supported :domain do
           node('Domain Name') { |raw| raw.downcase }  unless available?
         end
-        
+
         property_supported :domain_id do
           node("ROID") unless available?
         end
-        
+
+
         property_not_supported :referral_whois
 
         property_not_supported :referral_url
-        
+
+
         property_supported :status do
           node("Domain Status")  unless available?
         end
@@ -65,7 +68,7 @@ module Whois
         property_supported :expires_on do
           node("Expiration Date") { |date| Time.parse(date) }  unless available?
         end
-        
+
         property_supported :registrar do
           if registered?
             sponsor = node("Sponsoring Registrar")
@@ -92,13 +95,13 @@ module Whois
             Answer::Nameserver.new(name.downcase)
           end
         end
-        
+
         protected
-        
+
           def parse
             Scanner.new(content_for_scanner).parse
           end
-          
+
           def contact(element, type)
               Answer::Contact.new(
                 :type         => type,
@@ -107,11 +110,11 @@ module Whois
                 :email        => node("#{element} Email")
               )
           end
-          
+
           def reserved?
             content_for_scanner.strip == "the domain you want to register is reserved"
           end
-          
+
           class Scanner
 
             def initialize(content)
@@ -126,7 +129,7 @@ module Whois
               end
               @ast
             end
-            
+
             private
 
               def parse_content
