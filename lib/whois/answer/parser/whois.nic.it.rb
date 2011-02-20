@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/base'
 
 
 module Whois
@@ -27,7 +28,7 @@ module Whois
       # Parser for the whois.nic.it server.
       #
       class WhoisNicIt < Base
-        include Ast
+        include Features::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -114,11 +115,17 @@ module Whois
         end
 
 
-        protected
+        # Initializes a new {Scanner} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanner.new(content_for_scanner).parse
+        end
 
-          def parse
-            Scanner.new(content_for_scanner).parse
-          end
+
+        protected
 
           def contact(element, type)
             node(element) do |raw|
@@ -139,130 +146,90 @@ module Whois
           end
 
 
-        class Scanner
+        class Scanner < Scanners::Base
 
-          def initialize(content)
-            @input = StringScanner.new(content)
+          def parse_content
+            trim_newline      ||
+            parse_disclaimer  ||
+            parse_pair        ||
+            parse_section     ||
+            error!("Unexpected token")
           end
 
-          def parse
-            @ast = {}
-            while !@input.eos?
-              trim_newline  ||
-              parse_content
-            end
-            @ast
-          end
-
-          private
-
-            def parse_content
-              parse_disclaimer  ||
-              parse_pair        ||
-              parse_section     ||
-              error("Unexpected token")
-            end
-
-            def trim_newline
-              @input.scan(/\n/)
-            end
-
-            def parse_pair
-              if @input.scan(/(.*?):(.*?)\n/)
-                key, value = @input[1].strip, @input[2].strip
-                @ast[key] = value
-              else
-                false
+          def parse_disclaimer
+            if @input.match?(/\*(.*?)\*\n/)
+              disclaimer = []
+              while @input.scan(/\*(.*?)\*\n/)
+                matched = @input[1].strip
+                disclaimer << matched if matched =~ /\w+/
               end
+              @ast["Disclaimer"] = disclaimer.join(" ")
             end
+          end
 
-            def parse_disclaimer
-              if @input.match?(/\*(.*?)\*\n/)
-                disclaimer = []
-                while @input.scan(/\*(.*?)\*\n/)
-                  matched = @input[1].strip
-                  disclaimer << matched if matched =~ /\w+/
+          def parse_pair
+            if @input.scan(/(.*?):(.*?)\n/)
+              key, value = @input[1].strip, @input[2].strip
+              @ast[key] = value
+            end
+          end
+
+          def parse_section
+            if @input.scan(/([^:]*?)\n/)
+              section = @input[1].strip
+              content = parse_section_pairs ||
+                        parse_section_items
+              @input.match?(/\n+/) || error("Unexpected end of section")
+              @ast[section] = content
+            end
+          end
+
+            def parse_section_items
+              if @input.match?(/(\s+)([^:]*?)\n/)
+                items = []
+                indentation = @input[1].length
+                while item = parse_section_items_item(indentation)
+                  items << item
                 end
-                @ast["Disclaimer"] = disclaimer.join(" ")
+                items
+              end
+            end
+
+              def parse_section_items_item(indentation)
+                if @input.scan(/\s{#{indentation}}(.*)\n/)
+                  @input[1]
+                end
+              end
+
+            def parse_section_pairs
+              contents = {}
+              while content = parse_section_pair
+                contents.merge!(content)
+              end
+              if !contents.empty?
+                contents
               else
                 false
               end
             end
 
-            def parse_section
-              if @input.scan(/([^:]*?)\n/)
-                section = @input[1].strip
-                content = parse_section_pairs ||
-                          parse_section_items
-                @input.match?(/\n+/) || error("Unexpected end of section")
-                @ast[section] = content
-              else
-                false
-              end
-            end
-
-              def parse_section_items
-                if @input.match?(/(\s+)([^:]*?)\n/)
-                  items = []
-                  indentation = @input[1].length
-                  while item = parse_section_items_item(indentation)
-                    items << item
+              def parse_section_pair
+                if @input.scan(/(\s+)(.*?):(\s+)(.*?)\n/)
+                  key = @input[2].strip
+                  values = [@input[4].strip]
+                  indentation = @input[1].length + @input[2].length + 1 + @input[3].length
+                  while value = parse_section_pair_newlinevalue(indentation)
+                    values << value
                   end
-                  items
-                else
-                  false
+                  { key => values.join("\n") }
                 end
               end
 
-                def parse_section_items_item(indentation)
+                def parse_section_pair_newlinevalue(indentation)
                   if @input.scan(/\s{#{indentation}}(.*)\n/)
                     @input[1]
-                  else
-                    false
                   end
                 end
-
-              def parse_section_pairs
-                contents = {}
-                while content = parse_section_pair
-                  contents.merge!(content)
-                end
-                if !contents.empty?
-                  contents
-                else
-                  false
-                end
-              end
-
-                def parse_section_pair
-                  if @input.scan(/(\s+)(.*?):(\s+)(.*?)\n/)
-                    key = @input[2].strip
-                    values = [@input[4].strip]
-                    indentation = @input[1].length + @input[2].length + 1 + @input[3].length
-                    while value = parse_section_pair_newlinevalue(indentation)
-                      values << value
-                    end
-                    { key => values.join("\n") }
-                  else
-                    false
-                  end
-                end
-
-                  def parse_section_pair_newlinevalue(indentation)
-                    if @input.scan(/\s{#{indentation}}(.*)\n/)
-                      @input[1]
-                    else
-                      false
-                    end
-                  end
-
-            def error(message)
-              if @input.eos?
-                raise "Unexpected end of input."
-              else
-                raise "#{message}: #{@input.peek(@input.string.length)}"
-              end
-            end
 
         end
 

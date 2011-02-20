@@ -28,7 +28,7 @@ module Whois
       # Parser for the whois.nic.tv server.
       #
       class WhoisNicTv < Base
-        include Ast
+        include Features::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -94,11 +94,14 @@ module Whois
         end
 
 
-        protected
-
-          def parse
-            Scanners::Verisign.new(content_for_scanner).parse
-          end
+        # Initializes a new {Scanners::Verisign} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::Verisign.new(content_for_scanner).parse
+        end
 
       end
 

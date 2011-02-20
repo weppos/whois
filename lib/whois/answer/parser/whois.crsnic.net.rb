@@ -28,7 +28,7 @@ module Whois
       # Parser for the whois.crsnic.net server.
       #
       class WhoisCrsnicNet < Base
-        include Ast
+        include Features::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -96,11 +96,17 @@ module Whois
         end
 
 
-        protected
+        # Initializes a new {Scanners::Verisign} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::Verisign.new(content_for_scanner).parse
+        end
 
-          def parse
-            Scanners::Verisign.new(content_for_scanner).parse
-          end
+
+        protected
 
           # In case of "SPAM Response", the response contains more than one item
           # for the same value and the value becomes an Array.

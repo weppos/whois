@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/base'
 
 
 module Whois
@@ -33,7 +34,7 @@ module Whois
       # and examples.
       #
       class WhoisTldEe < Base
-        include Ast
+        include Features::Ast
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
@@ -112,11 +113,17 @@ module Whois
         end
 
 
-        protected
+        # Initializes a new {Scanner} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanner.new(content_for_scanner).parse
+        end
 
-          def parse
-            Scanner.new(content_for_scanner).parse
-          end
+
+        protected
 
           def contact(element, type)
             node(element) do |raw|
@@ -130,30 +137,25 @@ module Whois
             end
           end
 
-          class Scanner
 
-            def initialize(content)
-              @input = StringScanner.new(content)
-            end
+          class Scanner < Scanners::Base
 
-            def parse
-              @ast = Hash.new
-              while !@input.eos?
-                if @input.scan(/contact:\s+(.*)\n/)
-                  section = @input[1].strip
-                  content = Hash.new
+            def parse_content
+              if @input.scan(/contact:\s+(.*)\n/)
+                section = @input[1].strip
+                content = {}
 
-                  while @input.scan(/(.*?):\s+(.*?)\n/)
-                    content[@input[1]] = @input[2]
-                  end
-
-                  @ast[section] = content
-                else
-                  @input.scan(/(.*)\n/)
+                while @input.scan(/(.*?):\s+(.*?)\n/)
+                  content[@input[1]] = @input[2]
                 end
+
+                @ast[section] = content
+              # FIXME: incomplete scanner, it skips all the properties
+              else
+                @input.scan(/(.*)\n/)
               end
-              @ast
             end
+
           end
 
       end

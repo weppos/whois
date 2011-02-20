@@ -43,12 +43,14 @@ http://www.domain.hu/domain/domainsearch/feltetelek.html címen
 elérhetõ feltételek elfogadása és betartása mellett
 használható legálisan.
 EOS
-    assert_equal  expected,
-                  @klass.new(load_part('available.txt')).disclaimer
-    assert_equal  expected,
-                  @klass.new(load_part('in_progress.txt')).disclaimer
-    assert_equal  expected,
-                  @klass.new(load_part('registered.txt')).disclaimer
+    parser    = @klass.new(load_part('registered.txt'))
+    assert_equal_and_cached expected, parser, :disclaimer
+
+    parser    = @klass.new(load_part('in_progress.txt'))
+    assert_equal_and_cached expected, parser, :disclaimer
+
+    parser    = @klass.new(load_part('available.txt'))
+    assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
@@ -91,7 +93,7 @@ EOS
     assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('in_progress.txt'))
-    expected  = :in_progress
+    expected  = :registered
     assert_equal_and_cached expected, parser, :status
   end
 
@@ -100,12 +102,12 @@ EOS
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
-    expected  = true
-    assert_equal_and_cached expected, parser, :available?
-
     parser    = @klass.new(load_part('in_progress.txt'))
     expected  = false
+    assert_equal_and_cached expected, parser, :available?
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
@@ -114,11 +116,11 @@ EOS
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
-    expected  = false
+    parser    = @klass.new(load_part('in_progress.txt'))
+    expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end

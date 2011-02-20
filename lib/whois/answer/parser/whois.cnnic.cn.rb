@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/base'
 
 
 module Whois
@@ -27,7 +28,7 @@ module Whois
       # Parser for the whois.cnnic.cn server.
       #
       class WhoisCnnicCn < Base
-        include Ast
+        include Features::Ast
 
         property_not_supported :disclaimer
 
@@ -102,11 +103,17 @@ module Whois
         end
 
 
-        protected
+        # Initializes a new {Scanner} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanner.new(content_for_scanner).parse
+        end
 
-          def parse
-            Scanner.new(content_for_scanner).parse
-          end
+
+        protected
 
           def contact(element, type)
             n = node("#{element} Name")
@@ -123,66 +130,42 @@ module Whois
           end
 
 
-          class Scanner
+          class Scanner < Scanners::Base
 
-            def initialize(content)
-              @input = StringScanner.new(content)
+            def parse_content
+              parse_reserved    ||
+              parse_available   ||
+              parse_pair        ||
+              trim_newline      ||
+              error!("Unexpected token")
             end
 
-            def parse
-              @ast = {}
-              while !@input.eos?
-                parse_content
+            def parse_available
+              if @input.scan(/^no matching record\n/)
+                @ast["status-available"] = true
               end
-              @ast
             end
 
-            private
-
-              def parse_content
-                parse_reserved    ||
-                parse_available   ||
-                parse_pair        ||
-                trim_newline      ||
-                error("Unexpected token")
+            def parse_reserved
+              if @input.scan(/^the domain you want to register is reserved\n/)
+                @ast["status-reserved"] = true
               end
+            end
 
-              def trim_newline
-                @input.scan(/\n/)
-              end
-
-              def parse_available
-                if @input.scan(/^no matching record\n/)
-                  @ast["status-available"] = true
-                end
-              end
-
-              def parse_reserved
-                if @input.scan(/^the domain you want to register is reserved\n/)
-                  @ast["status-reserved"] = true
-                end
-              end
-
-              def parse_pair
-                if @input.scan(/(.+?):(.*?)\n/)
-                  key, value = @input[1].strip, @input[2].strip
-                  if @ast[key].nil?
-                    @ast[key] = value
-                  else
-                    @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                    @ast[key] << value
-                  end
-                end
-              end
-
-              def error(message)
-                if @input.eos?
-                  raise "Unexpected end of input."
+            def parse_pair
+              if @input.scan(/(.+?):(.*?)\n/)
+                key, value = @input[1].strip, @input[2].strip
+                if @ast[key].nil?
+                  @ast[key] = value
                 else
-                  raise "#{message}: #{@input.peek(@input.string.length)}"
+                  @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
+                  @ast[key] << value
                 end
               end
+            end
+
           end
+
       end
     end
   end

@@ -18,16 +18,17 @@ require 'time'
 require 'whois/answer/contact'
 require 'whois/answer/registrar'
 require 'whois/answer/nameserver'
-require 'whois/answer/parser/ast'
 
 
 module Whois
   class Answer
     class Parser
 
-      #
-      # = Base Answer Parser
-      #
+      module Features
+        autoload :Ast,      'whois/answer/parser/features/ast'
+      end
+
+
       # This class is intended to be the base abstract class for all
       # server-specific parser implementations.
       #
