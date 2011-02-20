@@ -40,14 +40,16 @@ describe Whois::Answer::Parser::WhoisNicIo do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = "drop.io"
-        parser.should support_property_and_cache(:domain, expected)
+        parser.domain.should == expected
+        parser.should cache_property(:domain)
       end
     end
     context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = "u34jedzcq.io"
-        parser.should support_property_and_cache(:domain, expected)
+        parser.domain.should == expected
+        parser.should cache_property(:domain)
       end
     end
   end
@@ -85,14 +87,16 @@ describe Whois::Answer::Parser::WhoisNicIo do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = :registered
-        parser.should support_property_and_cache(:status, expected)
+        parser.status.should == expected
+        parser.should cache_property(:status)
       end
     end
     context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = :available
-        parser.should support_property_and_cache(:status, expected)
+        parser.status.should == expected
+        parser.should cache_property(:status)
       end
     end
   end
@@ -102,14 +106,16 @@ describe Whois::Answer::Parser::WhoisNicIo do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = false
-        parser.should support_property_and_cache(:available?, expected)
+        parser.available?.should == expected
+        parser.should cache_property(:available?)
       end
     end
     context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = true
-        parser.should support_property_and_cache(:available?, expected)
+        parser.available?.should == expected
+        parser.should cache_property(:available?)
       end
     end
   end
@@ -119,14 +125,16 @@ describe Whois::Answer::Parser::WhoisNicIo do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_registered.txt'))
         expected  = true
-        parser.should support_property_and_cache(:registered?, expected)
+        parser.registered?.should == expected
+        parser.should cache_property(:registered?)
       end
     end
     context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = false
-        parser.should support_property_and_cache(:registered?, expected)
+        parser.registered?.should == expected
+        parser.should cache_property(:registered?)
       end
     end
   end

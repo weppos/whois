@@ -22,7 +22,7 @@ module GeneratorsNameservers
         parser.nameservers.should == []
       end
       it "caches the value" do
-        parser    = klass.new(load_part('status_registered.txt'))
+        parser    = klass.new(load_part('status_available.txt'))
         parser.should cache_property(:nameservers)
       end
     end

@@ -10,8 +10,8 @@ describe Whois::Answer::Parser::WhoisNicFr, ".FR" do
 
 
   describe "#nameservers" do
-    nameservers__when_any
     nameservers__when_none
+    nameservers__when_any
 
     context "when only name" do
       it "returns and cache the value" do
@@ -44,8 +44,8 @@ describe Whois::Answer::Parser::WhoisNicFr, ".PM" do
 
 
   describe "#nameservers" do
-    nameservers__when_any
     nameservers__when_none
+    nameservers__when_any
 
     context "when mixed ipv4 and ipv6" do
       it "returns and cache the value" do
@@ -70,8 +70,8 @@ describe Whois::Answer::Parser::WhoisNicFr, ".RE" do
 
 
   describe "#nameservers" do
-    nameservers__when_any
     nameservers__when_none
+    nameservers__when_any
 
     context "when mixed ipv4 and ipv6" do
       it "returns and cache the value" do

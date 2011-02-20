@@ -36,6 +36,25 @@ module Whois
       class WhoisBiz < Base
         include Features::Ast
 
+        # Actually the :disclaimer is supported,
+        # but extracting it with the current scanner
+        # would require too much effort.
+        # property_supported :disclaimer
+
+
+        property_supported :domain do
+          node("Domain Name") { |value| value.downcase }
+        end
+
+        property_supported :domain_id do
+          node("Domain ID")
+        end
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
 
         property_supported :status do
           node("Domain Status")
@@ -63,6 +82,29 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          node("Sponsoring Registrar") do |raw|
+            Answer::Registrar.new(
+              :id           => node("Sponsoring Registrar IANA ID"),
+              :name         => node("Sponsoring Registrar")
+            )
+          end
+        end
+
+
+        property_supported :registrant_contact do
+          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contact do
+          contact("Administrative Contact", Whois::Answer::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contact do
+          contact("Technical Contact", Whois::Answer::Contact::TYPE_TECHNICAL)
+        end
+
+
         property_supported :nameservers do
           node("Name Server") do |values|
             [*values].map do |name|
@@ -80,6 +122,29 @@ module Whois
         def parse
           Scanners::Whoisbiz.new(content_for_scanner).parse
         end
+
+
+        protected
+
+          def contact(element, type)
+            node("#{element} ID") do |raw|
+              Answer::Contact.new(
+                :type         => type,
+                :id           => node("#{element} ID"),
+                :name         => node("#{element} Name"),
+                :organization => node("#{element} Organization"),
+                :address      => node("#{element} Address1"),
+                :city         => node("#{element} City"),
+                :zip          => node("#{element} Postal Code"),
+                :state        => node("#{element} State/Province"),
+                :country      => node("#{element} Country"),
+                :country_code => node("#{element} Country Code"),
+                :phone        => node("#{element} Phone Number"),
+                :fax          => node("#{element} Facsimile Number"),
+                :email        => node("#{element} Email")
+              )
+            end
+          end
 
       end
 

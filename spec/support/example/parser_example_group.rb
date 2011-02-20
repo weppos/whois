@@ -10,22 +10,27 @@ module ParserExampleGroup
 
 end
 
-RSpec::Matchers.define :support_property_and_cache do |property, expected|
-  match do |instance|
-    cache = instance.instance_variable_get(:"@cached_properties")
-    instance.send(property).should == expected
-    cache.key?(property).should be_true
-    instance.send(property).should == expected
-  end
-end
-
 RSpec::Matchers.define :cache_property do |property|
   match do |instance|
-    cache = instance.instance_variable_get(:"@cached_properties")
+    cache = instance.instance_eval do
+      @cached_properties = {}
+      @cached_properties
+    end
+
     cache.key?(property).should be_false
     value = instance.send(property)
+
     cache.key?(property).should be_true
-    instance.send(property).should == value
+    cache[property].should == value
+
+    true
+  end
+
+  failure_message_for_should do |instance|
+    "expected parser to cache property #{property}"
+  end
+  failure_message_for_should_not do |instance|
+    "expected parser to not cache property #{property}"
   end
 end
 

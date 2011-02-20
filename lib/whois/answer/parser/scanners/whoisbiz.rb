@@ -50,7 +50,7 @@ module Whois
 
           def parse_available
             if @input.scan(/^Not found: (.+)\n/)
-              @ast["Domain ID"] = @input[1]
+              @ast["Domain Name"] = @input[1]
               @ast["status-available"] = true
             end
           end
