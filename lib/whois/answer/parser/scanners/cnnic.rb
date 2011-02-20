@@ -22,65 +22,30 @@ module Whois
     class Parser
       module Scanners
 
-        class Verisign < Base
+        class Cnnic < Scanners::Base
 
           def parse_content
-            trim_empty_line   ||
+            parse_reserved    ||
             parse_available   ||
-            parse_disclaimer  ||
-            parse_notice      ||
-            parse_indentedkeyvalue ||
-            skip_ianaservice  ||
-            skip_lastupdate   ||
-            skip_fuffa        ||
+            parse_keyvalue    ||
+            trim_newline      ||
             error!("Unexpected token")
           end
 
-
-          def skip_lastupdate
-            @input.skip(/>>>(.+?)<<<\n/)
-          end
-
-          def skip_fuffa
-            (@input.scan(/^\S(.+)\n/)) ||
-            (@input.scan(/^\S(.+)/) and @input.eos?)
-          end
-
-          def skip_ianaservice
-            if @input.match?(/IANA Whois Service/)
-              @ast["IANA"] = true
-              @input.terminate
-            end
-          end
-
           def parse_available
-            if @input.scan(/No match for "(.+?)"\.\n/)
-              @ast["Domain Name"] = @input[1].strip
+            if @input.scan(/^no matching record\n/)
+              @ast["status-available"] = true
             end
           end
 
-          def parse_notice
-            if @input.match?(/^NOTICE:/)
-              lines = []
-              while @input.scan(/(.+)\n/)
-                lines << @input[1].strip
-              end
-              @ast["Notice"] = lines.join(" ")
+          def parse_reserved
+            if @input.scan(/^the domain you want to register is reserved\n/)
+              @ast["status-reserved"] = true
             end
           end
 
-          def parse_disclaimer
-            if @input.match?(/^TERMS OF USE:/)
-              lines = []
-              while @input.scan(/(.+)\n/)
-                lines << @input[1].strip
-              end
-              @ast["Disclaimer"] = lines.join(" ")
-            end
-          end
-
-          def parse_indentedkeyvalue
-            if @input.scan(/\s+(.+?):(.*?)\n/)
+          def parse_keyvalue
+            if @input.scan(/(.+?):(.*?)\n/)
               key, value = @input[1].strip, @input[2].strip
               if @ast[key].nil?
                 @ast[key] = value

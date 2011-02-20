@@ -15,7 +15,7 @@
 
 
 require 'whois/answer/parser/base'
-require 'whois/answer/parser/scanners/base'
+require 'whois/answer/parser/scanners/cnnic'
 
 
 module Whois
@@ -110,7 +110,7 @@ module Whois
         #
         # @return [Hash]
         def parse
-          Scanner.new(content_for_scanner).parse
+          Scanners::Cnnic.new(content_for_scanner).parse
         end
 
 
@@ -128,43 +128,6 @@ module Whois
               :organization => o,
               :email        => e
             )
-          end
-
-
-          class Scanner < Scanners::Base
-
-            def parse_content
-              parse_reserved    ||
-              parse_available   ||
-              parse_keyvalue    ||
-              trim_newline      ||
-              error!("Unexpected token")
-            end
-
-            def parse_available
-              if @input.scan(/^no matching record\n/)
-                @ast["status-available"] = true
-              end
-            end
-
-            def parse_reserved
-              if @input.scan(/^the domain you want to register is reserved\n/)
-                @ast["status-reserved"] = true
-              end
-            end
-
-            def parse_keyvalue
-              if @input.scan(/(.+?):(.*?)\n/)
-                key, value = @input[1].strip, @input[2].strip
-                if @ast[key].nil?
-                  @ast[key] = value
-                else
-                  @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                  @ast[key] << value
-                end
-              end
-            end
-
           end
 
       end
