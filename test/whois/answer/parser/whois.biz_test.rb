@@ -15,7 +15,7 @@ class AnswerParserWhoisBizTest < Whois::Answer::Parser::TestCase
     assert_equal_and_cached expected, parser, :status
 
     parser    = @klass.new(load_part('status_available.txt'))
-    expected  = %w()
+    expected  = nil
     assert_equal_and_cached expected, parser, :status
   end
 

@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/whoisbiz'
 
 
 module Whois
@@ -33,13 +34,15 @@ module Whois
       # and examples.
       #
       class WhoisBiz < Base
+        include Features::Ast
+
 
         property_supported :status do
-          content_for_scanner.scan(/Domain Status:\s+(.*?)\n/).flatten
+          node("Domain Status")
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /Not found:/)
+          !!node("status-available")
         end
 
         property_supported :registered? do
@@ -48,28 +51,34 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Domain Registration Date:\s+(.*)\n/
-            Time.parse($1)
-          end
+          node("Domain Registration Date") { |value| Time.parse(value) }
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Domain Last Updated Date:\s+(.*)\n/
-            Time.parse($1)
-          end
+          node("Domain Last Updated Date") { |value| Time.parse(value) }
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Domain Expiration Date:\s+(.*)\n/
-            Time.parse($1)
-          end
+          node("Domain Expiration Date") { |value| Time.parse(value) }
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
-            Answer::Nameserver.new(name.downcase)
-          end
+          node("Name Server") do |values|
+            [*values].map do |name|
+              Nameserver.new(name.downcase)
+            end
+          end || []
+        end
+
+
+        # Initializes a new {Scanners::Verisign} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::Whoisbiz.new(content_for_scanner).parse
         end
 
       end

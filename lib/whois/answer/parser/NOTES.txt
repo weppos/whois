@@ -1,3 +1,14 @@
+# Scanners
+
+
+## Types
+
+- verisign : indented keyvalue with text
+- cnnic : keyvalue
+- biz : keyvalue
+
+---
+
 .us
 .biz
 .travel
