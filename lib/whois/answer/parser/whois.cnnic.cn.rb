@@ -26,40 +26,67 @@ module Whois
       #
       # Parser for the whois.cnnic.cn server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisCnnicCn < Base
+        include Ast
+
+        property_not_supported :disclaimer
+
+
+        property_supported :domain do
+          node("Domain Name") { |value| value.downcase }
+        end
+
+        property_supported :domain_id do
+          node("ROID")
+        end
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
 
         property_supported :status do
-          content_for_scanner.scan(/Domain Status:\s+(.+)\n/).flatten
+          node("Domain Status")
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "no matching record")
+          !!node("status-available")
         end
 
         property_supported :registered? do
-          !available?
+          reserved? || !available?
         end
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Registration Date:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("Registration Date") { |value| Time.parse(value) }
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
-            Time.parse($1)
+          node("Expiration Date") { |value| Time.parse(value) }
+        end
+
+        property_supported :registrar do
+          node("Sponsoring Registrar") do |value|
+            Answer::Registrar.new(
+              :id =>    value,
+              :name =>  value
+            )
           end
         end
+
+        property_supported :registrant_contact do
+          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contact do
+          contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN)
+        end
+
+        property_not_supported :technical_contact
 
 
         property_supported :nameservers do
@@ -68,8 +95,95 @@ module Whois
           end
         end
 
-      end
 
+        # NEWPROPERTY
+        def reserved?
+          !!node("status-reserved")
+        end
+
+
+        protected
+
+          def parse
+            Scanner.new(content_for_scanner).parse
+          end
+
+          def contact(element, type)
+            n = node("#{element} Name")
+            o = node("#{element} Organization")
+            e = node("#{element} Email")
+            return if n.nil? && o.nil? && e.nil?
+
+            Answer::Contact.new(
+              :type         => type,
+              :name         => n,
+              :organization => o,
+              :email        => e
+            )
+          end
+
+
+          class Scanner
+
+            def initialize(content)
+              @input = StringScanner.new(content)
+            end
+
+            def parse
+              @ast = {}
+              while !@input.eos?
+                parse_content
+              end
+              @ast
+            end
+
+            private
+
+              def parse_content
+                parse_reserved    ||
+                parse_available   ||
+                parse_pair        ||
+                trim_newline      ||
+                error("Unexpected token")
+              end
+
+              def trim_newline
+                @input.scan(/\n/)
+              end
+
+              def parse_available
+                if @input.scan(/^no matching record\n/)
+                  @ast["status-available"] = true
+                end
+              end
+
+              def parse_reserved
+                if @input.scan(/^the domain you want to register is reserved\n/)
+                  @ast["status-reserved"] = true
+                end
+              end
+
+              def parse_pair
+                if @input.scan(/(.+?):(.*?)\n/)
+                  key, value = @input[1].strip, @input[2].strip
+                  if @ast[key].nil?
+                    @ast[key] = value
+                  else
+                    @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
+                    @ast[key] << value
+                  end
+                end
+              end
+
+              def error(message)
+                if @input.eos?
+                  raise "Unexpected end of input."
+                else
+                  raise "#{message}: #{@input.peek(@input.string.length)}"
+                end
+              end
+          end
+      end
     end
   end
 end

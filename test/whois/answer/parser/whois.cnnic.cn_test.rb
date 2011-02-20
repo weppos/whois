@@ -9,16 +9,73 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_disclaimer
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).disclaimer }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).disclaimer }
+  end
+
+
+  def test_domain
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = "google.cn"
+    assert_equal_and_cached expected, parser, :domain
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :domain
+  end
+
+  def test_domain_id
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = "20030311s10001s00033735-cn"
+    assert_equal_and_cached expected, parser, :domain_id
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :domain_id
+  end
+
+
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_url }
+  end
+
+
   def test_status
-    assert_equal  ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
-                   "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"],
-                  @klass.new(load_part('registered.txt')).status
-    assert_equal  [],
-                  @klass.new(load_part('available.txt')).status
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
+                 "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"]
+    assert_equal_and_cached expected, parser, :status
+
+    parser    = @klass.new(load_part('registered_status_ok.txt'))
+    expected  = "ok"
+    assert_equal_and_cached expected, parser, :status
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :status
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
+    expected  = false
+    assert_equal_and_cached expected, parser, :available?
+
+    parser    = @klass.new(load_part('registered_status_ok.txt'))
+    expected  = false
+    assert_equal_and_cached expected, parser, :available?
+
+    parser    = @klass.new(load_part('reserved.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
@@ -32,17 +89,27 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
+    parser    = @klass.new(load_part('registered_status_ok.txt'))
+    expected  = true
+    assert_equal_and_cached expected, parser, :registered?
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = true
+    assert_equal_and_cached expected, parser, :registered?
+
     parser    = @klass.new(load_part('available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
-  def test_created_on
+  def test_created_on_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2003-03-17 12:20:00")
     assert_equal_and_cached expected, parser, :created_on
+  end
 
+  def test_created_on_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
@@ -53,14 +120,71 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
   end
 
-  def test_expires_on
+  def test_expires_on_with_registered
     parser    = @klass.new(load_part('registered.txt'))
     expected  = Time.parse("2012-03-17 12:48:00")
     assert_equal_and_cached expected, parser, :expires_on
+  end
 
+  def test_expires_on_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
+  end
+
+
+  def test_registrar_with_registered
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = parser.registrar
+    assert_equal_and_cached expected, parser, :registrar
+
+    assert_instance_of Whois::Answer::Registrar,  expected
+    assert_equal "MarkMonitor, Inc.",             expected.id
+    assert_equal "MarkMonitor, Inc.",             expected.name
+  end
+
+  def test_registrar_with_available
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :registrar
+  end
+
+  def test_registrant_contact_with_registered
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = parser.registrant_contact
+    assert_equal_and_cached expected, parser, :registrant_contact
+
+    assert_instance_of Whois::Answer::Contact,            expected
+    assert_equal "Google Ireland Holdings",               expected.organization
+    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, expected.type
+    assert_equal "Domain Admin",                          expected.name
+  end
+
+  def test_registrant_contact_with_available
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :registrant_contact
+  end
+
+  def test_admin_contact_with_registered
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = parser.admin_contact
+    assert_equal_and_cached expected, parser, :admin_contact
+
+    assert_instance_of Whois::Answer::Contact,            expected
+    assert_equal Whois::Answer::Contact::TYPE_ADMIN,      expected.type
+    assert_equal "dns-admin@google.com",                  expected.email
+  end
+
+  def test_admin_contact_with_available
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = nil
+    assert_equal_and_cached expected, parser, :admin_contact
+  end
+
+  def test_technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
   end
 
 
@@ -72,6 +196,21 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
+  end
+
+
+  def test_reserved_question
+    parser    = @klass.new(load_part('registered.txt'))
+    expected  = false
+    assert_equal  expected, parser.reserved?
+
+    parser    = @klass.new(load_part('available.txt'))
+    expected  = false
+    assert_equal  expected, parser.reserved?
+
+    parser    = @klass.new(load_part('reserved.txt'))
+    expected  = true
+    assert_equal  expected, parser.reserved?
   end
 
 end
