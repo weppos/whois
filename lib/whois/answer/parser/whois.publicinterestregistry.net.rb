@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/base'
 
 
 module Whois
@@ -30,7 +31,7 @@ module Whois
         include Features::Ast
 
         property_supported :disclaimer do
-          node("disclaimer")
+          node("Disclaimer")
         end
 
 
@@ -48,7 +49,7 @@ module Whois
         end
 
         property_supported :available? do
-          node("Domain ID").nil?
+          !!node("status-available")
         end
 
         property_supported :registered? do
@@ -117,11 +118,17 @@ module Whois
         end
 
 
-        protected
+        # Initializes a new {Scanner} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanner.new(content_for_scanner).parse
+        end
 
-          def parse
-            Scanner.new(content_for_scanner).parse
-          end
+
+        protected
 
           def contact(element, type)
             node("#{element} ID") do |registrant_id|
@@ -145,81 +152,54 @@ module Whois
           end
 
 
-        class Scanner
+        class Scanner < Scanners::Base
 
-          def initialize(content)
-            @input = StringScanner.new(content)
+          def parse_content
+            parse_available   ||
+            parse_throttled   ||
+            parse_disclaimer  ||
+            parse_pair        ||
+
+            trim_empty_line   ||
+            error!("Unexpected token")
           end
 
-          def parse
-            @ast = {}
-            while !@input.eos?
-              parse_content
+
+          def parse_available
+            if @input.match?(/^NOT FOUND\n/)
+              @ast["status-available"] = true
+              @input.skip(/^.+\n/)
             end
-            @ast
           end
 
-          private
-
-            def parse_content
-              parse_not_found   ||
-              parse_throttled   ||
-              parse_disclaimer  ||
-              parse_pair        ||
-
-              trim_empty_line   ||
-              error("Unexpected token")
+          def parse_throttled
+            if @input.match?(/^WHOIS LIMIT EXCEEDED/)
+              @ast["response-throttled"] = true
+              @input.skip(/^.+\n/)
             end
+          end
 
-            def trim_empty_line
-              @input.skip(/^\n/)
+          def parse_disclaimer
+            if @input.match?(/^NOTICE:/)
+              lines = []
+              while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
+                lines << @input[1].strip
+              end
+              @ast["Disclaimer"] = lines.join(" ")
             end
+          end
 
-            def error(message)
-              if @input.eos?
-                raise "Unexpected end of input."
+          def parse_pair
+            if @input.scan(/(.+?):(.*?)\n/)
+              key, value = @input[1].strip, @input[2].strip
+              if @ast[key].nil?
+                @ast[key] = value
               else
-                raise "#{message}: `#{@input.peek(@input.string.length)}'"
+                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
+                @ast[key] << value
               end
             end
-
-
-            def parse_not_found
-              @input.skip(/^NOT FOUND\n/)
-            end
-
-            def parse_throttled
-              if @input.match?(/^WHOIS LIMIT EXCEEDED/)
-                @ast["response-throttled"] = true
-                @input.skip(/^.+\n/)
-              end
-            end
-
-            def parse_disclaimer
-              if @input.match?(/^NOTICE:/)
-                lines = []
-                while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
-                  lines << @input[1].strip
-                end
-                @ast["disclaimer"] = lines.join(" ")
-              else
-                false
-              end
-            end
-
-            def parse_pair
-              if @input.scan(/(.+?):(.*?)\n/)
-                key, value = @input[1].strip, @input[2].strip
-                if @ast[key].nil?
-                  @ast[key] = value
-                else
-                  @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                  @ast[key] << value
-                end
-              else
-                false
-              end
-            end
+          end
 
         end
 
