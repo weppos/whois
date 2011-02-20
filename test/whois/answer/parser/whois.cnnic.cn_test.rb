@@ -36,6 +36,17 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_referral_whois
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_whois }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_whois }
+  end
+
+  def test_referral_url
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_url }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_url }
+  end
+
+
   def test_status
     parser    = @klass.new(load_part('registered.txt'))
     expected  = ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited",
@@ -50,17 +61,6 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
     expected  = nil
     assert_equal_and_cached expected, parser, :status
   end
-
-  def test_referral_whois
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_whois }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_whois }
-  end
-
-  def test_referral_url
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).referral_url }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).referral_url }
-  end
-
 
   def test_available?
     parser    = @klass.new(load_part('registered.txt'))
@@ -175,7 +175,6 @@ class AnswerParserWhoisCnnicCnTest < Whois::Answer::Parser::TestCase
   def test_admin_contact_with_available
     parser    = @klass.new(load_part('available.txt'))
     expected  = nil
-    
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
