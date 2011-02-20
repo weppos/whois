@@ -26,10 +26,10 @@ module Whois
 
           def parse_content
             trim_empty_line   ||
-            parse_not_found   ||
+            parse_available   ||
             parse_disclaimer  ||
             parse_notice      ||
-            parse_pair        ||
+            parse_keyvalue    ||
             skip_iana_service ||
             skip_last_update  ||
             skip_fuffa        ||
@@ -38,12 +38,12 @@ module Whois
 
 
           def skip_last_update
-            @input.scan(/>>>(.*?)<<<\n/)
+            @input.scan(/>>>(.+?)<<<\n/)
           end
 
           def skip_fuffa
-            (@input.scan(/^\w(.*)\n/)) ||
-            (@input.scan(/^\w(.*)/) and @input.eos?)
+            (@input.scan(/^\w(.+)\n/)) ||
+            (@input.scan(/^\w(.+)/) and @input.eos?)
           end
 
           def skip_iana_service
@@ -53,17 +53,16 @@ module Whois
             end
           end
 
-          def parse_not_found
-            if @input.scan(/No match for "(.*?)"\.\n/)
+          def parse_available
+            if @input.scan(/No match for "(.+?)"\.\n/)
               @ast["Domain Name"] = @input[1].strip
             end
           end
 
-          # NOTE: parse_notice and parse_disclaimer are similar!
           def parse_notice
-            if @input.match?(/NOTICE:/)
+            if @input.match?(/^NOTICE:/)
               lines = []
-              while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
+              while @input.scan(/(.+)\n/)
                 lines << @input[1].strip
               end
               @ast["Notice"] = lines.join(" ")
@@ -71,17 +70,17 @@ module Whois
           end
 
           def parse_disclaimer
-            if @input.match?(/TERMS OF USE:/)
+            if @input.match?(/^TERMS OF USE:/)
               lines = []
-              while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
+              while @input.scan(/(.+)\n/)
                 lines << @input[1].strip
               end
               @ast["Disclaimer"] = lines.join(" ")
             end
           end
 
-          def parse_pair
-            if @input.scan(/\s+(.*?):(.*?)\n/)
+          def parse_keyvalue
+            if @input.scan(/\s+(.+?):(.*?)\n/)
               key, value = @input[1].strip, @input[2].strip
               if @ast[key].nil?
                 @ast[key] = value

@@ -135,7 +135,7 @@ module Whois
             def parse_content
               parse_reserved    ||
               parse_available   ||
-              parse_pair        ||
+              parse_keyvalue    ||
               trim_newline      ||
               error!("Unexpected token")
             end
@@ -152,7 +152,7 @@ module Whois
               end
             end
 
-            def parse_pair
+            def parse_keyvalue
               if @input.scan(/(.+?):(.*?)\n/)
                 key, value = @input[1].strip, @input[2].strip
                 if @ast[key].nil?
