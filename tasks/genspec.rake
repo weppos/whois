@@ -23,6 +23,8 @@ namespace :genspec do
 #   $ rake genspec:parsers
 #
 
+require 'whois/answer/parser/%{khost}'
+
 describe %{klass}, "%{descr}" do
 
   FILE = "%{fpath}"
@@ -70,11 +72,12 @@ end
 
       # Generate the filename and klass name from the test file.
       parts = (file.split("/") - FIXTURE_PARTS)
-      klass = Whois::Answer::Parser.parser_klass(parts.first)
+      khost = parts.first
+      klass = Whois::Answer::Parser.parser_klass(khost)
 
       tests_path   = file
       fixture_path = File.join(FIXTURE_DIR, *parts).gsub(".expected", ".txt")
-      rspec_path   = File.join(RSPEC_DIR,   *parts).gsub(".expected", "_rspec.rb")
+      rspec_path   = File.join(RSPEC_DIR,   *parts).gsub(".expected", "_spec.rb")
 
       # Extract the tests from the test file
       # and generates a Hash.
@@ -122,6 +125,7 @@ end
       describe = <<-RUBY
 #{TPL_DESCRIBE % {
   :klass => klass,
+  :khost => khost,
   :descr => parts.last,
   :fpath => fixture_path,
   :sfile => relativize(rspec_path),
