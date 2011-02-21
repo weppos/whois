@@ -1,13 +1,13 @@
 module ParserExampleGroup
 
-  def load_part(path)
-    _part.new(File.read(fixture("responses", @host.to_s, @suffix.to_s, @schema.to_s, path)), @host)
-  end
-
   _part       = Whois::Answer::Part
   _registrar  = Whois::Answer::Registrar
   _contact    = Whois::Answer::Contact
   _nameserver = Whois::Answer::Nameserver
+
+  def load_part(path)
+    Whois::Answer::Part.new(File.read(fixture("responses", @host.to_s, @suffix.to_s, @schema.to_s, path)), @host)
+  end
 
 end
 
