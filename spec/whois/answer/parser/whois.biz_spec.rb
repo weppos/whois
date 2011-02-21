@@ -141,7 +141,7 @@ describe Whois::Answer::Parser::WhoisBiz do
         parser.should cache_property(:created_on)
       end
     end
-    context "status registered" do
+    context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = nil
@@ -160,7 +160,7 @@ describe Whois::Answer::Parser::WhoisBiz do
         parser.should cache_property(:updated_on)
       end
     end
-    context "status registered" do
+    context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = nil
@@ -179,7 +179,7 @@ describe Whois::Answer::Parser::WhoisBiz do
         parser.should cache_property(:expires_on)
       end
     end
-    context "status registered" do
+    context "status available" do
       it "returns and cache the value" do
         parser    = klass.new(load_part('status_available.txt'))
         expected  = nil
@@ -190,9 +190,108 @@ describe Whois::Answer::Parser::WhoisBiz do
   end
 
 
+  describe "#registrar" do
+    context "when any" do
+      it "returns a Registrar" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.registrar.should be_a(Whois::Answer::Registrar)
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.should cache_property(:registrar)
+      end
+      it "parses the attributes" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        object    = parser.registrar
+        object.id.should      == "292"
+        object.name.should    == "MARKMONITOR, INC."
+      end
+    end
+    context "when none" do
+      it "returns an empty array" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.registrar.should be_nil
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.should cache_property(:registrar)
+      end
+    end
+  end
+
+  describe "#registrant_contact" do
+    context "when any" do
+      it "returns a Contact" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.registrant_contact.should be_a(Whois::Answer::Contact)
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.should cache_property(:registrant_contact)
+      end
+    end
+    context "when none" do
+      it "returns an empty array" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.registrant_contact.should be_nil
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.should cache_property(:registrant_contact)
+      end
+    end
+  end
+
+  describe "#admin_contact" do
+    context "when any" do
+      it "returns a Contact" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.admin_contact.should be_a(Whois::Answer::Contact)
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.should cache_property(:admin_contact)
+      end
+    end
+    context "when none" do
+      it "returns an empty array" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.admin_contact.should be_nil
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.should cache_property(:admin_contact)
+      end
+    end
+  end
+
+  describe "#technical_contact" do
+    context "when any" do
+      it "returns a Contact" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.technical_contact.should be_a(Whois::Answer::Contact)
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_registered.txt'))
+        parser.should cache_property(:technical_contact)
+      end
+    end
+    context "when none" do
+      it "returns an empty array" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.technical_contact.should be_nil
+      end
+      it "caches the value" do
+        parser    = klass.new(load_part('status_available.txt'))
+        parser.should cache_property(:technical_contact)
+      end
+    end
+  end
+
+
   describe "#nameservers" do
-    nameservers__when_any
     nameservers__when_none
+    nameservers__when_any
 
     context "when only name" do
       it "returns and cache the value" do
