@@ -23,17 +23,13 @@ namespace :genspec do
 #   $ rake genspec:parsers
 #
 
+require 'spec_helper'
 require 'whois/answer/parser/%{khost}'
 
 describe %{klass}, "%{descr}" do
 
   FILE = "%{fpath}"
   PART = Whois::Answer::Part.new(:body => File.read(FILE))
-
-  _part       = Whois::Answer::Part
-  _registrar  = Whois::Answer::Registrar
-  _contact    = Whois::Answer::Contact
-  _nameserver = Whois::Answer::Nameserver
 
 
   before(:each) do

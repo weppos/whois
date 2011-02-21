@@ -8,17 +8,13 @@
 #   $ rake genspec:parsers
 #
 
+require 'spec_helper'
 require 'whois/answer/parser/whois.biz'
 
 describe Whois::Answer::Parser::WhoisBiz, "status_registered.expected" do
 
   FILE = "/Users/weppos/Code/whois/spec/fixtures/responses/whois.biz/status_registered.txt"
   PART = Whois::Answer::Part.new(:body => File.read(FILE))
-
-  _part       = Whois::Answer::Part
-  _registrar  = Whois::Answer::Registrar
-  _contact    = Whois::Answer::Contact
-  _nameserver = Whois::Answer::Nameserver
 
 
   before(:each) do
