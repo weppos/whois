@@ -13,12 +13,10 @@ require 'whois/answer/parser/whois.biz'
 
 describe Whois::Answer::Parser::WhoisBiz, "status_registered.expected" do
 
-  FILE = "/Users/weppos/Code/whois/spec/fixtures/responses/whois.biz/status_registered.txt"
-  PART = Whois::Answer::Part.new(:body => File.read(FILE))
-
-
   before(:each) do
-    @parser = klass.new(PART)
+    file = fixture("responses", "whois.biz/status_registered.txt")
+    part = Whois::Answer::Part.new(:body => File.read(file))
+    @parser = klass.new(part)
   end
 
   context "#domain" do

@@ -2,14 +2,11 @@ require 'fileutils'
 
 namespace :genspec do
 
-  ROOT          = File.expand_path("../../", __FILE__)
-  ROOT_PARTS    = ROOT.split("/")
+  ROOT_DIR      = File.expand_path("../../", __FILE__)
+  TARGET_DIR    = File.join(ROOT_DIR, %w( spec whois answer parser responses ))
 
-  FIXTURE_DIR   = File.join(ROOT, %w( spec fixtures responses ))
-  FIXTURE_PARTS = FIXTURE_DIR.split("/")
-
-  RSPEC_DIR     = File.join(ROOT, %w( spec whois answer parser responses ))
-  RSPEC_PARTS   = RSPEC_DIR.split("/")
+  SOURCE_DIR    = File.join(ROOT_DIR, %w( spec fixtures responses ))
+  SOURCE_PARTS  = SOURCE_DIR.split("/")
 
 
   TPL_DESCRIBE = <<-RUBY.chomp!
@@ -28,12 +25,10 @@ require 'whois/answer/parser/%{khost}'
 
 describe %{klass}, "%{descr}" do
 
-  FILE = "%{fpath}"
-  PART = Whois::Answer::Part.new(:body => File.read(FILE))
-
-
   before(:each) do
-    @parser = klass.new(PART)
+    file = fixture("responses", "%{fixture}")
+    part = Whois::Answer::Part.new(:body => File.read(file))
+    @parser = klass.new(part)
   end
 
 %{contexts}
@@ -59,21 +54,20 @@ end
   RUBY
 
   def relativize(path)
-    path.gsub(ROOT, "")
+    path.gsub(ROOT_DIR, "")
   end
 
 
   task :parsers do
-    Dir["#{FIXTURE_DIR}/**/**.expected"].each do |file|
+    Dir["#{SOURCE_DIR}/**/**.expected"].each do |source_path|
 
       # Generate the filename and klass name from the test file.
-      parts = (file.split("/") - FIXTURE_PARTS)
+      parts = (source_path.split("/") - SOURCE_PARTS)
       khost = parts.first
+      kfile = parts.last
       klass = Whois::Answer::Parser.parser_klass(khost)
 
-      tests_path   = file
-      fixture_path = File.join(FIXTURE_DIR, *parts).gsub(".expected", ".txt")
-      rspec_path   = File.join(RSPEC_DIR,   *parts).gsub(".expected", "_spec.rb")
+      target_path = File.join(TARGET_DIR, *parts).gsub(".expected", "_spec.rb")
 
       # Extract the tests from the test file
       # and generates a Hash.
@@ -90,7 +84,7 @@ end
       #
       tests = {}
       match = nil
-      lines = File.open(tests_path)
+      lines = File.open(source_path)
       lines.each do |line|
         line.chomp!
         case line
@@ -120,18 +114,18 @@ end
 
       describe = <<-RUBY
 #{TPL_DESCRIBE % {
-  :klass => klass,
-  :khost => khost,
-  :descr => parts.last,
-  :fpath => fixture_path,
-  :sfile => relativize(rspec_path),
+  :klass    => klass,
+  :khost    => khost,
+  :descr    => kfile,
+  :sfile    => relativize(target_path),
+  :fixture  => parts.join("/").gsub(".expected", ".txt"),
   :contexts => contexts
 }}
       RUBY
 
-      print "Generating #{relativize(rspec_path)}... "
-      File.dirname(rspec_path).tap { |d| File.exists?(d) || FileUtils.mkdir_p(d) }
-      File.open(rspec_path, "w+") { |f| f.write(describe) }
+      print "Generating #{relativize(target_path)}... "
+      File.dirname(target_path).tap { |d| File.exists?(d) || FileUtils.mkdir_p(d) }
+      File.open(target_path, "w+") { |f| f.write(describe) }
       print "done!\n"
     end
 
