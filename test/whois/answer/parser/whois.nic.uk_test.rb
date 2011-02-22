@@ -160,4 +160,15 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     assert_equal_and_cached expected, parser, :nameservers
   end
 
+  def test_registrar
+    parser    = @klass.new(load_part('/registered.txt'))
+    result    = parser.registrar
+
+    assert_instance_of Whois::Answer::Registrar,  result
+    assert_equal "MARKMONITOR",                   result.id
+    assert_equal "Markmonitor",                   result.name
+    assert_equal "Markmonitor Inc.",              result.organization
+    assert_equal "http://www.markmonitor.com",    result.url
+  end
+
 end
