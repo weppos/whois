@@ -92,11 +92,14 @@ module Whois
 
         property_supported :registrar do
           if content_for_scanner =~ /Registrar:\n(.+) \[Tag = (.+)\]\n\s*URL: (.+)\n/
+            name, id, url = $1.strip, $2.strip, $3.strip
+            org, name = name.split(" t/a ")
+
             Answer::Registrar.new(
-              :id           => $2.strip,
-              :name         => $1.strip,
-              :organization => $1.strip,
-              :url          => $3.strip
+              :id           => id,
+              :url          => url,
+              :name         => (name || org),
+              :organization => org
             )
           end
         end
