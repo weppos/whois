@@ -172,7 +172,7 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
   end
 
   def test_registrar_without_trading_name
-    parser    = @klass.new(load_part('/property_nameservers_with_ip.txt'))
+    parser    = @klass.new(load_part('/property_registrar_without_trading_name.txt'))
     result    = parser.registrar
 
     assert_instance_of Whois::Answer::Registrar,  result
