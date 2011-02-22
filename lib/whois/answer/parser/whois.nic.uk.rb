@@ -90,6 +90,16 @@ module Whois
           end
         end
 
+        property_supported :registrar do
+          if content_for_scanner =~ /Registrar:\n(.+) \[Tag = (.+)\]\n\s*URL: (.+)\n/
+            Answer::Registrar.new(
+              :id           => $2.strip,
+              :name         => $1.strip,
+              :organization => $1.strip,
+              :url          => $3.strip
+            )
+          end
+        end
 
         # NEWPROPERTY
         def valid?
