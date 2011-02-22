@@ -1,0 +1,63 @@
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#domain
+  should: %s == "drop.io"
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s raise_error(Whois::PropertyNotSupported)
