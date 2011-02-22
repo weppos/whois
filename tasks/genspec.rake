@@ -59,7 +59,7 @@ end
 
 
   task :parsers do
-    Dir["#{SOURCE_DIR}/**/**.expected"].each do |source_path|
+    Dir["#{SOURCE_DIR}/**/*.expected"].each do |source_path|
 
       # Generate the filename and klass name from the test file.
       parts = (source_path.split("/") - SOURCE_PARTS)
