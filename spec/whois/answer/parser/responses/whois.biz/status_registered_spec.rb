@@ -109,6 +109,9 @@ describe Whois::Answer::Parser::WhoisBiz, "status_registered.expected" do
       @parser.nameservers.should be_a(Array)
     end
     it do
+      @parser.nameservers.should have(4).items
+    end
+    it do
       @parser.nameservers[0].should be_a(_nameserver)
     end
     it do
