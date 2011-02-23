@@ -60,7 +60,7 @@ module Whois
               section = @input[1].strip
               content = parse_section_pairs ||
                         parse_section_items
-              @input.match?(/\n+/) || error("Unexpected end of section")
+              @input.match?(/\n+/) || error!("Unexpected end of section")
               @ast[section] = content
             end
           end
