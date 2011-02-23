@@ -26,6 +26,12 @@ module Whois
       #
       # Parser for the whois.markmonitor.com server.
       #
+      # NOTE: This parser is just a stub and provides only a few basic methods
+      # to check for domain availability and get domain status.
+      # Please consider to contribute implementing missing methods.
+      # See WhoisNicIt parser for an explanation of all available methods
+      # and examples.
+      #
       class WhoisMarkmonitorCom < Base
 
         property_not_supported :status
