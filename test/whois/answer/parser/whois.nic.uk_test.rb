@@ -136,6 +136,29 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_registrar
+    parser    = @klass.new(load_part('status_registered.txt'))
+    result    = parser.registrar
+
+    assert_instance_of Whois::Answer::Registrar,  result
+    assert_equal "MARKMONITOR",                   result.id
+    assert_equal "Markmonitor",                   result.name
+    assert_equal "Markmonitor Inc.",              result.organization
+    assert_equal "http://www.markmonitor.com",    result.url
+  end
+
+  def test_registrar_without_trading_name
+    parser    = @klass.new(load_part('property_registrar_without_trading_name.txt'))
+    result    = parser.registrar
+
+    assert_instance_of Whois::Answer::Registrar,  result
+    assert_equal "NETNAMES",                      result.id
+    assert_equal "NetNames Limited",              result.name
+    assert_equal "NetNames Limited",              result.organization
+    assert_equal "http://www.netnames.co.uk",     result.url
+  end
+
+
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
@@ -158,28 +181,6 @@ class AnswerParserWhoisNicUkTest < Whois::Answer::Parser::TestCase
     ipv4s     = %w( 212.53.64.30         212.53.77.30         )
     expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
-  end
-
-  def test_registrar
-    parser    = @klass.new(load_part('status_registered.txt'))
-    result    = parser.registrar
-
-    assert_instance_of Whois::Answer::Registrar,  result
-    assert_equal "MARKMONITOR",                   result.id
-    assert_equal "Markmonitor",                   result.name
-    assert_equal "Markmonitor Inc.",              result.organization
-    assert_equal "http://www.markmonitor.com",    result.url
-  end
-
-  def test_registrar_without_trading_name
-    parser    = @klass.new(load_part('property_registrar_without_trading_name.txt'))
-    result    = parser.registrar
-
-    assert_instance_of Whois::Answer::Registrar,  result
-    assert_equal "NETNAMES",                      result.id
-    assert_equal "NetNames Limited",              result.name
-    assert_equal "NetNames Limited",              result.organization
-    assert_equal "http://www.netnames.co.uk",     result.url
   end
 
 end

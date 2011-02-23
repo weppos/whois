@@ -80,14 +80,6 @@ module Whois
         end
 
 
-        property_supported :nameservers do
-          if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
-            $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|
-              Answer::Nameserver.new(*line.strip.split(/\s+/))
-            end
-          end || []
-        end
-
         property_supported :registrar do
           if content_for_scanner =~ /Registrar:\n(.+) \[Tag = (.+)\]\n\s*URL: (.+)\n/
             name, id, url = $1.strip, $2.strip, $3.strip
@@ -101,6 +93,16 @@ module Whois
             )
           end
         end
+
+
+        property_supported :nameservers do
+          if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
+            $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|
+              Answer::Nameserver.new(*line.strip.split(/\s+/))
+            end
+          end || []
+        end
+
 
         # NEWPROPERTY
         def valid?
