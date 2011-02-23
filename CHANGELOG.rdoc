@@ -55,6 +55,8 @@
 
 * NEW: whois.nic.uk now supports #registrar (#81, #82).
 
+* NEW: Added simple whois.markmonitor.net parser (#83).
+
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
 
 * CHANGED: Switched from RDoc to YARDoc (#3).
