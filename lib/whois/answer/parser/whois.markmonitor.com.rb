@@ -110,7 +110,7 @@ module Whois
               :country_code => info[4],
               :email => email,
               :phone => phone,
-              :fax => fax,
+              :fax => fax
             )
           end
 
