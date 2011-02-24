@@ -48,8 +48,11 @@ module Whois
               when "connect"    then :registered
               when "free"       then :available
               when "invalid"    then :invalid
+              # NEWSTATUS
+              # The domain is registered, but there is not DNS entry for it.
+              when "failed"     then :registered
               else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+                Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
             end
           else
             if version < "2.0"
