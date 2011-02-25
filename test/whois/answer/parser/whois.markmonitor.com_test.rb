@@ -91,6 +91,15 @@ class AnswerParserWhoisMarkmonitorComTest < Whois::Answer::Parser::TestCase
   end
 
 
+  def test_registrar
+    registrar = Whois::Answer::Registrar.new(
+      :name => 'Markmonitor.com',
+      :url =>  'http://www.markmonitor.com'
+    )
+    assert_equal_and_cached registrar, @registered, :registrar
+  end
+
+
   def test_nameservers
     names     = %w( ns2.google.com ns1.google.com ns4.google.com ns3.google.com )
     expected  = names.map { |name| nameserver(name) }

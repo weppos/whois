@@ -68,8 +68,8 @@ module Whois
 
         property_supported :registrar do
           Answer::Registrar.new(
-            :name => content_for_scanner[/Registrar Name: (.+)\.\n/, 1],
-            :url  => content_for_scanner[/Registrar Homepage: (.+)\.\n/, 1]
+            :name => content_for_scanner[/Registrar Name: (.+)\n/, 1],
+            :url  => content_for_scanner[/Registrar Homepage: (.+)\n/, 1]
           )
         end
 
