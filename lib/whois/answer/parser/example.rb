@@ -54,6 +54,15 @@ module Whois
         end
 
 
+        property_supported :referral_whois do
+          nil
+        end
+
+        property_supported :referral_url do
+          nil
+        end
+
+
         # Gets the record status or statuses.
         #
         # Returns a String/Array with the record status if available,

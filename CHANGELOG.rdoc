@@ -89,35 +89,37 @@
 
 * FIXED: Make sure a warning is issued when #registered? or #available? returns nil.
 
-* FIXED: Fixed a bug with the whois.crsnic.net where the name server contains "no nameserver" instead of a valid host.
+* FIXED: Fixed a bug with the whois.crsnic.net parser where the name server contains "no nameserver" instead of a valid host.
 
 * FIXED: Fixed a bug which prevents a client to be created with nil timeout.
 
 * FIXED: The very first time a Whois::Answer method/property question method is invoked,
   the corresponding method is called instead of the question one.
 
-* FIXED: whois.cat must support multiple statuses.
+* FIXED: whois.cat parser must support multiple statuses.
 
-* FIXED: whois.tld.ee must support :expired status.
+* FIXED: whois.tld.ee parser must support :expired status.
 
-* FIXED: whois.nic.fr must support :registered status.
+* FIXED: whois.nic.fr parser must support :registered status.
 
-* FIXED: whois.nic.cz must support :expired status.
+* FIXED: whois.nic.cz parser must support :expired status.
 
 * FIXED: With some .tr domains, whois.nic.tr parser returns invalid values for nameservers.
 
-* FIXED: whois.isoc.org.il must support "transfer allowed" status.
+* FIXED: whois.isoc.org.il parser must support "transfer allowed" status.
 
 * FIXED: Whois::Answer#respond_to? and Whois::Answer::Parser#respond_to?
   should keep METHODS and PROPERTIES into consideration.
 
-* FIXED: whois.nic.fr must support "redemption" status.
+* FIXED: whois.nic.fr parser must support "redemption" status.
 
-* FIXED: whois.nic.it must support the following new statuses:
+* FIXED: whois.nic.it parser must support the following new statuses:
     - ok / *
     - client*
     - pendingDelete
     - GRACE-PERIOD
+
+* FIXED: whois.nic.it parser doesn't set address state.
 
 === BC
 

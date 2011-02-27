@@ -1,0 +1,13 @@
+#registrant_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s.id           == "HTML1-ITNIC"
+  should: %s.name         == "HTML.it srl"
+  should: %s.organization == "HTML.it srl"
+  should: %s.address      == "Viale Alessandrino, 595"
+  should: %s.city         == "Roma"
+  should: %s.zip          == "00172"
+  should: %s.state        == "RM"
+  should: %s.country_code == "IT"
+  should: %s.created_on   == Time.parse("2007-03-01 10:28:08")
+  should: %s.updated_on   == Time.parse("2007-03-01 10:28:08")
