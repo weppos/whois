@@ -1,0 +1,60 @@
+
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://www.nic.it/cgi-bin/Whois/whois.cgi                         *
+*********************************************************************
+
+Domain:             ucicinemas.it
+Status:             ACTIVE
+Created:            2001-10-18 00:00:00
+Last Update:        2010-09-01 00:02:22
+Expire Date:        2011-08-16
+
+Registrant
+  Name:             UCI ITALIA Spa
+  Organization:     UCI ITALIA Spa
+  ContactID:        UCII1-ITNIC
+  Address:          Via E. Fermi, 161
+                    Roma
+                    00146
+                    RM
+                    IT
+  Created:          2007-03-01 10:27:58
+  Last Update:      2007-03-01 10:27:58
+
+Admin Contact
+  Name:             Andrea Antonio Renato Stratta
+  ContactID:        AARS1-ITNIC
+  Address:          UCI Italia Srl
+                    Via E. Fermi, 161
+                    Roma
+                    00146
+                    RM
+                    IT
+  Created:          2006-08-16 00:00:00
+  Last Update:      2007-03-01 07:48:42
+
+Technical Contacts
+  Name:             Andrea Antonio Renato Stratta
+  ContactID:        AARS1-ITNIC
+  Address:          UCI Italia Srl
+                    Via E. Fermi, 161
+                    Roma
+                    00146
+                    RM
+                    IT
+  Created:          2006-08-16 00:00:00
+  Last Update:      2007-03-01 07:48:42
+
+Registrar
+  Organization:     Telnet s.r.l.
+  Name:             TELNET-MNT
+
+Nameservers
+  ns0.telnetwork.it
+  ns1.telnetwork.it
+
