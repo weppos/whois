@@ -131,11 +131,12 @@ module Whois
           def contact(element, type)
             node(element) do |raw|
               address = (raw["Address"] || "").split("\n")
+              company = address.size == 6 ? address.shift : nil
               Answer::Contact.new(
                 :id           => raw["ContactID"],
                 :type         => type,
                 :name         => raw["Name"],
-                :organization => raw["Organization"],
+                :organization => raw["Organization"] || company,
                 :address      => address[0],
                 :city         => address[1],
                 :zip          => address[2],
