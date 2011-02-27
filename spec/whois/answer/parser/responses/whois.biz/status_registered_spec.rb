@@ -83,10 +83,10 @@ describe Whois::Answer::Parser::WhoisBiz, "status_registered.expected" do
       @parser.registrar.should be_a(_registrar)
     end
     it do
-      @parser.registrar.id.should == "292"
+      @parser.registrar.id.should           == "292"
     end
     it do
-      @parser.registrar.name.should == "MARKMONITOR, INC."
+      @parser.registrar.name.should         == "MARKMONITOR, INC."
     end
   end
   context "#registrant_contact" do
