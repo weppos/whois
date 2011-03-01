@@ -102,6 +102,15 @@ module Whois
           end
         end
 
+        # Checks whether this response contains a message
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
+        #
+        # @return [Boolean]
+        def response_unavailable?
+          !!(content_for_scanner =~ /Server too busy, try again later/)
+        end
+
+
       end
 
     end

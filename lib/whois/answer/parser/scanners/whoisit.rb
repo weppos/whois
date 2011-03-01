@@ -25,11 +25,19 @@ module Whois
         class Whoisit < Scanners::Base
 
           def parse_content
+            parse_response_unavailable ||
+
             trim_newline      ||
             parse_disclaimer  ||
             parse_keyvalue    ||
             parse_section     ||
             error!("Unexpected token")
+          end
+
+          def parse_response_unavailable
+            if @input.scan(/Service temporarily unavailable\.\n/)
+              @ast["status-unavailable"] = true
+            end
           end
 
           def parse_disclaimer
@@ -56,7 +64,7 @@ module Whois
           end
 
           def parse_section
-            if @input.scan(/([^:]*?)\n/)
+            if @input.scan(/([^:]+?)\n/)
               section = @input[1].strip
               content = parse_section_pairs ||
                         parse_section_items
@@ -66,7 +74,7 @@ module Whois
           end
 
             def parse_section_items
-              if @input.match?(/(\s+)([^:]*?)\n/)
+              if @input.match?(/(\s+)([^:]+?)\n/)
                 items = []
                 indentation = @input[1].length
                 while item = parse_section_items_item(indentation)
@@ -77,7 +85,7 @@ module Whois
             end
 
               def parse_section_items_item(indentation)
-                if @input.scan(/\s{#{indentation}}(.*)\n/)
+                if @input.scan(/\s{#{indentation}}(.+)\n/)
                   @input[1]
                 end
               end
@@ -95,7 +103,7 @@ module Whois
             end
 
               def parse_section_pair
-                if @input.scan(/(\s+)(.*?):(\s+)(.*?)\n/)
+                if @input.scan(/(\s+)(.+?):(\s+)(.*?)\n/)
                   key = @input[2].strip
                   values = [@input[4].strip]
                   indentation = @input[1].length + @input[2].length + 1 + @input[3].length
@@ -107,7 +115,7 @@ module Whois
               end
 
                 def parse_section_pair_newlinevalue(indentation)
-                  if @input.scan(/\s{#{indentation}}(.*)\n/)
+                  if @input.scan(/\s{#{indentation}}(.+)\n/)
                     @input[1]
                   end
                 end

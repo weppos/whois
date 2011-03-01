@@ -229,6 +229,22 @@ describe Whois::Answer::Parser::Base do
     # end
   end
 
+  describe "#response_unavailable?" do
+    it "is undefined" do
+      klass.new(@part).respond_to?(:response_unavailable?).should be_false
+    end
+
+    # it "returns nil" do
+    #   i = klass.new(@part)
+    #   i.response_unavailable?.should be_nil
+    # end
+    #
+    # it "is false" do
+    #   i = klass.new(@part)
+    #   i.response_unavailable?.should be_false
+    # end
+  end
+
 end
 
 describe Whois::Answer::Parser::Base, "Parser Behavior" do

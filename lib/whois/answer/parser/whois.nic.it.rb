@@ -116,6 +116,14 @@ module Whois
         end
 
 
+        # Checks whether this response contains a message
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
+        #
+        # @return [Boolean]
+        def response_unavailable?
+          !!node("status-unavailable")
+        end
+
         # Initializes a new {Scanner} instance
         # passing the {Whois::Answer::Parser::Base#content_for_scanner}
         # and calls +parse+ on it.

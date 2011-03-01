@@ -91,3 +91,7 @@
   should: %s[2] == _nameserver.new(:name => "ns2.google.com")
   should: %s[3] be_a(_nameserver)
   should: %s[3] == _nameserver.new(:name => "ns3.google.com")
+
+
+#response_unavailable?
+  should: %s == false

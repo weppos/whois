@@ -361,7 +361,7 @@ module Whois
         end
 
         # Checks whether this response contains a message
-        # that can be reconducted to a WHOIS Server Unavailable status.
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
         #
         # Some WHOIS servers returns error messages
         # when they are experiencing failures.
