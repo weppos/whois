@@ -42,7 +42,7 @@ module Whois
 
 
         property_supported :status do
-          if incomplete?
+          if response_incomplete?
             :incomplete
           else
             if available?
@@ -54,11 +54,11 @@ module Whois
         end
 
         property_supported :available? do
-           (!incomplete? && !!(content_for_scanner =~ /No match for/))
+           (!response_incomplete? && !!(content_for_scanner =~ /No match for/))
         end
 
         property_supported :registered? do
-          (!incomplete? && !available?)
+          (!response_incomplete? && !available?)
         end
 
 
@@ -88,9 +88,9 @@ module Whois
         #
         # @return [Boolean]
         #
-        # @see Whois::Answer::Parser::Base#incomplete?
+        # @see Whois::Answer::Parser::Base#response_incomplete?
         #
-        def incomplete?
+        def response_incomplete?
           content_for_scanner.strip == ""
         end
 
@@ -98,8 +98,8 @@ module Whois
         protected
 
           def incomplete_response?
-            Whois.deprecate "#{self.class}#incomplete? will be removed in Whois 2.1. Please use #{self.class}#incomplete?."
-            incomplete?
+            Whois.deprecate "#{self.class}#response_incomplete? will be removed in Whois 2.1. Please use #{self.class}#response_incomplete?."
+            response_incomplete?
           end
 
       end

@@ -313,11 +313,11 @@ describe Whois::Answer do
     end
   end
 
-  describe "#incomplete?" do
+  describe "#response_incomplete?" do
     it "delegates to #parser" do
       i = klass.new(nil, [])
-      i.parser.expects(:incomplete?)
-      i.incomplete?
+      i.parser.expects(:response_incomplete?)
+      i.response_incomplete?
     end
   end
 

@@ -310,18 +310,18 @@ describe Whois::Answer::Parser do
     end
   end
 
-  describe "#incomplete?" do
+  describe "#response_incomplete?" do
     it "returns false when all parts are complete" do
       i = parsers("defined-false", "defined-false")
-      i.incomplete?.should == false
+      i.response_incomplete?.should == false
     end
 
     it "returns true when at least one part is incomplete" do
       i = parsers("defined-false", "defined-true")
-      i.incomplete?.should == true
+      i.response_incomplete?.should == true
 
       i = parsers("defined-true", "defined-false")
-      i.incomplete?.should == true
+      i.response_incomplete?.should == true
     end
   end
 
@@ -332,7 +332,7 @@ describe Whois::Answer::Parser do
       def throttled?
         true
       end
-      def incomplete?
+      def response_incomplete?
         true
       end
     end
@@ -341,7 +341,7 @@ describe Whois::Answer::Parser do
       def throttled?
         false
       end
-      def incomplete?
+      def response_incomplete?
         false
       end
     end

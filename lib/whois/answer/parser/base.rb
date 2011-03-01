@@ -354,10 +354,10 @@ module Whois
         # @abstract This method is just a stub.
         #           Define it in your parser class.
         #
-        # @see Whois::Answer#incomplete?
-        # @see Whois::Answer::Parser#incomplete?
+        # @see Whois::Answer#response_incomplete?
+        # @see Whois::Answer::Parser#response_incomplete?
         #
-        def incomplete?
+        def response_incomplete?
         end
 
         # Checks whether this response contains a message
@@ -375,7 +375,7 @@ module Whois
         end
 
         # Let them be documented
-        undef :incomplete?
+        undef :response_incomplete?
         undef :throttled?
         undef :response_unavailable?
 

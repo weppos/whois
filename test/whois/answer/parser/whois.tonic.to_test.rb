@@ -71,20 +71,20 @@ class AnswerParserWhoisTonicToTest < Whois::Answer::Parser::TestCase
     assert_equal_and_cached expected, parser, :registered?
   end
 
-  def test_incomplete?
+  def test_response_incomplete?
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
-    assert_equal  expected, parser.incomplete?
+    assert_equal  expected, parser.response_incomplete?
     # assert_equal  expected, parser.instance_eval { @incomplete }
 
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
-    assert_equal  expected, parser.incomplete?
+    assert_equal  expected, parser.response_incomplete?
     # assert_equal  expected, parser.instance_eval { @incomplete }
 
     parser    = @klass.new(load_part('is_incomplete.txt'))
     expected  = true
-    assert_equal  expected, parser.incomplete?
+    assert_equal  expected, parser.response_incomplete?
     # assert_equal  expected, parser.instance_eval { @incomplete }
   end
 

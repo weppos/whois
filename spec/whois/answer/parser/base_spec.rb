@@ -213,19 +213,19 @@ describe Whois::Answer::Parser::Base do
     # end
   end
 
-  describe "#incomplete?" do
+  describe "#response_incomplete?" do
     it "is undefined" do
-      klass.new(@part).respond_to?(:incomplete?).should be_false
+      klass.new(@part).respond_to?(:response_incomplete?).should be_false
     end
 
     # it "returns nil" do
     #   i = klass.new(@part)
-    #   i.incomplete?.should be_nil
+    #   i.response_incomplete?.should be_nil
     # end
     #
     # it "is false" do
     #   i = klass.new(@part)
-    #   i.incomplete?.should be_false
+    #   i.response_incomplete?.should be_false
     # end
   end
 
