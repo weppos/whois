@@ -219,4 +219,9 @@ describe Whois::Answer::Parser::WhoisNicIt, "status_registered.expected" do
       @parser.nameservers[3].should == _nameserver.new(:name => "ns3.google.com")
     end
   end
+  context "#response_unavailable?" do
+    it do
+      @parser.response_unavailable?.should == false
+    end
+  end
 end

@@ -127,7 +127,7 @@ module Whois
         # @example
         #   % Error: 55000000002 Connection refused; access control limit reached.
         #
-        def throttled?
+        def response_throttled?
           !!node("response-throttled")
         end
 

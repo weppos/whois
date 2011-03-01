@@ -52,3 +52,7 @@
 #nameservers
   should: %s be_a(Array)
   should: %s == []
+
+
+#response_unavailable?
+  should: %s == false

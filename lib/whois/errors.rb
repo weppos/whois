@@ -133,7 +133,7 @@ module Whois
 
   # Raised when attempting to access a property when the response is throttled.
   #
-  # @see Whois::Answer::Parser::Base#throttled?
+  # @see Whois::Answer::Parser::Base#response_throttled?
   class ResponseIsThrottled < ResponseError
   end
 

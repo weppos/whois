@@ -91,7 +91,7 @@ module Whois
         # @example
         #   whois.domain-registry.nl: daily whois-limit exceeded
         #
-        def throttled?
+        def response_throttled?
           case content_for_scanner
           when /^#{Regexp.escape("whois.domain-registry.nl: only 1 request per second allowed, try again later")}/
             true
@@ -101,6 +101,15 @@ module Whois
             false
           end
         end
+
+        # Checks whether this response contains a message
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
+        #
+        # @return [Boolean]
+        def response_unavailable?
+          !!(content_for_scanner =~ /Server too busy, try again later/)
+        end
+
 
       end
 

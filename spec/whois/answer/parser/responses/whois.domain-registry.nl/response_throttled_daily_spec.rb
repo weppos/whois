@@ -19,9 +19,9 @@ describe Whois::Answer::Parser::WhoisDomainRegistryNl, "response_throttled_daily
     @parser = klass.new(part)
   end
 
-  context "#throttled?" do
+  context "#response_throttled?" do
     it do
-      @parser.throttled?.should == true
+      @parser.response_throttled?.should == true
     end
   end
 end

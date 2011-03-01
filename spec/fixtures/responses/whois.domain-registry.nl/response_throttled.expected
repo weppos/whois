@@ -1,2 +1,2 @@
-#throttled?
+#response_throttled?
   should: %s == true

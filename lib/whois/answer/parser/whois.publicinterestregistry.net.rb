@@ -113,7 +113,7 @@ module Whois
         # @example
         #   WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS
         #
-        def throttled?
+        def response_throttled?
           !!node("response-throttled")
         end
 

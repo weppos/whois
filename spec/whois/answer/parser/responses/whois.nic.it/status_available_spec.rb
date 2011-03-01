@@ -102,4 +102,9 @@ describe Whois::Answer::Parser::WhoisNicIt, "status_available.expected" do
       @parser.nameservers.should == []
     end
   end
+  context "#response_unavailable?" do
+    it do
+      @parser.response_unavailable?.should == false
+    end
+  end
 end

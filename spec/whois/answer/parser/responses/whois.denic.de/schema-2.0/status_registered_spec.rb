@@ -19,9 +19,9 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#throttled?" do
+  context "#response_throttled?" do
     it do
-      @parser.throttled?.should == false
+      @parser.response_throttled?.should == false
     end
   end
 end

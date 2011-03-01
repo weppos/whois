@@ -259,7 +259,7 @@ module Whois
 
         # @api internal
         def validate!
-          raise ResponseIsThrottled if is(:throttled?)
+          raise ResponseIsThrottled if is(:response_throttled?)
         end
 
 
@@ -341,10 +341,10 @@ module Whois
         # @abstract This method is just a stub.
         #           Define it in your parser class.
         #
-        # @see Whois::Answer#throttled?
-        # @see Whois::Answer::Parser#throttled?
+        # @see Whois::Answer#response_throttled?
+        # @see Whois::Answer::Parser#response_throttled?
         #
-        def throttled?
+        def response_throttled?
         end
 
         # Checks whether this is an incomplete response.
@@ -354,15 +354,30 @@ module Whois
         # @abstract This method is just a stub.
         #           Define it in your parser class.
         #
-        # @see Whois::Answer#incomplete?
-        # @see Whois::Answer::Parser#incomplete?
+        # @see Whois::Answer#response_incomplete?
+        # @see Whois::Answer::Parser#response_incomplete?
         #
-        def incomplete?
+        def response_incomplete?
+        end
+
+        # Checks whether this response contains a message
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
+        #
+        # Some WHOIS servers returns error messages
+        # when they are experiencing failures.
+        #
+        # @return [Boolean]
+        #
+        # @abstract This method is just a stub.
+        #           Define it in your parser class.
+        #
+        def response_unavailable?
         end
 
         # Let them be documented
-        undef :incomplete?
-        undef :throttled?
+        undef :response_incomplete?
+        undef :response_throttled?
+        undef :response_unavailable?
 
         # @endgroup
 

@@ -305,19 +305,19 @@ describe Whois::Answer do
   end
 
 
-  describe "#throttled?" do
+  describe "#response_throttled?" do
     it "delegates to #parser" do
       i = klass.new(nil, [])
-      i.parser.expects(:throttled?)
-      i.throttled?
+      i.parser.expects(:response_throttled?)
+      i.response_throttled?
     end
   end
 
-  describe "#incomplete?" do
+  describe "#response_incomplete?" do
     it "delegates to #parser" do
       i = klass.new(nil, [])
-      i.parser.expects(:incomplete?)
-      i.incomplete?
+      i.parser.expects(:response_incomplete?)
+      i.response_incomplete?
     end
   end
 
