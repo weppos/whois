@@ -121,6 +121,8 @@
 
 * FIXED: whois.nic.it parser doesn't set address state.
 
+* FIXED: whois.cira.ca parser must support "to be released" status.
+
 === BC
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.

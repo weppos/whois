@@ -41,6 +41,7 @@ module Whois
               when "registered"       then :registered
               when "redemption"       then :registered
               when "auto-renew grace" then :registered
+              when "to be released"   then :registered
               when "available"        then :available
               # schema-1
               when "exist"      then :registered
