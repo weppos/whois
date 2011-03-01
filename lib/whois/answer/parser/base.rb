@@ -335,9 +335,8 @@ module Whois
         end
 
         # Checks whether this is a throttle response.
-        # The default implementation always returns +nil+.
         #
-        # @return [nil, false]
+        # @return [Boolean]
         #
         # @abstract This method is just a stub.
         #           Define it in your parser class.
@@ -349,9 +348,8 @@ module Whois
         end
 
         # Checks whether this is an incomplete response.
-        # The default implementation always returns +nil+.
         #
-        # @return [nil, false]
+        # @return [Boolean]
         #
         # @abstract This method is just a stub.
         #           Define it in your parser class.
