@@ -360,9 +360,24 @@ module Whois
         def incomplete?
         end
 
+        # Checks whether this response contains a message
+        # that can be reconducted to a WHOIS Server Unavailable status.
+        #
+        # Some WHOIS servers returns error messages
+        # when they are experiencing failures.
+        #
+        # @return [Boolean]
+        #
+        # @abstract This method is just a stub.
+        #           Define it in your parser class.
+        #
+        def response_unavailable?
+        end
+
         # Let them be documented
         undef :incomplete?
         undef :throttled?
+        undef :response_unavailable?
 
         # @endgroup
 
