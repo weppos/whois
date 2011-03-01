@@ -27,7 +27,7 @@ module Whois
     #
     # Please note that a response is not required to provide
     # all the attributes. When an attribute is not available,
-    # the corresponding value is set to nil.
+    # the corresponding value is set to nil.
     #
     # @attr [String] id
     # @attr [String] type

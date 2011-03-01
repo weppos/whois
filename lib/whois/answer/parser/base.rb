@@ -252,7 +252,7 @@ module Whois
           part.body
         end
 
-        # @api internal
+        # @api internal
         def is(symbol)
           respond_to?(symbol) && send(symbol)
         end
@@ -362,7 +362,7 @@ module Whois
         def incomplete?
         end
 
-        # Let them be documented
+        # Let them be documented
         undef :incomplete?
         undef :throttled?
 

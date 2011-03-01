@@ -127,7 +127,7 @@ module Whois
     end
 
     # Appends <em>Please report issue to</em> to the message
-    # and raises a new +error+ with the final message.
+    # and raises a new +error+ with the final message.
     #
     # @param  [Exception] error
     # @param  [String] message

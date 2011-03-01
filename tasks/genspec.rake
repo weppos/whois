@@ -100,7 +100,7 @@ end
       end
 
       # Generate the RSpec content and
-      # write one file for every test.
+      # write one file for every test.
       contexts = tests.map do |attr, specs|
         examples = specs.map do |method, should, match|
           if match.index("raise_")
