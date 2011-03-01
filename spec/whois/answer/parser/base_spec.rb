@@ -115,21 +115,21 @@ describe Whois::Answer::Parser::Base do
 
   describe "#is" do
     it "calls the method if the object respond to the method" do
-      i = Class.new(klass) { def throttled?; true; end }.new(Whois::Answer::Part.new)
-      i.is(:throttled?)
+      i = Class.new(klass) { def response_throttled?; true; end }.new(Whois::Answer::Part.new)
+      i.is(:response_throttled?)
     end
     it "does not call the method if the object does not respond to the method" do
       i = Class.new(klass).new(Whois::Answer::Part.new)
-      i.is(:throttled?).should be_false
+      i.is(:response_throttled?).should be_false
     end
   end
 
   describe "#validate!" do
     it "raises Whois::ResponseIsThrottled when the response is throttled" do
-      i = Class.new(klass) { def throttled?; true; end }.new(Whois::Answer::Part.new)
+      i = Class.new(klass) { def response_throttled?; true; end }.new(Whois::Answer::Part.new)
       lambda { i.validate! }.should raise_error(Whois::ResponseIsThrottled)
 
-      i = Class.new(klass) { def throttled?; false; end }.new(Whois::Answer::Part.new)
+      i = Class.new(klass) { def response_throttled?; false; end }.new(Whois::Answer::Part.new)
       lambda { i.validate! }.should_not raise_error
     end
   end
@@ -197,19 +197,19 @@ describe Whois::Answer::Parser::Base do
   end
 
 
-  describe "#throttled?" do
+  describe "#response_throttled?" do
     it "is undefined" do
-      klass.new(@part).respond_to?(:throttled?).should be_false
+      klass.new(@part).respond_to?(:response_throttled?).should be_false
     end
 
     # it "returns nil" do
     #   i = klass.new(@part)
-    #   i.throttled?.should be_nil
+    #   i.response_throttled?.should be_nil
     # end
     #
     # it "is false" do
     #   i = klass.new(@part)
-    #   i.throttled?.should be_false
+    #   i.response_throttled?.should be_false
     # end
   end
 
@@ -253,7 +253,7 @@ describe Whois::Answer::Parser::Base, "Parser Behavior" do
     property_supported(:domain) { "example.com" }
     property_not_supported(:domain_id)
 
-    def throttled?
+    def response_throttled?
       part.host == "throttled.whois.test"
     end
   end

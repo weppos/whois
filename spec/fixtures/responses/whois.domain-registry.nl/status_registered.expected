@@ -1,4 +1,4 @@
-#throttled?
+#response_throttled?
   should: %s == false
 
 #response_unavailable?

@@ -295,18 +295,18 @@ describe Whois::Answer::Parser do
     end
   end
 
-  describe "#throttled?" do
+  describe "#response_throttled?" do
     it "returns false when all parts are not throttled" do
       i = parsers("defined-false", "defined-false")
-      i.throttled?.should == false
+      i.response_throttled?.should == false
     end
 
     it "returns true when at least one part is throttled" do
       i = parsers("defined-false", "defined-true")
-      i.throttled?.should == true
+      i.response_throttled?.should == true
 
       i = parsers("defined-true", "defined-false")
-      i.throttled?.should == true
+      i.response_throttled?.should == true
     end
   end
 
@@ -329,7 +329,7 @@ describe Whois::Answer::Parser do
   private
 
     class Whois::Answer::Parser::ResponseDefinedTrueTest < Whois::Answer::Parser::Base
-      def throttled?
+      def response_throttled?
         true
       end
       def response_incomplete?
@@ -338,7 +338,7 @@ describe Whois::Answer::Parser do
     end
 
     class Whois::Answer::Parser::ResponseDefinedFalseTest < Whois::Answer::Parser::Base
-      def throttled?
+      def response_throttled?
         false
       end
       def response_incomplete?

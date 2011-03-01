@@ -91,7 +91,7 @@ module Whois
         # @example
         #   whois.domain-registry.nl: daily whois-limit exceeded
         #
-        def throttled?
+        def response_throttled?
           case content_for_scanner
           when /^#{Regexp.escape("whois.domain-registry.nl: only 1 request per second allowed, try again later")}/
             true

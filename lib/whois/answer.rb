@@ -224,10 +224,10 @@ module Whois
     #
     # @return [Boolean]
     #
-    # @see Whois::Answer::Parser#throttled?
+    # @see Whois::Answer::Parser#response_throttled?
     #
-    def throttled?
-      parser.throttled?
+    def response_throttled?
+      parser.response_throttled?
     end
 
     # Checks whether this is an incomplete response.

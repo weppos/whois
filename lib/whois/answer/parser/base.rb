@@ -259,7 +259,7 @@ module Whois
 
         # @api internal
         def validate!
-          raise ResponseIsThrottled if is(:throttled?)
+          raise ResponseIsThrottled if is(:response_throttled?)
         end
 
 
@@ -341,10 +341,10 @@ module Whois
         # @abstract This method is just a stub.
         #           Define it in your parser class.
         #
-        # @see Whois::Answer#throttled?
-        # @see Whois::Answer::Parser#throttled?
+        # @see Whois::Answer#response_throttled?
+        # @see Whois::Answer::Parser#response_throttled?
         #
-        def throttled?
+        def response_throttled?
         end
 
         # Checks whether this is an incomplete response.
@@ -376,7 +376,7 @@ module Whois
 
         # Let them be documented
         undef :response_incomplete?
-        undef :throttled?
+        undef :response_throttled?
         undef :response_unavailable?
 
         # @endgroup
