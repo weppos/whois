@@ -41,17 +41,21 @@ module Whois
 
         @@property_registry = {}
 
-        #
-        # :call-seq:
-        #   property_registry => hash
-        #   property_registry(ParserClass) => hash
-        #
         # Returns the <tt>@@property_registry</tt> if <tt>klass</tt> is nil,
         # otherwise returns the value in <tt>@@property_registry</tt> for given <tt>klass</tt>.
         # <tt>klass</tt> is expected to be a class name.
         #
         # Returned value is always a hash. If <tt>@@property_registry[klass]</tt>
         # doesn't exist, this method automatically initializes it to an empty Hash.
+        #
+        # @param  [Class] klass
+        # @return [Hash]
+        #
+        # @example Get the full registry
+        #   property_registry
+        #
+        # @example Get the registry for a specfic Class
+        #   property_registry(ParserClass)
         #
         def self.property_registry(klass = nil)
           if klass.nil?
@@ -61,11 +65,16 @@ module Whois
           end
         end
 
-        # Returns the status for the <tt>property</tt> passed as symbol.
+        # Returns the status for the +property+ passed as symbol.
         #
+        # @param  [Symbol] property
+        # @return [Symbol, nil]
+        #
+        # @example Undefined property
         #   property_status(:disclaimer)
         #   # => nil
         #
+        # @example Defined property
         #   property_register(:discaimer, :supported) {}
         #   property_status(:disclaimer)
         #   # => :supported
@@ -75,12 +84,18 @@ module Whois
           property_registry(self)[property]
         end
 
-        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
-        # is registered in the <tt>property_registry</tt> for current parser.
+        # Check if the +property+ passed as symbol
+        # is registered in the +property_registry+ for current parser.
         #
+        # @param  [Symbol] property
+        # @param  [Symbol] status
+        # @return [Boolean]
+        #
+        # @example Not-registered property
         #   property_registered?(:disclaimer)
         #   # => false
         #
+        # @example Registered property
         #   property_register(:discaimer) {}
         #   property_registered?(:disclaimer)
         #   # => true
@@ -160,6 +175,10 @@ module Whois
         # Registers a <tt>property</tt> as <tt>:not_implemented</tt>
         # and defines a method which will raise a <tt>PropertyNotImplemented</tt> error.
         #
+        # @param  [Symbol] property
+        # @return [void]
+        #
+        # @example Defining a not implemented property
         #   # Defines a not implemented property called :disclaimer.
         #   property_not_implemented(:disclaimer) do
         #     ...
@@ -178,6 +197,10 @@ module Whois
         # Registers a <tt>property</tt> as <tt>:not_supported</tt>
         # and defines a method which will raise a <tt>PropertyNotSupported</tt> error.
         #
+        # @param  [Symbol] property
+        # @return [void]
+        #
+        # @example Defining an unsupported property
         #   # Defines an unsupported property called :disclaimer.
         #   property_not_supported(:disclaimer) do
         #     ...
@@ -196,6 +219,10 @@ module Whois
         # Registers a <tt>property</tt> as <tt>:supported</tt>
         # and defines a method with the content of the block.
         #
+        # @param  [Symbol] property
+        # @return [void]
+        #
+        # @example Defining a supported property
         #   # Defines a supported property called :disclaimer.
         #   property_supported(:disclaimer) do
         #     ...
@@ -209,7 +236,7 @@ module Whois
           property_register(property, :supported, &block)
         end
 
-        # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
+        # Checks if the <tt>property</tt> passed as symbol
         # is supported by the current parser.
         #
         # @param  [Symbol] property The name of the property to check.
