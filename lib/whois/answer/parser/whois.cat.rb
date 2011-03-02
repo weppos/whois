@@ -36,7 +36,7 @@ module Whois
 
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
-            [*$1.split(", ")]
+            Array.wrap($1.split(", "))
           end
         end
 

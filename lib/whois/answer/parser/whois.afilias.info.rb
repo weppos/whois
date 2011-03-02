@@ -108,11 +108,9 @@ module Whois
 
 
         property_supported :nameservers do
-          node("Name Server") do |values|
-            [*values].delete_if(&:empty?).map do |name|
-              Nameserver.new(name.downcase)
-            end
-          end || []
+          Array.wrap(node("Name Server")).reject(&:empty?).map do |name|
+            Nameserver.new(name.downcase)
+          end
         end
 
 

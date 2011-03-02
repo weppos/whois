@@ -87,11 +87,9 @@ module Whois
 
 
         property_supported :nameservers do
-          node("Name Server") do |values|
-            [*values].reject { |value| value =~ /no nameserver/i }.map do |name|
-              Nameserver.new(name.downcase)
-            end
-          end || []
+          Array.wrap(node("Name Server")).reject { |value| value =~ /no nameserver/i }.map do |name|
+            Nameserver.new(name.downcase)
+          end
         end
 
 
