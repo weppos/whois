@@ -19,6 +19,31 @@ describe Whois::Answer::Parser::WhoisAfiliasInfo, "status_registered.expected" d
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Access to INFO WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "google.info"
+    end
+  end
+  context "#domain_id" do
+    it do
+      @parser.domain_id.should == "D37288-LRMS"
+    end
+  end
+  context "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#status" do
     it do
       @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
@@ -56,6 +81,143 @@ describe Whois::Answer::Parser::WhoisAfiliasInfo, "status_registered.expected" d
     end
     it do
       @parser.expires_on.should == Time.parse("2010-07-31 23:57:50 UTC")
+    end
+  end
+  context "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+    end
+    it do
+      @parser.registrar.id.should           == "R151-LRMS"
+    end
+    it do
+      @parser.registrar.name.should         == "Markmonitor Inc."
+    end
+    it do
+      @parser.registrar.organization.should == "Markmonitor Inc."
+    end
+  end
+  context "#registrant_contact" do
+    it do
+      @parser.registrant_contact.should be_a(_contact)
+    end
+    it do
+      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+    end
+    it do
+      @parser.registrant_contact.id.should           == "mmr-32097"
+    end
+    it do
+      @parser.registrant_contact.name.should         == "DNS Admin"
+    end
+    it do
+      @parser.registrant_contact.organization.should == "Google Inc."
+    end
+    it do
+      @parser.registrant_contact.address.should      == "1600 Amphitheatre Parkway"
+    end
+    it do
+      @parser.registrant_contact.city.should         == "Mountain View"
+    end
+    it do
+      @parser.registrant_contact.zip.should          == "94043"
+    end
+    it do
+      @parser.registrant_contact.state.should        == "CA"
+    end
+    it do
+      @parser.registrant_contact.country_code.should == "US"
+    end
+    it do
+      @parser.registrant_contact.phone.should        == "+1.6506234000"
+    end
+    it do
+      @parser.registrant_contact.fax.should          == "+1.6506188571"
+    end
+    it do
+      @parser.registrant_contact.email.should        == "dns-admin@google.com"
+    end
+  end
+  context "#admin_contact" do
+    it do
+      @parser.admin_contact.should be_a(_contact)
+    end
+    it do
+      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+    end
+    it do
+      @parser.admin_contact.id.should           == "mmr-32097"
+    end
+    it do
+      @parser.admin_contact.name.should         == "DNS Admin"
+    end
+    it do
+      @parser.admin_contact.organization.should == "Google Inc."
+    end
+    it do
+      @parser.admin_contact.address.should      == "1600 Amphitheatre Parkway"
+    end
+    it do
+      @parser.admin_contact.city.should         == "Mountain View"
+    end
+    it do
+      @parser.admin_contact.zip.should          == "94043"
+    end
+    it do
+      @parser.admin_contact.state.should        == "CA"
+    end
+    it do
+      @parser.admin_contact.country_code.should == "US"
+    end
+    it do
+      @parser.admin_contact.phone.should        == "+1.6506234000"
+    end
+    it do
+      @parser.admin_contact.fax.should          == "+1.6506188571"
+    end
+    it do
+      @parser.admin_contact.email.should        == "dns-admin@google.com"
+    end
+  end
+  context "#technical_contact" do
+    it do
+      @parser.technical_contact.should be_a(_contact)
+    end
+    it do
+      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+    end
+    it do
+      @parser.technical_contact.id.should           == "mmr-32097"
+    end
+    it do
+      @parser.technical_contact.name.should         == "DNS Admin"
+    end
+    it do
+      @parser.technical_contact.organization.should == "Google Inc."
+    end
+    it do
+      @parser.technical_contact.address.should      == "1600 Amphitheatre Parkway"
+    end
+    it do
+      @parser.technical_contact.city.should         == "Mountain View"
+    end
+    it do
+      @parser.technical_contact.zip.should          == "94043"
+    end
+    it do
+      @parser.technical_contact.state.should        == "CA"
+    end
+    it do
+      @parser.technical_contact.country_code.should == "US"
+    end
+    it do
+      @parser.technical_contact.phone.should        == "+1.6506234000"
+    end
+    it do
+      @parser.technical_contact.fax.should          == "+1.6506188571"
+    end
+    it do
+      @parser.technical_contact.email.should        == "dns-admin@google.com"
     end
   end
   context "#nameservers" do

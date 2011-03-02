@@ -93,6 +93,7 @@ module Whois
           end
         end
 
+
         private
 
           def contact(element, type)

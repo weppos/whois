@@ -1,3 +1,21 @@
+#disclaimer
+  should: %s == nil
+
+
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s == nil
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == []
 
@@ -15,6 +33,19 @@
   should: %s == nil
 
 #expires_on
+  should: %s == nil
+
+
+#registrar
+  should: %s == nil
+
+#registrant_contact
+  should: %s == nil
+
+#admin_contact
+  should: %s == nil
+
+#technical_contact
   should: %s == nil
 
 

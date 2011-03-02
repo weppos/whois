@@ -19,6 +19,31 @@ describe Whois::Answer::Parser::WhoisAfiliasInfo, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == nil
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  context "#domain_id" do
+    it do
+      @parser.domain_id.should == nil
+    end
+  end
+  context "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#status" do
     it do
       @parser.status.should == []
@@ -47,6 +72,26 @@ describe Whois::Answer::Parser::WhoisAfiliasInfo, "status_available.expected" do
   context "#expires_on" do
     it do
       @parser.expires_on.should == nil
+    end
+  end
+  context "#registrar" do
+    it do
+      @parser.registrar.should == nil
+    end
+  end
+  context "#registrant_contact" do
+    it do
+      @parser.registrant_contact.should == nil
+    end
+  end
+  context "#admin_contact" do
+    it do
+      @parser.admin_contact.should == nil
+    end
+  end
+  context "#technical_contact" do
+    it do
+      @parser.technical_contact.should == nil
     end
   end
   context "#nameservers" do

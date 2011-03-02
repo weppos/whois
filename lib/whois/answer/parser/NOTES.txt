@@ -5,7 +5,8 @@
 
 - verisign : indented keyvalue with text
 - cnnic : keyvalue
-- biz : keyvalue
+- biz : keyvalue + lastupdate + disclaimer
+- info : disclaimer + keyvalue
 
 ---
 

@@ -15,6 +15,7 @@
 
 
 require 'whois/answer/parser/base'
+require 'whois/answer/parser/scanners/afilias'
 
 
 module Whois
@@ -26,20 +27,35 @@ module Whois
       #
       # Parser for the whois.afilias.info server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisAfiliasInfo < Base
+        include Features::Ast
+
+
+        property_supported :disclaimer do
+          node("property-disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("Domain Name", &:downcase)
+        end
+
+        property_supported :domain_id do
+          node("Domain ID")
+        end
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
 
         property_supported :status do
-          content_for_scanner.scan(/Status:(.+?)\n/).flatten
+          node("Status") || []
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "NOT FOUND")
+          !!node("status-available")
         end
 
         property_supported :registered? do
@@ -48,29 +64,90 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Created On:(.*?)\n/
-            Time.parse($1)
+          node("Created On") do |value|
+            Time.parse(value)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Last Updated On:(.*?)\n/
-            Time.parse($1)
+          node("Last Updated On") do |value|
+            Time.parse(value)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expiration Date:(.*?)\n/
-            Time.parse($1)
+          node("Expiration Date") do |value|
+            Time.parse(value)
           end
         end
+
+
+        property_supported :registrar do
+          node("Sponsoring Registrar") do |value|
+            value =~ /(.+?) \((.+?)\)/ || Whois.bug!("Unknown registrar format `#{value}'")
+            Answer::Registrar.new(
+              :id =>            $2,
+              :name =>          $1,
+              :organization =>  $1
+            )
+          end
+        end
+
+        property_supported :registrant_contact do
+          contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contact do
+          contact("Admin", Whois::Answer::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contact do
+          contact("Tech", Whois::Answer::Contact::TYPE_TECHNICAL)
+        end
+
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:([^\s]+)\n/).flatten.map do |name|
-            Answer::Nameserver.new(name.downcase)
-          end
+          node("Name Server") do |values|
+            [*values].delete_if(&:empty?).map do |name|
+              Nameserver.new(name.downcase)
+            end
+          end || []
         end
+
+
+        # Initializes a new {Scanner} instance
+        # passing the {Whois::Answer::Parser::Base#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::Afilias.new(content_for_scanner).parse
+        end
+
+
+        private
+
+          def contact(element, type)
+            node("#{element} ID") do
+              address = (1..3).map { |i| node("#{element} Street#{i}") }.delete_if(&:empty?).join(" ")
+
+              Answer::Contact.new(
+                :type         => type,
+                :id           => node("#{element} ID"),
+                :name         => node("#{element} Name"),
+                :organization => node("#{element} Organization"),
+                :address      => address,
+                :city         => node("#{element} City"),
+                :zip          => node("#{element} Postal Code"),
+                :state        => node("#{element} State/Province"),
+                :country_code => node("#{element} Country"),
+                :phone        => node("#{element} Phone"),
+                :fax          => node("#{element} FAX"),
+                :email        => node("#{element} Email")
+              )
+            end
+          end
 
       end
 

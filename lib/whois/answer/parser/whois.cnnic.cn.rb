@@ -71,6 +71,7 @@ module Whois
           node("Expiration Date") { |value| Time.parse(value) }
         end
 
+
         property_supported :registrar do
           node("Sponsoring Registrar") do |value|
             Answer::Registrar.new(
@@ -92,9 +93,11 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:(.+)\n/).flatten.map do |name|
-            Answer::Nameserver.new(name.downcase)
-          end
+          node("Name Server") do |values|
+            [*values].map do |name|
+              Nameserver.new(name.downcase)
+            end
+          end || []
         end
 
 
@@ -114,7 +117,7 @@ module Whois
         end
 
 
-        protected
+        private
 
           def contact(element, type)
             n = node("#{element} Name")

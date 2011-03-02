@@ -27,12 +27,6 @@ module Whois
       #
       # Parser for the whois.biz server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisBiz < Base
         include Features::Ast
 
@@ -43,7 +37,7 @@ module Whois
 
 
         property_supported :domain do
-          node("Domain Name") { |value| value.downcase }
+          node("Domain Name", &:downcase)
         end
 
         property_supported :domain_id do
