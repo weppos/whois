@@ -49,7 +49,11 @@
 
 * NEW: whois.registry.in now supports #registrar (#78).
 
-* NEW: Added full .CN TLD parser (whois.cnnic.cn) (#77).
+* NEW: Added full whois.cnnic.cn parser (#77).
+
+* NEW: Added full whois.cnnic.biz parser.
+
+* NEW: Added full whois.afilias.info parser.
 
 * NEW: Extracted Whois::Answer::Parser::Features and Extracted Whois::Answer::Parser::Scanners::Base.
 
