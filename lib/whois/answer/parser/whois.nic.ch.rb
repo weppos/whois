@@ -65,18 +65,21 @@ module Whois
         #
         property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((.+\n)+)(?:\n|\z)/
-            list = {}
+            list  = {}
+            order = []
             $1.split("\n").map do |line|
               if line =~ /(.+)\t\[(.+)\]/
                 name, ip = $1, $2
+                order << name unless order.include?(name)
                 list[name] ||= Answer::Nameserver.new(name)
                 list[name].ipv4 = ip if Whois::Server.valid_ipv4?(ip)
                 list[name].ipv6 = ip if Whois::Server.valid_ipv6?(ip)
               else
+                order << line unless order.include?(line)
                 list[line] ||= Answer::Nameserver.new(line)
               end
             end
-            list.values
+            order.map { |name| list[name] }
           end || []
         end
 
