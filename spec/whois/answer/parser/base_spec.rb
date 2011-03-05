@@ -37,28 +37,28 @@ describe Whois::Answer::Parser::Base do
     it "defines a public method called PROPERTY when block is given" do
       with_registry do
         pklass = Class.new(klass)
-        pklass.public_instance_methods.should_not include(:greetings)
+        pklass.public_instance_methods.map(&:to_sym).should_not include(:greetings)
         pklass.property_register(:greetings, :supported) {}
-        pklass.public_instance_methods.should include(:greetings)
+        pklass.public_instance_methods.map(&:to_sym).should include(:greetings)
 
         pklass = Class.new(klass)
-        pklass.public_instance_methods.should_not include(:greetings)
+        pklass.public_instance_methods.map(&:to_sym).should_not include(:greetings)
         pklass.property_register(:greetings, :supported)
-        pklass.public_instance_methods.should_not include(:greetings)
+        pklass.public_instance_methods.map(&:to_sym).should_not include(:greetings)
       end
     end
 
     it "defines a private method called internal_PROPERTY when block is given" do
       with_registry do
         pklass = Class.new(klass)
-        pklass.private_instance_methods.should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
         pklass.property_register(:greetings, :supported) {}
-        pklass.private_instance_methods.should include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should include(:internal_greetings)
 
         pklass = Class.new(klass)
-        pklass.private_instance_methods.should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
         pklass.property_register(:greetings, :supported)
-        pklass.private_instance_methods.should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
       end
     end
   end
