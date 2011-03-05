@@ -309,11 +309,10 @@ module Whois
         # @see Whois::Answer::Parser#contacts
         #
         def contacts
-          contacts = []
-          [:registrant_contact, :admin_contact, :technical_contact].each do |property|
-            contacts << send(property) if property_supported?(property)
+          [:registrant_contact, :admin_contact, :technical_contact].inject([]) do |contacts, property|
+            contacts += Array.wrap(send(property)) if property_supported?(property)
+            contacts
           end
-          contacts.flatten.compact
         end
 
         # @endgroup
