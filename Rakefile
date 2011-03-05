@@ -108,11 +108,9 @@ namespace :multitest do
     end
   end
 
-  namespace :rubies do
-    task :setup do
-      sh "rvm #{RUBIES.join(",")} gem install bundler"
-      sh "rvm #{RUBIES.join(",")} bundle install"
-    end
+  task :setup do
+    sh "rvm #{RUBIES.join(",")} gem install bundler"
+    sh "rvm #{RUBIES.join(",")} bundle install"
   end
 end
 
