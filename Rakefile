@@ -89,11 +89,11 @@ Rake::TestTask.new(:testunit) do |t|
 end
 
 
-namespace :test do
-  RUBIES = %w( 1.8.7-p330 1.9.2-p0 jruby-1.5.6 ree-1.8.7-2010.02 )
+namespace :multitest do
+  RUBIES = %w( ruby-1.8.7-p334 ruby-1.9.2-p180 jruby-1.6.0.RC2 ree-1.8.7-2011.03 )
 
   desc "Run tests for all rubies"
-  task :rubies => :ensure_rvm do
+  task :all => :ensure_rvm do
     sh "rvm #{RUBIES.join(",")} rake default"
   end
 
@@ -101,12 +101,17 @@ namespace :test do
     File.exist?(File.expand_path("~/.rvm/scripts/rvm")) || abort("RVM is not available")
   end
 
-  namespace :ruby do
-    RUBIES.each do |ruby|
-      desc "Run tests against Ruby #{ruby}"
-      task ruby => "test:ensure_rvm" do
-        sh "rvm #{ruby} rake default"
-      end
+  RUBIES.each do |ruby|
+    desc "Run tests against Ruby #{ruby}"
+    task ruby => "test:ensure_rvm" do
+      sh "rvm #{ruby} rake default"
+    end
+  end
+
+  namespace :rubies do
+    task :setup do
+      sh "rvm #{RUBIES.join(",")} gem install bundler"
+      sh "rvm #{RUBIES.join(",")} bundle install"
     end
   end
 end
