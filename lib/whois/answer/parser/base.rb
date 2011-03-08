@@ -218,16 +218,6 @@ module Whois
         end
 
 
-        # @api internal
-        def self.define_method_property(property)
-          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
-            def #{property}(*args)
-              _property_#{property}(*args)
-            end
-          RUBY
-        end
-        
-
 
         # @return [Whois::Answer::Part] The part referenced by this parser.
         attr_reader :part
@@ -275,7 +265,11 @@ module Whois
         # @group Properties
 
         Whois::Answer::Parser::PROPERTIES.each do |property|
-          define_method_property(property)
+          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
+            def #{property}(*args)
+              _property_#{property}(*args)
+            end
+          RUBY
 
           property_not_implemented(property)
         end
