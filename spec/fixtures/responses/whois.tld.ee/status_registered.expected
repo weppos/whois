@@ -1,0 +1,22 @@
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "fraktal"
+  should: %s.name         == "fraktal"
+  should: %s.organization == nil
+
+#registrant_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s.id           == "CID:FRAKTAL:1"
+  should: %s.name         == "Priit Haamer"
+  should: %s.organization == nil
+
+#admin_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s.id           == "CID:FRAKTAL:7"
+  should: %s.name         == "Tõnu Runnel"
+  should: %s.organization == "Fraktal OÜ"
+
+#technical_contact
+  should: %s raise_error(Whois::PropertyNotSupported)

@@ -34,10 +34,6 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
-
-    parser    = @klass.new(load_part('status_expired.txt'))
-    expected  = false
-    assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
@@ -48,11 +44,8 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
-
-    parser    = @klass.new(load_part('status_expired.txt'))
-    expected  = true
-    assert_equal_and_cached expected, parser, :registered?
   end
+
 
   def test_created_on
     parser    = @klass.new(load_part('status_registered.txt'))
@@ -82,88 +75,6 @@ class AnswerParserWhoisTldEeTest < Whois::Answer::Parser::TestCase
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
-  end
-
-
-  def test_registrar_with_registered
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = parser.registrar
-    assert_equal_and_cached expected, parser, :registrar
-
-    assert_instance_of Whois::Answer::Registrar, expected
-    assert_equal "fraktal", expected.id
-  end
-
-  def test_registrar_with_available
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar
-  end
-
-  def test_registrar
-    parser    = @klass.new(load_part('property_registrar.txt'))
-    result    = parser.registrar
-
-    assert_instance_of Whois::Answer::Registrar,  result
-    assert_equal "fraktal",                       result.id
-    assert_equal "fraktal",                       result.name
-    assert_equal nil,                             result.organization
-  end
-
-
-  def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = parser.registrant_contact
-    assert_equal_and_cached expected, parser, :registrant_contact
-
-    assert_instance_of Whois::Answer::Contact, expected
-    assert_equal "CID:FRAKTAL:1", expected.id
-  end
-
-  def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrant_contact
-  end
-
-  def test_registrant_contact
-    parser    = @klass.new(load_part('property_contact_registrant.txt'))
-    result    = parser.registrant_contact
-
-    assert_instance_of Whois::Answer::Contact,      result
-    assert_equal "CID:FRAKTAL:1",                   result.id
-    assert_equal "Priit Haamer",                    result.name
-    assert_equal nil,                               result.organization
-  end
-
-  def test_admin_contact_with_registered
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = parser.admin_contact
-    assert_equal_and_cached expected, parser, :admin_contact
-
-    assert_instance_of Whois::Answer::Contact, expected
-    assert_equal "CID:FRAKTAL:7", expected.id
-  end
-
-  def test_admin_contact_with_available
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :admin_contact
-  end
-
-  def test_admin_contact
-    parser    = @klass.new(load_part('property_contact_admin.txt'))
-    result    = parser.admin_contact
-
-    assert_instance_of Whois::Answer::Contact,      result
-    assert_equal "CID:FRAKTAL:7",                   result.id
-    assert_equal "Tõnu Runnel",                     result.name
-    assert_equal "Fraktal OÜ",                      result.organization
-  end
-
-  def test_technical_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).technical_contact }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).technical_contact }
   end
 
 
