@@ -187,7 +187,8 @@ module Whois
           define_method("_property_#{property}", &block)
           private :"_property_#{property}"
 
-          # FIXME: move the typecast to a separate method.
+          # TODO: benchmark the cost of redefining the method.
+          # TODO: move the typecast to a separate method.
           # Ideally, we can define the methods once in the base parser
           # and have #property_register to only define the _method.
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
