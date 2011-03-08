@@ -26,18 +26,24 @@ describe Whois::Answer::Parser::WhoisNicMd, "status_registered.expected" do
       lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == nil
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "Google Inc."
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+    end
+    it do
+      @parser.registrant_contacts[0].id.should           == nil
+    end
+    it do
+      @parser.registrant_contacts[0].name.should         == "Google Inc."
     end
   end
   context "#admin_contacts" do

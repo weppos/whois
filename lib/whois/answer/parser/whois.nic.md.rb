@@ -80,7 +80,7 @@ module Whois
         property_not_supported :registrar
 
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant:\s+(.+?)\n/
             Whois::Answer::Contact.new(
               nil,

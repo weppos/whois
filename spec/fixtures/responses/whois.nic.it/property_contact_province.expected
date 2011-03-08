@@ -1,13 +1,15 @@
-#registrant_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
-  should: %s.id           == "HTML1-ITNIC"
-  should: %s.name         == "HTML.it srl"
-  should: %s.organization == "HTML.it srl"
-  should: %s.address      == "Viale Alessandrino, 595"
-  should: %s.city         == "Roma"
-  should: %s.zip          == "00172"
-  should: %s.state        == "RM"
-  should: %s.country_code == "IT"
-  should: %s.created_on   == Time.parse("2007-03-01 10:28:08")
-  should: %s.updated_on   == Time.parse("2007-03-01 10:28:08")
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == "HTML1-ITNIC"
+  should: %s[0].name         == "HTML.it srl"
+  should: %s[0].organization == "HTML.it srl"
+  should: %s[0].address      == "Viale Alessandrino, 595"
+  should: %s[0].city         == "Roma"
+  should: %s[0].zip          == "00172"
+  should: %s[0].state        == "RM"
+  should: %s[0].country_code == "IT"
+  should: %s[0].created_on   == Time.parse("2007-03-01 10:28:08")
+  should: %s[0].updated_on   == Time.parse("2007-03-01 10:28:08")

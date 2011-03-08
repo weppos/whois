@@ -129,7 +129,7 @@ module Whois
         #
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the registrant contact or
         # <tt>nil</tt> if not available.
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           nil
         end
 
@@ -138,7 +138,7 @@ module Whois
         #
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the administrative contact or
         # <tt>nil</tt> if not available.
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           nil
         end
 
@@ -147,7 +147,7 @@ module Whois
         #
         # Returns an instance of <tt>Whois::Answer::Contact</tt> representing the technical contact or
         # <tt>nil</tt> if not available.
-        property_supported :technical_contact do
+        property_supported :technical_contacts do
           nil
         end
 

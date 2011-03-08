@@ -21,42 +21,48 @@ describe Whois::Answer::Parser::WhoisNicIt, "property_contact_province.expected"
     @parser = klass.new(part)
   end
 
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == "HTML1-ITNIC"
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "HTML.it srl"
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.registrant_contact.organization.should == "HTML.it srl"
+      @parser.registrant_contacts[0].id.should           == "HTML1-ITNIC"
     end
     it do
-      @parser.registrant_contact.address.should      == "Viale Alessandrino, 595"
+      @parser.registrant_contacts[0].name.should         == "HTML.it srl"
     end
     it do
-      @parser.registrant_contact.city.should         == "Roma"
+      @parser.registrant_contacts[0].organization.should == "HTML.it srl"
     end
     it do
-      @parser.registrant_contact.zip.should          == "00172"
+      @parser.registrant_contacts[0].address.should      == "Viale Alessandrino, 595"
     end
     it do
-      @parser.registrant_contact.state.should        == "RM"
+      @parser.registrant_contacts[0].city.should         == "Roma"
     end
     it do
-      @parser.registrant_contact.country_code.should == "IT"
+      @parser.registrant_contacts[0].zip.should          == "00172"
     end
     it do
-      @parser.registrant_contact.created_on.should   == Time.parse("2007-03-01 10:28:08")
+      @parser.registrant_contacts[0].state.should        == "RM"
     end
     it do
-      @parser.registrant_contact.updated_on.should   == Time.parse("2007-03-01 10:28:08")
+      @parser.registrant_contacts[0].country_code.should == "IT"
+    end
+    it do
+      @parser.registrant_contacts[0].created_on.should   == Time.parse("2007-03-01 10:28:08")
+    end
+    it do
+      @parser.registrant_contacts[0].updated_on.should   == Time.parse("2007-03-01 10:28:08")
     end
   end
 end

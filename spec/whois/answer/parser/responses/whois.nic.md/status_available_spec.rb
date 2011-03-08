@@ -26,9 +26,12 @@ describe Whois::Answer::Parser::WhoisNicMd, "status_available.expected" do
       lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should == nil
+      @parser.registrant_contacts.should be_a(Array)
+    end
+    it do
+      @parser.registrant_contacts.should == []
     end
   end
   context "#admin_contacts" do

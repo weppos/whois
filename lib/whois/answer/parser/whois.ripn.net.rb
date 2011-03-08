@@ -73,7 +73,7 @@ module Whois
         end
 
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           if content_for_scanner =~ /e-mail:\s+(.+)\n/
             Answer::Contact.new(
               :type         => Answer::Contact::TYPE_ADMIN,

@@ -21,42 +21,48 @@ describe Whois::Answer::Parser::WhoisNicIt, "property_contact_with_organization.
     @parser = klass.new(part)
   end
 
-  context "#admin_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.admin_contacts.should be_a(Array)
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.admin_contacts.should have(1).items
     end
     it do
-      @parser.admin_contact.id.should           == "TT4277-ITNIC"
+      @parser.admin_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.admin_contact.name.should         == "Tsao Tu"
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
     end
     it do
-      @parser.admin_contact.organization.should == "Tu Tsao"
+      @parser.admin_contacts[0].id.should           == "TT4277-ITNIC"
     end
     it do
-      @parser.admin_contact.address.should      == "30 Herbert Street"
+      @parser.admin_contacts[0].name.should         == "Tsao Tu"
     end
     it do
-      @parser.admin_contact.city.should         == "Dublin"
+      @parser.admin_contacts[0].organization.should == "Tu Tsao"
     end
     it do
-      @parser.admin_contact.zip.should          == "2"
+      @parser.admin_contacts[0].address.should      == "30 Herbert Street"
     end
     it do
-      @parser.admin_contact.state.should        == "IE"
+      @parser.admin_contacts[0].city.should         == "Dublin"
     end
     it do
-      @parser.admin_contact.country_code.should == "IE"
+      @parser.admin_contacts[0].zip.should          == "2"
     end
     it do
-      @parser.admin_contact.created_on.should   == Time.parse("2008-11-27 16:47:22")
+      @parser.admin_contacts[0].state.should        == "IE"
     end
     it do
-      @parser.admin_contact.updated_on.should   == Time.parse("2008-11-27 16:47:22")
+      @parser.admin_contacts[0].country_code.should == "IE"
+    end
+    it do
+      @parser.admin_contacts[0].created_on.should   == Time.parse("2008-11-27 16:47:22")
+    end
+    it do
+      @parser.admin_contacts[0].updated_on.should   == Time.parse("2008-11-27 16:47:22")
     end
   end
 end

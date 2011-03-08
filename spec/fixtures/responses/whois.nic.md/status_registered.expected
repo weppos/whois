@@ -1,11 +1,13 @@
 #registrar
   should: %s raise_error(Whois::PropertyNotSupported)
 
-#registrant_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
-  should: %s.id           == nil
-  should: %s.name         == "Google Inc."
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Google Inc."
 
 #admin_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

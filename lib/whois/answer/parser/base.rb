@@ -143,21 +143,31 @@ module Whois
           property_registry(self).merge!({ property => status })
 
           if block_given?
-            define_method("internal_#{property}", &block)
-            private :"internal_#{property}"
+            define_method("_property_#{property}", &block)
+            private :"_property_#{property}"
 
+            # FIXME: move the typecast to a separate method.
+            # Ideally, we can define the methods once in the base parser
+            # and have #property_register to only define the _method.
             class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status == :supported
               def #{property}(*args)
                 cached_properties_fetch(:#{property}) do
                   validate!
-                  internal_#{property}(*args)
+                  value = _property_#{property}(*args)
+
+                  case "#{property}"
+                  when /_contacts$/
+                    typecast(value, Array)
+                  else
+                    value
+                  end
                 end
               end
             RUBY
 
             class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status != :supported
               def #{property}(*args)
-                internal_#{property}(*args)
+                _property_#{property}(*args)
               end
             RUBY
           end
@@ -419,6 +429,17 @@ module Whois
               @cached_properties[key] = yield
             end
             @cached_properties[key]
+          end
+
+        private
+
+          # @api internal
+          def typecast(value, type)
+            if Array == type
+              Array.wrap(value)
+            else
+              value
+            end
           end
 
       end

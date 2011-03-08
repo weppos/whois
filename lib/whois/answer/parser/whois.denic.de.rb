@@ -92,17 +92,17 @@ module Whois
           end
         end
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           contact("Holder", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           contact("Admin-C", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
         # FIXME: check against different schema
 
-        property_supported :technical_contact do
+        property_supported :technical_contacts do
           contact("Tech-C", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 

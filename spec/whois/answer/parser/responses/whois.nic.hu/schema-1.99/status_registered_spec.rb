@@ -35,124 +35,142 @@ describe Whois::Answer::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.registrar.organization.should == "3C Ltd."
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == nil
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "Google, Inc."
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.registrant_contact.organization.should == "Google, Inc."
+      @parser.registrant_contacts[0].id.should           == nil
     end
     it do
-      @parser.registrant_contact.address.should      == "Amphitheatre Pkwy 1600."
+      @parser.registrant_contacts[0].name.should         == "Google, Inc."
     end
     it do
-      @parser.registrant_contact.city.should         == "Mountain View"
+      @parser.registrant_contacts[0].organization.should == "Google, Inc."
     end
     it do
-      @parser.registrant_contact.zip.should          == "CA-94043"
+      @parser.registrant_contacts[0].address.should      == "Amphitheatre Pkwy 1600."
     end
     it do
-      @parser.registrant_contact.state.should        == nil
+      @parser.registrant_contacts[0].city.should         == "Mountain View"
     end
     it do
-      @parser.registrant_contact.country_code.should == "US"
+      @parser.registrant_contacts[0].zip.should          == "CA-94043"
     end
     it do
-      @parser.registrant_contact.phone.should        == "+1 650 253 0000"
+      @parser.registrant_contacts[0].state.should        == nil
     end
     it do
-      @parser.registrant_contact.fax.should          == "+1 650 253 0001"
+      @parser.registrant_contacts[0].country_code.should == "US"
     end
     it do
-      @parser.registrant_contact.email.should        == nil
-    end
-  end
-  context "#admin_contact" do
-    it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.registrant_contacts[0].phone.should        == "+1 650 253 0000"
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.registrant_contacts[0].fax.should          == "+1 650 253 0001"
     end
     it do
-      @parser.admin_contact.id.should           == "2000466366"
-    end
-    it do
-      @parser.admin_contact.name.should         == "3C Kft. (Registrar)"
-    end
-    it do
-      @parser.admin_contact.organization.should == nil
-    end
-    it do
-      @parser.admin_contact.address.should      == "Konkoly Thege út 29-33."
-    end
-    it do
-      @parser.admin_contact.city.should         == "Budapest"
-    end
-    it do
-      @parser.admin_contact.zip.should          == "H-1121"
-    end
-    it do
-      @parser.admin_contact.state.should        == nil
-    end
-    it do
-      @parser.admin_contact.country_code.should == "HU"
-    end
-    it do
-      @parser.admin_contact.phone.should        == "+36 1 275 52 00"
-    end
-    it do
-      @parser.admin_contact.fax.should          == "+36 1 275 58 87"
+      @parser.registrant_contacts[0].email.should        == nil
     end
   end
-  context "#technical_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.technical_contact.should be_a(_contact)
+      @parser.admin_contacts.should be_a(Array)
     end
     it do
-      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+      @parser.admin_contacts.should have(1).items
     end
     it do
-      @parser.technical_contact.id.should           == "2000578125"
+      @parser.admin_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.technical_contact.name.should         == "Markmonitor"
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
     end
     it do
-      @parser.technical_contact.organization.should == nil
+      @parser.admin_contacts[0].id.should           == "2000466366"
     end
     it do
-      @parser.technical_contact.address.should      == "Overland Road 10400, PMB155"
+      @parser.admin_contacts[0].name.should         == "3C Kft. (Registrar)"
     end
     it do
-      @parser.technical_contact.city.should         == "Boise"
+      @parser.admin_contacts[0].organization.should == nil
     end
     it do
-      @parser.technical_contact.zip.should          == "ID-83709"
+      @parser.admin_contacts[0].address.should      == "Konkoly Thege út 29-33."
     end
     it do
-      @parser.technical_contact.state.should        == nil
+      @parser.admin_contacts[0].city.should         == "Budapest"
     end
     it do
-      @parser.technical_contact.country_code.should == "US"
+      @parser.admin_contacts[0].zip.should          == "H-1121"
     end
     it do
-      @parser.technical_contact.phone.should        == "+ 1 208 389 5798"
+      @parser.admin_contacts[0].state.should        == nil
     end
     it do
-      @parser.technical_contact.fax.should          == "+ 1 208 389 5771"
+      @parser.admin_contacts[0].country_code.should == "HU"
     end
     it do
-      @parser.technical_contact.email.should        == "ccops@markmonitor.com"
+      @parser.admin_contacts[0].phone.should        == "+36 1 275 52 00"
+    end
+    it do
+      @parser.admin_contacts[0].fax.should          == "+36 1 275 58 87"
+    end
+  end
+  context "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+    end
+    it do
+      @parser.technical_contacts.should have(1).items
+    end
+    it do
+      @parser.technical_contacts[0].should be_a(_contact)
+    end
+    it do
+      @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+    end
+    it do
+      @parser.technical_contacts[0].id.should           == "2000578125"
+    end
+    it do
+      @parser.technical_contacts[0].name.should         == "Markmonitor"
+    end
+    it do
+      @parser.technical_contacts[0].organization.should == nil
+    end
+    it do
+      @parser.technical_contacts[0].address.should      == "Overland Road 10400, PMB155"
+    end
+    it do
+      @parser.technical_contacts[0].city.should         == "Boise"
+    end
+    it do
+      @parser.technical_contacts[0].zip.should          == "ID-83709"
+    end
+    it do
+      @parser.technical_contacts[0].state.should        == nil
+    end
+    it do
+      @parser.technical_contacts[0].country_code.should == "US"
+    end
+    it do
+      @parser.technical_contacts[0].phone.should        == "+ 1 208 389 5798"
+    end
+    it do
+      @parser.technical_contacts[0].fax.should          == "+ 1 208 389 5771"
+    end
+    it do
+      @parser.technical_contacts[0].email.should        == "ccops@markmonitor.com"
     end
   end
 end

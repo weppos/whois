@@ -4,46 +4,52 @@
   should: %s.name         == "3C Kft. (Registrar)"
   should: %s.organization == "3C Ltd."
 
-#registrant_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
-  should: %s.id           == nil
-  should: %s.name         == "Google, Inc."
-  should: %s.organization == "Google, Inc."
-  should: %s.address      == "Amphitheatre Pkwy 1600."
-  should: %s.city         == "Mountain View"
-  should: %s.zip          == "CA-94043"
-  should: %s.state        == nil
-  should: %s.country_code == "US"
-  should: %s.phone        == "+1 650 253 0000"
-  should: %s.fax          == "+1 650 253 0001"
-  should: %s.email        == nil
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Google, Inc."
+  should: %s[0].organization == "Google, Inc."
+  should: %s[0].address      == "Amphitheatre Pkwy 1600."
+  should: %s[0].city         == "Mountain View"
+  should: %s[0].zip          == "CA-94043"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1 650 253 0000"
+  should: %s[0].fax          == "+1 650 253 0001"
+  should: %s[0].email        == nil
 
-#admin_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_ADMIN
-  should: %s.id           == "2000466366"
-  should: %s.name         == "3C Kft. (Registrar)"
-  should: %s.organization == nil
-  should: %s.address      == "Konkoly Thege út 29-33."
-  should: %s.city         == "Budapest"
-  should: %s.zip          == "H-1121"
-  should: %s.state        == nil
-  should: %s.country_code == "HU"
-  should: %s.phone        == "+36 1 275 52 00"
-  should: %s.fax          == "+36 1 275 58 87"
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s[0].id           == "2000466366"
+  should: %s[0].name         == "3C Kft. (Registrar)"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Konkoly Thege út 29-33."
+  should: %s[0].city         == "Budapest"
+  should: %s[0].zip          == "H-1121"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "HU"
+  should: %s[0].phone        == "+36 1 275 52 00"
+  should: %s[0].fax          == "+36 1 275 58 87"
 
-#technical_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_TECHNICAL
-  should: %s.id           == "2000578125"
-  should: %s.name         == "Markmonitor"
-  should: %s.organization == nil
-  should: %s.address      == "Overland Road 10400, PMB155"
-  should: %s.city         == "Boise"
-  should: %s.zip          == "ID-83709"
-  should: %s.state        == nil
-  should: %s.country_code == "US"
-  should: %s.phone        == "+ 1 208 389 5798"
-  should: %s.fax          == "+ 1 208 389 5771"
-  should: %s.email        == "ccops@markmonitor.com"
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == "2000578125"
+  should: %s[0].name         == "Markmonitor"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Overland Road 10400, PMB155"
+  should: %s[0].city         == "Boise"
+  should: %s[0].zip          == "ID-83709"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+ 1 208 389 5798"
+  should: %s[0].fax          == "+ 1 208 389 5771"
+  should: %s[0].email        == "ccops@markmonitor.com"

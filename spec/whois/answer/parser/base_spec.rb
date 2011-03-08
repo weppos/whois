@@ -48,17 +48,17 @@ describe Whois::Answer::Parser::Base do
       end
     end
 
-    it "defines a private method called internal_PROPERTY when block is given" do
+    it "defines a private method called _property_PROPERTY when block is given" do
       with_registry do
         pklass = Class.new(klass)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
         pklass.property_register(:greetings, :supported) {}
-        pklass.private_instance_methods.map(&:to_sym).should include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should include(:_property_greetings)
 
         pklass = Class.new(klass)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
         pklass.property_register(:greetings, :supported)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
       end
     end
   end

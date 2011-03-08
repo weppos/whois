@@ -91,19 +91,37 @@ describe Whois::Answer::Parser::WhoisBiz, "status_registered.expected" do
       @parser.registrar.name.should         == "MARKMONITOR, INC."
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
+    end
+    it do
+      @parser.registrant_contacts.should have(1).items
+    end
+    it do
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
   end
-  context "#admin_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.admin_contacts.should be_a(Array)
+    end
+    it do
+      @parser.admin_contacts.should have(1).items
+    end
+    it do
+      @parser.admin_contacts[0].should be_a(_contact)
     end
   end
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      @parser.technical_contact.should be_a(_contact)
+      @parser.technical_contacts.should be_a(Array)
+    end
+    it do
+      @parser.technical_contacts.should have(1).items
+    end
+    it do
+      @parser.technical_contacts[0].should be_a(_contact)
     end
   end
   context "#nameservers" do

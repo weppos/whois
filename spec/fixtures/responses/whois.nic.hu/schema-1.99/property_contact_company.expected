@@ -1,14 +1,16 @@
-#registrant_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
-  should: %s.id           == nil
-  should: %s.name         == "Google, Inc."
-  should: %s.organization == "Google, Inc."
-  should: %s.address      == "Amphitheatre Pkwy 1600."
-  should: %s.city         == "Mountain View"
-  should: %s.zip          == "CA-94043"
-  should: %s.state        == nil
-  should: %s.country_code == "US"
-  should: %s.phone        == "+1 650 253 0000"
-  should: %s.fax          == "+1 650 253 0001"
-  should: %s.email        == nil
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Google, Inc."
+  should: %s[0].organization == "Google, Inc."
+  should: %s[0].address      == "Amphitheatre Pkwy 1600."
+  should: %s[0].city         == "Mountain View"
+  should: %s[0].zip          == "CA-94043"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1 650 253 0000"
+  should: %s[0].fax          == "+1 650 253 0001"
+  should: %s[0].email        == nil

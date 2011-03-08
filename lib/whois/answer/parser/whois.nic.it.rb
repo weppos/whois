@@ -96,15 +96,15 @@ module Whois
         end
 
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           contact("Admin Contact", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
-        property_supported :technical_contact do
+        property_supported :technical_contacts do
           contact("Technical Contacts", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 
