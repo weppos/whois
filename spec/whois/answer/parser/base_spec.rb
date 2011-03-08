@@ -34,31 +34,12 @@ describe Whois::Answer::Parser::Base do
   end
 
   describe ".property_register" do
-    it "defines a public method called PROPERTY when block is given" do
+    it "register given property" do
       with_registry do
         pklass = Class.new(klass)
-        pklass.public_instance_methods.map(&:to_sym).should_not include(:greetings)
-        pklass.property_register(:greetings, :supported) {}
-        pklass.public_instance_methods.map(&:to_sym).should include(:greetings)
-
-        pklass = Class.new(klass)
-        pklass.public_instance_methods.map(&:to_sym).should_not include(:greetings)
         pklass.property_register(:greetings, :supported)
-        pklass.public_instance_methods.map(&:to_sym).should_not include(:greetings)
-      end
-    end
 
-    it "defines a private method called _property_PROPERTY when block is given" do
-      with_registry do
-        pklass = Class.new(klass)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
-        pklass.property_register(:greetings, :supported) {}
-        pklass.private_instance_methods.map(&:to_sym).should include(:_property_greetings)
-
-        pklass = Class.new(klass)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
-        pklass.property_register(:greetings, :supported)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
+        klass.property_registry[pklass][:greetings].should == :supported
       end
     end
   end
@@ -182,9 +163,9 @@ describe Whois::Answer::Parser::Base do
       c2 = Whois::Answer::Contact.new(:id => "2nd", :name => "foo")
       c3 = Whois::Answer::Contact.new(:id => "3rd", :name => "foo")
       i  = Class.new(klass) do
-        property_register(:registrant_contacts, :supported) { [c1, c2] }
-        property_register(:admin_contacts, :supported)      { [] }
-        property_register(:technical_contacts, :supported)  { [c3] }
+        property_supported(:registrant_contacts) { [c1, c2] }
+        property_supported(:admin_contacts)      { [] }
+        property_supported(:technical_contacts)  { [c3] }
       end.new(@part)
 
       i.contacts.should == [c1, c2, c3]

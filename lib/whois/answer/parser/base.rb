@@ -109,119 +109,71 @@ module Whois
           end
         end
 
-        # Creates a new method called <tt>property</tt>
-        # with the content of <tt>block</tt> and registers
-        # the <tt>property</tt> in the {@@property_registry}
-        # with given <tt>status</tt>.
+        # Registers a <tt>property</tt> in the registry.
         #
         # @param  [Symbol] property
         # @param  [Symbol] status
         #
         # @return [void]
         #
-        #
-        # @example Defining a simple property
-        #
-        #   property_register(:disclaimer, :supported) do
-        #     ...
-        #   end
-        #
-        #   respond_to?(:disclaimer)
-        #   # =>true
-        #
-        #   property_registered?(:disclaimer)
-        #   # => true
-        #
-        # @example Defining a property with arguments
-        #
-        #   property_register(:disclaimer, :supported) do |arg1|
-        #     ...
-        #   end
-        #
-        def self.property_register(property, status, &block)
+        def self.property_register(property, status)
           property = property.to_s.to_sym
           property_registry(self).merge!({ property => status })
-
-          if block_given?
-            define_method("_property_#{property}", &block)
-            private :"_property_#{property}"
-
-            # FIXME: move the typecast to a separate method.
-            # Ideally, we can define the methods once in the base parser
-            # and have #property_register to only define the _method.
-            class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status == :supported
-              def #{property}(*args)
-                cached_properties_fetch(:#{property}) do
-                  validate!
-                  value = _property_#{property}(*args)
-
-                  case "#{property}"
-                  when /_contacts$/, "nameservers"
-                    typecast(value, Array)
-                  else
-                    value
-                  end
-                end
-              end
-            RUBY
-
-            class_eval(<<-RUBY, __FILE__, __LINE__ + 1) if status != :supported
-              def #{property}(*args)
-                _property_#{property}(*args)
-              end
-            RUBY
-          end
-
-          self
         end
 
 
         # Registers a <tt>property</tt> as <tt>:not_implemented</tt>
-        # and defines a method which will raise a <tt>PropertyNotImplemented</tt> error.
+        # and defines the corresponding private _property_PROPERTY method.
+        #
+        # A :not_implemented property always raises a <tt>PropertyNotImplemented</tt> error
+        # when the property method is called.
         #
         # @param  [Symbol] property
         # @return [void]
         #
         # @example Defining a not implemented property
         #   # Defines a not implemented property called :disclaimer.
-        #   property_not_implemented(:disclaimer) do
-        #     ...
-        #   end
-        #
-        #   # def disclaimer
-        #   #   raise PropertyNotImplemented, "You should overwrite this method."
-        #   # end
+        #   property_not_implemented(:disclaimer)
         #
         def self.property_not_implemented(property)
-          property_register(property, :not_implemented) do
-            raise PropertyNotSupported
-          end
+          property_register(property, :not_implemented)
+
+          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
+            def _property_#{property}(*args)
+              raise PropertyNotImplemented
+            end
+
+            private :_property_#{property}
+          RUBY
         end
 
         # Registers a <tt>property</tt> as <tt>:not_supported</tt>
-        # and defines a method which will raise a <tt>PropertyNotSupported</tt> error.
+        # and defines the corresponding private _property_PROPERTY method.
+        #
+        # A :not_implemented property always raises a <tt>PropertyNotSupported</tt> error
+        # when the property method is called.
         #
         # @param  [Symbol] property
         # @return [void]
         #
         # @example Defining an unsupported property
         #   # Defines an unsupported property called :disclaimer.
-        #   property_not_supported(:disclaimer) do
-        #     ...
-        #   end
-        #
-        #   # def disclaimer
-        #   #   raise PropertyNotSupported
-        #   # end
+        #   property_not_supported(:disclaimer)
         #
         def self.property_not_supported(property)
-          property_register(property, :not_supported) do
-            raise PropertyNotSupported
-          end
+          property_register(property, :not_supported)
+
+          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
+            def _property_#{property}(*args)
+              raise PropertyNotSupported
+            end
+
+            private :_property_#{property}
+          RUBY
         end
 
         # Registers a <tt>property</tt> as <tt>:supported</tt>
-        # and defines a method with the content of the block.
+        # and defines the corresponding private _property_PROPERTY method.
         #
         # @param  [Symbol] property
         # @return [void]
@@ -232,12 +184,30 @@ module Whois
         #     ...
         #   end
         #
-        #   # def disclaimer
-        #   #   ...
-        #   # end
-        #
         def self.property_supported(property, &block)
-          property_register(property, :supported, &block)
+          property_register(property, :supported)
+
+          define_method("_property_#{property}", &block)
+          private :"_property_#{property}"
+
+          # FIXME: move the typecast to a separate method.
+          # Ideally, we can define the methods once in the base parser
+          # and have #property_register to only define the _method.
+          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
+            def #{property}(*args)
+              cached_properties_fetch(:#{property}) do
+                validate!
+                value = _property_#{property}(*args)
+
+                case "#{property}"
+                when /_contacts$/, "nameservers"
+                  typecast(value, Array)
+                else
+                  value
+                end
+              end
+            end
+          RUBY
         end
 
         # Checks if the <tt>property</tt> passed as symbol
@@ -249,6 +219,17 @@ module Whois
         def property_supported?(property)
           self.class.property_registered?(property, :supported)
         end
+
+
+        # @api internal
+        def self.define_method_property(property)
+          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
+            def #{property}(*args)
+              _property_#{property}(*args)
+            end
+          RUBY
+        end
+        
 
 
         # @return [Whois::Answer::Part] The part referenced by this parser.
@@ -297,6 +278,8 @@ module Whois
         # @group Properties
 
         Whois::Answer::Parser::PROPERTIES.each do |property|
+          define_method_property(property)
+
           property_not_implemented(property)
         end
 
