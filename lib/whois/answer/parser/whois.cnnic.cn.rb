@@ -89,7 +89,7 @@ module Whois
           contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
-        property_not_supported :technical_contact
+        property_not_supported :technical_contacts
 
 
         property_supported :nameservers do

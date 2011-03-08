@@ -26,9 +26,9 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_available.expected" do
       @parser.registrar.should == nil
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      lambda { @parser.registrant_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   context "#admin_contact" do
@@ -36,9 +36,9 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_available.expected" do
       @parser.admin_contact.should == nil
     end
   end
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      lambda { @parser.technical_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

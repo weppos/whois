@@ -4,8 +4,8 @@
 #registrant_contact
   should: %s == nil
 
-#admin_contact
+#admin_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
 
-#technical_contact
+#technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

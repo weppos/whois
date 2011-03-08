@@ -76,11 +76,11 @@ module Whois
         property_not_supported :registrar
 
 
-        property_not_supported :registrant_contact
+        property_not_supported :registrant_contacts
 
-        property_not_supported :admin_contact
+        property_not_supported :admin_contacts
 
-        property_not_supported :technical_contact
+        property_not_supported :technical_contacts
 
 
         property_supported :nameservers do

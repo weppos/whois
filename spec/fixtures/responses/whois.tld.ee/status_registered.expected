@@ -18,5 +18,5 @@
   should: %s.name         == "Tõnu Runnel"
   should: %s.organization == "Fraktal OÜ"
 
-#technical_contact
+#technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

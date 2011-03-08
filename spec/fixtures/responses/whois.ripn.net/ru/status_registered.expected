@@ -4,7 +4,7 @@
   should: %s.name         == nil
   should: %s.organization == nil
 
-#registrant_contact
+#registrant_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #admin_contact
@@ -17,5 +17,5 @@
   should: %s.fax          == "+1 650 618 8571"
   should: %s.email        == "dns-admin@google.com"
 
-#technical_contact
+#technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

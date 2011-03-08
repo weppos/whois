@@ -7,8 +7,8 @@
   should: %s.id           == nil
   should: %s.name         == "Google Inc."
 
-#admin_contact
+#admin_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
 
-#technical_contact
+#technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

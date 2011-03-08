@@ -18,5 +18,5 @@
   should: %s.name         == nil
   should: %s.email        == "dns-admin@google.com"
 
-#technical_contact
+#technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

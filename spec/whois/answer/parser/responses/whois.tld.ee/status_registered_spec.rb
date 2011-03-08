@@ -69,9 +69,9 @@ describe Whois::Answer::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.admin_contact.organization.should == "Fraktal OÜ"
     end
   end
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      lambda { @parser.technical_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

@@ -7,5 +7,5 @@
 #admin_contact
   should: %s == nil
 
-#technical_contact
+#technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)

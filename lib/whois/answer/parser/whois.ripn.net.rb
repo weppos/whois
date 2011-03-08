@@ -87,9 +87,9 @@ module Whois
           end
         end
 
-        property_not_supported :registrant_contact
+        property_not_supported :registrant_contacts
 
-        property_not_supported :technical_contact
+        property_not_supported :technical_contacts
 
 
         # Nameservers are listed in the following formats:

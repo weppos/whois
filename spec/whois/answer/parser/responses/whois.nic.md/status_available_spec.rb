@@ -31,14 +31,14 @@ describe Whois::Answer::Parser::WhoisNicMd, "status_available.expected" do
       @parser.registrant_contact.should == nil
     end
   end
-  context "#admin_contact" do
+  context "#admin_contacts" do
     it do
-      lambda { @parser.admin_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      lambda { @parser.technical_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end
