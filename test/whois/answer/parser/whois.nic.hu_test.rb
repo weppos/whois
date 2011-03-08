@@ -46,7 +46,7 @@ EOS
     parser    = @klass.new(load_part('status_registered.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
 
     parser    = @klass.new(load_part('status_available.txt'))
@@ -63,7 +63,7 @@ EOS
     expected  = nil
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = "ezitvps.hu"
     assert_equal_and_cached expected, parser, :domain
   end
@@ -77,7 +77,7 @@ EOS
     expected  = nil
     assert_equal_and_cached expected, parser, :domain_id
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain_id
   end
@@ -92,7 +92,7 @@ EOS
     expected  = :available
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
   end
@@ -102,7 +102,7 @@ EOS
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
@@ -116,7 +116,7 @@ EOS
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
@@ -135,7 +135,7 @@ EOS
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
   end
@@ -149,7 +149,7 @@ EOS
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
   end
@@ -157,135 +157,7 @@ EOS
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('in_progress.txt')).expires_on }
-  end
-
-
-  def test_registrar_with_registered
-    registrar = @klass.new(load_part('status_registered.txt')).registrar
-    assert_instance_of Whois::Answer::Registrar, registrar
-    assert_equal '1960108002', registrar.id
-    assert_equal '3C Kft. (Registrar)', registrar.name
-    assert_equal '3C Ltd.', registrar.organization
-  end
-
-  def test_registrar_with_unregistered
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar
-
-    parser    = @klass.new(load_part('in_progress.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar
-  end
-
-
-  def test_registrant_contact_with_registered
-    parser      = @klass.new(load_part('status_registered.txt'))
-    expected    = parser.registrant_contact
-    assert_instance_of Whois::Answer::Contact, expected
-    assert_equal_and_cached expected, parser, :registrant_contact
- end
-
-  def test_registrant_contact_with_unregistered
-    parser      = @klass.new(load_part('status_available.txt'))
-    expected    = nil
-    assert_equal_and_cached expected, parser, :registrant_contact
-
-    parser      = @klass.new(load_part('in_progress.txt'))
-    expected    = nil
-    assert_equal_and_cached expected, parser, :registrant_contact
-  end
-
-  def test_registrant_contact_as_company
-    parser    = @klass.new(load_part('property_registrant_as_company.txt'))
-    result    = parser.registrant_contact
-
-    assert_instance_of Whois::Answer::Contact,  result
-    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, result.type
-    assert_equal 'Google, Inc.',                result.name
-    assert_equal 'Google, Inc.',                result.organization
-    assert_equal 'Amphitheatre Pkwy 1600.',     result.address
-    assert_equal 'CA-94043',                    result.zip
-    assert_equal 'Mountain View',               result.city
-    assert_equal 'US',                          result.country_code
-    assert_equal '+1 650 253 0000',             result.phone
-    assert_equal '+1 650 253 0001',             result.fax
-  end
-
-  def test_registrant_contact_as_private_person
-    parser    = @klass.new(load_part('property_registrant_as_private_person.txt'))
-    result    = parser.registrant_contact
-
-    assert_instance_of Whois::Answer::Contact,  result
-    assert_equal Whois::Answer::Contact::TYPE_REGISTRANT, result.type
-    assert_match /Buruzs/,                      result.name             # UTF-8 hack
-    assert_equal nil,                           result.organization
-    assert_equal nil,                           result.address
-    assert_equal nil,                           result.zip
-    assert_equal nil,                           result.city
-    assert_equal nil,                           result.country_code
-    assert_equal nil,                           result.phone
-    assert_equal nil,                           result.fax
-  end
-
-  def test_registrant_contact_without_address
-    parser    = @klass.new(load_part('property_registrant_without_address.txt'))
-    result    = parser.registrant_contact
-
-    assert_equal nil, result.address
-    assert_equal nil, result.zip
-    assert_equal nil, result.city
-    assert_equal nil, result.country_code
-  end
-
-  def test_admin_contact_with_registered
-    result = @klass.new(load_part('status_registered.txt')).admin_contact
-    assert_instance_of Whois::Answer::Contact,    result
-    assert_equal Whois::Answer::Contact::TYPE_ADMIN, result.type
-    assert_equal '2000466366',                    result.id
-    assert_equal '3C Kft. (Registrar)',           result.name
-    assert_equal 'Konkoly Thege út 29-33.',       result.address
-    assert_equal 'H-1121',                        result.zip
-    assert_equal 'Budapest',                      result.city
-    assert_equal 'HU',                            result.country_code
-    assert_equal '+36 1 275 52 00',               result.phone
-    assert_equal '+36 1 275 58 87',               result.fax
-  end
-
-  def test_admin_contact_with_unregistered
-    parser      = @klass.new(load_part('status_available.txt'))
-    expected    = nil
-    assert_equal_and_cached expected, parser, :admin_contact
-
-    parser      = @klass.new(load_part('in_progress.txt'))
-    expected    = nil
-    assert_equal_and_cached expected, parser, :admin_contact
-  end
-
-  def test_technical_contact_with_registered
-    result = @klass.new(load_part('status_registered.txt')).technical_contact
-    assert_instance_of Whois::Answer::Contact,    result
-    assert_equal Whois::Answer::Contact::TYPE_TECHNICAL, result.type
-    assert_equal '2000578125',                    result.id
-    assert_equal 'Markmonitor',                   result.name
-    assert_equal 'Overland Road 10400, PMB155',   result.address
-    assert_equal 'ID-83709',                      result.zip
-    assert_equal 'Boise',                         result.city
-    assert_equal 'US',                            result.country_code
-    assert_equal '+ 1 208 389 5798',              result.phone
-    assert_equal '+ 1 208 389 5771',              result.fax
-    assert_equal 'ccops@markmonitor.com',         result.email
-  end
-
-  def test_technical_contact_with_unregistered
-    parser      = @klass.new(load_part('status_available.txt'))
-    expected    = nil
-    assert_equal_and_cached expected, parser, :technical_contact
-
-    parser      = @klass.new(load_part('in_progress.txt'))
-    expected    = nil
-    assert_equal_and_cached expected, parser, :technical_contact
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_in_progress.txt')).expires_on }
   end
 
 
@@ -298,7 +170,7 @@ EOS
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -323,7 +195,7 @@ EOS
     expected  = nil
     assert_equal_and_cached expected, parser, :zone_contact
 
-    parser    = @klass.new(load_part('in_progress.txt'))
+    parser    = @klass.new(load_part('status_in_progress.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :zone_contact
   end
@@ -341,16 +213,6 @@ EOS
     assert_equal 'HU', registrar_contact.country_code
     assert_equal '+36 1 275 52 00', registrar_contact.phone
     assert_equal '+36 1 275 58 87', registrar_contact.fax
-  end
-
-  def test_registrar_contact_with_unregistered
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar_contact
-
-    parser    = @klass.new(load_part('in_progress.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar_contact
   end
 
 end

@@ -99,35 +99,6 @@ class AnswerParserWhoisNicMdTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_registrar
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).registrar }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).registrar }
-  end
-
-
-  def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Contact.new(nil, Whois::Answer::Contact::TYPE_REGISTRANT, "Google Inc.")
-    assert_equal_and_cached expected, parser, :registrant_contact
-  end
-
-  def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrant_contact
-  end
-
-  def test_admin_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).admin_contact }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).admin_contact }
-  end
-
-  def test_technical_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).technical_contact }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).technical_contact }
-  end
-
-
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     names     = %w( ns1.google.com ns2.google.com )

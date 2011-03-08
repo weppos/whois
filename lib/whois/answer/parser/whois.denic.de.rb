@@ -100,6 +100,8 @@ module Whois
           contact("Admin-C", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
+        # FIXME: check against different schema
+
         property_supported :technical_contact do
           contact("Tech-C", Whois::Answer::Contact::TYPE_TECHNICAL)
         end

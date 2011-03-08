@@ -47,6 +47,8 @@ module Whois
         end
 
 
+        # TODO: registrar
+
         property_supported :registrant_contact do
           contact("organisation", Whois::Answer::Contact::TYPE_REGISTRANT)
         end

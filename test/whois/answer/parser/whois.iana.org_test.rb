@@ -5,49 +5,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
 
   def setup
     @klass  = Whois::Answer::Parser::WhoisIanaOrg
-
     @host   = "whois.iana.org"
-
-
-    @registrant = Whois::Answer::Contact.new(
-      :type         => Whois::Answer::Contact::TYPE_REGISTRANT,
-      :name         => nil,
-      :organization => "North Atlantic Treaty Organization",
-      :address      => "Blvd Leopold III",
-      :city         => "1110 Brussels",
-      :zip          => "Brussels",
-      :country      => "Belgium",
-      :phone        => nil,
-      :fax          => nil,
-      :email        => nil
-    )
-
-    @admin =      Whois::Answer::Contact.new(
-      :type         => Whois::Answer::Contact::TYPE_ADMIN,
-      :name         => "Aidan Murdock",
-      :organization => nil,
-      :address      => "SHAPE",
-      :city         => "NCSA/SDD/SAL",
-      :zip          => "Casteau Hainaut 7010",
-      :country      => "Belgium",
-      :phone        => "+32 65 44 7244",
-      :fax          => "+32 65 44 7221",
-      :email        => "aidan.murdock@ncsa.nato.int"
-    )
-
-    @technical =  Whois::Answer::Contact.new(
-      :type         => Whois::Answer::Contact::TYPE_TECHNICAL,
-      :name         => "Jack Smits",
-      :organization => nil,
-      :address      => "SHAPE",
-      :city         => "NCSA/SMD",
-      :zip          => "Casteau Hainaut 7010",
-      :country      => "Belgium",
-      :phone        => "+32 65 44 7534",
-      :fax          => "+32 65 44 7556",
-      :email        => "jack.smits@ncsa.nato.int"
-    )
-
   end
 
 
@@ -60,7 +18,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
     expected  = :available
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('not_assigned.txt'))
+    parser    = @klass.new(load_part('status_not_assigned.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
@@ -74,7 +32,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
     expected  = true
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('not_assigned.txt'))
+    parser    = @klass.new(load_part('status_not_assigned.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
@@ -88,7 +46,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('not_assigned.txt'))
+    parser    = @klass.new(load_part('status_not_assigned.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
@@ -103,7 +61,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
 
-    parser    = @klass.new(load_part('not_assigned.txt'))
+    parser    = @klass.new(load_part('status_not_assigned.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
   end
@@ -117,7 +75,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('not_assigned.txt'))
+    parser    = @klass.new(load_part('status_not_assigned.txt'))
     expected  = Time.parse("1999-09-27")
     assert_equal_and_cached expected, parser, :updated_on
   end
@@ -125,26 +83,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
   def test_expires_on
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('not_assigned.txt')).expires_on }
-  end
-
-
-  def test_contacts
-    parser    = @klass.new(load_part('status_registered.txt'))
-    assert_equal @registrant, parser.registrant_contact
-    assert_equal @admin, parser.admin_contact
-    assert_equal @technical, parser.technical_contact
-        
-    parser    = @klass.new(load_part('status_available.txt'))
-    assert_equal nil, parser.registrant_contact
-    assert_equal nil, parser.admin_contact
-    assert_equal nil, parser.technical_contact
-        
-    parser    = @klass.new(load_part('not_assigned.txt'))
-    assert_equal nil, parser.registrant_contact
-    assert_equal nil, parser.admin_contact
-    assert_equal nil, parser.technical_contact
-    
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_not_assigned.txt')).expires_on }
   end
 
 
@@ -157,7 +96,7 @@ class AnswerParserWhoisIanaOrgTest < Whois::Answer::Parser::TestCase
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
     
-    parser    = @klass.new(load_part('not_assigned.txt'))
+    parser    = @klass.new(load_part('status_not_assigned.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end

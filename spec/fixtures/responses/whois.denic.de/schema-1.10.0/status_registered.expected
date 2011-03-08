@@ -1,0 +1,43 @@
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Domain Billing"
+  should: %s.organization == "MarkMonitor"
+
+#registrant_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s.id           == nil
+  should: %s.name         == "Google Inc."
+  should: %s.city         == "Mountain View"
+  should: %s.zip          == "94043"
+  should: %s.state        == nil
+  should: %s.phone        == nil
+  should: %s.fax          == nil
+  should: %s.email        == nil
+
+#admin_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s.id           == nil
+  should: %s.name         == "Lena Tangermann"
+  should: %s.organization == "Google Germany GmbH"
+  should: %s.address      == "ABC-Strasse 19"
+  should: %s.city         == "Hamburg"
+  should: %s.zip          == "20354"
+  should: %s.state        == nil
+  should: %s.phone        == nil
+  should: %s.fax          == nil
+  should: %s.email        == nil
+
+#technical_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_TECHNICAL
+  should: %s.id           == nil
+  should: %s.name         == "Google Inc."
+  should: %s.city         == "Mountain View"
+  should: %s.zip          == "94043"
+  should: %s.state        == nil
+  should: %s.phone        == "+1-6503300100"
+  should: %s.fax          == "+1-6506188571"
+  should: %s.email        == "dns-admin@google.com"

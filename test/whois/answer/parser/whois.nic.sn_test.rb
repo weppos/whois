@@ -94,48 +94,6 @@ class AnswerParserWhoisNicSnTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_registrar
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Registrar.new(:id => "registry", :name => "registry")
-    assert_equal_and_cached expected, parser, :registrar
-
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar
-  end
-
-
-  def test_registrant_contact
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Contact.new(:id => "C4-SN", :name => "C4-SN")
-    assert_equal_and_cached expected, parser, :registrant_contact
-
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrant_contact
-  end
-
-  def test_admin_contact
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Contact.new(:id => "C5-SN", :name => "C5-SN")
-    assert_equal_and_cached expected, parser, :admin_contact
-
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :admin_contact
-  end
-
-  def test_technical_contact
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Contact.new(:id => "C6-SN", :name => "C6-SN")
-    assert_equal_and_cached expected, parser, :technical_contact
-
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :technical_contact
-  end
-
-
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }

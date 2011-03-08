@@ -36,16 +36,6 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
-#created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-
 #registrar
   should: %s raise_error(Whois::PropertyNotSupported)
 

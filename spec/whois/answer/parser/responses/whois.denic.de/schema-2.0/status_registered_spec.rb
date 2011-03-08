@@ -21,6 +21,71 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+    end
+    it do
+      @parser.registrar.id.should           == nil
+    end
+    it do
+      @parser.registrar.name.should         == "Domain Admin"
+    end
+    it do
+      @parser.registrar.organization.should == "MarkMonitor Inc"
+    end
+  end
+  context "#registrant_contact" do
+    it do
+      @parser.registrant_contact.should == nil
+    end
+  end
+  context "#admin_contact" do
+    it do
+      @parser.admin_contact.should == nil
+    end
+  end
+  context "#technical_contact" do
+    it do
+      @parser.technical_contact.should be_a(_contact)
+    end
+    it do
+      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+    end
+    it do
+      @parser.technical_contact.id.should           == nil
+    end
+    it do
+      @parser.technical_contact.name.should         == "DNS Admin"
+    end
+    it do
+      @parser.technical_contact.organization.should == "Google Inc."
+    end
+    it do
+      @parser.technical_contact.address.should      == "1600 Amphitheatre Parkway"
+    end
+    it do
+      @parser.technical_contact.city.should         == "Mountain View"
+    end
+    it do
+      @parser.technical_contact.zip.should          == "94043"
+    end
+    it do
+      @parser.technical_contact.state.should        == nil
+    end
+    it do
+      @parser.technical_contact.country_code.should == "US"
+    end
+    it do
+      @parser.technical_contact.phone.should        == "+1.6502530000"
+    end
+    it do
+      @parser.technical_contact.fax.should          == "+1.6506188571"
+    end
+    it do
+      @parser.technical_contact.email.should        == "dns-admin@google.com"
+    end
+  end
   context "#response_throttled?" do
     it do
       @parser.response_throttled?.should == false

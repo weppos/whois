@@ -1,0 +1,11 @@
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contact
+  should: %s raise_error(Whois::PropertyNotSupported)

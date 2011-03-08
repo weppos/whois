@@ -1,0 +1,38 @@
+#registrant_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s.id           == nil
+  should: %s.name         == nil
+  should: %s.organization == "North Atlantic Treaty Organization"
+  should: %s.address      == "Blvd Leopold III"
+  should: %s.city         == "1110 Brussels"
+  should: %s.zip          == "Brussels"
+  should: %s.country      == "Belgium"
+
+#admin_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s.id           == nil
+  should: %s.name         == "Aidan Murdock"
+  should: %s.organization == nil
+  should: %s.address      == "SHAPE"
+  should: %s.city         == "NCSA/SDD/SAL"
+  should: %s.zip          == "Casteau Hainaut 7010"
+  should: %s.country      == "Belgium"
+  should: %s.phone        == "+32 65 44 7244"
+  should: %s.fax          == "+32 65 44 7221"
+  should: %s.email        == "aidan.murdock@ncsa.nato.int"
+
+#technical_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_TECHNICAL
+  should: %s.id           == nil
+  should: %s.name         == "Jack Smits"
+  should: %s.organization == nil
+  should: %s.address      == "SHAPE"
+  should: %s.city         == "NCSA/SMD"
+  should: %s.zip          == "Casteau Hainaut 7010"
+  should: %s.country      == "Belgium"
+  should: %s.phone        == "+32 65 44 7534"
+  should: %s.fax          == "+32 65 44 7556"
+  should: %s.email        == "jack.smits@ncsa.nato.int"

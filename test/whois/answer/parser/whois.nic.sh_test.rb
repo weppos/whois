@@ -89,27 +89,6 @@ class AnswerParserWhoisNicShTest < Whois::Answer::Parser::TestCase
   end
 
 
-  def test_registrar
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).registrar }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).registrar }
-  end
-
-  def test_registrant_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).registrant_contact }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).registrant_contact }
-  end
-
-  def test_admin_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).admin_contact }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).admin_contact }
-  end
-
-  def test_technical_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).technical_contact }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).technical_contact }
-  end
-
-
   def test_nameservers
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).nameservers }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).nameservers }

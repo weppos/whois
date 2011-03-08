@@ -1,0 +1,8 @@
+#registrant_contact
+  should: %s == nil
+
+#admin_contact
+  should: %s == nil
+
+#technical_contact
+  should: %s == nil
