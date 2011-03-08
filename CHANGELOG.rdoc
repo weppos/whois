@@ -138,6 +138,8 @@
 
 * #admin_contact, #technical_contact and #registrant_contact have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts and they now returns an array of Contact, instead of a single Contact. #admin_contact, #technical_contact and #registrant_contact still exists in the Answer as a convenient shortcut.
 
+* Renamed Whois::Answer::Parser::Base.register_property to Whois::Answer::Parser::Base.property_register.
+
 
 == Release 1.6.6
 

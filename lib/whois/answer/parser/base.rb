@@ -175,12 +175,6 @@ module Whois
           self
         end
 
-        # @deprecated Use {Whois::Answer::Parser::Base.property_register}.
-        def self.register_property(property, status, &block)
-          Whois.deprecate "#{self.class}.register_property will be removed in Whois 2.1. Use #{self.class}.property_register."
-          property_register(property, status, &block)
-        end
-
 
         # Registers a <tt>property</tt> as <tt>:not_implemented</tt>
         # and defines a method which will raise a <tt>PropertyNotImplemented</tt> error.
