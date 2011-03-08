@@ -80,7 +80,6 @@ module Whois
         #   # => :supported
         #
         def self.property_status(property)
-          property = property.to_s.to_sym
           property_registry(self)[property]
         end
 
@@ -101,7 +100,6 @@ module Whois
         #   # => true
         #
         def self.property_registered?(property, status = :any)
-          property = property.to_s.to_sym
           if status == :any
             property_registry(self).key?(property)
           else
@@ -117,7 +115,6 @@ module Whois
         # @return [void]
         #
         def self.property_register(property, status)
-          property = property.to_s.to_sym
           property_registry(self).merge!({ property => status })
         end
 
