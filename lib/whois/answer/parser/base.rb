@@ -309,8 +309,8 @@ module Whois
         # @see Whois::Answer::Parser#contacts
         #
         def contacts
-          [:registrant_contact, :admin_contact, :technical_contact].inject([]) do |contacts, property|
-            contacts += Array.wrap(send(property)) if property_supported?(property)
+          [:registrant_contacts, :admin_contacts, :technical_contacts].inject([]) do |contacts, property|
+            contacts += send(property) if property_supported?(property)
             contacts
           end
         end

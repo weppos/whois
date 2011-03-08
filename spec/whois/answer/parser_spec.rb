@@ -201,13 +201,13 @@ describe Whois::Answer::Parser do
     end
 
     class Whois::Answer::Parser::Contacts2Test < Whois::Answer::Parser::Base
-      property_supported(:technical_contact)   { "p2-t1" }
-      property_supported(:admin_contact)       { "p2-a1" }
-      property_supported(:registrant_contact)  { nil }
+      property_supported(:technical_contacts)   { ["p2-t1"] }
+      property_supported(:admin_contacts)       { ["p2-a1"] }
+      property_supported(:registrant_contacts)  { [] }
     end
 
     class Whois::Answer::Parser::Contacts3Test< Whois::Answer::Parser::Base
-      property_supported(:technical_contact)   { "p3-t1" }
+      property_supported(:technical_contacts)   { ["p3-t1"] }
     end
 
     it "returns an empty array when 0 parts" do
