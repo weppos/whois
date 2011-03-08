@@ -36,130 +36,130 @@ Whois database for failure to abide by these terms of use. VeriSign \
 reserves the right to modify these terms at any time. 
 EOS
 
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.cc"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = "u34jedzcq.cc"
     assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).domain_id }
   end
 
 
   def test_referral_whois
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "whois.markmonitor.com"
     assert_equal_and_cached expected, parser, :referral_whois
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :referral_whois
   end
 
   def test_referral_url
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "http://www.markmonitor.com"
     assert_equal_and_cached expected, parser, :referral_url
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :referral_url
   end
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = ["CLIENT-XFER-PROHIBITED", "CLIENT-UPDATE-PROHIBITED", "CLIENT-DELETE-PROHIBITED"]
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("1999-06-07")
     assert_equal_and_cached expected, parser, :created_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2009-05-06")
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2010-06-07")
     assert_equal_and_cached expected, parser, :expires_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
   end
 
 
   def test_registrar
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns2.google.com ns1.google.com ns4.google.com ns3.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end

@@ -20,58 +20,58 @@ class AnswerParserWhoisRipeNetFoTest < AnswerParserWhoisRipeNetTest
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns3.zoneedit.com ns4.zoneedit.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -87,58 +87,58 @@ class AnswerParserWhoisRipeNetGmTest < AnswerParserWhoisRipeNetTest
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.commit.gm ns1.sol.no ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -154,60 +154,60 @@ class AnswerParserWhoisRipeNetMcTest < AnswerParserWhoisRipeNetTest
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     names     = %w( ns.nic.mc    bow.rain.fr ns.ripe.net )
     ipv4s     = %w( 195.78.6.131 194.51.3.49 193.0.0.194 )
     expected  = names.zip(ipv4s).map { |name, ipv4| nameserver(name, ipv4) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -223,58 +223,58 @@ class AnswerParserWhoisRipeNetSmTest < AnswerParserWhoisRipeNetTest
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -290,58 +290,58 @@ class AnswerParserWhoisRipeNetVaTest < AnswerParserWhoisRipeNetTest
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).updated_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).updated_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).updated_on }
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( john.vatican.va ns2.nic.it seth.namex.it osiris.namex.it michael.vatican.va ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end

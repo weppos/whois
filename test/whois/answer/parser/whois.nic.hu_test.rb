@@ -12,11 +12,11 @@ class AnswerParserWhoisNicHuTest < Whois::Answer::Parser::TestCase
   end
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.hu"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain
   end
@@ -43,23 +43,23 @@ http://www.domain.hu/domain/domainsearch/feltetelek.html címen
 elérhetõ feltételek elfogadása és betartása mellett
 használható legálisan.
 EOS
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
 
     parser    = @klass.new(load_part('in_progress.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.hu"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain
 
@@ -69,11 +69,11 @@ EOS
   end
 
   def test_domain_id
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "0000219547"
     assert_equal_and_cached expected, parser, :domain_id
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain_id
 
@@ -84,11 +84,11 @@ EOS
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
 
@@ -98,7 +98,7 @@ EOS
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
@@ -106,13 +106,13 @@ EOS
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
@@ -120,18 +120,18 @@ EOS
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2000-03-25 23:20:39")
     assert_equal_and_cached expected, parser, :created_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :created_on
 
@@ -141,11 +141,11 @@ EOS
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse("2009-08-25 10:11:32")
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
 
@@ -155,14 +155,14 @@ EOS
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
     assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('in_progress.txt')).expires_on }
   end
 
 
   def test_registrar_with_registered
-    registrar = @klass.new(load_part('registered.txt')).registrar
+    registrar = @klass.new(load_part('status_registered.txt')).registrar
     assert_instance_of Whois::Answer::Registrar, registrar
     assert_equal '1960108002', registrar.id
     assert_equal '3C Kft. (Registrar)', registrar.name
@@ -170,7 +170,7 @@ EOS
   end
 
   def test_registrar_with_unregistered
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
 
@@ -181,14 +181,14 @@ EOS
 
 
   def test_registrant_contact_with_registered
-    parser      = @klass.new(load_part('registered.txt'))
+    parser      = @klass.new(load_part('status_registered.txt'))
     expected    = parser.registrant_contact
     assert_instance_of Whois::Answer::Contact, expected
     assert_equal_and_cached expected, parser, :registrant_contact
  end
 
   def test_registrant_contact_with_unregistered
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :registrant_contact
 
@@ -240,7 +240,7 @@ EOS
   end
 
   def test_admin_contact_with_registered
-    result = @klass.new(load_part('registered.txt')).admin_contact
+    result = @klass.new(load_part('status_registered.txt')).admin_contact
     assert_instance_of Whois::Answer::Contact,    result
     assert_equal Whois::Answer::Contact::TYPE_ADMIN, result.type
     assert_equal '2000466366',                    result.id
@@ -254,7 +254,7 @@ EOS
   end
 
   def test_admin_contact_with_unregistered
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :admin_contact
 
@@ -264,7 +264,7 @@ EOS
   end
 
   def test_technical_contact_with_registered
-    result = @klass.new(load_part('registered.txt')).technical_contact
+    result = @klass.new(load_part('status_registered.txt')).technical_contact
     assert_instance_of Whois::Answer::Contact,    result
     assert_equal Whois::Answer::Contact::TYPE_TECHNICAL, result.type
     assert_equal '2000578125',                    result.id
@@ -279,7 +279,7 @@ EOS
   end
 
   def test_technical_contact_with_unregistered
-    parser      = @klass.new(load_part('available.txt'))
+    parser      = @klass.new(load_part('status_available.txt'))
     expected    = nil
     assert_equal_and_cached expected, parser, :technical_contact
 
@@ -290,11 +290,11 @@ EOS
 
 
   def test_nameserver
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
 
@@ -305,7 +305,7 @@ EOS
 
 
   def test_zone_contact_with_registered
-    zone_contact = @klass.new(load_part('registered.txt')).zone_contact
+    zone_contact = @klass.new(load_part('status_registered.txt')).zone_contact
     assert_instance_of Whois::Answer::Contact, zone_contact
     assert_equal '2000578125', zone_contact.id
     assert_equal 'Markmonitor', zone_contact.name
@@ -319,7 +319,7 @@ EOS
   end
 
   def test_zone_contact_with_unregistered
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :zone_contact
 
@@ -329,7 +329,7 @@ EOS
   end
 
   def test_registrar_contact_with_registered
-    registrar_contact = @klass.new(load_part('registered.txt')).registrar_contact
+    registrar_contact = @klass.new(load_part('status_registered.txt')).registrar_contact
     assert_instance_of Whois::Answer::Contact, registrar_contact
 
     assert_equal '1960108002', registrar_contact.id
@@ -344,7 +344,7 @@ EOS
   end
 
   def test_registrar_contact_with_unregistered
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar_contact
 

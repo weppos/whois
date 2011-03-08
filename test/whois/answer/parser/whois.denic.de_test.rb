@@ -11,7 +11,7 @@ class AnswerParserWhoisDenicDe_2_0_Test < Whois::Answer::Parser::TestCase
 
 
   def test_disclaimer
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = <<-EOS.strip
 The data in this record is provided by DENIC for informational purposes only. \
 DENIC does not guarantee its accuracy and cannot, under any circumstances, \
@@ -42,34 +42,34 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_disclaimer_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :disclaimer
   end
 
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.de"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = "googlededewdedewdewde.de"
     assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).domain_id }
   end
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
 
@@ -79,11 +79,11 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
 
@@ -93,11 +93,11 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
 
@@ -108,29 +108,29 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
 
   def test_created
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse('2010-09-08 22:40:48 +0200')
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
   end
 
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_registrar
-    registrar = @klass.new(load_part('registered.txt')).registrar
+    registrar = @klass.new(load_part('status_registered.txt')).registrar
     assert_instance_of(Whois::Answer::Registrar, registrar)
     assert_equal nil,               registrar.id
     assert_equal "Domain Admin",    registrar.name
@@ -139,37 +139,37 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_registrar_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_admin_contact_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_admin_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_technical_contact_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.technical_contact
     assert_equal_and_cached expected, parser, :technical_contact
 
@@ -177,7 +177,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_technical_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :technical_contact
   end
@@ -204,11 +204,11 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -234,7 +234,7 @@ class AnswerParserWhoisDenicDe_1_11_0_Test < Whois::Answer::Parser::TestCase
 
 
   def test_disclaimer
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = <<-EOS.strip
 The data in this record is provided by DENIC for informational purposes only. \
 DENIC does not guarantee its accuracy and cannot, under any circumstances, \
@@ -265,7 +265,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_disclaimer_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = <<-EOS.strip
 The data in this record is provided by DENIC for informational purposes only. \
 DENIC does not guarantee its accuracy and cannot, under any circumstances, \
@@ -297,75 +297,75 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.de"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).domain_id }
   end
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).created_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).created_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).created_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse('2009-02-28 12:03:09 +0100')
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_registrar
-    registrar = @klass.new(load_part('registered.txt')).registrar
+    registrar = @klass.new(load_part('status_registered.txt')).registrar
     assert_instance_of(Whois::Answer::Registrar, registrar)
     assert_equal nil,               registrar.id
     assert_equal "Domain Billing",  registrar.name
@@ -374,37 +374,37 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_registrar_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrant_contact_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_admin_contact_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_admin_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_technical_contact_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = parser.technical_contact
     assert_equal_and_cached expected, parser, :technical_contact
 
@@ -412,7 +412,7 @@ http://www.denic.de/en/background/whois-service/webwhois.html
   end
 
   def test_technical_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :technical_contact
   end
@@ -439,11 +439,11 @@ http://www.denic.de/en/background/whois-service/webwhois.html
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
@@ -469,7 +469,7 @@ class AnswerParserWhoisDenicDe_1_10_0_Test < Whois::Answer::Parser::TestCase
 
 
   def test_disclaimer_with_registered
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = <<-EOS.strip
 All the domain data that is visible in the whois search is protected \
 by law. It is not permitted to use it for any purpose other than \
@@ -488,7 +488,7 @@ assurance and to bar you from using its whois query.
   end
 
   def test_disclaimer_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = <<-EOS.strip
 All the domain data that is visible in the whois search is protected \
 by law. It is not permitted to use it for any purpose other than \
@@ -508,75 +508,75 @@ assurance and to bar you from using its whois query.
 
 
   def test_domain
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = "google.de"
     assert_equal_and_cached expected, parser, :domain
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :domain
   end
 
   def test_domain_id
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).domain_id }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).domain_id }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).domain_id }
   end
 
 
   def test_status
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = :registered
     assert_equal_and_cached expected, parser, :status
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = :available
     assert_equal_and_cached expected, parser, :status
   end
 
   def test_available?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :available?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :available?
   end
 
   def test_registered?
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = true
     assert_equal_and_cached expected, parser, :registered?
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = false
     assert_equal_and_cached expected, parser, :registered?
   end
 
 
   def test_created_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
   def test_updated_on
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = Time.parse('2009-02-28 12:03:09 +01:00')
     assert_equal_and_cached expected, parser, :updated_on
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :updated_on
   end
 
   def test_expires_on
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('registered.txt')).expires_on }
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('available.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).expires_on }
+    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_available.txt')).expires_on }
   end
 
 
   def test_registrar_with_registered
-    registrar = @klass.new(load_part('registered.txt')).registrar
+    registrar = @klass.new(load_part('status_registered.txt')).registrar
     assert_instance_of(Whois::Answer::Registrar, registrar)
     assert_equal nil,               registrar.id
     assert_equal "Domain Billing",  registrar.name
@@ -585,13 +585,13 @@ assurance and to bar you from using its whois query.
   end
 
   def test_registrar_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrar
   end
 
   def test_registrant_contact_with_registered
-    result = @klass.new(load_part('registered.txt')).registrant_contact
+    result = @klass.new(load_part('status_registered.txt')).registrant_contact
     assert_instance_of(Whois::Answer::Contact, result)
     assert_equal(nil, result.id)
     assert_equal('Google Inc.', result.name)
@@ -608,13 +608,13 @@ assurance and to bar you from using its whois query.
   end
 
   def test_registrant_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :registrant_contact
   end
 
   def test_admin_contact_with_registered
-    result = @klass.new(load_part('registered.txt')).admin_contact
+    result = @klass.new(load_part('status_registered.txt')).admin_contact
     assert_instance_of(Whois::Answer::Contact, result)
     assert_equal(nil, result.id)
     assert_equal('Lena Tangermann', result.name)
@@ -631,13 +631,13 @@ assurance and to bar you from using its whois query.
   end
 
   def test_admin_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :admin_contact
   end
 
   def test_technical_contact_with_registered
-    result = @klass.new(load_part('registered.txt')).technical_contact
+    result = @klass.new(load_part('status_registered.txt')).technical_contact
     assert_instance_of(Whois::Answer::Contact, result)
     assert_equal(nil, result.id)
     assert_equal('Google Inc.', result.name)
@@ -654,18 +654,18 @@ assurance and to bar you from using its whois query.
   end
 
   def test_technical_contact_with_available
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :technical_contact
   end
 
 
   def test_nameservers
-    parser    = @klass.new(load_part('registered.txt'))
+    parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns4.google.com ns3.google.com ns2.google.com ).map { |ns| nameserver(ns) }
     assert_equal_and_cached expected, parser, :nameservers
 
-    parser    = @klass.new(load_part('available.txt'))
+    parser    = @klass.new(load_part('status_available.txt'))
     expected  = %w()
     assert_equal_and_cached expected, parser, :nameservers
   end
