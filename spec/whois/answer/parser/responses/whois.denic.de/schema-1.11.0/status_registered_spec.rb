@@ -35,46 +35,58 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_registered.expected" do
       @parser.registrar.organization.should == "MarkMonitor"
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should == nil
+      @parser.registrant_contacts.should be_a(Array)
+    end
+    it do
+      @parser.registrant_contacts.should == []
     end
   end
-  context "#admin_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.admin_contact.should == nil
+      @parser.admin_contacts.should be_a(Array)
+    end
+    it do
+      @parser.admin_contacts.should == []
     end
   end
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      @parser.technical_contact.should be_a(_contact)
+      @parser.technical_contacts.should be_a(Array)
     end
     it do
-      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts.should have(1).items
     end
     it do
-      @parser.technical_contact.id.should           == nil
+      @parser.technical_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.technical_contact.name.should         == "Google Inc."
+      @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
     end
     it do
-      @parser.technical_contact.city.should         == "Mountain View"
+      @parser.technical_contacts[0].id.should           == nil
     end
     it do
-      @parser.technical_contact.zip.should          == "94043"
+      @parser.technical_contacts[0].name.should         == "Google Inc."
     end
     it do
-      @parser.technical_contact.state.should        == nil
+      @parser.technical_contacts[0].city.should         == "Mountain View"
     end
     it do
-      @parser.technical_contact.phone.should        == "+1-6503300100"
+      @parser.technical_contacts[0].zip.should          == "94043"
     end
     it do
-      @parser.technical_contact.fax.should          == "+1-6506188571"
+      @parser.technical_contacts[0].state.should        == nil
     end
     it do
-      @parser.technical_contact.email.should        == "dns-admin@google.com"
+      @parser.technical_contacts[0].phone.should        == "+1-6503300100"
+    end
+    it do
+      @parser.technical_contacts[0].fax.should          == "+1-6506188571"
+    end
+    it do
+      @parser.technical_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
 end

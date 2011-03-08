@@ -84,7 +84,7 @@ module Whois
           end
         end
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           return unless node("name")
 
           address, city, zip, country_code = decompose_address(node("address"))
@@ -102,11 +102,11 @@ module Whois
           )
         end
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           contact("admin-c", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
-        property_supported :technical_contact do
+        property_supported :technical_contacts do
           contact("tech-c", Whois::Answer::Contact::TYPE_TECHNICAL)
         end
 

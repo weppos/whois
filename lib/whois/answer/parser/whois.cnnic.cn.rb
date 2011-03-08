@@ -81,15 +81,15 @@ module Whois
           end
         end
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           contact("Registrant", Whois::Answer::Contact::TYPE_REGISTRANT)
         end
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           contact("Administrative", Whois::Answer::Contact::TYPE_ADMIN)
         end
 
-        property_not_supported :technical_contact
+        property_not_supported :technical_contacts
 
 
         property_supported :nameservers do

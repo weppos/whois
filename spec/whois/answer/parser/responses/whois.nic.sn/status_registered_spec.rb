@@ -32,46 +32,64 @@ describe Whois::Answer::Parser::WhoisNicSn, "status_registered.expected" do
       @parser.registrar.name.should         == "registry"
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == "C4-SN"
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "C4-SN"
-    end
-  end
-  context "#admin_contact" do
-    it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.registrant_contacts[0].id.should           == "C4-SN"
     end
     it do
-      @parser.admin_contact.id.should           == "C5-SN"
-    end
-    it do
-      @parser.admin_contact.name.should         == "C5-SN"
+      @parser.registrant_contacts[0].name.should         == "C4-SN"
     end
   end
-  context "#technical_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.technical_contact.should be_a(_contact)
+      @parser.admin_contacts.should be_a(Array)
     end
     it do
-      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+      @parser.admin_contacts.should have(1).items
     end
     it do
-      @parser.technical_contact.id.should           == "C6-SN"
+      @parser.admin_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.technical_contact.name.should         == "C6-SN"
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
+    end
+    it do
+      @parser.admin_contacts[0].id.should           == "C5-SN"
+    end
+    it do
+      @parser.admin_contacts[0].name.should         == "C5-SN"
+    end
+  end
+  context "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+    end
+    it do
+      @parser.technical_contacts.should have(1).items
+    end
+    it do
+      @parser.technical_contacts[0].should be_a(_contact)
+    end
+    it do
+      @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+    end
+    it do
+      @parser.technical_contacts[0].id.should           == "C6-SN"
+    end
+    it do
+      @parser.technical_contacts[0].name.should         == "C6-SN"
     end
   end
 end

@@ -81,19 +81,19 @@ module Whois
         end
 
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           if content_for_scanner =~ /Owner's handle:\s+(.+)\n/
             contact($1, Whois::Answer::Contact::TYPE_REGISTRANT)
           end
         end
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           if content_for_scanner =~ /Administrative Contact's handle:\s+(.*+)\n/
             contact($1, Whois::Answer::Contact::TYPE_ADMIN)
           end
         end
 
-        property_supported :technical_contact do
+        property_supported :technical_contacts do
           if content_for_scanner =~ /Technical Contact's handle:\s+(.+)\n/
             contact($1, Whois::Answer::Contact::TYPE_TECHNICAL)
           end

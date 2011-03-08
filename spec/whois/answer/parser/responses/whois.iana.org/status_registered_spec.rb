@@ -21,109 +21,127 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == nil
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == nil
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.registrant_contact.organization.should == "North Atlantic Treaty Organization"
+      @parser.registrant_contacts[0].id.should           == nil
     end
     it do
-      @parser.registrant_contact.address.should      == "Blvd Leopold III"
+      @parser.registrant_contacts[0].name.should         == nil
     end
     it do
-      @parser.registrant_contact.city.should         == "1110 Brussels"
+      @parser.registrant_contacts[0].organization.should == "North Atlantic Treaty Organization"
     end
     it do
-      @parser.registrant_contact.zip.should          == "Brussels"
+      @parser.registrant_contacts[0].address.should      == "Blvd Leopold III"
     end
     it do
-      @parser.registrant_contact.country.should      == "Belgium"
-    end
-  end
-  context "#admin_contact" do
-    it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.registrant_contacts[0].city.should         == "1110 Brussels"
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.registrant_contacts[0].zip.should          == "Brussels"
     end
     it do
-      @parser.admin_contact.id.should           == nil
-    end
-    it do
-      @parser.admin_contact.name.should         == "Aidan Murdock"
-    end
-    it do
-      @parser.admin_contact.organization.should == nil
-    end
-    it do
-      @parser.admin_contact.address.should      == "SHAPE"
-    end
-    it do
-      @parser.admin_contact.city.should         == "NCSA/SDD/SAL"
-    end
-    it do
-      @parser.admin_contact.zip.should          == "Casteau Hainaut 7010"
-    end
-    it do
-      @parser.admin_contact.country.should      == "Belgium"
-    end
-    it do
-      @parser.admin_contact.phone.should        == "+32 65 44 7244"
-    end
-    it do
-      @parser.admin_contact.fax.should          == "+32 65 44 7221"
-    end
-    it do
-      @parser.admin_contact.email.should        == "aidan.murdock@ncsa.nato.int"
+      @parser.registrant_contacts[0].country.should      == "Belgium"
     end
   end
-  context "#technical_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.technical_contact.should be_a(_contact)
+      @parser.admin_contacts.should be_a(Array)
     end
     it do
-      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+      @parser.admin_contacts.should have(1).items
     end
     it do
-      @parser.technical_contact.id.should           == nil
+      @parser.admin_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.technical_contact.name.should         == "Jack Smits"
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
     end
     it do
-      @parser.technical_contact.organization.should == nil
+      @parser.admin_contacts[0].id.should           == nil
     end
     it do
-      @parser.technical_contact.address.should      == "SHAPE"
+      @parser.admin_contacts[0].name.should         == "Aidan Murdock"
     end
     it do
-      @parser.technical_contact.city.should         == "NCSA/SMD"
+      @parser.admin_contacts[0].organization.should == nil
     end
     it do
-      @parser.technical_contact.zip.should          == "Casteau Hainaut 7010"
+      @parser.admin_contacts[0].address.should      == "SHAPE"
     end
     it do
-      @parser.technical_contact.country.should      == "Belgium"
+      @parser.admin_contacts[0].city.should         == "NCSA/SDD/SAL"
     end
     it do
-      @parser.technical_contact.phone.should        == "+32 65 44 7534"
+      @parser.admin_contacts[0].zip.should          == "Casteau Hainaut 7010"
     end
     it do
-      @parser.technical_contact.fax.should          == "+32 65 44 7556"
+      @parser.admin_contacts[0].country.should      == "Belgium"
     end
     it do
-      @parser.technical_contact.email.should        == "jack.smits@ncsa.nato.int"
+      @parser.admin_contacts[0].phone.should        == "+32 65 44 7244"
+    end
+    it do
+      @parser.admin_contacts[0].fax.should          == "+32 65 44 7221"
+    end
+    it do
+      @parser.admin_contacts[0].email.should        == "aidan.murdock@ncsa.nato.int"
+    end
+  end
+  context "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+    end
+    it do
+      @parser.technical_contacts.should have(1).items
+    end
+    it do
+      @parser.technical_contacts[0].should be_a(_contact)
+    end
+    it do
+      @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+    end
+    it do
+      @parser.technical_contacts[0].id.should           == nil
+    end
+    it do
+      @parser.technical_contacts[0].name.should         == "Jack Smits"
+    end
+    it do
+      @parser.technical_contacts[0].organization.should == nil
+    end
+    it do
+      @parser.technical_contacts[0].address.should      == "SHAPE"
+    end
+    it do
+      @parser.technical_contacts[0].city.should         == "NCSA/SMD"
+    end
+    it do
+      @parser.technical_contacts[0].zip.should          == "Casteau Hainaut 7010"
+    end
+    it do
+      @parser.technical_contacts[0].country.should      == "Belgium"
+    end
+    it do
+      @parser.technical_contacts[0].phone.should        == "+32 65 44 7534"
+    end
+    it do
+      @parser.technical_contacts[0].fax.should          == "+32 65 44 7556"
+    end
+    it do
+      @parser.technical_contacts[0].email.should        == "jack.smits@ncsa.nato.int"
     end
   end
 end

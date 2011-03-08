@@ -87,19 +87,19 @@ module Whois
           end
         end
 
-        property_supported :admin_contact do
+        property_supported :admin_contacts do
           if content_for_scanner =~ /admin-c:\s+(.*)\n/
             contact($1, Whois::Answer::Contact::TYPE_ADMIN)
           end
         end
 
-        property_supported :registrant_contact do
+        property_supported :registrant_contacts do
           if content_for_scanner =~ /registrant:\s+(.*)\n/
             contact($1, Whois::Answer::Contact::TYPE_REGISTRANT)
           end
         end
 
-        property_not_supported :technical_contact
+        property_not_supported :technical_contacts
 
 
         property_supported :nameservers do

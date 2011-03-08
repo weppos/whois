@@ -48,17 +48,17 @@ describe Whois::Answer::Parser::Base do
       end
     end
 
-    it "defines a private method called internal_PROPERTY when block is given" do
+    it "defines a private method called _property_PROPERTY when block is given" do
       with_registry do
         pklass = Class.new(klass)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
         pklass.property_register(:greetings, :supported) {}
-        pklass.private_instance_methods.map(&:to_sym).should include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should include(:_property_greetings)
 
         pklass = Class.new(klass)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
         pklass.property_register(:greetings, :supported)
-        pklass.private_instance_methods.map(&:to_sym).should_not include(:internal_greetings)
+        pklass.private_instance_methods.map(&:to_sym).should_not include(:_property_greetings)
       end
     end
   end
@@ -182,9 +182,9 @@ describe Whois::Answer::Parser::Base do
       c2 = Whois::Answer::Contact.new(:id => "2nd", :name => "foo")
       c3 = Whois::Answer::Contact.new(:id => "3rd", :name => "foo")
       i  = Class.new(klass) do
-        property_register(:registrant_contact, :supported) { [c1, c2] }
-        property_register(:admin_contact, :supported) { nil }
-        property_register(:technical_contact, :supported) { c3 }
+        property_register(:registrant_contacts, :supported) { [c1, c2] }
+        property_register(:admin_contacts, :supported)      { [] }
+        property_register(:technical_contacts, :supported)  { [c3] }
       end.new(@part)
 
       i.contacts.should == [c1, c2, c3]

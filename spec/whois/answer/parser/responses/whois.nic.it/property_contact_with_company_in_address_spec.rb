@@ -21,42 +21,48 @@ describe Whois::Answer::Parser::WhoisNicIt, "property_contact_with_company_in_ad
     @parser = klass.new(part)
   end
 
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      @parser.technical_contact.should be_a(_contact)
+      @parser.technical_contacts.should be_a(Array)
     end
     it do
-      @parser.technical_contact.type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts.should have(1).items
     end
     it do
-      @parser.technical_contact.id.should           == "AARS1-ITNIC"
+      @parser.technical_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.technical_contact.name.should         == "Andrea Antonio Renato Stratta"
+      @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
     end
     it do
-      @parser.technical_contact.organization.should == "UCI Italia Srl"
+      @parser.technical_contacts[0].id.should           == "AARS1-ITNIC"
     end
     it do
-      @parser.technical_contact.address.should      == "Via E. Fermi, 161"
+      @parser.technical_contacts[0].name.should         == "Andrea Antonio Renato Stratta"
     end
     it do
-      @parser.technical_contact.city.should         == "Roma"
+      @parser.technical_contacts[0].organization.should == "UCI Italia Srl"
     end
     it do
-      @parser.technical_contact.zip.should          == "00146"
+      @parser.technical_contacts[0].address.should      == "Via E. Fermi, 161"
     end
     it do
-      @parser.technical_contact.state.should        == "RM"
+      @parser.technical_contacts[0].city.should         == "Roma"
     end
     it do
-      @parser.technical_contact.country_code.should == "IT"
+      @parser.technical_contacts[0].zip.should          == "00146"
     end
     it do
-      @parser.technical_contact.created_on.should   == Time.parse("2006-08-16 00:00:00")
+      @parser.technical_contacts[0].state.should        == "RM"
     end
     it do
-      @parser.technical_contact.updated_on.should   == Time.parse("2007-03-01 07:48:42")
+      @parser.technical_contacts[0].country_code.should == "IT"
+    end
+    it do
+      @parser.technical_contacts[0].created_on.should   == Time.parse("2006-08-16 00:00:00")
+    end
+    it do
+      @parser.technical_contacts[0].updated_on.should   == Time.parse("2007-03-01 07:48:42")
     end
   end
 end

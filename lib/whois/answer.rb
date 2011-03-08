@@ -43,7 +43,7 @@ module Whois
     # Checks if this class respond to given method.
     #
     # Overrides the default implementation to add support
-    # for {PROPERTIES} and {METHODS}.
+    # for {Parser::PROPERTIES} and {Parser::METHODS}.
     #
     # @returns [Boolean]
     def respond_to?(symbol, include_private = false)
@@ -166,6 +166,51 @@ module Whois
 
     # @group Methods
 
+    # Shortcut for <tt>#registrant_contacts.first</tt>.
+    #
+    # @return [Whois::Answer::Contact]
+    #         If the property is supported and a contact exists.
+    # @return [nil]
+    #         If the property is not supported or the contact doesn't exist.
+    #
+    # @see Answer#registrant_contacts
+    #
+    def registrant_contact
+      if property_supported?(:registrant_contacts)
+        parser.registrant_contacts.first
+      end
+    end
+
+    # Shortcut for <tt>#admin_contacts.first</tt>.
+    #
+    # @return [Whois::Answer::Contact]
+    #         If the property is supported and a contact exists.
+    # @return [nil]
+    #         If the property is not supported or the contact doesn't exist.
+    #
+    # @see Answer#admin_contacts
+    #
+    def admin_contact
+      if property_supported?(:admin_contacts)
+        parser.admin_contacts.first
+      end
+    end
+
+    # Shortcut for <tt>#technical_contacts.first</tt>.
+    #
+    # @return [Whois::Answer::Contact]
+    #         If the property is supported and a contact exists.
+    # @return [nil]
+    #         If the property is not supported or the contact doesn't exist.
+    #
+    # @see Answer#technical_contacts
+    #
+    def technical_contact
+      if property_supported?(:technical_contacts)
+        parser.technical_contacts.first
+      end
+    end
+
     # Collects and returns all the contacts.
     #
     # @return [Array<Whois::Answer::Contact>]
@@ -251,8 +296,6 @@ module Whois
           def #{method}(*args, &block)
             if property_supported?(:#{method})
               parser.#{method}(*args, &block)
-            else
-              nil
             end
           end
         RUBY

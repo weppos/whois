@@ -35,40 +35,46 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_registered.expected" do
       @parser.registrar.organization.should == nil
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      lambda { @parser.registrant_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#admin_contact" do
+  context "#admin_contacts" do
     it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.admin_contacts.should be_a(Array)
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.admin_contacts.should have(1).items
     end
     it do
-      @parser.admin_contact.id.should           == nil
+      @parser.admin_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.admin_contact.name.should         == nil
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
     end
     it do
-      @parser.admin_contact.organization.should == "Google Inc"
+      @parser.admin_contacts[0].id.should           == nil
     end
     it do
-      @parser.admin_contact.phone.should        == "+1 650 330 0100"
+      @parser.admin_contacts[0].name.should         == nil
     end
     it do
-      @parser.admin_contact.fax.should          == "+1 650 618 8571"
+      @parser.admin_contacts[0].organization.should == "Google Inc"
     end
     it do
-      @parser.admin_contact.email.should        == "dns-admin@google.com"
+      @parser.admin_contacts[0].phone.should        == "+1 650 330 0100"
+    end
+    it do
+      @parser.admin_contacts[0].fax.should          == "+1 650 618 8571"
+    end
+    it do
+      @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
-  context "#technical_contact" do
+  context "#technical_contacts" do
     it do
-      lambda { @parser.technical_contact }.should raise_error(Whois::PropertyNotSupported)
+      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

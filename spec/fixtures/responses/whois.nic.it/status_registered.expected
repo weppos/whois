@@ -45,39 +45,45 @@
   should: %s.name         == "REGISTER-MNT"
   should: %s.organization == "Register.it s.p.a."
 
-#registrant_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_REGISTRANT
-  should: %s.id           == "GOOG175-ITNIC"
-  should: %s.name         == "Google Ireland Holdings"
-  should: %s.organization == nil
-  should: %s.address      == "30 Herbert Street"
-  should: %s.city         == "Dublin"
-  should: %s.zip          == "2"
-  should: %s.state        == "IE"
-  should: %s.country_code == "IE"
-  should: %s.created_on   == Time.parse("2008-11-27 16:47:22")
-  should: %s.updated_on   == Time.parse("2008-11-27 16:47:22")
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == "GOOG175-ITNIC"
+  should: %s[0].name         == "Google Ireland Holdings"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "30 Herbert Street"
+  should: %s[0].city         == "Dublin"
+  should: %s[0].zip          == "2"
+  should: %s[0].state        == "IE"
+  should: %s[0].country_code == "IE"
+  should: %s[0].created_on   == Time.parse("2008-11-27 16:47:22")
+  should: %s[0].updated_on   == Time.parse("2008-11-27 16:47:22")
 
-#admin_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_ADMIN
-  should: %s.id           == "TT4277-ITNIC"
-  should: %s.name         == "Tsao Tu"
-  should: %s.organization == "Tu Tsao"
-  should: %s.address      == "30 Herbert Street"
-  should: %s.city         == "Dublin"
-  should: %s.zip          == "2"
-  should: %s.state        == "IE"
-  should: %s.country_code == "IE"
-  should: %s.created_on   == Time.parse("2008-11-27 16:47:22")
-  should: %s.updated_on   == Time.parse("2008-11-27 16:47:22")
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s[0].id           == "TT4277-ITNIC"
+  should: %s[0].name         == "Tsao Tu"
+  should: %s[0].organization == "Tu Tsao"
+  should: %s[0].address      == "30 Herbert Street"
+  should: %s[0].city         == "Dublin"
+  should: %s[0].zip          == "2"
+  should: %s[0].state        == "IE"
+  should: %s[0].country_code == "IE"
+  should: %s[0].created_on   == Time.parse("2008-11-27 16:47:22")
+  should: %s[0].updated_on   == Time.parse("2008-11-27 16:47:22")
 
-#technical_contact
-  should: %s be_a(_contact)
-  should: %s.type         == Whois::Answer::Contact::TYPE_TECHNICAL
-  should: %s.id           == "TS7016-ITNIC"
-  should: %s.name         == "Technical Services"
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Answer::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == "TS7016-ITNIC"
+  should: %s[0].name         == "Technical Services"
 
 
 #nameservers

@@ -35,43 +35,55 @@ describe Whois::Answer::Parser::WhoisCnnicCn, "status_registered.expected" do
       @parser.registrar.organization.should == nil
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == nil
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "Domain Admin"
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.registrant_contact.organization.should == "Google Ireland Holdings"
-    end
-  end
-  context "#admin_contact" do
-    it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.registrant_contacts[0].id.should           == nil
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.registrant_contacts[0].name.should         == "Domain Admin"
     end
     it do
-      @parser.admin_contact.id.should           == nil
-    end
-    it do
-      @parser.admin_contact.name.should         == nil
-    end
-    it do
-      @parser.admin_contact.email.should        == "dns-admin@google.com"
+      @parser.registrant_contacts[0].organization.should == "Google Ireland Holdings"
     end
   end
-  context "#technical_contact" do
+  context "#admin_contacts" do
     it do
-      lambda { @parser.technical_contact }.should raise_error(Whois::PropertyNotSupported)
+      @parser.admin_contacts.should be_a(Array)
+    end
+    it do
+      @parser.admin_contacts.should have(1).items
+    end
+    it do
+      @parser.admin_contacts[0].should be_a(_contact)
+    end
+    it do
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
+    end
+    it do
+      @parser.admin_contacts[0].id.should           == nil
+    end
+    it do
+      @parser.admin_contacts[0].name.should         == nil
+    end
+    it do
+      @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
+    end
+  end
+  context "#technical_contacts" do
+    it do
+      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

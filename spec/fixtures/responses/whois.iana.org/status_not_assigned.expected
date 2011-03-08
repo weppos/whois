@@ -1,8 +1,11 @@
-#registrant_contact
-  should: %s == nil
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s == []
 
-#admin_contact
-  should: %s == nil
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s == []
 
-#technical_contact
-  should: %s == nil
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s == []

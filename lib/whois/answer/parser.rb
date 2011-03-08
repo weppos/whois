@@ -41,7 +41,7 @@ module Whois
         :status, :available?, :registered?,
         :created_on, :updated_on, :expires_on,
         :registrar,
-        :registrant_contact, :admin_contact, :technical_contact,
+        :registrant_contacts, :admin_contacts, :technical_contacts,
         :nameservers,
       ]
 

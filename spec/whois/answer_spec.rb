@@ -361,13 +361,13 @@ describe Whois::Answer do
         end.should raise_error(NoMethodError)
       end
 
-      it "doesn't catch all methods" do
+      it "does not catch all methods" do
         lambda do
           klass.new(nil, []).i_am_not_defined
         end.should raise_error(NoMethodError)
       end
 
-      it "doesn't catch all question methods" do
+      it "does not catch all question methods" do
         lambda do
           klass.new(nil, []).i_am_not_defined?
         end.should raise_error(NoMethodError)

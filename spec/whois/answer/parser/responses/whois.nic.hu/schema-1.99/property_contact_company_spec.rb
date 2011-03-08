@@ -21,45 +21,51 @@ describe Whois::Answer::Parser::WhoisNicHu, "property_contact_company.expected" 
     @parser = klass.new(part)
   end
 
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == nil
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "Google, Inc."
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.registrant_contact.organization.should == "Google, Inc."
+      @parser.registrant_contacts[0].id.should           == nil
     end
     it do
-      @parser.registrant_contact.address.should      == "Amphitheatre Pkwy 1600."
+      @parser.registrant_contacts[0].name.should         == "Google, Inc."
     end
     it do
-      @parser.registrant_contact.city.should         == "Mountain View"
+      @parser.registrant_contacts[0].organization.should == "Google, Inc."
     end
     it do
-      @parser.registrant_contact.zip.should          == "CA-94043"
+      @parser.registrant_contacts[0].address.should      == "Amphitheatre Pkwy 1600."
     end
     it do
-      @parser.registrant_contact.state.should        == nil
+      @parser.registrant_contacts[0].city.should         == "Mountain View"
     end
     it do
-      @parser.registrant_contact.country_code.should == "US"
+      @parser.registrant_contacts[0].zip.should          == "CA-94043"
     end
     it do
-      @parser.registrant_contact.phone.should        == "+1 650 253 0000"
+      @parser.registrant_contacts[0].state.should        == nil
     end
     it do
-      @parser.registrant_contact.fax.should          == "+1 650 253 0001"
+      @parser.registrant_contacts[0].country_code.should == "US"
     end
     it do
-      @parser.registrant_contact.email.should        == nil
+      @parser.registrant_contacts[0].phone.should        == "+1 650 253 0000"
+    end
+    it do
+      @parser.registrant_contacts[0].fax.should          == "+1 650 253 0001"
+    end
+    it do
+      @parser.registrant_contacts[0].email.should        == nil
     end
   end
 end

@@ -35,43 +35,55 @@ describe Whois::Answer::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.registrar.organization.should == nil
     end
   end
-  context "#registrant_contact" do
+  context "#registrant_contacts" do
     it do
-      @parser.registrant_contact.should be_a(_contact)
+      @parser.registrant_contacts.should be_a(Array)
     end
     it do
-      @parser.registrant_contact.type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts.should have(1).items
     end
     it do
-      @parser.registrant_contact.id.should           == "CID:FRAKTAL:1"
+      @parser.registrant_contacts[0].should be_a(_contact)
     end
     it do
-      @parser.registrant_contact.name.should         == "Priit Haamer"
+      @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
     end
     it do
-      @parser.registrant_contact.organization.should == nil
-    end
-  end
-  context "#admin_contact" do
-    it do
-      @parser.admin_contact.should be_a(_contact)
+      @parser.registrant_contacts[0].id.should           == "CID:FRAKTAL:1"
     end
     it do
-      @parser.admin_contact.type.should         == Whois::Answer::Contact::TYPE_ADMIN
+      @parser.registrant_contacts[0].name.should         == "Priit Haamer"
     end
     it do
-      @parser.admin_contact.id.should           == "CID:FRAKTAL:7"
-    end
-    it do
-      @parser.admin_contact.name.should         == "Tõnu Runnel"
-    end
-    it do
-      @parser.admin_contact.organization.should == "Fraktal OÜ"
+      @parser.registrant_contacts[0].organization.should == nil
     end
   end
-  context "#technical_contact" do
+  context "#admin_contacts" do
     it do
-      lambda { @parser.technical_contact }.should raise_error(Whois::PropertyNotSupported)
+      @parser.admin_contacts.should be_a(Array)
+    end
+    it do
+      @parser.admin_contacts.should have(1).items
+    end
+    it do
+      @parser.admin_contacts[0].should be_a(_contact)
+    end
+    it do
+      @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
+    end
+    it do
+      @parser.admin_contacts[0].id.should           == "CID:FRAKTAL:7"
+    end
+    it do
+      @parser.admin_contacts[0].name.should         == "Tõnu Runnel"
+    end
+    it do
+      @parser.admin_contacts[0].organization.should == "Fraktal OÜ"
+    end
+  end
+  context "#technical_contacts" do
+    it do
+      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end
