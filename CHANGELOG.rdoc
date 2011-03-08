@@ -88,6 +88,8 @@
 
 * CHANGED: Whois#query no longer raises Errno or SocketError. The errors are now rescued and re-raised as Whois::ConnectionError.
 
+* CHANGED: #admin_contact, #technical_contact and #registrant_contact have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts and they now returns an array of Contact, instead of a single Contact.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
@@ -133,6 +135,9 @@
 
 * Whois#query no longer raises Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError.
   The errors are now rescued and re-raised as Whois::ConnectionError.
+
+* #admin_contact, #technical_contact and #registrant_contact have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts and they now returns an array of Contact, instead of a single Contact. #admin_contact, #technical_contact and #registrant_contact still exists in the Answer as a convenient shortcut.
+
 
 == Release 1.6.6
 
