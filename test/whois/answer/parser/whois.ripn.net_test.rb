@@ -75,38 +75,6 @@ class AnswerParserWhoisRipnNetRuTest < AnswerParserWhoisRipnNetTest
   end
 
 
-  def test_registrar
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Registrar.new(:id => "RUCENTER-REG-RIPN")
-    assert_equal_and_cached expected, parser, :registrar
-
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar
-  end
-
-
-  def test_admin_contact
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Contact.new(
-      :type         => Whois::Answer::Contact::TYPE_ADMIN,
-      :organization => 'Google Inc',
-      :phone        => '+1 650 330 0100',
-      :fax          => '+1 650 618 8571',
-      :email        => 'dns-admin@google.com'
-    )
-    assert_equal_and_cached expected, parser, :admin_contact
-  end
-
-  def test_registrant_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).registrant_contact }
-  end
-
-  def test_technical_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).technical_contact }
-  end
-
-
   def test_nameservers
     parser    = @klass.new(load_part('status_registered.txt'))
     expected  = %w( ns1.google.com ns2.google.com ns3.google.com ns4.google.com ).map { |ns| nameserver(ns) }
@@ -182,38 +150,6 @@ class AnswerParserWhoisRipnNetSuTest < AnswerParserWhoisRipnNetTest
     parser    = @klass.new(load_part('status_available.txt'))
     expected  = nil
     assert_equal_and_cached expected, parser, :expires_on
-  end
-
-
-  def test_registrar
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Registrar.new(:id => "RUCENTER-REG-FID")
-    assert_equal_and_cached expected, parser, :registrar
-
-    parser    = @klass.new(load_part('status_available.txt'))
-    expected  = nil
-    assert_equal_and_cached expected, parser, :registrar
-  end
-
-
-  def test_admin_contact
-    parser    = @klass.new(load_part('status_registered.txt'))
-    expected  = Whois::Answer::Contact.new(
-      :type         => Whois::Answer::Contact::TYPE_ADMIN,
-      :name         => 'Private Person',
-      :phone        => '+7 495 9681807',
-      :fax          => '+7 495 9681807',
-      :email        => 'cis@cis.su'
-    )
-    assert_equal_and_cached expected, parser, :admin_contact
-  end
-
-  def test_registrant_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).registrant_contact }
-  end
-
-  def test_technical_contact
-    assert_raise(Whois::PropertyNotSupported) { @klass.new(load_part('status_registered.txt')).technical_contact }
   end
 
 

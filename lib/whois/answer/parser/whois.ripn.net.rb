@@ -74,15 +74,17 @@ module Whois
 
 
         property_supported :admin_contact do
-          Answer::Contact.new(
-            :type         => Answer::Contact::TYPE_ADMIN,
-            :name         => content_for_scanner[/person:\s+(.+)\n/, 1],
-            :organization => content_for_scanner[/org:\s+(.+)\n/, 1],
-            :phone        => content_for_scanner[/phone:\s+(.+)\n/, 1],
-            :fax          => content_for_scanner[/fax-no:\s+(.+)\n/, 1],
-            # Return the first matched email, even if there are a few of them
-            :email        => content_for_scanner[/e-mail:\s+(.+)\n/, 1]
-          )
+          if content_for_scanner =~ /e-mail:\s+(.+)\n/
+            Answer::Contact.new(
+              :type         => Answer::Contact::TYPE_ADMIN,
+              :name         => content_for_scanner[/person:\s+(.+)\n/, 1],
+              :organization => content_for_scanner[/org:\s+(.+)\n/, 1],
+              :phone        => content_for_scanner[/phone:\s+(.+)\n/, 1],
+              :fax          => content_for_scanner[/fax-no:\s+(.+)\n/, 1],
+              # Return the first matched email, even if there are a few of them
+              :email        => content_for_scanner[/e-mail:\s+(.+)\n/, 1]
+            )
+          end
         end
 
         property_not_supported :registrant_contact

@@ -1,0 +1,20 @@
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "RUCENTER-REG-FID"
+  should: %s.name         == nil
+  should: %s.organization == nil
+
+#registrant_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contact
+  should: %s be_a(_contact)
+  should: %s.type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s.id           == nil
+  should: %s.name         == "Private Person"
+  should: %s.phone        == "+7 495 9681807"
+  should: %s.fax          == "+7 495 9681807"
+  should: %s.email        == "cis@cis.su"
+
+#technical_contact
+  should: %s raise_error(Whois::PropertyNotSupported)
