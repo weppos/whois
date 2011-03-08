@@ -118,7 +118,7 @@ module Whois
               name, ipv4 = line.split(/\s+/)
               Answer::Nameserver.new(name.chomp("."), ipv4)
             end
-          end || []
+          end
         end
 
 

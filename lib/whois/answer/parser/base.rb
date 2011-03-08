@@ -156,7 +156,7 @@ module Whois
                   value = _property_#{property}(*args)
 
                   case "#{property}"
-                  when /_contacts$/
+                  when /_contacts$/, "nameservers"
                     typecast(value, Array)
                   else
                     value

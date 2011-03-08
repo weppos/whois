@@ -70,7 +70,7 @@ module Whois
               line =~ /(.+) \((.+)\)/
               Answer::Nameserver.new($1, $2)
             end
-          end || []
+          end
         end
 
       end

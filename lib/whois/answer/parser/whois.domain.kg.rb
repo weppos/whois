@@ -75,7 +75,7 @@ module Whois
             $1.split("\n").map do |name|
               Answer::Nameserver.new(name.downcase)
             end
-          end || []
+          end
         end
 
       end

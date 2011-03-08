@@ -112,7 +112,7 @@ module Whois
 
 
         property_supported :nameservers do
-          (node("nameserver") || []).map do |name|
+          Array.wrap(node("nameserver")).map do |name|
             Answer::Nameserver.new(name)
           end
         end

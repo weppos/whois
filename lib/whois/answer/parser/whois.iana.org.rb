@@ -78,7 +78,7 @@ module Whois
             (raw["nserver"] || "").split("\n").map do |line|
               Answer::Nameserver.new(*line.downcase.split(/\s+/))
             end
-          end || []
+          end
         end
 
 

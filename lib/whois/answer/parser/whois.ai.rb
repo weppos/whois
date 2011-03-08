@@ -63,7 +63,7 @@ module Whois
             $1.split("\n").select { |e| e =~ /Server Hostname/ }.map do |line|
               Answer::Nameserver.new(line.split(":").last.strip)
             end
-          end || []
+          end
         end
 
       end

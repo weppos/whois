@@ -68,7 +68,7 @@ module Whois
             $1.split("\n").map do |name|
               Answer::Nameserver.new(name.chomp("."))
             end
-          end || []
+          end
         end
 
       end

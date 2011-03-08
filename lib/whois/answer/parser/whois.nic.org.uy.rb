@@ -75,7 +75,7 @@ module Whois
             $1.scan(/-\s(.*?)\n/).flatten.map do |name|
               Answer::Nameserver.new(name)
             end
-          end || []
+          end
         end
 
       end

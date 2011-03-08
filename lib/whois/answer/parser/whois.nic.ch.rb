@@ -80,7 +80,7 @@ module Whois
               end
             end
             order.map { |name| list[name] }
-          end || []
+          end
         end
 
       end

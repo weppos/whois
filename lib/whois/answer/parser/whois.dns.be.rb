@@ -76,7 +76,7 @@ module Whois
                 Answer::Nameserver.new(line.strip)
               end
             end
-          end || []
+          end
         end
 
       end

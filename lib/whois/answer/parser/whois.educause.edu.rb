@@ -76,7 +76,7 @@ module Whois
               name, ipv4 = line.strip.split(/\s+/)
               Answer::Nameserver.new(name.downcase, ipv4)
             end
-          end || []
+          end
         end
 
       end

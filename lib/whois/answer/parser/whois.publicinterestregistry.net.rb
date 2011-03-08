@@ -102,7 +102,7 @@ module Whois
             server.reject(&:empty?).map do |name|
               Answer::Nameserver.new(name.downcase)
             end
-          end || []
+          end
         end
 
 

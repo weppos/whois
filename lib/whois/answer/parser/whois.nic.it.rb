@@ -110,7 +110,7 @@ module Whois
 
 
         property_supported :nameservers do
-          (node("Nameservers") || []).map do |name|
+          Array.wrap(node("Nameservers")).map do |name|
             Answer::Nameserver.new(name)
           end
         end

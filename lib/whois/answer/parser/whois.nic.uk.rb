@@ -100,7 +100,7 @@ module Whois
             $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|
               Answer::Nameserver.new(*line.strip.split(/\s+/))
             end
-          end || []
+          end
         end
 
 

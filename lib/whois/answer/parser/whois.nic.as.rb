@@ -64,7 +64,7 @@ module Whois
               line.strip =~ /(.+) \((.+)\)/
               Answer::Nameserver.new($1, $2)
             end
-          end || []
+          end
         end
 
       end

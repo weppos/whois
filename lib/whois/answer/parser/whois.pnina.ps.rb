@@ -76,7 +76,7 @@ module Whois
             $1.split("\n").delete_if { |value| value =~ /nodns\.ns$/i  }.map do |name|
               Answer::Nameserver.new(name.strip)
             end
-          end || []
+          end
         end
 
       end
