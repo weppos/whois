@@ -186,23 +186,6 @@ module Whois
 
           define_method("_property_#{property}", &block)
           private :"_property_#{property}"
-
-          # TODO: benchmark the cost of redefining the method.
-          class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
-            def #{property}(*args)
-              cached_properties_fetch(:#{property}) do
-                validate!
-                value = _property_#{property}(*args)
-
-                case "#{property}"
-                when /_contacts$/, "nameservers"
-                  typecast(value, Array)
-                else
-                  value
-                end
-              end
-            end
-          RUBY
         end
 
         # Checks if the <tt>property</tt> passed as symbol
@@ -265,7 +248,7 @@ module Whois
         Whois::Answer::Parser::PROPERTIES.each do |property|
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
             def #{property}(*args)
-              _property_#{property}(*args)
+              handle_property(:#{property}, *args)
             end
           RUBY
 
@@ -405,6 +388,25 @@ module Whois
               Array.wrap(value)
             else
               value
+            end
+          end
+
+          # @api internal
+          def handle_property(property, *args)
+            cached_properties_fetch(property) do
+              unless property_supported?(property)
+                return send(:"_property_#{property}", *args)
+              end
+
+              validate!
+              value = send(:"_property_#{property}", *args)
+
+              case property.to_s
+              when /_contacts$/, "nameservers"
+                typecast(value, Array)
+              else
+                value
+              end
             end
           end
 
