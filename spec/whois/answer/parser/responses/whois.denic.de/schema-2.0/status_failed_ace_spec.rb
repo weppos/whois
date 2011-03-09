@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.denic.de'
+require 'whois/answer/parser/whois.denic.de.rb'
 
 describe Whois::Answer::Parser::WhoisDenicDe, "status_failed_ace.expected" do
 

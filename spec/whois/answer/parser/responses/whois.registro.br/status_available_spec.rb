@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.registro.br'
+require 'whois/answer/parser/whois.registro.br.rb'
 
 describe Whois::Answer::Parser::WhoisRegistroBr, "status_available.expected" do
 

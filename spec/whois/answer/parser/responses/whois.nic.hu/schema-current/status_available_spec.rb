@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.nic.hu'
+require 'whois/answer/parser/whois.nic.hu.rb'
 
 describe Whois::Answer::Parser::WhoisNicHu, "status_available.expected" do
 

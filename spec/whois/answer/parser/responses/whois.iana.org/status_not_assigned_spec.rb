@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.iana.org'
+require 'whois/answer/parser/whois.iana.org.rb'
 
 describe Whois::Answer::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
 

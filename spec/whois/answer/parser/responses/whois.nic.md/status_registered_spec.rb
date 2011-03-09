@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.nic.md'
+require 'whois/answer/parser/whois.nic.md.rb'
 
 describe Whois::Answer::Parser::WhoisNicMd, "status_registered.expected" do
 

@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.tonic.to'
+require 'whois/answer/parser/whois.tonic.to.rb'
 
 describe Whois::Answer::Parser::WhoisTonicTo, "status_registered.expected" do
 

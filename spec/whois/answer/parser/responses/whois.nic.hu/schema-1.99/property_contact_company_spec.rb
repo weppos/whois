@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.nic.hu'
+require 'whois/answer/parser/whois.nic.hu.rb'
 
 describe Whois::Answer::Parser::WhoisNicHu, "property_contact_company.expected" do
 

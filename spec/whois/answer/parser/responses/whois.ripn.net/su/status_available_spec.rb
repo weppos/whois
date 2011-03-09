@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.ripn.net'
+require 'whois/answer/parser/whois.ripn.net.rb'
 
 describe Whois::Answer::Parser::WhoisRipnNet, "status_available.expected" do
 

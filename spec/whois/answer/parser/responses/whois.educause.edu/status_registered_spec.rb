@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.educause.edu'
+require 'whois/answer/parser/whois.educause.edu.rb'
 
 describe Whois::Answer::Parser::WhoisEducauseEdu, "status_registered.expected" do
 

@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.nic.ch'
+require 'whois/answer/parser/whois.nic.ch.rb'
 
 describe Whois::Answer::Parser::WhoisNicCh, "property_nameservers_with_ip.expected" do
 

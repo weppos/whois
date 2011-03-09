@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.registry.in'
+require 'whois/answer/parser/whois.registry.in.rb'
 
 describe Whois::Answer::Parser::WhoisRegistryIn, "status_available.expected" do
 

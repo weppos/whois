@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.domain-registry.nl'
+require 'whois/answer/parser/whois.domain-registry.nl.rb'
 
 describe Whois::Answer::Parser::WhoisDomainRegistryNl, "response_throttled.expected" do
 

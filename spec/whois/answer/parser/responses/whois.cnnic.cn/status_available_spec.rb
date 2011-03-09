@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.cnnic.cn'
+require 'whois/answer/parser/whois.cnnic.cn.rb'
 
 describe Whois::Answer::Parser::WhoisCnnicCn, "status_available.expected" do
 

@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.tld.ee'
+require 'whois/answer/parser/whois.tld.ee.rb'
 
 describe Whois::Answer::Parser::WhoisTldEe, "status_expired.expected" do
 

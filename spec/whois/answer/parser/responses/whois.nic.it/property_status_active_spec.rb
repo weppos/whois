@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.nic.it'
+require 'whois/answer/parser/whois.nic.it.rb'
 
 describe Whois::Answer::Parser::WhoisNicIt, "property_status_active.expected" do
 

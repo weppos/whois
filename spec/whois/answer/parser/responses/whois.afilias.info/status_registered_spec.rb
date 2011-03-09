@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.afilias.info'
+require 'whois/answer/parser/whois.afilias.info.rb'
 
 describe Whois::Answer::Parser::WhoisAfiliasInfo, "status_registered.expected" do
 

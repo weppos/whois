@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.coza.net.za'
+require 'whois/answer/parser/whois.coza.net.za.rb'
 
 describe Whois::Answer::Parser::WhoisCozaNetZa, "status_available.expected" do
 

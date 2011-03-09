@@ -23,7 +23,7 @@ namespace :genspec do
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/%{khost}'
+require 'whois/answer/parser/%{khost}.rb'
 
 describe %{klass}, "%{descr}" do
 

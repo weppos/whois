@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.cira.ca'
+require 'whois/answer/parser/whois.cira.ca.rb'
 
 describe Whois::Answer::Parser::WhoisCiraCa, "property_status_tobereleased.expected" do
 

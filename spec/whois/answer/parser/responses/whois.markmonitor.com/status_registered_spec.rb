@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.markmonitor.com'
+require 'whois/answer/parser/whois.markmonitor.com.rb'
 
 describe Whois::Answer::Parser::WhoisMarkmonitorCom, "status_registered.expected" do
 

@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.co.pl'
+require 'whois/answer/parser/whois.co.pl.rb'
 
 describe Whois::Answer::Parser::WhoisCoPl, "status_available.expected" do
 

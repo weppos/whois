@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.publicinterestregistry.net'
+require 'whois/answer/parser/whois.publicinterestregistry.net.rb'
 
 describe Whois::Answer::Parser::WhoisPublicinterestregistryNet, "response_throttled.expected" do
 

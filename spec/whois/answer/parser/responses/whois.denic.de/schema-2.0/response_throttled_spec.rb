@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.denic.de'
+require 'whois/answer/parser/whois.denic.de.rb'
 
 describe Whois::Answer::Parser::WhoisDenicDe, "response_throttled.expected" do
 

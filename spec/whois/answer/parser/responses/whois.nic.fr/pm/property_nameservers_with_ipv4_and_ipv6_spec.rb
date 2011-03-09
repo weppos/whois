@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.nic.fr'
+require 'whois/answer/parser/whois.nic.fr.rb'
 
 describe Whois::Answer::Parser::WhoisNicFr, "property_nameservers_with_ipv4_and_ipv6.expected" do
 

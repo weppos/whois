@@ -11,7 +11,7 @@
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/whois.org.za'
+require 'whois/answer/parser/whois.org.za.rb'
 
 describe Whois::Answer::Parser::WhoisOrgZa, "status_available.expected" do
 
