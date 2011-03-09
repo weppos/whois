@@ -402,11 +402,11 @@ module Whois
 
           # @api internal
           def handle_property(property, *args)
-            cached_properties_fetch(property) do
-              unless property_supported?(property)
-                return send(:"_property_#{property}", *args)
-              end
+            unless property_supported?(property)
+              return send(:"_property_#{property}", *args)
+            end
 
+            cached_properties_fetch(property) do
               validate!
               value = send(:"_property_#{property}", *args)
 
