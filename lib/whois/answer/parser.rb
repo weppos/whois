@@ -154,7 +154,7 @@ module Whois
       # Overrides the default implementation to add support
       # for {PROPERTIES} and {METHODS}.
       #
-      # @returns [Boolean]
+      # @return [Boolean]
       def respond_to?(symbol, include_private = false)
         super || PROPERTIES.include?(symbol) || METHODS.include?(symbol)
       end

@@ -156,16 +156,17 @@ module Whois
         # extracted from the registry answer.
         #
         # @example
-        #
         #   nameserver
         #   # => []
+        #
+        # @example
         #   nameserver
         #   # => [
         #   #     #<struct Whois::Answer::Nameserver name="ns1.google.com">,
         #   #     #<struct Whois::Answer::Nameserver name="ns2.google.com">
         #   #    ]
         #
-        # @returns [Array<Whois::Answer::Nameserver>]
+        # @return [Array<Whois::Answer::Nameserver>]
         property_supported :nameservers do
           []
         end

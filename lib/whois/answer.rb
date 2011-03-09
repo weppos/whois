@@ -45,7 +45,7 @@ module Whois
     # Overrides the default implementation to add support
     # for {Parser::PROPERTIES} and {Parser::METHODS}.
     #
-    # @returns [Boolean]
+    # @return [Boolean]
     def respond_to?(symbol, include_private = false)
       super || Parser::PROPERTIES.include?(symbol) || Parser::METHODS.include?(symbol)
     end
