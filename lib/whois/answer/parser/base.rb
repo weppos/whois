@@ -232,6 +232,18 @@ module Whois
           part.body
         end
 
+        # Check if the parser respond to +symbol+
+        # and calls the method if defined.
+        # The method referenced by the +symbol+
+        # is supposed to be a question? method and to return a boolean.
+        #
+        # @param  [Symbol] symbol
+        # @return [Boolean]
+        #
+        # @example
+        #   is(:response_throttled?)
+        #   # => true
+        #
         # @api internal
         def is(symbol)
           respond_to?(symbol) && send(symbol)
