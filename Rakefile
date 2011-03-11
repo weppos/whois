@@ -43,10 +43,6 @@ spec = Gem::Specification.new do |s|
   s.homepage          = "http://www.ruby-whois.org"
   s.rubyforge_project = RUBYFORGE_PROJECT
 
-  s.has_rdoc          = true
-  s.extra_rdoc_files  = Dir.glob("*.rdoc")
-  s.rdoc_options      = %w( --main README.rdoc )
-
   s.files             = %w( Rakefile LICENSE .gemtest .rspec .yardopts ) +
                         Dir.glob("*.{rdoc,gemspec}") +
                         Dir.glob("{bin,lib,test,spec}/**/*")
