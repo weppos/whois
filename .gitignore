@@ -1,10 +1,10 @@
+*.rbc
+.bundle
 .DS_Store
-.autotest
 .idea
 .yardoc
-pkg
-rdoc
-doc
 coverage
-*.rbc
+doc
+pkg/*
+rdoc
 utils/whois-utf8.rb
