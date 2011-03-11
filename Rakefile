@@ -1,16 +1,17 @@
-require "rubygems"
-require "rake/testtask"
-require "rspec/core/rake_task"
-require "rake/gempackagetask"
+require 'rubygems'
+require 'rake/testtask'
+require 'rspec/core/rake_task'
+require 'rake/gempackagetask'
+require 'yard'
+require 'yard/rake/yardoc_task'
 
-$:.unshift(File.dirname(__FILE__) + "/lib")
-require "whois"
+$:.unshift(File.dirname(__FILE__) + '/lib')
+require 'whois'
 
 
 # Common package properties
 PKG_NAME    = ENV['PKG_NAME']    || Whois::GEM
 PKG_VERSION = ENV['PKG_VERSION'] || Whois::VERSION
-RUBYFORGE_PROJECT = "whois"
 
 if ENV['SNAPSHOT'].to_i == 1
   PKG_VERSION << "." << Time.now.utc.strftime("%Y%m%d%H%M%S")
@@ -30,18 +31,14 @@ spec = Gem::Specification.new do |s|
   s.name              = PKG_NAME
   s.version           = PKG_VERSION
   s.summary           = "An intelligent pure Ruby WHOIS client and parser."
-  s.description       = <<-EOD
-    Whois is an intelligent WHOIS client and parser written in pure Ruby. \
-    It can query registry data for IPv4, IPv6 and top level domains, \
-    parse and convert responses into easy-to-use Ruby objects.
-  EOD
+  s.description       = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, parse and convert responses into easy-to-use Ruby objects."
 
   s.required_ruby_version = ">= 1.8.7"
 
   s.author            = "Simone Carletti"
   s.email             = "weppos@weppos.net"
   s.homepage          = "http://www.ruby-whois.org"
-  s.rubyforge_project = RUBYFORGE_PROJECT
+  s.rubyforge_project = "whois"
 
   s.files             = %w( Rakefile LICENSE .gemtest .rspec .yardopts ) +
                         Dir.glob("*.{rdoc,gemspec}") +
@@ -59,10 +56,8 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency("yard")
 end
 
-# This task actually builds the gem. We also regenerate a static
-# .gemspec file, which is useful if something (i.e. GitHub) will
-# be automatically building a gem for this project. If you're not
-# using GitHub, edit as appropriate.
+# This task actually builds the gem.
+# We also regenerate a static .gemspec file.
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
@@ -126,46 +121,24 @@ desc "Package the library and generates the gemspec"
 task :package => [:gemspec]
 
 
-begin
-  require "yard"
-  require "yard/rake/yardoc_task"
-
-  YARD::Rake::YardocTask.new(:yardoc) do |y|
-    y.options = ["--output-dir", "yardoc"]
-  end
-
-  namespace :yardoc do
-    desc "Publish YARD documentation to the site"
-    task :publish => ["yardoc:clobber", "yardoc"] do
-      ENV["username"] || raise(ArgumentError, "Missing ssh username")
-      sh "rsync -avz --delete yardoc/ #{ENV["username"]}@alamak:/home/#{ENV["username"]}/ruby-whois.org/api"
-    end
-
-    desc "Remove YARD products"
-    task :clobber do
-      rm_r "yardoc" rescue nil
-    end
-  end
-
-  task :clobber => "yardoc:clobber"
-rescue LoadError
-  puts "YARD is not available"
+YARD::Rake::YardocTask.new(:yardoc) do |y|
+  y.options = ["--output-dir", "yardoc"]
 end
 
-
-begin
-  require "rcov/rcovtask"
-
-  desc "Create a code coverage report"
-  Rcov::RcovTask.new do |t|
-    t.test_files = FileList["test/**/*_test.rb"]
-    t.ruby_opts << "-Itest -x mocha,rcov,Rakefile"
-    t.verbose = true
+namespace :yardoc do
+  desc "Publish YARD documentation to the site"
+  task :publish => ["yardoc:clobber", "yardoc"] do
+    ENV["username"] || raise(ArgumentError, "Missing ssh username")
+    sh "rsync -avz --delete yardoc/ #{ENV["username"]}@alamak:/home/#{ENV["username"]}/ruby-whois.org/api"
   end
-rescue LoadError
-  task :clobber_rcov
-  # puts "RCov is not available"
+
+  desc "Remove YARD products"
+  task :clobber do
+    rm_r "yardoc" rescue nil
+  end
 end
+
+task :clobber => "yardoc:clobber"
 
 
 desc "Open an irb session preloaded with this library"
