@@ -21,6 +21,67 @@ describe Whois::Answer::Parser::WhoisCnnicCn, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "google.cn"
+    end
+  end
+  context "#domain_id" do
+    it do
+      @parser.domain_id.should == "20030311s10001s00033735-cn"
+    end
+  end
+  context "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited", "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"]
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+    end
+    it do
+      @parser.created_on.should == Time.parse("2003-03-17 12:20:00")
+    end
+  end
+  context "#updated_on" do
+    it do
+      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#expires_on" do
+    it do
+      @parser.expires_on.should be_a(Time)
+    end
+    it do
+      @parser.expires_on.should == Time.parse("2012-03-17 12:48:00")
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
@@ -84,6 +145,49 @@ describe Whois::Answer::Parser::WhoisCnnicCn, "status_registered.expected" do
   context "#technical_contacts" do
     it do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should have(5).items
+    end
+    it do
+      @parser.nameservers[0].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[0].name.should == "ns1.google.cn"
+    end
+    it do
+      @parser.nameservers[1].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[1].name.should == "ns2.google.com"
+    end
+    it do
+      @parser.nameservers[2].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[2].name.should == "ns1.google.com"
+    end
+    it do
+      @parser.nameservers[3].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[3].name.should == "ns3.google.com"
+    end
+    it do
+      @parser.nameservers[4].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[4].name.should == "ns4.google.com"
+    end
+  end
+  context "#reserved?" do
+    it do
+      @parser.reserved?.should == false
     end
   end
 end
