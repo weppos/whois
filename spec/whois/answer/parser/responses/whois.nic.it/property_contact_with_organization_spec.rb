@@ -24,44 +24,18 @@ describe Whois::Answer::Parser::WhoisNicIt, "property_contact_with_organization.
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should have(1).items
-    end
-    it do
       @parser.admin_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
-    end
-    it do
       @parser.admin_contacts[0].id.should           == "TT4277-ITNIC"
-    end
-    it do
       @parser.admin_contacts[0].name.should         == "Tsao Tu"
-    end
-    it do
       @parser.admin_contacts[0].organization.should == "Tu Tsao"
-    end
-    it do
       @parser.admin_contacts[0].address.should      == "30 Herbert Street"
-    end
-    it do
       @parser.admin_contacts[0].city.should         == "Dublin"
-    end
-    it do
       @parser.admin_contacts[0].zip.should          == "2"
-    end
-    it do
       @parser.admin_contacts[0].state.should        == "IE"
-    end
-    it do
       @parser.admin_contacts[0].country_code.should == "IE"
-    end
-    it do
       @parser.admin_contacts[0].created_on.should   == Time.parse("2008-11-27 16:47:22")
-    end
-    it do
       @parser.admin_contacts[0].updated_on.should   == Time.parse("2008-11-27 16:47:22")
     end
   end

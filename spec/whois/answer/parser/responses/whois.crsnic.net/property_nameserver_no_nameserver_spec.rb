@@ -24,8 +24,6 @@ describe Whois::Answer::Parser::WhoisCrsnicNet, "property_nameserver_no_nameserv
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

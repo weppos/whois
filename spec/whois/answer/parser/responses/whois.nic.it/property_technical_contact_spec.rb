@@ -24,20 +24,10 @@ describe Whois::Answer::Parser::WhoisNicIt, "property_technical_contact.expected
   context "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
-    end
-    it do
       @parser.technical_contacts.should have(1).items
-    end
-    it do
       @parser.technical_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
-    end
-    it do
       @parser.technical_contacts[0].id.should           == "TS7016-ITNIC"
-    end
-    it do
       @parser.technical_contacts[0].name.should         == "Technical Services"
     end
   end

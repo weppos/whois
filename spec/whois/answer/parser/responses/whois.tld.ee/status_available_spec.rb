@@ -29,16 +29,12 @@ describe Whois::Answer::Parser::WhoisTldEe, "status_available.expected" do
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should == []
     end
   end
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should == []
     end
   end

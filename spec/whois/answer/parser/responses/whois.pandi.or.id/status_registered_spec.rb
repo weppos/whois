@@ -39,56 +39,32 @@ describe Whois::Answer::Parser::WhoisPandiOrId, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2004-12-18")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2006-07-24")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2010-08-31")
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.google.com"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.google.com"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "ns3.google.com"
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end

@@ -29,20 +29,10 @@ describe Whois::Answer::Parser::WhoisNicMd, "status_registered.expected" do
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
-    end
-    it do
       @parser.registrant_contacts[0].id.should           == nil
-    end
-    it do
       @parser.registrant_contacts[0].name.should         == "Google Inc."
     end
   end

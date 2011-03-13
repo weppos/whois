@@ -39,20 +39,18 @@ end
 
   TPL_CONTEXT  = <<-RUBY.chomp!
   context "#%{descr}" do
+    it do
 %{examples}
+    end
   end
   RUBY
 
-  TPL_EXAMPLE = <<-RUBY.chomp!
-    it do
+  TPL_MATCH = <<-RUBY.chomp!
       @parser.%{subject}.%{should} %{match}
-    end
   RUBY
 
-  TPL_EXAMPLE_RAISE = <<-RUBY.chomp!
-    it do
+  TPL_MATCH_RAISE = <<-RUBY.chomp!
       lambda { @parser.%{subject} }.%{should} %{match}
-    end
   RUBY
 
   def relativize(path)
@@ -104,14 +102,14 @@ end
       # Generate the RSpec content and
       # write one file for every test.
       contexts = tests.map do |attr, specs|
-        examples = specs.map do |method, should, match|
+        matches = specs.map do |method, should, match|
           if match.index("raise_")
-            TPL_EXAMPLE_RAISE % { :subject => method % attr, :should => should, :match => match }
+            TPL_MATCH_RAISE % { :subject => method % attr, :should => should, :match => match }
           else
-            TPL_EXAMPLE % { :subject => method % attr, :should => should, :match => match }
+            TPL_MATCH % { :subject => method % attr, :should => should, :match => match }
           end
         end.join("\n")
-        TPL_CONTEXT % { :descr => attr, :examples => examples }
+        TPL_CONTEXT % { :descr => attr, :examples => matches }
       end.join("\n")
 
       describe = <<-RUBY

@@ -39,8 +39,6 @@ describe Whois::Answer::Parser::WhoisDnsPt, "status_reserved.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2009-02-09 01:00:00")
     end
   end
@@ -57,8 +55,6 @@ describe Whois::Answer::Parser::WhoisDnsPt, "status_reserved.expected" do
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

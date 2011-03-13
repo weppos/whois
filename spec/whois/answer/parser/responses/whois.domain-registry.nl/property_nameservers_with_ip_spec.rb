@@ -24,26 +24,12 @@ describe Whois::Answer::Parser::WhoisDomainRegistryNl, "property_nameservers_wit
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.tntpost.nl"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "145.78.21.10"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.tntpost.nl"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == "80.69.76.10"
     end
   end

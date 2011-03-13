@@ -24,35 +24,15 @@ describe Whois::Answer::Parser::WhoisDenicDe, "property_nameservers_with_ip.expe
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(3).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.prodns.de"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "213.160.64.75"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.prodns.de"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == "213.160.65.75"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "ns3.prodns.de"
-    end
-    it do
       @parser.nameservers[2].ipv4.should == "83.133.190.12"
     end
   end

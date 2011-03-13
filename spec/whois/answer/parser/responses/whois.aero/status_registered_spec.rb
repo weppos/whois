@@ -39,56 +39,32 @@ describe Whois::Answer::Parser::WhoisAero, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2002-03-26 06:48:27 UTC")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2008-03-05 14:32:18 UTC")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2010-03-26 06:48:27 UTC")
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "dns2.srilankan.aero"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "dns1.srilankan.aero"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "s1.ns.slt.lk"
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].name.should == "s2.ns.slt.lk"
     end
   end

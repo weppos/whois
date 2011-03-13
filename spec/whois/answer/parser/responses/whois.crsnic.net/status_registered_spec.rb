@@ -64,73 +64,41 @@ describe Whois::Answer::Parser::WhoisCrsnicNet, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("1999-03-15")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2009-02-10")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2010-03-15")
     end
   end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
-    end
-    it do
       @parser.registrar.id.should           == nil
-    end
-    it do
       @parser.registrar.name.should         == "MARKMONITOR INC."
-    end
-    it do
       @parser.registrar.organization.should == "MARKMONITOR INC."
-    end
-    it do
       @parser.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.google.com"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.google.com"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "ns3.google.com"
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end

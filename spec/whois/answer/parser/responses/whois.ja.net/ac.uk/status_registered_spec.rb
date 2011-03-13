@@ -39,68 +39,36 @@ describe Whois::Answer::Parser::WhoisJaNet, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2003-11-07")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2010-05-16")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2012-06-16")
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "agate.lut.ac.uk"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "158.125.1.100"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "bgate.lut.ac.uk"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == nil
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "cgate.lut.ac.uk"
-    end
-    it do
       @parser.nameservers[2].ipv4.should == nil
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].name.should == "ns3.ja.net"
-    end
-    it do
       @parser.nameservers[3].ipv4.should == nil
     end
   end

@@ -44,8 +44,6 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("1999-09-27")
     end
   end
@@ -57,32 +55,24 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should == []
     end
   end
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should == []
     end
   end
   context "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
-    end
-    it do
       @parser.technical_contacts.should == []
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

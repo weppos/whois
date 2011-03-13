@@ -24,47 +24,19 @@ describe Whois::Answer::Parser::WhoisNicHu, "property_contact_company.expected" 
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
-    end
-    it do
       @parser.registrant_contacts[0].id.should           == nil
-    end
-    it do
       @parser.registrant_contacts[0].name.should         == "Google, Inc."
-    end
-    it do
       @parser.registrant_contacts[0].organization.should == "Google, Inc."
-    end
-    it do
       @parser.registrant_contacts[0].address.should      == "Amphitheatre Pkwy 1600."
-    end
-    it do
       @parser.registrant_contacts[0].city.should         == "Mountain View"
-    end
-    it do
       @parser.registrant_contacts[0].zip.should          == "CA-94043"
-    end
-    it do
       @parser.registrant_contacts[0].state.should        == nil
-    end
-    it do
       @parser.registrant_contacts[0].country_code.should == "US"
-    end
-    it do
       @parser.registrant_contacts[0].phone.should        == "+1 650 253 0000"
-    end
-    it do
       @parser.registrant_contacts[0].fax.should          == "+1 650 253 0001"
-    end
-    it do
       @parser.registrant_contacts[0].email.should        == nil
     end
   end

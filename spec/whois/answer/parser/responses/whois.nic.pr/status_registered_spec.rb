@@ -39,8 +39,6 @@ describe Whois::Answer::Parser::WhoisNicPr, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2003-01-25")
     end
   end
@@ -52,8 +50,6 @@ describe Whois::Answer::Parser::WhoisNicPr, "status_registered.expected" do
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2011-01-25")
     end
   end

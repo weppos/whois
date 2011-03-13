@@ -39,16 +39,12 @@ describe Whois::Answer::Parser::WhoisIamNetMa, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2006-11-15")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2007-04-09")
     end
   end

@@ -39,16 +39,12 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("1997-08-26")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2009-11-10")
     end
   end
@@ -60,167 +56,69 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_registered.expected" do
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
-    end
-    it do
       @parser.registrant_contacts[0].id.should           == nil
-    end
-    it do
       @parser.registrant_contacts[0].name.should         == nil
-    end
-    it do
       @parser.registrant_contacts[0].organization.should == "North Atlantic Treaty Organization"
-    end
-    it do
       @parser.registrant_contacts[0].address.should      == "Blvd Leopold III"
-    end
-    it do
       @parser.registrant_contacts[0].city.should         == "1110 Brussels"
-    end
-    it do
       @parser.registrant_contacts[0].zip.should          == "Brussels"
-    end
-    it do
       @parser.registrant_contacts[0].country.should      == "Belgium"
     end
   end
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should have(1).items
-    end
-    it do
       @parser.admin_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
-    end
-    it do
       @parser.admin_contacts[0].id.should           == nil
-    end
-    it do
       @parser.admin_contacts[0].name.should         == "Aidan Murdock"
-    end
-    it do
       @parser.admin_contacts[0].organization.should == nil
-    end
-    it do
       @parser.admin_contacts[0].address.should      == "SHAPE"
-    end
-    it do
       @parser.admin_contacts[0].city.should         == "NCSA/SDD/SAL"
-    end
-    it do
       @parser.admin_contacts[0].zip.should          == "Casteau Hainaut 7010"
-    end
-    it do
       @parser.admin_contacts[0].country.should      == "Belgium"
-    end
-    it do
       @parser.admin_contacts[0].phone.should        == "+32 65 44 7244"
-    end
-    it do
       @parser.admin_contacts[0].fax.should          == "+32 65 44 7221"
-    end
-    it do
       @parser.admin_contacts[0].email.should        == "aidan.murdock@ncsa.nato.int"
     end
   end
   context "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
-    end
-    it do
       @parser.technical_contacts.should have(1).items
-    end
-    it do
       @parser.technical_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
-    end
-    it do
       @parser.technical_contacts[0].id.should           == nil
-    end
-    it do
       @parser.technical_contacts[0].name.should         == "Jack Smits"
-    end
-    it do
       @parser.technical_contacts[0].organization.should == nil
-    end
-    it do
       @parser.technical_contacts[0].address.should      == "SHAPE"
-    end
-    it do
       @parser.technical_contacts[0].city.should         == "NCSA/SMD"
-    end
-    it do
       @parser.technical_contacts[0].zip.should          == "Casteau Hainaut 7010"
-    end
-    it do
       @parser.technical_contacts[0].country.should      == "Belgium"
-    end
-    it do
       @parser.technical_contacts[0].phone.should        == "+32 65 44 7534"
-    end
-    it do
       @parser.technical_contacts[0].fax.should          == "+32 65 44 7556"
-    end
-    it do
       @parser.technical_contacts[0].email.should        == "jack.smits@ncsa.nato.int"
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "max.nra.nato.int"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "192.101.252.69"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "maxima.nra.nato.int"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == "193.110.130.68"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "ns.namsa.nato.int"
-    end
-    it do
       @parser.nameservers[2].ipv4.should == "208.161.248.15"
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].name.should == "ns.nc3a.nato.int"
-    end
-    it do
       @parser.nameservers[3].ipv4.should == "195.169.116.6"
     end
   end

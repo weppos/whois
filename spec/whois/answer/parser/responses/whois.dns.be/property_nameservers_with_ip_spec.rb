@@ -24,35 +24,15 @@ describe Whois::Answer::Parser::WhoisDnsBe, "property_nameservers_with_ip.expect
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(3).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns3.register.be"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "91.121.5.186"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns1.register.be"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == "80.169.63.207"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "ns2.register.be"
-    end
-    it do
       @parser.nameservers[2].ipv4.should == "194.78.23.152"
     end
   end

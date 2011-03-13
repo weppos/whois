@@ -39,8 +39,6 @@ describe Whois::Answer::Parser::WhoisGovZa, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2003-11-10")
     end
   end

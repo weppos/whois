@@ -84,8 +84,6 @@ describe Whois::Answer::Parser::JobswhoisVerisignGrsCom, "status_available.expec
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

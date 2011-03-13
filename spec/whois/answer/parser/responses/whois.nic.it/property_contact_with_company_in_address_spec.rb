@@ -24,44 +24,18 @@ describe Whois::Answer::Parser::WhoisNicIt, "property_contact_with_company_in_ad
   context "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
-    end
-    it do
       @parser.technical_contacts.should have(1).items
-    end
-    it do
       @parser.technical_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
-    end
-    it do
       @parser.technical_contacts[0].id.should           == "AARS1-ITNIC"
-    end
-    it do
       @parser.technical_contacts[0].name.should         == "Andrea Antonio Renato Stratta"
-    end
-    it do
       @parser.technical_contacts[0].organization.should == "UCI Italia Srl"
-    end
-    it do
       @parser.technical_contacts[0].address.should      == "Via E. Fermi, 161"
-    end
-    it do
       @parser.technical_contacts[0].city.should         == "Roma"
-    end
-    it do
       @parser.technical_contacts[0].zip.should          == "00146"
-    end
-    it do
       @parser.technical_contacts[0].state.should        == "RM"
-    end
-    it do
       @parser.technical_contacts[0].country_code.should == "IT"
-    end
-    it do
       @parser.technical_contacts[0].created_on.should   == Time.parse("2006-08-16 00:00:00")
-    end
-    it do
       @parser.technical_contacts[0].updated_on.should   == Time.parse("2007-03-01 07:48:42")
     end
   end

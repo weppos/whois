@@ -54,43 +54,21 @@ describe Whois::Answer::Parser::WhoisRegistryIn, "status_registered.expected" do
   context "#registrar" do
     it do
       @parser.registrar.should be_a(Whois::Answer::Registrar)
-    end
-    it do
       @parser.registrar.id.should == "R84-AFIN"
-    end
-    it do
       @parser.registrar.name.should == "Mark Monitor"
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].should == _nameserver.new(:name => "ns1.google.com")
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].should == _nameserver.new(:name => "ns2.google.com")
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].should == _nameserver.new(:name => "ns3.google.com")
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].should == _nameserver.new(:name => "ns4.google.com")
     end
   end

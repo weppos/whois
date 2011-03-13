@@ -39,202 +39,94 @@ describe Whois::Answer::Parser::WhoisMarkmonitorCom, "status_registered.expected
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("1999-03-15")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2011-02-11")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2012-03-14")
     end
   end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
-    end
-    it do
       @parser.registrar.id.should           == nil
-    end
-    it do
       @parser.registrar.name.should         == "Markmonitor.com"
-    end
-    it do
       @parser.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
-    end
-    it do
       @parser.registrant_contacts[0].name.should         == "DNS Admin"
-    end
-    it do
       @parser.registrant_contacts[0].organization.should == "Google Inc."
-    end
-    it do
       @parser.registrant_contacts[0].address.should      == "1600 Amphitheatre Parkway"
-    end
-    it do
       @parser.registrant_contacts[0].city.should         == "Mountain View"
-    end
-    it do
       @parser.registrant_contacts[0].zip.should          == "94043"
-    end
-    it do
       @parser.registrant_contacts[0].state.should        == "CA"
-    end
-    it do
       @parser.registrant_contacts[0].country_code.should == "US"
-    end
-    it do
       @parser.registrant_contacts[0].phone.should        == "+1.6506234000"
-    end
-    it do
       @parser.registrant_contacts[0].fax.should          == "+1.6506188571"
-    end
-    it do
       @parser.registrant_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should have(1).items
-    end
-    it do
       @parser.admin_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
-    end
-    it do
       @parser.admin_contacts[0].name.should         == "DNS Admin"
-    end
-    it do
       @parser.admin_contacts[0].organization.should == "Google Inc."
-    end
-    it do
       @parser.admin_contacts[0].address.should      == "1600 Amphitheatre Parkway"
-    end
-    it do
       @parser.admin_contacts[0].city.should         == "Mountain View"
-    end
-    it do
       @parser.admin_contacts[0].zip.should          == "94043"
-    end
-    it do
       @parser.admin_contacts[0].state.should        == "CA"
-    end
-    it do
       @parser.admin_contacts[0].country_code.should == "US"
-    end
-    it do
       @parser.admin_contacts[0].phone.should        == "+1.6506234000"
-    end
-    it do
       @parser.admin_contacts[0].fax.should          == "+1.6506188571"
-    end
-    it do
       @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
   context "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
-    end
-    it do
       @parser.technical_contacts.should have(1).items
-    end
-    it do
       @parser.technical_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.technical_contacts[0].type.should         == Whois::Answer::Contact::TYPE_TECHNICAL
-    end
-    it do
       @parser.technical_contacts[0].name.should         == "DNS Admin"
-    end
-    it do
       @parser.technical_contacts[0].organization.should == "Google Inc."
-    end
-    it do
       @parser.technical_contacts[0].address.should      == "1600 Amphitheatre Parkway"
-    end
-    it do
       @parser.technical_contacts[0].city.should         == "Mountain View"
-    end
-    it do
       @parser.technical_contacts[0].zip.should          == "94043"
-    end
-    it do
       @parser.technical_contacts[0].state.should        == "CA"
-    end
-    it do
       @parser.technical_contacts[0].country_code.should == "US"
-    end
-    it do
       @parser.technical_contacts[0].phone.should        == "+1.6506234000"
-    end
-    it do
       @parser.technical_contacts[0].fax.should          == "+1.6506188571"
-    end
-    it do
       @parser.technical_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].should == _nameserver.new(:name => "ns2.google.com")
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].should == _nameserver.new(:name => "ns1.google.com")
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].should == _nameserver.new(:name => "ns4.google.com")
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].should == _nameserver.new(:name => "ns3.google.com")
     end
   end

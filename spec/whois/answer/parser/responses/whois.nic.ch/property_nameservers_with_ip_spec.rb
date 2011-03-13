@@ -24,20 +24,10 @@ describe Whois::Answer::Parser::WhoisNicCh, "property_nameservers_with_ip.expect
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].should == _nameserver.new(:name => "ns1.citrin.ch", :ipv4 => "193.247.72.8", :ipv6 => "2001:8a8:21:5::11")
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].should == _nameserver.new(:name => "ns2.citrin.ch", :ipv4 => "62.12.149.3", :ipv6 => "2001:8a8:21:5::12")
     end
   end

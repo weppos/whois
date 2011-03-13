@@ -24,35 +24,15 @@ describe Whois::Answer::Parser::WhoisNicTr, "property_nameservers_with_ip.expect
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(3).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "titan.radore.com"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == nil
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "janus.radore.com"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == nil
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "mimas.rh.com.tr"
-    end
-    it do
       @parser.nameservers[2].ipv4.should == "77.75.34.2"
     end
   end

@@ -54,8 +54,6 @@ describe Whois::Answer::Parser::WhoisDomainRegistryNl, "status_quarantine.expect
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

@@ -24,20 +24,10 @@ describe Whois::Answer::Parser::WhoisNicMx, "property_nameservers_with_ip.expect
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].should == _nameserver.new(:name => "dns1.mpsnet.net.mx", :ipv4 => "200.4.48.15")
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].should == _nameserver.new(:name => "dns2.mpsnet.net.mx", :ipv4 => "200.4.48.16")
     end
   end

@@ -24,60 +24,30 @@ describe Whois::Answer::Parser::WhoisTldEe, "status_registered.expected" do
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
-    end
-    it do
       @parser.registrar.id.should           == "fraktal"
-    end
-    it do
       @parser.registrar.name.should         == "fraktal"
-    end
-    it do
       @parser.registrar.organization.should == nil
     end
   end
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.registrant_contacts[0].type.should         == Whois::Answer::Contact::TYPE_REGISTRANT
-    end
-    it do
       @parser.registrant_contacts[0].id.should           == "CID:FRAKTAL:1"
-    end
-    it do
       @parser.registrant_contacts[0].name.should         == "Priit Haamer"
-    end
-    it do
       @parser.registrant_contacts[0].organization.should == nil
     end
   end
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should have(1).items
-    end
-    it do
       @parser.admin_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
-    end
-    it do
       @parser.admin_contacts[0].id.should           == "CID:FRAKTAL:7"
-    end
-    it do
       @parser.admin_contacts[0].name.should         == "Tõnu Runnel"
-    end
-    it do
       @parser.admin_contacts[0].organization.should == "Fraktal OÜ"
     end
   end

@@ -24,26 +24,12 @@ describe Whois::Answer::Parser::WhoisNicFr, "status_registered.expected" do
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(3).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].should == _nameserver.new(:name => "ns1.nic.fr", :ipv4 => "192.93.0.1", :ipv6 => "2001:660:3005:1::1:1")
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].should == _nameserver.new(:name => "ns2.nic.fr", :ipv4 => "192.93.0.4", :ipv6 => "2001:660:3005:1::1:2")
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].should == _nameserver.new(:name => "ns3.nic.fr", :ipv4 => "192.134.0.49", :ipv6 => "2001:660:3006:1::1:1")
     end
   end

@@ -59,100 +59,60 @@ describe Whois::Answer::Parser::WhoisBiz, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2002-03-27 00:01:00 GMT")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2009-03-01 12:01:04 GMT")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2010-03-26 23:59:59 GMT")
     end
   end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
-    end
-    it do
       @parser.registrar.id.should           == "292"
-    end
-    it do
       @parser.registrar.name.should         == "MARKMONITOR, INC."
     end
   end
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
     end
   end
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should have(1).items
-    end
-    it do
       @parser.admin_contacts[0].should be_a(_contact)
     end
   end
   context "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
-    end
-    it do
       @parser.technical_contacts.should have(1).items
-    end
-    it do
       @parser.technical_contacts[0].should be_a(_contact)
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(4).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].should == _nameserver.new(:name => "ns1.google.com")
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].should == _nameserver.new(:name => "ns2.google.com")
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].should == _nameserver.new(:name => "ns3.google.com")
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].should == _nameserver.new(:name => "ns4.google.com")
     end
   end

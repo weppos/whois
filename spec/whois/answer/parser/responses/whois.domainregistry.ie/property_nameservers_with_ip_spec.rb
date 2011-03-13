@@ -24,62 +24,24 @@ describe Whois::Answer::Parser::WhoisDomainregistryIe, "property_nameservers_wit
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(6).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.dns.ie"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "208.94.148.4"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.dns.ie"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == "208.80.124.4"
-    end
-    it do
       @parser.nameservers[2].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[2].name.should == "ns3.dns.ie"
-    end
-    it do
       @parser.nameservers[2].ipv4.should == "208.80.126.4"
-    end
-    it do
       @parser.nameservers[3].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[3].name.should == "ns4.dns.ie"
-    end
-    it do
       @parser.nameservers[3].ipv4.should == "208.80.125.4"
-    end
-    it do
       @parser.nameservers[4].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[4].name.should == "ns5.dns.ie"
-    end
-    it do
       @parser.nameservers[4].ipv4.should == "208.80.127.4"
-    end
-    it do
       @parser.nameservers[5].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[5].name.should == "ns6.dns.ie"
-    end
-    it do
       @parser.nameservers[5].ipv4.should == "208.94.149.4"
     end
   end

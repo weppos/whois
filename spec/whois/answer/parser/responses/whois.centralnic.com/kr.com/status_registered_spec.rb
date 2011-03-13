@@ -49,8 +49,6 @@ describe Whois::Answer::Parser::WhoisCentralnicCom, "status_registered.expected"
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2008-06-11")
     end
   end
@@ -62,28 +60,16 @@ describe Whois::Answer::Parser::WhoisCentralnicCom, "status_registered.expected"
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2011-06-11")
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.academyart.edu"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.academyart.edu"
     end
   end

@@ -39,50 +39,30 @@ describe Whois::Answer::Parser::WhoisCat, "status_registered.expected" do
   context "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-    end
-    it do
       @parser.created_on.should == Time.parse("2006-02-14 09:12:37 GMT")
     end
   end
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2009-03-31 16:22:42 GMT")
     end
   end
   context "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-    end
-    it do
       @parser.expires_on.should == Time.parse("2010-02-14 09:12:37 GMT")
     end
   end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "dns2.gencat.cat"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "83.247.132.4"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "dns.gencat.net"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == nil
     end
   end

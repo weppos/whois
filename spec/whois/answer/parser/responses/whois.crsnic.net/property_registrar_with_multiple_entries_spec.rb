@@ -24,17 +24,9 @@ describe Whois::Answer::Parser::WhoisCrsnicNet, "property_registrar_with_multipl
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
-    end
-    it do
       @parser.registrar.id.should           == nil
-    end
-    it do
       @parser.registrar.name.should         == "MARKMONITOR INC."
-    end
-    it do
       @parser.registrar.organization.should == "MARKMONITOR INC."
-    end
-    it do
       @parser.registrar.url.should          == "http://www.markmonitor.com"
     end
   end

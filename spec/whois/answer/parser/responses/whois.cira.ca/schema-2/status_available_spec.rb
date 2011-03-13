@@ -59,8 +59,6 @@ describe Whois::Answer::Parser::WhoisCiraCa, "status_available.expected" do
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

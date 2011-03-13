@@ -24,8 +24,6 @@ describe Whois::Answer::Parser::JobswhoisVerisignGrsCom, "property_nameserver_no
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

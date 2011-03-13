@@ -24,26 +24,12 @@ describe Whois::Answer::Parser::WhoisNicHu, "property_contact_without_address.ex
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
-    end
-    it do
       @parser.registrant_contacts.should have(1).items
-    end
-    it do
       @parser.registrant_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.registrant_contacts[0].address.should      == nil
-    end
-    it do
       @parser.registrant_contacts[0].city.should         == nil
-    end
-    it do
       @parser.registrant_contacts[0].zip.should          == nil
-    end
-    it do
       @parser.registrant_contacts[0].state.should        == nil
-    end
-    it do
       @parser.registrant_contacts[0].country_code.should == nil
     end
   end

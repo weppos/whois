@@ -54,8 +54,6 @@ describe Whois::Answer::Parser::WhoisAdamsnamesTc, "status_available.expected" d
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

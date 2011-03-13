@@ -54,8 +54,6 @@ describe Whois::Answer::Parser::WhoisDomainregistryMy, "status_available.expecte
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should == []
     end
   end

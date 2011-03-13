@@ -44,8 +44,6 @@ describe Whois::Answer::Parser::WhoisNicPrivAt, "status_registered.expected" do
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2002-10-13")
     end
   end

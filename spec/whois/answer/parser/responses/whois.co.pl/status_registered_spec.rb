@@ -69,8 +69,6 @@ describe Whois::Answer::Parser::WhoisCoPl, "status_registered.expected" do
   context "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-    end
-    it do
       @parser.updated_on.should == Time.parse("2010-06-23 09:41:50")
     end
   end
@@ -102,20 +100,10 @@ describe Whois::Answer::Parser::WhoisCoPl, "status_registered.expected" do
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "ns1.co.pl"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "ns2.co.pl"
     end
   end

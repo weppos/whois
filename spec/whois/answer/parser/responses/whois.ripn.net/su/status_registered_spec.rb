@@ -24,14 +24,8 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_registered.expected" do
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
-    end
-    it do
       @parser.registrar.id.should           == "RUCENTER-REG-FID"
-    end
-    it do
       @parser.registrar.name.should         == nil
-    end
-    it do
       @parser.registrar.organization.should == nil
     end
   end
@@ -43,29 +37,13 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_registered.expected" do
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-    end
-    it do
       @parser.admin_contacts.should have(1).items
-    end
-    it do
       @parser.admin_contacts[0].should be_a(_contact)
-    end
-    it do
       @parser.admin_contacts[0].type.should         == Whois::Answer::Contact::TYPE_ADMIN
-    end
-    it do
       @parser.admin_contacts[0].id.should           == nil
-    end
-    it do
       @parser.admin_contacts[0].name.should         == "Private Person"
-    end
-    it do
       @parser.admin_contacts[0].phone.should        == "+7 495 9681807"
-    end
-    it do
       @parser.admin_contacts[0].fax.should          == "+7 495 9681807"
-    end
-    it do
       @parser.admin_contacts[0].email.should        == "cis@cis.su"
     end
   end

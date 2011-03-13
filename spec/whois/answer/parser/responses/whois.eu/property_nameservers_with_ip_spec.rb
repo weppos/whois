@@ -24,26 +24,12 @@ describe Whois::Answer::Parser::WhoisEu, "property_nameservers_with_ip.expected"
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-    end
-    it do
       @parser.nameservers.should have(2).items
-    end
-    it do
       @parser.nameservers[0].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[0].name.should == "dns1.servicemagic.eu"
-    end
-    it do
       @parser.nameservers[0].ipv4.should == "91.121.133.61"
-    end
-    it do
       @parser.nameservers[1].should be_a(_nameserver)
-    end
-    it do
       @parser.nameservers[1].name.should == "dns2.servicemagic.eu"
-    end
-    it do
       @parser.nameservers[1].ipv4.should == "91.121.103.77"
     end
   end
