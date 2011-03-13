@@ -1,0 +1,23 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2002-10-13")
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s raise_error(Whois::PropertyNotSupported)
