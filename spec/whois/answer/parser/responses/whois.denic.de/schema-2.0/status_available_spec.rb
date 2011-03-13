@@ -21,6 +21,51 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == nil
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "googlededewdedewdewde.de"
+    end
+  end
+  context "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == :available
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == true
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == false
+    end
+  end
+  context "#created_on" do
+    it do
+      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should == nil
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should == nil
@@ -48,6 +93,14 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_available.expected" do
     end
     it do
       @parser.technical_contacts.should == []
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should == []
     end
   end
 end

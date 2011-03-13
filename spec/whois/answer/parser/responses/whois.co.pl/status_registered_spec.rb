@@ -21,6 +21,64 @@ describe Whois::Answer::Parser::WhoisCoPl, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "coco.co.pl"
+    end
+  end
+  context "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == :registered
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+    end
+    it do
+      @parser.updated_on.should == Time.parse("2010-06-23 09:41:50")
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#registrar" do
     it do
       lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
@@ -39,6 +97,26 @@ describe Whois::Answer::Parser::WhoisCoPl, "status_registered.expected" do
   context "#technical_contacts" do
     it do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should have(2).items
+    end
+    it do
+      @parser.nameservers[0].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[0].name.should == "ns1.co.pl"
+    end
+    it do
+      @parser.nameservers[1].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[1].name.should == "ns2.co.pl"
     end
   end
 end

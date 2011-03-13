@@ -218,25 +218,25 @@ describe Whois::Answer::Parser::WhoisNicIt, "status_registered.expected" do
       @parser.nameservers[0].should be_a(_nameserver)
     end
     it do
-      @parser.nameservers[0].should == _nameserver.new(:name => "ns1.google.com")
+      @parser.nameservers[0].name.should == "ns1.google.com"
     end
     it do
       @parser.nameservers[1].should be_a(_nameserver)
     end
     it do
-      @parser.nameservers[1].should == _nameserver.new(:name => "ns4.google.com")
+      @parser.nameservers[1].name.should == "ns4.google.com"
     end
     it do
       @parser.nameservers[2].should be_a(_nameserver)
     end
     it do
-      @parser.nameservers[2].should == _nameserver.new(:name => "ns2.google.com")
+      @parser.nameservers[2].name.should == "ns2.google.com"
     end
     it do
       @parser.nameservers[3].should be_a(_nameserver)
     end
     it do
-      @parser.nameservers[3].should == _nameserver.new(:name => "ns3.google.com")
+      @parser.nameservers[3].name.should == "ns3.google.com"
     end
   end
   context "#response_unavailable?" do

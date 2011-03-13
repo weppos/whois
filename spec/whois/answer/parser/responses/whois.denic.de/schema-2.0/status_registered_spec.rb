@@ -21,6 +21,54 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "The data in this record is provided by DENIC for informational purposes only. DENIC does not guarantee its accuracy and cannot, under any circumstances, be held liable in case the stored information would prove to be wrong, incomplete or not accurate in any sense. All the domain data that is visible in the whois service is protected by law. It is not permitted to use it for any purpose other than technical or administrative requirements associated with the operation of the Internet. It is explicitly forbidden to extract, copy and/or use or re-utilise in any form and by any means (electronically or not) the whole or a quantitatively or qualitatively substantial part of the contents of the whois database without prior and explicit written permission by DENIC. It is prohibited, in particular, to use it for transmission of unsolicited and/or commercial and/or advertising by phone, fax, e-mail or for any similar purposes. By maintaining the connection you assure that you have a legitimate interest in the data and that you will only use it for the stated purposes. You are aware that DENIC maintains the right to initiate legal proceedings against you in the event of any breach of this assurance and to bar you from using its whois service. The DENIC whois service on port 43 never discloses any information concerning the domain holder/administrative contact. Information concerning the domain holder/administrative contact can be obtained through use of our web-based whois service available at the DENIC website: http://www.denic.de/en/background/whois-service/webwhois.html"
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "google.de"
+    end
+  end
+  context "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == :registered
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+    end
+    it do
+      @parser.updated_on.should == Time.parse('2010-09-08 22:40:48 +0200')
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
@@ -96,6 +144,38 @@ describe Whois::Answer::Parser::WhoisDenicDe, "status_registered.expected" do
     end
     it do
       @parser.technical_contacts[0].email.should        == "dns-admin@google.com"
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should have(4).items
+    end
+    it do
+      @parser.nameservers[0].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[0].name.should == "ns1.google.com"
+    end
+    it do
+      @parser.nameservers[1].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[1].name.should == "ns2.google.com"
+    end
+    it do
+      @parser.nameservers[2].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[2].name.should == "ns3.google.com"
+    end
+    it do
+      @parser.nameservers[3].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end
   context "#response_throttled?" do

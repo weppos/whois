@@ -1,3 +1,35 @@
+#disclaimer
+  should: %s == "All the domain data that is visible in the whois search is protected by law. It is not permitted to use it for any purpose other than technical or administrative requirements associated with the operation of the Internet or in order to contact the domain holder over legal problems. You are not permitted to save it electronically or in any other way without DENIC's express written permission. It is prohibited, in particular, to use it for advertising or any similar purpose. By maintaining the connection you assure that you have a legitimate interest in the data and that you will only use it for the stated purposes. You are aware that DENIC maintains the right to initiate legal proceedings against you in the event of any breach of this assurance and to bar you from using its whois query."
+
+
+#domain
+  should: %s == "google.de"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s be_a(Time)
+  should: %s == Time.parse('2009-02-28 12:03:09 +01:00')
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #registrar
   should: %s be_a(_registrar)
   should: %s.id           == nil
@@ -47,3 +79,16 @@
   should: %s[0].phone        == "+1-6503300100"
   should: %s[0].fax          == "+1-6506188571"
   should: %s[0].email        == "dns-admin@google.com"
+
+
+#nameservers
+  should: %s be_a(Array)
+  should: %s have(4).items
+  should: %s[0] be_a(_nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] be_a(_nameserver)
+  should: %s[1].name == "ns4.google.com"
+  should: %s[2] be_a(_nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] be_a(_nameserver)
+  should: %s[3].name == "ns2.google.com"

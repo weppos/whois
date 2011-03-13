@@ -1,3 +1,34 @@
+#disclaimer
+  should: %s == "All the domain data that is visible in the whois search is protected by law. It is not permitted to use it for any purpose other than technical or administrative requirements associated with the operation of the Internet or in order to contact the domain holder over legal problems. You are not permitted to save it electronically or in any other way without DENIC's express written permission. It is prohibited, in particular, to use it for advertising or any similar purpose. By maintaining the connection you assure that you have a legitimate interest in the data and that you will only use it for the stated purposes. You are aware that DENIC maintains the right to initiate legal proceedings against you in the event of any breach of this assurance and to bar you from using its whois query."
+
+
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :available
+
+#available?
+  should: %s == true
+
+#registered?
+  should: %s == false
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s == nil
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #registrar
   should: %s == nil
 
@@ -10,5 +41,10 @@
   should: %s == []
 
 #technical_contacts
+  should: %s be_a(Array)
+  should: %s == []
+
+
+#nameservers
   should: %s be_a(Array)
   should: %s == []

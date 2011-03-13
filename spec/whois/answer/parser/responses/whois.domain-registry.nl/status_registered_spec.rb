@@ -21,6 +21,74 @@ describe Whois::Answer::Parser::WhoisDomainRegistryNl, "status_registered.expect
     @parser = klass.new(part)
   end
 
+  context "#status" do
+    it do
+      @parser.status.should == :registered
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+    end
+    it do
+      @parser.created_on.should == Time.parse("1999-05-27")
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+    end
+    it do
+      @parser.updated_on.should == Time.parse("2009-02-11")
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should have(4).items
+    end
+    it do
+      @parser.nameservers[0].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[0].name.should == "ns1.google.com"
+    end
+    it do
+      @parser.nameservers[1].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[1].name.should == "ns2.google.com"
+    end
+    it do
+      @parser.nameservers[2].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[2].name.should == "ns3.google.com"
+    end
+    it do
+      @parser.nameservers[3].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[3].name.should == "ns4.google.com"
+    end
+  end
   context "#response_throttled?" do
     it do
       @parser.response_throttled?.should == false

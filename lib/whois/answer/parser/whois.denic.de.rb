@@ -56,7 +56,11 @@ module Whois
             end
           else
             if version < "2.0"
-              :available
+              if invalid?
+                :invalid
+              else
+                :available
+              end
             else
               Whois.bug!(ParserError, "Unable to parse status.")
             end
@@ -146,7 +150,7 @@ module Whois
         # NEWPROPERTY
         def invalid?
           cached_properties_fetch :invalid? do
-            !!node("Invalid") || node("Status") == "invalid"
+            !!node("status-invalid") || node("Status") == "invalid"
           end
         end
 
@@ -247,7 +251,7 @@ module Whois
 
             # Compatibility with Version: 1.11.0, 1.10.0
             def parse_available
-              if @input.match?(/% Object "(.*)" not found in database\n/)
+              if @input.match?(/% Object ".+" not found in database\n/)
                 while @input.scan(/%(.*)\n/)  # strip junk
                 end
                 @ast["status-available"] = true
@@ -255,9 +259,10 @@ module Whois
             end
 
             def parse_invalid
-              if @input.match?(/% ".*" is not a valid domain name\n/)
-                @input.scan(/%.*\n/)
-                @ast["Invalid"] = true
+              if @input.match?(/% ".+" is not a valid domain name\n/)
+                @input.scan(/% "(.+?)" is not a valid domain name\n/)
+                @ast["Domain"] = @input[1]
+                @ast["status-invalid"] = true
               end
             end
 
