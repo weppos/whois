@@ -37,8 +37,9 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /\[Stat(?:us|e)\]\s+(.*)\n/
             case $1.split(" ").first.downcase
-              when "active" then :registered
-              when "connected" then :registered
+              when "active"     then :registered
+              when "connected"  then :registered
+              when "reserved"   then :reserved
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -79,7 +80,7 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/\[Name Server\][ \t]+(.*?)\n/).flatten.map do |name|
+          content_for_scanner.scan(/\[Name Server\][\s\t]+([^\s\n]+?)\n/).flatten.map do |name|
             Answer::Nameserver.new(name)
           end
         end

@@ -21,6 +21,39 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
     @parser = klass.new(part)
   end
 
+  context "#status" do
+    it do
+      @parser.status.should == :available
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == true
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == false
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should == nil
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+    end
+    it do
+      @parser.updated_on.should == Time.parse("1999-09-27")
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
@@ -43,6 +76,14 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
     end
     it do
       @parser.technical_contacts.should == []
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should == []
     end
   end
 end

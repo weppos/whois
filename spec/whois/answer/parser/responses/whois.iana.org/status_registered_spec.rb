@@ -21,6 +21,42 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#status" do
+    it do
+      @parser.status.should == :registered
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+    end
+    it do
+      @parser.created_on.should == Time.parse("1997-08-26")
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+    end
+    it do
+      @parser.updated_on.should == Time.parse("2009-11-10")
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
@@ -142,6 +178,50 @@ describe Whois::Answer::Parser::WhoisIanaOrg, "status_registered.expected" do
     end
     it do
       @parser.technical_contacts[0].email.should        == "jack.smits@ncsa.nato.int"
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+    end
+    it do
+      @parser.nameservers.should have(4).items
+    end
+    it do
+      @parser.nameservers[0].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[0].name.should == "max.nra.nato.int"
+    end
+    it do
+      @parser.nameservers[0].ipv4.should == "192.101.252.69"
+    end
+    it do
+      @parser.nameservers[1].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[1].name.should == "maxima.nra.nato.int"
+    end
+    it do
+      @parser.nameservers[1].ipv4.should == "193.110.130.68"
+    end
+    it do
+      @parser.nameservers[2].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[2].name.should == "ns.namsa.nato.int"
+    end
+    it do
+      @parser.nameservers[2].ipv4.should == "208.161.248.15"
+    end
+    it do
+      @parser.nameservers[3].should be_a(_nameserver)
+    end
+    it do
+      @parser.nameservers[3].name.should == "ns.nc3a.nato.int"
+    end
+    it do
+      @parser.nameservers[3].ipv4.should == "195.169.116.6"
     end
   end
 end

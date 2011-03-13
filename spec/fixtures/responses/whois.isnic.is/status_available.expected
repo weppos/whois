@@ -12,23 +12,10 @@
   should: %s == nil
 
 #updated_on
-  should: %s == nil
-
-#expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
 
-
-#registrant_contacts
-  should: %s be_a(Array)
-  should: %s == []
-
-#admin_contacts
-  should: %s be_a(Array)
-  should: %s == []
-
-#technical_contacts
-  should: %s be_a(Array)
-  should: %s == []
+#expires_on
+  should: %s == nil
 
 
 #nameservers

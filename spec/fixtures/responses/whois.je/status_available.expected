@@ -9,26 +9,13 @@
 
 
 #created_on
-  should: %s == nil
+  should: %s raise_error(Whois::PropertyNotSupported)
 
 #updated_on
-  should: %s == nil
+  should: %s raise_error(Whois::PropertyNotSupported)
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
-
-
-#registrant_contacts
-  should: %s be_a(Array)
-  should: %s == []
-
-#admin_contacts
-  should: %s be_a(Array)
-  should: %s == []
-
-#technical_contacts
-  should: %s be_a(Array)
-  should: %s == []
 
 
 #nameservers
