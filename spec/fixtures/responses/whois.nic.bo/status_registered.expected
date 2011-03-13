@@ -1,0 +1,31 @@
+#domain
+  should: %s == "google.bo"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2006-08-22")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2011-08-22")
+
+
+#nameservers
+  should: %s raise_error(Whois::PropertyNotSupported)

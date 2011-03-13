@@ -21,16 +21,42 @@ describe Whois::Answer::Parser::WhoisNicFr, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#status" do
+    it do
+      @parser.status.should == :registered
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("1995-01-01")
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2004-09-17")
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].should == _nameserver.new(:name => "ns1.nic.fr", :ipv4 => "192.93.0.1", :ipv6 => "2001:660:3005:1::1:1")
-      @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].should == _nameserver.new(:name => "ns2.nic.fr", :ipv4 => "192.93.0.4", :ipv6 => "2001:660:3005:1::1:2")
-      @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].should == _nameserver.new(:name => "ns3.nic.fr", :ipv4 => "192.134.0.49", :ipv6 => "2001:660:3006:1::1:1")
     end
   end
 end

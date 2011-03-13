@@ -21,6 +21,36 @@ describe Whois::Answer::Parser::WhoisNicFr, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  context "#status" do
+    it do
+      @parser.status.should == :available
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == true
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == false
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should == nil
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should == nil
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

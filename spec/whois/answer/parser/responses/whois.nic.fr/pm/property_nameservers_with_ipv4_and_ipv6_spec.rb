@@ -26,11 +26,17 @@ describe Whois::Answer::Parser::WhoisNicFr, "property_nameservers_with_ipv4_and_
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
       @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].should == _nameserver.new(:name => "ns1.nic.fr", :ipv4 => "192.93.0.1", :ipv6 => "2001:660:3005:1::1:1")
+      @parser.nameservers[0].name.should == "ns1.nic.fr"
+      @parser.nameservers[0].ipv4.should == "192.93.0.1"
+      @parser.nameservers[0].ipv6.should == "2001:660:3005:1::1:1"
       @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].should == _nameserver.new(:name => "ns2.nic.fr", :ipv4 => "192.93.0.4", :ipv6 => "2001:660:3005:1::1:2")
+      @parser.nameservers[1].name.should == "ns2.nic.fr"
+      @parser.nameservers[1].ipv4.should == "192.93.0.4"
+      @parser.nameservers[1].ipv6.should == "2001:660:3005:1::1:2"
       @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].should == _nameserver.new(:name => "ns3.nic.fr", :ipv4 => "192.134.0.49", :ipv6 => "2001:660:3006:1::1:1")
+      @parser.nameservers[2].name.should == "ns3.nic.fr"
+      @parser.nameservers[2].ipv4.should == "192.134.0.49"
+      @parser.nameservers[2].ipv6.should == "2001:660:3006:1::1:1"
     end
   end
 end

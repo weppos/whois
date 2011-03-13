@@ -1,0 +1,21 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#nameservers
+  should: %s raise_error(Whois::PropertyNotSupported)

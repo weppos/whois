@@ -48,7 +48,7 @@ module Whois
         end
 
         property_supported :available? do
-          (status == "Not Registered")
+          status == :available
         end
 
         property_supported :registered? do
