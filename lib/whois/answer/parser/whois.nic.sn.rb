@@ -31,7 +31,7 @@ module Whois
         property_not_supported :disclaimer
 
         property_supported :domain do
-          if registered? and content_for_scanner =~ /Domain:\s+(.*)\n/
+          if registered? and content_for_scanner =~ /Domain:\s+(.+)\n/
             $1
           elsif available? and content_for_scanner =~ /Domain (.+?) not found/
             $1
@@ -64,7 +64,7 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Created:\s+(.*)\n/
+          if content_for_scanner =~ /Created:\s+(.+)\n/
             Time.parse($1)
           end
         end
@@ -75,7 +75,7 @@ module Whois
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /Registrar:\s+(.*)\n/
+          if content_for_scanner =~ /Registrar:\s+(.+)\n/
             Whois::Answer::Registrar.new(:id => $1, :name => $1)
           end
         end
@@ -88,7 +88,7 @@ module Whois
         end
 
         property_supported :admin_contacts do
-          if content_for_scanner =~ /Administrative Contact's handle:\s+(.*+)\n/
+          if content_for_scanner =~ /Administrative Contact's handle:\s+(.+)\n/
             contact($1, Whois::Answer::Contact::TYPE_ADMIN)
           end
         end
