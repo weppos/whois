@@ -36,4 +36,33 @@ describe Whois::Answer::Parser::WhoisTldEe, "status_expired.expected" do
       @parser.registered?.should == true
     end
   end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("04.07.2010 05:05:30")
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should == nil
+    end
+  end
+  context "#expires_on" do
+    it do
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("05.01.2011")
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should have(2).items
+      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].name.should == "ns1550.hostgator.com"
+      @parser.nameservers[0].ipv4.should == "174.132.145.195"
+      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].name.should == "ns1549.hostgator.com"
+      @parser.nameservers[1].ipv4.should == "174.132.145.194"
+    end
+  end
 end

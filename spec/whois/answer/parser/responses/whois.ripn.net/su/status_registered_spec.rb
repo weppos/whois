@@ -21,6 +21,38 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#status" do
+    it do
+      @parser.status.should == ["REGISTERED", "DELEGATED", "UNVERIFIED"]
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2005-10-16")
+    end
+  end
+  context "#updated_on" do
+    it do
+      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#expires_on" do
+    it do
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should ==Time.parse("2010-10-16")
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
@@ -50,6 +82,16 @@ describe Whois::Answer::Parser::WhoisRipnNet, "status_registered.expected" do
   context "#technical_contacts" do
     it do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should have(2).items
+      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].name.should == "ns1073.hostgator.com"
+      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].name.should == "ns1074.hostgator.com"
     end
   end
 end

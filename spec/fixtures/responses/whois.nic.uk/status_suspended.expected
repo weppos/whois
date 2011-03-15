@@ -1,0 +1,34 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2008-08-30")
+
+#updated_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2010-06-01")
+
+#expires_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2010-08-30")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "KEY-SYSTEMS-DE"
+  should: %s.name         == "Key-Systems GmbH"
+  should: %s.name         == "Key-Systems GmbH"
+  should: %s.url          == "http://www.Key-Systems.net"
+
+
+#nameservers
+  should: %s be_a(Array)
+  should: %s == []

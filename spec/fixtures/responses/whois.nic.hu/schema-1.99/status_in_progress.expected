@@ -1,3 +1,34 @@
+#disclaimer
+  should: %s == "Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan."
+
+
+#domain
+  should: %s == "ezitvps.hu"
+
+#domain_id
+  should: %s == nil
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s == nil
+
+#updated_on
+  should: %s == nil
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #registrar
   should: %s == nil
 
@@ -12,3 +43,10 @@
 #technical_contacts
   should: %s be_a(Array)
   should: %s == []
+
+
+#zone_contact
+  should: %s == nil
+
+#registrar_contact
+  should: %s == nil

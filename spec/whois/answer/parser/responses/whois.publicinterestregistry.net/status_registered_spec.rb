@@ -21,6 +21,54 @@ describe Whois::Answer::Parser::WhoisPublicinterestregistryNet, "status_register
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "NOTICE: Access to .ORG WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy.  This service is intended only for query-based access.  You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator or any ICANN-Accredited Registrar, except as reasonably necessary to register domain names or modify existing registrations.  All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "google.org"
+    end
+  end
+  context "#domain_id" do
+    it do
+      @parser.domain_id.should == "D2244233-LROR"
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("1998-10-21 04:00:00 UTC")
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2009-03-04 12:07:19 UTC")
+    end
+  end
+  context "#expires_on" do
+    it do
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("2012-10-20 04:00:00 UTC")
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
@@ -85,6 +133,20 @@ describe Whois::Answer::Parser::WhoisPublicinterestregistryNet, "status_register
       @parser.technical_contacts[0].phone.should        == "+1.6506234000"
       @parser.technical_contacts[0].fax.should          == "+1.6506188571"
       @parser.technical_contacts[0].email.should        == "dns-admin@google.com"
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should have(4).items
+      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].name.should == "ns2.google.com"
+      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].name.should == "ns1.google.com"
+      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].name.should == "ns3.google.com"
+      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end
   context "#response_throttled?" do

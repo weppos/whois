@@ -21,6 +21,53 @@ describe Whois::Answer::Parser::WhoisNicHu, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan."
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == "google.hu"
+    end
+  end
+  context "#domain_id" do
+    it do
+      @parser.domain_id.should == "0000219547"
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == :registered
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == false
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == true
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2000-03-25 23:20:39")
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2009-08-25 10:11:32")
+    end
+  end
+  context "#expires_on" do
+    it do
+      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
@@ -83,6 +130,53 @@ describe Whois::Answer::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.technical_contacts[0].phone.should        == "+ 1 208 389 5798"
       @parser.technical_contacts[0].fax.should          == "+ 1 208 389 5771"
       @parser.technical_contacts[0].email.should        == "ccops@markmonitor.com"
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should have(4).items
+      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].name.should == "ns1.google.com"
+      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].name.should == "ns4.google.com"
+      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].name.should == "ns3.google.com"
+      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].name.should == "ns2.google.com"
+    end
+  end
+  context "#zone_contact" do
+    it do
+      @parser.zone_contact.should be_a(_contact)
+      @parser.zone_contact.type.should         == nil
+      @parser.zone_contact.id.should           == "2000578125"
+      @parser.zone_contact.name.should         == "Markmonitor"
+      @parser.zone_contact.organization.should == nil
+      @parser.zone_contact.address.should      == "Overland Road 10400, PMB155"
+      @parser.zone_contact.city.should         == "Boise"
+      @parser.zone_contact.zip.should          == "ID-83709"
+      @parser.zone_contact.state.should        == nil
+      @parser.zone_contact.country_code.should == "US"
+      @parser.zone_contact.phone.should        == "+ 1 208 389 5798"
+      @parser.zone_contact.fax.should          == "+ 1 208 389 5771"
+      @parser.zone_contact.email.should        == "ccops@markmonitor.com"
+    end
+  end
+  context "#registrar_contact" do
+    it do
+      @parser.registrar_contact.should be_a(_contact)
+      @parser.registrar_contact.type.should         == nil
+      @parser.registrar_contact.id.should           == "1960108002"
+      @parser.registrar_contact.name.should         == "3C Kft. (Registrar)"
+      @parser.registrar_contact.organization.should == "3C Ltd."
+      @parser.registrar_contact.address.should      == "Konkoly Thege út 29-33."
+      @parser.registrar_contact.city.should         == "Budapest"
+      @parser.registrar_contact.zip.should          == "H-1121"
+      @parser.registrar_contact.state.should        == nil
+      @parser.registrar_contact.country_code.should == "HU"
+      @parser.registrar_contact.phone.should        == "+36 1 275 52 00"
+      @parser.registrar_contact.fax.should          == "+36 1 275 58 87"
     end
   end
 end

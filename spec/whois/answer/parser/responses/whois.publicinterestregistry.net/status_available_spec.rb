@@ -21,6 +21,51 @@ describe Whois::Answer::Parser::WhoisPublicinterestregistryNet, "status_availabl
     @parser = klass.new(part)
   end
 
+  context "#disclaimer" do
+    it do
+      @parser.disclaimer.should == nil
+    end
+  end
+  context "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  context "#domain_id" do
+    it do
+      @parser.domain_id.should == nil
+    end
+  end
+  context "#status" do
+    it do
+      @parser.status.should == nil
+    end
+  end
+  context "#available?" do
+    it do
+      @parser.available?.should == true
+    end
+  end
+  context "#registered?" do
+    it do
+      @parser.registered?.should == false
+    end
+  end
+  context "#created_on" do
+    it do
+      @parser.created_on.should == nil
+    end
+  end
+  context "#updated_on" do
+    it do
+      @parser.updated_on.should == nil
+    end
+  end
+  context "#expires_on" do
+    it do
+      @parser.expires_on.should == nil
+    end
+  end
   context "#registrar" do
     it do
       @parser.registrar.should == nil
@@ -42,6 +87,12 @@ describe Whois::Answer::Parser::WhoisPublicinterestregistryNet, "status_availabl
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should == []
+    end
+  end
+  context "#nameservers" do
+    it do
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should == []
     end
   end
 end
