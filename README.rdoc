@@ -102,25 +102,25 @@ Any WHOIS query returns a <tt>Whois::Record</tt>. This object looks like a Strin
 
 <tt>Whois::Record</tt> encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
 
-  a = Whois.whois("google.it")
+  r = Whois.whois("google.it")
   # => #<Whois::Record>
   
-  a.available?
+  r.available?
   # => false
-  a.registered?
+  r.registered?
   # => true
   
-  a.created_on
+  r.created_on
   # => Fri Dec 10 00:00:00 +0100 1999
   
-  t = a.technical
+  t = r.technical
   # => #<Whois::Record::Contact>
   t.id
   # => "TS7016-ITNIC"
   t.name
   # => "Technical Services"
   
-  a.nameservers.each do |nameserver|
+  r.nameservers.each do |nameserver|
     puts nameserver
   end
 
