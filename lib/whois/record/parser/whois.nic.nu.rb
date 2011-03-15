@@ -1,16 +1,9 @@
-#
-# = Ruby Whois
+#--
+# Ruby Whois
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-#
-# Category::    Net
-# Package::     Whois
-# Author::      Simone Carletti <weppos@weppos.net>, Mikkel Kristensen <mikkel@tdx.dk>
-# License::     MIT License
-#
-#--
-#
+# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -31,6 +24,9 @@ module Whois
       # Please consider to contribute implementing missing methods.
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
+      #
+      # @author Simone Carletti <weppos@weppos.net>
+      # @author Mikkel Kristensen <mikkel@tdx.dk>
       #
       class WhoisNicNu < Base
 

@@ -1,16 +1,9 @@
-#
-# = Ruby Whois
+#--
+# Ruby Whois
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-#
-# Category::    Net
-# Package::     Whois
-# Author::      Simone Carletti <weppos@weppos.net>, Aaron Mueller <mail@aaron-mueller.de>
-# License::     MIT License
-#
-#--
-#
+# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -26,6 +19,9 @@ module Whois
       # = whois.denic.de parser
       #
       # Parser for the whois.denic.de server.
+      #
+      # @author Simone Carletti <weppos@weppos.net>
+      # @author Aaron Mueller <mail@aaron-mueller.de>
       #
       class WhoisDenicDe < Base
         include Features::Ast

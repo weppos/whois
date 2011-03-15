@@ -1,16 +1,9 @@
-#
-# = Ruby Whois
+#--
+# Ruby Whois
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-#
-# Category::    Net
-# Package::     Whois
-# Author::      Simone Carletti <weppos@weppos.net>, Gábor Vészi <veszig@done.hu>
-# License::     MIT License
-#
-#--
-#
+# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -26,6 +19,9 @@ module Whois
       # = whois.nic.hu parser
       #
       # Parser for the whois.nic.hu server.
+      #
+      # @author Simone Carletti <weppos@weppos.net>
+      # @author Gábor Vészi <veszig@done.hu>
       #
       class WhoisNicHu < Base
         include Features::Ast

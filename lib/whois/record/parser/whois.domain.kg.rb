@@ -1,16 +1,9 @@
-#
-# = Ruby Whois
+#--
+# Ruby Whois
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-#
-# Category::    Net
-# Package::     Whois
-# Author::      Simone Carletti <weppos@weppos.net>, Mikkel Kristensen <mikkel@tdx.dk>
-# License::     MIT License
-#
-#--
-#
+# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
 #++
 
 
