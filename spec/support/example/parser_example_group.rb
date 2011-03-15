@@ -48,10 +48,10 @@ end
 
 RSpec::configure do |c|
   def c.escaped_path(*parts)
-    Regexp.compile(parts.join('[\\\/]'))
+    /#{parts.join('\/')}/
   end
 
-  c.include ParserExampleGroup, :type => :controller, :example_group => {
+  c.include ParserExampleGroup, :example_group => {
     :file_path => c.escaped_path(%w( spec whois answer parser ))
   }
 end
