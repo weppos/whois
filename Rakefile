@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'rake/testtask'
 require 'rspec/core/rake_task'
 require 'rake/gempackagetask'
 require 'yard'
@@ -19,8 +18,8 @@ end
 
 
 # Run test by default.
-task :default => :test
-task :test => [:rspec, :testunit]
+task :default => :rspec
+task :test => :rspec
 
 # This builds the actual gem. For details of what all these options
 # mean, and other ones you can add, check the documentation here:
@@ -42,7 +41,7 @@ spec = Gem::Specification.new do |s|
 
   s.files             = %w( Rakefile LICENSE .gemtest .rspec .yardopts ) +
                         Dir.glob("*.{rdoc,gemspec}") +
-                        Dir.glob("{bin,lib,test,spec}/**/*")
+                        Dir.glob("{bin,lib,spec}/**/*")
   s.executables       = ["ruby-whois"]
   s.require_paths     = ["lib"]
 
@@ -72,20 +71,13 @@ end
 # Run all the specs in the /spec folder
 RSpec::Core::RakeTask.new(:rspec)
 
-# Run all the tests in the /test folder
-Rake::TestTask.new(:testunit) do |t|
-  t.libs << "test"
-  t.test_files = FileList["test/**/*_test.rb"]
-  t.verbose = true
-end
-
 
 namespace :multitest do
   RUBIES = %w( ruby-1.8.7-p334 ruby-1.9.2-p180 jruby-1.6.0.RC2 ree-1.8.7-2011.03 )
 
   desc "Run tests for all rubies"
   task :all => :ensure_rvm do
-    sh "rvm #{RUBIES.join(",")} rake default"
+    sh "rvm #{RUBIES.join(",")} rake test"
   end
 
   task :ensure_rvm do
@@ -95,7 +87,7 @@ namespace :multitest do
   RUBIES.each do |ruby|
     desc "Run tests against Ruby #{ruby}"
     task ruby => "test:ensure_rvm" do
-      sh "rvm #{ruby} rake default"
+      sh "rvm #{ruby} rake test"
     end
   end
 

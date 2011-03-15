@@ -90,6 +90,8 @@
 
 * CHANGED: #admin_contact, #technical_contact and #registrant_contact have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts and they now returns an array of Contact, instead of a single Contact.
 
+* CHANGED: Migrated all tests to RSpec.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
