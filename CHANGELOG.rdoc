@@ -92,6 +92,8 @@
 
 * CHANGED: Migrated all tests to RSpec.
 
+* CHANGED: Renamed Whois::Answer to Whois::Record and deprecate Whois::Answer class.
+
 * FIXED: Converted #changed? and #unchanged? properties to methods
   and normalized their behavior.
 
