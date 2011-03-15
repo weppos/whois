@@ -80,14 +80,14 @@ module Whois
     # and returns the response from the server.
     #
     # @param  [#to_s] object The string to be sent as query parameter.
-    # @return [Whois::Answer] The answer object containing the WHOIS response.
+    # @return [Whois::Record] The object containing the WHOIS response.
     #
     # @raise  [Timeout::Error]
     #
     # @example
     #
     #   client.query("google.com")
-    #   # => #<Whois::Answer>
+    #   # => #<Whois::Record>
     #
     def query(object)
       string = object.to_s

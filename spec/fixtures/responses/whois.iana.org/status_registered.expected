@@ -24,7 +24,7 @@
   should: %s be_a(Array)
   should: %s have(1).items
   should: %s[0] be_a(_contact)
-  should: %s[0].type         == Whois::Answer::Contact::TYPE_REGISTRANT
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == nil
   should: %s[0].name         == nil
   should: %s[0].organization == "North Atlantic Treaty Organization"
@@ -37,7 +37,7 @@
   should: %s be_a(Array)
   should: %s have(1).items
   should: %s[0] be_a(_contact)
-  should: %s[0].type         == Whois::Answer::Contact::TYPE_ADMIN
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == nil
   should: %s[0].name         == "Aidan Murdock"
   should: %s[0].organization == nil
@@ -53,7 +53,7 @@
   should: %s be_a(Array)
   should: %s have(1).items
   should: %s[0] be_a(_contact)
-  should: %s[0].type         == Whois::Answer::Contact::TYPE_TECHNICAL
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == nil
   should: %s[0].name         == "Jack Smits"
   should: %s[0].organization == nil

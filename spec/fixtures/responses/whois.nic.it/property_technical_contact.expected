@@ -2,6 +2,6 @@
   should: %s be_a(Array)
   should: %s have(1).items
   should: %s[0] be_a(_contact)
-  should: %s[0].type         == Whois::Answer::Contact::TYPE_TECHNICAL
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "TS7016-ITNIC"
   should: %s[0].name         == "Technical Services"

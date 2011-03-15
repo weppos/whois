@@ -113,12 +113,12 @@ module Whois
   end
 
   # Raised when you are trying to access a property that is not supported
-  # for the current WHOIS answer.
+  # for the current WHOIS record.
   class PropertyNotSupported < ParserError
   end
 
   # Raised when you are trying to access a property that is not supported
-  # by any of the parsers available for current WHOIS answer.
+  # by any of the parsers available for current WHOIS record.
   class PropertyNotAvailable < ParserError
   end
 
@@ -133,7 +133,7 @@ module Whois
 
   # Raised when attempting to access a property when the response is throttled.
   #
-  # @see Whois::Answer::Parser::Base#response_throttled?
+  # @see Whois::Record::Parser::Base#response_throttled?
   class ResponseIsThrottled < ResponseError
   end
 

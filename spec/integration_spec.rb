@@ -13,12 +13,12 @@ describe Whois do
 
         record = Whois.query("example.it")
 
-        record.should be_a(Whois::Answer)
+        record.should be_a(Whois::Record)
         record.should be_available
         record.should_not be_registered
 
-        record.parser.should be_a(Whois::Answer::Parser)
-        record.parser.parsers.first.should be_a(Whois::Answer::Parser::WhoisNicIt)
+        record.parser.should be_a(Whois::Record::Parser)
+        record.parser.parsers.first.should be_a(Whois::Record::Parser::WhoisNicIt)
       end
     end
   end

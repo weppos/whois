@@ -24,11 +24,11 @@ module SpecHelper
     # Temporary resets parser @@registry
     # to let the test setup a custom registry.
     def with_registry
-      @_property_registry = Whois::Answer::Parser::Base.send :class_variable_get, :@@property_registry
-      Whois::Answer::Parser::Base.send :class_variable_set, :@@property_registry, {}
+      @_property_registry = Whois::Record::Parser::Base.send :class_variable_get, :@@property_registry
+      Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, {}
       yield
     ensure
-      Whois::Answer::Parser::Base.send :class_variable_set, :@@property_registry, @_property_registry
+      Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, @_property_registry
     end
 
     # Gets the currently described class.
@@ -43,7 +43,7 @@ module SpecHelper
     end
 
     def nameserver(*params)
-      Whois::Answer::Nameserver.new(*params)
+      Whois::Record::Nameserver.new(*params)
     end
 
 end

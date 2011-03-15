@@ -19,7 +19,7 @@
 
 
 #registrar
-  should: %s be_a(Whois::Answer::Registrar)
+  should: %s be_a(Whois::Record::Registrar)
   should: %s.id == "R84-AFIN"
   should: %s.name == "Mark Monitor"
 

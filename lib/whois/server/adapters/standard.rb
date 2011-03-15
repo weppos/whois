@@ -24,7 +24,7 @@ module Whois
       # Provides ability to query standard WHOIS interfaces.
       # A standard WHOIS interface accepts socket requests
       # containing the name of the domain and returns a single response
-      # containing the answer for given query.
+      # containing the record for given query.
       #
       #   a = Standard.new(:tld, ".it", "whois.nic.it")
       #   a.request("example.it")

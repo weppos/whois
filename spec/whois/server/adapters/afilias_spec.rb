@@ -18,7 +18,7 @@ describe Whois::Server::Adapters::Afilias do
         record = @server.query("domain.test")
         record.to_s.should  == expected
         record.parts.should have(1).part
-        record.parts.should == [Whois::Answer::Part.new(response, "whois.afilias-grs.info")]
+        record.parts.should == [Whois::Record::Part.new(response, "whois.afilias-grs.info")]
       end
     end
 
@@ -33,7 +33,7 @@ describe Whois::Server::Adapters::Afilias do
         record = @server.query("domain.test")
         record.to_s.should  == expected
         record.parts.should have(2).parts
-        record.parts.should == [Whois::Answer::Part.new(referral, "whois.afilias-grs.info"), Whois::Answer::Part.new(response, "whois.belizenic.bz")]
+        record.parts.should == [Whois::Record::Part.new(referral, "whois.afilias-grs.info"), Whois::Record::Part.new(response, "whois.belizenic.bz")]
       end
     end
   end

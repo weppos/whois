@@ -18,7 +18,7 @@ describe Whois::Server::Adapters::Verisign do
         record = @server.query("domain.test")
         record.to_s.should  == expected
         record.parts.should have(1).part
-        record.parts.should == [Whois::Answer::Part.new(response, "whois.test")]
+        record.parts.should == [Whois::Record::Part.new(response, "whois.test")]
       end
     end
 
@@ -33,7 +33,7 @@ describe Whois::Server::Adapters::Verisign do
         record = @server.query("domain.test")
         record.to_s.should  == expected
         record.parts.should have(2).parts
-        record.parts.should == [Whois::Answer::Part.new(referral, "whois.test"), Whois::Answer::Part.new(response, "whois.markmonitor.com")]
+        record.parts.should == [Whois::Record::Part.new(referral, "whois.test"), Whois::Record::Part.new(response, "whois.markmonitor.com")]
       end
 
       it "ignore referral when is not defined" do

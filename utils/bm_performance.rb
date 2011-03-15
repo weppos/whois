@@ -8,13 +8,13 @@ else
 end
 
 require 'whois'
-require 'whois/answer/parser/whois.nic.it'
+require 'whois/record/parser/whois.nic.it'
 
 TIMES = ARGV[1] || 100_000
 BLANK, PRESENT = DATA.read.to_s.split("<!--more-->")
 
-PBLANK   = Whois::Answer::Parser::WhoisNicIt.new(Whois::Answer::Part.new(BLANK, "whois.nic.it"))
-PPRESENT = Whois::Answer::Parser::WhoisNicIt.new(Whois::Answer::Part.new(PRESENT, "whois.nic.it"))
+PBLANK   = Whois::Record::Parser::WhoisNicIt.new(Whois::Record::Part.new(BLANK, "whois.nic.it"))
+PPRESENT = Whois::Record::Parser::WhoisNicIt.new(Whois::Record::Part.new(PRESENT, "whois.nic.it"))
 
 Benchmark.bmbm do |x|
   x.report("supported with value") do
@@ -33,7 +33,7 @@ Benchmark.bmbm do |x|
     end
   end
 
-  Whois::Answer::Parser::PROPERTIES.each do |property|
+  Whois::Record::Parser::PROPERTIES.each do |property|
     x.report("property #{property}") do
       TIMES.times do
         PPRESENT.send(property) rescue nil

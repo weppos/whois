@@ -18,7 +18,7 @@ describe Whois::Server::Adapters::Pir do
         record = @server.query("domain.test")
         record.to_s.should  == expected
         record.parts.should have(1).part
-        record.parts.should == [Whois::Answer::Part.new(response, "whois.publicinterestregistry.net")]
+        record.parts.should == [Whois::Record::Part.new(response, "whois.publicinterestregistry.net")]
       end
     end
 
@@ -33,7 +33,7 @@ describe Whois::Server::Adapters::Pir do
         record = @server.query("domain.test")
         record.to_s.should  == expected
         record.parts.should have(2).parts
-        record.parts.should == [Whois::Answer::Part.new(referral, "whois.publicinterestregistry.net"), Whois::Answer::Part.new(response, "whois.iana.org")]
+        record.parts.should == [Whois::Record::Part.new(referral, "whois.publicinterestregistry.net"), Whois::Record::Part.new(response, "whois.iana.org")]
       end
     end
   end
