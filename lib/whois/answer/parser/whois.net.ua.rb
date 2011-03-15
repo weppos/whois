@@ -60,14 +60,14 @@ module Whois
         property_supported :updated_on do
           if content_for_scanner =~ /changed:\s+(.*)\n/
             time = $1.split(" ").last
-            Time.strptime(time, "%Y%m%d%H%M%S")
+            Time.parse(time)
           end
         end
 
         property_supported :expires_on do
           if content_for_scanner =~ /status:\s+(.*)\n/
             time = $1.split(" ").last
-            Time.strptime(time, "%Y%m%d%H%M%S")
+            Time.parse(time)
           end
         end
 
