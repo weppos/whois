@@ -3,7 +3,7 @@ require 'fileutils'
 namespace :genspec do
 
   ROOT_DIR      = File.expand_path("../../", __FILE__)
-  TARGET_DIR    = File.join(ROOT_DIR, %w( spec whois answer parser responses ))
+  TARGET_DIR    = File.join(ROOT_DIR, %w( spec whois record parser responses ))
 
   SOURCE_DIR    = File.join(ROOT_DIR, %w( spec fixtures responses ))
   SOURCE_PARTS  = SOURCE_DIR.split("/")
@@ -23,13 +23,13 @@ namespace :genspec do
 #
 
 require 'spec_helper'
-require 'whois/answer/parser/%{khost}.rb'
+require 'whois/record/parser/%{khost}.rb'
 
 describe %{klass}, "%{descr}" do
 
   before(:each) do
     file = fixture("responses", "%{fixture}")
-    part = Whois::Answer::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(:body => File.read(file))
     @parser = klass.new(part)
   end
 
@@ -65,7 +65,7 @@ end
       parts = (source_path.split("/") - SOURCE_PARTS)
       khost = parts.first
       kfile = parts.last
-      klass = Whois::Answer::Parser.parser_klass(khost)
+      klass = Whois::Record::Parser.parser_klass(khost)
 
       target_path = File.join(TARGET_DIR, *parts).gsub(".expected", "_spec.rb")
 

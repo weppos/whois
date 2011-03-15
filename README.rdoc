@@ -43,7 +43,7 @@ You might need administrator privileges on your system to install it.
 
 == Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The {documentation}[http://www.ruby-whois.org/documentation.html] provides a more accurate explanation including tutorials, more examples and technical details about the client/server/answer/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The {documentation}[http://www.ruby-whois.org/documentation.html] provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 === Querying the Server
 
@@ -54,22 +54,22 @@ Check out the following examples:
   # Domain WHOIS
   w = Whois::Client.new
   w.query("google.com")
-  # => #<Whois::Answer>
+  # => #<Whois::Record>
 
   # TLD WHOIS
   w = Whois::Client.new
   w.query(".com")
-  # => #<Whois::Answer>
+  # => #<Whois::Record>
 
   # IPv4 WHOIS
   w = Whois::Client.new
   w.query("74.125.67.100")
-  # => #<Whois::Answer>
+  # => #<Whois::Record>
 
   # IPv6 WHOIS
   w = Whois::Client.new
   w.query("2001:db8::1428:57ab")
-  # => #<Whois::Answer>
+  # => #<Whois::Record>
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
@@ -83,7 +83,7 @@ The query method is stateless. For this reason, you can safely re-use the same c
 If you just need a WHOIS response and you don't care about a full control of the WHOIS Client, <tt>Whois</tt> comes with a simple method called whois. This is the simplest way to send a WHOIS request.
 
   Whois.whois("google.com")
-  # => #<Whois::Answer>
+  # => #<Whois::Record>
 
 Did I mention you can even use blocks?
 
@@ -96,35 +96,35 @@ Did I mention you can even use blocks?
   end
 
 
-=== Consuming the Answer
+=== Consuming the Record
 
-Any WHOIS query returns a <tt>Whois::Answer</tt>. This object looks like a String, but it's way more powerful.
+Any WHOIS query returns a <tt>Whois::Record</tt>. This object looks like a String, but it's way more powerful.
 
-<tt>Whois::Answer</tt> encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
+<tt>Whois::Record</tt> encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
 
-  a = Whois.whois("google.it")
-  # => #<Whois::Answer>
+  r = Whois.whois("google.it")
+  # => #<Whois::Record>
   
-  a.available?
+  r.available?
   # => false
-  a.registered?
+  r.registered?
   # => true
   
-  a.created_on
+  r.created_on
   # => Fri Dec 10 00:00:00 +0100 1999
   
-  t = a.technical
-  # => #<Whois::Answer::Contact>
+  t = r.technical
+  # => #<Whois::Record::Contact>
   t.id
   # => "TS7016-ITNIC"
   t.name
   # => "Technical Services"
   
-  a.nameservers.each do |nameserver|
+  r.nameservers.each do |nameserver|
     puts nameserver
   end
 
-This feature is made possible by the <tt>Whois</tt> answer parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
+This feature is made possible by the <tt>Whois</tt> record parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
 
 If you create a new parser, please consider releasing it to the public so that it can be included in a next version.
 

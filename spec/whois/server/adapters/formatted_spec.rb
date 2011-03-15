@@ -16,7 +16,7 @@ describe Whois::Server::Adapters::Formatted do
 
       record = server.query("domain.de")
       record.to_s.should  == expected
-      record.parts.should == [Whois::Answer::Part.new(response, "whois.denic.de")]
+      record.parts.should == [Whois::Record::Part.new(response, "whois.denic.de")]
     end
 
     context "without format option" do

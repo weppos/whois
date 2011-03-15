@@ -19,7 +19,7 @@ require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
 require 'whois/server'
-require 'whois/answer'
+require 'whois/record'
 
 
 module Whois
@@ -29,17 +29,21 @@ module Whois
   AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
 
 
+  # Backwards compatibility
+  autoload :Answer, 'whois/answer'
+
+
   class << self
 
     # Queries the WHOIS server for <tt>qstring</tt> and returns
     # the response from the server.
     #
     # @param  [String] qstring The string to be sent as query parameter.
-    # @return [Whois::Answer] The answer containing the response from the WHOIS server.
+    # @return [Whois::Record] The record containing the response from the WHOIS server.
     #
     # @example
     #   Whois.query("google.com")
-    #   # => #<Whois::Answer>
+    #   # => #<Whois::Record>
     #
     #   # Equivalent to
     #   Whois::Client.new.query("google.com")
@@ -57,7 +61,7 @@ module Whois
     # for the top level domain of <tt>qstring</tt>.
     # If no parser exists for <tt>qstring</tt>, you'll receive a
     # warning message and the method will return <tt>nil</tt>.
-    # This is a technical limitation. Browse the lib/whois/answer/parsers
+    # This is a technical limitation. Browse the lib/whois/record/parsers
     # folder to view all available parsers.
     #
     # @param  [String] qstring The string to be sent as query parameter.
@@ -88,7 +92,7 @@ module Whois
     # for the top level domain of <tt>qstring</tt>.
     # If no parser exists for <tt>qstring</tt>, you'll receive a warning message
     # and the method will return <tt>nil</tt>.
-    # This is a technical limitation. Browse the lib/whois/answer/parsers folder
+    # This is a technical limitation. Browse the lib/whois/record/parsers folder
     # to view all available parsers.
     #
     # @param  [String] qstring The string to be sent as query parameter.

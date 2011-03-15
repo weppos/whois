@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Whois do
 
-  class Whois::Answer::Parser::ParserTest < Whois::Answer::Parser::Base
+  class Whois::Record::Parser::ParserTest < Whois::Record::Parser::Base
     property_supported :available? do
       eval(content_for_scanner)
     end

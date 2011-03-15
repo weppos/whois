@@ -117,9 +117,9 @@ describe Whois::Client do
   need_connectivity do
     describe "#query" do
       it "sends a query for given domain" do
-        answer = klass.new.query("weppos.it")
-        assert answer.match?(/Domain:\s+weppos\.it/)
-        assert answer.match?(/Created:/)
+        record = klass.new.query("weppos.it")
+        assert record.match?(/Domain:\s+weppos\.it/)
+        assert record.match?(/Created:/)
       end
     end
   end

@@ -14,8 +14,8 @@
 #++
 
 
-require 'whois/answer/part'
-require 'whois/answer'
+require 'whois/record/part'
+require 'whois/record'
 require 'socket'
 
 
@@ -107,18 +107,18 @@ module Whois
         #
         # @param  [String] string The string to be sent as query parameter.
         #
-        # @return [Whois::Answer]
+        # @return [Whois::Record]
         #
         # Internally, this method calls {#request}
         # using the Template Method design pattern.
         #
         #   server.query("google.com")
-        #   # => Whois::Answer
+        #   # => Whois::Record
         #
         def query(string)
           buffer_start do |buffer|
             request(string)
-            Whois::Answer.new(self, buffer)
+            Whois::Record.new(self, buffer)
           end
         end
 
@@ -140,7 +140,7 @@ module Whois
 
         private
 
-          # Store an answer part in {#buffer}.
+          # Store a record part in {#buffer}.
           #
           # @param  [String] body
           # @param  [String] host
@@ -148,7 +148,7 @@ module Whois
           #
           # @api public
           def buffer_append(body, host)
-            @buffer << Whois::Answer::Part.new(body, host)
+            @buffer << Whois::Record::Part.new(body, host)
           end
 
           # @api internal

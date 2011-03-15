@@ -1,23 +1,23 @@
 module ParserExampleGroup
 
   def load_part(path)
-    Whois::Answer::Part.new(File.read(fixture("responses", @host.to_s, @suffix.to_s, @schema.to_s, path)), @host)
+    Whois::Record::Part.new(File.read(fixture("responses", @host.to_s, @suffix.to_s, @schema.to_s, path)), @host)
   end
 
   def _part
-    Whois::Answer::Part
+    Whois::Record::Part
   end
 
   def _registrar
-    Whois::Answer::Registrar
+    Whois::Record::Registrar
   end
 
   def _contact
-    Whois::Answer::Contact
+    Whois::Record::Contact
   end
 
   def _nameserver
-    Whois::Answer::Nameserver
+    Whois::Record::Nameserver
   end
 
 end
@@ -52,6 +52,6 @@ RSpec::configure do |c|
   end
 
   c.include ParserExampleGroup, :example_group => {
-    :file_path => c.escaped_path(%w( spec whois answer parser ))
+    :file_path => c.escaped_path(%w( spec whois record parser ))
   }
 end
