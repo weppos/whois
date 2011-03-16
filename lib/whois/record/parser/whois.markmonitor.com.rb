@@ -81,8 +81,8 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner[/Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/, 1].each_line.map do |ns|
-            Record::Nameserver.new(ns.strip)
+          content_for_scanner[/Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/, 1].split("\n").map do |line|
+            Record::Nameserver.new(line.strip)
           end
         end
 
@@ -90,7 +90,7 @@ module Whois
         private
 
           def contact(element, type)
-            info = content_for_scanner[/#{element}\n((.+\n){6})/, 1].each_line.map(&:strip)
+            info = content_for_scanner[/#{element}\n((.+\n){6})/, 1].split("\n").map(&:strip)
             # 0 DNS Admin
             # 1 Google Inc.
             # 2 1600 Amphitheatre Parkway
