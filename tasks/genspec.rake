@@ -117,7 +117,7 @@ end
   :klass    => klass,
   :khost    => khost,
   :descr    => kfile,
-  :sfile    => relativize(target_path),
+  :sfile    => relativize(source_path),
   :fixture  => parts.join("/").gsub(".expected", ".txt"),
   :contexts => contexts
 }}
