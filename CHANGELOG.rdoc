@@ -1,6 +1,6 @@
 = Changelog
 
-== master
+== Release 2.0.0
 
 * SERVER: Added .AE.ORG, .AR.COM, .KR.COM TLD definitions (whois.centralnic.net).
 
