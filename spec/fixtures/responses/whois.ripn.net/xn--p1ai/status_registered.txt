@@ -1,0 +1,20 @@
+% By submitting a query to RIPN's Whois Service
+% you agree to abide by the following terms of use:
+% http://www.ripn.net/about/servpol.html#3.2 (in Russian) 
+% http://www.ripn.net/about/en/servpol.html#3.2 (in English).
+
+domain:     XN----8SBC3AHKLCS4ADF.XN--P1AI
+nserver:    ns1.redsoft.ru.
+nserver:    ns2.redsoft.ru.
+nserver:    ns2.r01.ru.
+state:      REGISTERED, DELEGATED, VERIFIED
+person:     R01 Personal Data Operator protected
+phone:      +7 800 3020800
+e-mail:     liderkubani@gmail.com
+registrar:  R01-REG-RF
+created:    2010.11.12
+paid-till:  2011.11.12
+source:     TCI
+
+Last updated on 2011.03.17 22:40:46 MSK/MSD
+
