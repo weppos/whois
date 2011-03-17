@@ -52,13 +52,13 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          if content_for_scanner =~ /^Last-update\s+(.*)\n/
+          if content_for_scanner =~ /^Last-update\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /^Valid-date\s+(.*)\n/
+          if content_for_scanner =~ /^Valid-date\s+(.+)\n/
             Time.parse($1)
           end
         end
