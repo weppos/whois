@@ -1,5 +1,10 @@
 = Changelog
 
+== Release 2.0.1
+
+* FIXED: Removed invalid test files.
+
+
 == Release 2.0.0
 
 * SERVER: Added .AE.ORG, .AR.COM, .KR.COM TLD definitions (whois.centralnic.net).
