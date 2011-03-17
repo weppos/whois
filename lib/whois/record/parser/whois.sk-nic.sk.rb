@@ -30,7 +30,8 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /^Domain-status\s+(.+)\n/
             case $1.downcase
-              when "dom_ok" then :registered
+              when "dom_ok"   then :registered
+              when "dom_held" then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

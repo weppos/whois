@@ -133,6 +133,8 @@
 
 * FIXED: whois.cira.ca parser must support "to be released" status.
 
+* FIXED: whois.sk-nic.sk parser must support "DOM_HELD" status.
+
 === BC
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.
