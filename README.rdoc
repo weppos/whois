@@ -124,7 +124,7 @@ Any WHOIS query returns a <tt>Whois::Record</tt>. This object looks like a Strin
   r.created_on
   # => Fri Dec 10 00:00:00 +0100 1999
   
-  t = r.technical
+  t = r.technical_contact
   # => #<Whois::Record::Contact>
   t.id
   # => "TS7016-ITNIC"
