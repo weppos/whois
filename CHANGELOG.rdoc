@@ -1,5 +1,11 @@
 = Changelog
 
+
+== master
+
+* CHANGED: whois.ripn.net now returns an array of contacts, one for each email (#89)
+
+
 == Release 2.0.1
 
 * FIXED: Removed invalid test files.
