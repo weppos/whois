@@ -69,7 +69,7 @@ describe Whois::Record::Parser::WhoisRipnNet, "status_registered.expected" do
   context "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts.should have(2).items
       @parser.admin_contacts[0].should be_a(_contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == nil
@@ -78,6 +78,13 @@ describe Whois::Record::Parser::WhoisRipnNet, "status_registered.expected" do
       @parser.admin_contacts[0].phone.should        == "+1 650 330 0100"
       @parser.admin_contacts[0].fax.should          == "+1 650 618 8571"
       @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
+      @parser.admin_contacts[1].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[1].id.should           == nil
+      @parser.admin_contacts[1].name.should         == nil
+      @parser.admin_contacts[1].organization.should == "Google Inc"
+      @parser.admin_contacts[1].phone.should        == "+1 650 330 0100"
+      @parser.admin_contacts[1].fax.should          == "+1 650 618 8571"
+      @parser.admin_contacts[1].email.should        == "ccops@markmonitor.com"
     end
   end
   context "#technical_contacts" do
