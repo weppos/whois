@@ -185,7 +185,7 @@ module Whois
       # @see Whois::Record::Parser::Base#contacts
       #
       def contacts
-        parsers.inject([]) { |all, parser| all.concat(parser.contacts) }
+        parsers.map(&:contacts).flatten
       end
 
       # @endgroup
