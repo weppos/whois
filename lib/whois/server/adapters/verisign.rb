@@ -38,8 +38,12 @@ module Whois
           buffer_append response, host
 
           if endpoint = extract_referral(response)
-            response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
-            buffer_append response, endpoint
+            begin
+              response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
+              buffer_append response, endpoint
+            rescue ConnectionError => error
+              puts 'rescued.'
+            end
           end
         end
 
