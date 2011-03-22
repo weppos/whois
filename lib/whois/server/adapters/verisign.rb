@@ -42,7 +42,7 @@ module Whois
               response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
               buffer_append response, endpoint
             rescue ConnectionError => error
-              puts 'rescued.'
+              raise IncompleteResponse, "#{error.class}: #{error.message}" unless options[:allow_incomplete_responses]
             end
           end
         end
