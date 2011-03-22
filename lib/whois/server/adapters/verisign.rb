@@ -38,12 +38,8 @@ module Whois
           buffer_append response, host
 
           if endpoint = extract_referral(response)
-            begin
-              response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
-              buffer_append response, endpoint
-            rescue ConnectionError => error
-              raise IncompleteResponse, "#{error.class}: #{error.message}" unless options[:allow_incomplete_responses]
-            end
+            response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
+            buffer_append response, endpoint
           end
         end
 

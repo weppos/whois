@@ -162,7 +162,11 @@ module Whois
               options[:bind_port]
             )
           rescue *RESCUABLE_CONNECTION_ERRORS => error
-            raise ConnectionError, "#{error.class}: #{error.message}"
+            if error.instance_of? Errno::ECONNRESET 
+              raise IncompleteResponse, "#{error.class}: #{error.message}" unless options[:allow_incomplete_responses]
+            else
+              raise ConnectionError, "#{error.class}: #{error.message}"
+            end
           end
 
           # This method handles the lowest connection
