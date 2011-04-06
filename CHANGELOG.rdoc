@@ -5,6 +5,8 @@
 
 * CHANGED: whois.ripn.net now returns an array of contacts, one for each email (#89)
 
+* FIXED: whois.nic.it parser must support UNASSIGNABLE status.
+
 
 == Release 2.0.1
 
