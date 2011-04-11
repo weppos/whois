@@ -1,3 +1,18 @@
+module Helper
+
+  # Gets the currently described class.
+  # Conversely to +subject+, it returns the class
+  # instead of an instance.
+  def klass
+    described_class
+  end
+
+  def fixture(*names)
+    File.join(SPEC_ROOT, "fixtures", *names)
+  end
+
+end
+
 module SpecHelper
 
   private
@@ -31,17 +46,6 @@ module SpecHelper
       Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, @_property_registry
     end
 
-    # Gets the currently described class.
-    # Conversely to +subject+, it returns the class
-    # instead of an instance.
-    def klass
-      described_class
-    end
-
-    def fixture(*names)
-      File.join(SPEC_ROOT, "fixtures", *names)
-    end
-
     def nameserver(*params)
       Whois::Record::Nameserver.new(*params)
     end
@@ -49,5 +53,6 @@ module SpecHelper
 end
 
 RSpec.configure do |config|
+  config.include Helper
   config.include SpecHelper
 end

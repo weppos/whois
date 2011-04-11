@@ -34,8 +34,8 @@ spec = Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.8.7"
 
-  s.author            = "Simone Carletti"
-  s.email             = "weppos@weppos.net"
+  s.authors           = ["Simone Carletti"]
+  s.email             = ["weppos@weppos.net"]
   s.homepage          = "http://www.ruby-whois.org"
   s.rubyforge_project = "whois"
 
@@ -101,13 +101,12 @@ namespace :multitest do
 end
 
 
-desc "Remove any temporary products, including gemspec"
-task :clean => [:clobber] do
-  rm "#{spec.name}.gemspec" if File.file?("#{spec.name}.gemspec")
+task :clean_gemspec do
+  rm "#{spec.name}.gemspec" rescue nil
 end
 
-desc "Remove any generated file"
-task :clobber => [:clobber_rcov, :clobber_package]
+task :clean   => [:clean_gemspec]
+task :clobber => [:clobber_package]
 
 desc "Package the library and generates the gemspec"
 task :package => [:gemspec]
