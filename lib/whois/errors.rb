@@ -23,7 +23,10 @@ module Whois
   # Generic class for server errors.
   class ServerError < Error
   end
-
+  
+  # Raised when the referral endpoint does not respond.
+  class IncompleteResponse < ServerError
+  end
 
   # Raised when the class hasn't been able to select a valid server
   # probably because definitions are outdated.

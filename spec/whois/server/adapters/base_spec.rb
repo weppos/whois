@@ -4,6 +4,7 @@ describe Whois::Server::Adapters::Base do
 
   before(:each) do
     @definition = [:tld, ".test", "whois.test", { :foo => "bar" }]
+    @allow_incomplete_responses_definition = [:tld, ".test", "whois.test", { :foo => "bar", :allow_incomplete_responses => true} ]
   end
 
 
@@ -107,13 +108,27 @@ describe Whois::Server::Adapters::Base do
   end
 
   describe "#query_the_socket" do
-    [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
+    [ Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
       it "re-raises #{error} as Whois::ConnectionError" do
         klass.any_instance.expects(:ask_the_socket).raises(error)
         expect {
           klass.new(*@definition).send(:query_the_socket, "example.com", "whois.test")
         }.to raise_error(Whois::ConnectionError, "#{error}: #{error.new.message}")
       end
+    end
+    
+    it "re-raises Errno::ECONNRESET as Whois::IncompleteResponse when allow_incomplete_responses is not true" do
+      klass.any_instance.expects(:ask_the_socket).raises(Errno::ECONNRESET)
+      expect {
+        klass.new(*@definition).send(:query_the_socket, "example.com", "whois.test")
+      }.to raise_error(Whois::IncompleteResponse, "#{Errno::ECONNRESET}: #{Errno::ECONNRESET.new.message}")
+    end
+    
+    it "raises no errors when Errno::ECONNRESET is raised an allow_incomplete_responses is true" do
+      klass.any_instance.expects(:ask_the_socket).raises(Errno::ECONNRESET)
+      expect {
+        klass.new(*@allow_incomplete_responses_definition).send(:query_the_socket, "example.com", "whois.test")
+      }.should_not raise_error(Whois::IncompleteResponse, "#{Errno::ECONNRESET}: #{Errno::ECONNRESET.new.message}")
     end
   end
 
