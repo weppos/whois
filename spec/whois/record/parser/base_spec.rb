@@ -113,6 +113,14 @@ describe Whois::Record::Parser::Base do
       i = Class.new(klass) { def response_throttled?; false; end }.new(Whois::Record::Part.new)
       lambda { i.validate! }.should_not raise_error
     end
+
+    it "raises Whois::ResponseIsUnavailable when the response is unavailable" do
+      i = Class.new(klass) { def response_unavailable?; true; end }.new(Whois::Record::Part.new)
+      lambda { i.validate! }.should raise_error(Whois::ResponseIsUnavailable)
+
+      i = Class.new(klass) { def response_unavailable?; false; end }.new(Whois::Record::Part.new)
+      lambda { i.validate! }.should_not raise_error
+    end
   end
 
 

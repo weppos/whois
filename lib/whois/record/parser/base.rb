@@ -241,7 +241,8 @@ module Whois
 
         # @api internal
         def validate!
-          raise ResponseIsThrottled if is(:response_throttled?)
+          raise ResponseIsThrottled   if is(:response_throttled?)
+          raise ResponseIsUnavailable if is(:response_unavailable?)
         end
 
 

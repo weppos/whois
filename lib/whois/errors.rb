@@ -130,6 +130,12 @@ module Whois
   class ResponseIsThrottled < ResponseError
   end
 
+  # Raised when attempting to access a property when the response is unavailable.
+  #
+  # @see Whois::Record::Parser::Base#response_unavailable?
+  class ResponseIsUnavailable < ResponseError
+  end
+
   # @endgroup
 
 end

@@ -1,6 +1,12 @@
 = Changelog
 
 
+== master
+
+* FIXED: Whois::Record::Parser::Base#validate! should raise
+  a ResponseIsUnavailable error when response_unavailable?
+
+
 == Release 2.0.2
 
 * CHANGED: whois.ripn.net now returns an array of contacts, one for each email (#89)
