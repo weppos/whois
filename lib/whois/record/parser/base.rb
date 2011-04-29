@@ -225,7 +225,7 @@ module Whois
         # Check if the parser respond to +symbol+
         # and calls the method if defined.
         # The method referenced by the +symbol+
-        # is supposed to be a question? method and to return a boolean.
+        # is supposed to be a question? method and to return a boolean.
         #
         # @param  [Symbol] symbol
         # @return [Boolean]

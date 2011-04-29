@@ -100,7 +100,7 @@ module Whois
           contact("Admin-C", Whois::Record::Contact::TYPE_ADMIN)
         end
 
-        # FIXME: check against different schema
+        # FIXME: check against different schema
 
         property_supported :technical_contacts do
           contact("Tech-C", Whois::Record::Contact::TYPE_TECHNICAL)
