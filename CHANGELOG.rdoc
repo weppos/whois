@@ -6,6 +6,8 @@
 * FIXED: Whois::Record::Parser::Base#validate! should raise
   a ResponseIsUnavailable error when response_unavailable?
 
+* FIXED: whois.nic.it parser must support inactive / noRegistrar status.
+
 
 == Release 2.0.2
 

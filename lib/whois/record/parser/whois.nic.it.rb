@@ -53,6 +53,8 @@ module Whois
             :reserved
           when "available"
             :available
+          when /^inactive/
+            :inactive
           else
             Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
           end
