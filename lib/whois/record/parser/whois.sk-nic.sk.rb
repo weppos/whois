@@ -32,6 +32,7 @@ module Whois
             case $1.downcase
               when "dom_ok"   then :registered
               when "dom_held" then :registered
+              when "dom_dakt" then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

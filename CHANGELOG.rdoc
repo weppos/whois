@@ -8,6 +8,8 @@
 
 * FIXED: whois.nic.it parser must support inactive / noRegistrar status.
 
+* FIXED: whois.sk-nic.sk parser must support DOM_DAKT status.
+
 
 == Release 2.0.2
 

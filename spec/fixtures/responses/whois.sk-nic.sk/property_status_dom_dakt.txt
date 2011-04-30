@@ -1,0 +1,25 @@
+%
+% whois.sk-nic.sk - whois server for TLD .sk
+%
+
+
+Domain-name         plac.sk
+Admin-id            TOMH-0091
+Admin-name          Ing. Tomas Hanko
+Admin-legal-form    zivnost
+Admin-org.-ID       44805080
+Admin-address       L. Novomeskeho 2672/5, Trencin 91108
+Admin-telephone     0000000000
+Admin-email         TOMH0091@gmail.com
+Tech-id             TOMH-0091
+Tech-name           Ing. Tomas Hanko
+Tech-org.-ID        44805080
+Tech-address        L. Novomeskeho 2672/5, Trencin 91108
+Tech-telephone      0000000000
+Tech-email          TOMH0091@gmail.com
+dns_name            ns1.dnparking.sk
+dns_name            ns2.dnparking.sk
+Last-update         2011-04-20
+Valid-date          2011-05-04
+Domain-status       DOM_DAKT
+
