@@ -3,6 +3,10 @@
 
 == master
 
+* SERVER: Sync definitions with Debian whois 5.0.11:
+    * Added the remaining IPv4 allocations.
+    * Updated the .gm TLD server.
+
 * FIXED: Whois::Record::Parser::Base#validate! should raise
   a ResponseIsUnavailable error when response_unavailable?
 

@@ -107,7 +107,7 @@
 .edu.cn	whois.edu.cn
 .cn	whois.cnnic.cn
 .uk.co	whois.uk.co
-.co	WEB http://www.whois.co/
+.co	whois.nic.co
 .cr	WEB http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do
 .cu	WEB http://www.nic.cu/
 .cv	NONE		# www.dns.cv?
@@ -143,7 +143,7 @@
 .gh	WEB http://www.nic.gh/customer/search_c.htm
 .gi	AFILIAS
 .gl	whois.nic.gl
-.gm	whois.ripe.net	# www.nic.gm
+.gm	WEB http://www.nic.gm/htmlpages/whois.htm
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	whois.nic.gp
 .gq	NONE		# NO NIC http://www.getesa.gq/
