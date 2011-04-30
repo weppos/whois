@@ -29,6 +29,8 @@ module Whois
       #
       class WhoisNicUk < Base
 
+        # @see http://www.nominet.org.uk/registrars/systems/data/regstatus/
+        # @see http://www.nominet.org.uk/registrants/maintain/renew/status/
         property_supported :status do
           if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
             case $1.downcase

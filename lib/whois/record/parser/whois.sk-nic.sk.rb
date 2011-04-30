@@ -27,6 +27,7 @@ module Whois
       #
       class WhoisSkNicSk < Base
 
+        # @see https://www.sk-nic.sk/documents/stavy_domen.html
         property_supported :status do
           if content_for_scanner =~ /^Domain-status\s+(.+)\n/
             case $1.downcase
