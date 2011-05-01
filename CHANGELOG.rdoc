@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 2.0.3
 
 * SERVER: Sync definitions with Debian whois 5.0.11:
     * Added the remaining IPv4 allocations.
