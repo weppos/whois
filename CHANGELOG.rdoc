@@ -1,6 +1,12 @@
 = Changelog
 
 
+== master
+
+* SERVER: Added the following new IDN TLDs:
+    * .XN--90A3AC (.СРБ, Serbia)
+
+
 == Release 2.0.3
 
 * SERVER: Sync definitions with Debian whois 5.0.11:
