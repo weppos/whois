@@ -7,9 +7,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.2)
-    mocha (0.9.10)
-      rake
-    rake (0.8.7)
+    mocha (0.9.12)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)

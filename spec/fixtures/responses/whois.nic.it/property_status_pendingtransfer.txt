@@ -1,0 +1,46 @@
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://www.nic.it/cgi-bin/Whois/whois.cgi                         *
+*********************************************************************
+
+Domain:             alessandrofusco.it
+Status:             pendingTransfer
+Created:            2006-06-05 00:00:00
+Last Update:        2011-05-02 17:26:59
+Expire Date:        2011-06-05
+
+Registrant
+  Name:             Alessandro Fusco
+  Organization:     Alessandro Fusco
+  ContactID:        AF7184
+
+Admin Contact
+  Name:             Alessandro Fusco
+  Organization:     Alessandro Fusco
+  ContactID:        AF7184
+
+Technical Contacts
+  Name:             Claudio De Luca
+  Organization:     Serverplan
+  ContactID:        CDL148
+  Address:          Corso della Repubblica 171
+                    Cassino
+                    03043
+                    FR
+                    IT
+  Created:          2005-07-07 00:00:00
+  Last Update:      2010-01-28 16:10:28
+
+Registrar
+  Organization:     Serverplan s.r.l. Unipersonale
+  Name:             SERVERPLAN-REG
+  Web:              http://www.serverplan.com
+
+Nameservers
+  ns23.dnshighspeed.com
+  ns24.dnshighspeed.com
+

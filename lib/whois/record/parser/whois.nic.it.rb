@@ -43,11 +43,11 @@ module Whois
 
         property_supported :status do
           case node("Status").to_s.downcase
-          when /^ok/, "active"
+          when /^ok/, "active", /\bclient/
             :registered
-          when /\bclient/
+          when "grace-period", "pendingupdate", "pendingtransfer"
             :registered
-          when "pendingdelete / redemptionperiod", "grace-period"
+          when "pendingdelete / redemptionperiod"
             :registered
           when "unassignable"
             :reserved
