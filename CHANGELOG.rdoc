@@ -8,6 +8,8 @@
 
 * FIXED: whois.nic.it parser must support pendinUpdate and pendingTransfer statuses.
 
+* FIXED: whois.nic-se.se crashes in some cases where the modified: attribute is an invalid date.
+
 
 == Release 2.0.3
 
