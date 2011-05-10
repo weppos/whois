@@ -1,10 +1,10 @@
 = Changelog
 
 
-== master
+== Release 2.0.4
 
 * SERVER: Added the following new IDN TLDs:
-    * .XN--90A3AC (.СРБ, Serbia)
+    * .XN--90A3AC (.СРБ, Serbia) (#94)
 
 * FIXED: whois.nic.it parser must support pendinUpdate and pendingTransfer statuses.
 
