@@ -53,11 +53,11 @@ module Whois
 
         # Nameservers are listed in the following formats:
         #
-        #   Nameservers:
+        #   Name servers:
         #           dns1.servicemagic.eu
         #           dns2.servicemagic.eu
         #
-        #   Nameservers:
+        #   Name servers:
         #           dns1.servicemagic.eu (91.121.133.61)
         #           dns2.servicemagic.eu (91.121.103.77)
         #
