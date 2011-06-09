@@ -47,8 +47,8 @@ module Whois
             :registered
           when "grace-period", "pendingupdate", "pendingtransfer"
             :registered
-          when "pendingdelete / redemptionperiod"
-            :registered
+          when "pendingdelete / redemptionperiod", /redemption\-/
+            :redemption
           when "unassignable"
             :reserved
           when "available"
@@ -61,11 +61,11 @@ module Whois
         end
 
         property_supported :available? do
-          node("Status") == "AVAILABLE"
+          status == :available
         end
 
         property_supported :registered? do
-          node("Status") != "UNASSIGNABLE" &&
+          status != :reserved &&
           !available?
         end
 
