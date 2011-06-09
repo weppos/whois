@@ -21,17 +21,17 @@ describe Whois::Record::Parser::WhoisNicKz, "property_status_missing.expected" d
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == nil
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == true
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == false
     end

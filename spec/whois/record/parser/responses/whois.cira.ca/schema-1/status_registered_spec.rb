@@ -21,40 +21,40 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2000-10-03 00:00:00")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2009-05-27 00:00:00")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2011-04-28 00:00:00")
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "70"
@@ -63,7 +63,7 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
       @parser.registrar.url.should          == nil
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

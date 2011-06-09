@@ -21,54 +21,54 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#disclaimer" do
+  describe "#disclaimer" do
     it do
       @parser.disclaimer.should == "Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan."
     end
   end
-  context "#domain" do
+  describe "#domain" do
     it do
       @parser.domain.should == "google.hu"
     end
   end
-  context "#domain_id" do
+  describe "#domain_id" do
     it do
       @parser.domain_id.should == "0000219547"
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2000-03-25 23:20:39")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2009-08-25 10:11:32")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "1960108002"
@@ -76,7 +76,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.registrar.organization.should == "3C Ltd."
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
@@ -95,7 +95,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.registrant_contacts[0].email.should        == nil
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
@@ -113,7 +113,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.admin_contacts[0].fax.should          == "+36 1 275 58 87"
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
@@ -132,7 +132,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.technical_contacts[0].email.should        == "ccops@markmonitor.com"
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
@@ -146,7 +146,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.nameservers[3].name.should == "ns2.google.com"
     end
   end
-  context "#zone_contact" do
+  describe "#zone_contact" do
     it do
       @parser.zone_contact.should be_a(_contact)
       @parser.zone_contact.type.should         == nil
@@ -163,7 +163,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.zone_contact.email.should        == "ccops@markmonitor.com"
     end
   end
-  context "#registrar_contact" do
+  describe "#registrar_contact" do
     it do
       @parser.registrar_contact.should be_a(_contact)
       @parser.registrar_contact.type.should         == nil

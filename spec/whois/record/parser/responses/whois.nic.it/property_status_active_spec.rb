@@ -21,17 +21,17 @@ describe Whois::Record::Parser::WhoisNicIt, "property_status_active.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end

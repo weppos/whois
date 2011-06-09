@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisMeregistryNet, "property_nameservers_is_mis
     @parser = klass.new(part)
   end
 
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should == []

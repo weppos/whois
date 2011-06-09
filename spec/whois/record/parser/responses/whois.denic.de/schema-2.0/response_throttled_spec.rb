@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "response_throttled.expected" do
     @parser = klass.new(part)
   end
 
-  context "#response_throttled?" do
+  describe "#response_throttled?" do
     it do
       @parser.response_throttled?.should == true
     end

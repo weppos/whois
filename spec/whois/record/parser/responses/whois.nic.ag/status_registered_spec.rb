@@ -21,40 +21,40 @@ describe Whois::Record::Parser::WhoisNicAg, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2003-01-05 14:06:59 UTC")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2009-12-09 19:28:04 UTC")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2011-01-05 14:06:59 UTC")
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

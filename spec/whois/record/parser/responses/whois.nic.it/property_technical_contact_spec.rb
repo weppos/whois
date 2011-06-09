@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicIt, "property_technical_contact.expected
     @parser = klass.new(part)
   end
 
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items

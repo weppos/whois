@@ -38,7 +38,7 @@ end
   RUBY
 
   TPL_CONTEXT  = <<-RUBY.chomp!
-  context "#%{descr}" do
+  describe "#%{descr}" do
     it do
 %{examples}
     end

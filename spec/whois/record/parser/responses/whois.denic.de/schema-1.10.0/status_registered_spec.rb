@@ -21,53 +21,53 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#disclaimer" do
+  describe "#disclaimer" do
     it do
       @parser.disclaimer.should == "All the domain data that is visible in the whois search is protected by law. It is not permitted to use it for any purpose other than technical or administrative requirements associated with the operation of the Internet or in order to contact the domain holder over legal problems. You are not permitted to save it electronically or in any other way without DENIC's express written permission. It is prohibited, in particular, to use it for advertising or any similar purpose. By maintaining the connection you assure that you have a legitimate interest in the data and that you will only use it for the stated purposes. You are aware that DENIC maintains the right to initiate legal proceedings against you in the event of any breach of this assurance and to bar you from using its whois query."
     end
   end
-  context "#domain" do
+  describe "#domain" do
     it do
       @parser.domain.should == "google.de"
     end
   end
-  context "#domain_id" do
+  describe "#domain_id" do
     it do
       lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse('2009-02-28 12:03:09 +01:00')
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == nil
@@ -75,7 +75,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
       @parser.registrar.organization.should == "MarkMonitor"
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
@@ -91,7 +91,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
       @parser.registrant_contacts[0].email.should        == nil
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
@@ -109,7 +109,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
       @parser.admin_contacts[0].email.should        == nil
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
@@ -125,7 +125,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
       @parser.technical_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

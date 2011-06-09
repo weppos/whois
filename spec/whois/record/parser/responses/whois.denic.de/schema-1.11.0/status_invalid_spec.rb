@@ -21,75 +21,75 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_invalid.expected" do
     @parser = klass.new(part)
   end
 
-  context "#disclaimer" do
+  describe "#disclaimer" do
     it do
       @parser.disclaimer.should == "The data in this record is provided by DENIC for informational purposes only. DENIC does not guarantee its accuracy and cannot, under any circumstances, be held liable in case the stored information would prove to be wrong, incomplete or not accurate in any sense. All the domain data that is visible in the whois service is protected by law. It is not permitted to use it for any purpose other than technical or administrative requirements associated with the operation of the Internet. It is explicitly forbidden to extract, copy and/or use or re-utilise in any form and by any means (electronically or not) the whole or a quantitatively or qualitatively substantial part of the contents of the whois database without prior and explicit written permission by DENIC. It is prohibited, in particular, to use it for transmission of unsolicited and/or commercial and/or advertising by phone, fax, e-mail or for any similar purposes. By maintaining the connection you assure that you have a legitimate interest in the data and that you will only use it for the stated purposes. You are aware that DENIC maintains the right to initiate legal proceedings against you in the event of any breach of this assurance and to bar you from using its whois service. The DENIC whois service on port 43 never discloses any information concerning the domain holder/administrative contact. Information concerning the domain holder/administrative contact can be obtained through use of our web-based whois service available at the DENIC website: http://www.denic.de/en/background/whois-service/webwhois.html"
     end
   end
-  context "#domain" do
+  describe "#domain" do
     it do
       @parser.domain.should == "googlededewdedewdewde.foo.de"
     end
   end
-  context "#domain_id" do
+  describe "#domain_id" do
     it do
       lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :invalid
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == false
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should == nil
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should == nil
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should == []
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should == []
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should == []
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should == []

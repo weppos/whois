@@ -21,12 +21,12 @@ describe Whois::Record::Parser::WhoisTonicTo, "response_incomplete.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :incomplete
     end
   end
-  context "#response_incomplete?" do
+  describe "#response_incomplete?" do
     it do
       @parser.response_incomplete?.should == true
     end

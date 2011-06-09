@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisCat, "property_status_ok.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == ["ok"]
     end

@@ -21,40 +21,40 @@ describe Whois::Record::Parser::WhoisJaNet, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2003-11-07")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2010-05-16")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2012-06-16")
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

@@ -21,39 +21,39 @@ describe Whois::Record::Parser::WhoisInUa, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2010-02-14 22:22:14 UTC")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2011-02-14 00:00:00 UTC")
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items

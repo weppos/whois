@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisPninaPs, "property_nameservers_with_nodns.e
     @parser = klass.new(part)
   end
 
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(1).items

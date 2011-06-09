@@ -21,47 +21,47 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_available.expected" 
     @parser = klass.new(part)
   end
 
-  context "#referral_whois" do
+  describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#referral_url" do
+  describe "#referral_url" do
     it do
       lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :available
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == true
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == false
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should == nil
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should == []

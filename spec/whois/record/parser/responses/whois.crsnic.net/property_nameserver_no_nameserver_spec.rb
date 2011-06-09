@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "property_nameserver_no_nameserv
     @parser = klass.new(part)
   end
 
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should == []

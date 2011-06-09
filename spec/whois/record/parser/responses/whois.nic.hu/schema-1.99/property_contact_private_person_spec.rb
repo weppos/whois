@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicHu, "property_contact_private_person.exp
     @parser = klass.new(part)
   end
 
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts[0].should be_a(_contact)

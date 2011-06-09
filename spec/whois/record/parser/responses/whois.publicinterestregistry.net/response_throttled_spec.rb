@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisPublicinterestregistryNet, "response_thrott
     @parser = klass.new(part)
   end
 
-  context "#response_throttled?" do
+  describe "#response_throttled?" do
     it do
       @parser.response_throttled?.should == true
     end

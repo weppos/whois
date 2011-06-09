@@ -21,22 +21,22 @@ describe Whois::Record::Parser::WhoisCoCa, "status_reserved.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :reserved
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#reserved?" do
+  describe "#reserved?" do
     it do
       @parser.reserved?.should == true
     end

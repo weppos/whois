@@ -21,39 +21,39 @@ describe Whois::Record::Parser::WhoisRipnNet, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == ["REGISTERED", "DELEGATED", "VERIFIED"]
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2010-11-12")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2011-11-12")
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "R01-REG-RF"
@@ -61,12 +61,12 @@ describe Whois::Record::Parser::WhoisRipnNet, "status_registered.expected" do
       @parser.registrar.organization.should == nil
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       lambda { @parser.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
@@ -80,12 +80,12 @@ describe Whois::Record::Parser::WhoisRipnNet, "status_registered.expected" do
       @parser.admin_contacts[0].email.should        == "liderkubani@gmail.com"
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
