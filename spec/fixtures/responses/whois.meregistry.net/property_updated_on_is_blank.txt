@@ -1,0 +1,92 @@
+WHOIS TERMS & CONDITIONS: Access to .ME WHOIS information is provided to 
+assist persons in determining the contents of a domain name registration 
+record in the .ME registry database. The data in this record is provided by 
+.ME Registry for informational purposes only, and .ME Registry does not 
+guarantee its accuracy. This service is intended only for query-based 
+access. You agree that you will use this data only for lawful purposes 
+and that, under no circumstances will you use this data to: (a) allow, 
+enable, or otherwise support the transmission by e-mail, telephone, 
+facsimile, or other electronic processes of mass unsolicited, commercial 
+advertising or solicitations to entities other than the data recipient's own 
+existing customers; or (b) enable high volume, automated, electronic 
+processes that send queries or data to the systems of Registry Operator, 
+except as reasonably necessary to register domain names or modify existing 
+registrations. All rights reserved. .ME Registry reserves the right to modify 
+these terms at any time. By submitting this query, you agree to abide by this 
+policy.
+
+Domain ID:D2021453-ME
+Domain Name:FACTORYOUTLET.ME
+Domain Create Date:27-May-2011 16:22:58 UTC
+Domain Last Updated Date:
+Domain Expiration Date:27-May-2012 16:22:58 UTC
+Last Transferred Date:
+Trademark Name:
+Trademark Country:
+Trademark Number:
+Date Trademark Applied For:
+Date Trademark Registered:
+Sponsoring Registrar:Register.it S.p.A. R51-ME
+Created by:Register.it S.p.A. R51-ME
+Last Updated by Registrar:
+Domain Status:TRANSFER PROHIBITED
+Registrant ID:a66932b07c2b
+Registrant Name:Attana' Simone
+Registrant Organization:
+Registrant Address:via Merano 9/11
+Registrant Address2:
+Registrant Address3:
+Registrant City:Gessate
+Registrant State/Province:MI
+Registrant Country/Economy:IT
+Registrant Postal Code:20060
+Registrant Phone:+39.0295780392
+Registrant Phone Ext.:
+Registrant FAX:+39.0295780392
+Registrant FAX Ext.:
+Registrant E-mail:amministrazione@simoneattana.com
+Admin ID:a6ea540dd5aa
+Admin Name:Attana' Simone
+Admin Organization:Simone Attana'
+Admin Address:via Merano 9/11
+Admin Address2:
+Admin Address3:
+Admin City:Gessate
+Admin State/Province:MI
+Admin Country/Economy:IT
+Admin Postal Code:20060
+Admin Phone:+39.0295780392
+Admin Phone Ext.:
+Admin FAX:+39.0295780392
+Admin FAX Ext.:
+Admin E-mail:amministrazione@simoneattana.com
+Tech ID:FR-11b2b6d2f885
+Tech Name:Technical support
+Tech Organization:REGISTER.IT S.p.a.
+Tech Address:Via Ponti, 6
+Tech Address2:
+Tech Address3:
+Tech City:Bergamo
+Tech State/Province:BG
+Tech Country/Economy:IT
+Tech Postal Code:24126
+Tech Phone:+39.0353230300
+Tech Phone Ext.:
+Tech FAX:+39.0353230312
+Tech FAX Ext.:
+Tech E-mail:support@register.it
+Nameservers:NS1.REGISTER.IT
+Nameservers:NS2.REGISTER.IT
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+
+
