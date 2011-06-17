@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'rspec/core/rake_task'
-require 'rake/gempackagetask'
+require 'rubygems/package_task'
 require 'yard'
 require 'yard/rake/yardoc_task'
 
@@ -57,7 +57,7 @@ end
 
 # This task actually builds the gem.
 # We also regenerate a static .gemspec file.
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
 
