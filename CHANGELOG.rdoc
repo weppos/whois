@@ -2,7 +2,9 @@
 
 == master
 
-* SERVER: Updated .bi TLD definition.
+* SERVER: Updated .BI TLD definition.
+
+* SERVER: Added .XXX TLD definition.
 
 * NEW: Ability to detect whois.dns.be throttled responses.
 

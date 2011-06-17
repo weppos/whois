@@ -315,6 +315,7 @@ Whois::Server.define :tld, ".org.za", "whois.org.za"
 Whois::Server.define :tld, ".za", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".zm", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".zw", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xxx", "whois.nic.xxx"
 Whois::Server.define :tld, ".xn--3e0b707e", "whois.kr"
 Whois::Server.define :tld, ".xn--45brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--90a3ac", nil, { :adapter => Whois::Server::Adapters::None }
