@@ -2,6 +2,8 @@
 
 == master
 
+* SERVER: Updated .bi TLD definition.
+
 * NEW: Ability to detect whois.dns.be throttled responses.
 
 * FIXED: whois.meregistry.net parser raises `no time information in ""' when updated_at property is blank.
