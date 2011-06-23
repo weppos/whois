@@ -50,9 +50,10 @@ spec = Gem::Specification.new do |s|
   # s.add_dependency("some_other_gem", "~> 0.1.0")
 
   # If your tests use any gems, include them here
-  s.add_development_dependency("rspec", "~> 2.5.0")
-  s.add_development_dependency("mocha")
-  s.add_development_dependency("yard")
+  s.add_development_dependency "rake",  "~> 0.9"
+  s.add_development_dependency "rspec", "~> 2.5.0"
+  s.add_development_dependency "mocha"
+  s.add_development_dependency "yard"
 end
 
 # This task actually builds the gem.
