@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "property_nameservers_wit
     @parser = klass.new(part)
   end
 
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items

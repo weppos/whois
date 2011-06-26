@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicUk, "property_registrar_without_trading_
     @parser = klass.new(part)
   end
 
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "NETNAMES"

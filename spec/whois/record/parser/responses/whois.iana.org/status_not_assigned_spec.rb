@@ -21,56 +21,56 @@ describe Whois::Record::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :available
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == true
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == false
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should == nil
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("1999-09-27")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should == []
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should == []
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should == []
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should == []

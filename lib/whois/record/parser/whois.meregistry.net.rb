@@ -41,19 +41,19 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Domain Create Date:(.*)\n/
+          if content_for_scanner =~ /Domain Create Date:(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Domain Last Updated Date:(.*)\n/
+          if content_for_scanner =~ /Domain Last Updated Date:(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Domain Expiration Date:(.*)\n/
+          if content_for_scanner =~ /Domain Expiration Date:(.+)\n/
             Time.parse($1)
           end
         end

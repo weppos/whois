@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_updates_on_error_out-of-r
     @parser = klass.new(part)
   end
 
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2010-10-18 11:30:47 JST")

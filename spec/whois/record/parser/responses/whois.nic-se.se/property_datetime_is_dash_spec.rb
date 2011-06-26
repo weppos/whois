@@ -21,18 +21,18 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_datetime_is_dash.expecte
     @parser = klass.new(part)
   end
 
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2010-08-05")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should == nil
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2011-08-05")

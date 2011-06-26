@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicVe, "property_updated_on.expected" do
     @parser = klass.new(part)
   end
 
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2005-11-17 21:16:31")

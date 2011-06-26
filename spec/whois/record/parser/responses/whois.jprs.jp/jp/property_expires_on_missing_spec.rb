@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_expires_on_missing.expect
     @parser = klass.new(part)
   end
 
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
     end

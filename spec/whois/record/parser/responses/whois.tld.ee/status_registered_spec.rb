@@ -21,40 +21,40 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2010-07-04 07:10:32")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2010-12-10 13:37:11")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2011-12-10")
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "fraktal"
@@ -62,7 +62,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.registrar.organization.should == nil
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
@@ -73,7 +73,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.registrant_contacts[0].organization.should == nil
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
@@ -84,12 +84,12 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.admin_contacts[0].organization.should == "Fraktal OÜ"
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items

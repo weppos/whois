@@ -26,6 +26,7 @@ whois.dotmobyregistry.net
 whois.afilias.info
 whois.afilias-grs.info
 whois.aero
+whois.nic.xxx
 
 whois.nic.af
 whois.nic.mu

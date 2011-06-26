@@ -21,17 +21,17 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "property_status_missing.expecte
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :available
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == true
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == false
     end

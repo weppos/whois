@@ -21,88 +21,88 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#domain" do
+  describe "#domain" do
     it do
       @parser.domain.should == "google.biz"
     end
   end
-  context "#domain_id" do
+  describe "#domain_id" do
     it do
       @parser.domain_id.should == "D2835288-BIZ"
     end
   end
-  context "#referral_whois" do
+  describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#referral_url" do
+  describe "#referral_url" do
     it do
       lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == %w( clientDeleteProhibited clientTransferProhibited clientUpdateProhibited )
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2002-03-27 00:01:00 GMT")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2009-03-01 12:01:04 GMT")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2010-03-26 23:59:59 GMT")
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "292"
       @parser.registrar.name.should         == "MARKMONITOR, INC."
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(_contact)
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(_contact)
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
       @parser.technical_contacts[0].should be_a(_contact)
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

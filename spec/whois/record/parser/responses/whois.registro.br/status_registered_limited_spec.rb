@@ -21,12 +21,12 @@ describe Whois::Record::Parser::WhoisRegistroBr, "status_registered_limited.expe
     @parser = klass.new(part)
   end
 
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end

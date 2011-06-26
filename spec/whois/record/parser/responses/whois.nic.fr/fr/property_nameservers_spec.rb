@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicFr, "property_nameservers.expected" do
     @parser = klass.new(part)
   end
 
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

@@ -1,8 +1,6 @@
-# https://github.com/weppos/gitignore/blob/weppos/Ruby.gitignore
+utils/whois-utf8.rb
 
-coverage
-rdoc
-tmp
+# https://github.com/weppos/gitignore/blob/weppos/Ruby.gitignore
 
 # Bundler
 .bundle
@@ -15,5 +13,3 @@ pkg
 .yardoc
 _yardoc
 doc/
-
-utils/whois-utf8.rb

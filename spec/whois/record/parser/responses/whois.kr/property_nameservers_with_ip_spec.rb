@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisKr, "property_nameservers_with_ip.expected"
     @parser = klass.new(part)
   end
 
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items

@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "property_status_with_multiple.
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == ["serverHold (Expired)", "serverUpdateProhibited (Expired)"]
     end

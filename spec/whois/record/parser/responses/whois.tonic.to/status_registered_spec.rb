@@ -21,87 +21,87 @@ describe Whois::Record::Parser::WhoisTonicTo, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
-  context "#disclaimer" do
+  describe "#disclaimer" do
     it do
       lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#domain" do
+  describe "#domain" do
     it do
       lambda { @parser.domain }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#domain_id" do
+  describe "#domain_id" do
     it do
       lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#referral_url" do
+  describe "#referral_url" do
     it do
       lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#referral_whois" do
+  describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       lambda { @parser.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       lambda { @parser.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       lambda { @parser.nameservers }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#response_incomplete?" do
+  describe "#response_incomplete?" do
     it do
       @parser.response_incomplete?.should == false
     end

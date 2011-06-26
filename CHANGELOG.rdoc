@@ -1,5 +1,15 @@
 = Changelog
 
+== master
+
+* SERVER: Updated .BI TLD definition.
+
+* SERVER: Added .XXX TLD definition.
+
+* NEW: Ability to detect whois.dns.be throttled responses.
+
+* FIXED: whois.meregistry.net parser raises `no time information in ""' when updated_at property is blank.
+
 
 == Release 2.0.4
 

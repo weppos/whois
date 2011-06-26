@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicVe, "property_updated_on_blank.expected"
     @parser = klass.new(part)
   end
 
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should == nil
     end

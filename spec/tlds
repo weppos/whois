@@ -314,6 +314,7 @@ org.za;whois.org.za;joburg.org.za;u34jedzcq.org.za
 za;;;
 zm;;;
 zw;;;
+xxx;whois.nic.xxx;nic.xxx;u34jedzcq.xxx
 Whois::Server.define :tld, ".xn--3e0b707e", "whois.kr"
 Whois::Server.define :tld, ".xn--45brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"

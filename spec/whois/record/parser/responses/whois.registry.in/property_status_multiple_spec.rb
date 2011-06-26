@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_multiple.expec
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == [ "client delete prohibited", "client renew prohibited", "client transfer prohibited", "client update prohibited" ]
     end

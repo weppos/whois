@@ -21,65 +21,65 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
     @parser = klass.new(part)
   end
 
-  context "#disclaimer" do
+  describe "#disclaimer" do
     it do
       @parser.disclaimer.should == "Access to INFO WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
     end
   end
-  context "#domain" do
+  describe "#domain" do
     it do
       @parser.domain.should == "google.info"
     end
   end
-  context "#domain_id" do
+  describe "#domain_id" do
     it do
       @parser.domain_id.should == "D37288-LRMS"
     end
   end
-  context "#referral_whois" do
+  describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#referral_url" do
+  describe "#referral_url" do
     it do
       lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("2001-07-31 23:57:50 UTC")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2009-03-05 22:39:19 UTC")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2010-07-31 23:57:50 UTC")
     end
   end
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "R151-LRMS"
@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
       @parser.registrar.organization.should == "Markmonitor Inc."
     end
   end
-  context "#registrant_contacts" do
+  describe "#registrant_contacts" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
@@ -106,7 +106,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
       @parser.registrant_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
-  context "#admin_contacts" do
+  describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
@@ -125,7 +125,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
       @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
-  context "#technical_contacts" do
+  describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
@@ -144,7 +144,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
       @parser.technical_contacts[0].email.should        == "dns-admin@google.com"
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items

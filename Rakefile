@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'rspec/core/rake_task'
-require 'rake/gempackagetask'
+require 'rubygems/package_task'
 require 'yard'
 require 'yard/rake/yardoc_task'
 
@@ -50,14 +50,15 @@ spec = Gem::Specification.new do |s|
   # s.add_dependency("some_other_gem", "~> 0.1.0")
 
   # If your tests use any gems, include them here
-  s.add_development_dependency("rspec", "~> 2.5.0")
-  s.add_development_dependency("mocha")
-  s.add_development_dependency("yard")
+  s.add_development_dependency "rake",  "~> 0.9"
+  s.add_development_dependency "rspec", "~> 2.6.0"
+  s.add_development_dependency "mocha"
+  s.add_development_dependency "yard"
 end
 
 # This task actually builds the gem.
 # We also regenerate a static .gemspec file.
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
 

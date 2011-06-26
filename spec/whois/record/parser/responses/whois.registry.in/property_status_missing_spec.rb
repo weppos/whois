@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_missing.expect
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == nil
     end

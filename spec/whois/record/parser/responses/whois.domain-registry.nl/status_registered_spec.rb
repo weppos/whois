@@ -21,39 +21,39 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_registered.expect
     @parser = klass.new(part)
   end
 
-  context "#status" do
+  describe "#status" do
     it do
       @parser.status.should == :registered
     end
   end
-  context "#available?" do
+  describe "#available?" do
     it do
       @parser.available?.should == false
     end
   end
-  context "#registered?" do
+  describe "#registered?" do
     it do
       @parser.registered?.should == true
     end
   end
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
       @parser.created_on.should == Time.parse("1999-05-27")
     end
   end
-  context "#updated_on" do
+  describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
       @parser.updated_on.should == Time.parse("2009-02-11")
     end
   end
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  context "#nameservers" do
+  describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
@@ -67,12 +67,12 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_registered.expect
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end
-  context "#response_throttled?" do
+  describe "#response_throttled?" do
     it do
       @parser.response_throttled?.should == false
     end
   end
-  context "#response_unavailable?" do
+  describe "#response_unavailable?" do
     it do
       @parser.response_unavailable?.should == false
     end

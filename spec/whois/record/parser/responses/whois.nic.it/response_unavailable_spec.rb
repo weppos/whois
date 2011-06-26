@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicIt, "response_unavailable.expected" do
     @parser = klass.new(part)
   end
 
-  context "#response_unavailable?" do
+  describe "#response_unavailable?" do
     it do
       @parser.response_unavailable?.should == true
     end

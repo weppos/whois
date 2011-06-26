@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "property_registrar_with_multipl
     @parser = klass.new(part)
   end
 
-  context "#registrar" do
+  describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == nil

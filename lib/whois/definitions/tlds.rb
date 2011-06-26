@@ -72,7 +72,7 @@ Whois::Server.define :tld, ".be", "whois.dns.be"
 Whois::Server.define :tld, ".bf", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".bg", "whois.register.bg"
 Whois::Server.define :tld, ".bh", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".bi", nil, { :web => "http://whois.nic.bi/register/whois.hei", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".bi", nil, { :web => "https://whois.nic.bi/whois.php", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".bj", "whois.nic.bj"
 Whois::Server.define :tld, ".bm", nil, { :web => "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".bn", nil, { :adapter => Whois::Server::Adapters::None }
@@ -315,6 +315,7 @@ Whois::Server.define :tld, ".org.za", "whois.org.za"
 Whois::Server.define :tld, ".za", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".zm", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".zw", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xxx", "whois.nic.xxx"
 Whois::Server.define :tld, ".xn--3e0b707e", "whois.kr"
 Whois::Server.define :tld, ".xn--45brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--90a3ac", nil, { :adapter => Whois::Server::Adapters::None }

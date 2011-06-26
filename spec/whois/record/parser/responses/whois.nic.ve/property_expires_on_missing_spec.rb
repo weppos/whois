@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisNicVe, "property_expires_on_missing.expecte
     @parser = klass.new(part)
   end
 
-  context "#expires_on" do
+  describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
     end

@@ -1,0 +1,98 @@
+Access to INFO WHOIS information is provided to assist persons in
+determining the contents of a domain name registration record in the
+ICM Registry database. The data in this record is provided by
+ICM Registry for informational purposes only, and ICM does not
+guarantee its accuracy. This service is intended only for query-based
+access. You agree that you will use this data only for lawful purposes
+and that, under no circumstances will you use this data to: (a) allow,
+enable, or otherwise support the transmission by e-mail, telephone, or
+facsimile of mass unsolicited, commercial advertising or solicitations
+to entities other than the data recipient's own existing customers; or
+(b) enable high volume, automated, electronic processes that send
+queries or data to the systems of Registry Operator, a Registrar, or
+ICM except as reasonably necessary to register domain names or
+modify existing registrations. All rights reserved. ICM reserves
+the right to modify these terms at any time. By submitting this query,
+you agree to abide by this policy.
+
+
+Domain ID:D2-ICM
+Domain Name:NIC.XXX
+Created On:3-May-2011 21:00:00 UTC
+Last Updated On:3-May-2011 21:00:00 UTC
+Expiration Date:3-May-2012 21:00:00 UTC
+Sponsoring Registrar:ICM Registry LLC. (R1-ICM)
+Status:OK
+Registrant ID:C1-ICM
+Registrant Name:ICM Registry
+Registrant Organization:ICM Registry LLC
+Registrant Street1:PO Box 30129
+Registrant Street2:
+Registrant Street3:
+Registrant City:Palm Beach Gardens
+Registrant State/Province:FL
+Registrant Postal Code:33420
+Registrant Country:US
+Registrant Phone:+1.8778093182
+Registrant Phone Ext.:
+Registrant FAX:+1.8778093183
+Registrant FAX Ext.:
+Registrant Email:domainadmin@icmregistry.com
+Admin ID:C1-ICM
+Admin Name:ICM Registry
+Admin Organization:ICM Registry LLC
+Admin Street1:PO Box 30129
+Admin Street2:
+Admin Street3:
+Admin City:Palm Beach Gardens
+Admin State/Province:FL
+Admin Postal Code:33420
+Admin Country:US
+Admin Phone:+1.8778093182
+Admin Phone Ext.:
+Admin FAX:+1.8778093183
+Admin FAX Ext.:
+Admin Email:domainadmin@icmregistry.com
+Billing ID:C1-ICM
+Billing Name:ICM Registry
+Billing Organization:ICM Registry LLC
+Billing Street1:PO Box 30129
+Billing Street2:
+Billing Street3:
+Billing City:Palm Beach Gardens
+Billing State/Province:FL
+Billing Postal Code:33420
+Billing Country:US
+Billing Phone:+1.8778093182
+Billing Phone Ext.:
+Billing FAX:+1.8778093183
+Billing FAX Ext.:
+Billing Email:domainadmin@icmregistry.com
+Tech ID:C1-ICM
+Tech Name:ICM Registry
+Tech Organization:ICM Registry LLC
+Tech Street1:PO Box 30129
+Tech Street2:
+Tech Street3:
+Tech City:Palm Beach Gardens
+Tech State/Province:FL
+Tech Postal Code:33420
+Tech Country:US
+Tech Phone:+1.8778093182
+Tech Phone Ext.:
+Tech FAX:+1.8778093183
+Tech FAX Ext.:
+Tech Email:domainadmin@icmregistry.com
+Name Server:NS1.ICMREGISTRY.COM
+Name Server:NS2.ICMREGISTRY.COM
+Name Server:
+Name Server:
+Name Server:
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 

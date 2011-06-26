@@ -21,7 +21,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_created_on_and_expires_on
     @parser = klass.new(part)
   end
 
-  context "#created_on" do
+  describe "#created_on" do
     it do
       @parser.created_on.should == nil
     end
