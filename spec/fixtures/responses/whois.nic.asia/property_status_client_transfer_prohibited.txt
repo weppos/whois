@@ -1,0 +1,159 @@
+DotAsia WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS: The WHOIS service offered    
+by DotAsia and the access to the records in the DotAsia WHOIS database are provided
+for information purposes only. It allows persons to check whether a specific       
+domain name is still available or not and to obtain information related to         
+the registration records of existing domain names. DotAsia cannot, under any       
+circumstances, be held liable in case the stored information would prove to        
+be wrong, incomplete, or not accurate in any sense.  By submitting a query         
+you agree not to use the information made available to: allow, enable or           
+otherwise support the transmission of unsolicited, commercial advertising or       
+other solicitations whether via email or otherwise; target advertising in any      
+possible way; or to cause nuisance in any possible way to the registrants by       
+sending (whether by automated, electronic processes capable of enabling high       
+volumes or other possible means) messages to them.  Without prejudice to the       
+above, it is explicitly forbidden to extract, copy and/or use or re-utilise        
+in any form and by any means (electronically or not) the whole or a                
+quantitatively or qualitatively substantial part of the contents of the WHOIS      
+database without prior and explicit permission by DotAsia, nor in any attempt      
+hereof, or to apply automated, electronic processes to DotAsia (or its systems).   
+You agree that any reproduction and/or transmission of data for commercial         
+purposes will always be considered as the extraction of a substantial part of      
+the content of the WHOIS database. By submitting the query you agree to abide      
+by this policy and accept that DotAsia can take measures to limit the use of its   
+WHOIS services in order to protect the privacy of its registrants or the           
+integrity of the database.  
+
+Domain ID:D1609371-ASIA
+Domain Name:DREAMHOST.ASIA
+Domain Create Date:04-Oct-2010 04:21:46 UTC
+Domain Expiration Date:04-Oct-2011 04:21:46 UTC
+Domain Last Updated Date:03-Dec-2010 20:50:05 UTC
+Last Transferred Date:
+IPR Name:
+IPR Number:
+IPR CC Locality:
+IPR Applied:
+IPR Registered:
+IPR Class:
+IPR form:
+IPR Entitlement:
+IPR Type:
+Created by:1API GmbH R139-ASIA (1387)
+Last Updated by Registrar:ASIA Registry R6-ASIA (9996)
+Sponsoring Registrar:1API GmbH R139-ASIA (1387)
+Registration Agent ID:
+Registration Agent Name:
+Registration Agent Organization:
+Registration Agent Address:
+Registration Agent Address2:
+Registration Agent Address3:
+Registration Agent City:
+Registration Agent State/Province:
+Registration Agent Country/Economy:
+Registration Agent Postal Code:
+Registration Agent Phone:
+Registration Agent Phone Ext.:
+Registration Agent FAX:
+Registration Agent FAX Ext.:
+Registration Agent E-mail:
+Maintainer URL:
+Domain Status:CLIENT TRANSFER PROHIBITED
+Registrant ID:DDD6624899-BUXS
+Registrant Name:ALTUSHOST INC ALTUSHOST INC
+Registrant Organization:ALTUSHOST INC
+Registrant Address:ALTUSHOST INC
+Registrant Address2:
+Registrant Address3:
+Registrant City:ALTUSHOST INC
+Registrant State/Province:ALTUSHOST INC
+Registrant Country/Economy:CN
+Registrant Postal Code:100000
+Registrant Phone:+45.36946676
+Registrant Phone Ext.:
+Registrant FAX:
+Registrant FAX Ext.:
+Registrant E-mail:admin@dh.vc
+Administrative ID:DDD6624899-BUXS
+Administrative Name:ALTUSHOST INC ALTUSHOST INC
+Administrative Organization:ALTUSHOST INC
+Administrative Address:ALTUSHOST INC
+Administrative Address2:
+Administrative Address3:
+Administrative City:ALTUSHOST INC
+Administrative State/Province:ALTUSHOST INC
+Administrative Country/Economy:CN
+Administrative Postal Code:100000
+Administrative Phone:+45.36946676
+Administrative Phone Ext.:
+Administrative FAX:
+Administrative FAX Ext.:
+Administrative E-mail:admin@dh.vc
+Technical ID:DDD6624899-BUXS
+Technical Name:ALTUSHOST INC ALTUSHOST INC
+Technical Organization:ALTUSHOST INC
+Technical Address:ALTUSHOST INC
+Technical Address2:
+Technical Address3:
+Technical City:ALTUSHOST INC
+Technical State/Province:ALTUSHOST INC
+Technical Country/Economy:CN
+Technical Postal Code:100000
+Technical Phone:+45.36946676
+Technical Phone Ext.:
+Technical FAX:
+Technical FAX Ext.:
+Technical E-mail:admin@dh.vc
+Billing ID:P-LFG128-XDWI
+Billing Name:Lenz Gschwendtner
+Billing Organization:domarino ltd
+Billing Address:PO box 558
+Billing Address2:
+Billing Address3:
+Billing City:Paraparaumu
+Billing State/Province:
+Billing Country/Economy:NZ
+Billing Postal Code:5254
+Billing Phone:+64.49022082
+Billing Phone Ext.:
+Billing FAX:
+Billing FAX Ext.:
+Billing E-mail:info@domarino.com
+CED ID:P-LFG128-XDWI
+CED CC Locality:NZ
+CED State/Province:
+CED City:Paraparaumu
+CED Type of Legal Entity:Corporations or Companies
+CED Type (Other):
+CED Form of Identification:Certificate of Incorporation or equivalent business registration certificate
+CED Form of ID (Other):
+CED Identification Number:1982395
+Operations and Notifications ID:
+Operations and Notifications Name:
+Operations and Notifications Organization:
+Operations and Notifications Address:
+Operations and Notifications Address2:
+Operations and Notifications Address3:
+Operations and Notifications City:
+Operations and Notifications State/Province:
+Operations and Notifications Country/Economy:
+Operations and Notifications Postal Code:
+Operations and Notifications Phone:
+Operations and Notifications Phone Ext.:
+Operations and Notifications FAX:
+Operations and Notifications FAX Ext.:
+Operations and Notifications E-mail:
+Nameservers:NS1.US.EDITDNS.NET
+Nameservers:NS2.US.EDITDNS.NET
+Nameservers:NS3.US.EDITDNS.NET
+Nameservers:NS1.EU.EDITDNS.NET
+Nameservers:NS2.EU.EDITDNS.NET
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+
+

@@ -1,0 +1,160 @@
+DotAsia WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS: The WHOIS service offered    
+by DotAsia and the access to the records in the DotAsia WHOIS database are provided
+for information purposes only. It allows persons to check whether a specific       
+domain name is still available or not and to obtain information related to         
+the registration records of existing domain names. DotAsia cannot, under any       
+circumstances, be held liable in case the stored information would prove to        
+be wrong, incomplete, or not accurate in any sense.  By submitting a query         
+you agree not to use the information made available to: allow, enable or           
+otherwise support the transmission of unsolicited, commercial advertising or       
+other solicitations whether via email or otherwise; target advertising in any      
+possible way; or to cause nuisance in any possible way to the registrants by       
+sending (whether by automated, electronic processes capable of enabling high       
+volumes or other possible means) messages to them.  Without prejudice to the       
+above, it is explicitly forbidden to extract, copy and/or use or re-utilise        
+in any form and by any means (electronically or not) the whole or a                
+quantitatively or qualitatively substantial part of the contents of the WHOIS      
+database without prior and explicit permission by DotAsia, nor in any attempt      
+hereof, or to apply automated, electronic processes to DotAsia (or its systems).   
+You agree that any reproduction and/or transmission of data for commercial         
+purposes will always be considered as the extraction of a substantial part of      
+the content of the WHOIS database. By submitting the query you agree to abide      
+by this policy and accept that DotAsia can take measures to limit the use of its   
+WHOIS services in order to protect the privacy of its registrants or the           
+integrity of the database.  
+
+Domain ID:D1032500-ASIA
+Domain Name:NOVALASH.ASIA
+Domain Create Date:30-Oct-2008 22:54:15 UTC
+Domain Expiration Date:30-Oct-2012 22:54:15 UTC
+Domain Last Updated Date:01-Oct-2010 03:30:34 UTC
+Last Transferred Date:
+IPR Name:
+IPR Number:
+IPR CC Locality:
+IPR Applied:
+IPR Registered:
+IPR Class:
+IPR form:
+IPR Entitlement:
+IPR Type:
+Created by:007Names, Inc. R94-ASIA (91)
+Last Updated by Registrar:007Names, Inc. R94-ASIA (91)
+Sponsoring Registrar:007Names, Inc. R94-ASIA (91)
+Registration Agent ID:
+Registration Agent Name:
+Registration Agent Organization:
+Registration Agent Address:
+Registration Agent Address2:
+Registration Agent Address3:
+Registration Agent City:
+Registration Agent State/Province:
+Registration Agent Country/Economy:
+Registration Agent Postal Code:
+Registration Agent Phone:
+Registration Agent Phone Ext.:
+Registration Agent FAX:
+Registration Agent FAX Ext.:
+Registration Agent E-mail:
+Maintainer URL:
+Domain Status:CLIENT DELETE PROHIBITED
+Domain Status:CLIENT TRANSFER PROHIBITED
+Registrant ID:7AERFN4T4P
+Registrant Name:Sophy Merszei
+Registrant Organization:Novalash
+Registrant Address:3701 W. Alabama
+Registrant Address2:
+Registrant Address3:
+Registrant City:Houston
+Registrant State/Province:TX
+Registrant Country/Economy:US
+Registrant Postal Code:77027
+Registrant Phone:+1.8664301261
+Registrant Phone Ext.:
+Registrant FAX:
+Registrant FAX Ext.:
+Registrant E-mail:khickman@awsp.com
+Administrative ID:5MTMZMT3K1
+Administrative Name:Sophy Merszei
+Administrative Organization:Novalash
+Administrative Address:3701 W. Alabama
+Administrative Address2:
+Administrative Address3:
+Administrative City:Houston
+Administrative State/Province:TX
+Administrative Country/Economy:US
+Administrative Postal Code:77027
+Administrative Phone:+1.8664301261
+Administrative Phone Ext.:
+Administrative FAX:
+Administrative FAX Ext.:
+Administrative E-mail:khickman@awsp.com
+Technical ID:FR-11594d9eed91
+Technical Name:Edward Lin
+Technical Organization:EDM Enterprise Co., LTD
+Technical Address:No. 10 Lane 241, Chung Shan Road
+Technical Address2:
+Technical Address3:
+Technical City:Shen Kang Hsiang
+Technical State/Province:Taichung Hsien
+Technical Country/Economy:TW
+Technical Postal Code:35000
+Technical Phone:+886.425625115
+Technical Phone Ext.:
+Technical FAX:
+Technical FAX Ext.:
+Technical E-mail:doamina@yahoo.com
+Billing ID:5MTMZMT3K1
+Billing Name:Sophy Merszei
+Billing Organization:Novalash
+Billing Address:3701 W. Alabama
+Billing Address2:
+Billing Address3:
+Billing City:Houston
+Billing State/Province:TX
+Billing Country/Economy:US
+Billing Postal Code:77027
+Billing Phone:+1.8664301261
+Billing Phone Ext.:
+Billing FAX:
+Billing FAX Ext.:
+Billing E-mail:khickman@awsp.com
+CED ID:FR-11594d9eed91
+CED CC Locality:TW
+CED State/Province:Taichung Hsien
+CED City:Shen Kang Hsiang
+CED Type of Legal Entity:Corporations or Companies
+CED Type (Other):
+CED Form of Identification:Certificate of Incorporation or equivalent business registration certificate
+CED Form of ID (Other):
+CED Identification Number:N9fTw
+Operations and Notifications ID:7AERFN4T4P
+Operations and Notifications Name:Sophy Merszei
+Operations and Notifications Organization:Novalash
+Operations and Notifications Address:3701 W. Alabama
+Operations and Notifications Address2:
+Operations and Notifications Address3:
+Operations and Notifications City:Houston
+Operations and Notifications State/Province:TX
+Operations and Notifications Country/Economy:US
+Operations and Notifications Postal Code:77027
+Operations and Notifications Phone:+1.8664301261
+Operations and Notifications Phone Ext.:
+Operations and Notifications FAX:
+Operations and Notifications FAX Ext.:
+Operations and Notifications E-mail:khickman@awsp.com
+Nameservers:NS2.RACKSPACE.COM
+Nameservers:NS.RASKSPACE.COM
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+Nameservers: 
+
+

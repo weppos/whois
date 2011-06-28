@@ -14,6 +14,8 @@
 
 * FIXED: whois.nic.it parser must support pendingDelete / pendingDelete status.
 
+* FIXED: whois.nic.asia parser must support CLIENT statuses.
+
 
 == Release 2.0.4
 
