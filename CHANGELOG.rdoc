@@ -10,6 +10,8 @@
 
 * FIXED: whois.meregistry.net parser raises `no time information in ""' when updated_at property is blank.
 
+* FIXED: whois.nic.it parser must support NO-PROVIDER status.
+
 
 == Release 2.0.4
 

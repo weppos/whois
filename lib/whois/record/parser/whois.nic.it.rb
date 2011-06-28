@@ -45,7 +45,7 @@ module Whois
           case node("Status").to_s.downcase
           when /^ok/, "active", /\bclient/
             :registered
-          when "grace-period", "pendingupdate", "pendingtransfer"
+          when "grace-period", "pendingupdate", "pendingtransfer", "no-provider"
             :registered
           when "pendingdelete / redemptionperiod", /redemption\-/
             :redemption
