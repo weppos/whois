@@ -12,6 +12,8 @@
 
 * FIXED: whois.nic.it parser must support NO-PROVIDER status.
 
+* FIXED: whois.nic.it parser must support pendingDelete / pendingDelete status.
+
 
 == Release 2.0.4
 

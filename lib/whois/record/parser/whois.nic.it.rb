@@ -47,7 +47,8 @@ module Whois
             :registered
           when "grace-period", "pendingupdate", "pendingtransfer", "no-provider"
             :registered
-          when "pendingdelete / redemptionperiod", /redemption\-/
+          when "pendingdelete / redemptionperiod", /redemption\-/,
+               "pendingdelete / pendingdelete"  # will be deleted in 5 days
             :redemption
           when "unassignable"
             :reserved

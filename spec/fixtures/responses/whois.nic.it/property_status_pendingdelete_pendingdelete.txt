@@ -1,0 +1,45 @@
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://www.nic.it/cgi-bin/Whois/whois.cgi                         *
+*********************************************************************
+
+Domain:             cartucceweb.it
+Status:             pendingDelete / pendingDelete
+Created:            2007-06-07 14:48:44
+Last Update:        2011-06-27 12:05:12
+Expire Date:        2011-05-31
+
+Registrant
+  Name:             Jose Gregorio Chatila
+  Organization:     CARTUCCEWEB DI CHATILA JOSE GREGORIO
+  ContactID:        DFT-R-16249
+
+Admin Contact
+  Name:             JOSE GREGORIO CHATILA
+  ContactID:        DUP008397314
+
+Technical Contacts
+  Name:             Etesi s.r.l.
+  Organization:     www.ion.it - Italia on Net
+  ContactID:        DUP753815370
+  Address:          Via Alloro, 8
+                    Ribera
+                    92016
+                    AG
+                    IT
+  Created:          2010-05-31 00:52:08
+  Last Update:      2010-07-12 15:25:22
+
+Registrar
+  Organization:     DominioFaiDaTe S.r.l.
+  Name:             DFT-REG
+  Web:              http://www.dominiofaidate.com
+
+Nameservers
+  ns1.dominiofaidate.com
+  ns2.dominiofaidate.com
+
