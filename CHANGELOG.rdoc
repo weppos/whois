@@ -10,11 +10,13 @@
 
 * FIXED: whois.meregistry.net parser raises `no time information in ""' when updated_at property is blank.
 
-* FIXED: whois.nic.it parser must support NO-PROVIDER status.
+* FIXED: whois.nic.it parser must support `NO-PROVIDER' status.
 
-* FIXED: whois.nic.it parser must support pendingDelete / pendingDelete status.
+* FIXED: whois.nic.it parser must support `'pendingDelete / pendingDelete status.
 
-* FIXED: whois.nic.asia parser must support CLIENT statuses.
+* FIXED: whois.nic.asia parser must support `CLIENT' statuses.
+
+* FIXED: whois.nic.cz parser must support `Update prohibited' statuses.
 
 
 == Release 2.0.4

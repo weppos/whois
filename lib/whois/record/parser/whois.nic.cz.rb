@@ -30,9 +30,11 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
-              when "paid and in zone" then :registered
+              when "paid and in zone", "update prohibited"
+                :registered
               # NEWSTATUS
-              when "expired" then :expired
+              when "expired"
+                :expired
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

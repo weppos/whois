@@ -1,0 +1,83 @@
+%  (c) 2006-2011 CZ.NIC, z.s.p.o.
+% 
+% Intended use of supplied data and information
+% 
+% Data contained in the domain name register, as well as information
+% supplied through public information services of CZ.NIC association,
+% are appointed only for purposes connected with Internet network
+% administration and operation, or for the purpose of legal or other
+% similar proceedings, in process as regards a matter connected
+% particularly with holding and using a concrete domain name.
+% 
+% Full text available at:
+% http://www.nic.cz/page/306/intended-use-of-supplied-data-and-information/
+% 
+% See also a search service at http://www.nic.cz/whois/
+% 
+% 
+% Whoisd Server Version: 3.4.0
+% Timestamp: Wed Jun 29 09:48:24 2011
+
+domain:       forpsi.cz
+registrant:   SB:INTERNET-CZ
+nsset:        FORPSI
+registrar:    REG-INTERNET-CZ
+status:       Update prohibited
+status:       Sponsoring registrar change prohibited
+registered:   25.10.2004 15:05:00
+changed:      19.05.2011 08:36:38
+expire:       25.10.2018
+
+contact:      SB:INTERNET-CZ
+org:          INTERNET CZ, a.s.
+name:         Stefano Cecconi
+address:      Ktiš 2
+address:      Ktiš
+address:      384 03
+address:      CZ
+phone:        +420.383835353
+fax-no:       +420.383835354
+e-mail:       domain@forpsi.com
+registrar:    REG-INTERNET-CZ
+created:      18.11.2001 19:46:00
+changed:      06.06.2011 13:56:51
+
+nsset:        FORPSI
+nserver:      ns.forpsi.net 
+nserver:      ns.forpsi.cz (81.2.209.185)
+nserver:      ns.forpsi.it 
+tech-c:       FORPSI
+registrar:    REG-INTERNET-CZ
+created:      01.10.2007 10:19:47
+changed:      30.09.2010 10:21:36
+
+contact:      FORPSI
+org:          INTERNET CZ, a.s.
+name:         Stefano Cecconi
+address:      Ktiš 2
+address:      Ktiš
+address:      38403
+address:      CZ
+fax-no:       +420.383835354
+registrar:    REG-INTERNET-CZ
+created:      04.08.2008 14:42:08
+changed:      06.06.2011 13:55:12
+
+nsset:        FORPSI.CZ
+nserver:      ns.forpsi.net 
+nserver:      ns.forpsi.us 
+tech-c:       CID:IGN-C181273-TSC
+registrar:    REG-IGNUM
+created:      24.08.2008 16:07:09
+
+contact:      CID:IGN-C181273-TSC
+name:         Dana Stádníková
+address:      Gončarenkova 40
+address:      Praha 4
+address:      14700
+address:      CZ
+registrar:    REG-IGNUM
+created:      21.02.2008 21:10:03
+changed:      24.08.2008 16:38:14
+
+
