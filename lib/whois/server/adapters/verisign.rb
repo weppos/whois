@@ -49,7 +49,7 @@ module Whois
           def extract_referral(response)
             if response =~ /Domain Name:/
               endpoint = response.scan(/Whois Server: (.+?)$/).flatten.last
-              endpoint.strip!
+              endpoint.strip! if endpoint != nil
               endpoint = nil  if endpoint == "not defined"
               endpoint
             end
