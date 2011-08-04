@@ -18,9 +18,9 @@
 
 * FIXED: whois.nic.it parser must support `pendingDelete / pendingDelete' status.
 
-* FIXED: whois.nic.asia parser must support `CLIENT' statuses.
+* FIXED: whois.nic.asia parser must support `CLIENT' status.
 
-* FIXED: whois.nic.cz parser must support `Update prohibited' statuses.
+* FIXED: whois.nic.cz parser must support `Update prohibited' status.
 
 * FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
   when the response from the Verisign database doesn't contain a
@@ -29,6 +29,8 @@
 * FIXED: whois.eu parser changed the format of the nameserver property (#99).
 
 * FIXED: whois.nic.uk parser should return `:invalid' status when the domain is invalid.
+
+* FIXED: whois.cira.ca parser must support `unavailable' status (#102).
 
 
 == Release 2.0.4

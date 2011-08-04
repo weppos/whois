@@ -76,4 +76,14 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end
+  describe "#valid?" do
+    it do
+      @parser.valid?.should == true
+    end
+  end
+  describe "#invalid?" do
+    it do
+      @parser.invalid?.should == false
+    end
+  end
 end

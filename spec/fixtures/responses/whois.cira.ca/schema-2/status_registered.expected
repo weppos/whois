@@ -39,3 +39,10 @@
   should: %s[2].name == "ns3.google.com"
   should: %s[3] be_a(_nameserver)
   should: %s[3].name == "ns4.google.com"
+
+
+#valid?
+  should: %s == true
+
+#invalid?
+  should: %s == false

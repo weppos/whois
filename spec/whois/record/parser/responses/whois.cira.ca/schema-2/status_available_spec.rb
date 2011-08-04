@@ -62,4 +62,14 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_available.expected" do
       @parser.nameservers.should == []
     end
   end
+  describe "#valid?" do
+    it do
+      @parser.valid?.should == true
+    end
+  end
+  describe "#invalid?" do
+    it do
+      @parser.invalid?.should == false
+    end
+  end
 end

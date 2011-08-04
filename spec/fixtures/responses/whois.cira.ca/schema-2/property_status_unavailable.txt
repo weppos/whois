@@ -1,0 +1,11 @@
+Domain name:           mediom.ca
+Domain status:         unavailable
+Error code:            01114
+Error message:         The domain name provided conflicts with at least one other registered domain name and as a result is not available for registration (e.g. xyz.ca conflicts with xyz.on.ca).
+
+% WHOIS look-up made at 2011-08-04 16:46:53 (GMT)
+%
+% Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
+% Notice, available at http://www.cira.ca/legal-notice/?lang=en 
+%
+% (c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/) 

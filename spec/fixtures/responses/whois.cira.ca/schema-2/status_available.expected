@@ -25,3 +25,10 @@
 #nameservers
   should: %s be_a(Array)
   should: %s == []
+
+
+#valid?
+  should: %s == true
+
+#invalid?
+  should: %s == false

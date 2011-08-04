@@ -36,6 +36,7 @@ module Whois
               when "auto-renew grace" then :registered
               when "to be released"   then :registered
               when "available"        then :available
+              when "unavailable"      then :invalid
               # schema-1
               when "exist"      then :registered
               when "avail"      then :available
@@ -96,11 +97,11 @@ module Whois
 
         # Nameservers are listed in the following formats:
         #
-        #       ns1.google.com
-        #       ns2.google.com
+        #   ns1.google.com
+        #   ns2.google.com
         #
-        #       ns1.google.com                 216.239.32.10
-        #       ns2.google.com                 216.239.34.10
+        #   ns1.google.com  216.239.32.10
+        #   ns2.google.com  216.239.34.10
         #
         property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
@@ -114,6 +115,9 @@ module Whois
 
         # Attempts to detect and returns the
         # schema version.
+        #
+        # TODO: This is very empiric.
+        #       Use the available status in combination with the creation date label.
         def schema
           @schema ||= if content_for_scanner =~ /^% \(c\) (.+?) Canadian Internet Registration Authority/
             case $1
@@ -123,6 +127,21 @@ module Whois
           end
           @schema || Whois.bug!(ParserError, "Unable to detect schema version.")
         end
+
+        # NEWPROPERTY
+        def valid?
+          cached_properties_fetch(:valid?) do
+            !invalid?
+          end
+        end
+
+        # NEWPROPERTY
+        def invalid?
+          cached_properties_fetch(:invalid?) do
+            status == :invalid
+          end
+        end
+
 
       end
 
