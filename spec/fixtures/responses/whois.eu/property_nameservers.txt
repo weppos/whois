@@ -65,6 +65,8 @@ Name servers:
 	a.nic.eu
 	l.nic.eu
 	p.nic.eu
+	ns1.eurid.eu (91.220.191.220)
+	ns2.eurid.eu (195.234.53.220)
 
 Keys:
 	keyTag:34023 flags:KSK protocol:3 algorithm:RSA-SHA1-NSEC3 pubKey:AwEAAbu3N0HTlocsABTY4SmW5Et6kAwa1BHg2Jmjcy87VIvKrubLCjeOFLbC2hklqnlZvlyUI5DzmS3YW/1iGNQJ+u9Rdv63BWq1HPCimkxJasSQvIff1zTYDujCucJgnn5Y3nVnJYaRvn3pmaQYmVA4jL/b3vuOmCI1jNxUNKnfxYXntYBEvfU2C824Bsv+ngKwAVIW/+3dtDhCsHfYzN8lIRHXR9yiG3/sLvFUDUH4n9qIwYGFQ00Kiv/j35VGWwruLS2nj98tw2zEgKg9otcunatVSltUnajuauaTamSTDU/cKk45QHumbQxqxQ6CMv3irDsfVYh85tUeMtiXTb4Sn7s=
