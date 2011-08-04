@@ -57,4 +57,14 @@ describe Whois::Record::Parser::WhoisSrsNetNz, "status_invalid.expected" do
       @parser.nameservers.should == []
     end
   end
+  describe "#valid?" do
+    it do
+      @parser.valid?.should == false
+    end
+  end
+  describe "#invalid?" do
+    it do
+      @parser.invalid?.should == true
+    end
+  end
 end
