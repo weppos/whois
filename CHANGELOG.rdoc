@@ -34,7 +34,7 @@
 * SERVER: Added the following new IDN TLDs:
     * .XN--90A3AC (.СРБ, Serbia) (#94)
 
-* FIXED: whois.nic.it parser must support pendinUpdate and pendingTransfer statuses.
+* FIXED: whois.nic.it parser must support pendingUpdate and pendingTransfer statuses.
 
 * FIXED: whois.nic-se.se crashes in some cases where the modified: attribute is an invalid date.
 
