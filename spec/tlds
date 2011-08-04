@@ -1,53 +1,19 @@
-tld;registry;available;unavailable
-ae.org;whois.centralnic.com;qrops.ae.org;u34jedzcq.ae.org
-ar.com;whois.centralnic.com;hotel.ar.com;u34jedzcq.ar.com
-br.com;whois.centralnic.com;billboard.br.com;u34jedzcq.br.com
-cn.com;whois.centralnic.com;gsn.cn.com;u34jedzcq.cn.com
-de.com;whois.centralnic.com;boerse.de.com;u34jedzcq.de.com
-eu.com;whois.centralnic.com;walkabout.eu.com;u34jedzcq.eu.com
-gb.com;whois.centralnic.com;hotel.gb.com;u34jedzcq.gb.com
-gb.net;whois.centralnic.com;hotel.gb.net;u34jedzcq.gb.net
-hu.com;whois.centralnic.com;xxx.hu.com;u34jedzcq.hu.com
-jpn.com;whois.centralnic.com;koi.jpn.com;u34jedzcq.jpn.com
-kr.com;whois.centralnic.com;academyart.kr.com;u34jedzcq.kr.com
-no.com;whois.centralnic.com;mrsa.no.com;u34jedzcq.no.com
-qc.com;whois.centralnic.com;ceo.qc.com;u34jedzcq.qc.com
-ru.com;whois.centralnic.com;srk.ru.com;u34jedzcq.ru.com
-sa.com;whois.centralnic.com;fynbos.sa.com;u34jedzcq.sa.com
-se.com;whois.centralnic.com;hotel.se.com;u34jedzcq.se.com
-se.net;whois.centralnic.com;hotel.se.net;u34jedzcq.se.net
-uk.com;whois.centralnic.com;history.uk.com;u34jedzcq.uk.com
-uk.net;whois.centralnic.com;paramount.uk.net;u34jedzcq.uk.net
-us.com;whois.centralnic.com;college.us.com;u34jedzcq.us.com
-uy.com;whois.centralnic.com;ctrl.uy.com;u34jedzcq.uy.com
-za.com;whois.centralnic.com;siyenza.za.com;u34jedzcq.za.com
-com;whois.crsnic.net;google.com;u34jedzcq.com
-za.net;whois.za.net;karnaugh.za.net;u34jedzcq.za.net
-net;whois.crsnic.net;google.net;u34jedzcq.net
-eu.org;whois.eu.org;google.eu.org;u34jedzcq.eu.org
-za.org;whois.za.org;csa.za.org;u34jedzcq.za.org
-org;whois.publicinterestregistry.net;google.org;u34jedzcq.org
-edu;whois.educause.edu;google.edu;u34jedzcq.edu
-gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
-int;whois.iana.org;nato.int;u34jedzcq.int
-mil;;;
-arpa;whois.iana.org;ip6.arpa;u34jedzcq.arpa
-aero;whois.aero;srilankan.aero;u34jedzcq.aero
-asia;whois.nic.asia;srilankan.aero;u34jedzcq.asia
-biz;whois.biz;google.biz;u34jedzcq.biz
-cat;whois.cat;gencat.cat;u34jedzcq.cat
-coop;whois.nic.coop;calgary.coop;u34jedzcq.coop
-info;whois.afilias.info;google.info;u34jedzcq.info
-jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
-mobi;whois.dotmobiregistry.net;google.mobi;u34jedzcq.mobi
-museum;whois.museum;musedoma.museum;u34jedzcq.museum
-name;whois.nicc.name;carletti.name;u34jedzcq.name
-pro;whois.registrypro.pro;registry.pro;u34jedzcq.pro
-tel;whois.nic.tel;weppos.tel;u34jedzcq.tel
-travel;whois.nic.travel;travel.travel;u34jedzcq.travel
+#Whois::Server.define :tld, ".ac.za", "whois.ac.za"
+#Whois::Server.define :tld, ".bj", "whois.nic.bj"
+#Whois::Server.define :tld, ".co.pl", "whois.co.pl"
+#Whois::Server.define :tld, ".dm", "whois.nic.dm"
+#Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
+#Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
+#Whois::Server.define :tld, ".gp", "whois.nic.gp"
+#Whois::Server.define :tld, ".kp", "whois.kcce.kp"
+#Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
+.com.uy;;;
+ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
+ae.org;whois.centralnic.com;qrops.ae.org;u34jedzcq.ae.org
 ae;whois.aeda.net.ae;google.ae;u34jedzcq.ae
+aero;whois.aero;srilankan.aero;u34jedzcq.aero
 af;whois.nic.af;google.af;u34jedzcq.af
 af;whois.nic.ag;google.ag;u34jedzcq.ag
 ai;whois.ai;google.ai;u34jedzcq.ai
@@ -56,9 +22,11 @@ am;whois.nic.am;google.am;u34jedzcq.am
 an;;;
 ao;;;
 aq;;;
+ar.com;whois.centralnic.com;hotel.ar.com;u34jedzcq.ar.com
 ar;;;
+arpa;whois.iana.org;ip6.arpa;u34jedzcq.arpa
 as;whois.nic.as;google.as;u34jedzcq.as
-priv.at;whois.nic.priv.at;nic.priv.at;u34jedzcq.priv.at
+asia;whois.nic.asia;srilankan.aero;u34jedzcq.asia
 at;whois.nic.at;google.at;u34jedzcq.at
 au;whois.audns.net.au;google.com.au;u34jedzcq.com.au
 aw;;;
@@ -72,19 +40,22 @@ bf;;;
 bg;whois.register.bg;google.bg;u34jedzcq.bg
 bh;;;
 bi;;;
-#Whois::Server.define :tld, ".bj", "whois.nic.bj"
+biz;whois.biz;google.biz;u34jedzcq.biz
+bl.uk;;;
 bm;;;
 bn;;;
 bo;whois.nic.bo;google.br;u34jedzcq.bo
+br.com;whois.centralnic.com;billboard.br.com;u34jedzcq.br.com
 br;whois.registro.br;registro.br;u34jedzcq.br
+british-library.uk;;;
 bs;;;
 bt;;;
 bv;;;
-by;;;
 bw;;;
+by;;;
 bz;whois.afilias-grs.info;google.bz;u34jedzcq.bz
-co.ca;whois.co.ca;internet.co.ca;u34jedzcq.co.ca
 ca;whois.cira.ca;google.ca;u34jedzcq.ca
+cat;whois.cat;gencat.cat;u34jedzcq.cat
 cc;whois.nic.cc;google.cc;u34jedzcq.cc
 cd;whois.nic.cd;google.cd;u34jedzcq.cd
 cf;;;
@@ -94,27 +65,35 @@ ci;www.nic.ci;google.ci;u34jedzcq.ci
 ck;whois.nic.ck;google.co.ck;u34jedzcq.co.ck
 cl;whois.nic.cl;google.cl;u34jedzcq.cl
 cm;whois.netcom.cm;google.cm;u34jedzcq.cm
-#Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
+cn.com;whois.centralnic.com;gsn.cn.com;u34jedzcq.cn.com
 cn;whois.cnnic.cn;google.cn;u34jedzcq.cn
+co.ca;whois.co.ca;internet.co.ca;u34jedzcq.co.ca
+co.pl;whois.co.pl;coco.co.pl;u34jedzcq.co.pl
+co.za;whois.coza.net.za;google.co.za;u34jedzcq.co.za
 co;whois.nic.co;t.co;u34jedzcq.co
+com;whois.crsnic.net;google.com;u34jedzcq.com
+coop;whois.nic.coop;calgary.coop;u34jedzcq.coop
 cr;;;
 cu;;;
 cv;;;
 cx;whois.nic.cx;google.cx;u34jedzcq.cx
 cy;;;
 cz;whois.nic.cz;google.cz;u34jedzcq.cz
+de.com;whois.centralnic.com;boerse.de.com;u34jedzcq.de.com
 de;whois.denic.de;google.de;u34jedzcq.de
 dj;;;
 dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
-#Whois::Server.define :tld, ".dm", "whois.nic.dm"
 do;;;
 dz;whois.nic.dz;google.dz;u34jedzcq.dz
 ec;whois.nic.ec;google.ec;u34jedzcq.ec
+edu;whois.educause.edu;google.edu;u34jedzcq.edu
 ee;whois.tld.ee;google.ee;u34jedzcq.ee
 eg;;;
 er;;;
 es;;;
 et;;;
+eu.com;whois.centralnic.com;walkabout.eu.com;u34jedzcq.eu.com
+eu.org;whois.eu.org;google.eu.org;u34jedzcq.eu.org
 eu;whois.eu;google.eu;u34jedzcq.eu
 fi;whois.ficora.fi;google.fi;u34jedzcq.fi
 fi;whois.usp.ac.fj;google.com.fj;u34jedzcq.fj
@@ -123,6 +102,8 @@ fm;;;
 fo;whois.ripe.net;nic.fo;u34jedzcq.fo
 fr;whois.nic.fr;google.fr;u34jedzcq.fr
 ga;;;
+gb.com;whois.centralnic.com;hotel.gb.com;u34jedzcq.gb.com
+gb.net;whois.centralnic.com;hotel.gb.net;u34jedzcq.gb.net
 gb;;;
 gd;whois.adamsnames.tc;google.gd;u34jedzcq.gd
 ge;;;
@@ -133,7 +114,9 @@ gi;whois.afilias-grs.info;sapphire.gi;u34jedzcq.gi
 gl;whois.nic.gl;google.gl;u34jedzcq.gl
 gm;whois.ripe.net;nic.gm;u34jedzcq.gm
 gn;;;
-#Whois::Server.define :tld, ".gp", "whois.nic.gp"
+gov.uk;whois.ja.net;lboro.gov.uk;u34jedzcq.gov.uk
+gov.za;whois.gov.za;dha.gov.za;u34jedzcq.gov.za
+gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
 gq;;;
 gr;;;
 gs;whois.nic.gs;google.gs;u34jedzcq.gs
@@ -146,28 +129,36 @@ hm;whois.registry.hm;google.hm;u34jedzcq.hm
 hn;whois.afilias-grs.info;google.hn;u34jedzcq.hn
 hr;;;
 ht;whois.nic.ht;google.ht;u34jedzcq.ht
+hu.com;whois.centralnic.com;xxx.hu.com;u34jedzcq.hu.com
 hu;whois.nic.hu;google.hu;u34jedzcq.hu
+icnet.uk;;;
 id;whois.pandi.or.id;google.co.id;u34jedzcq.co.id
 ie;whois.domainregistry.ie;google.ie;u34jedzcq.ie
 il;whois.isoc.org.il;isoc.org.il;u34jedzcq.il
 im;whois.nic.im;google.im;u34jedzcq.im
+in.ua;whois.in.ua;google.in.ua;u34jedzcq.in.ua
 in;whois.registry.in;google.in;u34jedzcq.in
+info;whois.afilias.info;google.info;u34jedzcq.info
+int;whois.iana.org;nato.int;u34jedzcq.int
 io;whois.nic.io;drop.io;u34jedzcq.io
 iq;;;
 ir;whois.nic.ir;google.ir;u34jedzcq.ir
 is;whois.isnic.is;google.is;u34jedzcq.is
 it;whois.nic.it;google.it;u34jedzcq.it
 je;whois.je;google.je;u34jedzcq.je
+jet.uk;;;
 jm;;;
 jo;;;
+jobs;jobswhois.verisign-grs.com;goto.jobs;u34jedzcq.jobs
 jp;whois.jprs.jp;google.jp;u34jedzcq.jp
+jpn.com;whois.centralnic.com;koi.jpn.com;u34jedzcq.jpn.com
 ke;whois.kenic.or.ke;google.co.ke;u34jedzcq.ke
 kg;whois.domain.kg;google.kg;u34jedzcq.kg
 kh;;;
 ki;whois.nic.ki;google.ki;u34jedzcq.ki
 km;;;
 kn;;;
-#Whois::Server.define :tld, ".kp", "whois.kcce.kp"
+kr.com;whois.centralnic.com;academyart.kr.com;u34jedzcq.kr.com
 kr;whois.kr;google.kr;u34jedzcq.kr
 kw;;;
 ky;;;
@@ -189,61 +180,77 @@ md;whois.nic.md;google.md;u34jedzcq.md
 me;whois.meregistry.net;google.me;u34jedzcq.me
 mg;whois.nic.mg;google.mg;u34jedzcq.mg
 mh;;;
+mil;;;
 mk;;;
 ml;;;
 mm;;;
 mn;whois.afilias-grs.info;google.mn;u34jedzcq.mn
 mo;;;
+mobi;whois.dotmobiregistry.net;google.mobi;u34jedzcq.mobi
+mod.uk;;;
 mp;;;
 mq;;;
 mr;;;
 ms;whois.nic.ms;google.ms;u34jedzcq.ms
 mt;;;
 mu;whois.nic.mu;google.mu;u34jedzcq.mu
+museum;whois.museum;musedoma.museum;u34jedzcq.museum
 mv;;;
 mw;;;
 mx;whois.nic.mx;google.mx;u34jedzcq.mx
 my;whois.domainregistry.my;google.my;u34jedzcq.my
 mz;;;
 na;whois.na-nic.com.na;google.na;u34jedzcq.na
+name;whois.nicc.name;carletti.name;u34jedzcq.name
 nc;;;
 ne;;;
+net;whois.crsnic.net;google.net;u34jedzcq.net
 nf;whois.nic.net.nf;google.nf;u34jedzcq.nf
 ng;whois.nic.net.ng;nic.net.ng;u34jedzcq.ng
+nhs.uk;;;
 ni;;;
 nl;whois.domain-registry.nl;google.nl;u34jedzcq.nl
+nls.uk;;;
+no.com;whois.centralnic.com;mrsa.no.com;u34jedzcq.no.com
 no;whois.norid.no;google.no;u34jedzcq.no
 np;;;
 nr;;;
 nu;whois.nic.nu;google.nu;u34jedzcq.nu
 om;;;
+org.za;whois.org.za;joburg.org.za;u34jedzcq.org.za
+org;whois.publicinterestregistry.net;google.org;u34jedzcq.org
 pa;;;
+parliament.uk;;;
 pe;kero.yachay.pe;google.pe;u34jedzcq.pe
 pf;;;
 pg;;;
 ph;;;
 pk;;;
-#Whois::Server.define :tld, ".co.pl", "whois.co.pl"
-co.pl;whois.co.pl;coco.co.pl;u34jedzcq.co.pl
 pl;whois.dns.pl;google.pl;u34jedzcq.pl
 pm;whois.nic.fr;nic.pm;u34jedzcq.pm
 pn;;;
+police.uk;;;
 pr;whois.nic.pr;google.pr;u34jedzcq.pr
+priv.at;whois.nic.priv.at;nic.priv.at;u34jedzcq.priv.at
+pro;whois.registrypro.pro;registry.pro;u34jedzcq.pro
 ps;whois.pnina.ps;google.ps;u34jedzcq.ps
 pt;whois.dns.pt;google.pt;u34jedzcq.pt
 pw;;;
 py;;;
 qa;;;
+qc.com;whois.centralnic.com;ceo.qc.com;u34jedzcq.qc.com
 re;whois.nic.fr;nic.re;u34jedzcq.re
 ro;whois.rotld.ro;google.ro;u34jedzcq.ro
 rs;;;
-#Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
+ru.com;whois.centralnic.com;srk.ru.com;u34jedzcq.ru.com
 ru;whois.ripn.net;google.ru;u34jedzcq.ru
 rw;;;
+sa.com;whois.centralnic.com;fynbos.sa.com;u34jedzcq.sa.com
 sa;whois.nic.net.sa;saudigazette.com.sa;u34jedzcq.com.sa
-#Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
 sc;whois.afilias-grs.info;google.sc;u34jedzcq.sc
 sd;;;
+se.com;whois.centralnic.com;hotel.se.com;u34jedzcq.se.com
+se.net;whois.centralnic.com;hotel.se.net;u34jedzcq.se.net
 se;whois.nic-se.se;google.se;u34jedzcq.se
 sg;whois.sgnic.sg;google.sg;u34jedzcq.sg
 sh;whois.nic.sh;google.sh;u34jedzcq.sh
@@ -262,38 +269,32 @@ sy;;;
 sz;;;
 tc;whois.adamsnames.tc;google.tc;u34jedzcq.tc
 td;;;
+tel;whois.nic.tel;weppos.tel;u34jedzcq.tel
 tf;whois.nic.fr;google.tf;u34jedzcq.rf
 tg;;;
 th;whois.thnic.co.th;google.co.th;u34jedzcq.co.th
 tj;;;
 tk;whois.dot.tk;thinkcode.tk;u34jedzcq.tk
 tl;whois.nic.tl;thinkcode.tl;u34jedzcq.tl
+tld;registry;available;unavailable
 tm;whois.nic.tm;google.tm;u34jedzcq.tm
 tn;;;
 to;whois.tonic.to;go.to;u34jedzcq.to
 tp;;;
 tr;whois.nic.tr;google.com.tr;u34jedzcq.com.tr
+travel;whois.nic.travel;travel.travel;u34jedzcq.travel
 tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
 tw;whois.twnic.net.tw;google.com.tw;u34jedzcq.com.tw
 tz;whois.tznic.or.tz;dailynews.co.tz;u34jedzcq.co.tz
-in.ua;whois.in.ua;google.in.ua;u34jedzcq.in.ua
 ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
 ug;whois.co.ug;google.co.ug;u34jedzcq.co.ug
-ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
-bl.uk;;;
-british-library.uk;;;
-gov.uk;whois.ja.net;lboro.gov.uk;u34jedzcq.gov.uk
-icnet.uk;;;
-jet.uk;;;
-mod.uk;;;
-nhs.uk;;;
-nls.uk;;;
-parliament.uk;;;
-police.uk;;;
+uk.com;whois.centralnic.com;history.uk.com;u34jedzcq.uk.com
+uk.net;whois.centralnic.com;paramount.uk.net;u34jedzcq.uk.net
 uk;whois.nic.uk;google.co.uk;u34jedzcq.co.uk
+us.com;whois.centralnic.com;college.us.com;u34jedzcq.us.com
 us;whois.nic.us;google.us;u34jedzcq.us
-.com.uy;;;
+uy.com;whois.centralnic.com;ctrl.uy.com;u34jedzcq.uy.com
 uy;whois.nic.org.uy;seciu.edu.uy;u34jedzcq.edu.uy
 uz;whois.cctld.uz;google.uz;u34jedzcq.uz
 va;whois.ripe.net;vatican.va;u34jedzcq.va
@@ -304,17 +305,6 @@ vi;;;
 vn;;;
 vu;;;
 wf;whois.nic.fr;nic.wf;u34jedzcq.wf
-ws;whois.samoanic.ws;google.ws;u34jedzcq.ws
-ye;;;
-yt;whois.nic.fr;nic.yt;u34jedzcq.yt
-#Whois::Server.define :tld, ".ac.za", "whois.ac.za"
-co.za;whois.coza.net.za;google.co.za;u34jedzcq.co.za
-gov.za;whois.gov.za;dha.gov.za;u34jedzcq.gov.za
-org.za;whois.org.za;joburg.org.za;u34jedzcq.org.za
-za;;;
-zm;;;
-zw;;;
-xxx;whois.nic.xxx;nic.xxx;u34jedzcq.xxx
 Whois::Server.define :tld, ".xn--3e0b707e", "whois.kr"
 Whois::Server.define :tld, ".xn--45brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
@@ -322,22 +312,32 @@ Whois::Server.define :tld, ".xn--fiqz9s", "cwhois.cnnic.cn"
 Whois::Server.define :tld, ".xn--fpcrj9c3d", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--fzc2c9e2c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--gecrj9c", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--h2brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
 Whois::Server.define :tld, ".xn--kprw13d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--kpry57d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--mgbaam7a8h", "whois.aeda.net.ae"
 Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--mgbbh1a71e", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--mgberp4a5d4ar", "whois.nic.net.sa"
 Whois::Server.define :tld, ".xn--o3cw4h", "whois.thnic.co.th"
-xn--p1ai;whois.ripn.net;xn----8sbc3ahklcs4adf.xn--p1ai;u34jedzcq.xn--p1ai
+Whois::Server.define :tld, ".xn--ogbpf8fl", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--pgbs0dh", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--s9brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
 Whois::Server.define :tld, ".xn--wgbl6a", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
-Whois::Server.define :tld, ".xn--h2brj9c", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--mgbbh1a71e", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--ogbpf8fl", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--s9brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--xkc2dl3a5ee0h", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--yfro4i67o", "whois.sgnic.sg"
+Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
+ws;whois.samoanic.ws;google.ws;u34jedzcq.ws
+xn--p1ai;whois.ripn.net;xn----8sbc3ahklcs4adf.xn--p1ai;u34jedzcq.xn--p1ai
+xxx;whois.nic.xxx;nic.xxx;u34jedzcq.xxx
+ye;;;
+yt;whois.nic.fr;nic.yt;u34jedzcq.yt
+za.com;whois.centralnic.com;siyenza.za.com;u34jedzcq.za.com
+za.net;whois.za.net;karnaugh.za.net;u34jedzcq.za.net
+za.org;whois.za.org;csa.za.org;u34jedzcq.za.org
+za;;;
+zm;;;
+zw;;;
