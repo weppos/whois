@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisNicUk, "status_invalid.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#status" do
+    it do
+      @parser.status.should == :invalid
+    end
+  end
   describe "#valid?" do
     it do
       @parser.valid?.should == false

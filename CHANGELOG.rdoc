@@ -16,7 +16,7 @@
 
 * FIXED: whois.nic.it parser must support `NO-PROVIDER' status.
 
-* FIXED: whois.nic.it parser must support `'pendingDelete / pendingDelete status.
+* FIXED: whois.nic.it parser must support `pendingDelete / pendingDelete' status.
 
 * FIXED: whois.nic.asia parser must support `CLIENT' statuses.
 
@@ -27,6 +27,8 @@
   referral (#103)
 
 * FIXED: whois.eu parser changed the format of the nameserver property (#99).
+
+* FIXED: whois.nic.uk parser should return `:invalid' status when the domain is invalid.
 
 
 == Release 2.0.4
