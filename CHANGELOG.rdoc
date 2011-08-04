@@ -22,6 +22,8 @@
   when the response from the Verisign database doesn't contain a
   referral (#103)
 
+* FIXED: whois.eu parser changed the format of the nameserver property (#99).
+
 
 == Release 2.0.4
 
