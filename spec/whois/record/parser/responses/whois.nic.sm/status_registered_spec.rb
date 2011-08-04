@@ -39,13 +39,13 @@ describe Whois::Record::Parser::WhoisNicSm, "status_registered.expected" do
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2003-04-03")
+      @parser.created_on.should == Time.parse("2003-04-03 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2008-08-01")
+      @parser.updated_on.should == Time.parse("2008-08-01 00:00:00 UTC")
     end
   end
   describe "#expires_on" do

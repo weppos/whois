@@ -59,19 +59,19 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2002-03-27 00:01:00 GMT")
+      @parser.created_on.should == Time.parse("2002-03-27 00:01:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-03-01 12:01:04 GMT")
+      @parser.updated_on.should == Time.parse("2009-03-01 12:01:04 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-03-26 23:59:59 GMT")
+      @parser.expires_on.should == Time.parse("2010-03-26 23:59:59 UTC")
     end
   end
   describe "#registrar" do

@@ -51,7 +51,7 @@ describe Whois::Record::Parser::WhoisMuseum, "status_registered.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2003-07-31 11:00:00 GMT")
+      @parser.expires_on.should == Time.parse("2003-07-31 11:00:00 UTC")
     end
   end
   describe "#nameservers" do

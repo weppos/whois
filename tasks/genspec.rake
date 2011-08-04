@@ -78,7 +78,7 @@ end
       #     ],
       #     "created_on" => [
       #       ["%s", "should", "be_a(Time)"],
-      #       ["%s", "should", "== Time.parse(\"2002-03-27 00:01:00 GMT\")"]
+      #       ["%s", "should", "== Time.parse(\"2002-03-27 00:01:00 UTC\")"]
       #     ]
       #   }
       #

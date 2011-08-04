@@ -39,19 +39,19 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2006-02-14 09:12:37 GMT")
+      @parser.created_on.should == Time.parse("2006-02-14 09:12:37 UTC")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-03-31 16:22:42 GMT")
+      @parser.updated_on.should == Time.parse("2009-03-31 16:22:42 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-02-14 09:12:37 GMT")
+      @parser.expires_on.should == Time.parse("2010-02-14 09:12:37 UTC")
     end
   end
   describe "#nameservers" do

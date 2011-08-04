@@ -10,11 +10,11 @@
 
 #created_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2003-04-03")
+  should: %s == Time.parse("2003-04-03 00:00:00 UTC")
 
 #updated_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2008-08-01")
+  should: %s == Time.parse("2008-08-01 00:00:00 UTC")
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
