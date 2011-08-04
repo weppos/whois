@@ -54,7 +54,7 @@ Registrar:
 	Name:	 eMarkMonitor, Inc.
 	Website: www.markmonitor.com
 
-Nameservers:
+Name servers:
 	ns1.google.com
 	ns2.google.com
 	ns3.google.com
