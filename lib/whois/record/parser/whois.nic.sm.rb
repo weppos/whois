@@ -50,13 +50,13 @@ module Whois
 
         property_supported :created_on do
           if content_for_scanner =~ /Registration date: (.+)\n/
-            Time.new(*$1.split('/').reverse)
+            Time.utc(*$1.split('/').reverse)
           end
         end
 
         property_supported :updated_on do
           if content_for_scanner =~ /Last Update: (.+)\n/
-            Time.new(*$1.split('/').reverse)
+            Time.utc(*$1.split('/').reverse)
           end
         end
 
