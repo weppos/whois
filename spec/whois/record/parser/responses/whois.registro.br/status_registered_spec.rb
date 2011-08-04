@@ -38,22 +38,30 @@ describe Whois::Record::Parser::WhoisRegistroBr, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("20110630")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("20110630")
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("20120630")
     end
   end
   describe "#nameservers" do
     it do
-      lambda { @parser.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should have(2).items
+      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].name.should == "a.sec.dns.br"
+      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].name.should == "b.sec.dns.br"
     end
   end
 end
