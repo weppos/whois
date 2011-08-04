@@ -95,7 +95,7 @@ end
           when /^\s+(.+?): (.+?) (.+)/
             tests[match] << [$2, $1, $3]
           else
-            raise "Invalid Line `#{line}'"
+            raise "Invalid Line `#{line}' in `#{source_path}'"
         end
       end
 
