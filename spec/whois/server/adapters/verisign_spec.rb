@@ -36,7 +36,16 @@ describe Whois::Server::Adapters::Verisign do
         record.parts.should == [Whois::Record::Part.new(referral, "whois.test"), Whois::Record::Part.new(response, "whois.markmonitor.com")]
       end
 
-      it "ignore referral when is not defined" do
+      it "extracts the closest referral when multiple referrals" do
+        referral = File.read(fixture("referrals/crsnic.com_referral_multiple.txt"))
+        @server.expects(:ask_the_socket).with("=domain.test", "whois.test", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns(referral)
+        @server.expects(:ask_the_socket).with("domain.test", "whois.markmonitor.com", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns("")
+
+        record = @server.query("domain.test")
+        record.parts.should have(2).parts
+      end
+
+      it "ignores referral when is not defined" do
         referral = File.read(fixture("referrals/crsnic.com_referral_not_defined.txt"))
         @server.expects(:ask_the_socket).with("=domain.test", "whois.test", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns(referral)
         @server.expects(:ask_the_socket).never
@@ -45,13 +54,15 @@ describe Whois::Server::Adapters::Verisign do
         record.parts.should have(1).part
       end
 
-      it "extracts the closest referral when multiple referrals" do
-        referral = File.read(fixture("referrals/crsnic.com_referral_multiple.txt"))
+      # (see #103)
+      # This is the case of vrsn-20100925-dnssecmonitor86.net
+      it "gracefully ignores referral when is missing" do
+        referral = File.read(fixture("referrals/crsnic.com_referral_missing.txt"))
         @server.expects(:ask_the_socket).with("=domain.test", "whois.test", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns(referral)
-        @server.expects(:ask_the_socket).with("domain.test", "whois.markmonitor.com", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, nil).returns("")
+        @server.expects(:ask_the_socket).never
 
         record = @server.query("domain.test")
-        record.parts.should have(2).parts
+        record.parts.should have(1).part
       end
     end
   end

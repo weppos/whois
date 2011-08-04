@@ -18,6 +18,10 @@
 
 * FIXED: whois.nic.cz parser must support `Update prohibited' statuses.
 
+* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
+  when the response from the Verisign database doesn't contain a
+  referral (#103)
+
 
 == Release 2.0.4
 
