@@ -30,16 +30,11 @@ module Whois
 
       class WhoisGodaddyCom < Base
 
-        property_supported :status do
-          if available?
-            :available
-          else
-            :registered
-          end
-        end
+        property_not_supported :status
 
+        # The server seems to provide only information for registered domains
         property_supported :available? do
-          !!(content_for_scanner =~ /^No match for (.+)/)
+          false
         end
 
         property_supported :registered? do
@@ -86,7 +81,7 @@ module Whois
         end
 
         property_supported :nameservers do
-          content_for_scanner[/Domain servers in listed order:\n((?:\s*[^\s\n]+\n)+)/, 1].split("\n").map do |line|
+          content_for_scanner[/Domain servers in listed order:\n((?:\s*[^\s\n]+\n)+)\n\s*\n/, 1].split("\n").map do |line|
             Record::Nameserver.new(line.strip)
           end
         end
@@ -121,7 +116,7 @@ module Whois
               :city => info.length >= 4 ? info[-2].to_s.partition(",")[0] : "",
               :state => info.length >= 4 ? info[-2].to_s.partition(",")[2].rpartition(" ")[0].to_s.strip : "",
               :zip => info.length >= 4 ? info[-2].to_s.rpartition(" ")[2] : "",
-              :country_code => info.length >= 5 ? info[-1] : "",
+              :country_code => info.length >= 4 ? info[-1] : "",
               :email => info[0].to_s.scan(/[^\s]\S+@[^\.].*\.[a-z]{2,}[^\s\)\n]/).first,
               :phone => phone,
               :fax => fax
