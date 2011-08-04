@@ -6,7 +6,11 @@
 
 * SERVER: Added .XXX TLD definition.
 
+* SERVER: Updated .SM TLD definition (#97).
+
 * NEW: Ability to detect whois.dns.be throttled responses.
+
+* NEW: Added base whois.nic.sm parser (#97).
 
 * FIXED: whois.meregistry.net parser raises `no time information in ""' when updated_at property is blank.
 

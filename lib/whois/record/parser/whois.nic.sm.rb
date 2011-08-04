@@ -15,9 +15,9 @@ module Whois
     class Parser
 
       #
-      # = whois.audns.net.au parser
+      # = whois.nic.sm parser
       #
-      # Parser for the whois.audns.net.au server.
+      # Parser for the whois.nic.sm server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -25,16 +25,22 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisAudnsNetAu < Base
+      class WhoisNicSm < Base
 
-        # @see http://www.auda.org.au/policies/auda-2002-28/
-        # @see http://www.auda.org.au/policies/auda-2006-07/
         property_supported :status do
-          content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
+            case $1.downcase
+              when "active"         then :registered
+              else
+                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+          else
+            :available
+          end
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "No Data Found")
+          (content_for_scanner.strip == "No entries found.")
         end
 
         property_supported :registered? do
@@ -42,11 +48,15 @@ module Whois
         end
 
 
-        property_not_supported :created_on
+        property_supported :created_on do
+          if content_for_scanner =~ /Registration date: (.+)\n/
+            Time.new(*$1.split('/').reverse)
+          end
+        end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Last Modified:\s+(.+)\n/
-            Time.parse($1)
+          if content_for_scanner =~ /Last Update: (.+)\n/
+            Time.new(*$1.split('/').reverse)
           end
         end
 
@@ -54,8 +64,10 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+          if content_for_scanner =~ /DNS Servers:\n((.*\n)+)(?:\n|\z)/
+            $1.split("\n").map do |name|
+              Record::Nameserver.new(name.strip)
+            end
           end
         end
 

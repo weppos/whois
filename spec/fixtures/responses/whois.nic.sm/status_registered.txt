@@ -1,0 +1,30 @@
+Domain Name: google.sm
+Registration date: 03/04/2003
+Last Update: 01/08/2008
+Status: Active
+
+Owner:
+Rose Hagan
+Google, Inc.
+1600 Amphitheatre Parkway
+US 94043 Mountain View (CA)
+US
+Phone: +1 650 2530000
+Fax: +1 650 6188571
+Email: dns-admin@google.com
+
+Technical Contact:
+Domain Names Department
+Visiant Outsourcing S.r.l.
+Strada del Drosso 128/6
+I 10135 Torino (TO)
+IT
+Phone: +39 011 3473520
+Fax: +39 011 3473522
+Email: domains.outsourcing@visiant.it
+
+DNS Servers:
+ns1.google.com
+ns2.google.com
+ns3.google.com
+ns4.google.com
