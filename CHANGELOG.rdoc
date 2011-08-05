@@ -1,6 +1,7 @@
 = Changelog
 
-== master
+
+== Release 2.0.5
 
 * SERVER: Updated .BI TLD definition.
 
