@@ -1,0 +1,24 @@
+%
+% whois.sk-nic.sk - whois server for TLD .sk
+%
+
+
+Domain-name         e-biznis.sk
+Admin-id            EVEC-0001
+Admin-name          eVector s.r.o.
+Admin-legal-form    s.r.o
+Admin-org.-ID       36552011
+Admin-address       Coboriho 2, Nitra 94901
+Admin-telephone     421-37-6578941
+Admin-email         info@evector.sk
+Tech-id             BEES-0002
+Tech-name           BeeSoft s.r.o.
+Tech-org.-ID        36723657
+Tech-address        Lamacska cesta 20, Bratislava 84103
+Tech-telephone      421264530707, 421905322795
+dns_name            ns1.beesoft.sk
+dns_name            ns2.beesoft.sk
+Last-update         2011-07-30
+Valid-date          2011-08-27
+Domain-status       DOM_WARN
+

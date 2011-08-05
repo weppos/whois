@@ -1,0 +1,26 @@
+%
+% whois.sk-nic.sk - whois server for TLD .sk
+%
+
+
+Domain-name         dobramasaz.sk
+Admin-id            SECO-0007
+Admin-name          SECORAMA
+Admin-legal-form    s.r.o
+Admin-org.-ID       45509859
+Admin-address       Kresankova 7/B, Bratislava 84105
+Admin-telephone     0000000000, 0000000000
+Admin-email         hmalik@secorama.sk
+Tech-id             FORP-0003
+Tech-name           Forplay, spol. s r.o.
+Tech-org.-ID        35868295
+Tech-address        Laurinska 11, Bratislava - Stare mesto 811 01
+Tech-telephone      0905 403 404
+Tech-email          info@forplay.sk
+dns_name            ns1.brianlurie.com
+dns_name            ns2.brianlurie.com
+dns_name            ns3.brianlurie.com
+Last-update         2011-08-02
+Valid-date          2011-08-16
+Domain-status       DOM_LNOT
+

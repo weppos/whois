@@ -32,6 +32,8 @@
 
 * FIXED: whois.cira.ca parser must support `unavailable' status (#102).
 
+* FIXED: whois.sk-nic.sk parser must support `DOM_EXP', `DOM_LNOT', `DOM_WARN' statuses.
+
 
 == Release 2.0.4
 

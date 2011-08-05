@@ -1,0 +1,27 @@
+%
+% whois.sk-nic.sk - whois server for TLD .sk
+%
+
+
+Domain-name         kuphry.sk
+Admin-id            BCPE-0006
+Admin-name          Bc. Peter Drienovsky
+Admin-legal-form    zivnost
+Admin-org.-ID       40332721
+Admin-address       Hviezdoslavova 22, Zlate Moravce 95301
+Admin-telephone     +421 905 2398 07
+Admin-email         peter@drienovsky.sk
+Tech-id             BCPE-0006
+Tech-name           Bc. Peter Drienovsky
+Tech-org.-ID        40332721
+Tech-address        Hviezdoslavova 22, Zlate Moravce 95301
+Tech-telephone      +421 905 2398 07
+Tech-email          peter@drienovsky.sk
+dns_name            ns1.servage.net
+dns_name            ns2.servage.net
+dns_name            ns3.servage.net
+dns_name            ns4.servage.net
+Last-update         2011-08-02
+Valid-date          2011-08-16
+Domain-status       DOM_EXP
+

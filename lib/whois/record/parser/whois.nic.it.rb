@@ -48,7 +48,8 @@ module Whois
           when "grace-period", "pendingupdate", "pendingtransfer", "no-provider"
             :registered
           when "pendingdelete / redemptionperiod", /redemption\-/,
-               "pendingdelete / pendingdelete"  # will be deleted in 5 days
+          # The domain will be deleted in 5 days
+               "pendingdelete / pendingdelete"
             :redemption
           when "unassignable"
             :reserved
