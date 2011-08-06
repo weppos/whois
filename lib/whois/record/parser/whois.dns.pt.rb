@@ -51,7 +51,7 @@ module Whois
 
         property_supported :created_on do
           if content_for_scanner =~ / Creation Date .+?:\s+(.*)\n/
-            DateTime.strptime($1, "%d/%m/%Y").to_time
+            Time.utc(*$1.split("/").reverse)
           end
         end
 

@@ -39,7 +39,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_reserved.expected" do
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2009-02-09 01:00:00")
+      @parser.created_on.should == Time.parse("2009-02-09 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
