@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* FIXED: whois.pnina.ps parser do not support `Active' status variants.
+
 
 == Release 2.0.5
 

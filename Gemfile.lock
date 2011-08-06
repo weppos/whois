@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    whois (2.0.4)
+    whois (2.0.5)
 
 GEM
   remote: http://rubygems.org/
