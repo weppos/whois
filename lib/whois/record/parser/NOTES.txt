@@ -36,8 +36,7 @@ whois.nic.mg
 whois.na-nic.com.na
 kero.yachay.pe
 whois.kenic.or.ke
-
-# http://coccaregistry.net/index.php/whois.html
+# start http://coccaregistry.net/index.php/whois.html
 whois.nic.cx
 whois.nic.gs
 whois.nic.ki
@@ -45,6 +44,23 @@ whois.nic.net.nf
 whois.nic.net.sb
 whois.nic.tl
 whois.nic.ms
+# end http://coccaregistry.net/index.php/whois.html
+
+lib/whois/record/parser/kero.yachay.pe.rb
+lib/whois/record/parser/whois.gg.rb
+lib/whois/record/parser/whois.kenic.or.ke.rb
+lib/whois/record/parser/whois.na-nic.com.na.rb
+lib/whois/record/parser/whois.netcom.cm.rb
+lib/whois/record/parser/whois.nic.cx.rb
+lib/whois/record/parser/whois.nic.gl.rb
+lib/whois/record/parser/whois.nic.gs.rb
+lib/whois/record/parser/whois.nic.ki.rb
+lib/whois/record/parser/whois.nic.mg.rb
+lib/whois/record/parser/whois.nic.ms.rb
+lib/whois/record/parser/whois.nic.net.nf.rb
+lib/whois/record/parser/whois.nic.net.ng.rb
+lib/whois/record/parser/whois.pnina.ps.rb
+lib/whois/record/parser/whois.registry.gy.rb
 
 # AFNIC
 whois.nic.fr

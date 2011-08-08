@@ -30,8 +30,10 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "active"         then :registered
-              when "not registered" then :available
+              when "active"
+                :registered
+              when "not registered"
+                :available
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -41,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          (status == :available)
+          status == :available
         end
 
         property_supported :registered? do
@@ -71,7 +73,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.downcase)
+              Record::Nameserver.new(name.strip)
             end
           end
         end
