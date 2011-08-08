@@ -28,10 +28,12 @@ module Whois
       class WhoisGg < Base
 
         property_supported :status do
-          if content_for_scanner =~ /status:(.+?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "0" then :available
-              when "1" then :registered
+              when "active"
+                :registered
+              when "not registered"
+                :available
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -49,17 +51,25 @@ module Whois
         end
 
 
-        property_not_supported :created_on
+        property_supported :created_on do
+          if content_for_scanner =~ /Created:\s+(.+?)\n/
+            Time.parse($1)
+          end
+        end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          if content_for_scanner =~ /Modified:\s+(.+?)\n/
+            Time.parse($1)
+          end
+        end
 
         property_not_supported :expires_on
 
 
         property_supported :nameservers do
-          if content_for_scanner =~ /Registered Nameservers\n[-]+\n((.+\n)+)\n/
+          if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             $1.split("\n").map do |name|
-              Record::Nameserver.new(name.chomp("."))
+              Record::Nameserver.new(name.strip.downcase)
             end
           end
         end

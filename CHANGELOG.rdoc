@@ -2,6 +2,8 @@
 
 == master
 
+* CHANGED: whois.gg has changed response format.
+
 * FIXED: whois.pnina.ps parser do not support `Active' status variants.
 
 * FIXED: whois.sk-nic.sk parser must support `DOM_TA' status.

@@ -9,10 +9,12 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s be_a(Time)
+  should: %s == Time.parse("2003-04-30 00:00:00")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s be_a(Time)
+  should: %s == Time.parse("2011-03-31 00:00:00")
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
@@ -24,8 +26,8 @@
   should: %s[0] be_a(_nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[1] be_a(_nameserver)
-  should: %s[1].name == "ns4.google.com"
+  should: %s[1].name == "ns2.google.com"
   should: %s[2] be_a(_nameserver)
-  should: %s[2].name == "ns2.google.com"
+  should: %s[2].name == "ns4.google.com"
   should: %s[3] be_a(_nameserver)
   should: %s[3].name == "ns3.google.com"
