@@ -1,0 +1,25 @@
+%
+% whois.sk-nic.sk - whois server for TLD .sk
+%
+
+
+Domain-name         plac.sk
+Admin-id            KATA-0423
+Admin-name          Katarina Majercakova
+Admin-legal-form    zivnost
+Admin-org.-ID       44304862
+Admin-address       Pradiaren 765/10, Kezmarok 060 01
+Admin-telephone     0907 555 883
+Admin-email         majercakova.katarina@gmail.com
+Tech-id             KATA-0423
+Tech-name           Katarina Majercakova
+Tech-org.-ID        44304862
+Tech-address        Pradiaren 765/10, Kezmarok 060 01
+Tech-telephone      0907 555 883
+Tech-email          majercakova.katarina@gmail.com
+dns_name            ns1.dnparking.sk
+dns_name            ns2.dnparking.sk
+Last-update         2011-08-02
+Valid-date          2011-08-16
+Domain-status       DOM_TA
+

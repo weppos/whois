@@ -32,21 +32,17 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /^Domain-status\s+(.+)\n/
             case $1.downcase
-              # The domain is registered and paid.
-              when  "dom_ok",
-              # Replacement 14-day period for domain payment.
-                    "dom_dakt",
-              # 28 days before the expiration of one year's notice is sent to the first call for an extension of domains.
-              # The domain is still fully functional (14 days).
-                    "dom_warn",
-              # 14 days before the expiration of one year's notice is sent to the second call to the extension of domains.
-              # The domain is still fully functional (14 days).
-                    "dom_lnot",
-              # The domain is expired and has not been renewed (14 days).
+              when  "dom_ok",   # The domain is registered and paid.
+                    "dom_ta",   # The domain is registered and registration fee has to be payed (14 days).
+                                # Replacement 14-day period for domain payment.
+                    "dom_dakt", # 28 days before the expiration of one year's notice is sent to the first call for an extension of domains.
+                                # The domain is still fully functional (14 days).
+                    "dom_warn", # 14 days before the expiration of one year's notice is sent to the second call to the extension of domains.
+                                # The domain is still fully functional (14 days).
+                    "dom_lnot", # The domain is expired and has not been renewed (14 days).
                     "dom_exp"
                 :registered
-              # The domain losts its registrar (28 days).
-              when  "dom_held"
+              when  "dom_held"  # The domain losts its registrar (28 days).
                 :redemption
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")

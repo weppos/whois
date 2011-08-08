@@ -4,6 +4,8 @@
 
 * FIXED: whois.pnina.ps parser do not support `Active' status variants.
 
+* FIXED: whois.sk-nic.sk parser must support `DOM_TA' status.
+
 
 == Release 2.0.5
 
