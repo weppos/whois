@@ -1,0 +1,68 @@
+% New Zealand Domain Name Registry Limited
+% Users confirm on submission their agreement to all published Terms
+%
+version: 5.00
+query_datetime: 2011-08-07T05:56:36+12:00
+domain_name: zumbafitness.co.nz
+query_status: 210 PendingRelease
+domain_dateregistered: 2009-07-14T12:11:36+12:00
+domain_datebilleduntil: 2011-07-14T12:11:36+12:00
+domain_datelastmodified: 2011-07-14T03:13:49+12:00
+domain_datecancelled: 2011-07-14T03:13:49+12:00
+domain_delegaterequested: yes
+domain_signed: no
+%
+registrar_name: NETREGISTRY PTY LTD
+registrar_address1: PO Box 270
+registrar_city: Broadway
+registrar_postalcode: 2007
+registrar_country: AU (AUSTRALIA)
+registrar_phone: +61 2 9699 6099
+registrar_fax: +61 2 9699 6088
+registrar_email: dnsadmin@netregistry.com.au
+%
+registrant_contact_name: Zumba Fitness, Rodrigo, Faerman
+registrant_contact_address1: 3801 North 29th Avenue
+registrant_contact_address2: fl, 33020
+registrant_contact_city: Hollywood
+registrant_contact_country: GB (UNITED KINGDOM)
+registrant_contact_phone: +1 9 549253755
+registrant_contact_email: rodrigo@zumba.com
+%
+admin_contact_name: NetRegistry
+admin_contact_address1: PO BOX 270
+admin_contact_address2: NSW 2007
+admin_contact_city: Broadway
+admin_contact_country: AU (AUSTRALIA)
+admin_contact_phone: +61 2 96996099
+admin_contact_fax: +61 2 96996088
+admin_contact_email: dmain@netregistry.com.au
+%
+technical_contact_name: NETREGISTRY PTY LTD
+technical_contact_address1: PO Box 270
+technical_contact_city: Broadway
+technical_contact_postalcode: 2007
+technical_contact_country: AU (AUSTRALIA)
+technical_contact_phone: +61 2 9699 6099
+technical_contact_fax: +61 2 9699 6088
+technical_contact_email: dnsadmin@netregistry.com.au
+%
+ns_name_01: ns1.netregistry.net
+ns_name_02: ns2.netregistry.net
+ns_name_03: ns3.netregistry.net
+%
+% Users are advised that the following activities are strictly forbidden.
+%
+% Using multiple WHOIS queries, or using the output of multiple WHOIS
+% queries in conjunction with any other facility or service, to enable
+% or effect a download of part or all of the .nz Register.
+%
+% Using any information contained in the WHOIS query output to attempt a
+% targeted contact campaign with any person, or any organisation, using any
+% medium.
+%
+% A breach of these conditions will be treated as a breach of the .nz Policies
+% and Procedures.  Sanctions in line with those specified in the policies and
+% procedures at www.dnc.org.nz may result from any breach.
+%
+% Copyright InternetNZ

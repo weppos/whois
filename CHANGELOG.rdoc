@@ -6,6 +6,8 @@
 
 * FIXED: whois.sk-nic.sk parser must support `DOM_TA' status.
 
+* FIXED: whois.srs.net.nz parser must support `210 PendingRelease' status.
+
 
 == Release 2.0.5
 

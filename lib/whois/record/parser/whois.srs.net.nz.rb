@@ -27,12 +27,16 @@ module Whois
       #
       class WhoisSrsNetNz < Base
 
+        # @see http://dnc.org.nz/content/srs-whois-spec-1.0.html
         property_supported :status do
           if content_for_scanner =~ /query_status:\s(.+)\n/
             case s = $1.downcase
               when /active/               then :registered
               when /available/            then :available
               when /invalid characters/   then :invalid
+              # The domain is no longer active but is in the period prior
+              # to being released for general registrations
+              when "210 pendingrelease"   then :redemption
               else
                 Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
@@ -46,7 +50,7 @@ module Whois
         end
 
         property_supported :registered? do
-          (status == :registered)
+          (status == :registered) || (status == :redemption)
         end
 
 
