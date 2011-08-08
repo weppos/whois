@@ -29,12 +29,12 @@ module Whois
 
         property_supported :status do
           if content_for_scanner =~ /query_status:\s(.+)\n/
-            case $1.downcase
+            case s = $1.downcase
               when /active/               then :registered
               when /available/            then :available
               when /invalid characters/   then :invalid
               else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+                Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")
