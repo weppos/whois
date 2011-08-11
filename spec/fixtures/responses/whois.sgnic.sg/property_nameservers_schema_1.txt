@@ -10,7 +10,7 @@ Registrant:  GOOGLE INC.
 
     Domain Name:		GOOGLE.SG 
     Creation Date:		03-Jan-2005 12:00:00
-    Expiration Date:		03-Jan-2012 00:00:00
+    Expiration Date:		03-Jan-2011 00:00:00
     Domain Status:		OK
     Domain Status:		CLIENT UPDATE PROHIBITED
     Domain Status:		CLIENT TRANSFER PROHIBITED
@@ -19,7 +19,7 @@ Registrant:  GOOGLE INC.
 
     Owner/Main Contact:
 
-        Name:           GOOGLE INC. (SGNIC-ORG1113988)        
+        Name:           GOOGLE INC. (SGNIC-ORG1076986)        
         Registered Address(line1):	1600 AMPHITHEATRE PARKWAY
         Registered Address(line2):	
         Registered Address(line3):	
@@ -31,19 +31,19 @@ Registrant:  GOOGLE INC.
 
     Administrative Contact:
           
-        Name:           GOOGLE  ASIA PACIFIC PTE LTD (SGNIC-ORG1100431)        
-        Registered Address(line1):	8 SHENTON WAY
-        Registered Address(line2):	38-01/01A
+        Name:           IP MIRROR PTE. LTD. - SGNIC ORGIP60218 (SGNIC-ORG1076985)        
+        Registered Address(line1):	47 DUXTON ROAD
+        Registered Address(line2):	IP MIRROR TECHHAUS
         Registered Address(line3):	
         Registered State:		
         Registered Country:		SG
-        Registered Postalcode:		068811
+        Registered Postalcode:		089511
 
 
 
     Technical Contact:
         
-        Name:           GOOGLE INC. (SGNIC-ORG1113988)        
+        Name:           GOOGLE INC. (SGNIC-ORG1076986)        
         Registered Address(line1):	1600 AMPHITHEATRE PARKWAY
         Registered Address(line2):	
         Registered Address(line3):	
@@ -51,26 +51,30 @@ Registrant:  GOOGLE INC.
         Registered Country:		US
         Registered Postalcode:		94043
 
-        Telephone:			+1.6502530000
-        Facsimile:			+1.6502530001  
+        Telephone:			+1.6503300100
+        Facsimile:			+1.6506181434  
         EMAIL:				dns-admin@google.com
 
 
 
     Billing Contact:
           
-        Name:           MARKMONITOR (SGNIC-ORG1082334)        
-        Registered Address(line1):	10400 OVERLAND RD PMB 155
-        Registered Address(line2):	
+        Name:           MARKMONITOR (SGNIC-ORG1076984)        
+        Registered Address(line1):	391 N. ANCESTOR PLACE
+        Registered Address(line2):	SUITE 150
         Registered Address(line3): 	
-        Registered State:		ID
+        Registered State:		CA
         Registered Country:		US
-        Registered Postalcode:		83709
+        Registered Postalcode:		83704
 
 
 
     Name Servers:
-        NS1.GOOGLE.COM          NS2.GOOGLE.COM          NS3.GOOGLE.COM          NS4.GOOGLE.COM  
+        NS1.GOOGLE.COM
+        NS2.GOOGLE.COM
+        NS3.GOOGLE.COM
+        NS4.GOOGLE.COM
+
 
          
 

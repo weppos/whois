@@ -57,8 +57,19 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
-            $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.downcase)
+            values = case value = $1.downcase
+              # schema-1
+              when /^(?:\s+([\w.-]+)\n){2,}/
+                value.split("\n").map(&:strip)
+              # schema-2
+              when /^(?:\s+([\w.-]+)){2,}/
+                value.strip.split(/\s+/)
+              else
+                Whois.bug!("Unknown nameservers format `#{value}'")
+            end
+
+            values.map do |name|
+              Record::Nameserver.new(name)
             end
           end
         end

@@ -3,12 +3,14 @@
 
 == master
 
-* CHANGED: whois.dns.pt has changed nameservers response format.
+* CHANGED: whois.dns.pt changed nameservers response format.
+
+* CHANGED: whois.sgnic.sg changed nameservers response format.
 
 
 == Release 2.0.6
 
-* CHANGED: whois.gg has changed response format.
+* CHANGED: whois.gg changed response format.
 
 * FIXED: whois.pnina.ps parser do not support `Active' status variants.
 

@@ -17,7 +17,7 @@
 
 #expires_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2011-01-03 00:00:00")
+  should: %s == Time.parse("2012-01-03 00:00:00")
 
 
 #nameservers

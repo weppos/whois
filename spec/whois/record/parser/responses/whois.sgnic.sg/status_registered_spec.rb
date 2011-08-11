@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisSgnicSg, "status_registered.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-01-03 00:00:00")
+      @parser.expires_on.should == Time.parse("2012-01-03 00:00:00")
     end
   end
   describe "#nameservers" do
