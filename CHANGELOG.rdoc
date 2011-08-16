@@ -1,7 +1,7 @@
 = Changelog
 
 
-== master
+== Release 2.0.7
 
 * CHANGED: whois.dns.pt changed nameservers response format.
 
