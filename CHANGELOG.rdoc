@@ -1,5 +1,9 @@
 = Changelog
 
+== master
+
+* CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
+
 
 == Release 2.0.7
 

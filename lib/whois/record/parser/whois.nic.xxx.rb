@@ -64,7 +64,7 @@ module Whois
 
         property_supported :updated_on do
           node("Last Updated On") do |value|
-            Time.parse(value)
+            Time.parse(value) unless value.empty?
           end
         end
 
@@ -79,9 +79,9 @@ module Whois
           node("Sponsoring Registrar") do |value|
             value =~ /(.+?) \((.+?)\)/ || Whois.bug!("Unknown registrar format `#{value}'")
             Record::Registrar.new(
-              :id =>            $2,
-              :name =>          $1,
-              :organization =>  $1
+              :id =>            $1,
+              :name =>          $2,
+              :organization =>  $2
             )
           end
         end
