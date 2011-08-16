@@ -2,6 +2,8 @@
 
 == master
 
+* SERVER: Added .COM.DE, .GR.COM, .US.ORG TLD definitions.
+
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
 
