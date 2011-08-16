@@ -90,7 +90,10 @@ module Whois
         private
 
           def contact(element, type)
-            info = content_for_scanner[/#{element}\n((.+\n){6})/, 1].split("\n").map(&:strip)
+            match = content_for_scanner.slice(/#{element}\n((.+\n){6})/, 1)
+            return unless match
+
+            info  = match.split("\n").map(&:strip)
             # 0 DNS Admin
             # 1 Google Inc.
             # 2 1600 Amphitheatre Parkway
