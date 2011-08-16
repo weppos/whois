@@ -9,6 +9,8 @@
 
 * FIXED: whois.markmonitor.com parser crashes when the contacts are empty.
 
+* FIXED: whois.educause.edu parser crashes when the updated_on property is `unknown'.
+
 
 == Release 2.0.6
 

@@ -52,7 +52,7 @@ module Whois
 
         property_supported :updated_on do
           if content_for_scanner =~ /Domain record last updated:\s+(.+?)\n/
-            Time.parse($1)
+            Time.parse($1) unless $1 == "unknown"
           end
         end
 
