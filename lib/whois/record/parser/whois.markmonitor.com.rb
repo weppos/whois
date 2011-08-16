@@ -61,8 +61,8 @@ module Whois
 
         property_supported :registrar do
           Record::Registrar.new(
-            :name => content_for_scanner[/Registrar Name: (.+)\n/, 1],
-            :url  => content_for_scanner[/Registrar Homepage: (.+)\n/, 1]
+            :name => content_for_scanner.slice(/Registrar Name: (.+)\n/, 1),
+            :url  => content_for_scanner.slice(/Registrar Homepage: (.+)\n/, 1)
           )
         end
 
@@ -81,7 +81,7 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner[/Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/, 1].split("\n").map do |line|
+          content_for_scanner.slice(/Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/, 1).split("\n").map do |line|
             Record::Nameserver.new(line.strip)
           end
         end
