@@ -6,8 +6,9 @@
 
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
-* FIXED: In a very rare situation the Whois::Client raises a `Errno::EINVAL: Invalid argument - bind(2)' error
-  attempting to connect to a WHOIS server (see #40).
+* FIXED: In a very rare situation the Whois::Client raises a
+  `Errno::EINVAL: Invalid argument - bind(2)' error attempting to connect
+  to a WHOIS server (see #40).
 
 
 == Release 2.0.7
@@ -44,7 +45,8 @@
 
 * NEW: Added base whois.nic.sm parser (#97).
 
-* FIXED: whois.meregistry.net parser raises `no time information in ""' when updated_at property is blank.
+* FIXED: whois.meregistry.net parser raises `no time information in ""'
+  when updated_at property is blank.
 
 * FIXED: whois.nic.it parser must support `NO-PROVIDER' status.
 
@@ -54,7 +56,7 @@
 
 * FIXED: whois.nic.cz parser must support `Update prohibited' status.
 
-* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
+* FIXED: The Verisign WHOIS adapter crashes in some rare circumstances
   when the response from the Verisign database doesn't contain a
   referral (#103)
 
@@ -74,7 +76,8 @@
 
 * FIXED: whois.nic.it parser must support pendingUpdate and pendingTransfer statuses.
 
-* FIXED: whois.nic-se.se crashes in some cases where the modified: attribute is an invalid date.
+* FIXED: whois.nic-se.se crashes in some cases where the `modified:'
+  attribute is an invalid date.
 
 
 == Release 2.0.3
@@ -176,8 +179,9 @@
 
 * CHANGED: Renamed Whois::Server::Adapters::Base#append_to_buffer to buffer_append.
 
-* CHANGED: Whois::Answer::Parser::Base#response_throttled? and Whois::Answer::Parser::Base#invalid? are not defined by default.
-           Define the method in the implementation, and Whois::Answer::Parser will automatically use it.
+* CHANGED: Whois::Answer::Parser::Base#response_throttled? and Whois::Answer::Parser::Base#invalid?
+  are not defined by default. Define the method in the implementation, 
+  and Whois::Answer::Parser will automatically use it.
 
 * CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (#66)
 
@@ -189,9 +193,12 @@
 
 * CHANGED: Change #nameservers property to return an Array of Nameserver (#76, see #71, see #64).
 
-* CHANGED: Whois#query no longer raises Errno or SocketError. The errors are now rescued and re-raised as Whois::ConnectionError.
+* CHANGED: Whois#query no longer raises Errno or SocketError.
+  The errors are now rescued and re-raised as Whois::ConnectionError.
 
-* CHANGED: #admin_contact, #technical_contact and #registrant_contact have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts and they now returns an array of Contact, instead of a single Contact.
+* CHANGED: #admin_contact, #technical_contact and #registrant_contact
+  have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts
+  and they now returns an array of Contact, instead of a single Contact.
 
 * CHANGED: Migrated all tests to RSpec.
 
@@ -202,7 +209,8 @@
 
 * FIXED: Make sure a warning is issued when #registered? or #available? returns nil.
 
-* FIXED: Fixed a bug with the whois.crsnic.net parser where the name server contains "no nameserver" instead of a valid host.
+* FIXED: Fixed a bug with the whois.crsnic.net parser where the name server
+  contains "no nameserver" instead of a valid host.
 
 * FIXED: Fixed a bug which prevents a client to be created with nil timeout.
 
@@ -245,9 +253,14 @@
 * Whois#query no longer raises Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError.
   The errors are now rescued and re-raised as Whois::ConnectionError.
 
-* #admin_contact, #technical_contact and #registrant_contact have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts and they now returns an array of Contact, instead of a single Contact. #admin_contact, #technical_contact and #registrant_contact still exists in the Answer as a convenient shortcut.
+* #admin_contact, #technical_contact and #registrant_contact
+  have been renamed to #admin_contacts, #technical_contacts and #registrant_contacts
+  and they now returns an array of Contact, instead of a single Contact.
+  #admin_contact, #technical_contact and #registrant_contact still exists
+  in the Answer as a convenient shortcut.
 
-* Renamed Whois::Answer::Parser::Base.register_property to Whois::Answer::Parser::Base.property_register.
+* Renamed Whois::Answer::Parser::Base.register_property to
+  Whois::Answer::Parser::Base.property_register.
 
 
 == Release 1.6.6
