@@ -154,13 +154,27 @@ module Whois
 
           # @api public
           def query_the_socket(query, host, port = nil)
-            ask_the_socket(
-              query,
-              host,
-              port || options[:port] || DEFAULT_WHOIS_PORT,
-              options[:bind_host] || DEFAULT_BIND_HOST,
-              options[:bind_port]
-            )
+            args = []
+            args.push(host)
+            args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
+
+            # This is a hack to prevent +TCPSocket.new+ to crash
+            # when resolv-replace.rb file is required.
+            #
+            # +TCPSocket.new+ defaults +local_host+ and +local_port+ to nil
+            # but when you require resolv-replace.rb, +local_host+
+            # is resolved when you pass any local parameter and in case of nil
+            # it raises the following error
+            #
+            #   ArgumentError: cannot interpret as DNS name: nil
+            #
+            if options[:bind_host] || options[:bind_port]
+              args.push(options[:bind_host] || DEFAULT_BIND_HOST)
+              args.push(options[:bind_port]) if options[:bind_port]
+            end
+
+            ask_the_socket(query, *args)
+
           rescue *RESCUABLE_CONNECTION_ERRORS => error
             raise ConnectionError, "#{error.class}: #{error.message}"
           end
@@ -171,9 +185,8 @@ module Whois
           # This is for internal use only!
           #
           # @api internal
-          def ask_the_socket(query, host, port, local_host, local_port)
-            args   = [host, port, local_host, local_port].compact
-            client = TCPSocket.open(host, port, local_host, local_port)
+          def ask_the_socket(query, *args)
+            client = TCPSocket.new(*args)
             client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
             client.read                     # but write/read is more symmetric than puts/read
           ensure                            # and I really want to use read instead of gets.
