@@ -75,7 +75,7 @@ Whois::Server.define :tld, ".be", "whois.dns.be"
 Whois::Server.define :tld, ".bf", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".bg", "whois.register.bg"
 Whois::Server.define :tld, ".bh", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".bi", nil, { :web => "https://whois.nic.bi/whois.php", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".bi", "whois.nic.bi"
 Whois::Server.define :tld, ".bj", "whois.nic.bj"
 Whois::Server.define :tld, ".bm", nil, { :web => "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".bn", nil, { :adapter => Whois::Server::Adapters::None }
