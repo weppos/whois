@@ -60,16 +60,24 @@ module Whois
             values = case value = $1.downcase
               # schema-1
               when /^(?:\s+([\w.-]+)\n){2,}/
-                value.split("\n").map(&:strip)
+                value.scan(/\s+([\w.-]+)\n/).map do |match|
+                  { :name => match[0] }
+                end
+              when /^(?:\s+([\w.-]+)\s+\((.+)\)\n){2,}/
+                value.scan(/\s+([\w.-]+)\s+\((.+)\)\n/).map do |match|
+                  { :name => match[0], :ipv4 => match[1] }
+                end
               # schema-2
               when /^(?:\s+([\w.-]+)){2,}/
-                value.strip.split(/\s+/)
+                value.strip.split(/\s+/).map do |name|
+                  { :name => name }
+                end
               else
                 Whois.bug!(ParserError, "Unknown nameservers format `#{value}'")
             end
 
-            values.map do |name|
-              Record::Nameserver.new(name)
+            values.map do |params|
+              Record::Nameserver.new(params)
             end
           end
         end

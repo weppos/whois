@@ -1,0 +1,94 @@
+
+----------------------------------------------------------------------  
+ SGNIC WHOIS Server
+---------------------------------------------------------------------- 
+
+The following data is provided for information purposes only.
+
+Registrar:   SINGNET PTE LTD 
+Registrant:  CANON SINGAPORE PTE. LTD.
+
+    Domain Name:		CANON.COM.SG 
+    Creation Date:		09-Jan-1996 00:00:00
+    Expiration Date:		09-Jan-2012 00:00:00
+    Domain Status:		OK
+
+
+    Owner/Main Contact:
+
+        Name:           CANON SINGAPORE PTE. LTD. (SGNIC-ORGCA65520)        
+        Registered Address(line1):	1 HarbourFront Avenue
+        Registered Address(line2):	#08-01
+        Registered Address(line3):	
+        Registered State:		
+        Registered Country:		SG
+        Registered Postalcode:		098632
+
+
+
+    Administrative Contact:
+          
+        Name:           CANON SINGAPORE PTE. LTD. (SGNIC-ORGCA65520)        
+        Registered Address(line1):	1 HarbourFront Avenue
+        Registered Address(line2):	#08-01
+        Registered Address(line3):	
+        Registered State:		
+        Registered Country:		SG
+        Registered Postalcode:		098632
+
+
+
+    Technical Contact:
+        
+        Name:           SingNet Hostmaster  (SGNIC-PERSI60492)        
+        Registered Address(line1):	2 STIRLING ROAD
+        Registered Address(line2):	QUEENSTOWN TELEPHONE EXCHANGE
+        Registered Address(line3):	#03-00
+        Registered State:		
+        Registered Country:		SG
+        Registered Postalcode:		148943
+
+        Telephone:			67845922
+        Facsimile:			64753273  
+        EMAIL:				hostmaster@singnet.com.sg
+
+
+
+    Billing Contact:
+          
+        Name:           NEE CHUEN LAI  (SGNIC-PERNE65521)        
+        Registered Address(line1):	1 HarbourFront Avenue
+        Registered Address(line2):	#08-01
+        Registered Address(line3): 	
+        Registered State:		
+        Registered Country:		SG
+        Registered Postalcode:		098632
+
+
+
+    Name Servers:
+        DNSSEC1.SINGNET.COM.SG  (165.21.83.11)
+        DNSSEC2.SINGNET.COM.SG  (195.13.10.226)
+        DNSSEC3.SINGNET.COM.SG  (165.21.100.11)
+
+
+         
+
+Note: With immediate effect from 1 Jun 2005 email address and phone numbers for Registrant,
+Administrative Contact and Billing Contact will not be shown in the above WHOIS results.
+This move is in-line with national and global efforts to curb SPAM.
+
+Technical Contact details will still be available for troubleshooting of technical problems
+which may be time-sensitive.
+
+Any party who has legitimate reason to obtain email address or phone numbers of the domain
+name contacts can either (1) obtain the contacts from the domain name's website (usually by
+prepending 'www.' in front of the domain name or perform an Internet search using the 
+organization name or; (2) Request the information from SGNIC via email (dnq@sgnic.sg), 
+stating the reasons.
+
+
+
+
+
+

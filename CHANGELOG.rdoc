@@ -6,6 +6,8 @@
 
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
+* CHANGED: whois.sgnic.sg changed nameservers response format (again).
+
 * FIXED: In a very rare situation the Whois::Client raises a
   `Errno::EINVAL: Invalid argument - bind(2)' error attempting to connect
   to a WHOIS server (see #40).
