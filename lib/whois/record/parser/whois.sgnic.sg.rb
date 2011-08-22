@@ -65,7 +65,7 @@ module Whois
               when /^(?:\s+([\w.-]+)){2,}/
                 value.strip.split(/\s+/)
               else
-                Whois.bug!("Unknown nameservers format `#{value}'")
+                Whois.bug!(ParserError, "Unknown nameservers format `#{value}'")
             end
 
             values.map do |name|

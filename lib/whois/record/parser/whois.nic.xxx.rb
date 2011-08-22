@@ -77,7 +77,7 @@ module Whois
 
         property_supported :registrar do
           node("Sponsoring Registrar") do |value|
-            value =~ /(.+?) \((.+?)\)/ || Whois.bug!("Unknown registrar format `#{value}'")
+            value =~ /(.+?) \((.+?)\)/ || Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
             Record::Registrar.new(
               :id =>            $1,
               :name =>          $2,
