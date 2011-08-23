@@ -28,11 +28,7 @@ module Whois
       class WhoisNicName < Base
 
         property_supported :status do
-          if available?
-            :available
-          else
-            :registered
-          end
+          content_for_scanner.scan(/Domain Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do

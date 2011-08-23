@@ -1,5 +1,5 @@
 #status
-  should: %s == :registered
+  should: %s == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
 
 #available?
   should: %s == false

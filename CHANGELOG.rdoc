@@ -14,6 +14,8 @@
 
 * FIXED: whois.nic.travel parser must support multiple statuses.
 
+* FIXED: whois.nic.name parser must support multiple statuses.
+
 
 == Release 2.0.7
 

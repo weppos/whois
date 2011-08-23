@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicName, "status_registered.expected" do
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
     end
   end
   describe "#available?" do
