@@ -12,6 +12,8 @@
   `Errno::EINVAL: Invalid argument - bind(2)' error attempting to connect
   to a WHOIS server (see #40).
 
+* FIXED: whois.nic.travel parser must support multiple statuses.
+
 
 == Release 2.0.7
 

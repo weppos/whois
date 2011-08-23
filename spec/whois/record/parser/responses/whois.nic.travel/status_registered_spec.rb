@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicTravel, "status_registered.expected" do
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["ok"]
     end
   end
   describe "#available?" do
