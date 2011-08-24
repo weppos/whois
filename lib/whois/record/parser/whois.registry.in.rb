@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base'
+require 'whois/record/parser/base_afilias'
 
 
 module Whois
