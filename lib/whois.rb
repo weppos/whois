@@ -22,10 +22,6 @@ module Whois
   AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
 
 
-  # Backwards compatibility
-  autoload :Answer, 'whois/answer'
-
-
   class << self
 
     # Queries the WHOIS server for <tt>qstring</tt> and returns

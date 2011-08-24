@@ -29,6 +29,8 @@
 
 * FIXED: whois.nic.name parser must support multiple statuses.
 
+* REMOVED: Remove deprecated Whois::Answer class.
+
 
 == Release 2.0.7
 
