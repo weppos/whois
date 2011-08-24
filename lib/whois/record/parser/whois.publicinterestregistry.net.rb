@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/base'
+require 'whois/record/parser/scanners/whois.publicinternetregistry.net.rb'
 
 
 module Whois
@@ -111,13 +111,13 @@ module Whois
         end
 
 
-        # Initializes a new {Scanner} instance
+        # Initializes a new {Scanners::WhoisPublicinternetregistryNet} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanner.new(content_for_scanner).parse
+          Scanners::WhoisPublicinternetregistryNet.new(content_for_scanner).parse
         end
 
 
@@ -143,58 +143,6 @@ module Whois
               )
             end
           end
-
-
-        class Scanner < Scanners::Base
-
-          def parse_content
-            parse_available   ||
-            parse_throttled   ||
-            parse_disclaimer  ||
-            parse_pair        ||
-
-            trim_empty_line   ||
-            error!("Unexpected token")
-          end
-
-
-          def parse_available
-            if @input.match?(/^NOT FOUND\n/)
-              @ast["status-available"] = true
-              @input.skip(/^.+\n/)
-            end
-          end
-
-          def parse_throttled
-            if @input.match?(/^WHOIS LIMIT EXCEEDED/)
-              @ast["response-throttled"] = true
-              @input.skip(/^.+\n/)
-            end
-          end
-
-          def parse_disclaimer
-            if @input.match?(/^NOTICE:/)
-              lines = []
-              while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
-                lines << @input[1].strip
-              end
-              @ast["Disclaimer"] = lines.join(" ")
-            end
-          end
-
-          def parse_pair
-            if @input.scan(/(.+?):(.*?)\n/)
-              key, value = @input[1].strip, @input[2].strip
-              if @ast[key].nil?
-                @ast[key] = value
-              else
-                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                @ast[key] << value
-              end
-            end
-          end
-
-        end
 
       end
 
