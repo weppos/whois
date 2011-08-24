@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Access to CCTLD WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.bz"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "D354967-LRCC"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
@@ -45,13 +70,39 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-01-21 13:29:10 UTC")
+      @parser.updated_on.should == Time.parse("2011-01-11 10:18:34 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-02-12 18:08:52 UTC")
+      @parser.expires_on.should == Time.parse("2012-02-12 18:08:52 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.id.should           == "R22-LRCC"
+      @parser.registrar.name.should         == "MarkMonitor, Inc."
+      @parser.registrar.organization.should == "MarkMonitor, Inc."
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(0).items
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(0).items
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(0).items
     end
   end
   describe "#nameservers" do

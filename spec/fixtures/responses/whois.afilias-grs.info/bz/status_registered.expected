@@ -1,3 +1,21 @@
+#disclaimer
+  should: %s == "Access to CCTLD WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+
+
+#domain
+  should: %s == "google.bz"
+
+#domain_id
+  should: %s == "D354967-LRCC"
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
 
@@ -14,11 +32,30 @@
 
 #updated_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2009-01-21 13:29:10 UTC")
+  should: %s == Time.parse("2011-01-11 10:18:34 UTC")
 
 #expires_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2011-02-12 18:08:52 UTC")
+  should: %s == Time.parse("2012-02-12 18:08:52 UTC")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "R22-LRCC"
+  should: %s.name         == "MarkMonitor, Inc."
+  should: %s.organization == "MarkMonitor, Inc."
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(0).items
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(0).items
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(0).items
 
 
 #nameservers

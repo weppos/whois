@@ -1,3 +1,21 @@
+#disclaimer
+  should: %s == "Access to CCTLD WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+
+
+#domain
+  should: %s == "sapphire.gi"
+
+#domain_id
+  should: %s == "D68296-LRCC"
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == ["OK"]
 
@@ -19,6 +37,64 @@
 #expires_on
   should: %s be_a(Time)
   should: %s == Time.parse("2009-12-20 13:34:34 UTC")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "R43-LRCC"
+  should: %s.name         == "GibNet Registrar"
+  should: %s.organization == "GibNet Registrar"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == "FR-1103549674779"
+  should: %s[0].name         == "Jimmy Imossi"
+  should: %s[0].organization == "Broadband Gibraltar Limited"
+  should: %s[0].address      == "Suite 951\nEuroport"
+  should: %s[0].city         == "Gibraltar"
+  should: %s[0].zip          == "NA"
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "GI"
+  should: %s[0].phone        == "+350.47200"
+  should: %s[0].fax          == "+350.47272"
+  should: %s[0].email        == "jimossi@sapphire.gi"
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == "FR-1103549674779"
+  should: %s[0].name         == "Jimmy Imossi"
+  should: %s[0].organization == "Broadband Gibraltar Limited"
+  should: %s[0].address      == "Suite 951\nEuroport"
+  should: %s[0].city         == "Gibraltar"
+  should: %s[0].zip          == "NA"
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "GI"
+  should: %s[0].phone        == "+350.47200"
+  should: %s[0].fax          == "+350.47272"
+  should: %s[0].email        == "jimossi@sapphire.gi"
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == "FR-10a223e2e4cf0"
+  should: %s[0].name         == "Tech Dept"
+  should: %s[0].organization == "Broadband Gibraltar Ltd"
+  should: %s[0].address      == "Suite 9.5.1\nEuroport"
+  should: %s[0].city         == "N/A"
+  should: %s[0].zip          == "N/A"
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "GI"
+  should: %s[0].phone        == "+350.47200"
+  should: %s[0].fax          == "+350.47271"
+  should: %s[0].email        == "tech@sapphire.gi"
 
 
 #nameservers

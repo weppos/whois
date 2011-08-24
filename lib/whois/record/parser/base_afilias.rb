@@ -122,7 +122,7 @@ module Whois
 
           def contact(element, type)
             node("#{element} ID") do
-              address = (1..3).map { |i| node("#{element} Street#{i}") }.delete_if(&:empty?).join(" ")
+              address = (1..3).map { |i| node("#{element} Street#{i}") }.delete_if(&:empty?).join("\n")
 
               Record::Contact.new(
                 :type         => type,
