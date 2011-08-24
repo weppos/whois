@@ -87,14 +87,6 @@ module Whois
           content_for_scanner.strip == ""
         end
 
-
-        protected
-
-          def incomplete_response?
-            Whois.deprecate "#{self.class}#response_incomplete? will be removed in Whois 2.1. Please use #{self.class}#response_incomplete?."
-            response_incomplete?
-          end
-
       end
 
     end
