@@ -6,20 +6,8 @@
 - verisign : indented keyvalue with text
 - cnnic : keyvalue
 - biz : keyvalue + lastupdate + disclaimer
-- info : disclaimer + keyvalue
 
 ---
-
-.us
-.biz
-.travel
-whois.nic.co
-
-whois.museum
-whois.cat
-
-.ve
-.uy
 
 # afilias
 - whois.aero
@@ -31,8 +19,21 @@ whois.cat
 - whois.nic.xxx
 - whois.dotmobyregistry.net
 - whois.publicinternetregistry.org
-whois.nic.asia
+# also
+- whois.nic.asia
 - whois.meregistry.net
+
+
+.us
+.biz
+.travel
+whois.nic.co
+
+whois.museum
+whois.cat
+
+.ve
+.uy
 
 whois.nic.af
 whois.nic.mu
