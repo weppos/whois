@@ -67,9 +67,6 @@ module Whois
         true
       elsif other.is_a?(self.class)
         to_s == other.to_s
-      elsif other.is_a?(String)
-        Whois.deprecate "Comparing an record with a String is deprecated and will be removed in Whois 2.1."
-        to_s == other.to_s
       else
         false
       end

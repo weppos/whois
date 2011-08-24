@@ -102,14 +102,14 @@ describe Whois::Record do
       (one.eql? two).should be_false
     end
 
-    it "returns true when other is string and has the same content", :deprecated => true do
+    it "returns false when other is string and has the same content" do
       one, two = klass.new(@server, @parts), klass.new(@server, @parts).to_s
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_false
+      (one.eql? two).should be_false
     end
 
-    it "returns false when other is string and has different content", :deprecated => true do
+    it "returns false when other is string and has different content" do
       one, two = klass.new(@server, @parts), "different"
 
       (one == two).should be_false

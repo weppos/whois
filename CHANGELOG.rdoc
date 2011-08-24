@@ -31,6 +31,8 @@
 
 * REMOVED: Remove deprecated Whois::Answer class.
 
+* REMOVED: Remove deprecated Whois::Record#== behavior.
+
 
 == Release 2.0.7
 
