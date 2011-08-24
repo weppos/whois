@@ -4,6 +4,16 @@
 
 * SERVER: Added .COM.DE, .GR.COM, .US.ORG TLD definitions.
 
+* NEW: Ability to define inheritable parsers
+
+      class Whois::Record::Parser::Afilias < Whois::Record::Parser::Base
+      end
+
+      class Whois::Record::Parser::WhoisNicXxx < Whois::Record::Parser::Afilias
+      end
+
+  Parsers will inherits all the properties from their parents.
+
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
 * CHANGED: whois.sgnic.sg changed nameservers response format (again).

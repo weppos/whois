@@ -36,16 +36,6 @@ module SpecHelper
     end
 
 
-    # Temporary resets parser @@registry
-    # to let the test setup a custom registry.
-    def with_registry
-      @_property_registry = Whois::Record::Parser::Base.send :class_variable_get, :@@property_registry
-      Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, {}
-      yield
-    ensure
-      Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, @_property_registry
-    end
-
     def nameserver(*params)
       Whois::Record::Nameserver.new(*params)
     end

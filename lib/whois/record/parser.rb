@@ -283,10 +283,10 @@ module Whois
           elsif parser = select_parser(method, :supported)
             parser.send(method, *args, &block)
 
-          # Select a parser where the property is defined
-          # (but not supported) and call the method.
+          # Select a parser where the property is defined but not supported
+          # and call the method.
           # The call is expected to raise an exception.
-          elsif parser = select_parser(method)
+          elsif parser = select_parser(method, :not_supported)
             parser.send(method, *args, &block)
 
           # The property is not supported nor defined.

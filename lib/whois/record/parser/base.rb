@@ -29,31 +29,8 @@ module Whois
       #
       class Base
 
-        @@property_registry = {}
-
-        # Returns the <tt>@@property_registry</tt> if <tt>klass</tt> is nil,
-        # otherwise returns the value in <tt>@@property_registry</tt> for given <tt>klass</tt>.
-        # <tt>klass</tt> is expected to be a class name.
-        #
-        # Returned value is always a hash. If <tt>@@property_registry[klass]</tt>
-        # doesn't exist, this method automatically initializes it to an empty Hash.
-        #
-        # @param  [Class] klass
-        # @return [Hash]
-        #
-        # @example Get the full registry
-        #   property_registry
-        #
-        # @example Get the registry for a specfic Class
-        #   property_registry(ParserClass)
-        #
-        def self.property_registry(klass = nil)
-          if klass.nil?
-            @@property_registry
-          else
-            @@property_registry[klass] ||= {}
-          end
-        end
+        class_attribute :_properties
+        self._properties = {}
 
         # Returns the status for the +property+ passed as symbol.
         #
@@ -70,11 +47,11 @@ module Whois
         #   # => :supported
         #
         def self.property_status(property)
-          property_registry(self)[property]
+          self._properties[property]
         end
 
         # Check if the +property+ passed as symbol
-        # is registered in the +property_registry+ for current parser.
+        # is registered in the registry for current parser.
         #
         # @param  [Symbol] property
         # @param  [Symbol] status
@@ -91,9 +68,9 @@ module Whois
         #
         def self.property_registered?(property, status = :any)
           if status == :any
-            property_registry(self).key?(property)
+            self._properties.key?(property)
           else
-            property_registry(self)[property] == status
+            self._properties[property] == status
           end
         end
 
@@ -105,7 +82,7 @@ module Whois
         # @return [void]
         #
         def self.property_register(property, status)
-          property_registry(self).merge!({ property => status })
+          self._properties = self._properties.merge({ property => status })
         end
 
 
