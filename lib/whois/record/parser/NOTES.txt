@@ -31,8 +31,8 @@ whois.cat
 - whois.nic.xxx
 - whois.dotmobyregistry.net
 - whois.publicinternetregistry.org
-whois.meregistry.net
 whois.nic.asia
+- whois.meregistry.net
 
 whois.nic.af
 whois.nic.mu
