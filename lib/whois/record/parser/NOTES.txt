@@ -22,11 +22,17 @@ whois.cat
 .uy
 
 # afilias
-whois.dotmobyregistry.net
-whois.afilias.info
-whois.afilias-grs.info
 whois.aero
+whois.afilias-grs.info
+whois.afilias.info
+whois.nic.ag
+whois.registry.in
+# also
 whois.nic.xxx
+whois.dotmobyregistry.net
+whois.publicinternetregistry.org
+whois.meregistry.net
+whois.nic.asia
 
 whois.nic.af
 whois.nic.mu

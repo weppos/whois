@@ -99,8 +99,8 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::Verisign} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::Whoisbiz} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]

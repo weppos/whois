@@ -124,8 +124,8 @@ module Whois
           !!node("status-unavailable")
         end
 
-        # Initializes a new {Scanner} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::Whoisit} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
