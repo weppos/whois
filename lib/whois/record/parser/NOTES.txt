@@ -22,10 +22,10 @@ whois.cat
 .uy
 
 # afilias
-whois.aero
-whois.afilias-grs.info
-whois.afilias.info
-whois.nic.ag
+- whois.aero
+- whois.afilias-grs.info
+- whois.afilias.info
+- whois.nic.ag
 whois.registry.in
 # also
 whois.nic.xxx
