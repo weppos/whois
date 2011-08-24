@@ -21,7 +21,8 @@ module Whois
             parse_available   ||
             parse_disclaimer  ||
             parse_keyvalue    ||
-            trim_newline      ||
+
+            trim_empty_line   ||
             error!("Unexpected token")
           end
 
@@ -37,7 +38,7 @@ module Whois
               while @input.scan(/^(.+)\n/)
                 lines << @input[1].strip
               end
-              @ast["property-disclaimer"] = lines.join(" ")
+              @ast["property:disclaimer"] = lines.join(" ")
             end
           end
 

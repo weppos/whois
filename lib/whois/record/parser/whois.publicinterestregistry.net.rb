@@ -24,7 +24,7 @@ module Whois
         include Scanners::Ast
 
         property_supported :disclaimer do
-          node("Disclaimer")
+          node("property:disclaimer")
         end
 
 

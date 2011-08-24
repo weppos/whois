@@ -21,7 +21,7 @@ module Whois
             parse_available   ||
             parse_throttled   ||
             parse_disclaimer  ||
-            parse_pair        ||
+            parse_keyvalue    ||
 
             trim_empty_line   ||
             error!("Unexpected token")
@@ -29,9 +29,8 @@ module Whois
 
 
           def parse_available
-            if @input.match?(/^NOT FOUND\n/)
+            if @input.scan(/^NOT FOUND\n/)
               @ast["status-available"] = true
-              @input.skip(/^.+\n/)
             end
           end
 
@@ -45,14 +44,14 @@ module Whois
           def parse_disclaimer
             if @input.match?(/^NOTICE:/)
               lines = []
-              while !@input.match?(/\n/) && @input.scan(/(.*)\n/)
+              while @input.scan(/^(.+)\n/)
                 lines << @input[1].strip
               end
-              @ast["Disclaimer"] = lines.join(" ")
+              @ast["property:disclaimer"] = lines.join(" ")
             end
           end
 
-          def parse_pair
+          def parse_keyvalue
             if @input.scan(/(.+?):(.*?)\n/)
               key, value = @input[1].strip, @input[2].strip
               if @ast[key].nil?
