@@ -11,7 +11,7 @@ require 'time'
 require 'whois/record/contact'
 require 'whois/record/registrar'
 require 'whois/record/nameserver'
-require 'whois/record/parser/features/ast'
+require 'whois/record/parser/scanners/ast'
 
 
 module Whois
@@ -19,13 +19,13 @@ module Whois
     class Parser
 
 
-      # This class is intended to be the base abstract class for all
+      # Represents the abstract base parser class for all
       # server-specific parser implementations.
       #
-      # == Available Methods
-      #
-      # The Base class is for the most part auto-generated via meta programming.
+      # NOTE. This class is for the most part auto-generated via meta programming.
       # This is the reason why RDoc can't detect and document all available methods.
+      #
+      # @abstract
       #
       class Base
 

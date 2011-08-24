@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whoisit'
+require 'whois/record/parser/scanners/whois.nic.it.rb'
 
 
 module Whois
@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.nic.it server.
       #
       class WhoisNicIt < Base
-        include Features::Ast
+        include Scanners::Ast
 
 
         property_supported :disclaimer do
@@ -124,13 +124,13 @@ module Whois
           !!node("status-unavailable")
         end
 
-        # Initializes a new {Scanner} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::WhoisIt} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisit.new(content_for_scanner).parse
+          Scanners::WhoisNicIt.new(content_for_scanner).parse
         end
 
 

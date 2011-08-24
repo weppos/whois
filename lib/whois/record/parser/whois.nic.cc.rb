@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.nic.cc server.
       #
       class WhoisNicCc < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -85,7 +85,7 @@ module Whois
 
 
         # Initializes a new {Scanners::Verisign} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]

@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/base'
+require 'whois/record/parser/scanners/whois.tld.ee.rb'
 
 
 module Whois
@@ -27,7 +27,7 @@ module Whois
       # and examples.
       #
       class WhoisTldEe < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
@@ -106,13 +106,13 @@ module Whois
         end
 
 
-        # Initializes a new {Scanner} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::WhoisTldEe} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanner.new(content_for_scanner).parse
+          Scanners::WhoisTldEe.new(content_for_scanner).parse
         end
 
 
@@ -128,27 +128,6 @@ module Whois
                 :created_on     => Time.parse(raw['created'])
               )
             end
-          end
-
-
-          class Scanner < Scanners::Base
-
-            def parse_content
-              if @input.scan(/contact:\s+(.*)\n/)
-                section = @input[1].strip
-                content = {}
-
-                while @input.scan(/(.*?):\s+(.*?)\n/)
-                  content[@input[1]] = @input[2]
-                end
-
-                @ast[section] = content
-              # FIXME: incomplete scanner, it skips all the properties
-              else
-                @input.scan(/(.*)\n/)
-              end
-            end
-
           end
 
       end

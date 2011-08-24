@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.nic.xxx server.
       #
       class WhoisNicXxx < Base
-        include Features::Ast
+        include Scanners::Ast
 
 
         property_supported :disclaimer do
@@ -107,8 +107,8 @@ module Whois
         end
 
 
-        # Initializes a new {Scanner} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::Afilias} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]

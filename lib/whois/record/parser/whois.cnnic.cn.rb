@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.cnnic.cn server.
       #
       class WhoisCnnicCn < Base
-        include Features::Ast
+        include Scanners::Ast
 
 
         property_not_supported :disclaimer
@@ -98,8 +98,8 @@ module Whois
         end
 
 
-        # Initializes a new {Scanner} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::Cnnic} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]

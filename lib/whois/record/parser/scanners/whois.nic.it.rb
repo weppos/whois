@@ -15,7 +15,7 @@ module Whois
     class Parser
       module Scanners
 
-        class Whoisit < Scanners::Base
+        class WhoisNicIt < Scanners::Base
 
           def parse_content
             parse_response_unavailable ||

@@ -13,7 +13,7 @@ require 'strscan'
 module Whois
   class Record
     class Parser
-      module Features
+      module Scanners
 
         # The Ast module tries to emulate a super-simple Abstract Syntax Tree structure
         # including method for accessing ast nodes.

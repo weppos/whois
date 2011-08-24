@@ -15,7 +15,7 @@ module Whois
     class Parser
       module Scanners
 
-        class Whoisbiz < Scanners::Base
+        class WhoisBiz < Scanners::Base
 
           def parse_content
             parse_available   ||

@@ -12,6 +12,15 @@ module Whois
     class Parser
       module Scanners
 
+        # Represents the abstract base scanner class,
+        # containing common scanner methods.
+        #
+        # Concrete classes should implement the following methods:
+        #
+        # * {#parse_content}
+        #
+        # @abstract
+        #
         class Base
 
           def initialize(content)

@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whoisbiz'
+require 'whois/record/parser/scanners/whois.biz.rb'
 
 
 module Whois
@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.biz server.
       #
       class WhoisBiz < Base
-        include Features::Ast
+        include Scanners::Ast
 
         # Actually the :disclaimer is supported,
         # but extracting it with the current scanner
@@ -99,13 +99,13 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::Verisign} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::WhoisBiz} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisbiz.new(content_for_scanner).parse
+          Scanners::WhoisBiz.new(content_for_scanner).parse
         end
 
 

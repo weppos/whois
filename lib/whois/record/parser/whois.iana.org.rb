@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.iana.org server.
       #
       class WhoisIanaOrg < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :status do
           if available?
@@ -76,7 +76,7 @@ module Whois
 
 
         # Initializes a new {Scanners::Iana} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
