@@ -25,16 +25,13 @@ module Whois
         end
 
 
-        property_supported :registrar do
-          node("Sponsoring Registrar") do |value|
-            value =~ /(.+?) \((.+?)\)/ || Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
-            Record::Registrar.new(
-              :id =>            $1,
-              :name =>          $2,
-              :organization =>  $2
-            )
+        private
+
+          def decompose_registrar(value)
+            if value =~ /(.+?) \((.+?)\)/
+              [$1, $2]
+            end
           end
-        end
 
       end
 
