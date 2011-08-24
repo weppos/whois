@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisPublicinterestregistryNet, "status_availabl
   end
   describe "#status" do
     it do
-      @parser.status.should == nil
+      @parser.status.should == []
     end
   end
   describe "#available?" do

@@ -10,7 +10,7 @@
 
 
 #status
-  should: %s == nil
+  should: %s == []
 
 #available?
   should: %s == true

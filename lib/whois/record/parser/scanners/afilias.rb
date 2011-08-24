@@ -19,6 +19,7 @@ module Whois
 
           def parse_content
             parse_available   ||
+            parse_throttled   ||  # .ORG
             parse_disclaimer  ||
             parse_keyvalue    ||
 
@@ -32,8 +33,15 @@ module Whois
             end
           end
 
+          def parse_throttled
+            if @input.match?(/^WHOIS LIMIT EXCEEDED/)
+              @ast["response:throttled"] = true
+              @input.skip(/^.+\n/)
+            end
+          end
+
           def parse_disclaimer
-            if @input.match?(/^Access to/)
+            if @input.pos == 0
               lines = []
               while @input.scan(/^(.+)\n/)
                 lines << @input[1].strip

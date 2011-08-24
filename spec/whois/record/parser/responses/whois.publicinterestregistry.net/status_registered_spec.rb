@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisPublicinterestregistryNet, "status_register
       @parser.registrar.should be_a(_registrar)
       @parser.registrar.id.should           == "R37-LROR"
       @parser.registrar.name.should         == "MarkMonitor Inc."
-      @parser.registrar.organization.should == nil
+      @parser.registrar.organization.should == "MarkMonitor Inc."
       @parser.registrar.url.should          == nil
     end
   end
