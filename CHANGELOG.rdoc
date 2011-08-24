@@ -8,6 +8,9 @@
 
 * CHANGED: whois.sgnic.sg changed nameservers response format (again).
 
+* CHANGED: Extended core_ext section. Since all the extensions belong to ActiveSupport,
+  the library attempts to use ActiveSupport if loaded.
+
 * FIXED: In a very rare situation the Whois::Client raises a
   `Errno::EINVAL: Invalid argument - bind(2)' error attempting to connect
   to a WHOIS server (see #40).
