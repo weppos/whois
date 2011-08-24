@@ -43,7 +43,7 @@ module Whois
 
 
         property_supported :status do
-          node("Status") || []
+          Array.wrap(node("Status"))
         end
 
         property_supported :available? do
