@@ -124,13 +124,13 @@ module Whois
           !!node("status-unavailable")
         end
 
-        # Initializes a new {Scanners::Whoisit} instance
+        # Initializes a new {Scanners::WhoisIt} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisit.new(content_for_scanner).parse
+          Scanners::WhoisIt.new(content_for_scanner).parse
         end
 
 

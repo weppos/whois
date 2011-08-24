@@ -99,13 +99,13 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::Whoisbiz} instance
+        # Initializes a new {Scanners::WhoisBiz} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisbiz.new(content_for_scanner).parse
+          Scanners::WhoisBiz.new(content_for_scanner).parse
         end
 
 
