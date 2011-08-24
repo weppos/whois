@@ -29,7 +29,7 @@ whois.cat
 - whois.registry.in
 # also
 - whois.nic.xxx
-whois.dotmobyregistry.net
+- whois.dotmobyregistry.net
 - whois.publicinternetregistry.org
 whois.meregistry.net
 whois.nic.asia
