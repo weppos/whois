@@ -30,13 +30,13 @@ module Whois
 
           def parse_available
             if @input.scan(/^NOT FOUND\n/)
-              @ast["status-available"] = true
+              @ast["status:available"] = true
             end
           end
 
           def parse_throttled
             if @input.match?(/^WHOIS LIMIT EXCEEDED/)
-              @ast["response-throttled"] = true
+              @ast["response:throttled"] = true
               @input.skip(/^.+\n/)
             end
           end

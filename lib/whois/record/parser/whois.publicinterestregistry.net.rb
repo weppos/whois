@@ -42,7 +42,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!node("status-available")
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -107,7 +107,7 @@ module Whois
         #   WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS
         #
         def response_throttled?
-          !!node("response-throttled")
+          !!node("response:throttled")
         end
 
 

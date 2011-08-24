@@ -47,7 +47,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!node("status-available")
+          !!node("status:available")
         end
 
         property_supported :registered? do

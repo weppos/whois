@@ -72,7 +72,7 @@ module Whois
             if @input.match?(/Nincs (.*?) \/ No match\n/)
               p("whois.nic.hu: parse_not_found") if 1 == 2 || $DEBUG
               @input.scan(/Nincs (.*?) \/ No match\n/)
-              @ast["status-available"] = true
+              @ast["status:available"] = true
             end
           end
 
@@ -81,7 +81,7 @@ module Whois
             if @input.match?(/(.*?) folyamatban \/ Registration in progress\n/)
               p("whois.nic.hu: parse_in_progress") if 1 == 2 || $DEBUG
               @input.scan(/(.*?) folyamatban \/ Registration in progress\n/)
-              @ast["status-inprogress"] = true
+              @ast["status:inprogress"] = true
             end
           end
 

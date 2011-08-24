@@ -28,7 +28,7 @@ module Whois
 
           def parse_available
             if @input.scan(/^NOT FOUND\n/)
-              @ast["status-available"] = true
+              @ast["status:available"] = true
             end
           end
 
