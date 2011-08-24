@@ -14,6 +14,18 @@
 
   Parsers will inherits all the properties from their parents.
 
+* NEW: Added the following full parsers:
+    * whois.nic.asia
+    * whois.meregistry.net
+    * whois.dotmobiregistry.net
+    * whois.publicinternetregistry.net
+    * whois.registry.in
+    * whis.nic.ag
+    * whois.afilias-grs.info
+    * whois.aero
+    * whois.nic.xx
+    * whois.afilias.info
+
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
 * CHANGED: whois.sgnic.sg changed nameservers response format (again).
