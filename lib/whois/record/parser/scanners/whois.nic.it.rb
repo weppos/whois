@@ -29,7 +29,7 @@ module Whois
 
           def parse_response_unavailable
             if @input.scan(/Service temporarily unavailable\.\n/)
-              @ast["status-unavailable"] = true
+              @ast["status:unavailable"] = true
             end
           end
 

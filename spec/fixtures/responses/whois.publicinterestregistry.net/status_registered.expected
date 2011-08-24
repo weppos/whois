@@ -9,6 +9,13 @@
   should: %s == "D2244233-LROR"
 
 
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
 
@@ -36,7 +43,7 @@
   should: %s be_a(_registrar)
   should: %s.id           == "R37-LROR"
   should: %s.name         == "MarkMonitor Inc."
-  should: %s.organization == nil
+  should: %s.organization == "MarkMonitor Inc."
   should: %s.url          == nil
 
 #registrant_contacts

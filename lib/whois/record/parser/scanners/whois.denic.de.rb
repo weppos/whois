@@ -33,7 +33,7 @@ module Whois
 
           def parse_throttled
             if @input.match?(/^% Error: 55000000002/)
-              @ast["response-throttled"] = true
+              @ast["response:throttled"] = true
               @input.skip(/^.+\n/)
             end
           end
@@ -93,7 +93,7 @@ module Whois
             if @input.match?(/% Object ".+" not found in database\n/)
               while @input.scan(/%(.*)\n/)  # strip junk
               end
-              @ast["status-available"] = true
+              @ast["status:available"] = true
             end
           end
 
@@ -101,7 +101,7 @@ module Whois
             if @input.match?(/% ".+" is not a valid domain name\n/)
               @input.scan(/% "(.+?)" is not a valid domain name\n/)
               @ast["Domain"] = @input[1]
-              @ast["status-invalid"] = true
+              @ast["status:invalid"] = true
             end
           end
 

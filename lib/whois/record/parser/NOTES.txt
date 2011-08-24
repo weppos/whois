@@ -6,9 +6,23 @@
 - verisign : indented keyvalue with text
 - cnnic : keyvalue
 - biz : keyvalue + lastupdate + disclaimer
-- info : disclaimer + keyvalue
 
 ---
+
+# afilias
+- whois.aero
+- whois.afilias-grs.info
+- whois.afilias.info
+- whois.nic.ag
+- whois.registry.in
+# also
+- whois.nic.xxx
+- whois.dotmobyregistry.net
+- whois.publicinternetregistry.org
+# also
+- whois.nic.asia
+- whois.meregistry.net
+
 
 .us
 .biz
@@ -20,19 +34,6 @@ whois.cat
 
 .ve
 .uy
-
-# afilias
-whois.aero
-whois.afilias-grs.info
-whois.afilias.info
-whois.nic.ag
-whois.registry.in
-# also
-whois.nic.xxx
-whois.dotmobyregistry.net
-whois.publicinternetregistry.org
-whois.meregistry.net
-whois.nic.asia
 
 whois.nic.af
 whois.nic.mu

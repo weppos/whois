@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      @parser.status.should == "OK"
+      @parser.status.should == ["OK"]
     end
   end
   describe "#available?" do

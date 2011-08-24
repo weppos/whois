@@ -41,9 +41,9 @@ module Whois
 
 
         property_supported :status do
-          if node("status-available")
+          if node("status:available")
             :available
-          elsif node("status-inprogress")
+          elsif node("status:inprogress")
             :registered
           else
             :registered

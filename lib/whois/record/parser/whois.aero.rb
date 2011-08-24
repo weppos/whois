@@ -7,69 +7,31 @@
 #++
 
 
-require 'whois/record/parser/base'
+require 'whois/record/parser/base_afilias'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.aero parser
-      #
       # Parser for the whois.aero server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
-      class WhoisAero < Base
+      class WhoisAero < BaseAfilias
+
 
         property_supported :status do
-          if content_for_scanner =~ /Domain Status:(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
-          end
+          Array.wrap(node("Domain Status"))
         end
 
-        property_supported :available? do
-          (content_for_scanner.strip == "NOT FOUND")
-        end
-
-        property_supported :registered? do
-          !available?
-        end
-
-
-        property_supported :created_on do
-          if content_for_scanner =~ /Created On:(.+?)\n/
-            Time.parse($1)
-          end
-        end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Updated On:(.+?)\n/
-            Time.parse($1)
+          node("Updated On") do |value|
+            Time.parse(value)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expires On:(.+?)\n/
-            Time.parse($1)
-          end
-        end
-
-
-        property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:([^\s]+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name.downcase)
+          node("Expires On") do |value|
+            Time.parse(value)
           end
         end
 

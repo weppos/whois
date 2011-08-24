@@ -8,25 +8,24 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whois.biz.rb'
+require 'whois/record/parser/scanners/afilias'
 
 
 module Whois
   class Record
     class Parser
 
+      # Base parser for Afilias servers.
       #
-      # = whois.biz parser
+      # @abstract
       #
-      # Parser for the whois.biz server.
-      #
-      class WhoisBiz < Base
+      class BaseAfilias < Base
         include Scanners::Ast
 
-        # Actually the :disclaimer is supported,
-        # but extracting it with the current scanner
-        # would require too much effort.
-        # property_supported :disclaimer
+
+        property_supported :disclaimer do
+          node("property:disclaimer")
+        end
 
 
         property_supported :domain do
@@ -44,7 +43,7 @@ module Whois
 
 
         property_supported :status do
-          node("Domain Status")
+          Array.wrap(node("Status"))
         end
 
         property_supported :available? do
@@ -57,77 +56,96 @@ module Whois
 
 
         property_supported :created_on do
-          node("Domain Registration Date") { |value| Time.parse(value) }
+          node("Created On") do |value|
+            Time.parse(value)
+          end
         end
 
         property_supported :updated_on do
-          node("Domain Last Updated Date") { |value| Time.parse(value) }
+          node("Last Updated On") do |value|
+            Time.parse(value)
+          end
         end
 
         property_supported :expires_on do
-          node("Domain Expiration Date") { |value| Time.parse(value) }
+          node("Expiration Date") do |value|
+            Time.parse(value)
+          end
         end
 
 
         property_supported :registrar do
-          node("Sponsoring Registrar") do |raw|
+          node("Sponsoring Registrar") do |value|
+            parts = decompose_registrar(value) ||
+                Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
+
             Record::Registrar.new(
-              :id           => node("Sponsoring Registrar IANA ID"),
-              :name         => node("Sponsoring Registrar")
+              :id =>            parts[0],
+              :name =>          parts[1],
+              :organization =>  parts[1]
             )
           end
         end
-
 
         property_supported :registrant_contacts do
           contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
+          contact("Admin", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+          contact("Tech", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          Array.wrap(node("Name Server")).map do |name|
+          Array.wrap(node("Name Server")).reject(&:empty?).map do |name|
             Nameserver.new(name.downcase)
           end
         end
 
 
-        # Initializes a new {Scanners::WhoisBiz} instance
+        # Initializes a new {Scanners::Afilias} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::WhoisBiz.new(content_for_scanner).parse
+          Scanners::Afilias.new(content_for_scanner).parse
         end
 
 
-        protected
+        private
 
           def contact(element, type)
-            node("#{element} ID") do |raw|
+            node("#{element} ID") do
+              address = (1..3).
+                  map { |i| node("#{element} Street#{i}") }.
+                  delete_if { |i| i.nil? || i.empty? }.
+                  join("\n")
+
               Record::Contact.new(
                 :type         => type,
                 :id           => node("#{element} ID"),
                 :name         => node("#{element} Name"),
                 :organization => node("#{element} Organization"),
-                :address      => node("#{element} Address1"),
+                :address      => address,
                 :city         => node("#{element} City"),
                 :zip          => node("#{element} Postal Code"),
                 :state        => node("#{element} State/Province"),
-                :country      => node("#{element} Country"),
-                :country_code => node("#{element} Country Code"),
-                :phone        => node("#{element} Phone Number"),
-                :fax          => node("#{element} Facsimile Number"),
+                :country_code => node("#{element} Country"),
+                :phone        => node("#{element} Phone"),
+                :fax          => node("#{element} FAX"),
                 :email        => node("#{element} Email")
               )
+            end
+          end
+  
+          def decompose_registrar(value)
+            if value =~ /(.+?) \((.+?)\)/
+              [$2, $1]
             end
           end
 

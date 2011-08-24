@@ -7,63 +7,78 @@
 #++
 
 
-require 'whois/record/parser/base'
+require 'whois/record/parser/base_afilias'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.meregistry.net parser
-      #
-      # Parser for the whois.meregistry.net server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
-      class WhoisMeregistryNet < Base
+      # Parser for the whois.dotmobiregistry.net server.
+      class WhoisMeregistryNet < BaseAfilias
 
         property_supported :status do
-          content_for_scanner.scan(/Domain Status:(.*?)\n/).flatten
-        end
-
-        property_supported :available? do
-          (content_for_scanner.strip == "NOT FOUND")
-        end
-
-        property_supported :registered? do
-          !available?
+          Array.wrap(node("Domain Status"))
         end
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Domain Create Date:(.+)\n/
-            Time.parse($1)
+          node("Domain Create Date") do |value|
+            Time.parse(value)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Domain Last Updated Date:(.+)\n/
-            Time.parse($1)
+          node("Domain Last Updated Date") do |value|
+            Time.parse(value) unless value.empty?
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Domain Expiration Date:(.+)\n/
-            Time.parse($1)
+          node("Domain Expiration Date") do |value|
+            Time.parse(value)
           end
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Nameservers:([^\s]+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name.downcase)
+          Array.wrap(node("Nameservers")).reject(&:empty?).map do |name|
+            Nameserver.new(name.downcase)
           end
         end
+
+
+        private
+
+          def contact(element, type)
+            node("#{element} ID") do
+              address = ["", "2", "3"].
+                  map { |i| node("#{element} Address#{i}") }.
+                  delete_if(&:empty?).
+                  join("\n")
+
+              Record::Contact.new(
+                :type         => type,
+                :id           => node("#{element} ID"),
+                :name         => node("#{element} Name"),
+                :organization => node("#{element} Organization"),
+                :address      => address,
+                :city         => node("#{element} City"),
+                :zip          => node("#{element} Postal Code"),
+                :state        => node("#{element} State/Province"),
+                :country_code => node("#{element} Country/Economy"),
+                :phone        => node("#{element} Phone"),
+                :fax          => node("#{element} FAX"),
+                :email        => node("#{element} E-mail")
+              )
+            end
+          end
+
+          def decompose_registrar(value)
+            if value =~ /^(.+?) ([^\s]+)$/
+              [$2, $1]
+            end
+          end
 
       end
 

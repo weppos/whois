@@ -27,13 +27,13 @@ module Whois
 
           def parse_available
             if @input.scan(/^no matching record/)
-              @ast["status-available"] = true
+              @ast["status:available"] = true
             end
           end
 
           def parse_reserved
             if @input.scan(/^the domain you want to register is reserved/)
-              @ast["status-reserved"] = true
+              @ast["status:reserved"] = true
             end
           end
 

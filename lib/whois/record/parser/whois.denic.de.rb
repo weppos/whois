@@ -64,7 +64,7 @@ module Whois
         end
 
         property_supported :available? do
-          !invalid? && (!!node("status-available") || node("Status") == "free")
+          !invalid? && (!!node("status:available") || node("Status") == "free")
         end
 
         property_supported :registered? do
@@ -130,7 +130,7 @@ module Whois
         #   % Error: 55000000002 Connection refused; access control limit reached.
         #
         def response_throttled?
-          !!node("response-throttled")
+          !!node("response:throttled")
         end
 
 
@@ -146,7 +146,7 @@ module Whois
         # NEWPROPERTY
         def invalid?
           cached_properties_fetch :invalid? do
-            !!node("status-invalid") || node("Status") == "invalid"
+            !!node("status:invalid") || node("Status") == "invalid"
           end
         end
 

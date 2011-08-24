@@ -121,7 +121,7 @@ module Whois
         #
         # @return [Boolean]
         def response_unavailable?
-          !!node("status-unavailable")
+          !!node("status:unavailable")
         end
 
         # Initializes a new {Scanners::WhoisIt} instance

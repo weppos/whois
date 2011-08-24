@@ -19,25 +19,34 @@ module Whois
 
           def parse_content
             parse_available   ||
+            parse_throttled   ||  # .ORG
             parse_disclaimer  ||
             parse_keyvalue    ||
-            trim_newline      ||
+
+            trim_empty_line   ||
             error!("Unexpected token")
           end
 
           def parse_available
             if @input.scan(/^NOT FOUND\n/)
-              @ast["status-available"] = true
+              @ast["status:available"] = true
+            end
+          end
+
+          def parse_throttled
+            if @input.match?(/^WHOIS LIMIT EXCEEDED/)
+              @ast["response:throttled"] = true
+              @input.skip(/^.+\n/)
             end
           end
 
           def parse_disclaimer
-            if @input.match?(/^Access to/)
+            if @input.pos == 0
               lines = []
               while @input.scan(/^(.+)\n/)
                 lines << @input[1].strip
               end
-              @ast["property-disclaimer"] = lines.join(" ")
+              @ast["property:disclaimer"] = lines.join(" ")
             end
           end
 

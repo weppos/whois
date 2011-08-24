@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Access to CCTLD WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.hn"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "D351-LRCC"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
@@ -52,6 +77,71 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2010-03-07 05:00:00 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.id.should           == "R22-LRCC"
+      @parser.registrar.name.should         == "MarkMonitor, Inc."
+      @parser.registrar.organization.should == "MarkMonitor, Inc."
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should           == "122496"
+      @parser.registrant_contacts[0].name.should         == "Rose Hagan"
+      @parser.registrant_contacts[0].organization.should == "Google Inc."
+      @parser.registrant_contacts[0].address.should      == "2400 E. Bayshore Pkwy Mountain View CA 94043"
+      @parser.registrant_contacts[0].city.should         == "Mountain"
+      @parser.registrant_contacts[0].zip.should          == "2400"
+      @parser.registrant_contacts[0].state.should        == ""
+      @parser.registrant_contacts[0].country_code.should == "US"
+      @parser.registrant_contacts[0].phone.should        == "+1.65033001"
+      @parser.registrant_contacts[0].fax.should          == ""
+      @parser.registrant_contacts[0].email.should        == "dns-admin@google.com"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should           == "122498"
+      @parser.admin_contacts[0].name.should         == "Alldomains.com"
+      @parser.admin_contacts[0].organization.should == "Alldomains.com"
+      @parser.admin_contacts[0].address.should      == "1800 Sutter St. Suite 100 Concord"
+      @parser.admin_contacts[0].city.should         == "Concord,"
+      @parser.admin_contacts[0].zip.should          == "94520"
+      @parser.admin_contacts[0].state.should        == "CA"
+      @parser.admin_contacts[0].country_code.should == "US"
+      @parser.admin_contacts[0].phone.should        == "+1.92568596"
+      @parser.admin_contacts[0].fax.should          == ""
+      @parser.admin_contacts[0].email.should        == "dnbilling@alldomains.com"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should           == "122497"
+      @parser.technical_contacts[0].name.should         == "NA"
+      @parser.technical_contacts[0].organization.should == "Alldomains.com"
+      @parser.technical_contacts[0].address.should      == "1800 Sutter St. Suite 100 Concord"
+      @parser.technical_contacts[0].city.should         == "Concord,"
+      @parser.technical_contacts[0].zip.should          == "94520"
+      @parser.technical_contacts[0].state.should        == "CA"
+      @parser.technical_contacts[0].country_code.should == "US"
+      @parser.technical_contacts[0].phone.should        == "+1.92568596"
+      @parser.technical_contacts[0].fax.should          == ""
+      @parser.technical_contacts[0].email.should        == "dnbilling@alldomains.com"
     end
   end
   describe "#nameservers" do

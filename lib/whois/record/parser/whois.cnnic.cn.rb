@@ -46,7 +46,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!node("status-available")
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -94,7 +94,7 @@ module Whois
 
         # NEWPROPERTY
         def reserved?
-          !!node("status-reserved")
+          !!node("status:reserved")
         end
 
 
