@@ -24,7 +24,7 @@ module Whois
       # @author Gábor Vészi <veszig@done.hu>
       #
       class WhoisNicHu < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :disclaimer do
           node("disclaimer")

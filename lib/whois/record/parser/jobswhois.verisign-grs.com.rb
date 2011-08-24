@@ -21,7 +21,7 @@ module Whois
       # Parser for the jobswhois.verisign-grs.com server.
       #
       class JobswhoisVerisignGrsCom < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")

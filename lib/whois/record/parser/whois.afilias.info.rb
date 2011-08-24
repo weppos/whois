@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.afilias.info server.
       #
       class WhoisAfiliasInfo < Base
-        include Features::Ast
+        include Scanners::Ast
 
 
         property_supported :disclaimer do

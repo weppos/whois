@@ -21,7 +21,7 @@ module Whois
       # Parser for the whois.biz server.
       #
       class WhoisBiz < Base
-        include Features::Ast
+        include Scanners::Ast
 
         # Actually the :disclaimer is supported,
         # but extracting it with the current scanner

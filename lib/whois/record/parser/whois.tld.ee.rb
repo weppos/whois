@@ -27,7 +27,7 @@ module Whois
       # and examples.
       #
       class WhoisTldEe < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
