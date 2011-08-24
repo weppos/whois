@@ -1,2 +1,2 @@
 #status
-  should: %s == [ "client delete prohibited", "client renew prohibited", "client transfer prohibited", "client update prohibited" ]
+  should: %s == ["CLIENT DELETE PROHIBITED", "CLIENT RENEW PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]

@@ -1,2 +1,2 @@
 #status
-  should: %s == nil
+  should: %s == []

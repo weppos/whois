@@ -26,9 +26,9 @@ whois.cat
 - whois.afilias-grs.info
 - whois.afilias.info
 - whois.nic.ag
-whois.registry.in
+- whois.registry.in
 # also
-whois.nic.xxx
+- whois.nic.xxx
 whois.dotmobyregistry.net
 whois.publicinternetregistry.org
 whois.meregistry.net
