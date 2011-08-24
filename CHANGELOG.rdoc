@@ -41,6 +41,8 @@
 
 * FIXED: whois.nic.name parser must support multiple statuses.
 
+* FIXED: whois.nic.af parser must support `Delegated' status.
+
 * REMOVED: Removed deprecated Whois::Answer class.
 
 * REMOVED: Removed deprecated Whois::Record#== behavior.
