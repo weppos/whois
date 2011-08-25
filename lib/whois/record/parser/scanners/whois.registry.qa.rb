@@ -15,6 +15,9 @@ module Whois
     class Parser
       module Scanners
 
+        # Scanner for the whois.registry.qa server response.
+        #
+        # @since  GIT:MASTER
         class WhoisRegistryQa < Scanners::Base
 
           def parse_content

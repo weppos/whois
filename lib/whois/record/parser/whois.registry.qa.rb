@@ -16,6 +16,8 @@ module Whois
     class Parser
 
       # Parser for the whois.registry.qa server.
+      #
+      # @since  GIT:MASTER
       class WhoisRegistryQa < Base
         include Scanners::Ast
 
