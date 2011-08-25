@@ -1,0 +1,23 @@
+Domain Name:                     qtel.com.qa
+Registrar ID:                    QatarTelecom
+Registrar Name:                  Qatar Telecom (Qtel) Q. S. C
+Status:                          serverDeleteProhibited (Legacy)
+Status:                          serverRenewProhibited (Legacy)
+Status:                          serverTransferProhibited (Legacy)
+
+Registrant:                      Qatar Telecom (Qtel) Q.S.C
+Eligibility Type:                Legacy
+Eligibility ID:                         Legacy Domain Name
+
+Registrant Contact ID:           QT11734
+Registrant Contact Name:         DNS Administrator - Qtel Internet Services
+Registrant Contact Email:        Visit portal.registry.qa for Web based WhoIs
+
+Tech Contact ID:                 QT11734
+Tech Contact Name:               DNS Administrator - Qtel Internet Services
+Tech Contact Email:              Visit portal.registry.qa for Web based WhoIs
+
+Name Server:                     ns1.qtel.com.qa
+Name Server IP:                  212.77.203.185
+Name Server:                     ns2.qtel.com.qa
+Name Server IP:                  213.130.113.101
