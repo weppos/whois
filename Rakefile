@@ -118,13 +118,6 @@ YARD::Rake::YardocTask.new(:yardoc) do |y|
 end
 
 namespace :yardoc do
-  desc "Publish YARD documentation to the site"
-  task :publish => ["yardoc:clobber", "yardoc"] do
-    ENV["username"] || raise(ArgumentError, "Missing ssh username")
-    sh "rsync -avz --delete yardoc/ #{ENV["username"]}@alamak:/home/#{ENV["username"]}/ruby-whois.org/api"
-  end
-
-  desc "Remove YARD products"
   task :clobber do
     rm_r "yardoc" rescue nil
   end
