@@ -27,7 +27,7 @@
     * whois.aero
     * whois.nic.xx
     * whois.afilias.info
-    * whois.registry.qa
+    * whois.registry.qa (#114)
 
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
