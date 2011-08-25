@@ -29,8 +29,7 @@ module Whois
 
         property_not_supported :status
 
-
-        # The server seems to provide only information for registered domains
+        # The server seems to provide only linesrmation for registered domains
         property_supported :available? do
           false
         end
@@ -66,7 +65,6 @@ module Whois
           )
         end
 
-
         property_supported :registrant_contacts do
           contact('Registrant:', Record::Contact::TYPE_REGISTRANT)
         end
@@ -81,8 +79,10 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.slice(/Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/, 1).split("\n").map do |line|
-            Record::Nameserver.new(line.strip)
+         if content_for_scanner =~ /Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/
+            $1.split("\n").map do |line|
+              Record::Nameserver.new(line.strip)
+            end
           end
         end
 
@@ -93,24 +93,25 @@ module Whois
             match = content_for_scanner.slice(/#{element}\n((.+\n){6})/, 1)
             return unless match
 
-            info  = match.split("\n").map(&:strip)
+            lines = match.split("\n").map(&:strip)
+
             # 0 DNS Admin
             # 1 Google Inc.
             # 2 1600 Amphitheatre Parkway
             # 3 Mountain View CA 94043
             # 4 US
             # 5 dns-admin@google.com +1.6506234000 Fax: +1.6506188571
-            city, state, zip = info[3].scan(/^(.+) ([A-Z]{2}) ([0-9]+)$/).first
-            email, phone, fax = info[5].scan(/^(.+) (.+) Fax: (.+)$/).first
+            city, state, zip = lines[3].scan(/^(.+) ([A-Z]{2}) ([0-9]+)$/).first
+            email, phone, fax = lines[5].scan(/^(.+) (.+) Fax: (.+)$/).first
             Record::Contact.new(
               :type => type,
-              :name => info[0],
-              :organization => info[1],
-              :address => info[2],
+              :name => lines[0],
+              :organization => lines[1],
+              :address => lines[2],
               :city => city,
               :state => state,
               :zip => zip,
-              :country_code => info[4],
+              :country_code => lines[4],
               :email => email,
               :phone => phone,
               :fax => fax
