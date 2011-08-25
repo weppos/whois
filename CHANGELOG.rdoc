@@ -1,6 +1,7 @@
 = Changelog
 
-== master
+
+== Release 2.1.0
 
 * SERVER: Added .COM.DE, .GR.COM, .US.ORG TLD definitions.
 
