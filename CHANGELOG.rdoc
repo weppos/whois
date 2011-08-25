@@ -4,6 +4,8 @@
 
 * SERVER: Added .COM.DE, .GR.COM, .US.ORG TLD definitions.
 
+* SERVER: Updated .QA and .XN--WGBL6A TLD definitions.
+
 * NEW: Ability to define inheritable parsers
 
       class Whois::Record::Parser::Afilias < Whois::Record::Parser::Base

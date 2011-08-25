@@ -237,7 +237,7 @@ Whois::Server.define :tld, ".ps", "whois.pnina.ps"
 Whois::Server.define :tld, ".pt", "whois.dns.pt"
 Whois::Server.define :tld, ".pw", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".py", nil, { :web => "http://www.nic.py/consultas.html", :adapter => Whois::Server::Adapters::Web }
-Whois::Server.define :tld, ".qa", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".qa", "whois.registry.qa"
 Whois::Server.define :tld, ".re", "whois.nic.fr"
 Whois::Server.define :tld, ".ro", "whois.rotld.ro"
 Whois::Server.define :tld, ".rs", nil, { :web => "http://www.nic.rs/en/whois", :adapter => Whois::Server::Adapters::Web }
@@ -342,7 +342,7 @@ Whois::Server.define :tld, ".xn--p1ai", "whois.ripn.net"
 Whois::Server.define :tld, ".xn--pgbs0dh", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--s9brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
-Whois::Server.define :tld, ".xn--wgbl6a", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--wgbl6a", "whois.registry.qa"
 Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--xkc2dl3a5ee0h", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--yfro4i67o", "whois.sgnic.sg"
