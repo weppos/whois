@@ -6,6 +6,8 @@
 
 * SERVER: Updated .QA and .XN--WGBL6A TLD definitions.
 
+* SERVER: Updated .SU, .RU and .XN--P1AI TLD definitions (#87).
+
 * SERVER: Added the following new IDN TLDs:
     * .XN--LGBBAT1AD8J (.الجزائر, Algeria) (#95)
     * .XN--MGBC0A9AZCG (.المغرب, Morocco) (#96)
@@ -39,6 +41,8 @@
 
 * CHANGED: Extended core_ext section. Since all the extensions belong to ActiveSupport,
   the library attempts to use ActiveSupport if loaded.
+
+* CHANGED: Renamed whois.ripn.net to whois.tcinet.ru (#87)
 
 * FIXED: In a very rare situation the Whois::Client raises a
   `Errno::EINVAL: Invalid argument - bind(2)' error attempting to connect
