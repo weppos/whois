@@ -34,6 +34,7 @@
     * whois.nic.xx
     * whois.afilias.info
     * whois.registry.qa (#114)
+    * whois.godaddy.com (#105)
 
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 

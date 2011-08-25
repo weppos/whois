@@ -7,6 +7,7 @@
 #registered?
   should: %s == true
 
+
 #created_on
   should: %s be_a(Time)
   should: %s == Time.parse("02-Mar-99")
@@ -37,10 +38,10 @@
   should: %s[0].city         == "Scottsdale"
   should: %s[0].zip          == "85260"
   should: %s[0].state        == "Arizona"
-  should: %s[0].country_code == "United States"
-  should: %s[0].phone        == ""
-  should: %s[0].fax          == ""
-  should: %s[0].email        == ""
+  should: %s[0].country      == "United States"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
 
 #admin_contacts
   should: %s be_a(Array)
@@ -53,7 +54,7 @@
   should: %s[0].city         == "Scottsdale"
   should: %s[0].zip          == "85260"
   should: %s[0].state        == "Arizona"
-  should: %s[0].country_code == "United States"
+  should: %s[0].country      == "United States"
   should: %s[0].phone        == "+1.4805058800"
   should: %s[0].fax          == "+1.4805058844"
   should: %s[0].email        == "dns@jomax.net"
@@ -69,7 +70,7 @@
   should: %s[0].city         == "Scottsdale"
   should: %s[0].zip          == "85260"
   should: %s[0].state        == "Arizona"
-  should: %s[0].country_code == "United States"
+  should: %s[0].country      == "United States"
   should: %s[0].phone        == "+1.4805058800"
   should: %s[0].fax          == "+1.4805058844"
   should: %s[0].email        == "dns@jomax.net"
@@ -79,8 +80,8 @@
   should: %s be_a(Array)
   should: %s have(3).items
   should: %s[0] be_a(_nameserver)
-  should: %s[0] == _nameserver.new(:name => "CNS1.SECURESERVER.NET")
+  should: %s[0].name == "CNS1.SECURESERVER.NET"
   should: %s[1] be_a(_nameserver)
-  should: %s[1] == _nameserver.new(:name => "CNS2.SECURESERVER.NET")
+  should: %s[1].name == "CNS2.SECURESERVER.NET"
   should: %s[2] be_a(_nameserver)
-  should: %s[2] == _nameserver.new(:name => "CNS3.SECURESERVER.NET")
+  should: %s[2].name == "CNS3.SECURESERVER.NET"
