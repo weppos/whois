@@ -35,12 +35,6 @@ module Whois
             @input.scan(/^\S(.+)\n/)
           end
 
-          def skip_unless_keyvalue
-            if !@input.match?(/(.+?):(.*?)\n/)
-              @input.scan(/.*\n/)
-            end
-          end
-
           def parse_available
             if @input.scan(/^Not found: (.+)\n/)
               @ast["Domain Name"] = @input[1]
