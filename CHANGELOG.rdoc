@@ -6,6 +6,10 @@
 
 * SERVER: Updated .QA and .XN--WGBL6A TLD definitions.
 
+* SERVER: Added the following new IDN TLDs:
+    * .XN--LGBBAT1AD8J (.الجزائر, Algeria) (#95)
+    * .XN--MGBC0A9AZCG (.المغرب, Morocco) (#96)
+
 * NEW: Ability to define inheritable parsers
 
       class Whois::Record::Parser::Afilias < Whois::Record::Parser::Base
