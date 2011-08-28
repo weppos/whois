@@ -53,6 +53,11 @@ module Whois
           reserved? || !available?
         end
 
+        # NEWPROPERTY
+        def reserved?
+          !!node("status:reserved")
+        end
+
 
         property_supported :created_on do
           node("Registration Date") { |value| Time.parse(value) }
@@ -89,12 +94,6 @@ module Whois
           Array.wrap(node("Name Server")).map do |name|
             Nameserver.new(name.downcase)
           end
-        end
-
-
-        # NEWPROPERTY
-        def reserved?
-          !!node("status:reserved")
         end
 
 

@@ -71,6 +71,11 @@ module Whois
           !available?
         end
 
+        # NEWPROPERTY
+        def reserved?
+          !!node("status:reserved")
+        end
+
 
         property_supported :created_on do
           node("Created") { |raw| Time.parse(raw) }
