@@ -41,7 +41,7 @@ module Whois
           end
 
           def parse_disclaimer
-            if @input.pos == 0
+            if @input.pos == 0 && @input.match?(/^(.+\n){3,}\n/)
               lines = []
               while @input.scan(/^(.+)\n/)
                 lines << @input[1].strip
