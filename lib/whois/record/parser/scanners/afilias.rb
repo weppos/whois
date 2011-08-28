@@ -19,6 +19,7 @@ module Whois
 
           def parse_content
             parse_available   ||
+            parse_reserved    ||  # .XXX
             parse_throttled   ||  # .ORG
             parse_disclaimer  ||
             parse_keyvalue    ||
@@ -30,6 +31,12 @@ module Whois
           def parse_available
             if @input.scan(/^NOT FOUND\n/)
               @ast["status:available"] = true
+            end
+          end
+
+          def parse_reserved
+            if @input.scan(/^Reserved by ICM Registry\n/)
+              @ast["status:reserved"] = true
             end
           end
 

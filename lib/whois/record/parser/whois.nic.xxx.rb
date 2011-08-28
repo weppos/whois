@@ -7,8 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/afilias'
+require 'whois/record/parser/base_afilias'
 
 
 module Whois
@@ -17,6 +16,20 @@ module Whois
 
       # Parser for the whois.nic.xxx server.
       class WhoisNicXxx < BaseAfilias
+
+        property_supported :status do
+          if reserved?
+            :reserved
+          else
+            super()
+          end
+        end
+
+        # NEWPROPERTY
+        def reserved?
+          !!node("status:reserved")
+        end
+
 
         property_supported :updated_on do
           node("Last Updated On") do |value|
