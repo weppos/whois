@@ -1,0 +1,54 @@
+The data contained in GoDaddy.com, Inc.'s WhoIs database,
+while believed by the company to be reliable, is provided "as is"
+with no guarantee or warranties regarding its accuracy.  This
+information is provided for the sole purpose of assisting you
+in obtaining information about domain name registration records.
+Any use of this data for any other purpose is expressly forbidden without the prior written
+permission of GoDaddy.com, Inc.  By submitting an inquiry,
+you agree to these terms of usage and limitations of warranty.  In particular,
+you agree not to use this data to allow, enable, or otherwise make possible,
+dissemination or collection of this data, in part or in its entirety, for any
+purpose, such as the transmission of unsolicited advertising and
+and solicitations of any kind, including spam.  You further agree
+not to use this data to enable high volume, automated or robotic electronic
+processes designed to collect or compile this data for any purpose,
+including mining this data for your own personal or commercial purposes. 
+
+Please note: the registrant of the domain name is specified
+in the "registrant" field.  In most cases, GoDaddy.com, Inc. 
+is not the registrant of domain names listed in this database.
+
+
+Registrant:
+   Darrin Demchuk
+   2920 Clairemont Dr
+   Apt 12
+   San Diego, CA 92117
+   United States
+
+   Registered through: GoDaddy.com, Inc. (http://www.godaddy.com)
+   Domain Name: YOGAEXERCISEWORLD.COM
+      Created on: 13-Apr-10
+      Expires on: 13-Apr-12
+      Last Updated on: 26-May-11
+
+   Administrative Contact:
+      Demchuk, Darrin  darrindemchuk@gmail.com
+      2920 Clairemont Dr
+      Apt 12
+      San Diego, CA 92117
+      United States
+      +1.8589529307      Fax -- 
+
+   Technical Contact:
+      Demchuk, Darrin  darrindemchuk@gmail.com
+      2920 Clairemont Dr
+      Apt 12
+      San Diego, CA 92117
+      United States
+      +1.8589529307      Fax -- 
+
+   Domain servers in listed order:
+      NS1.PROMOTIONSURGEADMIN.COM
+      NS2.PROMOTIONSURGEADMIN.COM
+
