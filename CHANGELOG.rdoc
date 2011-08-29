@@ -4,6 +4,8 @@
 
 * NEW: whois.nic.xx parser now recognizes reserved domains.
 
+* FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
+
 
 == Release 2.1.0
 

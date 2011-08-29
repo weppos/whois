@@ -73,7 +73,7 @@ module Whois
 
         # NEWPROPERTY
         def reserved?
-          !!node("status:reserved")
+          status == :reserved
         end
 
 
