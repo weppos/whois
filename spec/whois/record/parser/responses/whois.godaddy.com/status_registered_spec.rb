@@ -36,24 +36,6 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       @parser.registered?.should == true
     end
   end
-  describe "#created_on" do
-    it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("02-Mar-99")
-    end
-  end
-  describe "#updated_on" do
-    it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("21-Oct-10")
-    end
-  end
-  describe "#expires_on" do
-    it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("02-Mar-19")
-    end
-  end
   describe "#registrar" do
     it do
       @parser.registrar.should be_a(_registrar)
