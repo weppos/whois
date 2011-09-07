@@ -6,6 +6,8 @@
 
 * FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
 
+* FIXED: Release 2.1.0 is not compatible under Rails 2.3 (#117).
+
 
 == Release 2.1.0
 

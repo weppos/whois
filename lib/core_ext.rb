@@ -1,4 +1,4 @@
-if defined?(ActiveSupport) && ActiveSupport::VERSION::MAJOR == 3
+if defined?(ActiveSupport::VERSION) && ActiveSupport::VERSION::MAJOR == 3
   require 'active_support/core_ext/array/wrap'
   require 'active_support/core_ext/date_time/conversions'
   require 'core_ext/class/attribute'
