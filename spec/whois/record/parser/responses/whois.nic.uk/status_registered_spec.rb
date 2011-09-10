@@ -93,6 +93,11 @@ describe Whois::Record::Parser::WhoisNicUk, "status_registered.expected" do
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
+    end
+  end
   describe "#valid?" do
     it do
       @parser.valid?.should == true

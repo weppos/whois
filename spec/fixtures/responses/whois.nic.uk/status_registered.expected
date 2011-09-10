@@ -57,6 +57,10 @@
   should: %s[3].name == "ns4.google.com"
 
 
+#response_throttled?
+  should: %s == false
+
+
 #valid?
   should: %s == true
 

@@ -116,6 +116,11 @@ module Whois
         end
 
 
+        def response_throttled?
+          !!(content_for_scanner =~ /The WHOIS query quota for .+ has been exceeded/)
+        end
+
+
         # NEWPROPERTY
         def valid?
           cached_properties_fetch(:valid?) do
