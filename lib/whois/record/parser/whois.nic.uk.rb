@@ -92,6 +92,21 @@ module Whois
         end
 
 
+        property_supported :registrant_contacts do
+          address_info = content_for_scanner[/Registrant's address:\n(.+)\n\n/m, 1]
+          address, city, state, zip, country = address_info.split("\n").map(&:strip)
+          Record::Contact.new(
+            :type => Record::Contact::TYPE_REGISTRANT,
+            :name => content_for_scanner[/Registrant:\n\s*(.+)\n/, 1],
+            :address => address,
+            :city => city,
+            :state => state,
+            :zip => zip,
+            :country => country
+          )
+        end
+
+
         property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
             $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|

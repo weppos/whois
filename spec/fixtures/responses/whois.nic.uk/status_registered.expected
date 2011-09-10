@@ -29,6 +29,21 @@
   should: %s.url          == "http://www.markmonitor.com"
 
 
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Google Inc."
+  should: %s[0].organization == nil
+  should: %s[0].address      == "1600 Amphitheatre Parkway"
+  should: %s[0].city         == "Mountain View"
+  should: %s[0].zip          == "94043"
+  should: %s[0].state        == "CA"
+  should: %s[0].country      == "United States"
+
+
 #nameservers
   should: %s be_a(Array)
   should: %s have(4).items
