@@ -93,17 +93,18 @@ module Whois
 
 
         property_supported :registrant_contacts do
-          address_info = content_for_scanner[/Registrant's address:\n(.+)\n\n/m, 1]
-          address, city, state, zip, country = address_info.split("\n").map(&:strip)
-          Record::Contact.new(
-            :type => Record::Contact::TYPE_REGISTRANT,
-            :name => content_for_scanner[/Registrant:\n\s*(.+)\n/, 1],
-            :address => address,
-            :city => city,
-            :state => state,
-            :zip => zip,
-            :country => country
-          )
+          if address_info = content_for_scanner[/Registrant's address:\n(.+)\n\n/m, 1]
+            address, city, state, zip, country = address_info.split("\n").map(&:strip)
+            Record::Contact.new(
+              :type => Record::Contact::TYPE_REGISTRANT,
+              :name => content_for_scanner[/Registrant:\n\s*(.+)\n/, 1],
+              :address => address,
+              :city => city,
+              :state => state,
+              :zip => zip,
+              :country => country
+            )
+          end
         end
 
 
