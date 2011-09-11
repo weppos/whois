@@ -12,6 +12,8 @@
 
 * FIXED: Release 2.1.0 is not compatible with Rails 2.3 (#117).
 
+* FIXED: whois.nic.coop should support multiple statuses (#115).
+
 
 == Release 2.1.0
 
