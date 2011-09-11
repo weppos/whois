@@ -2,7 +2,7 @@
 
 == master
 
-* NEW: whois.nic.xx parser now recognizes reserved domains.
+* NEW: whois.nic.xxs parser now recognizes reserved domains.
 
 * FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
 
