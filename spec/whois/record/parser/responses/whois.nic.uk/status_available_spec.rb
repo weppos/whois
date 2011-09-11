@@ -51,6 +51,16 @@ describe Whois::Record::Parser::WhoisNicUk, "status_available.expected" do
       @parser.expires_on.should == nil
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should == []
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
