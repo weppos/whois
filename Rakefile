@@ -18,8 +18,8 @@ end
 
 
 # Run test by default.
-task :default => :rspec
-task :test => :rspec
+task :default => :spec
+task :test => :spec
 
 # This builds the actual gem. For details of what all these options
 # mean, and other ones you can add, check the documentation here:
@@ -70,7 +70,7 @@ end
 
 
 # Run all the specs in the /spec folder
-RSpec::Core::RakeTask.new(:rspec)
+RSpec::Core::RakeTask.new
 
 
 namespace :multitest do
