@@ -1,6 +1,6 @@
 require 'fileutils'
 
-namespace :genspec do
+namespace :spec do
 
   ROOT_DIR      = File.expand_path("../../", __FILE__)
   TARGET_DIR    = File.join(ROOT_DIR, %w( spec whois record parser responses ))
@@ -19,7 +19,7 @@ namespace :genspec do
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -58,7 +58,9 @@ end
   end
 
 
-  task :parsers do
+  task :generate => :generate_parsers
+
+  task :generate_parsers do
     Dir["#{SOURCE_DIR}/**/*.expected"].each do |source_path|
 
       # Generate the filename and klass name from the test file.
