@@ -63,6 +63,22 @@ describe Whois::Record::Parser::WhoisNicUk, "status_registered.expected" do
       @parser.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should           == nil
+      @parser.registrant_contacts[0].name.should         == "Google Inc."
+      @parser.registrant_contacts[0].organization.should == nil
+      @parser.registrant_contacts[0].address.should      == "1600 Amphitheatre Parkway"
+      @parser.registrant_contacts[0].city.should         == "Mountain View"
+      @parser.registrant_contacts[0].zip.should          == "94043"
+      @parser.registrant_contacts[0].state.should        == "CA"
+      @parser.registrant_contacts[0].country.should      == "United States"
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
@@ -75,6 +91,11 @@ describe Whois::Record::Parser::WhoisNicUk, "status_registered.expected" do
       @parser.nameservers[2].name.should == "ns3.google.com"
       @parser.nameservers[3].should be_a(_nameserver)
       @parser.nameservers[3].name.should == "ns4.google.com"
+    end
+  end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
     end
   end
   describe "#valid?" do
