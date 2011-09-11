@@ -4,6 +4,10 @@
 
 * NEW: whois.nic.xxs parser now recognizes reserved domains.
 
+* NEW: whois.nic.uk parser now recognizes throttled responses (#118).
+
+* NEW: whois.nic.uk parser now extracts registrant_contacts (#118).
+
 * FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
 
 * FIXED: Release 2.1.0 is not compatible with Rails 2.3 (#117).
