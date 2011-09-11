@@ -1,6 +1,7 @@
 = Changelog
 
-== master
+
+== Release 2.1.1
 
 * NEW: whois.nic.xxs parser now recognizes reserved domains.
 
