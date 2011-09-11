@@ -28,15 +28,7 @@ module Whois
       class WhoisNicLa < Base
 
         property_supported :status do
-          if content_for_scanner =~ /Status:(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
-          end
+          content_for_scanner.scan(/Status:(.+?)\n/).flatten
         end
 
         property_supported :available? do

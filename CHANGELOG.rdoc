@@ -14,6 +14,8 @@
 
 * FIXED: whois.nic.coop should support multiple statuses (#115).
 
+* FIXED: whois.nic.la should support multiple statuses (#116).
+
 
 == Release 2.1.0
 
