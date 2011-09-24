@@ -31,6 +31,7 @@ module Whois
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "active"         then :registered
+              when "delegated"      then :registered
               when "not registered" then :available
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")

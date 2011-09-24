@@ -1,5 +1,8 @@
 = Changelog
 
+== master
+
+* FIXED: whois.nic.ht parser must support `Delegated' status.
 
 == Release 2.1.1
 
