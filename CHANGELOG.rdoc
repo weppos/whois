@@ -4,6 +4,9 @@
 
 * FIXED: whois.nic.ht parser must support `Delegated' status.
 
+* FIXED: whois.nic.mu parser must support `Delegated' status.
+
+
 == Release 2.1.1
 
 * NEW: whois.nic.xxs parser now recognizes reserved domains.
