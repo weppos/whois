@@ -6,6 +6,8 @@
 
 * FIXED: whois.nic.mu parser must support `Delegated' status.
 
+* FIXED: whois.nic.ki parser must support `Delegated' status (#119).
+
 
 == Release 2.1.1
 
