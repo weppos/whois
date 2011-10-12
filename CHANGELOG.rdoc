@@ -10,6 +10,8 @@
 
 * FIXED: whois.registry.gy parser must support `Delegated' status (#120).
 
+* FIXED: whois.nic.cx parser must support `Delegated' status (#121).
+
 
 == Release 2.1.1
 
