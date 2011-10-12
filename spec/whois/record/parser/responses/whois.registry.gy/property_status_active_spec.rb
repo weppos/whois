@@ -36,36 +36,4 @@ describe Whois::Record::Parser::WhoisRegistryGy, "property_status_active.expecte
       @parser.registered?.should == true
     end
   end
-  describe "#created_on" do
-    it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2008-05-13")
-    end
-  end
-  describe "#updated_on" do
-    it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-10-12")
-    end
-  end
-  describe "#expires_on" do
-    it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-10-05")
-    end
-  end
-  describe "#nameservers" do
-    it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "ns2.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "ns1.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
-      @parser.nameservers[3].name.should == "ns4.google.com"
-    end
-  end
 end

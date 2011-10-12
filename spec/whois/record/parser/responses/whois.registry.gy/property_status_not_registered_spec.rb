@@ -36,25 +36,4 @@ describe Whois::Record::Parser::WhoisRegistryGy, "property_status_not_registered
       @parser.registered?.should == false
     end
   end
-  describe "#created_on" do
-    it do
-      @parser.created_on.should == nil
-    end
-  end
-  describe "#updated_on" do
-    it do
-      @parser.updated_on.should == nil
-    end
-  end
-  describe "#expires_on" do
-    it do
-      @parser.expires_on.should == nil
-    end
-  end
-  describe "#nameservers" do
-    it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
-    end
-  end
 end
