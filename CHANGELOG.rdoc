@@ -6,28 +6,28 @@
 
 * FIXED: whois.nic.mu parser must support `Delegated' status.
 
-* FIXED: whois.nic.ki parser must support `Delegated' status (#119).
+* FIXED: whois.nic.ki parser must support `Delegated' status (GH-119).
 
-* FIXED: whois.registry.gy parser must support `Delegated' status (#120).
+* FIXED: whois.registry.gy parser must support `Delegated' status (GH-120).
 
-* FIXED: whois.nic.cx parser must support `Delegated' status (#121).
+* FIXED: whois.nic.cx parser must support `Delegated' status (GH-121).
 
 
 == Release 2.1.1
 
 * NEW: whois.nic.xxs parser now recognizes reserved domains.
 
-* NEW: whois.nic.uk parser now recognizes throttled responses (#118).
+* NEW: whois.nic.uk parser now recognizes throttled responses (GH-118).
 
-* NEW: whois.nic.uk parser now extracts registrant_contacts (#118).
+* NEW: whois.nic.uk parser now extracts registrant_contacts (GH-118).
 
 * FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
 
-* FIXED: Release 2.1.0 is not compatible with Rails 2.3 (#117).
+* FIXED: Release 2.1.0 is not compatible with Rails 2.3 (GH-117).
 
-* FIXED: whois.nic.coop should support multiple statuses (#115).
+* FIXED: whois.nic.coop should support multiple statuses (GH-115).
 
-* FIXED: whois.nic.la should support multiple statuses (#116).
+* FIXED: whois.nic.la should support multiple statuses (GH-116).
 
 
 == Release 2.1.0
@@ -36,11 +36,11 @@
 
 * SERVER: Updated .QA and .XN--WGBL6A TLD definitions.
 
-* SERVER: Updated .SU, .RU and .XN--P1AI TLD definitions (#87).
+* SERVER: Updated .SU, .RU and .XN--P1AI TLD definitions (GH-87).
 
 * SERVER: Added the following new IDN TLDs:
-    * .XN--LGBBAT1AD8J (.الجزائر, Algeria) (#95)
-    * .XN--MGBC0A9AZCG (.المغرب, Morocco) (#96)
+    * .XN--LGBBAT1AD8J (.الجزائر, Algeria) (GH-95)
+    * .XN--MGBC0A9AZCG (.المغرب, Morocco) (GH-96)
 
 * NEW: Ability to define inheritable parsers
 
@@ -63,8 +63,8 @@
     * whois.aero
     * whois.nic.xx
     * whois.afilias.info
-    * whois.registry.qa (#114)
-    * whois.godaddy.com (#105)
+    * whois.registry.qa (GH-114)
+    * whois.godaddy.com (GH-105)
 
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
@@ -73,11 +73,11 @@
 * CHANGED: Extended core_ext section. Since all the extensions belong to ActiveSupport,
   the library attempts to use ActiveSupport if loaded.
 
-* CHANGED: Renamed whois.ripn.net to whois.tcinet.ru (#87)
+* CHANGED: Renamed whois.ripn.net to whois.tcinet.ru (GH-87)
 
 * FIXED: In a very rare situation the Whois::Client raises a
   `Errno::EINVAL: Invalid argument - bind(2)' error attempting to connect
-  to a WHOIS server (see #40).
+  to a WHOIS server (see GH-40).
 
 * FIXED: whois.nic.travel parser must support multiple statuses.
 
@@ -120,11 +120,11 @@
 
 * SERVER: Added .XXX TLD definition.
 
-* SERVER: Updated .SM TLD definition (#97).
+* SERVER: Updated .SM TLD definition (GH-97).
 
 * NEW: Ability to detect whois.dns.be throttled responses.
 
-* NEW: Added base whois.nic.sm parser (#97).
+* NEW: Added base whois.nic.sm parser (GH-97).
 
 * FIXED: whois.meregistry.net parser raises `no time information in ""'
   when updated_at property is blank.
@@ -139,13 +139,13 @@
 
 * FIXED: The Verisign WHOIS adapter crashes in some rare circumstances
   when the response from the Verisign database doesn't contain a
-  referral (#103)
+  referral (GH-103)
 
-* FIXED: whois.eu parser changed the format of the nameserver property (#99).
+* FIXED: whois.eu parser changed the format of the nameserver property (GH-99).
 
 * FIXED: whois.nic.uk parser should return `:invalid' status when the domain is invalid.
 
-* FIXED: whois.cira.ca parser must support `unavailable' status (#102).
+* FIXED: whois.cira.ca parser must support `unavailable' status (GH-102).
 
 * FIXED: whois.sk-nic.sk parser must support `DOM_EXP', `DOM_LNOT', `DOM_WARN' statuses.
 
@@ -153,7 +153,7 @@
 == Release 2.0.4
 
 * SERVER: Added the following new IDN TLDs:
-    * .XN--90A3AC (.СРБ, Serbia) (#94)
+    * .XN--90A3AC (.СРБ, Serbia) (GH-94)
 
 * FIXED: whois.nic.it parser must support pendingUpdate and pendingTransfer statuses.
 
@@ -177,7 +177,7 @@
 
 == Release 2.0.2
 
-* CHANGED: whois.ripn.net now returns an array of contacts, one for each email (#89)
+* CHANGED: whois.ripn.net now returns an array of contacts, one for each email (GH-89)
 
 * FIXED: whois.nic.it parser must support UNASSIGNABLE status.
 
@@ -193,13 +193,13 @@
 
 * SERVER: Removed invalid .WEB.COM TLD definition (whois.centralnic.net).
 
-* SERVER: Updated .EE TLD definition and corresponding parser (#64).
+* SERVER: Updated .EE TLD definition and corresponding parser (GH-64).
 
 * SERVER: Sync definitions with Debian whois 5.0.10:
     * Added new IPv4 allocations.
 
 * SERVER: Added the following 12 new IDN TLD:
-    * .XN--WGBL6A (قطر, Qatar) (#63)
+    * .XN--WGBL6A (قطر, Qatar) (GH-63)
     * .XN--3E0B707E (한국, Korea, Republic of)
     * .XN--45BRJ9C (.ভারত, India)
     * .XN--FPCRJ9C3D (భారత్, India)
@@ -219,24 +219,24 @@
   SA.COM, SE.COM, SE.NET, UK.COM, UK.NET, US.COM, UY.COM, WEB.COM,
   ZA.COM TLD parser (whois.centralnic.net).
 
-* NEW: Added ability to bind a WHOIS query to a specific local address and port (#40).
+* NEW: Added ability to bind a WHOIS query to a specific local address and port (GH-40).
 
-* NEW: Added simple .SO TLD parser (whois.nic.so) (#57).
+* NEW: Added simple .SO TLD parser (whois.nic.so) (GH-57).
 
-* NEW: Property memoization (#18)
+* NEW: Property memoization (GH-18)
 
-* NEW: whois.ripn.net now supports #registrar and #admin_contact (#72).
+* NEW: whois.ripn.net now supports #registrar and #admin_contact (GH-72).
 
 * NEW: Added support for $ gem test and Gem Testers
   See http://www.engineyard.com/blog/2011/introducing-gem-testers/
 
 * NEW: Whois::Answer::Nameserver#to_s returns the #name for BC with string-based nameservers.
 
-* NEW: Added support for throttled response detection (#23, #54, #61)
+* NEW: Added support for throttled response detection (GH-23, GH-54, GH-61)
 
-* NEW: whois.registry.in now supports #registrar (#78).
+* NEW: whois.registry.in now supports #registrar (GH-78).
 
-* NEW: Added full whois.cnnic.cn parser (#77).
+* NEW: Added full whois.cnnic.cn parser (GH-77).
 
 * NEW: Added full whois.cnnic.biz parser.
 
@@ -244,13 +244,13 @@
 
 * NEW: Extracted Whois::Answer::Parser::Features and Extracted Whois::Answer::Parser::Scanners::Base.
 
-* NEW: whois.nic.uk now supports #registrar (#81, #82).
+* NEW: whois.nic.uk now supports #registrar (GH-81, GH-82).
 
-* NEW: Added simple whois.markmonitor.net parser (#83).
+* NEW: Added simple whois.markmonitor.net parser (GH-83).
 
-* CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (#28).
+* CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (GH-28).
 
-* CHANGED: Switched from RDoc to YARDoc (#3).
+* CHANGED: Switched from RDoc to YARDoc (GH-3).
 
 * CHANGED: Whois::Server::Adapter::Base#== now returns false if other is not the same instance of self.
 
@@ -264,7 +264,7 @@
   are not defined by default. Define the method in the implementation, 
   and Whois::Answer::Parser will automatically use it.
 
-* CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (#66)
+* CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (GH-66)
 
 * CHANGED: Renamed Whois::Answer::Parser::Base.register_property to Whois::Answer::Parser::Base.property_register.
 
@@ -272,7 +272,7 @@
 
 * CHANGED: whois.nic.it parser raises on invalid #status.
 
-* CHANGED: Change #nameservers property to return an Array of Nameserver (#76, see #71, see #64).
+* CHANGED: Change #nameservers property to return an Array of Nameserver (GH-76, see GH-71, see GH-64).
 
 * CHANGED: Whois#query no longer raises Errno or SocketError.
   The errors are now rescued and re-raised as Whois::ConnectionError.
@@ -374,7 +374,7 @@
 
 * FIXED: whois.nic.kz doesn't recognize multiline status
 
-* FIXED: jprs.jp domain parser bug with empty date fields (#60)
+* FIXED: jprs.jp domain parser bug with empty date fields (GH-60)
 
 
 == Release 1.6.2
@@ -405,11 +405,11 @@
 
 * NEW: Added .co.za TLD parser (whois.coza.net.za).
 
-* NEW: Added simple .ci TLD parser (whois.nic.ci). (#39)
+* NEW: Added simple .ci TLD parser (whois.nic.ci). (GH-39)
 
-* NEW: Added simple .gy TLD parser (whois.registry.gy). (#45)
+* NEW: Added simple .gy TLD parser (whois.registry.gy). (GH-45)
 
-* NEW: Added simple .hm TLD parser (whois.registry.hm). (#46)
+* NEW: Added simple .hm TLD parser (whois.registry.hm). (GH-46)
 
 * NEW: Added simple .pl TLD parser (whois.dns.pl).
 
@@ -505,7 +505,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 == Release 1.3.10
 
-* CHANGED: Standardized #status property for the following parsers (#5)
+* CHANGED: Standardized #status property for the following parsers (GH-5)
   * whois.aero
   * whois.aeda.net.ae
   * whois.audns.net.au
@@ -542,7 +542,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
   * whois.rotld.ro
   * whois.srs.net.nz
 
-* FIXED: Property cache is missing for some parsers (#18)
+* FIXED: Property cache is missing for some parsers (GH-18)
 
 * FIXED: In some circumstances the whois.jprs.js parser may raise 
   an Argument out of range error trying to parse the #updated_on property.
@@ -599,7 +599,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
   when the response from the Verisign database returns a "not defined" value
-  for the Referral Whois Server (#42)
+  for the Referral Whois Server (GH-42)
 
 
 == Release 1.3.7
@@ -640,9 +640,9 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 == Release 1.3.5
 
-* SERVER: Updated the .so TLD definition (#36).
+* SERVER: Updated the .so TLD definition (GH-36).
 
-* NEW: Added simple .ug TLD parser (whois.co.ug) (#35). [DerGuteMoritz]
+* NEW: Added simple .ug TLD parser (whois.co.ug) (GH-35). [DerGuteMoritz]
 
 * FIXED: ruby-whois executable is not installed when the Gem is installed.
 
@@ -667,13 +667,13 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 == Release 1.3.2
 
-* FIXED: .nl TLD parser doesn't understand quarantine status (#34).
+* FIXED: .nl TLD parser doesn't understand quarantine status (GH-34).
 
 * CHANGED: Parser aliases are now created aliasing constants instead subclassing.
 
-* CHANGED: Updated .hk parser to whois.hkirc.hk (#30).
+* CHANGED: Updated .hk parser to whois.hkirc.hk (GH-30).
 
-* CHANGED: Updated .tw parser to whois.twnic.net.tw (#31).
+* CHANGED: Updated .tw parser to whois.twnic.net.tw (GH-31).
 
 
 == Release 1.3.1
@@ -738,9 +738,9 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * CHANGED: The .co TLD now has a WHOIS interface (whois.nic.co). Added simple .co parser.
 
-* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (#29).
+* CHANGED: Updated .sa TLD parser from saudinic.net.sa to whois.nic.net.sa (GH-29).
 
-* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (#27).
+* CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (GH-27).
 
 
 == Release 1.2.1
@@ -782,7 +782,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 == Release 1.1.7
 
-* FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (#24)
+* FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (GH-24)
 
 
 == Release 1.1.6
@@ -913,7 +913,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 == Release 1.0.7
 
-* FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (#19).
+* FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (GH-19).
 
 
 == Release 1.0.6
@@ -947,11 +947,11 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * SERVER: Updated the .dj TLD definition (whois 5.0.1).
 
-* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (#15)
+* NEW: Support for 'nameservers' property for the whois.afilias.info parser. (GH-15)
 
-* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (#17)
+* NEW: Support for 'nameservers' property for the whois.nic.tel parser. (GH-17)
 
-* NEW: Support for 'nameservers' property for the whois.eu parser. (#16)
+* NEW: Support for 'nameservers' property for the whois.eu parser. (GH-16)
 
 * NEW: Support for 'nameservers' property for the whois.meregistry.net parser.
 
@@ -975,7 +975,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * SERVER: Updated web address for the .gt TLD [axic]
 
-* SERVER: Updated web address for the .co TLD (#13)
+* SERVER: Updated web address for the .co TLD (GH-13)
 
 * NEW: Support for 'Contact#zip' property for the whois.nic.it parser [axic]
 
@@ -985,7 +985,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * FIXED: The whois.nic.it parser extracts the wrong Contact country_code property [axic]
 
-* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (#14)
+* FIXED: With some .de domains, whois.denic.de parser returns invalid values for nameservers (GH-14)
 
 * FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
 
