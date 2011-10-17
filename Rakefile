@@ -1,8 +1,4 @@
 require 'rubygems'
-require 'rspec/core/rake_task'
-require 'rubygems/package_task'
-require 'yard'
-require 'yard/rake/yardoc_task'
 
 $:.unshift(File.dirname(__FILE__) + '/lib')
 require 'whois'
@@ -21,11 +17,6 @@ end
 task :default => :spec
 task :test => :spec
 
-# This builds the actual gem. For details of what all these options
-# mean, and other ones you can add, check the documentation here:
-#
-#   http://rubygems.org/read/chapter/20
-#
 spec = Gem::Specification.new do |s|
   s.name              = PKG_NAME
   s.version           = PKG_VERSION
@@ -56,8 +47,9 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency "yard"
 end
 
-# This task actually builds the gem.
-# We also regenerate a static .gemspec file.
+
+require 'rubygems/package_task'
+
 Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
@@ -69,7 +61,8 @@ task :gemspec do
 end
 
 
-# Run all the specs in the /spec folder
+require 'rspec/core/rake_task'
+
 RSpec::Core::RakeTask.new
 
 
@@ -112,6 +105,9 @@ task :clobber => [:clobber_package]
 desc "Package the library and generates the gemspec"
 task :package => [:gemspec]
 
+
+require 'yard'
+require 'yard/rake/yardoc_task'
 
 YARD::Rake::YardocTask.new(:yardoc) do |y|
   y.options = ["--output-dir", "yardoc"]
