@@ -1,6 +1,6 @@
-= Changelog
+# Changelog
 
-== master
+## master
 
 * FIXED: whois.nic.ht parser must support `Delegated' status.
 
@@ -13,7 +13,7 @@
 * FIXED: whois.nic.cx parser must support `Delegated' status (GH-121).
 
 
-== Release 2.1.1
+## Release 2.1.1
 
 * NEW: whois.nic.xxs parser now recognizes reserved domains.
 
@@ -30,7 +30,7 @@
 * FIXED: whois.nic.la should support multiple statuses (GH-116).
 
 
-== Release 2.1.0
+## Release 2.1.0
 
 * SERVER: Added .COM.DE, .GR.COM, .US.ORG TLD definitions.
 
@@ -87,12 +87,12 @@
 
 * REMOVED: Removed deprecated Whois::Answer class.
 
-* REMOVED: Removed deprecated Whois::Record#== behavior.
+* REMOVED: Removed deprecated Whois::Record### behavior.
 
 * REMOVED: Removed deprecated Whois::Record::Parser::WhoisTonicTo#incomplete_response? method.
 
 
-== Release 2.0.7
+## Release 2.0.7
 
 * CHANGED: whois.dns.pt changed nameservers response format.
 
@@ -103,7 +103,7 @@
 * FIXED: whois.educause.edu parser crashes when the updated_on property is `unknown'.
 
 
-== Release 2.0.6
+## Release 2.0.6
 
 * CHANGED: whois.gg changed response format.
 
@@ -114,7 +114,7 @@
 * FIXED: whois.srs.net.nz parser must support `210 PendingRelease' status.
 
 
-== Release 2.0.5
+## Release 2.0.5
 
 * SERVER: Updated .BI TLD definition.
 
@@ -150,7 +150,7 @@
 * FIXED: whois.sk-nic.sk parser must support `DOM_EXP', `DOM_LNOT', `DOM_WARN' statuses.
 
 
-== Release 2.0.4
+## Release 2.0.4
 
 * SERVER: Added the following new IDN TLDs:
     * .XN--90A3AC (.СРБ, Serbia) (GH-94)
@@ -161,7 +161,7 @@
   attribute is an invalid date.
 
 
-== Release 2.0.3
+## Release 2.0.3
 
 * SERVER: Sync definitions with Debian whois 5.0.11:
     * Added the remaining IPv4 allocations.
@@ -175,19 +175,19 @@
 * FIXED: whois.sk-nic.sk parser must support DOM_DAKT status.
 
 
-== Release 2.0.2
+## Release 2.0.2
 
 * CHANGED: whois.ripn.net now returns an array of contacts, one for each email (GH-89)
 
 * FIXED: whois.nic.it parser must support UNASSIGNABLE status.
 
 
-== Release 2.0.1
+## Release 2.0.1
 
 * FIXED: Removed invalid test files.
 
 
-== Release 2.0.0
+## Release 2.0.0
 
 * SERVER: Added .AE.ORG, .AR.COM, .KR.COM TLD definitions (whois.centralnic.net).
 
@@ -252,7 +252,7 @@
 
 * CHANGED: Switched from RDoc to YARDoc (GH-3).
 
-* CHANGED: Whois::Server::Adapter::Base#== now returns false if other is not the same instance of self.
+* CHANGED: Whois::Server::Adapter::Base### now returns false if other is not the same instance of self.
 
 * CHANGED: Deprecated the comparison of Whois::Answer with String.
 
@@ -327,7 +327,7 @@
 
 * FIXED: whois.sk-nic.sk parser must support "DOM_HELD" status.
 
-=== BC
+### Backward Incompatibilities
 
 * Whois::Server::Adapters::Base#append_to_buffer renamed to buffer_append.
 
@@ -344,7 +344,7 @@
   Whois::Answer::Parser::Base.property_register.
 
 
-== Release 1.6.6
+## Release 1.6.6
 
 * NEW: Backported whois.centralnic.net support from version 2.0.
 
@@ -353,14 +353,14 @@
 * FIXED: whois.cira.ca must support "auto-renew grace" status.
 
 
-== Release 1.6.5
+## Release 1.6.5
 
 * FIXED: whois.dns.pt must support :reserved status.
 
 * FIXED: whois.cira.ca must support :redemption status as :registered.
 
 
-== Release 1.6.4
+## Release 1.6.4
 
 * FIXED: With some .pl domains, whois.dns.pl parser returns invalid values for nameservers.
 
@@ -370,14 +370,14 @@
 * FIXED: whois.nic.ve must support :suspended status.
 
 
-== Release 1.6.3
+## Release 1.6.3
 
 * FIXED: whois.nic.kz doesn't recognize multiline status
 
 * FIXED: jprs.jp domain parser bug with empty date fields (GH-60)
 
 
-== Release 1.6.2
+## Release 1.6.2
 
 * SERVER: Updated the .sg TLD definition.
 
@@ -420,12 +420,12 @@
 * FIXED: The CLI help message uses whois instead or ruby-whois.
 
 
-== Release 1.6.1
+## Release 1.6.1
 
 * FIXED: Fixed unknown status `Inactive' for kero.yachay.pe.
 
 
-== Release 1.6.0
+## Release 1.6.0
 
 * SERVER: Updated the .nc TLD definition.
 
@@ -476,7 +476,7 @@
 * FIXED: whois.audns.net.au record can contain multiple statuses.
 
 
-== Release 1.5.1
+## Release 1.5.1
 
 * NEW: Added simple .kg TLD parser (whois.domain.kg).
 
@@ -487,7 +487,7 @@
 * FIXED: With some .cz domains, whois.nic.cz parser returns invalid values for nameservers.
 
 
-== Release 1.5.0
+## Release 1.5.0
 
 WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
@@ -503,7 +503,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * REMOVED: Remove deprecated Whois::Answer::Part#response property.
 
 
-== Release 1.3.10
+## Release 1.3.10
 
 * CHANGED: Standardized #status property for the following parsers (GH-5)
   * whois.aero
@@ -551,7 +551,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
   the domain is suspended.
 
 
-== Release 1.3.10
+## Release 1.3.10
 
 * SERVER: Removed the .fed.us TLD definition.
 
@@ -570,7 +570,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Standardized whois.nic.gov #status property.
 
 
-== Release 1.3.9
+## Release 1.3.9
 
 * SERVER: Sync definitions with Debian whois 5.0.8:
     * Updated the .bb, .ps, and .lk TLD definitions.
@@ -595,14 +595,14 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: Compatibility with the new whois.cira.ca record schema.
 
 
-== Release 1.3.8
+## Release 1.3.8
 
 * FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
   when the response from the Verisign database returns a "not defined" value
   for the Referral Whois Server (GH-42)
 
 
-== Release 1.3.7
+## Release 1.3.7
 
 * SERVER: Updated the .ci TLD definition.
 
@@ -631,14 +631,14 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
   it now returns symbols instead of strings.
 
 
-== Release 1.3.6
+## Release 1.3.6
 
 * CHANGED: Deprecated Whois::Answer::Part#response.
 
 * FIXED: whois.denic.de parser is not compatible with Denic response v 2.0.
 
 
-== Release 1.3.5
+## Release 1.3.5
 
 * SERVER: Updated the .so TLD definition (GH-36).
 
@@ -647,14 +647,14 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: ruby-whois executable is not installed when the Gem is installed.
 
 
-== Release 1.3.4
+## Release 1.3.4
 
 * FIXED: With some .ie domains, whois.dns.be parser returns invalid values for nameservers.
 
 * FIXED: With some .be domains, whois.dmainregistry.ie parser returns invalid values for nameservers.
 
 
-== Release 1.3.3
+## Release 1.3.3
 
 * NEW: Ability to parse Registrar for .ca TLD parser. [aeden]
 
@@ -665,7 +665,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: With some .me domains, whois.meregistry.net parser returns invalid values for nameservers.
 
 
-== Release 1.3.2
+## Release 1.3.2
 
 * FIXED: .nl TLD parser doesn't understand quarantine status (GH-34).
 
@@ -676,7 +676,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Updated .tw parser to whois.twnic.net.tw (GH-31).
 
 
-== Release 1.3.1
+## Release 1.3.1
 
 * SERVER: Added the following 10 new IDN TLD:
     * .xn--fzc2c9e2c (.ලංකා, Sri Lanka)
@@ -697,7 +697,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * REMOVED: Deprecated Whois::Answer::Parser.properties method.
 
 
-== Release 1.3.0
+## Release 1.3.0
 
 * NEW: Ability to query IANA for TLD WHOIS information. [aadlani]
 
@@ -709,10 +709,10 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * NEW: Ability to compare two Server adapters for equality.
 
-    Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
+    Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo") ## Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
     # => true
 
-    Whois::Server.factory(:ipv4, "192.168.1.0", "whois.foo") == Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
+    Whois::Server.factory(:ipv4, "192.168.1.0", "whois.foo") ## Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.foo")
     # => false
 
 * CHANGED: Renamed Scanners::VerisignScanner to Scanners::Verisign.
@@ -720,7 +720,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Excluded test folder from the packaged .gem file to reduce the size of the final packaged library.
 
 
-== Release 1.2.2
+## Release 1.2.2
 
 * SERVER: Sync definitions with Debian whois 5.0.6.
 
@@ -743,7 +743,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Updated .au TLD parser from whois.ausregistry.net.au to whois.audns.net.au (GH-27).
 
 
-== Release 1.2.1
+## Release 1.2.1
 
 * NEW: Added simple .ee TLD parser (whois.eenet.ee).
 
@@ -758,7 +758,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * NEW: Added simple .uy TLD parser (whois.nic.org.uy).
 
 
-== Release 1.2.0
+## Release 1.2.0
 
 * NEW: Whois::Answer#throttle? returns true in case of throttle response (see whois.publicinternetregistry.com for a real example)
 
@@ -771,7 +771,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Lazy-load adapters using Ruby autoload feature.
 
 
-== Release 1.1.8
+## Release 1.1.8
 
 * NEW: Added simple .pt TLD parser (whois.dns.pt).
 
@@ -780,17 +780,17 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * NEW: Added simple .tr TLD parser (whois.nic.tr).
 
 
-== Release 1.1.7
+## Release 1.1.7
 
 * FIXED: method `to_time' not defined in DateTime (NameError) when the library is used with Ruby 1.9.1 and Rails (GH-24)
 
 
-== Release 1.1.6
+## Release 1.1.6
 
 * NEW: Added simple .in.ua TLD parser (whois.in.ua). It seems that .in.ua is handled separately from .ua.
 
 
-== Release 1.1.5
+## Release 1.1.5
 
 * NEW: Added simple .ua TLD parser (whois.net.ua).
 
@@ -799,7 +799,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Cleanup Whois::Adapter::Base @buffer after a successful request.
 
 
-== Release 1.1.4
+## Release 1.1.4
 
 * NEW: Added registrar support to Verisign parsers
 
@@ -810,30 +810,30 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: Whois::Answer::Parsers::WhoisDotTk is not compatible with Ruby 1.9
 
 
-== Release 1.1.3
+## Release 1.1.3
 
 * NEW: Added simple .tk TLD parser (whois.dot.tk).
 
 * NEW: Added .sn TLD parser (whois.nic.sn).
 
-* CHANGED: Whois::Answer#== and Whois::Answer#eql? should be able to compare Whois::Answer with subclasses.
+* CHANGED: Whois::Answer### and Whois::Answer#eql? should be able to compare Whois::Answer with subclasses.
 
 * CHANGED: Deprecate Whois::Answer::Parser.properties. Use Whois::Answer::Parser::PROPERTIES instead.
 
 
-== Release 1.1.2
+## Release 1.1.2
 
 * NEW: Whois::Answer::Contact#type property returns the type of the contact (ADMIN, TECHNICAL, ...).
 
 * FIXED: Whois::Answer::Parser::Base#contacts decomposes each Contact property in a single contact.
 
 
-== Release 1.1.1
+## Release 1.1.1
 
 * FIXED: Deprecated methods Whois::Answer::Parser::Base#(admin|technical|registrant) didn't figure as supported with Whois::Answer#property_supported?(:method)
 
 
-== Release 1.1.0
+## Release 1.1.0
 
 * NEW: Added simple .am TLD parser (whois.nic.am).
 
@@ -848,7 +848,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Renamed Whois::Answer::Parser::Base#(admin|technical|registrant) to Whois::Answer::Parser::Base#(admin|technical|registrant)_contact.
 
 
-== Release 1.0.12
+## Release 1.0.12
 
 * NEW: Added simple .in TLD parser (whois.registry.in).
 
@@ -857,7 +857,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: With some .lu domains, whois.dns.lu parser returns invalid values for nameservers.
 
 
-== Release 1.0.11
+## Release 1.0.11
 
 * NEW: Added simple .af TLD parser (whois.nic.af).
 
@@ -874,7 +874,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: Fixed uninitialized constant error Whois::Answer::Parser::WhoisNicOrKr when trying to load the .kr parser.
 
 
-== Release 1.0.10
+## Release 1.0.10
 
 * NEW: Added simple .kr TLD parser (whois.nic.or.kr).
 
@@ -887,7 +887,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: With some .bg domains, whois.register.bg parser returns invalid values for nameservers.
 
 
-== Release 1.0.9
+## Release 1.0.9
 
 * NEW: Added simple .lt TLD parser (whois.domreg.lt).
 
@@ -904,19 +904,19 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: With some .ru domains, whois.ripn.net parser returns invalid values for nameservers.
 
 
-== Release 1.0.8
+## Release 1.0.8
 
 * NEW: Added simple .nz TLD parser (whois.srs.net.nz).
 
 * FIXED: With some .ch domains, whois.nic.ch parser returns invalid or duplicate values for nameservers.
 
 
-== Release 1.0.7
+## Release 1.0.7
 
 * FIXED: whois.nic.hu parser raises a NoMethodError when trying to access 'registrant' property for personal domains (GH-19).
 
 
-== Release 1.0.6
+## Release 1.0.6
 
 * NEW: Added simple .ve TLD parser (whois.nic.ve).
 
@@ -939,7 +939,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: whois.nic.tv now correctly raises PropertyNotSupported when a property is not supported.
 
 
-== Release 1.0.5
+## Release 1.0.5
 
 * SERVER: Sync definitions with Debian whois 5.0.1.
 
@@ -960,7 +960,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: With some .se domains, whois.nic-se.se parser returns invalid values for nameservers.
 
 
-== Release 1.0.4
+## Release 1.0.4
 
 * NEW: Added Symbol.to_proc core extension to ensure compatibility with Ruby 1.8.6.
 
@@ -969,7 +969,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Suppress Japanese output for the .js TLD [axic]
 
 
-== Release 1.0.3
+## Release 1.0.3
 
 * SERVER: Added web address for the .eg TLD [axic]
 
@@ -990,17 +990,17 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * FIXED: whois.crsnic.net crashes with reserved IANA domains (ex y.com)
 
 
-== Release 1.0.2
+## Release 1.0.2
 
 * CHANGED: Changed Parsers to use a normalized content version called Whois::Parser::Base#content_for_scanner (Dho! I forgot to save some files on TextMate)
 
 
-== Release 1.0.1
+## Release 1.0.1
 
 * CHANGED: Changed Parsers to use a normalized content version called Whois::Parser::Base#content_for_scanner
 
 
-== Release 1.0.0
+## Release 1.0.0
 
 * SERVER: Changed .biz TLD server to whois.biz (see http://www.iana.org/domains/root/db/biz.html)
 
@@ -1141,7 +1141,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * REMOVED: Removed Deprecated compatibility layer to Whois 0.4.2
 
 
-== Release 0.9.0
+## Release 0.9.0
 
 * SERVER: .ec TLD has a whois server (closes REDMINE-322)
 
@@ -1202,7 +1202,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * CHANGED: Renamed #supported to #property_supported?
 
 
-== Release 0.8.1
+## Release 0.8.1
 
 * FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes REDMINE-314)
 
@@ -1211,7 +1211,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * NEW: ability to check whether a property is supported via answer.supported? or parser.supported?
 
 
-== Release 0.8.0
+## Release 0.8.0
 
 * FIXED: Server definition with :format doesn't use the Formatted adapter (closes REDMINE-305)
 
@@ -1228,7 +1228,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 * REMOVED: Whois::Answer#i_am_feeling_lucky (formerly Whois::Answer#i_am_feeling_lucky) become obsolete since the introduction of Answer parsers.
 
 
-== Release 0.6.0
+## Release 0.6.0
 
 * NEW: new more convenient method to query a whois server in addition to the existing Whois::whois method.
 
@@ -1257,23 +1257,23 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
   
     r = Whois::query("domain.com")
     # supported but deprecated in a future version
-    r == "NOT FOUND"
+    r ## "NOT FOUND"
     # explicitly cast the object to string instead
-    r.to_s == "NOT FOUND"
+    r.to_s ## "NOT FOUND"
     # or use one of the other Whois::Response methods.
 
 Note. This is an experimental version (EAP) and it should not be considered production-ready.
 API might change at any time without previous notice.
 
 
-== Release 0.5.3
+## Release 0.5.3
 
 * FIXED: self.valid_ipv6?(addr) references valid_v4? instead of valid_ipv4? (closes REDMINE-300)
 
 * FIXED: In some rare circumstances the server guessing fails to return the right server but returns an other server instead (closes REDMINE-260).
 
 
-== Release 0.5.2
+## Release 0.5.2
 
 * SERVER: Sync definitions with Debian whois 4.7.36.
 
@@ -1295,7 +1295,7 @@ API might change at any time without previous notice.
 * FIXED: DeprecatedWhoisTest are flagged with need_connectivity method because they require connectivity.
 
 
-== Release 0.5.1
+## Release 0.5.1
 
 * NEW: Whois binary (closes REDMINE-271).
 
@@ -1304,7 +1304,7 @@ API might change at any time without previous notice.
 * FIXED: In case of thin server the client should concatenate all responses (closes REDMINE-259).
 
 
-== Release 0.5.0
+## Release 0.5.0
 
 * NEW: Support for IPv4 and IPv6 (closes REDMINE-265).
 
@@ -1324,7 +1324,7 @@ API might change at any time without previous notice.
 * SERVER: Updated .ae TLD definition (closes REDMINE-270).
 
 
-== Release 0.1.1
+## Release 0.1.1
 
 * FIXED: Server#guess should raise ServerNotFound when query is not recognized.
 
@@ -1333,6 +1333,6 @@ API might change at any time without previous notice.
 * CHANGED: Removed the Kernel#whois method because fights with many implementations of missing_method. Moved the method under the Whois namespace.
 
 
-== Release 0.1.0
+## Release 0.1.0
 
 * First release
