@@ -12,6 +12,8 @@
 
 * FIXED: whois.nic.cx parser must support `Delegated' status (GH-121).
 
+* FIXED: With some .com.br domains, whois.registro.br parser returns invalid values for nameservers.
+
 
 ## Release 2.1.1
 
