@@ -4,6 +4,8 @@ rvm:
   - ruby-head
   - ree
   - jruby
+  - rbx
+  - rbx-2.0
 notifications:
   recipients:
     - weppos@weppos.net
