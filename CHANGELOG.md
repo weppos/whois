@@ -16,6 +16,8 @@
 
 * FIXED: With some .com.br domains, whois.registro.br parser returns invalid values for nameservers.
 
+* FIXED: whois.nic.it parser should support `pendingTransfer / autoRenewPeriod' status (GH-124).
+
 
 ## Release 2.1.1
 

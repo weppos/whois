@@ -45,10 +45,14 @@ module Whois
           case node("Status").to_s.downcase
           when /^ok/, "active", /\bclient/
             :registered
-          when "grace-period", "pendingupdate", "pendingtransfer", "no-provider"
+          when "grace-period", "pendingupdate", "no-provider"
             :registered
-          when "pendingdelete / redemptionperiod", /redemption\-/,
-          # The domain will be deleted in 5 days
+          when "pendingtransfer",
+               "pendingtransfer / autorenewperiod"
+            :registered
+          when /redemption\-/,
+               "pendingdelete / redemptionperiod",
+               # The domain will be deleted in 5 days
                "pendingdelete / pendingdelete"
             :redemption
           when "unassignable"
