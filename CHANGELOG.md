@@ -18,6 +18,8 @@
 
 * FIXED: whois.nic.it parser should support `pendingTransfer / autoRenewPeriod' status (GH-124).
 
+* FIXED: whois.nic.net.nf parser must support `Delegated' status (GH-125).
+
 
 ## Release 2.1.1
 
