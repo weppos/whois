@@ -1,5 +1,6 @@
 # Changelog
 
+
 ## master
 
 * CHANGED: whois.je changed response format (GH-123).
@@ -19,6 +20,8 @@
 * FIXED: whois.nic.it parser should support `pendingTransfer / autoRenewPeriod' status (GH-124).
 
 * FIXED: whois.nic.net.nf parser must support `Delegated' status (GH-125).
+
+* FIXED: whois.nic.ms parser must support `Delegated' status (GH-126).
 
 
 ## Release 2.1.1
