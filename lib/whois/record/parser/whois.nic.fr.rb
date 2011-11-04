@@ -33,6 +33,7 @@ module Whois
               when "active"     then :registered
               when "registered" then :registered
               when "redemption" then :redemption
+              when "blocked"    then :inactive
               # NEWSTATUS (reserved)
               when "frozen"     then :frozen
               else

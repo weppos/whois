@@ -23,6 +23,8 @@
 
 * FIXED: whois.nic.ms parser must support `Delegated' status (GH-126).
 
+* FIXED: whois.nic.fr parser must support `BLOCKED' status (GH-127).
+
 
 ## Release 2.1.1
 
