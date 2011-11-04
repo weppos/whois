@@ -44,7 +44,7 @@ module Whois
               when "connect"    then :registered
               when "free"       then :available
               when "invalid"    then :invalid
-              # NEWSTATUS
+              # NEWSTATUS (inactive)
               # The domain is registered, but there is not DNS entry for it.
               when "failed"     then :registered
               else

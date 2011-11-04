@@ -37,7 +37,7 @@ module Whois
               when "registered until renewal date."         then :registered
               when "registration request being processed."  then :registered
               when "renewal request being processed."       then :registered
-              # NEWSTATUS
+              # NEWSTATUS (redemption?)
               when "renewal required."                      then :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
