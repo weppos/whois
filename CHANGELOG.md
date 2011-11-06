@@ -29,6 +29,8 @@
 
 * FIXED: whois.nic.gs parser must support `Delegated' status (GH-128).
 
+* FIXED: whois.nic.tl parser must support `Delegated'.
+
 
 ## Release 2.1.1
 
