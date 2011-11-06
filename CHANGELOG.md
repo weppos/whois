@@ -3,6 +3,8 @@
 
 ## master
 
+* NEW: Added base whois.nic.net.sb parser (GH-56).
+
 * CHANGED: whois.je changed response format (GH-123).
 
 * FIXED: whois.nic.ht parser must support `Delegated' status.

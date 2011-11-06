@@ -6,8 +6,8 @@
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 #Whois::Server.define :tld, ".gp", "whois.nic.gp"
 #Whois::Server.define :tld, ".kp", "whois.kcce.kp"
-#Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
-.com.uy;;;
+sb;whois.nic.net.sb;baidu.com.sb;u34jedzcq.sb
+com.uy;;;
 ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
