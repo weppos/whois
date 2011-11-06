@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.na"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 

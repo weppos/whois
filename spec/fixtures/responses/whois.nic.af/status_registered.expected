@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.af"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 

@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicHt, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.ht"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -39,19 +49,19 @@ describe Whois::Record::Parser::WhoisNicHt, "status_registered.expected" do
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2004-06-18 00:00:00 UTC")
+      @parser.created_on.should == Time.parse("2004-06-18 00:00:00")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-05-20 00:00:00 UTC")
+      @parser.updated_on.should == Time.parse("2010-05-20 00:00:00")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-06-18 00:00:00 UTC")
+      @parser.expires_on.should == Time.parse("2011-06-18 00:00:00")
     end
   end
   describe "#nameservers" do

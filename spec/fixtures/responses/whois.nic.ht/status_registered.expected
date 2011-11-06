@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.ht"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -10,15 +17,15 @@
 
 #created_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2004-06-18 00:00:00 UTC")
+  should: %s == Time.parse("2004-06-18 00:00:00")
 
 #updated_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2010-05-20 00:00:00 UTC")
+  should: %s == Time.parse("2010-05-20 00:00:00")
 
 #expires_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2011-06-18 00:00:00 UTC")
+  should: %s == Time.parse("2011-06-18 00:00:00")
 
 
 #nameservers

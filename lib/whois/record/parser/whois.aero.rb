@@ -17,7 +17,6 @@ module Whois
       # Parser for the whois.aero server.
       class WhoisAero < BaseAfilias
 
-
         property_supported :status do
           Array.wrap(node("Domain Status"))
         end
