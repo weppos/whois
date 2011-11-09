@@ -31,6 +31,8 @@
 
 * FIXED: whois.nic.tl parser must support `Delegated'.
 
+* FIXED: whois.nic.net.ng parser must support `Delegated'.
+
 
 ## Release 2.1.1
 
