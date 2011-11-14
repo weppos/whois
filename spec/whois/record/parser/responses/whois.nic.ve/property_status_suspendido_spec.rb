@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicVe, "property_status_suspendido.expected
 
   describe "#status" do
     it do
-      @parser.status.should == :suspended
+      @parser.status.should == :inactive
     end
   end
   describe "#available?" do

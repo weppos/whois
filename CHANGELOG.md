@@ -7,6 +7,8 @@
 
 * CHANGED: whois.je changed response format (GH-123).
 
+* CHANGED: whois.nic.ve now returns `:inactive' instead of `:suspended'.
+
 * FIXED: whois.nic.ht parser must support `Delegated' status.
 
 * FIXED: whois.nic.mu parser must support `Delegated' status.
