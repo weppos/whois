@@ -30,8 +30,9 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /^Estado \/ Status:\s+(.+)\n/
             case $1.downcase
-              when "active" then :registered
+              when "active"   then :registered
               when "reserved" then :reserved
+              when "tech-pro" then :inactive
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -50,7 +51,7 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ / Creation Date .+?:\s+(.*)\n/
+          if content_for_scanner =~ / Creation Date .+?:\s+(.+)\n/
             Time.utc(*$1.split("/").reverse)
           end
         end

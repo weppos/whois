@@ -37,6 +37,8 @@
 
 * FIXED: whois.na-nic.com.na parser must support `Suspended' status (GH-130).
 
+* FIXED: whois.dns.pt parser must support `TECH-PRO' status (closes GH-132).
+
 
 ## Release 2.1.1
 
