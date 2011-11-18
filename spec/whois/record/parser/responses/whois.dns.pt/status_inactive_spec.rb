@@ -49,7 +49,8 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_inactive.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("2014-03-01 00:00:00 UTC")
     end
   end
   describe "#nameservers" do

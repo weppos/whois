@@ -9,6 +9,8 @@
 
 * CHANGED: whois.nic.ve now returns `:inactive' instead of `:suspended'.
 
+* CHANGED: whois.dns.pt now supports `expired_on` property.
+
 * FIXED: whois.nic.ht parser must support `Delegated' status.
 
 * FIXED: whois.nic.mu parser must support `Delegated' status.

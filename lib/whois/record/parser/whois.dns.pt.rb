@@ -58,7 +58,11 @@ module Whois
 
         property_not_supported :updated_on
 
-        property_not_supported :expires_on
+        property_supported :expires_on do
+          if content_for_scanner =~ / Expiration Date .+?:\s+(.+)\n/
+            Time.utc(*$1.split("/").reverse)
+          end
+        end
 
 
         property_supported :nameservers do

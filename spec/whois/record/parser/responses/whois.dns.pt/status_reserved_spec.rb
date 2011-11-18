@@ -49,7 +49,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_reserved.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.expires_on.should == nil
     end
   end
   describe "#nameservers" do
