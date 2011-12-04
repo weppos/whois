@@ -74,7 +74,7 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             if line =~ /(.+) \((.+)\)/
-              Record::Nameserver.new($1, $2)
+              Record::Nameserver.new($1, *$2.split(", "))
             else
               Record::Nameserver.new(line.strip)
             end

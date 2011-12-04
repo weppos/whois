@@ -21,7 +21,7 @@
 domain:       albatani.cz
 registrant:   SB:EDRIVEHOSTING
 admin-c:      BRUHADAVID
-nsset:        NSS:EDRIVEHOSTING:1
+nsset:        NSS:KRAXNET:1
 registrar:    REG-GENREG
 status:       paid and in zone
 registered:   07.08.1999 02:00:00
@@ -50,12 +50,14 @@ e-mail:       domeny@edrive-hosting.cz
 registrar:    REG-GENREG
 created:      22.08.2007 17:45:00
 
-nsset:        NSS:EDRIVEHOSTING:1
-nserver:      ns.albatani.cz (195.122.208.21)
-nserver:      ns.albatani.net 
-tech-c:       BRUHADAVID
-tech-c:       SB:EDRIVEHOSTING
-registrar:    REG-GENREG
+nsset:        NSS:KRAXNET:1
+nserver:      ns.kraxnet.com
+nserver:      ns1.kraxnet.cz (178.217.247.1)
+nserver:      ns.kraxnet.cz (178.217.247.2, 2a02:1360::56)
+tech-c:       SB:KRAXNET
+tech-c:       KUBICEK
+registrar:    REG-KRAXNET
 created:      01.10.2007 02:00:00
+changed:      19.09.2011 17:48:26
 
 
