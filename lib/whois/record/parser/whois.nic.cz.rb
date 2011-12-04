@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-
+require 'whois/record/parser/scanners/whois.nic.cz.rb'
 
 module Whois
   class Record
@@ -26,6 +26,15 @@ module Whois
       # and examples.
       #
       class WhoisNicCz < Base
+        include Scanners::Ast
+
+        property_supported :domain do
+          if registered? and content_for_scanner =~ /domain:\s+(.+)\n/
+            $1
+          end
+        end
+
+        property_not_supported :domain_id
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
@@ -70,6 +79,25 @@ module Whois
           end
         end
 
+        property_supported :registrar do
+          if content_for_scanner =~ /registrar:\s+(.+)\n/
+            Whois::Record::Registrar.new(:id => $1, :name => $1)
+          end
+        end
+
+        property_supported :admin_contacts do
+          if content_for_scanner =~ /admin-c:\s+(.*)\n/
+            contact($1, Whois::Record::Contact::TYPE_ADMIN)
+          end
+        end
+
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /registrant:\s+(.*)\n/
+            contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
+          end
+        end
+
+        property_not_supported :technical_contacts
 
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
@@ -80,6 +108,29 @@ module Whois
             end
           end
         end
+
+        # Initializes a new {Scanners::WhoisTldEe} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisNicCz.new(content_for_scanner).parse
+        end
+
+        protected
+
+          def contact(element, type)
+            node(element) do |raw|
+              Record::Contact.new(
+                :id             => element,
+                :type           => type,
+                :name           => raw['name'],
+                :organization   => raw['org'],
+                :created_on     => Time.parse(raw['created'])
+              )
+            end
+          end
 
       end
 
