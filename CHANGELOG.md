@@ -43,6 +43,8 @@
 
 * FIXED: whois.nic.net.nf parser must support /pending delete/ status (GH-131).
 
+* FIXED: whois.nic.cz IPv6 nameserver support (GH-135).
+
 
 ## Release 2.1.1
 
