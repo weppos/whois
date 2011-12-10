@@ -34,9 +34,9 @@
   should: %s[0].id            == "GI658-FRNIC"
   should: %s[0].name          == nil
   should: %s[0].organization  == "Google Inc."
-  should: %s[0].address       == "1600, Amphitheatre Parkway"
-  should: %s[0].city          == "Mountain View Ca"
-  should: %s[0].zip           == "94043"
+  should: %s[0].address       == "1600, Amphitheatre Parkway\n94043 Mountain View Ca"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
   should: %s[0].state         == nil
   should: %s[0].country       == nil
   should: %s[0].country_code  == "US"
@@ -53,9 +53,9 @@
   should: %s[0].id            == "TT599-FRNIC"
   should: %s[0].name          == "Tu Tsao"
   should: %s[0].organization  == "Google France"
-  should: %s[0].address       == "38, avenue de l'Opera"
-  should: %s[0].city          == "Paris"
-  should: %s[0].zip           == "75002"
+  should: %s[0].address       == "38, avenue de l'Opera\n75002 Paris"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
   should: %s[0].state         == nil
   should: %s[0].country       == nil
   should: %s[0].country_code  == "FR"
@@ -81,7 +81,7 @@
   should: %s[0].phone         == "+01 2083895740"
   should: %s[0].fax           == nil
   should: %s[0].email         == "ccops@markmonitor.com"
-  should: %s[0].email         == Time.parse("2008-10-10")
+  should: %s[0].updated_on    == Time.parse("2008-10-10")
 
 
 #nameservers
