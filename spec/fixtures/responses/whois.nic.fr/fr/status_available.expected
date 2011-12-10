@@ -18,6 +18,22 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
+#registrar
+  should: %s == nil
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s == []
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s == []
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s == []
+
+
 #nameservers
   should: %s be_a(Array)
   should: %s == []

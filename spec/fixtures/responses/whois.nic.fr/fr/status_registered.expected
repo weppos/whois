@@ -20,6 +20,70 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == nil
+  should: %s.name         == "eMARKMONITOR Inc. dba MARKMONITOR"
+  should: %s.organization == "eMARKMONITOR Inc. dba MARKMONITOR"
+  should: %s.url          == "http://www.markmonitor.com"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "GI658-FRNIC"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600, Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View Ca"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1 650 253 0000"
+  should: %s[0].fax           == "+1 650 618 8571"
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].updated_on    == Time.parse("2009-07-09")
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "TT599-FRNIC"
+  should: %s[0].name          == "Tu Tsao"
+  should: %s[0].organization  == "Google France"
+  should: %s[0].address       == "38, avenue de l'Opera"
+  should: %s[0].city          == "Paris"
+  should: %s[0].zip           == "75002"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FR"
+  should: %s[0].phone         == "+33 6 50 33 00 10"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].updated_on    == Time.parse("2009-02-24")
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "MC239-FRNIC"
+  should: %s[0].name          == "MARKMONITOR CCOPS"
+  should: %s[0].organization  == "eMarkmonitor Inc. dba MarkMonitor"
+  should: %s[0].address       == "PMB 155\n10400 Overland Road\n83709-1433 Boise, Id\nUS"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+01 2083895740"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "ccops@markmonitor.com"
+  should: %s[0].email         == Time.parse("2008-10-10")
+
+
 #nameservers
   should: %s be_a(Array)
   should: %s have(4).items

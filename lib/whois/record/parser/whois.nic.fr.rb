@@ -54,14 +54,14 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /created:\s+(.*)\n/
+          if content_for_scanner =~ /created:\s+(.+)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /last-update:\s+(.*)\n/
+          if content_for_scanner =~ /last-update:\s+(.+)\n/
             d, m, y = $1.split("/")
             Time.parse("#{y}-#{m}-#{d}")
           end
@@ -69,6 +69,11 @@ module Whois
 
         # TODO: Use anniversary
         property_not_supported :expires_on
+
+
+        property_supported :admin_contacts do
+          parse_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+        end
 
 
         property_supported :nameservers do
@@ -80,6 +85,69 @@ module Whois
             end
           end
         end
+
+
+        private
+
+        MULTIVALUE_KEYS = %w( address )
+
+        def parse_contact(element, type)
+          return unless content_for_scanner =~ /#{element}:\s+(.+)\n/
+
+          id = $1
+          content_for_scanner.scan(/nic-hdl:\s+#{id}\n((.+\n)+)\n/).any? ||
+              Whois.bug!(ParserError, "Unable to parse contact block for nic-hdl: #{id}")
+          p values = build_hash($1.scan(/(.+?):\s+(.+?)\n/))
+
+          if values["type"] == "ORGANIZATION"
+            name = nil
+            organization = values["contact"]
+            address = address[0..-1].join("\n")
+            zip, city = values["address"][-1].split(" ")
+          else
+            name = values["contact"]
+            if values["address"] > 2
+              organization = values["address"][0]
+              address = address[1..-1].join("\n")
+            else
+              organization = nil
+              address = address[0..-1].join("\n")
+            end
+            zip, city = values["address"].last.split(" ")
+          end
+
+          Record::Contact.new({
+            :type         => type,
+            :id           => id,
+            :name         => name,
+            :organization => organization,
+            :address      => address,
+            :city         => city,
+            :zip          => zip,
+            # :state        => "",
+            # :country      => "",
+            :country_code => values["country"],
+            :phone        => values["phone"],
+            :fax          => values["fax-no"],
+            :email        => values["e-mail"],
+            # :created_on   => "",
+            :updated_on   => Time.new(*values["changed"].split(" ").first.split("/").reverse),
+          })
+        end
+
+        def build_hash(tokens)
+          {}.tap do |hash|
+            tokens.each do |key, value|
+              if MULTIVALUE_KEYS.include?(key)
+                hash[key] ||= []
+                hash[key] <<  value
+              else
+                hash[key] = value
+              end
+            end
+          end
+        end
+
 
       end
 
