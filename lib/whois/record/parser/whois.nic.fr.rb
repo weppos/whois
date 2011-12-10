@@ -71,8 +71,16 @@ module Whois
         property_not_supported :expires_on
 
 
+        property_supported :registrant_contacts do
+          parse_contact("holder-c", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
         property_supported :admin_contacts do
           parse_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          parse_contact("tech-c", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -97,23 +105,21 @@ module Whois
           id = $1
           content_for_scanner.scan(/nic-hdl:\s+#{id}\n((.+\n)+)\n/).any? ||
               Whois.bug!(ParserError, "Unable to parse contact block for nic-hdl: #{id}")
-          p values = build_hash($1.scan(/(.+?):\s+(.+?)\n/))
+          values = build_hash($1.scan(/(.+?):\s+(.+?)\n/))
 
           if values["type"] == "ORGANIZATION"
             name = nil
             organization = values["contact"]
-            address = address[0..-1].join("\n")
-            zip, city = values["address"][-1].split(" ")
+            address = values["address"].join("\n")
           else
             name = values["contact"]
-            if values["address"] > 2
+            if values["address"].size > 2
               organization = values["address"][0]
-              address = address[1..-1].join("\n")
+              address = values["address"][1..-1].join("\n")
             else
               organization = nil
-              address = address[0..-1].join("\n")
+              address = values["address"].join("\n")
             end
-            zip, city = values["address"].last.split(" ")
           end
 
           Record::Contact.new({
@@ -122,15 +128,15 @@ module Whois
             :name         => name,
             :organization => organization,
             :address      => address,
-            :city         => city,
-            :zip          => zip,
-            # :state        => "",
-            # :country      => "",
+            # :city         => nil,
+            # :zip          => nil,
+            # :state        => nil,
+            # :country      => nil,
             :country_code => values["country"],
             :phone        => values["phone"],
             :fax          => values["fax-no"],
             :email        => values["e-mail"],
-            # :created_on   => "",
+            # :created_on   => nil,
             :updated_on   => Time.new(*values["changed"].split(" ").first.split("/").reverse),
           })
         end

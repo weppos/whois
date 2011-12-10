@@ -18,9 +18,6 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
-#registrar
-  should: %s == nil
-
 #registrant_contacts
   should: %s be_a(Array)
   should: %s == []

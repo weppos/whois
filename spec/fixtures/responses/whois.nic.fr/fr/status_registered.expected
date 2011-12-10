@@ -20,13 +20,6 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
-#registrar
-  should: %s be_a(_registrar)
-  should: %s.id           == nil
-  should: %s.name         == "eMARKMONITOR Inc. dba MARKMONITOR"
-  should: %s.organization == "eMARKMONITOR Inc. dba MARKMONITOR"
-  should: %s.url          == "http://www.markmonitor.com"
-
 #registrant_contacts
   should: %s be_a(Array)
   should: %s have(1).items

@@ -53,6 +53,68 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "GI658-FRNIC"
+      @parser.registrant_contacts[0].name.should          == nil
+      @parser.registrant_contacts[0].organization.should  == "Google Inc."
+      @parser.registrant_contacts[0].address.should       == "1600, Amphitheatre Parkway\n94043 Mountain View Ca"
+      @parser.registrant_contacts[0].city.should          == nil
+      @parser.registrant_contacts[0].zip.should           == nil
+      @parser.registrant_contacts[0].state.should         == nil
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == "US"
+      @parser.registrant_contacts[0].phone.should         == "+1 650 253 0000"
+      @parser.registrant_contacts[0].fax.should           == "+1 650 618 8571"
+      @parser.registrant_contacts[0].email.should         == "dns-admin@google.com"
+      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2009-07-09")
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "TT599-FRNIC"
+      @parser.admin_contacts[0].name.should          == "Tu Tsao"
+      @parser.admin_contacts[0].organization.should  == "Google France"
+      @parser.admin_contacts[0].address.should       == "38, avenue de l'Opera\n75002 Paris"
+      @parser.admin_contacts[0].city.should          == nil
+      @parser.admin_contacts[0].zip.should           == nil
+      @parser.admin_contacts[0].state.should         == nil
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == "FR"
+      @parser.admin_contacts[0].phone.should         == "+33 6 50 33 00 10"
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "dns-admin@google.com"
+      @parser.admin_contacts[0].updated_on.should    == Time.parse("2009-02-24")
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "MC239-FRNIC"
+      @parser.technical_contacts[0].name.should          == "MARKMONITOR CCOPS"
+      @parser.technical_contacts[0].organization.should  == "eMarkmonitor Inc. dba MarkMonitor"
+      @parser.technical_contacts[0].address.should       == "PMB 155\n10400 Overland Road\n83709-1433 Boise, Id\nUS"
+      @parser.technical_contacts[0].city.should          == nil
+      @parser.technical_contacts[0].zip.should           == nil
+      @parser.technical_contacts[0].state.should         == nil
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == nil
+      @parser.technical_contacts[0].phone.should         == "+01 2083895740"
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "ccops@markmonitor.com"
+      @parser.technical_contacts[0].updated_on.should    == Time.parse("2008-10-10")
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
