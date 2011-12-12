@@ -20,6 +20,63 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "A1967-FRNIC"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "AFNIC"
+  should: %s[0].address       == "immeuble international\n2, rue Stephenson\nMontigny-Le-Bretonneux\n78181 Saint Quentin en Yvelines"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FR"
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].updated_on    == Time.parse("2009-12-02")
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "NFC1-FRNIC"
+  should: %s[0].name          == "NIC France Contact"
+  should: %s[0].organization  == "AFNIC"
+  should: %s[0].address       == "immeuble international\n2, rue Stephenson\nMontigny le Bretonneux\n78181 Saint Quentin en Yvelines Cedex"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FR"
+  should: %s[0].phone         == "+33 1 39 30 83 00"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "hostmaster@nic.fr"
+  should: %s[0].updated_on    == Time.parse("2005-08-23")
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "NFC1-FRNIC"
+  should: %s[0].name          == "NIC France Contact"
+  should: %s[0].organization  == "AFNIC"
+  should: %s[0].address       == "immeuble international\n2, rue Stephenson\nMontigny le Bretonneux\n78181 Saint Quentin en Yvelines Cedex"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FR"
+  should: %s[0].phone         == "+33 1 39 30 83 00"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "hostmaster@nic.fr"
+  should: %s[0].updated_on    == Time.parse("2005-08-23")
+
+
 #nameservers
   should: %s be_a(Array)
   should: %s have(3).items
