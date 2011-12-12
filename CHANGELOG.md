@@ -5,6 +5,8 @@
 
 * NEW: Added base whois.nic.net.sb parser (GH-56).
 
+* NEW: Added whois.nic.fr contact parsing.
+
 * CHANGED: whois.je changed response format (GH-123).
 
 * CHANGED: whois.nic.ve now returns `:inactive' instead of `:suspended'.
