@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 2.2.0
 
 * NEW: Added base whois.nic.net.sb parser (GH-56).
 
