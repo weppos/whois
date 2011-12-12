@@ -137,7 +137,7 @@ module Whois
             :fax          => values["fax-no"],
             :email        => values["e-mail"],
             # :created_on   => nil,
-            :updated_on   => Time.new(*values["changed"].split(" ").first.split("/").reverse),
+            :updated_on   => Time.utc(*values["changed"].split(" ").first.split("/").reverse),
           })
         end
 

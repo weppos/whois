@@ -36,7 +36,7 @@
   should: %s[0].phone         == nil
   should: %s[0].fax           == nil
   should: %s[0].email         == nil
-  should: %s[0].updated_on    == Time.parse("2008-10-09")
+  should: %s[0].updated_on    == Time.parse("2008-10-09 00:00:00 UTC")
 
 #admin_contacts
   should: %s be_a(Array)
@@ -55,7 +55,7 @@
   should: %s[0].phone         == "+33 1 39 30 83 00"
   should: %s[0].fax           == nil
   should: %s[0].email         == "hostmaster@nic.fr"
-  should: %s[0].updated_on    == Time.parse("2005-08-23")
+  should: %s[0].updated_on    == Time.parse("2005-08-23 00:00:00 UTC")
 
 #technical_contacts
   should: %s be_a(Array)
@@ -74,7 +74,7 @@
   should: %s[0].phone         == "+33 1 39 30 83 00"
   should: %s[0].fax           == nil
   should: %s[0].email         == "hostmaster@nic.fr"
-  should: %s[0].updated_on    == Time.parse("2005-08-23")
+  should: %s[0].updated_on    == Time.parse("2005-08-23 00:00:00 UTC")
 
 
 #nameservers

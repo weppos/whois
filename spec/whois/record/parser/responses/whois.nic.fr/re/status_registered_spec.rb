@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       @parser.registrant_contacts[0].phone.should         == nil
       @parser.registrant_contacts[0].fax.should           == nil
       @parser.registrant_contacts[0].email.should         == nil
-      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2009-12-02")
+      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2009-12-02 00:00:00 UTC")
     end
   end
   describe "#admin_contacts" do
@@ -91,7 +91,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       @parser.admin_contacts[0].phone.should         == "+33 1 39 30 83 00"
       @parser.admin_contacts[0].fax.should           == nil
       @parser.admin_contacts[0].email.should         == "hostmaster@nic.fr"
-      @parser.admin_contacts[0].updated_on.should    == Time.parse("2005-08-23")
+      @parser.admin_contacts[0].updated_on.should    == Time.parse("2005-08-23 00:00:00 UTC")
     end
   end
   describe "#technical_contacts" do
@@ -112,7 +112,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       @parser.technical_contacts[0].phone.should         == "+33 1 39 30 83 00"
       @parser.technical_contacts[0].fax.should           == nil
       @parser.technical_contacts[0].email.should         == "hostmaster@nic.fr"
-      @parser.technical_contacts[0].updated_on.should    == Time.parse("2005-08-23")
+      @parser.technical_contacts[0].updated_on.should    == Time.parse("2005-08-23 00:00:00 UTC")
     end
   end
   describe "#nameservers" do

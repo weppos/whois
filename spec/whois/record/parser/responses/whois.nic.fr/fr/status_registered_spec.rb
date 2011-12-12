@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       @parser.registrant_contacts[0].phone.should         == "+1 650 253 0000"
       @parser.registrant_contacts[0].fax.should           == "+1 650 618 8571"
       @parser.registrant_contacts[0].email.should         == "dns-admin@google.com"
-      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2009-07-09")
+      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2009-07-09 00:00:00 UTC")
     end
   end
   describe "#admin_contacts" do
@@ -91,7 +91,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       @parser.admin_contacts[0].phone.should         == "+33 6 50 33 00 10"
       @parser.admin_contacts[0].fax.should           == nil
       @parser.admin_contacts[0].email.should         == "dns-admin@google.com"
-      @parser.admin_contacts[0].updated_on.should    == Time.parse("2009-02-24")
+      @parser.admin_contacts[0].updated_on.should    == Time.parse("2009-02-24 00:00:00 UTC")
     end
   end
   describe "#technical_contacts" do
@@ -112,7 +112,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       @parser.technical_contacts[0].phone.should         == "+01 2083895740"
       @parser.technical_contacts[0].fax.should           == nil
       @parser.technical_contacts[0].email.should         == "ccops@markmonitor.com"
-      @parser.technical_contacts[0].updated_on.should    == Time.parse("2008-10-10")
+      @parser.technical_contacts[0].updated_on.should    == Time.parse("2008-10-10 00:00:00 UTC")
     end
   end
   describe "#nameservers" do
