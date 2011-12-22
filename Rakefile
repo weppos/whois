@@ -67,7 +67,7 @@ RSpec::Core::RakeTask.new
 
 
 namespace :multitest do
-  RUBIES = %w( ruby-1.8.7-p334 ruby-1.9.2-p180 jruby-1.6.0.RC2 ree-1.8.7-2011.03 )
+  RUBIES = %w( ruby-1.8.7 ruby-1.9.2 jruby ree )
 
   desc "Run tests for all rubies"
   task :all => :ensure_rvm do
