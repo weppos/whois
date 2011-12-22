@@ -113,12 +113,15 @@ module Whois
             address = values["address"].join("\n")
           else
             name = values["contact"]
-            if values["address"].size > 2
+            if values["address"].nil?
+              organization = nil
+              address      = nil
+            elsif values["address"].size > 2
               organization = values["address"][0]
-              address = values["address"][1..-1].join("\n")
+              address      = values["address"][1..-1].join("\n")
             else
               organization = nil
-              address = values["address"].join("\n")
+              address      = values["address"].join("\n")
             end
           end
 
