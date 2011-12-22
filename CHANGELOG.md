@@ -1,5 +1,9 @@
 # Changelog
 
+## Master
+
+* FIXED: whois.nic.net.nt parser must support `Pending Purge' and `Pending Delete' status (GH-131).
+
 
 ## Release 2.2.0
 
