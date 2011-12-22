@@ -1,14 +1,14 @@
 # Whois
 
-Whois is an intelligent pure Ruby WHOIS client and parser.
+*Whois* is an intelligent pure Ruby WHOIS client and parser.
 
 [![Build Status](https://secure.travis-ci.org/weppos/whois.png)](http://travis-ci.org/weppos/whois)
 
-Whois is a OS-independent library and doesn't require any external binaries or C libraries: it is a 100% Ruby software.
+*Whois* is a OS-independent library and doesn't require any external binaries or C libraries: it is a 100% Ruby software.
 
 This library was developed to power [RoboDomain](https://www.robodomain.com) and, since July 2009, it ran more than thousands requests.
 
-An extensive test suite is available to verify the library correctness but you must be aware that registrant might change Whois interfaces without notice and at any time causing queries to specific hosts to stop working.
+An extensive test suite is available to verify the library correctness but you must be aware that registrant might change WHOIS interfaces without notice and at any time causing queries to specific hosts to stop working.
 
 
 ## Features
@@ -26,7 +26,7 @@ An extensive test suite is available to verify the library correctness but you m
 
 * Ruby >= 1.8.7
 
-Whois >= 1.5 requires Ruby 1.8.7 or newer.
+*Whois* >= 1.5 requires Ruby 1.8.7 or newer.
 For older versions of Ruby, see the CHANGELOG.rdoc file.
 
 In addition to the standard Ruby interpreter (MRI),
@@ -136,7 +136,7 @@ Any WHOIS query returns a {Whois::Record}. This object looks like a String, but 
       puts nameserver
     end
 
-This feature is made possible by the _Whois_ record parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
+This feature is made possible by the *Whois* record parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
 
 If you create a new parser, please consider releasing it to the public so that it can be included in a next version.
 
@@ -156,7 +156,7 @@ Off course, you can customize the timeout value setting a different value. If ti
 
 ## Acknowledgments
 
-First of all, I would like to express my most sincere thanks to Cyril Mougel, the author of the first Ruby Whois GEM that has been available since 2007. Cyril has been kind enough to yield me the privilege of using the RubyForge Whois project and the Whois package name to publish this library. To express all my gratitude, the release 0.5.0 and all sub sequential versions of the new Whois up to 0.9.x are 100% compatible with Cyril's Whois.
+First of all, I would like to express my most sincere thanks to Cyril Mougel, the author of the first Ruby Whois gem that has been available since 2007. Cyril has been kind enough to yield me the privilege of using the RubyForge Whois project and the Whois package name to publish this library. To express all my gratitude, the release 0.5.0 and all sub sequential versions of the new Whois up to 0.9.x are 100% compatible with Cyril's Whois.
 
 Whois is largely inspired by other notable Whois projects, most of all the Debian Whois library written and maintained by Marco D'Itri. Other good ideas and design decisions come from the PERL `Net::DRI` package.
 
@@ -165,7 +165,7 @@ They didn't directly influence this library or any design decision, but they hav
 
 The parser architecture has been inspired by the [PHPWhois](http://phpwhois.sourceforge.net/) project. The authors puts lot of effort to create whois-specific parsers normalizing the different responses in a single tree-based structure. So far, this is the only one open source project that offers such this feature in all the programming language ecosystem.
 
-Despite I spent weeks reading source code from the available whois libraries, Ruby Whois has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
+Despite I spent weeks reading source code from the available whois libraries, Ruby *Whois* has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
 
 ## Author
@@ -178,11 +178,13 @@ Author: [Simone Carletti](http://www.simonecarletti.com/) <weppos@weppos.net>
 Everyone [in this list](https://github.com/weppos/whois/contributors).
 
 
-## FeedBack and Bug reports
+## Contribute
 
-If you use this library and find yourself missing any functionality I have missed, please [let me know](mailto:weppos@weppos.net).
+Direct questions and discussions to the [mailing list](http://groups.google.com/group/ruby-whois).
 
-Bug reports and Feature suggestions [are welcomed](https://github.com/weppos/whois/issues).
+Pull requests are very welcome! Please include spec and/or feature coverage for every patch, and create a topic branch for every separate change you make.
+
+Report issues or feature requests to [GitHub Issues](https://github.com/weppos/whois/issues).
 
 
 ## More
@@ -200,5 +202,5 @@ See the CHANGELOG.rdoc file for details.
 
 ## License
 
-_Whois_ is copyright (c) 2009-2011 Simone Carletti.
+*Whois* is copyright (c) 2009-2011 Simone Carletti.
 This is Free Software distributed under the MIT license.
