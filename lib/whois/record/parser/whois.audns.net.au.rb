@@ -27,8 +27,11 @@ module Whois
       #
       class WhoisAudnsNetAu < Base
 
+        # == Status responses:
+        #
         # @see http://www.auda.org.au/policies/auda-2002-28/
         # @see http://www.auda.org.au/policies/auda-2006-07/
+        #
         property_supported :status do
           content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
         end

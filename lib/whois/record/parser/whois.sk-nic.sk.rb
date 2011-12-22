@@ -27,8 +27,11 @@ module Whois
       #
       class WhoisSkNicSk < Base
 
+        # == Status responses:
+        #
         # @see https://www.sk-nic.sk/documents/stavy_domen.html
         # @see http://www.inwx.de/en/sk-domain.html
+        #
         property_supported :status do
           if content_for_scanner =~ /^Domain-status\s+(.+)\n/
             case $1.downcase

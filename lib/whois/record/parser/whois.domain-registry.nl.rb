@@ -27,6 +27,18 @@ module Whois
       #
       class WhoisDomainRegistryNl < Base
 
+        # == Status responses:
+        #
+        # - free: the .nl domain name is still available for registration
+        # - withdrawn: the .nl domain name is barred from registration
+        # - excluded: the .nl domain name is excluded from registration
+        # - requested: an application for the .nl domain name is being processed
+        # - active: the .nl domain name has already been registered. (If you want to know who has registered the name, tick the ‘Extended search’ box. You will then be shown more information about whoever has registered the name.)
+        # - inactive: the .nl domain name has already been registered, but has not yet been added to the .nl zone file. (If you want to know who has registered the name, tick the ‘Extended search’ box. You will then be shown more information about whoever has registered the name.)
+        # - in quarantine: this .nl domain name's registration has been cancelled. Following cancellation, a domain name is placed in quarantine for forty days.
+        #
+        # @see https://www.sidn.nl/en/whois/
+        #
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.*?)\n/
             case $1.downcase
