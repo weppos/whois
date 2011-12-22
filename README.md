@@ -6,7 +6,7 @@ Whois is an intelligent pure Ruby WHOIS client and parser.
 
 Whois is a OS-independent library and doesn't require any external binaries or C libraries: it is a 100% Ruby software.
 
-This library was developed to power [RoboDomain](http://www.robodomain.com) and, since July 2009, it ran more than thousands requests.
+This library was developed to power [RoboDomain](https://www.robodomain.com) and, since July 2009, it ran more than thousands requests.
 
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change Whois interfaces without notice and at any time causing queries to specific hosts to stop working.
 
@@ -175,20 +175,20 @@ Author: [Simone Carletti](http://www.simonecarletti.com/) <weppos@weppos.net>
 
 ## Thanks to
 
-Everyone [in this list](http://github.com/weppos/whois/contributors).
+Everyone [in this list](https://github.com/weppos/whois/contributors).
 
 
 ## FeedBack and Bug reports
 
 If you use this library and find yourself missing any functionality I have missed, please [let me know](mailto:weppos@weppos.net).
 
-Bug reports and Feature suggestions [are welcomed](http://github.com/weppos/whois/issues).
+Bug reports and Feature suggestions [are welcomed](https://github.com/weppos/whois/issues).
 
 
 ## More
 
 * [Homepage](http://www.ruby-whois.org/)
-* [Repository](http://github.com/weppos/whois)
+* [Repository](https://github.com/weppos/whois)
 * [Documentation](http://www.ruby-whois.org/documentation.html) - The official documentation, see also the [API Documentation](/api).
 * [Discussion Group](http://groups.google.com/group/ruby-whois)
 
