@@ -19,13 +19,14 @@ module Whois
 
           def parse_content
             parse_response_unavailable ||
-
             trim_newline      ||
             parse_disclaimer  ||
             parse_keyvalue    ||
             parse_section     ||
             error!("Unexpected token")
           end
+
+        private
 
           def parse_response_unavailable
             if @input.scan(/Service temporarily unavailable\.\n/)
