@@ -38,7 +38,6 @@ module Whois
 
           def parse_version
             if @input.match?(/% Whois server .*\n/)
-              p("whois.nic.hu: parse_version") if 1 == 2 || $DEBUG
               @input.scan(/% Whois server ([\w\d\.]*).*?\n/)
               @ast["version"] = @input[1]
             end
@@ -47,14 +46,12 @@ module Whois
           # FIXME: Requires UTF-8 Encoding (see #11)
           def parse_moreinfo
             if @input.match?(/Tov.* ld\.:\n/)
-              p("whois.nic.hu: parse_moreinfo") if 1 == 2 || $DEBUG
               @ast["moreinfo"] = @input.scan_until(/^\n/)
             end
           end
 
           def parse_disclaimer
             if @input.match?(/^Rights.*\n/)
-              p("whois.nic.hu: parse_disclaimer") if 1 == 2 || $DEBUG
               lines = @input.scan_until(/^\n/)
               @ast["disclaimer"] = lines.strip
             end
@@ -62,7 +59,6 @@ module Whois
 
           def parse_domain
             if @input.match?(/^domain:\s+(.*)\n/) && @input.scan(/^domain:\s+(.*?)\n/)
-              p("whois.nic.hu: parse_domain") if 1 == 2 || $DEBUG
               @ast["domain"] = @input[1].strip
             end
           end
@@ -70,7 +66,6 @@ module Whois
           # FIXME: Requires UTF-8 Encoding (see #11)
           def parse_available
             if @input.match?(/Nincs (.*?) \/ No match\n/)
-              p("whois.nic.hu: parse_not_found") if 1 == 2 || $DEBUG
               @input.scan(/Nincs (.*?) \/ No match\n/)
               @ast["status:available"] = true
             end
@@ -79,7 +74,6 @@ module Whois
           # FIXME: Requires UTF-8 Encoding (see #11)
           def parse_in_progress
             if @input.match?(/(.*?) folyamatban \/ Registration in progress\n/)
-              p("whois.nic.hu: parse_in_progress") if 1 == 2 || $DEBUG
               @input.scan(/(.*?) folyamatban \/ Registration in progress\n/)
               @ast["status:inprogress"] = true
             end
@@ -87,7 +81,6 @@ module Whois
 
           def parse_domain_data
             if @input.match?(/(.+?):\s+(.*)\n/)
-              p("whois.nic.hu: parse_domain_data") if 1 == 2 || $DEBUG
               while @input.scan(/(.+?):\s+(.*)\n/)
                 key, value = @input[1].strip, @input[2].strip
                 if key == 'person'
@@ -114,7 +107,6 @@ module Whois
 
           def parse_contacts
             if @input.match?(/\n(person|org):/)
-              p("whois.nic.hu: parse_contacts") if 1 == 2 || $DEBUG
               @input.scan(/\n/)
               while @input.match?(/(.+?):\s+(.*)\n/)
                 parse_contact
@@ -125,7 +117,6 @@ module Whois
 
           def parse_contact
             contact ||= {}
-            p("whois.nic.hu: parse_contact") if 1 == 2 || $DEBUG
             while @input.scan(/(.+?):\s+(.*)\n/)
               key, value = @input[1].strip, @input[2].strip
               if key == 'hun-id'
