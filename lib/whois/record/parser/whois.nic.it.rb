@@ -130,7 +130,7 @@ module Whois
         #
         # @return [Boolean]
         def response_unavailable?
-          !!node("status:unavailable")
+          !!node("response:unavailable")
         end
 
         # Initializes a new {Scanners::WhoisIt} instance
@@ -143,27 +143,27 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node(element) do |raw|
-              address = (raw["Address"] || "").split("\n")
-              company = address.size == 6 ? address.shift : nil
-              Record::Contact.new(
-                :id           => raw["ContactID"],
-                :type         => type,
-                :name         => raw["Name"],
-                :organization => raw["Organization"] || company,
-                :address      => address[0],
-                :city         => address[1],
-                :zip          => address[2],
-                :state        => address[3],
-                :country_code => address[4],
-                :created_on   => raw["Created"] ? Time.parse(raw["Created"]) : nil,
-                :updated_on   => raw["Last Update"] ? Time.parse(raw["Last Update"]) : nil
-              )
-            end
+        def contact(element, type)
+          node(element) do |raw|
+            address = (raw["Address"] || "").split("\n")
+            company = address.size == 6 ? address.shift : nil
+            Record::Contact.new(
+              :id           => raw["ContactID"],
+              :type         => type,
+              :name         => raw["Name"],
+              :organization => raw["Organization"] || company,
+              :address      => address[0],
+              :city         => address[1],
+              :zip          => address[2],
+              :state        => address[3],
+              :country_code => address[4],
+              :created_on   => raw["Created"] ? Time.parse(raw["Created"]) : nil,
+              :updated_on   => raw["Last Update"] ? Time.parse(raw["Last Update"]) : nil
+            )
           end
+        end
 
       end
 
