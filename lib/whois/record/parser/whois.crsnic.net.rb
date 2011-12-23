@@ -87,6 +87,14 @@ module Whois
         end
 
 
+        # Checks whether this response contains a message
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
+        #
+        # @return [Boolean]
+        def response_unavailable?
+          !!node("response:unavailable")
+        end
+
         # Initializes a new {Scanners::Verisign} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
@@ -97,13 +105,13 @@ module Whois
         end
 
 
-        protected
+      private
 
-          # In case of "SPAM Response", the response contains more than one item
-          # for the same value and the value becomes an Array.
-          def last_useful_item(values)
-            values.is_a?(Array) ? values.last : values
-          end
+        # In case of "SPAM Response", the response contains more than one item
+        # for the same value and the value becomes an Array.
+        def last_useful_item(values)
+          values.is_a?(Array) ? values.last : values
+        end
 
       end
 

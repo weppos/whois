@@ -28,10 +28,17 @@ module Whois
           end
 
           def parse
+            # The temporary store.
+            # Scanners may use this to store pointers, states or other flags.
+            @tmp = {}
+
+            # A super-simple AST store.
             @ast = {}
+
             while !@input.eos?
               parse_content
             end
+
             @ast
           end
 

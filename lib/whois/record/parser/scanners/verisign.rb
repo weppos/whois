@@ -19,6 +19,7 @@ module Whois
 
           def parse_content
             trim_empty_line   ||
+            parse_response_unavailable ||
             parse_available   ||
             parse_disclaimer  ||
             parse_notice      ||
@@ -29,6 +30,7 @@ module Whois
             error!("Unexpected token")
           end
 
+        private
 
           def skip_lastupdate
             @input.skip(/>>>(.+?)<<<\n/)
@@ -43,6 +45,26 @@ module Whois
             if @input.match?(/IANA Whois Service/)
               @ast["IANA"] = true
               @input.terminate
+            end
+          end
+
+          def parse_response_unavailable
+            # Check if the string starts with /*
+            # If it does, match until the end of all /* lines
+            # or the end of the file and check for the content.
+            #
+            # Flag the block as visited to force the scanner to ignore this tokenizer
+            # if already used and the content didn't match the unavailable message.
+            if @input.match?(/^\*\n/) && !visited?
+              p = /^[^\*]|\z/
+              y = @input.check_until(p) =~ /^\* Sorry, the Whois database is currently down/
+
+              if y
+                @input.scan_until(p)
+                @ast["response:unavailable"] = true
+              else
+                visited!
+              end
             end
           end
 
@@ -82,6 +104,15 @@ module Whois
                 @ast[key] << value
               end
             end
+          end
+
+          def visited?
+            !!@tmp["visited:#{@input.pos}"]
+          end
+
+          def visited!
+            @tmp["visited:#{@input.pos}"] = true
+            nil
           end
 
         end

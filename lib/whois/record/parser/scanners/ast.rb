@@ -41,10 +41,6 @@ module Whois
         #
         module Ast
 
-          def ast
-            @ast ||= parse
-          end
-
           def node(key)
             if block_given?
               value = ast[key]
@@ -57,6 +53,12 @@ module Whois
 
           def node?(key)
             !ast[key].nil?
+          end
+
+        private
+
+          def ast
+            @ast ||= parse
           end
 
         end

@@ -1,0 +1,13 @@
+
+Whois Server Version 2.0
+
+Domain names in the .com and .net domains can now be registered
+with many different competing registrars. Go to http://www.internic.net
+for detailed information.
+*
+* WELCOME to the Verisign Inc. Registry Whois Server.
+*
+* Sorry, the Whois database is currently down.
+*
+* Please wait a while and try again. Thanks
+*
