@@ -36,11 +36,11 @@ Whois has been successfully tested against several
 
 ## Installation
 
-This library is intended to be installed as a Gem.
+The best way to install *Whois* is via [RubyGems](https://rubygems.org/).
 
     $ gem install whois
 
-You might need administrator privileges on your system to install it.
+You might need administrator privileges on your system to install the gem.
 
 
 ## Upgrade
