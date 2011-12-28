@@ -54,6 +54,16 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
       @parser.expires_on.should == Time.parse("2010-07-31")
     end
   end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].name.should         == "EDUCAUSE"
+      @parser.registrant_contacts[0].organization.should == "EDUCAUSE"
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

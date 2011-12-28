@@ -62,6 +62,16 @@ module Whois
           end
         end
 
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /Registrant:\n\s+(.+?)\n/
+            school = $1 # eg. Carnegie Mellon University
+            Record::Contact.new(
+              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+              :name         => school,
+              :organization => school,
+            )
+          end
+        end
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/
