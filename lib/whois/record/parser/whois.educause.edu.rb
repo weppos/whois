@@ -63,12 +63,25 @@ module Whois
         end
 
         property_supported :registrant_contacts do
-          if content_for_scanner =~ /Registrant:\n\s+(.+?)\n/
-            school = $1 # eg. Carnegie Mellon University
+          # TODO use named captures in Ruby 1.9
+          if content_for_scanner =~ /Registrant:\s+(.+?)\n(\s+(.+?)\n)?\s+([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}))\n\s+UNITED STATES/m
+            school  = $1  # e.g. Carnegie Mellon University
+            address = $2  # e.g. "Cyert Hall 215\n5000 Forbes Avenue"
+            # $3 is city wrapped in whitespace
+            city    = $4  # e.g. Pittsburgh
+            state   = $5  # e.g. PA
+            zip     = $6  # e.g. 15213
+            
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :name         => school,
               :organization => school,
+              :address      => (address.strip if address),
+              :city         => city,
+              :state        => state,
+              :zip          => zip,
+              :country      => 'UNITED STATES', # all .EDU records
+              :country_code => 'US'             # ''
             )
           end
         end

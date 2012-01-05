@@ -62,6 +62,12 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].name.should         == "EDUCAUSE"
       @parser.registrant_contacts[0].organization.should == "EDUCAUSE"
+      @parser.registrant_contacts[0].address.should      == "4772 Walnut Street\n   Suite 206"
+      @parser.registrant_contacts[0].city.should         == "Boulder"
+      @parser.registrant_contacts[0].state.should        == "CO"
+      @parser.registrant_contacts[0].zip.should          == "80301"
+      @parser.registrant_contacts[0].country.should      == "UNITED STATES"
+      @parser.registrant_contacts[0].country_code.should == "US"
     end
   end
   describe "#nameservers" do
