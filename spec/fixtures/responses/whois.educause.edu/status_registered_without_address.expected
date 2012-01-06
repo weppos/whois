@@ -32,4 +32,3 @@
   should: %s[0].state        == "MA"
   should: %s[0].zip          == "02139"
   should: %s[0].country      == "UNITED STATES"
-  should: %s[0].country_code == "US"

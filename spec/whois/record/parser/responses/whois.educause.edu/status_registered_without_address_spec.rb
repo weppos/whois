@@ -66,7 +66,6 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered_without_add
       @parser.registrant_contacts[0].state.should        == "MA"
       @parser.registrant_contacts[0].zip.should          == "02139"
       @parser.registrant_contacts[0].country.should      == "UNITED STATES"
-      @parser.registrant_contacts[0].country_code.should == "US"
     end
   end
 end
