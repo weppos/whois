@@ -8,6 +8,8 @@
 
 * FIXED: whois.nic.fr crashes when contact is anonymous (GH-140).
 
+* FIXED: whois.nic.fr parser must support `NOT_OPEN' status (GH-142).
+
 
 ## Release 2.2.0
 

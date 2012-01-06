@@ -36,6 +36,7 @@ module Whois
               when "blocked"    then :inactive
               # NEWSTATUS (reserved)
               when "frozen"     then :frozen
+              when "not_open"   then :reserved
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
