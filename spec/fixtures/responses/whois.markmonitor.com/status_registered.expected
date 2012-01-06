@@ -27,6 +27,7 @@
   should: %s.name         == "Markmonitor.com"
   should: %s.url          == "http://www.markmonitor.com"
 
+
 #registrant_contacts
   should: %s be_a(Array)
   should: %s have(1).items

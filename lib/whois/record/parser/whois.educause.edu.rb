@@ -62,6 +62,24 @@ module Whois
           end
         end
 
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /Registrant:\n((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            
+            (city,state,zip) = (/([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}))/.match lines[-2]).captures
+            
+            Record::Contact.new(
+              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+              :name         => lines[0],
+              :organization => lines[0],
+              :address      => lines[1..-3].join("\n"),
+              :city         => city,
+              :state        => state,
+              :zip          => zip,
+              :country      => lines[-1]
+            )
+          end
+        end
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/

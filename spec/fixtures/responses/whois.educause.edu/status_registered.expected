@@ -21,6 +21,20 @@
   should: %s == Time.parse("2010-07-31")
 
 
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "EDUCAUSE"
+  should: %s[0].organization == "EDUCAUSE"
+  should: %s[0].address      == "4772 Walnut Street\nSuite 206"
+  should: %s[0].city         == "Boulder"
+  should: %s[0].state        == "CO"
+  should: %s[0].zip          == "80301"
+  should: %s[0].country      == "UNITED STATES"
+
+
 #nameservers
   should: %s be_a(Array)
   should: %s have(3).items
