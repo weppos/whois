@@ -1,0 +1,34 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("1985-05-23")
+
+#updated_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2010-06-18")
+
+#expires_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2012-07-31")
+
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Massachusetts Institute of Technology"
+  should: %s[0].organization == "Massachusetts Institute of Technology"
+  should: %s[0].city         == "Cambridge"
+  should: %s[0].state        == "MA"
+  should: %s[0].zip          == "02139"
+  should: %s[0].country      == "UNITED STATES"
