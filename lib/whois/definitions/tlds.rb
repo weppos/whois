@@ -300,7 +300,7 @@ Whois::Server.define :tld, ".us", "whois.nic.us"
 Whois::Server.define :tld, ".com.uy", nil, { :web => "https://nic.anteldata.com.uy/dns/", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".uy", "whois.nic.org.uy"
 Whois::Server.define :tld, ".uz", "whois.cctld.uz"
-Whois::Server.define :tld, ".va", "whois.ripe.net"
+Whois::Server.define :tld, ".va", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".vc", "whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }
 Whois::Server.define :tld, ".ve", "whois.nic.ve"
 Whois::Server.define :tld, ".vg", "whois.adamsnames.tc"

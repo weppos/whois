@@ -2,6 +2,8 @@
 
 ## Master
 
+* SERVER: .VA TLD no longer provides public WHOIS interface (GH-93).
+
 * NEW: whois.crsnic.net parser now recognizes unavailable responses.
 
 * NEW: Added support for whois.educause.edu registrant contact field (GH-141).
