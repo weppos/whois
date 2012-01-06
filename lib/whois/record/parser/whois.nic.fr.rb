@@ -30,15 +30,20 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
-              when "active"     then :registered
-              when "registered" then :registered
-              when "redemption" then :redemption
-              when "blocked"    then :inactive
-              # NEWSTATUS (reserved)
-              when "frozen"     then :frozen
-              when "not_open"   then :reserved
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "active"     then :registered
+            when "registered" then :registered
+            when "redemption" then :redemption
+            when "blocked"    then :inactive
+            # The 'frozen' status seems to be a status
+            # where a registered domain is placed to prevent changes
+            # and/or when changes can't be made.
+            when "frozen"     then :registered
+            # The 'not_open' status seems to indicate a domain
+            # that is already reserved and can't be registered directly.
+            # This is the case of second level names.
+            when "not_open"   then :reserved
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available

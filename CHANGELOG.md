@@ -4,6 +4,8 @@
 
 * NEW: whois.crsnic.net parser now recognizes unavailable responses.
 
+* CHANGED: whois.nic.fr `frozen' status is now considered as :registered.
+
 * FIXED: whois.nic.net.nt parser must support `Pending Purge' and `Pending Delete' status (GH-131).
 
 * FIXED: whois.nic.fr crashes when contact is anonymous (GH-140).
