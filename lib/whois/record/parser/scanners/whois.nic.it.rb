@@ -23,7 +23,7 @@ module Whois
             parse_disclaimer  ||
             parse_keyvalue    ||
             parse_section     ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
         private

@@ -61,12 +61,12 @@ module Whois
             @input.skip(/\n/)
           end
 
+          def unexpected_token
+            error!("Unexpected token")
+          end
+
           def error!(message)
-            if @input.eos?
-              raise ParserError, "Unexpected end of input."
-            else
-              raise ParserError, "#{message}: #{@input.peek(@input.string.length)}"
-            end
+            raise ParserError, "#{message}: #{@input.peek(@input.string.length)}"
           end
 
         end

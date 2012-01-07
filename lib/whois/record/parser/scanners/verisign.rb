@@ -27,7 +27,7 @@ module Whois
             skip_ianaservice  ||
             skip_lastupdate   ||
             skip_fuffa        ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
         private

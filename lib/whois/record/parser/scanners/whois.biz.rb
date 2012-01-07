@@ -23,7 +23,7 @@ module Whois
             skip_lastupdate   ||
             skip_fuffa        ||
             trim_newline      ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
 

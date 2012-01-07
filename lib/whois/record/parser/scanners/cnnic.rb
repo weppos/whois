@@ -22,7 +22,7 @@ module Whois
             parse_available   ||
             parse_keyvalue    ||
             trim_newline      ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
           def parse_available

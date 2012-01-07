@@ -21,7 +21,7 @@ module Whois
             trim_newline      ||
             parse_disclaimer  ||
             parse_section     ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
           def parse_disclaimer

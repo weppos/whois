@@ -27,7 +27,7 @@ module Whois
             parse_db_time     ||    # 2.0
 
             trim_empty_line   ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
 

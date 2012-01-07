@@ -32,7 +32,7 @@ module Whois
             parse_contacts    ||
 
             trim_empty_line   ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
 

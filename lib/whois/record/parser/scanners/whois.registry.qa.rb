@@ -25,7 +25,7 @@ module Whois
             parse_keyvalue_spaced ||
 
             trim_empty_line ||
-            error!("Unexpected token")
+            unexpected_token
           end
 
           def parse_available
