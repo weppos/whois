@@ -18,7 +18,7 @@ module Whois
         class Iana < Base
 
           self.tokenizers += [
-              :skip_newline,
+              :skip_empty_line,
               :scan_disclaimer,
               :scan_section,
           ]

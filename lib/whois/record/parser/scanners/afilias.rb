@@ -19,12 +19,12 @@ module Whois
         class Afilias < Base
 
           self.tokenizers += [
+              :skip_empty_line,
               :scan_available,
               :scan_reserved,
               :scan_throttled,
               :scan_disclaimer,
               :scan_keyvalue,
-              :skip_empty_line,
           ]
 
 

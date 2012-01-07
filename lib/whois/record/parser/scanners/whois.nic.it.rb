@@ -18,8 +18,8 @@ module Whois
         class WhoisNicIt < Base
 
           self.tokenizers += [
+              :skip_empty_line,
               :scan_response_unavailable,
-              :skip_newline,
               :scan_disclaimer,
               :scan_keyvalue,
               :scan_section,

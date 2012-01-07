@@ -18,6 +18,7 @@ module Whois
         class WhoisDenicDe < Base
 
           self.tokenizers += [
+              :skip_empty_line,
               :scan_response_throttled,
               :scan_disclaimer,
               :scan_invalid,
@@ -25,7 +26,6 @@ module Whois
               :scan_pair,
               :scan_contact,
               :skip_db_time,
-              :skip_empty_line,
           ]
 
 

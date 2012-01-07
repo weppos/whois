@@ -19,10 +19,10 @@ module Whois
         class WhoisCnnicCn < Base
 
           self.tokenizers += [
+              :skip_empty_line,
               :scan_reserved,
               :scan_available,
               :scan_keyvalue,
-              :skip_empty_line,
           ]
 
 

@@ -18,11 +18,11 @@ module Whois
         class WhoisBiz < Base
 
           self.tokenizers += [
+              :skip_empty_line,
               :scan_available,
               :scan_keyvalue,
               :skip_lastupdate,
               :skip_fuffa,
-              :skip_newline,
           ]
 
 
