@@ -57,6 +57,7 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
       @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should            == "AC3598-FRNIC"
       @parser.registrant_contacts[0].name.should          == nil
