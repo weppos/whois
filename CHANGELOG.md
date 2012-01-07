@@ -11,6 +11,8 @@
 
 * CHANGED: whois.nic.fr `frozen' status is now considered as :registered.
 
+* CHANGED: Rewritten Whois::Record::Parser::Scanners::Base to use a modular approach.
+
 * FIXED: whois.nic.net.nt parser must support `Pending Purge' and `Pending Delete' status (GH-131).
 
 * FIXED: whois.nic.fr crashes when contact is anonymous (GH-140).
