@@ -42,7 +42,7 @@ module Whois
               y = @input.check_until(p) =~ /^\* Sorry, the Whois database is currently down/
 
               if y
-                @input.scan_until(p)
+                @input.skip_until(p)
                 @ast["response:unavailable"] = true
               else
                 visited!
