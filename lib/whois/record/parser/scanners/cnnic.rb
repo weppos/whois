@@ -15,37 +15,26 @@ module Whois
     class Parser
       module Scanners
 
-        class Cnnic < Scanners::Base
+        # Scanner for the Cnnic record.
+        class Cnnic < Base
 
-          def parse_content
-            parse_reserved    ||
-            parse_available   ||
-            parse_keyvalue    ||
-            trim_newline      ||
-            unexpected_token
-          end
+          self.tokenizers += [
+              :scan_reserved,
+              :scan_available,
+              :scan_keyvalue,
+              :skip_empty_line,
+          ]
 
-          def parse_available
+
+          tokenizer :scan_available do
             if @input.scan(/^no matching record/)
               @ast["status:available"] = true
             end
           end
 
-          def parse_reserved
+          tokenizer :scan_reserved do
             if @input.scan(/^the domain you want to register is reserved/)
               @ast["status:reserved"] = true
-            end
-          end
-
-          def parse_keyvalue
-            if @input.scan(/(.+?):(.*?)\n/)
-              key, value = @input[1].strip, @input[2].strip
-              if @ast[key].nil?
-                @ast[key] = value
-              else
-                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                @ast[key] << value
-              end
             end
           end
 

@@ -15,43 +15,30 @@ module Whois
     class Parser
       module Scanners
 
-        class WhoisBiz < Scanners::Base
+        class WhoisBiz < Base
 
-          def parse_content
-            parse_available   ||
-            parse_keyvalue    ||
-            skip_lastupdate   ||
-            skip_fuffa        ||
-            trim_newline      ||
-            unexpected_token
-          end
+          self.tokenizers += [
+              :scan_available,
+              :scan_keyvalue,
+              :skip_lastupdate,
+              :skip_fuffa,
+              :skip_newline,
+          ]
 
 
-          def skip_lastupdate
-            @input.skip(/>>>(.+?)<<<\n/)
-          end
-
-          def skip_fuffa
-            @input.scan(/^\S(.+)\n/)
-          end
-
-          def parse_available
+          tokenizer :scan_available do
             if @input.scan(/^Not found: (.+)\n/)
               @ast["Domain Name"] = @input[1]
               @ast["status:available"] = true
             end
           end
 
-          def parse_keyvalue
-            if @input.scan(/(.+?):(.*?)\n/)
-              key, value = @input[1].strip, @input[2].strip
-              if @ast[key].nil?
-                @ast[key] = value
-              else
-                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                @ast[key] << value
-              end
-            end
+          tokenizer :skip_lastupdate do
+            @input.skip(/>>>(.+?)<<<\n/)
+          end
+
+          tokenizer :skip_fuffa do
+            @input.scan(/^\S(.+)\n/)
           end
 
         end

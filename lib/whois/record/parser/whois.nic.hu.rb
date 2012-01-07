@@ -27,16 +27,16 @@ module Whois
         include Scanners::Ast
 
         property_supported :disclaimer do
-          node("disclaimer")
+          node("field:disclaimer")
         end
 
 
         property_supported :domain do
-          node("domain")
+          node("field:domain")
         end
 
         property_supported :domain_id do
-          node('hun-id')
+          node("hun-id")
         end
 
 
@@ -60,11 +60,11 @@ module Whois
 
 
         property_supported :created_on do
-          node('registered') { |raw| Time.parse(raw) }
+          node("registered") { |raw| Time.parse(raw) }
         end
 
         property_supported :updated_on do
-          node('changed') { |raw| Time.parse(raw) }
+          node("changed") { |raw| Time.parse(raw) }
         end
 
         property_not_supported :expires_on

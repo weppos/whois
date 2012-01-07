@@ -15,56 +15,28 @@ module Whois
     class Parser
       module Scanners
 
-        class WhoisNicHu < Scanners::Base
+        class WhoisNicHu < Base
 
-          def parse_content
-            parse_version     ||
-            parse_disclaimer  ||
-            parse_domain      ||
-            parse_available   ||
-            parse_in_progress ||
+          self.tokenizers += [
+              :scan_version,
+              :scan_disclaimer,
+              :scan_domain,
+              :scan_available,
+              :scan_in_progress,
 
-            # v2.0
-            parse_moreinfo    ||
+              # v2.0
+              :scan_moreinfo,
 
-            # v1.99
-            parse_domain_data ||
-            parse_contacts    ||
+              # v1.99
+              :scan_domain_data,
+              :scan_contacts,
 
-            trim_empty_line   ||
-            unexpected_token
-          end
+              :skip_empty_line,
+          ]
 
-
-          def parse_version
-            if @input.match?(/% Whois server .*\n/)
-              @input.scan(/% Whois server ([\w\d\.]*).*?\n/)
-              @ast["version"] = @input[1]
-            end
-          end
 
           # FIXME: Requires UTF-8 Encoding (see #11)
-          def parse_moreinfo
-            if @input.match?(/Tov.* ld\.:\n/)
-              @ast["moreinfo"] = @input.scan_until(/^\n/)
-            end
-          end
-
-          def parse_disclaimer
-            if @input.match?(/^Rights.*\n/)
-              lines = @input.scan_until(/^\n/)
-              @ast["disclaimer"] = lines.strip
-            end
-          end
-
-          def parse_domain
-            if @input.match?(/^domain:\s+(.*)\n/) && @input.scan(/^domain:\s+(.*?)\n/)
-              @ast["domain"] = @input[1].strip
-            end
-          end
-
-          # FIXME: Requires UTF-8 Encoding (see #11)
-          def parse_available
+          tokenizer :scan_available do
             if @input.match?(/Nincs (.*?) \/ No match\n/)
               @input.scan(/Nincs (.*?) \/ No match\n/)
               @ast["status:available"] = true
@@ -72,14 +44,41 @@ module Whois
           end
 
           # FIXME: Requires UTF-8 Encoding (see #11)
-          def parse_in_progress
+          tokenizer :scan_in_progress do
             if @input.match?(/(.*?) folyamatban \/ Registration in progress\n/)
               @input.scan(/(.*?) folyamatban \/ Registration in progress\n/)
               @ast["status:inprogress"] = true
             end
           end
 
-          def parse_domain_data
+          tokenizer :scan_disclaimer do
+            if @input.match?(/^Rights.*\n/)
+              lines = @input.scan_until(/^\n/)
+              @ast["field:disclaimer"] = lines.strip
+            end
+          end
+
+          tokenizer :scan_domain do
+            if @input.match?(/^domain:\s+(.*)\n/) && @input.scan(/^domain:\s+(.*?)\n/)
+              @ast["field:domain"] = @input[1].strip
+            end
+          end
+
+          # FIXME: Requires UTF-8 Encoding (see #11)
+          tokenizer :scan_moreinfo do
+            if @input.match?(/Tov.* ld\.:\n/)
+              @ast["field:moreinfo"] = @input.scan_until(/^\n/)
+            end
+          end
+
+          tokenizer :scan_version do
+            if @input.match?(/% Whois server .*\n/)
+              @input.scan(/% Whois server ([\w\d\.]*).*?\n/)
+              @ast["field:version"] = @input[1]
+            end
+          end
+
+          tokenizer :scan_domain_data do
             if @input.match?(/(.+?):\s+(.*)\n/)
               while @input.scan(/(.+?):\s+(.*)\n/)
                 key, value = @input[1].strip, @input[2].strip
@@ -105,7 +104,7 @@ module Whois
             end
           end
 
-          def parse_contacts
+          tokenizer :scan_contacts do
             if @input.match?(/\n(person|org):/)
               @input.scan(/\n/)
               while @input.match?(/(.+?):\s+(.*)\n/)
@@ -114,6 +113,9 @@ module Whois
               true
             end
           end
+
+
+        private
 
           def parse_contact
             contact ||= {}

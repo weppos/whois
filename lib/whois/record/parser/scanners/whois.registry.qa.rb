@@ -15,34 +15,21 @@ module Whois
     class Parser
       module Scanners
 
-        # Scanner for the whois.registry.qa server response.
+        # Scanner for the whois.registry.qa record.
         #
         # @since  2.1.0
-        class WhoisRegistryQa < Scanners::Base
+        class WhoisRegistryQa < Base
 
-          def parse_content
-            parse_available ||
-            parse_keyvalue_spaced ||
+          self.tokenizers += [
+              :scan_available,
+              :scan_keyvalue,
+              :skip_empty_line,
+          ]
 
-            trim_empty_line ||
-            unexpected_token
-          end
 
-          def parse_available
+          tokenizer :scan_available do
             if @input.scan(/^No Data Found\n/)
               @ast["status:available"] = true
-            end
-          end
-
-          def parse_keyvalue_spaced
-            if @input.scan(/(.+?):\s+(.*?)\n/)
-              key, value = @input[1].strip, @input[2].strip
-              if @ast[key].nil?
-                @ast[key] = value
-              else
-                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
-                @ast[key] << value
-              end
             end
           end
 

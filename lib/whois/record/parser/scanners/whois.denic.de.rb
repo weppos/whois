@@ -15,30 +15,46 @@ module Whois
     class Parser
       module Scanners
 
-        class WhoisDenicDe < Scanners::Base
+        class WhoisDenicDe < Base
 
-          def parse_content
-            parse_throttled   ||
-            parse_disclaimer  ||
-            parse_invalid     ||    # 1.10.0, 1.11.0
-            parse_available   ||    # 1.10.0, 1.11.0
-            parse_pair(@ast)  ||
-            parse_contact     ||
-            parse_db_time     ||    # 2.0
+          self.tokenizers += [
+              :scan_response_throttled,
+              :scan_disclaimer,
+              :scan_invalid,
+              :scan_available,
+              :scan_pair,
+              :scan_contact,
+              :skip_db_time,
+              :skip_empty_line,
+          ]
 
-            trim_empty_line   ||
-            unexpected_token
+
+          # Version 1.11.0, 1.10.0
+          tokenizer :scan_available do
+            if @input.match?(/% Object ".+" not found in database\n/)
+              while @input.skip(/%(.*)\n/)
+              end
+              @ast["status:available"] = true
+            end
           end
 
+          # Version 1.11.0, 1.10.0
+          tokenizer :scan_invalid do
+            if @input.match?(/% ".+" is not a valid domain name\n/)
+              @input.scan(/% "(.+?)" is not a valid domain name\n/)
+              @ast["Domain"] = @input[1]
+              @ast["status:invalid"] = true
+            end
+          end
 
-          def parse_throttled
+          tokenizer :scan_response_throttled do
             if @input.match?(/^% Error: 55000000002/)
               @ast["response:throttled"] = true
               @input.skip(/^.+\n/)
             end
           end
 
-          def parse_disclaimer
+          tokenizer :scan_disclaimer do
             if @input.match?(/% Copyright \(c\) *\d{4} by DENIC\n/)
               @input.scan_until(/% Terms and Conditions of Use\n/)
               lines = []
@@ -49,20 +65,11 @@ module Whois
             end
           end
 
-          def parse_pair(node)
-            if @input.scan(/([^  \[]*):(.*)\n/)
-              key, value = @input[1].strip, @input[2].strip
-              if node[key].nil?
-                node[key] = value
-              else
-                node[key].is_a?(Array) || node[key] = [node[key]]
-                node[key] << value
-              end
-              true
-            end
+          tokenizer :scan_pair do
+            parse_pair(@ast)
           end
 
-          def parse_contact
+          tokenizer :scan_contact do
             if @input.scan(/\[(.*)\]\n/)
               contact_name = @input[1]
               contact = {}
@@ -88,25 +95,25 @@ module Whois
             end
           end
 
-          # Compatibility with Version: 1.11.0, 1.10.0
-          def parse_available
-            if @input.match?(/% Object ".+" not found in database\n/)
-              while @input.scan(/%(.*)\n/)  # strip junk
+          # Version 2.0
+          tokenizer :skip_db_time do
+            @input.skip(/^% DB time is (.+)\n/)
+          end
+
+
+        private
+
+          def parse_pair(store)
+            if @input.scan(/([^  \[]*):(.*)\n/)
+              key, value = @input[1].strip, @input[2].strip
+              if store[key].nil?
+                store[key] = value
+              else
+                store[key].is_a?(Array) || store[key] = [store[key]]
+                store[key] << value
               end
-              @ast["status:available"] = true
+              store
             end
-          end
-
-          def parse_invalid
-            if @input.match?(/% ".+" is not a valid domain name\n/)
-              @input.scan(/% "(.+?)" is not a valid domain name\n/)
-              @ast["Domain"] = @input[1]
-              @ast["status:invalid"] = true
-            end
-          end
-
-          def parse_db_time
-            @input.scan(/^% DB time is (.+)\n$/)
           end
 
         end

@@ -17,38 +17,20 @@ module Whois
 
         class Verisign < Base
 
-          def parse_content
-            trim_empty_line   ||
-            parse_response_unavailable ||
-            parse_available   ||
-            parse_disclaimer  ||
-            parse_notice      ||
-            parse_indentedkeyvalue ||
-            skip_ianaservice  ||
-            skip_lastupdate   ||
-            skip_fuffa        ||
-            unexpected_token
-          end
+          self.tokenizers += [
+              :skip_empty_line,
+              :scan_response_unavailable,
+              :scan_available,
+              :scan_disclaimer,
+              :scan_notice,
+              :scan_keyvalue_indented,
+              :skip_ianaservice,
+              :skip_lastupdate,
+              :skip_fuffa,
+          ]
 
-        private
 
-          def skip_lastupdate
-            @input.skip(/>>>(.+?)<<<\n/)
-          end
-
-          def skip_fuffa
-            (@input.scan(/^\S(.+)\n/)) ||
-            (@input.scan(/^\S(.+)/) and @input.eos?)
-          end
-
-          def skip_ianaservice
-            if @input.match?(/IANA Whois Service/)
-              @ast["IANA"] = true
-              @input.terminate
-            end
-          end
-
-          def parse_response_unavailable
+          tokenizer :scan_response_unavailable do
             # Check if the string starts with /*
             # If it does, match until the end of all /* lines
             # or the end of the file and check for the content.
@@ -68,23 +50,13 @@ module Whois
             end
           end
 
-          def parse_available
+          tokenizer :scan_available do
             if @input.scan(/No match for "(.+?)"\.\n/)
               @ast["Domain Name"] = @input[1].strip
             end
           end
 
-          def parse_notice
-            if @input.match?(/^NOTICE:/)
-              lines = []
-              while @input.scan(/(.+)\n/)
-                lines << @input[1].strip
-              end
-              @ast["Notice"] = lines.join(" ")
-            end
-          end
-
-          def parse_disclaimer
+          tokenizer :scan_disclaimer do
             if @input.match?(/^TERMS OF USE:/)
               lines = []
               while @input.scan(/(.+)\n/)
@@ -94,17 +66,44 @@ module Whois
             end
           end
 
-          def parse_indentedkeyvalue
+          tokenizer :scan_notice do
+            if @input.match?(/^NOTICE:/)
+              lines = []
+              while @input.scan(/(.+)\n/)
+                lines << @input[1].strip
+              end
+              @ast["Notice"] = lines.join(" ")
+            end
+          end
+
+          tokenizer :scan_keyvalue_indented do
             if @input.scan(/\s+(.+?):(.*?)\n/)
               key, value = @input[1].strip, @input[2].strip
               if @ast[key].nil?
                 @ast[key] = value
               else
-                @ast[key].is_a?(Array) || @ast[key] = [@ast[key]]
+                @ast[key] = [@ast[key]] unless @ast[key].is_a?(Array)
                 @ast[key] << value
               end
             end
           end
+
+          tokenizer :skip_lastupdate do
+            @input.skip(/>>>(.+?)<<<\n/)
+          end
+
+          tokenizer :skip_fuffa do
+            @input.scan(/^\S(.+)(?:\n|\z)/)
+          end
+
+          tokenizer :skip_ianaservice do
+            if @input.match?(/IANA Whois Service/)
+              @ast["IANA"] = true
+              @input.terminate
+            end
+          end
+
+        private
 
           def visited?
             !!@tmp["visited:#{@input.pos}"]

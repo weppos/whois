@@ -17,14 +17,14 @@ module Whois
 
         class Iana < Base
 
-          def parse_content
-            trim_newline      ||
-            parse_disclaimer  ||
-            parse_section     ||
-            unexpected_token
-          end
+          self.tokenizers += [
+              :skip_newline,
+              :scan_disclaimer,
+              :scan_section,
+          ]
 
-          def parse_disclaimer
+
+          tokenizer :scan_disclaimer do
             if @input.match?(/^\%(.*?)\n/)
               disclaimer = []
               while @input.scan(/\%(.*?)\n/)
@@ -35,7 +35,7 @@ module Whois
             end
           end
 
-          def parse_section
+          tokenizer :scan_section do
             if @input.scan(/^(.+):(.+)\n/)
 
               # Adapt the section's name depending on the first line
@@ -55,6 +55,9 @@ module Whois
               @ast[section] = content
             end
           end
+
+
+        private
 
           def parse_section_pairs
             # Sets by default the firsts values found in the section parsing bellow

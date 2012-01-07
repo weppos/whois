@@ -15,9 +15,19 @@ module Whois
     class Parser
       module Scanners
 
-        class WhoisTldEe < Scanners::Base
+        # Scanner for the whois.tld.ee record.
+        #
+        # @todo This is an incomplete scanner, it skips all the properties
+        #       except contacts.
+        class WhoisTldEe < Base
 
-          def parse_content
+          self.tokenizers += [
+              :scan_contact,
+              :todo_content,
+          ]
+
+
+          tokenizer :scan_contact do
             if @input.scan(/contact:\s+(.*)\n/)
               section = @input[1].strip
               content = {}
@@ -27,10 +37,11 @@ module Whois
               end
 
               @ast[section] = content
-            # FIXME: incomplete scanner, it skips all the properties
-            else
-              @input.scan(/(.*)\n/)
             end
+          end
+
+          tokenizer :todo_content do
+            @input.scan(/(.*)\n/)
           end
 
         end

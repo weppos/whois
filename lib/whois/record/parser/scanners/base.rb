@@ -12,16 +12,15 @@ module Whois
     class Parser
       module Scanners
 
-        # Represents the abstract base scanner class,
-        # containing common scanner methods.
-        #
-        # Concrete classes should implement the following methods:
-        #
-        # * {#parse_content}
-        #
-        # @abstract
-        #
         class Base
+
+          class_attribute :tokenizers
+          self.tokenizers = []
+
+          def self.tokenizer(name, &block)
+            define_method(name, &block)
+          end
+
 
           def initialize(content)
             @input = StringScanner.new(content)
@@ -35,30 +34,39 @@ module Whois
             # A super-simple AST store.
             @ast = {}
 
-            while !@input.eos?
-              parse_content
-            end
+            tokenize until @input.eos?
 
             @ast
           end
 
-          # This method is the core of the parser.
-          #
-          # It should include the parser logic
-          # to analyze, trim or consume a line.
-          #
-          # @abstract Implement in your parser.
-          def parse_content
-            raise NotImplementedError
-          end
 
-
-          def trim_empty_line
+          tokenizer :skip_empty_line do
             @input.skip(/^\n/)
           end
 
-          def trim_newline
+          tokenizer :skip_newline do
             @input.skip(/\n/)
+          end
+
+          tokenizer :scan_keyvalue do
+            if @input.scan(/(.+?):(.*?)\n/)
+              key, value = @input[1].strip, @input[2].strip
+              if @ast[key].nil?
+                @ast[key] = value
+              else
+                @ast[key] = [@ast[key]] unless @ast[key].is_a?(Array)
+                @ast[key] << value
+              end
+            end
+          end
+
+          private
+
+          def tokenize
+            tokenizers.each do |tokenizer|
+              return if send(tokenizer)
+            end
+            unexpected_token
           end
 
           def unexpected_token
