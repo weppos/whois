@@ -90,17 +90,17 @@ module Whois
         end
 
         property_supported :registrant_contacts do
-          contact("Holder", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Holder", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Admin-C", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Admin-C", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         # FIXME: check against different schema
 
         property_supported :technical_contacts do
-          contact("Tech-C", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Tech-C", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -158,15 +158,15 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node(element) do |raw|
-              Record::Contact.new(raw) do |c|
-                c.type = type
-              end
+        def build_contact(element, type)
+          node(element) do |raw|
+            Record::Contact.new(raw) do |c|
+              c.type = type
             end
           end
+        end
 
       end
     end

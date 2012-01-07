@@ -79,13 +79,13 @@ module Whois
 
         property_supported :admin_contacts do
           if content_for_scanner =~ /admin-c:\s+(.*)\n/
-            contact($1, Whois::Record::Contact::TYPE_ADMIN)
+            build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /registrant:\s+(.*)\n/
-            contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
+            build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
           end
         end
 
@@ -113,19 +113,19 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node(element) do |raw|
-              Record::Contact.new(
-                :id             => element,
+        def build_contact(element, type)
+          node(element) do |raw|
+            Record::Contact.new(
                 :type           => type,
-                :name           => raw['name'],
-                :organization   => raw['org'],
-                :created_on     => Time.parse(raw['created'])
-              )
-            end
+                :id             => element,
+                :name           => raw["name"],
+                :organization   => raw["org"],
+                :created_on     => Time.parse(raw["created"])
+            )
           end
+        end
 
       end
     end

@@ -76,15 +76,15 @@ module Whois
 
 
         property_supported :registrant_contacts do
-          contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -105,27 +105,27 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node("#{element} ID") do |raw|
-              Record::Contact.new(
-                :type         => type,
-                :id           => node("#{element} ID"),
-                :name         => node("#{element} Name"),
-                :organization => node("#{element} Organization"),
-                :address      => node("#{element} Address1"),
-                :city         => node("#{element} City"),
-                :zip          => node("#{element} Postal Code"),
-                :state        => node("#{element} State/Province"),
-                :country      => node("#{element} Country"),
-                :country_code => node("#{element} Country Code"),
-                :phone        => node("#{element} Phone Number"),
-                :fax          => node("#{element} Facsimile Number"),
-                :email        => node("#{element} Email")
-              )
-            end
+        def build_contact(element, type)
+          node("#{element} ID") do |raw|
+            Record::Contact.new(
+              :type         => type,
+              :id           => node("#{element} ID"),
+              :name         => node("#{element} Name"),
+              :organization => node("#{element} Organization"),
+              :address      => node("#{element} Address1"),
+              :city         => node("#{element} City"),
+              :zip          => node("#{element} Postal Code"),
+              :state        => node("#{element} State/Province"),
+              :country      => node("#{element} Country"),
+              :country_code => node("#{element} Country Code"),
+              :phone        => node("#{element} Phone Number"),
+              :fax          => node("#{element} Facsimile Number"),
+              :email        => node("#{element} Email")
+            )
           end
+        end
 
       end
 

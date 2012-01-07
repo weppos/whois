@@ -80,23 +80,23 @@ module Whois
                 Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
 
             Record::Registrar.new(
-              :id =>            parts[0],
-              :name =>          parts[1],
-              :organization =>  parts[1]
+                :id =>            parts[0],
+                :name =>          parts[1],
+                :organization =>  parts[1]
             )
           end
         end
 
         property_supported :registrant_contacts do
-          contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Admin", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Admin", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Tech", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Tech", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -117,16 +117,16 @@ module Whois
         end
 
 
-        private
+      private
 
-          def contact(element, type)
-            node("#{element} ID") do
-              address = (1..3).
-                  map { |i| node("#{element} Street#{i}") }.
-                  delete_if { |i| i.nil? || i.empty? }.
-                  join("\n")
+        def build_contact(element, type)
+          node("#{element} ID") do
+            address = (1..3).
+                map { |i| node("#{element} Street#{i}") }.
+                delete_if { |i| i.nil? || i.empty? }.
+                join("\n")
 
-              Record::Contact.new(
+            Record::Contact.new(
                 :type         => type,
                 :id           => node("#{element} ID"),
                 :name         => node("#{element} Name"),
@@ -139,15 +139,15 @@ module Whois
                 :phone        => node("#{element} Phone"),
                 :fax          => node("#{element} FAX"),
                 :email        => node("#{element} Email")
-              )
-            end
+            )
           end
-  
-          def decompose_registrar(value)
-            if value =~ /(.+?) \((.+?)\)/
-              [$2, $1]
-            end
+        end
+
+        def decompose_registrar(value)
+          if value =~ /(.+?) \((.+?)\)/
+            [$2, $1]
           end
+        end
 
       end
 

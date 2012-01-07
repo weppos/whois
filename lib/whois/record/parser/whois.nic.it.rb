@@ -100,17 +100,16 @@ module Whois
           end
         end
 
-
         property_supported :registrant_contacts do
-          contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Admin Contact", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Admin Contact", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Technical Contacts", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Technical Contacts", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -141,7 +140,7 @@ module Whois
 
       private
 
-        def contact(element, type)
+        def build_contact(element, type)
           node(element) do |str|
             address = (str["Address"] || "").split("\n")
             company = address.size == 6 ? address.shift : nil

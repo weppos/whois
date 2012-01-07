@@ -14,8 +14,9 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the <tt>whois.nic.or.kr</tt> server.
-      # Aliases the <tt>whois.kr</tt>.
+      # Parser for the whois.nic.or.kr server.
+      #
+      # It aliases the whois.kr parser.
       WhoisNicOrKr = WhoisKr
 
     end

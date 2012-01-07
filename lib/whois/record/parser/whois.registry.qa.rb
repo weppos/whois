@@ -68,13 +68,13 @@ module Whois
 
 
         property_supported :registrant_contacts do
-          contact("Registrant Contact", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant Contact", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_not_supported :admin_contacts
 
         property_supported :technical_contacts do
-          contact("Tech Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Tech Contact", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -97,18 +97,18 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node("#{element} ID") do |raw|
-              Record::Contact.new(
-                :type         => type,
-                :id           => node("#{element} ID"),
-                :name         => node("#{element} Name"),
-                :email        => node("#{element} Email")
-              )
-            end
+        def build_contact(element, type)
+          node("#{element} ID") do |raw|
+            Record::Contact.new(
+              :type         => type,
+              :id           => node("#{element} ID"),
+              :name         => node("#{element} Name"),
+              :email        => node("#{element} Email")
+            )
           end
+        end
 
       end
 

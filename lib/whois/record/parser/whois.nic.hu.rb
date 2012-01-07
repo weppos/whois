@@ -83,24 +83,24 @@ module Whois
           address, city, zip, country_code = decompose_address(node("address"))
 
           Whois::Record::Contact.new(
-            :type         => Whois::Record::Contact::TYPE_REGISTRANT,
-            :name         => node("name"),
-            :organization => node("org"),
-            :address      => address,
-            :city         => city,
-            :zip          => zip,
-            :country_code => country_code,
-            :phone        => node("phone"),
-            :fax          => node("fax-no")
+              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+              :name         => node("name"),
+              :organization => node("org"),
+              :address      => address,
+              :city         => city,
+              :zip          => zip,
+              :country_code => country_code,
+              :phone        => node("phone"),
+              :fax          => node("fax-no")
           )
         end
 
         property_supported :admin_contacts do
-          contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("tech-c", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("tech-c", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -114,14 +114,14 @@ module Whois
         # NEWPROPERTY
         def registrar_contact
           cached_properties_fetch(:registrar_contact) do
-            contact("registrar", nil)
+            build_contact("registrar", nil)
           end
         end
 
         # NEWPROPERTY
         def zone_contact
           cached_properties_fetch(:zone_contact) do
-            contact("zone-c", nil)
+            build_contact("zone-c", nil)
           end
         end
 
@@ -136,31 +136,31 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node(node(element)) do |raw|
-              Whois::Record::Contact.new do |c|
-                c.type = type
-                raw.each { |k,v| c[k.to_sym] = v }
-              end
+        def build_contact(element, type)
+          node(node(element)) do |raw|
+            Whois::Record::Contact.new do |c|
+              c.type = type
+              raw.each { |k,v| c[k.to_sym] = v }
             end
           end
+        end
 
-          # Depending on record type, the address can be <tt>nil</tt>
-          # or an array containing different address parts.
-          def decompose_address(parts)
-            addresses = parts || []
-            address, city, zip, country_code = nil, nil, nil, nil
+        # Depending on record type, the address can be <tt>nil</tt>
+        # or an array containing different address parts.
+        def decompose_address(parts)
+          addresses = parts || []
+          address, city, zip, country_code = nil, nil, nil, nil
 
-            if !addresses.empty?
-              address       = addresses[0]                if addresses[0]
-              zip, city     = addresses[1].split(" ", 2)  if addresses[1]
-              country_code  = addresses[2]                if addresses[2]
-            end
-
-            [address, city, zip, country_code]
+          if !addresses.empty?
+            address       = addresses[0]                if addresses[0]
+            zip, city     = addresses[1].split(" ", 2)  if addresses[1]
+            country_code  = addresses[2]                if addresses[2]
           end
+
+          [address, city, zip, country_code]
+        end
 
       end
 

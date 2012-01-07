@@ -48,37 +48,37 @@ module Whois
         end
 
 
-        private
+      private
 
-          def contact(element, type)
-            node("#{element} ID") do
-              address = ["", "2", "3"].
-                  map { |i| node("#{element} Address#{i}") }.
-                  delete_if(&:empty?).
-                  join("\n")
+        def build_contact(element, type)
+          node("#{element} ID") do
+            address = ["", "2", "3"].
+                map { |i| node("#{element} Address#{i}") }.
+                delete_if(&:empty?).
+                join("\n")
 
-              Record::Contact.new(
-                :type         => type,
-                :id           => node("#{element} ID"),
-                :name         => node("#{element} Name"),
-                :organization => node("#{element} Organization"),
-                :address      => address,
-                :city         => node("#{element} City"),
-                :zip          => node("#{element} Postal Code"),
-                :state        => node("#{element} State/Province"),
-                :country_code => node("#{element} Country/Economy"),
-                :phone        => node("#{element} Phone"),
-                :fax          => node("#{element} FAX"),
-                :email        => node("#{element} E-mail")
-              )
-            end
+            Record::Contact.new(
+              :type         => type,
+              :id           => node("#{element} ID"),
+              :name         => node("#{element} Name"),
+              :organization => node("#{element} Organization"),
+              :address      => address,
+              :city         => node("#{element} City"),
+              :zip          => node("#{element} Postal Code"),
+              :state        => node("#{element} State/Province"),
+              :country_code => node("#{element} Country/Economy"),
+              :phone        => node("#{element} Phone"),
+              :fax          => node("#{element} FAX"),
+              :email        => node("#{element} E-mail")
+            )
           end
+        end
 
-          def decompose_registrar(value)
-            if value =~ /^(.+?) ([^\s]+)$/
-              [$2, $1]
-            end
+        def decompose_registrar(value)
+          if value =~ /^(.+?) ([^\s]+)$/
+            [$2, $1]
           end
+        end
 
       end
 

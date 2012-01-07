@@ -76,19 +76,19 @@ module Whois
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Owner's handle:\s+(.+)\n/
-            contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
+            build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
           end
         end
 
         property_supported :admin_contacts do
           if content_for_scanner =~ /Administrative Contact's handle:\s+(.+)\n/
-            contact($1, Whois::Record::Contact::TYPE_ADMIN)
+            build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :technical_contacts do
           if content_for_scanner =~ /Technical Contact's handle:\s+(.+)\n/
-            contact($1, Whois::Record::Contact::TYPE_TECHNICAL)
+            build_contact($1, Whois::Record::Contact::TYPE_TECHNICAL)
           end
         end
 
@@ -100,11 +100,15 @@ module Whois
         end
 
 
-        private
+      private
 
-          def contact(string, type)
-            Whois::Record::Contact.new(:type => type, :id => string, :name => string)
-          end
+        def build_contact(string, type)
+          Whois::Record::Contact.new(
+              :type => type,
+              :id => string,
+              :name => string
+          )
+        end
 
       end
 

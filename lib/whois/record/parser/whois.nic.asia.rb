@@ -42,11 +42,11 @@ module Whois
 
 
         property_supported :admin_contacts do
-          contact("Administrative", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Administrative", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Technical", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Technical", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -57,16 +57,16 @@ module Whois
         end
 
 
-        private
+      private
 
-          def contact(element, type)
-            node("#{element} ID") do
-              address = ["", "2", "3"].
-                  map { |i| node("#{element} Address#{i}") }.
-                  delete_if(&:empty?).
-                  join("\n")
+        def build_contact(element, type)
+          node("#{element} ID") do
+            address = ["", "2", "3"].
+                map { |i| node("#{element} Address#{i}") }.
+                delete_if(&:empty?).
+                join("\n")
 
-              Record::Contact.new(
+            Record::Contact.new(
                 :type         => type,
                 :id           => node("#{element} ID"),
                 :name         => node("#{element} Name"),
@@ -79,9 +79,9 @@ module Whois
                 :phone        => node("#{element} Phone"),
                 :fax          => node("#{element} FAX"),
                 :email        => node("#{element} E-mail")
-              )
-            end
+            )
           end
+        end
 
       end
 

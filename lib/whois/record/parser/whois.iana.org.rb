@@ -39,15 +39,15 @@ module Whois
         # TODO: registrar
 
         property_supported :registrant_contacts do
-          contact("organisation", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("organisation", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("administrative", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("administrative", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("technical", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("technical", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
@@ -81,27 +81,27 @@ module Whois
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node(element) do |raw|
-              if raw["organisation"] != "Not assigned"
-                address = (raw["address"] || "").split("\n")
-                Record::Contact.new(
-                  :type         => type,
-                  :name         => raw["name"],
-                  :organization => raw["organisation"],
-                  :address      => address[0],
-                  :city         => address[1],
-                  :zip          => address[2],
-                  :country      => address[3],
-                  :phone        => raw["phone"],
-                  :fax          => raw["fax-no"],
-                  :email        => raw["e-mail"]
-                )
-              end
+        def build_contact(element, type)
+          node(element) do |raw|
+            if raw["organisation"] != "Not assigned"
+              address = (raw["address"] || "").split("\n")
+              Record::Contact.new(
+                :type         => type,
+                :name         => raw["name"],
+                :organization => raw["organisation"],
+                :address      => address[0],
+                :city         => address[1],
+                :zip          => address[2],
+                :country      => address[3],
+                :phone        => raw["phone"],
+                :fax          => raw["fax-no"],
+                :email        => raw["e-mail"]
+              )
             end
           end
+        end
 
       end
 
