@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.crsnic.net parser
-      #
       # Parser for the whois.crsnic.net server.
-      #
       class WhoisCrsnicNet < Base
         include Scanners::Ast
 

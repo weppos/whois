@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.biz parser
-      #
       # Parser for the whois.biz server.
-      #
       class WhoisBiz < Base
         include Scanners::Ast
 

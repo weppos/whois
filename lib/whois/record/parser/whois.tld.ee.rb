@@ -15,9 +15,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.tld.ee parser
-      #
       # Parser for the whois.tld.ee server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods

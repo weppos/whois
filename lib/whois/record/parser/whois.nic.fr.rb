@@ -14,9 +14,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.fr parser
-      #
       # Parser for the whois.nic.fr server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
@@ -101,7 +98,7 @@ module Whois
         end
 
 
-        private
+      private
 
         MULTIVALUE_KEYS = %w( address )
 

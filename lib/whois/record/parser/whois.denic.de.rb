@@ -15,9 +15,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.denic.de parser
-      #
       # Parser for the whois.denic.de server.
       #
       # @author Simone Carletti <weppos@weppos.net>

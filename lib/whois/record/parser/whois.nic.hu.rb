@@ -15,9 +15,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.hu parser
-      #
       # Parser for the whois.nic.hu server.
       #
       # @author Simone Carletti <weppos@weppos.net>

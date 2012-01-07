@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.it parser
-      #
       # Parser for the whois.nic.it server.
-      #
       class WhoisNicIt < Base
         include Scanners::Ast
 
@@ -30,7 +26,7 @@ module Whois
 
 
         property_supported :domain do
-          node("Domain") { |raw| raw.downcase }
+          node("Domain") { |str| str.downcase }
         end
 
         property_not_supported :domain_id
@@ -82,24 +78,24 @@ module Whois
 
 
         property_supported :created_on do
-          node("Created") { |raw| Time.parse(raw) }
+          node("Created") { |str| Time.parse(str) }
         end
 
         property_supported :updated_on do
-          node("Last Update") { |raw| Time.parse(raw) }
+          node("Last Update") { |str| Time.parse(str) }
         end
 
         property_supported :expires_on do
-          node("Expire Date") { |raw| Time.parse(raw) }
+          node("Expire Date") { |str| Time.parse(str) }
         end
 
 
         property_supported :registrar do
-          node("Registrar") do |raw|
+          node("Registrar") do |str|
             Record::Registrar.new(
-              :id           => raw["Name"],
-              :name         => raw["Name"],
-              :organization => raw["Organization"]
+              :id           => str["Name"],
+              :name         => str["Name"],
+              :organization => str["Organization"]
             )
           end
         end
@@ -133,7 +129,7 @@ module Whois
           !!node("response:unavailable")
         end
 
-        # Initializes a new {Scanners::WhoisIt} instance
+        # Initializes a new {Scanners::WhoisNicIt} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
@@ -146,21 +142,21 @@ module Whois
       private
 
         def contact(element, type)
-          node(element) do |raw|
-            address = (raw["Address"] || "").split("\n")
+          node(element) do |str|
+            address = (str["Address"] || "").split("\n")
             company = address.size == 6 ? address.shift : nil
             Record::Contact.new(
-              :id           => raw["ContactID"],
+              :id           => str["ContactID"],
               :type         => type,
-              :name         => raw["Name"],
-              :organization => raw["Organization"] || company,
+              :name         => str["Name"],
+              :organization => str["Organization"] || company,
               :address      => address[0],
               :city         => address[1],
               :zip          => address[2],
               :state        => address[3],
               :country_code => address[4],
-              :created_on   => raw["Created"] ? Time.parse(raw["Created"]) : nil,
-              :updated_on   => raw["Last Update"] ? Time.parse(raw["Last Update"]) : nil
+              :created_on   => str["Created"] ? Time.parse(str["Created"]) : nil,
+              :updated_on   => str["Last Update"] ? Time.parse(str["Last Update"]) : nil
             )
           end
         end

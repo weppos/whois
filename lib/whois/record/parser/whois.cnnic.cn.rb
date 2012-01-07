@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.cnnic.cn parser
-      #
       # Parser for the whois.cnnic.cn server.
-      #
       class WhoisCnnicCn < Base
         include Scanners::Ast
 

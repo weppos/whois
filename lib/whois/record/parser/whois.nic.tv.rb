@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.tv parser
-      #
       # Parser for the whois.nic.tv server.
-      #
       class WhoisNicTv < Base
         include Scanners::Ast
 

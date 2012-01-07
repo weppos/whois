@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.iana.org parser
-      #
       # Parser for the whois.iana.org server.
-      #
       class WhoisIanaOrg < Base
         include Scanners::Ast
 

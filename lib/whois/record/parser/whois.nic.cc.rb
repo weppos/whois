@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.cc parser
-      #
       # Parser for the whois.nic.cc server.
-      #
       class WhoisNicCc < Base
         include Scanners::Ast
 

@@ -15,11 +15,7 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = jobswhois.verisign-grs.com parser
-      #
       # Parser for the jobswhois.verisign-grs.com server.
-      #
       class JobswhoisVerisignGrsCom < Base
         include Scanners::Ast
 
