@@ -42,7 +42,7 @@ module Whois
         #   # => nil
         #
         # @example Defined property
-        #   property_register(:discaimer, :supported) {}
+        #   property_register(:disclaimer, :supported) {}
         #   property_status(:disclaimer)
         #   # => :supported
         #
@@ -62,7 +62,7 @@ module Whois
         #   # => false
         #
         # @example Registered property
-        #   property_register(:discaimer) {}
+        #   property_register(:disclaimer) {}
         #   property_registered?(:disclaimer)
         #   # => true
         #
