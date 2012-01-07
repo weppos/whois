@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/cnnic'
+require 'whois/record/parser/scanners/whois.cnnic.cn.rb'
 
 
 module Whois
@@ -97,13 +97,13 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::Cnnic} instance
+        # Initializes a new {Scanners::WhoisCnnicCn} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Cnnic.new(content_for_scanner).parse
+          Scanners::WhoisCnnicCn.new(content_for_scanner).parse
         end
 
 

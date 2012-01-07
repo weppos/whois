@@ -15,8 +15,8 @@ module Whois
     class Parser
       module Scanners
 
-        # Scanner for the Cnnic record.
-        class Cnnic < Base
+        # Scanner for the whois.cnnic.cn record.
+        class WhoisCnnicCn < Base
 
           self.tokenizers += [
               :scan_reserved,
