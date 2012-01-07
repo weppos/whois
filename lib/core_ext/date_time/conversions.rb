@@ -9,6 +9,6 @@ class DateTime
   # If self has an offset other than 0, self will just be returned unaltered, since there's no clean way to map it to a Time.
   def to_time
     self.offset == 0 ? ::Time.utc(year, month, day, hour, min, sec, sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)) : self
-  end
+  end unless method_defined?(:to_time)
 
 end
