@@ -63,7 +63,9 @@ end
 
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new
+RSpec::Core::RakeTask.new do |t|
+  t.verbose = !!ENV["VERBOSE"]
+end
 
 
 namespace :multitest do
