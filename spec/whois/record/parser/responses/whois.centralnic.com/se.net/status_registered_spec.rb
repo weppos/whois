@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["OK"]
     end
   end
   describe "#available?" do
@@ -49,30 +49,29 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2008-05-10")
+      @parser.created_on.should == Time.parse("2011-09-29 12:10:36 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2011-11-29 02:15:36 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-05-10")
+      @parser.expires_on.should == Time.parse("2012-09-29 23:59:59 UTC")
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
+      @parser.nameservers.should have(2).items
       @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "ns1.domaindiscount24.net"
+      @parser.nameservers[0].name.should == "ns2020.hostgator.com"
       @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "ns2.domaindiscount24.net"
-      @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].name.should == "ns3.domaindiscount24.net"
+      @parser.nameservers[1].name.should == "ns2019.hostgator.com"
     end
   end
 end

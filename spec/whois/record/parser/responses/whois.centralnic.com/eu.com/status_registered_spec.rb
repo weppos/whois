@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["OK"]
     end
   end
   describe "#available?" do
@@ -49,18 +49,19 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2001-08-14")
+      @parser.created_on.should == Time.parse("2001-08-14 10:14:41 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2011-09-21 08:16:17 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-08-14")
+      @parser.expires_on.should == Time.parse("2013-08-14 23:59:59 UTC")
     end
   end
   describe "#nameservers" do

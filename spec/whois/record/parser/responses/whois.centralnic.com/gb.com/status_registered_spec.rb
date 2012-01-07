@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["OK"]
     end
   end
   describe "#available?" do
@@ -49,18 +49,19 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2006-04-23")
+      @parser.created_on.should == Time.parse("2006-04-23 06:26:11 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2011-08-09 00:17:05 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-04-23")
+      @parser.expires_on.should == Time.parse("2012-04-23 23:59:59 UTC")
     end
   end
   describe "#nameservers" do
@@ -68,13 +69,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
       @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "a.ns14.net"
+      @parser.nameservers[0].name.should == "d.ns14.net"
       @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "b.ns14.net"
+      @parser.nameservers[1].name.should == "c.ns14.net"
       @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].name.should == "c.ns14.net"
+      @parser.nameservers[2].name.should == "b.ns14.net"
       @parser.nameservers[3].should be_a(_nameserver)
-      @parser.nameservers[3].name.should == "d.ns14.net"
+      @parser.nameservers[3].name.should == "a.ns14.net"
     end
   end
 end

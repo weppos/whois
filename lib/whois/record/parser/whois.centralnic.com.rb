@@ -27,48 +27,17 @@ module Whois
       #
       class WhoisCentralnicCom < Base
 
-        # property_supported :disclaimer do
-        #   if content_for_scanner =~ /(This whois service is provided by .*)\n/m
-        #     $1.gsub("\n", " ")
-        #   else
-        #     raise ParserError, "Unexpected response trying to parse `:disclaimer' property. The parser might be outdated."
-        #   end
-        # end
-
-
-        # property_supported :domain do
-        #   if content_for_scanner =~ /Domain Name: (.*)\n/
-        #     $1.strip
-        #   elsif content_for_scanner =~ /^No match for (.*)\n/
-        #     $1.strip
-        #   else
-        #     raise ParserError, "Unexpected response trying to parse `:domain' property. The parser might be outdated."
-        #   end
-        # end
-        #
-        # property_not_supported :domain_id
-
-
         property_not_supported :referral_whois
 
         property_not_supported :referral_url
 
 
         property_supported :status do
-          if content_for_scanner =~ /Status: (.+?)\n/
-            case $1.downcase
-              when "live" then :registered
-              when "live, renewal in progress" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
-          end
+          content_for_scanner.scan(/Status:(.+)\n/).flatten
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^No match for/)
+          content_for_scanner.strip == "DOMAIN NOT FOUND"
         end
 
         property_supported :registered? do
@@ -77,36 +46,27 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Record created on: (.+)\n/
+          if content_for_scanner =~ /^Created On:(.+)\n/
             Time.parse($1)
           end
         end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          if content_for_scanner =~ /^Last Updated On:(.+)\n/
+            Time.parse($1)
+          end
+        end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Record expires on: (.+)\n/
+          if content_for_scanner =~ /^Expiration Date:(.+)\n/
             Time.parse($1)
           end
         end
-
-
-        # property_supported :registrar do
-        #   if content_for_scanner =~ /Registrar: (.*) \((.*)\)\n/
-        #     Record::Registrar.new(
-        #       :id           => $1,
-        #       :name         => $2,
-        #       :organization => $2
-        #     )
-        #   end
-        # end
 
 
         property_supported :nameservers do
-          if content_for_scanner =~ /Domain servers in listed order:\n\n((.+\n)+)\n/
-            $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.downcase)
-            end
+          content_for_scanner.scan(/Name Server:(.+)\n/).flatten.map do |name|
+            Record::Nameserver.new(name.downcase)
           end
         end
 

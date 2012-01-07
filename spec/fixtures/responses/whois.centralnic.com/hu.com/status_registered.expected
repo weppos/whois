@@ -6,7 +6,7 @@
 
 
 #status
-  should: %s == :registered
+  should: %s == ["TRANSFER PROHIBITED"]
 
 #available?
   should: %s == false
@@ -17,14 +17,15 @@
 
 #created_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2008-08-27")
+  should: %s == Time.parse("2008-08-27 23:18:29 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s be_a(Time)
+  should: %s == Time.parse("2011-07-03 00:15:41 UTC")
 
 #expires_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2011-08-27")
+  should: %s == Time.parse("2012-08-27 23:59:59 UTC")
 
 
 #nameservers

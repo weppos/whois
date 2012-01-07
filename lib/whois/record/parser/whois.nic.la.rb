@@ -27,12 +27,17 @@ module Whois
       #
       class WhoisNicLa < Base
 
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
         property_supported :status do
-          content_for_scanner.scan(/Status:(.+?)\n/).flatten
+          content_for_scanner.scan(/Status:(.+)\n/).flatten
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "DOMAIN NOT FOUND")
+          content_for_scanner.strip == "DOMAIN NOT FOUND"
         end
 
         property_supported :registered? do
@@ -41,19 +46,19 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /^Created On:(.*)\n/
+          if content_for_scanner =~ /^Created On:(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /^Last Updated On:(.*)\n/
+          if content_for_scanner =~ /^Last Updated On:(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /^Expiration Date:(.*)\n/
+          if content_for_scanner =~ /^Expiration Date:(.+)\n/
             Time.parse($1)
           end
         end

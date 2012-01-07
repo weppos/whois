@@ -1,53 +1,71 @@
-  Domain Name: boerse.de.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    Christopher Bergmann (H1094739) info@webdesign-er.com
-    
-    Maueraeckerstr. 27, Unterreichenbach
-    75399
-    DE (Germany)
-    Tel: +49.72358308
+Domain ID:CNIC-DO819205
+Domain Name:BOERSE.DE.COM
+Created On:28-Nov-2011 21:38:30 UTC
+Last Updated On:03-Dec-2011 00:15:47 UTC
+Expiration Date:28-Nov-2012 23:59:59 UTC
+Status:TRANSFER PROHIBITED
+Registrant ID:T2187-GANDI-VKXS
+Registrant Name:Dhananjeyan Thangavelu
+Registrant Organization:LTV Global Inc.
+Registrant Street1:5 Meenakshi Nagar
+Registrant City:Trichy
+Registrant State/Province:TN
+Registrant Postal Code:620006
+Registrant Country:IN
+Registrant Phone:+91.4312431415
+Registrant Email:08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net
+Admin ID:T2187-GANDI-VKXS
+Admin Name:Dhananjeyan Thangavelu
+Admin Organization:LTV Global Inc.
+Admin Street1:5 Meenakshi Nagar
+Admin City:Trichy
+Admin State/Province:TN
+Admin Postal Code:620006
+Admin Country:IN
+Admin Phone:+91.4312431415
+Admin Email:08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net
+Tech ID:T2187-GANDI-VKXS
+Tech Name:Dhananjeyan Thangavelu
+Tech Organization:LTV Global Inc.
+Tech Street1:5 Meenakshi Nagar
+Tech City:Trichy
+Tech State/Province:TN
+Tech Postal Code:620006
+Tech Country:IN
+Tech Phone:+91.4312431415
+Tech Email:08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net
+Billing ID:T2187-GANDI-VKXS
+Billing Name:Dhananjeyan Thangavelu
+Billing Organization:LTV Global Inc.
+Billing Street1:5 Meenakshi Nagar
+Billing City:Trichy
+Billing State/Province:TN
+Billing Postal Code:620006
+Billing Country:IN
+Billing Phone:+91.4312431415
+Billing Email:08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net
+Sponsoring Registrar ID:H1167922
+Sponsoring Registrar Organization:Gandi SAS
+Sponsoring Registrar Street1:15 place de la Nation
+Sponsoring Registrar City:Paris
+Sponsoring Registrar Postal Code:75011
+Sponsoring Registrar Country:FR
+Sponsoring Registrar Phone:+33 1 7039 3740
+Sponsoring Registrar FAX:+33 1 4373 1851
+Sponsoring Registrar Website:http://www.gandi.net/
+Name Server:B.DNS.GANDI.NET
+Name Server:C.DNS.GANDI.NET
+Name Server:A.DNS.GANDI.NET
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Christopher Bergmann (H884756) info@webdesign-er.com
-    
-    Maueraeckerstr. 27, Unterreichenbach
-    75399
-    DE (Germany)
-    Tel: +49.72358308
 
-  Technical Contact:
-    Hostmaster (H67436) centralnic@bot.udag.net
-    United Domains AG
-    Gautinger Strasse 10, 
-    Starnberg
-    D-82319
-    DE (Germany)
-    Tel: +498151368670
-    Fax: +4981513686777
-
-  Registrar:
-    Hostmaster (H67436) centralnic@bot.udag.net
-    United Domains AG
-    Gautinger Strasse 10, 
-    Starnberg
-    D-82319
-    DE (Germany)
-    Tel: +498151368670
-    Fax: +4981513686777
-    URL: http://www.united-domains.de
-
-  Record created on: 02 March 2010
-  Record expires on: 02 March 2011
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS.UDAGDNS.DE
-  NS.UDAGDNS.NET
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

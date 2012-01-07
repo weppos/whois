@@ -1,59 +1,63 @@
-  Domain Name: paramount.uk.net
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    Century Leisure plc (H1056361) pierre@centuryclub.co.uk
-    
-    61 Shaftesbury Avenue
-    London
-    W1D 6LG
-    UK (United Kingdom)
-    Tel: +44 20 75343080
+Domain ID:CNIC-DO393884
+Domain Name:PARAMOUNT.UK.NET
+Created On:28-Feb-2006 12:17:01 UTC
+Last Updated On:10-May-2010 10:21:35 UTC
+Expiration Date:28-Feb-2012 23:59:59 UTC
+Status:OK
+Registrant ID:H1056361
+Registrant Name:Century Leisure plc
+Registrant Postal Code:W1D 6LG
+Registrant Country:GB
+Registrant Phone:+44.2075343080
+Registrant Email:pierre@centuryclub.co.uk
+Admin ID:H239313
+Admin Name:Pierre Condou
+Admin Organization:Century Leisure plc
+Admin Postal Code:W1D 6LG
+Admin Country:GB
+Admin Phone:+44.2075343080
+Admin Email:pierre@centuryclub.co.uk
+Tech ID:I6467
+Tech Name:Domain Admin
+Tech Organization:Webfusion
+Tech Street1:5 Roundwood Avenue
+Tech Street2:Stockley Park
+Tech Street3:Uxbridge
+Tech City:Middlesex
+Tech Postal Code:UB11 1FF
+Tech Country:GB
+Tech Phone:+44.8712309525
+Tech FAX:+44.8701650437
+Tech Email:hosting-domains@webfusion.com
+Billing ID:H1056361
+Billing Name:Century Leisure plc
+Billing Postal Code:W1D 6LG
+Billing Country:GB
+Billing Phone:+44.2075343080
+Billing Email:pierre@centuryclub.co.uk
+Sponsoring Registrar ID:I6467
+Sponsoring Registrar Organization:Webfusion
+Sponsoring Registrar Street1:5 Roundwood Avenue
+Sponsoring Registrar Street2:Stockley Park
+Sponsoring Registrar Street3:Uxbridge
+Sponsoring Registrar City:Middlesex
+Sponsoring Registrar Postal Code:UB11 1FF
+Sponsoring Registrar Country:GB
+Sponsoring Registrar Phone:08712 309525
+Sponsoring Registrar FAX:08701 650437
+Sponsoring Registrar Website:http://www.123-reg.co.uk
+Name Server:NS2.MYHOSTCP.COM
+Name Server:NS1.MYHOSTCP.COM
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Pierre Condou (H239313) pierre@centuryclub.co.uk
-    Century Leisure plc
-    61 Shaftesbury Avenue
-    London
-    W1D 6LG
-    UK (United Kingdom)
-    Tel: +44 20 75343080
 
-  Technical Contact:
-    Domain Admin (I6467) hosting-domains@webfusion.com
-    Webfusion
-    5 Roundwood Avenue
-    Stockley Park
-    Uxbridge
-    Middlesex
-    UB11 1FF
-    UK (United Kingdom)
-    Tel: 08712 309525
-    Fax: 08701 650437
-
-  Registrar:
-    Domain Admin (I6467) hosting-domains@webfusion.com
-    Webfusion
-    5 Roundwood Avenue
-    Stockley Park
-    Uxbridge
-    Middlesex
-    UB11 1FF
-    UK (United Kingdom)
-    Tel: 08712 309525
-    Fax: 08701 650437
-    URL: http://www.123-reg.co.uk
-
-  Record created on: 28 February 2006
-  Record expires on: 28 February 2012
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS1.MYHOSTCP.COM
-  NS2.MYHOSTCP.COM
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

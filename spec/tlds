@@ -6,8 +6,6 @@
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 #Whois::Server.define :tld, ".gp", "whois.nic.gp"
 #Whois::Server.define :tld, ".kp", "whois.kcce.kp"
-sb;whois.nic.net.sb;baidu.com.sb;u34jedzcq.sb
-com.uy;;;
 ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
@@ -71,6 +69,8 @@ co.ca;whois.co.ca;internet.co.ca;u34jedzcq.co.ca
 co.pl;whois.co.pl;coco.co.pl;u34jedzcq.co.pl
 co.za;whois.coza.net.za;google.co.za;u34jedzcq.co.za
 co;whois.nic.co;t.co;u34jedzcq.co
+com.de;whois.centralnic.com;abercrombiefitcheshop.com.de;u34jedzcq.com.de
+com.uy;;;
 com;whois.crsnic.net;google.com;u34jedzcq.com
 coop;whois.nic.coop;calgary.coop;u34jedzcq.coop
 cr;;;
@@ -119,6 +119,7 @@ gov.za;whois.gov.za;dha.gov.za;u34jedzcq.gov.za
 gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
 gq;;;
 gr;;;
+gr.com;whois.centralnic.com;google.gr.com;u34jedzcq.gr.com
 gs;whois.nic.gs;google.gs;u34jedzcq.gs
 gt;;;
 gu;;;
@@ -247,6 +248,7 @@ ru;whois.ripn.net;google.ru;u34jedzcq.ru
 rw;;;
 sa.com;whois.centralnic.com;fynbos.sa.com;u34jedzcq.sa.com
 sa;whois.nic.net.sa;saudigazette.com.sa;u34jedzcq.com.sa
+sb;whois.nic.net.sb;baidu.com.sb;u34jedzcq.sb
 sc;whois.afilias-grs.info;google.sc;u34jedzcq.sc
 sd;;;
 se.com;whois.centralnic.com;hotel.se.com;u34jedzcq.se.com
@@ -293,8 +295,9 @@ uk.com;whois.centralnic.com;history.uk.com;u34jedzcq.uk.com
 uk.net;whois.centralnic.com;paramount.uk.net;u34jedzcq.uk.net
 uk;whois.nic.uk;google.co.uk;u34jedzcq.co.uk
 us.com;whois.centralnic.com;college.us.com;u34jedzcq.us.com
+us.org;whois.centralnic.com;;u34jedzcq.us.org
 us;whois.nic.us;google.us;u34jedzcq.us
-uy.com;whois.centralnic.com;ctrl.uy.com;u34jedzcq.uy.com
+uy.com;whois.centralnic.com;bestb.uy.com;u34jedzcq.uy.com
 uy;whois.nic.org.uy;seciu.edu.uy;u34jedzcq.edu.uy
 uz;whois.cctld.uz;google.uz;u34jedzcq.uz
 va;;;

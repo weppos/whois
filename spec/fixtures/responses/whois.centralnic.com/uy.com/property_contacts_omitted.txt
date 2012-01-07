@@ -1,0 +1,32 @@
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
+
+Domain ID:CNIC-DO705337
+Domain Name:BINGO.UY.COM
+Created On:02-Aug-2010 09:47:07 UTC
+Last Updated On:03-Aug-2011 00:15:14 UTC
+Expiration Date:02-Aug-2012 23:59:59 UTC
+Status:OK
+Registrant ID:H122681
+Admin ID:H122681
+Tech ID:H122681
+Billing ID:H122681
+Sponsoring Registrar ID:H122681
+Sponsoring Registrar Organization:Domain Exploitation International
+Sponsoring Registrar City:Santa Monica
+Sponsoring Registrar State/Province:CA
+Sponsoring Registrar Postal Code:90401
+Sponsoring Registrar Country:US
+Sponsoring Registrar Phone:
+Name Server:NS2.DOMAIN-EXPLOITATION.US.COM
+Name Server:NS1.DOMAIN-EXPLOITATION.US.COM
+DNSSEC:Unsigned
+
+

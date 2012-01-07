@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_available.expected" 
   end
   describe "#status" do
     it do
-      @parser.status.should == :available
+      @parser.status.should == []
     end
   end
   describe "#available?" do
@@ -53,7 +53,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_available.expected" 
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should == nil
     end
   end
   describe "#expires_on" do

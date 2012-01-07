@@ -1,5 +1,6 @@
 # Changelog
 
+
 ## Master
 
 * SERVER: .VA TLD no longer provides public WHOIS interface (GH-93).
@@ -16,14 +17,14 @@
 
 * FIXED: whois.nic.fr parser must support `NOT_OPEN' status (GH-142).
 
+* FIXED: whois.centralnic.com changed response format.
+
 
 ## Release 2.2.0
 
 * NEW: Added base whois.nic.net.sb parser (GH-56).
 
 * NEW: Added whois.nic.fr contact parsing.
-
-* CHANGED: whois.je changed response format (GH-123).
 
 * CHANGED: whois.nic.ve now returns `:inactive' instead of `:suspended'.
 
@@ -62,6 +63,8 @@
 * FIXED: whois.nic.net.nf parser must support /pending delete/ status (GH-131).
 
 * FIXED: whois.nic.cz IPv6 nameserver support (GH-135).
+
+* FIXED: whois.je changed response format (GH-123).
 
 
 ## Release 2.1.1

@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["OK"]
     end
   end
   describe "#available?" do
@@ -49,18 +49,19 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2004-10-08")
+      @parser.created_on.should == Time.parse("2004-10-08 02:12:49 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2010-10-11 17:18:17 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2012-10-08")
+      @parser.expires_on.should == Time.parse("2012-10-08 23:59:59 UTC")
     end
   end
   describe "#nameservers" do
@@ -68,13 +69,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
       @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "ns1.mydomain.com"
+      @parser.nameservers[0].name.should == "ns4.mydomain.com"
       @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "ns2.mydomain.com"
+      @parser.nameservers[1].name.should == "ns3.mydomain.com"
       @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].name.should == "ns3.mydomain.com"
+      @parser.nameservers[2].name.should == "ns2.mydomain.com"
       @parser.nameservers[3].should be_a(_nameserver)
-      @parser.nameservers[3].name.should == "ns4.mydomain.com"
+      @parser.nameservers[3].name.should == "ns1.mydomain.com"
     end
   end
 end

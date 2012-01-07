@@ -6,7 +6,7 @@
 
 
 #status
-  should: %s == :registered
+  should: %s == ["OK"]
 
 #available?
   should: %s == false
@@ -17,14 +17,15 @@
 
 #created_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2001-08-31")
+  should: %s == Time.parse("2001-08-31 11:50:57 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s be_a(Time)
+  should: %s == Time.parse("2011-09-01 23:42:41 UTC")
 
 #expires_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2011-08-31")
+  should: %s == Time.parse("2013-08-31 23:59:59 UTC")
 
 
 #nameservers
