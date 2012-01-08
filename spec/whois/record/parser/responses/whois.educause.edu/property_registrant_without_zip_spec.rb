@@ -27,7 +27,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_registrant_without_z
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(_contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == "The American University of the Caribbean School of Medicine"
+      @parser.registrant_contacts[0].name.should         == nil
       @parser.registrant_contacts[0].organization.should == "The American University of the Caribbean School of Medicine"
       @parser.registrant_contacts[0].address.should      == "c/o Campbell Corporate Services, Ltd.\nScotiabank Building, P. O. Box 268"
       @parser.registrant_contacts[0].city.should         == "Grand Cayman"

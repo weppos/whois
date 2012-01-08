@@ -72,7 +72,7 @@ module Whois
 
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
-              :name         => lines[0],
+              :name         => nil,
               :organization => lines[0],
               :address      => lines[1..-3].join("\n"),
               :city         => city,

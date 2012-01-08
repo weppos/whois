@@ -26,7 +26,7 @@
   should: %s have(1).items
   should: %s[0] be_a(_contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].name         == "EDUCAUSE"
+  should: %s[0].name         == nil
   should: %s[0].organization == "EDUCAUSE"
   should: %s[0].address      == "4772 Walnut Street\nSuite 206"
   should: %s[0].city         == "Boulder"
