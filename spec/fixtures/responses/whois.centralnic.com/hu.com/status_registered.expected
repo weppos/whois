@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+
+
+#domain
+  should: %s == "xxx.hu.com"
+
+#domain_id
+  should: %s == "CNIC-DO592232"
+
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
@@ -26,6 +37,68 @@
 #expires_on
   should: %s be_a(Time)
   should: %s == Time.parse("2012-08-27 23:59:59 UTC")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "H292913"
+  should: %s.name         == nil
+  should: %s.organization == "Network Solutions LLC"
+  should: %s.url          == "http://www.networksolutions.com/"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "37300766"
+  should: %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
+  should: %s[0].organization  == "DIANAMIC ABRASIVE PRODUCTS INC"
+  should: %s[0].address       == "2566 INDUSTRIAL ROW DRIVE"
+  should: %s[0].city          == "TROY"
+  should: %s[0].zip           == "48084"
+  should: %s[0].state         == "MI"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.248280118"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "no.valid.email@worldnic.com"
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "37300766"
+  should: %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
+  should: %s[0].organization  == "DIANAMIC ABRASIVE PRODUCTS INC"
+  should: %s[0].address       == "2566 INDUSTRIAL ROW DRIVE"
+  should: %s[0].city          == "TROY"
+  should: %s[0].zip           == "48084"
+  should: %s[0].state         == "MI"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.248280118"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "no.valid.email@worldnic.com"
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "37300766"
+  should: %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
+  should: %s[0].organization  == "DIANAMIC ABRASIVE PRODUCTS INC"
+  should: %s[0].address       == "2566 INDUSTRIAL ROW DRIVE"
+  should: %s[0].city          == "TROY"
+  should: %s[0].zip           == "48084"
+  should: %s[0].state         == "MI"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.248280118"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "no.valid.email@worldnic.com"
 
 
 #nameservers

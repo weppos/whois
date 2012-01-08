@@ -9,6 +9,8 @@
 
 * NEW: Added support for whois.educause.edu registrant contact field (GH-141).
 
+* NEW: Added full whois.centralnic.com parser.
+
 * CHANGED: whois.nic.fr `frozen' status is now considered as :registered.
 
 * CHANGED: Rewritten Whois::Record::Parser::Scanners::Base to use a modular approach.

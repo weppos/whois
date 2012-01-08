@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+
+
+#domain
+  should: %s == "gsn.cn.com"
+
+#domain_id
+  should: %s == "CNIC-DO323367"
+
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
@@ -26,6 +37,68 @@
 #expires_on
   should: %s be_a(Time)
   should: %s == Time.parse("2012-11-23 23:59:59 UTC")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "H67436"
+  should: %s.name         == nil
+  should: %s.organization == "United Domains AG"
+  should: %s.url          == "http://www.united-domains.de"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "H1062079"
+  should: %s[0].name          == "GSN Electronics Incorporation Pte Ltd"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == "049910"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "SG"
+  should: %s[0].phone         == "+65.62336919"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "abuse@gsn.in"
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "H161687"
+  should: %s[0].name          == "Pauline Ang"
+  should: %s[0].organization  == "GSN Electronics Incorporation Pte Ltd"
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == "049910"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "SG"
+  should: %s[0].phone         == "+65.62336919"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "abuse@gsn.in"
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "H94152"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
 
 
 #nameservers

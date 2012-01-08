@@ -14,8 +14,9 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the <tt>whois.centralnic.net</tt> server.
-      # Aliases the <tt>whois.centralnic.com</tt> parser.
+      # Parser for the whois.centralnic.net server.
+      #
+      # It aliases the whois.centralnic.com parser.
       class WhoisCentralnicNet < WhoisCentralnicCom
       end
 

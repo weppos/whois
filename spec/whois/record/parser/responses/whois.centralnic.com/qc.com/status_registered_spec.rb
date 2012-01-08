@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "ceo.qc.com"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "CNIC-DO327026"
+    end
+  end
   describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
@@ -62,6 +77,75 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2012-10-08 23:59:59 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.id.should           == "H87003"
+      @parser.registrar.name.should         == nil
+      @parser.registrar.organization.should == "Registerapi"
+      @parser.registrar.url.should          == "http://www.dotster.com/"
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "H1062277"
+      @parser.registrant_contacts[0].name.should          == "helene"
+      @parser.registrant_contacts[0].organization.should  == nil
+      @parser.registrant_contacts[0].address.should       == nil
+      @parser.registrant_contacts[0].city.should          == nil
+      @parser.registrant_contacts[0].zip.should           == "J1X 3W4"
+      @parser.registrant_contacts[0].state.should         == nil
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == "CA"
+      @parser.registrant_contacts[0].phone.should         == "+1.8198438380"
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == "docjgs@videotron.ca"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "H114589"
+      @parser.admin_contacts[0].name.should          == "helene viens"
+      @parser.admin_contacts[0].organization.should  == nil
+      @parser.admin_contacts[0].address.should       == nil
+      @parser.admin_contacts[0].city.should          == nil
+      @parser.admin_contacts[0].zip.should           == "J1X 3W4"
+      @parser.admin_contacts[0].state.should         == nil
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == "CA"
+      @parser.admin_contacts[0].phone.should         == "+1.8198438380"
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "docjgs@videotron.ca"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "H114590"
+      @parser.technical_contacts[0].name.should          == "helene viens"
+      @parser.technical_contacts[0].organization.should  == nil
+      @parser.technical_contacts[0].address.should       == nil
+      @parser.technical_contacts[0].city.should          == nil
+      @parser.technical_contacts[0].zip.should           == "J1X 3W4"
+      @parser.technical_contacts[0].state.should         == nil
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == "CA"
+      @parser.technical_contacts[0].phone.should         == "+1.8198438380"
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "docjgs@videotron.ca"
     end
   end
   describe "#nameservers" do

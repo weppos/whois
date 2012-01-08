@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "hotel.se.com"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "CNIC-DO561053"
+    end
+  end
   describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
@@ -62,6 +77,75 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2012-05-10 23:59:59 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.id.should           == "7145-IX"
+      @parser.registrar.name.should         == nil
+      @parser.registrar.organization.should == "InternetX GmbH"
+      @parser.registrar.url.should          == "http://www.internetx.de/"
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "INX-9925147com"
+      @parser.registrant_contacts[0].name.should          == "boris schleinkofer"
+      @parser.registrant_contacts[0].organization.should  == "p.s. consulting ag"
+      @parser.registrant_contacts[0].address.should       == "hacklthalerstrasse 21c"
+      @parser.registrant_contacts[0].city.should          == "kirchdorf"
+      @parser.registrant_contacts[0].zip.should           == "83527"
+      @parser.registrant_contacts[0].state.should         == "bayern"
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == "DE"
+      @parser.registrant_contacts[0].phone.should         == "+49.8072370230"
+      @parser.registrant_contacts[0].fax.should           == "+49.80723702399"
+      @parser.registrant_contacts[0].email.should         == "schleinkofer@ps-consulting-ag.com"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "INX-9925147com"
+      @parser.admin_contacts[0].name.should          == "boris schleinkofer"
+      @parser.admin_contacts[0].organization.should  == "p.s. consulting ag"
+      @parser.admin_contacts[0].address.should       == "hacklthalerstrasse 21c"
+      @parser.admin_contacts[0].city.should          == "kirchdorf"
+      @parser.admin_contacts[0].zip.should           == "83527"
+      @parser.admin_contacts[0].state.should         == "bayern"
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == "DE"
+      @parser.admin_contacts[0].phone.should         == "+49.8072370230"
+      @parser.admin_contacts[0].fax.should           == "+49.80723702399"
+      @parser.admin_contacts[0].email.should         == "schleinkofer@ps-consulting-ag.com"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "INX-9925147com"
+      @parser.technical_contacts[0].name.should          == "boris schleinkofer"
+      @parser.technical_contacts[0].organization.should  == "p.s. consulting ag"
+      @parser.technical_contacts[0].address.should       == "hacklthalerstrasse 21c"
+      @parser.technical_contacts[0].city.should          == "kirchdorf"
+      @parser.technical_contacts[0].zip.should           == "83527"
+      @parser.technical_contacts[0].state.should         == "bayern"
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == "DE"
+      @parser.technical_contacts[0].phone.should         == "+49.8072370230"
+      @parser.technical_contacts[0].fax.should           == "+49.80723702399"
+      @parser.technical_contacts[0].email.should         == "schleinkofer@ps-consulting-ag.com"
     end
   end
   describe "#nameservers" do

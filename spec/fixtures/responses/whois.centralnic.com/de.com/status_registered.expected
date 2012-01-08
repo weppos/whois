@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+
+
+#domain
+  should: %s == "boerse.de.com"
+
+#domain_id
+  should: %s == "CNIC-DO819205"
+
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
@@ -26,6 +37,68 @@
 #expires_on
   should: %s be_a(Time)
   should: %s == Time.parse("2012-11-28 23:59:59 UTC")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "H1167922"
+  should: %s.name         == nil
+  should: %s.organization == "Gandi SAS"
+  should: %s.url          == "http://www.gandi.net/"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "T2187-GANDI-VKXS"
+  should: %s[0].name          == "Dhananjeyan Thangavelu"
+  should: %s[0].organization  == "LTV Global Inc."
+  should: %s[0].address       == "5 Meenakshi Nagar"
+  should: %s[0].city          == "Trichy"
+  should: %s[0].zip           == "620006"
+  should: %s[0].state         == "TN"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "IN"
+  should: %s[0].phone         == "+91.4312431415"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "T2187-GANDI-VKXS"
+  should: %s[0].name          == "Dhananjeyan Thangavelu"
+  should: %s[0].organization  == "LTV Global Inc."
+  should: %s[0].address       == "5 Meenakshi Nagar"
+  should: %s[0].city          == "Trichy"
+  should: %s[0].zip           == "620006"
+  should: %s[0].state         == "TN"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "IN"
+  should: %s[0].phone         == "+91.4312431415"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "T2187-GANDI-VKXS"
+  should: %s[0].name          == "Dhananjeyan Thangavelu"
+  should: %s[0].organization  == "LTV Global Inc."
+  should: %s[0].address       == "5 Meenakshi Nagar"
+  should: %s[0].city          == "Trichy"
+  should: %s[0].zip           == "620006"
+  should: %s[0].state         == "TN"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "IN"
+  should: %s[0].phone         == "+91.4312431415"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
 
 
 #nameservers

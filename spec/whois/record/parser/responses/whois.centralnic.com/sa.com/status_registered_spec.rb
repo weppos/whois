@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "fynbos.sa.com"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "CNIC-DO501005"
+    end
+  end
   describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
@@ -62,6 +77,75 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2012-09-27 23:59:59 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.id.should           == "C30342"
+      @parser.registrar.name.should         == nil
+      @parser.registrar.organization.should == "Hostroute"
+      @parser.registrar.url.should          == "http://www.hostroute.com"
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "H323273"
+      @parser.registrant_contacts[0].name.should          == "Maarten Groos"
+      @parser.registrant_contacts[0].organization.should  == nil
+      @parser.registrant_contacts[0].address.should       == "farm 215 fynbos reserve\nPO Box 1314"
+      @parser.registrant_contacts[0].city.should          == "Gansbaai"
+      @parser.registrant_contacts[0].zip.should           == "7220"
+      @parser.registrant_contacts[0].state.should         == "Western Cape"
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == "ZA"
+      @parser.registrant_contacts[0].phone.should         == "+27.283880920"
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == "maarten@farm215.co.za"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "H323273"
+      @parser.admin_contacts[0].name.should          == "Maarten Groos"
+      @parser.admin_contacts[0].organization.should  == nil
+      @parser.admin_contacts[0].address.should       == "farm 215 fynbos reserve\nPO Box 1314"
+      @parser.admin_contacts[0].city.should          == "Gansbaai"
+      @parser.admin_contacts[0].zip.should           == "7220"
+      @parser.admin_contacts[0].state.should         == "Western Cape"
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == "ZA"
+      @parser.admin_contacts[0].phone.should         == "+27.283880920"
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "maarten@farm215.co.za"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "C30342"
+      @parser.technical_contacts[0].name.should          == "Seb de Lemos"
+      @parser.technical_contacts[0].organization.should  == "Hostroute"
+      @parser.technical_contacts[0].address.should       == "St Andrew's House\nSt Mary's Walk"
+      @parser.technical_contacts[0].city.should          == "Maidenhead"
+      @parser.technical_contacts[0].zip.should           == "SL6 1QZ"
+      @parser.technical_contacts[0].state.should         == "Berkshire"
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == "GB"
+      @parser.technical_contacts[0].phone.should         == "+44.2031377651"
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "sales@hostroute.com"
     end
   end
   describe "#nameservers" do
