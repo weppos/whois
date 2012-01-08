@@ -25,6 +25,8 @@
 
 * FIXED: whois.centralnic.com changed response format.
 
+* FIXED: whois.jprs.jp parser must support `To be suspended' status.
+
 
 ## Release 2.2.0
 

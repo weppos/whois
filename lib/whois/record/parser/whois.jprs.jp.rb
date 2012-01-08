@@ -14,9 +14,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.jprs.jp parser
-      #
       # Parser for the whois.jprs.jp server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
@@ -28,15 +25,25 @@ module Whois
       class WhoisJprsJp < Base
 
         property_supported :status do
-          if content_for_scanner =~ /\[Stat(?:us|e)\]\s+(.*)\n/
-            case $1.split(" ").first.downcase
-              when "active"     then :registered
-              when "connected"  then :registered
-              when "reserved"   then :reserved
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+          if content_for_scanner =~ /\[Status\]\s+(.+)\n/
+            case $1.downcase
+            when "active"
+              :registered
+            when "reserved"
+              :reserved
+            when "to be suspended"
+              :redemption
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
-          else
+          elsif content_for_scanner =~ /\[State\]\s+(.+)\n/
+            case $1.split(" ").first.downcase
+            when "connected"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            end
+         else
             :available
           end
         end

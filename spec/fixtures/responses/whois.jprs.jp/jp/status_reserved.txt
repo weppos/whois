@@ -1,5 +1,3 @@
-[Querying whois.jprs.jp]
-[whois.jprs.jp]
 [ JPRS database provides information on network administration. Its use is    ]
 [ restricted to network administration purposes. For further information,     ]
 [ use 'whois -h whois.jprs.jp help'. To suppress Japanese output, add'/e'     ]
@@ -11,6 +9,7 @@ Domain Information:
 [Registrant]                     
 
 [Name Server]                   
+[Signing Key]                   
 
 [Created on]                     
 [Expires on]                     
@@ -25,3 +24,4 @@ Contact Information:
 [Postal Address]                 
 [Phone]                         
 [Fax]                           
+
