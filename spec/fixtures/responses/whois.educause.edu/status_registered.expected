@@ -30,8 +30,8 @@
   should: %s[0].organization == "EDUCAUSE"
   should: %s[0].address      == "4772 Walnut Street\nSuite 206"
   should: %s[0].city         == "Boulder"
-  should: %s[0].state        == "CO"
   should: %s[0].zip          == "80301"
+  should: %s[0].state        == "CO"
   should: %s[0].country      == "UNITED STATES"
 
 

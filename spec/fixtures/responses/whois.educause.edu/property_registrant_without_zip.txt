@@ -1,0 +1,65 @@
+
+This Registry database contains ONLY .EDU domains. 
+The data in the EDUCAUSE Whois database is provided 
+by EDUCAUSE for information purposes in order to 
+assist in the process of obtaining information about 
+or related to .edu domain registration records. 
+
+The EDUCAUSE Whois database is authoritative for the 
+.EDU domain.         
+
+A Web interface for the .EDU EDUCAUSE Whois Server is 
+available at: http://whois.educause.net 
+
+By submitting a Whois query, you agree that this information 
+will not be used to allow, enable, or otherwise support 
+the transmission of unsolicited commercial advertising or 
+solicitations via e-mail.  The use of electronic processes to 
+harvest information from this server is generally prohibited 
+except as reasonably necessary to register or modify .edu 
+domain names.
+
+You may use "%" as a wildcard in your search. For further 
+information regarding the use of this WHOIS server, please 
+type: help 
+
+--------------------------
+
+Domain Name: AUCMED.EDU
+
+Registrant:
+   The American University of the Caribbean School of Medicine
+   c/o Campbell Corporate Services, Ltd.
+   Scotiabank Building, P. O. Box 268
+   Grand Cayman 
+   CAYMAN ISLANDS
+
+Administrative Contact:
+   Ron  Spaide
+   VP, CIO
+   Devry Medical International, Inc
+   630 US Highway 1
+   North Brunswick, NJ 08902
+   UNITED STATES
+   (732) 509-4796
+   rspaide@devrymedical.org
+
+Technical Contact:
+   Bill Huber
+   Director, Network Operations
+   DeVry Medical International, Inc
+   630 US Highway 1
+   North Brunswick, NJ 08902
+   UNITED STATES
+   (732) 509-4796
+   bhuber@devrymedical.org
+
+Name Servers: 
+   NS1.GEODNS.NET      
+   NS2.GEODNS.NET      
+
+Domain record activated:    02-Jul-1997
+Domain record last updated: 09-Aug-2011
+Domain expires:             31-Jul-2012
+
+

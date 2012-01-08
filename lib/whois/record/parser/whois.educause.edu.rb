@@ -14,9 +14,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.educause.edu parser
-      #
       # Parser for the whois.educause.edu server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
@@ -65,9 +62,14 @@ module Whois
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant:\n((.+\n)+)\n/
             lines = $1.split("\n").map(&:strip)
-            
-            (city,state,zip) = (/([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}))/.match lines[-2]).captures
-            
+
+            case lines[-2]
+              when /([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}))/
+                city, state, zip = $1, $2, $3
+              else
+                city = lines[-2]
+            end
+
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :name         => lines[0],
