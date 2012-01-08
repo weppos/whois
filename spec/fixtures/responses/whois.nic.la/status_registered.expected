@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
+
+
+#domain
+  should: %s == "google.la"
+
+#domain_id
+  should: %s == "CNIC-DO471480"
+
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
@@ -26,6 +37,68 @@
 #expires_on
   should: %s be_a(Time)
   should: %s == Time.parse("2010-07-18 23:59:59 UTC")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == "7279-LN"
+  should: %s.name         == nil
+  should: %s.organization == "LA Registry Pte Ltd"
+  should: %s.url          == "http://www.la/"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "ndn-96955"
+  should: %s[0].name          == "Google Inc"
+  should: %s[0].organization  == "Google Inc"
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "Ca"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.65067188571"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "ndn-96955"
+  should: %s[0].name          == "Google Inc"
+  should: %s[0].organization  == "Google Inc"
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "Ca"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.65067188571"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).items
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "ndn-96955"
+  should: %s[0].name          == "Google Inc"
+  should: %s[0].organization  == "Google Inc"
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "Ca"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.65067188571"
+  should: %s[0].email         == "dns-admin@google.com"
 
 
 #nameservers
