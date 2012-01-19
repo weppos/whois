@@ -125,6 +125,10 @@ Whois::Server.define :tld, ".fj", "whois.usp.ac.fj"
 Whois::Server.define :tld, ".fk", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".fm", nil, { :web => "http://www.dot.fm/whois.html", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".fo", "whois.ripe.net"
+# keep before .fr
+%w(aeroport avocat chambagri chirurgiens-dentistes experts-comptables geometre-expert medecin notaires pharmacien port veterinaire).each do |t|
+  Whois::Server.define :tld, ".#{t}.fr", "whois.smallregistry.net"
+end
 Whois::Server.define :tld, ".fr", "whois.nic.fr"
 Whois::Server.define :tld, ".ga", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gb", nil, { :adapter => Whois::Server::Adapters::None }
