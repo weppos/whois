@@ -126,9 +126,17 @@ Whois::Server.define :tld, ".fk", nil, { :adapter => Whois::Server::Adapters::No
 Whois::Server.define :tld, ".fm", nil, { :web => "http://www.dot.fm/whois.html", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".fo", "whois.ripe.net"
 # keep before .fr
-%w(aeroport avocat chambagri chirurgiens-dentistes experts-comptables geometre-expert medecin notaires pharmacien port veterinaire).each do |t|
-  Whois::Server.define :tld, ".#{t}.fr", "whois.smallregistry.net"
-end
+Whois::Server.define :tld, ".aeroport.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".avocat.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".chambagri.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".chirurgiens-dentistes.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".experts-comptables.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".geometre-expert.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".medecin.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".notaires.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".pharmacien.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".port.fr", "whois.smallregistry.net"
+Whois::Server.define :tld, ".veterinaire.fr", "whois.smallregistry.net"
 Whois::Server.define :tld, ".fr", "whois.nic.fr"
 Whois::Server.define :tld, ".ga", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gb", nil, { :adapter => Whois::Server::Adapters::None }
