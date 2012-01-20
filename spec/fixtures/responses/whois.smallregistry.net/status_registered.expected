@@ -27,14 +27,10 @@
   should: %s == DateTime.parse("2012-01-13T16:00:09+01:00")
 
 #registrar
-  should: %s be_a(Whois::Record::Parser::WhoisSmallregistryNet::Registrar)
+  should: %s be_a(_registrar)
   should: %s.name == "GOOGLE"
-  should: %s.address == "1 RUE DE LA PAIX\n75002 PARIS\nFRANCE"
-  should: %s.phone == "+33.123456789"
-  should: %s.fax == "+33.123456798"
-  should: %s.mobile == "+33.123456807"
+  should: %s.organization == "GOOGLE"
   should: %s.url == "http://www.google.com"
-  should: %s.trouble == "abuse@google.com"
 
 #nameservers
   should: %s be_a(Array)
@@ -51,6 +47,7 @@
 #registrant_contacts
   should: %s be_a(Array)
   should: %s have(1).item
+  should: %s[0] be_a(_contact)
   should: %s[0].id == "FBB1-SMALL"
   should: %s[0].name == "FOO BAR BAZ"
   should: %s[0].organization == "FOO BAR BAZ INC"
@@ -63,6 +60,7 @@
 #admin_contacts
   should: %s be_a(Array)
   should: %s have(1).item
+  should: %s[0] be_a(_contact)
   should: %s[0].id == "QR1-SMALL"
   should: %s[0].organization == "QWE RTY"
   should: %s[0].type == Whois::Record::Contact::TYPE_ADMIN
@@ -73,6 +71,7 @@
 #technical_contacts
   should: %s be_a(Array)
   should: %s have(1).item
+  should: %s[0] be_a(_contact)
   should: %s[0].id == "GOOG-SMALL"
   should: %s[0].organization == "GOOGLE DNS MASTER"
   should: %s[0].type == Whois::Record::Contact::TYPE_TECHNICAL

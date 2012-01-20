@@ -67,14 +67,10 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Parser::WhoisSmallregistryNet::Registrar)
+      @parser.registrar.should be_a(_registrar)
       @parser.registrar.name.should == "GOOGLE"
-      @parser.registrar.address.should == "1 RUE DE LA PAIX\n75002 PARIS\nFRANCE"
-      @parser.registrar.phone.should == "+33.123456789"
-      @parser.registrar.fax.should == "+33.123456798"
-      @parser.registrar.mobile.should == "+33.123456807"
+      @parser.registrar.organization.should == "GOOGLE"
       @parser.registrar.url.should == "http://www.google.com"
-      @parser.registrar.trouble.should == "abuse@google.com"
     end
   end
   describe "#nameservers" do
@@ -95,6 +91,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).item
+      @parser.registrant_contacts[0].should be_a(_contact)
       @parser.registrant_contacts[0].id.should == "FBB1-SMALL"
       @parser.registrant_contacts[0].name.should == "FOO BAR BAZ"
       @parser.registrant_contacts[0].organization.should == "FOO BAR BAZ INC"
@@ -109,6 +106,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).item
+      @parser.admin_contacts[0].should be_a(_contact)
       @parser.admin_contacts[0].id.should == "QR1-SMALL"
       @parser.admin_contacts[0].organization.should == "QWE RTY"
       @parser.admin_contacts[0].type.should == Whois::Record::Contact::TYPE_ADMIN
@@ -121,6 +119,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).item
+      @parser.technical_contacts[0].should be_a(_contact)
       @parser.technical_contacts[0].id.should == "GOOG-SMALL"
       @parser.technical_contacts[0].organization.should == "GOOGLE DNS MASTER"
       @parser.technical_contacts[0].type.should == Whois::Record::Contact::TYPE_TECHNICAL

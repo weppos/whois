@@ -20,10 +20,6 @@ module Whois
       # @author Mathieu Arnold <m@absolight.fr>
       #
       class WhoisSmallregistryNet < Base
-        class Registrar < SuperStruct.new(:id, :name, :organization, :url, :address, :phone, :fax, :mobile, :trouble)
-          alias web= url=
-        end
-
         include Scanners::Ast
 
         property_supported :disclaimer do
@@ -69,19 +65,21 @@ module Whois
         end
 
         property_supported :registrar do
-          node("registrar")
+          if node?("registrar")
+            Registrar.new(*node("registrar").values_at('nil', 'name', 'name', 'web'))
+          end
         end
 
         property_supported :registrant_contacts do
-          node("contact:registrant")
+          build_contact(node("contact:registrant"))
         end
 
         property_supported :admin_contacts do
-          node("contact:administrative_contact")
+          build_contact(node("contact:administrative_contact"))
         end
 
         property_supported :technical_contacts do
-          node("contact:technical_contact")
+          build_contact(node("contact:technical_contact"))
         end
 
         # Seems nobody cares about that.
@@ -90,13 +88,19 @@ module Whois
         # end
 
         property_supported :nameservers do
-          node('nameservers') || []
+          Array.wrap(node("nameservers")).map { |hash| Record::Nameserver.new(hash) }
         end
 
         # Also, there could be some DS records.
 
         def parse
           Scanners::WhoisSmallregistryNet.new(content_for_scanner).parse
+        end
+
+        def build_contact(hash)
+          if !hash.nil?
+            Contact.new(hash)
+          end
         end
 
       end

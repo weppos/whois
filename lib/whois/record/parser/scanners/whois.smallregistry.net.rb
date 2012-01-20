@@ -84,7 +84,7 @@ module Whois
             if @input.match?(/^name_servers: $\n/) && @input.scan(/^name_servers: \n/)
               @ast["nameservers"] = []
               while line = @input.scan(/^- (\S+)(?: - (.*?)(?: - (.*?))?)?\n/)
-                @ast["nameservers"] << Record::Nameserver.new(@input[1], @input[2], @input[3])
+                @ast["nameservers"] << { :name => @input[1], :ipv4 => @input[2], :ipv6 => @input[3] }
               end
             end
           end
@@ -100,10 +100,10 @@ module Whois
 
           tokenizer :scan_registrar do
             if @input.match?(/^registrar: /) && @input.scan(/^registrar: .*\n/)
-              registrar = Parser::WhoisSmallregistryNet::Registrar.new
+              registrar = {}
               %w(name address phone fax mobile web trouble).each do |field|
                 ret = parse_string(field, 2)
-                registrar.send("#{field}=", ret) unless ret.nil?
+                registrar[field] = ret unless ret.nil?
               end
               @ast["registrar"] = registrar
             end
@@ -117,23 +117,22 @@ module Whois
           }.each do |type, id|
             tokenizer :"scan_#{type}" do
               if @input.match?(/^#{type}: /) && @input.scan(/^#{type}: .*\n/)
-                contact = Record::Contact.new
-                contact.type = id
+                contact = {:type => id}
                 [
-                  ['nic-handle', :id=],
-                  ['name', :name=],
-                  ['company', :organization=],
+                  ['nic-handle', :id],
+                  ['name', :name],
+                  ['company', :organization],
                   ['type', nil],
-                  ['address', :address=],
-                  ['phone', :phone=],
-                  ['fax', :fax=],
+                  ['address', :address],
+                  ['phone', :phone],
+                  ['fax', :fax],
                   ['mobile', nil],
                 ].each do |k,v|
                   ret = parse_string(k, 2)
-                  contact.send(v, ret.strip) unless ret.nil? || v.nil?
+                  contact[v] = ret.strip unless ret.nil? || v.nil?
                 end
                 if @input.match?(/^  updated:\s+"(.*)"\n/) && @input.scan(/^  updated:\s+"(.*)"\n/)
-                  contact.updated_on = DateTime.parse(@input[1].strip)
+                  contact[:updated_on] = DateTime.parse(@input[1].strip)
                 end
                 @ast["contact:#{type}"] = contact
               end
