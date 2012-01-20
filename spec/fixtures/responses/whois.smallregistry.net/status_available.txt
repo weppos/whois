@@ -1,0 +1,21 @@
+--- #YAML:1.0
+# Welcome to the SMALLREGISTRY WHOIS  Server. Datas are available  in  order to
+# supply  you with  information purpose  only,  PROMOPIXEL  is  not responsible
+# for its accuracy. Copy  of whole or part of the data without  permission from
+# PROMOPIXEL is  strictly forbidden.  The  sole owner of a domain is the entity
+# described  in  the  relevant  "registrant:"  record.   Domain   or  subdomain
+# ownership  disputes  should  be settled by contacting  SMALLREGISTRY registry:
+# https://www.smallregistry.net, or PROMOPIXEL: http://www.promopixel.com
+#  
+# Bienvenue  sur le serveur  WHOIS de SMALLREGISTRY. Les données fournies  sont
+# disponibles à  titre informatif uniquement,  PROMOPIXEL ne garantit pas leurs
+# exactitudes.  La copie de tout ou partie de la base de  données est interdite
+# sans l'autorisation expresse de PROMOPIXEL. Le seul propriétaire d'un domaine
+# ou d'un sous-domaine est l'entité décrite dans l’enregistrement "registrant:"
+# correspondant.  Un  différent  sur la propriété  d'un  nom  de domaine  ou de
+# sous-domaine  peut   être  réglé  en   contactant  le registre SMALLREGISTRY:
+# https://www.smallregistry.net, ou PROMOPIXEL: http://www.promopixel.com
+#
+# 2012-01-20T12:24:07+01:00
+# Object not found
+--- ~

@@ -1,0 +1,37 @@
+#status
+  should: %s == :available
+
+#available?
+  should: %s be_true
+
+#registered?
+  should: %s be_false
+
+#created_on
+  should: %s be_nil
+
+#updated_on
+  should: %s be_nil
+
+#expires_on
+  should: %s be_nil
+
+#nameservers
+  should: %s be_a(Array)
+  should: %s be_empty
+
+#registrar
+  should: %s be_nil
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s be_empty
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s be_empty
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s be_empty
+
