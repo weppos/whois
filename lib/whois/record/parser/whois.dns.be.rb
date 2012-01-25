@@ -77,7 +77,7 @@ module Whois
         #
         # @return [Boolean]
         def response_throttled?
-          !!(content_for_scanner =~ /^% Excessive querying/)
+          !!(content_for_scanner =~ /^% (Excessive querying|Maximum queries per hour reached)/)
         end
 
       end
