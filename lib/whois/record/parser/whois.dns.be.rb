@@ -31,6 +31,11 @@ module Whois
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "registered" then :registered
+              when "quarantine" then :registered
+              #when "blocked"    then :registered
+              when "out of service" then :registered
+              #when "withdrawn"  then :registered
+              #when "reserved"   then :registered
               when "free"       then :available
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
@@ -77,7 +82,7 @@ module Whois
         #
         # @return [Boolean]
         def response_throttled?
-          !!(content_for_scanner =~ /^% Excessive querying/)
+          !!(content_for_scanner =~ /^% (Excessive querying|Maximum queries per hour reached)/)
         end
 
       end
