@@ -90,9 +90,13 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             if line =~ /(.+) \[(.+)\]/
-              Record::Nameserver.new($1, *$2.split(/\s+/))
+              name = $1
+              ips  = $2.split(/\s+/)
+              ipv4 = ips.find { |ip| Whois::Server.valid_ipv4?(ip) }
+              ipv6 = ips.find { |ip| Whois::Server.valid_ipv6?(ip) }
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4, :ipv6 => ipv6)
             else
-              Record::Nameserver.new(line)
+              Record::Nameserver.new(:name => line)
             end
           end
         end

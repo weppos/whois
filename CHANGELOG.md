@@ -27,6 +27,8 @@
 
 * FIXED: whois.jprs.jp parser must support `To be suspended' status.
 
+* FIXED: whois.nic.fr parser raises 'struct size differs' trying to parse nameservers for some responses.
+
 
 ## Release 2.2.0
 
