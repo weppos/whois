@@ -8,7 +8,7 @@
 
 
 #status
-  should: %s == :active
+  should: %s == :registered
 
 #available?
   should: %s == false

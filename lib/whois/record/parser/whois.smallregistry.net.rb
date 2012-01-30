@@ -37,10 +37,13 @@ module Whois
         property_supported :status do
           if node?("status:available")
             :available
-          elsif node?("field:status")
-            node("field:status").to_sym
           else
-            :unknown
+            case node("field:status")
+            when "ACTIVE"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{node("field:status")}'.")
+            end
           end
         end
 

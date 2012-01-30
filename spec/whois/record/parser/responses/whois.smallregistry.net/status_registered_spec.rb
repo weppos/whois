@@ -34,7 +34,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
   end
   describe "#status" do
     it do
-      @parser.status.should == :active
+      @parser.status.should == :registered
     end
   end
   describe "#available?" do
@@ -79,14 +79,14 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).item
       @parser.registrant_contacts[0].should be_a(_contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should           == "FBB1-SMALL"
-      @parser.registrant_contacts[0].name.should         == "FOO BAR BAZ"
-      @parser.registrant_contacts[0].organization.should == "FOO BAR BAZ INC"
-      @parser.registrant_contacts[0].address.should      == "116 RUE DE LA PAIX\n75001 PARIS\nFRANCE"
-      @parser.registrant_contacts[0].phone.should        == "+33.123456651"
-      @parser.registrant_contacts[0].fax.should          == "+33.123456660"
-      @parser.registrant_contacts[0].updated_on.should   == Time.parse("2011-01-13 15:45:18 +01:00")
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "FBB1-SMALL"
+      @parser.registrant_contacts[0].name.should          == "FOO BAR BAZ"
+      @parser.registrant_contacts[0].organization.should  == "FOO BAR BAZ INC"
+      @parser.registrant_contacts[0].address.should       == "116 RUE DE LA PAIX\n75001 PARIS\nFRANCE"
+      @parser.registrant_contacts[0].phone.should         == "+33.123456651"
+      @parser.registrant_contacts[0].fax.should           == "+33.123456660"
+      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2011-01-13 15:45:18 +01:00")
     end
   end
   describe "#admin_contacts" do
@@ -94,13 +94,13 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).item
       @parser.admin_contacts[0].should be_a(_contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should           == "QR1-SMALL"
-      @parser.admin_contacts[0].name.should         == nil
-      @parser.admin_contacts[0].organization.should == "QWE RTY"
-      @parser.admin_contacts[0].address.should      == "13 RUE DE LA PAIX\n75003 PARIS\nFRANCE"
-      @parser.admin_contacts[0].phone.should        == "+33.144887967"
-      @parser.admin_contacts[0].updated_on.should   == Time.parse("2010-08-02 14:48:21 +02:00")
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "QR1-SMALL"
+      @parser.admin_contacts[0].name.should          == nil
+      @parser.admin_contacts[0].organization.should  == "QWE RTY"
+      @parser.admin_contacts[0].address.should       == "13 RUE DE LA PAIX\n75003 PARIS\nFRANCE"
+      @parser.admin_contacts[0].phone.should         == "+33.144887967"
+      @parser.admin_contacts[0].updated_on.should    == Time.parse("2010-08-02 14:48:21 +02:00")
     end
   end
   describe "#technical_contacts" do
@@ -108,14 +108,14 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).item
       @parser.technical_contacts[0].should be_a(_contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should           == "GOOG-SMALL"
-      @parser.technical_contacts[0].name.should         == nil
-      @parser.technical_contacts[0].organization.should == "GOOGLE DNS MASTER"
-      @parser.technical_contacts[0].address.should      == "GOOGLE\n22, RUE DE LA PAIX\n75008 PARIS\nFRANCE"
-      @parser.technical_contacts[0].phone.should        == "+33.821845353"
-      @parser.technical_contacts[0].fax.should          == "+33.821845354"
-      @parser.technical_contacts[0].updated_on.should  == Time.parse("2011-05-18 09:35:37 +02:00")
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "GOOG-SMALL"
+      @parser.technical_contacts[0].name.should          == nil
+      @parser.technical_contacts[0].organization.should  == "GOOGLE DNS MASTER"
+      @parser.technical_contacts[0].address.should       == "GOOGLE\n22, RUE DE LA PAIX\n75008 PARIS\nFRANCE"
+      @parser.technical_contacts[0].phone.should         == "+33.821845353"
+      @parser.technical_contacts[0].fax.should           == "+33.821845354"
+      @parser.technical_contacts[0].updated_on.should    == Time.parse("2011-05-18 09:35:37 +02:00")
     end
   end
   describe "#nameservers" do

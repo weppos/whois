@@ -68,7 +68,7 @@ module Whois
 
           tokenizer :scan_status do
             if @input.match?(/^status:\s+(.*)\n/) && @input.scan(/^status:\s+(.*?)\n/)
-              @ast["field:status"] = @input[1].strip.downcase
+              @ast["field:status"] = @input[1].strip
             end
           end
 
