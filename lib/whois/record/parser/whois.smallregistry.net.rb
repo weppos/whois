@@ -54,15 +54,15 @@ module Whois
 
 
         property_supported :created_on do
-          node("field:created")
+          node("field:created") { |str| Time.parse(str) }
         end
 
         property_supported :updated_on do
-          node("field:updated")
+          node("field:updated") { |str| Time.parse(str) }
         end
 
         property_supported :expires_on do
-          node("field:expired")
+          node("field:expired") { |str| Time.parse(str) }
         end
 
 

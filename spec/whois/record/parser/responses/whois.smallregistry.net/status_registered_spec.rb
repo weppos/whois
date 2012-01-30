@@ -49,20 +49,20 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(DateTime)
-      @parser.created_on.should == DateTime.parse("2011-01-13T15:45:18+01:00")
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2011-01-13 15:45:18")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(DateTime)
-      @parser.expires_on.should == DateTime.parse("2013-01-13T15:45:18+01:00")
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("2013-01-13 15:45:18 +01:00")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(DateTime)
-      @parser.updated_on.should == DateTime.parse("2012-01-13T16:00:09+01:00")
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2012-01-13 16:00:09 +01:00")
     end
   end
   describe "#registrar" do

@@ -49,7 +49,7 @@ module Whois
 
           tokenizer :scan_request_time do
             if @input.scan(/^# (\d+-\d+-\d+T.*)\n/)
-              @ast["request_time"] = DateTime.parse(@input[1].strip)
+              @ast["field:request_time"] = @input[1].strip
             end
           end
 
@@ -75,7 +75,7 @@ module Whois
           %w(created expired updated).each do |date|
             tokenizer :"scan_date_#{date}" do
               if @input.match?(/^#{date}:\s+"(.*)"\n/) && @input.scan(/^#{date}:\s+"(.*)"\n/)
-                @ast["field:#{date}"] = DateTime.parse(@input[1].strip)
+                @ast["field:#{date}"] = @input[1].strip
               end
             end
           end
