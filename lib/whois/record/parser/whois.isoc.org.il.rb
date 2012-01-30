@@ -30,10 +30,12 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.*?)\n/
             case $1.downcase
-              when "transfer locked" then :registered
-              when "transfer allowed" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "transfer locked"
+              :registered
+            when "transfer allowed"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -41,7 +43,7 @@ module Whois
         end
 
         property_supported :available? do
-          (status == :available)
+          status == :available
         end
 
         property_supported :registered? do
