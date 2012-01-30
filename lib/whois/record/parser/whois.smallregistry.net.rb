@@ -35,7 +35,7 @@ module Whois
 
 
         property_supported :status do
-          if node?("status:not_found")
+          if node?("status:available")
             :available
           elsif node?("field:status")
             node("field:status").to_sym
@@ -67,21 +67,21 @@ module Whois
 
 
         property_supported :registrar do
-          if node?("registrar")
-            Registrar.new(*node("registrar").values_at('nil', 'name', 'name', 'web'))
+          if node?("field:registrar")
+            Registrar.new(*node("field:registrar").values_at('nil', 'name', 'name', 'web'))
           end
         end
 
         property_supported :registrant_contacts do
-          build_contact(node("contact:registrant"))
+          build_contact(node("field:registrant"))
         end
 
         property_supported :admin_contacts do
-          build_contact(node("contact:administrative_contact"))
+          build_contact(node("field:administrative_contact"))
         end
 
         property_supported :technical_contacts do
-          build_contact(node("contact:technical_contact"))
+          build_contact(node("field:technical_contact"))
         end
 
         # Seems nobody cares about that.
@@ -91,7 +91,7 @@ module Whois
 
 
         property_supported :nameservers do
-          Array.wrap(node("nameservers")).map { |hash| Record::Nameserver.new(hash) }
+          Array.wrap(node("field:nameservers")).map { |hash| Record::Nameserver.new(hash) }
         end
 
         # Also, there could be some DS records.

@@ -55,7 +55,7 @@ module Whois
 
           tokenizer :scan_not_found do
             if @input.scan(/^# Object not found.*\n/)
-              @ast["status:not_found"] = true
+              @ast["status:available"] = true
             end
 
           end
@@ -82,18 +82,18 @@ module Whois
 
           tokenizer :scan_name_servers do
             if @input.match?(/^name_servers: $\n/) && @input.scan(/^name_servers: \n/)
-              @ast["nameservers"] = []
+              @ast["field:nameservers"] = []
               while line = @input.scan(/^- (\S+)(?: - (.*?)(?: - (.*?))?)?\n/)
-                @ast["nameservers"] << { :name => @input[1], :ipv4 => @input[2], :ipv6 => @input[3] }
+                @ast["field:nameservers"] << { :name => @input[1], :ipv4 => @input[2], :ipv6 => @input[3] }
               end
             end
           end
 
           tokenizer :scan_ds_list do
             if @input.match?(/^ds-list: $/) && @input.scan(/^ds-list: \n/)
-              @ast["ds"] = []
+              @ast["field:ds"] = []
               while line = @input.scan(/^- (.*)\n/)
-                @ast["ds"] << @input[1].strip
+                @ast["field:ds"] << @input[1].strip
               end
             end
           end
@@ -105,7 +105,7 @@ module Whois
                 ret = parse_string(field, 2)
                 registrar[field] = ret unless ret.nil?
               end
-              @ast["registrar"] = registrar
+              @ast["field:registrar"] = registrar
             end
           end
 
@@ -134,12 +134,13 @@ module Whois
                 if @input.match?(/^  updated:\s+"(.*)"\n/) && @input.scan(/^  updated:\s+"(.*)"\n/)
                   contact[:updated_on] = DateTime.parse(@input[1].strip)
                 end
-                @ast["contact:#{type}"] = contact
+                @ast["field:#{type}"] = contact
               end
             end
           end
 
           private
+          
           def parse_string(k, spaces = 0)
             if @input.match?(/^#{" "*spaces}#{k}: \|-/) && @input.scan(/^#{" "*spaces}#{k}: .*\n/)
               val = ""
@@ -151,7 +152,8 @@ module Whois
               @input[2]
             end
           end
-        end
+        
+      end
       end
     end
   end
