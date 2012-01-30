@@ -67,9 +67,7 @@ module Whois
 
 
         property_supported :registrar do
-          if node?("field:registrar")
-            Registrar.new(*node("field:registrar").values_at('nil', 'name', 'name', 'web'))
-          end
+          node("field:registrar") { |hash| Registrar.new(*hash.values_at('nil', 'name', 'name', 'web')) }
         end
 
         property_supported :registrant_contacts do
