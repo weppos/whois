@@ -25,7 +25,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_registrant_without_z
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].name.should         == nil
       @parser.registrant_contacts[0].organization.should == "The American University of the Caribbean School of Medicine"

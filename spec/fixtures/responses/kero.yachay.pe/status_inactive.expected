@@ -19,6 +19,6 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s (array)
   should: %s have(0).items
   should: %s == []

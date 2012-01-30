@@ -78,7 +78,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "QatarTelecom"
       @parser.registrar.name.should         == "Qatar Telecom (Qtel) Q. S. C"
       @parser.registrar.organization.should == "Qatar Telecom (Qtel) Q. S. C"
@@ -88,7 +88,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should           == "QT11734"
       @parser.registrant_contacts[0].name.should         == "DNS Administrator - Qtel Internet Services"
@@ -112,7 +112,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should           == "QT11734"
       @parser.technical_contacts[0].name.should         == "DNS Administrator - Qtel Internet Services"
@@ -131,10 +131,10 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.qtel.com.qa"
       @parser.nameservers[0].ipv4.should == "212.77.203.185"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.qtel.com.qa"
       @parser.nameservers[1].ipv4.should == "213.130.113.101"
     end

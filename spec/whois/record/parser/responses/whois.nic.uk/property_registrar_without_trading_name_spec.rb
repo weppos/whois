@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicUk, "property_registrar_without_trading_
 
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "NETNAMES"
       @parser.registrar.name.should         == "NetNames Limited"
       @parser.registrar.name.should         == "NetNames Limited"

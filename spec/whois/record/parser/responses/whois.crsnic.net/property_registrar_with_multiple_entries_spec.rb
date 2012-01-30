@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "property_registrar_with_multipl
 
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "MARKMONITOR INC."
       @parser.registrar.organization.should == "MARKMONITOR INC."

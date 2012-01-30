@@ -56,7 +56,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "fraktal"
       @parser.registrar.name.should         == "fraktal"
       @parser.registrar.organization.should == nil
@@ -66,7 +66,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should           == "CID:FRAKTAL:1"
       @parser.registrant_contacts[0].name.should         == "Priit Haamer"
@@ -77,7 +77,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "CID:FRAKTAL:7"
       @parser.admin_contacts[0].name.should         == "Tõnu Runnel"
@@ -93,10 +93,10 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns3.edicy.net"
       @parser.nameservers[0].ipv4.should == "82.129.24.69"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns4.edicy.net"
       @parser.nameservers[1].ipv4.should == "82.199.86.42"
     end

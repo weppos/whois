@@ -25,7 +25,7 @@ describe Whois::Record::Parser::WhoisNicIt, "property_technical_contact.expected
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should           == "TS7016-ITNIC"
       @parser.technical_contacts[0].name.should         == "Technical Services"

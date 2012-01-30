@@ -25,13 +25,13 @@ describe Whois::Record::Parser::WhoisNicCz, "property_nameservers_with_ip.expect
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns.kraxnet.com"
       @parser.nameservers[0].ipv4.should == nil
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns1.kraxnet.cz"
       @parser.nameservers[1].ipv4.should == "178.217.247.1"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns.kraxnet.cz"
       @parser.nameservers[2].ipv4.should == "178.217.247.2"
       @parser.nameservers[2].ipv6.should == "2a02:1360::56"

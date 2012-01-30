@@ -88,7 +88,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should            == "H1044037"
       @parser.registrant_contacts[0].name.should          == "Vantage Media Corporation"
@@ -108,7 +108,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should            == "H143205"
       @parser.admin_contacts[0].name.should          == "Domain Administrator"
@@ -128,7 +128,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should            == "H143205"
       @parser.technical_contacts[0].name.should          == "Domain Administrator"
@@ -148,13 +148,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns3.p17.dynect.net"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.p17.dynect.net"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns4.p17.dynect.net"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns1.p17.dynect.net"
     end
   end

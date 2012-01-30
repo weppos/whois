@@ -134,34 +134,41 @@ end
 
   end
 
-    def _parse_assertion(method, should, condition)
-      m = method
-      s = should
-      c = condition
 
-      case condition
-      # should: %s == (time)
-      when /^(==) \(([a-z]+)\)$/
-        c = "#{$1} #{_build_condition_typeof($2)}"
-      end
+  def _parse_assertion(method, should, condition)
+    m = method
+    s = should
+    c = condition
 
-      [m, s, c]
+    case condition
+    # should: %s (time)
+    # ->
+    # should: %s be_a(time)
+    when /^\(([a-z]+)\)$/
+      c = "be_a(#{_build_condition_typeof($1)})"
     end
 
-    def _build_condition_typeof(klass)
-      case klass
-      when "time"     then "Time"
-      else
-        raise "Unknown class `#{klass}'"
-      end
-    end
+    [m, s, c]
+  end
 
-    def _build_condition_typecast(klass, value)
-      case klass
-      when "time"     then %Q{Time.parse("#{value}")}
-      else
-        raise "Unknown class `#{klass}'"
-      end
+  def _build_condition_typeof(klass)
+    case klass
+    when "array" then "Array"
+    when "time" then "Time"
+    when "contact" then "Whois::Record::Contact"
+    when "registrar" then "Whois::Record::Registrar"
+    when "nameserver" then "Whois::Record::Nameserver"
+    else
+      raise "Unknown class `#{klass}'"
     end
+  end
+
+  def _build_condition_typecast(klass, value)
+    case klass
+    when "time"     then %Q{Time.parse("#{value}")}
+    else
+      raise "Unknown class `#{klass}'"
+    end
+  end
 
 end

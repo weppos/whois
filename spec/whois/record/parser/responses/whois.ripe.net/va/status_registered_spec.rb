@@ -55,15 +55,15 @@ describe Whois::Record::Parser::WhoisRipeNet, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(5).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "john.vatican.va"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.nic.it"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "seth.namex.it"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "osiris.namex.it"
-      @parser.nameservers[4].should be_a(_nameserver)
+      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[4].name.should == "michael.vatican.va"
     end
   end

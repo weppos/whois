@@ -25,16 +25,16 @@ describe Whois::Record::Parser::WhoisDomregLt, "property_nameservers_with_ip.exp
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.serveriai.lt"
       @parser.nameservers[0].ipv4.should == "79.98.25.142"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.serveriai.lt"
       @parser.nameservers[1].ipv4.should == "174.36.250.192"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.serveriai.lt"
       @parser.nameservers[2].ipv4.should == "79.98.29.142"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns4.serveriai.lt"
       @parser.nameservers[3].ipv4.should == "67.228.39.192"
     end

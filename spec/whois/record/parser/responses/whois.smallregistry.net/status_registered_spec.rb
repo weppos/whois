@@ -71,7 +71,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "GOOGLE"
       @parser.registrar.organization.should == "GOOGLE"
@@ -82,7 +82,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).item
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should            == "FBB1-SMALL"
       @parser.registrant_contacts[0].name.should          == "FOO BAR BAZ"
@@ -97,7 +97,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).item
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should            == "QR1-SMALL"
       @parser.admin_contacts[0].name.should          == nil
@@ -111,7 +111,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).item
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should            == "GOOG-SMALL"
       @parser.technical_contacts[0].name.should          == nil
@@ -126,13 +126,13 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end

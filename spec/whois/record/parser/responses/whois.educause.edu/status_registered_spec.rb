@@ -58,7 +58,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].name.should         == nil
       @parser.registrant_contacts[0].organization.should == "EDUCAUSE"
@@ -73,11 +73,11 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].should == _nameserver.new(:name => "ns3.educause.edu", :ipv4 => "198.59.61.50")
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].should == _nameserver.new(:name => "ns4.educause.edu", :ipv4 => "192.52.179.69")
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].should == _nameserver.new(:name => "ns5.educause.edu", :ipv4 => "198.59.61.50")
     end
   end

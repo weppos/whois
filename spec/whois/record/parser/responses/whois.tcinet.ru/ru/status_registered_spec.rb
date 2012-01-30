@@ -55,7 +55,7 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "RUCENTER-REG-RIPN"
       @parser.registrar.name.should         == nil
       @parser.registrar.organization.should == nil
@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(2).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == nil
       @parser.admin_contacts[0].name.should         == nil
@@ -96,13 +96,13 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end

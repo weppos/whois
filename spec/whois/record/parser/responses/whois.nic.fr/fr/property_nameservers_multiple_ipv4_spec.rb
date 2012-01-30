@@ -25,11 +25,11 @@ describe Whois::Record::Parser::WhoisNicFr, "property_nameservers_multiple_ipv4.
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.boursedirect.fr"
       @parser.nameservers[0].ipv4.should == "212.157.203.190"
       @parser.nameservers[0].ipv6.should == nil
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.boursedirect.fr"
       @parser.nameservers[1].ipv4.should == "212.157.203.189"
       @parser.nameservers[1].ipv6.should == nil

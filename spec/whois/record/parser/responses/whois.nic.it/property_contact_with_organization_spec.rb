@@ -25,7 +25,7 @@ describe Whois::Record::Parser::WhoisNicIt, "property_contact_with_organization.
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "TT4277-ITNIC"
       @parser.admin_contacts[0].name.should         == "Tsao Tu"

@@ -56,7 +56,7 @@ describe Whois::Record::Parser::WhoisNicUk, "status_suspended.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "KEY-SYSTEMS-DE"
       @parser.registrar.name.should         == "Key-Systems GmbH"
       @parser.registrar.name.should         == "Key-Systems GmbH"

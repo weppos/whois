@@ -25,13 +25,13 @@ describe Whois::Record::Parser::WhoisSgnicSg, "property_nameservers_schema_1_wit
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "dnssec1.singnet.com.sg"
       @parser.nameservers[0].ipv4.should == "165.21.83.11"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "dnssec2.singnet.com.sg"
       @parser.nameservers[1].ipv4.should == "195.13.10.226"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "dnssec3.singnet.com.sg"
       @parser.nameservers[2].ipv4.should == "165.21.100.11"
     end

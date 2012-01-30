@@ -40,20 +40,20 @@
   should: %s == nil
 
 #registrant_contacts
-  should: %s be_a(Array)
+  should: %s (array)
   should: %s == []
 
 #admin_contacts
-  should: %s be_a(Array)
+  should: %s (array)
   should: %s == []
 
 #technical_contacts
-  should: %s be_a(Array)
+  should: %s (array)
   should: %s == []
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s (array)
   should: %s == []
 #status
   should: %s == []
@@ -76,5 +76,5 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s (array)
   should: %s == []

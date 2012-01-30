@@ -81,7 +81,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "7145-IX"
       @parser.registrar.name.should         == nil
       @parser.registrar.organization.should == "InternetX GmbH"
@@ -92,7 +92,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should            == "INX-9925147com"
       @parser.registrant_contacts[0].name.should          == "boris schleinkofer"
@@ -112,7 +112,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should            == "INX-9925147com"
       @parser.admin_contacts[0].name.should          == "boris schleinkofer"
@@ -132,7 +132,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should            == "INX-9925147com"
       @parser.technical_contacts[0].name.should          == "boris schleinkofer"
@@ -152,13 +152,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "d.ns14.net"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "c.ns14.net"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "b.ns14.net"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "a.ns14.net"
     end
   end

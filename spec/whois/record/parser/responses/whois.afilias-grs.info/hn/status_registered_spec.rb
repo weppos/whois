@@ -81,7 +81,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "R22-LRCC"
       @parser.registrar.name.should         == "MarkMonitor, Inc."
       @parser.registrar.organization.should == "MarkMonitor, Inc."
@@ -91,7 +91,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should           == "122496"
       @parser.registrant_contacts[0].name.should         == "Rose Hagan"
@@ -110,7 +110,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "122498"
       @parser.admin_contacts[0].name.should         == "Alldomains.com"
@@ -129,7 +129,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should           == "122497"
       @parser.technical_contacts[0].name.should         == "NA"
@@ -148,9 +148,9 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
     end
   end

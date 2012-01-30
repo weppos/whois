@@ -81,7 +81,7 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "9998"
       @parser.registrar.name.should         == "dotASIA R4-ASIA"
       @parser.registrar.organization.should == "dotASIA R4-ASIA"
@@ -92,7 +92,7 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should           == "FR-1158300cc88a"
       @parser.registrant_contacts[0].name.should         == "Pioneer Domain (Temporary Delegation)"
@@ -111,7 +111,7 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "FR-11582fd1b4a9"
       @parser.admin_contacts[0].name.should         == "DotAsia Organisation"
@@ -130,7 +130,7 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should           == "FR-11582fd1b4a9"
       @parser.technical_contacts[0].name.should         == "DotAsia Organisation"
@@ -149,9 +149,9 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.dotasia.org"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.dotasia.org"
     end
   end

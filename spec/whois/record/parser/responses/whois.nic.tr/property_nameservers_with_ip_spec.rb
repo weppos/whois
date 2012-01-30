@@ -25,13 +25,13 @@ describe Whois::Record::Parser::WhoisNicTr, "property_nameservers_with_ip.expect
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "titan.radore.com"
       @parser.nameservers[0].ipv4.should == nil
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "janus.radore.com"
       @parser.nameservers[1].ipv4.should == nil
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "mimas.rh.com.tr"
       @parser.nameservers[2].ipv4.should == "77.75.34.2"
     end

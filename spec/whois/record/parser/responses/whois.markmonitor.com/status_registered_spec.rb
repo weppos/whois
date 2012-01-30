@@ -56,7 +56,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "Markmonitor.com"
       @parser.registrar.url.should          == "http://www.markmonitor.com"
@@ -66,7 +66,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].name.should         == "DNS Admin"
       @parser.registrant_contacts[0].organization.should == "Google Inc."
@@ -84,7 +84,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].name.should         == "DNS Admin"
       @parser.admin_contacts[0].organization.should == "Google Inc."
@@ -102,7 +102,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].name.should         == "DNS Admin"
       @parser.technical_contacts[0].organization.should == "Google Inc."
@@ -120,13 +120,13 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].should == _nameserver.new(:name => "ns2.google.com")
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].should == _nameserver.new(:name => "ns1.google.com")
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].should == _nameserver.new(:name => "ns4.google.com")
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].should == _nameserver.new(:name => "ns3.google.com")
     end
   end
