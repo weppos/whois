@@ -117,7 +117,7 @@ module Whois
           }.each do |type, id|
             tokenizer :"scan_#{type}" do
               if @input.match?(/^#{type}: /) && @input.scan(/^#{type}: .*\n/)
-                contact = {:type => id}
+                contact = {}
                 [
                   ['nic-handle', :id],
                   ['name', :name],

@@ -79,21 +79,16 @@ module Whois
         end
 
         property_supported :registrant_contacts do
-          build_contact(node("field:registrant"))
+          build_contact("field:registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          build_contact(node("field:administrative_contact"))
+          build_contact("field:administrative_contact", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          build_contact(node("field:technical_contact"))
+          build_contact("field:technical_contact", Whois::Record::Contact::TYPE_TECHNICAL)
         end
-
-        # Seems nobody cares about that.
-        # property_supported :billing_contacts do
-        #   node("contact:billing_contact")
-        # end
 
 
         property_supported :nameservers do
@@ -115,9 +110,10 @@ module Whois
 
       private
 
-        def build_contact(hash)
-          if !hash.nil?
-            c = Contact.new(hash)
+        def build_contact(element, type)
+          node(element) do |hash|
+            c = Record::Contact.new(hash)
+            c.type = type
             c.updated_on = Time.parse(c.updated_on)
             c
           end
