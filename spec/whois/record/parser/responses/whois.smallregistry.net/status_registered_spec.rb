@@ -54,7 +54,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2011-01-13 15:45:18")
+      @parser.created_on.should == Time.parse("2011-01-13 15:45:18 +01:00")
     end
   end
   describe "#expires_on" do

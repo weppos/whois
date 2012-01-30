@@ -21,7 +21,7 @@
 
 #created_on
   should: %s be_a(Time)
-  should: %s == Time.parse("2011-01-13 15:45:18")
+  should: %s == Time.parse("2011-01-13 15:45:18 +01:00")
 
 #expires_on
   should: %s be_a(Time)
