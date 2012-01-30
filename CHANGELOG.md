@@ -5,6 +5,8 @@
 
 * SERVER: .VA TLD no longer provides public WHOIS interface (GH-93).
 
+* SERVER: Added Smallregistry FR TLDs (GH-144).
+
 * NEW: whois.crsnic.net parser now recognizes unavailable responses.
 
 * NEW: Added support for whois.educause.edu registrant contact field (GH-141).
@@ -12,6 +14,8 @@
 * NEW: Added full whois.centralnic.com parser.
 
 * NEW: Added full whois.nic.la parser.
+
+* NEW: Added full whois.smallregistry.net parser (GH-144).
 
 * CHANGED: whois.nic.fr `frozen' status is now considered as :registered.
 
