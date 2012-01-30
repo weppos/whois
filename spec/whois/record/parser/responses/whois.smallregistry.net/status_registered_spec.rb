@@ -99,7 +99,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
       @parser.registrant_contacts[0].address.should == "116 RUE DE LA PAIX\n75001 PARIS\nFRANCE"
       @parser.registrant_contacts[0].phone.should == "+33.123456651"
       @parser.registrant_contacts[0].fax.should == "+33.123456660"
-      @parser.registrant_contacts[0].updated_on.should == DateTime.parse("2011-01-13T15:45:18+01:00")
+      @parser.registrant_contacts[0].updated_on.should == Time.parse("2011-01-13 15:45:18 +01:00")
     end
   end
   describe "#admin_contacts" do
@@ -112,7 +112,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
       @parser.admin_contacts[0].type.should == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].address.should == "13 RUE DE LA PAIX\n75003 PARIS\nFRANCE"
       @parser.admin_contacts[0].phone.should == "+33.144887967"
-      @parser.admin_contacts[0].updated_on.should == DateTime.parse("2010-08-02T14:48:21+02:00")
+      @parser.admin_contacts[0].updated_on.should == Time.parse("2010-08-02 14:48:21 +02:00")
     end
   end
   describe "#technical_contacts" do
@@ -126,7 +126,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_registered.expect
       @parser.technical_contacts[0].address.should == "GOOGLE\n22, RUE DE LA PAIX\n75008 PARIS\nFRANCE"
       @parser.technical_contacts[0].phone.should == "+33.821845353"
       @parser.technical_contacts[0].fax.should == "+33.821845354"
-      @parser.technical_contacts[0].updated_on.should == DateTime.parse("2011-05-18T09:35:37+02:00")
+      @parser.technical_contacts[0].updated_on.should == Time.parse("2011-05-18 09:35:37 +02:00")
     end
   end
 end

@@ -55,7 +55,7 @@
   should: %s[0].address == "116 RUE DE LA PAIX\n75001 PARIS\nFRANCE"
   should: %s[0].phone == "+33.123456651"
   should: %s[0].fax == "+33.123456660"
-  should: %s[0].updated_on == DateTime.parse("2011-01-13T15:45:18+01:00")
+  should: %s[0].updated_on == Time.parse("2011-01-13 15:45:18 +01:00")
 
 #admin_contacts
   should: %s be_a(Array)
@@ -66,7 +66,7 @@
   should: %s[0].type == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].address == "13 RUE DE LA PAIX\n75003 PARIS\nFRANCE"
   should: %s[0].phone == "+33.144887967"
-  should: %s[0].updated_on == DateTime.parse("2010-08-02T14:48:21+02:00")
+  should: %s[0].updated_on == Time.parse("2010-08-02 14:48:21 +02:00")
 
 #technical_contacts
   should: %s be_a(Array)
@@ -78,4 +78,4 @@
   should: %s[0].address == "GOOGLE\n22, RUE DE LA PAIX\n75008 PARIS\nFRANCE"
   should: %s[0].phone == "+33.821845353"
   should: %s[0].fax == "+33.821845354"
-  should: %s[0].updated_on == DateTime.parse("2011-05-18T09:35:37+02:00")
+  should: %s[0].updated_on == Time.parse("2011-05-18 09:35:37 +02:00")

@@ -109,7 +109,9 @@ module Whois
 
         def build_contact(hash)
           if !hash.nil?
-            Contact.new(hash)
+            c = Contact.new(hash)
+            c.updated_on = Time.parse(c.updated_on)
+            c
           end
         end
 

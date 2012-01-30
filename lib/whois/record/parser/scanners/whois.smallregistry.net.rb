@@ -132,7 +132,7 @@ module Whois
                   contact[v] = ret.strip unless ret.nil? || v.nil?
                 end
                 if @input.match?(/^  updated:\s+"(.*)"\n/) && @input.scan(/^  updated:\s+"(.*)"\n/)
-                  contact[:updated_on] = DateTime.parse(@input[1].strip)
+                  contact[:updated_on] = @input[1].strip
                 end
                 @ast["field:#{type}"] = contact
               end
