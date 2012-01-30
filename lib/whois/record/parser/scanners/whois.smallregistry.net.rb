@@ -42,8 +42,8 @@ module Whois
           end
 
           tokenizer :scan_disclaimer do
-            if @input.match?(/^#/) && disc = @input.scan_until(/^#\n/)
-              @ast["field:disclaimer"] = disc
+            if @input.match?(/^#/) && disclaimer = @input.scan_until(/^#\n/)
+              @ast["field:disclaimer"] = disclaimer
             end
           end
 

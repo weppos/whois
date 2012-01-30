@@ -23,7 +23,12 @@ module Whois
         include Scanners::Ast
 
         property_supported :disclaimer do
-          node("field:disclaimer")
+          node("field:disclaimer") do |str|
+            str.scan(/# (.+)\n/).flatten.map do |str|
+              token = str.strip
+              token.gsub!(/\s+/, " ")
+            end.join(" ").gsub!(/(\s{2})/, "\n")
+          end
         end
 
 
