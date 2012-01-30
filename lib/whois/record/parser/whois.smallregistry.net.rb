@@ -33,7 +33,7 @@ module Whois
 
 
         property_supported :domain do
-          node("field:domain")
+          node("name")
         end
 
         property_not_supported :domain_id
@@ -62,40 +62,38 @@ module Whois
 
 
         property_supported :created_on do
-          node("field:created") { |str| Time.parse(str) }
+          node("created") { |str| Time.parse(str) }
         end
 
         property_supported :updated_on do
-          node("field:updated") { |str| Time.parse(str) }
+          node("updated") { |str| Time.parse(str) }
         end
 
         property_supported :expires_on do
-          node("field:expired") { |str| Time.parse(str) }
+          node("expired") { |str| Time.parse(str) }
         end
 
 
         property_supported :registrar do
-          node("field:registrar") { |hash| Registrar.new(*hash.values_at('nil', 'name', 'name', 'web')) }
+          node("registrar") { |hash| Registrar.new(*hash.values_at('nil', 'name', 'name', 'web')) }
         end
 
         property_supported :registrant_contacts do
-          build_contact("field:registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          build_contact("field:administrative_contact", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("administrative_contact", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          build_contact("field:technical_contact", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("technical_contact", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          Array.wrap(node("field:nameservers")).map { |hash| Record::Nameserver.new(hash) }
+          Array.wrap(node("name_servers")).map { |hash| Record::Nameserver.new(hash) }
         end
-
-        # Also, there could be some DS records.
 
 
         # Initializes a new {Scanners::WhoisSmallregistryNet} instance
@@ -112,10 +110,17 @@ module Whois
 
         def build_contact(element, type)
           node(element) do |hash|
-            c = Record::Contact.new(hash)
-            c.type = type
-            c.updated_on = Time.parse(c.updated_on)
-            c
+            Record::Contact.new(
+              :type         => type,
+              :id           => hash['nic-handle'],
+              :name         => hash['name'],
+              :organization => hash['company'],
+              :address      => hash['address'],
+              :phone        => hash['phone'],
+              :fax          => hash['fax'],
+              :email        => hash['mobile'],
+              :updated_on   => Time.parse(hash['updated'])
+            )
           end
         end
 
