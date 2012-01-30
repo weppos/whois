@@ -90,25 +90,26 @@ end
       lines.each do |line|
         line.chomp!
         case line
-          when ""
-            # skip blank lines
-          when /^#([^\s]+)/
-            tests[match = $1] = []
-          when /^\s+(.+?): (.+?) (.+)/
-            tests[match] << [$2, $1, $3]
-          else
-            raise "Invalid Line `#{line}' in `#{source_path}'"
+        when ""
+          # skip blank lines
+        when /^#([^\s]+)/
+          tests[match = $1] = []
+        when /^\s+(.+?): (.+?) (.+)/
+          tests[match] << _parse_assertion($2, $1, $3)
+        else
+          raise "Invalid Line `#{line}' in `#{source_path}'"
         end
       end
 
       # Generate the RSpec content and
       # write one file for every test.
       contexts = tests.map do |attr, specs|
-        matches = specs.map do |method, should, match|
-          if match.index("raise_")
-            TPL_MATCH_RAISE % { :subject => method % attr, :should => should, :match => match }
+        matches = specs.map do |method, should, condition|
+          subject = method % attr
+          if condition.index("raise_")
+            TPL_MATCH_RAISE % { :subject => subject, :should => should, :match => condition }
           else
-            TPL_MATCH % { :subject => method % attr, :should => should, :match => match }
+            TPL_MATCH % { :subject => subject, :should => should, :match => condition }
           end
         end.join("\n")
         TPL_CONTEXT % { :descr => attr, :examples => matches }
@@ -132,5 +133,35 @@ end
     end
 
   end
+
+    def _parse_assertion(method, should, condition)
+      m = method
+      s = should
+      c = condition
+
+      case condition
+      # should: %s == (time)
+      when /^(==) \(([a-z]+)\)$/
+        c = "#{$1} #{_build_condition_typeof($2)}"
+      end
+
+      [m, s, c]
+    end
+
+    def _build_condition_typeof(klass)
+      case klass
+      when "time"     then "Time"
+      else
+        raise "Unknown class `#{klass}'"
+      end
+    end
+
+    def _build_condition_typecast(klass, value)
+      case klass
+      when "time"     then %Q{Time.parse("#{value}")}
+      else
+        raise "Unknown class `#{klass}'"
+      end
+    end
 
 end
