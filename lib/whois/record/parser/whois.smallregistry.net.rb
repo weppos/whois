@@ -52,6 +52,7 @@ module Whois
           !available?
         end
 
+
         property_supported :created_on do
           node("field:created")
         end
@@ -63,6 +64,7 @@ module Whois
         property_supported :expires_on do
           node("field:expired")
         end
+
 
         property_supported :registrar do
           if node?("registrar")
@@ -87,15 +89,25 @@ module Whois
         #   node("contact:billing_contact")
         # end
 
+
         property_supported :nameservers do
           Array.wrap(node("nameservers")).map { |hash| Record::Nameserver.new(hash) }
         end
 
         # Also, there could be some DS records.
 
+
+        # Initializes a new {Scanners::WhoisSmallregistryNet} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
         def parse
           Scanners::WhoisSmallregistryNet.new(content_for_scanner).parse
         end
+
+
+      private
 
         def build_contact(hash)
           if !hash.nil?
