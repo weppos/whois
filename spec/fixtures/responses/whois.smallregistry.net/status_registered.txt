@@ -1,0 +1,89 @@
+--- #YAML:1.0
+# Welcome to the SMALLREGISTRY WHOIS  Server. Datas are available  in  order to
+# supply  you with  information purpose  only,  PROMOPIXEL  is  not responsible
+# for its accuracy. Copy  of whole or part of the data without  permission from
+# PROMOPIXEL is  strictly forbidden.  The  sole owner of a domain is the entity
+# described  in  the  relevant  "registrant:"  record.   Domain   or  subdomain
+# ownership  disputes  should  be settled by contacting  SMALLREGISTRY registry:
+# https://www.smallregistry.net, or PROMOPIXEL: http://www.promopixel.com
+#  
+# Bienvenue  sur le serveur  WHOIS de SMALLREGISTRY. Les données fournies  sont
+# disponibles à  titre informatif uniquement,  PROMOPIXEL ne garantit pas leurs
+# exactitudes.  La copie de tout ou partie de la base de  données est interdite
+# sans l'autorisation expresse de PROMOPIXEL. Le seul propriétaire d'un domaine
+# ou d'un sous-domaine est l'entité décrite dans l’enregistrement "registrant:"
+# correspondant.  Un  différent  sur la propriété  d'un  nom  de domaine  ou de
+# sous-domaine  peut   être  réglé  en   contactant  le registre SMALLREGISTRY:
+# https://www.smallregistry.net, ou PROMOPIXEL: http://www.promopixel.com
+#
+# 2012-01-20T12:06:35+01:00
+--- !Domain 
+name: dr-foo-bar-baz.chirurgiens-dentistes.fr
+status: ACTIVE
+created: "2011-01-13T15:45:18+01:00"
+expired: "2013-01-13T15:45:18+01:00"
+updated: "2012-01-13T16:00:09+01:00"
+name_servers: 
+- ns1.google.com
+- ns2.google.com
+- ns3.google.com
+- ns4.google.com
+ds-list: 
+- 62325 7 1 d80de98c7c60ef17e4de4a66ee538e332a3a0d39
+- 62325 7 2 a5ef93e1cd8722ed923005f2a579135738aaea79b45a8dc6d2c24274c8b4442c
+registrar: !Registrar 
+  name: GOOGLE
+  address: |-
+    1 RUE DE LA PAIX
+    75002 PARIS
+    FRANCE
+  phone: +33.123456789
+  fax: +33.123456798
+  mobile: +33.123456807
+  web: http://www.google.com
+  trouble: abuse@google.com
+registrant: !Contact 
+  nic-handle: FBB1-SMALL
+  name: FOO BAR BAZ
+  company: FOO BAR BAZ INC
+  type: LEGAL ENTITY
+  address: |-
+    116 RUE DE LA PAIX
+    75001 PARIS
+    FRANCE
+  phone: "+33.123456651"
+  fax: "+33.123456660"
+  mobile: "+33.123456678"
+  updated: "2011-01-13T15:45:18+01:00"
+administrative_contact: !Contact 
+  nic-handle: QR1-SMALL
+  company: QWE RTY
+  type: LEGAL ENTITY
+  address: |-
+    13 RUE DE LA PAIX
+    75003 PARIS
+    FRANCE
+  phone: "+33.144887967"
+  updated: "2010-08-02T14:48:21+02:00"
+technical_contact: !Contact 
+  nic-handle: GOOG-SMALL
+  company: GOOGLE DNS MASTER
+  type: LEGAL ENTITY
+  address: |-
+    GOOGLE
+    22, RUE DE LA PAIX
+    75008 PARIS
+    FRANCE
+  phone: "+33.821845353"
+  fax: "+33.821845354"
+  updated: "2011-05-18T09:35:37+02:00"
+billing_contact: !Contact 
+  nic-handle: QR1-SMALL
+  company: QWE RTY
+  type: LEGAL ENTITY
+  address: |-
+    13 RUE DE LA PAIX
+    75003 PARIS
+    FRANCE
+  phone: "+33.144887967"
+  updated: "2010-08-02T14:48:21+02:00"

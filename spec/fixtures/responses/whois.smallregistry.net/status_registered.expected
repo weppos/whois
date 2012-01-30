@@ -1,0 +1,91 @@
+#disclaimer
+  should: %s == "Welcome to the SMALLREGISTRY WHOIS Server. Datas are available in order to supply you with information purpose only, PROMOPIXEL is not responsible for its accuracy. Copy of whole or part of the data without permission from PROMOPIXEL is strictly forbidden. The sole owner of a domain is the entity described in the relevant \"registrant:\" record. Domain or subdomain ownership disputes should be settled by contacting SMALLREGISTRY registry: https://www.smallregistry.net, or PROMOPIXEL: http://www.promopixel.com\nBienvenue sur le serveur WHOIS de SMALLREGISTRY. Les données fournies sont disponibles à titre informatif uniquement, PROMOPIXEL ne garantit pas leurs exactitudes. La copie de tout ou partie de la base de données est interdite sans l'autorisation expresse de PROMOPIXEL. Le seul propriétaire d'un domaine ou d'un sous-domaine est l'entité décrite dans l’enregistrement \"registrant:\" correspondant. Un différent sur la propriété d'un nom de domaine ou de sous-domaine peut être réglé en contactant le registre SMALLREGISTRY: https://www.smallregistry.net, ou PROMOPIXEL: http://www.promopixel.com"
+
+
+#domain
+  should: %s == "dr-foo-bar-baz.chirurgiens-dentistes.fr"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2011-01-13 15:45:18")
+
+#expires_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2013-01-13 15:45:18 +01:00")
+
+#updated_on
+  should: %s be_a(Time)
+  should: %s == Time.parse("2012-01-13 16:00:09 +01:00")
+
+
+#registrar
+  should: %s be_a(_registrar)
+  should: %s.id           == nil
+  should: %s.name         == "GOOGLE"
+  should: %s.organization == "GOOGLE"
+  should: %s.url          == "http://www.google.com"
+
+#registrant_contacts
+  should: %s be_a(Array)
+  should: %s have(1).item
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "FBB1-SMALL"
+  should: %s[0].name          == "FOO BAR BAZ"
+  should: %s[0].organization  == "FOO BAR BAZ INC"
+  should: %s[0].address       == "116 RUE DE LA PAIX\n75001 PARIS\nFRANCE"
+  should: %s[0].phone         == "+33.123456651"
+  should: %s[0].fax           == "+33.123456660"
+  should: %s[0].updated_on    == Time.parse("2011-01-13 15:45:18 +01:00")
+
+#admin_contacts
+  should: %s be_a(Array)
+  should: %s have(1).item
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "QR1-SMALL"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "QWE RTY"
+  should: %s[0].address       == "13 RUE DE LA PAIX\n75003 PARIS\nFRANCE"
+  should: %s[0].phone         == "+33.144887967"
+  should: %s[0].updated_on    == Time.parse("2010-08-02 14:48:21 +02:00")
+
+#technical_contacts
+  should: %s be_a(Array)
+  should: %s have(1).item
+  should: %s[0] be_a(_contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "GOOG-SMALL"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "GOOGLE DNS MASTER"
+  should: %s[0].address       == "GOOGLE\n22, RUE DE LA PAIX\n75008 PARIS\nFRANCE"
+  should: %s[0].phone         == "+33.821845353"
+  should: %s[0].fax           == "+33.821845354"
+  should: %s[0].updated_on    == Time.parse("2011-05-18 09:35:37 +02:00")
+
+
+#nameservers
+  should: %s be_a(Array)
+  should: %s have(4).items
+  should: %s[0] be_a(_nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] be_a(_nameserver)
+  should: %s[1].name == "ns2.google.com"
+  should: %s[2] be_a(_nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] be_a(_nameserver)
+  should: %s[3].name == "ns4.google.com"
