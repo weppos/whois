@@ -6,6 +6,9 @@
 #domain
   should: %s == "dr-foo-bar-baz.chirurgiens-dentistes.fr"
 
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #status
   should: %s == :registered
