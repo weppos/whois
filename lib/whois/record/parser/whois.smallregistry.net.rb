@@ -43,7 +43,7 @@ module Whois
           if node?("status:available")
             :available
           else
-            case node("field:status")
+            case node("status")
             when "ACTIVE"
               :registered
             else
