@@ -42,6 +42,7 @@ module Whois
           !available?
         end
 
+
         property_not_supported :created_on
 
         property_supported :updated_on do
@@ -51,6 +52,7 @@ module Whois
         end
 
         property_not_supported :expires_on
+        
 
         property_supported :nameservers do
           content_for_scanner.scan(/Nserver:\s+(.+)\n/).flatten.map do |name|
