@@ -1,33 +1,37 @@
+[Domain]
+Domain: google.lv
+Status: active
+Changed: 2009-06-10T00:00:00+03:00
 
-% Information from TLD .lv whois service.
-% Please visit http://www.nic.lv for more information.
+[Holder]
+Type: Legal person
+Name: Google, Inc.
+Email: dns-admin@google.com
+Fax: +1.6502530001
+Phone: +1.6502530000
+Address: 1600 Amphitheatre Parkway, Mountain View, CA, 94043, USA
+RegNr: None
 
-domain:       google.lv
-descr:        Google, Inc.
-admin-c:      9370-LUMII
-tech-c:       13942-LUMII
-nserver:      ns1.google.com
-nserver:      ns2.google.com
-nserver:      ns3.google.com
-nserver:      ns4.google.com
-changed:      dns-reg@nic.lv 20090610
-source:       LUMII
+[Tech]
+Type: Natural person
+Email: ccops@markmonitor.com
+Fax: +12083895799
+Phone: +12083895740
 
-person:       <hidden>
-address:      none
-phone:        +12083895740
-fax-no:       +12083895799
-e-mail:       ccops@markmonitor.com
-nic-hdl:      13942-LUMII
-source:       LUMII
+[Registrar]
+Type: Legal person
+Name: MarkMonitor Inc.
+Email: ccops@markmonitor.com
+Fax: +12083895771
+Phone: +12083895740
+Address: 391 N.Ancestor place, Boise, ID 83704 Idaho, USA
+RegNr: 82-0513468
 
-person:       <hidden>
-address:      none
-phone:        +1 650 330 0100
-fax-no:       +1 650 618 1499
-e-mail:       dns-admin@google.com
-nic-hdl:      9370-LUMII
-source:       LUMII
+[Nservers]
+Nserver: ns1.google.com
+Nserver: ns2.google.com
+Nserver: ns3.google.com
+Nserver: ns4.google.com
 
-
-
+[Whois]
+Updated: 2012-01-30T12:12:27.309824+00:00

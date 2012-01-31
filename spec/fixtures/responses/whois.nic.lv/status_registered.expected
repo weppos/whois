@@ -1,12 +1,11 @@
 #status
-  should: %s == :registered
+  should: %s == :active
 
 #available?
   should: %s == false
 
 #registered?
   should: %s == true
-
 
 #created_on
   should: %s raise_error(Whois::PropertyNotSupported)
@@ -17,7 +16,6 @@
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
-
 
 #nameservers
   should: %s (array)
