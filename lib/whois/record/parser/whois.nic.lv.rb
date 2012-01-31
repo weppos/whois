@@ -17,13 +17,20 @@ module Whois
       # = whois.nic.lv parser
       #
       # Parser for the whois.nic.lv server.
+      #
+      # NOTE: This parser is just a stub and provides only a few basic methods
+      # to check for domain availability and get domain status.
+      # Please consider to contribute implementing missing methods.
+      # See WhoisNicIt parser for an explanation of all available methods
+      # and examples.
+      #
       class WhoisNicLv < Base
 
         property_supported :status do
           if available?
-            :free
+            :available
           else
-            :active
+            :registered
           end
         end
 

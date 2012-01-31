@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicLv, "status_registered.expected" do
 
   describe "#status" do
     it do
-      @parser.status.should == :active
+      @parser.status.should == :registered
     end
   end
   describe "#available?" do
