@@ -33,6 +33,8 @@
 
 * FIXED: whois.nic.fr parser raises 'struct size differs' trying to parse nameservers for some responses.
 
+* FIXED: whois.nic.nu parser must support `NotRenewed' status.
+
 
 ## Release 2.2.0
 
