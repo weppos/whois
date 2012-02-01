@@ -1,7 +1,6 @@
+[Domain]
+Domain: farug0e7er.lv
+Status: free
 
-% Information from TLD .lv whois service.
-% Please visit http://www.nic.lv for more information.
-
-%ERR - Nothing found
-
-
+[Whois]
+Updated: 2012-01-30 12:12:27.309824

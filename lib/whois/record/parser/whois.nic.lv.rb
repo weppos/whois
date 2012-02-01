@@ -14,7 +14,6 @@ module Whois
   class Record
     class Parser
 
-      #
       # = whois.nic.lv parser
       #
       # Parser for the whois.nic.lv server.
@@ -36,7 +35,7 @@ module Whois
         end
 
         property_supported :available? do
-           !!(content_for_scanner =~ /%ERR - Nothing found/)
+           !!(content_for_scanner =~ /Status: free/)
         end
 
         property_supported :registered? do
@@ -47,16 +46,16 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          if content_for_scanner =~ /changed:\s+(.*)\n/
+          if content_for_scanner =~ /Changed:\s+(.*)\n/
             Time.parse($1.split(" ", 2).last)
           end
         end
 
         property_not_supported :expires_on
-
+        
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |name|
+          content_for_scanner.scan(/Nserver:\s+(.+)\n/).flatten.map do |name|
             Record::Nameserver.new(name)
           end
         end
