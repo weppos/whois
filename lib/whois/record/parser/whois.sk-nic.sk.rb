@@ -27,7 +27,7 @@ module Whois
       #
       class WhoisSkNicSk < Base
 
-        # == Status responses:
+        # == Values for Status
         #
         # @see https://www.sk-nic.sk/documents/stavy_domen.html
         # @see http://www.inwx.de/en/sk-domain.html

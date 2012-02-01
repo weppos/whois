@@ -27,7 +27,7 @@ module Whois
       #
       class WhoisAudnsNetAu < Base
 
-        # == Status responses:
+        # == Values for Status
         #
         # @see http://www.auda.org.au/policies/auda-2002-28/
         # @see http://www.auda.org.au/policies/auda-2006-07/

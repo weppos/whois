@@ -29,7 +29,7 @@ module Whois
       #
       class WhoisNicUk < Base
 
-        # == Status responses:
+        # == Values for Status
         #
         # @see http://www.nominet.org.uk/registrars/systems/data/regstatus/
         # @see http://www.nominet.org.uk/registrants/maintain/renew/status/

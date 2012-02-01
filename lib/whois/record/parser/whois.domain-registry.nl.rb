@@ -27,7 +27,7 @@ module Whois
       #
       class WhoisDomainRegistryNl < Base
 
-        # == Status responses:
+        # == Values for Status
         #
         # - free: the .nl domain name is still available for registration
         # - withdrawn: the .nl domain name is barred from registration
