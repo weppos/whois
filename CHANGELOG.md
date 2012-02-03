@@ -19,6 +19,8 @@
 
 * NEW: whois.nic.net.nf now understands invalid responses.
 
+* NEW: whois.nic.fr parser now recognizes throttled responses (GH-147).
+
 * CHANGED: whois.nic.fr `frozen' status is now considered as :registered.
 
 * CHANGED: Rewritten Whois::Record::Parser::Scanners::Base to use a modular approach.
@@ -40,6 +42,8 @@
 * FIXED: whois.nic.nu parser must support `NotRenewed' status.
 
 * FIXED: whois.nic.lv changed response format (GH-145, GH-146).
+
+* FIXED: whois.dns.be parser must support `quarantine' and `out of service' status (GH-147).
 
 
 ## Release 2.2.0
