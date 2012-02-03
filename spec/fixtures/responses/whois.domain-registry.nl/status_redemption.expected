@@ -1,5 +1,5 @@
 #status
-  should: %s == :quarantine
+  should: %s == :redemption
 
 #available?
   should: %s == false

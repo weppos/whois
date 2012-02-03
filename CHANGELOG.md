@@ -21,6 +21,8 @@
 
 * CHANGED: Rewritten Whois::Record::Parser::Scanners::Base to use a modular approach.
 
+* CHANGED: Renamed whois.domain-registry.nl :quarantine status to :redemption.
+
 * FIXED: whois.nic.net.nt parser must support `Pending Purge' and `Pending Delete' status (GH-131).
 
 * FIXED: whois.nic.fr crashes when contact is anonymous (GH-140).
