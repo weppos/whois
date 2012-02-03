@@ -33,14 +33,9 @@ spec = Gem::Specification.new do |s|
   s.files             = %w( Rakefile LICENSE .gemtest .rspec .yardopts ) +
                         Dir.glob("*.{rdoc,gemspec}") +
                         Dir.glob("{bin,lib,spec}/**/*")
-  s.executables       = ["ruby-whois"]
-  s.require_paths     = ["lib"]
+  s.executables       = %w( ruby-whois )
+  s.require_paths     = %w( lib )
 
-  # If you want to depend on other gems, add them here, along with any
-  # relevant versions
-  # s.add_dependency("some_other_gem", "~> 0.1.0")
-
-  # If your tests use any gems, include them here
   s.add_development_dependency "rake",  "~> 0.9"
   s.add_development_dependency "rspec", "~> 2.8.0"
   s.add_development_dependency "mocha"
