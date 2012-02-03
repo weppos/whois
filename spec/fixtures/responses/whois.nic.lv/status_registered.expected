@@ -13,7 +13,7 @@
 
 #updated_on
   should: %s (time)
-  should: %s == Time.parse("2009-06-10")
+  should: %s == Time.parse("2009-06-10 00:00:00+03:00")
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
