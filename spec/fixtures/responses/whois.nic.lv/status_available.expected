@@ -6,18 +6,3 @@
 
 #registered?
   should: %s == false
-
-
-#created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#updated_on
-  should: %s == nil
-
-#expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-
-#nameservers
-  should: %s (array)
-  should: %s == []
