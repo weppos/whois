@@ -17,6 +17,8 @@
 
 * NEW: Added full whois.smallregistry.net parser (GH-144).
 
+* NEW: whois.nic.net.nf now understands invalid responses.
+
 * CHANGED: whois.nic.fr `frozen' status is now considered as :registered.
 
 * CHANGED: Rewritten Whois::Record::Parser::Scanners::Base to use a modular approach.

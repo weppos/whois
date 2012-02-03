@@ -25,11 +25,27 @@ module Whois
             when "not registered" then :available
             when /pending delete/ then :redemption
             when /pending purge/  then :redemption
+            when /not have any records for that zone/ then :invalid
             else
               Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")
+          end
+        end
+
+
+        # NEWPROPERTY
+        def valid?
+          cached_properties_fetch(:valid?) do
+            !invalid?
+          end
+        end
+
+        # NEWPROPERTY
+        def invalid?
+          cached_properties_fetch(:invalid?) do
+            status == :invalid
           end
         end
 
