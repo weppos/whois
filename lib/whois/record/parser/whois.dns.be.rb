@@ -31,9 +31,9 @@ module Whois
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
               when "registered" then :registered
-              when "quarantine" then :registered
+              when "quarantine" then :redemption
               #when "blocked"    then :registered
-              when "out of service" then :registered
+              when "out of service" then :redemption
               #when "withdrawn"  then :registered
               #when "reserved"   then :registered
               when "free"       then :available
