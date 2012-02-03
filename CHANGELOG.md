@@ -35,6 +35,8 @@
 
 * FIXED: whois.nic.nu parser must support `NotRenewed' status.
 
+* FIXED: whois.nic.lv changed response format (GH-145, GH-146).
+
 
 ## Release 2.2.0
 
