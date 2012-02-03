@@ -38,15 +38,13 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /Record status:\s+(.*)\n/
             case $1.downcase
-            when "active"
-              :registered
+            when "active"     then :registered
             # The day after the domain name expires, its status is changed to "Not Renewed",
             # but it is still available for you to renew during another fourweek period.
             # After this expiration reprieve, the name is put up for shortterm auction.
             # If no one registers the name via the auction, it expires and becomes available
             # to the general public for  registration using the standard process.
-            when "notrenewed"
-              :redemption
+            when "notrenewed" then :redemption
             else
               Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
