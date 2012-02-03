@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDnsBe, "property_status_outofservice.expect
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == :redemption
     end
   end
   describe "#available?" do
