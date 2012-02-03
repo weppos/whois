@@ -1,0 +1,21 @@
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
+%% Rights restricted by copyright.
+%% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
+%%
+%% Use '-h' option to obtain more information about this service.
+%%
+%% [111.168.33.209 REQUEST] >> -V Md5.0 google.fr
+%%
+%% RL Net [##########] - RL IP [..........]
+%%
+%% Too many requests...
+%%
+
+%% No entries found in the AFNIC Database.
+
