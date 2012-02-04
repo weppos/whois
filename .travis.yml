@@ -6,8 +6,8 @@ rvm:
   - jruby-18mode
   - jruby-19mode
   - rbx-18mode
-  - ruby-head
-  - jruby-head
+  #- ruby-head
+  #- jruby-head
   - ree
 notifications:
   recipients:
