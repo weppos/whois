@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+* FIXED: whois.nic.gl parser must support `Delegate' status.
+
+
 ## Release 2.3.0
 
 * SERVER: .VA TLD no longer provides public WHOIS interface (GH-93).

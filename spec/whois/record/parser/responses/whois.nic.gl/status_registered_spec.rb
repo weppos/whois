@@ -45,13 +45,13 @@ describe Whois::Record::Parser::WhoisNicGl, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-03-19")
+      @parser.updated_on.should == Time.parse("2011-12-09")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-01-01")
+      @parser.expires_on.should == Time.parse("2013-01-01")
     end
   end
   describe "#nameservers" do

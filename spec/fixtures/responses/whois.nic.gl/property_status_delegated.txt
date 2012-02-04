@@ -19,33 +19,30 @@ Please be aware that expired domains part of the "legacy" registrar may
 still be active, and indeed still be in active use. Only a return answer of 
 'Not Registered' is indication that a domain can be registered.
 Domain Information
-Query: google.gl
+Query: com.gl
 Status: Delegated
-Created: 11 Mar 2003
-Modified: 09 Dec 2011
-Expires: 01 Jan 2013
+Created: 03 Sep 2009
+Modified: 22 Sep 2009
+Expires: 03 Sep 2014
 Name Servers:
-    ns1.google.com
-    ns2.google.com
+    a.nuuk.nic.gl
+    b.nuuk.nic.gl
+    c.nuuk.nic.gl
 
 Registrar Information
-Registrar Name: MarkMonitor
-Registration URL: http://www.markmonitor.com
-Address: 391 N Ancestor Place
-Boise, ID 83704 US
-Country: US
-Customer Service Contact: Matt Serlin
-Customer Service Email: ccops AT markmonitor DOT com
+Registrar Name: OSS Department
+Country: GL
 
 
 
 
 Registrant:
-Name: Google Inc.
+Name: OSS Department
+Organisation: Tele Greenland A/S
 Address:
-	1600 Amphitheatre Parkway
-	Mountain View, CA 94043
-	US
-Email Address: dns-admin AT google DOT com
-Phone Number: +1 6303300100
+	P.O. Box 1002
+	Nuuk 3900
+	GL
+Email Address: gl-admin AT tele DOT gl
+Phone Number: +299 341255
 
