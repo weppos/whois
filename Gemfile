@@ -4,5 +4,5 @@ source "http://rubygems.org"
 gemspec
 
 group :test do
-  gem 'fuubar'
+  gem 'fuubar', '~> 1.0.0'
 end
