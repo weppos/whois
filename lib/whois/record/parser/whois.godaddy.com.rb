@@ -61,8 +61,7 @@ module Whois
 
         property_supported :registrar do
           Record::Registrar.new(
-            :name => content_for_scanner[/Registered through: (.+) \(/, 1],
-            :url  => content_for_scanner[/Registered through: .*\((.+)\)\n/, 1]
+            :name => content_for_scanner[/Registered through: (.+)\n/, 1]
           )
         end
 
