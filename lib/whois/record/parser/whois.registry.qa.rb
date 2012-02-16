@@ -80,7 +80,8 @@ module Whois
 
         property_supported :nameservers do
           node("Name Server") do |value|
-            value.zip(node("Name Server IP")).map do |name, ipv4|
+            ipv4s = node("Name Server IP") || Array.new(value.size)
+            value.zip(ipv4s).map do |name, ipv4|
               Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end

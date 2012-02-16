@@ -9,6 +9,8 @@
 
 * FIXED: whois.godaddy.com partially changed response format (GH-148).
 
+* FIXED: whois.registry.qa parser crashes when the response doesn't contain nameserver IPs.
+
 
 ## Release 2.3.0
 
