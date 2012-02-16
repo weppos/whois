@@ -12,6 +12,7 @@
   should: %s (registrar)
   should: %s.id           == nil
   should: %s.name         == "Go Daddy"
+  should: %s.url          == "http://www.godaddy.com/"
 
 #registrant_contacts
   should: %s (array)

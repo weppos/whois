@@ -7,6 +7,8 @@
 
 * FIXED: whois.nic.gl parser must support `Delegate' status.
 
+* FIXED: whois.godaddy.com partially changed response format (GH-148).
+
 
 ## Release 2.3.0
 

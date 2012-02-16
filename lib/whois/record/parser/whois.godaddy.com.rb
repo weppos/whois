@@ -61,7 +61,8 @@ module Whois
 
         property_supported :registrar do
           Record::Registrar.new(
-            :name => content_for_scanner[/Registered through: (.+)\n/, 1]
+            :name => content_for_scanner[/Registered through: (.+)\n/, 1],
+            :url => "http://www.godaddy.com/"
           )
         end
 

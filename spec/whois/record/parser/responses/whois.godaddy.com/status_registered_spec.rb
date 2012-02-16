@@ -41,6 +41,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "Go Daddy"
+      @parser.registrar.url.should          == "http://www.godaddy.com/"
     end
   end
   describe "#registrant_contacts" do
