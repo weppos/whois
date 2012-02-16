@@ -1,0 +1,47 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name          == "adequatehq.com Private Registrant"
+  should: %s[0].organization  == "A Happy DreamHost Customer"
+  should: %s[0].address       == "417 Associated Rd #324"
+  should: %s[0].city          == "Brea"
+  should: %s[0].zip           == "92821"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.2139471032"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "adequatehq.com@proxy.dreamhost.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name          == "adequatehq.com Private Registrant"
+  should: %s[0].organization  == "A Happy DreamHost Customer"
+  should: %s[0].address       == "417 Associated Rd #324"
+  should: %s[0].city          == "Brea"
+  should: %s[0].zip           == "92821"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.2139471032"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "adequatehq.com@proxy.dreamhost.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name          == "adequatehq.com Private Registrant"
+  should: %s[0].organization  == "A Happy DreamHost Customer"
+  should: %s[0].address       == "417 Associated Rd #324"
+  should: %s[0].city          == "Brea"
+  should: %s[0].zip           == "92821"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.2139471032"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "adequatehq.com@proxy.dreamhost.com"

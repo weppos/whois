@@ -1,0 +1,79 @@
+Legal Stuff:
+
+The information in DreamHost's whois database is to be used for
+informational purposes only, and to obtain information on a
+domain name registration. DreamHost does not guarantee its
+accuracy.
+
+You are not authorized to query or access DreamHost's whois
+database using high-volume, automated means without written
+permission from DreamHost.
+
+You are not authorized to query or access DreamHost's whois
+database in order to facilitate illegal activities, or to
+facilitate the use of unsolicited bulk email, telephone, or
+facsimile communications.
+
+You are not authorized to collect, repackage, or redistribute the
+information in DreamHost's whois database.
+
+DreamHost may, at its sole discretion, restrict your access to
+the whois database at any time, with or without notice. DreamHost
+may modify these Terms of Service at any time, with or without
+notice.
+
++++++++++++++++++++++++++++++++++++++++++++
+
+   Domain Name: dreamhost.com
+
+   Registrant Contact:
+      DreamHost Web Hosting         internic@dreamhost.com
+      New Dream Network, LLC.
+      PMB #257
+      417 Associated Rd.
+      Brea, CA 92821
+      US
+      +1.7147064182
+
+   Administrative Contact:
+      DreamHost Web Hosting         internic@dreamhost.com
+      New Dream Network, LLC.
+      PMB #257
+      417 Associated Rd.
+      Brea, CA 92821
+      US
+      +1.7147064182
+
+   Technical Contact:
+      DreamHost Web Hosting         internic@dreamhost.com
+      New Dream Network, LLC.
+      PMB #257
+      417 Associated Rd.
+      Brea, CA 92821
+      US
+      +1.7147064182
+
+   Billing Contact:
+      DreamHost Web Hosting         internic@dreamhost.com
+      New Dream Network, LLC.
+      PMB #257
+      417 Associated Rd.
+      Brea, CA 92821
+      US
+      +1.7147064182
+
+   Record created on 1997-09-22 21:00:00.
+   Record expires on 2013-09-21 21:00:00.
+
+   Domain servers in listed order:
+
+      ns1.dreamhost.com
+      ns2.dreamhost.com
+      ns3.dreamhost.com
+DreamHost whois server terms of service: http://whois.dreamhost.com/terms.html
+
+Get a 14-day free trial of unlimited everything from DreamHost Web Hosting.
+Paid web hosting includes A FREE domain registration!
+http://www.dreamhost.com/
+Use promotional code "WHOIS" for an additional $50 off any plan!
+

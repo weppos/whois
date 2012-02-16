@@ -1,0 +1,87 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1997-09-22 21:00:00")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-09-21 21:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "DreamHost"
+  should: %s.organization == "New Dream Network, LLC."
+  should: %s.url          == "http://www.dreamhost.com/"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name          == "DreamHost Web Hosting"
+  should: %s[0].organization  == "New Dream Network, LLC."
+  should: %s[0].address       == "PMB #257\n417 Associated Rd."
+  should: %s[0].city          == "Brea"
+  should: %s[0].zip           == "92821"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.7147064182"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "internic@dreamhost.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name          == "DreamHost Web Hosting"
+  should: %s[0].organization  == "New Dream Network, LLC."
+  should: %s[0].address       == "PMB #257\n417 Associated Rd."
+  should: %s[0].city          == "Brea"
+  should: %s[0].zip           == "92821"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.7147064182"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "internic@dreamhost.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name          == "DreamHost Web Hosting"
+  should: %s[0].organization  == "New Dream Network, LLC."
+  should: %s[0].address       == "PMB #257\n417 Associated Rd."
+  should: %s[0].city          == "Brea"
+  should: %s[0].zip           == "92821"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.7147064182"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "internic@dreamhost.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.dreamhost.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.dreamhost.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.dreamhost.com"
