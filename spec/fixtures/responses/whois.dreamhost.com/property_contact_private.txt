@@ -24,46 +24,42 @@ notice.
 
 +++++++++++++++++++++++++++++++++++++++++++
 
-   Domain Name: dreamhost.com
+   Domain Name: adequatehq.com
 
    Registrant Contact:
-      DreamHost Web Hosting         internic@dreamhost.com
-      New Dream Network, LLC.
-      PMB #257
-      417 Associated Rd.
+      adequatehq.com Private Registrant         adequatehq.com@proxy.dreamhost.com
+      A Happy DreamHost Customer
+      417 Associated Rd #324
       Brea, CA 92821
       US
-      +1.7147064182
+      +1.2139471032
 
    Administrative Contact:
-      DreamHost Web Hosting         internic@dreamhost.com
-      New Dream Network, LLC.
-      PMB #257
-      417 Associated Rd.
+      adequatehq.com Private Registrant         adequatehq.com@proxy.dreamhost.com
+      A Happy DreamHost Customer
+      417 Associated Rd #324
       Brea, CA 92821
       US
-      +1.7147064182
+      +1.2139471032
 
    Technical Contact:
-      DreamHost Web Hosting         internic@dreamhost.com
-      New Dream Network, LLC.
-      PMB #257
-      417 Associated Rd.
+      adequatehq.com Private Registrant         adequatehq.com@proxy.dreamhost.com
+      A Happy DreamHost Customer
+      417 Associated Rd #324
       Brea, CA 92821
       US
-      +1.7147064182
+      +1.2139471032
 
    Billing Contact:
-      DreamHost Web Hosting         internic@dreamhost.com
-      New Dream Network, LLC.
-      PMB #257
-      417 Associated Rd.
+      adequatehq.com Private Registrant         adequatehq.com@proxy.dreamhost.com
+      A Happy DreamHost Customer
+      417 Associated Rd #324
       Brea, CA 92821
       US
-      +1.7147064182
+      +1.2139471032
 
-   Record created on 1997-09-22 21:00:00.
-   Record expires on 2013-09-21 21:00:00.
+   Record created on 2011-08-23 13:45:51.
+   Record expires on 2014-08-23 13:45:51.
 
    Domain servers in listed order:
 
