@@ -27,29 +27,29 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2007-09-27 18:14:53 UTC")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-08-31 15:42:21 UTC")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2012-09-27 23:59:59 UTC")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "C30342"
   should: %s.name         == nil
   should: %s.organization == "Hostroute"
   should: %s.url          == "http://www.hostroute.com"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "H323273"
   should: %s[0].name          == "Maarten Groos"
@@ -65,9 +65,9 @@
   should: %s[0].email         == "maarten@farm215.co.za"
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "H323273"
   should: %s[0].name          == "Maarten Groos"
@@ -83,9 +83,9 @@
   should: %s[0].email         == "maarten@farm215.co.za"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "C30342"
   should: %s[0].name          == "Seb de Lemos"
@@ -102,9 +102,9 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1191.websitewelcome.com"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns1192.websitewelcome.com"

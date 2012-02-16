@@ -20,29 +20,29 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-01-13 15:45:18 +01:00")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2013-01-13 15:45:18 +01:00")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2012-01-13 16:00:09 +01:00")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "GOOGLE"
   should: %s.organization == "GOOGLE"
   should: %s.url          == "http://www.google.com"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).item
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "FBB1-SMALL"
   should: %s[0].name          == "FOO BAR BAZ"
@@ -53,9 +53,9 @@
   should: %s[0].updated_on    == Time.parse("2011-01-13 15:45:18 +01:00")
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).item
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "QR1-SMALL"
   should: %s[0].name          == nil
@@ -65,9 +65,9 @@
   should: %s[0].updated_on    == Time.parse("2010-08-02 14:48:21 +02:00")
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).item
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "GOOG-SMALL"
   should: %s[0].name          == nil
@@ -79,13 +79,13 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(4).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.google.com"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.google.com"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns4.google.com"

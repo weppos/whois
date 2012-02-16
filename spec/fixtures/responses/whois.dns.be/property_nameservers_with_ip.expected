@@ -1,12 +1,12 @@
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(3).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns3.register.be"
   should: %s[0].ipv4 == "91.121.5.186"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns1.register.be"
   should: %s[1].ipv4 == "80.169.63.207"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns2.register.be"
   should: %s[2].ipv4 == "194.78.23.152"

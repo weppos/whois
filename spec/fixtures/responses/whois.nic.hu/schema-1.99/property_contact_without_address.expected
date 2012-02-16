@@ -1,7 +1,7 @@
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].address      == nil
   should: %s[0].city         == nil
   should: %s[0].zip          == nil

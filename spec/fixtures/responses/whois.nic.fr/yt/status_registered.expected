@@ -9,11 +9,11 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("1995-01-01")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2004-09-17")
 
 #expires_on
@@ -21,9 +21,9 @@
 
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "AC3598-FRNIC"
   should: %s[0].name          == nil
@@ -40,9 +40,9 @@
   should: %s[0].updated_on    == Time.parse("2008-10-09 00:00:00 UTC")
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "NFC1-FRNIC"
   should: %s[0].name          == "NIC France Contact"
@@ -59,9 +59,9 @@
   should: %s[0].updated_on    == Time.parse("2005-08-23 00:00:00 UTC")
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "NFC1-FRNIC"
   should: %s[0].name          == "NIC France Contact"
@@ -79,17 +79,17 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(3).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.nic.fr"
   should: %s[0].ipv4 == "192.93.0.1"
   should: %s[0].ipv6 == "2001:660:3005:1::1:1"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.nic.fr"
   should: %s[1].ipv4 == "192.93.0.4"
   should: %s[1].ipv6 == "2001:660:3005:1::1:2"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.nic.fr"
   should: %s[2].ipv4 == "192.134.0.49"
   should: %s[2].ipv6 == "2001:660:3006:1::1:1"

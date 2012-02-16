@@ -27,29 +27,29 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-11-28 21:38:30 UTC")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-12-03 00:15:47 UTC")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2012-11-28 23:59:59 UTC")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "H1167922"
   should: %s.name         == nil
   should: %s.organization == "Gandi SAS"
   should: %s.url          == "http://www.gandi.net/"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "T2187-GANDI-VKXS"
   should: %s[0].name          == "Dhananjeyan Thangavelu"
@@ -65,9 +65,9 @@
   should: %s[0].email         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "T2187-GANDI-VKXS"
   should: %s[0].name          == "Dhananjeyan Thangavelu"
@@ -83,9 +83,9 @@
   should: %s[0].email         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "T2187-GANDI-VKXS"
   should: %s[0].name          == "Dhananjeyan Thangavelu"
@@ -102,11 +102,11 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(3).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "b.dns.gandi.net"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "c.dns.gandi.net"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "a.dns.gandi.net"

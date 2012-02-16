@@ -20,11 +20,11 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2000-03-25 23:20:39")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2009-08-25 10:11:32")
 
 #expires_on
@@ -32,15 +32,15 @@
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "1960108002"
-  should: %s.name         == "3C Kft. (Registrar)"
+  should: %s.name         == "3C Kft. CLASS(registrar)"
   should: %s.organization == "3C Ltd."
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == nil
   should: %s[0].name         == "Google, Inc."
@@ -55,12 +55,12 @@
   should: %s[0].email        == nil
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == "2000466366"
-  should: %s[0].name         == "3C Kft. (Registrar)"
+  should: %s[0].name         == "3C Kft. CLASS(registrar)"
   should: %s[0].organization == nil
   should: %s[0].address      == "Konkoly Thege út 29-33."
   should: %s[0].city         == "Budapest"
@@ -71,9 +71,9 @@
   should: %s[0].fax          == "+36 1 275 58 87"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "2000578125"
   should: %s[0].name         == "Markmonitor"
@@ -89,21 +89,21 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(4).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns4.google.com"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.google.com"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns2.google.com"
 
 
 
 #zone_contact
-  should: %s (contact)
+  should: %s CLASS(contact)
   should: %s.type         == nil
   should: %s.id           == "2000578125"
   should: %s.name         == "Markmonitor"
@@ -118,10 +118,10 @@
   should: %s.email        == "ccops@markmonitor.com"
 
 #registrar_contact
-  should: %s (contact)
+  should: %s CLASS(contact)
   should: %s.type         == nil
   should: %s.id           == "1960108002"
-  should: %s.name         == "3C Kft. (Registrar)"
+  should: %s.name         == "3C Kft. CLASS(registrar)"
   should: %s.organization == "3C Ltd."
   should: %s.address      == "Konkoly Thege út 29-33."
   should: %s.city         == "Budapest"

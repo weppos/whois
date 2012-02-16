@@ -9,37 +9,37 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-07-04 07:10:32")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-12-10 13:37:11")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-12-10")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "fraktal"
   should: %s.name         == "fraktal"
   should: %s.organization == nil
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == "CID:FRAKTAL:1"
   should: %s[0].name         == "Priit Haamer"
   should: %s[0].organization == nil
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == "CID:FRAKTAL:7"
   should: %s[0].name         == "Tõnu Runnel"
@@ -50,11 +50,11 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns3.edicy.net"
   should: %s[0].ipv4 == "82.129.24.69"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns4.edicy.net"
   should: %s[1].ipv4 == "82.199.86.42"

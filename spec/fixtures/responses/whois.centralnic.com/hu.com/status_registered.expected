@@ -27,29 +27,29 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2008-08-27 23:18:29 UTC")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-07-03 00:15:41 UTC")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2012-08-27 23:59:59 UTC")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "H292913"
   should: %s.name         == nil
   should: %s.organization == "Network Solutions LLC"
   should: %s.url          == "http://www.networksolutions.com/"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "37300766"
   should: %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
@@ -65,9 +65,9 @@
   should: %s[0].email         == "no.valid.email@worldnic.com"
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "37300766"
   should: %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
@@ -83,9 +83,9 @@
   should: %s[0].email         == "no.valid.email@worldnic.com"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "37300766"
   should: %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
@@ -102,9 +102,9 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns27.worldnic.com"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns28.worldnic.com"

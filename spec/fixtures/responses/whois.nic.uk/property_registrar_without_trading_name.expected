@@ -1,5 +1,5 @@
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "NETNAMES"
   should: %s.name         == "NetNames Limited"
   should: %s.name         == "NetNames Limited"

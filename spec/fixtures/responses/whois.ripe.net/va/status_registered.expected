@@ -19,15 +19,15 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(5).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "john.vatican.va"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.nic.it"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "seth.namex.it"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "osiris.namex.it"
-  should: %s[4] (nameserver)
+  should: %s[4] CLASS(nameserver)
   should: %s[4].name == "michael.vatican.va"

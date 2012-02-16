@@ -141,10 +141,11 @@ end
     c = condition
 
     case condition
-    # should: %s (time)
+
+    # should: %s CLASS(time)
     # ->
     # should: %s be_a(time)
-    when /^\(([a-z]+)\)$/
+    when /^CLASS\((.+)\)$/
       c = "be_a(#{_build_condition_typeof($1)})"
     end
 

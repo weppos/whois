@@ -9,23 +9,23 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("04.07.2010 05:05:30")
 
 #updated_on
   should: %s == nil
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("05.01.2011")
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1550.hostgator.com"
   should: %s[0].ipv4 == "174.132.145.195"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns1549.hostgator.com"
   should: %s[1].ipv4 == "174.132.145.194"

@@ -27,29 +27,29 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2008-01-15 11:28:02 UTC")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2008-03-16 04:30:25 UTC")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-01-15 11:28:02 UTC")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "9998"
   should: %s.name         == "dotASIA R4-ASIA"
   should: %s.organization == "dotASIA R4-ASIA"
   should: %s.url          == nil
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == "FR-1158300cc88a"
   should: %s[0].name         == "Pioneer Domain (Temporary Delegation)"
@@ -64,9 +64,9 @@
   should: %s[0].email        == "domains@registry.asia"
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == "FR-11582fd1b4a9"
   should: %s[0].name         == "DotAsia Organisation"
@@ -81,9 +81,9 @@
   should: %s[0].email        == "domains@registry.asia"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "FR-11582fd1b4a9"
   should: %s[0].name         == "DotAsia Organisation"
@@ -99,9 +99,9 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.dotasia.org"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.dotasia.org"

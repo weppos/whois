@@ -9,34 +9,34 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2003-09-17")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-01-13")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-03-30")
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(8).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "eur5.akam.net"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "eur6.akam.net"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns1-173.akam.net"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns1-31.akam.net"
-  should: %s[4] (nameserver)
+  should: %s[4] CLASS(nameserver)
   should: %s[4].name == "usc4.akam.net"
-  should: %s[5] (nameserver)
+  should: %s[5] CLASS(nameserver)
   should: %s[5].name == "use10.akam.net"
-  should: %s[6] (nameserver)
+  should: %s[6] CLASS(nameserver)
   should: %s[6].name == "usw2.akam.net"
-  should: %s[7] (nameserver)
+  should: %s[7] CLASS(nameserver)
   should: %s[7].name == "usw4.akam.net"

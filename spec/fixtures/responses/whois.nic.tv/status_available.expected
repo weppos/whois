@@ -40,5 +40,5 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []

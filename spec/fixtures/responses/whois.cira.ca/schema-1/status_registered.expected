@@ -9,20 +9,20 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2000-10-03 00:00:00")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2009-05-27 00:00:00")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-04-28 00:00:00")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "70"
   should: %s.name         == "Webnames.ca Inc."
   should: %s.organization == "Webnames.ca Inc."
@@ -30,17 +30,17 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(4).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[0].ipv4 == "216.239.32.10"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.google.com"
   should: %s[1].ipv4 == "216.239.34.10"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.google.com"
   should: %s[2].ipv4 == "216.239.36.10"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns4.google.com"
   should: %s[3].ipv4 == "216.239.38.10"

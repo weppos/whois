@@ -12,7 +12,7 @@
   should: %s == nil
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("1999-09-27")
 
 #expires_on
@@ -20,18 +20,18 @@
 
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []

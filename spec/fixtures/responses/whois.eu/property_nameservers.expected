@@ -1,17 +1,17 @@
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(5).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "a.nic.eu"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "l.nic.eu"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "p.nic.eu"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns1.eurid.eu"
   should: %s[3].ipv4 == "91.220.191.220"
   should: %s[3].ipv6 == nil
-  should: %s[4] (nameserver)
+  should: %s[4] CLASS(nameserver)
   should: %s[4].name == "ns2.eurid.eu"
   should: %s[4].ipv4 == "195.234.53.220"
   should: %s[4].ipv6 == nil

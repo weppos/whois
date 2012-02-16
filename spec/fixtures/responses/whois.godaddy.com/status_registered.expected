@@ -9,15 +9,15 @@
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "Go Daddy"
   should: %s.url          == "http://www.godaddy.com/"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].name         == "Go Daddy"
   should: %s[0].organization == ""
@@ -31,9 +31,9 @@
   should: %s[0].email        == nil
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].name         == "Go Daddy, Go Daddy"
   should: %s[0].organization == "Go Daddy"
@@ -47,9 +47,9 @@
   should: %s[0].email        == "dns@jomax.net"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].name         == "Go Daddy, Go Daddy"
   should: %s[0].organization == "Go Daddy"
@@ -64,11 +64,11 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(3).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "CNS1.SECURESERVER.NET"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "CNS2.SECURESERVER.NET"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "CNS3.SECURESERVER.NET"

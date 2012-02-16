@@ -1,15 +1,15 @@
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(3).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.nic.fr"
   should: %s[0].ipv4 == "192.93.0.1"
   should: %s[0].ipv6 == "2001:660:3005:1::1:1"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.nic.fr"
   should: %s[1].ipv4 == "192.93.0.4"
   should: %s[1].ipv6 == "2001:660:3005:1::1:2"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.nic.fr"
   should: %s[2].ipv4 == "192.134.0.49"
   should: %s[2].ipv6 == "2001:660:3006:1::1:1"

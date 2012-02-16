@@ -19,14 +19,14 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(3).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns.nic.mc"
   should: %s[0].ipv4 == "195.78.6.131"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "bow.rain.fr"
   should: %s[1].ipv4 == "194.51.3.49"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns.ripe.net"
   should: %s[2].ipv4 == "193.0.0.194"

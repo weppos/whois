@@ -1,17 +1,17 @@
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "Markmonitor.com"
   should: %s.url          == "http://www.markmonitor.com"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(0).items
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(0).items
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(0).items

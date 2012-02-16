@@ -9,7 +9,7 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2003-11-10")
 
 #updated_on

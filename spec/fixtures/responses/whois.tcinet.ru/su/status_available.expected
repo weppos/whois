@@ -25,7 +25,7 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 #technical_contacts
@@ -33,5 +33,5 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []

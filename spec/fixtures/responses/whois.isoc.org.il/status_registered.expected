@@ -12,7 +12,7 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-10-07")
 
 #expires_on
@@ -20,17 +20,17 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(6).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns.isoc.org.il"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "grappa.isoc.org.il"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "aristo.tau.ac.il"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "relay.huji.ac.il"
-  should: %s[4] (nameserver)
+  should: %s[4] CLASS(nameserver)
   should: %s[4].name == "drns.isoc.org.il"
-  should: %s[5] (nameserver)
+  should: %s[5] CLASS(nameserver)
   should: %s[5].name == "sps-pb.isc.org"

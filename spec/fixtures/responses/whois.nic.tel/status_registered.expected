@@ -9,28 +9,28 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2009-04-19 12:36:25 UTC")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2009-04-20 12:39:49 UTC")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-04-18 23:59:59 UTC")
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(5).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "a0.cth.dns.nic.tel"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "d0.cth.dns.nic.tel"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "n0.cth.dns.nic.tel"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "s0.cth.dns.nic.tel"
-  should: %s[4] (nameserver)
+  should: %s[4] CLASS(nameserver)
   should: %s[4].name == "t0.cth.dns.nic.tel"

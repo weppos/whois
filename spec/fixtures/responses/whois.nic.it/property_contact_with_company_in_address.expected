@@ -1,7 +1,7 @@
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "AARS1-ITNIC"
   should: %s[0].name         == "Andrea Antonio Renato Stratta"

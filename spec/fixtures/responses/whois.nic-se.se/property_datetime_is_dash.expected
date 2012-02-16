@@ -1,10 +1,10 @@
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-08-05")
 
 #updated_on
   should: %s == nil
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-08-05")

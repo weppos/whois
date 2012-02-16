@@ -19,17 +19,17 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(4).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[0].ipv4 == "216.239.32.10"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.google.com"
   should: %s[1].ipv4 == "216.239.34.10"
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.google.com"
   should: %s[2].ipv4 == "216.239.36.10"
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns4.google.com"
   should: %s[3].ipv4 == "216.239.38.10"

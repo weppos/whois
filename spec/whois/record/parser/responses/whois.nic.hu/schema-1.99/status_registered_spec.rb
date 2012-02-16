@@ -72,7 +72,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     it do
       @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "1960108002"
-      @parser.registrar.name.should         == "3C Kft. (Registrar)"
+      @parser.registrar.name.should         == "3C Kft. CLASS(registrar)"
       @parser.registrar.organization.should == "3C Ltd."
     end
   end
@@ -102,7 +102,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "2000466366"
-      @parser.admin_contacts[0].name.should         == "3C Kft. (Registrar)"
+      @parser.admin_contacts[0].name.should         == "3C Kft. CLASS(registrar)"
       @parser.admin_contacts[0].organization.should == nil
       @parser.admin_contacts[0].address.should      == "Konkoly Thege út 29-33."
       @parser.admin_contacts[0].city.should         == "Budapest"
@@ -168,7 +168,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       @parser.registrar_contact.should be_a(Whois::Record::Contact)
       @parser.registrar_contact.type.should         == nil
       @parser.registrar_contact.id.should           == "1960108002"
-      @parser.registrar_contact.name.should         == "3C Kft. (Registrar)"
+      @parser.registrar_contact.name.should         == "3C Kft. CLASS(registrar)"
       @parser.registrar_contact.organization.should == "3C Ltd."
       @parser.registrar_contact.address.should      == "Konkoly Thege út 29-33."
       @parser.registrar_contact.city.should         == "Budapest"

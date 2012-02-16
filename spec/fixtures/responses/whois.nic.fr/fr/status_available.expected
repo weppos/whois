@@ -19,18 +19,18 @@
 
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []

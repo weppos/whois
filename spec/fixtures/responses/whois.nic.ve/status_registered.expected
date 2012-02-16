@@ -9,17 +9,17 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-10-27 12:23:43")
 
 #updated_on
   should: %s == nil
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-10-27 12:23:43")
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s == []

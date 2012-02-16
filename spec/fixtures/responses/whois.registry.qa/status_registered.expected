@@ -37,15 +37,15 @@
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "QatarTelecom"
   should: %s.name         == "Qatar Telecom (Qtel) Q. S. C"
   should: %s.organization == "Qatar Telecom (Qtel) Q. S. C"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == "QT11734"
   should: %s[0].name         == "DNS Administrator - Qtel Internet Services"
@@ -63,9 +63,9 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "QT11734"
   should: %s[0].name         == "DNS Administrator - Qtel Internet Services"
@@ -81,11 +81,11 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.qtel.com.qa"
   should: %s[0].ipv4 == "212.77.203.185"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.qtel.com.qa"
   should: %s[1].ipv4 == "213.130.113.101"

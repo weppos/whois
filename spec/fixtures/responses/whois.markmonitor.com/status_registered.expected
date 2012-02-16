@@ -9,29 +9,29 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("1999-03-15")
 
 #updated_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-02-11")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2012-03-14")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "Markmonitor.com"
   should: %s.url          == "http://www.markmonitor.com"
 
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].name         == "DNS Admin"
   should: %s[0].organization == "Google Inc."
@@ -45,9 +45,9 @@
   should: %s[0].email        == "dns-admin@google.com"
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].name         == "DNS Admin"
   should: %s[0].organization == "Google Inc."
@@ -61,9 +61,9 @@
   should: %s[0].email        == "dns-admin@google.com"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].name         == "DNS Admin"
   should: %s[0].organization == "Google Inc."
@@ -78,13 +78,13 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(4).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0] == _nameserver.new(:name => "ns2.google.com")
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1] == _nameserver.new(:name => "ns1.google.com")
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2] == _nameserver.new(:name => "ns4.google.com")
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3] == _nameserver.new(:name => "ns3.google.com")

@@ -16,14 +16,14 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2006-08-22")
 
 #updated_on
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-08-22")
 
 

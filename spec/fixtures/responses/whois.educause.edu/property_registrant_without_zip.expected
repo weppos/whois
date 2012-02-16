@@ -1,7 +1,7 @@
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].name         == nil
   should: %s[0].organization == "The American University of the Caribbean School of Medicine"

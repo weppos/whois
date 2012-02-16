@@ -29,7 +29,7 @@ registered:     2000.03.25 23:20:39
 changed:        2009.08.25 10:11:32
 registrar:      1960108002
 
-person:         3C Kft. (Registrar)
+person:         3C Kft. CLASS(registrar)
 address:        Konkoly Thege út 29-33.
 address:        H-1121 Budapest
 address:        HU
@@ -55,7 +55,7 @@ fax-no:         + 1 208 389 5771
 hun-id:         2000578125
 
 org:            org_name_eng: 3C Ltd.
-org:            org_name_hun: 3C Kft. (Registrar)
+org:            org_name_hun: 3C Kft. CLASS(registrar)
 address:        Konkoly Thege út 29-33.
 address:        H-1121 Budapest
 address:        HU

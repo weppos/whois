@@ -9,26 +9,26 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2008-10-20")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2009-08-01")
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-10-20")
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(4).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0] == _nameserver.new(:name => "ns1.google.com")
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1] == _nameserver.new(:name => "ns2.google.com")
-  should: %s[2] (nameserver)
+  should: %s[2] CLASS(nameserver)
   should: %s[2] == _nameserver.new(:name => "ns3.google.com")
-  should: %s[3] (nameserver)
+  should: %s[3] CLASS(nameserver)
   should: %s[3] == _nameserver.new(:name => "ns4.google.com")

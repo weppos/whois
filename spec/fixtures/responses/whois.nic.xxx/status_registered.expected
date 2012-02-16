@@ -27,27 +27,27 @@
 
 
 #created_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2011-08-09 17:48:52.556689 UTC")
 
 #updated_on
   should: %s == nil
 
 #expires_on
-  should: %s (time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2012-08-09 17:48:52.556689")
 
 
 #registrar
-  should: %s (registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "R2-ICM"
   should: %s.name         == "Domainmonster.com"
   should: %s.organization == "Domainmonster.com"
 
 #registrant_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == "C7-ICM"
   should: %s[0].name         == "Domainmonster.com Privacy Service"
@@ -62,9 +62,9 @@
   should: %s[0].email        == "support@domainmonster.com"
 
 #admin_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == "C7-ICM"
   should: %s[0].name         == "Domainmonster.com Privacy Service"
@@ -79,9 +79,9 @@
   should: %s[0].email        == "support@domainmonster.com"
 
 #technical_contacts
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(1).items
-  should: %s[0] (contact)
+  should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "C7-ICM"
   should: %s[0].name         == "Domainmonster.com Privacy Service"
@@ -97,9 +97,9 @@
 
 
 #nameservers
-  should: %s (array)
+  should: %s CLASS(array)
   should: %s have(2).items
-  should: %s[0] (nameserver)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns33.domaincontrol.com"
-  should: %s[1] (nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns34.domaincontrol.com"
