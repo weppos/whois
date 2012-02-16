@@ -20,5 +20,5 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)
   should: %s == []

@@ -1,6 +1,6 @@
 #admin_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == "TT4277-ITNIC"

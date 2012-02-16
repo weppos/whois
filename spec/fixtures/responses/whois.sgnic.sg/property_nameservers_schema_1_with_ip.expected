@@ -1,6 +1,6 @@
 #nameservers
   should: %s CLASS(array)
-  should: %s have(3).items
+  should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "dnssec1.singnet.com.sg"
   should: %s[0].ipv4 == "165.21.83.11"

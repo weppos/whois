@@ -6,12 +6,12 @@
 
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)
 
 #admin_contacts
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)
 
 #technical_contacts
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)

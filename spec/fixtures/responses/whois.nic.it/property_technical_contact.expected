@@ -1,6 +1,6 @@
 #technical_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id           == "TS7016-ITNIC"

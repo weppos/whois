@@ -21,7 +21,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(6).items
+  should: %s SIZE(6)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns.isoc.org.il"
   should: %s[1] CLASS(nameserver)

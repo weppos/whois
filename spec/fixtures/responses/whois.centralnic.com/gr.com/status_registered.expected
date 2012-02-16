@@ -44,7 +44,7 @@
 
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "H1346485"
@@ -62,7 +62,7 @@
 
 #admin_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "H1346485"
@@ -80,7 +80,7 @@
 
 #technical_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "H1346485"
@@ -99,7 +99,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(6).items
+  should: %s SIZE(6)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns5.centralnic-dns.com"
   should: %s[1] CLASS(nameserver)

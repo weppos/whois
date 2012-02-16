@@ -23,7 +23,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(4).items
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "a.gtld.pro"
   should: %s[1] CLASS(nameserver)

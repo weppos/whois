@@ -1,6 +1,6 @@
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == "HTML1-ITNIC"

@@ -31,7 +31,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(4).items
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[0].ipv4 == "216.239.32.10"

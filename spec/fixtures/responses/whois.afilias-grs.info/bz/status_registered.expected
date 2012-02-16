@@ -47,20 +47,20 @@
 
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)
 
 #admin_contacts
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)
 
 #technical_contacts
   should: %s CLASS(array)
-  should: %s have(0).items
+  should: %s SIZE(0)
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(4).items
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[1] CLASS(nameserver)

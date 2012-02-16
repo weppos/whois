@@ -1,6 +1,6 @@
 #nameservers
   should: %s CLASS(array)
-  should: %s have(4).items
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
   should: %s[0] == _nameserver.new(:name => "ns2.loopia.se", :ipv4 => "93.188.0.21")
   should: %s[1] CLASS(nameserver)

@@ -22,7 +22,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(2).items
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns3.zoneedit.com"
   should: %s[1] CLASS(nameserver)

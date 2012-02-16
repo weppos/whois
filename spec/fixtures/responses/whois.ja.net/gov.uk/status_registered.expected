@@ -23,7 +23,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(8).items
+  should: %s SIZE(8)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "eur5.akam.net"
   should: %s[1] CLASS(nameserver)

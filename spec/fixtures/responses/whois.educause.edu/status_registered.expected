@@ -23,7 +23,7 @@
 
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].name         == nil
@@ -37,7 +37,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(3).items
+  should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
   should: %s[0] == _nameserver.new(:name => "ns3.educause.edu", :ipv4 => "198.59.61.50")
   should: %s[1] CLASS(nameserver)

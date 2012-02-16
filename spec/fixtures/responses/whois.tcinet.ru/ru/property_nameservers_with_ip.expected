@@ -1,6 +1,6 @@
 #nameservers
   should: %s CLASS(array)
-  should: %s have(3).items
+  should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
   should: %s[0] == _nameserver.new(:name => "ns.masterhost.ru", :ipv4 => "217.16.20.30")
   should: %s[1] CLASS(nameserver)

@@ -22,7 +22,7 @@
 
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "APEM2-FRNIC"
@@ -41,7 +41,7 @@
 
 #admin_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == "NFC1-FRNIC"
@@ -60,7 +60,7 @@
 
 #technical_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "NFC1-FRNIC"
@@ -80,4 +80,4 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(3).items
+  should: %s SIZE(3)

@@ -22,7 +22,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(3).items
+  should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "blade.wcic.co.za"
   should: %s[1] CLASS(nameserver)

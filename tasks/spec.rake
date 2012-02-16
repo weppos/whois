@@ -147,6 +147,12 @@ end
     # should: %s be_a(time)
     when /^CLASS\((.+)\)$/
       c = "be_a(#{_build_condition_typeof($1)})"
+
+    # should: %s SIZE(3)
+    # ->
+    # should: %s have(3).items
+    when /^SIZE\((.+)\)$/
+      c = "have(#{$1}).items"
     end
 
     [m, s, c]

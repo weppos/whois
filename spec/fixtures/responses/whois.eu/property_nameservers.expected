@@ -1,6 +1,6 @@
 #nameservers
   should: %s CLASS(array)
-  should: %s have(5).items
+  should: %s SIZE(5)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "a.nic.eu"
   should: %s[1] CLASS(nameserver)

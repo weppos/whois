@@ -43,7 +43,7 @@
 
 #registrant_contacts
   should: %s CLASS(array)
-  should: %s have(1).items
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id           == nil
@@ -58,7 +58,7 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s have(2).items
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[0].ipv4 == "216.239.32.10"
