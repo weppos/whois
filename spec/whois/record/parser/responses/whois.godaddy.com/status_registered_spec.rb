@@ -40,8 +40,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
     it do
       @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
-      @parser.registrar.name.should         == "GoDaddy.com, Inc."
-      @parser.registrar.url.should          == "http://www.godaddy.com"
+      @parser.registrar.name.should         == "Go Daddy"
     end
   end
   describe "#registrant_contacts" do
@@ -50,7 +49,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == "GoDaddy.com, Inc."
+      @parser.registrant_contacts[0].name.should         == "Go Daddy"
       @parser.registrant_contacts[0].organization.should == ""
       @parser.registrant_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
       @parser.registrant_contacts[0].city.should         == "Scottsdale"
@@ -68,8 +67,8 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should         == "GoDaddy.com, Inc., GoDaddy.com, Inc."
-      @parser.admin_contacts[0].organization.should == "GoDaddy.com, Inc."
+      @parser.admin_contacts[0].name.should         == "Go Daddy, Go Daddy"
+      @parser.admin_contacts[0].organization.should == "Go Daddy"
       @parser.admin_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
       @parser.admin_contacts[0].city.should         == "Scottsdale"
       @parser.admin_contacts[0].zip.should          == "85260"
@@ -86,8 +85,8 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       @parser.technical_contacts.should have(1).items
       @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "GoDaddy.com, Inc., GoDaddy.com, Inc."
-      @parser.technical_contacts[0].organization.should == "GoDaddy.com, Inc."
+      @parser.technical_contacts[0].name.should         == "Go Daddy, Go Daddy"
+      @parser.technical_contacts[0].organization.should == "Go Daddy"
       @parser.technical_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
       @parser.technical_contacts[0].city.should         == "Scottsdale"
       @parser.technical_contacts[0].zip.should          == "85260"
