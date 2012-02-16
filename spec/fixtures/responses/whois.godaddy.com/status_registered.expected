@@ -11,15 +11,14 @@
 #registrar
   should: %s (registrar)
   should: %s.id           == nil
-  should: %s.name         == "GoDaddy.com, Inc."
-  should: %s.url          == "http://www.godaddy.com"
+  should: %s.name         == "Go Daddy"
 
 #registrant_contacts
   should: %s (array)
   should: %s have(1).items
   should: %s[0] (contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].name         == "GoDaddy.com, Inc."
+  should: %s[0].name         == "Go Daddy"
   should: %s[0].organization == ""
   should: %s[0].address      == "14455 N Hayden Rd Suite 219"
   should: %s[0].city         == "Scottsdale"
@@ -35,8 +34,8 @@
   should: %s have(1).items
   should: %s[0] (contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].name         == "GoDaddy.com, Inc., GoDaddy.com, Inc."
-  should: %s[0].organization == "GoDaddy.com, Inc."
+  should: %s[0].name         == "Go Daddy, Go Daddy"
+  should: %s[0].organization == "Go Daddy"
   should: %s[0].address      == "14455 N Hayden Rd Suite 219"
   should: %s[0].city         == "Scottsdale"
   should: %s[0].zip          == "85260"
@@ -51,8 +50,8 @@
   should: %s have(1).items
   should: %s[0] (contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].name         == "GoDaddy.com, Inc., GoDaddy.com, Inc."
-  should: %s[0].organization == "GoDaddy.com, Inc."
+  should: %s[0].name         == "Go Daddy, Go Daddy"
+  should: %s[0].organization == "Go Daddy"
   should: %s[0].address      == "14455 N Hayden Rd Suite 219"
   should: %s[0].city         == "Scottsdale"
   should: %s[0].zip          == "85260"
