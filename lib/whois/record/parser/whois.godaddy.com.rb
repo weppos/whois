@@ -30,7 +30,7 @@ module Whois
 
         property_not_supported :status
 
-        # The server seems to provide only linesrmation for registered domains
+        # The server is contacted only in case of a registered domain.
         property_supported :available? do
           false
         end

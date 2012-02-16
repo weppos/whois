@@ -14,22 +14,19 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.markmonitor.com parser
-      #
       # Parser for the whois.markmonitor.com server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
       #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       class WhoisMarkmonitorCom < Base
 
         property_not_supported :status
 
-        # The server seems to provide only linesrmation for registered domains
+        # The server is contacted only in case of a registered domain.
         property_supported :available? do
           false
         end
