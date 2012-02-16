@@ -1,14 +1,12 @@
 utils/whois-utf8.rb
-yardoc/
 
 # Bundler
 .bundle
-pkg
+pkg/*
 
 # Rubinius
 *.rbc
 
-# YARD artifacts
+# YARD
 .yardoc
-_yardoc
-doc/
+yardoc/
