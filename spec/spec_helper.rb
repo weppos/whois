@@ -8,7 +8,7 @@ end
 # The fixtures are UTF-8 encoded.
 # Make sure Ruby uses the proper encoding.
 if RUBY_VERSION < '1.9'
-  $KCODE='u'
+  $KCODE = 'u'
 else
   Encoding.default_external = Encoding::UTF_8
   Encoding.default_internal = Encoding::UTF_8
