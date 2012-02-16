@@ -3,6 +3,8 @@
 
 ## master
 
+* SERVER: .KP TLD no longer provides public WHOIS interface (GH-52).
+
 * FIXED: whois.nic.gl parser must support `Delegate' status.
 
 

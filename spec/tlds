@@ -5,7 +5,6 @@
 #Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 #Whois::Server.define :tld, ".gp", "whois.nic.gp"
-#Whois::Server.define :tld, ".kp", "whois.kcce.kp"
 ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
@@ -161,6 +160,7 @@ km;;;
 kn;;;
 kr.com;whois.centralnic.com;academyart.kr.com;u34jedzcq.kr.com
 kr;whois.kr;google.kr;u34jedzcq.kr
+kp;;;
 kw;;;
 ky;;;
 kz;whois.nic.kz;google.kz;u34jedzcq.kz

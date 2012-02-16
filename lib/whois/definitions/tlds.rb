@@ -125,7 +125,6 @@ Whois::Server.define :tld, ".fj", "whois.usp.ac.fj"
 Whois::Server.define :tld, ".fk", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".fm", nil, { :web => "http://www.dot.fm/whois.html", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".fo", "whois.ripe.net"
-# keep before .fr
 Whois::Server.define :tld, ".aeroport.fr", "whois.smallregistry.net"
 Whois::Server.define :tld, ".avocat.fr", "whois.smallregistry.net"
 Whois::Server.define :tld, ".chambagri.fr", "whois.smallregistry.net"
@@ -183,7 +182,7 @@ Whois::Server.define :tld, ".kh", nil, { :adapter => Whois::Server::Adapters::No
 Whois::Server.define :tld, ".ki", "whois.nic.ki"
 Whois::Server.define :tld, ".km", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".kn", nil, { :web => "http://www.nic.kn/", :adapter => Whois::Server::Adapters::Web }
-Whois::Server.define :tld, ".kp", "whois.kcce.kp"
+Whois::Server.define :tld, ".kp", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".kr", "whois.nic.or.kr"
 Whois::Server.define :tld, ".kw", nil, { :web => "http://www.kw/", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".ky", nil, { :web => "http://kynseweb.messagesecure.com/kywebadmin/", :adapter => Whois::Server::Adapters::Web }
