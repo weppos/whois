@@ -202,5 +202,6 @@ See the CHANGELOG.rdoc file for details.
 
 ## License
 
-*Whois* is copyright (c) 2009-2012 Simone Carletti.
+Copyright (c) 2009-2012 Simone Carletti.
+
 This is Free Software distributed under the MIT license.

@@ -5,12 +5,8 @@ require 'whois'
 
 
 # Common package properties
-PKG_NAME    = ENV['PKG_NAME']    || Whois::GEM
-PKG_VERSION = ENV['PKG_VERSION'] || Whois::VERSION
-
-if ENV['SNAPSHOT'].to_i == 1
-  PKG_VERSION << "." << Time.now.utc.strftime("%Y%m%d%H%M%S")
-end
+PKG_NAME    = Whois::GEM
+PKG_VERSION = Whois::VERSION
 
 
 # Run test by default.
@@ -55,6 +51,17 @@ task :gemspec do
   File.open(file, "w") {|f| f << spec.to_ruby }
 end
 
+desc "Remove any temporary products, including gemspec"
+task :clean => [:clobber] do
+  rm "#{spec.name}.gemspec" if File.file?("#{spec.name}.gemspec")
+end
+
+desc "Remove any generated file"
+task :clobber => [:clobber_package]
+
+desc "Package the library and generates the gemspec"
+task :package => [:gemspec]
+
 
 require 'rspec/core/rake_task'
 
@@ -90,17 +97,6 @@ namespace :multitest do
     sh "rvm #{RUBIES.join(",")} exec bundle install"
   end
 end
-
-
-task :clean_gemspec do
-  rm "#{spec.name}.gemspec" rescue nil
-end
-
-task :clean   => [:clean_gemspec]
-task :clobber => [:clobber_package]
-
-desc "Package the library and generates the gemspec"
-task :package => [:gemspec]
 
 
 require 'yard'
