@@ -158,22 +158,6 @@ describe Whois::Record::Parser::Base do
   end
 
 
-  describe "#response_throttled?" do
-    it "is undefined" do
-      klass.new(@part).respond_to?(:response_throttled?).should be_false
-    end
-
-    # it "returns nil" do
-    #   i = klass.new(@part)
-    #   i.response_throttled?.should be_nil
-    # end
-    #
-    # it "is false" do
-    #   i = klass.new(@part)
-    #   i.response_throttled?.should be_false
-    # end
-  end
-
   describe "#response_incomplete?" do
     it "is undefined" do
       klass.new(@part).respond_to?(:response_incomplete?).should be_false
@@ -187,6 +171,22 @@ describe Whois::Record::Parser::Base do
     # it "is false" do
     #   i = klass.new(@part)
     #   i.response_incomplete?.should be_false
+    # end
+  end
+
+  describe "#response_throttled?" do
+    it "is undefined" do
+      klass.new(@part).respond_to?(:response_throttled?).should be_false
+    end
+
+    # it "returns nil" do
+    #   i = klass.new(@part)
+    #   i.response_throttled?.should be_nil
+    # end
+    #
+    # it "is false" do
+    #   i = klass.new(@part)
+    #   i.response_throttled?.should be_false
     # end
   end
 

@@ -7,6 +7,8 @@
 
 * NEW: Added full whois.dreamhost.com parser.
 
+* NEW: Added ability to check for an unavailable response with Whois::Record#response_unavailable?.
+
 * FIXED: whois.nic.gl parser must support `Delegate' status.
 
 * FIXED: whois.godaddy.com partially changed response format (GH-148).

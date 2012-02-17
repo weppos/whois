@@ -299,19 +299,6 @@ module Whois
           content_for_scanner == other.content_for_scanner
         end
 
-        # Checks whether this is a throttle response.
-        #
-        # @return [Boolean]
-        #
-        # @abstract This method is just a stub.
-        #           Define it in your parser class.
-        #
-        # @see Whois::Record#response_throttled?
-        # @see Whois::Record::Parser#response_throttled?
-        #
-        def response_throttled?
-        end
-
         # Checks whether this is an incomplete response.
         #
         # @return [Boolean]
@@ -325,6 +312,19 @@ module Whois
         def response_incomplete?
         end
 
+        # Checks whether this is a throttle response.
+        #
+        # @return [Boolean]
+        #
+        # @abstract This method is just a stub.
+        #           Define it in your parser class.
+        #
+        # @see Whois::Record#response_throttled?
+        # @see Whois::Record::Parser#response_throttled?
+        #
+        def response_throttled?
+        end
+
         # Checks whether this response contains a message
         # that can be reconducted to a "WHOIS Server Unavailable" status.
         #
@@ -335,6 +335,9 @@ module Whois
         #
         # @abstract This method is just a stub.
         #           Define it in your parser class.
+        #
+        # @see Whois::Record#response_unavailable?
+        # @see Whois::Record::Parser#response_unavailable?
         #
         def response_unavailable?
         end

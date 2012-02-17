@@ -224,6 +224,18 @@ module Whois
       end
 
       # Loop through all the parts to check if at least
+      # one part is an incomplete response.
+      #
+      # @return [Boolean]
+      #
+      # @see Whois::Record#response_incomplete?
+      # @see Whois::Record::Parser::Base#response_incomplete?
+      #
+      def response_incomplete?
+        any_is?(parsers, :response_incomplete?)
+      end
+
+      # Loop through all the parts to check if at least
       # one part is a throttle response.
       #
       # @return [Boolean]
@@ -236,15 +248,15 @@ module Whois
       end
 
       # Loop through all the parts to check if at least
-      # one part is an incomplete response.
+      # one part is an unavailable response.
       #
       # @return [Boolean]
       #
-      # @see Whois::Record#response_incomplete?
-      # @see Whois::Record::Parser::Base#response_incomplete?
+      # @see Whois::Record#response_unavailable?
+      # @see Whois::Record::Parser::Base#response_unavailable?
       #
-      def response_incomplete?
-        any_is?(parsers, :response_incomplete?)
+      def response_unavailable?
+        any_is?(parsers, :response_unavailable?)
       end
 
       # @endgroup

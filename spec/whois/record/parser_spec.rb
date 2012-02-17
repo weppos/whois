@@ -295,21 +295,6 @@ describe Whois::Record::Parser do
     end
   end
 
-  describe "#response_throttled?" do
-    it "returns false when all parts are not throttled" do
-      i = parsers("defined-false", "defined-false")
-      i.response_throttled?.should == false
-    end
-
-    it "returns true when at least one part is throttled" do
-      i = parsers("defined-false", "defined-true")
-      i.response_throttled?.should == true
-
-      i = parsers("defined-true", "defined-false")
-      i.response_throttled?.should == true
-    end
-  end
-
   describe "#response_incomplete?" do
     it "returns false when all parts are complete" do
       i = parsers("defined-false", "defined-false")
@@ -325,32 +310,68 @@ describe Whois::Record::Parser do
     end
   end
 
+  describe "#response_throttled?" do
+    it "returns false when all parts are not throttled" do
+      i = parsers("defined-false", "defined-false")
+      i.response_throttled?.should == false
+    end
+
+    it "returns true when at least one part is throttled" do
+      i = parsers("defined-false", "defined-true")
+      i.response_throttled?.should == true
+
+      i = parsers("defined-true", "defined-false")
+      i.response_throttled?.should == true
+    end
+  end
+
+  describe "#response_unavailable?" do
+    it "returns false when all parts are available" do
+      i = parsers("defined-false", "defined-false")
+      i.response_unavailable?.should == false
+    end
+
+    it "returns true when at least one part is unavailable" do
+      i = parsers("defined-false", "defined-true")
+      i.response_unavailable?.should == true
+
+      i = parsers("defined-true", "defined-false")
+      i.response_unavailable?.should == true
+    end
+  end
+
 
   private
 
-    class Whois::Record::Parser::ResponseDefinedTrueTest < Whois::Record::Parser::Base
-      def response_throttled?
-        true
-      end
-      def response_incomplete?
-        true
-      end
+  class Whois::Record::Parser::ResponseDefinedTrueTest < Whois::Record::Parser::Base
+    def response_incomplete?
+      true
     end
+    def response_throttled?
+      true
+    end
+    def response_unavailable?
+      true
+    end
+  end
 
-    class Whois::Record::Parser::ResponseDefinedFalseTest < Whois::Record::Parser::Base
-      def response_throttled?
-        false
-      end
-      def response_incomplete?
-        false
-      end
+  class Whois::Record::Parser::ResponseDefinedFalseTest < Whois::Record::Parser::Base
+    def response_incomplete?
+      false
     end
+    def response_throttled?
+      false
+    end
+    def response_unavailable?
+      false
+    end
+  end
 
-    class Whois::Record::Parser::ResponseUndefinedTest < Whois::Record::Parser::Base
-    end
+  class Whois::Record::Parser::ResponseUndefinedTest < Whois::Record::Parser::Base
+  end
 
-    def parsers(*types)
-      klass.new(Whois::Record.new(nil, types.map { |type| Whois::Record::Part.new("", "response-#{type}.test")  }))
-    end
+  def parsers(*types)
+    klass.new(Whois::Record.new(nil, types.map { |type| Whois::Record::Part.new("", "response-#{type}.test")  }))
+  end
 
 end

@@ -255,6 +255,16 @@ module Whois
     end
 
 
+    # Checks whether this is an incomplete response.
+    #
+    # @return [Boolean]
+    #
+    # @see Whois::Record::Parser#response_incomplete?
+    #
+    def response_incomplete?
+      parser.response_incomplete?
+    end
+
     # Checks whether this is a throttle response.
     #
     # @return [Boolean]
@@ -265,14 +275,14 @@ module Whois
       parser.response_throttled?
     end
 
-    # Checks whether this is an incomplete response.
+    # Checks whether this is an unavailable response.
     #
     # @return [Boolean]
     #
-    # @see Whois::Record::Parser#response_incomplete?
+    # @see Whois::Record::Parser#response_unavailable?
     #
-    def response_incomplete?
-      parser.response_incomplete?
+    def response_unavailable?
+      parser.response_unavailable?
     end
 
     # @endgroup

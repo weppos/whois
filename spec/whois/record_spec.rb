@@ -305,6 +305,14 @@ describe Whois::Record do
   end
 
 
+  describe "#response_incomplete?" do
+    it "delegates to #parser" do
+      i = klass.new(nil, [])
+      i.parser.expects(:response_incomplete?)
+      i.response_incomplete?
+    end
+  end
+
   describe "#response_throttled?" do
     it "delegates to #parser" do
       i = klass.new(nil, [])
@@ -313,11 +321,11 @@ describe Whois::Record do
     end
   end
 
-  describe "#response_incomplete?" do
+  describe "#response_unavailable?" do
     it "delegates to #parser" do
       i = klass.new(nil, [])
-      i.parser.expects(:response_incomplete?)
-      i.response_incomplete?
+      i.parser.expects(:response_unavailable?)
+      i.response_unavailable?
     end
   end
 
