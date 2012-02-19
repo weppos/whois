@@ -9,6 +9,8 @@
 
 * NEW: Added ability to check for an unavailable response with Whois::Record#response_unavailable?.
 
+* CHANGED: Placed "core_ext" under "whois" namespace (GH-149).
+
 * FIXED: whois.nic.gl parser must support `Delegate' status.
 
 * FIXED: whois.godaddy.com partially changed response format (GH-148).
