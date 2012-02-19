@@ -7,7 +7,7 @@
 #++
 
 
-require 'core_ext'
+require 'whois/core_ext'
 require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
