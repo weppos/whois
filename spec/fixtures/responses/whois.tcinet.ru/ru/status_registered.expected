@@ -17,12 +17,12 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-03-05")
+  should: %s == Time.parse("2013-03-05")
 
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == "RUCENTER-REG-RIPN"
+  should: %s.id           == "RU-CENTER-REG-RIPN"
   should: %s.name         == nil
   should: %s.organization == nil
 
@@ -30,23 +30,11 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(2)
+  should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == nil
-  should: %s[0].name         == nil
-  should: %s[0].organization == "Google Inc"
-  should: %s[0].phone        == "+1 650 330 0100"
-  should: %s[0].fax          == "+1 650 618 8571"
-  should: %s[0].email        == "dns-admin@google.com"
-  should: %s[1].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[1].id           == nil
-  should: %s[1].name         == nil
-  should: %s[1].organization == "Google Inc"
-  should: %s[1].phone        == "+1 650 330 0100"
-  should: %s[1].fax          == "+1 650 618 8571"
-  should: %s[1].email        == "ccops@markmonitor.com"
+  should: %s[0].organization == "Google Inc."
+  should: %s[0].url          == "https://www.nic.ru/whois"
 
 #technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
