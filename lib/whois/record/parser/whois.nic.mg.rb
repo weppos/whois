@@ -32,6 +32,8 @@ module Whois
             case $1.downcase
               when "active"
                 :registered
+              when "delegated"
+                :registered
               when "not registered"
                 :available
               else

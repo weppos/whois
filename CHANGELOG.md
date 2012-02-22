@@ -17,6 +17,8 @@
 
 * FIXED: whois.registry.qa parser crashes when the response doesn't contain nameserver IPs.
 
+* FIXED: whois.nic.mg parser must support `Delegate' status.
+
 
 ## Release 2.3.0
 
