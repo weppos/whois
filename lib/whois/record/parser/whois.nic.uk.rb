@@ -111,7 +111,13 @@ module Whois
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant's address:\n((.+\n)+)\n/
-            *address, city, state, zip, country = *$1.split("\n").map(&:strip)
+            lines = $1.split("\n").map(&:strip)
+            address = lines[0..-5]
+            city    = lines[-4]
+            state   = lines[-3]
+            zip     = lines[-2]
+            country = lines[-1]
+            
             Record::Contact.new(
               :type => Record::Contact::TYPE_REGISTRANT,
               :name => content_for_scanner[/Registrant:\n\s*(.+)\n/, 1],
