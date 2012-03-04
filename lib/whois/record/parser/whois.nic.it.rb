@@ -38,18 +38,17 @@ module Whois
 
 
         property_supported :status do
-          case node("Status").to_s.downcase
+          case s = node("Status").to_s.downcase
           when /^ok/, "active", /\bclient/
             :registered
           when "grace-period", "pendingupdate", "no-provider"
             :registered
-          when "pendingtransfer",
-               "pendingtransfer / autorenewperiod"
+          when /^pendingtransfer/
             :registered
-          when /redemption\-/,
-               "pendingdelete / redemptionperiod",
-               # The domain will be deleted in 5 days
-               "pendingdelete / pendingdelete"
+          when /redemption\-/
+            :redemption
+          # The domain will be deleted in 5 days
+          when /^pendingdelete/
             :redemption
           when "unassignable"
             :reserved
@@ -58,7 +57,7 @@ module Whois
           when /^inactive/
             :inactive
           else
-            Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
+            Whois.bug!(ParserError, "Unknown status `#{s}'.")
           end
         end
 
