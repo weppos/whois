@@ -1,0 +1,62 @@
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://www.nic.it/cgi-bin/Whois/whois.cgi                         *
+*********************************************************************
+
+Domain:             bunkerfilm.it
+Status:             pendingUpdate / autoRenewPeriod
+Created:            2010-02-26 15:47:30
+Last Update:        2012-02-28 08:51:35
+Expire Date:        2012-02-26
+
+Registrant
+  Name:             FRANCESCO CACCHIANI2
+  Organization:     FRANCESCO CACCHIANI
+  ContactID:        GIF-0000004711R
+  Address:          Via Ilio Barontini 1b
+                    Lastra a Signa
+                    50100
+                    FI
+                    IT
+  Created:          2010-02-26 15:47:30
+  Last Update:      2011-04-04 16:58:43
+
+Admin Contact
+  Name:             FRANCESCO CACCHIANI2
+  Organization:     FRANCESCO CACCHIANI
+  ContactID:        GIF-0000004711R
+  Address:          Via Ilio Barontini 1b
+                    Lastra a Signa
+                    50100
+                    FI
+                    IT
+  Created:          2010-02-26 15:47:30
+  Last Update:      2011-04-04 16:58:43
+
+Technical Contacts
+  Name:             FRANCESCO CACCHIANI2
+  Organization:     FRANCESCO CACCHIANI
+  ContactID:        GIF-0000004711R
+  Address:          Via Ilio Barontini 1b
+                    Lastra a Signa
+                    50100
+                    FI
+                    IT
+  Created:          2010-02-26 15:47:30
+  Last Update:      2011-04-04 16:58:43
+
+Registrar
+  Organization:     Genesys Informatica s.r.l.
+  Name:             GIF-REG
+  Web:              http://www.hostingsolutions.it
+
+Nameservers
+  ns1.asidev.net
+  ns2.asidev.net
+  ns3.asipec.com
+  ns4.asipec.com
+

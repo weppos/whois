@@ -19,6 +19,8 @@
 
 * FIXED: whois.nic.mg parser must support `Delegate' status.
 
+* FIXED: whois.nic.it parser must support `pendingUpdate` status.
+
 
 ## Release 2.3.0
 
