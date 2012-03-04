@@ -103,7 +103,7 @@ module Whois
               :id           => nil,
               :name         => "Nominet",
               :organization => "Nominet UK",
-              :url          => "http://www.nic.uk/",
+              :url          => "http://www.nic.uk/"
             )
           end
         end
