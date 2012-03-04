@@ -23,6 +23,8 @@
 
 * FIXED: whois.nic.it parser must support `pendingUpdate` status.
 
+* FIXED: whois.nic.it parser must support `PENDING-DELETE' status.
+
 
 ## Release 2.3.0
 

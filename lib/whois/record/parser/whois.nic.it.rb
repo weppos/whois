@@ -49,6 +49,8 @@ module Whois
             :registered
           when /redemption\-/
             :redemption
+          when "pending-delete"
+            :redemption
           # The domain will be deleted in 5 days
           when /^pendingdelete/
             :redemption
