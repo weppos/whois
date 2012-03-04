@@ -9,6 +9,8 @@
 
 * NEW: Added ability to check for an unavailable response with Whois::Record#response_unavailable?.
 
+* NEW: whois.nic.uk now understands reserved domains.
+
 * CHANGED: Placed "core_ext" under "whois" namespace (GH-149).
 
 * FIXED: whois.nic.gl parser must support `Delegate' status.
