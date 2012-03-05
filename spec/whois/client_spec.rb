@@ -81,10 +81,10 @@ describe Whois::Client do
           sleep(2)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new(:timeout => 1)
-      lambda { client.query("foo.com") }.should raise_error(Timeout::Error)
+      lambda { client.query("example.test") }.should raise_error(Timeout::Error)
     end
 
     it "does not raise if timeout is not exceeded" do
@@ -93,10 +93,10 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new(:timeout => 5)
-      lambda { client.query("foo.com") }.should_not raise_error
+      lambda { client.query("example.test") }.should_not raise_error
     end
 
     it "supports unlimited timeout" do
@@ -105,10 +105,10 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new.tap { |c| c.timeout = nil }
-      lambda { client.query("foo.com") }.should_not raise_error
+      lambda { client.query("example.test") }.should_not raise_error
     end
 
   end
