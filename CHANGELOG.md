@@ -5,6 +5,9 @@
 
 * SERVER: .KP TLD no longer provides public WHOIS interface (GH-52).
 
+* SERVER: Added the following new IDN TLDs:
+    * .XN--80AO21A (.ҚАЗ, Kazakhstan)
+
 * NEW: Added full whois.dreamhost.com parser.
 
 * NEW: Added ability to check for an unavailable response with Whois::Record#response_unavailable?.

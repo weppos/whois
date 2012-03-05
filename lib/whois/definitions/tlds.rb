@@ -332,6 +332,7 @@ Whois::Server.define :tld, ".zw", nil, { :adapter => Whois::Server::Adapters::No
 Whois::Server.define :tld, ".xxx", "whois.nic.xxx"
 Whois::Server.define :tld, ".xn--3e0b707e", "whois.kr"
 Whois::Server.define :tld, ".xn--45brj9c", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--80ao21a", "whois.nic.kz"
 Whois::Server.define :tld, ".xn--90a3ac", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--clchc0ea0b2g2a9gcd", "whois.sgnic.sg"
 Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
@@ -343,9 +344,11 @@ Whois::Server.define :tld, ".xn--h2brj9c", nil, { :adapter => Whois::Server::Ada
 Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
 Whois::Server.define :tld, ".xn--kprw13d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--kpry57d", "whois.twnic.net.tw"
+Whois::Server.define :tld, ".xn--lgbbat1ad8j", "whois.nic.dz"
 Whois::Server.define :tld, ".xn--mgbaam7a8h", "whois.aeda.net.ae"
 Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--mgbbh1a71e", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--mgbc0a9azcg", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--mgberp4a5d4ar", "whois.nic.net.sa"
 Whois::Server.define :tld, ".xn--o3cw4h", "whois.thnic.co.th"
 Whois::Server.define :tld, ".xn--ogbpf8fl", nil, { :adapter => Whois::Server::Adapters::None }
@@ -354,9 +357,7 @@ Whois::Server.define :tld, ".xn--pgbs0dh", nil, { :adapter => Whois::Server::Ada
 Whois::Server.define :tld, ".xn--s9brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
 Whois::Server.define :tld, ".xn--wgbl6a", "whois.registry.qa"
-Whois::Server.define :tld, ".xn--lgbbat1ad8j", "whois.nic.dz"
 Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--xkc2dl3a5ee0h", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--mgbc0a9azcg", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--yfro4i67o", "whois.sgnic.sg"
 Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
