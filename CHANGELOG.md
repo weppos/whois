@@ -16,6 +16,8 @@
 
 * CHANGED: Placed "core_ext" under "whois" namespace (GH-149).
 
+* CHANGED: Whois::Client#query is no longer case sensitive (GH-151).
+
 * FIXED: whois.nic.gl parser must support `Delegate' status.
 
 * FIXED: whois.godaddy.com partially changed response format (GH-148).

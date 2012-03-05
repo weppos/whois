@@ -83,7 +83,7 @@ module Whois
     #   # => #<Whois::Record>
     #
     def query(object)
-      string = object.to_s
+      string = object.to_s.downcase
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
         @server.configure(settings)
