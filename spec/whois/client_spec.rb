@@ -56,7 +56,7 @@ describe Whois::Client do
     it "converts the argument to downcase" do
       server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
       server.expects(:query).with("example.test")
-      Whois::Server.expects(:guess).with(instance_of(String)).returns(server)
+      Whois::Server.expects(:guess).with("example.test").returns(server)
       klass.new.query("Example.TEST")
     end
 
