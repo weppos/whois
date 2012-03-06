@@ -196,7 +196,7 @@ Whois is free software, but it costs money to write, test, and distribute it. Yo
 
 - [Homepage](http://www.ruby-whois.org/)
 - [Repository](https://github.com/weppos/whois)
-- [Documentation](http://www.ruby-whois.org/documentation.html) - The official documentation, see also the [API Documentation](/api).
+- [Documentation](http://www.ruby-whois.org/documentation.html) - The official documentation, see also the [API Documentation](http://www.ruby-whois.org/api).
 - [Discussion Group](http://groups.google.com/group/ruby-whois)
 
 
