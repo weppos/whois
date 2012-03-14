@@ -49,7 +49,7 @@ Install the newer version via RubyGems.
 
     $ gem install whois
 
-Minor and bugfix releases normally won't break backwards-compatibility. You can read the CHANGELOG.rdoc file to learn about the changes in each release.
+Minor and bugfix releases normally won't break backwards-compatibility. You can read the CHANGELOG.md file to learn about the changes in each release.
 
 Read the [Upgrading](http://www.ruby-whois.org/manual/upgrading.html) documentation page for detailed information about incompatible changes and further instructions.
 
@@ -110,9 +110,9 @@ Did I mention you can even use blocks?
 
 ### Consuming the Record
 
-Any WHOIS query returns a {Whois::Record}. This object looks like a String, but it's way more powerful.
+Any WHOIS query returns a `Whois::Record`. This object looks like a String, but it's way more powerful.
 
-{Whois::Record} encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
+`Whois::Record` encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
 
     r = Whois.whois("google.it")
     # => #<Whois::Record>
@@ -142,7 +142,7 @@ If you create a new parser, please consider releasing it to the public so that i
 
 ### Timeout
 
-By default, each query run though the client has a timeout value of 5 seconds. If the execution exceeds timeout limit, the client raises a {Timeout::Error} exception.
+By default, each query run though the client has a timeout value of 5 seconds. If the execution exceeds timeout limit, the client raises a `Timeout::Error` exception.
 
 Off course, you can customize the timeout value setting a different value. If timeout is `nil`, the client will until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know you are doing!
 
@@ -168,14 +168,10 @@ The parser architecture has been inspired by the [PHPWhois](http://phpwhois.sour
 Despite I spent weeks reading source code from the available whois libraries, Ruby *Whois* has been built from scratch trying to focus on long-term maintainability and flexibility and cannot be considered a Ruby port of any of other existing Whois libraries.
 
 
-## Author
+## Credits
 
-Author: [Simone Carletti](http://www.simonecarletti.com/) <weppos@weppos.net>
-
-
-## Thanks to
-
-Everyone [in this list](https://github.com/weppos/whois/contributors).
+- [Simone Carletti](http://www.simonecarletti.com/) <weppos@weppos.net> - Author
+- [Contributors](https://github.com/weppos/whois/contributors)
 
 
 ## Contribute
@@ -187,12 +183,21 @@ Pull requests are very welcome! Please include spec and/or feature coverage for 
 Report issues or feature requests to [GitHub Issues](https://github.com/weppos/whois/issues).
 
 
+## Donations
+
+[Support Whois at Pledgie](http://www.pledgie.com/campaigns/11383).
+
+<a href='http://www.pledgie.com/campaigns/11383'><img alt='Click here to lend your support to: whois and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/11383.png?skin_name=chrome' border='0' /></a>
+
+Whois is free software, but it costs money to write, test, and distribute it. You can support the development by sending a donation. **Any amount, even $5, is greatly appreciated**.
+
+
 ## More
 
-* [Homepage](http://www.ruby-whois.org/)
-* [Repository](https://github.com/weppos/whois)
-* [Documentation](http://www.ruby-whois.org/documentation.html) - The official documentation, see also the [API Documentation](/api).
-* [Discussion Group](http://groups.google.com/group/ruby-whois)
+- [Homepage](http://www.ruby-whois.org/)
+- [Repository](https://github.com/weppos/whois)
+- [Documentation](http://www.ruby-whois.org/documentation.html) - The official documentation, see also the [API Documentation](http://www.ruby-whois.org/api).
+- [Discussion Group](http://groups.google.com/group/ruby-whois)
 
 
 ## Changelog
