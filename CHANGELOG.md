@@ -3,10 +3,12 @@
 
 ## master
 
-* SERVER: .KP TLD no longer provides public WHOIS interface (GH-52).
+* SERVER: Removed .KP TLD server (GH-52).
 
-* SERVER: Added the following new IDN TLDs:
+* SERVER: Added the following new IDN TLD servers:
     * .XN--80AO21A (.ҚАЗ, Kazakhstan)
+
+* SERVER: Updated ipv4 allocations.
 
 * NEW: Added full whois.dreamhost.com parser.
 
