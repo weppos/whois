@@ -12,11 +12,15 @@
 
 * SERVER: Updated ipv4 allocations.
 
+* SERVER: Added .RS TLD server.
+
 * NEW: Added full whois.dreamhost.com parser.
 
 * NEW: Added ability to check for an unavailable response with Whois::Record#response_unavailable?.
 
 * NEW: whois.nic.uk now understands reserved domains.
+
+* NEW: Added full whois.rnids.rs parser.
 
 * CHANGED: Placed "core_ext" under "whois" namespace (GH-149).
 
