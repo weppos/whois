@@ -357,7 +357,7 @@ Whois::Server.define :tld, ".xn--pgbs0dh", nil, { :adapter => Whois::Server::Ada
 Whois::Server.define :tld, ".xn--s9brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--wgbh1c", "whois.dotmasr.eg"
 Whois::Server.define :tld, ".xn--wgbl6a", "whois.registry.qa"
-Whois::Server.define :tld, ".xn--xkc2al3hye2a", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--xkc2al3hye2a", "whois.nic.lk"
 Whois::Server.define :tld, ".xn--xkc2dl3a5ee0h", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--yfro4i67o", "whois.sgnic.sg"
 Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
