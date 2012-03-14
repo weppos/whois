@@ -1,0 +1,94 @@
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#domain
+  should: %s == "google.rs"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2008-03-10 12:31:19")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-02-28 04:30:05")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-10 12:31:19")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "NINET Company d.o.o."
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway, Mountain View, United States of America"
+  should: %s[0].email         == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Domain Administrator, Drustvo za marketing Google DOO"
+  should: %s[0].address       == "Marsala Birjuzova 47/18, Beograd, Serbia"
+  should: %s[0].email         == nil
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Domain Provisioning, MarkMonitor"
+  should: %s[0].address       == "10400 Overland Road, Boise, United States of America"
+  should: %s[0].email         == nil
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[0].ipv4 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.google.com"
+  should: %s[1].ipv4 == nil
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[2].ipv4 == "216.239.36.10"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.google.com"
+  should: %s[3].ipv4 == "216.239.38.10"

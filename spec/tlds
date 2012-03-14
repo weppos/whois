@@ -1,10 +1,3 @@
-#Whois::Server.define :tld, ".ac.za", "whois.ac.za"
-#Whois::Server.define :tld, ".bj", "whois.nic.bj"
-#Whois::Server.define :tld, ".co.pl", "whois.co.pl"
-#Whois::Server.define :tld, ".dm", "whois.nic.dm"
-#Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
-#Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
-#Whois::Server.define :tld, ".gp", "whois.nic.gp"
 ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
@@ -38,6 +31,7 @@ bg;whois.register.bg;google.bg;u34jedzcq.bg
 bh;;;
 bi;;;
 biz;whois.biz;google.biz;u34jedzcq.biz
+bj;;;
 bl.uk;;;
 bm;;;
 bn;;;
@@ -82,9 +76,12 @@ de.com;whois.centralnic.com;boerse.de.com;u34jedzcq.de.com
 de;whois.denic.de;google.de;u34jedzcq.de
 dj;;;
 dk;whois.dk-hostmaster.dk;google.dk;u34jedzcq.dk
+dm;;;
 do;;;
 dz;whois.nic.dz;google.dz;u34jedzcq.dz
 ec;whois.nic.ec;google.ec;u34jedzcq.ec
+edu.cn;;;
+edu.ru;;;
 edu;whois.educause.edu;google.edu;u34jedzcq.edu
 ee;whois.tld.ee;google.ee;u34jedzcq.ee
 eg;;;
@@ -94,7 +91,7 @@ et;;;
 eu.com;whois.centralnic.com;walkabout.eu.com;u34jedzcq.eu.com
 eu.org;whois.eu.org;google.eu.org;u34jedzcq.eu.org
 eu;whois.eu;google.eu;u34jedzcq.eu
-fi;whois.ficora.fi;google.fi;u34jedzcq.fi
+fi;whois.fi;google.fi;u34jedzcq.fi
 fi;whois.usp.ac.fj;google.com.fj;u34jedzcq.fj
 fk;;;
 fm;;;
@@ -116,9 +113,10 @@ gn;;;
 gov.uk;whois.ja.net;lboro.gov.uk;u34jedzcq.gov.uk
 gov.za;whois.gov.za;dha.gov.za;u34jedzcq.gov.za
 gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
+gp;;;
 gq;;;
-gr;;;
 gr.com;whois.centralnic.com;google.gr.com;u34jedzcq.gr.com
+gr;;;
 gs;whois.nic.gs;google.gs;u34jedzcq.gs
 gt;;;
 gu;;;
@@ -158,9 +156,9 @@ kh;;;
 ki;whois.nic.ki;google.ki;u34jedzcq.ki
 km;;;
 kn;;;
+kp;;;
 kr.com;whois.centralnic.com;academyart.kr.com;u34jedzcq.kr.com
 kr;whois.kr;google.kr;u34jedzcq.kr
-kp;;;
 kw;;;
 ky;;;
 kz;whois.nic.kz;google.kz;u34jedzcq.kz
@@ -168,7 +166,7 @@ la;whois.nic.la;google.la;u34jedzcq.la
 lb;;;
 lc;whois.afilias-grs.info;nic.lc;u34jedzcq.lc
 li;whois.nic.li;google.li;u34jedzcq.li
-lk;;;
+lk;whois.nic.lk;google.lk;u34jedzcq.lk
 lr;;;
 ls;;;
 lt;whois.domreg.lt;google.lt;u34jedzcq.lt
@@ -242,7 +240,7 @@ qa.com;whois.registry.qa;qtel.com.qa;u34jedzcq.qa
 qc.com;whois.centralnic.com;ceo.qc.com;u34jedzcq.qc.com
 re;whois.nic.fr;nic.re;u34jedzcq.re
 ro;whois.rotld.ro;google.ro;u34jedzcq.ro
-rs;;;
+rs;whois.rnids.rs;google.rs;u34jedzcq.rs
 ru.com;whois.centralnic.com;srk.ru.com;u34jedzcq.ru.com
 ru;whois.ripn.net;google.ru;u34jedzcq.ru
 rw;;;
@@ -289,7 +287,7 @@ tt;;;
 tv;whois.nic.tv;thinkcode.tv;u34jedzcq.tv
 tw;whois.twnic.net.tw;google.com.tw;u34jedzcq.com.tw
 tz;whois.tznic.or.tz;dailynews.co.tz;u34jedzcq.co.tz
-ua;whois.net.ua;google.com.ua;u34jedzcq.com.ua
+ua;whois.ua;google.com.ua;u34jedzcq.com.ua
 ug;whois.co.ug;google.co.ug;u34jedzcq.co.ug
 uk.com;whois.centralnic.com;history.uk.com;u34jedzcq.uk.com
 uk.net;whois.centralnic.com;paramount.uk.net;u34jedzcq.uk.net
