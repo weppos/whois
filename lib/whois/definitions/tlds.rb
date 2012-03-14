@@ -89,7 +89,7 @@ Whois::Server.define :tld, ".bw", nil, { :adapter => Whois::Server::Adapters::No
 Whois::Server.define :tld, ".bz", "whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }
 Whois::Server.define :tld, ".co.ca", "whois.co.ca"
 Whois::Server.define :tld, ".ca", "whois.cira.ca"
-Whois::Server.define :tld, ".cc", "whois.nic.cc", { :adapter => Whois::Server::Adapters::Verisign}
+Whois::Server.define :tld, ".cc", "whois.nic.cc", { :adapter => Whois::Server::Adapters::Verisign }
 Whois::Server.define :tld, ".cd", "whois.nic.cd"
 Whois::Server.define :tld, ".cf", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".cg", nil, { :web => "http://www.nic.cg/cgi-bin/whois.pl", :adapter => Whois::Server::Adapters::Web }
@@ -102,14 +102,14 @@ Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 Whois::Server.define :tld, ".cn", "whois.cnnic.cn"
 Whois::Server.define :tld, ".co", "whois.nic.co"
 Whois::Server.define :tld, ".cr", nil, { :web => "http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do", :adapter => Whois::Server::Adapters::Web }
-Whois::Server.define :tld, ".cu", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.cu/"}
-Whois::Server.define :tld, ".cv", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".cu", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.cu/" }
+Whois::Server.define :tld, ".cv", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.dns.cv/" }
 Whois::Server.define :tld, ".cx", "whois.nic.cx"
 Whois::Server.define :tld, ".cy", nil, { :web => "http://www.nic.cy/nslookup/online_database.php", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".cz", "whois.nic.cz"
 Whois::Server.define :tld, ".de", "whois.denic.de", { :adapter => Whois::Server::Adapters::Formatted, :format => "-T dn,ace %s"}
-Whois::Server.define :tld, ".dj", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.dj/whois.php"}
-Whois::Server.define :tld, ".dk", "whois.dk-hostmaster.dk", { :adapter => Whois::Server::Adapters::Formatted, :format => "--show-handles %s"}
+Whois::Server.define :tld, ".dj", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.dj/whois.php" }
+Whois::Server.define :tld, ".dk", "whois.dk-hostmaster.dk", { :adapter => Whois::Server::Adapters::Formatted, :format => "--show-handles %s" }
 Whois::Server.define :tld, ".dm", "whois.nic.dm"
 Whois::Server.define :tld, ".do", nil, { :web => "http://www.nic.do/whois-h.php3", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".dz", "whois.nic.dz"
@@ -140,20 +140,20 @@ Whois::Server.define :tld, ".fr", "whois.nic.fr"
 Whois::Server.define :tld, ".ga", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gb", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gd", "whois.adamsnames.tc"
-Whois::Server.define :tld, ".ge", nil, { :web => "http://www.registration.ge/", :adapter => Whois::Server::Adapters::Web }
-Whois::Server.define :tld, ".gf", nil, { :web => "http://www.nic.gf/?id=whois", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".ge", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.registration.ge/" }
+Whois::Server.define :tld, ".gf", nil, { :adapter => Whois::Server::Adapters::Web, :web => "https://www.dom-enic.com/whois.html" }
 Whois::Server.define :tld, ".gg", "whois.gg"
-Whois::Server.define :tld, ".gh", nil, { :web => "http://www.nic.gh/customer/search_c.htm", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".gh", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.gh/customer/search_c.htm" }
 Whois::Server.define :tld, ".gi", "whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }
 Whois::Server.define :tld, ".gl", "whois.nic.gl"
-Whois::Server.define :tld, ".gm", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.gm/htmlpages/whois.htm"}
+Whois::Server.define :tld, ".gm", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.gm/htmlpages/whois.htm" }
 Whois::Server.define :tld, ".gn", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gp", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gq", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".gr", nil, { :adapter => Whois::Server::Adapters::Web, :web => "https://grweb.ics.forth.gr/whois_en.jsp"}
+Whois::Server.define :tld, ".gr", nil, { :adapter => Whois::Server::Adapters::Web, :web => "https://grweb.ics.forth.gr/whois_en.jsp" }
 Whois::Server.define :tld, ".gs", "whois.nic.gs"
-Whois::Server.define :tld, ".gt", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.gt/whois.html"}
-Whois::Server.define :tld, ".gu", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://gadao.gov.gu/domainsearch.htm"}
+Whois::Server.define :tld, ".gt", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.gt/whois.html" }
+Whois::Server.define :tld, ".gu", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://gadao.gov.gu/domainsearch.htm" }
 Whois::Server.define :tld, ".gw", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gy", "whois.registry.gy"
 Whois::Server.define :tld, ".hk", "whois.hkirc.hk"
@@ -204,13 +204,13 @@ Whois::Server.define :tld, ".md", "whois.nic.md"
 Whois::Server.define :tld, ".me", "whois.meregistry.net"
 Whois::Server.define :tld, ".mg", "whois.nic.mg"
 Whois::Server.define :tld, ".mh", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".mk", nil, { :web => "http://dns.marnet.net.mk/registar.php", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".mk", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://dns.marnet.net.mk/registar.php" }
 Whois::Server.define :tld, ".ml", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".mm", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".mn", "whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }
 Whois::Server.define :tld, ".mo", nil, { :web => "http://www.monic.net.mo/", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".mp", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".mq", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".mq", nil, { :adapter => Whois::Server::Adapters::Web, :web => "https://www.dom-enic.com/whois.html" }
 Whois::Server.define :tld, ".mr", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".ms", "whois.nic.ms"
 Whois::Server.define :tld, ".mt", nil, { :web => "https://www.nic.org.mt/dotmt/", :adapter => Whois::Server::Adapters::Web }
@@ -272,7 +272,7 @@ Whois::Server.define :tld, ".so", "whois.nic.so"
 Whois::Server.define :tld, ".sr", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".st", "whois.nic.st"
 Whois::Server.define :tld, ".su", "whois.tcinet.ru"
-Whois::Server.define :tld, ".sv", nil, { :web => "http://www.uca.edu.sv/dns/", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".sv", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.uca.edu.sv/dns/" }
 Whois::Server.define :tld, ".sy", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".sz", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".tc", "whois.adamsnames.tc"
@@ -346,7 +346,7 @@ Whois::Server.define :tld, ".xn--kprw13d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--kpry57d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--lgbbat1ad8j", "whois.nic.dz"
 Whois::Server.define :tld, ".xn--mgbaam7a8h", "whois.aeda.net.ae"
-Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://idn.jo/whois_a.aspx" }
 Whois::Server.define :tld, ".xn--mgbbh1a71e", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--mgbc0a9azcg", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--mgberp4a5d4ar", "whois.nic.net.sa"

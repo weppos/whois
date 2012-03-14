@@ -3,7 +3,9 @@
 
 ## master
 
-* SERVER: Removed .KP (GH-52), .GP (GH-44) TLD server.
+* SERVER: Removed .KP (GH-52), .GP (GH-44) TLD servers.
+
+* SERVER: Updated .CV, .GF, .MQ, .XN-MGBAYH7GPA TLD servers.
 
 * SERVER: Added the following new IDN TLD servers:
     * .XN--80AO21A (.ҚАЗ, Kazakhstan)
