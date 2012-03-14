@@ -148,7 +148,7 @@ Whois::Server.define :tld, ".gi", "whois.afilias-grs.info", { :adapter => Whois:
 Whois::Server.define :tld, ".gl", "whois.nic.gl"
 Whois::Server.define :tld, ".gm", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.nic.gm/htmlpages/whois.htm"}
 Whois::Server.define :tld, ".gn", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".gp", "whois.nic.gp"
+Whois::Server.define :tld, ".gp", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gq", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".gr", nil, { :adapter => Whois::Server::Adapters::Web, :web => "https://grweb.ics.forth.gr/whois_en.jsp"}
 Whois::Server.define :tld, ".gs", "whois.nic.gs"

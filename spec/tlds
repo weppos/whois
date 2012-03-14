@@ -4,7 +4,6 @@
 #Whois::Server.define :tld, ".dm", "whois.nic.dm"
 #Whois::Server.define :tld, ".edu.cn", "whois.edu.cn"
 #Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
-#Whois::Server.define :tld, ".gp", "whois.nic.gp"
 ac.uk;whois.ja.net;lboro.ac.uk;u34jedzcq.ac.uk
 ac;whois.nic.ac;google.ac;u34jedzcq.ac
 ad;;;
@@ -116,6 +115,7 @@ gn;;;
 gov.uk;whois.ja.net;lboro.gov.uk;u34jedzcq.gov.uk
 gov.za;whois.gov.za;dha.gov.za;u34jedzcq.gov.za
 gov;whois.nic.gov;gsa.gov;u34jedzcq.gov
+gp;;;
 gq;;;
 gr;;;
 gr.com;whois.centralnic.com;google.gr.com;u34jedzcq.gr.com
