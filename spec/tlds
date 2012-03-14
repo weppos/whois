@@ -314,7 +314,6 @@ Whois::Server.define :tld, ".xn--clchc0ea0b2g2a9gcd", "whois.sgnic.sg"
 Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
 Whois::Server.define :tld, ".xn--fiqz9s", "cwhois.cnnic.cn"
 Whois::Server.define :tld, ".xn--fpcrj9c3d", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--fzc2c9e2c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--gecrj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--h2brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
@@ -339,6 +338,7 @@ Whois::Server.define :tld, ".xn--ygbi2ammx", "whois.pnina.ps"
 ws;whois.samoanic.ws;google.ws;u34jedzcq.ws
 xn--p1ai;whois.ripn.net;xn----8sbc3ahklcs4adf.xn--p1ai;u34jedzcq.xn--p1ai
 xn--xkc2al3hye2a;whois.nic.lk;xn--4kcolx4fsa0gdt6j.xn--xkc2al3hye2a;u34jedzcq.xn--xkc2al3hye2a
+xn--fzc2c9e2c;whois.nic.lk;xn--fzc3a2azd8dsa2ktat.xn--fzc2c9e2c;u34jedzcq.xn--fzc2c9e2c
 xxx;whois.nic.xxx;nic.xxx;u34jedzcq.xxx
 ye;;;
 yt;whois.nic.fr;nic.yt;u34jedzcq.yt

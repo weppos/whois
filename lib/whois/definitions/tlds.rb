@@ -338,7 +338,7 @@ Whois::Server.define :tld, ".xn--clchc0ea0b2g2a9gcd", "whois.sgnic.sg"
 Whois::Server.define :tld, ".xn--fiqs8s", "cwhois.cnnic.cn"
 Whois::Server.define :tld, ".xn--fiqz9s", "cwhois.cnnic.cn"
 Whois::Server.define :tld, ".xn--fpcrj9c3d", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".xn--fzc2c9e2c", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".xn--fzc2c9e2c", "whois.nic.lk"
 Whois::Server.define :tld, ".xn--gecrj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--h2brj9c", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
