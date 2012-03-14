@@ -16,6 +16,9 @@ module Whois
     class Parser
 
       # Parser for the whois.rnids.rs server.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       # @since RELEASE
       class WhoisRnidsRs < Base

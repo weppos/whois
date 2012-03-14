@@ -8,27 +8,27 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/parser/scanners/whois.dns.hr.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.lk server.
+      # Parser for the whois.dns.hr server.
       # 
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
       # @since RELEASE
-      class WhoisNicLk < Base
+      class WhoisDnsHr < Base
+        include Scanners::Ast
 
         property_not_supported :disclaimer
 
 
         property_supported :domain do
-          if content_for_scanner =~ /Domain Name:\n\s+(.+)\n/
-            $1
-          end
+          node("domain")
         end
 
         property_not_supported :domain_id
@@ -37,7 +37,6 @@ module Whois
         property_not_supported :referral_whois
 
         property_not_supported :referral_url
-
 
 
         property_supported :status do
@@ -49,7 +48,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^This Domain is not available/)
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -57,22 +56,12 @@ module Whois
         end
 
 
-        property_supported :created_on do
-          if content_for_scanner =~ /Created on\.+:(.+)\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :created_on
 
-        property_supported :updated_on do
-          if content_for_scanner =~ /Record last updated on\.+:(.+)\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expires on\.+:(.+)\n/
-            Time.parse($1)
-          end
+          node("expires") { |value| Time.parse(value) }
         end
 
 
@@ -80,18 +69,18 @@ module Whois
 
 
         property_supported :registrant_contacts do
-          if content_for_scanner =~ /Registrant:\n\s+(.+)\n/
+          node("descr") do |array|
+            city, zip = array[2].match(/([\d\s]+) (.+)/).to_a
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :id           => nil,
-              :name         => $1,
+              :name         => array[0],
               :organization => nil,
-              :address      => nil,
-              :city         => nil,
-              :zip          => nil,
+              :address      => array[1],
+              :city         => city,
+              :zip          => zip,
               :state        => nil,
               :country      => nil,
-              :country_code => nil,
               :phone        => nil,
               :fax          => nil,
               :email        => nil
@@ -103,12 +92,17 @@ module Whois
 
         property_not_supported :technical_contacts
 
-        property_supported :nameservers do
-         if content_for_scanner =~ /Domain Servers in listed order:\n((?:.+\n)+)/
-            $1.split("\n").map do |name|
-              Record::Nameserver.new(name: name.strip.chomp("."))
-            end
-          end
+
+        property_not_supported :nameservers
+
+
+        # Initializes a new {Scanners::WhoisDnsHr} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisDnsHr.new(content_for_scanner).parse
         end
 
       end

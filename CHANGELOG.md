@@ -12,7 +12,7 @@
 
 * SERVER: Updated ipv4 allocations.
 
-* SERVER: Added .RS, .LK TLD server.
+* SERVER: Added .RS, .LK, .HR (GH-122) TLD server.
 
 * NEW: Added full whois.dreamhost.com parser.
 
@@ -21,6 +21,10 @@
 * NEW: whois.nic.uk now understands reserved domains.
 
 * NEW: Added full whois.rnids.rs parser.
+
+* NEW: Added full whois.nic.lk parser.
+
+* NEW: Added full whois.dns.hr parser (GH-122).
 
 * CHANGED: Placed "core_ext" under "whois" namespace (GH-149).
 

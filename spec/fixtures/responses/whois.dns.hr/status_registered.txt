@@ -1,0 +1,7 @@
+domain:    google.hr
+descr:     Google Hrvatska d.o.o.
+descr:     Primorska 26
+descr:     10 000 Zagreb
+expires:   20120921
+source:    DNSHR
+
