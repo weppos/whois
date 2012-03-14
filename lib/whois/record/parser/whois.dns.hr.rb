@@ -70,7 +70,7 @@ module Whois
 
         property_supported :registrant_contacts do
           node("descr") do |array|
-            city, zip = array[2].match(/([\d\s]+) (.+)/).to_a
+            fuffa, zip, city = array[2].match(/([\d\s]+) (.+)/).to_a
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :id           => nil,
