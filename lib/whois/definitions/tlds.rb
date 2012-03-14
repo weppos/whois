@@ -120,7 +120,7 @@ Whois::Server.define :tld, ".er", nil, { :adapter => Whois::Server::Adapters::No
 Whois::Server.define :tld, ".es", nil, { :web => "https://www.nic.es/", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".et", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".eu", "whois.eu"
-Whois::Server.define :tld, ".fi", "whois.ficora.fi"
+Whois::Server.define :tld, ".fi", "whois.fi"
 Whois::Server.define :tld, ".fj", "whois.usp.ac.fj"
 Whois::Server.define :tld, ".fk", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".fm", nil, { :web => "http://www.dot.fm/whois.html", :adapter => Whois::Server::Adapters::Web }
