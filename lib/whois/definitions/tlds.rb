@@ -191,7 +191,7 @@ Whois::Server.define :tld, ".la", "whois.nic.la"
 Whois::Server.define :tld, ".lb", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.aub.edu.lb/lbdr/"}
 Whois::Server.define :tld, ".lc", "whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }
 Whois::Server.define :tld, ".li", "whois.nic.li"
-Whois::Server.define :tld, ".lk", nil, { :adapter => Whois::Server::Adapters::None }
+Whois::Server.define :tld, ".lk", "whois.nic.lk"
 Whois::Server.define :tld, ".lr", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".ls", nil, { :adapter => Whois::Server::Adapters::Web, :web => "http://www.co.ls/co.asp"}
 Whois::Server.define :tld, ".lt", "whois.domreg.lt"

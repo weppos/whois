@@ -12,7 +12,7 @@
 
 * SERVER: Updated ipv4 allocations.
 
-* SERVER: Added .RS TLD server.
+* SERVER: Added .RS, .LK TLD server.
 
 * NEW: Added full whois.dreamhost.com parser.
 

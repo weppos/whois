@@ -19,6 +19,9 @@ module Whois
       # @note This parser is just a stub and provides only a few basic methods
       #   to check for domain availability and get domain status.
       #   Please consider to contribute implementing missing methods.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       # @since RELEASE
       class WhoisFi < Base
