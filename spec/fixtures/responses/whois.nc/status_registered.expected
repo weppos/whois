@@ -1,0 +1,76 @@
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#domain
+  should: %s == "domaine.nc"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-05-14")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-02-13")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2016-05-14")
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "CCTLD"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "1 RUE MONCHOVET\n7 EME ETAGE\nLE WARUNA 1"
+  should: %s[0].city         == "NOUMEA CEDEX"
+  should: %s[0].zip          == "98841"
+  should: %s[0].state        == nil
+  should: %s[0].country      == "NEW CALEDONIA"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "any-ns1.nc"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns1.nc"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns2.nc"
