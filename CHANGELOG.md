@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 2.4.0
 
 * SERVER: Removed .KP (GH-52), .GP (GH-44) TLD servers.
 
