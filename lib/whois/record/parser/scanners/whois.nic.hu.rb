@@ -38,7 +38,7 @@ module Whois
           # FIXME: Requires UTF-8 Encoding (see #11)
           tokenizer :scan_available do
             if @input.match?(/Nincs (.*?) \/ No match\n/)
-              @input.scan(/Nincs (.*?) \/ No match\n/)
+              @input.skip(/Nincs (.*?) \/ No match\n/)
               @ast["status:available"] = true
             end
           end
@@ -46,7 +46,7 @@ module Whois
           # FIXME: Requires UTF-8 Encoding (see #11)
           tokenizer :scan_in_progress do
             if @input.match?(/(.*?) folyamatban \/ Registration in progress\n/)
-              @input.scan(/(.*?) folyamatban \/ Registration in progress\n/)
+              @input.skip(/(.*?) folyamatban \/ Registration in progress\n/)
               @ast["status:inprogress"] = true
             end
           end
