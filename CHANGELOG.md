@@ -1,5 +1,9 @@
 # Changelog
 
+## Master
+
+* CHANGED: Moved scanners from Whois::Record::Parser::Scanners to Whois::Record::Scanners.
+
 
 ## Release 2.4.0
 

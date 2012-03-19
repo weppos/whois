@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/iana'
+require 'whois/record/scanners/iana'
 
 
 module Whois

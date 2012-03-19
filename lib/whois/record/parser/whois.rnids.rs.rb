@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whois.rnids.rs.rb'
+require 'whois/record/scanners/whois.rnids.rs.rb'
 
 
 module Whois

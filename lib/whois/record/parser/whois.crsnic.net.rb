@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/verisign'
+require 'whois/record/scanners/verisign'
 
 
 module Whois

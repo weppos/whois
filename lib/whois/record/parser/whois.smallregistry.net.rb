@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whois.smallregistry.net.rb'
+require 'whois/record/scanners/whois.smallregistry.net.rb'
 
 
 module Whois
