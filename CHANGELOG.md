@@ -1,6 +1,9 @@
 # Changelog
 
+
 ## Master
+
+* NEW: Added full whois.audns.net.au parser.
 
 * CHANGED: Moved scanners from Whois::Record::Parser::Scanners to Whois::Record::Scanners.
 
