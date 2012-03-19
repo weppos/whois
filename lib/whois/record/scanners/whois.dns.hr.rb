@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.dns.hr record.
       #
-      # @since RELEASE
+      # @since 2.4.0
       class WhoisDnsHr < Base
 
         self.tokenizers += [

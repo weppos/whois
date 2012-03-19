@@ -20,7 +20,7 @@ module Whois
       #   to check for domain availability and get domain status.
       #   Please consider to contribute implementing missing methods.
       #
-      # @since RELEASE
+      # @since 2.4.0
       class WhoisUa < Base
 
         property_supported :status do

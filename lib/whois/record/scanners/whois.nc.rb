@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.nc record.
       #
-      # @since RELEASE
+      # @since 2.4.0
       class WhoisNc < Base
 
         self.tokenizers += [
