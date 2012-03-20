@@ -84,7 +84,7 @@ Whois::Server.define :tld, ".br", "whois.registro.br"
 Whois::Server.define :tld, ".bs", nil, { :web => "http://www.nic.bs/cgi-bin/search.pl", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".bt", nil, { :web => "http://www.nic.bt/", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".bv", nil, { :adapter => Whois::Server::Adapters::None }
-Whois::Server.define :tld, ".by", 'whois.hoster.by'
+Whois::Server.define :tld, ".by", 'whois.cctld.by'
 Whois::Server.define :tld, ".bw", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".bz", "whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }
 Whois::Server.define :tld, ".co.ca", "whois.co.ca"

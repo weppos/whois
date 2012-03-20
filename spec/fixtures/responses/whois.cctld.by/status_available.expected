@@ -1,0 +1,39 @@
+#status
+  should: %s == :available
+
+#available?
+  should: %s == true
+
+#registered?
+  should: %s == false
+
+
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrar
+  should: %s == nil
+
+#nameservers
+  should: %s == nil
+
+#updated_on
+  should: %s == nil
+
+#created_on
+  should: %s == nil
+
+#expires_on
+  should: %s == nil
