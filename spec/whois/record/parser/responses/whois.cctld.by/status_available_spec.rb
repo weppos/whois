@@ -68,7 +68,8 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_available.expected" do
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should == nil
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should == []
     end
   end
   describe "#updated_on" do

@@ -45,10 +45,6 @@ module Whois
           !available?
         end
 
-        property_supported :domain do
-          node("Domain Name", &:downcase)
-        end
-
         property_supported :status do
           if available?
             :available
@@ -57,15 +53,36 @@ module Whois
           end
         end
 
-        #property_not_supported :created_on
-        #
-        #property_not_supported :updated_on
-        #
-        #property_not_supported :expires_on
+        property_supported :domain do
+          node("Domain Name", &:downcase)
+        end
 
-        #property_not_supported :registrar
-        #
-        #property_not_supported :nameservers
+        property_supported :registrar do
+          node("Registrar") do |registrar|
+            Record::Registrar.new(:id => registrar,
+                                  :name => registrar,
+                                  :organization => registrar
+            )
+          end
+        end
+
+        property_supported :updated_on do
+          node("Updated Date") { |value| Time.parse(value) }
+        end
+
+        property_supported :created_on do
+          node("Creation Date") { |value| Time.parse(value) }
+        end
+
+        property_supported :expires_on do
+          node("Expiration Date") { |value| Time.parse(value) }
+        end
+
+        property_supported :nameservers do
+          Array.wrap(node("Name Server")).map do |name|
+            Nameserver.new(name.downcase)
+          end
+        end
 
         property_not_supported :disclaimer
 

@@ -16,7 +16,7 @@ module Whois
         #
         # = whois.cctld.by scanner
         #
-        # Ast scanner for the whois.cctld.by server.
+        # Scanner for the whois.cctld.by server.
         #
         # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
         class WhoisCctldBy < Base
@@ -33,10 +33,6 @@ module Whois
             if @input.scan(/^Object does not exist/)
               @ast["status:available"] = true
             end
-          end
-
-          tokenizer :skip_lastupdate do
-            @input.skip(/>>>(.+?)<<<\n/)
           end
 
           tokenizer :skip_provider_signature do

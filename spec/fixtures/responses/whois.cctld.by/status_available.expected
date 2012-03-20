@@ -27,7 +27,8 @@
   should: %s == nil
 
 #nameservers
-  should: %s == nil
+  should: %s CLASS(array)
+  should: %s == []
 
 #updated_on
   should: %s == nil
