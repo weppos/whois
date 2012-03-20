@@ -25,9 +25,6 @@ module Whois
       #
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
       class WhoisCctldBy < Base
-
-        # TODO: make sure I specify all the properties
-
         property_not_supported :disclaimer
 
         property_not_supported :domain

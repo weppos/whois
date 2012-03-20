@@ -97,4 +97,19 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2013-12-21 10:07:40 UTC")
     end
   end
+  describe "#disclaimer" do
+    it do
+      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
 end

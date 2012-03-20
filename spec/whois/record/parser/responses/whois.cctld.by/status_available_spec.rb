@@ -86,4 +86,19 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_available.expected" do
       @parser.expires_on.should == nil
     end
   end
+  describe "#disclaimer" do
+    it do
+      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
 end

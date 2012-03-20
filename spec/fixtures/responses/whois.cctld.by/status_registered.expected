@@ -48,3 +48,13 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2013-12-21 10:07:40 UTC")
+
+
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
