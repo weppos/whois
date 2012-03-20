@@ -26,6 +26,7 @@ module Whois
             :scan_available,
             :scan_keyvalue,
             :skip_empty_line,
+            :skip_dash_line,
             :skip_provider_signature,
           ]
 
@@ -35,8 +36,12 @@ module Whois
             end
           end
 
+          tokenizer :skip_dash_line do
+            @input.skip(/^-+\n/)
+          end
+
           tokenizer :skip_provider_signature do
-            @input.scan(/^\S(.+)\n/)
+            @input.scan(/^(.+)\n/)
           end
         end
       end
