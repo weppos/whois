@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "active.by"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -36,14 +61,30 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
       @parser.registered?.should == true
     end
   end
-  describe "#domain" do
+  describe "#created_on" do
     it do
-      @parser.domain.should == "active.by"
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2003-02-02 15:50:44 UTC")
     end
   end
-  describe "#domain_id" do
+  describe "#updated_on" do
     it do
-      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2010-12-20 08:36:13 UTC")
+    end
+  end
+  describe "#expires_on" do
+    it do
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("2013-12-21 10:07:40 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "Active Technologies LLC"
+      @parser.registrar.name.should         == "Active Technologies LLC"
+      @parser.registrar.organization.should == "Active Technologies LLC"
     end
   end
   describe "#registrant_contacts" do
@@ -61,14 +102,6 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
       lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  describe "#registrar" do
-    it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == "Active Technologies LLC"
-      @parser.registrar.name.should         == "Active Technologies LLC"
-      @parser.registrar.organization.should == "Active Technologies LLC"
-    end
-  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
@@ -77,39 +110,6 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
       @parser.nameservers[0].name.should == "ns1.activeby.net"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.activeby.net"
-    end
-  end
-  describe "#updated_on" do
-    it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-12-20 08:36:13 UTC")
-    end
-  end
-  describe "#created_on" do
-    it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2003-02-02 15:50:44 UTC")
-    end
-  end
-  describe "#expires_on" do
-    it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2013-12-21 10:07:40 UTC")
-    end
-  end
-  describe "#disclaimer" do
-    it do
-      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
-  describe "#referral_whois" do
-    it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
-  describe "#referral_url" do
-    it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end
