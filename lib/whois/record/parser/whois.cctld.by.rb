@@ -18,12 +18,6 @@ module Whois
       #
       # Parser for the whois.cctld.by server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
       class WhoisCctldBy < Base
         include Scanners::Ast
