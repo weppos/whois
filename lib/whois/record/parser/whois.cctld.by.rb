@@ -7,7 +7,7 @@
 #++
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whois.cctld.by'
+require 'whois/record/scanners/whois.cctld.by'
 
 module Whois
   class Record
