@@ -92,17 +92,17 @@ describe Whois::Record::Parser::WhoisNicIt, "status_registered.expected" do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should           == "GOOG175-ITNIC"
-      @parser.registrant_contacts[0].name.should         == "Google Ireland Holdings"
-      @parser.registrant_contacts[0].organization.should == nil
-      @parser.registrant_contacts[0].address.should      == "30 Herbert Street"
-      @parser.registrant_contacts[0].city.should         == "Dublin"
-      @parser.registrant_contacts[0].zip.should          == "2"
-      @parser.registrant_contacts[0].state.should        == "IE"
-      @parser.registrant_contacts[0].country_code.should == "IE"
-      @parser.registrant_contacts[0].created_on.should   == Time.parse("2008-11-27 16:47:22")
-      @parser.registrant_contacts[0].updated_on.should   == Time.parse("2008-11-27 16:47:22")
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "GOOG175-ITNIC"
+      @parser.registrant_contacts[0].name.should          == "Google Ireland Holdings"
+      @parser.registrant_contacts[0].organization.should  == nil
+      @parser.registrant_contacts[0].address.should       == "30 Herbert Street"
+      @parser.registrant_contacts[0].city.should          == "Dublin"
+      @parser.registrant_contacts[0].zip.should           == "2"
+      @parser.registrant_contacts[0].state.should         == "IE"
+      @parser.registrant_contacts[0].country_code.should  == "IE"
+      @parser.registrant_contacts[0].created_on.should    == Time.parse("2008-11-27 16:47:22")
+      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2008-11-27 16:47:22")
     end
   end
   describe "#admin_contacts" do
@@ -110,17 +110,17 @@ describe Whois::Record::Parser::WhoisNicIt, "status_registered.expected" do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should           == "TT4277-ITNIC"
-      @parser.admin_contacts[0].name.should         == "Tsao Tu"
-      @parser.admin_contacts[0].organization.should == "Tu Tsao"
-      @parser.admin_contacts[0].address.should      == "30 Herbert Street"
-      @parser.admin_contacts[0].city.should         == "Dublin"
-      @parser.admin_contacts[0].zip.should          == "2"
-      @parser.admin_contacts[0].state.should        == "IE"
-      @parser.admin_contacts[0].country_code.should == "IE"
-      @parser.admin_contacts[0].created_on.should   == Time.parse("2008-11-27 16:47:22")
-      @parser.admin_contacts[0].updated_on.should   == Time.parse("2008-11-27 16:47:22")
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "TT4277-ITNIC"
+      @parser.admin_contacts[0].name.should          == "Tsao Tu"
+      @parser.admin_contacts[0].organization.should  == "Tu Tsao"
+      @parser.admin_contacts[0].address.should       == "30 Herbert Street"
+      @parser.admin_contacts[0].city.should          == "Dublin"
+      @parser.admin_contacts[0].zip.should           == "2"
+      @parser.admin_contacts[0].state.should         == "IE"
+      @parser.admin_contacts[0].country_code.should  == "IE"
+      @parser.admin_contacts[0].created_on.should    == Time.parse("2008-11-27 16:47:22")
+      @parser.admin_contacts[0].updated_on.should    == Time.parse("2008-11-27 16:47:22")
     end
   end
   describe "#technical_contacts" do
@@ -128,9 +128,9 @@ describe Whois::Record::Parser::WhoisNicIt, "status_registered.expected" do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
       @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should           == "TS7016-ITNIC"
-      @parser.technical_contacts[0].name.should         == "Technical Services"
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "TS7016-ITNIC"
+      @parser.technical_contacts[0].name.should          == "Technical Services"
     end
   end
   describe "#nameservers" do

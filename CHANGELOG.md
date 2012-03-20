@@ -1,18 +1,39 @@
 # Changelog
 
 
-## master
+## Master
 
-* SERVER: .KP TLD no longer provides public WHOIS interface (GH-52).
+* NEW: Added full whois.audns.net.au parser.
 
-* SERVER: Added the following new IDN TLDs:
+* CHANGED: Moved scanners from Whois::Record::Parser::Scanners to Whois::Record::Scanners.
+
+
+## Release 2.4.0
+
+* SERVER: Removed .KP (GH-52), .GP (GH-44) TLD servers.
+
+* SERVER: Updated .CV, .FI (GH-133), .GF, .MQ, .UA (GH-153), .XN-MGBAYH7GPA, .XN--FZC2C9E2C, .XN--XKC2AL3HYE2A TLD servers.
+
+* SERVER: Added the following new IDN TLD servers:
     * .XN--80AO21A (.ҚАЗ, Kazakhstan)
+
+* SERVER: Updated ipv4 allocations.
+
+* SERVER: Added .RS, .LK, .HR (GH-122), .NC (GH-109) TLD server.
 
 * NEW: Added full whois.dreamhost.com parser.
 
 * NEW: Added ability to check for an unavailable response with Whois::Record#response_unavailable?.
 
 * NEW: whois.nic.uk now understands reserved domains.
+
+* NEW: Added full whois.rnids.rs parser.
+
+* NEW: Added full whois.nic.lk parser.
+
+* NEW: Added full whois.dns.hr parser (GH-122).
+
+* NEW: Added full whois.nc parser (GH-109).
 
 * CHANGED: Placed "core_ext" under "whois" namespace (GH-149).
 

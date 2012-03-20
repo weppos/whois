@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whois.biz.rb'
+require 'whois/record/scanners/whois.biz.rb'
 
 
 module Whois
@@ -66,7 +66,7 @@ module Whois
 
 
         property_supported :registrar do
-          node("Sponsoring Registrar") do |raw|
+          node("Sponsoring Registrar") do |str|
             Record::Registrar.new(
               :id           => node("Sponsoring Registrar IANA ID"),
               :name         => node("Sponsoring Registrar")
@@ -108,7 +108,7 @@ module Whois
       private
 
         def build_contact(element, type)
-          node("#{element} ID") do |raw|
+          node("#{element} ID") do |str|
             Record::Contact.new(
               :type         => type,
               :id           => node("#{element} ID"),

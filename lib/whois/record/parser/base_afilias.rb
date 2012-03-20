@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/afilias'
+require 'whois/record/scanners/afilias'
 
 
 module Whois

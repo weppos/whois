@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.com.au"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == ["ok"]
@@ -50,6 +75,48 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
   describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "TPP Internet"
+      @parser.registrar.name.should         == "TPP Internet"
+      @parser.registrar.organization.should == nil
+      @parser.registrar.url.should          == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "TPP139202-R"
+      @parser.registrant_contacts[0].name.should          == "Domain Admin"
+      @parser.registrant_contacts[0].organization.should  == "Google INC"
+      @parser.registrant_contacts[0].address.should       == nil
+      @parser.registrant_contacts[0].city.should          == nil
+      @parser.registrant_contacts[0].zip.should           == nil
+      @parser.registrant_contacts[0].state.should         == nil
+      @parser.registrant_contacts[0].country_code.should  == nil
+      @parser.registrant_contacts[0].created_on.should    == nil
+      @parser.registrant_contacts[0].updated_on.should    == nil
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { @parser.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "TPP139936-C"
+      @parser.technical_contacts[0].name.should          == "Domain Admin"
     end
   end
   describe "#nameservers" do

@@ -1,3 +1,21 @@
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#domain
+  should: %s == "google.com.au"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == ["ok"]
 
@@ -17,6 +35,41 @@
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "TPP Internet"
+  should: %s.name         == "TPP Internet"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "TPP139202-R"
+  should: %s[0].name          == "Domain Admin"
+  should: %s[0].organization  == "Google INC"
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
+
+#admin_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "TPP139936-C"
+  should: %s[0].name          == "Domain Admin"
 
 
 #nameservers

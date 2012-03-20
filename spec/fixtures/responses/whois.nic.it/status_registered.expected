@@ -49,41 +49,41 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == "GOOG175-ITNIC"
-  should: %s[0].name         == "Google Ireland Holdings"
-  should: %s[0].organization == nil
-  should: %s[0].address      == "30 Herbert Street"
-  should: %s[0].city         == "Dublin"
-  should: %s[0].zip          == "2"
-  should: %s[0].state        == "IE"
-  should: %s[0].country_code == "IE"
-  should: %s[0].created_on   == Time.parse("2008-11-27 16:47:22")
-  should: %s[0].updated_on   == Time.parse("2008-11-27 16:47:22")
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "GOOG175-ITNIC"
+  should: %s[0].name          == "Google Ireland Holdings"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "30 Herbert Street"
+  should: %s[0].city          == "Dublin"
+  should: %s[0].zip           == "2"
+  should: %s[0].state         == "IE"
+  should: %s[0].country_code  == "IE"
+  should: %s[0].created_on    == Time.parse("2008-11-27 16:47:22")
+  should: %s[0].updated_on    == Time.parse("2008-11-27 16:47:22")
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == "TT4277-ITNIC"
-  should: %s[0].name         == "Tsao Tu"
-  should: %s[0].organization == "Tu Tsao"
-  should: %s[0].address      == "30 Herbert Street"
-  should: %s[0].city         == "Dublin"
-  should: %s[0].zip          == "2"
-  should: %s[0].state        == "IE"
-  should: %s[0].country_code == "IE"
-  should: %s[0].created_on   == Time.parse("2008-11-27 16:47:22")
-  should: %s[0].updated_on   == Time.parse("2008-11-27 16:47:22")
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "TT4277-ITNIC"
+  should: %s[0].name          == "Tsao Tu"
+  should: %s[0].organization  == "Tu Tsao"
+  should: %s[0].address       == "30 Herbert Street"
+  should: %s[0].city          == "Dublin"
+  should: %s[0].zip           == "2"
+  should: %s[0].state         == "IE"
+  should: %s[0].country_code  == "IE"
+  should: %s[0].created_on    == Time.parse("2008-11-27 16:47:22")
+  should: %s[0].updated_on    == Time.parse("2008-11-27 16:47:22")
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id           == "TS7016-ITNIC"
-  should: %s[0].name         == "Technical Services"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "TS7016-ITNIC"
+  should: %s[0].name          == "Technical Services"
 
 
 #nameservers
