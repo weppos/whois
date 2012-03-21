@@ -27,7 +27,7 @@ module Whois
         ]
 
         tokenizer :scan_available do
-          if @input.scan(/^Object does not exist/)
+          if @input.skip(/^Object does not exist/)
             @ast["status:available"] = true
           end
         end

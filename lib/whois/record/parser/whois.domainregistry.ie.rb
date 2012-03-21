@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.domainregistry.ie.rb'
 
 
 module Whois
@@ -26,22 +27,21 @@ module Whois
       # and examples.
       #
       class WhoisDomainregistryIe < Base
+        include Scanners::Ast
 
         property_supported :status do
-          if content_for_scanner =~ /status:\s+(.+)\n/
-            case $1.downcase
-            when "active"
-              :registered
-            else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
+          case node("status", &:downcase)
+          when nil
             :available
+          when "active"
+            :registered
+          else
+            Whois.bug!(ParserError, "Unknown status `#{node("status")}'.")
           end
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^% Not Registered/)
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -54,17 +54,25 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /renewal:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("renewal") { |value| Time.parse(value) }
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+          Array.wrap(node("nserver")).map do |line|
             name, ipv4 = line.split(/\s+/)
             Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
+        end
+
+
+        # Initializes a new {Scanners::WhoisDomainregistryIe} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisDomainregistryIe.new(content_for_scanner).parse
         end
 
       end
