@@ -20,10 +20,9 @@ module Whois
 
         self.tokenizers += [
           :skip_empty_line,
+          :skip_dash_line,
           :scan_available,
           :scan_keyvalue,
-          :skip_empty_line,
-          :skip_dash_line,
           :skip_provider_signature,
         ]
 
