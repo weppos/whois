@@ -77,7 +77,7 @@ module Whois
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :id           => nil,
-              :name         => array[0],
+              :name         => array[0]
             )
           end
         end
