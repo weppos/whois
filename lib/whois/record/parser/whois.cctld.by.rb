@@ -7,22 +7,24 @@
 #++
 
 require 'whois/record/parser/base'
-require 'whois/record/scanners/whois.cctld.by'
+require 'whois/record/scanners/whois.cctld.by.rb'
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.cctld.by parser
-      #
       # Parser for the whois.cctld.by server.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
+      # @since  RELEASE
       class WhoisCctldBy < Base
         include Scanners::Ast
 
         property_not_supported :disclaimer
+
 
         property_supported :domain do
           node("Domain Name", &:downcase)
@@ -30,9 +32,11 @@ module Whois
 
         property_not_supported :domain_id
 
+
         property_not_supported :referral_whois
 
         property_not_supported :referral_url
+
 
         property_supported :status do
           if available?
@@ -50,6 +54,7 @@ module Whois
           !available?
         end
 
+
         property_supported :created_on do
           node("Creation Date") { |value| Time.parse(value) }
         end
@@ -62,11 +67,13 @@ module Whois
           node("Expiration Date") { |value| Time.parse(value) }
         end
 
+
         property_supported :registrar do
           node("Registrar") do |registrar|
-            Record::Registrar.new(:id => registrar,
-            :name => registrar,
-            :organization => registrar
+            Record::Registrar.new(
+              :id => registrar,
+              :name => registrar,
+              :organization => registrar
             )
           end
         end
@@ -77,11 +84,13 @@ module Whois
 
         property_not_supported :technical_contacts
 
+
         property_supported :nameservers do
           Array.wrap(node("Name Server")).map do |name|
-            Nameserver.new(name.downcase)
+            Nameserver.new(:name => name.downcase)
           end
         end
+
 
         # Initializes a new {Scanners::WhoisCctldBy} instance
         # passing the {#content_for_scanner}
@@ -91,6 +100,7 @@ module Whois
         def parse
           Scanners::WhoisCctldBy.new(content_for_scanner).parse
         end
+
       end
     end
   end

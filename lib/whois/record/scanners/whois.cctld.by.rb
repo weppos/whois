@@ -12,12 +12,10 @@ module Whois
   class Record
     module Scanners
 
-      #
-      # = whois.cctld.by scanner
-      #
       # Scanner for the whois.cctld.by server.
       #
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
+      # @since  RELEASE
       class WhoisCctldBy < Base
 
         self.tokenizers += [
@@ -42,6 +40,7 @@ module Whois
         tokenizer :skip_provider_signature do
           @input.scan(/^(.+)\n/)
         end
+
       end
     end
   end

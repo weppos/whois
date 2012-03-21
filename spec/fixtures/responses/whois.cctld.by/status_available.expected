@@ -1,17 +1,20 @@
 #disclaimer
   should: %s raise_error(Whois::PropertyNotSupported)
 
+
 #domain
   should: %s == nil
 
 #domain_id
   should: %s raise_error(Whois::PropertyNotSupported)
 
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #referral_url
   should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #status
   should: %s == :available
@@ -22,6 +25,7 @@
 #registered?
   should: %s == false
 
+
 #created_on
   should: %s == nil
 
@@ -30,6 +34,7 @@
 
 #expires_on
   should: %s == nil
+
 
 #registrar
   should: %s == nil
@@ -42,6 +47,7 @@
 
 #technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #nameservers
   should: %s CLASS(array)

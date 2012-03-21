@@ -3,7 +3,11 @@
 
 ## Master
 
+* SERVER: Added .BY (GH-154) TLD server.
+
 * NEW: Added full whois.audns.net.au parser.
+
+* NEW: Added full whois.cctld.by server (GH-154).
 
 * CHANGED: Moved scanners from Whois::Record::Parser::Scanners to Whois::Record::Scanners.
 
@@ -21,7 +25,7 @@
 
 * SERVER: Updated ipv4 allocations.
 
-* SERVER: Added .RS, .LK, .HR (GH-122), .NC (GH-109) TLD server.
+* SERVER: Added .RS, .LK, .HR (GH-122), .NC (GH-109) TLD servers.
 
 * NEW: Added full whois.dreamhost.com parser.
 

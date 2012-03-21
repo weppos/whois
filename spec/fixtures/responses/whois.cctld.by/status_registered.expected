@@ -1,17 +1,20 @@
 #disclaimer
   should: %s raise_error(Whois::PropertyNotSupported)
 
+
 #domain
   should: %s == "active.by"
 
 #domain_id
   should: %s raise_error(Whois::PropertyNotSupported)
 
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #referral_url
   should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #status
   should: %s == :registered
@@ -21,6 +24,7 @@
 
 #registered?
   should: %s == true
+
 
 #created_on
   should: %s CLASS(time)
@@ -33,6 +37,7 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2013-12-21 10:07:40 UTC")
+
 
 #registrar
   should: %s CLASS(registrar)
@@ -48,6 +53,7 @@
 
 #technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #nameservers
   should: %s CLASS(array)
