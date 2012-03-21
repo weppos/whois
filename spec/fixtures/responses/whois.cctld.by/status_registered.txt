@@ -1,0 +1,11 @@
+Domain Name: active.by
+Domain Name Administrator: HIDDEN! Details are available at http://www.cctld.by/whois
+Registrar: Active Technologies LLC
+Name Server: ns1.activeby.net
+Name Server: ns2.activeby.net
+Updated Date: 2010-12-20T08:36:13.0Z
+Creation Date: 2003-02-02T15:50:44.0Z
+Expiration Date: 2013-12-21T10:07:40.0Z
+
+-------------------------------------------
+Service provided by Reliable Software, Inc.
