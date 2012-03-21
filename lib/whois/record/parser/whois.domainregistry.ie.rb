@@ -30,9 +30,10 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
-              when "active" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "active"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -40,7 +41,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
+          !!(content_for_scanner =~ /^% Not Registered/)
         end
 
         property_supported :registered? do
@@ -53,7 +54,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /renewal:\s+(.*)\n/
+          if content_for_scanner =~ /renewal:\s+(.+)\n/
             Time.parse($1)
           end
         end
@@ -62,7 +63,7 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             name, ipv4 = line.split(/\s+/)
-            Record::Nameserver.new(name, ipv4)
+            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
         end
 
