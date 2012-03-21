@@ -14,14 +14,15 @@ module Whois
   class Record
     module Scanners
 
+      # Scanner for the whois.smallregistry.net record.
       class WhoisSmallregistryNet < Base
 
         self.tokenizers += [
-          :scan_yaml_header,
-          :scan_disclaimer,
-          :scan_request_time,
-          :scan_available,
-          :scan_body,
+            :scan_yaml_header,
+            :scan_disclaimer,
+            :scan_request_time,
+            :scan_available,
+            :scan_body,
         ]
         
         tokenizer :scan_yaml_header do
