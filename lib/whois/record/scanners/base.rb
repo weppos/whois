@@ -59,7 +59,25 @@ module Whois
           end
         end
 
-        private
+      protected
+
+        def _scan_lines_to_array(pattern)
+          lines = []
+          while @input.scan(pattern)
+            lines << @input[1].strip
+          end
+          lines
+        end
+
+        def _scan_lines_to_hash(pattern)
+          lines = {}
+          while @input.scan(pattern)
+            lines.merge! @input[1].strip => @input[2].strip
+          end
+          lines
+        end
+
+      private
 
         def tokenize
           tokenizers.each do |tokenizer|

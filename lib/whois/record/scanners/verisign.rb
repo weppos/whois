@@ -57,21 +57,13 @@ module Whois
 
         tokenizer :scan_disclaimer do
           if @input.match?(/^TERMS OF USE:/)
-            lines = []
-            while @input.scan(/(.+)\n/)
-              lines << @input[1].strip
-            end
-            @ast["Disclaimer"] = lines.join(" ")
+            @ast["Disclaimer"] = _scan_lines_to_array(/(.+)\n/).join(" ")
           end
         end
 
         tokenizer :scan_notice do
           if @input.match?(/^NOTICE:/)
-            lines = []
-            while @input.scan(/(.+)\n/)
-              lines << @input[1].strip
-            end
-            @ast["Notice"] = lines.join(" ")
+            @ast["Notice"] = _scan_lines_to_array(/(.+)\n/).join(" ")
           end
         end
 

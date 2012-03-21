@@ -35,11 +35,7 @@ module Whois
 
         tokenizer :scan_disclaimer do
           if @input.match?(/^\S([^:]+)\n/)
-            lines = []
-            while @input.scan(/(.+)\n/)
-              lines << @input[1].strip
-            end
-            @ast["field:disclaimer"] = lines.join(" ")
+            @ast["field:disclaimer"] = _scan_lines_to_array(/(.+)\n/).join(" ")
           end
         end
 

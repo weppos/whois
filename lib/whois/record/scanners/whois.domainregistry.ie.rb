@@ -33,20 +33,13 @@ module Whois
 
         tokenizer :scan_copyright do
           if @input.match?(/^% Rights restricted by copyright/)
-            lines = []
-            while @input.scan(/^%(.+)\n/)
-              lines << @input[1].strip
-            end
-            @ast["field:disclaimer"] = lines.join("\n")
+            @ast["field:disclaimer"] = _scan_lines_to_array(/^%(.+)\n/).join("\n")
           end
         end
 
         tokenizer :scan_contact do
           if @input.match?(/^person:/)
-            lines = {}
-            while @input.scan(/(.+?):(.*?)\n/)
-              lines.merge! @input[1].strip => @input[2].strip
-            end
+            lines = _scan_lines_to_hash(/(.+?):(.*?)\n/)
             @ast["field:#{lines['nic-hdl']}"] = lines
           end
         end
