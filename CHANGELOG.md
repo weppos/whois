@@ -9,6 +9,8 @@
 
 * NEW: Added full whois.cctld.by server (GH-154).
 
+* NEW: Added full whois.domainregistry.ie server.
+
 * CHANGED: Moved scanners from Whois::Record::Parser::Scanners to Whois::Record::Scanners.
 
 * FIXED: .IE availability checking returns incorrect results (GH-155)

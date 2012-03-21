@@ -1,3 +1,21 @@
+#disclaimer
+  should: %s == "Rights restricted by copyright; http://iedr.ie/index.php/mnudomregs/mnudnssearch/96\nDo not remove this notice"
+
+
+#domain
+  should: %s == "google.ie"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -17,6 +35,34 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2013-03-21")
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Google, Inc"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "KR59-IEDR"
+  should: %s[0].name          == "Kulpreet Rana"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "CCA7-IEDR"
+  should: %s[0].name          == "eMarkmonitor Inc"
 
 
 #nameservers

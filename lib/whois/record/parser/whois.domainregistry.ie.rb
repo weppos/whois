@@ -15,19 +15,30 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.domainregistry.ie parser
-      #
       # Parser for the whois.domainregistry.ie server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisDomainregistryIe < Base
         include Scanners::Ast
+
+        property_supported :disclaimer do
+          node("field:disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("domain")
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
 
         property_supported :status do
           case node("status", &:downcase)
@@ -58,6 +69,28 @@ module Whois
         end
 
 
+        property_not_supported :registrar
+
+
+        property_supported :registrant_contacts do
+          node("descr") do |array|
+            Record::Contact.new(
+              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+              :id           => nil,
+              :name         => array[0],
+            )
+          end
+        end
+
+        property_supported :admin_contacts do
+          build_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("tech-c", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+
         property_supported :nameservers do
           Array.wrap(node("nserver")).map do |line|
             name, ipv4 = line.split(/\s+/)
@@ -73,6 +106,20 @@ module Whois
         # @return [Hash]
         def parse
           Scanners::WhoisDomainregistryIe.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          node(element) do |id|
+            contact = node("field:#{id}")
+            Record::Contact.new(
+              :type         => type,
+              :id           => id,
+              :name         => contact["person"]
+            )
+          end
         end
 
       end

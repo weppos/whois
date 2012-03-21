@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_registered.expect
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Rights restricted by copyright; http://iedr.ie/index.php/mnudomregs/mnudnssearch/96\nDo not remove this notice"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.ie"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -50,6 +75,41 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_registered.expect
     it do
       @parser.expires_on.should be_a(Time)
       @parser.expires_on.should == Time.parse("2013-03-21")
+    end
+  end
+  describe "#registrar" do
+    it do
+      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == nil
+      @parser.registrant_contacts[0].name.should          == "Google, Inc"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "KR59-IEDR"
+      @parser.admin_contacts[0].name.should          == "Kulpreet Rana"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "CCA7-IEDR"
+      @parser.technical_contacts[0].name.should          == "eMarkmonitor Inc"
     end
   end
   describe "#nameservers" do

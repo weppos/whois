@@ -40,13 +40,13 @@ module Whois
 
 
         property_supported :status do
-          case s = node("Domain status") { |str| str.downcase }
+          case node("Domain status", &:downcase)
           when nil
             :available
           when "active"
             :registered
           else
-            Whois.bug!(ParserError, "Unknown status `#{s}'.")
+            Whois.bug!(ParserError, "Unknown status `#{node("Domain status")}'.")
           end
         end
 
