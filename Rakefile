@@ -33,7 +33,7 @@ spec = Gem::Specification.new do |s|
   s.require_paths     = %w( lib )
 
   s.add_development_dependency "rake",  "~> 0.9"
-  s.add_development_dependency "rspec", "~> 2.8.0"
+  s.add_development_dependency "rspec", "~> 2.9.0"
   s.add_development_dependency "mocha"
   s.add_development_dependency "yard"
 end
