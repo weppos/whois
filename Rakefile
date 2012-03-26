@@ -64,9 +64,15 @@ task :package => [:gemspec]
 
 
 require 'rspec/core/rake_task'
+begin
+  require 'fuubar'
+rescue LoadError
+end
 
 RSpec::Core::RakeTask.new do |t|
   t.verbose = !!ENV["VERBOSE"]
+  t.rspec_opts  = []
+  t.rspec_opts << ['--format', 'Fuubar'] if defined?(Fuubar)
 end
 
 
