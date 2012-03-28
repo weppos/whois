@@ -1,0 +1,15 @@
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Matt Barrie"
+  should: %s[0].organization == "Freelancer Technology Pty Limited"
+  should: %s[0].address      == "Suite 501\n35 Lime Street"
+  should: %s[0].city         == "Sydney"
+  should: %s[0].zip          == "2000"
+  should: %s[0].state        == "NSW"
+  should: %s[0].country_code == "AU"
+  should: %s[0].phone        == "+61.292793305"
+  should: %s[0].fax          == "+61.292793305"
+  should: %s[0].email        == "noc@freelancer.com"

@@ -95,21 +95,22 @@ module Whois
           # 4 731 Market Street, Suite 500
           # 5 San Francisco, CA 94103
           # 6 US
+
           lines = match.split("\n").map(&:strip)
           name, email = lines[1].match(/(.+) \((.*)\)/)[1..2]
-          fax = lines[3].match(/Fax:(.*)/)[1]
-          city, state, zip = lines[5].match(/(.+), (.+?) (\d+)/)[1..3]
+          fax = lines[3].match(/Fax:(.*)/)[1].strip
+          city, state, zip = lines[-2].match(/(.+), (.+?) (\d+)/)[1..3]
 
           Record::Contact.new(
             :type         => type,
             :id           => nil,
             :name         => name,
             :organization => lines[0],
-            :address      => lines[4],
+            :address      => lines[4..-3].join("\n"),
             :city         => city,
             :zip          => zip,
             :state        => state,
-            :country_code => lines[6],
+            :country_code => lines[-1],
             :phone        => lines[2],
             :fax          => fax,
             :email        => email
