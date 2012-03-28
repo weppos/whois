@@ -13,6 +13,8 @@
 
 * NEW: Added full whois.cira.ca parser.
 
+* NEW: Added whois.enom.com parser.
+
 * CHANGED: Moved scanners from Whois::Record::Parser::Scanners to Whois::Record::Scanners.
 
 * FIXED: .IE availability checking returns incorrect results (GH-155)

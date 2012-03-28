@@ -1,0 +1,97 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2004-06-16 18:07:25")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2015-06-16 00:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "eNom Inc."
+  should: %s.url          == "http://www.enom.com/"
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Host Master"
+  should: %s[0].organization == "AdBrite, Inc."
+  should: %s[0].address      == "731 Market Street, Suite 500"
+  should: %s[0].city         == "San Francisco"
+  should: %s[0].zip          == "94103"
+  should: %s[0].state        == "CA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == ""
+  should: %s[0].fax          == ""
+  should: %s[0].email        == ""
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Host Master"
+  should: %s[0].organization == "AdBrite, Inc."
+  should: %s[0].address      == "731 Market Street, Suite 500"
+  should: %s[0].city         == "San Francisco"
+  should: %s[0].zip          == "94103"
+  should: %s[0].state        == "CA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "4159750916"
+  should: %s[0].fax          == ""
+  should: %s[0].email        == "hostmaster@adbrite.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Host Master"
+  should: %s[0].organization == "AdBrite, Inc."
+  should: %s[0].address      == "731 Market Street, Suite 500"
+  should: %s[0].city         == "San Francisco"
+  should: %s[0].zip          == "94103"
+  should: %s[0].state        == "CA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "4159750916"
+  should: %s[0].fax          == ""
+  should: %s[0].email        == "hostmaster@adbrite.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(8)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "asia3.akam.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "aus1.akam.net"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "eur1.akam.net"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "eur2.akam.net"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns1-105.akam.net"
+  should: %s[5] CLASS(nameserver)
+  should: %s[5].name == "ns1-232.akam.net"
+  should: %s[6] CLASS(nameserver)
+  should: %s[6].name == "usc2.akam.net"
+  should: %s[7] CLASS(nameserver)
+  should: %s[7].name == "usw6.akam.net"
