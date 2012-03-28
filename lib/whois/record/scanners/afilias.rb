@@ -50,7 +50,7 @@ module Whois
 
         tokenizer :scan_disclaimer do
           if @input.pos == 0 && @input.match?(/^(.+\n){3,}\n/)
-            @ast["property:disclaimer"] = _scan_lines_to_array(/^(.+)\n/).join(" ")
+            @ast["field:disclaimer"] = _scan_lines_to_array(/^(.+)\n/).join(" ")
           end
         end
       end

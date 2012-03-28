@@ -19,7 +19,7 @@ module Whois
 
         self.tokenizers += [
             :skip_empty_line,
-            :scan_copyright,
+            :scan_disclaimer,
             :scan_contact,
             :scan_keyvalue,
             :scan_available,
@@ -31,7 +31,7 @@ module Whois
           end
         end
 
-        tokenizer :scan_copyright do
+        tokenizer :scan_disclaimer do
           if @input.match?(/^% Rights restricted by copyright/)
             @ast["field:disclaimer"] = _scan_lines_to_array(/^%(.+)\n/).join("\n")
           end

@@ -53,7 +53,6 @@ module Whois
         tokenizer :scan_group_keyvalue do
           if @input.scan(/(.+?):(.*?)\n/)
             key, value = @input[1].strip, @input[2].strip
-
             target = @tmp["group"] ? (@ast[@tmp["group"]] ||= {}) : @ast
 
             if target[key].nil?

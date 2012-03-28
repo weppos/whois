@@ -1,3 +1,21 @@
+#disclaimer
+  should: %s == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
+
+
+#domain
+  should: %s == "u34jedzcq.ca"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :available
 
@@ -20,6 +38,18 @@
 
 #registrar
   should: %s == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
 
 
 #nameservers

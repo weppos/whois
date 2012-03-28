@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.ca"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -61,6 +86,63 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
       @parser.registrar.name.should         == "Webnames.ca Inc."
       @parser.registrar.organization.should == "Webnames.ca Inc."
       @parser.registrar.url.should          == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should           == nil
+      @parser.registrant_contacts[0].name.should         == "Google Inc."
+      @parser.registrant_contacts[0].organization.should == nil
+      @parser.registrant_contacts[0].address.should      == nil
+      @parser.registrant_contacts[0].city.should         == nil
+      @parser.registrant_contacts[0].zip.should          == nil
+      @parser.registrant_contacts[0].state.should        == nil
+      @parser.registrant_contacts[0].country_code.should == nil
+      @parser.registrant_contacts[0].phone.should        == nil
+      @parser.registrant_contacts[0].fax.should          == nil
+      @parser.registrant_contacts[0].email.should        == nil
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should           == nil
+      @parser.admin_contacts[0].name.should         == "Christina Chiou"
+      @parser.admin_contacts[0].organization.should == nil
+      @parser.admin_contacts[0].address.should      == "130 King St. W., Suite 1800,\nToronto ON M5X1E3 Canada"
+      @parser.admin_contacts[0].city.should         == nil
+      @parser.admin_contacts[0].zip.should          == nil
+      @parser.admin_contacts[0].state.should        == nil
+      @parser.admin_contacts[0].country_code.should == nil
+      @parser.admin_contacts[0].phone.should        == "+1.4168653361x"
+      @parser.admin_contacts[0].fax.should          == "+1.4169456616"
+      @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should           == nil
+      @parser.technical_contacts[0].name.should         == "Matt Serlin"
+      @parser.technical_contacts[0].organization.should == nil
+      @parser.technical_contacts[0].address.should      == "Domain Provisioning,10400 Overland Rd. PMB 155\nBoise ID 83709 United States"
+      @parser.technical_contacts[0].city.should         == nil
+      @parser.technical_contacts[0].zip.should          == nil
+      @parser.technical_contacts[0].state.should        == nil
+      @parser.technical_contacts[0].country_code.should == nil
+      @parser.technical_contacts[0].phone.should        == "+1.2083895740x"
+      @parser.technical_contacts[0].fax.should          == "+1.2083895771"
+      @parser.technical_contacts[0].email.should        == "ccops@markmonitor.com"
     end
   end
   describe "#nameservers" do

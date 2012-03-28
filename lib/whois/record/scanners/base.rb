@@ -53,7 +53,7 @@ module Whois
             if @ast[key].nil?
               @ast[key] = value
             else
-              @ast[key] = [@ast[key]] unless @ast[key].is_a?(Array)
+              @ast[key] = Array.wrap(@ast[key])
               @ast[key] << value
             end
           end
@@ -64,6 +64,7 @@ module Whois
         def _scan_lines_to_array(pattern)
           lines = []
           while @input.scan(pattern)
+            @input[1].strip
             lines << @input[1].strip
           end
           lines
