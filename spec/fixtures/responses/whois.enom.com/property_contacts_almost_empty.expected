@@ -1,0 +1,31 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Tony Kerr"
+  should: %s[0].organization == ""
+  should: %s[0].address      == ""
+  should: %s[0].city         == ""
+  should: %s[0].zip          == ""
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == ""
+  should: %s[0].fax          == ""
+  should: %s[0].email        == ""
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Tony Kerr"
+  should: %s[0].organization == ""
+  should: %s[0].address      == ""
+  should: %s[0].city         == ""
+  should: %s[0].zip          == ""
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1."
+  should: %s[0].fax          == ""
+  should: %s[0].email        == "tkerr@sportimeny.com"

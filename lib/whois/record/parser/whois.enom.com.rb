@@ -96,10 +96,10 @@ module Whois
           # 5 San Francisco, CA 94103
           # 6 US
 
-          lines = match.split("\n").map(&:strip)
-          name, email = lines[1].match(/(.+) \((.*)\)/)[1..2]
-          fax = lines[3].match(/Fax:(.*)/)[1].strip
-          city, state, zip = lines[-2].match(/(.+), (.+?) (\d+)/)[1..3]
+          lines = match.split("\n").map(&:lstrip)
+          name, email = lines[1].match(/(.+) \((.*)\)/)[1..2].map(&:strip)
+          fax = lines[3].match(/Fax: (.*)/)[1]
+          city, state, zip = lines[-2].match(/(.*),(.+?)(\d*)$/)[1..3].map(&:strip)
 
           Record::Contact.new(
             :type         => type,
