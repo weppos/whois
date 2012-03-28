@@ -21,6 +21,7 @@ module Whois
 
         self.tokenizers += [
             :skip_empty_line,
+            :scan_disclaimer,
             :skip_comment,
             :scan_header,
             :scan_keyvalue,
@@ -28,6 +29,13 @@ module Whois
         ]
 
         
+
+        tokenizer :scan_disclaimer do
+          if @input.match?(/^% Use of CIRA/)
+            @ast["field:disclaimer"] = _scan_lines_to_array(/^%(.*)\n/).join("\n")
+          end
+        end
+
         tokenizer :scan_header do
           if @input.scan(/^(.+?):\n/)
             @tmp["group"] = @input[1]

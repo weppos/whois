@@ -24,7 +24,7 @@ module Whois
 
 
         property_supported :disclaimer do
-          node("property:disclaimer")
+          node("field:disclaimer")
         end
 
 

@@ -64,6 +64,7 @@ module Whois
         def _scan_lines_to_array(pattern)
           lines = []
           while @input.scan(pattern)
+            @input[1].strip
             lines << @input[1].strip
           end
           lines

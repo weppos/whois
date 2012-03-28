@@ -24,6 +24,23 @@ module Whois
       class WhoisCiraCa < Base
         include Scanners::Ast
 
+        property_supported :disclaimer do
+           node("field:disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("Domain name")
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
         property_supported :status do
           if content_for_scanner =~ /Domain status:\s+(.+?)\n/
             case node("Domain status", &:downcase)
@@ -76,6 +93,27 @@ module Whois
               :name         => hash["Name"],
               :organization => hash["Name"]
             )
+          end
+        end
+
+
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("Administrative contact", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Technical contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+
+        property_supported :nameservers do
+          Array.wrap(node("nserver")).map do |line|
+            name, ipv4 = line.split(/\s+/)
+            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
         end
 
@@ -133,6 +171,28 @@ module Whois
         # @return [Hash]
         def parse
           Scanners::WhoisCiraCa.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          node(element) do |hash|
+            Record::Contact.new(
+              :type         => type,
+              :id           => nil,
+              :name         => hash["Name"],
+              :organization => nil,
+              :address      => hash["Postal address"],
+              :city         => nil,
+              :zip          => nil,
+              :state        => nil,
+              :country      => nil,
+              :phone        => hash["Phone"],
+              :fax          => hash["Fax"],
+              :email        => hash["Email"]
+            )
+          end
         end
 
       end

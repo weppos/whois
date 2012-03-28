@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "u34jedzcq.ca"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :available
@@ -54,6 +79,24 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_available.expected" do
   describe "#registrar" do
     it do
       @parser.registrar.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
