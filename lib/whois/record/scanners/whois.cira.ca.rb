@@ -48,9 +48,10 @@ module Whois
             key, value = start.strip, @input[2].strip
 
             # This is a nested key
-            target = if start[0] == " "
+            target = if start.index(" ") == 0
               error!("Expected group.") if @tmp["group"].nil?
               @ast[@tmp["group"]] ||= {}
+              @ast[@tmp["group"]]
             else
               @tmp.delete("group")
               @ast
