@@ -14,11 +14,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-05-27 00:00:00")
+  should: %s == Time.parse("2012-03-27 00:00:00")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-04-28 00:00:00")
+  should: %s == Time.parse("2013-04-28 00:00:00")
 
 
 #registrar
@@ -34,13 +34,16 @@
   should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
-  should: %s[0].ipv4 == "216.239.32.10"
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.google.com"
-  should: %s[1].ipv4 == "216.239.34.10"
   should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns3.google.com"
-  should: %s[2].ipv4 == "216.239.36.10"
   should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns4.google.com"
-  should: %s[3].ipv4 == "216.239.38.10"
+
+
+#valid?
+  should: %s == true
+
+#invalid?
+  should: %s == false

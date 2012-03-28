@@ -1,7 +1,8 @@
 Domain name:           google.ca
 Domain status:         registered
 Creation date:         2000/10/03
-Expiry date:           2011/04/28
+Expiry date:           2013/04/28
+Updated date:          2012/03/27
 
 Registrar:
     Name:              Webnames.ca Inc.
@@ -11,19 +12,19 @@ Registrant:
     Name:              Google Inc.
 
 Administrative contact:
-    Name:              Rose Hagan
-    Postal address:    130 King St. W., Suite 1800 
-                       Toronto ON M5X 1E3 Canada
-    Phone:             1 416 8653361
-    Fax:               1 416 9456616
+    Name:              Christina Chiou
+    Postal address:    130 King St. W., Suite 1800,
+                       Toronto ON M5X1E3 Canada
+    Phone:             +1.4168653361x
+    Fax:               +1.4169456616
     Email:             dns-admin@google.com
 
 Technical contact:
     Name:              Matt Serlin
-    Postal address:    Domain Provisioning,10400 Overland Rd. PMB 155 
+    Postal address:    Domain Provisioning,10400 Overland Rd. PMB 155
                        Boise ID 83709 United States
-    Phone:             1.2083895740
-    Fax:               1.2083895771
+    Phone:             +1.2083895740x
+    Fax:               +1.2083895771
     Email:             ccops@markmonitor.com
 
 Name servers:
@@ -32,7 +33,7 @@ Name servers:
     ns3.google.com
     ns4.google.com
 
-% WHOIS look-up made at 2010-10-13 18:32:42 (GMT)
+% WHOIS look-up made at 2012-03-28 14:44:21 (GMT)
 %
 % Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
 % Notice, available at http://www.cira.ca/legal-notice/?lang=en 

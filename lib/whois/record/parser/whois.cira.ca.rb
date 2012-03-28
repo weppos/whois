@@ -28,20 +28,22 @@ module Whois
       class WhoisCiraCa < Base
 
         property_supported :status do
-          if content_for_scanner =~ /Domain status:\s+(.*?)\n/
+          if content_for_scanner =~ /Domain status:\s+(.+?)\n/
             case $1.downcase
-              # schema-2
-              when "registered"       then :registered
-              when "redemption"       then :registered
-              when "auto-renew grace" then :registered
-              when "to be released"   then :registered
-              when "available"        then :available
-              when "unavailable"      then :invalid
-              # schema-1
-              when "exist"      then :registered
-              when "avail"      then :available
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "registered"
+              :registered
+            when "redemption"
+              :registered
+            when "auto-renew grace"
+              :registered
+            when "to be released"
+              :registered
+            when "available"
+              :available
+            when "unavailable"
+              :invalid
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")
@@ -58,38 +60,29 @@ module Whois
 
 
         property_supported :created_on do
-          # schema-2
-          if content_for_scanner =~ /Creation date:\s+(.*?)\n/
-            Time.parse($1)
-          # schema-1
-          elsif content_for_scanner =~ /Approval date:\s+(.*?)\n/
+          if content_for_scanner =~ /Creation date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
-        # TODO: Not supported in schema-2?
         property_supported :updated_on do
-          if content_for_scanner =~ /Updated date:\s+(.*?)\n/
+          if content_for_scanner =~ /Updated date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          # schema-2
-          if content_for_scanner =~ /Expiry date:\s+(.*?)\n/
-            Time.parse($1)
-          # schema-1
-          elsif content_for_scanner =~ /Renewal date:\s+(.*?)\n/
+          if content_for_scanner =~ /Expiry date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /^Registrar:\n(.*\n?)^\n/m
+          if content_for_scanner =~ /^Registrar:\n(.+\n?)^\n/m
             match = $1
-            id    = match =~ /Number:\s+(.*)$/ ? $1.strip : nil
-            name  = match =~ /Name:\s+(.*)$/   ? $1.strip : nil
+            id    = match =~ /Number:\s+(.+)$/ ? $1.strip : nil
+            name  = match =~ /Name:\s+(.+)$/   ? $1.strip : nil
             Whois::Record::Registrar.new(:id => id, :name => name, :organization => name)
           end
         end
@@ -107,7 +100,7 @@ module Whois
           if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
             $1.split("\n").map do |line|
               name, ipv4 = line.strip.split(/\s+/)
-              Record::Nameserver.new(name, ipv4)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end
         end
@@ -141,7 +134,6 @@ module Whois
             status == :invalid
           end
         end
-
 
       end
 
