@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.cira.ca record.
       #
-      # @since RELEASE
+      # @since 2.5.0
       class WhoisCiraCa < Base
 
         self.tokenizers += [

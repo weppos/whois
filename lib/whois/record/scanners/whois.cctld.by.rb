@@ -15,7 +15,7 @@ module Whois
       # Scanner for the whois.cctld.by server.
       #
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
-      # @since  RELEASE
+      # @since  2.5.0
       class WhoisCctldBy < Base
 
         self.tokenizers += [

@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Master
+## Release 2.5.0
 
 * SERVER: Added .BY (GH-154) TLD server.
 
