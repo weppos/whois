@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+* FIXED: whois.enom.com crashes when the contact has no name.
+
+
 ## Release 2.5.0
 
 * SERVER: Added .BY (GH-154) TLD server.

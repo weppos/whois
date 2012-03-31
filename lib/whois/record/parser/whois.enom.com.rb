@@ -97,7 +97,7 @@ module Whois
           # 6 US
 
           lines = match.split("\n").map(&:lstrip)
-          name, email = lines[1].match(/(.+) \((.*)\)/)[1..2].map(&:strip)
+          name, email = lines[1].match(/(.*)\((.*)\)/)[1..2].map(&:strip)
           fax = lines[3].match(/Fax: (.*)/)[1]
           city, state, zip = lines[-2].match(/(.*),(.+?)(\d*)$/)[1..3].map(&:strip)
 
