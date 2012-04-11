@@ -1,0 +1,19 @@
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "JL241-IEDR"
+  should: %s[0].name          == "Jonathan Lundberg"
+  should: %s[1] CLASS(contact)
+  should: %s[1].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[1].id            == "JM474-IEDR"
+  should: %s[1].name          == "John Moylan"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "JM474-IEDR"
+  should: %s[0].name          == "John Moylan"

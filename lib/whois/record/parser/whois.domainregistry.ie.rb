@@ -116,7 +116,7 @@ module Whois
       private
 
         def build_contact(element, type)
-          node(element) do |id|
+          Array.wrap(node(element)).map do |id|
             contact = node("field:#{id}")
             Record::Contact.new(
               :type         => type,

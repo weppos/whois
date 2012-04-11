@@ -7,6 +7,8 @@
 
 * FIXED: whois.domainregistry.ie parser crashes when there is a pending application token for the domain.
 
+* FIXED: whois.domainregistry.ie parser should support multiple contacts.
+
 
 ## Release 2.5.0
 
