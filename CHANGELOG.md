@@ -3,7 +3,9 @@
 
 ## master
 
-* FIXED: whois.enom.com crashes when the contact has no name.
+* FIXED: whois.enom.com parser crashes when the contact has no name.
+
+* FIXED: whois.domainregistry.ie parser crashes when there is a pending application token for the domain.
 
 
 ## Release 2.5.0

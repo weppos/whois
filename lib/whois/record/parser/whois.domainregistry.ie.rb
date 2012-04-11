@@ -42,10 +42,14 @@ module Whois
 
         property_supported :status do
           case node("status", &:downcase)
-          when nil
-            :available
           when "active"
             :registered
+          when nil
+            if node("status:pending")
+              :registered
+            else
+              :available
+            end
           else
             Whois.bug!(ParserError, "Unknown status `#{node("status")}'.")
           end

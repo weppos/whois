@@ -23,6 +23,7 @@ module Whois
             :scan_contact,
             :scan_keyvalue,
             :scan_available,
+            :skip_application_pending,
         ]
 
         tokenizer :scan_available do
@@ -41,6 +42,13 @@ module Whois
           if @input.match?(/^person:/)
             lines = _scan_lines_to_hash(/(.+?):(.*?)\n/)
             @ast["field:#{lines['nic-hdl']}"] = lines
+          end
+        end
+
+        tokenizer :skip_application_pending do
+          if @input.match?(/^% Application Pending/)
+            _scan_lines_to_array(/^%(.+)\n/)
+            @ast["status:pending"] = true
           end
         end
 
