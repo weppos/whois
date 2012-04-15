@@ -9,6 +9,8 @@
 
 * FIXED: whois.domainregistry.ie parser should support multiple contacts.
 
+* FIXED: whois.dns.be now uses "not available" and "available" statuses.
+
 
 ## Release 2.5.0
 

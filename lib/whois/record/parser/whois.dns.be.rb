@@ -14,31 +14,29 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.dns.be parser
-      #
       # Parser for the whois.dns.be server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisDnsBe < Base
 
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "registered" then :registered
-              when "quarantine" then :redemption
-              #when "blocked"    then :registered
-              when "out of service" then :redemption
-              #when "withdrawn"  then :registered
-              #when "reserved"   then :registered
-              when "free"       then :available
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "available"        then :available
+            when "not available"    then :registered
+            when "quarantine"       then :redemption
+            when "out of service"   then :redemption
+            # old response
+            when "registered"       then :registered
+            when "free"             then :available
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")

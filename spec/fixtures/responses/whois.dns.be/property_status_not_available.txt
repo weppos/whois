@@ -34,31 +34,29 @@
 % protect the privacy of its registrants or the integrity of the database.
 %
 
-Domain:	google.be
+Domain:	gratisdatingplaza.be
 Status:	NOT AVAILABLE
-Registered:	Tue Dec 12 2000
+Registered:	Tue Feb 15 2011
 
 Registrant:
 	Not shown, please visit www.dns.be for webbased whois.
 
 Registrar Technical Contacts:
-	Name:	CCOPS
-	Organisation:	MarkMonitor
-	Language:	en
-	Phone:	+1.2083895740
-	Fax:	+1.2083895799
-	Email:	ccops@markmonitor.com
+	Name:	R. Bashir
+	Organisation:	AXC
+	Language:	nl
+	Phone:	+31.787112586
+	Fax:	+31.787112587
+	Email:	support@axc.nl
 
 
 Registrar:
-	Name:	 MarkMonitor
-	Website: http://www.markmonitor.com
+	Name:	 AXC
+	Website: axc.nl/
 
 Nameservers:
-	ns1.google.com
-	ns2.google.com
-	ns3.google.com
-	ns4.google.com
+	ns2594.hostgator.com
+	ns2593.hostgator.com
 
 Keys:
 
