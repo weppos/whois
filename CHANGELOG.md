@@ -11,6 +11,8 @@
 
 * FIXED: whois.dns.be now uses "not available" and "available" statuses.
 
+* FIXED: whois.cnnic.cn scanner fails to recognize some reserved domains.
+
 
 ## Release 2.5.0
 

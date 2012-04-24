@@ -20,6 +20,7 @@ module Whois
         self.tokenizers += [
             :skip_empty_line,
             :scan_reserved,
+            :scan_reserved_list,
             :scan_available,
             :scan_keyvalue,
         ]
@@ -33,6 +34,12 @@ module Whois
 
         tokenizer :scan_reserved do
           if @input.scan(/^the domain you want to register is reserved/)
+            @ast["status:reserved"] = true
+          end
+        end
+
+        tokenizer :scan_reserved_list do
+          if @input.scan(/^Sorry, The domain you requested is in the reserved list/)
             @ast["status:reserved"] = true
           end
         end
