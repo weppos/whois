@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 2.5.1
 
 * FIXED: whois.enom.com parser crashes when the contact has no name.
 
