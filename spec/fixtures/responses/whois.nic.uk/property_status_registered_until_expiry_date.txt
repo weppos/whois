@@ -1,34 +1,39 @@
 
     Domain name:
-        bedandbreakfastsearcher.co.uk
+        google.co.uk
 
     Registrant:
-        Mike Peacock
+        Google Inc.
 
     Registrant type:
-        UK Individual
+        Unknown
 
     Registrant's address:
-        The registrant is a non-trading individual who has opted to have their
-        address omitted from the WHOIS service.
+        1600 Amphitheatre Parkway
+        Mountain View
+        CA
+        94043
+        United States
 
     Registrar:
-        Webfusion Ltd t/a 123-reg [Tag = 123-REG]
-        URL: http://www.123-reg.co.uk
+        Markmonitor Inc. t/a Markmonitor [Tag = MARKMONITOR]
+        URL: http://www.markmonitor.com
 
     Relevant dates:
-        Registered on: 16-Apr-2006
-        Expiry date:  16-Apr-2014
-        Last updated:  11-Apr-2012
+        Registered on: 14-Feb-1999
+        Expiry date:  14-Feb-2013
+        Last updated:  10-Feb-2011
 
     Registration status:
         Registered until expiry date.
 
     Name servers:
-        ns1.rapidswitch.com
-        ns2.rapidswitch.com
+        ns1.google.com
+        ns2.google.com
+        ns3.google.com
+        ns4.google.com
 
-    WHOIS lookup made at 11:40:44 01-May-2012
+    WHOIS lookup made at 13:12:03 01-May-2012
 
 -- 
 This WHOIS information is provided for free by Nominet UK the central registry

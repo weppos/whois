@@ -1,40 +1,34 @@
 
     Domain name:
-        allofshoes.co.uk
+        bedandbreakfastsearcher.co.uk
 
     Registrant:
-        Yuan Chen
+        Mike Peacock
 
     Registrant type:
-        Unknown
+        UK Individual
 
     Registrant's address:
-        Meiyuan Road
-        Putian
-        351100
-        China
-
-    Registered through:
-        GoDaddy.com, Inc.
-        URL: http://www.godaddy.com
+        The registrant is a non-trading individual who has opted to have their
+        address omitted from the WHOIS service.
 
     Registrar:
-        Key-Systems GmbH [Tag = KEY-SYSTEMS-DE]
-        URL: http://www.Key-Systems.net
+        Webfusion Ltd t/a 123-reg [Tag = 123-REG]
+        URL: http://www.123-reg.co.uk
 
     Relevant dates:
-        Registered on: 30-Aug-2008
-        Expiry date:  30-Aug-2010
-        Last updated:  09-Feb-2012
+        Registered on: 16-Apr-2006
+        Expiry date:  16-Apr-2014
+        Last updated:  11-Apr-2012
 
     Registration status:
-        Renewal required.
-        *** This registration has been SUSPENDED. ***
+        Registered until expiry date.
 
     Name servers:
-        No name servers listed.
+        ns1.rapidswitch.com
+        ns2.rapidswitch.com
 
-    WHOIS lookup made at 13:41:57 01-May-2012
+    WHOIS lookup made at 13:39:01 01-May-2012
 
 -- 
 This WHOIS information is provided for free by Nominet UK the central registry

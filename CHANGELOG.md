@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+* CHANGED: whois.nic.uk changed response format.
+
+
 ## Release 2.5.1
 
 * FIXED: whois.enom.com parser crashes when the contact has no name.

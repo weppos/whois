@@ -82,7 +82,7 @@ module Whois
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /\s+Renewal date:\s+(.+)\n/
+          if content_for_scanner =~ /\s+Expiry date:\s+(.+)\n/
             Time.parse($1)
           end
         end

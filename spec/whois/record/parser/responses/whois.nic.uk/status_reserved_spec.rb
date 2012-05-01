@@ -45,7 +45,7 @@ describe Whois::Record::Parser::WhoisNicUk, "status_reserved.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2011-12-23")
+      @parser.updated_on.should == Time.parse("2012-03-23")
     end
   end
   describe "#expires_on" do
