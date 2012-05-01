@@ -37,8 +37,6 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
             case $1.downcase
-            when "registered until renewal date."
-              :registered
             when "registered until expiry date."
               :registered
             when "registration request being processed."
