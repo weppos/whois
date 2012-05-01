@@ -13,6 +13,8 @@
 
 * FIXED: whois.cnnic.cn scanner fails to recognize some reserved domains.
 
+* FIXED: whois.nic.uk fails to recognize "registered until expiry date" status.
+
 
 ## Release 2.5.0
 
