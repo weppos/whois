@@ -140,6 +140,14 @@ module Whois
         end
 
 
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   The WHOIS query quota for 127.0.0.1 has been exceeded
+        #   and will be replenished in 50 seconds.
+        #
         def response_throttled?
           !!(content_for_scanner =~ /The WHOIS query quota for .+ has been exceeded/)
         end

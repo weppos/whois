@@ -57,4 +57,9 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_available.expecte
       @parser.nameservers.should == []
     end
   end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
+    end
+  end
 end
