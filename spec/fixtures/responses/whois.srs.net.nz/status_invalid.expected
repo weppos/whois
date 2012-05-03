@@ -28,3 +28,7 @@
 
 #invalid?
   should: %s == true
+
+
+#response_throttled?
+  should: %s == false

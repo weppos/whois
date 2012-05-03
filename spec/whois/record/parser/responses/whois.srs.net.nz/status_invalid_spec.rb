@@ -67,4 +67,9 @@ describe Whois::Record::Parser::WhoisSrsNetNz, "status_invalid.expected" do
       @parser.invalid?.should == true
     end
   end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
+    end
+  end
 end

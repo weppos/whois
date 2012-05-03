@@ -3,6 +3,8 @@
 
 ## master
 
+* NEW: whois.srs.net.nz now recognizes throttled responses.
+
 * CHANGED: whois.nic.uk changed response format.
 
 

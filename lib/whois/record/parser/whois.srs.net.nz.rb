@@ -29,12 +29,13 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /query_status:\s(.+)\n/
             case s = $1.downcase
-            when /active/               then :registered
-            when /available/            then :available
-            when /invalid characters/   then :invalid
+            when "200 active"           then :registered
             # The domain is no longer active but is in the period prior
             # to being released for general registrations
             when "210 pendingrelease"   then :redemption
+            when "220 available"        then :available
+            when "404 request denied"   then :error
+            when /invalid characters/   then :invalid
             else
               Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
@@ -44,11 +45,11 @@ module Whois
         end
 
         property_supported :available? do
-          (status == :available)
+          status == :available
         end
 
         property_supported :registered? do
-          (status == :registered) || (status == :redemption)
+          status == :registered || status == :redemption
         end
 
 
@@ -74,6 +75,20 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/ns_name_[\d]+:\s(.+)\n/).flatten.map do |name|
             Record::Nameserver.new(name)
+          end
+        end
+
+
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   query_status: 440 Request Denied
+        #
+        def response_throttled?
+          cached_properties_fetch(:response_throttled?) do
+            !!(content_for_scanner =~ /^query_status: 440 Request Denied/)
           end
         end
 
