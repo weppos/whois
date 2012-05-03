@@ -1,14 +1,15 @@
 % New Zealand Domain Name Registry Limited
 % Users confirm on submission their agreement to all published Terms
 %
-version: 4.00
-query_datetime: 2010-03-22T22:32:20+13:00
+version: 5.00
+query_datetime: 2012-05-03T20:26:25+12:00
 domain_name: google.co.nz
 query_status: 200 Active
 domain_dateregistered: 1999-02-17T00:00:00+13:00
-domain_datebilleduntil: 2011-02-17T00:00:00+13:00
-domain_datelastmodified: 2010-01-16T23:23:15+13:00
+domain_datebilleduntil: 2013-02-17T00:00:00+13:00
+domain_datelastmodified: 2012-01-16T23:16:18+13:00
 domain_delegaterequested: yes
+domain_signed: no
 %
 registrar_name: MarkMonitor
 registrar_address1: 391 N. Ancestor Place

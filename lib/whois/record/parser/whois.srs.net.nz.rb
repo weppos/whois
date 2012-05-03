@@ -14,16 +14,14 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.srs.net.nz parser
-      #
       # Parser for the whois.srs.net.nz server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisSrsNetNz < Base
 
@@ -31,14 +29,14 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /query_status:\s(.+)\n/
             case s = $1.downcase
-              when /active/               then :registered
-              when /available/            then :available
-              when /invalid characters/   then :invalid
-              # The domain is no longer active but is in the period prior
-              # to being released for general registrations
-              when "210 pendingrelease"   then :redemption
-              else
-                Whois.bug!(ParserError, "Unknown status `#{s}'.")
+            when /active/               then :registered
+            when /available/            then :available
+            when /invalid characters/   then :invalid
+            # The domain is no longer active but is in the period prior
+            # to being released for general registrations
+            when "210 pendingrelease"   then :redemption
+            else
+              Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")
