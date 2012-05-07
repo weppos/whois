@@ -14,16 +14,14 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.hkirc.hk parser
-      #
       # Parser for the whois.hkirc.hk server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisHkircHk < Base
 
@@ -36,7 +34,7 @@ module Whois
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "Domain Not Found")
+          content_for_scanner.strip == 'Domain Not Found'
         end
 
         property_supported :registered? do
@@ -45,7 +43,7 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Domain Name Commencement Date:\s(.*?)\n/
+          if content_for_scanner =~ /Domain Name Commencement Date:\s(.+?)\n/
             Time.parse($1)
           end
         end
@@ -53,7 +51,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expiry Date:\s(.*?)\n/
+          if content_for_scanner =~ /Expiry Date:\s(.+?)\n/
             Time.parse($1)
           end
         end
@@ -62,7 +60,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers Information:\n\n((.+\n)+)\n/
             $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.downcase)
+              Record::Nameserver.new(:name => name.strip.downcase)
             end
           end
         end
