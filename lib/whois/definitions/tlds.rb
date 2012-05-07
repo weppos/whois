@@ -232,7 +232,7 @@ Whois::Server.define :tld, ".np", nil, { :web => "http://register.mos.com.np/use
 Whois::Server.define :tld, ".nr", nil, { :web => "http://www.cenpac.net.nr/dns/whois.html", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".nu", "whois.nic.nu"
 Whois::Server.define :tld, ".nz", "whois.srs.net.nz"
-Whois::Server.define :tld, ".om", nil, { :web => "http://www.omnic.om/onlineUser/WHOISLookup.jsp", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".om", "whois.registry.om"
 Whois::Server.define :tld, ".pa", nil, { :web => "http://www.nic.pa/", :adapter => Whois::Server::Adapters::Web }
 Whois::Server.define :tld, ".pe", "kero.yachay.pe"
 Whois::Server.define :tld, ".pf", nil, { :adapter => Whois::Server::Adapters::None }

@@ -117,7 +117,7 @@ module Whois
         end
 
 
-      private
+        private
 
         def build_contact(element, type)
           node("#{element} ID") do

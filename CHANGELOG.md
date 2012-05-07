@@ -3,7 +3,11 @@
 
 ## master
 
+* SERVER: Added .OM TLD server.
+
 * NEW: whois.srs.net.nz parser now recognizes throttled responses.
+
+* NEW: Added full whois.registry.om parser.
 
 * CHANGED: whois.nic.uk changed response format.
 

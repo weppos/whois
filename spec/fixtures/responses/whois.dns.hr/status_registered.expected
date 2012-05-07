@@ -44,17 +44,19 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].name         == "Google Hrvatska d.o.o."
-  should: %s[0].organization == nil
-  should: %s[0].address      == "Primorska 26"
-  should: %s[0].city         == "Zagreb"
-  should: %s[0].zip          == "10 000"
-  should: %s[0].state        == nil
-  should: %s[0].country      == nil
-  should: %s[0].phone        == nil
-  should: %s[0].fax          == nil
-  should: %s[0].email        == nil
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Google Hrvatska d.o.o."
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "Primorska 26"
+  should: %s[0].city          == "Zagreb"
+  should: %s[0].zip           == "10 000"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
 
 #admin_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
