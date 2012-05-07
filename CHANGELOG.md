@@ -3,9 +3,11 @@
 
 ## master
 
-* NEW: whois.srs.net.nz now recognizes throttled responses.
+* NEW: whois.srs.net.nz parser now recognizes throttled responses.
 
 * CHANGED: whois.nic.uk changed response format.
+
+* FIXED: whois.hkirc.hk parser crashes when expiration date is "null".
 
 
 ## Release 2.5.1
