@@ -1,0 +1,11 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []

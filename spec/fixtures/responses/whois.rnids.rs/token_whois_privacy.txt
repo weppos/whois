@@ -1,0 +1,36 @@
+%
+%This is the RNIDS Whois server.
+%
+% Date Format         : DD.MM.YYYY
+% Whois Server Version: 1.0.0
+%
+% Rights restricted by copyright.
+% See http://www.rnids.rs/whois_en
+%
+%
+%
+% Ovo je odgovor od RNIDS Whois servera.
+%
+% Format datuma     : DD.MM.YYYY
+% Verzija Whois Servera : 1.0.0
+%
+% Sva prava zadržana. Za više informacija.
+% pogledajte http://www.rnids.rs/whois_sr
+
+Domain name: eg.rs.
+Domain status: Active
+Registration date: 22.10.2010 10:20:31
+Modification date: 08.08.2011 11:13:00
+Expiration date: 22.10.2012 10:20:31
+Registrar: GAMA Electronics d.o.o.
+
+
+Whois privacy has been activated for domain.
+
+
+DNS: bits-hq.bitsyu.net. - 217.24.17.10
+DNS: largo.bitsyu.net. - 217.24.17.80
+
+
+
+
