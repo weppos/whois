@@ -26,6 +26,7 @@ module Whois
             :scan_group_keyvalue,
             :flag_group_end,
             :skip_empty_line,
+            :skip_privacy,
         ]
 
 
@@ -66,6 +67,10 @@ module Whois
 
         tokenizer :skip_comment do
           @input.skip(/^%.*\n/)
+        end
+
+        tokenizer :skip_privacy do
+          @input.skip(/^Whois privacy has been activated for domain.\n/)
         end
 
       end
