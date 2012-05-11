@@ -4,32 +4,25 @@ The contents of the WHOIS is Dr Lisse's intellectual property and is provided by
 
 The compilation, repackaging, dissemination or other use of this Data is expressly prohibited. We reserve the right to enter IP addresses and/or corresponding networks of offenders into our IPTables.
 
-.NA(R), Copyright(C) 1991, 1995, 2008, 2011 Dr Lisse
+.NA(R), Copyright(C) 1991, 1995, 2007, 2010 Dr Lisse
 
 
-Domain Information
+Domain Name Information
 Query: google.na
-Status: Delegated
+Status: Active
 Created: 28 Mar 2007
-Modified: 19 Mar 2012
-Expires: 20 Aug 2012
+Modified: 12 Oct 2010
+Expires: 20 Aug 2011
 Name Servers:
     ns2.google.com
     ns1.google.com
 
 Registrar Information
 Registrar Name: MarkMonitor
-Registration URL: http://www.markmonitor.com
 Address: PMB 155
 10400 Overland Road
 Boise, ID
 Country: US
-Phone: +1 208 389 5740
-Fax: +1 208 389 5771
-Customer Service Contact: Kevin Pearl
-Customer Service Email: ccops AT markmonitor DOT com
-Admin Contact: Kevin Pearl
-Admin Email: ccops AT markmonitor DOT com
 
 
 
@@ -43,15 +36,12 @@ Email Address: info AT google DOT na
 
 
 Admin Contact:
-Name: Christina Chiou
+Name: DNS Admin
 Organisation: Google Inc
 Address:
 	1600 Amphitheatre Parkway
-	Mountain View, CA 94043
-	US
+	Mountain View, CA 94043	US
 Email Address: dns-admin AT google DOT com
-Phone Number: +1.6503300100
-Fax Number: +1.6506188571
 
 
 Technical Contact:
