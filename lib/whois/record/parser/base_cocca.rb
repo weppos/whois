@@ -70,6 +70,14 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          Record::Registrar.new(
+            :name => content_for_scanner.slice(/Registrar Name: (.+)\n/, 1),
+            :url  => content_for_scanner.slice(/Registration URL: (.+)\n/, 1)
+          )
+        end
+
+
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             $1.split("\n").map do |name|

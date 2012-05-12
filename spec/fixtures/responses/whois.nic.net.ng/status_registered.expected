@@ -21,6 +21,13 @@
   should: %s == Time.parse("2020-07-31 00:00 WAT")
 
 
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "nira"
+  should: %s.url          == nil
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(4)

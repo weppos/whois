@@ -54,6 +54,14 @@ describe Whois::Record::Parser::WhoisNicNetNg, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2020-07-31 00:00 WAT")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == nil
+      @parser.registrar.name.should         == "nira"
+      @parser.registrar.url.should          == nil
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

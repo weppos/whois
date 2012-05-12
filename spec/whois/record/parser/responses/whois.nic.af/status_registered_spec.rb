@@ -55,23 +55,35 @@ describe Whois::Record::Parser::WhoisNicAf, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-01-29")
+      @parser.updated_on.should == Time.parse("2012-05-01")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-05-05")
+      @parser.expires_on.should == Time.parse("2013-05-05")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == nil
+      @parser.registrar.name.should         == "MarkMonitor"
+      @parser.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
+      @parser.nameservers.should have(4).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[2].name.should == "ns3.google.com"
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end
 end
