@@ -9,9 +9,17 @@
 
 * NEW: Added full whois.registry.om parser.
 
+* NEW: Implement registrar property for CoCCA (GH-165). [Thanks @sherwind]
+
 * CHANGED: whois.nic.uk changed response format.
 
 * FIXED: whois.hkirc.hk parser crashes when expiration date is "null".
+
+* FIXED: whois.na-nic.com.na parser fails to support 'Delegate' status (GH-159). [Thanks @sherwind]
+
+* FIXED: whois.rnids.rs parser crashes when domain is private (GH-163). [Thanks @sherwind]
+
+* FIXED: whois.rnids.rs parser not to split nameserver name at the hypen (GH-164). [Thanks @sherwind]
 
 
 ## Release 2.5.1
