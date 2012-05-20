@@ -35,7 +35,7 @@
 
 * NEW: Added full whois.audns.net.au parser.
 
-* NEW: Added full whois.cctld.by parser (GH-154).
+* NEW: Added full whois.cctld.by parser (GH-154). [Thanks @kliuchnikau]
 
 * NEW: Added full whois.domainregistry.ie parser.
 
@@ -188,9 +188,9 @@
 
 * NEW: whois.nic.xxs parser now recognizes reserved domains.
 
-* NEW: whois.nic.uk parser now recognizes throttled responses (GH-118).
+* NEW: whois.nic.uk parser now recognizes throttled responses (GH-118). [Thanks @semaperepelitsa]
 
-* NEW: whois.nic.uk parser now extracts registrant_contacts (GH-118).
+* NEW: whois.nic.uk parser now extracts registrant_contacts (GH-118). [Thanks @semaperepelitsa]
 
 * FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
 
@@ -235,7 +235,7 @@
     * whois.nic.xx
     * whois.afilias.info
     * whois.registry.qa (GH-114)
-    * whois.godaddy.com (GH-105)
+    * whois.godaddy.com (GH-105) [Thanks @pmyteh]
 
 * CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
@@ -312,7 +312,7 @@
   when the response from the Verisign database doesn't contain a
   referral (GH-103)
 
-* FIXED: whois.eu parser changed the format of the nameserver property (GH-99).
+* FIXED: whois.eu parser changed the format of the nameserver property (GH-99). [Thanks @armins]
 
 * FIXED: whois.nic.uk parser should return `:invalid' status when the domain is invalid.
 
@@ -348,7 +348,7 @@
 
 ## Release 2.0.2
 
-* CHANGED: whois.ripn.net now returns an array of contacts, one for each email (GH-89)
+* CHANGED: whois.ripn.net now returns an array of contacts, one for each email (GH-89). [Thanks @semaperepelitsa]
 
 * FIXED: whois.nic.it parser must support UNASSIGNABLE status.
 
@@ -415,9 +415,9 @@
 
 * NEW: Extracted Whois::Answer::Parser::Features and Extracted Whois::Answer::Parser::Scanners::Base.
 
-* NEW: whois.nic.uk now supports #registrar (GH-81, GH-82).
+* NEW: whois.nic.uk now supports #registrar (GH-81, GH-82). [Thanks @geoffgarside]
 
-* NEW: Added simple whois.markmonitor.net parser (GH-83).
+* NEW: Added simple whois.markmonitor.net parser (GH-83). [Thanks @semaperepelitsa]
 
 * CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (GH-28).
 
@@ -1241,7 +1241,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * NEW: Simple .wf, .yt TLD parser (whois.nic.fr).
 
-* NEW: Simple .dk TLD parser [thanks to Mikkel Kristensen].
+* NEW: Simple .dk TLD parser [Thanks Mikkel Kristensen]
 
 * NEW: Simple .uk TLD parser (whois.nic.uk).
 
@@ -1375,7 +1375,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 ## Release 0.8.1
 
-* FIXED: Updated the whois.denic.de parser to the new format. Thanks to David Krentzlin (closes REDMINE-314)
+* FIXED: Updated the whois.denic.de parser to the new format (REDMINE-314). [Thanks David Krentzlin]
 
 * FIXED: In case of thin server the client should select the closest whois server match (closes REDMINE-264)
 
