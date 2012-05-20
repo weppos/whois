@@ -21,11 +21,18 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-12-04")
+  should: %s == Time.parse("2012-03-21")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-12-20")
+  should: %s == Time.parse("2012-12-20")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor"
+  should: %s.url          == "http://www.markmonitor.com"
 
 
 #nameservers

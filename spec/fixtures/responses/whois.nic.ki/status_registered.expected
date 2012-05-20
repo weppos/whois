@@ -28,6 +28,13 @@
   should: %s == Time.parse("2010-11-27")
 
 
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor"
+  should: %s.url          == "http://www.markmonitor.com"
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(4)

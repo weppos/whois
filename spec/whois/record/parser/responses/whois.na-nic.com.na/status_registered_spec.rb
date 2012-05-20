@@ -64,6 +64,14 @@ describe Whois::Record::Parser::WhoisNaNicComNa, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2012-08-20")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == nil
+      @parser.registrar.name.should         == "MarkMonitor"
+      @parser.registrar.url.should          == "http://www.markmonitor.com"
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

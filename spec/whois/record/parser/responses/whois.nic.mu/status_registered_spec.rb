@@ -55,13 +55,21 @@ describe Whois::Record::Parser::WhoisNicMu, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-12-04")
+      @parser.updated_on.should == Time.parse("2012-03-21")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-12-20")
+      @parser.expires_on.should == Time.parse("2012-12-20")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == nil
+      @parser.registrar.name.should         == "MarkMonitor"
+      @parser.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   describe "#nameservers" do
