@@ -1,0 +1,36 @@
+All rights reserved.
+Copyright "Tunisian Internet Agency - http://whois.tn"
+
+Domain   	: google.tn
+Acivated 	: 2009-05-14 00:00:00
+Registrar	: 3S Global Net
+
+NameServers	: ns1.google.com. [216.239.32.10]
+NameServers	: ns2.google.com. [216.239.34.10]
+NameServers	: ns3.google.com. [216.239.36.10]
+NameServers	: ns4.google.com. [216.239.38.10]
+
+Owner Name 	: GOOGLE Inc
+Owner Address 	: PO BOX 2050 Moutain view CA 94042 USA
+Owner Tel 	: +1 925 685 9600
+Owner Fax	: +1 925 685 9620
+Owner Email	: dns-admin@google.com
+Owner Created	: 2009-05-14 00:00:00
+Owner Updated	: 2010-07-18 00:00:00
+
+Admin. Name  	: GOOGLE Inc
+Admin. Address 	: PO BOX 2050 Moutain view CA 94042 USA
+Admin. Tel 	: +1 925 685 9600
+Admin. Fax 	: +1 925 685 9620
+Admin. Email	: dns-admin@google.com
+Admin. Created	: 2009-05-14 00:00:00
+Admin. Updated	: 2010-07-18 00:00:00
+
+Tech. Name  	: GOOGLE Inc
+Tech. Address 	: PO BOX 2050 Moutain view CA 94042 USA
+Tech. Tel 	: +1 925 685 9600
+Tech. Fax 	: +1 925 685 9620
+Tech. Email 	: dns-admin@google.com
+Tech. Created 	: 2009-05-14 00:00:00
+Tech. Updated	: 2010-07-18 00:00:00
+

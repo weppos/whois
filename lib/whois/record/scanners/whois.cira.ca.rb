@@ -29,7 +29,6 @@ module Whois
         ]
 
         
-
         tokenizer :scan_disclaimer do
           if @input.match?(/^% Use of CIRA/)
             @ast["field:disclaimer"] = _scan_lines_to_array(/^%(.*)\n/).join("\n")

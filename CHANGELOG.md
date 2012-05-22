@@ -5,9 +5,13 @@
 
 * SERVER: Added .OM TLD server.
 
+* SERVER: Added .TN TLD server.
+
 * NEW: whois.srs.net.nz parser now recognizes throttled responses.
 
 * NEW: Added full whois.registry.om parser.
+
+* NEW: Added full whois.ati.tn parser.
 
 * NEW: Implement registrar property for CoCCA (GH-165). [Thanks @sherwind]
 
