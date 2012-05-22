@@ -284,7 +284,7 @@ Whois::Server.define :tld, ".tj", nil, { :web => "http://www.nic.tj/whois.html",
 Whois::Server.define :tld, ".tk", "whois.dot.tk"
 Whois::Server.define :tld, ".tl", "whois.nic.tl"
 Whois::Server.define :tld, ".tm", "whois.nic.tm"
-Whois::Server.define :tld, ".tn", nil, { :web => "http://whois.ati.tn/", :adapter => Whois::Server::Adapters::Web }
+Whois::Server.define :tld, ".tn", "whois.ati.tn"
 Whois::Server.define :tld, ".to", "whois.tonic.to"
 Whois::Server.define :tld, ".tp", nil, { :adapter => Whois::Server::Adapters::None }
 Whois::Server.define :tld, ".tr", "whois.nic.tr"
