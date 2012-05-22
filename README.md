@@ -202,7 +202,7 @@ Whois is free software, but it costs money to write, test, and distribute it. Yo
 
 ## Changelog
 
-See the CHANGELOG.rdoc file for details.
+See the [CHANGELOG](CHANGELOG.md) file for details.
 
 
 ## License
