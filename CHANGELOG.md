@@ -13,6 +13,8 @@
 
 * NEW: Added full whois.ati.tn parser.
 
+* NEW: Added full whois.educause.edu parser.
+
 * NEW: Implement registrar property for CoCCA (GH-165). [Thanks @sherwind]
 
 * CHANGED: whois.nic.uk changed response format.
