@@ -24,6 +24,29 @@ module Whois
       #
       class WhoisEducauseEdu < Base
 
+        property_supported :disclaimer do
+          if content_for_scanner =~ /\A((.*\n)+)\n--------------------------\n/
+            $1
+          else
+            Whois.bug!(ParserError, "Unable to parse disclaimer.")
+          end
+        end
+
+
+        property_supported :domain do
+          if content_for_scanner =~ /Domain Name:\s(.+?)\n/
+            $1.downcase
+          end
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
         property_supported :status do
           if available?
             :available
@@ -49,7 +72,7 @@ module Whois
 
         property_supported :updated_on do
           if content_for_scanner =~ /Domain record last updated:\s+(.+?)\n/
-            Time.parse($1) unless $1 == "unknown"
+            Time.parse($1) unless $1 == 'unknown'
           end
         end
 
@@ -58,6 +81,9 @@ module Whois
             Time.parse($1)
           end
         end
+
+
+        property_not_supported :registrar
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant:\n((.+\n)+)\n/

@@ -14,11 +14,10 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.tonic.to parser
-      #
       # Parser for the whois.tonic.to server.
       #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       class WhoisTonicTo < Base
 
         property_not_supported :disclaimer
