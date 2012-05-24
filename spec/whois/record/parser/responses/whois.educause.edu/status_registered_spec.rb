@@ -89,14 +89,59 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == nil
-      @parser.registrant_contacts[0].organization.should == "EDUCAUSE"
-      @parser.registrant_contacts[0].address.should      == "4772 Walnut Street\nSuite 206"
-      @parser.registrant_contacts[0].city.should         == "Boulder"
-      @parser.registrant_contacts[0].zip.should          == "80301"
-      @parser.registrant_contacts[0].state.should        == "CO"
-      @parser.registrant_contacts[0].country.should      == "UNITED STATES"
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == nil
+      @parser.registrant_contacts[0].name.should          == nil
+      @parser.registrant_contacts[0].organization.should  == "EDUCAUSE"
+      @parser.registrant_contacts[0].address.should       == "4772 Walnut Street\nSuite 206"
+      @parser.registrant_contacts[0].city.should          == "Boulder"
+      @parser.registrant_contacts[0].zip.should           == "80301"
+      @parser.registrant_contacts[0].state.should         == "CO"
+      @parser.registrant_contacts[0].country.should       == "UNITED STATES"
+      @parser.registrant_contacts[0].country_code.should  == nil
+      @parser.registrant_contacts[0].phone.should         == nil
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == nil
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == nil
+      @parser.admin_contacts[0].name.should          == "Information Technology\nEDUCAUSE"
+      @parser.admin_contacts[0].organization.should  == nil
+      @parser.admin_contacts[0].address.should       == "4772 Walnut Street\nSte 206"
+      @parser.admin_contacts[0].city.should          == "Boulder"
+      @parser.admin_contacts[0].zip.should           == "80301"
+      @parser.admin_contacts[0].state.should         == "CO"
+      @parser.admin_contacts[0].country.should       == "UNITED STATES"
+      @parser.admin_contacts[0].country_code.should  == nil
+      @parser.admin_contacts[0].phone.should         == "(303) 449-4430"
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "netadmin@educause.edu"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == nil
+      @parser.technical_contacts[0].name.should          == "Information Technology\nEDUCAUSE"
+      @parser.technical_contacts[0].organization.should  == nil
+      @parser.technical_contacts[0].address.should       == "4772 Walnut Street\nSte 206"
+      @parser.technical_contacts[0].city.should          == "Boulder"
+      @parser.technical_contacts[0].zip.should           == "80301"
+      @parser.technical_contacts[0].state.should         == "CO"
+      @parser.technical_contacts[0].country.should       == "UNITED STATES"
+      @parser.technical_contacts[0].country_code.should  == nil
+      @parser.technical_contacts[0].phone.should         == "(303) 449-4430"
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "netadmin@educause.edu"
     end
   end
   describe "#nameservers" do

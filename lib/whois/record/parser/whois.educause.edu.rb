@@ -86,28 +86,17 @@ module Whois
         property_not_supported :registrar
 
         property_supported :registrant_contacts do
-          if content_for_scanner =~ /Registrant:\n((.+\n)+)\n/
-            lines = $1.split("\n").map(&:strip)
-
-            case lines[-2]
-              when /([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}))/
-                city, state, zip = $1, $2, $3
-              else
-                city = lines[-2]
-            end
-
-            Record::Contact.new(
-              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
-              :name         => nil,
-              :organization => lines[0],
-              :address      => lines[1..-3].join("\n"),
-              :city         => city,
-              :state        => state,
-              :zip          => zip,
-              :country      => lines[-1]
-            )
-          end
+          build_contact_registrant("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
+
+        property_supported :admin_contacts do
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers: \n((.+\n)+)\n/
@@ -115,6 +104,99 @@ module Whois
               name, ipv4 = line.strip.split(/\s+/)
               Record::Nameserver.new(name.downcase, ipv4)
             end
+          end
+        end
+
+
+      private
+
+        # [NAME] | EMPTY
+        # [ROLE]?
+        # [ORGANIZATION]
+        # [ADDRESS]*
+        # [CITY, ST ZIP]
+        # [COUNTRY]
+        # [PHONE]
+        # [EMAIL]
+        def build_contact(element, type)
+          if content_for_scanner =~ /#{element}:\n+((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            items = lines.dup
+
+            # Extract variables
+
+            # items.shift if items[0].strip == ''
+
+            v13 = items.delete_at(-1)
+
+            v11 = items.delete_at(-1)
+
+            v9 = items.delete_at(-1)
+
+            v4 = []
+            until items[0] =~ /^\d+/
+              v4 << items.shift
+            end
+            v4 = v4.join("\n")
+
+            v6 = items.delete_at(-1)
+            if v6 =~ /([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}(?:-\d{4})?))/
+              v6, v7, v8 = $1, $2, $3
+            end
+
+            v5 = items.empty? ? nil : items.join("\n")
+
+            # Create Contact
+
+            Record::Contact.new(
+                :type         => type,
+                :name         => v4,
+                :organization => nil,
+                :address      => v5,
+                :city         => v6,
+                :state        => v7,
+                :zip          => v8,
+                :country      => v9,
+                :phone        => v11,
+                :email        => v13
+            )
+          end
+        end
+
+        # [ORGANIZATION]
+        # [ADDRESS]*
+        # [CITY, ST ZIP] | [CITY]
+        # [COUNTRY]
+        def build_contact_registrant(element, type)
+          if content_for_scanner =~ /#{element}:\n((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            items = lines.dup
+
+            # Extract variables
+
+            v9 = items.delete_at(-1)
+
+            v4 = items.delete_at(0)
+
+            v6 = items.delete_at(-1)
+            if v6 =~ /([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}))/
+              v6, v7, v8 = $1, $2, $3
+            end
+
+            v5 = items.empty? ? nil : items.join("\n")
+
+            # Create Contact
+
+            Record::Contact.new(
+                :type         => type,
+                :name         => nil,
+                :organization => v4,
+                :address      => v5,
+                :city         => v6,
+                :state        => v7,
+                :zip          => v8,
+                :country      => v9
+            )
           end
         end
 

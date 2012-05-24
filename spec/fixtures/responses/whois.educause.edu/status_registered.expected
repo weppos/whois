@@ -46,14 +46,55 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].name         == nil
-  should: %s[0].organization == "EDUCAUSE"
-  should: %s[0].address      == "4772 Walnut Street\nSuite 206"
-  should: %s[0].city         == "Boulder"
-  should: %s[0].zip          == "80301"
-  should: %s[0].state        == "CO"
-  should: %s[0].country      == "UNITED STATES"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "EDUCAUSE"
+  should: %s[0].address       == "4772 Walnut Street\nSuite 206"
+  should: %s[0].city          == "Boulder"
+  should: %s[0].zip           == "80301"
+  should: %s[0].state         == "CO"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Information Technology\nEDUCAUSE"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "4772 Walnut Street\nSte 206"
+  should: %s[0].city          == "Boulder"
+  should: %s[0].zip           == "80301"
+  should: %s[0].state         == "CO"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "(303) 449-4430"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "netadmin@educause.edu"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Information Technology\nEDUCAUSE"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "4772 Walnut Street\nSte 206"
+  should: %s[0].city          == "Boulder"
+  should: %s[0].zip           == "80301"
+  should: %s[0].state         == "CO"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "(303) 449-4430"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "netadmin@educause.edu"
 
 
 #nameservers

@@ -39,6 +39,19 @@
 #registrar
   should: %s raise_error(Whois::PropertyNotSupported)
 
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s == []

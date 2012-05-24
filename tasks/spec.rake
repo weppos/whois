@@ -91,7 +91,9 @@ end
         line.chomp!
         case line
         when ""
-          # skip blank lines
+          # skip empty line
+        when /^\s*\/\//
+          # skip comment line
         when /^#([^\s]+)/
           tests[match = $1] = []
         when /^\s+(.+?): (.+?) (.+)/

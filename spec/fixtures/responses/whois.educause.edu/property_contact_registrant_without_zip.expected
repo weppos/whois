@@ -1,0 +1,27 @@
+//  Description:
+//  The registrant contact property is missing the ZIP.
+
+//  This case follows this schema:
+//      
+//    [ORGANIZATION]
+//    [ADDRESS]*
+//    [CITY]
+//    [COUNTRY]
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "The American University of the Caribbean School of Medicine"
+  should: %s[0].address       == "c/o Campbell Corporate Services, Ltd.\nScotiabank Building, P. O. Box 268"
+  should: %s[0].city          == "Grand Cayman"
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == "CAYMAN ISLANDS"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
