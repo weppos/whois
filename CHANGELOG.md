@@ -27,6 +27,8 @@
 
 * FIXED: whois.rnids.rs parser not to split nameserver name at the hypen (GH-164). [Thanks @sherwind]
 
+* FIXED: whois.co.ug parser fails to support 'Unconfirmed' status.
+
 
 ## Release 2.5.1
 
