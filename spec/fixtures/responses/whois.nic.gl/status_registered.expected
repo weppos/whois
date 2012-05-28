@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.gl"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -19,6 +26,13 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2013-01-01")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor"
+  should: %s.url          == "http://www.markmonitor.com"
 
 
 #nameservers
