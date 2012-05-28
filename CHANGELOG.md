@@ -29,6 +29,12 @@
 
 * FIXED: whois.co.ug parser fails to support 'Unconfirmed' status.
 
+* FIXED: whois.cctld.uz parser crashes when expiration date is dash (GH-161). [Thanks @sherwind]
+
+* FIXED: whois.cctld.uz parser fails to support 'RESERVED' status (GH-162). [Thanks @sherwind]
+
+* FIXED: whois.tznic.or.tz parser fails to support 'Expired' status (GH-160). [Thanks @sherwind]
+
 
 ## Release 2.5.1
 
