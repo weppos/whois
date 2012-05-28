@@ -103,7 +103,7 @@ module Whois
       private
 
         def build_contact(string, type)
-          Whois::Record::Contact.new(
+          Record::Contact.new(
               :type => type,
               :id => string,
               :name => string

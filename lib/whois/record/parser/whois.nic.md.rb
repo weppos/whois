@@ -75,10 +75,9 @@ module Whois
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant:\s+(.+?)\n/
-            Whois::Record::Contact.new(
-              nil,
-              Whois::Record::Contact::TYPE_REGISTRANT,
-              $1
+            Record::Contact.new(
+                :type => Whois::Record::Contact::TYPE_REGISTRANT,
+                :name => $1
             )
           end
         end
