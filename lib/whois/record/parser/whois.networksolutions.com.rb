@@ -91,37 +91,47 @@ module Whois
       private
 
         def build_contact(element, type)
-          match = content_for_scanner.slice(/#{element}.*\n((.+\n){5,7})/, 1)
+          match = content_for_scanner.slice(/#{element}.*\n((.+\n){4,7})/, 1)
           return unless match
 
           lines = match.split("\n").map(&:strip)
 
-          # 0 XIF Communications
-          # 1  1200 New Hampshire Avenue NW
-          # 2  Suite 410
-          # 3  Washington, DC 20036
+          # 0 XIF Communications                    |  mpowers LLC
+          # 1  1200 New Hampshire Avenue NW         |  21010 Southbank St #575
+          # 2  Suite 410                            |  Potomac Falls, VA 20165
+          # 3  Washington, DC 20036                 |  US
           # 4  US
-          
-          # 0 Communications, XIF ContactMiddleName   noc@xif.com
-          # 1 XIF Communications
-          # 2 1200 New Hampshire Avenue NW
-          # 3 Suite 410
-          # 4 Washington, DC 20036
+
+          # 0 Communications, XIF ContactMiddleName   noc@xif.com   | mpowers LLC   michael@mpowers.net
+          # 1 XIF Communications                                    | 21010 Southbank St #575
+          # 2 1200 New Hampshire Avenue NW                          | Potomac Falls, VA 20165
+          # 3 Suite 410                                             | US
+          # 4 Washington, DC 20036                                  | +1.5712832829
           # 5 US
           # 6 202-463-7200 fax: 202-318-4003
 
-          if lines.length == 7 then
+          # Does the first line end in something that looks like a email address?
+          if lines[0].to_s =~ /\S+@\S+$/
             # The record has a extra name and number line
-            name, email = lines[0].scan(/^(.+)\s(\S+@\S+)$/).first
-            phone, fax  = lines[6].scan(/^(.+) fax: (.+)$/).first
+            name, email = lines.shift.scan(/^(.+)\s(\S+@\S+)$/).first
             name = name.strip
-            lines.shift
           end
 
-          organization = lines[0]
-          address = lines[1] + "\n" + lines[2]
-          city, state, zip = lines[3].scan(/^(.+), ([A-Z]{2}) ([0-9]+)$/).first
-          country_code = lines[4]
+          # Does the last line contains the word fax, or has >9 digits
+          if lines[-1].to_s =~ / fax: /
+            phone, fax  = lines.pop.to_s.scan(/^(.+) fax: (.+)$/).first
+            phone = phone.strip
+            fax   = fax.strip
+
+          elsif lines[-1].to_s.gsub(/[^\d]+/, '').length > 9
+            phone = lines.pop
+          end
+
+          country_code = lines.pop
+          city, state, zip = lines.pop.scan(/^(.+), ([A-Z]{2}) ([\sA-Z0-9\-]+)$/).first
+          organization = lines.shift if lines.length >= 2
+
+          address = lines.join("\n")
 
           Record::Contact.new(
             :type => type,
