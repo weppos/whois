@@ -22,12 +22,12 @@ describe Whois::Record::Part do
       end.should_not raise_error
     end
 
-    it "initializes a new instance from given params" do
-      i = klass.new("This is a WHOIS record.", "whois.example.test")
+    # it "initializes a new instance from given params" do
+    #   i = klass.new("This is a WHOIS record.", "whois.example.test")
 
-      i.body.should == "This is a WHOIS record."
-      i.host.should == "whois.example.test"
-    end
+    #   i.body.should == "This is a WHOIS record."
+    #   i.host.should == "whois.example.test"
+    # end
 
     it "initializes a new instance from given hash" do
       i = klass.new(:body => "This is a WHOIS record.", :host => "whois.example.test")

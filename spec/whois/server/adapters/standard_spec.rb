@@ -16,7 +16,7 @@ describe Whois::Server::Adapters::Standard do
 
       record = server.query("domain.test")
       record.to_s.should  == expected
-      record.parts.should == [Whois::Record::Part.new(response, "whois.test")]
+      record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.test")]
     end
 
     context "with port option" do
