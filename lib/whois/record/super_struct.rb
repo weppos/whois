@@ -44,17 +44,18 @@ class SuperStruct < Struct
     if args.first.is_a? Hash
       initialize_with_hash(args.first)
     else
+      Whois.deprecate "Passing a list of arguments to #{self.class} is deprecated, please use the Hash syntax."
       super
     end
     yield(self) if block_given?
   end
 
-  private
+private
 
-    def initialize_with_hash(attributes = {})
-      attributes.each do |key, value|
-        self[key] = value
-      end
+  def initialize_with_hash(attributes = {})
+    attributes.each do |key, value|
+      self[key] = value
     end
+  end
 
 end

@@ -12,7 +12,6 @@ describe SuperStruct do
   describe "#initialize" do
     it "initializes a new instance from given hash" do
       i = SuperEroe.new(:name => "Pippo", :supername => "SuperPippo")
-
       i.name.should == "Pippo"
       i.supername.should == "SuperPippo"
     end
