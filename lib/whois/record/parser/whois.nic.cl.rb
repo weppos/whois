@@ -61,7 +61,7 @@ module Whois
             $1.split("\n").map do |line|
               line.strip!
               line =~ /(.+) \((.+)\)/
-              Record::Nameserver.new($1, $2)
+              Record::Nameserver.new(:name => $1, :ipv4 => $2)
             end
           end
         end

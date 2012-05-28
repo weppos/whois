@@ -69,22 +69,22 @@ module Whois
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /registrar:\s+(.*)\n/
+          if content_for_scanner =~ /registrar:\s+(.+)\n/
             Whois::Record::Registrar.new(
-                :id => $1,
-                :name => $1
+                :id           => $1,
+                :name         => $1
             )
           end
         end
 
         property_supported :admin_contacts do
-          if content_for_scanner =~ /admin-c:\s+(.*)\n/
+          if content_for_scanner =~ /admin-c:\s+(.+)\n/
             build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :registrant_contacts do
-          if content_for_scanner =~ /registrant:\s+(.*)\n/
+          if content_for_scanner =~ /registrant:\s+(.+)\n/
             build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
           end
         end
@@ -95,9 +95,9 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             if line =~ /(.+) \((.+)\)/
-              Record::Nameserver.new($1, $2)
+              Record::Nameserver.new(:name => $1, :ipv4 => $2)
             else
-              Record::Nameserver.new(line)
+              Record::Nameserver.new(:name => line)
             end
           end
         end

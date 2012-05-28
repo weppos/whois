@@ -75,7 +75,15 @@ module Whois
 
 
         property_supported :registrar do
-          node("registrar") { |hash| Registrar.new(*hash.values_at('nil', 'name', 'name', 'web')) }
+          node("registrar") do |hash|
+            v1, v2, v3, v4 = hash.values_at('nil', 'name', 'name', 'web')
+            Registrar.new(
+                :id           => v1,
+                :name         => v2,
+                :organization => v3,
+                :url          => v4
+            )
+          end
         end
 
         property_supported :registrant_contacts do
@@ -93,7 +101,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("name_servers")).map do |hash|
-            Record::Nameserver.new(hash)
+            Record::Nameserver.new(:name => hash)
           end
         end
 

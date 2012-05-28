@@ -74,9 +74,10 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             if line =~ /(.+) \((.+)\)/
-              Record::Nameserver.new($1, *$2.split(", "))
+              ipv4, ipv6 = $2.split(", ")
+              Record::Nameserver.new(:name => $1, :ipv4 => ipv4, :ipv6 => ipv6)
             else
-              Record::Nameserver.new(line.strip)
+              Record::Nameserver.new(:name => line.strip)
             end
           end
         end

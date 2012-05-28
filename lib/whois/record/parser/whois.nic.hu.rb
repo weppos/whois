@@ -82,7 +82,7 @@ module Whois
 
           address, city, zip, country_code = decompose_address(node("address"))
 
-          Whois::Record::Contact.new(
+          Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :name         => node("name"),
               :organization => node("org"),
@@ -106,7 +106,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("nameserver")).map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 
@@ -140,7 +140,7 @@ module Whois
 
         def build_contact(element, type)
           node(node(element)) do |raw|
-            Whois::Record::Contact.new do |c|
+            Record::Contact.new do |c|
               c.type = type
               raw.each { |k,v| c[k.to_sym] = v }
             end

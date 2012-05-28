@@ -80,7 +80,7 @@ module Whois
           if content_for_scanner =~ /Domain nameservers:\n((.+\n)+)\n/
             $1.split("\n").map do |line|
               name, ipv4 = line.strip.split(/\s+/)
-              Record::Nameserver.new(name, ipv4)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end
         end

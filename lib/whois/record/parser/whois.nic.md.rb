@@ -75,10 +75,9 @@ module Whois
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant:\s+(.+?)\n/
-            Whois::Record::Contact.new(
-              nil,
-              Whois::Record::Contact::TYPE_REGISTRANT,
-              $1
+            Record::Contact.new(
+                :type => Whois::Record::Contact::TYPE_REGISTRANT,
+                :name => $1
             )
           end
         end
@@ -90,7 +89,8 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Name server:\s(.+?)\n/).flatten.map do |line|
-             Record::Nameserver.new(*line.split(/\s+/))
+            name, ipv4 = line.split(/\s+/)
+            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
         end
 

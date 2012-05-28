@@ -141,7 +141,7 @@ module Whois
         #
         # @api public
         def buffer_append(body, host)
-          @buffer << Whois::Record::Part.new(body, host)
+          @buffer << Whois::Record::Part.new(:body => body, :host => host)
         end
 
         # @api internal

@@ -21,6 +21,8 @@
 
 * CHANGED: whois.nic.gl now inherits from CoCCA and learns new properties (GH-166). [Thanks @sherwind]
 
+* CHANGED: Deprecate SuperStruct initialization with list of params.
+
 * FIXED: whois.hkirc.hk parser crashes when expiration date is "null".
 
 * FIXED: whois.na-nic.com.na parser fails to support 'Delegate' status (GH-159). [Thanks @sherwind]

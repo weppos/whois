@@ -22,14 +22,14 @@ describe Whois::Record::Contact do
       end.should_not raise_error
     end
 
-    it "initializes a new instance from given params" do
-      i = klass.new(10, klass::TYPE_REGISTRANT, "John Doe", nil)
+    # it "initializes a new instance from given params" do
+    #   i = klass.new(10, klass::TYPE_REGISTRANT, "John Doe", nil)
 
-      i.id.should == 10
-      i.type.should == klass::TYPE_REGISTRANT
-      i.name.should == "John Doe"
-      i.organization.should be_nil
-    end
+    #   i.id.should == 10
+    #   i.type.should == klass::TYPE_REGISTRANT
+    #   i.name.should == "John Doe"
+    #   i.organization.should be_nil
+    # end
 
     it "initializes a new instance from given hash" do
       i = klass.new(:id => 10, :name => "John Doe", :type => klass::TYPE_REGISTRANT)

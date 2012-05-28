@@ -60,7 +60,9 @@ module Whois
 
         property_supported :registrar do
           if content_for_scanner =~ /registrar:\s+(.*)\n/
-            Record::Registrar.new(:id => $1)
+            Record::Registrar.new(
+                :id           => $1
+            )
           end
         end
 
@@ -91,7 +93,7 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             name, ipv4 = line.split(/\s+/)
-            Record::Nameserver.new(name.chomp("."), ipv4)
+            Record::Nameserver.new(:name => name.chomp("."), :ipv4 => ipv4)
           end
         end
 

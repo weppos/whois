@@ -55,7 +55,7 @@ module Whois
           if content_for_scanner =~ /Nameservers:\s((.+\n)+)\n/
             $1.split("\n").reject { |value| value.strip.empty? }.map do |line|
               line.strip =~ /(.+) \((.+)\)/
-              Record::Nameserver.new($1, $2)
+              Record::Nameserver.new(:name => $1, :ipv4 => $2)
             end
           end
         end

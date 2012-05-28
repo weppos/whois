@@ -62,7 +62,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Domain Nameservers:\n((.+\n)+)\s+\n/
             $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.downcase)
+              Record::Nameserver.new(:name => name.strip.downcase)
             end
           end
         end

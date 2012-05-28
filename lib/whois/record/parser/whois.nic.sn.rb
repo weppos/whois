@@ -69,7 +69,10 @@ module Whois
 
         property_supported :registrar do
           if content_for_scanner =~ /Registrar:\s+(.+)\n/
-            Whois::Record::Registrar.new(:id => $1, :name => $1)
+            Whois::Record::Registrar.new(
+                :id           => $1,
+                :name         => $1
+            )
           end
         end
 
@@ -95,7 +98,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 
@@ -103,7 +106,7 @@ module Whois
       private
 
         def build_contact(string, type)
-          Whois::Record::Contact.new(
+          Record::Contact.new(
               :type => type,
               :id => string,
               :name => string

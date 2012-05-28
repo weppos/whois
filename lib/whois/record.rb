@@ -104,12 +104,12 @@ module Whois
     # and separates each response with a newline character.
     #
     # @example Record with one part
-    #   record = Whois::Record.new([Whois::Record::Part.new("First record.")])
+    #   record = Whois::Record.new([Whois::Record::Part.new(:body => "First record.")])
     #   record.content
     #   # => "First record."
     #
     # @example Record with multiple parts
-    #   record = Whois::Record.new([Whois::Record::Part.new("First record."), Whois::Record::Part.new("Second record.")])
+    #   record = Whois::Record.new([Whois::Record::Part.new(:body => "First record."), Whois::Record::Part.new(:body => "Second record.")])
     #   record.content
     #   # => "First record.\nSecond record."
     #

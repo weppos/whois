@@ -36,21 +36,28 @@ module Whois
           if content_for_scanner =~ /^Domain-status\s+(.+)\n/
             case $1.downcase
             # The domain is registered and paid.
-            when  "dom_ok"    then :registered
+            when  "dom_ok"
+              :registered
             # The domain is registered and registration fee has to be payed (14 days).
             # Replacement 14-day period for domain payment.
-            when  "dom_ta"    then :registered
+            when  "dom_ta"
+              :registered
             # 28 days before the expiration of one year's notice is sent to the first call for an extension of domains.
             # The domain is still fully functional (14 days).
-            when  "dom_dakt"  then :registered
+            when  "dom_dakt"
+              :registered
             # 14 days before the expiration of one year's notice is sent to the second call to the extension of domains.
             # The domain is still fully functional (14 days).
-            when  "dom_warn"  then :registered
+            when  "dom_warn"
+              :registered
             # The domain is expired and has not been renewed (14 days).
-            when  "dom_lnot"  then :registered
-            when  "dom_exp"   then :registered
+            when  "dom_lnot"
+              :registered
+            when  "dom_exp"
+              :registered
             # The domain losts its registrar (28 days).
-            when  "dom_held"  then :redemption
+            when  "dom_held"
+              :redemption
             else
               Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -85,7 +92,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/dns_name\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 

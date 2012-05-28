@@ -70,14 +70,18 @@ module Whois
 
         property_supported :registrar do
           node("Registrar") do |raw|
-            Whois::Record::Registrar.new(:name => last_useful_item(raw), :organization => last_useful_item(raw), :url => referral_url)
+            Whois::Record::Registrar.new(
+                :name => last_useful_item(raw), 
+                :organization => last_useful_item(raw),
+                :url => referral_url
+            )
           end
         end
 
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject { |value| value =~ /no nameserver/i }.map do |name|
-            Nameserver.new(name.downcase)
+            Nameserver.new(:name => name.downcase)
           end
         end
 

@@ -65,7 +65,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
-            Record::Nameserver.new(line.split(" ").first)
+            Record::Nameserver.new(:name => line.split(" ").first)
           end
         end
 
