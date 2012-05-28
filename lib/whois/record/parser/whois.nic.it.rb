@@ -96,9 +96,9 @@ module Whois
         property_supported :registrar do
           node("Registrar") do |str|
             Record::Registrar.new(
-              :id           => str["Name"],
-              :name         => str["Name"],
-              :organization => str["Organization"]
+                :id           => str["Name"],
+                :name         => str["Name"],
+                :organization => str["Organization"]
             )
           end
         end

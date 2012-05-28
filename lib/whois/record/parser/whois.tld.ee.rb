@@ -69,22 +69,22 @@ module Whois
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /registrar:\s+(.*)\n/
+          if content_for_scanner =~ /registrar:\s+(.+)\n/
             Whois::Record::Registrar.new(
-                :id => $1,
-                :name => $1
+                :id           => $1,
+                :name         => $1
             )
           end
         end
 
         property_supported :admin_contacts do
-          if content_for_scanner =~ /admin-c:\s+(.*)\n/
+          if content_for_scanner =~ /admin-c:\s+(.+)\n/
             build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :registrant_contacts do
-          if content_for_scanner =~ /registrant:\s+(.*)\n/
+          if content_for_scanner =~ /registrant:\s+(.+)\n/
             build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
           end
         end
