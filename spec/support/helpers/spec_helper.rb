@@ -31,11 +31,6 @@ module RSpecSupportSpecHelpers
     Whois::Server.send :class_variable_set, :@@definitions, @_definitions
   end
 
-
-  def nameserver(*params)
-    Whois::Record::Nameserver.new(*params)
-  end
-
 end
 
 RSpec.configure do |config|

@@ -134,7 +134,8 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
             $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|
-              Record::Nameserver.new(*line.strip.split(/\s+/))
+              name, ipv4, ipv6 = line.strip.split(/\s+/)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4, :ipv6 => ipv6)
             end
           end
         end

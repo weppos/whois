@@ -93,7 +93,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("name_servers")).map do |hash|
-            Record::Nameserver.new(hash)
+            Record::Nameserver.new(:name => hash)
           end
         end
 

@@ -102,7 +102,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject(&:empty?).map do |name|
-            Nameserver.new(name.downcase)
+            Nameserver.new(:name => name.downcase)
           end
         end
 

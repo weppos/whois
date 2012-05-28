@@ -118,7 +118,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Nameservers")).map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 

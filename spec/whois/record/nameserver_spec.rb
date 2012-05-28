@@ -22,13 +22,13 @@ describe Whois::Record::Nameserver do
       end.should_not raise_error
     end
 
-    it "initializes a new instance from given params" do
-      i = klass.new("ns1.example.com", "127.0.0.1")
+    # it "initializes a new instance from given params" do
+    #   i = klass.new("ns1.example.com", "127.0.0.1")
 
-      i.name.should == "ns1.example.com"
-      i.ipv4.should == "127.0.0.1"
-      i.ipv6.should be_nil
-    end
+    #   i.name.should == "ns1.example.com"
+    #   i.ipv4.should == "127.0.0.1"
+    #   i.ipv6.should be_nil
+    # end
 
     it "initializes a new instance from given hash" do
       i = klass.new(:name => "ns1.example.com", :ipv4 => "127.0.0.1")

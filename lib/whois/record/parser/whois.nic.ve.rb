@@ -30,8 +30,10 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /Estatus del dominio: (.+?)\n/
             case $1.downcase
-              when "activo"     then :registered
-              when "suspendido" then :inactive
+              when "activo"
+                :registered
+              when "suspendido"
+                :inactive
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -70,7 +72,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Servidor\(es\) de Nombres de Dominio:\n\n((.+\n)+)\n/
             $1.scan(/-\s(.*?)\n/).flatten.map do |name|
-              Record::Nameserver.new(name)
+              Record::Nameserver.new(:name => name)
             end
           end
         end

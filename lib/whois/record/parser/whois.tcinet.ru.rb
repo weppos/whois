@@ -91,7 +91,7 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             name, ipv4 = line.split(/\s+/)
-            Record::Nameserver.new(name.chomp("."), ipv4)
+            Record::Nameserver.new(:name => name.chomp("."), :ipv4 => ipv4)
           end
         end
 

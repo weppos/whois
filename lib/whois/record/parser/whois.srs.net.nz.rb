@@ -28,14 +28,19 @@ module Whois
         # @see http://dnc.org.nz/content/srs-whois-spec-1.0.html
         property_supported :status do
           if content_for_scanner =~ /query_status:\s(.+)\n/
-            case s = $1.downcase
-            when "200 active"           then :registered
+            case (s = $1.downcase)
+            when "200 active"
+              :registered
             # The domain is no longer active but is in the period prior
             # to being released for general registrations
-            when "210 pendingrelease"   then :redemption
-            when "220 available"        then :available
-            when "404 request denied"   then :error
-            when /invalid characters/   then :invalid
+            when "210 pendingrelease"
+              :redemption
+            when "220 available"
+              :available
+            when "404 request denied"
+              :error
+            when /invalid characters/
+              :invalid
             else
               Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
@@ -74,7 +79,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/ns_name_[\d]+:\s(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 

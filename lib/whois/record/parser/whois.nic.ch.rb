@@ -64,12 +64,12 @@ module Whois
               if line =~ /(.+)\t\[(.+)\]/
                 name, ip = $1, $2
                 order << name unless order.include?(name)
-                list[name] ||= Record::Nameserver.new(name)
+                list[name] ||= Record::Nameserver.new(:name => name)
                 list[name].ipv4 = ip if Whois::Server.valid_ipv4?(ip)
                 list[name].ipv6 = ip if Whois::Server.valid_ipv6?(ip)
               else
                 order << line unless order.include?(line)
-                list[line] ||= Record::Nameserver.new(line)
+                list[line] ||= Record::Nameserver.new(:name => line)
               end
             end
             order.map { |name| list[name] }

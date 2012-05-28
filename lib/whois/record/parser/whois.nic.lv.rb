@@ -56,7 +56,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Nserver:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 
