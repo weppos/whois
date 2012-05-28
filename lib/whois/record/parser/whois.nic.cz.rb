@@ -30,13 +30,13 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
             case $1.downcase
-              when "paid and in zone", "update prohibited"
-                :registered
-              # NEWSTATUS
-              when "expired"
-                :expired
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "paid and in zone", "update prohibited"
+              :registered
+            # NEWSTATUS
+            when "expired"
+              :expired
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -74,8 +74,9 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
             if line =~ /(.+) \((.+)\)/
+              name = $1
               ipv4, ipv6 = $2.split(", ")
-              Record::Nameserver.new(:name => $1, :ipv4 => ipv4, :ipv6 => ipv6)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4, :ipv6 => ipv6)
             else
               Record::Nameserver.new(:name => line.strip)
             end
