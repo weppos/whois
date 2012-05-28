@@ -11,3 +11,5 @@ Gemfile.lock
 # YARD
 .yardoc
 yardoc/
+
+spec/whois/record/parser/responses/*
