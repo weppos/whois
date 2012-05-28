@@ -57,8 +57,8 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /^Expiration Date:(.*)\n/
-            Time.parse($1)
+          if content_for_scanner =~ /^Expiration Date:\s+(.*)\n/
+            Time.parse($1) unless $1 == '-'
           end
         end
 
