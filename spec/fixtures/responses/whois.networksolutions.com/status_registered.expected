@@ -1,0 +1,90 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1997-06-10")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-05-27 22:19:52 EDT")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2014-06-09")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.name         == 'Network Solutions'
+  should: %s.organization == 'Network Solutions, LLC'
+  should: %s.url          == 'http://www.networksolutions.com/'
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == nil
+  should: %s[0].organization == "XIF Communications"
+  should: %s[0].address      == "1200 New Hampshire Avenue NW\nSuite 410"
+  should: %s[0].city         == "Washington"
+  should: %s[0].zip          == "20036"
+  should: %s[0].state        == "DC"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Communications, XIF ContactMiddleName"
+  should: %s[0].organization == "XIF Communications"
+  should: %s[0].address      == "1200 New Hampshire Avenue NW\nSuite 410"
+  should: %s[0].city         == "Washington"
+  should: %s[0].zip          == "20036"
+  should: %s[0].state        == "DC"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "202-463-7200"
+  should: %s[0].fax          == "202-318-4003"
+  should: %s[0].email        == "noc@xif.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Communications, XIF ContactMiddleName"
+  should: %s[0].organization == "XIF Communications"
+  should: %s[0].address      == "1200 New Hampshire Avenue NW\nSuite 410"
+  should: %s[0].city         == "Washington"
+  should: %s[0].zip          == "20036"
+  should: %s[0].state        == "DC"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "202-463-7200"
+  should: %s[0].fax          == "202-318-4003"
+  should: %s[0].email        == "noc@xif.com"
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns01.xif.com"
+  should: %s[0].ipv4 == "63.240.200.70"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns-east.cerf.net"
+  should: %s[1].ipv4 == "207.252.96.3"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns-west.cerf.net"
+  should: %s[2].ipv4 == "192.153.156.3"
