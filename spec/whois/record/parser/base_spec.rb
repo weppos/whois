@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Whois::Record::Parser::Base do
 
   before(:each) do
-    @part = Whois::Record::Part.new("This is the response.", "whois.example.test")
+    @part = Whois::Record::Part.new(:body => "This is the response.", :host => "whois.example.test")
   end
 
 
@@ -54,12 +54,12 @@ describe Whois::Record::Parser::Base do
 
   describe "#content_for_scanner" do
     it "returns the part body with line feed normalized" do
-      i = klass.new(Whois::Record::Part.new("This is\r\nthe response.", "whois.example.test"))
+      i = klass.new(Whois::Record::Part.new(:body => "This is\r\nthe response.", :host => "whois.example.test"))
       i.send(:content_for_scanner).should == "This is\nthe response."
     end
 
     it "caches the result" do
-      i = klass.new(Whois::Record::Part.new("This is\r\nthe response.", "whois.example.test"))
+      i = klass.new(Whois::Record::Part.new(:body => "This is\r\nthe response.", :host => "whois.example.test"))
       i.instance_eval { @content_for_scanner }.should be_nil
       i.send(:content_for_scanner)
       i.instance_eval { @content_for_scanner }.should == "This is\nthe response."
@@ -125,14 +125,14 @@ describe Whois::Record::Parser::Base do
     end
 
     it "returns true if the content_for_scanner is the same" do
-      i = klass.new(Whois::Record::Part.new("This is the\nresponse 1.", "whois.example.test"))
-      o = klass.new(Whois::Record::Part.new("This is the\r\nresponse 1.", "whois.example.test"))
+      i = klass.new(Whois::Record::Part.new(:body => "This is the\nresponse 1.", :host => "whois.example.test"))
+      o = klass.new(Whois::Record::Part.new(:body => "This is the\r\nresponse 1.", :host => "whois.example.test"))
       i.unchanged?(o).should be_true
     end
 
     it "returns false if the content_for_scanner is not the same" do
-      i = klass.new(Whois::Record::Part.new("This is the response 1.", "whois.example.test"))
-      o = klass.new(Whois::Record::Part.new("This is the response 2.", "whois.example.test"))
+      i = klass.new(Whois::Record::Part.new(:body => "This is the response 1.", :host => "whois.example.test"))
+      o = klass.new(Whois::Record::Part.new(:body => "This is the response 2.", :host => "whois.example.test"))
       i.unchanged?(o).should be_false
     end
   end
@@ -221,20 +221,20 @@ describe Whois::Record::Parser::Base, "Parser Behavior" do
 
   context "property supported" do
     it "raises Whois::ResponseIsThrottled when the response is throttled" do
-      i = Klass.new(Whois::Record::Part.new("", "throttled.whois.test"))
+      i = Klass.new(Whois::Record::Part.new(:body => "", :host => "throttled.whois.test"))
       lambda { i.domain }.should raise_error(Whois::ResponseIsThrottled)
 
-      i = Klass.new(Whois::Record::Part.new("", "success.whois.test"))
+      i = Klass.new(Whois::Record::Part.new(:body => "", :host => "success.whois.test"))
       lambda { i.domain }.should_not raise_error
     end
   end
 
   context "property not supported" do
     it "raises Whois::ResponseIsThrottled when the response is throttled" do
-      i = Klass.new(Whois::Record::Part.new("", "throttled.whois.test"))
+      i = Klass.new(Whois::Record::Part.new(:body => "", :host => "throttled.whois.test"))
       lambda { i.domain_id }.should raise_error(Whois::PropertyNotSupported)
 
-      i = Klass.new(Whois::Record::Part.new("", "success.whois.test"))
+      i = Klass.new(Whois::Record::Part.new(:body => "", :host => "success.whois.test"))
       lambda { i.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end

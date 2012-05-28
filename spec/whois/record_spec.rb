@@ -5,8 +5,8 @@ describe Whois::Record do
   before(:each) do
     @server   = Whois::Server.factory(:tld, ".foo", "whois.example.test")
     @parts    = [
-        Whois::Record::Part.new("This is a record from foo.", "foo.example.test"),
-        Whois::Record::Part.new("This is a record from bar.", "bar.example.test")
+        Whois::Record::Part.new(:body => "This is a record from foo.", :host => "foo.example.test"),
+        Whois::Record::Part.new(:body => "This is a record from bar.", :host => "bar.example.test")
     ]
     @content  = @parts.map(&:body).join("\n")
   end
@@ -203,57 +203,57 @@ describe Whois::Record do
 
   describe "#property_supported?" do
     it "returns true if the property is supported" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.property_supported?(:status).should == true
       r.property_supported?(:created_on).should == true
     end
 
     it "returns false if the property is not supported" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.property_supported?(:updated_on).should == false
     end
 
     it "returns false if the property is not defined" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.property_supported?(:expires_on).should == false
     end
   end
 
   describe "property" do
     it "returns value when the property is supported" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.created_on.should == Date.parse("2010-10-20")
     end
 
     it "returns nil when the property is not supported" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.updated_on.should be_nil
     end
 
     it "returns nil when the property is not implemented" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.expires_on.should be_nil
     end
   end
 
   describe "property?" do
     it "returns true when the property is supported and has no value" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.status?.should == false
     end
 
     it "returns false when the property is supported and has q value" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.created_on?.should == true
     end
 
     it "returns false when the property is not supported" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.updated_on?.should == false
     end
 
     it "returns false when the property is not implemented" do
-      r = klass.new(nil, [Whois::Record::Part.new("", "whois.properties.test")])
+      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.expires_on?.should == false
     end
   end
