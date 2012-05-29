@@ -31,6 +31,11 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
       lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
