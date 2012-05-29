@@ -133,16 +133,16 @@ module Whois
 
             v9 = items.delete_at(-1)
 
-            v4 = []
-            until items[0] =~ /^\d+/
-              v4 << items.shift
-            end
-            v4 = v4.join("\n")
-
             v6 = items.delete_at(-1)
             if v6 =~ /([^\n,]+),\s([A-Z]{2})(?:\s(\d{5}(?:-\d{4})?))/
               v6, v7, v8 = $1, $2, $3
             end
+
+            v4 = []
+            until items[0] =~ /^\d+/ || items.empty?
+              v4 << items.shift
+            end
+            v4 = v4.join("\n")
 
             v5 = items.empty? ? nil : items.join("\n")
 

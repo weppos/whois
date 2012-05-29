@@ -1,5 +1,5 @@
 //  Description:
-//  The contact property contains a ZIP code of .
+//  The contact property contains a ZIP code of XXXXX-XXXX.
 //  The final token count is the same of a standard contact (8 tokens).
 
 //  This case follows this schema:
