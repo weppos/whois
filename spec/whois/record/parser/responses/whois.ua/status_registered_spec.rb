@@ -74,6 +74,11 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2012-12-04 00:00:00")
     end
   end
+  describe "#registrar" do
+    it do
+      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

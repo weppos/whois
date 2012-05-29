@@ -19,6 +19,7 @@
 #registered?
   should: %s == true
 
+
 #created_on
   should: %s CLASS(time)
   should: %s == Time.parse("2002-12-04 00:00:00")
@@ -30,6 +31,10 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2012-12-04 00:00:00")
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
 
 
 #nameservers
