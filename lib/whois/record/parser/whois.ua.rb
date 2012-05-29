@@ -54,6 +54,8 @@ module Whois
 				
 				property_not_supported :referral_whois
 				
+				property_not_supported :referral_url
+				
         property_not_supported :created_on
 
         property_supported :updated_on do
