@@ -44,6 +44,12 @@ module Whois
           !available?
         end
 
+				property_supported :domain do
+					if content_for_scanner =~ /domain:\s+(.+)\n/
+						$1
+					end
+        end
+
 
         property_not_supported :created_on
 

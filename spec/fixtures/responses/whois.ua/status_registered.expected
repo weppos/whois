@@ -1,3 +1,6 @@
+#domain
+  should: %s == "google.com.ua"
+
 #status
   should: %s == :registered
 

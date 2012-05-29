@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.com.ua"
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
