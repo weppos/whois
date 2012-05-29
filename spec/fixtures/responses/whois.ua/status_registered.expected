@@ -1,6 +1,9 @@
 #domain
   should: %s == "google.com.ua"
 
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
 #status
   should: %s == :registered
 

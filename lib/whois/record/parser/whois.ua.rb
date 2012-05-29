@@ -50,7 +50,7 @@ module Whois
 					end
         end
 
-
+				property_not_supported :domain_id
         property_not_supported :created_on
 
         property_supported :updated_on do

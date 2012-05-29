@@ -26,6 +26,11 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
       @parser.domain.should == "google.com.ua"
     end
   end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
