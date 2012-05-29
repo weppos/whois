@@ -58,19 +58,20 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2002-12-04 00:00:00")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-11-01 17:35:34")
+      @parser.updated_on.should == Time.parse("2011-11-04 18:58:42")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-12-04 00:00:00")
+      @parser.expires_on.should == Time.parse("2012-12-04 00:00:00")
     end
   end
   describe "#nameservers" do

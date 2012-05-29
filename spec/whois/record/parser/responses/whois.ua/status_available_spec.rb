@@ -58,7 +58,7 @@ describe Whois::Record::Parser::WhoisUa, "status_available.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should == nil
     end
   end
   describe "#updated_on" do

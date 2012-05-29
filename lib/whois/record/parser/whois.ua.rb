@@ -56,7 +56,16 @@ module Whois
 				
 				property_not_supported :referral_url
 				
-        property_not_supported :created_on
+        property_supported :created_on do
+          if content_for_scanner =~ /created:\s+(.+)\n/
+            time = $1.split(" ").last
+            begin
+							Time.parse(time)
+						rescue ArgumentError
+							nil
+						end
+          end
+        end
 
         property_supported :updated_on do
           if content_for_scanner =~ /changed:\s+(.+)\n/

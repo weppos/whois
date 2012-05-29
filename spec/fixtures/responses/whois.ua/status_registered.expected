@@ -20,15 +20,16 @@
   should: %s == true
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2002-12-04 00:00:00")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-11-01 17:35:34")
+  should: %s == Time.parse("2011-11-04 18:58:42")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-12-04 00:00:00")
+  should: %s == Time.parse("2012-12-04 00:00:00")
 
 
 #nameservers
