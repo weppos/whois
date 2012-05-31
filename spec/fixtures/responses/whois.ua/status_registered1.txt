@@ -1,0 +1,84 @@
+% request from 194.44.214.138
+% This is the Ukrainian Whois query server #I.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+
+% % .UA whois
+% Domain Record:
+% =============
+domain:     kyivstar.ua
+admin-c:    KG780-UANIC
+tech-c:     KG780-UANIC
+tech-c:     EIC-UANIC
+status:     OK-UNTIL 20120903121852
+dom-public: NO
+license:    85310
+nserver:    ns2.elvisti.kiev.ua
+nserver:    ns.kyivstar.net
+mnt-by:     EIC-UANIC (ua.visti)
+remark:     notify: domain-reg@visti.net
+created:    0-UANIC 20020903000000
+changed:    EIC-UANIC 20100811153401
+source:     UANIC
+
+
+% Administrative Contact:
+% ======================
+nic-handle:     KG780-UANIC
+organization:   Kyivstar GSM
+address:        Chervonozoryanyi Av., 51
+address:        03110 KYIV
+address:        UA
+fax-no:         +380 (44) 2473954
+phone:          +380 (44) 2473939
+phone:          +380 (67) 2372213
+e-mail:         dnsmaster@kyivstar.net
+org-id:         N/A
+mnt-by:         NONE
+remark:         hostmaster@kyivstar.net
+changed:        KG780-UANIC 20080902125247
+source:         UANIC
+
+% Technical Contact:
+% =================
+nic-handle:     KG780-UANIC
+organization:   Kyivstar GSM
+address:        Chervonozoryanyi Av., 51
+address:        03110 KYIV
+address:        UA
+fax-no:         +380 (44) 2473954
+phone:          +380 (44) 2473939
+phone:          +380 (67) 2372213
+e-mail:         dnsmaster@kyivstar.net
+org-id:         N/A
+mnt-by:         NONE
+remark:         hostmaster@kyivstar.net
+changed:        KG780-UANIC 20080902125247
+source:         UANIC
+
+% Technical Contact:
+% =================
+nic-handle:     EIC-UANIC
+organization:   "ElVisti Information Center", LLC
+organization:   ООО "Информационный центр "Электронные вести"
+organization:   ТОВ "ІЦ ЕЛВІСТІ"
+address:        а/с, 151
+address:        03037 КИЇВ
+address:        UA
+phone:          +38044 239-90-91
+e-mail:         hostmaster@visti.net
+url:            http://www.visti.net/
+org-id:         24361346
+mnt-by:         NONE
+changed:        EIC-UANIC 20111215113314
+source:         UANIC
+
+
+% % .UA whois
+
+% Last update of whois database: 31 May 2012 11:44:08 +0300 (EEST)
+
+% Query time:   10 msec
+

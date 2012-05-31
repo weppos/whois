@@ -1,0 +1,104 @@
+#domain
+  should: %s == "kyivstar.ua"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2002-09-03 00:00:00")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2010-08-11 15:34:01")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-09-03 12:18:52")
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "N/A"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Kyivstar GSM"
+  should: %s[0].address       == "Chervonozoryanyi Av., 51"
+  should: %s[0].city          == "KYIV"
+  should: %s[0].zip           == "03110"
+  should: %s[0].state         == nil
+  should: %s[0].country       == "UA"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+380 (44) 2473939"
+  should: %s[0].fax           == "+380 (44) 2473954"
+  should: %s[0].email         == "dnsmaster@kyivstar.net"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "N/A"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Kyivstar GSM"
+  should: %s[0].address       == "Chervonozoryanyi Av., 51"
+  should: %s[0].city          == "KYIV"
+  should: %s[0].zip           == "03110"
+  should: %s[0].state         == nil
+  should: %s[0].country       == "UA"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+380 (44) 2473939"
+  should: %s[0].fax           == "+380 (44) 2473954"
+  should: %s[0].email         == "dnsmaster@kyivstar.net"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  should: %s[1] CLASS(contact)
+  should: %s[1].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[1].id            == "24361346"
+  should: %s[1].name          == nil
+  should: %s[1].organization  == "\"ElVisti Information Center\", LLC\nООО \"Информационный центр \"Электронные вести\"\nТОВ \"ІЦ ЕЛВІСТІ\""
+  should: %s[1].address       == "а/с, 151"
+  should: %s[1].city          == "КИЇВ"
+  should: %s[1].zip           == "03037"
+  should: %s[1].state         == nil
+  should: %s[1].country       == "UA"
+  should: %s[1].country_code  == nil
+  should: %s[1].phone         == "+38044 239-90-91"
+  should: %s[1].fax           == nil
+  should: %s[1].email         == "hostmaster@visti.net"
+  should: %s[1].created_on    == nil
+  should: %s[1].updated_on    == Time.parse("2011-12-15 11:33:14")
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns2.elvisti.kiev.ua"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns.kyivstar.net"
