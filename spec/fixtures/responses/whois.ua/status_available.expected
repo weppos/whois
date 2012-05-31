@@ -29,6 +29,16 @@
 #expires_on
   should: %s == nil
 
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
 
 #registrar
   should: %s raise_error(Whois::PropertyNotSupported)

@@ -36,6 +36,48 @@
 #registrar
   should: %s raise_error(Whois::PropertyNotSupported)
 
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "N/A"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "US"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+1 6503300100"
+  should: %s[0].fax           == "+1 6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == Time.parse("2012-02-01 21:09:42")
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "N/A"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "US"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+1 6503300100"
+  should: %s[0].fax           == "+1 6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == Time.parse("2012-02-01 21:09:42")
 
 #nameservers
   should: %s CLASS(array)
