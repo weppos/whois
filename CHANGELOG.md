@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+* NEW: Added full whois.networksolutions.com parser (GH-168). [Thanks @bramp]
+
+
 ## Release 2.6.1
 
 * Reverted partial commit about .SX definitions included in v2.6.0 by mistake.
