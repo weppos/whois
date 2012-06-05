@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 2.6.0
 
 * SERVER: Added .OM TLD server.
 
