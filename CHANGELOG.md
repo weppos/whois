@@ -1,6 +1,11 @@
 # Changelog
 
 
+## Release 2.6.1
+
+* Reverted partial commit about .SX definitions included in v2.6.0 by mistake.
+
+
 ## Release 2.6.0
 
 * SERVER: Added .OM TLD server.
