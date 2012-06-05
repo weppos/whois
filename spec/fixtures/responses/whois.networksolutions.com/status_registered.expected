@@ -13,8 +13,7 @@
   should: %s == Time.parse("1997-06-10")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2012-05-27 22:19:52 EDT")
+  should: %s raise_error(Whois::PropertyNotSupported)
 
 #expires_on
   should: %s CLASS(time)
@@ -23,10 +22,9 @@
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.name         == 'Network Solutions'
-  should: %s.organization == 'Network Solutions, LLC'
-  should: %s.url          == 'http://www.networksolutions.com/'
-
+  should: %s.name         == "Network Solutions"
+  should: %s.organization == "Network Solutions, LLC"
+  should: %s.url          == "http://www.networksolutions.com/"
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -75,6 +73,7 @@
   should: %s[0].phone        == "202-463-7200"
   should: %s[0].fax          == "202-318-4003"
   should: %s[0].email        == "noc@xif.com"
+
 
 #nameservers
   should: %s CLASS(array)

@@ -16,15 +16,11 @@ module Whois
 
       # Parser for the whois.networksolutions.com server.
       #
-      # @note This parser is just a stub and provides only a few basic methods
-      #   to check for domain availability and get domain status.
-      #   Please consider to contribute implementing missing methods.
-      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
       # @author Andrew Brampton <me@bramp.net>
-      # 
+      # @since RELEASE
       class WhoisNetworksolutionsCom < Base
 
         property_not_supported :status
@@ -38,13 +34,6 @@ module Whois
           !available?
         end
 
-        property_supported :registrar do
-          Record::Registrar.new(
-              :name => 'Network Solutions',
-              :organization => 'Network Solutions, LLC',
-              :url  => 'http://www.networksolutions.com/'
-          )
-        end
 
         property_supported :created_on do
           if content_for_scanner =~ /Record created on (.+)\.\n/
@@ -52,16 +41,21 @@ module Whois
           end
         end
 
-        property_supported :updated_on do
-          if content_for_scanner =~ /Database last updated on (.+)\.\n/
-            Time.parse($1)
-          end
-        end
+        property_not_supported :updated_on
 
         property_supported :expires_on do
           if content_for_scanner =~ /Record expires on (.+)\.\n/
             Time.parse($1)
           end
+        end
+
+
+        property_supported :registrar do
+          Record::Registrar.new(
+              :name         => 'Network Solutions',
+              :organization => 'Network Solutions, LLC',
+              :url          => 'http://www.networksolutions.com/'
+          )
         end
 
         property_supported :registrant_contacts do
@@ -81,8 +75,8 @@ module Whois
          if content_for_scanner =~ /Domain servers in listed order:\n\n((?:[^\n]+\n)+)/
             $1.split("\n").map do |line|
               #   NS01.XIF.COM                 63.240.200.70
-              dns = line.strip.split(" ")
-              Record::Nameserver.new(dns[0].downcase, dns[1])
+              name, ipv4 = line.strip.split(" ")
+              Record::Nameserver.new(:name => name.downcase, :ipv4 => ipv4)
             end
           end
         end
@@ -122,7 +116,6 @@ module Whois
             phone, fax  = lines.pop.to_s.scan(/^(.+) fax: (.+)$/).first
             phone = phone.strip
             fax   = fax.strip
-
           elsif lines[-1].to_s.gsub(/[^\d]+/, '').length > 9
             phone = lines.pop
           end
