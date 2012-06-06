@@ -1,0 +1,9 @@
+[whois.sx]
+%
+% Copyright 2011 SX Registry S.A.
+%
+% WHOIS u34jedzcq
+Domain:	u34jedzcq
+
+Status: reserved/free (policy pending)
+

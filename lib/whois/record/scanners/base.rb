@@ -62,20 +62,33 @@ module Whois
       protected
 
         def _scan_lines_to_array(pattern)
-          lines = []
+          results = []
           while @input.scan(pattern)
             @input[1].strip
-            lines << @input[1].strip
+            results << @input[1].strip
           end
-          lines
+          results
         end
 
         def _scan_lines_to_hash(pattern)
-          lines = {}
+          results = {}
           while @input.scan(pattern)
-            lines.merge! @input[1].strip => @input[2].strip
+            results.merge! @input[1].strip => @input[2].strip
           end
-          lines
+          results
+        end
+
+        def _scan_keyvalues(pattern)
+          results = []
+          while @input.scan(/(.+?):(.*?)\n/)
+            key, value = @input[1].strip, @input[2].strip
+            if results[key].nil?
+              results[key] = value
+            else
+              results[key] = Array.wrap(results[key])
+              results[key] << value
+            end
+          end
         end
 
       private

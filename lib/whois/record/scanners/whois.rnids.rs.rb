@@ -22,15 +22,15 @@ module Whois
         self.tokenizers += [
             :scan_available,
             :skip_comment,
-            :flag_group_start,
-            :scan_group_keyvalue,
-            :flag_group_end,
+            :flag_section_start,
+            :scan_section_keyvalue,
+            :flag_section_end,
             :skip_empty_line,
             :skip_privacy,
         ]
 
 
-        GROUPS = ["Owner", "Administrative contact", "Technical contact"]
+        SECTIONS = ["Owner", "Administrative contact", "Technical contact"]
 
         tokenizer :scan_available do
           if @input.scan(/^%ERROR:103: Domain is not registered/)
@@ -38,23 +38,23 @@ module Whois
           end
         end
 
-        tokenizer :flag_group_start do
-          if GROUPS.any? { |group| @input.check(/^(#{group}):/) }
-            @tmp["group"] = @input[1]
+        tokenizer :flag_section_start do
+          if SECTIONS.any? { |section| @input.check(/^(#{section}):/) }
+            @tmp["section"] = @input[1]
           end
           false
         end
 
-        tokenizer :flag_group_end do
+        tokenizer :flag_section_end do
           if @input.match?(/^\n/)
-            @tmp.delete("group")
+            @tmp.delete("section")
           end
         end
 
-        tokenizer :scan_group_keyvalue do
+        tokenizer :scan_section_keyvalue do
           if @input.scan(/(.+?):(.*?)\n/)
             key, value = @input[1].strip, @input[2].strip
-            target = @tmp["group"] ? (@ast[@tmp["group"]] ||= {}) : @ast
+            target = @tmp["section"] ? (@ast[@tmp["section"]] ||= {}) : @ast
 
             if target[key].nil?
               target[key] = value
