@@ -3,7 +3,11 @@
 
 ## master
 
+* SERVER: Added .OM TLD server (GH-170).
+
 * NEW: Added full whois.networksolutions.com parser (GH-168). [Thanks @bramp]
+
+* NEW: Added full whois.sx parser (GH-170).
 
 
 ## Release 2.6.1
