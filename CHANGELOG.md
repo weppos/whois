@@ -3,7 +3,7 @@
 
 ## master
 
-* SERVER: Added .OM TLD server (GH-170).
+* SERVER: Added .SX TLD server (GH-170).
 
 * NEW: Added full whois.networksolutions.com parser (GH-168). [Thanks @bramp]
 
@@ -20,8 +20,6 @@
 * SERVER: Added .OM TLD server.
 
 * SERVER: Added .TN TLD server.
-
-* SERVER: Added .SX TLD server.
 
 * NEW: whois.srs.net.nz parser now recognizes throttled responses.
 
