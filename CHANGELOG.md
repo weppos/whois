@@ -17,6 +17,8 @@
 
 * SERVER: Added .TN TLD server.
 
+* SERVER: Added .SX TLD server.
+
 * NEW: whois.srs.net.nz parser now recognizes throttled responses.
 
 * NEW: Added full whois.registry.om parser.

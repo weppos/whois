@@ -1,0 +1,21 @@
+[whois.sx]
+%
+% Copyright 2011 SX Registry S.A.
+%
+% WHOIS whois
+Domain:	whois
+
+Status: active
+
+Registrant:
+	SX Registry S.A.
+
+Registrar:
+	Name:	 SX Registry S.A.
+	Website: http://registry.sx
+
+Name servers:
+	a.ns.sx
+	b.ns.sx
+	c.ns.sx
+
