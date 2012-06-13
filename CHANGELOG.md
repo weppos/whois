@@ -9,6 +9,8 @@
 
 * NEW: Added full whois.sx parser (GH-170).
 
+* NEW: whois.ua parser is now a full parser (GH-169). [Thanks @Uko]
+
 
 ## Release 2.6.1
 
