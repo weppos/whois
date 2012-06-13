@@ -1,5 +1,6 @@
-% This is the Ukrainian Whois query server #F.
-% Rights restricted by copyright.
+% This is the Ukrainian Whois query server #B.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
 %
 
 
@@ -9,7 +10,7 @@
 domain:     google.com.ua
 admin-c:    GI8-UANIC
 tech-c:     GI8-UANIC
-status:     OK-UNTIL 20111204000000
+status:     OK-UNTIL 20121204000000
 dom-public: NO
 nserver:    ns2.google.com
 nserver:    ns4.google.com
@@ -18,8 +19,8 @@ nserver:    ns1.google.com
 mnt-by:     IMENA-UANIC (ua.imena)
 remark:     Доменное имя зарегистрировано в интересах клиента
 remark:     The domain name has been registered on behalf of a client
-created:    0-UANIC 00000000000000
-changed:    IMENA-UANIC 20101101173534
+created:    0-UANIC 20021204000000
+changed:    IMENA-UANIC 20111104185842
 source:     UANIC
 
 
@@ -35,7 +36,7 @@ phone:          +1 6503300100
 e-mail:         dns-admin@google.com
 org-id:         N/A
 mnt-by:         NONE
-changed:        HOST-UANIC 20061205023307
+changed:        GI8-UANIC 20120201210942
 source:         UANIC
 
 % Technical Contact:
@@ -50,13 +51,13 @@ phone:          +1 6503300100
 e-mail:         dns-admin@google.com
 org-id:         N/A
 mnt-by:         NONE
-changed:        HOST-UANIC 20061205023307
+changed:        GI8-UANIC 20120201210942
 source:         UANIC
 
 
 % % .UA whois
 
-% Last update of whois database: 18 Feb 2011 23:39:17 +0200 (EET)
+% Last update of whois database: 29 May 2012 17:18:16 +0300 (EEST)
 
-% Query time:   9 msec
+% Query time:   11 msec
 
