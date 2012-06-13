@@ -1,3 +1,17 @@
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :available
 
@@ -9,13 +23,28 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s == nil
 
 #updated_on
   should: %s == nil
 
 #expires_on
   should: %s == nil
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
 
 
 #nameservers

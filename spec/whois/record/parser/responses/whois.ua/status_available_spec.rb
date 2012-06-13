@@ -21,6 +21,26 @@ describe Whois::Record::Parser::WhoisUa, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :available
@@ -38,7 +58,7 @@ describe Whois::Record::Parser::WhoisUa, "status_available.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should == nil
     end
   end
   describe "#updated_on" do
@@ -49,6 +69,28 @@ describe Whois::Record::Parser::WhoisUa, "status_available.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
+    end
+  end
+  describe "#registrar" do
+    it do
+      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      lambda { @parser.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
