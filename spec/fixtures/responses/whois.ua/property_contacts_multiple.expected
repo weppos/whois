@@ -4,11 +4,13 @@
 #domain_id
   should: %s raise_error(Whois::PropertyNotSupported)
 
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #referral_url
   should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #status
   should: %s == :registered
@@ -94,6 +96,7 @@
   should: %s[1].email         == "hostmaster@visti.net"
   should: %s[1].created_on    == nil
   should: %s[1].updated_on    == Time.parse("2011-12-15 11:33:14")
+
 
 #nameservers
   should: %s CLASS(array)

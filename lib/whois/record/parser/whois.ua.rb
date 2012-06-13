@@ -19,6 +19,20 @@ module Whois
       # @since 2.4.0
       class WhoisUa < Base
 
+				property_supported :domain do
+					if content_for_scanner =~ /domain:\s+(.+)\n/
+						$1
+					end
+        end
+
+				property_not_supported :domain_id
+
+	
+				property_not_supported :referral_whois
+				
+				property_not_supported :referral_url
+
+
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+?)\n/
             case s = $1.downcase
@@ -40,17 +54,6 @@ module Whois
           !available?
         end
 
-				property_supported :domain do
-					if content_for_scanner =~ /domain:\s+(.+)\n/
-						$1
-					end
-        end
-
-				property_not_supported :domain_id
-				
-				property_not_supported :referral_whois
-				
-				property_not_supported :referral_url
 				
         property_supported :created_on do
           if content_for_scanner =~ /created:\s+(.+)\n/
@@ -73,9 +76,9 @@ module Whois
           end
         end
 
+
 				property_not_supported :registrar
 
-				
 				property_not_supported :registrant_contacts
 
 				property_supported :admin_contacts do
@@ -93,8 +96,8 @@ module Whois
           end
         end
 
-			private
-			
+
+			private			
 			
 				def build_contact(element, type)
 					record = []

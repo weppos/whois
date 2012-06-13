@@ -4,11 +4,13 @@
 #domain_id
   should: %s raise_error(Whois::PropertyNotSupported)
 
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #referral_url
   should: %s raise_error(Whois::PropertyNotSupported)
+
 
 #status
   should: %s == :registered
@@ -78,6 +80,7 @@
   should: %s[0].email         == "dns-admin@google.com"
   should: %s[0].created_on    == nil
   should: %s[0].updated_on    == Time.parse("2012-02-01 21:09:42")
+
 
 #nameservers
   should: %s CLASS(array)
