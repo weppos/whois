@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 2.6.2
 
 * SERVER: Added .SX TLD server (GH-170).
 
