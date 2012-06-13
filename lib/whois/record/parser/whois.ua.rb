@@ -16,10 +16,6 @@ module Whois
 
       # Parser for the whois.ua server.
       #
-      # @note This parser is just a stub and provides only a few basic methods
-      #   to check for domain availability and get domain status.
-      #   Please consider to contribute implementing missing methods.
-      #
       # @since 2.4.0
       class WhoisUa < Base
 
@@ -59,11 +55,7 @@ module Whois
         property_supported :created_on do
           if content_for_scanner =~ /created:\s+(.+)\n/
             time = $1.split(" ").last
-            begin
-							Time.parse(time)
-						rescue ArgumentError
-							nil
-						end
+						Time.parse(time)
           end
         end
 
