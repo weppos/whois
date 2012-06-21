@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* FIXED: In some cases the parser class is not correctly detected from hostname (GH-173). [Thanks @JustinCampbell]
+
 
 ## Release 2.6.2
 
