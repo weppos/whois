@@ -36,6 +36,10 @@ describe Whois::Record::Parser do
       klass.host_to_parser("whois.nic.it").should == "WhoisNicIt"
       klass.host_to_parser("whois.domain-registry.nl").should == "WhoisDomainRegistryNl"
     end
+
+    it "downcases hostnames" do
+      klass.host_to_parser("whois.PublicDomainRegistry.com").should == "WhoisPublicdomainregistryCom"
+    end
   end
 
 
