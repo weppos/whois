@@ -114,7 +114,7 @@ module Whois
       #   # => "WhoisNicInfoIt"
       #
       def self.host_to_parser(host)
-        host.to_s.
+        host.to_s.downcase.
           gsub(/[.-]/, '_').
           gsub(/(?:^|_)(.)/)  { $1.upcase }
       end
