@@ -58,7 +58,7 @@ module Whois
         property_supported :created_on do
           if content_for_scanner =~ /created:\s+(.+)\n/
             time = $1.split(" ").last
-            Time.parse(time)
+            Time.parse(time) unless time =~ /\A[0]+\z/
           end
         end
 

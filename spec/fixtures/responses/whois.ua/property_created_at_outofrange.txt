@@ -1,0 +1,93 @@
+% request from 81.253.42.89
+% This is the Ukrainian Whois query server #F.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+
+% % .UA whois
+% Domain Record:
+% =============
+domain:     ukraine.com.ua
+admin-c:    UKRA-UANIC
+tech-c:     UKRA-UANIC
+tech-c:     DELTA-UANIC
+status:     OK-UNTIL 20130906000000
+dom-public: NO
+nserver:    ns1.ukraine.com.ua
+nserver:    ns3.ukraine.com.ua
+nserver:    ns2.ukraine.com.ua
+mnt-by:     DELTA-UANIC (ua.delta)
+remark:     Ukraine Hosting Provider
+remark:     Kiev, UA
+created:    0-UANIC 00000000000000
+changed:    DELTA-UANIC 20120421101933
+source:     UANIC
+
+
+% Glue Record:
+% ===========
+nserver: ns2.ukraine.com.ua
+ip-addr: 31.28.161.37
+ipv6-addr: 2001:67C:2070::2
+
+% Glue Record:
+% ===========
+nserver: ns3.ukraine.com.ua
+ip-addr: 46.4.47.124
+ipv6-addr: 2001:67C:2070::3
+
+% Glue Record:
+% ===========
+nserver: ns1.ukraine.com.ua
+ip-addr: 195.64.184.67
+
+% Administrative Contact:
+% ======================
+nic-handle: UKRA-UANIC
+remark:     Whois privacy protection service
+remark:     http://hostmaster.ua/priv.html
+e-mail:     ukra-uanic@priv.uanic.ua
+mnt-by:     NONE
+source:     UANIC
+
+% Technical Contact:
+% =================
+nic-handle: UKRA-UANIC
+remark:     Whois privacy protection service
+remark:     http://hostmaster.ua/priv.html
+e-mail:     ukra-uanic@priv.uanic.ua
+mnt-by:     NONE
+source:     UANIC
+
+% Technical Contact:
+% =================
+nic-handle:     DELTA-UANIC
+organization:   Delta-X ltd.
+organization:   ООО "Дельта-Х"
+organization:   ТОВ "Дельта-Х"
+address:        PO Box, 65
+address:        03065 KIEV
+address:        UA
+address:        а/я, 65
+address:        03065 Киев КИЕВ
+address:        UA
+address:        А/С, 65
+address:        03065 КИЇВ
+address:        UA
+fax-no:         +380 (44) 3927433
+phone:          +380 (44) 3927433
+e-mail:         hostmaster@deltahosting.com.ua
+url:            http://www.ukraine.com.ua
+org-id:         21460160
+mnt-by:         NONE
+changed:        DELTA-UANIC 20111227124117
+source:         UANIC
+
+
+% % .UA whois
+
+% Last update of whois database: 22 Jun 2012 23:05:03 +0300 (EEST)
+
+% Query time:   9 msec
+
