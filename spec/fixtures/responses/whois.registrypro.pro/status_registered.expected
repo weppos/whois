@@ -1,5 +1,23 @@
+#disclaimer
+  should: %s == "Access to .PRO REGISTRY WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the .PRO Registry registry database. The data in this record is provided by .PRO Registry for informational purposes only, and .PRO Registry does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. .PRO Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+
+
+#domain
+  should: %s == "registrypro.pro"
+
+#domain_id
+  should: %s == "D6394-PRO"
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
-  should: %s == ["serverDeleteProhibited"]
+  should: %s == ["CLIENT TRANSFER PROHIBITED", "DELETE PROHIBITED"]
 
 #available?
   should: %s == false
@@ -10,25 +28,85 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2004-08-18 06:20:14 UTC")
+  should: %s == Time.parse("2004-08-18 00:00:00 UTC")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-01-20 16:51:04 UTC")
+  should: %s == Time.parse("2012-06-14 21:27:09 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2017-01-26 06:00:00 UTC")
+  should: %s == Time.parse("2017-01-26 00:00:00 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "R2338-PRO"
+  should: %s.name         == "Corporation Service Company dba CSC Corporate Domains, Inc"
+  should: %s.organization == "Corporation Service Company dba CSC Corporate Domains, Inc"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "RSC-1"
+  should: %s[0].name          == "Afilias Limited"
+  should: %s[0].organization  == "Afilias Limited"
+  should: %s[0].address       == "2 La Touche House\nIFSC"
+  should: %s[0].city          == "Dublin"
+  should: %s[0].zip           == "1"
+  should: %s[0].state         == "IL"
+  should: %s[0].country_code  == "IE"
+  should: %s[0].phone         == "+353.14310511"
+  should: %s[0].fax           == "+353.14310557"
+  should: %s[0].email         == "domainadmin@afilias.info"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "RSC-1"
+  should: %s[0].name          == "Afilias Limited"
+  should: %s[0].organization  == "Afilias Limited"
+  should: %s[0].address       == "2 La Touche House\nIFSC"
+  should: %s[0].city          == "Dublin"
+  should: %s[0].zip           == "1"
+  should: %s[0].state         == "IL"
+  should: %s[0].country_code  == "IE"
+  should: %s[0].phone         == "+353.14310511"
+  should: %s[0].fax           == "+353.14310557"
+  should: %s[0].email         == "domainadmin@afilias.info"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "RSC-1"
+  should: %s[0].name          == "Afilias Limited"
+  should: %s[0].organization  == "Afilias Limited"
+  should: %s[0].address       == "2 La Touche House\nIFSC"
+  should: %s[0].city          == "Dublin"
+  should: %s[0].zip           == "1"
+  should: %s[0].state         == "IL"
+  should: %s[0].country_code  == "IE"
+  should: %s[0].phone         == "+353.14310511"
+  should: %s[0].fax           == "+353.14310557"
+  should: %s[0].email         == "domainadmin@afilias.info"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(4)
+  should: %s SIZE(5)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "a.gtld.pro"
+  should: %s[0].name == "ns1.ams1.afilias-nst.info"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "b.gtld.pro"
+  should: %s[1].name == "ns1.mia1.afilias-nst.info"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "c.gtld.pro"
+  should: %s[2].name == "ns1.sea1.afilias-nst.info"
   should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "d.gtld.pro"
+  should: %s[3].name == "ns1.yyz1.afilias-nst.info"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns1.hkg1.afilias-nst.info"

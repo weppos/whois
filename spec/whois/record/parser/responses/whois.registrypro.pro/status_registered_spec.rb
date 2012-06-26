@@ -21,9 +21,34 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Access to .PRO REGISTRY WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the .PRO Registry registry database. The data in this record is provided by .PRO Registry for informational purposes only, and .PRO Registry does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. .PRO Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "registrypro.pro"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "D6394-PRO"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
-      @parser.status.should == ["serverDeleteProhibited"]
+      @parser.status.should == ["CLIENT TRANSFER PROHIBITED", "DELETE PROHIBITED"]
     end
   end
   describe "#available?" do
@@ -39,33 +64,100 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2004-08-18 06:20:14 UTC")
+      @parser.created_on.should == Time.parse("2004-08-18 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-01-20 16:51:04 UTC")
+      @parser.updated_on.should == Time.parse("2012-06-14 21:27:09 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2017-01-26 06:00:00 UTC")
+      @parser.expires_on.should == Time.parse("2017-01-26 00:00:00 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "R2338-PRO"
+      @parser.registrar.name.should         == "Corporation Service Company dba CSC Corporate Domains, Inc"
+      @parser.registrar.organization.should == "Corporation Service Company dba CSC Corporate Domains, Inc"
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "RSC-1"
+      @parser.registrant_contacts[0].name.should          == "Afilias Limited"
+      @parser.registrant_contacts[0].organization.should  == "Afilias Limited"
+      @parser.registrant_contacts[0].address.should       == "2 La Touche House\nIFSC"
+      @parser.registrant_contacts[0].city.should          == "Dublin"
+      @parser.registrant_contacts[0].zip.should           == "1"
+      @parser.registrant_contacts[0].state.should         == "IL"
+      @parser.registrant_contacts[0].country_code.should  == "IE"
+      @parser.registrant_contacts[0].phone.should         == "+353.14310511"
+      @parser.registrant_contacts[0].fax.should           == "+353.14310557"
+      @parser.registrant_contacts[0].email.should         == "domainadmin@afilias.info"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "RSC-1"
+      @parser.admin_contacts[0].name.should          == "Afilias Limited"
+      @parser.admin_contacts[0].organization.should  == "Afilias Limited"
+      @parser.admin_contacts[0].address.should       == "2 La Touche House\nIFSC"
+      @parser.admin_contacts[0].city.should          == "Dublin"
+      @parser.admin_contacts[0].zip.should           == "1"
+      @parser.admin_contacts[0].state.should         == "IL"
+      @parser.admin_contacts[0].country_code.should  == "IE"
+      @parser.admin_contacts[0].phone.should         == "+353.14310511"
+      @parser.admin_contacts[0].fax.should           == "+353.14310557"
+      @parser.admin_contacts[0].email.should         == "domainadmin@afilias.info"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "RSC-1"
+      @parser.technical_contacts[0].name.should          == "Afilias Limited"
+      @parser.technical_contacts[0].organization.should  == "Afilias Limited"
+      @parser.technical_contacts[0].address.should       == "2 La Touche House\nIFSC"
+      @parser.technical_contacts[0].city.should          == "Dublin"
+      @parser.technical_contacts[0].zip.should           == "1"
+      @parser.technical_contacts[0].state.should         == "IL"
+      @parser.technical_contacts[0].country_code.should  == "IE"
+      @parser.technical_contacts[0].phone.should         == "+353.14310511"
+      @parser.technical_contacts[0].fax.should           == "+353.14310557"
+      @parser.technical_contacts[0].email.should         == "domainadmin@afilias.info"
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(4).items
+      @parser.nameservers.should have(5).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "a.gtld.pro"
+      @parser.nameservers[0].name.should == "ns1.ams1.afilias-nst.info"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "b.gtld.pro"
+      @parser.nameservers[1].name.should == "ns1.mia1.afilias-nst.info"
       @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "c.gtld.pro"
+      @parser.nameservers[2].name.should == "ns1.sea1.afilias-nst.info"
       @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "d.gtld.pro"
+      @parser.nameservers[3].name.should == "ns1.yyz1.afilias-nst.info"
+      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[4].name.should == "ns1.hkg1.afilias-nst.info"
     end
   end
 end

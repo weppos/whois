@@ -92,18 +92,18 @@ describe Whois::Record::Parser::WhoisAero, "status_registered.expected" do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should           == "C4526901-AERO"
-      @parser.registrant_contacts[0].name.should         == "Domain Name Administrator"
-      @parser.registrant_contacts[0].organization.should == "SriLankan Airlines Ltd"
-      @parser.registrant_contacts[0].address.should      == "Admin Bldg"
-      @parser.registrant_contacts[0].city.should         == "Katunayaka"
-      @parser.registrant_contacts[0].zip.should          == "11450"
-      @parser.registrant_contacts[0].state.should        == "WP"
-      @parser.registrant_contacts[0].country_code.should == "LK"
-      @parser.registrant_contacts[0].phone.should        == "+94.197331600"
-      @parser.registrant_contacts[0].fax.should          == "+94.197335160"
-      @parser.registrant_contacts[0].email.should        == "domregister@srilankan.aero"
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "C4526901-AERO"
+      @parser.registrant_contacts[0].name.should          == "Domain Name Administrator"
+      @parser.registrant_contacts[0].organization.should  == "SriLankan Airlines Ltd"
+      @parser.registrant_contacts[0].address.should       == "Admin Bldg"
+      @parser.registrant_contacts[0].city.should          == "Katunayaka"
+      @parser.registrant_contacts[0].zip.should           == "11450"
+      @parser.registrant_contacts[0].state.should         == "WP"
+      @parser.registrant_contacts[0].country_code.should  == "LK"
+      @parser.registrant_contacts[0].phone.should         == "+94.197331600"
+      @parser.registrant_contacts[0].fax.should           == "+94.197335160"
+      @parser.registrant_contacts[0].email.should         == "domregister@srilankan.aero"
     end
   end
   describe "#admin_contacts" do
@@ -111,18 +111,18 @@ describe Whois::Record::Parser::WhoisAero, "status_registered.expected" do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should           == "C4526901-AERO"
-      @parser.admin_contacts[0].name.should         == "Domain Name Administrator"
-      @parser.admin_contacts[0].organization.should == "SriLankan Airlines Ltd"
-      @parser.admin_contacts[0].address.should      == "Admin Bldg"
-      @parser.admin_contacts[0].city.should         == "Katunayaka"
-      @parser.admin_contacts[0].zip.should          == "11450"
-      @parser.admin_contacts[0].state.should        == "WP"
-      @parser.admin_contacts[0].country_code.should == "LK"
-      @parser.admin_contacts[0].phone.should        == "+94.197331600"
-      @parser.admin_contacts[0].fax.should          == "+94.197335160"
-      @parser.admin_contacts[0].email.should        == "domregister@srilankan.aero"
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "C4526901-AERO"
+      @parser.admin_contacts[0].name.should          == "Domain Name Administrator"
+      @parser.admin_contacts[0].organization.should  == "SriLankan Airlines Ltd"
+      @parser.admin_contacts[0].address.should       == "Admin Bldg"
+      @parser.admin_contacts[0].city.should          == "Katunayaka"
+      @parser.admin_contacts[0].zip.should           == "11450"
+      @parser.admin_contacts[0].state.should         == "WP"
+      @parser.admin_contacts[0].country_code.should  == "LK"
+      @parser.admin_contacts[0].phone.should         == "+94.197331600"
+      @parser.admin_contacts[0].fax.should           == "+94.197335160"
+      @parser.admin_contacts[0].email.should         == "domregister@srilankan.aero"
     end
   end
   describe "#technical_contacts" do
@@ -130,18 +130,18 @@ describe Whois::Record::Parser::WhoisAero, "status_registered.expected" do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
       @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should           == "C4526901-AERO"
-      @parser.technical_contacts[0].name.should         == "Domain Name Administrator"
-      @parser.technical_contacts[0].organization.should == "SriLankan Airlines Ltd"
-      @parser.technical_contacts[0].address.should      == "Admin Bldg"
-      @parser.technical_contacts[0].city.should         == "Katunayaka"
-      @parser.technical_contacts[0].zip.should          == "11450"
-      @parser.technical_contacts[0].state.should        == "WP"
-      @parser.technical_contacts[0].country_code.should == "LK"
-      @parser.technical_contacts[0].phone.should        == "+94.197331600"
-      @parser.technical_contacts[0].fax.should          == "+94.197335160"
-      @parser.technical_contacts[0].email.should        == "domregister@srilankan.aero"
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "C4526901-AERO"
+      @parser.technical_contacts[0].name.should          == "Domain Name Administrator"
+      @parser.technical_contacts[0].organization.should  == "SriLankan Airlines Ltd"
+      @parser.technical_contacts[0].address.should       == "Admin Bldg"
+      @parser.technical_contacts[0].city.should          == "Katunayaka"
+      @parser.technical_contacts[0].zip.should           == "11450"
+      @parser.technical_contacts[0].state.should         == "WP"
+      @parser.technical_contacts[0].country_code.should  == "LK"
+      @parser.technical_contacts[0].phone.should         == "+94.197331600"
+      @parser.technical_contacts[0].fax.should           == "+94.197335160"
+      @parser.technical_contacts[0].email.should         == "domregister@srilankan.aero"
     end
   end
   describe "#nameservers" do

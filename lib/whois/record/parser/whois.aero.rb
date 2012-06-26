@@ -15,6 +15,10 @@ module Whois
     class Parser
 
       # Parser for the whois.aero server.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class WhoisAero < BaseAfilias
 
         property_supported :status do

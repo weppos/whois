@@ -2,9 +2,13 @@
 
 ## master
 
+* NEW: whois.registrypro.pro is now a full parser.
+
 * FIXED: In some cases the parser class is not correctly detected from hostname (GH-173). [Thanks @JustinCampbell]
 
 * FIXED: whois.ua parser raises ArgumentError when the created_on object invalid data.
+
+* CHANGED: Updated whois.registrypro.pro parser to the new response format.
 
 
 ## Release 2.6.2
