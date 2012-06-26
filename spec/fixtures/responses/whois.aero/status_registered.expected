@@ -49,52 +49,52 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == "C4526901-AERO"
-  should: %s[0].name         == "Domain Name Administrator"
-  should: %s[0].organization == "SriLankan Airlines Ltd"
-  should: %s[0].address      == "Admin Bldg"
-  should: %s[0].city         == "Katunayaka"
-  should: %s[0].zip          == "11450"
-  should: %s[0].state        == "WP"
-  should: %s[0].country_code == "LK"
-  should: %s[0].phone        == "+94.197331600"
-  should: %s[0].fax          == "+94.197335160"
-  should: %s[0].email        == "domregister@srilankan.aero"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "C4526901-AERO"
+  should: %s[0].name          == "Domain Name Administrator"
+  should: %s[0].organization  == "SriLankan Airlines Ltd"
+  should: %s[0].address       == "Admin Bldg"
+  should: %s[0].city          == "Katunayaka"
+  should: %s[0].zip           == "11450"
+  should: %s[0].state         == "WP"
+  should: %s[0].country_code  == "LK"
+  should: %s[0].phone         == "+94.197331600"
+  should: %s[0].fax           == "+94.197335160"
+  should: %s[0].email         == "domregister@srilankan.aero"
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == "C4526901-AERO"
-  should: %s[0].name         == "Domain Name Administrator"
-  should: %s[0].organization == "SriLankan Airlines Ltd"
-  should: %s[0].address      == "Admin Bldg"
-  should: %s[0].city         == "Katunayaka"
-  should: %s[0].zip          == "11450"
-  should: %s[0].state        == "WP"
-  should: %s[0].country_code == "LK"
-  should: %s[0].phone        == "+94.197331600"
-  should: %s[0].fax          == "+94.197335160"
-  should: %s[0].email        == "domregister@srilankan.aero"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "C4526901-AERO"
+  should: %s[0].name          == "Domain Name Administrator"
+  should: %s[0].organization  == "SriLankan Airlines Ltd"
+  should: %s[0].address       == "Admin Bldg"
+  should: %s[0].city          == "Katunayaka"
+  should: %s[0].zip           == "11450"
+  should: %s[0].state         == "WP"
+  should: %s[0].country_code  == "LK"
+  should: %s[0].phone         == "+94.197331600"
+  should: %s[0].fax           == "+94.197335160"
+  should: %s[0].email         == "domregister@srilankan.aero"
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id           == "C4526901-AERO"
-  should: %s[0].name         == "Domain Name Administrator"
-  should: %s[0].organization == "SriLankan Airlines Ltd"
-  should: %s[0].address      == "Admin Bldg"
-  should: %s[0].city         == "Katunayaka"
-  should: %s[0].zip          == "11450"
-  should: %s[0].state        == "WP"
-  should: %s[0].country_code == "LK"
-  should: %s[0].phone        == "+94.197331600"
-  should: %s[0].fax          == "+94.197335160"
-  should: %s[0].email        == "domregister@srilankan.aero"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "C4526901-AERO"
+  should: %s[0].name          == "Domain Name Administrator"
+  should: %s[0].organization  == "SriLankan Airlines Ltd"
+  should: %s[0].address       == "Admin Bldg"
+  should: %s[0].city          == "Katunayaka"
+  should: %s[0].zip           == "11450"
+  should: %s[0].state         == "WP"
+  should: %s[0].country_code  == "LK"
+  should: %s[0].phone         == "+94.197331600"
+  should: %s[0].fax           == "+94.197335160"
+  should: %s[0].email         == "domregister@srilankan.aero"
 
 
 #nameservers
