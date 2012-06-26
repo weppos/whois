@@ -20,7 +20,7 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since 2.5.0
+      # @since  2.5.0
       class WhoisAudnsNetAu < Base
         include Scanners::Ast
 

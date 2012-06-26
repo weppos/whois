@@ -132,7 +132,7 @@ module Whois
 
   # Raised when attempting to access a property when the response is unavailable.
   #
-  # @since 2.0.3
+  # @since  2.0.3
   # @see Whois::Record::Parser::Base#response_unavailable?
   class ResponseIsUnavailable < ResponseError
   end

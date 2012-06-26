@@ -16,7 +16,7 @@ module Whois
 
       # Parser for the whois.ua server.
       #
-      # @since 2.4.0
+      # @since  2.4.0
       class WhoisUa < Base
 
         property_supported :domain do

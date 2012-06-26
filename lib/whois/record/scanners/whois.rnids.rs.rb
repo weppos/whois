@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.rnids.rs record.
       #
-      # @since 2.4.0
+      # @since  2.4.0
       class WhoisRnidsRs < Base
 
         self.tokenizers += [

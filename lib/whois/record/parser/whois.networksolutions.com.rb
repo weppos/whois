@@ -20,7 +20,7 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       # @author Andrew Brampton <me@bramp.net>
-      # @since RELEASE
+      # @since  2.6.2
       class WhoisNetworksolutionsCom < Base
 
         property_not_supported :status

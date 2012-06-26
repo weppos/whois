@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.sx record.
       #
-      # @since RELEASE
+      # @since  2.6.2
       class WhoisSx < Base
 
         self.tokenizers += [

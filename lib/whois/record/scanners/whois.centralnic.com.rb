@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.centralnic.com record.
       #
-      # @since 2.3.0
+      # @since  2.3.0
       class WhoisCentralnicCom < Base
 
         self.tokenizers += [

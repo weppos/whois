@@ -16,7 +16,7 @@ module Whois
 
       # Scanner for the whois.registry.om record.
       #
-      # @since 2.6.0
+      # @since  2.6.0
       class WhoisRegistryOm < Base
 
         self.tokenizers += [
