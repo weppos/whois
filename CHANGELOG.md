@@ -6,6 +6,8 @@
 
 * FIXED: whois.ua parser raises ArgumentError when the created_on object invalid data.
 
+* CHANGED: Updated whois.registrypro.pro parser to the new response format.
+
 
 ## Release 2.6.2
 

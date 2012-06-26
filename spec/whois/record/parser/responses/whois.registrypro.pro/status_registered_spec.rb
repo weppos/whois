@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
 
   describe "#status" do
     it do
-      @parser.status.should == ["serverDeleteProhibited"]
+      @parser.status.should == ["CLIENT TRANSFER PROHIBITED", "DELETE PROHIBITED"]
     end
   end
   describe "#available?" do
@@ -39,33 +39,35 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2004-08-18 06:20:14 UTC")
+      @parser.created_on.should == Time.parse("2004-08-18 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-01-20 16:51:04 UTC")
+      @parser.updated_on.should == Time.parse("2012-06-14 21:27:09 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2017-01-26 06:00:00 UTC")
+      @parser.expires_on.should == Time.parse("2017-01-26 00:00:00 UTC")
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(4).items
+      @parser.nameservers.should have(5).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "a.gtld.pro"
+      @parser.nameservers[0].name.should == "ns1.ams1.afilias-nst.info"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "b.gtld.pro"
+      @parser.nameservers[1].name.should == "ns1.mia1.afilias-nst.info"
       @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "c.gtld.pro"
+      @parser.nameservers[2].name.should == "ns1.sea1.afilias-nst.info"
       @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "d.gtld.pro"
+      @parser.nameservers[3].name.should == "ns1.yyz1.afilias-nst.info"
+      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[4].name.should == "ns1.hkg1.afilias-nst.info"
     end
   end
 end
