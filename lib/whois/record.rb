@@ -39,6 +39,7 @@ module Whois
     # for {Parser::PROPERTIES} and {Parser::METHODS}.
     #
     # @return [Boolean]
+    #
     def respond_to?(symbol, include_private = false)
       super || Parser::PROPERTIES.include?(symbol) || Parser::METHODS.include?(symbol)
     end
@@ -46,6 +47,7 @@ module Whois
     # Returns a String representation of this record.
     #
     # @return [String] The record content.
+    #
     def to_s
       content.to_s
     end
@@ -53,6 +55,7 @@ module Whois
     # Returns a human-readable representation of this record.
     #
     # @return [String] The result of {#inspect} on content.
+    #
     def inspect
       content.inspect
     end
@@ -62,6 +65,7 @@ module Whois
     #
     # @param  [Whois::Record] other The record to compare.
     # @return [Boolean]
+    #
     def ==(other)
       if equal?(other)
         true
@@ -78,7 +82,7 @@ module Whois
     # Invokes {#match} on record {#content}
     # and returns the match as <tt>MatchData</tt> or <tt>nil</tt>.
     #
-    # @param  [Regexp, String] match
+    # @param  [Regexp, String] pattern The regex pattern to match.
     # @return [MatchData] If pattern matches #content
     # @return [nil] If pattern doesn't match #content
     #
@@ -91,7 +95,7 @@ module Whois
     # Invokes {#match} and returns <tt>true</tt> if <tt>pattern</tt>
     # matches {#content}, <tt>false</tt> otherwise.
     #
-    # @param  [Regexp, String] match
+    # @param  [Regexp, String] pattern The regex pattern to match.
     # @return [Boolean]
     #
     # @see #match
@@ -122,6 +126,7 @@ module Whois
     # Lazy-loads and returns the parser proxy for current record.
     #
     # @return [Whois::Record::Parser]
+    #
     def parser
       @parser ||= Parser.new(self)
     end
@@ -145,6 +150,7 @@ module Whois
     # along with corresponding values.
     #
     # @return [{ Symbol => Object }]
+    #
     def properties
       hash = {}
       Parser::PROPERTIES.each { |property| hash[property] = send(property) }

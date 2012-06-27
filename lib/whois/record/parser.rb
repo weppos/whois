@@ -136,7 +136,7 @@ module Whois
 
       # Initializes and return a new parser from +record+.
       #
-      # @param  [Whois::Record]
+      # @param  [Whois::Record] record
       #
       def initialize(record)
         @record = record
