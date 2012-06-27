@@ -6,7 +6,7 @@
 
 *Whois* is a OS-independent library and doesn't require any external binaries or C libraries: it is a 100% Ruby software.
 
-This library was developed to power [RoboDomain](https://www.robodomain.com) and, since July 2009, it ran more than thousands requests.
+This library was developed to power [RoboDomain](https://www.robodomain.com/) and [RoboWhois](http://www.robowhois.com/). It has been performing queries in production since July 2009.
 
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change WHOIS interfaces without notice and at any time causing queries to specific hosts to stop working.
 
