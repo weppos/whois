@@ -239,12 +239,16 @@ module Whois
 
 
     def self.find_for_ip(string)
-      ip = IPAddr.new(string)
-      type = ip.ipv4? ? :ipv4 : :ipv6
-      definitions(type).each do |definition|
-        if IPAddr.new(definition.first).include?(ip)
-          return factory(type, *definition)
+      begin
+        ip = IPAddr.new(string)
+        type = ip.ipv4? ? :ipv4 : :ipv6
+        definitions(type).each do |definition|
+          if IPAddr.new(definition.first).include?(ip)
+            return factory(type, *definition)
+          end
         end
+      rescue ArgumentError => error
+        # continue
       end
       raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
     end

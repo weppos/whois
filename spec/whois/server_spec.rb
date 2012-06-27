@@ -182,9 +182,9 @@ describe Whois::Server do
       it "raises if definition is not found" do
         with_definitions do
           Whois::Server.define(:ipv6, "::1", "whois.test")
-          lambda do
+          lambda {
             Whois::Server.guess("2002:0300::1")
-          end.should raise_error(Whois::AllocationUnknown)
+          }.should raise_error(Whois::AllocationUnknown)
         end
       end
 
@@ -192,6 +192,15 @@ describe Whois::Server do
         with_definitions do
           Whois::Server.define(:ipv6, "::192.168.1.1", "whois.test")
           Whois::Server.guess("::192.168.1.1") == Whois::Server.factory(:ipv6, "::192.168.1.1", "whois.test")
+        end
+      end
+
+      # https://github.com/weppos/whois/issues/174
+      it "rescues IPAddr ArgumentError" do
+        with_definitions do
+          lambda {
+            Whois::Server.guess("f53")
+          }.should raise_error(Whois::AllocationUnknown)
         end
       end
     end

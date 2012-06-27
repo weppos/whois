@@ -8,6 +8,8 @@
 
 * FIXED: whois.ua parser raises ArgumentError when the created_on object invalid data.
 
+* FIXED: Whois::Server may occasionally raise an error trying to resolve an IPv6 matching query object (GH-174). [Thanks @aeden].
+
 * CHANGED: Updated whois.registrypro.pro parser to the new response format.
 
 
