@@ -1,6 +1,7 @@
 # Changelog
 
-## master
+
+## Release 2.6.3
 
 * NEW: whois.registrypro.pro is now a full parser.
 
