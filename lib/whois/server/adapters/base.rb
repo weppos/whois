@@ -44,7 +44,7 @@ module Whois
 
         # Temporary internal response buffer.
         #
-        # @api internal
+        # @api private
         # @return [Array]
         attr_reader :buffer
 
@@ -144,7 +144,7 @@ module Whois
           @buffer << Whois::Record::Part.new(:body => body, :host => host)
         end
 
-        # @api internal
+        # @api private
         def buffer_start
           @buffer = []
           result = yield(@buffer)
@@ -184,7 +184,7 @@ module Whois
         #
         # This is for internal use only!
         #
-        # @api internal
+        # @api private
         def ask_the_socket(query, *args)
           client = TCPSocket.new(*args)
           client.write("#{query}\r\n")    # I could use put(foo) and forget the \n

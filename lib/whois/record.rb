@@ -290,7 +290,7 @@ module Whois
 
     private
 
-      # @api internal
+      # @api private
       def self.define_property_method(method)
         class_eval <<-RUBY, __FILE__, __LINE__ + 1
           def #{method}(*args, &block)
@@ -301,7 +301,7 @@ module Whois
         RUBY
       end
 
-      # @api internal
+      # @api private
       def self.define_method_method(method)
         class_eval <<-RUBY, __FILE__, __LINE__ + 1
           def #{method}(*args, &block)
@@ -312,7 +312,7 @@ module Whois
         RUBY
       end
 
-      # @api internal
+      # @api private
       def self.define_question_method(method)
         class_eval <<-RUBY, __FILE__, __LINE__ + 1
           def #{method}?

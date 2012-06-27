@@ -211,12 +211,12 @@ module Whois
         #   is(:response_throttled?)
         #   # => true
         #
-        # @api internal
+        # @api private
         def is(symbol)
           respond_to?(symbol) && send(symbol)
         end
 
-        # @api internal
+        # @api private
         def validate!
           raise ResponseIsThrottled   if is(:response_throttled?)
           raise ResponseIsUnavailable if is(:response_unavailable?)
@@ -365,7 +365,7 @@ module Whois
 
         private
 
-          # @api internal
+          # @api private
           def typecast(value, type)
             if Array == type
               Array.wrap(value)
@@ -374,7 +374,7 @@ module Whois
             end
           end
 
-          # @api internal
+          # @api private
           def handle_property(property, *args)
             unless property_supported?(property)
               return send(:"_property_#{property}", *args)

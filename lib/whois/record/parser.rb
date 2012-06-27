@@ -264,7 +264,7 @@ module Whois
 
       private
 
-        # @api internal
+        # @api private
         def self.define_missing_method(method)
           class_eval <<-RUBY, __FILE__, __LINE__ + 1
             def #{method}(*args, &block)
@@ -357,7 +357,7 @@ module Whois
           nil
         end
 
-        # @api internal
+        # @api private
         def all_in_parallel?(*args)
           count = args.first.size
           index = 0
@@ -369,7 +369,7 @@ module Whois
           true
         end
 
-        # @api internal
+        # @api private
         def any_is?(collection, symbol)
           collection.any? { |item| item.is(symbol) }
         end

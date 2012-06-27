@@ -112,7 +112,7 @@ module Whois
     # @param  [String] message The message to display.
     # @return [void]
     #
-    # @api internal
+    # @api private
     # @private
     def deprecate(message = nil, callstack = caller)
       message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
@@ -127,7 +127,7 @@ module Whois
     # @param  [String] message
     # @return [void]
     #
-    # @api internal
+    # @api private
     # @private
     def bug!(error, message)
       raise error, message.dup        <<
