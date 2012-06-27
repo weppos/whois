@@ -11,6 +11,15 @@ This library was developed to power [RoboDomain](https://www.robodomain.com/) an
 An extensive test suite is available to verify the library correctness but you must be aware that registrant might change WHOIS interfaces without notice and at any time causing queries to specific hosts to stop working.
 
 
+## Donations
+
+[Support Whois at Pledgie](http://www.pledgie.com/campaigns/11383).
+
+<a href='http://www.pledgie.com/campaigns/11383'><img alt='Click here to lend your support to: whois and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/11383.png?skin_name=chrome' border='0' /></a>
+
+*Whois* is free software, but it costs money to write, test, and distribute it. You can support the development by sending a donation. **Any amount, even $5, is greatly appreciated**.
+
+
 ## Features
 
 * Ability to query registry data for [IPv4, IPv6, TLDs, and domain names](http://www.ruby-whois.org/manual/usage.html#usage-objects)
@@ -181,15 +190,6 @@ Direct questions and discussions to the [mailing list](http://groups.google.com/
 Pull requests are very welcome! Please include spec and/or feature coverage for every patch, and create a topic branch for every separate change you make.
 
 Report issues or feature requests to [GitHub Issues](https://github.com/weppos/whois/issues).
-
-
-## Donations
-
-[Support Whois at Pledgie](http://www.pledgie.com/campaigns/11383).
-
-<a href='http://www.pledgie.com/campaigns/11383'><img alt='Click here to lend your support to: whois and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/11383.png?skin_name=chrome' border='0' /></a>
-
-Whois is free software, but it costs money to write, test, and distribute it. You can support the development by sending a donation. **Any amount, even $5, is greatly appreciated**.
 
 
 ## More
