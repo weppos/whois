@@ -1381,7 +1381,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes REDMINE-344)
 
-* FIXED: Whois::Client doesn't cast qstring to_s (closes REDMINE-339)
+* FIXED: Whois::Client doesn't cast query to_s (closes REDMINE-339)
 
 * FIXED: Whois::Parser doesn't detect preloaded parsers. Improved performances skipping unnecessary 'require'. (closes REDMINE-340)
 

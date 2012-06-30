@@ -24,10 +24,10 @@ module Whois
 
   class << self
 
-    # Queries the WHOIS server for <tt>qstring</tt> and returns
+    # Queries the WHOIS server for <tt>object</tt> and returns
     # the response from the server.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] object The string to be sent as query parameter.
     # @return [Whois::Record] The record containing the response from the WHOIS server.
     #
     # @example
@@ -37,23 +37,23 @@ module Whois
     #   # Equivalent to
     #   Whois::Client.new.query("google.com")
     #
-    def query(qstring)
-      Client.new.query(qstring)
+    def query(object)
+      Client.new.query(object)
     end
 
     alias_method :whois, :query
 
 
-    # Checks whether the object represented by <tt>qstring</tt> is available.
+    # Checks whether the object represented by <tt>object</tt> is available.
     #
     # Warning: this method is only available if a Whois parser exists
-    # for the top level domain of <tt>qstring</tt>.
-    # If no parser exists for <tt>qstring</tt>, you'll receive a
+    # for the top level domain of <tt>object</tt>.
+    # If no parser exists for <tt>object</tt>, you'll receive a
     # warning message and the method will return <tt>nil</tt>.
     # This is a technical limitation. Browse the lib/whois/record/parsers
     # folder to view all available parsers.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] object The string to be sent as query parameter.
     #         It is intended to be a domain name, otherwise this method
     #         may return unexpected responses.
     # @return [Boolean]
@@ -66,25 +66,25 @@ module Whois
     #   Whois.available?("google-is-not-available-try-again-later.com")
     #   # => true
     #
-    def available?(qstring)
-      result = query(qstring).available?
+    def available?(object)
+      result = query(object).available?
       if result.nil?
         warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.query('#{qstring}') instead."
+              "Use Whois.query('#{object}') instead."
       end
       result
     end
 
-    # Checks whether the object represented by <tt>qstring</tt> is registered.
+    # Checks whether the object represented by <tt>object</tt> is registered.
     #
     # Warning: this method is only available if a Whois parser exists
-    # for the top level domain of <tt>qstring</tt>.
-    # If no parser exists for <tt>qstring</tt>, you'll receive a warning message
+    # for the top level domain of <tt>object</tt>.
+    # If no parser exists for <tt>object</tt>, you'll receive a warning message
     # and the method will return <tt>nil</tt>.
     # This is a technical limitation. Browse the lib/whois/record/parsers folder
     # to view all available parsers.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] string The string to be sent as query parameter.
     #         It is intended to be a domain name, otherwise this method
     #         may return unexpected responses.
     # @return [Boolean]
@@ -97,11 +97,11 @@ module Whois
     #   Whois.registered?("google-is-not-available-try-again-later.com")
     #   # => false
     #
-    def registered?(qstring)
-      result = query(qstring).registered?
+    def registered?(object)
+      result = query(object).registered?
       if result.nil?
         warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.query('#{qstring}') instead."
+              "Use Whois.query('#{object}') instead."
       end
       result
     end
