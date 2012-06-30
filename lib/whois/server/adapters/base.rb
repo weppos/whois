@@ -71,6 +71,7 @@ module Whois
         #
         # @return [Boolean] Returns true if the other is the same object,
         #         or <tt>other</tt> attributes matches this object attributes.
+        #
         def ==(other)
           (
             self.equal?(other)
@@ -90,6 +91,7 @@ module Whois
         #
         # @param  [Hash] settings
         # @return [Hash] The updated options for this object.
+        #
         def configure(settings)
           options.merge!(settings)
         end
@@ -126,12 +128,13 @@ module Whois
         # @raise  [NotImplementedError]
         # @return [void]
         # @abstract
+        #
         def request(string)
           raise NotImplementedError
         end
 
 
-        private
+      private
 
         # Store a record part in {#buffer}.
         #
@@ -140,6 +143,7 @@ module Whois
         # @return [void]
         #
         # @api public
+        #
         def buffer_append(body, host)
           @buffer << Whois::Record::Part.new(:body => body, :host => host)
         end
