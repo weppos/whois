@@ -325,7 +325,7 @@ Whois::Server.define :tld, ".ws", "whois.samoanic.ws"
 Whois::Server.define :tld, ".ye", nil, { :adapter => :none }
 Whois::Server.define :tld, ".yt", "whois.nic.fr"
 Whois::Server.define :tld, ".ac.za", "whois.ac.za"
-Whois::Server.define :tld, ".co.za", "whois.coza.net.za"
+Whois::Server.define :tld, ".co.za", "whois.registry.net.za"
 Whois::Server.define :tld, ".gov.za", "whois.gov.za"
 Whois::Server.define :tld, ".org.za", "whois.org.za"
 Whois::Server.define :tld, ".za", nil, { :adapter => :none }

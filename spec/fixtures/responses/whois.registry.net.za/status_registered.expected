@@ -1,0 +1,64 @@
+#available?
+  should: %s be_false
+
+#registered?
+  should: %s be_true
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns2.host-h.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns1.dns-h.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns1.host-h.net"
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id == "epag"
+  should: %s.name == "EPAG Domainservices"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Fred Flintstone"
+  should: %s[0].email        == "someguy@somedomain.co.za"
+  should: %s[0].phone        == "+27.219000000"
+  should: %s[0].fax          == "+27.219001000"
+  should: %s[0].address      == "30 Frazzita Business Park Durbanville Cape Town ZA 7550"
+
+#domain
+  should: %s == "broccoliwafflesareawesome.co.za"
+
+#created_on
+  should: %s == Time.new(2012,3,27,nil,nil,nil,"+02:00")
+
+#status
+  should: %s == ['ok', 'autorenew']
+
+#expires_on
+  should: %s == Time.new(2013,3,27,nil,nil,nil,"+02:00")
+
+#disclaimer
+  should: %s == "The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2012\n"
+
+#domain_id
+  should: %s raise_error Whois::PropertyNotSupported
+
+#referral_whois
+  should: %s raise_error Whois::PropertyNotSupported
+
+#referral_url
+  should: %s raise_error Whois::PropertyNotSupported
+
+#updated_on
+  should: %s raise_error Whois::PropertyNotSupported
+
+#admin_contacts
+  should: %s raise_error Whois::PropertyNotSupported
+
+#technical_contacts
+  should: %s raise_error Whois::PropertyNotSupported
