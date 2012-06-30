@@ -31,7 +31,10 @@ module Whois
         # @raise  [Whois::WebInterfaceError] For every request.
         #
         def request(string)
-          raise WebInterfaceError, options[:web]
+          if options[:web]
+            Whois.deprecate "options[:web] for :web adapter is deprecated, use options[:url]."
+          end
+          raise WebInterfaceError, options[:web] || options[:url]
         end
 
       end

@@ -120,7 +120,7 @@ module Whois
     #   # Define a new server with a custom adapter and options
     #   Whois::Server.define :tld, ".ar", nil,
     #     :adapter => Whois::Server::Adapters::Web,
-    #     :web => "http://www.nic.ar/"
+    #     :url => "http://www.nic.ar/"
     #
     def self.define(type, allocation, host, options = {})
       @@definitions[type] ||= []

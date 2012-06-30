@@ -75,11 +75,11 @@ describe Whois::Client do
     end
 
     it "works with domain with web whois" do
-      Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :web => "www.nic.test")
+      Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :url => "http://www.example.com/")
 
       lambda do
         klass.new.query("domain.webwhois")
-      end.should raise_error(Whois::WebInterfaceError, /www\.nic\.test/)
+      end.should raise_error(Whois::WebInterfaceError, /www\.example\.com/)
     end
 
     it "raises if timeout is exceeded" do

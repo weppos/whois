@@ -4,6 +4,8 @@
 
 * NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
 
+* CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
+
 
 ## Release 2.6.3
 
