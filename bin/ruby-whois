@@ -18,7 +18,7 @@ OptionParser.new do |opts|
   opts.separator    ""
   opts.separator    "Options:"
 
-  opts.on("-t", "--timeout [SECONDS]", Integer, "Specify the timeout value") do |seconds|
+  opts.on("-t", "--timeout [SECONDS]", Integer, "specify the timeout value") do |seconds|
     options.timeout = seconds
   end
 
@@ -28,6 +28,7 @@ OptionParser.new do |opts|
   end
 
   opts.on_tail("-v", "--version", "Show version") do
+  opts.on_tail("-v", "--version", "show version") do
     puts "#{Whois::NAME} #{Whois::VERSION}"
     exit
   end
