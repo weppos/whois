@@ -31,7 +31,7 @@ module Whois
     # If <tt>block</tt> is given, yields <tt>self</tt>.
     #
     # @param  [Hash] settings Hash of settings to customize the client behavior.
-    # @option settings [Fixnum, nil] :timeout (DEFAULT_TIMEOUT)
+    # @option settings [Integer, nil] :timeout (DEFAULT_TIMEOUT)
     #         The timeout for a WHOIS query, expressed in seconds.
     # @option settings [String] :bind_host (nil)
     #         Providing an IP address or hostname will bind the Socket connection
@@ -39,6 +39,8 @@ module Whois
     # @option settings [Fixnum] :bind_port (nil)
     #         Providing port number will bind the Socket connection
     #         to the specific local port.
+    # @option settings [String, nil] :host (nil)
+    #         The server host to query. Leave it blank for intelligent detection.
     #
     # @yield  [self]
     #

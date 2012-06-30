@@ -89,6 +89,13 @@ describe Whois::Server::Adapters::Base do
       a.configure(:foo => "baz")
       a.options.should == { :foo => "baz" }
     end
+
+    it "overrides @host if :host option exists" do
+      a = klass.new(:tld, ".test", "whois.test", { :hello => "world" })
+      a.configure(:foo => "bar", :host => "whois.example.com")
+      a.options.should == { :hello => "world", :foo => "bar", :host => "whois.example.com" }
+      a.host.should == "whois.example.com"
+    end
   end
 
 
