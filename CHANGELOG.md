@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
+
 
 ## Release 2.6.3
 

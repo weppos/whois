@@ -164,7 +164,9 @@ module Whois
     #
     def self.factory(type, allocation, host, options = {})
       options = options.dup
-      (options.delete(:adapter) || Adapters::Standard).new(type, allocation, host, options)
+      adapter = options.delete(:adapter) || Adapters::Standard
+      adapter = Adapters.const_get(camelize(adapter)) unless adapter.respond_to?(:new)
+      adapter.new(type, allocation, host, options)
     end
 
 
@@ -224,6 +226,11 @@ module Whois
 
 
   private
+
+    def self.camelize(string)
+      string.to_s.split("_").collect(&:capitalize).join
+    end
+
 
     def self.matches_tld?(string)
       string =~ /^\.(xn--)?[a-z0-9]+$/

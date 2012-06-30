@@ -71,8 +71,20 @@ describe Whois::Server do
       s.should be_a(Whois::Server::Adapters::Standard)
     end
 
-    it "accepts an :adapter option and returns an instance of given adapter" do
-      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => Whois::Server::Adapters::None)
+    it "accepts an :adapter option as Class and returns an instance of given adapter" do
+      a = Class.new do
+        attr_reader :args
+        def initialize(*args)
+          @args = args
+        end
+      end
+      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => a)
+      s.should be_a(a)
+      s.args.should == [:tld, ".test", "whois.test", {}]
+    end
+
+    it "accepts an :adapter option as Symbol, load Class and returns an instance of given adapter" do
+      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => :none)
       s.should be_a(Whois::Server::Adapters::None)
     end
 
