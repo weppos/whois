@@ -24,19 +24,6 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisNicCz < BaseWhoisd
-
-        property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
-            if line =~ /(.+) \((.+)\)/
-              name = $1
-              ipv4, ipv6 = $2.split(", ")
-              Record::Nameserver.new(:name => name, :ipv4 => ipv4, :ipv6 => ipv6)
-            else
-              Record::Nameserver.new(:name => line.strip)
-            end
-          end
-        end
-
       end
 
     end
