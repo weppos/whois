@@ -9,7 +9,7 @@ registrar:    fraktal
 status:       paid and in zone
 registered:   04.07.2010 07:10:32
 changed:      10.12.2010 13:37:11
-expire:       10.12.2011
+expire:       10.12.2012
 
 contact:      CID:FRAKTAL:1
 name:         Priit Haamer
@@ -18,7 +18,6 @@ registrar:    fraktal
 created:      09.12.2010 16:08:33
 
 contact:      CID:FRAKTAL:7
-org:          Fraktal OÜ
 name:         Tõnu Runnel
 e-mail:       Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS
 registrar:    fraktal

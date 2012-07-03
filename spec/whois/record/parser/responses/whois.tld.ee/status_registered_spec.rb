@@ -51,7 +51,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-12-10")
+      @parser.expires_on.should == Time.parse("2012-12-10")
     end
   end
   describe "#registrar" do
@@ -82,7 +82,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "CID:FRAKTAL:7"
       @parser.admin_contacts[0].name.should         == "Tõnu Runnel"
-      @parser.admin_contacts[0].organization.should == "Fraktal OÜ"
+      @parser.admin_contacts[0].organization.should == nil
     end
   end
   describe "#technical_contacts" do

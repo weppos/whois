@@ -2,7 +2,7 @@
 % Estonian Top Level Domain ee TLD
 
 %ERROR:101: no entries found
-%
+% 
 % No entries found.
 
 

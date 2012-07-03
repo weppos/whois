@@ -18,7 +18,7 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-12-10")
+  should: %s == Time.parse("2012-12-10")
 
 
 #registrar
@@ -44,7 +44,7 @@
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id           == "CID:FRAKTAL:7"
   should: %s[0].name         == "Tõnu Runnel"
-  should: %s[0].organization == "Fraktal OÜ"
+  should: %s[0].organization == nil
 
 #technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
