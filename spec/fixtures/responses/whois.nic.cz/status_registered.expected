@@ -14,7 +14,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2006-08-31 14:35:00")
+  should: %s == Time.parse("2011-05-18 23:28:45")
 
 #expires_on
   should: %s CLASS(time)
@@ -24,10 +24,10 @@
   should: %s CLASS(array)
   should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns3.google.com"
+  should: %s[0].name == "ns2.google.com"
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns4.google.com"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns1.google.com"
+  should: %s[2].name == "ns3.google.com"
   should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns2.google.com"
+  should: %s[3].name == "ns1.google.com"

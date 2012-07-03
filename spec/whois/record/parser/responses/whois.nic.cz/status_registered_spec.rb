@@ -45,7 +45,7 @@ describe Whois::Record::Parser::WhoisNicCz, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2006-08-31 14:35:00")
+      @parser.updated_on.should == Time.parse("2011-05-18 23:28:45")
     end
   end
   describe "#expires_on" do
@@ -59,13 +59,13 @@ describe Whois::Record::Parser::WhoisNicCz, "status_registered.expected" do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns3.google.com"
+      @parser.nameservers[0].name.should == "ns2.google.com"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns4.google.com"
       @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns1.google.com"
+      @parser.nameservers[2].name.should == "ns3.google.com"
       @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns2.google.com"
+      @parser.nameservers[3].name.should == "ns1.google.com"
     end
   end
 end

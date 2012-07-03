@@ -1,4 +1,4 @@
-%  (c) 2006-2010 CZ.NIC, z.s.p.o.
+%  (c) 2006-2012 CZ.NIC, z.s.p.o.
 % 
 % Intended use of supplied data and information
 % 
@@ -15,7 +15,7 @@
 % See also a search service at http://www.nic.cz/whois/
 % 
 % 
-% Whoisd Server Version: 3.2.1
+% Whoisd Server Version: 3.4.0
 
 %ERROR:101: no entries found
 % 
