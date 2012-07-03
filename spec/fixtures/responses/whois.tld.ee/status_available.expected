@@ -1,3 +1,10 @@
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :available
 
@@ -30,7 +37,8 @@
   should: %s == []
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(array)
+  should: %s == []
 
 
 #nameservers

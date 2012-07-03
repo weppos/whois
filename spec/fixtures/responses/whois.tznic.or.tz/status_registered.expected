@@ -1,3 +1,10 @@
+#domain
+  should: %s == "dailynews.co.tz"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -27,6 +34,63 @@
   should: %s.name         == "REG-TZNIC"
   should: %s.organization == nil
   should: %s.url          == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "CM7-TZNIC"
+  should: %s[0].name          == "Collins Mtita"
+  should: %s[0].organization  == "TSN"
+  should: %s[0].address       == "Dar_es_salaam\nDar_es_salaam\nP.O.BOX 9033\nTZ"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "mcollins@dailynews.co.tz"
+  should: %s[0].created_on    == Time.parse("2010-08-30 15:46:35")
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "CM7-TZNIC"
+  should: %s[0].name          == "Collins Mtita"
+  should: %s[0].organization  == "TSN"
+  should: %s[0].address       == "Dar_es_salaam\nDar_es_salaam\nP.O.BOX 9033\nTZ"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "mcollins@dailynews.co.tz"
+  should: %s[0].created_on    == Time.parse("2010-08-30 15:46:35")
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "JN1-TZNIC"
+  should: %s[0].name          == "Jacob Noel"
+  should: %s[0].organization  == "Twiga Hosting"
+  should: %s[0].address       == "Dar es Salaam\nDar es Salaam\nP.O.Box\nTZ"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+255.755763951"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "jacobn@twigaonline.com"
+  should: %s[0].created_on    == Time.parse("2009-08-24 06:21:51")
 
 
 #nameservers

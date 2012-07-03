@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicFo, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :available
@@ -54,6 +64,24 @@ describe Whois::Record::Parser::WhoisNicFo, "status_available.expected" do
   describe "#registrar" do
     it do
       lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should == []
     end
   end
   describe "#nameservers" do

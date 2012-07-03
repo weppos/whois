@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisTldEe, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :available
@@ -70,7 +80,8 @@ describe Whois::Record::Parser::WhoisTldEe, "status_available.expected" do
   end
   describe "#technical_contacts" do
     it do
-      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should == []
     end
   end
   describe "#nameservers" do

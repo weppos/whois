@@ -10,9 +10,13 @@
 
 * NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
 
-* NEW: Added whois.nic.fo parser (GH-177).
+* NEW: Added full whois.nic.fo parser (GH-177).
 
-* NEW: .CZ, .TZ parsers now support registry property.
+* NEW: whois.nic.cz is now a full parser.
+
+* NEW: whois.tld.ee is now a full parser.
+
+* NEW: whois.tznic.or.tz is now a full parser.
 
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 

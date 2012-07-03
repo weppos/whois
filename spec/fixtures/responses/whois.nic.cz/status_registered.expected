@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.cz"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -27,6 +34,62 @@
   should: %s.name         == "REG-MARKMONITOR"
   should: %s.organization == nil
   should: %s.url          == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "MM12383"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway\nMountain View\n94043\nCA\nUS"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == Time.parse("2011-05-18 23:28:26")
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "MM12383"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway\nMountain View\n94043\nCA\nUS"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == Time.parse("2011-05-18 23:28:26")
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].id            == "MM193020"
+  should: %s[0].name          == "Domain Provisioning"
+  should: %s[0].organization  == "MarkMonitor, Inc."
+  should: %s[0].address       == "10400 Overland Road PMB 155\nBoise\n83709-1433\nID\nUS"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "ccops@markmonitor.com"
+  should: %s[0].created_on    == Time.parse("2011-02-03 18:24:34")
 
 
 #nameservers

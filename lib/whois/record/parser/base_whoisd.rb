@@ -28,6 +28,14 @@ module Whois
           'expired' => :expired,
         }
 
+
+        property_supported :domain do
+          node('domain')
+        end
+
+        property_not_supported :domain_id
+
+
         property_supported :status do
           node('status') do |string|
             string = string.first if string.is_a?(Array)
@@ -67,6 +75,25 @@ module Whois
           end
         end
 
+        property_supported :registrant_contacts do
+          node('registrant') do |value|
+            build_contact(value, Record::Contact::TYPE_REGISTRANT)
+          end
+        end
+
+        property_supported :admin_contacts do
+          node('admin-c') do |value|
+            build_contact(value, Record::Contact::TYPE_ADMIN)
+          end
+        end
+
+        property_supported :technical_contacts do
+          id = node(node('nsset'))['tech-c'] rescue nil
+          if id
+            build_contact(id, Record::Contact::TYPE_TECHNICAL)
+          end
+        end
+
 
         property_supported :nameservers do
           lines = node(node('nsset'))['nserver'] rescue nil
@@ -89,6 +116,30 @@ module Whois
         # @return [Hash]
         def parse
           Scanners::Whoisd.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          node(element) do |hash|
+            address = hash['street'] || hash['address']
+            address = address.join("\n") if address.respond_to?(:join)
+
+            Record::Contact.new(
+                :type           => type,
+                :id             => element,
+                :name           => hash['name'],
+                :organization   => hash['org'],
+                :address        => address,
+                :city           => hash['city'],
+                :zip            => hash['postal code'],
+                :country_code   => hash['country'],
+                :phone          => hash['phone'],
+                :email          => hash['e-mail'],
+                :created_on     => Time.parse(hash['created'])
+            )
+          end
         end
 
       end

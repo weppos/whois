@@ -15,10 +15,6 @@ module Whois
     class Parser
 
       # Parser for the whois.nic.fo server.
-      #
-      # @note This parser is just a stub and provides only a few basic methods
-      #   to check for domain availability and get domain status.
-      #   Please consider to contribute implementing missing methods.
       # 
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
@@ -28,7 +24,15 @@ module Whois
 
         property_not_supported :registrar
 
-        # whois.nif.fo is using an old whoisd version.
+        # whois.nic.fo is using an old whoisd version.
+        property_supported :technical_contacts do
+          node('tech-c') do |value|
+            build_contact(value, Record::Contact::TYPE_TECHNICAL)
+          end
+        end
+
+
+        # whois.nic.fo is using an old whoisd version.
         property_supported :nameservers do
           Array.wrap(node('nserver')).map do |line|
             Record::Nameserver.new(:name => line.strip)

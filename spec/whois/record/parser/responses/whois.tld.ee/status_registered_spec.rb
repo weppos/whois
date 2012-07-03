@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == "edicy.ee"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -68,10 +78,20 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should           == "CID:FRAKTAL:1"
-      @parser.registrant_contacts[0].name.should         == "Priit Haamer"
-      @parser.registrant_contacts[0].organization.should == nil
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "CID:FRAKTAL:1"
+      @parser.registrant_contacts[0].name.should          == "Priit Haamer"
+      @parser.registrant_contacts[0].organization.should  == nil
+      @parser.registrant_contacts[0].address.should       == nil
+      @parser.registrant_contacts[0].city.should          == nil
+      @parser.registrant_contacts[0].zip.should           == nil
+      @parser.registrant_contacts[0].state.should         == nil
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == nil
+      @parser.registrant_contacts[0].phone.should         == nil
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == "Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS"
+      @parser.registrant_contacts[0].created_on.should    == Time.parse("2010-12-09 16:08:33")
     end
   end
   describe "#admin_contacts" do
@@ -79,15 +99,41 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should           == "CID:FRAKTAL:7"
-      @parser.admin_contacts[0].name.should         == "Tõnu Runnel"
-      @parser.admin_contacts[0].organization.should == nil
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "CID:FRAKTAL:7"
+      @parser.admin_contacts[0].name.should          == "Tõnu Runnel"
+      @parser.admin_contacts[0].organization.should  == nil
+      @parser.admin_contacts[0].address.should       == nil
+      @parser.admin_contacts[0].city.should          == nil
+      @parser.admin_contacts[0].zip.should           == nil
+      @parser.admin_contacts[0].state.should         == nil
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == nil
+      @parser.admin_contacts[0].phone.should         == nil
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS"
+      @parser.admin_contacts[0].created_on.should    == Time.parse("2010-12-10 13:35:38")
     end
   end
   describe "#technical_contacts" do
     it do
-      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "CID:FRAKTAL:1"
+      @parser.technical_contacts[0].name.should          == "Priit Haamer"
+      @parser.technical_contacts[0].organization.should  == nil
+      @parser.technical_contacts[0].address.should       == nil
+      @parser.technical_contacts[0].city.should          == nil
+      @parser.technical_contacts[0].zip.should           == nil
+      @parser.technical_contacts[0].state.should         == nil
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == nil
+      @parser.technical_contacts[0].phone.should         == nil
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS"
+      @parser.technical_contacts[0].created_on.should    == Time.parse("2010-12-09 16:08:33")
     end
   end
   describe "#nameservers" do
