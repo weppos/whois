@@ -20,6 +20,7 @@ module Whois
       #
       # @since  RELEASE
       class BaseWhoisd < Base
+        include Scanners::Ast
 
         class_attribute :status_mapping
         self.status_mapping = {
@@ -84,6 +85,16 @@ module Whois
               Record::Nameserver.new(:name => line.strip)
             end
           end
+        end
+
+
+        # Initializes a new {Scanners::Whoisd} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::Whoisd.new(content_for_scanner).parse
         end
 
       end

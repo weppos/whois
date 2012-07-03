@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base_whoisd'
-require 'whois/record/scanners/whois.tld.ee.rb'
+require 'whois/record/scanners/whoisd.rb'
 
 
 module Whois
@@ -25,43 +25,31 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisTldEe < BaseWhoisd
-        include Scanners::Ast
 
         property_supported :admin_contacts do
-          if content_for_scanner =~ /admin-c:\s+(.+)\n/
-            build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
+          node('admin-c') do |value|
+            build_contact(value, Record::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :registrant_contacts do
-          if content_for_scanner =~ /registrant:\s+(.+)\n/
-            build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
+          node('registrant') do |value|
+            build_contact(value, Record::Contact::TYPE_REGISTRANT)
           end
         end
 
         property_not_supported :technical_contacts
 
-
-        # Initializes a new {Scanners::WhoisTldEe} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisTldEe.new(content_for_scanner).parse
-        end
-
-
       private
 
         def build_contact(element, type)
-          node(element) do |raw|
+          node(element) do |hash|
             Record::Contact.new(
                 :type           => type,
                 :id             => element,
-                :name           => raw["name"],
-                :organization   => raw["org"],
-                :created_on     => Time.parse(raw["created"])
+                :name           => hash['name'],
+                :organization   => hash['org'],
+                :created_on     => Time.parse(hash['created'])
             )
           end
         end

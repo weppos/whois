@@ -14,20 +14,19 @@ module Whois
   class Record
     module Scanners
 
-      # Scanner for the whois.tld.ee record.
-      #
-      # @todo This is an incomplete scanner, it skips all the properties
-      #       except contacts.
-      class WhoisTldEe < Base
+      # Scanner for Whoisd-based record.
+      class Whoisd < Base
 
         self.tokenizers += [
-            :scan_contact,
-            :todo_content,
+            :skip_comment,
+            :skip_empty_line,
+            :scan_section,
+            :scan_keyvalue,
         ]
 
 
-        tokenizer :scan_contact do
-          if @input.scan(/contact:\s+(.*)\n/)
+        tokenizer :scan_section do
+          if @input.scan(/(?:contact|nsset):\s+(.+)\n/)
             @tmp['_section'] = @input[1].strip
             while scan_keyvalue
             end
@@ -37,6 +36,10 @@ module Whois
 
         tokenizer :todo_content do
           @input.scan(/(.*)\n/)
+        end
+
+        tokenizer :skip_comment do
+          @input.skip(/^%.*\n/)
         end
 
       end
