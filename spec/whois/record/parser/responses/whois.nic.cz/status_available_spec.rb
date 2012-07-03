@@ -51,6 +51,11 @@ describe Whois::Record::Parser::WhoisNicCz, "status_available.expected" do
       @parser.expires_on.should == nil
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should == nil
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

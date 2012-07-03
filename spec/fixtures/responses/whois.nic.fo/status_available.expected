@@ -18,6 +18,10 @@
   should: %s == nil
 
 
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s == []

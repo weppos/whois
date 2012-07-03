@@ -60,6 +60,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       @parser.registrar.id.should           == "fraktal"
       @parser.registrar.name.should         == "fraktal"
       @parser.registrar.organization.should == nil
+      @parser.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

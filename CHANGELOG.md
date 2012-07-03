@@ -12,6 +12,8 @@
 
 * NEW: Added whois.nic.fo parser (GH-177).
 
+* NEW: .CZ, .TZ parsers now support registry property.
+
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 
 * CHANGE: Removed Pir adaper, the registry is a thick whois server.

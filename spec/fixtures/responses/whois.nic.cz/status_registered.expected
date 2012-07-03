@@ -20,6 +20,15 @@
   should: %s CLASS(time)
   should: %s == Time.parse("2013-07-22")
 
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "REG-MARKMONITOR"
+  should: %s.name         == "REG-MARKMONITOR"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(4)

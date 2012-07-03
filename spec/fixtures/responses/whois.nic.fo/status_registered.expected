@@ -21,6 +21,10 @@
   should: %s == Time.parse("2014-01-03")
 
 
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(5)

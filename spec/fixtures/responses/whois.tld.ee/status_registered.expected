@@ -26,6 +26,7 @@
   should: %s.id           == "fraktal"
   should: %s.name         == "fraktal"
   should: %s.organization == nil
+  should: %s.url          == nil
 
 #registrant_contacts
   should: %s CLASS(array)

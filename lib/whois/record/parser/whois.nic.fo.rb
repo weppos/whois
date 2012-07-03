@@ -25,6 +25,9 @@ module Whois
       #
       # @since  RELEASE
       class WhoisNicFo < BaseWhoisd
+
+        property_not_supported :registrar
+
       end
 
     end

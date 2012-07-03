@@ -54,6 +54,15 @@ describe Whois::Record::Parser::WhoisTznicOrTz, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2012-07-27")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "REG-TZNIC"
+      @parser.registrar.name.should         == "REG-TZNIC"
+      @parser.registrar.organization.should == nil
+      @parser.registrar.url.should          == nil
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)

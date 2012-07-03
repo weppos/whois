@@ -66,6 +66,16 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          if content_for_scanner =~ /registrar:\s+(.+)\n/
+            Whois::Record::Registrar.new(
+                :id           => $1,
+                :name         => $1
+            )
+          end
+        end
+
+
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |name|
             Record::Nameserver.new(:name => name.strip)
