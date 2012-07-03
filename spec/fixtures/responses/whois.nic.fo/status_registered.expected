@@ -1,0 +1,36 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2010-06-03 03:34:05")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-07-12 12:52:57")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2014-01-03")
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(5)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.gratisdns.dk"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.gratisdns.dk"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.gratisdns.dk"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.gratisdns.dk"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns5.gratisdns.dk"

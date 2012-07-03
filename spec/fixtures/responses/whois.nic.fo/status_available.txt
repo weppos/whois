@@ -1,0 +1,12 @@
+%  This is the FO Database query service at whois.nic.fo
+% The FO Database is subject to Terms and Conditions.
+% See http://www.nic.fo/
+% Data served below is in Unicode.
+% 
+% Whoisd Server Version: 2.2.0
+
+%ERROR:101: no entries found
+% 
+% No entries found.
+
+

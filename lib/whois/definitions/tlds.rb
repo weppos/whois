@@ -125,7 +125,7 @@ Whois::Server.define :tld, ".fi", "whois.fi"
 Whois::Server.define :tld, ".fj", "whois.usp.ac.fj"
 Whois::Server.define :tld, ".fk", nil, { :adapter => :none }
 Whois::Server.define :tld, ".fm", nil, { :adapter => :web, :url => "http://www.dot.fm/whois.html" }
-Whois::Server.define :tld, ".fo", "whois.ripe.net"
+Whois::Server.define :tld, ".fo", "whois.nic.fo"
 Whois::Server.define :tld, ".aeroport.fr", "whois.smallregistry.net"
 Whois::Server.define :tld, ".avocat.fr", "whois.smallregistry.net"
 Whois::Server.define :tld, ".chambagri.fr", "whois.smallregistry.net"

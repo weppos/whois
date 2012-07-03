@@ -4,11 +4,13 @@
 
 * SERVER: Added .CW TLD server.
 
-* SERVER: Updated .GR, .ORG (GH-176) TLD server.
+* SERVER: Updated .GR, .ORG (GH-176), .FO (GH-177) TLD server.
 
 * SERVER: Added .XN--MGBA3A4F16A (ایران., Iran) IDN TLD server.
 
 * NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
+
+* NEW: Added whois.nic.fo parser (GH-177).
 
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 
