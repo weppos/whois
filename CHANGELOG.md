@@ -2,6 +2,12 @@
 
 ## master
 
+* SERVER: Added .CW TLD server.
+
+* SERVER: Updated .GR TLD server.
+
+* SERVER: Added .XN--MGBA3A4F16A (ایران., Iran) IDN TLD server.
+
 * NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
 
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
