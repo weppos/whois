@@ -12,6 +12,8 @@
 
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 
+* CHANGE: Removed Pir adaper, the registry is a thick whois server.
+
 
 ## Release 2.6.3
 

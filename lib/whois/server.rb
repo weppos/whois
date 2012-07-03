@@ -29,7 +29,6 @@ module Whois
       autoload :Formatted,        "whois/server/adapters/formatted"
       autoload :None,             "whois/server/adapters/none"
       autoload :NotImplemented,   "whois/server/adapters/not_implemented"
-      autoload :Pir,              "whois/server/adapters/pir"
       autoload :Standard,         "whois/server/adapters/standard"
       autoload :Verisign,         "whois/server/adapters/verisign"
       autoload :Web,              "whois/server/adapters/web"
