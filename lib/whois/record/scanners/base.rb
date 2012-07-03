@@ -47,14 +47,18 @@ module Whois
           @input.skip(/\n/)
         end
 
+        # Scan a key/value pair and stores the result in the current target.
+        # target is the global @ast if no '_section' is set, else '_section' is used.
         tokenizer :scan_keyvalue do
           if @input.scan(/(.+?):(.*?)\n/)
             key, value = @input[1].strip, @input[2].strip
-            if @ast[key].nil?
-              @ast[key] = value
+            target = @tmp['_section'] ? (@ast[@tmp['_section']] ||= {}) : @ast
+
+            if target[key].nil?
+              target[key] = value
             else
-              @ast[key] = Array.wrap(@ast[key])
-              @ast[key] << value
+              target[key] = Array.wrap(target[key])
+              target[key] << value
             end
           end
         end

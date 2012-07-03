@@ -23,7 +23,7 @@ module Whois
             :scan_available,
             :skip_comment,
             :flag_section_start,
-            :scan_section_keyvalue,
+            :scan_keyvalue,
             :flag_section_end,
             :skip_empty_line,
             :skip_privacy,
@@ -40,28 +40,14 @@ module Whois
 
         tokenizer :flag_section_start do
           if SECTIONS.any? { |section| @input.check(/^(#{section}):/) }
-            @tmp["section"] = @input[1]
+            @tmp['_section'] = @input[1]
           end
           false
         end
 
         tokenizer :flag_section_end do
           if @input.match?(/^\n/)
-            @tmp.delete("section")
-          end
-        end
-
-        tokenizer :scan_section_keyvalue do
-          if @input.scan(/(.+?):(.*?)\n/)
-            key, value = @input[1].strip, @input[2].strip
-            target = @tmp["section"] ? (@ast[@tmp["section"]] ||= {}) : @ast
-
-            if target[key].nil?
-              target[key] = value
-            else
-              target[key] = Array.wrap(target[key])
-              target[key] << value
-            end
+            @tmp.delete('_section')
           end
         end
 
