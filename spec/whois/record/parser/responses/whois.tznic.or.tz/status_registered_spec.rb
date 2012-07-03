@@ -51,7 +51,7 @@ describe Whois::Record::Parser::WhoisTznicOrTz, "status_registered.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-07-27")
+      @parser.expires_on.should == Time.parse("2012-07-27")
     end
   end
   describe "#nameservers" do
@@ -59,9 +59,9 @@ describe Whois::Record::Parser::WhoisTznicOrTz, "status_registered.expected" do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1213.hostgator.com"
+      @parser.nameservers[0].name.should == "ns1.twigaservers.com"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns1214.hostgator.com"
+      @parser.nameservers[1].name.should == "ns2.twigaservers.com"
     end
   end
 end
