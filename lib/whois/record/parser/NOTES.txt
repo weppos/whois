@@ -77,9 +77,7 @@ whois.nic.wf (CNAME whois.nic.fr)
 whois.nic.tf (CNAME whois.nic.fr)
 whois.nic.yt (CNAME whois.nic.fr)
 
-whois.nic.cz
 whois.tld.ee
-whois.tznic.or.tz
 whois.pandi.or.id
 whois.nic.ir
 ripe.net
