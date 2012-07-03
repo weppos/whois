@@ -4,7 +4,7 @@
 
 * SERVER: Added .CW TLD server.
 
-* SERVER: Updated .GR TLD server.
+* SERVER: Updated .GR, .ORG (GH-176) TLD server.
 
 * SERVER: Added .XN--MGBA3A4F16A (ایران., Iran) IDN TLD server.
 
@@ -13,6 +13,8 @@
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 
 * CHANGE: Removed Pir adaper, the registry is a thick whois server.
+
+* CHANGE: Changed whois.publicinterestregistry.com to whois.pir.org (GH-176).
 
 
 ## Release 2.6.3

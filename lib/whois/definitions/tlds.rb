@@ -28,7 +28,7 @@ Whois::Server.define :tld, ".za.net", "whois.za.net"
 Whois::Server.define :tld, ".net", "whois.crsnic.net", { :adapter => :verisign }
 Whois::Server.define :tld, ".eu.org", "whois.eu.org"
 Whois::Server.define :tld, ".za.org", "whois.za.org"
-Whois::Server.define :tld, ".org", "whois.publicinterestregistry.net"
+Whois::Server.define :tld, ".org", "whois.pir.org"
 Whois::Server.define :tld, ".edu", "whois.educause.edu"
 Whois::Server.define :tld, ".gov", "whois.nic.gov"
 Whois::Server.define :tld, ".int", "whois.iana.org"

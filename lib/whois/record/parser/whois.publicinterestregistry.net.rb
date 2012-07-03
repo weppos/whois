@@ -7,36 +7,16 @@
 #++
 
 
-require 'whois/record/parser/base_afilias'
+require 'whois/record/parser/whois.pir.org.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      # Parser for the whois.publicinternetregistry.net server.
-      class WhoisPublicinterestregistryNet < BaseAfilias
-
-        # Checks whether the response has been throttled.
-        #
-        # @return [Boolean]
-        #
-        # @example
-        #   WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS
-        #
-        def response_throttled?
-          !!node("response:throttled")
-        end
-
-        private
-
-          def decompose_registrar(value)
-            if value =~ /(.+?) \((.+?)\)/
-              [$2, $1]
-            end
-          end
-
-      end
+      # Parser for the <tt>whois.publicinterestregistry.net</tt> server.
+      # Aliases the <tt>whois.pir.org</tt> parser.
+      WhoisPublicinterestregistryNet = WhoisPirOrg
 
     end
   end
