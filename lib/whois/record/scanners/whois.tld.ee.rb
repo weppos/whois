@@ -28,14 +28,10 @@ module Whois
 
         tokenizer :scan_contact do
           if @input.scan(/contact:\s+(.*)\n/)
-            section = @input[1].strip
-            content = {}
-
-            while @input.scan(/(.*?):\s+(.*?)\n/)
-              content[@input[1]] = @input[2]
+            @tmp['_section'] = @input[1].strip
+            while scan_keyvalue
             end
-
-            @ast[section] = content
+            @tmp.delete('_section')
           end
         end
 
