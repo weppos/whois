@@ -21,18 +21,16 @@ module Whois
       # @since  RELEASE
       class BaseWhoisd < Base
 
+        class_attribute :status_mapping
+        self.status_mapping = {
+          'paid and in zone' => :registered,
+          'expired' => :expired,
+        }
+
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+)\n/
-            case $1.downcase
-            when "paid and in zone"
-              :registered
-            when "update prohibited"
-              :registered
-            when "expired"
-              :expired
-            else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
+            self.class.status_mapping[$1.downcase] ||
+            Whois.bug!(ParserError, "Unknown status `#{$1}'.")
           else
             :available
           end
