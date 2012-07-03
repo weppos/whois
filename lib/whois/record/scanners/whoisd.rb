@@ -18,15 +18,22 @@ module Whois
       class Whoisd < Base
 
         self.tokenizers += [
+            :scan_available,
             :skip_comment,
-            :skip_empty_line,
             :scan_section,
             :scan_keyvalue,
+            :skip_empty_line,
         ]
 
 
+        tokenizer :scan_available do
+          if @input.skip(/^%ERROR:101: no entries found/)
+            @ast['status:available'] = true
+          end
+        end
+
         tokenizer :scan_section do
-          if @input.scan(/(?:contact|nsset):\s+(.+)\n/)
+          if @input.scan(/\n(?:contact|nsset):\s+(.+)\n/)
             @tmp['_section'] = @input[1].strip
             while scan_keyvalue
             end

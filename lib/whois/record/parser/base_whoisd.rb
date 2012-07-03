@@ -29,16 +29,15 @@ module Whois
         }
 
         property_supported :status do
-          if content_for_scanner =~ /status:\s+(.+)\n/
-            self.class.status_mapping[$1.downcase] ||
-            Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-          else
-            :available
-          end
+          node('status') do |string|
+            string = string.first if string.is_a?(Array)
+            self.class.status_mapping[string.downcase] ||
+            Whois.bug!(ParserError, "Unknown status `#{string}'.")
+          end || :available
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^%ERROR:101: no entries found/)
+          !!node('status:available')
         end
 
         property_supported :registered? do
@@ -47,36 +46,31 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /registered:\s+(.+?)\n/
-            Time.parse($1)
-          end
+          node('registered') { |string| Time.parse(string) }
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /changed:\s+(.+?)\n/
-            Time.parse($1)
-          end
+          node('changed') { |string| Time.parse(string) }
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /expire:\s+(.+?)\n/
-            Time.parse($1)
-          end
+          node('expire') { |string| Time.parse(string) }
         end
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /registrar:\s+(.+)\n/
+          node('registrar') do |string|
             Whois::Record::Registrar.new(
-                :id           => $1,
-                :name         => $1
+                :id           => string,
+                :name         => string
             )
           end
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+          lines = node(node('nsset'))['nserver'] rescue nil
+          Array.wrap(lines).map do |line|
             if line =~ /(.+) \((.+)\)/
               name = $1
               ipv4, ipv6 = $2.split(', ')

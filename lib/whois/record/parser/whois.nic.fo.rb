@@ -28,6 +28,13 @@ module Whois
 
         property_not_supported :registrar
 
+        # whois.nif.fo is using an old whoisd version.
+        property_supported :nameservers do
+          Array.wrap(node('nserver')).map do |line|
+            Record::Nameserver.new(:name => line.strip)
+          end
+        end
+
       end
 
     end
