@@ -27,7 +27,6 @@ OptionParser.new do |opts|
     exit
   end
 
-  opts.on_tail("-v", "--version", "Show version") do
   opts.on_tail("-v", "--version", "show version") do
     puts "#{Whois::NAME} #{Whois::VERSION}"
     exit
