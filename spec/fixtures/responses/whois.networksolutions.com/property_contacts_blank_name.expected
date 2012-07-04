@@ -1,0 +1,15 @@
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == ""
+  should: %s[0].organization == "Earthlink Inc"
+  should: %s[0].address      == "1430 West Peachtree St. NW, Ste. 400"
+  should: %s[0].city         == "Atlanta"
+  should: %s[0].zip          == "30309"
+  should: %s[0].state        == "GA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "888-932-1997"
+  should: %s[0].fax          == "123 123 1234"
+  should: %s[0].email        == "hostmaster@earthlink.net"
