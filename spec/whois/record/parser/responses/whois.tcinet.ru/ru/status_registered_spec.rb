@@ -50,13 +50,13 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-03-05")
+      @parser.expires_on.should == Time.parse("2013-03-05")
     end
   end
   describe "#registrar" do
     it do
       @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == "RUCENTER-REG-RIPN"
+      @parser.registrar.id.should           == "RU-CENTER-REG-RIPN"
       @parser.registrar.name.should         == nil
       @parser.registrar.organization.should == nil
     end
@@ -68,23 +68,11 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(2).items
+      @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should           == nil
-      @parser.admin_contacts[0].name.should         == nil
-      @parser.admin_contacts[0].organization.should == "Google Inc"
-      @parser.admin_contacts[0].phone.should        == "+1 650 330 0100"
-      @parser.admin_contacts[0].fax.should          == "+1 650 618 8571"
-      @parser.admin_contacts[0].email.should        == "dns-admin@google.com"
-      @parser.admin_contacts[1].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[1].id.should           == nil
-      @parser.admin_contacts[1].name.should         == nil
-      @parser.admin_contacts[1].organization.should == "Google Inc"
-      @parser.admin_contacts[1].phone.should        == "+1 650 330 0100"
-      @parser.admin_contacts[1].fax.should          == "+1 650 618 8571"
-      @parser.admin_contacts[1].email.should        == "ccops@markmonitor.com"
+      @parser.admin_contacts[0].organization.should == "Google Inc."
+      @parser.admin_contacts[0].url.should          == "https://www.nic.ru/whois"
     end
   end
   describe "#technical_contacts" do
