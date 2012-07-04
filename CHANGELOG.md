@@ -18,6 +18,8 @@
 
 * NEW: whois.tznic.or.tz is now a full parser.
 
+* FIXED: whois.neworksolutions.com parser crashes when the contact name is blank.
+
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 
 * CHANGE: Removed Pir adaper, the registry is a thick whois server.

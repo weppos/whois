@@ -88,7 +88,9 @@ module Whois
           match = content_for_scanner.slice(/#{element}.*\n((.+\n){4,7})/, 1)
           return unless match
 
-          lines = match.split("\n").map(&:strip)
+          # Split lines but don't strip them now because in some cases
+          # we need the entire line, including extra-spaces.
+          lines = match.split("\n")
 
           # 0 XIF Communications                    |  mpowers LLC
           # 1  1200 New Hampshire Avenue NW         |  21010 Southbank St #575
@@ -106,10 +108,13 @@ module Whois
 
           # Does the first line end in something that looks like a email address?
           if lines[0].to_s =~ /\S+@\S+$/
+            # p lines.shift
             # The record has a extra name and number line
             name, email = lines.shift.scan(/^(.+)\s(\S+@\S+)$/).first
-            name = name.strip
+            name = name.strip if name
           end
+
+          lines.each(&:strip!)
 
           # Does the last line contains the word fax, or has >9 digits
           if lines[-1].to_s =~ / fax: /
