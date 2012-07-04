@@ -35,12 +35,13 @@ module Whois
     # @attr [String] phone
     # @attr [String] fax
     # @attr [String] email
+    # @attr [String] url - e. g. to the contact form
     # @attr [Time] created_on
     # @attr [Time] updated_on
     #
     class Contact < SuperStruct.new(:id, :type, :name, :organization,
                                     :address, :city, :zip, :state, :country, :country_code,
-                                    :phone, :fax, :email,
+                                    :phone, :fax, :email, :url,
                                     :created_on, :updated_on)
 
       TYPE_REGISTRANT = 1

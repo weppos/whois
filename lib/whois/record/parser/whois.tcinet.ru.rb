@@ -68,16 +68,20 @@ module Whois
 
 
         property_supported :admin_contacts do
-          content_for_scanner.scan(/e-mail:\s+(.+)\n/).flatten.map do |email|
+          url   = content_for_scanner[/admin-contact:\s+(.+)\n/, 1]
+          email = content_for_scanner[/e-mail:\s+(.+)\n/, 1]
+          contact = if url or email
             Record::Contact.new(
               :type         => Record::Contact::TYPE_ADMIN,
+              :url          => url,
+              :email        => email,
               :name         => content_for_scanner[/person:\s+(.+)\n/, 1],
               :organization => content_for_scanner[/org:\s+(.+)\n/, 1],
               :phone        => content_for_scanner[/phone:\s+(.+)\n/, 1],
-              :fax          => content_for_scanner[/fax-no:\s+(.+)\n/, 1],
-              :email        => email
+              :fax          => content_for_scanner[/fax-no:\s+(.+)\n/, 1]
             )
           end
+          Array.wrap(contact)
         end
 
         property_not_supported :registrant_contacts
