@@ -26,6 +26,8 @@
 
 * CHANGE: Changed whois.publicinterestregistry.com to whois.pir.org (GH-176).
 
+* CHANGE: whois.tcinet.ru parser learned how to parse contact URLs (GH-150).
+
 
 ## Release 2.6.3
 
