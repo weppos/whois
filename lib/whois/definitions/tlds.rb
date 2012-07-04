@@ -254,6 +254,7 @@ Whois::Server.define :tld, ".re", "whois.nic.fr"
 Whois::Server.define :tld, ".ro", "whois.rotld.ro"
 Whois::Server.define :tld, ".rs", "whois.rnids.rs"
 Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
+Whois::Server.define :tld, ".org.ru", "whois.nic.ru"
 Whois::Server.define :tld, ".ru", "whois.tcinet.ru"
 Whois::Server.define :tld, ".rw", nil, { :adapter => :web, :url => "http://www.nic.rw/cgi-bin/whois.pl"}
 Whois::Server.define :tld, ".sa", "saudinic.net.sa"
