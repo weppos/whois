@@ -36,6 +36,7 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 2.10.0"
   s.add_development_dependency "mocha"
   s.add_development_dependency "yard"
+  s.add_dependency "public_suffix", "~> 1.1.1"
 
   s.post_install_message = <<EOS
 ********************************************************************************
