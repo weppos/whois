@@ -255,6 +255,82 @@ Whois::Server.define :tld, ".ro", "whois.rotld.ro"
 Whois::Server.define :tld, ".rs", "whois.rnids.rs"
 Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 Whois::Server.define :tld, ".ru", "whois.tcinet.ru"
+Whois::Server.define :tld, ".org.ru", "whois.nic.ru"
+Whois::Server.define :tld, ".net.ru", "whois.nic.ru"
+Whois::Server.define :tld, ".pp.ru", "whois.nic.ru"
+Whois::Server.define :tld, ".com.ru", "whois.nic.ru"
+%w(
+abkhazia.su
+adygeya.ru
+adygeya.su
+aktyubinsk.su
+arkhangelsk.su
+armenia.su
+ashgabad.su
+azerbaijan.su
+balashov.su
+bashkiria.ru
+bashkiria.su
+bir.ru
+bryansk.su
+bukhara.su
+cbg.ru
+chimkent.su
+dagestan.ru
+dagestan.su
+east-kazakhstan.su
+georgia.su
+grozny.ru
+grozny.su
+ivanovo.su
+jambyl.su
+kalmykia.ru
+kalmykia.su
+kaluga.su
+karacol.su
+karaganda.su
+karelia.su
+khakassia.su
+krasnodar.su
+kurgan.su
+kustanai.ru
+kustanai.su
+mangyshlak.su
+marine.ru
+mordovia.ru
+mordovia.su
+msk.ru
+msk.su
+murmansk.su
+mytis.ru
+nalchik.ru
+nalchik.su
+navoi.su
+north-kazakhstan.su
+nov.ru
+nov.su
+obninsk.su
+penza.su
+pokrovsk.su
+pyatigorsk.ru
+sochi.su
+spb.ru
+spb.su
+tashkent.su
+termez.su
+togliatti.su
+troitsk.su
+tselinograd.su
+tula.su
+tuva.su
+vladikavkaz.ru
+vladikavkaz.su
+vladimir.ru
+vladimir.su
+vologda.su
+).each do |tld|
+  Whois::Server.define :tld, ".#{tld}", "whois.nic.ru"
+end
 Whois::Server.define :tld, ".rw", nil, { :adapter => :web, :url => "http://www.nic.rw/cgi-bin/whois.pl"}
 Whois::Server.define :tld, ".sa", "saudinic.net.sa"
 Whois::Server.define :tld, ".sb", "whois.nic.net.sb"

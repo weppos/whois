@@ -8,7 +8,7 @@
 
 
 require 'ipaddr'
-
+require 'public_suffix'
 
 module Whois
 
@@ -264,6 +264,11 @@ module Whois
     end
 
     def self.find_for_domain(string)
+      tld = ".#{::PublicSuffix.parse(string).tld}"
+      if definition = definitions(:tld).find { |definition| tld == definition[0] }
+        return factory(:tld, *definition)
+      end
+
       definitions(:tld).each do |definition|
         return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
       end
