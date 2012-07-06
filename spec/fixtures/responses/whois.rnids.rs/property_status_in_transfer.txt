@@ -1,0 +1,37 @@
+%
+%This is the RNIDS Whois server.
+%
+% Date Format         : DD.MM.YYYY
+% Whois Server Version: 1.0.0
+%
+% Rights restricted by copyright.
+% See http://www.rnids.rs/whois_en
+%
+%
+%
+% Ovo je odgovor od RNIDS Whois servera.
+%
+% Format datuma     : DD.MM.YYYY
+% Verzija Whois Servera : 1.0.0
+%
+% Sva prava zadržana. Za više informacija.
+% pogledajte http://www.rnids.rs/whois_sr
+
+Domain name: saj.rs.
+Domain status: In Transfer
+Registration date: 17.06.2010 14:40:59
+Modification date: 06.07.2012 16:24:55
+Expiration date: 17.06.2013 14:40:59
+Registrar: NINET Company d.o.o.
+
+
+Owner: Ana Rakovic
+
+
+DNS: ns1.bgsvetionik.com. - 
+DNS: ns2.bgsvetionik.com. - 
+
+
+Administrative contact: Ana Rakovic
+
+Technical contact: Strahinja Stanković

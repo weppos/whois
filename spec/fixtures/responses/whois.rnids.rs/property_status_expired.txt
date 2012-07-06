@@ -1,0 +1,37 @@
+%
+%This is the RNIDS Whois server.
+%
+% Date Format         : DD.MM.YYYY
+% Whois Server Version: 1.0.0
+%
+% Rights restricted by copyright.
+% See http://www.rnids.rs/whois_en
+%
+%
+%
+% Ovo je odgovor od RNIDS Whois servera.
+%
+% Format datuma     : DD.MM.YYYY
+% Verzija Whois Servera : 1.0.0
+%
+% Sva prava zadržana. Za više informacija.
+% pogledajte http://www.rnids.rs/whois_sr
+
+Domain name: saj.rs.
+Domain status: Expired
+Registration date: 17.06.2010 14:40:59
+Modification date: 18.06.2012 02:00:02
+Expiration date: 17.06.2012 14:40:59
+Registrar: BGSVETIONIK.S.A.
+
+
+Owner: Ana Rakovic
+
+
+DNS: ns9.sajthosting.com. - 85.10.206.52
+DNS: ns10.sajthosting.com. - 85.10.206.57
+
+
+Administrative contact: Ana Rakovic
+
+Technical contact: Davor Veselinovic

@@ -43,8 +43,14 @@ module Whois
           case node("Domain status", &:downcase)
           when nil
             :available
-          when "active"
+          when 'active'
             :registered
+          when 'locked'
+            :registered
+          when 'in transfer'
+            :registered
+          when 'expired'
+            :expired
           else
             Whois.bug!(ParserError, "Unknown status `#{node("Domain status")}'.")
           end

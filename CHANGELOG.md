@@ -20,6 +20,8 @@
 
 * FIXED: whois.neworksolutions.com parser crashes when the contact name is blank.
 
+* FIXED: whois.rnids.rs parser should support statuses Locked, Expired, and In Transfer.
+
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
 
 * CHANGE: Removed Pir adaper, the registry is a thick whois server.
