@@ -45,7 +45,7 @@ Whois::Server.define :tld, ".info", "whois.afilias.info"
 Whois::Server.define :tld, ".jobs", "jobswhois.verisign-grs.com", { :adapter => :verisign }
 Whois::Server.define :tld, ".mobi", "whois.dotmobiregistry.net"
 Whois::Server.define :tld, ".museum", "whois.museum"
-Whois::Server.define :tld, ".name", "whois.nic.name"
+Whois::Server.define :tld, ".name", "whois.nic.name", { :adapter => :formatted, :format => "domain=%s" }
 Whois::Server.define :tld, ".pro", "whois.registrypro.pro"
 Whois::Server.define :tld, ".tel", "whois.nic.tel"
 Whois::Server.define :tld, ".travel", "whois.nic.travel"
