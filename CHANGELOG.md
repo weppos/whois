@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## Release 2.6.4
 
 * SERVER: Added .CW TLD server.
 
@@ -22,7 +22,7 @@
 
 * FIXED: whois.rnids.rs parser should support statuses Locked, Expired, and In Transfer.
 
-* FIXED: whois.nic.gs parser should support status `Excluded - Pending Delete - Restorable`.
+* FIXED: whois.nic.gs parser should support status `Excluded - Pending Delete - Restorable` (GH-180). [Thanks @smith]
 
 * CHANGED: Deprecated options[:web] for :web adapter in favor of options[:url].
 
