@@ -1,5 +1,10 @@
 # Changelog
 
+## master
+
+* NEW: Added full whois.register.com parser.
+
+
 ## Release 2.6.4
 
 * SERVER: Added .CW TLD server.
