@@ -22,6 +22,8 @@
 
 * FIXED: whois.rnids.rs parser should support statuses Locked, Expired, and In Transfer.
 
+* FIXED: whois.nic.gs parser should support status `Excluded - Pending Delete - Restorable`.
+
 * CHANGED: Deprecated options[:web] for :web adapter in favor of options[:url].
 
 * CHANGED: Removed Pir adaper, the registry is a thick whois server.
