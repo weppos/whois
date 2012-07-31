@@ -81,10 +81,10 @@
   should: %s CLASS(array)
   should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0] == _nameserver.new(:name => "ns2.google.com")
+  should: %s[0].name == "ns2.google.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1] == _nameserver.new(:name => "ns1.google.com")
+  should: %s[1].name == "ns1.google.com"
   should: %s[2] CLASS(nameserver)
-  should: %s[2] == _nameserver.new(:name => "ns4.google.com")
+  should: %s[2].name == "ns4.google.com"
   should: %s[3] CLASS(nameserver)
-  should: %s[3] == _nameserver.new(:name => "ns3.google.com")
+  should: %s[3].name == "ns3.google.com"
