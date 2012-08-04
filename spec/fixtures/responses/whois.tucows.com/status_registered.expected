@@ -1,0 +1,85 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-03-06")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-03-19")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-06")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.name         == "Tucows"
+  should: %s.organization == "Tucows"
+  should: %s.url          == "http://www.tucows.com/"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Wadadiah"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "1-183 Carroll Street"
+  should: %s[0].city         == "Dunedin"
+  should: %s[0].zip          == "9001"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "NZ"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Almahdi, Ahmad"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "1-183 Carroll Street"
+  should: %s[0].city         == "Dunedin"
+  should: %s[0].zip          == "9001"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "NZ"
+  should: %s[0].phone        == "+1.6434701257"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "alatol@yahoo.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Almahdi, Ahmad"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "1-183 Carroll Street"
+  should: %s[0].city         == "Dunedin"
+  should: %s[0].zip          == "9001"
+  should: %s[0].state        == nil
+  should: %s[0].country_code == "NZ"
+  should: %s[0].phone        == "+1.6434701257"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "alatol@yahoo.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns5.ixwebhosting.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns6.ixwebhosting.com"

@@ -90,8 +90,6 @@ module Whois
           match = content_for_scanner.slice(/#{element}\n((.+\n)+)\n/, 1)
           return unless match
 
-          lines = $1.split("\n").map(&:strip)
-
           # Lines 1 and 5 may be absent, depending on the record.
           # The parser attempts to correct for this, but may be a bit flaky
           # on non-standard data.
@@ -102,6 +100,9 @@ module Whois
           # 3 Scottsdale, Arizona 85260
           # 4 United States
           # 5 +1.4805058800      Fax -- +1.4805058844
+
+          lines = $1.split("\n").map(&:strip)
+
           phone = nil
           fax   = nil
           if lines[-1].to_s =~ /Fax --/

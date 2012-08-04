@@ -4,6 +4,8 @@
 
 * NEW: Added full whois.register.com parser.
 
+* NEW: Added full whois.tucows.com parser.
+
 
 ## Release 2.6.4
 
