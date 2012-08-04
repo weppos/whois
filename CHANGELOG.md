@@ -6,6 +6,8 @@
 
 * NEW: Added full whois.tucows.com parser.
 
+* CHANGED: Changed .NAME to a formatted adapter to fetch additional properties.
+
 
 ## Release 2.6.4
 

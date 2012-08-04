@@ -9,14 +9,22 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-04-19 12:22:08 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-10-17 18:42:56 UTC")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-04-19 12:22:08 UTC")
 
 
 #nameservers
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.dreamhost.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.dreamhost.com"

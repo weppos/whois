@@ -38,22 +38,30 @@ describe Whois::Record::Parser::WhoisNicName, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2006-04-19 12:22:08 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2011-10-17 18:42:56 UTC")
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("2013-04-19 12:22:08 UTC")
     end
   end
   describe "#nameservers" do
     it do
-      lambda { @parser.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      @parser.nameservers.should be_a(Array)
+      @parser.nameservers.should have(2).items
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[0].name.should == "ns1.dreamhost.com"
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[1].name.should == "ns2.dreamhost.com"
     end
   end
 end

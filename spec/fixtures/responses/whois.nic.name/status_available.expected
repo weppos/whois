@@ -9,14 +9,15 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s == nil
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s == nil
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s == nil
 
 
 #nameservers
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(array)
+  should: %s == []
