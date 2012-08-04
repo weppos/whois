@@ -100,7 +100,8 @@ module Whois
           else
             lines[0].strip
           end
-          city, zip = lines[2].scan(/(.+?),  ([^\s]+)/).first.map(&:strip)
+          city, state, zip = lines[2].scan(/(.+?), ([^\s]*?) (.+)/).first.map(&:strip)
+          #city, zip = lines[2].scan(/(.+?),  ([^\s]+)/).first.map(&:strip)
           phone = lines[4].strip if lines[4]
 
           Record::Contact.new(
@@ -109,7 +110,7 @@ module Whois
             :organization => nil,
             :address      => lines[1].strip,
             :city         => city,
-            :state        => nil,
+            :state        => state,
             :zip          => zip,
             :country_code => lines[3].strip,
             :email        => email,

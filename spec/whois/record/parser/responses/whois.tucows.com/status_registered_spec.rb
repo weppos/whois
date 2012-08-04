@@ -73,7 +73,7 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       @parser.registrant_contacts[0].address.should      == "1-183 Carroll Street"
       @parser.registrant_contacts[0].city.should         == "Dunedin"
       @parser.registrant_contacts[0].zip.should          == "9001"
-      @parser.registrant_contacts[0].state.should        == nil
+      @parser.registrant_contacts[0].state.should        == ""
       @parser.registrant_contacts[0].country_code.should == "NZ"
       @parser.registrant_contacts[0].phone.should        == nil
       @parser.registrant_contacts[0].fax.should          == nil
@@ -91,7 +91,7 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       @parser.admin_contacts[0].address.should      == "1-183 Carroll Street"
       @parser.admin_contacts[0].city.should         == "Dunedin"
       @parser.admin_contacts[0].zip.should          == "9001"
-      @parser.admin_contacts[0].state.should        == nil
+      @parser.admin_contacts[0].state.should        == ""
       @parser.admin_contacts[0].country_code.should == "NZ"
       @parser.admin_contacts[0].phone.should        == "+1.6434701257"
       @parser.admin_contacts[0].fax.should          == nil
@@ -109,7 +109,7 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       @parser.technical_contacts[0].address.should      == "1-183 Carroll Street"
       @parser.technical_contacts[0].city.should         == "Dunedin"
       @parser.technical_contacts[0].zip.should          == "9001"
-      @parser.technical_contacts[0].state.should        == nil
+      @parser.technical_contacts[0].state.should        == ""
       @parser.technical_contacts[0].country_code.should == "NZ"
       @parser.technical_contacts[0].phone.should        == "+1.6434701257"
       @parser.technical_contacts[0].fax.should          == nil
