@@ -1,0 +1,15 @@
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Administrator, Domain"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "95 Hayden Avenue"
+  should: %s[0].city         == "Lexington"
+  should: %s[0].zip          == "02421"
+  should: %s[0].state        == "MA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.7816526199"
+  should: %s[0].fax          == "+1.7816526096"
+  should: %s[0].email        == "csadmin@vistaprint.com"

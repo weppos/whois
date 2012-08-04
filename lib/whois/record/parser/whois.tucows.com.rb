@@ -101,8 +101,9 @@ module Whois
             lines[0].strip
           end
           city, state, zip = lines[2].scan(/(.+?), ([^\s]*?) (.+)/).first.map(&:strip)
-          #city, zip = lines[2].scan(/(.+?),  ([^\s]+)/).first.map(&:strip)
-          phone = lines[4].strip if lines[4]
+          phone, fax = if lines[4]
+            lines[4].match(/\s+(.+?)\s*(?:Fax: (.+))?$/).to_a[1,2]
+          end
 
           Record::Contact.new(
             :type         => type,
@@ -114,7 +115,8 @@ module Whois
             :zip          => zip,
             :country_code => lines[3].strip,
             :email        => email,
-            :phone        => phone
+            :phone        => phone,
+            :fax          => fax
           )
         end
       end
