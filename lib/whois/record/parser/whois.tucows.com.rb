@@ -94,26 +94,33 @@ module Whois
           # 4 +1.6434701257
 
           lines = $1.split("\n")
+          items = lines.dup
 
-          name, email = if lines[0].index('@')
-            lines[0].scan(/(.+)  (.*)/).first.map(&:strip)
+          name, email = if items[0].index('@')
+            items.delete_at(0).scan(/(.+)  (.*)/).first.map(&:strip)
           else
-            lines[0].strip
+            items.delete_at(0).strip
           end
-          city, state, zip = lines[2].scan(/(.+?), ([^\s]*?) (.+)/).first.map(&:strip)
-          phone, fax = if lines[4]
-            lines[4].match(/\s+(.+?)\s*(?:Fax: (.+))?$/).to_a[1,2]
+
+          phone, fax = if items[-1] =~ /^\s+\+/
+            items.delete_at(-1).match(/\s+(.+?)\s*(?:Fax: (.+))?$/).to_a[1,2]
           end
+
+          country = items.delete_at(-1).strip
+
+          city, state, zip = items.delete_at(-1).scan(/(.+?), ([^\s]*?) (.+)/).first.map(&:strip)
+
+          address = items.map(&:strip).join("\n")
 
           Record::Contact.new(
             :type         => type,
             :name         => name,
             :organization => nil,
-            :address      => lines[1].strip,
+            :address      => address,
             :city         => city,
             :state        => state,
             :zip          => zip,
-            :country_code => lines[3].strip,
+            :country_code => country,
             :email        => email,
             :phone        => phone,
             :fax          => fax
