@@ -1,0 +1,31 @@
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Thomas, Jennifer"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "594 E. Millsap"
+  should: %s[0].city         == "Fayetteville"
+  should: %s[0].zip          == "72703"
+  should: %s[0].state        == "AR"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "479-442-2020"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "jthomas@see2020now.net"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Hostmaster, Contact"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "101 W. Mountain St.\nSuite 101"
+  should: %s[0].city         == "Fayetteville"
+  should: %s[0].zip          == "72701"
+  should: %s[0].state        == "AR"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "479-521-3100"
+  should: %s[0].fax          == "479-521-3188"
+  should: %s[0].email        == "hostmaster@gcmcomputers.com"

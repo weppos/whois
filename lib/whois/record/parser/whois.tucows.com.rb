@@ -84,7 +84,8 @@ module Whois
       private
 
         def build_contact(element, type)
-          match = content_for_scanner.slice(/#{element}.*\n((.*\n){5})/, 1)
+          indent = type == Record::Contact::TYPE_REGISTRANT ? 1 : 4
+          match  = content_for_scanner.slice(/#{element}.*\n((#{' ' * indent}.+\n)+)/, 1)
           return unless match
 
           # 0 Almahdi, Ahmad  alatol@yahoo.com
@@ -102,7 +103,7 @@ module Whois
             items.delete_at(0).strip
           end
 
-          phone, fax = if items[-1] =~ /^\s+\+/
+          phone, fax = if items[-1] =~ /^\s+\+?\d+/
             items.delete_at(-1).match(/\s+(.+?)\s*(?:Fax: (.+))?$/).to_a[1,2]
           end
 
