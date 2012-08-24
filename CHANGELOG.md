@@ -6,6 +6,8 @@
 
 * NEW: Added full whois.tucows.com parser.
 
+* FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
+
 * CHANGED: Changed .NAME to a formatted adapter to fetch additional properties.
 
 
