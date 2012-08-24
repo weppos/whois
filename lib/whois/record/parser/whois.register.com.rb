@@ -33,7 +33,7 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Created on\.+: (.+)\n/
+          if content_for_scanner =~ /(?:Created on\.+|Creation date): (.+)\n/
             Time.parse($1)
           end
         end
@@ -41,7 +41,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expires on\.+: (.+)\n/
+          if content_for_scanner =~ /(?:Expires on\.+|Expiration date): (.+)\n/
             Time.parse($1)
           end
         end
@@ -56,20 +56,20 @@ module Whois
         end
 
         property_supported :registrant_contacts do
-          build_contact('Registrant:', Record::Contact::TYPE_REGISTRANT)
+          build_contact(/Registrant(?: Contact)?:/, Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          build_contact('Administrative Contact:', Record::Contact::TYPE_ADMIN)
+          build_contact(/Administrative Contact:/, Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          build_contact('Technical  Contact:', Record::Contact::TYPE_TECHNICAL)
+          build_contact(/Technical\s+Contact:/, Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          if content_for_scanner =~ /DNS Servers:\n((.+\n)+)\n/
+          if content_for_scanner =~ /(?:DNS|Name) Servers:\n((.+\n)+)\n/
             $1.split("\n").map do |line|
               Record::Nameserver.new(:name => line.strip)
             end
@@ -80,6 +80,14 @@ module Whois
       private
 
         def build_contact(element, type)
+          if content_for_scanner.match /DNS Servers/
+            build_register_contact(element, type)
+          else
+            build_enom_contact(element, type)
+          end
+        end
+
+        def build_register_contact(element, type)
           match = content_for_scanner.slice(/#{element}\n((.+\n){7})/, 1)
           return unless match
 
@@ -106,6 +114,40 @@ module Whois
             :country_code => lines[4],
             :email        => email,
             :phone        => phone
+          )
+        end
+
+        def build_enom_contact(element, type)
+          match = content_for_scanner.slice(/#{element}\n(((\s{3}+.*)\n)+)/, 1)
+          return unless match
+
+          # 0 AdBrite, Inc.
+          # 1 Host Master (hostmaster@adbrite.com)
+          # 2 4159750916
+          # 3 Fax: 
+          # 4 731 Market Street, Suite 500
+          # 5 San Francisco, CA 94103
+          # 6 US
+
+          lines = match.split("\n").map(&:lstrip)
+          name, email = lines[1].match(/(.*)\((.*)\)/)[1..2].map(&:strip)
+          fax_match = lines[3].match(/Fax: (.*)/)
+          fax = fax_match[1] if fax_match
+          city, state, zip = lines[-2].match(/(.*),(.+?)(\d*)$/)[1..3].map(&:strip)
+
+          Record::Contact.new(
+            :type         => type,
+            :id           => nil,
+            :name         => name,
+            :organization => lines[0],
+            :address      => lines[4..-3].join("\n"),
+            :city         => city,
+            :zip          => zip,
+            :state        => state,
+            :country_code => lines[-1],
+            :phone        => lines[2] == "" ? nil : lines[2],
+            :fax          => fax,
+            :email        => email == "" ? nil : email
           )
         end
 
