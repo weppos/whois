@@ -36,6 +36,11 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       @parser.registered?.should == true
     end
   end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
+    end
+  end
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
