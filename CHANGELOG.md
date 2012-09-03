@@ -10,6 +10,8 @@
 
 * CHANGED: Changed .NAME to a formatted adapter to fetch additional properties.
 
+* CHANGED: whois.dns.pl now supports expires_on (GH-185). [Thanks @y3ti]
+
 
 ## Release 2.6.4
 
