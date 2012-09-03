@@ -14,11 +14,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-08-16 11:17:17")
+  should: %s == Time.parse("2012.08.17 11:21:09")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
-
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013.09.18 14:00:00")
 
 #nameservers
   should: %s CLASS(array)

@@ -45,12 +45,13 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-08-16 11:17:17")
+      @parser.updated_on.should == Time.parse("2012.08.17 11:21:09")
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.expires_on.should be_a(Time)
+      @parser.expires_on.should == Time.parse("2013.09.18 14:00:00")
     end
   end
   describe "#nameservers" do
