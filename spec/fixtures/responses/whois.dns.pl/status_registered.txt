@@ -1,12 +1,16 @@
 
 DOMAIN NAME:           google.pl
-registrant's handle:   ks_5271013 (CORPORATE)
-nameservers:           ns2.google.com. 
-                       ns1.google.com. 
-created:              2002.09.19 13:00:00
-last modified:        2010.08.16 11:17:17
+registrant type:       organization
+nameservers:           ns2.google.com.
+                       ns1.google.com.
+created:               2002.09.19 13:00:00
+last modified:         2012.08.17 11:21:09
+renewal date:          2013.09.18 14:00:00
 
-option created:       2008.10.12 19:07:34
+option created:        2011.10.14 09:29:47
+option expiration date:       2014.10.14 09:29:47
+
+dnssec:                Unsigned
 
 TECHNICAL CONTACT:
 company: DNS Admin
