@@ -62,6 +62,7 @@ module Whois
           end
         end
 
+
         property_supported :nameservers do
           content_for_scanner.scan(/nameservers:\s+(.+)\n(.+)\n/).flatten.map do |line|
             line.strip!
