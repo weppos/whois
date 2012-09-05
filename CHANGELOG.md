@@ -8,6 +8,8 @@
 
 * FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
 
+* FIXED: whois.jprs.js parser should support status `Suspended`.
+
 * CHANGED: Changed .NAME to a formatted adapter to fetch additional properties.
 
 * CHANGED: whois.dns.pl now supports expires_on (GH-185). [Thanks @y3ti]

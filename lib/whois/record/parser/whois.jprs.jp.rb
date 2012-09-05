@@ -33,6 +33,8 @@ module Whois
               :reserved
             when "to be suspended"
               :redemption
+            when "suspended"
+              :expired
             else
               Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
