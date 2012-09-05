@@ -7,6 +7,9 @@
 #registered?
   should: %s == true
 
+#response_throttled?
+  should: %s == false
+
 
 #created_on
   should: %s CLASS(time)

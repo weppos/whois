@@ -81,6 +81,9 @@ module Whois
           end
         end
 
+        def response_throttled?
+          !!(content_for_scanner =~ /The IP address from which you have visited/)
+        end
 
       private
 
