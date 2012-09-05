@@ -7,9 +7,6 @@
 #registered?
   should: %s == true
 
-#response_throttled?
-  should: %s == false
-
 
 #created_on
   should: %s CLASS(time)
@@ -90,3 +87,7 @@
   should: %s[2] CLASS(nameserver)
   should: %s[2].name == "ns-west.cerf.net"
   should: %s[2].ipv4 == "192.153.156.3"
+
+
+#response_throttled?
+  should: %s == false

@@ -6,6 +6,8 @@
 
 * NEW: Added full whois.tucows.com parser.
 
+* NEW: whois.networksolutions.com parser now recognizes throttled responses (GH-182). [Thanks @JustinCampbell]
+
 * FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
 
 * FIXED: whois.jprs.js parser should support status `Suspended`.

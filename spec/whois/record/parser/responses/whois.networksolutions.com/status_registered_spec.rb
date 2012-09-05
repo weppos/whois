@@ -36,11 +36,6 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       @parser.registered?.should == true
     end
   end
-  describe "#response_throttled?" do
-    it do
-      @parser.response_throttled?.should == false
-    end
-  end
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
@@ -133,6 +128,11 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns-west.cerf.net"
       @parser.nameservers[2].ipv4.should == "192.153.156.3"
+    end
+  end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
     end
   end
 end
