@@ -14,16 +14,14 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.dk-hostmaster.dk
-      #
       # Parser for the whois.dk-hostmaster.dk server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       # @author Simone Carletti <weppos@weppos.net>
       # @author Mikkel Kristensen <mikkel@tdx.dk>
@@ -33,7 +31,10 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "active" then :registered
+              when "active"
+                :registered
+              when "deactivated"
+                :expired
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

@@ -1,0 +1,52 @@
+# Hello 87.9.172.88. Your session has been logged.
+#
+# Copyright (c) 2002 - 2012 by DK Hostmaster A/S
+# 
+# The data in the DK Whois database is provided by DK Hostmaster A/S
+# for information purposes only, and to assist persons in obtaining
+# information about or related to a domain name registration record.
+# We do not guarantee its accuracy. We will reserve the right to remove
+# access for entities abusing the data, without notice.
+# 
+# Any use of this material to target advertising or similar activities
+# are explicitly forbidden and will be prosecuted. DK Hostmaster A/S
+# requests to be notified of any such activities or suspicions thereof.
+
+Domain:               progolftours.dk
+DNS:                  progolftours.dk
+Registered:           2010-08-16
+Expires:              2012-08-31
+Registration period:  5 years
+VID:                  no
+Status:               Deactivated
+
+Registrant
+Handle:               LI1233-DK
+Name:                 LH Invest
+Address:              Hausergade 36 1th
+Postalcode:           1128
+City:                 København K
+Country:              DK
+Phone:                +4520645320
+
+Administrator
+Handle:               LI1233-DK
+Name:                 LH Invest
+Address:              Hausergade 36 1th
+Postalcode:           1128
+City:                 København K
+Country:              DK
+Phone:                +4520645320
+
+Nameservers
+Hostname:             ns1.gratisdns.dk
+Handle:               GDNS1-DK
+Hostname:             ns2.gratisdns.dk
+Handle:               GDNS1-DK
+Hostname:             ns3.gratisdns.dk
+Handle:               GDNS1-DK
+Hostname:             ns4.gratisdns.dk
+Handle:               GDNS1-DK
+Hostname:             ns5.gratisdns.dk
+Handle:               GDNS1-DK
+

@@ -10,6 +10,8 @@
 
 * FIXED: whois.jprs.js parser should support status `Suspended`.
 
+* FIXED: whois.dk-hostmaster.dk parser should support status `Deactivated`.
+
 * CHANGED: Changed .NAME to a formatted adapter to fetch additional properties.
 
 * CHANGED: whois.dns.pl now supports expires_on (GH-185). [Thanks @y3ti]
