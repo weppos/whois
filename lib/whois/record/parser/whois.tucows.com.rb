@@ -103,7 +103,7 @@ module Whois
             items.delete_at(0).strip
           end
 
-          phone, fax = if items[-1] =~ /^\s+\+?\d+/
+          phone, fax = if items[-1] =~ /^\s+.{3,}/
             items.delete_at(-1).match(/\s+(.+?)\s*(?:Fax: (.+))?$/).to_a[1,2]
           end
 
