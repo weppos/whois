@@ -1,0 +1,9 @@
+
+Whois Server Version 1.0
+
+This whois server contains a sample load of data from the  zone.
+All data returned is for example and testing only.
+
+No match for "U34JEDZCQ.BI".
+
+This data is for testing and validation purposes ONLY
