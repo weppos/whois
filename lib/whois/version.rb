@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -12,8 +12,8 @@ module Whois
   # Holds information about library version.
   module Version
     MAJOR = 2
-    MINOR = 0
-    PATCH = 7
+    MINOR = 6
+    PATCH = 4
     BUILD = nil
 
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join(".")

@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicMs, "status_available.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == "u34jedzcq.ms"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :available

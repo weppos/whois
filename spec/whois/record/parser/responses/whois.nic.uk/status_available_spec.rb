@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -49,6 +49,16 @@ describe Whois::Record::Parser::WhoisNicUk, "status_available.expected" do
   describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should == []
     end
   end
   describe "#nameservers" do

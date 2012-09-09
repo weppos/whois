@@ -1,3 +1,3 @@
 #updated_on
-  should: %s be_a(Time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2005-11-17 21:16:31")

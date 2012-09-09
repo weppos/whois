@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+
+
+#domain
+  should: %s == "hotel.gb.net"
+
+#domain_id
+  should: %s == "CNIC-DO605873"
+
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
@@ -6,7 +17,7 @@
 
 
 #status
-  should: %s == :registered
+  should: %s == ["PENDING DELETE", "PENDING DELETE RESTORABLE"]
 
 #available?
   should: %s == false
@@ -16,25 +27,88 @@
 
 
 #created_on
-  should: %s be_a(Time)
-  should: %s == Time.parse("2008-12-04")
+  should: %s CLASS(time)
+  should: %s == Time.parse("2008-12-04 05:56:57 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-12-04 12:00:12 UTC")
 
 #expires_on
-  should: %s be_a(Time)
-  should: %s == Time.parse("2010-12-04")
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-12-04 23:59:59 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "7145-IX"
+  should: %s.name         == nil
+  should: %s.organization == "InternetX GmbH"
+  should: %s.url          == "http://www.internetx.de/"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "INX-9925147net"
+  should: %s[0].name          == "boris schleinkofer"
+  should: %s[0].organization  == "p.s. consulting ag"
+  should: %s[0].address       == "hacklthalerstrasse 21c"
+  should: %s[0].city          == "kirchdorf"
+  should: %s[0].zip           == "83527"
+  should: %s[0].state         == "bayern"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == "+49.8072370230"
+  should: %s[0].fax           == "+49.80723702399"
+  should: %s[0].email         == "schleinkofer@ps-consulting-ag.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "INX-9925147net"
+  should: %s[0].name          == "boris schleinkofer"
+  should: %s[0].organization  == "p.s. consulting ag"
+  should: %s[0].address       == "hacklthalerstrasse 21c"
+  should: %s[0].city          == "kirchdorf"
+  should: %s[0].zip           == "83527"
+  should: %s[0].state         == "bayern"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == "+49.8072370230"
+  should: %s[0].fax           == "+49.80723702399"
+  should: %s[0].email         == "schleinkofer@ps-consulting-ag.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "INX-9925147net"
+  should: %s[0].name          == "boris schleinkofer"
+  should: %s[0].organization  == "p.s. consulting ag"
+  should: %s[0].address       == "hacklthalerstrasse 21c"
+  should: %s[0].city          == "kirchdorf"
+  should: %s[0].zip           == "83527"
+  should: %s[0].state         == "bayern"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == "+49.8072370230"
+  should: %s[0].fax           == "+49.80723702399"
+  should: %s[0].email         == "schleinkofer@ps-consulting-ag.com"
 
 
 #nameservers
-  should: %s be_a(Array)
-  should: %s have(4).items
-  should: %s[0] be_a(_nameserver)
-  should: %s[0].name == "a.ns14.net"
-  should: %s[1] be_a(_nameserver)
-  should: %s[1].name == "b.ns14.net"
-  should: %s[2] be_a(_nameserver)
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "d.ns14.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "a.ns14.net"
+  should: %s[2] CLASS(nameserver)
   should: %s[2].name == "c.ns14.net"
-  should: %s[3] be_a(_nameserver)
-  should: %s[3].name == "d.ns14.net"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "b.ns14.net"

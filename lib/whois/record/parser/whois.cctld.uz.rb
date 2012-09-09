@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -31,6 +31,7 @@ module Whois
           if content_for_scanner =~ /^Status: (.+?)\n/
             case $1.downcase
               when "active" then :registered
+              when "reserved" then :reserved
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -57,8 +58,8 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /^Expiration Date:(.*)\n/
-            Time.parse($1)
+          if content_for_scanner =~ /^Expiration Date:\s+(.*)\n/
+            Time.parse($1) unless $1 == '-'
           end
         end
 
@@ -66,7 +67,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
             $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.chomp("."))
+              Record::Nameserver.new(:name => name.strip.chomp("."))
             end
           end
         end

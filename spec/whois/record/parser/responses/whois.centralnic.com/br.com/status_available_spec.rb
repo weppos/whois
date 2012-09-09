@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_available.expected" 
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == nil
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == nil
+    end
+  end
   describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
@@ -33,7 +48,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_available.expected" 
   end
   describe "#status" do
     it do
-      @parser.status.should == :available
+      @parser.status.should == []
     end
   end
   describe "#available?" do
@@ -53,12 +68,35 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_available.expected" 
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should == []
     end
   end
   describe "#nameservers" do

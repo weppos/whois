@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicVe, "property_status_suspendido.expected
 
   describe "#status" do
     it do
-      @parser.status.should == :suspended
+      @parser.status.should == :inactive
     end
   end
   describe "#available?" do

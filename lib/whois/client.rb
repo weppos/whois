@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -83,7 +83,7 @@ module Whois
     #   # => #<Whois::Record>
     #
     def query(object)
-      string = object.to_s
+      string = object.to_s.downcase
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
         @server.configure(settings)

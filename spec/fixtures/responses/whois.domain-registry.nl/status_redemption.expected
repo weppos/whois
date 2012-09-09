@@ -1,0 +1,27 @@
+#status
+  should: %s == :redemption
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s == nil
+
+#updated_on
+  should: %s == nil
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s == []
+
+
+#response_throttled?
+  should: %s == false

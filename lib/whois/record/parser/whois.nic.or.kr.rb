@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,8 +14,9 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the <tt>whois.nic.or.kr</tt> server.
-      # Aliases the <tt>whois.kr</tt>.
+      # Parser for the whois.nic.or.kr server.
+      #
+      # It aliases the whois.kr parser.
       WhoisNicOrKr = WhoisKr
 
     end

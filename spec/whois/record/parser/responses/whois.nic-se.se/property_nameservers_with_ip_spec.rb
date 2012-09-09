@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -25,13 +25,13 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_nameservers_with_ip.expe
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].should == _nameserver.new(:name => "ns2.loopia.se", :ipv4 => "93.188.0.21")
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].should == _nameserver.new(:name => "ns4.loopia.se", :ipv4 => "93.188.0.20")
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].should == _nameserver.new(:name => "ns3.loopia.se", :ipv4 => "93.188.0.21")
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].should == _nameserver.new(:name => "ns1.loopia.se", :ipv4 => "93.188.0.20")
     end
   end

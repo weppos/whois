@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "boerse.de.com"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "CNIC-DO819205"
+    end
+  end
   describe "#referral_whois" do
     it do
       lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
@@ -33,7 +48,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["TRANSFER PROHIBITED"]
     end
   end
   describe "#available?" do
@@ -49,28 +64,100 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2010-03-02")
+      @parser.created_on.should == Time.parse("2011-11-28 21:38:30 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2011-12-03 00:15:47 UTC")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-03-02")
+      @parser.expires_on.should == Time.parse("2012-11-28 23:59:59 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "H1167922"
+      @parser.registrar.name.should         == nil
+      @parser.registrar.organization.should == "Gandi SAS"
+      @parser.registrar.url.should          == "http://www.gandi.net/"
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "T2187-GANDI-VKXS"
+      @parser.registrant_contacts[0].name.should          == "Dhananjeyan Thangavelu"
+      @parser.registrant_contacts[0].organization.should  == "LTV Global Inc."
+      @parser.registrant_contacts[0].address.should       == "5 Meenakshi Nagar"
+      @parser.registrant_contacts[0].city.should          == "Trichy"
+      @parser.registrant_contacts[0].zip.should           == "620006"
+      @parser.registrant_contacts[0].state.should         == "TN"
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == "IN"
+      @parser.registrant_contacts[0].phone.should         == "+91.4312431415"
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "T2187-GANDI-VKXS"
+      @parser.admin_contacts[0].name.should          == "Dhananjeyan Thangavelu"
+      @parser.admin_contacts[0].organization.should  == "LTV Global Inc."
+      @parser.admin_contacts[0].address.should       == "5 Meenakshi Nagar"
+      @parser.admin_contacts[0].city.should          == "Trichy"
+      @parser.admin_contacts[0].zip.should           == "620006"
+      @parser.admin_contacts[0].state.should         == "TN"
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == "IN"
+      @parser.admin_contacts[0].phone.should         == "+91.4312431415"
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "T2187-GANDI-VKXS"
+      @parser.technical_contacts[0].name.should          == "Dhananjeyan Thangavelu"
+      @parser.technical_contacts[0].organization.should  == "LTV Global Inc."
+      @parser.technical_contacts[0].address.should       == "5 Meenakshi Nagar"
+      @parser.technical_contacts[0].city.should          == "Trichy"
+      @parser.technical_contacts[0].zip.should           == "620006"
+      @parser.technical_contacts[0].state.should         == "TN"
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == "IN"
+      @parser.technical_contacts[0].phone.should         == "+91.4312431415"
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net"
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "ns.udagdns.de"
-      @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "ns.udagdns.net"
+      @parser.nameservers.should have(3).items
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[0].name.should == "b.dns.gandi.net"
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[1].name.should == "c.dns.gandi.net"
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[2].name.should == "a.dns.gandi.net"
     end
   end
 end

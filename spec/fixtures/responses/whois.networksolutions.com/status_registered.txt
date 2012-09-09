@@ -1,0 +1,65 @@
+NOTICE AND TERMS OF USE: You are not authorized to access or query our WHOIS
+database through the use of high-volume, automated, electronic processes. The
+Data in Network Solutions' WHOIS database is provided by Network Solutions for information
+purposes only, and to assist persons in obtaining information about or related
+to a domain name registration record. Network Solutions does not guarantee its accuracy.
+By submitting a WHOIS query, you agree to abide by the following terms of use:
+You agree that you may use this Data only for lawful purposes and that under no
+circumstances will you use this Data to: (1) allow, enable, or otherwise support
+the transmission of mass unsolicited, commercial advertising or solicitations
+via e-mail, telephone, or facsimile; or (2) enable high volume, automated,
+electronic processes that apply to Network Solutions (or its computer systems). The
+compilation, repackaging, dissemination or other use of this Data is expressly
+prohibited without the prior written consent of Network Solutions. You agree not to use
+high-volume, automated, electronic processes to access or query the WHOIS
+database. Network Solutions reserves the right to terminate your access to the WHOIS
+database in its sole discretion, including without limitation, for excessive
+querying of the WHOIS database or for failure to otherwise abide by this policy.
+Network Solutions reserves the right to modify these terms at any time.
+
+Get a FREE domain name registration, transfer, or renewal with any annual hosting package.
+
+http://www.networksolutions.com
+
+Visit AboutUs.org for more information about XIF.COM
+<a href="http://www.aboutus.org/XIF.COM">AboutUs: XIF.COM </a>
+
+
+
+
+Registrant:
+XIF Communications
+   1200 New Hampshire Avenue NW
+   Suite 410
+   Washington, DC 20036
+   US
+
+   Domain Name: XIF.COM
+
+   ------------------------------------------------------------------------
+   Promote your business to millions of viewers for only $1 a month
+   Learn how you can get an Enhanced Business Listing here for your domain name.
+   Learn more at http://www.NetworkSolutions.com/
+   ------------------------------------------------------------------------
+
+   Administrative Contact, Technical Contact:
+      Communications, XIF ContactMiddleName		noc@xif.com
+      XIF Communications
+      1200 New Hampshire Avenue NW
+      Suite 410
+      Washington, DC 20036
+      US
+      202-463-7200 fax: 202-318-4003
+
+
+   Record expires on 09-Jun-2014.
+   Record created on 10-Jun-1997.
+   Database last updated on 5-Jun-2012 12:20:31 EDT.
+
+   Domain servers in listed order:
+
+   NS01.XIF.COM                 63.240.200.70
+   NS-EAST.CERF.NET             207.252.96.3
+   NS-WEST.CERF.NET             192.153.156.3
+
+

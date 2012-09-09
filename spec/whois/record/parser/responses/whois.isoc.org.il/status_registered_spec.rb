@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -56,17 +56,17 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(6).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns.isoc.org.il"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "grappa.isoc.org.il"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "aristo.tau.ac.il"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "relay.huji.ac.il"
-      @parser.nameservers[4].should be_a(_nameserver)
+      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[4].name.should == "drns.isoc.org.il"
-      @parser.nameservers[5].should be_a(_nameserver)
+      @parser.nameservers[5].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[5].name.should == "sps-pb.isc.org"
     end
   end

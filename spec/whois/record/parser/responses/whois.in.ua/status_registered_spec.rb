@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -57,11 +57,11 @@ describe Whois::Record::Parser::WhoisInUa, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns10.uadns.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns11.uadns.com"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns12.uadns.com"
     end
   end

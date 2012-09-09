@@ -48,7 +48,7 @@ fax-no:         (1) 438-4568
 hun-id:         2960712001
 
 org:            org_name_eng: CyberNet Ltd.
-org:            org_name_hun: KiberNet Kft. (Registrar)
+org:            org_name_hun: KiberNet Kft. CLASS(registrar)
 address:        Városmajor u. 1/c
 address:        1122 Budapest
 address:        HU

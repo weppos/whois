@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -54,17 +54,25 @@ describe Whois::Record::Parser::WhoisNicNetNg, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2020-07-31 00:00 WAT")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == nil
+      @parser.registrar.name.should         == "nira"
+      @parser.registrar.url.should          == nil
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "rns1.nic.net.ng"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "rns2.nic.net.ng"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "rns3.nic.net.ng"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "rns4.nic.net.ng"
     end
   end

@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -30,12 +30,23 @@ module Whois
       #
       class WhoisNicNu < Base
 
+
+        # == Values for Status
+        #
+        # @see http://www.nic.nu/about/about5.pdf
+        #
         property_supported :status do
           if content_for_scanner =~ /Record status:\s+(.*)\n/
             case $1.downcase
-              when "active" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "active"     then :registered
+            # The day after the domain name expires, its status is changed to "Not Renewed",
+            # but it is still available for you to renew during another fourweek period.
+            # After this expiration reprieve, the name is put up for shortterm auction.
+            # If no one registers the name via the auction, it expires and becomes available
+            # to the general public for  registration using the standard process.
+            when "notrenewed" then :redemption
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -73,7 +84,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Domain servers in listed order:(.*)Owner and Administrative Contact information for domains/m
             $1.split.map do |name|
-              Record::Nameserver.new(name)
+              Record::Nameserver.new(:name => name)
             end
           end
         end

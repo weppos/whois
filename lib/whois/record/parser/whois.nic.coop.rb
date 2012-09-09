@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -28,15 +28,7 @@ module Whois
       class WhoisNicCoop < Base
 
         property_supported :status do
-          if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
-          end
+          content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do
@@ -69,7 +61,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Host Name:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 

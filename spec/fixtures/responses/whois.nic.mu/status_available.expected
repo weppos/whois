@@ -1,3 +1,10 @@
+#domain
+  should: %s == "u34jedzcq.mu"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :available
 
@@ -19,5 +26,5 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []

@@ -1,0 +1,111 @@
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
+%% Rights restricted by copyright.
+%% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
+%%
+%% Use '-h' option to obtain more information about this service.
+%%
+%% [2.231.50.199 REQUEST] >> boursedirect.fr
+%%
+%% RL Net [##########] - RL IP [#########.]
+%%
+
+domain:      boursedirect.fr
+status:      ACTIVE
+hold:        NO
+holder-c:    BD1013-FRNIC
+admin-c:     HL505-FRNIC
+tech-c:      OH251-FRNIC
+tech-c:      AC2333-FRNIC
+zone-c:      NFC1-FRNIC
+nsl-id:      NSL13398-FRNIC
+registrar:   FRANCE TELECOM
+anniversary: 18/02
+created:     31/12/1997
+last-update: 08/06/2007
+source:      FRNIC
+
+ns-list:     NSL13398-FRNIC
+nserver:     ns1.boursedirect.fr [212.157.203.190 217.167.205.44 62.23.221.190 84.14.180.90 81.255.109.190]
+nserver:     ns2.boursedirect.fr [212.157.203.189 217.167.205.43 62.23.221.189 81.255.109.189 84.14.180.89]
+source:      FRNIC
+
+registrar:   FRANCE TELECOM
+type:        Isp Option 1
+address:     6 Place d'Alleray
+address:     PARIS CEDEX 15
+country:     FR
+phone:       +33 1 53 95 14 00
+fax-no:      +33 1 53 95 14 01
+e-mail:      domaine-admin@list.orange-ftgroup.com
+website:     http://www.orange-business.com/
+anonymous:   NO
+registered:  15/02/2006
+source:      FRNIC
+
+nic-hdl:     OH251-FRNIC
+type:        ROLE
+contact:     OLEANE Hostmaster
+address:     France Telecom
+address:     13, rue de Javel
+address:     75015 Paris
+country:     FR
+phone:       +33 1 53 95 14 00
+fax-no:      +33 1 53 95 14 01
+e-mail:      domaine-admin@list.orange-ftgroup.com
+admin-c:     CP460-FRNIC
+tech-c:      CW13-FRNIC
+notify:      hm-dbm-msgs@ripe.net
+changed:     29/10/2004 hostmaster@oleane.net
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+
+nic-hdl:     BD1013-FRNIC
+type:        ORGANIZATION
+contact:     BOURSE DIRECT
+address:     253, boulevard Pereire
+address:     75852 Paris Cedex 17
+country:     FR
+phone:       +33 1 56 43 71 85
+e-mail:      hlestrat@boursedirect.fr
+changed:     09/10/2008 whoismaster@nic.fr
+anonymous:   NO
+obsoleted:   NO
+eligstatus:  ok
+eligdate:    31/12/1997 00:00:00
+source:      FRNIC
+
+nic-hdl:     HL505-FRNIC
+type:        PERSON
+contact:     Herve Lestrat
+address:     BOURSE DIRECT
+address:     253, boulevard Pereire
+address:     75852 Paris Cedex 17
+country:     FR
+phone:       +33 1 56 43 71 85
+fax-no:      +33 1 56 43 71 85
+e-mail:      hlestrat@boursedirect.fr
+changed:     22/07/2006 nic@nic.fr
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+
+nic-hdl:     AC2333-FRNIC
+type:        PERSON
+contact:     Angin Christophe
+address:     BOURSE DIRECT
+address:     253, boulevard Pereire
+address:     75852 Paris Cedex 17
+country:     FR
+phone:       +33 1 56 43 82 07
+changed:     05/07/2006 cgi@oleane.net
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+

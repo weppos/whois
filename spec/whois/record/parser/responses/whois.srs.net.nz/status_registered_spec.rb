@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -45,27 +45,32 @@ describe Whois::Record::Parser::WhoisSrsNetNz, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-01-16 23:23:15 +13:00")
+      @parser.updated_on.should == Time.parse("2012-01-16 23:16:18 +13:00")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2011-02-17 00:00:00 +13:00")
+      @parser.expires_on.should == Time.parse("2013-02-17 00:00:00 +13:00")
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns4.google.com"
+    end
+  end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
     end
   end
 end

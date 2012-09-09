@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,23 +14,15 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.markmonitor.com parser
-      #
       # Parser for the whois.markmonitor.com server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       class WhoisMarkmonitorCom < Base
 
         property_not_supported :status
 
-
-        # The server seems to provide only information for registered domains
+        # The server is contacted only in case of a registered domain.
         property_supported :available? do
           false
         end
@@ -66,56 +58,58 @@ module Whois
           )
         end
 
-
         property_supported :registrant_contacts do
-          contact('Registrant:', Record::Contact::TYPE_REGISTRANT)
+          build_contact('Registrant:', Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact('Administrative Contact:', Record::Contact::TYPE_ADMIN)
+          build_contact('Administrative Contact:', Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact('Technical Contact, Zone Contact:', Record::Contact::TYPE_TECHNICAL)
+          build_contact('Technical Contact, Zone Contact:', Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.slice(/Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/, 1).split("\n").map do |line|
-            Record::Nameserver.new(line.strip)
+         if content_for_scanner =~ /Domain servers in listed order:\n\n((?:\s*[^\s\n]+\n)+)/
+            $1.split("\n").map do |line|
+              Record::Nameserver.new(:name => line.strip)
+            end
           end
         end
 
 
-        private
+      private
 
-          def contact(element, type)
-            match = content_for_scanner.slice(/#{element}\n((.+\n){6})/, 1)
-            return unless match
+        def build_contact(element, type)
+          match = content_for_scanner.slice(/#{element}\n((.+\n){6})/, 1)
+          return unless match
 
-            info  = match.split("\n").map(&:strip)
-            # 0 DNS Admin
-            # 1 Google Inc.
-            # 2 1600 Amphitheatre Parkway
-            # 3 Mountain View CA 94043
-            # 4 US
-            # 5 dns-admin@google.com +1.6506234000 Fax: +1.6506188571
-            city, state, zip = info[3].scan(/^(.+) ([A-Z]{2}) ([0-9]+)$/).first
-            email, phone, fax = info[5].scan(/^(.+) (.+) Fax: (.+)$/).first
-            Record::Contact.new(
-              :type => type,
-              :name => info[0],
-              :organization => info[1],
-              :address => info[2],
-              :city => city,
-              :state => state,
-              :zip => zip,
-              :country_code => info[4],
-              :email => email,
-              :phone => phone,
-              :fax => fax
-            )
-          end
+          lines = match.split("\n").map(&:strip)
+
+          # 0 DNS Admin
+          # 1 Google Inc.
+          # 2 1600 Amphitheatre Parkway
+          # 3 Mountain View CA 94043
+          # 4 US
+          # 5 dns-admin@google.com +1.6506234000 Fax: +1.6506188571
+          city, state, zip = lines[3].scan(/^(.+) ([A-Z]{2}) ([0-9]+)$/).first
+          email, phone, fax = lines[5].scan(/^(.+) (.+) Fax: (.+)$/).first
+          Record::Contact.new(
+            :type => type,
+            :name => lines[0],
+            :organization => lines[1],
+            :address => lines[2],
+            :city => city,
+            :state => state,
+            :zip => zip,
+            :country_code => lines[4],
+            :email => email,
+            :phone => phone,
+            :fax => fax
+          )
+        end
 
       end
 

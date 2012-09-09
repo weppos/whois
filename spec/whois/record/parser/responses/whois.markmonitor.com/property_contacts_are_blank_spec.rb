@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "property_contacts_are_blan
 
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "Markmonitor.com"
       @parser.registrar.url.should          == "http://www.markmonitor.com"

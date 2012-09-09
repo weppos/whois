@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicTravel, "status_registered.expected" do
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      @parser.status.should == ["ok"]
     end
   end
   describe "#available?" do
@@ -58,9 +58,9 @@ describe Whois::Record::Parser::WhoisNicTravel, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "netsys.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns01-mia.theglobe.com"
     end
   end

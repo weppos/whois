@@ -1,0 +1,15 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Daniel Austin"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "3 Gunnery Terrace\nMilverton"
+  should: %s[0].city         == "Leamington Spa"
+  should: %s[0].zip          == "CV32 5PE"
+  should: %s[0].state        == "Warwickshire"
+  should: %s[0].country_code == "UK"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil

@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -25,7 +25,7 @@ describe Whois::Record::Parser::WhoisNicHu, "property_contact_without_address.ex
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].address.should      == nil
       @parser.registrant_contacts[0].city.should         == nil
       @parser.registrant_contacts[0].zip.should          == nil

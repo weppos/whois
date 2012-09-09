@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Access to CCTLD WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Afilias registry database. The data in this record is provided by Afilias Limited for informational purposes only, and Afilias does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Afilias reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == "nic.lc"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      @parser.domain_id.should == "D946482-LRCC"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == ["OK"]
@@ -54,13 +79,78 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       @parser.expires_on.should == Time.parse("2009-12-08 00:00:00 UTC")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "R144-LRCC"
+      @parser.registrar.name.should         == "NicLc Registrar"
+      @parser.registrar.organization.should == "NicLc Registrar"
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should           == "LC-54921"
+      @parser.registrant_contacts[0].name.should         == "Nic LC Admin"
+      @parser.registrant_contacts[0].organization.should == "Nic LC"
+      @parser.registrant_contacts[0].address.should      == "#4 Colony House\nJohn Compton Hwy"
+      @parser.registrant_contacts[0].city.should         == "Castries"
+      @parser.registrant_contacts[0].zip.should          == "Not Provided"
+      @parser.registrant_contacts[0].state.should        == "Not Provided"
+      @parser.registrant_contacts[0].country_code.should == "LC"
+      @parser.registrant_contacts[0].phone.should        == "+758.4520220"
+      @parser.registrant_contacts[0].fax.should          == ""
+      @parser.registrant_contacts[0].email.should        == "nic@nic.lc"
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should           == "LC-51893"
+      @parser.admin_contacts[0].name.should         == "Nic LC Hostmaster"
+      @parser.admin_contacts[0].organization.should == "Nic LC"
+      @parser.admin_contacts[0].address.should      == "#4 Colony House\nNot Provided"
+      @parser.admin_contacts[0].city.should         == "Castries"
+      @parser.admin_contacts[0].zip.should          == "Not Provided"
+      @parser.admin_contacts[0].state.should        == "Not Provided"
+      @parser.admin_contacts[0].country_code.should == "LC"
+      @parser.admin_contacts[0].phone.should        == "+758.4520220"
+      @parser.admin_contacts[0].fax.should          == ""
+      @parser.admin_contacts[0].email.should        == "hostmaster@nic.lc"
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should           == "LC-53407"
+      @parser.technical_contacts[0].name.should         == "Nic LC Technical"
+      @parser.technical_contacts[0].organization.should == "Nic LC"
+      @parser.technical_contacts[0].address.should      == "#4 Colony House\nNot Provided"
+      @parser.technical_contacts[0].city.should         == "Castries"
+      @parser.technical_contacts[0].zip.should          == "Not Provided"
+      @parser.technical_contacts[0].state.should        == "Not Provided"
+      @parser.technical_contacts[0].country_code.should == "LC"
+      @parser.technical_contacts[0].phone.should        == "+758.4520220"
+      @parser.technical_contacts[0].fax.should          == ""
+      @parser.technical_contacts[0].email.should        == "technical@nic.lc"
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.nic.ag"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns.patricklay.com"
     end
   end

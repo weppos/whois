@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,12 +14,16 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.example.com parser
-      #
       # Parser for the whois.example.com server.
+      #--
+      # In case you are not implementing all the methods,
+      # please add the following statement to the class docblock.
       #
-      class WhoisExampleCom < Base
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      # ++
+      class Example < Base
 
         # Gets the registry disclaimer that comes with the record.
         #

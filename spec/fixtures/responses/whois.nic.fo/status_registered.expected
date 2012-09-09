@@ -1,0 +1,88 @@
+#domain
+  should: %s == "nic.fo"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2010-06-03 03:34:05")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-07-12 12:52:57")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2014-01-03")
+
+
+#registrar
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "ID005359"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "FO-umsitingin"
+  should: %s[0].address       == "Hoydalsvegur 19, Postboks 1255"
+  should: %s[0].city          == "Torshavn"
+  should: %s[0].zip           == "110"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FO" 
+  should: %s[0].phone         == "+298.322400"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].created_on    == Time.parse("2010-07-21 19:11:55")
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].id            == "ID005359"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "FO-umsitingin"
+  should: %s[0].address       == "Hoydalsvegur 19, Postboks 1255"
+  should: %s[0].city          == "Torshavn"
+  should: %s[0].zip           == "110"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FO" 
+  should: %s[0].phone         == "+298.322400"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].created_on    == Time.parse("2010-07-21 19:11:55")
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(5)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.gratisdns.dk"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.gratisdns.dk"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.gratisdns.dk"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.gratisdns.dk"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns5.gratisdns.dk"

@@ -1,0 +1,30 @@
+#status
+  should: %s == :inactive
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2005-11-21 15:21:32")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-06-08 21:54:41")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2010-11-21 15:21:32")
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns10.tepuyserver.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns9.tepuyserver.net"

@@ -1,0 +1,15 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == ""
+  should: %s[0].organization == "Ben Cohen"
+  should: %s[0].address      == "9 Carolyn Ct."
+  should: %s[0].city         == "Owings Mills"
+  should: %s[0].zip          == "21117"
+  should: %s[0].state        == "MD"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == ""
+  should: %s[0].fax          == ""
+  should: %s[0].email        == ""

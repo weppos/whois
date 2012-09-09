@@ -3,25 +3,21 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whoisit'
+require 'whois/record/scanners/whois.nic.it.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.it parser
-      #
       # Parser for the whois.nic.it server.
-      #
       class WhoisNicIt < Base
-        include Features::Ast
+        include Scanners::Ast
 
 
         property_supported :disclaimer do
@@ -30,7 +26,7 @@ module Whois
 
 
         property_supported :domain do
-          node("Domain") { |raw| raw.downcase }
+          node("Domain") { |str| str.downcase }
         end
 
         property_not_supported :domain_id
@@ -42,14 +38,21 @@ module Whois
 
 
         property_supported :status do
-          case node("Status").to_s.downcase
+          case s = node("Status").to_s.downcase
           when /^ok/, "active", /\bclient/
             :registered
-          when "grace-period", "pendingupdate", "pendingtransfer", "no-provider"
+          when "grace-period", "no-provider"
             :registered
-          when "pendingdelete / redemptionperiod", /redemption\-/,
+          when /^pendingupdate/
+            :registered
+          when /^pendingtransfer/
+            :registered
+          when /redemption\-/
+            :redemption
+          when "pending-delete"
+            :redemption
           # The domain will be deleted in 5 days
-               "pendingdelete / pendingdelete"
+          when /^pendingdelete/
             :redemption
           when "unassignable"
             :reserved
@@ -58,7 +61,7 @@ module Whois
           when /^inactive/
             :inactive
           else
-            Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
+            Whois.bug!(ParserError, "Unknown status `#{s}'.")
           end
         end
 
@@ -71,47 +74,51 @@ module Whois
           !available?
         end
 
+        # NEWPROPERTY
+        def reserved?
+          status == :reserved
+        end
+
 
         property_supported :created_on do
-          node("Created") { |raw| Time.parse(raw) }
+          node("Created") { |str| Time.parse(str) }
         end
 
         property_supported :updated_on do
-          node("Last Update") { |raw| Time.parse(raw) }
+          node("Last Update") { |str| Time.parse(str) }
         end
 
         property_supported :expires_on do
-          node("Expire Date") { |raw| Time.parse(raw) }
+          node("Expire Date") { |str| Time.parse(str) }
         end
 
 
         property_supported :registrar do
-          node("Registrar") do |raw|
+          node("Registrar") do |str|
             Record::Registrar.new(
-              :id           => raw["Name"],
-              :name         => raw["Name"],
-              :organization => raw["Organization"]
+                :id           => str["Name"],
+                :name         => str["Name"],
+                :organization => str["Organization"]
             )
           end
         end
 
-
         property_supported :registrant_contacts do
-          contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Admin Contact", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Admin Contact", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Technical Contacts", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Technical Contacts", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
           Array.wrap(node("Nameservers")).map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 
@@ -121,40 +128,40 @@ module Whois
         #
         # @return [Boolean]
         def response_unavailable?
-          !!node("status-unavailable")
+          !!node("response:unavailable")
         end
 
-        # Initializes a new {Scanner} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::WhoisNicIt} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisit.new(content_for_scanner).parse
+          Scanners::WhoisNicIt.new(content_for_scanner).parse
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node(element) do |raw|
-              address = (raw["Address"] || "").split("\n")
-              company = address.size == 6 ? address.shift : nil
-              Record::Contact.new(
-                :id           => raw["ContactID"],
-                :type         => type,
-                :name         => raw["Name"],
-                :organization => raw["Organization"] || company,
-                :address      => address[0],
-                :city         => address[1],
-                :zip          => address[2],
-                :state        => address[3],
-                :country_code => address[4],
-                :created_on   => raw["Created"] ? Time.parse(raw["Created"]) : nil,
-                :updated_on   => raw["Last Update"] ? Time.parse(raw["Last Update"]) : nil
-              )
-            end
+        def build_contact(element, type)
+          node(element) do |str|
+            address = (str["Address"] || "").split("\n")
+            company = address.size == 6 ? address.shift : nil
+            Record::Contact.new(
+              :id           => str["ContactID"],
+              :type         => type,
+              :name         => str["Name"],
+              :organization => str["Organization"] || company,
+              :address      => address[0],
+              :city         => address[1],
+              :zip          => address[2],
+              :state        => address[3],
+              :country_code => address[4],
+              :created_on   => str["Created"] ? Time.parse(str["Created"]) : nil,
+              :updated_on   => str["Last Update"] ? Time.parse(str["Last Update"]) : nil
+            )
           end
+        end
 
       end
 

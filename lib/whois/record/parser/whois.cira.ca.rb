@@ -3,45 +3,61 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.cira.ca.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.cira.ca parser
-      #
       # Parser for the whois.cira.ca server.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
+      # @since  2.5.0
       class WhoisCiraCa < Base
+        include Scanners::Ast
+
+        property_supported :disclaimer do
+           node("field:disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("Domain name")
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
 
         property_supported :status do
-          if content_for_scanner =~ /Domain status:\s+(.*?)\n/
-            case $1.downcase
-              # schema-2
-              when "registered"       then :registered
-              when "redemption"       then :registered
-              when "auto-renew grace" then :registered
-              when "to be released"   then :registered
-              when "available"        then :available
-              when "unavailable"      then :invalid
-              # schema-1
-              when "exist"      then :registered
-              when "avail"      then :available
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+          if content_for_scanner =~ /Domain status:\s+(.+?)\n/
+            case node("Domain status", &:downcase)
+            when "registered"
+              :registered
+            when "redemption"
+              :registered
+            when "auto-renew grace"
+              :registered
+            when "to be released"
+              :registered
+            when "available"
+              :available
+            when "unavailable"
+              :invalid
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")
@@ -58,39 +74,46 @@ module Whois
 
 
         property_supported :created_on do
-          # schema-2
-          if content_for_scanner =~ /Creation date:\s+(.*?)\n/
-            Time.parse($1)
-          # schema-1
-          elsif content_for_scanner =~ /Approval date:\s+(.*?)\n/
-            Time.parse($1)
-          end
+          node("Creation date") { |str| Time.parse(str) }
         end
 
-        # TODO: Not supported in schema-2?
         property_supported :updated_on do
-          if content_for_scanner =~ /Updated date:\s+(.*?)\n/
-            Time.parse($1)
-          end
+          node("Updated date") { |str| Time.parse(str) }
         end
 
         property_supported :expires_on do
-          # schema-2
-          if content_for_scanner =~ /Expiry date:\s+(.*?)\n/
-            Time.parse($1)
-          # schema-1
-          elsif content_for_scanner =~ /Renewal date:\s+(.*?)\n/
-            Time.parse($1)
-          end
+          node("Expiry date") { |str| Time.parse(str) }
         end
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /^Registrar:\n(.*\n?)^\n/m
-            match = $1
-            id    = match =~ /Number:\s+(.*)$/ ? $1.strip : nil
-            name  = match =~ /Name:\s+(.*)$/   ? $1.strip : nil
-            Whois::Record::Registrar.new(:id => id, :name => name, :organization => name)
+          node("Registrar") do |hash|
+            Record::Registrar.new(
+              :id           => hash["Number"],
+              :name         => hash["Name"],
+              :organization => hash["Name"]
+            )
+          end
+        end
+
+
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("Administrative contact", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Technical contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+
+        property_supported :nameservers do
+          Array.wrap(node("nserver")).map do |line|
+            name, ipv4 = line.split(/\s+/)
+            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
         end
 
@@ -104,11 +127,9 @@ module Whois
         #   ns2.google.com  216.239.34.10
         #
         property_supported :nameservers do
-          if content_for_scanner =~ /Name servers:\n((?:\s+([^\s]+)\s+([^\s]+)\n)+)/
-            $1.split("\n").map do |line|
-              name, ipv4 = line.strip.split(/\s+/)
-              Record::Nameserver.new(name, ipv4)
-            end
+          Array.wrap(node("field:nameservers")).map do |line|
+            name, ipv4 = line.strip.split(/\s+/)
+            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
         end
 
@@ -142,6 +163,37 @@ module Whois
           end
         end
 
+
+        # Initializes a new {Scanners::WhoisCiraCa} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisCiraCa.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          node(element) do |hash|
+            Record::Contact.new(
+              :type         => type,
+              :id           => nil,
+              :name         => hash["Name"],
+              :organization => nil,
+              :address      => hash["Postal address"],
+              :city         => nil,
+              :zip          => nil,
+              :state        => nil,
+              :country      => nil,
+              :phone        => hash["Phone"],
+              :fax          => hash["Fax"],
+              :email        => hash["Email"]
+            )
+          end
+        end
 
       end
 

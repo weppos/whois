@@ -1,0 +1,50 @@
+
+% Copyright (c) Nic.br
+%  The use of the data below is only permitted as described in
+%  full by the terms of use (http://registro.br/termo/en.html),
+%  being prohibited its distribution, comercialization or
+%  reproduction, in particular, to use it for advertising or
+%  any similar purpose.
+%  2011-10-18 07:33:39 (BRST -02:00)
+
+domain:      hostgator.com.br
+owner:       Hostgator Brasil Hospedagem e suporte tecnico LTDA
+ownerid:     008.852.780/0001-00
+responsible: Robledo Ribeiro Aloisio
+country:     BR
+owner-c:     HOBRA
+admin-c:     HOBRA
+tech-c:      HOBRA
+billing-c:   HOBRA
+nserver:     ns1.hostgator.com.br 74.53.28.178 
+nsstat:      20111016 AA
+nslastaa:    20111016
+nserver:     ns2.hostgator.com.br 74.53.28.179 
+nsstat:      20111016 AA
+nslastaa:    20111016
+nserver:     ns3.hostgator.com.br 174.133.202.50 
+nsstat:      20111016 AA
+nslastaa:    20111016
+nserver:     ns4.hostgator.com.br 174.133.202.51 
+nsstat:      20111016 AA
+nslastaa:    20111016
+created:     20050912 #2351856
+expires:     20180912
+changed:     20110509
+provider:    HOSTGATOR-BRASIL (43)
+status:      published
+
+nic-hdl-br:  HOBRA
+person:      Hostgator Brasil
+e-mail:      rob@hostgator.com.br
+created:     20071207
+changed:     20110509
+
+% Security and mail abuse issues should also be addressed to
+% cert.br, http://www.cert.br/, respectivelly to cert@cert.br
+% and mail-abuse@cert.br
+%
+% whois.registro.br accepts only direct match queries. Types
+% of queries are: domain (.br), ticket, provider, ID, CIDR
+% block, IP and ASN.
+

@@ -1,50 +1,50 @@
-  Domain Name: gsn.cn.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    GSN Electronics Incorporation Pte Ltd (H1062079) abuse@gsn.in
-    
-    Straits Trading Building 9 Battery Road 16-08
-    Singapore
-    049910
-    SG (Singapore)
-    Tel: +65.62336919
+Domain ID:CNIC-DO323367
+Domain Name:GSN.CN.COM
+Created On:23-Nov-2005 15:44:03 UTC
+Last Updated On:05-Dec-2011 10:25:41 UTC
+Expiration Date:23-Nov-2012 23:59:59 UTC
+Status:OK
+Registrant ID:H1062079
+Registrant Name:GSN Electronics Incorporation Pte Ltd
+Registrant Postal Code:049910
+Registrant Country:SG
+Registrant Phone:+65.62336919
+Registrant Email:abuse@gsn.in
+Admin ID:H161687
+Admin Name:Pauline Ang
+Admin Organization:GSN Electronics Incorporation Pte Ltd
+Admin Postal Code:049910
+Admin Country:SG
+Admin Phone:+65.62336919
+Admin Email:abuse@gsn.in
+Tech ID:H94152
+Billing ID:H1062079
+Billing Name:GSN Electronics Incorporation Pte Ltd
+Billing Postal Code:049910
+Billing Country:SG
+Billing Phone:+65.62336919
+Billing Email:abuse@gsn.in
+Sponsoring Registrar ID:H67436
+Sponsoring Registrar Organization:United Domains AG
+Sponsoring Registrar Street1:Gautinger Str. 10
+Sponsoring Registrar City:Starnberg
+Sponsoring Registrar Postal Code:82319
+Sponsoring Registrar Country:DE
+Sponsoring Registrar Phone:+498151368670
+Sponsoring Registrar FAX:+4981513686777
+Sponsoring Registrar Website:http://www.united-domains.de
+Name Server:NS1.METEOS.IT
+Name Server:NS2.METEOS.IT
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Pauline Ang (H161687) abuse@gsn.in
-    GSN Electronics Incorporation Pte Ltd
-    Straits Trading Building 9 Battery Road 16-08
-    Singapore
-    049910
-    SG (Singapore)
-    Tel: +65.62336919
 
-  Technical Contact:
-
-    Handle ID: H94152. This handle is an individual who has elected
-    to have their details omitted from the whois database.
-
-  Registrar:
-    Hostmaster (H67436) centralnic@bot.udag.net
-    United Domains AG
-    Gautinger Strasse 10, 
-    Starnberg
-    D-82319
-    DE (Germany)
-    Tel: +498151368670
-    Fax: +4981513686777
-    URL: http://www.united-domains.de
-
-  Record created on: 23 November 2005
-  Record expires on: 23 November 2011
-  Status: Live, Renewal In Progress
-
-  Domain servers in listed order:
-
-  NS1.METEOS.IT
-  NS2.METEOS.IT
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

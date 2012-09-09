@@ -1,0 +1,63 @@
+% This is the Ukrainian Whois query server #B.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+
+% % .UA whois
+% Domain Record:
+% =============
+domain:     google.com.ua
+admin-c:    GI8-UANIC
+tech-c:     GI8-UANIC
+status:     OK-UNTIL 20121204000000
+dom-public: NO
+nserver:    ns2.google.com
+nserver:    ns4.google.com
+nserver:    ns3.google.com
+nserver:    ns1.google.com
+mnt-by:     IMENA-UANIC (ua.imena)
+remark:     Доменное имя зарегистрировано в интересах клиента
+remark:     The domain name has been registered on behalf of a client
+created:    0-UANIC 20021204000000
+changed:    IMENA-UANIC 20111104185842
+source:     UANIC
+
+
+% Administrative Contact:
+% ======================
+nic-handle:     GI8-UANIC
+organization:   Google Inc.
+address:        1600 Amphitheatre Parkway
+address:        Mountain View CA 94043
+address:        US
+fax-no:         +1 6506188571
+phone:          +1 6503300100
+e-mail:         dns-admin@google.com
+org-id:         N/A
+mnt-by:         NONE
+changed:        GI8-UANIC 20120201210942
+source:         UANIC
+
+% Technical Contact:
+% =================
+nic-handle:     GI8-UANIC
+organization:   Google Inc.
+address:        1600 Amphitheatre Parkway
+address:        Mountain View CA 94043
+address:        US
+fax-no:         +1 6506188571
+phone:          +1 6503300100
+e-mail:         dns-admin@google.com
+org-id:         N/A
+mnt-by:         NONE
+changed:        GI8-UANIC 20120201210942
+source:         UANIC
+
+
+% % .UA whois
+
+% Last update of whois database: 29 May 2012 17:18:16 +0300 (EEST)
+
+% Query time:   11 msec
+

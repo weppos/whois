@@ -36,18 +36,18 @@
   should: %s == nil
 
 #registrant_contacts
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []
 
 #admin_contacts
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []
 
 #technical_contacts
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []

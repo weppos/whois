@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -58,22 +58,22 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
             values = case value = $1.downcase
-              # schema-1
-              when /^(?:\s+([\w.-]+)\n){2,}/
-                value.scan(/\s+([\w.-]+)\n/).map do |match|
-                  { :name => match[0] }
-                end
-              when /^(?:\s+([\w.-]+)\s+\((.+)\)\n){2,}/
-                value.scan(/\s+([\w.-]+)\s+\((.+)\)\n/).map do |match|
-                  { :name => match[0], :ipv4 => match[1] }
-                end
-              # schema-2
-              when /^(?:\s+([\w.-]+)){2,}/
-                value.strip.split(/\s+/).map do |name|
-                  { :name => name }
-                end
-              else
-                Whois.bug!(ParserError, "Unknown nameservers format `#{value}'")
+            # schema-1
+            when /^(?:\s+([\w.-]+)\n){2,}/
+              value.scan(/\s+([\w.-]+)\n/).map do |match|
+                { :name => match[0] }
+              end
+            when /^(?:\s+([\w.-]+)\s+\((.+)\)\n){2,}/
+              value.scan(/\s+([\w.-]+)\s+\((.+)\)\n/).map do |match|
+                { :name => match[0], :ipv4 => match[1] }
+              end
+            # schema-2
+            when /^(?:\s+([\w.-]+)){2,}/
+              value.strip.split(/\s+/).map do |name|
+                { :name => name }
+              end
+            else
+              Whois.bug!(ParserError, "Unknown nameservers format `#{value}'")
             end
 
             values.map do |params|

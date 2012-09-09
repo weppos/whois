@@ -1,52 +1,72 @@
-  Domain Name: fynbos.sa.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    Maarten Groos (H323273) maarten@farm215.co.za
-    
-    farm 215 fynbos reserve
-    PO Box 1314
-    Gansbaai
-    Western Cape
-    7220
-    ZA (South Africa)
-    Tel: +27 28 388 09 20
+Domain ID:CNIC-DO501005
+Domain Name:FYNBOS.SA.COM
+Created On:27-Sep-2007 18:14:53 UTC
+Last Updated On:31-Aug-2011 15:42:21 UTC
+Expiration Date:27-Sep-2012 23:59:59 UTC
+Status:OK
+Registrant ID:H323273
+Registrant Name:Maarten Groos
+Registrant Street1:farm 215 fynbos reserve
+Registrant Street2:PO Box 1314
+Registrant City:Gansbaai
+Registrant State/Province:Western Cape
+Registrant Postal Code:7220
+Registrant Country:ZA
+Registrant Phone:+27.283880920
+Registrant Email:maarten@farm215.co.za
+Admin ID:H323273
+Admin Name:Maarten Groos
+Admin Street1:farm 215 fynbos reserve
+Admin Street2:PO Box 1314
+Admin City:Gansbaai
+Admin State/Province:Western Cape
+Admin Postal Code:7220
+Admin Country:ZA
+Admin Phone:+27.283880920
+Admin Email:maarten@farm215.co.za
+Tech ID:C30342
+Tech Name:Seb de Lemos
+Tech Organization:Hostroute 
+Tech Street1:St Andrew's House
+Tech Street2:St Mary's Walk
+Tech City:Maidenhead
+Tech State/Province:Berkshire
+Tech Postal Code:SL6 1QZ
+Tech Country:GB
+Tech Phone:+44.2031377651
+Tech Email:sales@hostroute.com
+Billing ID:H323273
+Billing Name:Maarten Groos
+Billing Street1:farm 215 fynbos reserve
+Billing Street2:PO Box 1314
+Billing City:Gansbaai
+Billing State/Province:Western Cape
+Billing Postal Code:7220
+Billing Country:ZA
+Billing Phone:+27.283880920
+Billing Email:maarten@farm215.co.za
+Sponsoring Registrar ID:C30342
+Sponsoring Registrar Organization:Hostroute 
+Sponsoring Registrar Street1:St Andrew's House
+Sponsoring Registrar Street2:St Mary's Walk
+Sponsoring Registrar City:Maidenhead
+Sponsoring Registrar State/Province:Berkshire
+Sponsoring Registrar Postal Code:SL6 1QZ
+Sponsoring Registrar Country:GB
+Sponsoring Registrar Phone:020 3137 7651
+Sponsoring Registrar Website:http://www.hostroute.com
+Name Server:NS1191.WEBSITEWELCOME.COM
+Name Server:NS1192.WEBSITEWELCOME.COM
+DNSSEC:Unsigned
 
-  Technical Contact:
-    Jordan Gross (C30342) hostmaster@hostroute.com
-    Ultraspeed UK Ltd
-    Unit 11 Jacks place
-    6 corbet place
-    London
-    London
-    E1 6NN
-    UK (United Kingdom)
-    Tel: 0845 862 0210
-    Fax: 020 3216 0030
 
-  Registrar:
-    Jordan Gross (C30342) hostmaster@hostroute.com
-    Ultraspeed UK Ltd
-    Unit 11 Jacks place
-    6 corbet place
-    London
-    London
-    E1 6NN
-    UK (United Kingdom)
-    Tel: 0845 862 0210
-    Fax: 020 3216 0030
-    URL: http://www.nameroute.co.uk/
-
-  Record created on: 27 September 2007
-  Record expires on: 27 September 2011
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS1191.WEBSITEWELCOME.COM
-  NS1192.WEBSITEWELCOME.COM
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

@@ -40,7 +40,7 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #registrant_contacts
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []
 
 #admin_contacts
@@ -51,5 +51,5 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []

@@ -1,31 +1,18 @@
 require 'rubygems'
-require 'rspec/core/rake_task'
-require 'rubygems/package_task'
-require 'yard'
-require 'yard/rake/yardoc_task'
 
 $:.unshift(File.dirname(__FILE__) + '/lib')
 require 'whois'
 
 
 # Common package properties
-PKG_NAME    = ENV['PKG_NAME']    || Whois::GEM
-PKG_VERSION = ENV['PKG_VERSION'] || Whois::VERSION
-
-if ENV['SNAPSHOT'].to_i == 1
-  PKG_VERSION << "." << Time.now.utc.strftime("%Y%m%d%H%M%S")
-end
+PKG_NAME    = Whois::GEM
+PKG_VERSION = Whois::VERSION
 
 
 # Run test by default.
-task :default => :rspec
-task :test => :rspec
+task :default => :spec
+task :test => :spec
 
-# This builds the actual gem. For details of what all these options
-# mean, and other ones you can add, check the documentation here:
-#
-#   http://rubygems.org/read/chapter/20
-#
 spec = Gem::Specification.new do |s|
   s.name              = PKG_NAME
   s.version           = PKG_VERSION
@@ -39,25 +26,39 @@ spec = Gem::Specification.new do |s|
   s.homepage          = "http://www.ruby-whois.org"
   s.rubyforge_project = "whois"
 
-  s.files             = %w( Rakefile LICENSE .gemtest .rspec .yardopts ) +
-                        Dir.glob("*.{rdoc,gemspec}") +
-                        Dir.glob("{bin,lib,spec}/**/*")
-  s.executables       = ["ruby-whois"]
-  s.require_paths     = ["lib"]
+  s.files             = %w( LICENSE .yardopts ) +
+                        Dir.glob("*.{md,gemspec}") +
+                        Dir.glob("{bin,lib}/**/*")
+  s.executables       = %w( ruby-whois )
+  s.require_paths     = %w( lib )
 
-  # If you want to depend on other gems, add them here, along with any
-  # relevant versions
-  # s.add_dependency("some_other_gem", "~> 0.1.0")
-
-  # If your tests use any gems, include them here
   s.add_development_dependency "rake",  "~> 0.9"
-  s.add_development_dependency "rspec", "~> 2.6.0"
+  s.add_development_dependency "rspec", "~> 2.10.0"
   s.add_development_dependency "mocha"
   s.add_development_dependency "yard"
+
+  s.post_install_message = <<EOS
+********************************************************************************
+
+  Thank you for installing the whois gem!
+
+  If you like this gem, please support the project.
+  http://pledgie.com/campaigns/11383
+
+  Does your project or organization use this gem? Add it to the apps wiki.
+  https://github.com/weppos/whois/wiki/apps
+
+  Are you looking for a quick and convenient way to perform WHOIS queries?
+  Check out RoboWhois WHOIS API.
+  http://www.robowhois.com/
+
+********************************************************************************
+EOS
 end
 
-# This task actually builds the gem.
-# We also regenerate a static .gemspec file.
+
+require 'rubygems/package_task'
+
 Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
@@ -68,13 +69,33 @@ task :gemspec do
   File.open(file, "w") {|f| f << spec.to_ruby }
 end
 
+desc "Remove any temporary products, including gemspec"
+task :clean => [:clobber] do
+  rm "#{spec.name}.gemspec" if File.file?("#{spec.name}.gemspec")
+end
 
-# Run all the specs in the /spec folder
-RSpec::Core::RakeTask.new(:rspec)
+desc "Remove any generated file"
+task :clobber => [:clobber_package]
+
+desc "Package the library and generates the gemspec"
+task :package => [:gemspec]
+
+
+require 'rspec/core/rake_task'
+begin
+  require 'fuubar'
+rescue LoadError
+end
+
+RSpec::Core::RakeTask.new do |t|
+  t.verbose = !!ENV["VERBOSE"]
+  t.rspec_opts  = []
+  t.rspec_opts << ['--format', 'Fuubar'] if defined?(Fuubar)
+end
 
 
 namespace :multitest do
-  RUBIES = %w( ruby-1.8.7-p334 ruby-1.9.2-p180 jruby-1.6.0.RC2 ree-1.8.7-2011.03 )
+  RUBIES = %w( ruby-1.8.7 ruby-1.9.2 jruby ree )
 
   desc "Run tests for all rubies"
   task :all => :ensure_rvm do
@@ -102,29 +123,14 @@ namespace :multitest do
 end
 
 
-task :clean_gemspec do
-  rm "#{spec.name}.gemspec" rescue nil
-end
-
-task :clean   => [:clean_gemspec]
-task :clobber => [:clobber_package]
-
-desc "Package the library and generates the gemspec"
-task :package => [:gemspec]
-
+require 'yard'
+require 'yard/rake/yardoc_task'
 
 YARD::Rake::YardocTask.new(:yardoc) do |y|
   y.options = ["--output-dir", "yardoc"]
 end
 
 namespace :yardoc do
-  desc "Publish YARD documentation to the site"
-  task :publish => ["yardoc:clobber", "yardoc"] do
-    ENV["username"] || raise(ArgumentError, "Missing ssh username")
-    sh "rsync -avz --delete yardoc/ #{ENV["username"]}@alamak:/home/#{ENV["username"]}/ruby-whois.org/api"
-  end
-
-  desc "Remove YARD products"
   task :clobber do
     rm_r "yardoc" rescue nil
   end

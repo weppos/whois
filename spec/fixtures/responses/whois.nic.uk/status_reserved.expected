@@ -1,0 +1,71 @@
+#status
+  should: %s == :reserved
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1996-08-01")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-03-23")
+
+#expires_on
+  should: %s == nil
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Nominet"
+  should: %s.organization == "Nominet UK"
+  should: %s.url          == "http://www.nic.uk/"
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Nominet UK"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Minerva House, Edmund Halley Road\nOxford Science Park"
+  should: %s[0].city         == "Oxford"
+  should: %s[0].zip          == "OX4 4DQ"
+  should: %s[0].state        == "Oxon"
+  should: %s[0].country      == "United Kingdom"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "nom-ns1.nominet.org.uk"
+  should: %s[0].ipv4 == "213.248.199.16"
+  should: %s[0].ipv6 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "nom-ns2.nominet.org.uk"
+  should: %s[1].ipv4 == "195.66.240.250"
+  should: %s[1].ipv6 == "2a01:40:1001:37::2"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "nom-ns3.nominet.org.uk"
+  should: %s[2].ipv4 == "213.219.13.194"
+  should: %s[2].ipv6 == nil
+
+
+#response_throttled?
+  should: %s == false
+
+
+#valid?
+  should: %s == true
+
+#invalid?
+  should: %s == false

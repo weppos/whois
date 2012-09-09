@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -58,10 +58,10 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "dns2.gencat.cat"
       @parser.nameservers[0].ipv4.should == "83.247.132.4"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "dns.gencat.net"
       @parser.nameservers[1].ipv4.should == nil
     end

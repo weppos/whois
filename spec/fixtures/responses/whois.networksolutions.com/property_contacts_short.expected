@@ -1,0 +1,47 @@
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].organization == "mpowers LLC"
+  should: %s[0].address      == "21010 Southbank St #575"
+  should: %s[0].city         == "Potomac Falls"
+  should: %s[0].zip          == "20165"
+  should: %s[0].state        == "VA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "mpowers LLC"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "21010 Southbank St #575"
+  should: %s[0].city         == "Potomac Falls"
+  should: %s[0].zip          == "20165"
+  should: %s[0].state        == "VA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.5712832829"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "michael@mpowers.net"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "mpowers LLC"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "21010 Southbank St #575"
+  should: %s[0].city         == "Potomac Falls"
+  should: %s[0].zip          == "20165"
+  should: %s[0].state        == "VA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.5712832829"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "michael@mpowers.net"

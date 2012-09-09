@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -11,7 +11,7 @@ require 'time'
 require 'whois/record/contact'
 require 'whois/record/registrar'
 require 'whois/record/nameserver'
-require 'whois/record/parser/features/ast'
+require 'whois/record/scanners/ast'
 
 
 module Whois
@@ -19,41 +19,18 @@ module Whois
     class Parser
 
 
-      # This class is intended to be the base abstract class for all
+      # Represents the abstract base parser class for all
       # server-specific parser implementations.
       #
-      # == Available Methods
-      #
-      # The Base class is for the most part auto-generated via meta programming.
+      # NOTE. This class is for the most part auto-generated via meta programming.
       # This is the reason why RDoc can't detect and document all available methods.
+      #
+      # @abstract
       #
       class Base
 
-        @@property_registry = {}
-
-        # Returns the <tt>@@property_registry</tt> if <tt>klass</tt> is nil,
-        # otherwise returns the value in <tt>@@property_registry</tt> for given <tt>klass</tt>.
-        # <tt>klass</tt> is expected to be a class name.
-        #
-        # Returned value is always a hash. If <tt>@@property_registry[klass]</tt>
-        # doesn't exist, this method automatically initializes it to an empty Hash.
-        #
-        # @param  [Class] klass
-        # @return [Hash]
-        #
-        # @example Get the full registry
-        #   property_registry
-        #
-        # @example Get the registry for a specfic Class
-        #   property_registry(ParserClass)
-        #
-        def self.property_registry(klass = nil)
-          if klass.nil?
-            @@property_registry
-          else
-            @@property_registry[klass] ||= {}
-          end
-        end
+        class_attribute :_properties
+        self._properties = {}
 
         # Returns the status for the +property+ passed as symbol.
         #
@@ -65,16 +42,16 @@ module Whois
         #   # => nil
         #
         # @example Defined property
-        #   property_register(:discaimer, :supported) {}
+        #   property_register(:disclaimer, :supported) {}
         #   property_status(:disclaimer)
         #   # => :supported
         #
         def self.property_status(property)
-          property_registry(self)[property]
+          self._properties[property]
         end
 
         # Check if the +property+ passed as symbol
-        # is registered in the +property_registry+ for current parser.
+        # is registered in the registry for current parser.
         #
         # @param  [Symbol] property
         # @param  [Symbol] status
@@ -85,15 +62,15 @@ module Whois
         #   # => false
         #
         # @example Registered property
-        #   property_register(:discaimer) {}
+        #   property_register(:disclaimer) {}
         #   property_registered?(:disclaimer)
         #   # => true
         #
         def self.property_registered?(property, status = :any)
           if status == :any
-            property_registry(self).key?(property)
+            self._properties.key?(property)
           else
-            property_registry(self)[property] == status
+            self._properties[property] == status
           end
         end
 
@@ -105,7 +82,7 @@ module Whois
         # @return [void]
         #
         def self.property_register(property, status)
-          property_registry(self).merge!({ property => status })
+          self._properties = self._properties.merge({ property => status })
         end
 
 
@@ -234,12 +211,12 @@ module Whois
         #   is(:response_throttled?)
         #   # => true
         #
-        # @api internal
+        # @api private
         def is(symbol)
           respond_to?(symbol) && send(symbol)
         end
 
-        # @api internal
+        # @api private
         def validate!
           raise ResponseIsThrottled   if is(:response_throttled?)
           raise ResponseIsUnavailable if is(:response_unavailable?)
@@ -322,19 +299,6 @@ module Whois
           content_for_scanner == other.content_for_scanner
         end
 
-        # Checks whether this is a throttle response.
-        #
-        # @return [Boolean]
-        #
-        # @abstract This method is just a stub.
-        #           Define it in your parser class.
-        #
-        # @see Whois::Record#response_throttled?
-        # @see Whois::Record::Parser#response_throttled?
-        #
-        def response_throttled?
-        end
-
         # Checks whether this is an incomplete response.
         #
         # @return [Boolean]
@@ -348,6 +312,19 @@ module Whois
         def response_incomplete?
         end
 
+        # Checks whether this is a throttle response.
+        #
+        # @return [Boolean]
+        #
+        # @abstract This method is just a stub.
+        #           Define it in your parser class.
+        #
+        # @see Whois::Record#response_throttled?
+        # @see Whois::Record::Parser#response_throttled?
+        #
+        def response_throttled?
+        end
+
         # Checks whether this response contains a message
         # that can be reconducted to a "WHOIS Server Unavailable" status.
         #
@@ -358,6 +335,9 @@ module Whois
         #
         # @abstract This method is just a stub.
         #           Define it in your parser class.
+        #
+        # @see Whois::Record#response_unavailable?
+        # @see Whois::Record::Parser#response_unavailable?
         #
         def response_unavailable?
         end
@@ -385,7 +365,7 @@ module Whois
 
         private
 
-          # @api internal
+          # @api private
           def typecast(value, type)
             if Array == type
               Array.wrap(value)
@@ -394,7 +374,7 @@ module Whois
             end
           end
 
-          # @api internal
+          # @api private
           def handle_property(property, *args)
             unless property_supported?(property)
               return send(:"_property_#{property}", *args)

@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -62,7 +62,7 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Domain Name Servers listed in order:\n\n((.+\n)+)\n/
             $1.split("\n").reject { |value| value.strip.empty? }.map do |name|
-              Record::Nameserver.new(name.strip)
+              Record::Nameserver.new(:name => name.strip)
             end
           end
         end

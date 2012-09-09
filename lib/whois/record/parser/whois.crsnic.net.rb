@@ -3,25 +3,21 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/verisign'
+require 'whois/record/scanners/verisign'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.crsnic.net parser
-      #
       # Parser for the whois.crsnic.net server.
-      #
       class WhoisCrsnicNet < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -75,20 +71,32 @@ module Whois
 
         property_supported :registrar do
           node("Registrar") do |raw|
-            Whois::Record::Registrar.new(:name => last_useful_item(raw), :organization => last_useful_item(raw), :url => referral_url)
+            Whois::Record::Registrar.new(
+                :name         => last_useful_item(raw),
+                :organization => last_useful_item(raw),
+                :url          => referral_url
+            )
           end
         end
 
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject { |value| value =~ / / }.map do |name|
-            Record::Nameserver.new(name.downcase)
+            Record::Nameserver.new(:name => name.downcase)
           end
         end
 
 
+        # Checks whether this response contains a message
+        # that can be reconducted to a "WHOIS Server Unavailable" status.
+        #
+        # @return [Boolean]
+        def response_unavailable?
+          !!node("response:unavailable")
+        end
+
         # Initializes a new {Scanners::Verisign} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
@@ -97,13 +105,13 @@ module Whois
         end
 
 
-        protected
+      private
 
-          # In case of "SPAM Response", the response contains more than one item
-          # for the same value and the value becomes an Array.
-          def last_useful_item(values)
-            values.is_a?(Array) ? values.last : values
-          end
+        # In case of "SPAM Response", the response contains more than one item
+        # for the same value and the value becomes an Array.
+        def last_useful_item(values)
+          values.is_a?(Array) ? values.last : values
+        end
 
       end
 

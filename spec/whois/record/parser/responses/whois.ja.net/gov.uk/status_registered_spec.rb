@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -58,21 +58,21 @@ describe Whois::Record::Parser::WhoisJaNet, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(8).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "eur5.akam.net"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "eur6.akam.net"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns1-173.akam.net"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns1-31.akam.net"
-      @parser.nameservers[4].should be_a(_nameserver)
+      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[4].name.should == "usc4.akam.net"
-      @parser.nameservers[5].should be_a(_nameserver)
+      @parser.nameservers[5].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[5].name.should == "use10.akam.net"
-      @parser.nameservers[6].should be_a(_nameserver)
+      @parser.nameservers[6].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[6].name.should == "usw2.akam.net"
-      @parser.nameservers[7].should be_a(_nameserver)
+      @parser.nameservers[7].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[7].name.should == "usw4.akam.net"
     end
   end

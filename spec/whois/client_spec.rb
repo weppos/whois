@@ -41,16 +41,23 @@ describe Whois::Client do
   end
 
   describe "#query" do
-    it "coerces the argument to string" do
+    it "converts the argument to string" do
       # I can't use the String in place of instance_of(String)
       # because Array#to_s behaves differently
       # on Ruby 1.8.7 and Ruby 1.9.1
       # http://redmine.ruby-lang.org/issues/show/2617
 
-      server = Whois::Server::Adapters::Base.new(:tld, ".test", "example.test")
+      server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
       server.expects(:query).with(instance_of(String))
       Whois::Server.expects(:guess).with(instance_of(String)).returns(server)
-      klass.new.query(["google", ".", "test"])
+      klass.new.query(["example", ".", "test"])
+    end
+
+    it "converts the argument to downcase" do
+      server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
+      server.expects(:query).with("example.test")
+      Whois::Server.expects(:guess).with("example.test").returns(server)
+      klass.new.query("Example.TEST")
     end
 
     it "detects email" do
@@ -68,11 +75,11 @@ describe Whois::Client do
     end
 
     it "works with domain with web whois" do
-      Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :web => "www.nic.test")
+      Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :url => "http://www.example.com/")
 
       lambda do
         klass.new.query("domain.webwhois")
-      end.should raise_error(Whois::WebInterfaceError, /www\.nic\.test/)
+      end.should raise_error(Whois::WebInterfaceError, /www\.example\.com/)
     end
 
     it "raises if timeout is exceeded" do
@@ -81,10 +88,10 @@ describe Whois::Client do
           sleep(2)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new(:timeout => 1)
-      lambda { client.query("foo.com") }.should raise_error(Timeout::Error)
+      lambda { client.query("example.test") }.should raise_error(Timeout::Error)
     end
 
     it "does not raise if timeout is not exceeded" do
@@ -93,10 +100,10 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new(:timeout => 5)
-      lambda { client.query("foo.com") }.should_not raise_error
+      lambda { client.query("example.test") }.should_not raise_error
     end
 
     it "supports unlimited timeout" do
@@ -105,10 +112,10 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "example.test"))
+      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new.tap { |c| c.timeout = nil }
-      lambda { client.query("foo.com") }.should_not raise_error
+      lambda { client.query("example.test") }.should_not raise_error
     end
 
   end

@@ -12,7 +12,7 @@
   should: %s == nil
 
 #updated_on
-  should: %s be_a(Time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2001-02-21 00:00:00")
 
 #expires_on
@@ -20,5 +20,5 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []

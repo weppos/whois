@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -81,7 +81,7 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "ENCIRCA, INC"
       @parser.registrar.organization.should == "ENCIRCA, INC"
@@ -92,9 +92,9 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns2.registry.jobs"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns1.registry.jobs"
     end
   end

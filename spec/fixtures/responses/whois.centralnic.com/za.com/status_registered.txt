@@ -1,63 +1,60 @@
-  Domain Name: siyenza.za.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    MegaWeb Internet Services cc (H1063006) dns-admin@megaweb.co.za
-    
-    PO Box 3738
-    Cramerview
-    2060
-    ZA (South Africa)
-    Tel: 011 485 1984
-    Fax: 011 485 5999
+Domain ID:CNIC-DO333077
+Domain Name:SIYENZA.ZA.COM
+Created On:17-Nov-2004 11:47:29 UTC
+Last Updated On:19-Nov-2010 13:41:46 UTC
+Expiration Date:17-Nov-2013 23:59:59 UTC
+Status:OK
+Registrant ID:H1063006
+Registrant Name:MegaWeb Internet Services cc
+Registrant Postal Code:2060
+Registrant Country:ZA
+Registrant Phone:+27.0114851984
+Registrant FAX:+27.0114855999
+Registrant Email:dns-admin@megaweb.co.za
+Admin ID:H119106
+Admin Name:Liz Hart
+Admin Organization:Siyenza Management
+Admin Postal Code:2060
+Admin Country:ZA
+Admin Phone:+27.0114851984
+Admin FAX:+27.0114855999
+Admin Email:dns-admin@megaweb.co.za
+Tech ID:C12112
+Tech Name:Laida Peters
+Tech Organization:Megaweb Internet Services
+Tech City:Gauteng
+Tech Postal Code:2192
+Tech Country:ZA
+Tech Phone:+27.027114851984
+Tech FAX:+27.027114851986
+Tech Email:dns-admin@megaweb.co.za
+Billing ID:H1063006
+Billing Name:MegaWeb Internet Services cc
+Billing Postal Code:2060
+Billing Country:ZA
+Billing Phone:+27.0114851984
+Billing FAX:+27.0114855999
+Billing Email:dns-admin@megaweb.co.za
+Sponsoring Registrar ID:C12112
+Sponsoring Registrar Organization:Megaweb Internet Services
+Sponsoring Registrar City:Gauteng
+Sponsoring Registrar Postal Code:2192
+Sponsoring Registrar Country:ZA
+Sponsoring Registrar Phone:02711 485 1984
+Sponsoring Registrar FAX:02711 485 1986
+Sponsoring Registrar Website:http://www.megaweb.co.za/
+Name Server:NS1A.YOUR-SERVER.CO.ZA
+Name Server:NSA.SECOND-NS.CO.ZA
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Liz Hart (H119106) dns-admin@megaweb.co.za
-    Siyenza Management
-    PO Box 3738
-    Cramerview
-    2060
-    ZA (South Africa)
-    Tel: 011 485 1984
-    Fax: 011 485 5999
 
-  Technical Contact:
-    Michael Peter (C12112) dns-admin@megaweb.co.za
-    Megaweb Internet Services
-    Po Box 522
-    Highlands North
-    Gauteng
-    2037
-    South Africa
-    2192
-    ZA (South Africa)
-    Tel: 02711 485 1984
-    Fax: 02711 485 1986
-
-  Registrar:
-    Michael Peter (C12112) dns-admin@megaweb.co.za
-    Megaweb Internet Services
-    Po Box 522
-    Highlands North
-    Gauteng
-    2037
-    South Africa
-    2192
-    ZA (South Africa)
-    Tel: 02711 485 1984
-    Fax: 02711 485 1986
-    URL: http://www.megaweb.co.za/
-
-  Record created on: 17 November 2004
-  Record expires on: 17 November 2013
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS1A.YOUR-SERVER.CO.ZA
-  NSA.SECOND-NS.CO.ZA
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

@@ -14,19 +14,23 @@ that apply to Tele Greenland or its computer systems.
 
 The compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
+
+Please be aware that expired domains part of the "legacy" registrar may
+still be active, and indeed still be in active use. Only a return answer of 
+'Not Registered' is indication that a domain can be registered.
 Domain Information
 Query: google.gl
-Status: Active
+Status: Delegated
 Created: 11 Mar 2003
-Modified: 19 Mar 2010
-Expires: 01 Jan 2011
+Modified: 09 Dec 2011
+Expires: 01 Jan 2013
 Name Servers:
     ns1.google.com
     ns2.google.com
 
 Registrar Information
 Registrar Name: MarkMonitor
-Registration URL: www.markmonitor.com
+Registration URL: http://www.markmonitor.com
 Address: 391 N Ancestor Place
 Boise, ID 83704 US
 Country: US

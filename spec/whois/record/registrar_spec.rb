@@ -22,14 +22,14 @@ describe Whois::Record::Registrar do
       end.should_not raise_error
     end
 
-    it "initializes a new instance from given params" do
-      i = klass.new(10, "John Doe", nil, "http://example.com")
+    # it "initializes a new instance from given params" do
+    #   i = klass.new(10, "John Doe", nil, "http://example.com")
 
-      i.id.should == 10
-      i.name.should == "John Doe"
-      i.organization.should be_nil
-      i.url.should == "http://example.com"
-    end
+    #   i.id.should == 10
+    #   i.name.should == "John Doe"
+    #   i.organization.should be_nil
+    #   i.url.should == "http://example.com"
+    # end
 
     it "initializes a new instance from given hash" do
       i = klass.new(:id => 10, :name => "John Doe", :url => "http://example.com")

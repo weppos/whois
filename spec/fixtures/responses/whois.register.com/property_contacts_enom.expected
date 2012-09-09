@@ -1,0 +1,91 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2002-03-14 00:19:48")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-14 00:19:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Register.com"
+  should: %s.url          == "http://www.register.com/"
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Josh Cramer"
+  should: %s[0].organization == "Cramer Development"
+  should: %s[0].address      == "226 S. Clinton Street"
+  should: %s[0].city         == "Iowa City"
+  should: %s[0].zip          == "52240"
+  should: %s[0].state        == "IA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Host Master"
+  should: %s[0].organization == "Cramer Development Incorporated"
+  should: %s[0].address      == "226 S Clinton St"
+  should: %s[0].city         == "Iowa City"
+  should: %s[0].zip          == "52245"
+  should: %s[0].state        == "IA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.5152920050"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "domains@cramerdev.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Host Master"
+  should: %s[0].organization == "Cramer Development Incorporated"
+  should: %s[0].address      == "226 S Clinton St"
+  should: %s[0].city         == "Iowa City"
+  should: %s[0].zip          == "52245"
+  should: %s[0].state        == "IA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.5152920050"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "domains@cramerdev.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(5)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "dns01.gpn.register.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "dns02.gpn.register.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "dns03.gpn.register.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "dns04.gpn.register.com"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "dns05.gpn.register.com"

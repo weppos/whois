@@ -1,9 +1,0 @@
-#nameservers
-  should: %s be_a(Array)
-  should: %s have(3).items
-  should: %s[0] be_a(_nameserver)
-  should: %s[0] == _nameserver.new(:name => "ns.masterhost.ru", :ipv4 => "217.16.20.30")
-  should: %s[1] be_a(_nameserver)
-  should: %s[1] == _nameserver.new(:name => "ns1.masterhost.ru", :ipv4 => "217.16.16.30")
-  should: %s[2] be_a(_nameserver)
-  should: %s[2] == _nameserver.new(:name => "ns2.masterhost.ru", :ipv4 => "217.16.22.30")

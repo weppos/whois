@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -44,7 +44,7 @@ describe Whois::Record::Parser::WhoisNicLv, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-06-10")
+      @parser.updated_on.should == Time.parse("2009-06-10 00:00:00+03:00")
     end
   end
   describe "#expires_on" do
@@ -56,13 +56,13 @@ describe Whois::Record::Parser::WhoisNicLv, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns4.google.com"
     end
   end

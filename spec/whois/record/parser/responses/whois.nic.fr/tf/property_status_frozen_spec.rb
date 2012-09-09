@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicFr, "property_status_frozen.expected" do
 
   describe "#status" do
     it do
-      @parser.status.should == :frozen
+      @parser.status.should == :registered
     end
   end
   describe "#available?" do

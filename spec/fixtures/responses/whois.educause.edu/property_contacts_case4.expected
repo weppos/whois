@@ -1,0 +1,32 @@
+//  Description:
+//  The contact property contains an address where no lines starts with a digit.
+//  This specific case caused infinite loop.
+
+//  This case follows this schema:
+//      
+//    [NAME]
+//    [ROLE]
+//    [ORGANIZATION]
+//    [ADDRESS]
+//    [CITY, ST ZIP]
+//    [COUNTRY]
+//    [PHONE]
+//    [EMAIL]
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  // should: %s[0].type          == ANYTHING
+  should: %s[0].id            == nil
+  should: %s[0].name          == "ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == "Syracuse"
+  should: %s[0].zip           == "13244"
+  should: %s[0].state         == "NY"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "(315) 443-6189"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "itsoffice@syr.edu"

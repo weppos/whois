@@ -1,61 +1,54 @@
-  Domain Name: college.us.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    Vantage Media Corporation (H1044037) domainadmin@vantagemedia.com
-    
-    2101 Rosecrans Ave.
-    Suite 2000
-    90245
-    US (United States)
-    Tel: 310-219-6200
-    Fax: 866-589-7214
+Domain ID:CNIC-DO275307
+Domain Name:COLLEGE.US.COM
+Created On:20-Oct-2003 10:03:28 UTC
+Last Updated On:10-May-2010 10:21:34 UTC
+Expiration Date:20-Oct-2014 23:59:59 UTC
+Status:OK
+Registrant ID:H1044037
+Registrant Name:Vantage Media Corporation
+Registrant Postal Code:90245
+Registrant Country:US
+Registrant Phone:+1.3102196200
+Registrant FAX:+1.8665897214
+Registrant Email:domainadmin@vantagemedia.com
+Admin ID:H143205
+Admin Name:Domain Administrator
+Admin Organization:Vantage Media LLC
+Admin Postal Code:90245
+Admin Country:US
+Admin Phone:+1.3102196200
+Admin FAX:+1.8665897214
+Admin Email:domainadmin@vantagemedia.com
+Tech ID:H143205
+Tech Name:Domain Administrator
+Tech Organization:Vantage Media LLC
+Tech Postal Code:90245
+Tech Country:US
+Tech Phone:+1.3102196200
+Tech FAX:+1.8665897214
+Tech Email:domainadmin@vantagemedia.com
+Billing ID:H143205
+Billing Name:Domain Administrator
+Billing Organization:Vantage Media LLC
+Billing Postal Code:90245
+Billing Country:US
+Billing Phone:+1.3102196200
+Billing FAX:+1.8665897214
+Billing Email:domainadmin@vantagemedia.com
+Name Server:NS3.P17.DYNECT.NET
+Name Server:NS2.P17.DYNECT.NET
+Name Server:NS4.P17.DYNECT.NET
+Name Server:NS1.P17.DYNECT.NET
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Domain Administrator (H143205) domainadmin@vantagemedia.com
-    Vantage Media LLC
-    2101 Rosecrans Ave.
-    Suite 2000
-    90245
-    US (United States)
-    Tel: 310-219-6200
-    Fax: 866-589-7214
 
-  Technical Contact:
-    Domain Administrator (H143205) domainadmin@vantagemedia.com
-    Vantage Media LLC
-    2101 Rosecrans Ave.
-    Suite 2000
-    90245
-    US (United States)
-    Tel: 310-219-6200
-    Fax: 866-589-7214
-
-  Billing Contact:
-    Domain Administrator (H143205) domainadmin@vantagemedia.com
-    Vantage Media LLC
-    2101 Rosecrans Ave.
-    Suite 2000
-    90245
-    US (United States)
-    Tel: 310-219-6200
-    Fax: 866-589-7214
-
-  Registrar:
-    No registrar listed. This domain is registered directly with CentralNic.
-
-  Record created on: 20 October 2003
-  Record expires on: 20 October 2014
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS1.P17.DYNECT.NET
-  NS2.P17.DYNECT.NET
-  NS3.P17.DYNECT.NET
-  NS4.P17.DYNECT.NET
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

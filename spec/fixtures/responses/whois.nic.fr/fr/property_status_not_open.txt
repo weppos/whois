@@ -1,0 +1,76 @@
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
+%% Rights restricted by copyright.
+%% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
+%%
+%% Use '-h' option to obtain more information about this service.
+%%
+%% [207.239.114.206 REQUEST] >> asso.fr
+%%
+%% RL Net [##########] - RL IP [#########.]
+%%
+
+domain:      asso.fr
+status:      NOT_OPEN
+hold:        NO
+holder-c:    SFAI2-FRNIC
+admin-c:     NFC1-FRNIC
+tech-c:      NFC1-FRNIC
+zone-c:      NFC1-FRNIC
+registrar:   AFNIC registry
+anniversary: 01/01
+created:     01/01/1995
+last-update: 04/06/2007
+source:      FRNIC
+
+registrar:   AFNIC registry
+type:        Isp Option 2
+anonymous:   YES
+registered:  22/05/1997
+source:      FRNIC
+
+nic-hdl:     NFC1-FRNIC
+type:        ROLE
+contact:     NIC France Contact
+address:     AFNIC
+address:     immeuble international
+address:     2, rue Stephenson
+address:     Montigny le Bretonneux
+address:     78181 Saint Quentin en Yvelines Cedex
+country:     FR
+phone:       +33 1 39 30 83 00
+e-mail:      hostmaster@nic.fr
+admin-c:     NFC1-FRNIC
+tech-c:      PL12-FRNIC
+tech-c:      JP-FRNIC
+tech-c:      MS1887-FRNIC
+tech-c:      VL-FRNIC
+tech-c:      PR1249-FRNIC
+tech-c:      PV827-FRNIC
+tech-c:      GO661-FRNIC
+tech-c:      MS-FRNIC
+tech-c:      AI1-FRNIC
+changed:     23/08/2005 hostmaster@nic.fr
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+
+nic-hdl:     SFAI2-FRNIC
+type:        ORGANIZATION
+contact:     Subdomain for associations in France
+address:     AFNIC
+address:     immeuble international
+address:     2, rue Stephenson
+address:     Montigny le Bretonneux
+address:     78181 Saint Quentin en Yvelines Cedex
+country:     FR
+changed:     09/10/2008 whoismaster@nic.fr
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+

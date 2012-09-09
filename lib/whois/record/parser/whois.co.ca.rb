@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -43,6 +43,11 @@ module Whois
           !available?
         end
 
+        # NEWPROPERTY
+        def reserved?
+          !!(content_for_scanner =~ /^Domain is not available or is reserved by the registry/)
+        end
+
 
         property_supported :created_on do
           if content_for_scanner =~ /date_approved:\s+(.+)\n/
@@ -61,14 +66,8 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/ns[\d]_hostname:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
-        end
-
-
-        # NEWPROPERTY
-        def reserved?
-          !!(content_for_scanner =~ /^Domain is not available or is reserved by the registry/)
         end
 
       end

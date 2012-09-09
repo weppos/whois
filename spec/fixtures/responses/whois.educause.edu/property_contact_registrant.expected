@@ -1,0 +1,27 @@
+//  Description:
+//  The standard registrant contact property.
+
+//  The standard registrant contact follows this schema:
+//      
+//    [ORGANIZATION]
+//    [ADDRESS]
+//    [CITY, ST ZIP]
+//    [COUNTRY]
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "North Idaho College"
+  should: %s[0].address       == "1000 W. Garden Avenue"
+  should: %s[0].city          == "Coeur d'Alene"
+  should: %s[0].zip           == "83814"
+  should: %s[0].state         == "ID"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil

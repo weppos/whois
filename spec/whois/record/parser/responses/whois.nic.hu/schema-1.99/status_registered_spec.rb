@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -70,9 +70,9 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "1960108002"
-      @parser.registrar.name.should         == "3C Kft. (Registrar)"
+      @parser.registrar.name.should         == "3C Kft. CLASS(registrar)"
       @parser.registrar.organization.should == "3C Ltd."
     end
   end
@@ -80,7 +80,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should           == nil
       @parser.registrant_contacts[0].name.should         == "Google, Inc."
@@ -99,10 +99,10 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
       @parser.admin_contacts[0].id.should           == "2000466366"
-      @parser.admin_contacts[0].name.should         == "3C Kft. (Registrar)"
+      @parser.admin_contacts[0].name.should         == "3C Kft. CLASS(registrar)"
       @parser.admin_contacts[0].organization.should == nil
       @parser.admin_contacts[0].address.should      == "Konkoly Thege út 29-33."
       @parser.admin_contacts[0].city.should         == "Budapest"
@@ -117,7 +117,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
       @parser.technical_contacts[0].id.should           == "2000578125"
       @parser.technical_contacts[0].name.should         == "Markmonitor"
@@ -136,19 +136,19 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns4.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns2.google.com"
     end
   end
   describe "#zone_contact" do
     it do
-      @parser.zone_contact.should be_a(_contact)
+      @parser.zone_contact.should be_a(Whois::Record::Contact)
       @parser.zone_contact.type.should         == nil
       @parser.zone_contact.id.should           == "2000578125"
       @parser.zone_contact.name.should         == "Markmonitor"
@@ -165,10 +165,10 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
   end
   describe "#registrar_contact" do
     it do
-      @parser.registrar_contact.should be_a(_contact)
+      @parser.registrar_contact.should be_a(Whois::Record::Contact)
       @parser.registrar_contact.type.should         == nil
       @parser.registrar_contact.id.should           == "1960108002"
-      @parser.registrar_contact.name.should         == "3C Kft. (Registrar)"
+      @parser.registrar_contact.name.should         == "3C Kft. CLASS(registrar)"
       @parser.registrar_contact.organization.should == "3C Ltd."
       @parser.registrar_contact.address.should      == "Konkoly Thege út 29-33."
       @parser.registrar_contact.city.should         == "Budapest"

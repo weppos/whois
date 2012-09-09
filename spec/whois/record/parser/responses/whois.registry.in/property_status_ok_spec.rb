@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_ok.expected" d
 
   describe "#status" do
     it do
-      @parser.status.should == %w( ok )
+      @parser.status.should == ["OK"]
     end
   end
 end

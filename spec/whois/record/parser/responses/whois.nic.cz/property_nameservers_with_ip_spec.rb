@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -24,13 +24,17 @@ describe Whois::Record::Parser::WhoisNicCz, "property_nameservers_with_ip.expect
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "ns.albatani.cz"
-      @parser.nameservers[0].ipv4.should == "195.122.208.21"
-      @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "ns.albatani.net"
-      @parser.nameservers[1].ipv4.should == nil
+      @parser.nameservers.should have(3).items
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[0].name.should == "ns.kraxnet.com"
+      @parser.nameservers[0].ipv4.should == nil
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[1].name.should == "ns1.kraxnet.cz"
+      @parser.nameservers[1].ipv4.should == "178.217.247.1"
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[2].name.should == "ns.kraxnet.cz"
+      @parser.nameservers[2].ipv4.should == "178.217.247.2"
+      @parser.nameservers[2].ipv6.should == "2a02:1360::56"
     end
   end
 end

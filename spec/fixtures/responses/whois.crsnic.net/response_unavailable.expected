@@ -1,0 +1,2 @@
+#response_unavailable?
+  should: %s == true

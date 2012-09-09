@@ -1,4 +1,4 @@
-%  (c) 2006-2010 CZ.NIC, z.s.p.o.
+%  (c) 2006-2012 CZ.NIC, z.s.p.o.
 % 
 % Intended use of supplied data and information
 % 
@@ -15,74 +15,50 @@
 % See also a search service at http://www.nic.cz/whois/
 % 
 % 
-% Whoisd Server Version: 3.2.1
-% Timestamp: Tue Sep 28 12:48:43 2010
+% Whoisd Server Version: 3.4.0
+% Timestamp: Tue Jul 03 14:52:17 2012
 
 domain:       google.cz
-registrant:   SB:ACTIVE24-SGOO406652
-admin-c:      ACTIVE24-PBFF025571
-nsset:        NSS:MARKMONITOR:12
-registrar:    REG-ACTIVE24
+registrant:   MM12383
+admin-c:      MM12383
+nsset:        MM1543911
+registrar:    REG-MARKMONITOR
 status:       paid and in zone
 registered:   21.07.2000 15:21:00
-changed:      31.08.2006 14:35:00
+changed:      18.05.2011 23:28:45
 expire:       22.07.2013
 
-contact:      SB:ACTIVE24-SGOO406652
+contact:      MM12383
 org:          Google Inc.
-name:         Google Inc.
-address:      1600 Ampitheatre Parkway
-address:      Mountain View CA
+name:         DNS Admin
+address:      1600 Amphitheatre Parkway
+address:      Mountain View
 address:      94043
+address:      CA
 address:      US
 e-mail:       dns-admin@google.com
-registrar:    REG-ACTIVE24
-created:      31.07.2006 19:25:00
+registrar:    REG-MARKMONITOR
+created:      18.05.2011 23:28:26
 
-contact:      ACTIVE24-PBFF025571
-name:         Diana Ly
-address:      1600 Ampitheatre Parkway
-address:      Mountain View CA
-address:      94043
-address:      US
-phone:        +16.503300100
-fax-no:       +16.506188571
-e-mail:       dns-admin@google.com
-registrar:    REG-ACTIVE24
-created:      31.07.2006 19:15:00
-
-nsset:        NSS:MARKMONITOR:12
-nserver:      ns3.google.com 
-nserver:      ns4.google.com 
-nserver:      ns1.google.com 
+nsset:        MM1543911
 nserver:      ns2.google.com 
-tech-c:       SB:MARKMONITOR
-tech-c:       CCOPS
-registrar:    REG-ACTIVE24
-created:      01.10.2007 02:00:00
+nserver:      ns4.google.com 
+nserver:      ns3.google.com 
+nserver:      ns1.google.com 
+tech-c:       MM193020
+registrar:    REG-MARKMONITOR
+created:      18.05.2011 23:27:16
 
-contact:      SB:MARKMONITOR
-org:          eMarkmonitor Inc. dba Markmonitor
-name:         eMarkmonitor Inc. dba Markmonitor
-address:      10400 Overland Rd PMB 155
+contact:      MM193020
+org:          MarkMonitor, Inc.
+name:         Domain Provisioning
+address:      10400 Overland Road PMB 155
 address:      Boise
-address:      83709
+address:      83709-1433
+address:      ID
 address:      US
 e-mail:       ccops@markmonitor.com
-registrar:    REG-ACTIVE24
-created:      27.02.2002 02:16:00
-changed:      28.05.2007 14:25:00
-
-contact:      CCOPS
-name:         Domain Administrator
-address:      10400 Overland Rd PMB 155
-address:      Boise ID
-address:      83709
-address:      US
-phone:        +12.083895740
-fax-no:       +12.083895799
-e-mail:       ccops@markmonitor.com
-registrar:    REG-ACTIVE24
-created:      08.05.2007 01:25:00
+registrar:    REG-MARKMONITOR
+created:      03.02.2011 18:24:34
 
 

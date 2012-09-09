@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicCz, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.cz"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -45,7 +55,7 @@ describe Whois::Record::Parser::WhoisNicCz, "status_registered.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2006-08-31 14:35:00")
+      @parser.updated_on.should == Time.parse("2011-05-18 23:28:45")
     end
   end
   describe "#expires_on" do
@@ -54,18 +64,89 @@ describe Whois::Record::Parser::WhoisNicCz, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2013-07-22")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == "REG-MARKMONITOR"
+      @parser.registrar.name.should         == "REG-MARKMONITOR"
+      @parser.registrar.organization.should == nil
+      @parser.registrar.url.should          == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "MM12383"
+      @parser.registrant_contacts[0].name.should          == "DNS Admin"
+      @parser.registrant_contacts[0].organization.should  == "Google Inc."
+      @parser.registrant_contacts[0].address.should       == "1600 Amphitheatre Parkway\nMountain View\n94043\nCA\nUS"
+      @parser.registrant_contacts[0].city.should          == nil
+      @parser.registrant_contacts[0].zip.should           == nil
+      @parser.registrant_contacts[0].state.should         == nil
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == nil
+      @parser.registrant_contacts[0].phone.should         == nil
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == "dns-admin@google.com"
+      @parser.registrant_contacts[0].created_on.should    == Time.parse("2011-05-18 23:28:26")
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "MM12383"
+      @parser.admin_contacts[0].name.should          == "DNS Admin"
+      @parser.admin_contacts[0].organization.should  == "Google Inc."
+      @parser.admin_contacts[0].address.should       == "1600 Amphitheatre Parkway\nMountain View\n94043\nCA\nUS"
+      @parser.admin_contacts[0].city.should          == nil
+      @parser.admin_contacts[0].zip.should           == nil
+      @parser.admin_contacts[0].state.should         == nil
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == nil
+      @parser.admin_contacts[0].phone.should         == nil
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "dns-admin@google.com"
+      @parser.admin_contacts[0].created_on.should    == Time.parse("2011-05-18 23:28:26")
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].id.should            == "MM193020"
+      @parser.technical_contacts[0].name.should          == "Domain Provisioning"
+      @parser.technical_contacts[0].organization.should  == "MarkMonitor, Inc."
+      @parser.technical_contacts[0].address.should       == "10400 Overland Road PMB 155\nBoise\n83709-1433\nID\nUS"
+      @parser.technical_contacts[0].city.should          == nil
+      @parser.technical_contacts[0].zip.should           == nil
+      @parser.technical_contacts[0].state.should         == nil
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == nil
+      @parser.technical_contacts[0].phone.should         == nil
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "ccops@markmonitor.com"
+      @parser.technical_contacts[0].created_on.should    == Time.parse("2011-02-03 18:24:34")
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
-      @parser.nameservers[0].name.should == "ns3.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[0].name.should == "ns2.google.com"
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns4.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].name.should == "ns1.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
-      @parser.nameservers[3].name.should == "ns2.google.com"
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[2].name.should == "ns3.google.com"
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[3].name.should == "ns1.google.com"
     end
   end
 end

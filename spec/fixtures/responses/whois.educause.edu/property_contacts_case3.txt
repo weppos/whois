@@ -1,0 +1,66 @@
+
+This Registry database contains ONLY .EDU domains. 
+The data in the EDUCAUSE Whois database is provided 
+by EDUCAUSE for information purposes in order to 
+assist in the process of obtaining information about 
+or related to .edu domain registration records. 
+
+The EDUCAUSE Whois database is authoritative for the 
+.EDU domain.         
+
+A Web interface for the .EDU EDUCAUSE Whois Server is 
+available at: http://whois.educause.net 
+
+By submitting a Whois query, you agree that this information 
+will not be used to allow, enable, or otherwise support 
+the transmission of unsolicited commercial advertising or 
+solicitations via e-mail.  The use of electronic processes to 
+harvest information from this server is generally prohibited 
+except as reasonably necessary to register or modify .edu 
+domain names.
+
+You may use "%" as a wildcard in your search. For further 
+information regarding the use of this WHOIS server, please 
+type: help 
+
+--------------------------
+
+Domain Name: UIUC.EDU
+
+Registrant:
+   University of Illinois at Urbana Champaign
+   CITES 1120 Digital Computer Laboratory
+   1304 West Springfield Avenue
+   Urbana, IL 61801-2910
+   UNITED STATES
+
+Administrative Contact:
+   Tracy L. Smith
+   University of Illinois at Urbana-Champaign
+   CITES  2105 Digital Computer Laboratory
+   1304 West Springfield Avenue
+   Urbana, IL 61801-4399
+   UNITED STATES
+   (217) 244-2032
+   edu-admin@listserv.illinois.edu
+
+Technical Contact:
+   Charles Kline
+   University of Illinois at Urbana Champaign
+   CITES 1120 Digital Computer Laboratory
+   1304 West Springfield Avenue
+   Urbana, IL 61801
+   UNITED STATES
+   (217) 333-3339
+   edu-tech@listserv.illinois.edu
+
+Name Servers: 
+   DNS1.ILLINOIS.EDU      
+   DNS2.ILLINOIS.EDU      
+   DNS1.IU.EDU            
+
+Domain record activated:    18-Jul-1985
+Domain record last updated: 22-Mar-2011
+Domain expires:             31-Jul-2012
+
+

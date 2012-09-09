@@ -71,8 +71,20 @@ describe Whois::Server do
       s.should be_a(Whois::Server::Adapters::Standard)
     end
 
-    it "accepts an :adapter option and returns an instance of given adapter" do
-      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => Whois::Server::Adapters::None)
+    it "accepts an :adapter option as Class and returns an instance of given adapter" do
+      a = Class.new do
+        attr_reader :args
+        def initialize(*args)
+          @args = args
+        end
+      end
+      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => a)
+      s.should be_a(a)
+      s.args.should == [:tld, ".test", "whois.test", {}]
+    end
+
+    it "accepts an :adapter option as Symbol, load Class and returns an instance of given adapter" do
+      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => :none)
       s.should be_a(Whois::Server::Adapters::None)
     end
 
@@ -182,9 +194,9 @@ describe Whois::Server do
       it "raises if definition is not found" do
         with_definitions do
           Whois::Server.define(:ipv6, "::1", "whois.test")
-          lambda do
+          lambda {
             Whois::Server.guess("2002:0300::1")
-          end.should raise_error(Whois::AllocationUnknown)
+          }.should raise_error(Whois::AllocationUnknown)
         end
       end
 
@@ -192,6 +204,15 @@ describe Whois::Server do
         with_definitions do
           Whois::Server.define(:ipv6, "::192.168.1.1", "whois.test")
           Whois::Server.guess("::192.168.1.1") == Whois::Server.factory(:ipv6, "::192.168.1.1", "whois.test")
+        end
+      end
+
+      # https://github.com/weppos/whois/issues/174
+      it "rescues IPAddr ArgumentError" do
+        with_definitions do
+          lambda {
+            Whois::Server.guess("f53")
+          }.should raise_error(Whois::AllocationUnknown)
         end
       end
     end

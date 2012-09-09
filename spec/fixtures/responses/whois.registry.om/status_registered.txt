@@ -1,0 +1,18 @@
+Domain Name:                     rop.gov.om
+Registrar Name:                  Oman Telecommunication Company
+Status:                          ok
+
+Registrant Contact ID:           10084244
+Registrant Contact Name:         Nasser Said Al Daree
+Registrant Contact Email:        Visit whois.registry.om for Web based WhoIs
+
+Tech Contact ID:                 10084244
+Tech Contact Name:               Nasser Said Al Daree
+Tech Contact Email:              Visit whois.registry.om for Web based WhoIs
+
+Name Server:                     om14.omantel.net.om
+Name Server IP:                  212.72.23.4
+Name Server:                     om16.omantel.net.om
+Name Server IP:                  212.72.1.186
+Name Server:                     om41.omantel.net.om
+Name Server IP:                  62.231.243.249

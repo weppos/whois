@@ -1,4 +1,4 @@
-module Helper
+module RSpecSupportSpecHelpers
 
   # Gets the currently described class.
   # Conversely to +subject+, it returns the class
@@ -11,48 +11,28 @@ module Helper
     File.join(SPEC_ROOT, "fixtures", *names)
   end
 
-end
-
-module SpecHelper
-
   private
 
-    # Temporary resets Server @@definitions
-    # to let the test setup a custom definition list.
-    def with_definitions
-      definitions_setup
-      yield
-    ensure
-      definitions_teardown
-    end
+  # Temporary resets Server @@definitions
+  # to let the test setup a custom definition list.
+  def with_definitions
+    definitions_setup
+    yield
+  ensure
+    definitions_teardown
+  end
 
-    def definitions_setup
-      @_definitions = Whois::Server.definitions
-      Whois::Server.send :class_variable_set, :@@definitions, { :tld => [], :ipv4 =>[], :ipv6 => [] }
-    end
+  def definitions_setup
+    @_definitions = Whois::Server.definitions
+    Whois::Server.send :class_variable_set, :@@definitions, { :tld => [], :ipv4 =>[], :ipv6 => [] }
+  end
 
-    def definitions_teardown
-      Whois::Server.send :class_variable_set, :@@definitions, @_definitions
-    end
-
-
-    # Temporary resets parser @@registry
-    # to let the test setup a custom registry.
-    def with_registry
-      @_property_registry = Whois::Record::Parser::Base.send :class_variable_get, :@@property_registry
-      Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, {}
-      yield
-    ensure
-      Whois::Record::Parser::Base.send :class_variable_set, :@@property_registry, @_property_registry
-    end
-
-    def nameserver(*params)
-      Whois::Record::Nameserver.new(*params)
-    end
+  def definitions_teardown
+    Whois::Server.send :class_variable_set, :@@definitions, @_definitions
+  end
 
 end
 
 RSpec.configure do |config|
-  config.include Helper
-  config.include SpecHelper
+  config.include RSpecSupportSpecHelpers
 end

@@ -1,0 +1,21 @@
+Welcome to the Network Solutions(R) Registrar WHOIS Server.
+
+The IP address from which you have visited the Network Solutions Registrar WHOIS
+database is contained within a list of IP addresses that may have failed
+to abide by Network Solutions' WHOIS policy.  Failure to abide by this policy can
+adversely impact our systems and servers, preventing the processing of
+other WHOIS requests.
+
+To see the Network Solutions WHOIS Policy, click on or copy and paste the following
+URL into your browser:
+
+http://www.networksolutions.com/whois/index.jhtml
+
+If you feel that you have received this message in error, please email us using the online
+form at http://www.networksolutions.com/help/email.jsp with the following information:
+
+Whois Query: domain.com
+YOUR IP address is 12.23.34.45
+Date and Time of Query: Thu Aug 23 13:57:48 EDT 2012
+Reason Code: IE
+

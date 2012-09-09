@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -29,7 +29,6 @@ module Whois
       autoload :Formatted,        "whois/server/adapters/formatted"
       autoload :None,             "whois/server/adapters/none"
       autoload :NotImplemented,   "whois/server/adapters/not_implemented"
-      autoload :Pir,              "whois/server/adapters/pir"
       autoload :Standard,         "whois/server/adapters/standard"
       autoload :Verisign,         "whois/server/adapters/verisign"
       autoload :Web,              "whois/server/adapters/web"
@@ -120,7 +119,7 @@ module Whois
     #   # Define a new server with a custom adapter and options
     #   Whois::Server.define :tld, ".ar", nil,
     #     :adapter => Whois::Server::Adapters::Web,
-    #     :web => "http://www.nic.ar/"
+    #     :url => "http://www.nic.ar/"
     #
     def self.define(type, allocation, host, options = {})
       @@definitions[type] ||= []
@@ -164,7 +163,9 @@ module Whois
     #
     def self.factory(type, allocation, host, options = {})
       options = options.dup
-      (options.delete(:adapter) || Adapters::Standard).new(type, allocation, host, options)
+      adapter = options.delete(:adapter) || Adapters::Standard
+      adapter = Adapters.const_get(camelize(adapter)) unless adapter.respond_to?(:new)
+      adapter.new(type, allocation, host, options)
     end
 
 
@@ -223,22 +224,28 @@ module Whois
     end
 
 
-    private
+  private
 
-      def self.matches_tld?(string)
-        string =~ /^\.(xn--)?[a-z0-9]+$/
-      end
-
-      def self.matches_ip?(string)
-        valid_ipv4?(string) || valid_ipv6?(string)
-      end
-
-      def self.matches_email?(string)
-        string =~ /@/
-      end
+    def self.camelize(string)
+      string.to_s.split("_").collect(&:capitalize).join
+    end
 
 
-      def self.find_for_ip(string)
+    def self.matches_tld?(string)
+      string =~ /^\.(xn--)?[a-z0-9]+$/
+    end
+
+    def self.matches_ip?(string)
+      valid_ipv4?(string) || valid_ipv6?(string)
+    end
+
+    def self.matches_email?(string)
+      string =~ /@/
+    end
+
+
+    def self.find_for_ip(string)
+      begin
         ip = IPAddr.new(string)
         type = ip.ipv4? ? :ipv4 : :ipv6
         definitions(type).each do |definition|
@@ -246,39 +253,42 @@ module Whois
             return factory(type, *definition)
           end
         end
-        raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
+      rescue ArgumentError => error
+        # continue
       end
+      raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
+    end
 
-      def self.find_for_email(string)
-        raise ServerNotSupported, "No WHOIS server is known for email objects"
+    def self.find_for_email(string)
+      raise ServerNotSupported, "No WHOIS server is known for email objects"
+    end
+
+    def self.find_for_domain(string)
+      definitions(:tld).each do |definition|
+        return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
       end
+      nil
+    end
 
-      def self.find_for_domain(string)
-        definitions(:tld).each do |definition|
-          return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
-        end
-        nil
+
+    def self.valid_ipv4?(addr)
+      if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
+        return $~.captures.all? {|i| i.to_i < 256}
       end
+      false
+    end
 
-
-      def self.valid_ipv4?(addr)
-        if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
-          return $~.captures.all? {|i| i.to_i < 256}
-        end
-        false
-      end
-
-      def self.valid_ipv6?(addr)
-        # IPv6 (normal)
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*\Z/ =~ addr
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/ =~ addr
-        return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/ =~ addr
-        # IPv6 (IPv4 compat)
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?($')
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
-        return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
-        false
-      end
+    def self.valid_ipv6?(addr)
+      # IPv6 (normal)
+      return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*\Z/ =~ addr
+      return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/ =~ addr
+      return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/ =~ addr
+      # IPv6 (IPv4 compat)
+      return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?($')
+      return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
+      return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
+      false
+    end
 
   end
 

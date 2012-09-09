@@ -1,0 +1,2 @@
+Domain:             la.it
+Status:             UNASSIGNABLE

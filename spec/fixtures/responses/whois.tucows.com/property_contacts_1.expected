@@ -1,0 +1,15 @@
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Contact Privacy Inc. Customer 0129153591,"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "96 Mowat Ave"
+  should: %s[0].city         == "Toronto"
+  should: %s[0].zip          == "M6K 3M1"
+  should: %s[0].state        == "ON"
+  should: %s[0].country_code == "CA"
+  should: %s[0].phone        == "+1.4165385457"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "hairlosstalk.com@contactprivacy.com"

@@ -1,0 +1,83 @@
+Domain Name:                                 WEBCAMS.TRAVEL
+Domain ID:                                   D108042-TRAVEL
+Sponsoring Registrar:                        SECURA GMBH
+Sponsoring Registrar IANA ID:                111
+Domain Status:                               clientDeleteProhibited
+Domain Status:                               clientTransferProhibited
+Registrant ID:                               P-IRO86-YIHZ
+Registrant Name:                             Ingo Oppermann
+Registrant Organization:                     OPAG Online Promotion AG
+Registrant Address1:                         Austr.37
+Registrant City:                             Vaduz
+Registrant Postal Code:                      9490
+Registrant Country:                          Liechtenstein
+Registrant Country Code:                     LI
+Registrant Phone Number:                     +41.442777501
+Registrant Facsimile Number:                 +41.763770216
+Registrant Email:                            ingo.oppermann@topin.travel
+Administrative Contact ID:                   P-IRO86-YIHZ
+Administrative Contact Name:                 Ingo Oppermann
+Administrative Contact Organization:         OPAG Online Promotion AG
+Administrative Contact Address1:             Austr.37
+Administrative Contact City:                 Vaduz
+Administrative Contact Postal Code:          9490
+Administrative Contact Country:              Liechtenstein
+Administrative Contact Country Code:         LI
+Administrative Contact Phone Number:         +41.442777501
+Administrative Contact Facsimile Number:     +41.763770216
+Administrative Contact Email:                ingo.oppermann@topin.travel
+Billing Contact ID:                          P-HVO132-PVII
+Billing Contact Name:                        Hans-Peter Oswald
+Billing Contact Organization:                Secura GmbH
+Billing Contact Address1:                    Frohnhofweg 18
+Billing Contact City:                        Koeln
+Billing Contact State/Province:              NRW
+Billing Contact Postal Code:                 50858
+Billing Contact Country:                     Germany
+Billing Contact Country Code:                DE
+Billing Contact Phone Number:                +49.2212571213
+Billing Contact Facsimile Number:            +49.221925227
+Billing Contact Email:                       secura@domainregistry.de
+Technical Contact ID:                        P-HVO132-PVII
+Technical Contact Name:                      Hans-Peter Oswald
+Technical Contact Organization:              Secura GmbH
+Technical Contact Address1:                  Frohnhofweg 18
+Technical Contact City:                      Koeln
+Technical Contact State/Province:            NRW
+Technical Contact Postal Code:               50858
+Technical Contact Country:                   Germany
+Technical Contact Country Code:              DE
+Technical Contact Phone Number:              +49.2212571213
+Technical Contact Facsimile Number:          +49.221925227
+Technical Contact Email:                     secura@domainregistry.de
+Name Server:                                 FINKPLOYD.NRG4U.COM
+Name Server:                                 C00L3R.NETWORX.CH
+Created by Registrar:                        SECURA GMBH
+Last Updated by Registrar:                   SECURA GMBH
+Domain Registration Date:                    Tue Aug 01 12:39:21 GMT 2006
+Domain Expiration Date:                      Tue Jul 31 23:59:59 GMT 2012
+Domain Last Updated Date:                    Mon Aug 30 12:52:13 GMT 2010
+
+>>>> Whois database was last updated on: Tue Aug 23 16:43:08 GMT 2011 <<<<
+
+Tralliance, Inc., the Registry Operator for .travel, has collected this information
+for the WHOIS database through an ICANN-Accredited Registrar.  This information
+is provided to you for informational purposes only and is designed to assist
+persons in determining contents of a domain name registration record in the
+Tralliance registry database.  Tralliance makes this information available to you
+"as is" and does not guarantee its accuracy. By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that, under no
+circumstances will you use this data: (1) to allow, enable, or otherwise
+support the transmission of mass unsolicited, commercial advertising or
+solicitations via direct mail, electronic mail, or by telephone; (2) in
+contravention of any applicable data and privacy protection acts; or (3) to
+enable high volume, automated, electronic processes that apply to the registry
+(or its systems).  Compilation, repackaging, dissemination, or other use of the
+WHOIS database in its entirety, or of a substantial portion thereof, is not
+allowed without Tralliance's prior written permission.  Tralliance reserves the
+right to modify or change these conditions at any time without prior or
+subsequent notification of any kind.  By executing this query, in any manner
+whatsoever, you agree to abide by these terms.
+
+NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT INDICATIVE
+OF THE AVAILABILITY OF A DOMAIN NAME.

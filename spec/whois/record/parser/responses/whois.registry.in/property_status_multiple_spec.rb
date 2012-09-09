@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_multiple.expec
 
   describe "#status" do
     it do
-      @parser.status.should == [ "client delete prohibited", "client renew prohibited", "client transfer prohibited", "client update prohibited" ]
+      @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT RENEW PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     end
   end
 end

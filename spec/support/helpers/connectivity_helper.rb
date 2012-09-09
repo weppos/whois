@@ -1,4 +1,4 @@
-module ConnectivityHelper
+module RSpecSupportConnectivityHelpers
   def need_connectivity
     if connectivity_available?
       yield
@@ -11,5 +11,5 @@ module ConnectivityHelper
 end
 
 RSpec.configure do |config|
-  config.extend ConnectivityHelper
+  config.extend RSpecSupportConnectivityHelpers
 end

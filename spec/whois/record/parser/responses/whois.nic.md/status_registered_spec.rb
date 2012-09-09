@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisNicMd, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
       @parser.registrant_contacts[0].id.should           == nil
       @parser.registrant_contacts[0].name.should         == "Google Inc."
@@ -107,10 +107,10 @@ describe Whois::Record::Parser::WhoisNicMd, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
       @parser.nameservers[0].ipv4.should == "216.239.32.10"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
       @parser.nameservers[1].ipv4.should == "216.239.34.10"
     end

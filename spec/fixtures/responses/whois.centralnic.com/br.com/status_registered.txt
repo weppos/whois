@@ -1,73 +1,72 @@
-  Domain Name: billboard.br.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
-    
-    Rua Iguatemi, 192
-    Cj 141/142
-    Sao Paulo
-    Sao Paulo
-    01451-010
-    BR (Brazil)
-    Tel: +55.1130787711
+Domain ID:CNIC-DO624205
+Domain Name:BILLBOARD.BR.COM
+Created On:17-Apr-2009 12:22:49 UTC
+Last Updated On:16-Apr-2011 00:16:02 UTC
+Expiration Date:17-Apr-2014 23:59:59 UTC
+Status:TRANSFER PROHIBITED
+Registrant ID:36542943
+Registrant Name:Antonio Camarotti Pinto
+Registrant Street1:Rua Tapinas
+Registrant Street2:118
+Registrant City:Sao Paulo
+Registrant State/Province:Sao Paulo
+Registrant Postal Code:04531-050
+Registrant Country:BR
+Registrant Phone:+1.551130787711
+Registrant Email:ac@camarotti.com
+Admin ID:36542943
+Admin Name:Antonio Camarotti Pinto
+Admin Street1:Rua Tapinas
+Admin Street2:118
+Admin City:Sao Paulo
+Admin State/Province:Sao Paulo
+Admin Postal Code:04531-050
+Admin Country:BR
+Admin Phone:+1.551130787711
+Admin Email:ac@camarotti.com
+Tech ID:36542943
+Tech Name:Antonio Camarotti Pinto
+Tech Street1:Rua Tapinas
+Tech Street2:118
+Tech City:Sao Paulo
+Tech State/Province:Sao Paulo
+Tech Postal Code:04531-050
+Tech Country:BR
+Tech Phone:+1.551130787711
+Tech Email:ac@camarotti.com
+Billing ID:36542943
+Billing Name:Antonio Camarotti Pinto
+Billing Street1:Rua Tapinas
+Billing Street2:118
+Billing City:Sao Paulo
+Billing State/Province:Sao Paulo
+Billing Postal Code:04531-050
+Billing Country:BR
+Billing Phone:+1.551130787711
+Billing Email:ac@camarotti.com
+Sponsoring Registrar ID:H292913
+Sponsoring Registrar Organization:Network Solutions LLC
+Sponsoring Registrar Street1:13861 Sunrise Valley Drive
+Sponsoring Registrar Street2:Suite 300
+Sponsoring Registrar City:Herndon
+Sponsoring Registrar State/Province:VA
+Sponsoring Registrar Postal Code:20171
+Sponsoring Registrar Country:US
+Sponsoring Registrar Phone:+1.5707088788
+Sponsoring Registrar FAX:+1.7036685817
+Sponsoring Registrar Website:http://www.networksolutions.com/
+Name Server:NS1.LOCAWEB.COM.BR
+Name Server:NS2.LOCAWEB.COM.BR
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
-    
-    Rua Iguatemi, 192
-    Cj 141/142
-    Sao Paulo
-    Sao Paulo
-    01451-010
-    BR (Brazil)
-    Tel: +55.1130787711
 
-  Technical Contact:
-    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
-    
-    Rua Iguatemi, 192
-    Cj 141/142
-    Sao Paulo
-    Sao Paulo
-    01451-010
-    BR (Brazil)
-    Tel: +55.1130787711
-
-  Billing Contact:
-    Antonio Camarotti Pinto (36542943) acamarotti@hotmail.com
-    
-    Rua Iguatemi, 192
-    Cj 141/142
-    Sao Paulo
-    Sao Paulo
-    01451-010
-    BR (Brazil)
-    Tel: +55.1130787711
-
-  Registrar:
-    Domain Administrator (H292913) GTLD-Admin@networksolutions.com
-    Network Solutions LLC
-    13861 Sunrise Valley Drive
-    Suite 300
-    Herndon
-    VA
-    20171
-    US (United States)
-    Tel: +1.5707088788
-    Fax: +1.7036685817
-    URL: http://www.networksolutions.com/
-
-  Record created on: 17 April 2009
-  Record expires on: 17 April 2011
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS1.TERRA.COM.BR
-  NS2.TERRA.COM.BR
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

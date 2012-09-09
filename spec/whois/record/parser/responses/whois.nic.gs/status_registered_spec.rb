@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicGs, "status_registered.expected" do
     @parser = klass.new(part)
   end
 
+  describe "#domain" do
+    it do
+      @parser.domain.should == "google.gs"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :registered
@@ -54,13 +64,21 @@ describe Whois::Record::Parser::WhoisNicGs, "status_registered.expected" do
       @parser.expires_on.should == Time.parse("2011-07-08")
     end
   end
+  describe "#registrar" do
+    it do
+      @parser.registrar.should be_a(Whois::Record::Registrar)
+      @parser.registrar.id.should           == nil
+      @parser.registrar.name.should         == "MarkMonitor"
+      @parser.registrar.url.should          == "http://www.markmonitor.com"
+    end
+  end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.google.com"
     end
   end

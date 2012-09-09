@@ -1,0 +1,93 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1994-11-01")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2019-08-04")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Register.com"
+  should: %s.url          == "http://www.register.com/"
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Domain Registrar"
+  should: %s[0].organization == "Register.Com, Inc."
+  should: %s[0].address      == "575 8th Avenue"
+  should: %s[0].city         == "New York"
+  should: %s[0].zip          == "10018"
+  should: %s[0].state        == "NY"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.9027492701"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "domainregistrar@register.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Domain Registrar"
+  should: %s[0].organization == "Register.Com, Inc."
+  should: %s[0].address      == "575 8th Avenue"
+  should: %s[0].city         == "New York"
+  should: %s[0].zip          == "10018"
+  should: %s[0].state        == "NY"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.9027492701"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "domainregistrar@register.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Domain Registrar"
+  should: %s[0].organization == "Register.Com, Inc."
+  should: %s[0].address      == "575 8th Avenue"
+  should: %s[0].city         == "New York"
+  should: %s[0].zip          == "10018"
+  should: %s[0].state        == "NY"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.9027492701"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "domainregistrar@register.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(6)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns2.register.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns3.register.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns4.register.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns5.register.com"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns6.register.com"
+  should: %s[5] CLASS(nameserver)
+  should: %s[5].name == "ns1.register.com"

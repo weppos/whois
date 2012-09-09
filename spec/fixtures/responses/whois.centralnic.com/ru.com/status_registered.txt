@@ -1,62 +1,48 @@
-  Domain Name: srk.ru.com
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
-  Registrant:
-    Anthony Lloyd, SRK Consulting (UK) Limited (H1037013) alloyd@srk.co.uk
-    
-    5th Floor
-    Churchill House
-    17 Churchill Way
-    Cardiff
-    CF10 2HH
-    UK (United Kingdom)
-    Tel: 02920348150
+Domain ID:CNIC-DO450826
+Domain Name:SRK.RU.COM
+Created On:31-Jul-2006 10:06:04 UTC
+Last Updated On:08-Jul-2010 16:05:47 UTC
+Expiration Date:31-Jul-2012 23:59:59 UTC
+Status:OK
+Registrant ID:H1037013
+Registrant Name:Anthony Lloyd, SRK Consulting (UK) Limited
+Registrant Postal Code:CF10 2HH
+Registrant Country:GB
+Registrant Phone:+44.2920348150
+Registrant Email:alloyd@srk.co.uk
+Admin ID:H265405
+Admin Name:Anthony Lloyd
+Admin Organization:SRK Consulting (UK) Limited
+Admin Postal Code:CF10 2HH
+Admin Country:GB
+Admin Phone:+44.2920348150
+Admin Email:alloyd@srk.co.uk
+Tech ID:H265405
+Tech Name:Anthony Lloyd
+Tech Organization:SRK Consulting (UK) Limited
+Tech Postal Code:CF10 2HH
+Tech Country:GB
+Tech Phone:+44.2920348150
+Tech Email:alloyd@srk.co.uk
+Billing ID:H265406
+Billing Name:A R Lloyd
+Billing Organization:SRK Consulting (UK) Limited
+Billing Postal Code:CF10 3BX
+Billing Country:GB
+Billing Phone:+44.2920348150
+Billing Email:alloyd@srk.co.uk
+Name Server:NS7.ZONEEDIT.COM
+Name Server:NS12.ZONEEDIT.COM
+DNSSEC:Unsigned
 
-  Administrative Contact:
-    Anthony Lloyd (H265405) alloyd@srk.co.uk
-    SRK Consulting (UK) Limited
-    5th Floor
-    Churchill House
-    17 Churchill Way
-    Cardiff
-    CF10 2HH
-    UK (United Kingdom)
-    Tel: 02920348150
 
-  Technical Contact:
-    Anthony Lloyd (H265405) alloyd@srk.co.uk
-    SRK Consulting (UK) Limited
-    5th Floor
-    Churchill House
-    17 Churchill Way
-    Cardiff
-    CF10 2HH
-    UK (United Kingdom)
-    Tel: 02920348150
-
-  Billing Contact:
-    A R Lloyd (H265406) alloyd@srk.co.uk
-    SRK Consulting (UK) Limited
-    Windsor Court
-    1-3 Windsor Place
-    Cardiff
-    CF10 3BX
-    UK (United Kingdom)
-    Tel: 02920348150
-
-  Registrar:
-    No registrar listed. This domain is registered directly with CentralNic.
-
-  Record created on: 31 July 2006
-  Record expires on: 31 July 2012
-  Status: Live
-
-  Domain servers in listed order:
-
-  NS12.ZONEEDIT.COM
-  NS7.ZONEEDIT.COM
-
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com

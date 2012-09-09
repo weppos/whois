@@ -3,11 +3,11 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
-require 'core_ext'
+require 'whois/core_ext'
 require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
@@ -22,16 +22,12 @@ module Whois
   AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
 
 
-  # Backwards compatibility
-  autoload :Answer, 'whois/answer'
-
-
   class << self
 
-    # Queries the WHOIS server for <tt>qstring</tt> and returns
+    # Queries the WHOIS server for <tt>object</tt> and returns
     # the response from the server.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] object The string to be sent as query parameter.
     # @return [Whois::Record] The record containing the response from the WHOIS server.
     #
     # @example
@@ -41,23 +37,23 @@ module Whois
     #   # Equivalent to
     #   Whois::Client.new.query("google.com")
     #
-    def query(qstring)
-      Client.new.query(qstring)
+    def query(object)
+      Client.new.query(object)
     end
 
     alias_method :whois, :query
 
 
-    # Checks whether the object represented by <tt>qstring</tt> is available.
+    # Checks whether the object represented by <tt>object</tt> is available.
     #
     # Warning: this method is only available if a Whois parser exists
-    # for the top level domain of <tt>qstring</tt>.
-    # If no parser exists for <tt>qstring</tt>, you'll receive a
+    # for the top level domain of <tt>object</tt>.
+    # If no parser exists for <tt>object</tt>, you'll receive a
     # warning message and the method will return <tt>nil</tt>.
     # This is a technical limitation. Browse the lib/whois/record/parsers
     # folder to view all available parsers.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] object The string to be sent as query parameter.
     #         It is intended to be a domain name, otherwise this method
     #         may return unexpected responses.
     # @return [Boolean]
@@ -70,25 +66,25 @@ module Whois
     #   Whois.available?("google-is-not-available-try-again-later.com")
     #   # => true
     #
-    def available?(qstring)
-      result = query(qstring).available?
+    def available?(object)
+      result = query(object).available?
       if result.nil?
         warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.query('#{qstring}') instead."
+              "Use Whois.query('#{object}') instead."
       end
       result
     end
 
-    # Checks whether the object represented by <tt>qstring</tt> is registered.
+    # Checks whether the object represented by <tt>object</tt> is registered.
     #
     # Warning: this method is only available if a Whois parser exists
-    # for the top level domain of <tt>qstring</tt>.
-    # If no parser exists for <tt>qstring</tt>, you'll receive a warning message
+    # for the top level domain of <tt>object</tt>.
+    # If no parser exists for <tt>object</tt>, you'll receive a warning message
     # and the method will return <tt>nil</tt>.
     # This is a technical limitation. Browse the lib/whois/record/parsers folder
     # to view all available parsers.
     #
-    # @param  [String] qstring The string to be sent as query parameter.
+    # @param  [String] string The string to be sent as query parameter.
     #         It is intended to be a domain name, otherwise this method
     #         may return unexpected responses.
     # @return [Boolean]
@@ -101,11 +97,11 @@ module Whois
     #   Whois.registered?("google-is-not-available-try-again-later.com")
     #   # => false
     #
-    def registered?(qstring)
-      result = query(qstring).registered?
+    def registered?(object)
+      result = query(object).registered?
       if result.nil?
         warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.query('#{qstring}') instead."
+              "Use Whois.query('#{object}') instead."
       end
       result
     end
@@ -116,10 +112,11 @@ module Whois
     # @param  [String] message The message to display.
     # @return [void]
     #
-    # @api internal
+    # @api private
     # @private
-    def deprecate(message = nil)
+    def deprecate(message = nil, callstack = caller)
       message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
+      # warn("DEPRECATION WARNING: #{message} #{deprecation_caller_message(callstack)}")
       warn("DEPRECATION WARNING: #{message}")
     end
 
@@ -130,7 +127,7 @@ module Whois
     # @param  [String] message
     # @return [void]
     #
-    # @api internal
+    # @api private
     # @private
     def bug!(error, message)
       raise error, message.dup        <<
@@ -138,6 +135,30 @@ module Whois
         " http://github.com/weppos/whois/issues"
     end
 
+  private
+
+    def deprecation_caller_message(callstack)
+      file, line, method = extract_callstack(callstack)
+      if file
+        if line && method
+          "(called from #{method} at #{file}:#{line})"
+        else
+          "(called from #{file}:#{line})"
+        end
+      end
+    end
+
+    def extract_callstack(callstack)
+      gem_root = File.expand_path("../../../", __FILE__) + "/"
+      offending_line = callstack.find { |line| !line.start_with?(gem_root) } || callstack.first
+      if offending_line
+        if md = offending_line.match(/^(.+?):(\d+)(?::in `(.*?)')?/)
+          md.captures
+        else
+          offending_line
+        end
+      end
+    end
   end
 
 end

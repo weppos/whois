@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,16 +14,14 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.co.ug parser
-      #
       # Parser for the whois.co.ug server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       # @author Simone Carletti <weppos@weppos.net>
       # @author Moritz Heidkamp <moritz.heidkamp@bevuta.com>
@@ -33,9 +31,12 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /^Status:\s+(.+?)\n/
             case $1.downcase
-              when "active" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when 'active'
+              :registered
+            when 'unconfirmed'
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -72,7 +73,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name.downcase)
+            Record::Nameserver.new(:name => name.downcase)
           end
         end
 

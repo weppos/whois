@@ -3,38 +3,53 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.audns.net.au.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.audns.net.au parser
-      #
       # Parser for the whois.audns.net.au server.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
+      # @since  2.5.0
       class WhoisAudnsNetAu < Base
+        include Scanners::Ast
 
+        property_not_supported :disclaimer
+
+
+        property_supported :domain do
+          node("Domain Name")
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
+        # == Values for Status
+        #
         # @see http://www.auda.org.au/policies/auda-2002-28/
         # @see http://www.auda.org.au/policies/auda-2006-07/
+        #
         property_supported :status do
-          content_for_scanner.scan(/Status:\s+(.+?)\n/).flatten
+          Array.wrap(node("Status"))
         end
 
         property_supported :available? do
-          (content_for_scanner.strip == "No Data Found")
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -45,17 +60,70 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Last Modified:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("Last Modified") { |value| Time.parse(value) }
         end
 
         property_not_supported :expires_on
 
 
+        property_supported :registrar do
+          node("Registrar ID") do |str|
+            Record::Registrar.new(
+              :id   => str,
+              :name => node("Registrar Name")
+            )
+          end
+        end
+
+
+        property_supported :registrant_contacts do
+          contact = build_contact("Registrant Contact", Record::Contact::TYPE_REGISTRANT)
+          contact.organization = node("Registrant") if contact
+          contact
+        end
+
+        property_not_supported :admin_contacts
+
+        property_supported :technical_contacts do
+          build_contact("Tech Contact", Record::Contact::TYPE_TECHNICAL)
+        end
+
+
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+          Array.wrap(node("Name Server")).map do |name|
+            Record::Nameserver.new(:name => name)
+          end
+        end
+
+
+        # Initializes a new {Scanners::WhoisAudnsNetAu} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisAudnsNetAu.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          node("#{element} ID") do |str|
+            Record::Contact.new(
+              :type         => type,
+              :id           => str,
+              :name         => node("#{element} Name"),
+              :organization => nil,
+              :address      => nil,
+              :city         => nil,
+              :zip          => nil,
+              :state        => nil,
+              :country      => nil,
+              :phone        => nil,
+              :fax          => nil,
+              :email        => nil
+            )
           end
         end
 

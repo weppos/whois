@@ -1,0 +1,73 @@
+
+The data in Register.com's WHOIS database is provided to you by
+Register.com for information purposes only, that is, to assist you in
+obtaining information about or related to a domain name registration
+record.  Register.com makes this information available "as is," and
+does not guarantee its accuracy.  By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that,
+under no circumstances will you use this data to: (1) allow, enable,
+or otherwise support the transmission of mass unsolicited, commercial
+advertising or solicitations via direct mail, electronic mail, or by
+telephone; or (2) enable high volume, automated, electronic processes
+that apply to Register.com (or its systems).  The compilation,
+repackaging, dissemination or other use of this data is expressly
+prohibited without the prior written consent of Register.com.
+Register.com reserves the right to modify these terms at any time.
+By submitting this query, you agree to abide by these terms.
+
+
+   Registrant:
+      Register.Com, Inc.
+      Domain Registrar
+      575 8th Avenue 
+      New York, NY 10018
+      US
+      Phone: +1.9027492701
+      Email: domainregistrar@register.com
+
+
+
+   Registrar Name....: Register.com
+   Registrar Whois...: whois.register.com
+   Registrar Homepage: www.register.com
+
+   Domain Name: register.com
+      Created on..............: 1994-11-01
+      Expires on..............: 2019-08-04
+
+   Administrative Contact:
+      Register.Com, Inc.
+      Domain Registrar
+      575 8th Avenue 
+      New York, NY 10018
+      US
+      Phone: +1.9027492701
+      Email: domainregistrar@register.com
+
+
+   Technical  Contact:
+      Register.Com, Inc.
+      Domain Registrar
+      575 8th Avenue 
+      New York, NY 10018
+      US
+      Phone: +1.9027492701
+      Email: domainregistrar@register.com
+
+
+   DNS Servers:
+      ns2.register.com
+      ns3.register.com
+      ns4.register.com
+      ns5.register.com
+      ns6.register.com
+      ns1.register.com
+
+
+
+Visit AboutUs.org for more information about register.com
+
+<A HREF="http://www.aboutus.org/register.com">AboutUs: register.com</A>
+
+Register your domain name at http://www.register.com
+

@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,26 +14,29 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.dns.be parser
-      #
       # Parser for the whois.dns.be server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisDnsBe < Base
 
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "registered" then :registered
-              when "free"       then :available
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "available"        then :available
+            when "not available"    then :registered
+            when "quarantine"       then :redemption
+            when "out of service"   then :redemption
+            # old response
+            when "registered"       then :registered
+            when "free"             then :available
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             Whois.bug!(ParserError, "Unable to parse status.")
@@ -64,9 +67,9 @@ module Whois
           if content_for_scanner =~ /Nameservers:\s((.+\n)+)\n/
             $1.split("\n").map do |line|
               if line.strip =~ /(.+) \((.+)\)/
-                Record::Nameserver.new($1, $2)
+                Record::Nameserver.new(:name => $1, :ipv4 => $2)
               else
-                Record::Nameserver.new(line.strip)
+                Record::Nameserver.new(:name => line.strip)
               end
             end
           end
@@ -77,7 +80,7 @@ module Whois
         #
         # @return [Boolean]
         def response_throttled?
-          !!(content_for_scanner =~ /^% Excessive querying/)
+          !!(content_for_scanner =~ /^% (Excessive querying|Maximum queries per hour reached)/)
         end
 
       end

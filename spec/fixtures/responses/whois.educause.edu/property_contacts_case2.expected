@@ -1,0 +1,32 @@
+//  Description:
+//  The contact property contains an empty organization name.
+//  The final token count is the same of a standard contact (8 tokens).
+
+//  This case follows this schema:
+//      
+//    [NAME]
+//    [ROLE]
+//    [ORGANIZATION]
+//    [ADDRESS]
+//    [CITY, ST ZIP]
+//    [COUNTRY]
+//    [PHONE]
+//    [EMAIL]
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  // should: %s[0].type          == ANYTHING
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Domain Admin\nStanford University"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "241 Panama Street Pine Hall, Room 115"
+  should: %s[0].city          == "Stanford"
+  should: %s[0].zip           == "94305-4122"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "(650) 723-4328"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "sunet-admin@stanford.edu"

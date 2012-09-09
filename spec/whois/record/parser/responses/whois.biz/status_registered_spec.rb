@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -76,7 +76,7 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "292"
       @parser.registrar.name.should         == "MARKMONITOR, INC."
     end
@@ -85,34 +85,34 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
     it do
       @parser.registrant_contacts.should be_a(Array)
       @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(_contact)
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
     end
   end
   describe "#admin_contacts" do
     it do
       @parser.admin_contacts.should be_a(Array)
       @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(_contact)
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
     end
   end
   describe "#technical_contacts" do
     it do
       @parser.technical_contacts.should be_a(Array)
       @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(_contact)
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].should == _nameserver.new(:name => "ns1.google.com")
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].should == _nameserver.new(:name => "ns2.google.com")
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].should == _nameserver.new(:name => "ns3.google.com")
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].should == _nameserver.new(:name => "ns4.google.com")
     end
   end

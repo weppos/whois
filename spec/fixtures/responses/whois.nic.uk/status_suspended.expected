@@ -9,20 +9,20 @@
 
 
 #created_on
-  should: %s be_a(Time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2008-08-30")
 
 #updated_on
-  should: %s be_a(Time)
-  should: %s == Time.parse("2010-06-01")
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-02-09")
 
 #expires_on
-  should: %s be_a(Time)
+  should: %s CLASS(time)
   should: %s == Time.parse("2010-08-30")
 
 
 #registrar
-  should: %s be_a(_registrar)
+  should: %s CLASS(registrar)
   should: %s.id           == "KEY-SYSTEMS-DE"
   should: %s.name         == "Key-Systems GmbH"
   should: %s.name         == "Key-Systems GmbH"
@@ -30,5 +30,5 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []

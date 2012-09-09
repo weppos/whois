@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+
+
+#domain
+  should: %s == "fynbos.sa.com"
+
+#domain_id
+  should: %s == "CNIC-DO501005"
+
+
 #referral_whois
   should: %s raise_error(Whois::PropertyNotSupported)
 
@@ -6,7 +17,7 @@
 
 
 #status
-  should: %s == :registered
+  should: %s == ["OK"]
 
 #available?
   should: %s == false
@@ -16,21 +27,84 @@
 
 
 #created_on
-  should: %s be_a(Time)
-  should: %s == Time.parse("2007-09-27")
+  should: %s CLASS(time)
+  should: %s == Time.parse("2007-09-27 18:14:53 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-08-31 15:42:21 UTC")
 
 #expires_on
-  should: %s be_a(Time)
-  should: %s == Time.parse("2011-09-27")
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-09-27 23:59:59 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "C30342"
+  should: %s.name         == nil
+  should: %s.organization == "Hostroute"
+  should: %s.url          == "http://www.hostroute.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "H323273"
+  should: %s[0].name          == "Maarten Groos"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "farm 215 fynbos reserve\nPO Box 1314"
+  should: %s[0].city          == "Gansbaai"
+  should: %s[0].zip           == "7220"
+  should: %s[0].state         == "Western Cape"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "ZA"
+  should: %s[0].phone         == "+27.283880920"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "maarten@farm215.co.za"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "H323273"
+  should: %s[0].name          == "Maarten Groos"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "farm 215 fynbos reserve\nPO Box 1314"
+  should: %s[0].city          == "Gansbaai"
+  should: %s[0].zip           == "7220"
+  should: %s[0].state         == "Western Cape"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "ZA"
+  should: %s[0].phone         == "+27.283880920"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "maarten@farm215.co.za"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "C30342"
+  should: %s[0].name          == "Seb de Lemos"
+  should: %s[0].organization  == "Hostroute"
+  should: %s[0].address       == "St Andrew's House\nSt Mary's Walk"
+  should: %s[0].city          == "Maidenhead"
+  should: %s[0].zip           == "SL6 1QZ"
+  should: %s[0].state         == "Berkshire"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "GB"
+  should: %s[0].phone         == "+44.2031377651"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "sales@hostroute.com"
 
 
 #nameservers
-  should: %s be_a(Array)
-  should: %s have(2).items
-  should: %s[0] be_a(_nameserver)
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1191.websitewelcome.com"
-  should: %s[1] be_a(_nameserver)
+  should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns1192.websitewelcome.com"

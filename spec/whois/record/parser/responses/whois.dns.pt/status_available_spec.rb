@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_available.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.expires_on.should == nil
     end
   end
   describe "#nameservers" do

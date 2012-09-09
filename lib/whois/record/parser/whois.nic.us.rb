@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -28,7 +28,7 @@ module Whois
       class WhoisNicUs < Base
 
         property_supported :status do
-          content_for_scanner.scan(/Domain Status:\s+(.*?)\n/).flatten
+          content_for_scanner.scan(/Domain Status:\s+(.+?)\n/).flatten
         end
 
         property_supported :available? do
@@ -41,19 +41,19 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Domain Registration Date:\s+(.*)\n/
+          if content_for_scanner =~ /Domain Registration Date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Domain Last Updated Date:\s+(.*)\n/
+          if content_for_scanner =~ /Domain Last Updated Date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Domain Expiration Date:\s+(.*)\n/
+          if content_for_scanner =~ /Domain Expiration Date:\s+(.+?)\n/
             Time.parse($1)
           end
         end
@@ -61,7 +61,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name.downcase)
+            Record::Nameserver.new(:name => name.downcase)
           end
         end
 

@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -31,11 +31,11 @@ module Whois
         # @return [void]
         #
         def request(string)
-          response = query_the_socket(string, host, DEFAULT_WHOIS_PORT)
+          response = query_the_socket(string, host)
           buffer_append response, host
 
           if endpoint = extract_referral(response)
-            response = query_the_socket(string, endpoint, DEFAULT_WHOIS_PORT)
+            response = query_the_socket(string, endpoint)
             buffer_append response, endpoint
           end
         end

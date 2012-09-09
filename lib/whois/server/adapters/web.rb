@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -31,7 +31,10 @@ module Whois
         # @raise  [Whois::WebInterfaceError] For every request.
         #
         def request(string)
-          raise WebInterfaceError, options[:web]
+          if options[:web]
+            Whois.deprecate "options[:web] for :web adapter is deprecated, use options[:url]."
+          end
+          raise WebInterfaceError, options[:web] || options[:url]
         end
 
       end

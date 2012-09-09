@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -43,18 +43,21 @@ class SuperStruct < Struct
   def initialize(*args)
     if args.first.is_a? Hash
       initialize_with_hash(args.first)
+    elsif args.size == 0
+      super
     else
+      Whois.deprecate "Passing a list of arguments to #{self.class} is deprecated, please use the Hash syntax."
       super
     end
     yield(self) if block_given?
   end
 
-  private
+private
 
-    def initialize_with_hash(attributes = {})
-      attributes.each do |key, value|
-        self[key] = value
-      end
+  def initialize_with_hash(attributes = {})
+    attributes.each do |key, value|
+      self[key] = value
     end
+  end
 
 end

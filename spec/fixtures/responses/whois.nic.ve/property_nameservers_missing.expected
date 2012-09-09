@@ -1,3 +1,3 @@
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []

@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -38,12 +38,12 @@ describe Whois::Record::Parser::WhoisJe, "status_available.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should == nil
     end
   end
   describe "#expires_on" do

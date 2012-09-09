@@ -4,7 +4,7 @@ require 'whois/record/parser/blank'
 describe Whois::Record::Parser::Blank do
 
   before(:each) do
-    @part = Whois::Record::Part.new("This is the response.", "whois.example.test")
+    @part = Whois::Record::Part.new(:body => "This is the response.", :host => "whois.example.test")
   end
 
   Whois::Record::Parser::PROPERTIES.each do |method|

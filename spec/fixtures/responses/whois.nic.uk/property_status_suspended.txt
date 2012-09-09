@@ -24,8 +24,8 @@
 
     Relevant dates:
         Registered on: 30-Aug-2008
-        Renewal date:  30-Aug-2010
-        Last updated:  01-Jun-2010
+        Expiry date:  30-Aug-2010
+        Last updated:  09-Feb-2012
 
     Registration status:
         Renewal required.
@@ -34,13 +34,13 @@
     Name servers:
         No name servers listed.
 
-    WHOIS lookup made at 12:25:35 19-Oct-2010
+    WHOIS lookup made at 13:41:57 01-May-2012
 
 -- 
 This WHOIS information is provided for free by Nominet UK the central registry
 for .uk domain names. This information and the .uk WHOIS are:
 
-    Copyright Nominet UK 1996 - 2010.
+    Copyright Nominet UK 1996 - 2012.
 
 You may not access the .uk WHOIS or use any data from it except as permitted
 by the terms of use available in full at http://www.nominet.org.uk/whois, which

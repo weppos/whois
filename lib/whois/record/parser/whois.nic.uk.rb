@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -29,18 +29,27 @@ module Whois
       #
       class WhoisNicUk < Base
 
+        # == Values for Status
+        #
         # @see http://www.nominet.org.uk/registrars/systems/data/regstatus/
         # @see http://www.nominet.org.uk/registrants/maintain/renew/status/
+        #
         property_supported :status do
           if content_for_scanner =~ /\s+Registration status:\s+(.+?)\n/
             case $1.downcase
-              when "registered until renewal date."         then :registered
-              when "registration request being processed."  then :registered
-              when "renewal request being processed."       then :registered
-              # NEWSTATUS
-              when "renewal required."                      then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "registered until expiry date."
+              :registered
+            when "registration request being processed."
+              :registered
+            when "renewal request being processed."
+              :registered
+            when "no registration status listed."
+              :reserved
+            # NEWSTATUS (redemption?)
+            when "renewal required."
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           elsif invalid?
             :invalid
@@ -59,24 +68,25 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /\s+Registered on:\s+(.*)\n/
+          if content_for_scanner =~ /\s+Registered on:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /\s+Last updated:\s+(.*)\n/
+          if content_for_scanner =~ /\s+Last updated:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /\s+Renewal date:\s+(.*)\n/
+          if content_for_scanner =~ /\s+Expiry date:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
+        # @see http://www.nic.uk/other/whois/instruct/
         property_supported :registrar do
           if content_for_scanner =~ /Registrar:\n(.+) \[Tag = (.+)\]\n\s*URL: (.+)\n/
             name, id, url = $1.strip, $2.strip, $3.strip
@@ -84,9 +94,38 @@ module Whois
 
             Record::Registrar.new(
               :id           => id,
-              :url          => url,
               :name         => (name || org),
-              :organization => org
+              :organization => org,
+              :url          => url
+            )
+          elsif content_for_scanner =~ /This domain is registered directly with Nominet/
+            Record::Registrar.new(
+              :id           => nil,
+              :name         => "Nominet",
+              :organization => "Nominet UK",
+              :url          => "http://www.nic.uk/"
+            )
+          end
+        end
+
+
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /Registrant's address:\n((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            address = lines[0..-5]
+            city    = lines[-4]
+            state   = lines[-3]
+            zip     = lines[-2]
+            country = lines[-1]
+            
+            Record::Contact.new(
+              :type => Record::Contact::TYPE_REGISTRANT,
+              :name => content_for_scanner[/Registrant:\n\s*(.+)\n/, 1],
+              :address => address.join("\n"),
+              :city => city,
+              :state => state,
+              :zip => zip,
+              :country => country
             )
           end
         end
@@ -95,9 +134,23 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
             $1.split("\n").reject { |value| value =~ /No name servers listed/ }.map do |line|
-              Record::Nameserver.new(*line.strip.split(/\s+/))
+              name, ipv4, ipv6 = line.strip.split(/\s+/)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4, :ipv6 => ipv6)
             end
           end
+        end
+
+
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   The WHOIS query quota for 127.0.0.1 has been exceeded
+        #   and will be replenished in 50 seconds.
+        #
+        def response_throttled?
+          !!(content_for_scanner =~ /The WHOIS query quota for .+ has been exceeded/)
         end
 
 

@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -114,7 +114,7 @@ module Whois
       #   # => "WhoisNicInfoIt"
       #
       def self.host_to_parser(host)
-        host.to_s.
+        host.to_s.downcase.
           gsub(/[.-]/, '_').
           gsub(/(?:^|_)(.)/)  { $1.upcase }
       end
@@ -136,7 +136,7 @@ module Whois
 
       # Initializes and return a new parser from +record+.
       #
-      # @param  [Whois::Record]
+      # @param  [Whois::Record] record
       #
       def initialize(record)
         @record = record
@@ -224,6 +224,18 @@ module Whois
       end
 
       # Loop through all the parts to check if at least
+      # one part is an incomplete response.
+      #
+      # @return [Boolean]
+      #
+      # @see Whois::Record#response_incomplete?
+      # @see Whois::Record::Parser::Base#response_incomplete?
+      #
+      def response_incomplete?
+        any_is?(parsers, :response_incomplete?)
+      end
+
+      # Loop through all the parts to check if at least
       # one part is a throttle response.
       #
       # @return [Boolean]
@@ -236,131 +248,131 @@ module Whois
       end
 
       # Loop through all the parts to check if at least
-      # one part is an incomplete response.
+      # one part is an unavailable response.
       #
       # @return [Boolean]
       #
-      # @see Whois::Record#response_incomplete?
-      # @see Whois::Record::Parser::Base#response_incomplete?
+      # @see Whois::Record#response_unavailable?
+      # @see Whois::Record::Parser::Base#response_unavailable?
       #
-      def response_incomplete?
-        any_is?(parsers, :response_incomplete?)
+      def response_unavailable?
+        any_is?(parsers, :response_unavailable?)
       end
 
       # @endgroup
 
 
-      private
+    private
 
-        # @api internal
-        def self.define_missing_method(method)
-          class_eval <<-RUBY, __FILE__, __LINE__ + 1
-            def #{method}(*args, &block)
-              delegate_to_parsers(:#{method}, *args, &block)
-            end
-          RUBY
-        end
-
-        def method_missing(method, *args, &block)
-          if PROPERTIES.include?(method)
-            self.class.define_missing_method(method)
-            send(method, *args, &block)
-          elsif METHODS.include?(method)
-            self.class.define_missing_method(method)
-            send(method, *args, &block)
-          else
-            super
+      # @api private
+      def self.define_missing_method(method)
+        class_eval <<-RUBY, __FILE__, __LINE__ + 1
+          def #{method}(*args, &block)
+            delegate_to_parsers(:#{method}, *args, &block)
           end
+        RUBY
+      end
+
+      def method_missing(method, *args, &block)
+        if PROPERTIES.include?(method)
+          self.class.define_missing_method(method)
+          send(method, *args, &block)
+        elsif METHODS.include?(method)
+          self.class.define_missing_method(method)
+          send(method, *args, &block)
+        else
+          super
         end
+      end
 
-        def delegate_to_parsers(method, *args, &block)
-          # Raise an error without any parser
-          if parsers.empty?
-            raise ParserError, "Unable to select a parser because the record is empty"
+      def delegate_to_parsers(method, *args, &block)
+        # Raise an error without any parser
+        if parsers.empty?
+          raise ParserError, "Unable to select a parser because the record is empty"
 
-          # Select a parser where the property is supported
-          # and call the method.
-          elsif parser = select_parser(method, :supported)
-            parser.send(method, *args, &block)
+        # Select a parser where the property is supported
+        # and call the method.
+        elsif parser = select_parser(method, :supported)
+          parser.send(method, *args, &block)
 
-          # Select a parser where the property is defined
-          # (but not supported) and call the method.
-          # The call is expected to raise an exception.
-          elsif parser = select_parser(method)
-            parser.send(method, *args, &block)
+        # Select a parser where the property is defined but not supported
+        # and call the method.
+        # The call is expected to raise an exception.
+        elsif parser = select_parser(method, :not_supported)
+          parser.send(method, *args, &block)
 
-          # The property is not supported nor defined.
-          else
-            raise PropertyNotAvailable, "Unable to find a parser for `#{method}'"
-          end
+        # The property is not supported nor defined.
+        else
+          raise PropertyNotAvailable, "Unable to find a parser for `#{method}'"
         end
+      end
 
-        # Loops through all record parts, for each part
-        # tries to guess the appropriate parser object whenever available,
-        # and returns the final array of server-specific parsers.
-        #
-        # Parsers are initialized in reverse order for performance reason.
-        #
-        # @return [Array<Class>] An array of Class,
-        #         where each item is the parts reverse-N specific parser {Class}.
-        #         Each {Class} is expected to be a child of {Whois::Record::Parser::Base}.
-        #
-        # @example
-        #
-        #   parser.parts
-        #   # => [whois.foo.com, whois.bar.com]
-        #
-        #   parser.parsers
-        #   # => [Whois::Record::Parser::WhoisBarCom, Whois::Record::Parser::WhoisFooCom]
-        #
-        # @see Whois::Record::Parser#select_parser
-        #
-        def init_parsers
-          record.parts.reverse.map { |part| self.class.parser_for(part) }
+      # Loops through all record parts, for each part
+      # tries to guess the appropriate parser object whenever available,
+      # and returns the final array of server-specific parsers.
+      #
+      # Parsers are initialized in reverse order for performance reason.
+      #
+      # @return [Array<Class>] An array of Class,
+      #         where each item is the parts reverse-N specific parser {Class}.
+      #         Each {Class} is expected to be a child of {Whois::Record::Parser::Base}.
+      #
+      # @example
+      #
+      #   parser.parts
+      #   # => [whois.foo.com, whois.bar.com]
+      #
+      #   parser.parsers
+      #   # => [Whois::Record::Parser::WhoisBarCom, Whois::Record::Parser::WhoisFooCom]
+      #
+      # @see Whois::Record::Parser#select_parser
+      #
+      def init_parsers
+        record.parts.reverse.map { |part| self.class.parser_for(part) }
+      end
+
+      # Selects the first parser in {#parsers}
+      # where given property matches <tt>status</tt>.
+      #
+      # @param  [Symbol] property The property to search for.
+      # @param  [Symbol] status The status value.
+      #
+      # @return [Whois::Record::Parser::Base]
+      #         The parser which satisfies given requirement.
+      # @return [nil]
+      #         If the parser wasn't found.
+      #
+      # @example
+      #
+      #   select_parser(:nameservers)
+      #   # => #<Whois::Record::Parser::WhoisExampleCom>
+      #
+      #   select_parser(:nameservers, :supported)
+      #   # => nil
+      #
+      def select_parser(property, status = :any)
+        parsers.each do |parser|
+          return parser if parser.class.property_registered?(property, status)
         end
+        nil
+      end
 
-        # Selects the first parser in {#parsers}
-        # where given property matches <tt>status</tt>.
-        #
-        # @param  [Symbol] property The property to search for.
-        # @param  [Symbol] status The status value.
-        #
-        # @return [Whois::Record::Parser::Base]
-        #         The parser which satisfies given requirement.
-        # @return [nil]
-        #         If the parser wasn't found.
-        #
-        # @example
-        #
-        #   select_parser(:nameservers)
-        #   # => #<Whois::Record::Parser::WhoisExampleCom>
-        #
-        #   select_parser(:nameservers, :supported)
-        #   # => nil
-        #
-        def select_parser(property, status = :any)
-          parsers.each do |parser|
-            return parser if parser.class.property_registered?(property, status)
-          end
-          nil
+      # @api private
+      def all_in_parallel?(*args)
+        count = args.first.size
+        index = 0
+
+        while index < count
+          return false unless yield(*args.map { |arg| arg[index] })
+          index += 1
         end
+        true
+      end
 
-        # @api internal
-        def all_in_parallel?(*args)
-          count = args.first.size
-          index = 0
-
-          while index < count
-            return false unless yield(*args.map { |arg| arg[index] })
-            index += 1
-          end
-          true
-        end
-
-        # @api internal
-        def any_is?(collection, symbol)
-          collection.any? { |item| item.is(symbol) }
-        end
+      # @api private
+      def any_is?(collection, symbol)
+        collection.any? { |item| item.is(symbol) }
+      end
 
     end
 

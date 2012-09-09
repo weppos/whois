@@ -1,11 +1,10 @@
 % New Zealand Domain Name Registry Limited
 % Users confirm on submission their agreement to all published Terms
 %
-version: 4.00
-query_datetime: 2010-03-22T22:33:25+13:00
+version: 5.00
+query_datetime: 2012-05-03T20:27:42+12:00
 domain_name: u34jedzcq.nz
 query_status: 500 Invalid characters in query string
-%
 %
 %
 %

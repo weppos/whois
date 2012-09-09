@@ -3,25 +3,21 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/verisign'
+require 'whois/record/scanners/verisign'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.tv parser
-      #
       # Parser for the whois.nic.tv server.
-      #
       class WhoisNicTv < Base
-        include Features::Ast
+        include Scanners::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -80,13 +76,13 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject { |value| value =~ /no nameserver/i }.map do |name|
-            Nameserver.new(name.downcase)
+            Record::Nameserver.new(:name => name.downcase)
           end
         end
 
 
         # Initializes a new {Scanners::Verisign} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]

@@ -1,0 +1,17 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "ANO00-FRNIC"
+  should: %s[0].name          == "Ano Nymous"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].updated_on    == Time.parse("2007-09-03 00:00:00 UTC")

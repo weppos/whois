@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -25,22 +25,22 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_nameservers_wit
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(6).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.dns.ie"
       @parser.nameservers[0].ipv4.should == "208.94.148.4"
-      @parser.nameservers[1].should be_a(_nameserver)
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[1].name.should == "ns2.dns.ie"
       @parser.nameservers[1].ipv4.should == "208.80.124.4"
-      @parser.nameservers[2].should be_a(_nameserver)
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[2].name.should == "ns3.dns.ie"
       @parser.nameservers[2].ipv4.should == "208.80.126.4"
-      @parser.nameservers[3].should be_a(_nameserver)
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[3].name.should == "ns4.dns.ie"
       @parser.nameservers[3].ipv4.should == "208.80.125.4"
-      @parser.nameservers[4].should be_a(_nameserver)
+      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[4].name.should == "ns5.dns.ie"
       @parser.nameservers[4].ipv4.should == "208.80.127.4"
-      @parser.nameservers[5].should be_a(_nameserver)
+      @parser.nameservers[5].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[5].name.should == "ns6.dns.ie"
       @parser.nameservers[5].ipv4.should == "208.94.149.4"
     end

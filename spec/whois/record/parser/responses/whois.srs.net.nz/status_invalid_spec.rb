@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -65,6 +65,11 @@ describe Whois::Record::Parser::WhoisSrsNetNz, "status_invalid.expected" do
   describe "#invalid?" do
     it do
       @parser.invalid?.should == true
+    end
+  end
+  describe "#response_throttled?" do
+    it do
+      @parser.response_throttled?.should == false
     end
   end
 end

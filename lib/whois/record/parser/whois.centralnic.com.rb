@@ -3,50 +3,35 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.centralnic.com.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.centralnic.net parser
-      #
       # Parser for the whois.centralnic.net server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisCentralnicCom < Base
-
-        # property_supported :disclaimer do
-        #   if content_for_scanner =~ /(This whois service is provided by .*)\n/m
-        #     $1.gsub("\n", " ")
-        #   else
-        #     raise ParserError, "Unexpected response trying to parse `:disclaimer' property. The parser might be outdated."
-        #   end
-        # end
+        include Scanners::Ast
 
 
-        # property_supported :domain do
-        #   if content_for_scanner =~ /Domain Name: (.*)\n/
-        #     $1.strip
-        #   elsif content_for_scanner =~ /^No match for (.*)\n/
-        #     $1.strip
-        #   else
-        #     raise ParserError, "Unexpected response trying to parse `:domain' property. The parser might be outdated."
-        #   end
-        # end
-        #
-        # property_not_supported :domain_id
+        property_supported :disclaimer do
+          node("field:disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("Domain Name") { |str| str.downcase }
+        end
+
+        property_supported :domain_id do
+          node("Domain ID")
+        end
 
 
         property_not_supported :referral_whois
@@ -55,20 +40,11 @@ module Whois
 
 
         property_supported :status do
-          if content_for_scanner =~ /Status: (.+?)\n/
-            case $1.downcase
-              when "live" then :registered
-              when "live, renewal in progress" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            :available
-          end
+          Array.wrap(node("Status"))
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^No match for/)
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -77,36 +53,84 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Record created on: (.+)\n/
-            Time.parse($1)
-          end
+          node("Created On") { |str| Time.parse(str) }
         end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          node("Last Updated On") { |str| Time.parse(str) }
+        end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Record expires on: (.+)\n/
-            Time.parse($1)
+          node("Expiration Date") { |str| Time.parse(str) }
+        end
+
+
+        property_supported :registrar do
+          node("Sponsoring Registrar ID") do
+            Record::Registrar.new(
+                :id           => node("Sponsoring Registrar ID"),
+                :name         => nil,
+                :organization => node("Sponsoring Registrar Organization"),
+                :url          => node("Sponsoring Registrar Website")
+            )
           end
         end
 
 
-        # property_supported :registrar do
-        #   if content_for_scanner =~ /Registrar: (.*) \((.*)\)\n/
-        #     Record::Registrar.new(
-        #       :id           => $1,
-        #       :name         => $2,
-        #       :organization => $2
-        #     )
-        #   end
-        # end
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("Admin", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Tech", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
 
 
         property_supported :nameservers do
-          if content_for_scanner =~ /Domain servers in listed order:\n\n((.+\n)+)\n/
-            $1.split("\n").map do |name|
-              Record::Nameserver.new(name.strip.downcase)
-            end
+          Array.wrap(node("Name Server")).map do |name|
+            Record::Nameserver.new(:name => name.downcase)
+          end
+        end
+
+
+        # Initializes a new {Scanners::WhoisCentralnicCom} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisCentralnicCom.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          node("#{element} ID") do
+            address = (1..3).
+                map { |i| node("#{element} Street#{i}") }.
+                delete_if { |i| i.nil? || i.empty? }.
+                join("\n")
+            address = nil if address.empty?
+
+            Record::Contact.new(
+                :type         => type,
+                :id           => node("#{element} ID"),
+                :name         => node("#{element} Name"),
+                :organization => node("#{element} Organization"),
+                :address      => address,
+                :city         => node("#{element} City"),
+                :zip          => node("#{element} Postal Code"),
+                :state        => node("#{element} State/Province"),
+                :country_code => node("#{element} Country"),
+                :phone        => node("#{element} Phone"),
+                :fax          => node("#{element} FAX"),
+                :email        => node("#{element} Email")
+            )
           end
         end
 

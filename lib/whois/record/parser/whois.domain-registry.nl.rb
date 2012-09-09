@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,26 +14,41 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.domain-registry.nl parser
-      #
       # Parser for the whois.domain-registry.nl server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisDomainRegistryNl < Base
 
+        # == Values for Status
+        #
+        # - free: the .nl domain name is still available for registration
+        # - withdrawn: the .nl domain name is barred from registration
+        # - excluded: the .nl domain name is excluded from registration
+        # - requested: an application for the .nl domain name is being processed
+        # - active: the .nl domain name has already been registered. (If you want to know who has registered the name, tick the ‘Extended search’ box. You will then be shown more information about whoever has registered the name.)
+        # - inactive: the .nl domain name has already been registered, but has not yet been added to the .nl zone file. (If you want to know who has registered the name, tick the ‘Extended search’ box. You will then be shown more information about whoever has registered the name.)
+        # - in quarantine: this .nl domain name's registration has been cancelled. Following cancellation, a domain name is placed in quarantine for forty days.
+        #
+        # @see https://www.sidn.nl/en/whois/
+        # @see https://www.sidn.nl/en/about-nl/whois/looking-up-a-domain-name/
+        #
         property_supported :status do
-          if content_for_scanner =~ /Status:\s+(.*?)\n/
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-              when "active"         then :registered
-              when "in quarantine"  then :quarantine
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "active"
+              :registered
+            when "in quarantine"
+              :redemption
+            when "inactive"
+              :inactive
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -41,22 +56,22 @@ module Whois
         end
 
         property_supported :available? do
-          (status == :available)
+          status == :available
         end
 
         property_supported :registered? do
-          [:registered, :quarantine].include?(status)
+          status != :available
         end
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Date registered:\s+(.*)\n/
+          if content_for_scanner =~ /Date registered:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Record last updated:\s+(.*)\n/
+          if content_for_scanner =~ /Record last updated:\s+(.+)\n/
             Time.parse($1)
           end
         end
@@ -68,7 +83,7 @@ module Whois
           if content_for_scanner =~ /Domain nameservers:\n((.+\n)+)\n/
             $1.split("\n").map do |line|
               name, ipv4 = line.strip.split(/\s+/)
-              Record::Nameserver.new(name, ipv4)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end
         end
@@ -102,7 +117,6 @@ module Whois
         def response_unavailable?
           !!(content_for_scanner =~ /Server too busy, try again later/)
         end
-
 
       end
 

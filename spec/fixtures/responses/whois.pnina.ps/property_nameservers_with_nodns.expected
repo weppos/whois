@@ -1,5 +1,5 @@
 #nameservers
-  should: %s be_a(Array)
-  should: %s have(1).items
-  should: %s[0] be_a(_nameserver)
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.pnn-ps.com"

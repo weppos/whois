@@ -3,25 +3,21 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
-require 'whois/record/parser/scanners/whoisbiz'
+require 'whois/record/scanners/whois.biz.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.biz parser
-      #
       # Parser for the whois.biz server.
-      #
       class WhoisBiz < Base
-        include Features::Ast
+        include Scanners::Ast
 
         # Actually the :disclaimer is supported,
         # but extracting it with the current scanner
@@ -48,7 +44,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!node("status-available")
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -70,7 +66,7 @@ module Whois
 
 
         property_supported :registrar do
-          node("Sponsoring Registrar") do |raw|
+          node("Sponsoring Registrar") do |str|
             Record::Registrar.new(
               :id           => node("Sponsoring Registrar IANA ID"),
               :name         => node("Sponsoring Registrar")
@@ -80,56 +76,56 @@ module Whois
 
 
         property_supported :registrant_contacts do
-          contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
         end
 
         property_supported :technical_contacts do
-          contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).map do |name|
-            Nameserver.new(name.downcase)
+            Nameserver.new(:name => name.downcase)
           end
         end
 
 
-        # Initializes a new {Scanners::Verisign} instance
-        # passing the {Whois::Record::Parser::Base#content_for_scanner}
+        # Initializes a new {Scanners::WhoisBiz} instance
+        # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisbiz.new(content_for_scanner).parse
+          Scanners::WhoisBiz.new(content_for_scanner).parse
         end
 
 
-        protected
+      private
 
-          def contact(element, type)
-            node("#{element} ID") do |raw|
-              Record::Contact.new(
-                :type         => type,
-                :id           => node("#{element} ID"),
-                :name         => node("#{element} Name"),
-                :organization => node("#{element} Organization"),
-                :address      => node("#{element} Address1"),
-                :city         => node("#{element} City"),
-                :zip          => node("#{element} Postal Code"),
-                :state        => node("#{element} State/Province"),
-                :country      => node("#{element} Country"),
-                :country_code => node("#{element} Country Code"),
-                :phone        => node("#{element} Phone Number"),
-                :fax          => node("#{element} Facsimile Number"),
-                :email        => node("#{element} Email")
-              )
-            end
+        def build_contact(element, type)
+          node("#{element} ID") do |str|
+            Record::Contact.new(
+              :type         => type,
+              :id           => node("#{element} ID"),
+              :name         => node("#{element} Name"),
+              :organization => node("#{element} Organization"),
+              :address      => node("#{element} Address1"),
+              :city         => node("#{element} City"),
+              :zip          => node("#{element} Postal Code"),
+              :state        => node("#{element} State/Province"),
+              :country      => node("#{element} Country"),
+              :country_code => node("#{element} Country Code"),
+              :phone        => node("#{element} Phone Number"),
+              :fax          => node("#{element} Facsimile Number"),
+              :email        => node("#{element} Email")
+            )
           end
+        end
 
       end
 

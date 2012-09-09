@@ -1,0 +1,100 @@
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#domain
+  should: %s == "rop.gov.om"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Oman Telecommunication Company"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "10084244"
+  should: %s[0].name          == "Nasser Said Al Daree"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "Visit whois.registry.om for Web based WhoIs"
+
+#admin_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "10084244"
+  should: %s[0].name          == "Nasser Said Al Daree"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "Visit whois.registry.om for Web based WhoIs"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "om14.omantel.net.om"
+  should: %s[0].ipv4 == nil
+  should: %s[0].ipv6 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "om16.omantel.net.om"
+  should: %s[1].ipv4 == nil
+  should: %s[1].ipv6 == nil
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "om41.omantel.net.om"
+  should: %s[2].ipv4 == nil
+  should: %s[2].ipv6 == nil

@@ -1,0 +1,118 @@
+#disclaimer
+  should: %s == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
+
+
+#domain
+  should: %s == "google.ca"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2000-10-03 00:00:00")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-03-27 00:00:00")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-04-28 00:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "70"
+  should: %s.name         == "Webnames.ca Inc."
+  should: %s.organization == "Webnames.ca Inc."
+  should: %s.url          == nil
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Google Inc."
+  should: %s[0].organization == nil
+  should: %s[0].address      == nil
+  should: %s[0].city         == nil
+  should: %s[0].zip          == nil
+  should: %s[0].state        == nil
+  should: %s[0].country_code == nil
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Christina Chiou"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "130 King St. W., Suite 1800,\nToronto ON M5X1E3 Canada"
+  should: %s[0].city         == nil
+  should: %s[0].zip          == nil
+  should: %s[0].state        == nil
+  should: %s[0].country_code == nil
+  should: %s[0].phone        == "+1.4168653361x"
+  should: %s[0].fax          == "+1.4169456616"
+  should: %s[0].email        == "dns-admin@google.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Matt Serlin"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Domain Provisioning,10400 Overland Rd. PMB 155\nBoise ID 83709 United States"
+  should: %s[0].city         == nil
+  should: %s[0].zip          == nil
+  should: %s[0].state        == nil
+  should: %s[0].country_code == nil
+  should: %s[0].phone        == "+1.2083895740x"
+  should: %s[0].fax          == "+1.2083895771"
+  should: %s[0].email        == "ccops@markmonitor.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.google.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.google.com"
+
+
+#valid?
+  should: %s == true
+
+#invalid?
+  should: %s == false

@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -45,7 +45,7 @@ describe Whois::Record::Parser::WhoisNicUk, "status_suspended.expected" do
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-06-01")
+      @parser.updated_on.should == Time.parse("2012-02-09")
     end
   end
   describe "#expires_on" do
@@ -56,7 +56,7 @@ describe Whois::Record::Parser::WhoisNicUk, "status_suspended.expected" do
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(_registrar)
+      @parser.registrar.should be_a(Whois::Record::Registrar)
       @parser.registrar.id.should           == "KEY-SYSTEMS-DE"
       @parser.registrar.name.should         == "Key-Systems GmbH"
       @parser.registrar.name.should         == "Key-Systems GmbH"

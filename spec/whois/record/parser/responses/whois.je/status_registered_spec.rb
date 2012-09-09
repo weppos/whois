@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -38,12 +38,14 @@ describe Whois::Record::Parser::WhoisJe, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.created_on.should be_a(Time)
+      @parser.created_on.should == Time.parse("2002-10-31 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      @parser.updated_on.should be_a(Time)
+      @parser.updated_on.should == Time.parse("2011-10-05 14:28:00 UTC")
     end
   end
   describe "#expires_on" do
@@ -55,14 +57,14 @@ describe Whois::Record::Parser::WhoisJe, "status_registered.expected" do
     it do
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(_nameserver)
+      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
       @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(_nameserver)
-      @parser.nameservers[1].name.should == "ns3.google.com"
-      @parser.nameservers[2].should be_a(_nameserver)
-      @parser.nameservers[2].name.should == "ns2.google.com"
-      @parser.nameservers[3].should be_a(_nameserver)
-      @parser.nameservers[3].name.should == "ns4.google.com"
+      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[1].name.should == "ns2.google.com"
+      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[2].name.should == "ns4.google.com"
+      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
+      @parser.nameservers[3].name.should == "ns3.google.com"
     end
   end
 end

@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -44,7 +44,7 @@ module Whois
 
         # Temporary internal response buffer.
         #
-        # @api internal
+        # @api private
         # @return [Array]
         attr_reader :buffer
 
@@ -71,6 +71,7 @@ module Whois
         #
         # @return [Boolean] Returns true if the other is the same object,
         #         or <tt>other</tt> attributes matches this object attributes.
+        #
         def ==(other)
           (
             self.equal?(other)
@@ -90,6 +91,7 @@ module Whois
         #
         # @param  [Hash] settings
         # @return [Hash] The updated options for this object.
+        #
         def configure(settings)
           options.merge!(settings)
         end
@@ -126,72 +128,74 @@ module Whois
         # @raise  [NotImplementedError]
         # @return [void]
         # @abstract
+        #
         def request(string)
           raise NotImplementedError
         end
 
 
-        private
+      private
 
-          # Store a record part in {#buffer}.
+        # Store a record part in {#buffer}.
+        #
+        # @param  [String] body
+        # @param  [String] host
+        # @return [void]
+        #
+        # @api public
+        #
+        def buffer_append(body, host)
+          @buffer << Whois::Record::Part.new(:body => body, :host => host)
+        end
+
+        # @api private
+        def buffer_start
+          @buffer = []
+          result = yield(@buffer)
+          @buffer = [] # reset
+          result
+        end
+
+        # @api public
+        def query_the_socket(query, host, port = nil)
+          args = []
+          args.push(host)
+          args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
+
+          # This is a hack to prevent +TCPSocket.new+ to crash
+          # when resolv-replace.rb file is required.
           #
-          # @param  [String] body
-          # @param  [String] host
-          # @return [void]
+          # +TCPSocket.new+ defaults +local_host+ and +local_port+ to nil
+          # but when you require resolv-replace.rb, +local_host+
+          # is resolved when you pass any local parameter and in case of nil
+          # it raises the following error
           #
-          # @api public
-          def buffer_append(body, host)
-            @buffer << Whois::Record::Part.new(body, host)
+          #   ArgumentError: cannot interpret as DNS name: nil
+          #
+          if options[:bind_host] || options[:bind_port]
+            args.push(options[:bind_host] || DEFAULT_BIND_HOST)
+            args.push(options[:bind_port]) if options[:bind_port]
           end
 
-          # @api internal
-          def buffer_start
-            @buffer = []
-            result = yield(@buffer)
-            @buffer = [] # reset
-            result
-          end
+          ask_the_socket(query, *args)
 
-          # @api public
-          def query_the_socket(query, host, port = nil)
-            args = []
-            args.push(host)
-            args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
+        rescue *RESCUABLE_CONNECTION_ERRORS => error
+          raise ConnectionError, "#{error.class}: #{error.message}"
+        end
 
-            # This is a hack to prevent +TCPSocket.new+ to crash
-            # when resolv-replace.rb file is required.
-            #
-            # +TCPSocket.new+ defaults +local_host+ and +local_port+ to nil
-            # but when you require resolv-replace.rb, +local_host+
-            # is resolved when you pass any local parameter and in case of nil
-            # it raises the following error
-            #
-            #   ArgumentError: cannot interpret as DNS name: nil
-            #
-            if options[:bind_host] || options[:bind_port]
-              args.push(options[:bind_host] || DEFAULT_BIND_HOST)
-              args.push(options[:bind_port]) if options[:bind_port]
-            end
-
-            ask_the_socket(query, *args)
-
-          rescue *RESCUABLE_CONNECTION_ERRORS => error
-            raise ConnectionError, "#{error.class}: #{error.message}"
-          end
-
-          # This method handles the lowest connection
-          # to the WHOIS server.
-          #
-          # This is for internal use only!
-          #
-          # @api internal
-          def ask_the_socket(query, *args)
-            client = TCPSocket.new(*args)
-            client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
-            client.read                     # but write/read is more symmetric than puts/read
-          ensure                            # and I really want to use read instead of gets.
-            client.close if client          # If != client something went wrong.
-          end
+        # This method handles the lowest connection
+        # to the WHOIS server.
+        #
+        # This is for internal use only!
+        #
+        # @api private
+        def ask_the_socket(query, *args)
+          client = TCPSocket.new(*args)
+          client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
+          client.read                     # but write/read is more symmetric than puts/read
+        ensure                            # and I really want to use read instead of gets.
+          client.close if client          # If != client something went wrong.
+        end
 
       end
 

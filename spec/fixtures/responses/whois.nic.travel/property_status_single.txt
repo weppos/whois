@@ -1,0 +1,75 @@
+Domain Name:                                 TRAVEL.TRAVEL
+Domain ID:                                   D24096-TRAVEL
+Sponsoring Registrar:                        NEUSTAR GATEWAY
+Domain Status:                               ok
+Registrant ID:                               TRALLIANCE
+Registrant Name:                             Tralliance Corporation
+Registrant Address1:                         110 East Broward Blvd, 14th floor
+Registrant City:                             Fort Lauderdale
+Registrant State/Province:                   FL
+Registrant Postal Code:                      33301
+Registrant Country:                          United States
+Registrant Country Code:                     US
+Registrant Phone Number:                     +1.9547695999
+Registrant Email:                            info@tralliance.travel
+Administrative Contact ID:                   TRALLIANCE
+Administrative Contact Name:                 Tralliance Corporation
+Administrative Contact Address1:             110 East Broward Blvd, 14th floor
+Administrative Contact City:                 Fort Lauderdale
+Administrative Contact State/Province:       FL
+Administrative Contact Postal Code:          33301
+Administrative Contact Country:              United States
+Administrative Contact Country Code:         US
+Administrative Contact Phone Number:         +1.9547695999
+Administrative Contact Email:                info@tralliance.travel
+Billing Contact ID:                          TRALLIANCE
+Billing Contact Name:                        Tralliance Corporation
+Billing Contact Address1:                    110 East Broward Blvd, 14th floor
+Billing Contact City:                        Fort Lauderdale
+Billing Contact State/Province:              FL
+Billing Contact Postal Code:                 33301
+Billing Contact Country:                     United States
+Billing Contact Country Code:                US
+Billing Contact Phone Number:                +1.9547695999
+Billing Contact Email:                       info@tralliance.travel
+Technical Contact ID:                        TRALLIANCE
+Technical Contact Name:                      Tralliance Corporation
+Technical Contact Address1:                  110 East Broward Blvd, 14th floor
+Technical Contact City:                      Fort Lauderdale
+Technical Contact State/Province:            FL
+Technical Contact Postal Code:               33301
+Technical Contact Country:                   United States
+Technical Contact Country Code:              US
+Technical Contact Phone Number:              +1.9547695999
+Technical Contact Email:                     info@tralliance.travel
+Name Server:                                 NETSYS.COM
+Name Server:                                 NS01-MIA.THEGLOBE.COM
+Created by Registrar:                        NEUSTAR GATEWAY
+Last Updated by Registrar:                   NMUTONYI
+Domain Registration Date:                    Tue Oct 04 21:44:27 GMT 2005
+Domain Expiration Date:                      Sun Oct 03 23:59:59 GMT 2010
+Domain Last Updated Date:                    Sun Jul 23 16:08:37 GMT 2006
+
+>>>> Whois database was last updated on: Fri Dec 25 21:30:26 GMT 2009 <<<<
+
+Tralliance, Inc., the Registry Operator for .travel, has collected this information
+for the WHOIS database through an ICANN-Accredited Registrar.  This information
+is provided to you for informational purposes only and is designed to assist
+persons in determining contents of a domain name registration record in the
+Tralliance registry database.  Tralliance makes this information available to you
+"as is" and does not guarantee its accuracy. By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that, under no
+circumstances will you use this data: (1) to allow, enable, or otherwise
+support the transmission of mass unsolicited, commercial advertising or
+solicitations via direct mail, electronic mail, or by telephone; (2) in
+contravention of any applicable data and privacy protection acts; or (3) to
+enable high volume, automated, electronic processes that apply to the registry
+(or its systems).  Compilation, repackaging, dissemination, or other use of the
+WHOIS database in its entirety, or of a substantial portion thereof, is not
+allowed without Tralliance's prior written permission.  Tralliance reserves the
+right to modify or change these conditions at any time without prior or
+subsequent notification of any kind.  By executing this query, in any manner
+whatsoever, you agree to abide by these terms.
+
+NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT INDICATIVE
+OF THE AVAILABILITY OF A DOMAIN NAME.

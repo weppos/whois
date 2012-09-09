@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -69,42 +69,49 @@ module Whois
 
         property_supported :registrar do
           if content_for_scanner =~ /Registrar:\s+(.+)\n/
-            Whois::Record::Registrar.new(:id => $1, :name => $1)
+            Whois::Record::Registrar.new(
+                :id           => $1,
+                :name         => $1
+            )
           end
         end
 
 
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Owner's handle:\s+(.+)\n/
-            contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
+            build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
           end
         end
 
         property_supported :admin_contacts do
           if content_for_scanner =~ /Administrative Contact's handle:\s+(.+)\n/
-            contact($1, Whois::Record::Contact::TYPE_ADMIN)
+            build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
           end
         end
 
         property_supported :technical_contacts do
           if content_for_scanner =~ /Technical Contact's handle:\s+(.+)\n/
-            contact($1, Whois::Record::Contact::TYPE_TECHNICAL)
+            build_contact($1, Whois::Record::Contact::TYPE_TECHNICAL)
           end
         end
 
 
         property_supported :nameservers do
           content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(name)
+            Record::Nameserver.new(:name => name)
           end
         end
 
 
-        private
+      private
 
-          def contact(string, type)
-            Whois::Record::Contact.new(:type => type, :id => string, :name => string)
-          end
+        def build_contact(string, type)
+          Record::Contact.new(
+              :type => type,
+              :id => string,
+              :name => string
+          )
+        end
 
       end
 

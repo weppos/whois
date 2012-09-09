@@ -1,0 +1,28 @@
+//  Description:
+//  The registrant contact property contains additional tokens in the organization.
+//  For the sake of simplicity, these tokens are attached to the address.
+
+//  This case follows this schema:
+//      
+//    [ORGANIZATION]
+//    [ADDRESS]*
+//    [CITY, ST ZIP]
+//    [COUNTRY]
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Harvard University"
+  should: %s[0].address       == "HUIT Network Services\n60 Oxford Street"
+  should: %s[0].city          == "Cambridge"
+  should: %s[0].zip           == "02138"
+  should: %s[0].state         == "MA"
+  should: %s[0].country       == "UNITED STATES"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil

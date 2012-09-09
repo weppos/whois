@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -51,6 +51,69 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
   describe "#expires_on" do
     it do
       lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should have(1).items
+      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      @parser.registrant_contacts[0].id.should            == "APEM2-FRNIC"
+      @parser.registrant_contacts[0].name.should          == nil
+      @parser.registrant_contacts[0].organization.should  == "Afnic (Saint-Pierre et Miquelon - CTOM)"
+      @parser.registrant_contacts[0].address.should       == "immeuble international\n2, rue Stephenson\nMontigny-Le-Bretonneux\n78181 Saint Quentin en Yvelines Cedex"
+      @parser.registrant_contacts[0].city.should          == nil
+      @parser.registrant_contacts[0].zip.should           == nil
+      @parser.registrant_contacts[0].state.should         == nil
+      @parser.registrant_contacts[0].country.should       == nil
+      @parser.registrant_contacts[0].country_code.should  == "FR"
+      @parser.registrant_contacts[0].phone.should         == nil
+      @parser.registrant_contacts[0].fax.should           == nil
+      @parser.registrant_contacts[0].email.should         == nil
+      @parser.registrant_contacts[0].updated_on.should    == Time.parse("2008-10-09 00:00:00 UTC")
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should have(1).items
+      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      @parser.admin_contacts[0].id.should            == "NFC1-FRNIC"
+      @parser.admin_contacts[0].name.should          == "NIC France Contact"
+      @parser.admin_contacts[0].organization.should  == "AFNIC"
+      @parser.admin_contacts[0].address.should       == "immeuble international\n2, rue Stephenson\nMontigny le Bretonneux\n78181 Saint Quentin en Yvelines Cedex"
+      @parser.admin_contacts[0].city.should          == nil
+      @parser.admin_contacts[0].zip.should           == nil
+      @parser.admin_contacts[0].state.should         == nil
+      @parser.admin_contacts[0].country.should       == nil
+      @parser.admin_contacts[0].country_code.should  == "FR"
+      @parser.admin_contacts[0].phone.should         == "+33 1 39 30 83 00"
+      @parser.admin_contacts[0].fax.should           == nil
+      @parser.admin_contacts[0].email.should         == "hostmaster@nic.fr"
+      @parser.admin_contacts[0].updated_on.should    == Time.parse("2005-08-23 00:00:00 UTC")
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should have(1).items
+      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
+      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      @parser.technical_contacts[0].id.should            == "NFC1-FRNIC"
+      @parser.technical_contacts[0].name.should          == "NIC France Contact"
+      @parser.technical_contacts[0].organization.should  == "AFNIC"
+      @parser.technical_contacts[0].address.should       == "immeuble international\n2, rue Stephenson\nMontigny le Bretonneux\n78181 Saint Quentin en Yvelines Cedex"
+      @parser.technical_contacts[0].city.should          == nil
+      @parser.technical_contacts[0].zip.should           == nil
+      @parser.technical_contacts[0].state.should         == nil
+      @parser.technical_contacts[0].country.should       == nil
+      @parser.technical_contacts[0].country_code.should  == "FR"
+      @parser.technical_contacts[0].phone.should         == "+33 1 39 30 83 00"
+      @parser.technical_contacts[0].fax.should           == nil
+      @parser.technical_contacts[0].email.should         == "hostmaster@nic.fr"
+      @parser.technical_contacts[0].updated_on.should    == Time.parse("2005-08-23 00:00:00 UTC")
     end
   end
   describe "#nameservers" do

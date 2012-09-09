@@ -3,44 +3,60 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.domainregistry.ie.rb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.domainregistry.ie parser
-      #
       # Parser for the whois.domainregistry.ie server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # 
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisDomainregistryIe < Base
+        include Scanners::Ast
+
+        property_supported :disclaimer do
+          node("field:disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("domain")
+        end
+
+        property_not_supported :domain_id
+
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
 
         property_supported :status do
-          if content_for_scanner =~ /status:\s+(.+)\n/
-            case $1.downcase
-              when "active" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+          case node("status", &:downcase)
+          when "active"
+            :registered
+          when nil
+            if node("status:pending")
+              :registered
+            else
+              :available
             end
           else
-            :available
+            Whois.bug!(ParserError, "Unknown status `#{node("status")}'.")
           end
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /Not Registered - The domain you have requested is not a registered .ie domain name/)
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -53,16 +69,60 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /renewal:\s+(.*)\n/
-            Time.parse($1)
+          node("renewal") { |value| Time.parse(value) }
+        end
+
+
+        property_not_supported :registrar
+
+
+        property_supported :registrant_contacts do
+          node("descr") do |array|
+            Record::Contact.new(
+              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+              :id           => nil,
+              :name         => array[0]
+            )
           end
+        end
+
+        property_supported :admin_contacts do
+          build_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("tech-c", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+          Array.wrap(node("nserver")).map do |line|
             name, ipv4 = line.split(/\s+/)
-            Record::Nameserver.new(name, ipv4)
+            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
+          end
+        end
+
+
+        # Initializes a new {Scanners::WhoisDomainregistryIe} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisDomainregistryIe.new(content_for_scanner).parse
+        end
+
+
+      private
+
+        def build_contact(element, type)
+          Array.wrap(node(element)).map do |id|
+            contact = node("field:#{id}")
+            Record::Contact.new(
+              :type         => type,
+              :id           => id,
+              :name         => contact["person"]
+            )
           end
         end
 

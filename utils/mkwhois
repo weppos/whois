@@ -4,7 +4,10 @@ $:.unshift(File.expand_path("../../lib", __FILE__))
 
 require "fileutils"
 require "whois"
-require File.expand_path("../whois-utf8", __FILE__) rescue nil
+begin
+  require File.expand_path("../whois-utf8", __FILE__)
+rescue LoadError
+end
 
 d = ARGV.shift || raise("Missing domain")
 n = ARGV.shift || raise("Missing file name")

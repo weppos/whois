@@ -1,0 +1,53 @@
+#status
+  should: %s == ["REGISTERED", "DELEGATED", "VERIFIED"]
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2004-03-04")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-05")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "RU-CENTER-REG-RIPN"
+  should: %s.name         == nil
+  should: %s.organization == nil
+
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].organization == "Google Inc."
+  should: %s[0].url          == "https://www.nic.ru/whois"
+
+#technical_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.google.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.google.com"

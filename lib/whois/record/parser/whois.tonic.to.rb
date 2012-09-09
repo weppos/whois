@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2011 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -14,11 +14,10 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.tonic.to parser
-      #
       # Parser for the whois.tonic.to server.
       #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       class WhoisTonicTo < Base
 
         property_not_supported :disclaimer
@@ -86,14 +85,6 @@ module Whois
         def response_incomplete?
           content_for_scanner.strip == ""
         end
-
-
-        protected
-
-          def incomplete_response?
-            Whois.deprecate "#{self.class}#response_incomplete? will be removed in Whois 2.1. Please use #{self.class}#response_incomplete?."
-            response_incomplete?
-          end
 
       end
 

@@ -7,7 +7,7 @@
 #
 # and regenerate the tests with the following rake task
 #
-#   $ rake genspec:parsers
+#   $ rake spec:generate
 #
 
 require 'spec_helper'
@@ -21,6 +21,31 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_available.expecte
     @parser = klass.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      @parser.disclaimer.should == "Rights restricted by copyright; http://iedr.ie/index.php/mnudomregs/mnudnssearch/96\nDo not remove this notice"
+    end
+  end
+  describe "#domain" do
+    it do
+      @parser.domain.should == nil
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       @parser.status.should == :available
@@ -49,6 +74,29 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_available.expecte
   describe "#expires_on" do
     it do
       @parser.expires_on.should == nil
+    end
+  end
+  describe "#registrar" do
+    it do
+      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      @parser.registrant_contacts.should be_a(Array)
+      @parser.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      @parser.admin_contacts.should be_a(Array)
+      @parser.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      @parser.technical_contacts.should be_a(Array)
+      @parser.technical_contacts.should == []
     end
   end
   describe "#nameservers" do

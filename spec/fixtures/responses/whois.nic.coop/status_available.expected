@@ -1,5 +1,5 @@
 #status
-  should: %s == :available
+  should: %s == []
 
 #available?
   should: %s == true
@@ -19,5 +19,5 @@
 
 
 #nameservers
-  should: %s be_a(Array)
+  should: %s CLASS(array)
   should: %s == []
