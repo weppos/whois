@@ -19,11 +19,15 @@ module Whois
 
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case s = $1.downcase
-            when "active"         then :registered
-            when "delegated"      then :registered
-            when "not registered" then :available
-            when /pending delete/ then :redemption
+            case (s = $1.downcase)
+            when "active"
+              :registered
+            when "delegated"
+              :registered
+            when "not registered"
+              :available
+            when /pending delete/
+              :redemption
             else
               Whois.bug!(ParserError, "Unknown status `#{s}'.")
             end
