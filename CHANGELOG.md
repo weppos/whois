@@ -4,6 +4,8 @@
 
 * SERVER: Added .IQ TLD server (GH-171).
 
+* SERVER: Added .XN--MGB9AWBF (عمان, Oman) IDN TLD server.
+
 * NEW: Added full whois.register.com parser.
 
 * NEW: Added full whois.tucows.com parser.

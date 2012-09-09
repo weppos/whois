@@ -347,6 +347,7 @@ Whois::Server.define :tld, ".xn--j6w193g", "whois.hkirc.hk"
 Whois::Server.define :tld, ".xn--kprw13d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--kpry57d", "whois.twnic.net.tw"
 Whois::Server.define :tld, ".xn--lgbbat1ad8j", "whois.nic.dz"
+Whois::Server.define :tld, ".xn--mgb9awbf", "whois.registry.om"
 Whois::Server.define :tld, ".xn--mgba3a4f16a", "whois.nic.ir"
 Whois::Server.define :tld, ".xn--mgbaam7a8h", "whois.aeda.net.ae"
 Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, { :adapter => :web, :url => "http://idn.jo/whois_a.aspx" }
