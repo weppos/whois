@@ -169,7 +169,7 @@ Whois::Server.define :tld, ".il", "whois.isoc.org.il"
 Whois::Server.define :tld, ".im", "whois.nic.im"
 Whois::Server.define :tld, ".in", "whois.registry.in"
 Whois::Server.define :tld, ".io", "whois.nic.io"
-Whois::Server.define :tld, ".iq", nil, { :adapter => :none }
+Whois::Server.define :tld, ".iq", "whois.cmc.iq"
 Whois::Server.define :tld, ".ir", "whois.nic.ir"
 Whois::Server.define :tld, ".is", "whois.isnic.is"
 Whois::Server.define :tld, ".it", "whois.nic.it"

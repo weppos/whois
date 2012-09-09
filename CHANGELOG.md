@@ -2,11 +2,15 @@
 
 ## master
 
+* SERVER: Added .IQ TLD server (GH-171).
+
 * NEW: Added full whois.register.com parser.
 
 * NEW: Added full whois.tucows.com parser.
 
 * NEW: whois.networksolutions.com parser now recognizes throttled responses (GH-182). [Thanks @JustinCampbell]
+
+* NEW: Added full whois.cmc.iq parser (GH-171).
 
 * FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
 
