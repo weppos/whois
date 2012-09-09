@@ -8,6 +8,8 @@
 
 * SERVER: Added .BI TLD server (GH-113).
 
+* SERVER: Added .DM TLD server (GH-43).
+
 * NEW: Added full whois.register.com parser.
 
 * NEW: Added full whois.tucows.com parser.
@@ -17,6 +19,8 @@
 * NEW: Added full whois.cmc.iq parser (GH-171).
 
 * NEW: Added full whois1.nic.bi parser (GH-113).
+
+* NEW: Added full whois.nic.dm parser (GH-43).
 
 * FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
 
