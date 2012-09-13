@@ -15,151 +15,151 @@ require 'whois/record/parser/whois.nic.la.rb'
 
 describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.la/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      @parser.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
+      subject.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com"
     end
   end
   describe "#domain" do
     it do
-      @parser.domain.should == "google.la"
+      subject.domain.should == "google.la"
     end
   end
   describe "#domain_id" do
     it do
-      @parser.domain_id.should == "CNIC-DO471480"
+      subject.domain_id.should == "CNIC-DO471480"
     end
   end
   describe "#referral_whois" do
     it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_url" do
     it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == ["OK"]
+      subject.status.should == ["OK"]
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2002-07-18 01:00:00 UTC")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2002-07-18 01:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-09-15 16:48:47 UTC")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2009-09-15 16:48:47 UTC")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-07-18 23:59:59 UTC")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2010-07-18 23:59:59 UTC")
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == "7279-LN"
-      @parser.registrar.name.should         == nil
-      @parser.registrar.organization.should == "LA Registry Pte Ltd"
-      @parser.registrar.url.should          == "http://www.la/"
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == "7279-LN"
+      subject.registrar.name.should         == nil
+      subject.registrar.organization.should == "LA Registry Pte Ltd"
+      subject.registrar.url.should          == "http://www.la/"
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should            == "ndn-96955"
-      @parser.registrant_contacts[0].name.should          == "Google Inc"
-      @parser.registrant_contacts[0].organization.should  == "Google Inc"
-      @parser.registrant_contacts[0].address.should       == "1600 Amphitheatre Parkway"
-      @parser.registrant_contacts[0].city.should          == "Mountain View"
-      @parser.registrant_contacts[0].zip.should           == "94043"
-      @parser.registrant_contacts[0].state.should         == "Ca"
-      @parser.registrant_contacts[0].country.should       == nil
-      @parser.registrant_contacts[0].country_code.should  == "US"
-      @parser.registrant_contacts[0].phone.should         == "+1.6502530000"
-      @parser.registrant_contacts[0].fax.should           == "+1.65067188571"
-      @parser.registrant_contacts[0].email.should         == "dns-admin@google.com"
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == "ndn-96955"
+      subject.registrant_contacts[0].name.should          == "Google Inc"
+      subject.registrant_contacts[0].organization.should  == "Google Inc"
+      subject.registrant_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.registrant_contacts[0].city.should          == "Mountain View"
+      subject.registrant_contacts[0].zip.should           == "94043"
+      subject.registrant_contacts[0].state.should         == "Ca"
+      subject.registrant_contacts[0].country.should       == nil
+      subject.registrant_contacts[0].country_code.should  == "US"
+      subject.registrant_contacts[0].phone.should         == "+1.6502530000"
+      subject.registrant_contacts[0].fax.should           == "+1.65067188571"
+      subject.registrant_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should            == "ndn-96955"
-      @parser.admin_contacts[0].name.should          == "Google Inc"
-      @parser.admin_contacts[0].organization.should  == "Google Inc"
-      @parser.admin_contacts[0].address.should       == "1600 Amphitheatre Parkway"
-      @parser.admin_contacts[0].city.should          == "Mountain View"
-      @parser.admin_contacts[0].zip.should           == "94043"
-      @parser.admin_contacts[0].state.should         == "Ca"
-      @parser.admin_contacts[0].country.should       == nil
-      @parser.admin_contacts[0].country_code.should  == "US"
-      @parser.admin_contacts[0].phone.should         == "+1.6502530000"
-      @parser.admin_contacts[0].fax.should           == "+1.65067188571"
-      @parser.admin_contacts[0].email.should         == "dns-admin@google.com"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].id.should            == "ndn-96955"
+      subject.admin_contacts[0].name.should          == "Google Inc"
+      subject.admin_contacts[0].organization.should  == "Google Inc"
+      subject.admin_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.admin_contacts[0].city.should          == "Mountain View"
+      subject.admin_contacts[0].zip.should           == "94043"
+      subject.admin_contacts[0].state.should         == "Ca"
+      subject.admin_contacts[0].country.should       == nil
+      subject.admin_contacts[0].country_code.should  == "US"
+      subject.admin_contacts[0].phone.should         == "+1.6502530000"
+      subject.admin_contacts[0].fax.should           == "+1.65067188571"
+      subject.admin_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should            == "ndn-96955"
-      @parser.technical_contacts[0].name.should          == "Google Inc"
-      @parser.technical_contacts[0].organization.should  == "Google Inc"
-      @parser.technical_contacts[0].address.should       == "1600 Amphitheatre Parkway"
-      @parser.technical_contacts[0].city.should          == "Mountain View"
-      @parser.technical_contacts[0].zip.should           == "94043"
-      @parser.technical_contacts[0].state.should         == "Ca"
-      @parser.technical_contacts[0].country.should       == nil
-      @parser.technical_contacts[0].country_code.should  == "US"
-      @parser.technical_contacts[0].phone.should         == "+1.6502530000"
-      @parser.technical_contacts[0].fax.should           == "+1.65067188571"
-      @parser.technical_contacts[0].email.should         == "dns-admin@google.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == "ndn-96955"
+      subject.technical_contacts[0].name.should          == "Google Inc"
+      subject.technical_contacts[0].organization.should  == "Google Inc"
+      subject.technical_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.technical_contacts[0].city.should          == "Mountain View"
+      subject.technical_contacts[0].zip.should           == "94043"
+      subject.technical_contacts[0].state.should         == "Ca"
+      subject.technical_contacts[0].country.should       == nil
+      subject.technical_contacts[0].country_code.should  == "US"
+      subject.technical_contacts[0].phone.should         == "+1.6502530000"
+      subject.technical_contacts[0].fax.should           == "+1.65067188571"
+      subject.technical_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns4.google.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(4).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.google.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.google.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.google.com"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns4.google.com"
     end
   end
 end

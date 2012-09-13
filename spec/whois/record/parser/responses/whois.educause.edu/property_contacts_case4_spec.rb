@@ -15,29 +15,29 @@ require 'whois/record/parser/whois.educause.edu.rb'
 
 describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case4.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.educause.edu/property_contacts_case4.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].id.should            == nil
-      @parser.admin_contacts[0].name.should          == "ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology"
-      @parser.admin_contacts[0].organization.should  == nil
-      @parser.admin_contacts[0].address.should       == nil
-      @parser.admin_contacts[0].city.should          == "Syracuse"
-      @parser.admin_contacts[0].zip.should           == "13244"
-      @parser.admin_contacts[0].state.should         == "NY"
-      @parser.admin_contacts[0].country.should       == "UNITED STATES"
-      @parser.admin_contacts[0].country_code.should  == nil
-      @parser.admin_contacts[0].phone.should         == "(315) 443-6189"
-      @parser.admin_contacts[0].fax.should           == nil
-      @parser.admin_contacts[0].email.should         == "itsoffice@syr.edu"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].id.should            == nil
+      subject.admin_contacts[0].name.should          == "ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology"
+      subject.admin_contacts[0].organization.should  == nil
+      subject.admin_contacts[0].address.should       == nil
+      subject.admin_contacts[0].city.should          == "Syracuse"
+      subject.admin_contacts[0].zip.should           == "13244"
+      subject.admin_contacts[0].state.should         == "NY"
+      subject.admin_contacts[0].country.should       == "UNITED STATES"
+      subject.admin_contacts[0].country_code.should  == nil
+      subject.admin_contacts[0].phone.should         == "(315) 443-6189"
+      subject.admin_contacts[0].fax.should           == nil
+      subject.admin_contacts[0].email.should         == "itsoffice@syr.edu"
     end
   end
 end

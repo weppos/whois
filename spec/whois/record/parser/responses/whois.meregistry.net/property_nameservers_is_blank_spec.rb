@@ -15,16 +15,16 @@ require 'whois/record/parser/whois.meregistry.net.rb'
 
 describe Whois::Record::Parser::WhoisMeregistryNet, "property_nameservers_is_blank.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.meregistry.net/property_nameservers_is_blank.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

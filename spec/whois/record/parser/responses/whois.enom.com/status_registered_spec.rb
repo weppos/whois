@@ -15,126 +15,126 @@ require 'whois/record/parser/whois.enom.com.rb'
 
 describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.enom.com/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      lambda { @parser.status }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.status }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2004-06-16 18:07:25")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2004-06-16 18:07:25")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2015-06-16 00:00:00")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2015-06-16 00:00:00")
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == nil
-      @parser.registrar.name.should         == "eNom Inc."
-      @parser.registrar.url.should          == "http://www.enom.com/"
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "eNom Inc."
+      subject.registrar.url.should          == "http://www.enom.com/"
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == "Host Master"
-      @parser.registrant_contacts[0].organization.should == "AdBrite, Inc."
-      @parser.registrant_contacts[0].address.should      == "731 Market Street, Suite 500"
-      @parser.registrant_contacts[0].city.should         == "San Francisco"
-      @parser.registrant_contacts[0].zip.should          == "94103"
-      @parser.registrant_contacts[0].state.should        == "CA"
-      @parser.registrant_contacts[0].country_code.should == "US"
-      @parser.registrant_contacts[0].phone.should        == ""
-      @parser.registrant_contacts[0].fax.should          == ""
-      @parser.registrant_contacts[0].email.should        == ""
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].name.should         == "Host Master"
+      subject.registrant_contacts[0].organization.should == "AdBrite, Inc."
+      subject.registrant_contacts[0].address.should      == "731 Market Street, Suite 500"
+      subject.registrant_contacts[0].city.should         == "San Francisco"
+      subject.registrant_contacts[0].zip.should          == "94103"
+      subject.registrant_contacts[0].state.should        == "CA"
+      subject.registrant_contacts[0].country_code.should == "US"
+      subject.registrant_contacts[0].phone.should        == ""
+      subject.registrant_contacts[0].fax.should          == ""
+      subject.registrant_contacts[0].email.should        == ""
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should         == "Host Master"
-      @parser.admin_contacts[0].organization.should == "AdBrite, Inc."
-      @parser.admin_contacts[0].address.should      == "731 Market Street, Suite 500"
-      @parser.admin_contacts[0].city.should         == "San Francisco"
-      @parser.admin_contacts[0].zip.should          == "94103"
-      @parser.admin_contacts[0].state.should        == "CA"
-      @parser.admin_contacts[0].country_code.should == "US"
-      @parser.admin_contacts[0].phone.should        == "4159750916"
-      @parser.admin_contacts[0].fax.should          == ""
-      @parser.admin_contacts[0].email.should        == "hostmaster@adbrite.com"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].name.should         == "Host Master"
+      subject.admin_contacts[0].organization.should == "AdBrite, Inc."
+      subject.admin_contacts[0].address.should      == "731 Market Street, Suite 500"
+      subject.admin_contacts[0].city.should         == "San Francisco"
+      subject.admin_contacts[0].zip.should          == "94103"
+      subject.admin_contacts[0].state.should        == "CA"
+      subject.admin_contacts[0].country_code.should == "US"
+      subject.admin_contacts[0].phone.should        == "4159750916"
+      subject.admin_contacts[0].fax.should          == ""
+      subject.admin_contacts[0].email.should        == "hostmaster@adbrite.com"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "Host Master"
-      @parser.technical_contacts[0].organization.should == "AdBrite, Inc."
-      @parser.technical_contacts[0].address.should      == "731 Market Street, Suite 500"
-      @parser.technical_contacts[0].city.should         == "San Francisco"
-      @parser.technical_contacts[0].zip.should          == "94103"
-      @parser.technical_contacts[0].state.should        == "CA"
-      @parser.technical_contacts[0].country_code.should == "US"
-      @parser.technical_contacts[0].phone.should        == "4159750916"
-      @parser.technical_contacts[0].fax.should          == ""
-      @parser.technical_contacts[0].email.should        == "hostmaster@adbrite.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "Host Master"
+      subject.technical_contacts[0].organization.should == "AdBrite, Inc."
+      subject.technical_contacts[0].address.should      == "731 Market Street, Suite 500"
+      subject.technical_contacts[0].city.should         == "San Francisco"
+      subject.technical_contacts[0].zip.should          == "94103"
+      subject.technical_contacts[0].state.should        == "CA"
+      subject.technical_contacts[0].country_code.should == "US"
+      subject.technical_contacts[0].phone.should        == "4159750916"
+      subject.technical_contacts[0].fax.should          == ""
+      subject.technical_contacts[0].email.should        == "hostmaster@adbrite.com"
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(8).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "asia3.akam.net"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "aus1.akam.net"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "eur1.akam.net"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "eur2.akam.net"
-      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[4].name.should == "ns1-105.akam.net"
-      @parser.nameservers[5].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[5].name.should == "ns1-232.akam.net"
-      @parser.nameservers[6].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[6].name.should == "usc2.akam.net"
-      @parser.nameservers[7].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[7].name.should == "usw6.akam.net"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(8).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "asia3.akam.net"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "aus1.akam.net"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "eur1.akam.net"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "eur2.akam.net"
+      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[4].name.should == "ns1-105.akam.net"
+      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[5].name.should == "ns1-232.akam.net"
+      subject.nameservers[6].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[6].name.should == "usc2.akam.net"
+      subject.nameservers[7].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[7].name.should == "usw6.akam.net"
     end
   end
 end

@@ -15,16 +15,16 @@ require 'whois/record/parser/jobswhois.verisign-grs.com.rb'
 
 describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "property_nameserver_no_nameserver.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "jobswhois.verisign-grs.com/property_nameserver_no_nameserver.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

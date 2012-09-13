@@ -15,18 +15,18 @@ require 'whois/record/parser/whois.pnina.ps.rb'
 
 describe Whois::Record::Parser::WhoisPninaPs, "property_nameservers_with_nodns.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.pnina.ps/property_nameservers_with_nodns.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(1).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.pnn-ps.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(1).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.pnn-ps.com"
     end
   end
 end

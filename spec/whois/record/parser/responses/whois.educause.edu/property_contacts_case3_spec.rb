@@ -15,29 +15,29 @@ require 'whois/record/parser/whois.educause.edu.rb'
 
 describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case3.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.educause.edu/property_contacts_case3.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].id.should            == nil
-      @parser.admin_contacts[0].name.should          == "Tracy L. Smith\nUniversity of Illinois at Urbana-Champaign\nCITES  2105 Digital Computer Laboratory"
-      @parser.admin_contacts[0].organization.should  == nil
-      @parser.admin_contacts[0].address.should       == "1304 West Springfield Avenue"
-      @parser.admin_contacts[0].city.should          == "Urbana"
-      @parser.admin_contacts[0].zip.should           == "61801-4399"
-      @parser.admin_contacts[0].state.should         == "IL"
-      @parser.admin_contacts[0].country.should       == "UNITED STATES"
-      @parser.admin_contacts[0].country_code.should  == nil
-      @parser.admin_contacts[0].phone.should         == "(217) 244-2032"
-      @parser.admin_contacts[0].fax.should           == nil
-      @parser.admin_contacts[0].email.should         == "edu-admin@listserv.illinois.edu"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].id.should            == nil
+      subject.admin_contacts[0].name.should          == "Tracy L. Smith\nUniversity of Illinois at Urbana-Champaign\nCITES  2105 Digital Computer Laboratory"
+      subject.admin_contacts[0].organization.should  == nil
+      subject.admin_contacts[0].address.should       == "1304 West Springfield Avenue"
+      subject.admin_contacts[0].city.should          == "Urbana"
+      subject.admin_contacts[0].zip.should           == "61801-4399"
+      subject.admin_contacts[0].state.should         == "IL"
+      subject.admin_contacts[0].country.should       == "UNITED STATES"
+      subject.admin_contacts[0].country_code.should  == nil
+      subject.admin_contacts[0].phone.should         == "(217) 244-2032"
+      subject.admin_contacts[0].fax.should           == nil
+      subject.admin_contacts[0].email.should         == "edu-admin@listserv.illinois.edu"
     end
   end
 end

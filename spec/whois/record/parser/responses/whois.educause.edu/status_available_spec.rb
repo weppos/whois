@@ -15,94 +15,94 @@ require 'whois/record/parser/whois.educause.edu.rb'
 
 describe Whois::Record::Parser::WhoisEducauseEdu, "status_available.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.educause.edu/status_available.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      @parser.disclaimer.should == "\nThis Registry database contains ONLY .EDU domains. \nThe data in the EDUCAUSE Whois database is provided \nby EDUCAUSE for information purposes in order to \nassist in the process of obtaining information about \nor related to .edu domain registration records. \n\nThe EDUCAUSE Whois database is authoritative for the \n.EDU domain.         \n\nA Web interface for the .EDU EDUCAUSE Whois Server is \navailable at: http://whois.educause.net \n\nBy submitting a Whois query, you agree that this information \nwill not be used to allow, enable, or otherwise support \nthe transmission of unsolicited commercial advertising or \nsolicitations via e-mail.  The use of electronic processes to \nharvest information from this server is generally prohibited \nexcept as reasonably necessary to register or modify .edu \ndomain names.\n\nYou may use \"%\" as a wildcard in your search. For further \ninformation regarding the use of this WHOIS server, please \ntype: help \n"
+      subject.disclaimer.should == "\nThis Registry database contains ONLY .EDU domains. \nThe data in the EDUCAUSE Whois database is provided \nby EDUCAUSE for information purposes in order to \nassist in the process of obtaining information about \nor related to .edu domain registration records. \n\nThe EDUCAUSE Whois database is authoritative for the \n.EDU domain.         \n\nA Web interface for the .EDU EDUCAUSE Whois Server is \navailable at: http://whois.educause.net \n\nBy submitting a Whois query, you agree that this information \nwill not be used to allow, enable, or otherwise support \nthe transmission of unsolicited commercial advertising or \nsolicitations via e-mail.  The use of electronic processes to \nharvest information from this server is generally prohibited \nexcept as reasonably necessary to register or modify .edu \ndomain names.\n\nYou may use \"%\" as a wildcard in your search. For further \ninformation regarding the use of this WHOIS server, please \ntype: help \n"
     end
   end
   describe "#domain" do
     it do
-      @parser.domain.should == nil
+      subject.domain.should == nil
     end
   end
   describe "#domain_id" do
     it do
-      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_url" do
     it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_whois" do
     it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == :available
+      subject.status.should == :available
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == true
+      subject.available?.should == true
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == false
+      subject.registered?.should == false
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should == nil
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should == nil
+      subject.expires_on.should == nil
     end
   end
   describe "#registrar" do
     it do
-      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should == []
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should == []
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should == []
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

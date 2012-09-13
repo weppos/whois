@@ -15,47 +15,47 @@ require 'whois/record/parser/whois.jprs.jp.rb'
 
 describe Whois::Record::Parser::WhoisJprsJp, "status_reserved.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.jprs.jp/jp/status_reserved.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :reserved
+      subject.status.should == :reserved
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2001-02-21 00:00:00")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2001-02-21 00:00:00")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should == nil
+      subject.expires_on.should == nil
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

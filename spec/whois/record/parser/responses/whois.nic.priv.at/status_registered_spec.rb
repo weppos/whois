@@ -15,46 +15,46 @@ require 'whois/record/parser/whois.nic.priv.at.rb'
 
 describe Whois::Record::Parser::WhoisNicPrivAt, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.priv.at/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2002-10-13")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2002-10-13")
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      lambda { @parser.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

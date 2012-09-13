@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.domain-registry.nl.rb'
 
 describe Whois::Record::Parser::WhoisDomainRegistryNl, "response_unavailable.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.domain-registry.nl/response_unavailable.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#response_unavailable?" do
     it do
-      @parser.response_unavailable?.should == true
+      subject.response_unavailable?.should == true
     end
   end
 end

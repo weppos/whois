@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.nic.fr.rb'
 
 describe Whois::Record::Parser::WhoisNicFr, "response_throttled.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.fr/pm/response_throttled.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#response_throttled?" do
     it do
-      @parser.response_throttled?.should == true
+      subject.response_throttled?.should == true
     end
   end
 end

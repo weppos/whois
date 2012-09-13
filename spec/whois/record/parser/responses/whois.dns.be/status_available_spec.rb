@@ -15,46 +15,46 @@ require 'whois/record/parser/whois.dns.be.rb'
 
 describe Whois::Record::Parser::WhoisDnsBe, "status_available.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.dns.be/status_available.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :available
+      subject.status.should == :available
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == true
+      subject.available?.should == true
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == false
+      subject.registered?.should == false
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

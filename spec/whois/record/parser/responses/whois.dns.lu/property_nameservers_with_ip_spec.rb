@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.dns.lu.rb'
 
 describe Whois::Record::Parser::WhoisDnsLu, "property_nameservers_with_ip.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.dns.lu/property_nameservers_with_ip.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.arbed.lu"
-      @parser.nameservers[0].ipv4.should == "194.154.218.10"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns1.pt.lu"
-      @parser.nameservers[1].ipv4.should == nil
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns2.arbed.lu"
-      @parser.nameservers[2].ipv4.should == "194.154.218.12"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(3).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.arbed.lu"
+      subject.nameservers[0].ipv4.should == "194.154.218.10"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns1.pt.lu"
+      subject.nameservers[1].ipv4.should == nil
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns2.arbed.lu"
+      subject.nameservers[2].ipv4.should == "194.154.218.12"
     end
   end
 end

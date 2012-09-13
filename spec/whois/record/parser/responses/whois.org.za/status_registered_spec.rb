@@ -15,90 +15,90 @@ require 'whois/record/parser/whois.org.za.rb'
 
 describe Whois::Record::Parser::WhoisOrgZa, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.org.za/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      lambda { @parser.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.disclaimer }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#domain" do
     it do
-      lambda { @parser.domain }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#domain_id" do
     it do
-      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_whois" do
     it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_url" do
     it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#registrar" do
     it do
-      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#registrant_contacts" do
     it do
-      lambda { @parser.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#admin_contacts" do
     it do
-      lambda { @parser.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#technical_contacts" do
     it do
-      lambda { @parser.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      lambda { @parser.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

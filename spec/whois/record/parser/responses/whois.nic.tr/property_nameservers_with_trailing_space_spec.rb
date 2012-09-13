@@ -15,20 +15,20 @@ require 'whois/record/parser/whois.nic.tr.rb'
 
 describe Whois::Record::Parser::WhoisNicTr, "property_nameservers_with_trailing_space.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.tr/property_nameservers_with_trailing_space.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.phpsunucu.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns2.phpsunucu.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(2).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.phpsunucu.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.phpsunucu.com"
     end
   end
 end

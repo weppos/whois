@@ -15,28 +15,28 @@ require 'whois/record/parser/whois.nic.hu.rb'
 
 describe Whois::Record::Parser::WhoisNicHu, "property_contact_private_person.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.hu/schema-1.99/property_contact_private_person.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should           == nil
-      @parser.registrant_contacts[0].name.should         =~ /Buruzs/
-      @parser.registrant_contacts[0].organization.should == nil
-      @parser.registrant_contacts[0].address.should      == nil
-      @parser.registrant_contacts[0].city.should         == nil
-      @parser.registrant_contacts[0].zip.should          == nil
-      @parser.registrant_contacts[0].state.should        == nil
-      @parser.registrant_contacts[0].country_code.should == nil
-      @parser.registrant_contacts[0].phone.should        == nil
-      @parser.registrant_contacts[0].fax.should          == nil
-      @parser.registrant_contacts[0].email.should        == nil
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should           == nil
+      subject.registrant_contacts[0].name.should         =~ /Buruzs/
+      subject.registrant_contacts[0].organization.should == nil
+      subject.registrant_contacts[0].address.should      == nil
+      subject.registrant_contacts[0].city.should         == nil
+      subject.registrant_contacts[0].zip.should          == nil
+      subject.registrant_contacts[0].state.should        == nil
+      subject.registrant_contacts[0].country_code.should == nil
+      subject.registrant_contacts[0].phone.should        == nil
+      subject.registrant_contacts[0].fax.should          == nil
+      subject.registrant_contacts[0].email.should        == nil
     end
   end
 end

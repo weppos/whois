@@ -15,42 +15,42 @@ require 'whois/record/parser/whois.norid.no.rb'
 
 describe Whois::Record::Parser::WhoisNoridNo, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.norid.no/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2001-02-26")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2001-02-26")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2006-12-07")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2006-12-07")
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
 end

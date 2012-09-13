@@ -15,50 +15,50 @@ require 'whois/record/parser/whois.ripe.net.rb'
 
 describe Whois::Record::Parser::WhoisRipeNet, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.ripe.net/gm/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.commit.gm"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns1.sol.no"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(2).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.commit.gm"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns1.sol.no"
     end
   end
 end

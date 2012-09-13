@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.domainregistry.ie.rb'
 
 describe Whois::Record::Parser::WhoisDomainregistryIe, "token_application_pending.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.domainregistry.ie/token_application_pending.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
 end

@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.isoc.org.il.rb'
 
 describe Whois::Record::Parser::WhoisIsocOrgIl, "property_status_transfer_allowed.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.isoc.org.il/property_status_transfer_allowed.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
 end

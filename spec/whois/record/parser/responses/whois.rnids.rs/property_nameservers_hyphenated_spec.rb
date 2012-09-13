@@ -15,22 +15,22 @@ require 'whois/record/parser/whois.rnids.rs.rb'
 
 describe Whois::Record::Parser::WhoisRnidsRs, "property_nameservers_hyphenated.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.rnids.rs/property_nameservers_hyphenated.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "bits-hq.bitsyu.net"
-      @parser.nameservers[0].ipv4.should == "217.24.17.10"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "largo.bitsyu.net"
-      @parser.nameservers[1].ipv4.should == "217.24.17.80"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(2).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "bits-hq.bitsyu.net"
+      subject.nameservers[0].ipv4.should == "217.24.17.10"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "largo.bitsyu.net"
+      subject.nameservers[1].ipv4.should == "217.24.17.80"
     end
   end
 end

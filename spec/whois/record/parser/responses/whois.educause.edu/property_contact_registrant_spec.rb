@@ -15,30 +15,30 @@ require 'whois/record/parser/whois.educause.edu.rb'
 
 describe Whois::Record::Parser::WhoisEducauseEdu, "property_contact_registrant.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.educause.edu/property_contact_registrant.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should            == nil
-      @parser.registrant_contacts[0].name.should          == nil
-      @parser.registrant_contacts[0].organization.should  == "North Idaho College"
-      @parser.registrant_contacts[0].address.should       == "1000 W. Garden Avenue"
-      @parser.registrant_contacts[0].city.should          == "Coeur d'Alene"
-      @parser.registrant_contacts[0].zip.should           == "83814"
-      @parser.registrant_contacts[0].state.should         == "ID"
-      @parser.registrant_contacts[0].country.should       == "UNITED STATES"
-      @parser.registrant_contacts[0].country_code.should  == nil
-      @parser.registrant_contacts[0].phone.should         == nil
-      @parser.registrant_contacts[0].fax.should           == nil
-      @parser.registrant_contacts[0].email.should         == nil
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == nil
+      subject.registrant_contacts[0].name.should          == nil
+      subject.registrant_contacts[0].organization.should  == "North Idaho College"
+      subject.registrant_contacts[0].address.should       == "1000 W. Garden Avenue"
+      subject.registrant_contacts[0].city.should          == "Coeur d'Alene"
+      subject.registrant_contacts[0].zip.should           == "83814"
+      subject.registrant_contacts[0].state.should         == "ID"
+      subject.registrant_contacts[0].country.should       == "UNITED STATES"
+      subject.registrant_contacts[0].country_code.should  == nil
+      subject.registrant_contacts[0].phone.should         == nil
+      subject.registrant_contacts[0].fax.should           == nil
+      subject.registrant_contacts[0].email.should         == nil
     end
   end
 end

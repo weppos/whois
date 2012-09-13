@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.nic.af.rb'
 
 describe Whois::Record::Parser::WhoisNicAf, "property_status_delegated.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.af/property_status_delegated.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
 end

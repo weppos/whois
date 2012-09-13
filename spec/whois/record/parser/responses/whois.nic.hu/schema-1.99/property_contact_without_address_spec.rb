@@ -15,22 +15,22 @@ require 'whois/record/parser/whois.nic.hu.rb'
 
 describe Whois::Record::Parser::WhoisNicHu, "property_contact_without_address.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.hu/schema-1.99/property_contact_without_address.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].address.should      == nil
-      @parser.registrant_contacts[0].city.should         == nil
-      @parser.registrant_contacts[0].zip.should          == nil
-      @parser.registrant_contacts[0].state.should        == nil
-      @parser.registrant_contacts[0].country_code.should == nil
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].address.should      == nil
+      subject.registrant_contacts[0].city.should         == nil
+      subject.registrant_contacts[0].zip.should          == nil
+      subject.registrant_contacts[0].state.should        == nil
+      subject.registrant_contacts[0].country_code.should == nil
     end
   end
 end

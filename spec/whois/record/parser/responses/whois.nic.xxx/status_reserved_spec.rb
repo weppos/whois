@@ -15,30 +15,30 @@ require 'whois/record/parser/whois.nic.xxx.rb'
 
 describe Whois::Record::Parser::WhoisNicXxx, "status_reserved.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.xxx/status_reserved.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :reserved
+      subject.status.should == :reserved
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#reserved?" do
     it do
-      @parser.reserved?.should == true
+      subject.reserved?.should == true
     end
   end
 end

@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.nic.tr.rb'
 
 describe Whois::Record::Parser::WhoisNicTr, "property_nameservers_with_ip.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.tr/property_nameservers_with_ip.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "titan.radore.com"
-      @parser.nameservers[0].ipv4.should == nil
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "janus.radore.com"
-      @parser.nameservers[1].ipv4.should == nil
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "mimas.rh.com.tr"
-      @parser.nameservers[2].ipv4.should == "77.75.34.2"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(3).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "titan.radore.com"
+      subject.nameservers[0].ipv4.should == nil
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "janus.radore.com"
+      subject.nameservers[1].ipv4.should == nil
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "mimas.rh.com.tr"
+      subject.nameservers[2].ipv4.should == "77.75.34.2"
     end
   end
 end

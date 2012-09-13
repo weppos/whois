@@ -15,84 +15,84 @@ require 'whois/record/parser/whois.nic.hu.rb'
 
 describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.hu/schema-current/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      @parser.disclaimer.should == nil
+      subject.disclaimer.should == nil
     end
   end
   describe "#domain" do
     it do
-      @parser.domain.should == "google.hu"
+      subject.domain.should == "google.hu"
     end
   end
   describe "#domain_id" do
     it do
-      @parser.domain_id.should == nil
+      subject.domain_id.should == nil
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should == nil
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should == nil
+      subject.registrar.should == nil
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should == []
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should == []
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should == []
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

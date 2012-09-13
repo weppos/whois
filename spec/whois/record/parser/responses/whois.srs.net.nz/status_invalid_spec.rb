@@ -15,61 +15,61 @@ require 'whois/record/parser/whois.srs.net.nz.rb'
 
 describe Whois::Record::Parser::WhoisSrsNetNz, "status_invalid.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.srs.net.nz/status_invalid.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :invalid
+      subject.status.should == :invalid
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == false
+      subject.registered?.should == false
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should == nil
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should == nil
+      subject.expires_on.should == nil
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
   describe "#valid?" do
     it do
-      @parser.valid?.should == false
+      subject.valid?.should == false
     end
   end
   describe "#invalid?" do
     it do
-      @parser.invalid?.should == true
+      subject.invalid?.should == true
     end
   end
   describe "#response_throttled?" do
     it do
-      @parser.response_throttled?.should == false
+      subject.response_throttled?.should == false
     end
   end
 end

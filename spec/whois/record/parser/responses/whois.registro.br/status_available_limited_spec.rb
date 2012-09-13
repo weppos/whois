@@ -15,20 +15,20 @@ require 'whois/record/parser/whois.registro.br.rb'
 
 describe Whois::Record::Parser::WhoisRegistroBr, "status_available_limited.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.registro.br/status_available_limited.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#available?" do
     it do
-      @parser.available?.should == true
+      subject.available?.should == true
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == false
+      subject.registered?.should == false
     end
   end
 end

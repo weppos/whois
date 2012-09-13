@@ -15,19 +15,19 @@ require 'whois/record/parser/whois.nic.uk.rb'
 
 describe Whois::Record::Parser::WhoisNicUk, "property_registrar_without_trading_name.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.uk/property_registrar_without_trading_name.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == "NETNAMES"
-      @parser.registrar.name.should         == "NetNames Limited"
-      @parser.registrar.name.should         == "NetNames Limited"
-      @parser.registrar.url.should          == "http://www.netnames.co.uk"
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == "NETNAMES"
+      subject.registrar.name.should         == "NetNames Limited"
+      subject.registrar.name.should         == "NetNames Limited"
+      subject.registrar.url.should          == "http://www.netnames.co.uk"
     end
   end
 end

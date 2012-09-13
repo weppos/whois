@@ -15,29 +15,29 @@ require 'whois/record/parser/whois.educause.edu.rb'
 
 describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case2.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.educause.edu/property_contacts_case2.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].id.should            == nil
-      @parser.technical_contacts[0].name.should          == "Domain Admin\nStanford University"
-      @parser.technical_contacts[0].organization.should  == nil
-      @parser.technical_contacts[0].address.should       == "241 Panama Street Pine Hall, Room 115"
-      @parser.technical_contacts[0].city.should          == "Stanford"
-      @parser.technical_contacts[0].zip.should           == "94305-4122"
-      @parser.technical_contacts[0].state.should         == "CA"
-      @parser.technical_contacts[0].country.should       == "UNITED STATES"
-      @parser.technical_contacts[0].country_code.should  == nil
-      @parser.technical_contacts[0].phone.should         == "(650) 723-4328"
-      @parser.technical_contacts[0].fax.should           == nil
-      @parser.technical_contacts[0].email.should         == "sunet-admin@stanford.edu"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].id.should            == nil
+      subject.technical_contacts[0].name.should          == "Domain Admin\nStanford University"
+      subject.technical_contacts[0].organization.should  == nil
+      subject.technical_contacts[0].address.should       == "241 Panama Street Pine Hall, Room 115"
+      subject.technical_contacts[0].city.should          == "Stanford"
+      subject.technical_contacts[0].zip.should           == "94305-4122"
+      subject.technical_contacts[0].state.should         == "CA"
+      subject.technical_contacts[0].country.should       == "UNITED STATES"
+      subject.technical_contacts[0].country_code.should  == nil
+      subject.technical_contacts[0].phone.should         == "(650) 723-4328"
+      subject.technical_contacts[0].fax.should           == nil
+      subject.technical_contacts[0].email.should         == "sunet-admin@stanford.edu"
     end
   end
 end

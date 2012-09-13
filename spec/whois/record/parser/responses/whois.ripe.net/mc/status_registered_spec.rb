@@ -15,55 +15,55 @@ require 'whois/record/parser/whois.ripe.net.rb'
 
 describe Whois::Record::Parser::WhoisRipeNet, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.ripe.net/mc/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { @parser.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns.nic.mc"
-      @parser.nameservers[0].ipv4.should == "195.78.6.131"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "bow.rain.fr"
-      @parser.nameservers[1].ipv4.should == "194.51.3.49"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns.ripe.net"
-      @parser.nameservers[2].ipv4.should == "193.0.0.194"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(3).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns.nic.mc"
+      subject.nameservers[0].ipv4.should == "195.78.6.131"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "bow.rain.fr"
+      subject.nameservers[1].ipv4.should == "194.51.3.49"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns.ripe.net"
+      subject.nameservers[2].ipv4.should == "193.0.0.194"
     end
   end
 end

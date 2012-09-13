@@ -15,48 +15,48 @@ require 'whois/record/parser/whois.dns.pt.rb'
 
 describe Whois::Record::Parser::WhoisDnsPt, "status_inactive.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.dns.pt/status_inactive.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :inactive
+      subject.status.should == :inactive
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2009-02-09 00:00:00 UTC")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2009-02-09 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2014-03-01 00:00:00 UTC")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2014-03-01 00:00:00 UTC")
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(0).items
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(0).items
     end
   end
 end

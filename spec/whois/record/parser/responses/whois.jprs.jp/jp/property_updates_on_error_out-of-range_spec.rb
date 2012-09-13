@@ -15,16 +15,16 @@ require 'whois/record/parser/whois.jprs.jp.rb'
 
 describe Whois::Record::Parser::WhoisJprsJp, "property_updates_on_error_out-of-range.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.jprs.jp/jp/property_updates_on_error_out-of-range.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2010-10-18 11:30:47 JST")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2010-10-18 11:30:47 JST")
     end
   end
 end

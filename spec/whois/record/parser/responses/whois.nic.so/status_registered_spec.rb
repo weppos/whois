@@ -15,57 +15,57 @@ require 'whois/record/parser/whois.nic.so.rb'
 
 describe Whois::Record::Parser::WhoisNicSo, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.so/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == ["serverDeleteProhibited", "serverTransferProhibited"]
+      subject.status.should == ["serverDeleteProhibited", "serverTransferProhibited"]
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2011-01-24 02:22:24 UTC")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2011-01-24 02:22:24 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2011-01-25 04:20:26 UTC")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2011-01-25 04:20:26 UTC")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2014-01-24 02:22:24 UTC")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2014-01-24 02:22:24 UTC")
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns3.google.com"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns4.google.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(4).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.google.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.google.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.google.com"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns4.google.com"
     end
   end
 end

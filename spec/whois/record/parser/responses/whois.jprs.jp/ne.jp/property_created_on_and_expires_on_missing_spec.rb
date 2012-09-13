@@ -15,20 +15,20 @@ require 'whois/record/parser/whois.jprs.jp.rb'
 
 describe Whois::Record::Parser::WhoisJprsJp, "property_created_on_and_expires_on_missing.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.jprs.jp/ne.jp/property_created_on_and_expires_on_missing.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should == nil
+      subject.expires_on.should == nil
     end
   end
 end

@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.nic.asia.rb'
 
 describe Whois::Record::Parser::WhoisNicAsia, "property_status_multiple.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.asia/property_status_multiple.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED"]
+      subject.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED"]
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
 end

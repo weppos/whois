@@ -15,59 +15,59 @@ require 'whois/record/parser/whois.nic.tel.rb'
 
 describe Whois::Record::Parser::WhoisNicTel, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.tel/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2009-04-19 12:36:25 UTC")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2009-04-19 12:36:25 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2009-04-20 12:39:49 UTC")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2009-04-20 12:39:49 UTC")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-04-18 23:59:59 UTC")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2010-04-18 23:59:59 UTC")
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(5).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "a0.cth.dns.nic.tel"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "d0.cth.dns.nic.tel"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "n0.cth.dns.nic.tel"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "s0.cth.dns.nic.tel"
-      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[4].name.should == "t0.cth.dns.nic.tel"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(5).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "a0.cth.dns.nic.tel"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "d0.cth.dns.nic.tel"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "n0.cth.dns.nic.tel"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "s0.cth.dns.nic.tel"
+      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[4].name.should == "t0.cth.dns.nic.tel"
     end
   end
 end

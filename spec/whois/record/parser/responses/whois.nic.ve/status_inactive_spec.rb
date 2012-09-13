@@ -15,53 +15,53 @@ require 'whois/record/parser/whois.nic.ve.rb'
 
 describe Whois::Record::Parser::WhoisNicVe, "status_inactive.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.ve/status_inactive.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :inactive
+      subject.status.should == :inactive
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2005-11-21 15:21:32")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2005-11-21 15:21:32")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2006-06-08 21:54:41")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2006-06-08 21:54:41")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2010-11-21 15:21:32")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2010-11-21 15:21:32")
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns10.tepuyserver.net"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns9.tepuyserver.net"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(2).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns10.tepuyserver.net"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns9.tepuyserver.net"
     end
   end
 end

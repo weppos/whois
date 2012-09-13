@@ -15,28 +15,28 @@ require 'whois/record/parser/whois.tucows.com.rb'
 
 describe Whois::Record::Parser::WhoisTucowsCom, "property_contacts_2.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.tucows.com/property_contacts_2.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should         == "Administrator, Domain"
-      @parser.admin_contacts[0].organization.should == nil
-      @parser.admin_contacts[0].address.should      == "95 Hayden Avenue"
-      @parser.admin_contacts[0].city.should         == "Lexington"
-      @parser.admin_contacts[0].zip.should          == "02421"
-      @parser.admin_contacts[0].state.should        == "MA"
-      @parser.admin_contacts[0].country_code.should == "US"
-      @parser.admin_contacts[0].phone.should        == "+1.7816526199"
-      @parser.admin_contacts[0].fax.should          == "+1.7816526096"
-      @parser.admin_contacts[0].email.should        == "csadmin@vistaprint.com"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].name.should         == "Administrator, Domain"
+      subject.admin_contacts[0].organization.should == nil
+      subject.admin_contacts[0].address.should      == "95 Hayden Avenue"
+      subject.admin_contacts[0].city.should         == "Lexington"
+      subject.admin_contacts[0].zip.should          == "02421"
+      subject.admin_contacts[0].state.should        == "MA"
+      subject.admin_contacts[0].country_code.should == "US"
+      subject.admin_contacts[0].phone.should        == "+1.7816526199"
+      subject.admin_contacts[0].fax.should          == "+1.7816526096"
+      subject.admin_contacts[0].email.should        == "csadmin@vistaprint.com"
     end
   end
 end

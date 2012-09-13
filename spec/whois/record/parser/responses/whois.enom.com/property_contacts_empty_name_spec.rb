@@ -15,28 +15,28 @@ require 'whois/record/parser/whois.enom.com.rb'
 
 describe Whois::Record::Parser::WhoisEnomCom, "property_contacts_empty_name.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.enom.com/property_contacts_empty_name.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == ""
-      @parser.registrant_contacts[0].organization.should == "Ben Cohen"
-      @parser.registrant_contacts[0].address.should      == "9 Carolyn Ct."
-      @parser.registrant_contacts[0].city.should         == "Owings Mills"
-      @parser.registrant_contacts[0].zip.should          == "21117"
-      @parser.registrant_contacts[0].state.should        == "MD"
-      @parser.registrant_contacts[0].country_code.should == "US"
-      @parser.registrant_contacts[0].phone.should        == ""
-      @parser.registrant_contacts[0].fax.should          == ""
-      @parser.registrant_contacts[0].email.should        == ""
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].name.should         == ""
+      subject.registrant_contacts[0].organization.should == "Ben Cohen"
+      subject.registrant_contacts[0].address.should      == "9 Carolyn Ct."
+      subject.registrant_contacts[0].city.should         == "Owings Mills"
+      subject.registrant_contacts[0].zip.should          == "21117"
+      subject.registrant_contacts[0].state.should        == "MD"
+      subject.registrant_contacts[0].country_code.should == "US"
+      subject.registrant_contacts[0].phone.should        == ""
+      subject.registrant_contacts[0].fax.should          == ""
+      subject.registrant_contacts[0].email.should        == ""
     end
   end
 end

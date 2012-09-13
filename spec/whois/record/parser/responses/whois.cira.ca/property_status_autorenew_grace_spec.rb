@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.cira.ca.rb'
 
 describe Whois::Record::Parser::WhoisCiraCa, "property_status_autorenew_grace.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.cira.ca/property_status_autorenew_grace.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
 end

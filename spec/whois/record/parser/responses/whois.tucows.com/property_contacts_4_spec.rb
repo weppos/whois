@@ -15,46 +15,46 @@ require 'whois/record/parser/whois.tucows.com.rb'
 
 describe Whois::Record::Parser::WhoisTucowsCom, "property_contacts_4.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.tucows.com/property_contacts_4.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should         == "Thomas, Jennifer"
-      @parser.admin_contacts[0].organization.should == nil
-      @parser.admin_contacts[0].address.should      == "594 E. Millsap"
-      @parser.admin_contacts[0].city.should         == "Fayetteville"
-      @parser.admin_contacts[0].zip.should          == "72703"
-      @parser.admin_contacts[0].state.should        == "AR"
-      @parser.admin_contacts[0].country_code.should == "US"
-      @parser.admin_contacts[0].phone.should        == "479-442-2020"
-      @parser.admin_contacts[0].fax.should          == nil
-      @parser.admin_contacts[0].email.should        == "jthomas@see2020now.net"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].name.should         == "Thomas, Jennifer"
+      subject.admin_contacts[0].organization.should == nil
+      subject.admin_contacts[0].address.should      == "594 E. Millsap"
+      subject.admin_contacts[0].city.should         == "Fayetteville"
+      subject.admin_contacts[0].zip.should          == "72703"
+      subject.admin_contacts[0].state.should        == "AR"
+      subject.admin_contacts[0].country_code.should == "US"
+      subject.admin_contacts[0].phone.should        == "479-442-2020"
+      subject.admin_contacts[0].fax.should          == nil
+      subject.admin_contacts[0].email.should        == "jthomas@see2020now.net"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "Hostmaster, Contact"
-      @parser.technical_contacts[0].organization.should == nil
-      @parser.technical_contacts[0].address.should      == "101 W. Mountain St.\nSuite 101"
-      @parser.technical_contacts[0].city.should         == "Fayetteville"
-      @parser.technical_contacts[0].zip.should          == "72701"
-      @parser.technical_contacts[0].state.should        == "AR"
-      @parser.technical_contacts[0].country_code.should == "US"
-      @parser.technical_contacts[0].phone.should        == "479-521-3100"
-      @parser.technical_contacts[0].fax.should          == "479-521-3188"
-      @parser.technical_contacts[0].email.should        == "hostmaster@gcmcomputers.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "Hostmaster, Contact"
+      subject.technical_contacts[0].organization.should == nil
+      subject.technical_contacts[0].address.should      == "101 W. Mountain St.\nSuite 101"
+      subject.technical_contacts[0].city.should         == "Fayetteville"
+      subject.technical_contacts[0].zip.should          == "72701"
+      subject.technical_contacts[0].state.should        == "AR"
+      subject.technical_contacts[0].country_code.should == "US"
+      subject.technical_contacts[0].phone.should        == "479-521-3100"
+      subject.technical_contacts[0].fax.should          == "479-521-3188"
+      subject.technical_contacts[0].email.should        == "hostmaster@gcmcomputers.com"
     end
   end
 end

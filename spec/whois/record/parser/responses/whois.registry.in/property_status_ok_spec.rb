@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.registry.in.rb'
 
 describe Whois::Record::Parser::WhoisRegistryIn, "property_status_ok.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.registry.in/property_status_ok.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == ["OK"]
+      subject.status.should == ["OK"]
     end
   end
 end

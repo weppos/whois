@@ -15,36 +15,36 @@ require 'whois/record/parser/whois.markmonitor.com.rb'
 
 describe Whois::Record::Parser::WhoisMarkmonitorCom, "property_contacts_are_blank.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.markmonitor.com/property_contacts_are_blank.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == nil
-      @parser.registrar.name.should         == "Markmonitor.com"
-      @parser.registrar.url.should          == "http://www.markmonitor.com"
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "Markmonitor.com"
+      subject.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(0).items
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(0).items
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(0).items
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(0).items
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(0).items
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(0).items
     end
   end
 end

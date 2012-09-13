@@ -27,10 +27,10 @@ require 'whois/record/parser/%{khost}.rb'
 
 describe %{klass}, "%{descr}" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "%{fixture}")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
 %{contexts}
@@ -46,11 +46,11 @@ end
   RUBY
 
   TPL_MATCH = <<-RUBY.chomp!
-      @parser.%{subject}.%{should} %{match}
+      subject.%{attribute}.%{should} %{match}
   RUBY
 
   TPL_MATCH_RAISE = <<-RUBY.chomp!
-      lambda { @parser.%{subject} }.%{should} %{match}
+      lambda { subject.%{attribute} }.%{should} %{match}
   RUBY
 
   def relativize(path)
@@ -107,11 +107,11 @@ end
       # write one file for every test.
       contexts = tests.map do |attr, specs|
         matches = specs.map do |method, should, condition|
-          subject = method % attr
+          attribute = method % attr
           if condition.index("raise_")
-            TPL_MATCH_RAISE % { :subject => subject, :should => should, :match => condition }
+            TPL_MATCH_RAISE % { :attribute => attribute, :should => should, :match => condition }
           else
-            TPL_MATCH % { :subject => subject, :should => should, :match => condition }
+            TPL_MATCH % { :attribute => attribute, :should => should, :match => condition }
           end
         end.join("\n")
         TPL_CONTEXT % { :descr => attr, :examples => matches }
@@ -162,10 +162,10 @@ end
 
   def _build_condition_typeof(klass)
     case klass
-    when "array" then "Array"
-    when "time" then "Time"
-    when "contact" then "Whois::Record::Contact"
-    when "registrar" then "Whois::Record::Registrar"
+    when "array"      then "Array"
+    when "time"       then "Time"
+    when "contact"    then "Whois::Record::Contact"
+    when "registrar"  then "Whois::Record::Registrar"
     when "nameserver" then "Whois::Record::Nameserver"
     else
       raise "Unknown class `#{klass}'"
@@ -174,7 +174,7 @@ end
 
   def _build_condition_typecast(klass, value)
     case klass
-    when "time"     then %Q{Time.parse("#{value}")}
+    when "time"       then %Q{Time.parse("#{value}")}
     else
       raise "Unknown class `#{klass}'"
     end

@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.nic.la.rb'
 
 describe Whois::Record::Parser::WhoisCentralnicCom, "property_status_multiple.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.la/property_status_multiple.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
+      subject.status.should == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
     end
   end
 end

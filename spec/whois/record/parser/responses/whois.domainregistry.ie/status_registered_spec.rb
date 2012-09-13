@@ -15,113 +15,113 @@ require 'whois/record/parser/whois.domainregistry.ie.rb'
 
 describe Whois::Record::Parser::WhoisDomainregistryIe, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.domainregistry.ie/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      @parser.disclaimer.should == "Rights restricted by copyright; http://iedr.ie/index.php/mnudomregs/mnudnssearch/96\nDo not remove this notice"
+      subject.disclaimer.should == "Rights restricted by copyright; http://iedr.ie/index.php/mnudomregs/mnudnssearch/96\nDo not remove this notice"
     end
   end
   describe "#domain" do
     it do
-      @parser.domain.should == "google.ie"
+      subject.domain.should == "google.ie"
     end
   end
   describe "#domain_id" do
     it do
-      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_whois" do
     it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_url" do
     it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      lambda { @parser.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2013-03-21")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2013-03-21")
     end
   end
   describe "#registrar" do
     it do
-      lambda { @parser.registrar }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should            == nil
-      @parser.registrant_contacts[0].name.should          == "Google, Inc"
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == nil
+      subject.registrant_contacts[0].name.should          == "Google, Inc"
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should            == "KR59-IEDR"
-      @parser.admin_contacts[0].name.should          == "Kulpreet Rana"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].id.should            == "KR59-IEDR"
+      subject.admin_contacts[0].name.should          == "Kulpreet Rana"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should            == "CCA7-IEDR"
-      @parser.technical_contacts[0].name.should          == "eMarkmonitor Inc"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == "CCA7-IEDR"
+      subject.technical_contacts[0].name.should          == "eMarkmonitor Inc"
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.google.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns2.google.com"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns3.google.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(3).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.google.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.google.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.google.com"
     end
   end
 end

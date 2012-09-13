@@ -15,28 +15,28 @@ require 'whois/record/parser/whois.domreg.lt.rb'
 
 describe Whois::Record::Parser::WhoisDomregLt, "property_nameservers_with_ip.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.domreg.lt/property_nameservers_with_ip.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(4).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.serveriai.lt"
-      @parser.nameservers[0].ipv4.should == "79.98.25.142"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns2.serveriai.lt"
-      @parser.nameservers[1].ipv4.should == "174.36.250.192"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns3.serveriai.lt"
-      @parser.nameservers[2].ipv4.should == "79.98.29.142"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns4.serveriai.lt"
-      @parser.nameservers[3].ipv4.should == "67.228.39.192"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(4).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.serveriai.lt"
+      subject.nameservers[0].ipv4.should == "79.98.25.142"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.serveriai.lt"
+      subject.nameservers[1].ipv4.should == "174.36.250.192"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.serveriai.lt"
+      subject.nameservers[2].ipv4.should == "79.98.29.142"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns4.serveriai.lt"
+      subject.nameservers[3].ipv4.should == "67.228.39.192"
     end
   end
 end

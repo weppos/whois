@@ -15,117 +15,117 @@ require 'whois/record/parser/whois.dreamhost.com.rb'
 
 describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.dreamhost.com/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      lambda { @parser.status }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.status }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("1997-09-22 21:00:00")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("1997-09-22 21:00:00")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2013-09-21 21:00:00")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2013-09-21 21:00:00")
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == nil
-      @parser.registrar.name.should         == "DreamHost"
-      @parser.registrar.organization.should == "New Dream Network, LLC."
-      @parser.registrar.url.should          == "http://www.dreamhost.com/"
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "DreamHost"
+      subject.registrar.organization.should == "New Dream Network, LLC."
+      subject.registrar.url.should          == "http://www.dreamhost.com/"
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should          == "DreamHost Web Hosting"
-      @parser.registrant_contacts[0].organization.should  == "New Dream Network, LLC."
-      @parser.registrant_contacts[0].address.should       == "PMB #257\n417 Associated Rd."
-      @parser.registrant_contacts[0].city.should          == "Brea"
-      @parser.registrant_contacts[0].zip.should           == "92821"
-      @parser.registrant_contacts[0].state.should         == "CA"
-      @parser.registrant_contacts[0].country_code.should  == "US"
-      @parser.registrant_contacts[0].phone.should         == "+1.7147064182"
-      @parser.registrant_contacts[0].fax.should           == nil
-      @parser.registrant_contacts[0].email.should         == "internic@dreamhost.com"
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].name.should          == "DreamHost Web Hosting"
+      subject.registrant_contacts[0].organization.should  == "New Dream Network, LLC."
+      subject.registrant_contacts[0].address.should       == "PMB #257\n417 Associated Rd."
+      subject.registrant_contacts[0].city.should          == "Brea"
+      subject.registrant_contacts[0].zip.should           == "92821"
+      subject.registrant_contacts[0].state.should         == "CA"
+      subject.registrant_contacts[0].country_code.should  == "US"
+      subject.registrant_contacts[0].phone.should         == "+1.7147064182"
+      subject.registrant_contacts[0].fax.should           == nil
+      subject.registrant_contacts[0].email.should         == "internic@dreamhost.com"
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should          == "DreamHost Web Hosting"
-      @parser.admin_contacts[0].organization.should  == "New Dream Network, LLC."
-      @parser.admin_contacts[0].address.should       == "PMB #257\n417 Associated Rd."
-      @parser.admin_contacts[0].city.should          == "Brea"
-      @parser.admin_contacts[0].zip.should           == "92821"
-      @parser.admin_contacts[0].state.should         == "CA"
-      @parser.admin_contacts[0].country_code.should  == "US"
-      @parser.admin_contacts[0].phone.should         == "+1.7147064182"
-      @parser.admin_contacts[0].fax.should           == nil
-      @parser.admin_contacts[0].email.should         == "internic@dreamhost.com"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].name.should          == "DreamHost Web Hosting"
+      subject.admin_contacts[0].organization.should  == "New Dream Network, LLC."
+      subject.admin_contacts[0].address.should       == "PMB #257\n417 Associated Rd."
+      subject.admin_contacts[0].city.should          == "Brea"
+      subject.admin_contacts[0].zip.should           == "92821"
+      subject.admin_contacts[0].state.should         == "CA"
+      subject.admin_contacts[0].country_code.should  == "US"
+      subject.admin_contacts[0].phone.should         == "+1.7147064182"
+      subject.admin_contacts[0].fax.should           == nil
+      subject.admin_contacts[0].email.should         == "internic@dreamhost.com"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should          == "DreamHost Web Hosting"
-      @parser.technical_contacts[0].organization.should  == "New Dream Network, LLC."
-      @parser.technical_contacts[0].address.should       == "PMB #257\n417 Associated Rd."
-      @parser.technical_contacts[0].city.should          == "Brea"
-      @parser.technical_contacts[0].zip.should           == "92821"
-      @parser.technical_contacts[0].state.should         == "CA"
-      @parser.technical_contacts[0].country_code.should  == "US"
-      @parser.technical_contacts[0].phone.should         == "+1.7147064182"
-      @parser.technical_contacts[0].fax.should           == nil
-      @parser.technical_contacts[0].email.should         == "internic@dreamhost.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should          == "DreamHost Web Hosting"
+      subject.technical_contacts[0].organization.should  == "New Dream Network, LLC."
+      subject.technical_contacts[0].address.should       == "PMB #257\n417 Associated Rd."
+      subject.technical_contacts[0].city.should          == "Brea"
+      subject.technical_contacts[0].zip.should           == "92821"
+      subject.technical_contacts[0].state.should         == "CA"
+      subject.technical_contacts[0].country_code.should  == "US"
+      subject.technical_contacts[0].phone.should         == "+1.7147064182"
+      subject.technical_contacts[0].fax.should           == nil
+      subject.technical_contacts[0].email.should         == "internic@dreamhost.com"
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns1.dreamhost.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns2.dreamhost.com"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns3.dreamhost.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(3).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.dreamhost.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.dreamhost.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.dreamhost.com"
     end
   end
 end

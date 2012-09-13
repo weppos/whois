@@ -15,122 +15,122 @@ require 'whois/record/parser/whois.register.com.rb'
 
 describe Whois::Record::Parser::WhoisRegisterCom, "property_contacts_register.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.register.com/property_contacts_register.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      lambda { @parser.status }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.status }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("1994-11-01")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("1994-11-01")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { @parser.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2019-08-04")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2019-08-04")
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == nil
-      @parser.registrar.name.should         == "Register.com"
-      @parser.registrar.url.should          == "http://www.register.com/"
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "Register.com"
+      subject.registrar.url.should          == "http://www.register.com/"
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == "Domain Registrar"
-      @parser.registrant_contacts[0].organization.should == "Register.Com, Inc."
-      @parser.registrant_contacts[0].address.should      == "575 8th Avenue"
-      @parser.registrant_contacts[0].city.should         == "New York"
-      @parser.registrant_contacts[0].zip.should          == "10018"
-      @parser.registrant_contacts[0].state.should        == "NY"
-      @parser.registrant_contacts[0].country_code.should == "US"
-      @parser.registrant_contacts[0].phone.should        == "+1.9027492701"
-      @parser.registrant_contacts[0].fax.should          == nil
-      @parser.registrant_contacts[0].email.should        == "domainregistrar@register.com"
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].name.should         == "Domain Registrar"
+      subject.registrant_contacts[0].organization.should == "Register.Com, Inc."
+      subject.registrant_contacts[0].address.should      == "575 8th Avenue"
+      subject.registrant_contacts[0].city.should         == "New York"
+      subject.registrant_contacts[0].zip.should          == "10018"
+      subject.registrant_contacts[0].state.should        == "NY"
+      subject.registrant_contacts[0].country_code.should == "US"
+      subject.registrant_contacts[0].phone.should        == "+1.9027492701"
+      subject.registrant_contacts[0].fax.should          == nil
+      subject.registrant_contacts[0].email.should        == "domainregistrar@register.com"
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should         == "Domain Registrar"
-      @parser.admin_contacts[0].organization.should == "Register.Com, Inc."
-      @parser.admin_contacts[0].address.should      == "575 8th Avenue"
-      @parser.admin_contacts[0].city.should         == "New York"
-      @parser.admin_contacts[0].zip.should          == "10018"
-      @parser.admin_contacts[0].state.should        == "NY"
-      @parser.admin_contacts[0].country_code.should == "US"
-      @parser.admin_contacts[0].phone.should        == "+1.9027492701"
-      @parser.admin_contacts[0].fax.should          == nil
-      @parser.admin_contacts[0].email.should        == "domainregistrar@register.com"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].name.should         == "Domain Registrar"
+      subject.admin_contacts[0].organization.should == "Register.Com, Inc."
+      subject.admin_contacts[0].address.should      == "575 8th Avenue"
+      subject.admin_contacts[0].city.should         == "New York"
+      subject.admin_contacts[0].zip.should          == "10018"
+      subject.admin_contacts[0].state.should        == "NY"
+      subject.admin_contacts[0].country_code.should == "US"
+      subject.admin_contacts[0].phone.should        == "+1.9027492701"
+      subject.admin_contacts[0].fax.should          == nil
+      subject.admin_contacts[0].email.should        == "domainregistrar@register.com"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "Domain Registrar"
-      @parser.technical_contacts[0].organization.should == "Register.Com, Inc."
-      @parser.technical_contacts[0].address.should      == "575 8th Avenue"
-      @parser.technical_contacts[0].city.should         == "New York"
-      @parser.technical_contacts[0].zip.should          == "10018"
-      @parser.technical_contacts[0].state.should        == "NY"
-      @parser.technical_contacts[0].country_code.should == "US"
-      @parser.technical_contacts[0].phone.should        == "+1.9027492701"
-      @parser.technical_contacts[0].fax.should          == nil
-      @parser.technical_contacts[0].email.should        == "domainregistrar@register.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "Domain Registrar"
+      subject.technical_contacts[0].organization.should == "Register.Com, Inc."
+      subject.technical_contacts[0].address.should      == "575 8th Avenue"
+      subject.technical_contacts[0].city.should         == "New York"
+      subject.technical_contacts[0].zip.should          == "10018"
+      subject.technical_contacts[0].state.should        == "NY"
+      subject.technical_contacts[0].country_code.should == "US"
+      subject.technical_contacts[0].phone.should        == "+1.9027492701"
+      subject.technical_contacts[0].fax.should          == nil
+      subject.technical_contacts[0].email.should        == "domainregistrar@register.com"
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(6).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns2.register.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns3.register.com"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns4.register.com"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns5.register.com"
-      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[4].name.should == "ns6.register.com"
-      @parser.nameservers[5].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[5].name.should == "ns1.register.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(6).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns2.register.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns3.register.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns4.register.com"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns5.register.com"
+      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[4].name.should == "ns6.register.com"
+      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[5].name.should == "ns1.register.com"
     end
   end
 end

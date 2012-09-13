@@ -15,28 +15,28 @@ require 'whois/record/parser/whois.enom.com.rb'
 
 describe Whois::Record::Parser::WhoisEnomCom, "property_contacts_long_address.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.enom.com/property_contacts_long_address.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "Matt Barrie"
-      @parser.technical_contacts[0].organization.should == "Freelancer Technology Pty Limited"
-      @parser.technical_contacts[0].address.should      == "Suite 501\n35 Lime Street"
-      @parser.technical_contacts[0].city.should         == "Sydney"
-      @parser.technical_contacts[0].zip.should          == "2000"
-      @parser.technical_contacts[0].state.should        == "NSW"
-      @parser.technical_contacts[0].country_code.should == "AU"
-      @parser.technical_contacts[0].phone.should        == "+61.292793305"
-      @parser.technical_contacts[0].fax.should          == "+61.292793305"
-      @parser.technical_contacts[0].email.should        == "noc@freelancer.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "Matt Barrie"
+      subject.technical_contacts[0].organization.should == "Freelancer Technology Pty Limited"
+      subject.technical_contacts[0].address.should      == "Suite 501\n35 Lime Street"
+      subject.technical_contacts[0].city.should         == "Sydney"
+      subject.technical_contacts[0].zip.should          == "2000"
+      subject.technical_contacts[0].state.should        == "NSW"
+      subject.technical_contacts[0].country_code.should == "AU"
+      subject.technical_contacts[0].phone.should        == "+61.292793305"
+      subject.technical_contacts[0].fax.should          == "+61.292793305"
+      subject.technical_contacts[0].email.should        == "noc@freelancer.com"
     end
   end
 end

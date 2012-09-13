@@ -15,63 +15,63 @@ require 'whois/record/parser/whois.networksolutions.com.rb'
 
 describe Whois::Record::Parser::WhoisNetworksolutionsCom, "property_contacts_short.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.networksolutions.com/property_contacts_short.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].organization.should == "mpowers LLC"
-      @parser.registrant_contacts[0].address.should      == "21010 Southbank St #575"
-      @parser.registrant_contacts[0].city.should         == "Potomac Falls"
-      @parser.registrant_contacts[0].zip.should          == "20165"
-      @parser.registrant_contacts[0].state.should        == "VA"
-      @parser.registrant_contacts[0].country_code.should == "US"
-      @parser.registrant_contacts[0].phone.should        == nil
-      @parser.registrant_contacts[0].fax.should          == nil
-      @parser.registrant_contacts[0].email.should        == nil
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].organization.should == "mpowers LLC"
+      subject.registrant_contacts[0].address.should      == "21010 Southbank St #575"
+      subject.registrant_contacts[0].city.should         == "Potomac Falls"
+      subject.registrant_contacts[0].zip.should          == "20165"
+      subject.registrant_contacts[0].state.should        == "VA"
+      subject.registrant_contacts[0].country_code.should == "US"
+      subject.registrant_contacts[0].phone.should        == nil
+      subject.registrant_contacts[0].fax.should          == nil
+      subject.registrant_contacts[0].email.should        == nil
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].name.should         == "mpowers LLC"
-      @parser.admin_contacts[0].organization.should == nil
-      @parser.admin_contacts[0].address.should      == "21010 Southbank St #575"
-      @parser.admin_contacts[0].city.should         == "Potomac Falls"
-      @parser.admin_contacts[0].zip.should          == "20165"
-      @parser.admin_contacts[0].state.should        == "VA"
-      @parser.admin_contacts[0].country_code.should == "US"
-      @parser.admin_contacts[0].phone.should        == "+1.5712832829"
-      @parser.admin_contacts[0].fax.should          == nil
-      @parser.admin_contacts[0].email.should        == "michael@mpowers.net"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].name.should         == "mpowers LLC"
+      subject.admin_contacts[0].organization.should == nil
+      subject.admin_contacts[0].address.should      == "21010 Southbank St #575"
+      subject.admin_contacts[0].city.should         == "Potomac Falls"
+      subject.admin_contacts[0].zip.should          == "20165"
+      subject.admin_contacts[0].state.should        == "VA"
+      subject.admin_contacts[0].country_code.should == "US"
+      subject.admin_contacts[0].phone.should        == "+1.5712832829"
+      subject.admin_contacts[0].fax.should          == nil
+      subject.admin_contacts[0].email.should        == "michael@mpowers.net"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "mpowers LLC"
-      @parser.technical_contacts[0].organization.should == nil
-      @parser.technical_contacts[0].address.should      == "21010 Southbank St #575"
-      @parser.technical_contacts[0].city.should         == "Potomac Falls"
-      @parser.technical_contacts[0].zip.should          == "20165"
-      @parser.technical_contacts[0].state.should        == "VA"
-      @parser.technical_contacts[0].country_code.should == "US"
-      @parser.technical_contacts[0].phone.should        == "+1.5712832829"
-      @parser.technical_contacts[0].fax.should          == nil
-      @parser.technical_contacts[0].email.should        == "michael@mpowers.net"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "mpowers LLC"
+      subject.technical_contacts[0].organization.should == nil
+      subject.technical_contacts[0].address.should      == "21010 Southbank St #575"
+      subject.technical_contacts[0].city.should         == "Potomac Falls"
+      subject.technical_contacts[0].zip.should          == "20165"
+      subject.technical_contacts[0].state.should        == "VA"
+      subject.technical_contacts[0].country_code.should == "US"
+      subject.technical_contacts[0].phone.should        == "+1.5712832829"
+      subject.technical_contacts[0].fax.should          == nil
+      subject.technical_contacts[0].email.should        == "michael@mpowers.net"
     end
   end
 end

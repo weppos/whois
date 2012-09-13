@@ -15,46 +15,46 @@ require 'whois/record/parser/whois.enom.com.rb'
 
 describe Whois::Record::Parser::WhoisEnomCom, "property_contacts_almost_empty.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.enom.com/property_contacts_almost_empty.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].name.should         == "Tony Kerr"
-      @parser.registrant_contacts[0].organization.should == ""
-      @parser.registrant_contacts[0].address.should      == ""
-      @parser.registrant_contacts[0].city.should         == ""
-      @parser.registrant_contacts[0].zip.should          == ""
-      @parser.registrant_contacts[0].state.should        == ""
-      @parser.registrant_contacts[0].country_code.should == "US"
-      @parser.registrant_contacts[0].phone.should        == ""
-      @parser.registrant_contacts[0].fax.should          == ""
-      @parser.registrant_contacts[0].email.should        == ""
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].name.should         == "Tony Kerr"
+      subject.registrant_contacts[0].organization.should == ""
+      subject.registrant_contacts[0].address.should      == ""
+      subject.registrant_contacts[0].city.should         == ""
+      subject.registrant_contacts[0].zip.should          == ""
+      subject.registrant_contacts[0].state.should        == ""
+      subject.registrant_contacts[0].country_code.should == "US"
+      subject.registrant_contacts[0].phone.should        == ""
+      subject.registrant_contacts[0].fax.should          == ""
+      subject.registrant_contacts[0].email.should        == ""
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == "Tony Kerr"
-      @parser.technical_contacts[0].organization.should == ""
-      @parser.technical_contacts[0].address.should      == ""
-      @parser.technical_contacts[0].city.should         == ""
-      @parser.technical_contacts[0].zip.should          == ""
-      @parser.technical_contacts[0].state.should        == ""
-      @parser.technical_contacts[0].country_code.should == "US"
-      @parser.technical_contacts[0].phone.should        == "+1."
-      @parser.technical_contacts[0].fax.should          == ""
-      @parser.technical_contacts[0].email.should        == "tkerr@sportimeny.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "Tony Kerr"
+      subject.technical_contacts[0].organization.should == ""
+      subject.technical_contacts[0].address.should      == ""
+      subject.technical_contacts[0].city.should         == ""
+      subject.technical_contacts[0].zip.should          == ""
+      subject.technical_contacts[0].state.should        == ""
+      subject.technical_contacts[0].country_code.should == "US"
+      subject.technical_contacts[0].phone.should        == "+1."
+      subject.technical_contacts[0].fax.should          == ""
+      subject.technical_contacts[0].email.should        == "tkerr@sportimeny.com"
     end
   end
 end

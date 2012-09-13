@@ -15,20 +15,20 @@ require 'whois/record/parser/whois.nic.ve.rb'
 
 describe Whois::Record::Parser::WhoisNicVe, "property_nameservers.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.nic.ve/property_nameservers.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(2).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "avalon.ula.ve"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "azmodan.ula.ve"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(2).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "avalon.ula.ve"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "azmodan.ula.ve"
     end
   end
 end

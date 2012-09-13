@@ -15,30 +15,30 @@ require 'whois/record/parser/whois.eu.rb'
 
 describe Whois::Record::Parser::WhoisEu, "property_nameservers.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.eu/property_nameservers.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(5).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "a.nic.eu"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "l.nic.eu"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "p.nic.eu"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns1.eurid.eu"
-      @parser.nameservers[3].ipv4.should == "91.220.191.220"
-      @parser.nameservers[3].ipv6.should == nil
-      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[4].name.should == "ns2.eurid.eu"
-      @parser.nameservers[4].ipv4.should == "195.234.53.220"
-      @parser.nameservers[4].ipv6.should == nil
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(5).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "a.nic.eu"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "l.nic.eu"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "p.nic.eu"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns1.eurid.eu"
+      subject.nameservers[3].ipv4.should == "91.220.191.220"
+      subject.nameservers[3].ipv6.should == nil
+      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[4].name.should == "ns2.eurid.eu"
+      subject.nameservers[4].ipv4.should == "195.234.53.220"
+      subject.nameservers[4].ipv6.should == nil
     end
   end
 end

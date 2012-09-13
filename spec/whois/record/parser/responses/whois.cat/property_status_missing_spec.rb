@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.cat.rb'
 
 describe Whois::Record::Parser::WhoisCat, "property_status_missing.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.cat/property_status_missing.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == nil
+      subject.status.should == nil
     end
   end
 end

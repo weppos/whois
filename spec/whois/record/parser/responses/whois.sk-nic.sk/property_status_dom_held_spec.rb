@@ -15,25 +15,25 @@ require 'whois/record/parser/whois.sk-nic.sk.rb'
 
 describe Whois::Record::Parser::WhoisSkNicSk, "property_status_dom_held.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.sk-nic.sk/property_status_dom_held.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == :redemption
+      subject.status.should == :redemption
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
 end

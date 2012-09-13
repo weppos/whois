@@ -15,155 +15,155 @@ require 'whois/record/parser/whois.centralnic.com.rb'
 
 describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.centralnic.com/ar.com/status_registered.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      @parser.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+      subject.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
     end
   end
   describe "#domain" do
     it do
-      @parser.domain.should == "hotel.ar.com"
+      subject.domain.should == "hotel.ar.com"
     end
   end
   describe "#domain_id" do
     it do
-      @parser.domain_id.should == "CNIC-DO557730"
+      subject.domain_id.should == "CNIC-DO557730"
     end
   end
   describe "#referral_whois" do
     it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_url" do
     it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == ["OK"]
+      subject.status.should == ["OK"]
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == true
+      subject.registered?.should == true
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("2008-04-25 16:22:13 UTC")
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2008-04-25 16:22:13 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2011-04-26 00:15:12 UTC")
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2011-04-26 00:15:12 UTC")
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2012-04-25 23:59:59 UTC")
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2012-04-25 23:59:59 UTC")
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == "H1323241"
-      @parser.registrar.name.should         == nil
-      @parser.registrar.organization.should == "CentralNic Ltd"
-      @parser.registrar.url.should          == nil
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == "H1323241"
+      subject.registrar.name.should         == nil
+      subject.registrar.organization.should == "CentralNic Ltd"
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should have(1).items
-      @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should            == "H1323241"
-      @parser.registrant_contacts[0].name.should          == "Reserved Domains"
-      @parser.registrant_contacts[0].organization.should  == "CentralNic Ltd"
-      @parser.registrant_contacts[0].address.should       == "35-39 Moorgate"
-      @parser.registrant_contacts[0].city.should          == "London"
-      @parser.registrant_contacts[0].zip.should           == "EC2R 6AR"
-      @parser.registrant_contacts[0].state.should         == nil
-      @parser.registrant_contacts[0].country.should       == nil
-      @parser.registrant_contacts[0].country_code.should  == "GB"
-      @parser.registrant_contacts[0].phone.should         == "+44.8700170900"
-      @parser.registrant_contacts[0].fax.should           == "+44.8700170901"
-      @parser.registrant_contacts[0].email.should         == "domains@centralnic.com"
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == "H1323241"
+      subject.registrant_contacts[0].name.should          == "Reserved Domains"
+      subject.registrant_contacts[0].organization.should  == "CentralNic Ltd"
+      subject.registrant_contacts[0].address.should       == "35-39 Moorgate"
+      subject.registrant_contacts[0].city.should          == "London"
+      subject.registrant_contacts[0].zip.should           == "EC2R 6AR"
+      subject.registrant_contacts[0].state.should         == nil
+      subject.registrant_contacts[0].country.should       == nil
+      subject.registrant_contacts[0].country_code.should  == "GB"
+      subject.registrant_contacts[0].phone.should         == "+44.8700170900"
+      subject.registrant_contacts[0].fax.should           == "+44.8700170901"
+      subject.registrant_contacts[0].email.should         == "domains@centralnic.com"
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should have(1).items
-      @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should            == "H1323241"
-      @parser.admin_contacts[0].name.should          == "Reserved Domains"
-      @parser.admin_contacts[0].organization.should  == "CentralNic Ltd"
-      @parser.admin_contacts[0].address.should       == "35-39 Moorgate"
-      @parser.admin_contacts[0].city.should          == "London"
-      @parser.admin_contacts[0].zip.should           == "EC2R 6AR"
-      @parser.admin_contacts[0].state.should         == nil
-      @parser.admin_contacts[0].country.should       == nil
-      @parser.admin_contacts[0].country_code.should  == "GB"
-      @parser.admin_contacts[0].phone.should         == "+44.8700170900"
-      @parser.admin_contacts[0].fax.should           == "+44.8700170901"
-      @parser.admin_contacts[0].email.should         == "domains@centralnic.com"
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].id.should            == "H1323241"
+      subject.admin_contacts[0].name.should          == "Reserved Domains"
+      subject.admin_contacts[0].organization.should  == "CentralNic Ltd"
+      subject.admin_contacts[0].address.should       == "35-39 Moorgate"
+      subject.admin_contacts[0].city.should          == "London"
+      subject.admin_contacts[0].zip.should           == "EC2R 6AR"
+      subject.admin_contacts[0].state.should         == nil
+      subject.admin_contacts[0].country.should       == nil
+      subject.admin_contacts[0].country_code.should  == "GB"
+      subject.admin_contacts[0].phone.should         == "+44.8700170900"
+      subject.admin_contacts[0].fax.should           == "+44.8700170901"
+      subject.admin_contacts[0].email.should         == "domains@centralnic.com"
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should            == "H1323241"
-      @parser.technical_contacts[0].name.should          == "Reserved Domains"
-      @parser.technical_contacts[0].organization.should  == "CentralNic Ltd"
-      @parser.technical_contacts[0].address.should       == "35-39 Moorgate"
-      @parser.technical_contacts[0].city.should          == "London"
-      @parser.technical_contacts[0].zip.should           == "EC2R 6AR"
-      @parser.technical_contacts[0].state.should         == nil
-      @parser.technical_contacts[0].country.should       == nil
-      @parser.technical_contacts[0].country_code.should  == "GB"
-      @parser.technical_contacts[0].phone.should         == "+44.8700170900"
-      @parser.technical_contacts[0].fax.should           == "+44.8700170901"
-      @parser.technical_contacts[0].email.should         == "domains@centralnic.com"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == "H1323241"
+      subject.technical_contacts[0].name.should          == "Reserved Domains"
+      subject.technical_contacts[0].organization.should  == "CentralNic Ltd"
+      subject.technical_contacts[0].address.should       == "35-39 Moorgate"
+      subject.technical_contacts[0].city.should          == "London"
+      subject.technical_contacts[0].zip.should           == "EC2R 6AR"
+      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].country.should       == nil
+      subject.technical_contacts[0].country_code.should  == "GB"
+      subject.technical_contacts[0].phone.should         == "+44.8700170900"
+      subject.technical_contacts[0].fax.should           == "+44.8700170901"
+      subject.technical_contacts[0].email.should         == "domains@centralnic.com"
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(6).items
-      @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns0.centralnic-dns.com"
-      @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns1.centralnic-dns.com"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns2.centralnic-dns.com"
-      @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].name.should == "ns3.centralnic-dns.com"
-      @parser.nameservers[4].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[4].name.should == "ns4.centralnic-dns.com"
-      @parser.nameservers[5].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[5].name.should == "ns5.centralnic-dns.com"
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(6).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns0.centralnic-dns.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns1.centralnic-dns.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns2.centralnic-dns.com"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns3.centralnic-dns.com"
+      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[4].name.should == "ns4.centralnic-dns.com"
+      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[5].name.should == "ns5.centralnic-dns.com"
     end
   end
 end

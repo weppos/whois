@@ -15,15 +15,15 @@ require 'whois/record/parser/whois.cat.rb'
 
 describe Whois::Record::Parser::WhoisCat, "property_status_multiple.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.cat/property_status_multiple.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#status" do
     it do
-      @parser.status.should == ["clientTransferProhibited", "clientDeleteProhibited"]
+      subject.status.should == ["clientTransferProhibited", "clientDeleteProhibited"]
     end
   end
 end

@@ -15,28 +15,28 @@ require 'whois/record/parser/whois.networksolutions.com.rb'
 
 describe Whois::Record::Parser::WhoisNetworksolutionsCom, "property_contacts_blank_name.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.networksolutions.com/property_contacts_blank_name.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should have(1).items
-      @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
-      @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].name.should         == ""
-      @parser.technical_contacts[0].organization.should == "Earthlink Inc"
-      @parser.technical_contacts[0].address.should      == "1430 West Peachtree St. NW, Ste. 400"
-      @parser.technical_contacts[0].city.should         == "Atlanta"
-      @parser.technical_contacts[0].zip.should          == "30309"
-      @parser.technical_contacts[0].state.should        == "GA"
-      @parser.technical_contacts[0].country_code.should == "US"
-      @parser.technical_contacts[0].phone.should        == "888-932-1997"
-      @parser.technical_contacts[0].fax.should          == "123 123 1234"
-      @parser.technical_contacts[0].email.should        == "hostmaster@earthlink.net"
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == ""
+      subject.technical_contacts[0].organization.should == "Earthlink Inc"
+      subject.technical_contacts[0].address.should      == "1430 West Peachtree St. NW, Ste. 400"
+      subject.technical_contacts[0].city.should         == "Atlanta"
+      subject.technical_contacts[0].zip.should          == "30309"
+      subject.technical_contacts[0].state.should        == "GA"
+      subject.technical_contacts[0].country_code.should == "US"
+      subject.technical_contacts[0].phone.should        == "888-932-1997"
+      subject.technical_contacts[0].fax.should          == "123 123 1234"
+      subject.technical_contacts[0].email.should        == "hostmaster@earthlink.net"
     end
   end
 end

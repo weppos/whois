@@ -15,104 +15,104 @@ require 'whois/record/parser/whois.cira.ca.rb'
 
 describe Whois::Record::Parser::WhoisCiraCa, "status_available.expected" do
 
-  before(:each) do
+  subject do
     file = fixture("responses", "whois.cira.ca/status_available.txt")
     part = Whois::Record::Part.new(:body => File.read(file))
-    @parser = klass.new(part)
+    described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      @parser.disclaimer.should == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
+      subject.disclaimer.should == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
     end
   end
   describe "#domain" do
     it do
-      @parser.domain.should == "u34jedzcq.ca"
+      subject.domain.should == "u34jedzcq.ca"
     end
   end
   describe "#domain_id" do
     it do
-      lambda { @parser.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_whois" do
     it do
-      lambda { @parser.referral_whois }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#referral_url" do
     it do
-      lambda { @parser.referral_url }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#status" do
     it do
-      @parser.status.should == :available
+      subject.status.should == :available
     end
   end
   describe "#available?" do
     it do
-      @parser.available?.should == true
+      subject.available?.should == true
     end
   end
   describe "#registered?" do
     it do
-      @parser.registered?.should == false
+      subject.registered?.should == false
     end
   end
   describe "#created_on" do
     it do
-      @parser.created_on.should == nil
+      subject.created_on.should == nil
     end
   end
   describe "#updated_on" do
     it do
-      @parser.updated_on.should == nil
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      @parser.expires_on.should == nil
+      subject.expires_on.should == nil
     end
   end
   describe "#registrar" do
     it do
-      @parser.registrar.should == nil
+      subject.registrar.should == nil
     end
   end
   describe "#registrant_contacts" do
     it do
-      @parser.registrant_contacts.should be_a(Array)
-      @parser.registrant_contacts.should == []
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
     end
   end
   describe "#admin_contacts" do
     it do
-      @parser.admin_contacts.should be_a(Array)
-      @parser.admin_contacts.should == []
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
     end
   end
   describe "#technical_contacts" do
     it do
-      @parser.technical_contacts.should be_a(Array)
-      @parser.technical_contacts.should == []
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
     it do
-      @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should == []
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
   describe "#valid?" do
     it do
-      @parser.valid?.should == true
+      subject.valid?.should == true
     end
   end
   describe "#invalid?" do
     it do
-      @parser.invalid?.should == false
+      subject.invalid?.should == false
     end
   end
 end
