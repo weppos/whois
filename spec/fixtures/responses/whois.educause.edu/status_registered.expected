@@ -101,8 +101,11 @@
   should: %s CLASS(array)
   should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
-  should: %s[0] == _nameserver.new(:name => "ns3.educause.edu", :ipv4 => "198.59.61.50")
+  should: %s[0].name == "ns3.educause.edu"
+  should: %s[0].ipv4 == "198.59.61.50"
   should: %s[1] CLASS(nameserver)
-  should: %s[1] == _nameserver.new(:name => "ns4.educause.edu", :ipv4 => "192.52.179.69")
+  should: %s[1].name == "ns4.educause.edu"
+  should: %s[1].ipv4 == "192.52.179.69"
   should: %s[2] CLASS(nameserver)
-  should: %s[2] == _nameserver.new(:name => "ns5.educause.edu", :ipv4 => "198.59.61.50")
+  should: %s[2].name == "ns5.educause.edu"
+  should: %s[2].ipv4 == "198.59.61.50"

@@ -26,9 +26,11 @@ describe Whois::Record::Parser::WhoisNicMx, "property_nameservers_with_ip.expect
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(2).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].should == _nameserver.new(:name => "dns1.mpsnet.net.mx", :ipv4 => "200.4.48.15")
+      @parser.nameservers[0].name.should == "dns1.mpsnet.net.mx"
+      @parser.nameservers[0].ipv4.should == "200.4.48.15"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].should == _nameserver.new(:name => "dns2.mpsnet.net.mx", :ipv4 => "200.4.48.16")
+      @parser.nameservers[1].name.should == "dns2.mpsnet.net.mx"
+      @parser.nameservers[1].ipv4.should == "200.4.48.16"
     end
   end
 end

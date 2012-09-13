@@ -26,13 +26,17 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_nameservers_with_ip.expe
       @parser.nameservers.should be_a(Array)
       @parser.nameservers.should have(4).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].should == _nameserver.new(:name => "ns2.loopia.se", :ipv4 => "93.188.0.21")
+      @parser.nameservers[0].name.should == "ns2.loopia.se"
+      @parser.nameservers[0].ipv4.should == "93.188.0.21"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].should == _nameserver.new(:name => "ns4.loopia.se", :ipv4 => "93.188.0.20")
+      @parser.nameservers[1].name.should == "ns4.loopia.se"
+      @parser.nameservers[1].ipv4.should == "93.188.0.20"
       @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].should == _nameserver.new(:name => "ns3.loopia.se", :ipv4 => "93.188.0.21")
+      @parser.nameservers[2].name.should == "ns3.loopia.se"
+      @parser.nameservers[2].ipv4.should == "93.188.0.21"
       @parser.nameservers[3].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[3].should == _nameserver.new(:name => "ns1.loopia.se", :ipv4 => "93.188.0.20")
+      @parser.nameservers[3].name.should == "ns1.loopia.se"
+      @parser.nameservers[3].ipv4.should == "93.188.0.20"
     end
   end
 end

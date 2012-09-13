@@ -2,10 +2,14 @@
   should: %s CLASS(array)
   should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0] == _nameserver.new(:name => "ns2.loopia.se", :ipv4 => "93.188.0.21")
+  should: %s[0].name == "ns2.loopia.se"
+  should: %s[0].ipv4 == "93.188.0.21"
   should: %s[1] CLASS(nameserver)
-  should: %s[1] == _nameserver.new(:name => "ns4.loopia.se", :ipv4 => "93.188.0.20")
+  should: %s[1].name == "ns4.loopia.se"
+  should: %s[1].ipv4 == "93.188.0.20"
   should: %s[2] CLASS(nameserver)
-  should: %s[2] == _nameserver.new(:name => "ns3.loopia.se", :ipv4 => "93.188.0.21")
+  should: %s[2].name == "ns3.loopia.se"
+  should: %s[2].ipv4 == "93.188.0.21"
   should: %s[3] CLASS(nameserver)
-  should: %s[3] == _nameserver.new(:name => "ns1.loopia.se", :ipv4 => "93.188.0.20")
+  should: %s[3].name == "ns1.loopia.se"
+  should: %s[3].ipv4 == "93.188.0.20"

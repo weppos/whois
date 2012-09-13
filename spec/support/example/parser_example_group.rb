@@ -4,22 +4,6 @@ module ParserExampleGroup
     Whois::Record::Part.new(File.read(fixture("responses", @host.to_s, @suffix.to_s, @schema.to_s, path)), @host)
   end
 
-  def _part
-    Whois::Record::Part
-  end
-
-  def _registrar
-    Whois::Record::Registrar
-  end
-
-  def _contact
-    Whois::Record::Contact
-  end
-
-  def _nameserver
-    Whois::Record::Nameserver
-  end
-
 end
 
 RSpec::Matchers.define :cache_property do |property|
