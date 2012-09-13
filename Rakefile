@@ -94,35 +94,6 @@ RSpec::Core::RakeTask.new do |t|
 end
 
 
-namespace :multitest do
-  RUBIES = %w( ruby-1.8.7 ruby-1.9.2 jruby ree )
-
-  desc "Run tests for all rubies"
-  task :all => :ensure_rvm do
-    sh "rvm #{RUBIES.join(",")} rake test"
-  end
-
-  task :ensure_rvm do
-    File.exist?(File.expand_path("~/.rvm/scripts/rvm")) || abort("RVM is not available")
-  end
-
-  RUBIES.each do |ruby|
-    desc "Run tests against Ruby #{ruby}"
-    task ruby => "test:ensure_rvm" do
-      sh "rvm #{ruby} rake test"
-    end
-  end
-
-  task :bundleize do
-    sh "rvm #{RUBIES.join(",")} gem install bundler"
-  end
-
-  task :setup do
-    sh "rvm #{RUBIES.join(",")} exec bundle install"
-  end
-end
-
-
 require 'yard'
 require 'yard/rake/yardoc_task'
 
