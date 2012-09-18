@@ -17,7 +17,6 @@ module Whois
       # Base parser for CoCCA servers.
       #
       # @abstract
-      #
       class BaseCocca < Base
 
         property_supported :domain do

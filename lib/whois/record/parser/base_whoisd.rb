@@ -19,7 +19,7 @@ module Whois
       #
       # @abstract
       #
-      # @since  RELEASE
+      # @since  2.6.4
       class BaseWhoisd < Base
         include Scanners::Ast
 
