@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["serverTransferProhibited"]
+      subject.status.should == ["serverDeleteProhibited", "serverTransferProhibited"]
     end
   end
   describe "#available?" do
@@ -45,7 +45,7 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-07-06 18:54:16 UTC")
+      subject.updated_on.should == Time.parse("2012-08-15 20:57:42")
     end
   end
   describe "#expires_on" do
@@ -59,13 +59,13 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(4).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.p26.dynect.net"
+      subject.nameservers[0].name.should == "ns1.p34.dynect.net"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.p26.dynect.net"
+      subject.nameservers[1].name.should == "ns2.p34.dynect.net"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.p26.dynect.net"
+      subject.nameservers[2].name.should == "ns3.p34.dynect.net"
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns4.p26.dynect.net"
+      subject.nameservers[3].name.should == "ns4.p34.dynect.net"
     end
   end
 end

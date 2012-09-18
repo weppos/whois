@@ -1,5 +1,5 @@
 #status
-  should: %s == ["serverTransferProhibited"]
+  should: %s == ["serverDeleteProhibited", "serverTransferProhibited"]
 
 #available?
   should: %s == false
@@ -14,7 +14,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-07-06 18:54:16 UTC")
+  should: %s == Time.parse("2012-08-15 20:57:42")
 
 #expires_on
   should: %s CLASS(time)
@@ -24,10 +24,10 @@
   should: %s CLASS(array)
   should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.p26.dynect.net"
+  should: %s[0].name == "ns1.p34.dynect.net"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.p26.dynect.net"
+  should: %s[1].name == "ns2.p34.dynect.net"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.p26.dynect.net"
+  should: %s[2].name == "ns3.p34.dynect.net"
   should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns4.p26.dynect.net"
+  should: %s[3].name == "ns4.p34.dynect.net"
