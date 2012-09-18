@@ -18,7 +18,6 @@ module Whois
       # Base parser for Afilias servers.
       #
       # @abstract
-      #
       class BaseAfilias < Base
         include Scanners::Ast
 
@@ -113,7 +112,7 @@ module Whois
         #
         # @return [Hash]
         def parse
-          Scanners::Afilias.new(content_for_scanner).parse
+          Scanners::BaseAfilias.new(content_for_scanner).parse
         end
 
 

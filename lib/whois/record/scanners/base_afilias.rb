@@ -15,7 +15,7 @@ module Whois
     module Scanners
 
       # Scanner for the Afilias record.
-      class Afilias < Base
+      class BaseAfilias < Base
 
         self.tokenizers += [
             :skip_empty_line,
