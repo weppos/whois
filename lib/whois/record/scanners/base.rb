@@ -43,6 +43,10 @@ module Whois
           @input.skip(/^\n/)
         end
 
+        tokenizer :skip_blank_line do
+          @input.skip(/^[\s]*\n/)
+        end
+
         tokenizer :skip_newline do
           @input.skip(/\n/)
         end

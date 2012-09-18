@@ -1,5 +1,5 @@
 #status
-  should: %s == []
+  should: %s == nil
 
 #available?
   should: %s == true
