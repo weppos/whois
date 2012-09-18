@@ -14,8 +14,8 @@ module Whois
   class Record
     module Scanners
 
-      # Scanner for Whoisd-based record.
-      class Whoisd < Base
+      # Scanner for Whoisd-based records.
+      class BaseWhoisd < Base
 
         self.tokenizers += [
             :scan_available,

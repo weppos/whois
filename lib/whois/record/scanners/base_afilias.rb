@@ -14,7 +14,7 @@ module Whois
   class Record
     module Scanners
 
-      # Scanner for the Afilias record.
+      # Scanner for the Afilias-based records.
       class BaseAfilias < Base
 
         self.tokenizers += [

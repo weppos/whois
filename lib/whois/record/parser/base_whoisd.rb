@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/scanners/whoisd.rb'
+require 'whois/record/scanners/base_whoisd.rb'
 
 
 module Whois
@@ -116,7 +116,7 @@ module Whois
         #
         # @return [Hash]
         def parse
-          Scanners::Whoisd.new(content_for_scanner).parse
+          Scanners::BaseWhoisd.new(content_for_scanner).parse
         end
 
 
