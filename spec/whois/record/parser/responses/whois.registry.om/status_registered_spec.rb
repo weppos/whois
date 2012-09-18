@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == :registered
+      subject.status.should == ["ok"]
     end
   end
   describe "#available?" do
@@ -81,7 +81,7 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
       subject.registrar.name.should         == "Oman Telecommunication Company"
-      subject.registrar.organization.should == nil
+      subject.registrar.organization.should == "Oman Telecommunication Company"
       subject.registrar.url.should          == nil
     end
   end
@@ -136,15 +136,15 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
       subject.nameservers.should have(3).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
       subject.nameservers[0].name.should == "om14.omantel.net.om"
-      subject.nameservers[0].ipv4.should == nil
+      subject.nameservers[0].ipv4.should == "212.72.23.4"
       subject.nameservers[0].ipv6.should == nil
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
       subject.nameservers[1].name.should == "om16.omantel.net.om"
-      subject.nameservers[1].ipv4.should == nil
+      subject.nameservers[1].ipv4.should == "212.72.1.186"
       subject.nameservers[1].ipv6.should == nil
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
       subject.nameservers[2].name.should == "om41.omantel.net.om"
-      subject.nameservers[2].ipv4.should == nil
+      subject.nameservers[2].ipv4.should == "62.231.243.249"
       subject.nameservers[2].ipv6.should == nil
     end
   end

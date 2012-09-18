@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_available.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == :available
+      subject.status.should == []
     end
   end
   describe "#available?" do

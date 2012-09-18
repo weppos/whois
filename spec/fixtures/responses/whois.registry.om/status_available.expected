@@ -17,7 +17,7 @@
 
 
 #status
-  should: %s == :available
+  should: %s == []
 
 #available?
   should: %s == true

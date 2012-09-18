@@ -14,10 +14,7 @@ module Whois
   class Record
     module Scanners
 
-      # Scanner for the whois.registry.qa record.
-      #
-      # @since  2.1.0
-      class WhoisRegistryQa < Base
+      class BaseShared1 < Base
 
         self.tokenizers += [
             :skip_empty_line,
