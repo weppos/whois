@@ -43,7 +43,7 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == %w( clientDeleteProhibited clientTransferProhibited clientUpdateProhibited )
+      subject.status.should == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
     end
   end
   describe "#available?" do
@@ -86,6 +86,19 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
       subject.registrant_contacts.should be_a(Array)
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == "MMR-32103"
+      subject.registrant_contacts[0].name.should          == "DNS Admin"
+      subject.registrant_contacts[0].organization.should  == "Google Inc."
+      subject.registrant_contacts[0].address.should       == "2400 E. Bayshore Pkwy"
+      subject.registrant_contacts[0].city.should          == "Mountain View"
+      subject.registrant_contacts[0].zip.should           == "94043"
+      subject.registrant_contacts[0].state.should         == "CA"
+      subject.registrant_contacts[0].country.should       == "United States"
+      subject.registrant_contacts[0].country_code.should  == "US"
+      subject.registrant_contacts[0].phone.should         == "+1.6503300100"
+      subject.registrant_contacts[0].fax.should           == "+1.6506181499"
+      subject.registrant_contacts[0].email.should         == "dns-admin@GOOGLE.COM"
     end
   end
   describe "#admin_contacts" do
@@ -93,6 +106,19 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].id.should            == "MMR-32104"
+      subject.admin_contacts[0].name.should          == "DNS Admin"
+      subject.admin_contacts[0].organization.should  == "Google Inc."
+      subject.admin_contacts[0].address.should       == "2400 E. Bayshore Pkwy"
+      subject.admin_contacts[0].city.should          == "Mountain View"
+      subject.admin_contacts[0].zip.should           == "94043"
+      subject.admin_contacts[0].state.should         == "CA"
+      subject.admin_contacts[0].country.should       == "United States"
+      subject.admin_contacts[0].country_code.should  == "US"
+      subject.admin_contacts[0].phone.should         == "+1.6503300100"
+      subject.admin_contacts[0].fax.should           == "+1.6506181499"
+      subject.admin_contacts[0].email.should         == "dns-admin@GOOGLE.COM"
     end
   end
   describe "#technical_contacts" do
@@ -100,6 +126,19 @@ describe Whois::Record::Parser::WhoisBiz, "status_registered.expected" do
       subject.technical_contacts.should be_a(Array)
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == "MMR-32105"
+      subject.technical_contacts[0].name.should          == "DNS Admin"
+      subject.technical_contacts[0].organization.should  == "Google Inc."
+      subject.technical_contacts[0].address.should       == "2400 E. Bayshore Pkwy"
+      subject.technical_contacts[0].city.should          == "Mountain View"
+      subject.technical_contacts[0].zip.should           == "94043"
+      subject.technical_contacts[0].state.should         == "CA"
+      subject.technical_contacts[0].country.should       == "United States"
+      subject.technical_contacts[0].country_code.should  == "US"
+      subject.technical_contacts[0].phone.should         == "+1.6503300100"
+      subject.technical_contacts[0].fax.should           == "+1.6506181499"
+      subject.technical_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#nameservers" do
