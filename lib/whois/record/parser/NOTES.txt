@@ -25,9 +25,7 @@
 
 
 .us
-.biz
 .travel
-whois.nic.co
 
 whois.museum
 whois.cat
