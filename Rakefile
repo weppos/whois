@@ -50,7 +50,7 @@ spec = Gem::Specification.new do |s|
 
   Are you looking for a quick and convenient way to perform WHOIS queries?
   Check out RoboWhois WHOIS API.
-  http://www.robowhois.com/
+  https://www.robowhois.com/
 
 ********************************************************************************
 EOS
