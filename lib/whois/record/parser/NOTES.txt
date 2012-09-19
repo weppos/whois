@@ -1,12 +1,6 @@
 # Scanners
 
 
-## Types
-
-- verisign : indented keyvalue with text
-- cnnic : keyvalue
-- biz : keyvalue + lastupdate + disclaimer
-
 ---
 
 # afilias

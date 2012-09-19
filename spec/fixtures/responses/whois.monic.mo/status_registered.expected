@@ -1,0 +1,62 @@
+#disclaimer
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#domain
+  should: %s == "umac.mo"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MONIC"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "umacsn1.umac.mo"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "umacsn2.umac.mo"

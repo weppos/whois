@@ -76,7 +76,6 @@ module Whois
           end
         end
 
-
         property_supported :registrant_contacts do
           build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end

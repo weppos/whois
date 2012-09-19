@@ -10,6 +10,8 @@
 
 * SERVER: Added .DM TLD server (GH-43).
 
+* SERVER: Added .MO TLD server.
+
 * NEW: Added full whois.register.com parser.
 
 * NEW: whois.networksolutions.com parser now recognizes throttled responses (GH-182). [Thanks @JustinCampbell]
@@ -21,6 +23,8 @@
 * NEW: Added full whois.nic.dm parser (GH-43).
 
 * NEW: Added full whois.nic.co parser.
+
+* NEW: Added full whois.monic.mo parser.
 
 * FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
 

@@ -209,7 +209,7 @@ Whois::Server.define :tld, ".mk", nil, { :adapter => :web, :url => "http://dns.m
 Whois::Server.define :tld, ".ml", nil, { :adapter => :none }
 Whois::Server.define :tld, ".mm", nil, { :adapter => :none }
 Whois::Server.define :tld, ".mn", "whois.afilias-grs.info", { :adapter => :afilias }
-Whois::Server.define :tld, ".mo", nil, { :adapter => :web, :url => "http://www.monic.net.mo/" }
+Whois::Server.define :tld, ".mo", "whois.monic.mo"
 Whois::Server.define :tld, ".mp", nil, { :adapter => :none }
 Whois::Server.define :tld, ".mq", nil, { :adapter => :web, :url => "https://www.dom-enic.com/whois.html" }
 Whois::Server.define :tld, ".mr", nil, { :adapter => :none }
