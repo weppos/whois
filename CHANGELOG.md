@@ -1,5 +1,11 @@
 # Changelog
 
+
+## master
+
+* Dropped support for Ruby 1.8
+
+
 ## Release 2.7.0
 
 * SERVER: Added .IQ TLD server (GH-171).

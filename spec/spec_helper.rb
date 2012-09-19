@@ -7,12 +7,8 @@ end
 
 # The fixtures are UTF-8 encoded.
 # Make sure Ruby uses the proper encoding.
-if RUBY_VERSION < '1.9'
-  $KCODE = 'u'
-else
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
