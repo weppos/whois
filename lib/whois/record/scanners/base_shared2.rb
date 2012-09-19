@@ -8,16 +8,17 @@
 
 
 require 'whois/record/scanners/base'
+require 'whois/record/scanners/base_shared2'
 
 
 module Whois
   class Record
     module Scanners
 
-      class WhoisBiz < Base
+      class BaseShared2 < Base
 
         self.tokenizers += [
-            :skip_empty_line,
+            :skip_blank_line,
             :scan_available,
             :scan_keyvalue,
             :skip_lastupdate,
@@ -37,7 +38,7 @@ module Whois
         end
 
         tokenizer :skip_fuffa do
-          @input.scan(/^\S(.+)\n/)
+          @input.skip(/^\S(.+)\n/)
         end
 
       end

@@ -16,6 +16,9 @@ module Whois
 
       # Parser for the whois.registry.qa server.
       #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       # @since  2.1.0
       class WhoisRegistryQa < BaseShared1
       end

@@ -90,7 +90,7 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::WhoisRegistryOm} instance
+        # Initializes a new {Scanners::BaseShared1} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
         #
