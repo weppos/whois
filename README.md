@@ -22,13 +22,13 @@ An extensive test suite is available to verify the library correctness but you m
 
 ## Features
 
-* Ability to query registry data for [IPv4, IPv6, TLDs, and domain names](http://www.ruby-whois.org/manual/usage.html#usage-objects)
-* Ability to [parse WHOIS responses](http://www.ruby-whois.org/manual/parser.html)
-* Flexible and extensible interface (e.g. You can define [custom servers](http://www.ruby-whois.org/manual/server.html) on the fly)
+* Ability to query registry data for [IPv4, IPv6, TLDs, and domain names](http://www.ruby-whois.org/manual/usage/#usage-objects)
+* Ability to [parse WHOIS responses](http://www.ruby-whois.org/manual/parser/)
+* Flexible and extensible interface (e.g. You can define [custom servers](http://www.ruby-whois.org/manual/server/) on the fly)
 * Object oriented design, featuring 10 different design patterns
 * Pure Ruby library, without any external dependency other than Ruby itself
-* Compatible with [Ruby 1.8.7 and greater](http://www.ruby-whois.org/manual/installing.html#installation-requirements), including Ruby 1.9 branch
-* Successfully tested against several [Ruby implementations](http://www.ruby-whois.org/manual/interpreters.html)
+* Compatible with [Ruby 1.8.7 and greater](http://www.ruby-whois.org/manual/installing/#installation-requirements), including Ruby 1.9 branch
+* Successfully tested against several [Ruby implementations](http://www.ruby-whois.org/manual/interpreters/)
 
 
 ## Requirements
@@ -40,7 +40,7 @@ For older versions of Ruby, see the CHANGELOG.rdoc file.
 
 In addition to the standard Ruby interpreter (MRI),
 Whois has been successfully tested against several
-[Ruby implementations](http://www.ruby-whois.org/manual/interpreters.html).
+[Ruby implementations](http://www.ruby-whois.org/manual/interpreters/).
 
 
 ## Installation
@@ -60,12 +60,12 @@ Install the newer version via RubyGems.
 
 Minor and bugfix releases normally won't break backwards-compatibility. You can read the CHANGELOG.md file to learn about the changes in each release.
 
-Read the [Upgrading](http://www.ruby-whois.org/manual/upgrading.html) documentation page for detailed information about incompatible changes and further instructions.
+Read the [Upgrading](http://www.ruby-whois.org/manual/upgrading/) documentation page for detailed information about incompatible changes and further instructions.
 
 
 ## Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://www.ruby-whois.org/documentation.html) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://www.ruby-whois.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 ### Querying the Server
 
@@ -196,7 +196,7 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 
 - [Homepage](http://www.ruby-whois.org/)
 - [Repository](https://github.com/weppos/whois)
-- [Documentation](http://www.ruby-whois.org/documentation.html) - The official documentation, see also the [API Documentation](http://www.ruby-whois.org/api).
+- [Documentation](http://www.ruby-whois.org/documentation/) - The official documentation, see also the [API Documentation](http://www.ruby-whois.org/api).
 - [Discussion Group](http://groups.google.com/group/ruby-whois)
 
 
