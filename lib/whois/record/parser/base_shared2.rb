@@ -113,12 +113,17 @@ module Whois
 
         def build_contact(element, type)
           node("#{element} ID") do |str|
+            address = (1..3).
+                map { |i| node("#{element} Address#{i}") }.
+                delete_if(&:nil?).
+                join("\n")
+
             Record::Contact.new(
               :type         => type,
               :id           => node("#{element} ID"),
               :name         => node("#{element} Name"),
               :organization => node("#{element} Organization"),
-              :address      => node("#{element} Address1"),
+              :address      => address,
               :city         => node("#{element} City"),
               :zip          => node("#{element} Postal Code"),
               :state        => node("#{element} State/Province"),

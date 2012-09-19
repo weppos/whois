@@ -20,6 +20,8 @@
 
 * NEW: Added full whois.nic.dm parser (GH-43).
 
+* NEW: Added full whois.nic.co parser.
+
 * FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
 
 * FIXED: whois.jprs.js parser should support status `Suspended`.

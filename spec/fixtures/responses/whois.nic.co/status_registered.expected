@@ -1,3 +1,17 @@
+#domain
+  should: %s == "t.co"
+
+#domain_id
+  should: %s == "D740225-CO"
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == ["serverDeleteProhibited", "serverTransferProhibited"]
 
@@ -19,6 +33,67 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2013-04-25 23:59:59 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "13"
+  should: %s.name         == "MELBOURNE IT LTD"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "TWITTERREG2012"
+  should: %s[0].name          == "Twitter, Inc."
+  should: %s[0].organization  == "Twitter, Inc."
+  should: %s[0].address       == "1355 Market Street\nSuite 900"
+  should: %s[0].city          == "San Francisco"
+  should: %s[0].zip           == "94103"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.4152229670"
+  should: %s[0].fax           == "+1.4152220922"
+  should: %s[0].email         == "domains@twitter.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "TWITTERADMIN2012"
+  should: %s[0].name          == "Domain Admin"
+  should: %s[0].organization  == "Twitter, Inc."
+  should: %s[0].address       == "1355 Market Street\nSuite 900"
+  should: %s[0].city          == "San Francisco"
+  should: %s[0].zip           == "94103"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.4152229670"
+  should: %s[0].fax           == "+1.4152220922"
+  should: %s[0].email         == "domains@twitter.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "TWITTERTECH2012"
+  should: %s[0].name          == "Tech Admin"
+  should: %s[0].organization  == "Twitter, Inc."
+  should: %s[0].address       == "1355 Market Street\nSuite 900"
+  should: %s[0].city          == "San Francisco"
+  should: %s[0].zip           == "94103"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.4152229670"
+  should: %s[0].fax           == "+1.4152220922"
+  should: %s[0].email         == "domains-tech@twitter.com"
+
 
 #nameservers
   should: %s CLASS(array)
