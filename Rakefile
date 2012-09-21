@@ -26,7 +26,7 @@ spec = Gem::Specification.new do |s|
   s.homepage          = "http://www.ruby-whois.org/"
   s.rubyforge_project = "whois"
 
-  s.files             = %w( LICENSE .yardopts ) +
+  s.files             = %w( LICENSE.txt .yardopts ) +
                         Dir.glob("*.{md,gemspec}") +
                         Dir.glob("{bin,lib}/**/*")
   s.executables       = %w( ruby-whois )
