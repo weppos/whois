@@ -22,7 +22,7 @@ module Whois
       #
       # @since  2.5.0
       class WhoisCiraCa < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_supported :disclaimer do
            node("field:disclaimer")

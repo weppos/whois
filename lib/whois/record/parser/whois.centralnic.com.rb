@@ -17,7 +17,7 @@ module Whois
 
       # Parser for the whois.centralnic.net server.
       class WhoisCentralnicCom < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
 
         property_supported :disclaimer do

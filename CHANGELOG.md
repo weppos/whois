@@ -5,6 +5,8 @@
 
 * CHANGED: Dropped support for Ruby 1.8
 
+* CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
+
 * FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 

@@ -21,7 +21,7 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisDomainregistryIe < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_supported :disclaimer do
           node("field:disclaimer")

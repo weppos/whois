@@ -21,7 +21,7 @@ module Whois
       #
       # @since  RELEASE
       class BaseShared1 < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_not_supported :disclaimer
 

@@ -21,7 +21,7 @@ module Whois
       #
       # @since  2.6.4
       class BaseWhoisd < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         class_attribute :status_mapping
         self.status_mapping = {

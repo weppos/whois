@@ -22,7 +22,7 @@ module Whois
       #
       # @since  2.6.2
       class WhoisSx < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_not_supported :disclaimer
 

@@ -21,7 +21,7 @@ module Whois
       #
       # @since  RELEASE
       class BaseShared2 < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         # Actually the :disclaimer is supported,
         # but extracting it with the current scanner

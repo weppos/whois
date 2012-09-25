@@ -17,7 +17,7 @@ module Whois
 
       # Parser for the whois.cnnic.cn server.
       class WhoisCnnicCn < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
 
         property_not_supported :disclaimer

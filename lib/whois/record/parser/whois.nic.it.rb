@@ -17,7 +17,7 @@ module Whois
 
       # Parser for the whois.nic.it server.
       class WhoisNicIt < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
 
         property_supported :disclaimer do

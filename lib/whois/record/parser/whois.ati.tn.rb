@@ -22,7 +22,7 @@ module Whois
       #
       # @since  2.6.0
       class WhoisAtiTn < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_supported :disclaimer do
           node("field:disclaimer")

@@ -21,7 +21,7 @@ module Whois
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
       # @since  2.5.0
       class WhoisCctldBy < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_not_supported :disclaimer
 

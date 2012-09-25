@@ -17,7 +17,7 @@ module Whois
 
       # Parser for the whois.crsnic.net server.
       class WhoisCrsnicNet < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_supported :disclaimer do
           node("Disclaimer")

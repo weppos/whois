@@ -17,7 +17,7 @@ module Whois
 
       # Parser for the whois.iana.org server.
       class WhoisIanaOrg < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_supported :status do
           if available?

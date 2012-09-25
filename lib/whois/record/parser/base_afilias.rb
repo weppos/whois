@@ -19,7 +19,7 @@ module Whois
       #
       # @abstract
       class BaseAfilias < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
 
         property_supported :disclaimer do

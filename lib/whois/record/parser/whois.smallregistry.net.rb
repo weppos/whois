@@ -20,7 +20,7 @@ module Whois
       # @author Mathieu Arnold <m@absolight.fr>
       #
       class WhoisSmallregistryNet < Base
-        include Scanners::Ast
+        include Scanners::Nodable
 
         property_supported :disclaimer do
           node("field:disclaimer") do |str|
