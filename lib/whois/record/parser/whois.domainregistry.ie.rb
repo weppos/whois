@@ -42,7 +42,7 @@ module Whois
 
         property_supported :status do
           case node("status", &:downcase)
-          when "active"
+          when /^active/
             :registered
           when nil
             if node("status:pending")

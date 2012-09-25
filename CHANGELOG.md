@@ -3,7 +3,9 @@
 
 ## master
 
-* Dropped support for Ruby 1.8
+* CHANGED: Dropped support for Ruby 1.8
+
+* FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 
 ## Release 2.7.0

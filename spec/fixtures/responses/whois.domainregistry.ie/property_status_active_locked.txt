@@ -1,0 +1,25 @@
+
+% Rights restricted by copyright; http://iedr.ie/index.php/mnudomregs/mnudnssearch/96 
+% Do not remove this notice
+
+domain:       radical.ie
+descr:        RADICAL MEDIA LIMITED
+descr:        Body Corporate (Ltd,PLC,Company)
+descr:        Discretionary Name
+admin-c:      APK491-IEDR
+tech-c:       WWA1-IEDR
+registration: 21-April-2009
+renewal:      21-April-2013
+status:       Active - LOCKED
+nserver:      ns.blacknightsolutions.com  
+nserver:      ns2.blacknightsolutions.com  
+source:       IEDR
+
+person:       Chris Hussey
+nic-hdl:      APK491-IEDR
+source:       IEDR
+
+person:       Webworld.ie Hostmaster
+nic-hdl:      WWA1-IEDR
+source:       IEDR
+
