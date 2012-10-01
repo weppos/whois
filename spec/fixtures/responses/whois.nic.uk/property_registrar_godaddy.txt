@@ -1,0 +1,47 @@
+
+    Domain name:
+        ecigsbrand.co.uk
+
+    Registrant:
+        Vitality & Wellness Ltd.
+
+    Registrant type:
+        Unknown
+
+    Registrant's address:
+        72 High Street
+        Haslemere
+        Surrey
+        GU27 2LA
+        United Kingdom
+
+    Registrar:
+        GoDaddy.com, LLP. [Tag = GODADDY]
+
+    Relevant dates:
+        Registered on: 16-Sep-2010
+        Expiry date:  16-Sep-2013
+        Last updated:  30-Aug-2012
+
+    Registration status:
+        Registered until expiry date.
+
+    Name servers:
+        pdns01.domaincontrol.com
+        pdns02.domaincontrol.com
+
+    WHOIS lookup made at 13:23:18 01-Oct-2012
+
+-- 
+This WHOIS information is provided for free by Nominet UK the central registry
+for .uk domain names. This information and the .uk WHOIS are:
+
+    Copyright Nominet UK 1996 - 2012.
+
+You may not access the .uk WHOIS or use any data from it except as permitted
+by the terms of use available in full at http://www.nominet.org.uk/whois, which
+includes restrictions on: (A) use of the data for advertising, or its
+repackaging, recompilation, redistribution or reuse (B) obscuring, removing
+or hiding any or all of this notice and (C) exceeding query rate or volume
+limits. The data is provided on an 'as-is' basis and may lag behind the
+register. Access may be withdrawn or restricted at any time. 

@@ -14,16 +14,11 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.uk parser
-      #
       # Parser for the whois.nic.uk server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
       #
       # @see http://www.nominet.org.uk/other/whois/detailedinstruct/
       #
@@ -88,22 +83,25 @@ module Whois
 
         # @see http://www.nic.uk/other/whois/instruct/
         property_supported :registrar do
-          if content_for_scanner =~ /Registrar:\n(.+) \[Tag = (.+)\]\n\s*URL: (.+)\n/
-            name, id, url = $1.strip, $2.strip, $3.strip
-            org, name = name.split(" t/a ")
+          if content_for_scanner =~ /Registrar:\n((.+\n)+)\n/
+            content = $1.strip
+            id = name = org = url = nil
+            
+            if content =~ /Tag =/
+              name, id = (content =~ /(.+) \[Tag = (.+)\]/) && [$1.strip, $2.strip]
+              org, name = name.split(" t/a ")
+              url = (content =~ /URL: (.+)/) && $1.strip
+            elsif content =~ /This domain is registered directly with Nominet/
+              name  = "Nominet"
+              org   = "Nominet UK"
+              url   = "http://www.nic.uk/"
+            end
 
             Record::Registrar.new(
               :id           => id,
-              :name         => (name || org),
+              :name         => name || org,
               :organization => org,
               :url          => url
-            )
-          elsif content_for_scanner =~ /This domain is registered directly with Nominet/
-            Record::Registrar.new(
-              :id           => nil,
-              :name         => "Nominet",
-              :organization => "Nominet UK",
-              :url          => "http://www.nic.uk/"
             )
           end
         end
