@@ -159,7 +159,7 @@ Whois::Server.define :tld, ".gw", nil, { :adapter => :none }
 Whois::Server.define :tld, ".gy", "whois.registry.gy"
 Whois::Server.define :tld, ".hk", "whois.hkirc.hk"
 Whois::Server.define :tld, ".hm", "whois.registry.hm"
-Whois::Server.define :tld, ".hn", "whois.afilias-grs.info", { :adapter => :afilias }
+Whois::Server.define :tld, ".hn", "whois.nic.hn"
 Whois::Server.define :tld, ".hr", "whois.dns.hr"
 Whois::Server.define :tld, ".ht", "whois.nic.ht"
 Whois::Server.define :tld, ".hu", "whois.nic.hu"

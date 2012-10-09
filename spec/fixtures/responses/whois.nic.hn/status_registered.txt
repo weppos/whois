@@ -1,0 +1,91 @@
+Terminos de Uso: NIC.HN no se hace responsable por la veracidad de los datos proporcionados, ya que los mismos fueron proporcionados por los Registrantes y Usuarios del Servicio de Registro. La informaci?n desplegada ha sido proporcionada por el Administrador de Nombre de Dominio que corresponda, dicha informacion no es generada por NIC.HN.
+
+Queda absolutamente prohibido su uso para otros prop?sitos, incluyendo el env?o de Correos Electr?nicos no solicitados con fines publicitarios o de promoci?n de productos y servicios (SPAM) sin mediar la autorizaci?n de los afectados y de NIC.HN.
+
+La base de datos generada a partir del sistema de delegaci?n, est? protegida por las leyes de Propiedad Intelectual y todos los tratados internacionales sobre la materia.
+
+Si necesita mayor informaci?n sobre los registros aqu? mostrados, favor de comunicarse a contacto@nic.hn
+
+
+Domain Information
+Query: google.hn
+Status: Delegated
+Created: 07 Mar 2003
+Modified: 04 Feb 2012
+Expires: 07 Mar 2013
+Name Servers:
+    ns1.google.com
+    ns2.google.com
+
+Registrar Information
+Registrar Name: MarkMonitor
+Registration URL: http://www.markmonitor.com
+Address: MarkMonitor
+Emerald Tech Center
+391 N. Ancestor Place
+Boise, ID 83704
+Country: US
+Phone: +1 (208) 389-5740
+Customer Service Contact: ccops@markmonitor.com
+Customer Service Email: ccops@markmonitor.com
+Admin Contact: Domain Billing
+Admin Email: ccops@markmonitor.com
+
+
+
+
+Registrant:
+Email Address: dns-admin@google.com
+Phone Number: +1.6502530000
+Fax Number: +1.6502530001
+
+International Name: DNS Admin
+International Organisation: Google Inc.
+International Address:
+	1600 Amphitheatre Parkway
+	Mountain View, CA 94043
+	US
+
+
+
+Admin Contact:
+Email Address: dns-admin@google.com
+Phone Number: +1.6502530000
+Fax Number: +1.6502530001
+
+International Name: DNS Admin
+International Organisation: Google Inc.
+International Address:
+	1600 Amphitheatre Parkway
+	Mountain View, CA 94043
+	US
+
+
+
+Technical Contact:
+Email Address: ccops@markmonitor.com
+Phone Number: +1.2083895740
+Fax Number: +1.2083895771
+
+International Name: CCOPs Provisioning
+International Organisation: MarkMonitor
+International Address:
+	10400 Overland Rd PMB 155
+	Boise, ID 83709
+	US
+
+
+
+Billing Contact:
+Email Address: ccops@markmonitor.com
+Phone Number: +1.2083895740
+Fax Number: +1.2083895771
+
+International Name: CCOPs Provisioning
+International Organisation: MarkMonitor
+International Address:
+	10400 Overland Rd PMB 155
+	Boise, ID 83709
+	US
+
+

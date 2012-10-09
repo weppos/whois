@@ -3,6 +3,8 @@
 
 ## master
 
+* SERVER: Updated .HN TLD server.
+
 * CHANGED: Dropped support for Ruby 1.8
 
 * CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
