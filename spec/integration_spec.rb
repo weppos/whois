@@ -9,7 +9,7 @@ describe Whois do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
         Whois::Server::Adapters::Standard.any_instance \
-            .expects(:ask_the_socket) \
+            .expects(:query_socket) \
             .with("example.it", "whois.nic.it", 43) \
             .returns(response)
 
@@ -30,7 +30,7 @@ describe Whois do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
         Whois::Server::Adapters::Standard.any_instance \
-            .expects(:ask_the_socket) \
+            .expects(:query_socket) \
             .with("example.it", "whois.nic.it", 43, "192.168.1.1", 3000) \
             .returns(response)
 
@@ -45,7 +45,7 @@ describe Whois do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
         Whois::Server::Adapters::Standard.any_instance \
-            .expects(:ask_the_socket) \
+            .expects(:query_socket) \
             .with("example.it", "whois.nic.it", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, 3000) \
             .returns(response)
 
@@ -60,7 +60,7 @@ describe Whois do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
         Whois::Server::Adapters::Standard.any_instance.
-            expects(:ask_the_socket).
+            expects(:query_socket).
             with("example.it", "whois.example.com", 43).
             returns(response)
 

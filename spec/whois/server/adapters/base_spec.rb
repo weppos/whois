@@ -114,7 +114,7 @@ describe Whois::Server::Adapters::Base do
   describe "#query_the_socket" do
     [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
       it "re-raises #{error} as Whois::ConnectionError" do
-        klass.any_instance.expects(:ask_the_socket).raises(error)
+        klass.any_instance.expects(:query_socket).raises(error)
         expect {
           klass.new(*definition).send(:query_the_socket, "example.com", "whois.test")
         }.to raise_error(Whois::ConnectionError, "#{error}: #{error.new.message}")
@@ -128,7 +128,7 @@ describe Whois::Server::Adapters::Base do
 
       it "does not bind the WHOIS query" do
         @base \
-            .expects(:ask_the_socket) \
+            .expects(:query_socket) \
             .with("example.test", "whois.test", 43)
 
         @base.send(:query_the_socket, "example.test", "whois.test", 43)
@@ -142,7 +142,7 @@ describe Whois::Server::Adapters::Base do
 
       it "binds the WHOIS query to given host and port" do
         @base \
-            .expects(:ask_the_socket) \
+            .expects(:query_socket) \
             .with("example.test", "whois.test", 43, "192.168.1.1", 3000)
 
         @base.send(:query_the_socket, "example.test", "whois.test", 43)
@@ -156,7 +156,7 @@ describe Whois::Server::Adapters::Base do
 
       it "binds the WHOIS query to given port and defaults host" do
         @base \
-            .expects(:ask_the_socket) \
+            .expects(:query_socket) \
             .with("example.test", "whois.test", 43, klass::DEFAULT_BIND_HOST, 3000)
 
         @base.send(:query_the_socket, "example.test", "whois.test", 43)

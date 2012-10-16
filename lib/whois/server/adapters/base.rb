@@ -135,15 +135,13 @@ module Whois
         end
 
 
-      private
+        private
 
         # Store a record part in {#buffer}.
         #
         # @param  [String] body
         # @param  [String] host
         # @return [void]
-        #
-        # @api public
         #
         def buffer_append(body, host)
           @buffer << Whois::Record::Part.new(:body => body, :host => host)
@@ -157,8 +155,7 @@ module Whois
           result
         end
 
-        # @api public
-        def query_the_socket(query, host, port = nil)
+        def query_prepare(query, host, port = nil)
           args = []
           args.push(host)
           args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
@@ -178,19 +175,31 @@ module Whois
             args.push(options[:bind_port]) if options[:bind_port]
           end
 
-          ask_the_socket(query, *args)
+          query_handle(query, *args)
+        end
 
+        alias :query_the_socket :query_prepare
+
+        # @api private
+        def query_handle(query, *args)
+          query_socket(query, *args)
         rescue *RESCUABLE_CONNECTION_ERRORS => error
           raise ConnectionError, "#{error.class}: #{error.message}"
         end
 
-        # This method handles the lowest connection
-        # to the WHOIS server.
+        # Executes the low-level Socket connection.
+        #
+        # It opens the socket passing given +args+,
+        # sends the +query+ and reads the response.
         #
         # This is for internal use only!
         #
+        # @param  [String] query
+        # @param  [Array] args
+        # @return [String]
+        #
         # @api private
-        def ask_the_socket(query, *args)
+        def query_socket(query, *args)
           client = TCPSocket.new(*args)
           client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
           client.read                     # but write/read is more symmetric than puts/read
