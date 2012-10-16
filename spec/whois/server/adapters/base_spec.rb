@@ -114,7 +114,7 @@ describe Whois::Server::Adapters::Base do
   describe "#query_the_socket" do
     [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
       it "re-raises #{error} as Whois::ConnectionError" do
-        klass.any_instance.expects(:query_socket).raises(error)
+        klass.query_handler.expects(:execute).raises(error)
         expect {
           klass.new(*definition).send(:query_the_socket, "example.com", "whois.test")
         }.to raise_error(Whois::ConnectionError, "#{error}: #{error.new.message}")
@@ -122,44 +122,38 @@ describe Whois::Server::Adapters::Base do
     end
 
     context "without :bind_host or :bind_port options" do
-      before(:each) do
-        @base = klass.new(:tld, ".test", "whois.test", {})
-      end
+      let(:server) { klass.new(:tld, ".test", "whois.test", {}) }
 
       it "does not bind the WHOIS query" do
-        @base \
-            .expects(:query_socket) \
-            .with("example.test", "whois.test", 43)
+        klass.
+            query_handler.expects(:call).
+            with("example.test", "whois.test", 43)
 
-        @base.send(:query_the_socket, "example.test", "whois.test", 43)
+        server.send(:query_the_socket, "example.test", "whois.test", 43)
       end
     end
 
     context "with :bind_host and :bind_port options" do
-      before(:each) do
-        @base = klass.new(:tld, ".test", "whois.test", { :bind_host => "192.168.1.1", :bind_port => 3000 })
-      end
+      let(:server) { klass.new(:tld, ".test", "whois.test", { :bind_host => "192.168.1.1", :bind_port => 3000 }) }
 
       it "binds the WHOIS query to given host and port" do
-        @base \
-            .expects(:query_socket) \
-            .with("example.test", "whois.test", 43, "192.168.1.1", 3000)
+        klass.
+            query_handler.expects(:call).
+            with("example.test", "whois.test", 43, "192.168.1.1", 3000)
 
-        @base.send(:query_the_socket, "example.test", "whois.test", 43)
+        server.send(:query_the_socket, "example.test", "whois.test", 43)
       end
     end
 
     context "with :bind_port and without :bind_host options" do
-      before(:each) do
-        @base = klass.new(:tld, ".test", "whois.test", { :bind_port => 3000 })
-      end
+      let(:server) { klass.new(:tld, ".test", "whois.test", { :bind_port => 3000 }) }
 
       it "binds the WHOIS query to given port and defaults host" do
-        @base \
-            .expects(:query_socket) \
-            .with("example.test", "whois.test", 43, klass::DEFAULT_BIND_HOST, 3000)
+        klass.
+            query_handler.expects(:call).
+            with("example.test", "whois.test", 43, klass::DEFAULT_BIND_HOST, 3000)
 
-        @base.send(:query_the_socket, "example.test", "whois.test", 43)
+        server.send(:query_the_socket, "example.test", "whois.test", 43)
       end
     end
   end

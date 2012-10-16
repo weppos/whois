@@ -18,22 +18,57 @@ module Whois
 
       class Base
 
+        # The SocketHandler is the default query handler provided with the
+        # Whois library. It performs the WHOIS query using a synchronous
+        # socket connection.
+        class SocketHandler
+
+          # Array of connection errors to rescue
+          # and wrap into a {Whois::ConnectionError}
+          RESCUABLE_CONNECTION_ERRORS = [
+              Errno::ECONNRESET,
+              Errno::EHOSTUNREACH,
+              Errno::ECONNREFUSED,
+              SocketError,
+          ]
+
+          # TODO: *args might probably be a Hash
+          def call(query, *args)
+            execute(query, *args)
+          rescue *RESCUABLE_CONNECTION_ERRORS => error
+            raise ConnectionError, "#{error.class}: #{error.message}"
+          end
+
+          # Executes the low-level Socket connection.
+          #
+          # It opens the socket passing given +args+,
+          # sends the +query+ and reads the response.
+          #
+          # This is for internal use only!
+          #
+          # @param  [String] query
+          # @param  [Array] args
+          # @return [String]
+          #
+          # @api private
+          def execute(query, *args)
+            client = TCPSocket.new(*args)
+            client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
+            client.read                     # but write/read is more symmetric than puts/read
+          ensure                            # and I really want to use read instead of gets.
+            client.close if client          # If != client something went wrong.
+          end
+        end
+
         # Default WHOIS request port.
         DEFAULT_WHOIS_PORT = 43
-
         # Default bind hostname.
         DEFAULT_BIND_HOST = "0.0.0.0"
 
-        # Array of connection errors to rescue and wrap into a {Whois::ConnectionError}
-        RESCUABLE_CONNECTION_ERRORS = [
-          Errno::ECONNRESET,
-          Errno::EHOSTUNREACH,
-          Errno::ECONNREFUSED,
-          SocketError,
-        ]
+        class_attribute :query_handler
+        self.query_handler = SocketHandler.new
 
-
-        # @return [Symbol] The type of WHOIS server
+        # @return [Symbol] The type of WHOIS server.
         attr_reader :type
         # @return [String] The allocation this server is responsible for.
         attr_reader :allocation
@@ -175,37 +210,10 @@ module Whois
             args.push(options[:bind_port]) if options[:bind_port]
           end
 
-          query_handle(query, *args)
+          self.class.query_handler.call(query, *args)
         end
 
         alias :query_the_socket :query_prepare
-
-        # @api private
-        def query_handle(query, *args)
-          query_socket(query, *args)
-        rescue *RESCUABLE_CONNECTION_ERRORS => error
-          raise ConnectionError, "#{error.class}: #{error.message}"
-        end
-
-        # Executes the low-level Socket connection.
-        #
-        # It opens the socket passing given +args+,
-        # sends the +query+ and reads the response.
-        #
-        # This is for internal use only!
-        #
-        # @param  [String] query
-        # @param  [Array] args
-        # @return [String]
-        #
-        # @api private
-        def query_socket(query, *args)
-          client = TCPSocket.new(*args)
-          client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
-          client.read                     # but write/read is more symmetric than puts/read
-        ensure                            # and I really want to use read instead of gets.
-          client.close if client          # If != client something went wrong.
-        end
 
       end
 
