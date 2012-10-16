@@ -55,4 +55,22 @@ describe Whois do
     end
   end
 
+  describe "Passing :host options" do
+    it "forces the WHOIS query to given host" do
+      with_definitions do
+        Whois::Server.define(:tld, ".it", "whois.nic.it")
+        Whois::Server::Adapters::Standard.any_instance.
+            expects(:ask_the_socket).
+            with("example.it", "whois.example.com", 43).
+            returns(response)
+
+        client = Whois::Client.new(:host => "whois.example.com")
+        record = client.query("example.it")
+        record.parts.size.should == 1
+        record.parts.first.body.should == response
+        record.parts.first.host.should == "whois.example.com"
+      end
+    end
+  end
+
 end

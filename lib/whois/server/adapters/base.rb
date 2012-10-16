@@ -93,6 +93,7 @@ module Whois
         # @return [Hash] The updated options for this object.
         #
         def configure(settings)
+          @host = settings[:host] if settings[:host]
           options.merge!(settings)
         end
 

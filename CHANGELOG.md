@@ -3,15 +3,17 @@
 
 ## master
 
-* SERVER: Updated .HN TLD server.
+- SERVER: Updated .HN TLD server.
 
-* CHANGED: Dropped support for Ruby 1.8
+- NEW: ruby-whois learns the -h option to pass whois hostname on the fly
 
-* CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
+- CHANGED: Dropped support for Ruby 1.8
 
-* FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
+- CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
 
-* FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
+- FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
+
+- FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
 
 
 ## Release 2.7.0
