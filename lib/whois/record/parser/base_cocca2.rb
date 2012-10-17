@@ -28,17 +28,16 @@ module Whois
 
 
         property_supported :status do
-          if content_for_scanner =~ /Domain Status: (.+)\n/
-            case $1.downcase
-            when "ok"
-              :registered
-            when "available"
+          list = statuses
+          case
+            when list.empty?
+              Whois.bug!(ParserError, "Unable to parse status.")
+            when list.include?("available")
               :available
+            when list.include?("ok")
+              :registered
             else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            Whois.bug!(ParserError, "Unable to parse status.")
+              Whois.bug!(ParserError, "Unknown status `#{list.join(", ")}'.")
           end
         end
 
@@ -85,6 +84,11 @@ module Whois
           content_for_scanner.scan(/Name Server: (.+)\n/).flatten.map do |name|
             Record::Nameserver.new(:name => name)
           end
+        end
+
+
+        def statuses
+          content_for_scanner.scan(/Domain Status: (.+)\n/).flatten.map(&:downcase)
         end
 
 
