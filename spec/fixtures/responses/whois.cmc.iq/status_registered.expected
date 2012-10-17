@@ -21,17 +21,18 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-05-24")
+  should: %s == Time.parse("2012-10-17")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-10-03")
+  should: %s == Time.parse("2013-10-03")
 
 
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "CMC Registrar"
+  should: %s.organization == nil
   should: %s.url          == nil
 
 

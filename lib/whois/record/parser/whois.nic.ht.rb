@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_cocca'
+require 'whois/record/parser/base_cocca2'
 
 
 module Whois
@@ -15,7 +15,11 @@ module Whois
     class Parser
 
       # Parser for the whois.nic.ht server.
-      class WhoisNicHt < BaseCocca
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
+      class WhoisNicHt < BaseCocca2
       end
 
     end

@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisNicNetNf, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2005-11-27")
+      subject.created_on.should == Time.parse("2005-11-27 11:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-03-19")
+      subject.updated_on.should == Time.parse("2012-01-14 11:14:40 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-11-27")
+      subject.expires_on.should == Time.parse("2012-11-27 11:00:00 UTC")
     end
   end
   describe "#registrar" do
@@ -69,6 +69,7 @@ describe Whois::Record::Parser::WhoisNicNetNf, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
       subject.registrar.name.should         == "MarkMonitor"
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == "http://www.markmonitor.com"
     end
   end

@@ -25,6 +25,10 @@
   should: %s == nil
 
 
+#registrar
+  should: %s == nil
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s == []

@@ -4,15 +4,15 @@ The contents of the WHOIS is Dr Lisse's intellectual property and is provided by
 
 The compilation, repackaging, dissemination or other use of this Data is expressly prohibited. We reserve the right to enter IP addresses and/or corresponding networks of offenders into our IPTables.
 
-.NA(R), Copyright(C) 1991, 1995, 2008, 2011 Dr Lisse
+.NA(R), Copyright(C) 1991, 1995, 2008, 2012 Dr Lisse
 
 
 Domain Information
 Query: google.na
 Status: Delegated
 Created: 28 Mar 2007
-Modified: 19 Mar 2012
-Expires: 20 Aug 2012
+Modified: 19 Jul 2012
+Expires: 20 Aug 2013
 Name Servers:
     ns2.google.com
     ns1.google.com

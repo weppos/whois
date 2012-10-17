@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_cocca'
+require 'whois/record/parser/base_cocca2'
 
 
 module Whois
@@ -15,27 +15,11 @@ module Whois
     class Parser
 
       # Parser for the whois.nic.gs server.
-      class WhoisNicGs < BaseCocca
-
-        property_supported :status do
-          if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case (s = $1.downcase)
-            when "active"
-              :registered
-            when "delegated"
-              :registered
-            when "not registered"
-              :available
-            when /pending delete/
-              :redemption
-            else
-              Whois.bug!(ParserError, "Unknown status `#{s}'.")
-            end
-          else
-            Whois.bug!(ParserError, "Unable to parse status.")
-          end
-        end
-
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
+      class WhoisNicGs < BaseCocca2
       end
 
     end

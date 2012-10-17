@@ -61,6 +61,11 @@ describe Whois::Record::Parser::WhoisCmcIq, "status_available.expected" do
       subject.expires_on.should == nil
     end
   end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
+    end
+  end
   describe "#nameservers" do
     it do
       lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)

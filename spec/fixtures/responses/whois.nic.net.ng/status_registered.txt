@@ -3,10 +3,10 @@
 
 Domain Information
 Query: nic.net.ng
-Status: Active
-Created: 13 May 2009 15:27 WAT
-Modified: 02 Jul 2010 20:06 WAT
-Expires: 31 Jul 2020 00:00 WAT
+Status: Delegated
+Created: 13 May 2009
+Modified: 24 Aug 2012
+Expires: 31 Jul 2020
 Name Servers:
     rns1.nic.net.ng
     rns2.nic.net.ng
@@ -21,13 +21,14 @@ Country: NG
 
 
 Registrant:
-Organisation: Nigeria Internet Registration Association (NIRA)
+Name: Domain Admin
+Organisation: Nigeria Internet Registration Association
 Address:
 	9 Kofo Abayomi Street
-	Victoria Island
-	Lagos, Lagos, Nigeria P O Box 1088 Yaba
+	Victoria Island, Lagos 101241
 	NG
-Email Address: ugo@nira.org.ng
+Email Address: admin@nira.org.ng
+Phone Number: +2348086031704
 
 
 Admin Contact:

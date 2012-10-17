@@ -6,8 +6,8 @@ Domain Information
 Query: google.iq
 Status: Delegated
 Created: 04 Oct 2010
-Modified: 24 May 2012
-Expires: 03 Oct 2012
+Modified: 17 Oct 2012
+Expires: 03 Oct 2013
 
 Registrar Information
 Registrar Name: CMC Registrar

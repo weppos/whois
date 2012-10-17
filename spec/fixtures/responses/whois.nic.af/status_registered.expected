@@ -17,21 +17,22 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-10-05")
+  should: %s == Time.parse("2009-10-05 03:51:17 UTC")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-05-01")
+  should: %s == Time.parse("2012-04-30 14:49:02 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-05-05")
+  should: %s == Time.parse("2013-05-05 03:51:17 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "MarkMonitor"
+  should: %s.organization == nil
   should: %s.url          == "http://www.markmonitor.com"
 
 
