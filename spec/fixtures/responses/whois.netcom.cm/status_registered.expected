@@ -10,15 +10,15 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-10-07")
+  should: %s == Time.parse("2009-10-07 10:02 WAT")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-02-12")
+  should: %s == Time.parse("2012-09-06 15:34 WAT")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-10-07")
+  should: %s == Time.parse("2013-10-07 10:02 WAT")
 
 
 #nameservers

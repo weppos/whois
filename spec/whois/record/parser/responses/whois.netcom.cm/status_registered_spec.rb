@@ -39,19 +39,19 @@ describe Whois::Record::Parser::WhoisNetcomCm, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2009-10-07")
+      subject.created_on.should == Time.parse("2009-10-07 10:02 WAT")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-02-12")
+      subject.updated_on.should == Time.parse("2012-09-06 15:34 WAT")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-10-07")
+      subject.expires_on.should == Time.parse("2013-10-07 10:02 WAT")
     end
   end
   describe "#nameservers" do
