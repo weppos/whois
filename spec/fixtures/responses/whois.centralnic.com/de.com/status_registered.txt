@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO819205
 Domain Name:BOERSE.DE.COM
 Created On:28-Nov-2011 21:38:30 UTC
-Last Updated On:03-Dec-2011 00:15:47 UTC
+Last Updated On:16-Jan-2012 16:26:04 UTC
 Expiration Date:28-Nov-2012 23:59:59 UTC
 Status:TRANSFER PROHIBITED
 Registrant ID:T2187-GANDI-VKXS
@@ -55,10 +55,11 @@ Billing Country:IN
 Billing Phone:+91.4312431415
 Billing Email:08cb0ba28467bf1e9ec03c83fdc62534-1376264@contact.gandi.net
 Sponsoring Registrar ID:H1167922
+Sponsoring Registrar IANA ID:81
 Sponsoring Registrar Organization:Gandi SAS
-Sponsoring Registrar Street1:15 place de la Nation
+Sponsoring Registrar Street1:63-65 bd. Massena
 Sponsoring Registrar City:Paris
-Sponsoring Registrar Postal Code:75011
+Sponsoring Registrar Postal Code:75013
 Sponsoring Registrar Country:FR
 Sponsoring Registrar Phone:+33 1 7039 3740
 Sponsoring Registrar FAX:+33 1 4373 1851

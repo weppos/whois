@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      subject.status.should == ["OK"]
+      subject.status.should == ["PENDING DELETE", "PENDING DELETE RESTORABLE"]
     end
   end
   describe "#available?" do
@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-01-11 11:13:32 UTC")
+      subject.updated_on.should == Time.parse("2012-10-16 00:15:11 UTC")
     end
   end
   describe "#expires_on" do
@@ -84,8 +84,8 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "H269407"
       subject.registrar.name.should         == nil
-      subject.registrar.organization.should == "Public Domain Registry Inc."
-      subject.registrar.url.should          == "www.publicdomainregistry.com"
+      subject.registrar.organization.should == "PDR Ltd. d/b/a PublicDomainRegistry.com"
+      subject.registrar.url.should          == "http://www.publicdomainregistry.com"
     end
   end
   describe "#registrant_contacts" do
@@ -153,9 +153,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns50.hosting-uae.com"
+      subject.nameservers[0].name.should == "dns2.parkpage.foundationapi.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns49.hosting-uae.com"
+      subject.nameservers[1].name.should == "dns.parkpage.foundationapi.com"
     end
   end
 end

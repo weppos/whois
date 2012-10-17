@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO85080
 Domain Name:WALKABOUT.EU.COM
 Created On:14-Aug-2001 10:14:41 UTC
-Last Updated On:21-Sep-2011 08:16:17 UTC
+Last Updated On:16-Jan-2012 16:26:29 UTC
 Expiration Date:14-Aug-2013 23:59:59 UTC
 Status:OK
 Registrant ID:H1045382

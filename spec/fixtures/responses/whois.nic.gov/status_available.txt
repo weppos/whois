@@ -1,1 +1,7 @@
-NOT FOUND
+% DOTGOV WHOIS Server ready 
+No match for "U34JEDZCQ.GOV".
+
+>>> Last update of whois database: Wed, 17 Oct 2012 17:05:15 UTC <<<
+Please be advised that this whois server only contains information pertaining
+to the .GOV domain. For information for other domains please use the whois
+server at RS.INTERNIC.NET. 

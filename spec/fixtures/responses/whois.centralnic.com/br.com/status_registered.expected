@@ -32,7 +32,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-04-16 00:16:02 UTC")
+  should: %s == Time.parse("2012-01-16 16:23:18 UTC")
 
 #expires_on
   should: %s CLASS(time)
@@ -62,7 +62,7 @@
   should: %s[0].country_code  == "BR"
   should: %s[0].phone         == "+1.551130787711"
   should: %s[0].fax           == nil
-  should: %s[0].email         == "ac@camarotti.com"
+  should: %s[0].email         == "ac@bpp.bz"
 
 #admin_contacts
   should: %s CLASS(array)
@@ -80,7 +80,7 @@
   should: %s[0].country_code  == "BR"
   should: %s[0].phone         == "+1.551130787711"
   should: %s[0].fax           == nil
-  should: %s[0].email         == "ac@camarotti.com"
+  should: %s[0].email         == "ac@bpp.bz"
 
 #technical_contacts
   should: %s CLASS(array)
@@ -98,13 +98,17 @@
   should: %s[0].country_code  == "BR"
   should: %s[0].phone         == "+1.551130787711"
   should: %s[0].fax           == nil
-  should: %s[0].email         == "ac@camarotti.com"
+  should: %s[0].email         == "ac@bpp.bz"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(2)
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.locaweb.com.br"
+  should: %s[0].name == "a.dns.terra.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.locaweb.com.br"
+  should: %s[1].name == "c.dns.terra.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "b.dns.terra.com.br"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "d.dns.terra.com.br"

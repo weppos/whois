@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisPirOrg, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "NOTICE: Access to .ORG WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy.  This service is intended only for query-based access.  You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator or any ICANN-Accredited Registrar, except as reasonably necessary to register domain names or modify existing registrations.  All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+      subject.disclaimer.should == "Access to .ORG WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
     end
   end
   describe "#domain" do
@@ -70,13 +70,13 @@ describe Whois::Record::Parser::WhoisPirOrg, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-03-04 12:07:19 UTC")
+      subject.updated_on.should == Time.parse("2012-09-18 09:20:07 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-10-20 04:00:00 UTC")
+      subject.expires_on.should == Time.parse("2013-10-20 04:00:00 UTC")
     end
   end
   describe "#registrar" do

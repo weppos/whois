@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO624205
 Domain Name:BILLBOARD.BR.COM
 Created On:17-Apr-2009 12:22:49 UTC
-Last Updated On:16-Apr-2011 00:16:02 UTC
+Last Updated On:16-Jan-2012 16:23:18 UTC
 Expiration Date:17-Apr-2014 23:59:59 UTC
 Status:TRANSFER PROHIBITED
 Registrant ID:36542943
@@ -23,7 +23,7 @@ Registrant State/Province:Sao Paulo
 Registrant Postal Code:04531-050
 Registrant Country:BR
 Registrant Phone:+1.551130787711
-Registrant Email:ac@camarotti.com
+Registrant Email:ac@bpp.bz
 Admin ID:36542943
 Admin Name:Antonio Camarotti Pinto
 Admin Street1:Rua Tapinas
@@ -33,7 +33,7 @@ Admin State/Province:Sao Paulo
 Admin Postal Code:04531-050
 Admin Country:BR
 Admin Phone:+1.551130787711
-Admin Email:ac@camarotti.com
+Admin Email:ac@bpp.bz
 Tech ID:36542943
 Tech Name:Antonio Camarotti Pinto
 Tech Street1:Rua Tapinas
@@ -43,7 +43,7 @@ Tech State/Province:Sao Paulo
 Tech Postal Code:04531-050
 Tech Country:BR
 Tech Phone:+1.551130787711
-Tech Email:ac@camarotti.com
+Tech Email:ac@bpp.bz
 Billing ID:36542943
 Billing Name:Antonio Camarotti Pinto
 Billing Street1:Rua Tapinas
@@ -53,20 +53,22 @@ Billing State/Province:Sao Paulo
 Billing Postal Code:04531-050
 Billing Country:BR
 Billing Phone:+1.551130787711
-Billing Email:ac@camarotti.com
+Billing Email:ac@bpp.bz
 Sponsoring Registrar ID:H292913
+Sponsoring Registrar IANA ID:2
 Sponsoring Registrar Organization:Network Solutions LLC
-Sponsoring Registrar Street1:13861 Sunrise Valley Drive
-Sponsoring Registrar Street2:Suite 300
-Sponsoring Registrar City:Herndon
-Sponsoring Registrar State/Province:VA
-Sponsoring Registrar Postal Code:20171
+Sponsoring Registrar Street1:12808 Gran Bay Parkway West
+Sponsoring Registrar City:Jacksonville
+Sponsoring Registrar State/Province:FL
+Sponsoring Registrar Postal Code:32258
 Sponsoring Registrar Country:US
-Sponsoring Registrar Phone:+1.5707088788
-Sponsoring Registrar FAX:+1.7036685817
+Sponsoring Registrar Phone:+1.9046806600
+Sponsoring Registrar FAX:+1.9048800350
 Sponsoring Registrar Website:http://www.networksolutions.com/
-Name Server:NS1.LOCAWEB.COM.BR
-Name Server:NS2.LOCAWEB.COM.BR
+Name Server:A.DNS.TERRA.COM
+Name Server:C.DNS.TERRA.COM
+Name Server:B.DNS.TERRA.COM.BR
+Name Server:D.DNS.TERRA.COM.BR
 DNSSEC:Unsigned
 
 

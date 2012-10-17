@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
   end
   describe "#domain" do
     it do
-      subject.domain.should == "educause.edu"
+      subject.domain.should == "academia.edu"
     end
   end
   describe "#domain_id" do
@@ -64,19 +64,19 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("1998-03-11")
+      subject.created_on.should == Time.parse("1999-05-10")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-10-02")
+      subject.updated_on.should == Time.parse("2012-04-04")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-07-31")
+      subject.expires_on.should == Time.parse("2013-07-31")
     end
   end
   describe "#registrar" do
@@ -92,11 +92,11 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       subject.registrant_contacts[0].id.should            == nil
       subject.registrant_contacts[0].name.should          == nil
-      subject.registrant_contacts[0].organization.should  == "EDUCAUSE"
-      subject.registrant_contacts[0].address.should       == "4772 Walnut Street\nSuite 206"
-      subject.registrant_contacts[0].city.should          == "Boulder"
-      subject.registrant_contacts[0].zip.should           == "80301"
-      subject.registrant_contacts[0].state.should         == "CO"
+      subject.registrant_contacts[0].organization.should  == "Academia"
+      subject.registrant_contacts[0].address.should       == "251 Kearny St\nsuite 520"
+      subject.registrant_contacts[0].city.should          == "San Francisco"
+      subject.registrant_contacts[0].zip.should           == "94108"
+      subject.registrant_contacts[0].state.should         == "CA"
       subject.registrant_contacts[0].country.should       == "UNITED STATES"
       subject.registrant_contacts[0].country_code.should  == nil
       subject.registrant_contacts[0].phone.should         == nil
@@ -111,17 +111,17 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
       subject.admin_contacts[0].id.should            == nil
-      subject.admin_contacts[0].name.should          == "Information Technology\nEDUCAUSE"
+      subject.admin_contacts[0].name.should          == "Academia, Inc."
       subject.admin_contacts[0].organization.should  == nil
-      subject.admin_contacts[0].address.should       == "4772 Walnut Street\nSte 206"
-      subject.admin_contacts[0].city.should          == "Boulder"
-      subject.admin_contacts[0].zip.should           == "80301"
-      subject.admin_contacts[0].state.should         == "CO"
+      subject.admin_contacts[0].address.should       == "251 Kearny St\nsuite 520"
+      subject.admin_contacts[0].city.should          == "San Francisco"
+      subject.admin_contacts[0].zip.should           == "94108"
+      subject.admin_contacts[0].state.should         == "CA"
       subject.admin_contacts[0].country.should       == "UNITED STATES"
       subject.admin_contacts[0].country_code.should  == nil
-      subject.admin_contacts[0].phone.should         == "(303) 449-4430"
+      subject.admin_contacts[0].phone.should         == "(415) 829-2341"
       subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "netadmin@educause.edu"
+      subject.admin_contacts[0].email.should         == "helpdesk@academia.edu"
     end
   end
   describe "#technical_contacts" do
@@ -131,32 +131,31 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
       subject.technical_contacts[0].id.should            == nil
-      subject.technical_contacts[0].name.should          == "Information Technology\nEDUCAUSE"
+      subject.technical_contacts[0].name.should          == "Academia, Inc."
       subject.technical_contacts[0].organization.should  == nil
-      subject.technical_contacts[0].address.should       == "4772 Walnut Street\nSte 206"
-      subject.technical_contacts[0].city.should          == "Boulder"
-      subject.technical_contacts[0].zip.should           == "80301"
-      subject.technical_contacts[0].state.should         == "CO"
+      subject.technical_contacts[0].address.should       == "251 Kearny St\nsuite 520"
+      subject.technical_contacts[0].city.should          == "San Francisco"
+      subject.technical_contacts[0].zip.should           == "94108"
+      subject.technical_contacts[0].state.should         == "CA"
       subject.technical_contacts[0].country.should       == "UNITED STATES"
       subject.technical_contacts[0].country_code.should  == nil
-      subject.technical_contacts[0].phone.should         == "(303) 449-4430"
+      subject.technical_contacts[0].phone.should         == "(415) 829-2341"
       subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "netadmin@educause.edu"
+      subject.technical_contacts[0].email.should         == "helpdesk@academia.edu"
     end
   end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
+      subject.nameservers.should have(4).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns3.educause.edu"
-      subject.nameservers[0].ipv4.should == "198.59.61.50"
+      subject.nameservers[0].name.should == "ns-1484.awsdns-57.org"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns4.educause.edu"
-      subject.nameservers[1].ipv4.should == "192.52.179.69"
+      subject.nameservers[1].name.should == "ns-225.awsdns-28.com"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns5.educause.edu"
-      subject.nameservers[2].ipv4.should == "198.59.61.50"
+      subject.nameservers[2].name.should == "ns-1850.awsdns-39.co.uk"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns-629.awsdns-14.net"
     end
   end
 end

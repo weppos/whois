@@ -17,7 +17,7 @@
 
 
 #status
-  should: %s == ["OK"]
+  should: %s == ["PENDING DELETE", "PENDING DELETE RESTORABLE"]
 
 #available?
   should: %s == false
@@ -32,7 +32,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-01-11 11:13:32 UTC")
+  should: %s == Time.parse("2012-10-16 00:15:11 UTC")
 
 #expires_on
   should: %s CLASS(time)
@@ -43,8 +43,8 @@
   should: %s CLASS(registrar)
   should: %s.id           == "H269407"
   should: %s.name         == nil
-  should: %s.organization == "Public Domain Registry Inc."
-  should: %s.url          == "www.publicdomainregistry.com"
+  should: %s.organization == "PDR Ltd. d/b/a PublicDomainRegistry.com"
+  should: %s.url          == "http://www.publicdomainregistry.com"
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -105,6 +105,6 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns50.hosting-uae.com"
+  should: %s[0].name == "dns2.parkpage.foundationapi.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns49.hosting-uae.com"
+  should: %s[1].name == "dns.parkpage.foundationapi.com"

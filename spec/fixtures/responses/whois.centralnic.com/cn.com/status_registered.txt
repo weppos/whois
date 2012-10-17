@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO323367
 Domain Name:GSN.CN.COM
 Created On:23-Nov-2005 15:44:03 UTC
-Last Updated On:05-Dec-2011 10:25:41 UTC
+Last Updated On:16-Jan-2012 16:25:57 UTC
 Expiration Date:23-Nov-2012 23:59:59 UTC
 Status:OK
 Registrant ID:H1062079
@@ -35,6 +35,7 @@ Billing Country:SG
 Billing Phone:+65.62336919
 Billing Email:abuse@gsn.in
 Sponsoring Registrar ID:H67436
+Sponsoring Registrar IANA ID:1408
 Sponsoring Registrar Organization:United Domains AG
 Sponsoring Registrar Street1:Gautinger Str. 10
 Sponsoring Registrar City:Starnberg

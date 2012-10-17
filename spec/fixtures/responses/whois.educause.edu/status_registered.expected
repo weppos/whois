@@ -3,7 +3,7 @@
 
 
 #domain
-  should: %s == "educause.edu"
+  should: %s == "academia.edu"
 
 #domain_id
   should: %s raise_error(Whois::PropertyNotSupported)
@@ -28,15 +28,15 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("1998-03-11")
+  should: %s == Time.parse("1999-05-10")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-10-02")
+  should: %s == Time.parse("2012-04-04")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-07-31")
+  should: %s == Time.parse("2013-07-31")
 
 
 #registrar
@@ -49,11 +49,11 @@
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == nil
   should: %s[0].name          == nil
-  should: %s[0].organization  == "EDUCAUSE"
-  should: %s[0].address       == "4772 Walnut Street\nSuite 206"
-  should: %s[0].city          == "Boulder"
-  should: %s[0].zip           == "80301"
-  should: %s[0].state         == "CO"
+  should: %s[0].organization  == "Academia"
+  should: %s[0].address       == "251 Kearny St\nsuite 520"
+  should: %s[0].city          == "San Francisco"
+  should: %s[0].zip           == "94108"
+  should: %s[0].state         == "CA"
   should: %s[0].country       == "UNITED STATES"
   should: %s[0].country_code  == nil
   should: %s[0].phone         == nil
@@ -66,17 +66,17 @@
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
   should: %s[0].id            == nil
-  should: %s[0].name          == "Information Technology\nEDUCAUSE"
+  should: %s[0].name          == "Academia, Inc."
   should: %s[0].organization  == nil
-  should: %s[0].address       == "4772 Walnut Street\nSte 206"
-  should: %s[0].city          == "Boulder"
-  should: %s[0].zip           == "80301"
-  should: %s[0].state         == "CO"
+  should: %s[0].address       == "251 Kearny St\nsuite 520"
+  should: %s[0].city          == "San Francisco"
+  should: %s[0].zip           == "94108"
+  should: %s[0].state         == "CA"
   should: %s[0].country       == "UNITED STATES"
   should: %s[0].country_code  == nil
-  should: %s[0].phone         == "(303) 449-4430"
+  should: %s[0].phone         == "(415) 829-2341"
   should: %s[0].fax           == nil
-  should: %s[0].email         == "netadmin@educause.edu"
+  should: %s[0].email         == "helpdesk@academia.edu"
 
 #technical_contacts
   should: %s CLASS(array)
@@ -84,28 +84,27 @@
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == nil
-  should: %s[0].name          == "Information Technology\nEDUCAUSE"
+  should: %s[0].name          == "Academia, Inc."
   should: %s[0].organization  == nil
-  should: %s[0].address       == "4772 Walnut Street\nSte 206"
-  should: %s[0].city          == "Boulder"
-  should: %s[0].zip           == "80301"
-  should: %s[0].state         == "CO"
+  should: %s[0].address       == "251 Kearny St\nsuite 520"
+  should: %s[0].city          == "San Francisco"
+  should: %s[0].zip           == "94108"
+  should: %s[0].state         == "CA"
   should: %s[0].country       == "UNITED STATES"
   should: %s[0].country_code  == nil
-  should: %s[0].phone         == "(303) 449-4430"
+  should: %s[0].phone         == "(415) 829-2341"
   should: %s[0].fax           == nil
-  should: %s[0].email         == "netadmin@educause.edu"
+  should: %s[0].email         == "helpdesk@academia.edu"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(3)
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns3.educause.edu"
-  should: %s[0].ipv4 == "198.59.61.50"
+  should: %s[0].name == "ns-1484.awsdns-57.org"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns4.educause.edu"
-  should: %s[1].ipv4 == "192.52.179.69"
+  should: %s[1].name == "ns-225.awsdns-28.com"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns5.educause.edu"
-  should: %s[2].ipv4 == "198.59.61.50"
+  should: %s[2].name == "ns-1850.awsdns-39.co.uk"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns-629.awsdns-14.net"

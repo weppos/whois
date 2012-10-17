@@ -1,5 +1,9 @@
-% DOTGOV WHOIS Server ready
-Domain Name: nic.gov
-Status: Active
+% DOTGOV WHOIS Server ready 
+   Domain Name: GSA.GOV
+   Status: ACTIVE
 
-Please be advised that this whois server only contains information pertaining to the .GOV domain. For information for other domains please use the whois server at RS.INTERNIC.NET.
+
+>>> Last update of whois database: Wed, 17 Oct 2012 17:05:15 UTC <<<
+Please be advised that this whois server only contains information pertaining
+to the .GOV domain. For information for other domains please use the whois
+server at RS.INTERNIC.NET. 

@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-04-16 00:16:02 UTC")
+      subject.updated_on.should == Time.parse("2012-01-16 16:23:18 UTC")
     end
   end
   describe "#expires_on" do
@@ -105,7 +105,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].country_code.should  == "BR"
       subject.registrant_contacts[0].phone.should         == "+1.551130787711"
       subject.registrant_contacts[0].fax.should           == nil
-      subject.registrant_contacts[0].email.should         == "ac@camarotti.com"
+      subject.registrant_contacts[0].email.should         == "ac@bpp.bz"
     end
   end
   describe "#admin_contacts" do
@@ -125,7 +125,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].country_code.should  == "BR"
       subject.admin_contacts[0].phone.should         == "+1.551130787711"
       subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "ac@camarotti.com"
+      subject.admin_contacts[0].email.should         == "ac@bpp.bz"
     end
   end
   describe "#technical_contacts" do
@@ -145,17 +145,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].country_code.should  == "BR"
       subject.technical_contacts[0].phone.should         == "+1.551130787711"
       subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "ac@camarotti.com"
+      subject.technical_contacts[0].email.should         == "ac@bpp.bz"
     end
   end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
+      subject.nameservers.should have(4).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.locaweb.com.br"
+      subject.nameservers[0].name.should == "a.dns.terra.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.locaweb.com.br"
+      subject.nameservers[1].name.should == "c.dns.terra.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "b.dns.terra.com.br"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "d.dns.terra.com.br"
     end
   end
 end

@@ -25,42 +25,41 @@ type: help
 
 --------------------------
 
-Domain Name: EDUCAUSE.EDU
+Domain Name: ACADEMIA.EDU
 
 Registrant:
-   EDUCAUSE
-   4772 Walnut Street
-   Suite 206
-   Boulder, CO 80301
+   Academia
+   251 Kearny St
+   suite 520
+   San Francisco, CA 94108
    UNITED STATES
 
 Administrative Contact:
-   Information Technology
-   EDUCAUSE
-   4772 Walnut Street
-   Ste 206
-   Boulder, CO 80301
+   Academia, Inc.
+   251 Kearny St
+   suite 520
+   San Francisco, CA 94108
    UNITED STATES
-   (303) 449-4430
-   netadmin@educause.edu
+   (415) 829-2341
+   helpdesk@academia.edu
 
 Technical Contact:
-   Information Technology
-   EDUCAUSE
-   4772 Walnut Street
-   Ste 206
-   Boulder, CO 80301
+   Academia, Inc.
+   251 Kearny St
+   suite 520
+   San Francisco, CA 94108
    UNITED STATES
-   (303) 449-4430
-   netadmin@educause.edu
+   (415) 829-2341
+   helpdesk@academia.edu
 
 Name Servers: 
-   NS3.EDUCAUSE.EDU      198.59.61.50
-   NS4.EDUCAUSE.EDU      192.52.179.69
-   NS5.EDUCAUSE.EDU      198.59.61.50
+   NS-1484.AWSDNS-57.ORG        
+   NS-225.AWSDNS-28.COM         
+   NS-1850.AWSDNS-39.CO.UK      
+   NS-629.AWSDNS-14.NET         
 
-Domain record activated:    11-Mar-1998
-Domain record last updated: 02-Oct-2009
-Domain expires:             31-Jul-2010
+Domain record activated:    10-May-1999
+Domain record last updated: 04-Apr-2012
+Domain expires:             31-Jul-2013
 
 
