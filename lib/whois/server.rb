@@ -253,7 +253,7 @@ module Whois
             return factory(type, *definition)
           end
         end
-      rescue ArgumentError => error
+      rescue ArgumentError
         # continue
       end
       raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
