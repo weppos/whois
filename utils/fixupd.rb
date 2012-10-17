@@ -8,8 +8,11 @@ require 'uri'
 require 'yaml'
 require 'whois'
 
-SOURCE = "https://raw.github.com/gist/3907123/tlds.yml"
+# SOURCE = "tlds.yml"
+# defs = YAML.load_file(SOURCE)
 
+
+SOURCE = "https://raw.github.com/gist/3907123/tlds.yml"
 uri  = URI.parse(SOURCE)
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
@@ -32,5 +35,26 @@ defs.each do |tld, node|
     rescue => e
       puts "Error #{e.message}"
     end
+  end
+end
+
+
+skippable = {}
+defs.each do |tld, node|
+  fixtures = node.reject { |k,v| k.index("_") == 0 }.reject { |k,v| node["_#{k}_skipdiff"].nil? }
+  subdir   = node["_subdir"] ? "/#{node["_subdir"]}" : ""
+  fixtures.each do |name, domain|
+    target = "spec/fixtures/responses/#{node["_server"]}#{subdir}/#{name}.txt"
+    skippable[target] = node["_#{name}_skipdiff"]
+  end
+end
+
+changes = `git status`.scan(/modified:\s+(.+)/).flatten
+changes.each do |path|
+  next unless (alpha = skippable[path])
+  beta = `git show HEAD~1:#{path} | diff - #{path}`.scan(/^(\d+)c\1/).flatten.map(&:to_i)
+  if (alpha - beta) == []
+    `git checkout #{path}`
+    puts "Reset #{path}"
   end
 end
