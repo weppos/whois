@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisRegistryGy, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2008-05-13")
+      subject.created_on.should == Time.parse("2008-05-12 17:56:23 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-10-12")
+      subject.updated_on.should == Time.parse("2012-10-15 08:36:53 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2011-10-05")
+      subject.expires_on.should == Time.parse("2013-10-04 23:30:00 UTC")
     end
   end
   describe "#registrar" do
@@ -69,7 +69,8 @@ describe Whois::Record::Parser::WhoisRegistryGy, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
       subject.registrar.name.should         == "MarkMonitor"
-      subject.registrar.url.should          == nil
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   describe "#nameservers" do

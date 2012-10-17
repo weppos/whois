@@ -1,3 +1,6 @@
+Domain Name: u34jedzcq.gy
+Domain Status: Available
+
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
 automated.  Whois database is provided by GY Registry as a service to the internet community. 
@@ -10,49 +13,5 @@ to: (1) allow, enable, or otherwise support the transmission of mass
 unsolicited, commercial advertising or solicitations via e-mail, telephone,
 or facsimile; or (2)  The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
-Domain Information
-Query: google.gy
-Status: Active
-Created: 13 May 2008
-Modified: 12 Oct 2010
-Expires: 05 Oct 2011
-Name Servers:
-    ns2.google.com
-    ns1.google.com
-    ns3.google.com
-    ns4.google.com
 
-Registrar Information
-Registrar Name: MarkMonitor
-
-
-
-
-Registrant:
-Name: google Inc
-Address:
-	mountain View
-	USA
-	Unknown	US
-Email Address: dns-admin@google.com
-Phone Number: +1.6506188571
-
-
-Admin Contact:
-Name: DNS Admin
-Address:
-	1600 Amphitheatre Parkway
-	mountain View
-	USA	US
-Email Address: dns-admin@google.com
-Phone Number: +1.6506188571
-
-
-Technical Contact:
-Name: Unknown
-Address:
-	Unknown
-	Unknown	US
-Email Address: Unknown
-Phone Number: Unknown
-
+>>> Last update of WHOIS database: 2012-10-18T03:47:00.257Z <<<
