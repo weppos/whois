@@ -8,7 +8,7 @@ Domain Information
 Query: google.bi
 Status: Delegated
 Created: 30 Sep 2002
-Modified: 30 Aug 2012
+Modified: 23 Sep 2012
 Expires: 30 Sep 2013
 Name Servers:
     ns1.google.com
@@ -24,6 +24,45 @@ Country: US
 
 
 Registrant:
+Name: DNS Admin
+Organisation: Google Inc.
+Address:
+	1600 Amphitheatre Parkway
+	Mountain View, CA 94043
+	US
 Email Address: dns-admin AT google DOT com
-Phone Number: 1.650253
+Phone Number: +1.6506234000
+
+
+Admin Contact:
+Name: DNS Admin
+Organisation: Google Inc.
+Address:
+	1600 Amphitheatre Parkway
+	Mountain View, CA 94043
+	US
+Email Address: dns-admin AT google DOT com
+Phone Number: +1.6506234000
+
+
+Technical Contact:
+Name: DNS Admin
+Organisation: Google Inc.
+Address:
+	1600 Amphitheatre Parkway
+	Mountain View, CA 94043
+	US
+Email Address: dns-admin AT google DOT com
+Phone Number: +1.6506234000
+
+
+Billing Contact:
+Name: MM Domain Administrator
+Organisation: MarkMonitor Inc
+Address:
+	391 N Ancestor Place
+	Boise, Idaho 83704
+	US
+Email Address: ccopsbilling AT markmonitor DOT com
+Phone Number: +1.2083895740
 

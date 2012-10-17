@@ -4,10 +4,10 @@ The contents of the WHOIS is Dr Lisse's intellectual property and is provided by
 
 The compilation, repackaging, dissemination or other use of this Data is expressly prohibited. We reserve the right to enter IP addresses and/or corresponding networks of offenders into our IPTables.
 
-.NA(R), Copyright(C) 1991, 1995, 2007, 2010 Dr Lisse
+.NA(R), Copyright(C) 1991, 1995, 2008, 2012 Dr Lisse
 
 
-Domain Name Information
+Domain Information
 Query: u34jedzcq.na
 Status: Not Registered
 
