@@ -55,7 +55,7 @@ describe Whois::Record::Parser::WhoisNicGl, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-12-09")
+      subject.updated_on.should == Time.parse("2012-03-10")
     end
   end
   describe "#expires_on" do
@@ -69,6 +69,7 @@ describe Whois::Record::Parser::WhoisNicGl, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
       subject.registrar.name.should         == "MarkMonitor"
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
