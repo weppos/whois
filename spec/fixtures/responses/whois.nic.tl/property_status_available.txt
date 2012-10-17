@@ -1,3 +1,6 @@
+Domain Name: u34jedzcq.tl
+Domain Status: Available
+
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
 automated.  Whois database is provided by CoCCA as a service to the internet
@@ -16,14 +19,4 @@ expressly prohibited.
 
 CoCCA Helpdesk | http://helpdesk.cocca.cx
 
-Domain Information
-Query: google.tl
-Created: 23 May 2003
-Expires: 23 May 2010
-Modified: 05 Aug 2009
-Status: Active
-Registrar: MarkMonitor
-Name Servers:
-    ns1.google.com
-    ns2.google.com
-
+>>> Last update of WHOIS database: 2012-10-18T03:37:27.477Z <<<
