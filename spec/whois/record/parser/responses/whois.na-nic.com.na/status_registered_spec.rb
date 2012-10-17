@@ -55,13 +55,13 @@ describe Whois::Record::Parser::WhoisNaNicComNa, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-03-19")
+      subject.updated_on.should == Time.parse("2012-07-19")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-08-20")
+      subject.expires_on.should == Time.parse("2013-08-20")
     end
   end
   describe "#registrar" do
