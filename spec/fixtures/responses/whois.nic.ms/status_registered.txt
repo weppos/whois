@@ -9,11 +9,10 @@ You agree that you may use this Data only for lawful purposes and that under no 
 
 Domain Information
 Query: google.ms
-Status: Active
+Status: Delegated
 Created: 04 Jun 1999 08:00 AST
-Modified: 11 May 2010 18:45 AST
-Expires: 04 Jun 2011 08:00 AST
-Renewal Grace Expiry: 11 May 2010 18:45 AST
+Modified: 07 May 2012 14:23 AST
+Expires: 04 Jun 2013 08:00 AST
 Name Servers:
     ns1.google.com
     ns2.google.com
@@ -56,4 +55,15 @@ Address:
 Email Address: dns-admin@google.com
 Phone Number: +1.6502530000
 Fax Number: +1.6506188571
+
+
+Billing Contact:
+Name: MarkMonitor
+Address:
+	10400 Overland Rd.
+	PMB 155
+	Boise, ID 83709-1433	US
+Email Address: ccops@markmonitor.com
+Phone Number: +1 208 389 5740
+Fax Number: +1 208 389 5771
 
