@@ -17,6 +17,8 @@
 
 - CHANGED: Updated whois.nic.gs parser to the new response format.
 
+- CHANGED: Updated whois.nic.ht parser to the new response format.
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
