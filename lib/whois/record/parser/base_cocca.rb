@@ -73,10 +73,13 @@ module Whois
 
 
         property_supported :registrar do
-          Record::Registrar.new(
-            :name => content_for_scanner.slice(/Registrar Name: (.+)\n/, 1),
-            :url  => content_for_scanner.slice(/Registration URL: (.+)\n/, 1)
-          )
+          if content_for_scanner =~ /Registrar Name: (.+)\n/
+            Record::Registrar.new(
+                :name         => $1,
+                :organization => nil,
+                :url          => content_for_scanner.slice(/Registration URL: (.+)\n/, 1)
+            )
+          end
         end
 
 

@@ -69,6 +69,7 @@ describe Whois::Record::Parser::WhoisCmcIq, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
       subject.registrar.name.should         == "CMC Registrar"
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == nil
     end
   end

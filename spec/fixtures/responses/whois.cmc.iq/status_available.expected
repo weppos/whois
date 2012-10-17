@@ -25,5 +25,9 @@
   should: %s == nil
 
 
+#registrar
+  should: %s == nil
+
+
 #nameservers
   should: %s raise_error(Whois::PropertyNotSupported)

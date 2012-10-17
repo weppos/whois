@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNetcomCm, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.cm"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -52,6 +62,15 @@ describe Whois::Record::Parser::WhoisNetcomCm, "status_registered.expected" do
     it do
       subject.expires_on.should be_a(Time)
       subject.expires_on.should == Time.parse("2013-10-07 10:02 WAT")
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "MarkMonitor"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#nameservers" do

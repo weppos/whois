@@ -32,6 +32,7 @@
   should: %s CLASS(registrar)
   should: %s.id           == nil
   should: %s.name         == "CMC Registrar"
+  should: %s.organization == nil
   should: %s.url          == nil
 
 

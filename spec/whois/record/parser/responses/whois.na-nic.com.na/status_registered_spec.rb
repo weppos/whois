@@ -69,6 +69,7 @@ describe Whois::Record::Parser::WhoisNaNicComNa, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
       subject.registrar.name.should         == "MarkMonitor"
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
