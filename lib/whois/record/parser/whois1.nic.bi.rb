@@ -15,6 +15,10 @@ module Whois
     class Parser
 
       # Parser for the whois1.nic.bi server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class Whois1NicBi < BaseCocca
       end
 
