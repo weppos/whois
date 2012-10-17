@@ -26,7 +26,8 @@ module Whois
 
         property_not_supported :domain_id
 
-
+        # TODO: /pending delete/ => :redemption
+        # TODO: /pending purge/  => :redemption
         property_supported :status do
           list = statuses
           case
