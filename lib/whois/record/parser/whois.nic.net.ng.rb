@@ -15,6 +15,10 @@ module Whois
     class Parser
 
       # Parser for the whois.nic.net.ng server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class WhoisNicNetNg < BaseCocca
       end
 
