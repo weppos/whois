@@ -33,7 +33,7 @@ defs.each do |tld, node|
       File.open(target, "w+") { |f| f.write(part.body) }
       puts "Saved #{target}"
     rescue => e
-      puts "Error #{e.message}"
+      puts "Error for #{domain}: #{e.message}"
     end
   end
 end
