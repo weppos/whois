@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisCmcIq, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2010-10-04")
+      subject.created_on.should == Time.parse("2010-10-03 21:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-10-17")
+      subject.updated_on.should == Time.parse("2012-10-17 06:21:08 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-10-03")
+      subject.expires_on.should == Time.parse("2013-10-02 21:00:00 UTC")
     end
   end
   describe "#registrar" do
