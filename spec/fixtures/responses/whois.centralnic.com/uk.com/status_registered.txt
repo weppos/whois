@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO86293
 Domain Name:HISTORY.UK.COM
 Created On:31-Aug-2001 11:50:57 UTC
-Last Updated On:01-Sep-2011 23:42:41 UTC
+Last Updated On:16-Jan-2012 16:26:58 UTC
 Expiration Date:31-Aug-2013 23:59:59 UTC
 Status:OK
 Registrant ID:H1045821
@@ -57,8 +57,8 @@ Sponsoring Registrar Postal Code:BN50 9EY
 Sponsoring Registrar Country:GB
 Sponsoring Registrar Phone:01273 684969
 Sponsoring Registrar Website:http://www.e-velocity.co.uk/
-Name Server:NS1.MYHOSTCP.COM
-Name Server:NS2.MYHOSTCP.COM
+Name Server:NS60.EUKDNS.COM.
+Name Server:NS61.EUKDNS.COM.
 DNSSEC:Unsigned
 
 

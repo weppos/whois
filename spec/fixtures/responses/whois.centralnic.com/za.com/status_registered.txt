@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO333077
 Domain Name:SIYENZA.ZA.COM
 Created On:17-Nov-2004 11:47:29 UTC
-Last Updated On:19-Nov-2010 13:41:46 UTC
+Last Updated On:16-Jan-2012 16:23:22 UTC
 Expiration Date:17-Nov-2013 23:59:59 UTC
 Status:OK
 Registrant ID:H1063006

@@ -70,13 +70,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-11-29 02:15:36 UTC")
+      subject.updated_on.should == Time.parse("2012-09-17 00:16:14 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-09-29 23:59:59 UTC")
+      subject.expires_on.should == Time.parse("2013-09-29 23:59:59 UTC")
     end
   end
   describe "#registrar" do
@@ -84,8 +84,8 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "H269407"
       subject.registrar.name.should         == nil
-      subject.registrar.organization.should == "Public Domain Registry Inc."
-      subject.registrar.url.should          == "www.publicdomainregistry.com"
+      subject.registrar.organization.should == "PDR Ltd. d/b/a PublicDomainRegistry.com"
+      subject.registrar.url.should          == "http://www.publicdomainregistry.com"
     end
   end
   describe "#registrant_contacts" do

@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO275307
 Domain Name:COLLEGE.US.COM
 Created On:20-Oct-2003 10:03:28 UTC
-Last Updated On:10-May-2010 10:21:34 UTC
+Last Updated On:16-Jan-2012 16:27:26 UTC
 Expiration Date:20-Oct-2014 23:59:59 UTC
 Status:OK
 Registrant ID:H1044037

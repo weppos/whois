@@ -70,13 +70,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-09-13 07:43:03 UTC")
+      subject.updated_on.should == Time.parse("2012-06-23 10:38:02 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-02-07 23:59:59 UTC")
+      subject.expires_on.should == Time.parse("2015-02-07 23:59:59 UTC")
     end
   end
   describe "#registrar" do
@@ -153,13 +153,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
       subject.nameservers[1].name.should == "ns4.centralnic-dns.com"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.centralnic-dns.com"
+      subject.nameservers[2].name.should == "ns1.centralnic-dns.com"
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
       subject.nameservers[3].name.should == "ns0.centralnic-dns.com"
       subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "ns2.centralnic-dns.com"
+      subject.nameservers[4].name.should == "ns3.centralnic-dns.com"
       subject.nameservers[5].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[5].name.should == "ns1.centralnic-dns.com"
+      subject.nameservers[5].name.should == "ns2.centralnic-dns.com"
     end
   end
 end

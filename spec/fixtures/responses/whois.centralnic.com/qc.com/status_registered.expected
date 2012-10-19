@@ -17,7 +17,7 @@
 
 
 #status
-  should: %s == ["OK"]
+  should: %s == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
 
 #available?
   should: %s == false
@@ -32,11 +32,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-10-11 17:18:17 UTC")
+  should: %s == Time.parse("2012-10-15 16:31:54 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-10-08 23:59:59 UTC")
+  should: %s == Time.parse("2014-10-08 23:59:59 UTC")
 
 
 #registrar

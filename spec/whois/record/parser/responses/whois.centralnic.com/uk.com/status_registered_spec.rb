@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-09-01 23:42:41 UTC")
+      subject.updated_on.should == Time.parse("2012-01-16 16:26:58 UTC")
     end
   end
   describe "#expires_on" do
@@ -153,9 +153,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.myhostcp.com"
+      subject.nameservers[0].name.should == "ns60.eukdns.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.myhostcp.com"
+      subject.nameservers[1].name.should == "ns61.eukdns.com"
     end
   end
 end

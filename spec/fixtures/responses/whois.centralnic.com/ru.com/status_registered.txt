@@ -11,8 +11,8 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO450826
 Domain Name:SRK.RU.COM
 Created On:31-Jul-2006 10:06:04 UTC
-Last Updated On:08-Jul-2010 16:05:47 UTC
-Expiration Date:31-Jul-2012 23:59:59 UTC
+Last Updated On:10-Jul-2012 08:16:19 UTC
+Expiration Date:31-Jul-2014 23:59:59 UTC
 Status:OK
 Registrant ID:H1037013
 Registrant Name:Anthony Lloyd, SRK Consulting (UK) Limited

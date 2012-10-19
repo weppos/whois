@@ -32,19 +32,19 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-11-29 02:15:36 UTC")
+  should: %s == Time.parse("2012-09-17 00:16:14 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-09-29 23:59:59 UTC")
+  should: %s == Time.parse("2013-09-29 23:59:59 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == "H269407"
   should: %s.name         == nil
-  should: %s.organization == "Public Domain Registry Inc."
-  should: %s.url          == "www.publicdomainregistry.com"
+  should: %s.organization == "PDR Ltd. d/b/a PublicDomainRegistry.com"
+  should: %s.url          == "http://www.publicdomainregistry.com"
 
 #registrant_contacts
   should: %s CLASS(array)

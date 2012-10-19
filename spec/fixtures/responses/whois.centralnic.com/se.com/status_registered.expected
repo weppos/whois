@@ -32,11 +32,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-06-01 07:08:49 UTC")
+  should: %s == Time.parse("2012-07-11 08:05:30 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-05-10 23:59:59 UTC")
+  should: %s == Time.parse("2013-05-10 23:59:59 UTC")
 
 
 #registrar
@@ -51,64 +51,62 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == "INX-9925147com"
-  should: %s[0].name          == "boris schleinkofer"
-  should: %s[0].organization  == "p.s. consulting ag"
-  should: %s[0].address       == "hacklthalerstrasse 21c"
-  should: %s[0].city          == "kirchdorf"
-  should: %s[0].zip           == "83527"
-  should: %s[0].state         == "bayern"
+  should: %s[0].id            == "INX-10599082com"
+  should: %s[0].name          == "Hotel Reservation Service Robert Ragge GmbH"
+  should: %s[0].organization  == "Hotel Reservation Service Robert Ragge GmbH"
+  should: %s[0].address       == "Blaubach 32"
+  should: %s[0].city          == "Koeln"
+  should: %s[0].zip           == "50676"
+  should: %s[0].state         == "NRW"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "DE"
-  should: %s[0].phone         == "+49.8072370230"
-  should: %s[0].fax           == "+49.80723702399"
-  should: %s[0].email         == "schleinkofer@ps-consulting-ag.com"
+  should: %s[0].phone         == "+49.2212077222"
+  should: %s[0].fax           == "+49.2212077394"
+  should: %s[0].email         == "domains@hrs.de"
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id            == "INX-9925147com"
-  should: %s[0].name          == "boris schleinkofer"
-  should: %s[0].organization  == "p.s. consulting ag"
-  should: %s[0].address       == "hacklthalerstrasse 21c"
-  should: %s[0].city          == "kirchdorf"
-  should: %s[0].zip           == "83527"
-  should: %s[0].state         == "bayern"
+  should: %s[0].id            == "INX-201727com"
+  should: %s[0].name          == "Robert Ragge"
+  should: %s[0].organization  == "Hotel Reservation Service Robert Ragge GmbH"
+  should: %s[0].address       == "Blaubach 32"
+  should: %s[0].city          == "Koeln"
+  should: %s[0].zip           == "50676"
+  should: %s[0].state         == "DE"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "DE"
-  should: %s[0].phone         == "+49.8072370230"
-  should: %s[0].fax           == "+49.80723702399"
-  should: %s[0].email         == "schleinkofer@ps-consulting-ag.com"
+  should: %s[0].phone         == "+49.2212077222"
+  should: %s[0].fax           == "+49.2212077394"
+  should: %s[0].email         == "domains@hrs.de"
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "INX-9925147com"
-  should: %s[0].name          == "boris schleinkofer"
-  should: %s[0].organization  == "p.s. consulting ag"
-  should: %s[0].address       == "hacklthalerstrasse 21c"
-  should: %s[0].city          == "kirchdorf"
-  should: %s[0].zip           == "83527"
-  should: %s[0].state         == "bayern"
+  should: %s[0].id            == "INX-201728com"
+  should: %s[0].name          == "Uwe Watzek"
+  should: %s[0].organization  == "Wind Internethaus GmbH"
+  should: %s[0].address       == "Am Krebsgraben 15\nHaus 2"
+  should: %s[0].city          == "Villingen-Schwenningen"
+  should: %s[0].zip           == "78048"
+  should: %s[0].state         == "Baden-Wuerttemberg"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "DE"
-  should: %s[0].phone         == "+49.8072370230"
-  should: %s[0].fax           == "+49.80723702399"
-  should: %s[0].email         == "schleinkofer@ps-consulting-ag.com"
+  should: %s[0].phone         == "+49.77214070740"
+  should: %s[0].fax           == "+49.77214070741"
+  should: %s[0].email         == "info@windinternethaus.de"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(4)
+  should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "b.ns14.net"
+  should: %s[0].name == "ns2.surfbrett.de"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "a.ns14.net"
+  should: %s[1].name == "ns2.hrs.de"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "c.ns14.net"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "d.ns14.net"
+  should: %s[2].name == "ns1.hrs.de"

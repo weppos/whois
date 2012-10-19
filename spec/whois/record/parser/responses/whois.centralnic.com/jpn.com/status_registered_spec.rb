@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-08-15 09:43:37 UTC")
+      subject.updated_on.should == Time.parse("2012-09-10 11:47:09 UTC")
     end
   end
   describe "#expires_on" do
@@ -85,7 +85,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrar.id.should           == "I6467"
       subject.registrar.name.should         == nil
       subject.registrar.organization.should == "Webfusion"
-      subject.registrar.url.should          == "http://www.123-reg.co.uk"
+      subject.registrar.url.should          == "http://www.123-reg.co.uk/domain-names/"
     end
   end
   describe "#registrant_contacts" do
@@ -137,13 +137,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "I6467"
       subject.technical_contacts[0].name.should          == "Domain Admin"
       subject.technical_contacts[0].organization.should  == "Webfusion"
-      subject.technical_contacts[0].address.should       == "5 Roundwood Avenue\nStockley Park\nUxbridge"
-      subject.technical_contacts[0].city.should          == "Middlesex"
+      subject.technical_contacts[0].address.should       == "5 Roundwood Avenue\nStockley Park"
+      subject.technical_contacts[0].city.should          == "Uxbridge"
       subject.technical_contacts[0].zip.should           == "UB11 1FF"
-      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].state.should         == "Middlesex"
       subject.technical_contacts[0].country.should       == nil
       subject.technical_contacts[0].country_code.should  == "GB"
-      subject.technical_contacts[0].phone.should         == "+44.8712309525"
+      subject.technical_contacts[0].phone.should         == "+44.8458590018"
       subject.technical_contacts[0].fax.should           == "+44.8701650437"
       subject.technical_contacts[0].email.should         == "hosting-domains@webfusion.com"
     end
@@ -153,9 +153,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.diywebbuilder.org"
+      subject.nameservers[0].name.should == "ns2.koi.jpn.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.diywebbuilder.org"
+      subject.nameservers[1].name.should == "ns1.koi.jpn.com"
     end
   end
 end

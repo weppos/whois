@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      subject.status.should == ["OK"]
+      subject.status.should == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
     end
   end
   describe "#available?" do
@@ -70,13 +70,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-10-11 17:18:17 UTC")
+      subject.updated_on.should == Time.parse("2012-10-15 16:31:54 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-10-08 23:59:59 UTC")
+      subject.expires_on.should == Time.parse("2014-10-08 23:59:59 UTC")
     end
   end
   describe "#registrar" do

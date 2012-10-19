@@ -11,8 +11,8 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO393884
 Domain Name:PARAMOUNT.UK.NET
 Created On:28-Feb-2006 12:17:01 UTC
-Last Updated On:10-May-2010 10:21:35 UTC
-Expiration Date:28-Feb-2012 23:59:59 UTC
+Last Updated On:12-Mar-2012 14:07:36 UTC
+Expiration Date:28-Feb-2014 23:59:59 UTC
 Status:OK
 Registrant ID:H1056361
 Registrant Name:Century Leisure plc
@@ -32,11 +32,11 @@ Tech Name:Domain Admin
 Tech Organization:Webfusion
 Tech Street1:5 Roundwood Avenue
 Tech Street2:Stockley Park
-Tech Street3:Uxbridge
-Tech City:Middlesex
+Tech City:Uxbridge
+Tech State/Province:Middlesex
 Tech Postal Code:UB11 1FF
 Tech Country:GB
-Tech Phone:+44.8712309525
+Tech Phone:+44.8458590018
 Tech FAX:+44.8701650437
 Tech Email:hosting-domains@webfusion.com
 Billing ID:H1056361
@@ -46,16 +46,17 @@ Billing Country:GB
 Billing Phone:+44.2075343080
 Billing Email:pierre@centuryclub.co.uk
 Sponsoring Registrar ID:I6467
+Sponsoring Registrar IANA ID:1515
 Sponsoring Registrar Organization:Webfusion
 Sponsoring Registrar Street1:5 Roundwood Avenue
 Sponsoring Registrar Street2:Stockley Park
-Sponsoring Registrar Street3:Uxbridge
-Sponsoring Registrar City:Middlesex
+Sponsoring Registrar City:Uxbridge
+Sponsoring Registrar State/Province:Middlesex
 Sponsoring Registrar Postal Code:UB11 1FF
 Sponsoring Registrar Country:GB
-Sponsoring Registrar Phone:08712 309525
+Sponsoring Registrar Phone:0845 859 0018
 Sponsoring Registrar FAX:08701 650437
-Sponsoring Registrar Website:http://www.123-reg.co.uk
+Sponsoring Registrar Website:http://www.123-reg.co.uk/domain-names/
 Name Server:NS2.MYHOSTCP.COM
 Name Server:NS1.MYHOSTCP.COM
 DNSSEC:Unsigned

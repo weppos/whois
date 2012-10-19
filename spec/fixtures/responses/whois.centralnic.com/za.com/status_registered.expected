@@ -32,7 +32,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-11-19 13:41:46 UTC")
+  should: %s == Time.parse("2012-01-16 16:23:22 UTC")
 
 #expires_on
   should: %s CLASS(time)

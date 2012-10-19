@@ -32,7 +32,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-09-01 23:42:41 UTC")
+  should: %s == Time.parse("2012-01-16 16:26:58 UTC")
 
 #expires_on
   should: %s CLASS(time)
@@ -105,6 +105,6 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.myhostcp.com"
+  should: %s[0].name == "ns60.eukdns.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.myhostcp.com"
+  should: %s[1].name == "ns61.eukdns.com"

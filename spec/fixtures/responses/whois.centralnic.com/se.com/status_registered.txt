@@ -11,54 +11,56 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO561053
 Domain Name:HOTEL.SE.COM
 Created On:10-May-2008 05:17:32 UTC
-Last Updated On:01-Jun-2011 07:08:49 UTC
-Expiration Date:10-May-2012 23:59:59 UTC
+Last Updated On:11-Jul-2012 08:05:30 UTC
+Expiration Date:10-May-2013 23:59:59 UTC
 Status:OK
-Registrant ID:INX-9925147com
-Registrant Name:boris schleinkofer
-Registrant Organization:p.s. consulting ag
-Registrant Street1:hacklthalerstrasse 21c
-Registrant City:kirchdorf
-Registrant State/Province:bayern
-Registrant Postal Code:83527
+Registrant ID:INX-10599082com
+Registrant Name:Hotel Reservation Service Robert Ragge GmbH
+Registrant Organization:Hotel Reservation Service Robert Ragge GmbH
+Registrant Street1:Blaubach 32
+Registrant City:Koeln
+Registrant State/Province:NRW
+Registrant Postal Code:50676
 Registrant Country:DE
-Registrant Phone:+49.8072370230
-Registrant FAX:+49.80723702399
-Registrant Email:schleinkofer@ps-consulting-ag.com
-Admin ID:INX-9925147com
-Admin Name:boris schleinkofer
-Admin Organization:p.s. consulting ag
-Admin Street1:hacklthalerstrasse 21c
-Admin City:kirchdorf
-Admin State/Province:bayern
-Admin Postal Code:83527
+Registrant Phone:+49.2212077222
+Registrant FAX:+49.2212077394
+Registrant Email:domains@hrs.de
+Admin ID:INX-201727com
+Admin Name:Robert Ragge
+Admin Organization:Hotel Reservation Service Robert Ragge GmbH
+Admin Street1:Blaubach 32
+Admin City:Koeln
+Admin State/Province:DE
+Admin Postal Code:50676
 Admin Country:DE
-Admin Phone:+49.8072370230
-Admin FAX:+49.80723702399
-Admin Email:schleinkofer@ps-consulting-ag.com
-Tech ID:INX-9925147com
-Tech Name:boris schleinkofer
-Tech Organization:p.s. consulting ag
-Tech Street1:hacklthalerstrasse 21c
-Tech City:kirchdorf
-Tech State/Province:bayern
-Tech Postal Code:83527
+Admin Phone:+49.2212077222
+Admin FAX:+49.2212077394
+Admin Email:domains@hrs.de
+Tech ID:INX-201728com
+Tech Name:Uwe Watzek
+Tech Organization:Wind Internethaus GmbH
+Tech Street1:Am Krebsgraben 15
+Tech Street2:Haus 2
+Tech City:Villingen-Schwenningen
+Tech State/Province:Baden-Wuerttemberg
+Tech Postal Code:78048
 Tech Country:DE
-Tech Phone:+49.8072370230
-Tech FAX:+49.80723702399
-Tech Email:schleinkofer@ps-consulting-ag.com
-Billing ID:INX-9925147com
-Billing Name:boris schleinkofer
-Billing Organization:p.s. consulting ag
-Billing Street1:hacklthalerstrasse 21c
-Billing City:kirchdorf
-Billing State/Province:bayern
-Billing Postal Code:83527
+Tech Phone:+49.77214070740
+Tech FAX:+49.77214070741
+Tech Email:info@windinternethaus.de
+Billing ID:INX-10599082com
+Billing Name:Hotel Reservation Service Robert Ragge GmbH
+Billing Organization:Hotel Reservation Service Robert Ragge GmbH
+Billing Street1:Blaubach 32
+Billing City:Koeln
+Billing State/Province:NRW
+Billing Postal Code:50676
 Billing Country:DE
-Billing Phone:+49.8072370230
-Billing FAX:+49.80723702399
-Billing Email:schleinkofer@ps-consulting-ag.com
+Billing Phone:+49.2212077222
+Billing FAX:+49.2212077394
+Billing Email:domains@hrs.de
 Sponsoring Registrar ID:7145-IX
+Sponsoring Registrar IANA ID:83
 Sponsoring Registrar Organization:InternetX GmbH
 Sponsoring Registrar Street1:Maximilianstr. 6
 Sponsoring Registrar City:Regensburg
@@ -67,10 +69,9 @@ Sponsoring Registrar Country:DE
 Sponsoring Registrar Phone:+49-941-595590
 Sponsoring Registrar FAX:+49-941-59579054
 Sponsoring Registrar Website:http://www.internetx.de/
-Name Server:B.NS14.NET
-Name Server:A.NS14.NET
-Name Server:C.NS14.NET
-Name Server:D.NS14.NET
+Name Server:NS2.SURFBRETT.DE
+Name Server:NS2.HRS.DE
+Name Server:NS1.HRS.DE
 DNSSEC:Unsigned
 
 

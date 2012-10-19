@@ -91,7 +91,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).map do |name|
-            Record::Nameserver.new(:name => name.downcase)
+            Record::Nameserver.new(:name => name.downcase.chomp("."))
           end
         end
 
@@ -106,7 +106,7 @@ module Whois
         end
 
 
-      private
+        private
 
         def build_contact(element, type)
           node("#{element} ID") do

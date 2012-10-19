@@ -32,11 +32,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-09-13 07:43:03 UTC")
+  should: %s == Time.parse("2012-06-23 10:38:02 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-02-07 23:59:59 UTC")
+  should: %s == Time.parse("2015-02-07 23:59:59 UTC")
 
 
 #registrar
@@ -105,10 +105,10 @@
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns4.centralnic-dns.com"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.centralnic-dns.com"
+  should: %s[2].name == "ns1.centralnic-dns.com"
   should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns0.centralnic-dns.com"
   should: %s[4] CLASS(nameserver)
-  should: %s[4].name == "ns2.centralnic-dns.com"
+  should: %s[4].name == "ns3.centralnic-dns.com"
   should: %s[5] CLASS(nameserver)
-  should: %s[5].name == "ns1.centralnic-dns.com"
+  should: %s[5].name == "ns2.centralnic-dns.com"

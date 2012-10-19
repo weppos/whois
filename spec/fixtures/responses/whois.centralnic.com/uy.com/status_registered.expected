@@ -32,7 +32,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-07-13 10:57:04 UTC")
+  should: %s == Time.parse("2012-09-10 12:16:56 UTC")
 
 #expires_on
   should: %s CLASS(time)
@@ -44,7 +44,7 @@
   should: %s.id           == "I6467"
   should: %s.name         == nil
   should: %s.organization == "Webfusion"
-  should: %s.url          == "http://www.123-reg.co.uk"
+  should: %s.url          == "http://www.123-reg.co.uk/domain-names/"
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -90,13 +90,13 @@
   should: %s[0].id            == "I6467"
   should: %s[0].name          == "Domain Admin"
   should: %s[0].organization  == "Webfusion"
-  should: %s[0].address       == "5 Roundwood Avenue\nStockley Park\nUxbridge"
-  should: %s[0].city          == "Middlesex"
+  should: %s[0].address       == "5 Roundwood Avenue\nStockley Park"
+  should: %s[0].city          == "Uxbridge"
   should: %s[0].zip           == "UB11 1FF"
-  should: %s[0].state         == nil
+  should: %s[0].state         == "Middlesex"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "GB"
-  should: %s[0].phone         == "+44.8712309525"
+  should: %s[0].phone         == "+44.8458590018"
   should: %s[0].fax           == "+44.8701650437"
   should: %s[0].email         == "hosting-domains@webfusion.com"
 

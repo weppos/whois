@@ -11,7 +11,7 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO492866
 Domain Name:KOI.JPN.COM
 Created On:29-Jun-2007 13:42:35 UTC
-Last Updated On:15-Aug-2011 09:43:37 UTC
+Last Updated On:10-Sep-2012 11:47:09 UTC
 Expiration Date:29-Jun-2013 23:59:59 UTC
 Status:OK
 Registrant ID:H1090485
@@ -40,11 +40,11 @@ Tech Name:Domain Admin
 Tech Organization:Webfusion
 Tech Street1:5 Roundwood Avenue
 Tech Street2:Stockley Park
-Tech Street3:Uxbridge
-Tech City:Middlesex
+Tech City:Uxbridge
+Tech State/Province:Middlesex
 Tech Postal Code:UB11 1FF
 Tech Country:GB
-Tech Phone:+44.8712309525
+Tech Phone:+44.8458590018
 Tech FAX:+44.8701650437
 Tech Email:hosting-domains@webfusion.com
 Billing ID:H1090485
@@ -58,18 +58,19 @@ Billing Country:GB
 Billing Phone:+44.7957842260
 Billing Email:deronsimons@aol.com
 Sponsoring Registrar ID:I6467
+Sponsoring Registrar IANA ID:1515
 Sponsoring Registrar Organization:Webfusion
 Sponsoring Registrar Street1:5 Roundwood Avenue
 Sponsoring Registrar Street2:Stockley Park
-Sponsoring Registrar Street3:Uxbridge
-Sponsoring Registrar City:Middlesex
+Sponsoring Registrar City:Uxbridge
+Sponsoring Registrar State/Province:Middlesex
 Sponsoring Registrar Postal Code:UB11 1FF
 Sponsoring Registrar Country:GB
-Sponsoring Registrar Phone:08712 309525
+Sponsoring Registrar Phone:0845 859 0018
 Sponsoring Registrar FAX:08701 650437
-Sponsoring Registrar Website:http://www.123-reg.co.uk
-Name Server:NS1.DIYWEBBUILDER.ORG
-Name Server:NS2.DIYWEBBUILDER.ORG
+Sponsoring Registrar Website:http://www.123-reg.co.uk/domain-names/
+Name Server:NS2.KOI.JPN.COM
+Name Server:NS1.KOI.JPN.COM
 DNSSEC:Unsigned
 
 

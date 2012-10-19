@@ -70,13 +70,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-05-10 10:21:35 UTC")
+      subject.updated_on.should == Time.parse("2012-03-12 14:07:36 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-02-28 23:59:59 UTC")
+      subject.expires_on.should == Time.parse("2014-02-28 23:59:59 UTC")
     end
   end
   describe "#registrar" do
@@ -85,7 +85,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrar.id.should           == "I6467"
       subject.registrar.name.should         == nil
       subject.registrar.organization.should == "Webfusion"
-      subject.registrar.url.should          == "http://www.123-reg.co.uk"
+      subject.registrar.url.should          == "http://www.123-reg.co.uk/domain-names/"
     end
   end
   describe "#registrant_contacts" do
@@ -137,13 +137,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "I6467"
       subject.technical_contacts[0].name.should          == "Domain Admin"
       subject.technical_contacts[0].organization.should  == "Webfusion"
-      subject.technical_contacts[0].address.should       == "5 Roundwood Avenue\nStockley Park\nUxbridge"
-      subject.technical_contacts[0].city.should          == "Middlesex"
+      subject.technical_contacts[0].address.should       == "5 Roundwood Avenue\nStockley Park"
+      subject.technical_contacts[0].city.should          == "Uxbridge"
       subject.technical_contacts[0].zip.should           == "UB11 1FF"
-      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].state.should         == "Middlesex"
       subject.technical_contacts[0].country.should       == nil
       subject.technical_contacts[0].country_code.should  == "GB"
-      subject.technical_contacts[0].phone.should         == "+44.8712309525"
+      subject.technical_contacts[0].phone.should         == "+44.8458590018"
       subject.technical_contacts[0].fax.should           == "+44.8701650437"
       subject.technical_contacts[0].email.should         == "hosting-domains@webfusion.com"
     end
