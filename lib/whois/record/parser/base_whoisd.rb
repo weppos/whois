@@ -38,10 +38,13 @@ module Whois
 
 
         property_supported :status do
-          node('status') do |string|
-            string = string.first if string.is_a?(Array)
-            self.class.status_mapping[string.downcase] ||
-            Whois.bug!(ParserError, "Unknown status `#{string}'.")
+          node('status') do |value|
+            values = Array.wrap(value)
+            status = values.each do |s|
+              v = self.class.status_mapping[s.downcase]
+              break v if v
+            end
+            status || Whois.bug!(ParserError, "Unknown status `#{string}'.")
           end || :available
         end
 

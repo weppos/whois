@@ -20,10 +20,12 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisNicCz < BaseWhoisd
-        self.status_mapping.merge!({
+        self.status_mapping = {
+          'paid and in zone' => :registered,
           'update prohibited' => :registered,
+          'expired' => :expired,
           'to be deleted' => :expired,
-        })
+        }
       end
 
     end

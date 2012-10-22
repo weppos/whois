@@ -39,6 +39,8 @@
 
 - FIXED: whois.nic.cz should support status `To be deleted`.
 
+- FIXED: whois.nic.cz should support multiple status (GH-190).
+
 
 ## Release 2.7.0
 
