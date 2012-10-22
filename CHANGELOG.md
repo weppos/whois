@@ -37,6 +37,8 @@
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
 
+- FIXED: whois.nic.cz should support status `To be deleted`.
+
 
 ## Release 2.7.0
 

@@ -1,0 +1,72 @@
+%  (c) 2006-2012 CZ.NIC, z.s.p.o.
+% 
+% Intended use of supplied data and information
+% 
+% Data contained in the domain name register, as well as information
+% supplied through public information services of CZ.NIC association,
+% are appointed only for purposes connected with Internet network
+% administration and operation, or for the purpose of legal or other
+% similar proceedings, in process as regards a matter connected
+% particularly with holding and using a concrete domain name.
+% 
+% Full text available at:
+% http://www.nic.cz/page/306/intended-use-of-supplied-data-and-information/
+% 
+% See also a search service at http://www.nic.cz/whois/
+% 
+% 
+% Whoisd Server Version: 3.6.0
+% Timestamp: Sun Oct 21 15:48:17 2012
+
+domain:       pihrtstudio.cz
+registrant:   ZONER-2008371226
+nsset:        NSSET:ZONER
+keyset:       KS:ZONER:1289219690
+registrar:    REG-ZONER
+status:       Domain is not generated into zone
+status:       Expired
+registered:   22.08.2011 14:29:51
+changed:      22.08.2011 14:30:34
+expire:       22.08.2012
+
+contact:      ZONER-2008371226
+org:          Kamil Egermajer
+name:         Kamil Egermajer
+address:      Kaprova 42/14
+address:      Praha 1 - Staré Město
+address:      110 00
+address:      CZ
+phone:        +420.602526398
+e-mail:       k.egermajer@email.cz
+registrar:    REG-ZONER
+created:      07.03.2008 12:26:25
+changed:      29.08.2012 11:28:18
+
+nsset:        NSSET:ZONER
+nserver:      ns1.regzone.info 
+nserver:      ns1.regzone.de 
+nserver:      ns1.regzone.cz (217.198.113.10, 2a00:19a0:2:300::2)
+tech-c:       ZONER
+registrar:    REG-ZONER
+created:      08.04.2010 12:23:52
+changed:      28.04.2011 14:16:23
+
+contact:      ZONER
+org:          ZONER software, a.s.
+name:         ZONER software, a.s.
+address:      Nové Sady 583/18
+address:      Brno
+address:      602 00
+address:      CZ
+phone:        +420.543257244
+fax-no:       +420.543257245
+e-mail:       admin@zoner.cz
+registrar:    REG-ZONER
+created:      10.11.2006 13:45:00
+changed:      01.12.2011 10:55:14
+
+keyset:       KS:ZONER:1289219690
+dnskey:       257 3 7 AwEAAb7N/rX8zrMtOG0qenf6jAI15VSC0Dv9feUbDh93AyxoJH/I2PaSGRWx29emlf9u21nAlnlJ0GiBMLPc/4/IBkI4QFf3TQ+z4Ox87x+NP8d1yEoO8yNdx0I9wDGIUe95djRMbI4T/wADeq8Dwcf7HGOLof7aQnTCV5lKLjrZkfpdw8ZJb+L4gI9s2u205WmfNQ0W6ZPvLXbbDT/kBnKxhhKHLkqxJH/tuqfg0E0SLZU97qC91tKRg9VfvaNEv498njkOU4eZ5C53iaE03MK4tPrlHDuwENFbHbbCxjQ66vc+v9UGmQOJbxNJJe/Q3HxmCDjKbtZfzxpaFte8bV47ZoKzip1gCk1xt7yr8reTekuLRp7dXMIM4EXp2MjgGtK2ExGji93yxvDn4uIh7pchi61aTPEPWx5P2rWjlFX5DbUaM6IWGeA7jcyTLGO+U8vYjSKgBoWhlVNyoCipWJ6VOUOVW4ii52VCBBBfahO0J1qIyym46raaylw6UDUn0Ziu2DR/FUOW3bB8TSNHi1sHu3UEktZciq85KL4nKHIhQdyFqOZQKcktNQJrRHHfLkgAvzyVTUwbA5cOGlc4V8S7yWjnew21WGapBAJsuF5Kpi7ZC2+cbqcoqR62VDBCa7Io/WRtA9xFbInsMJAHqoA8jBQY0xiRnBbA7ThNS2Cugv4z
+tech-c:       ZONER
+registrar:    REG-ZONER
+created:      08.11.2010 13:34:55
