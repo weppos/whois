@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisNicNetNg, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2009-05-13")
+      subject.created_on.should == Time.parse("2009-05-13 14:27:27 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-08-24")
+      subject.updated_on.should == Time.parse("2012-08-24 13:46:14 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2020-07-31")
+      subject.expires_on.should == Time.parse("2020-07-30 23:00:00 UTC")
     end
   end
   describe "#registrar" do
