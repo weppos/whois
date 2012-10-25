@@ -7,20 +7,12 @@ Creation Date: 2004-07-08T12:00:00.000Z
 Registry Expiry Date: 2013-07-08T12:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientTransferProhibited
-Domain Status: ok
 Domain Status: clientUpdateProhibited
+Domain Status: ok
+Domain Status: clientTransferProhibited
 Domain Status: clientDeleteProhibited
 
 Registrant ID: 681182-CoCCA
-Registrant Name: Google Inc.
-Registrant Organization: Google Inc.
-Registrant Street: 1600 Amphitheatre Parkway
-Registrant Street: Mountain View, CA 94043
-Registrant City: CA
-Registrant State/Province: 
-Registrant Postal Code: 
-Registrant Country: US
 
 Name Server: ns1.google.com
 Name Server: ns2.google.com
@@ -55,4 +47,4 @@ expressly prohibited.
 
 CoCCA Helpdesk | http://helpdesk.cocca.cx
 
->>> Last update of WHOIS database: 2012-10-18T02:31:01.124Z <<<
+>>> Last update of WHOIS database: 2012-10-25T20:11:09.439Z <<<

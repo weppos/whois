@@ -17,7 +17,7 @@
 
 
 #status
-  should: %s == ["ok"]
+  should: %s == ["clientDeleteProhibited", "clientUpdateProhibited"]
 
 #available?
   should: %s == false
@@ -31,7 +31,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-10-12 16:05:44 UTC")
+  should: %s == Time.parse("2012-05-09 17:09:29 UTC")
 
 #expires_on
   should: %s raise_error(Whois::PropertyNotSupported)
@@ -39,8 +39,8 @@
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == "TPP Internet"
-  should: %s.name         == "TPP Internet"
+  should: %s.id           == "MARKMONITOR"
+  should: %s.name         == "MarkMonitor Inc."
   should: %s.organization == nil
   should: %s.url          == nil
 
@@ -49,14 +49,18 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == "TPP139202-R"
-  should: %s[0].name          == "Domain Admin"
+  should: %s[0].id            == "MMR-122026"
+  should: %s[0].name          == "Domain Administrator"
   should: %s[0].organization  == "Google INC"
   should: %s[0].address       == nil
   should: %s[0].city          == nil
   should: %s[0].zip           == nil
   should: %s[0].state         == nil
+  should: %s[0].country       == nil
   should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "Visit whois.ausregistry.com.au for Web based WhoIs"
   should: %s[0].created_on    == nil
   should: %s[0].updated_on    == nil
 
@@ -68,8 +72,20 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "TPP139936-C"
-  should: %s[0].name          == "Domain Admin"
+  should: %s[0].id            == "MMR-87489"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "Visit whois.ausregistry.com.au for Web based WhoIs"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 
 #nameservers

@@ -48,7 +48,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == ["ok"]
+      subject.status.should == ["clientDeleteProhibited", "clientUpdateProhibited"]
     end
   end
   describe "#available?" do
@@ -69,7 +69,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-10-12 16:05:44 UTC")
+      subject.updated_on.should == Time.parse("2012-05-09 17:09:29 UTC")
     end
   end
   describe "#expires_on" do
@@ -80,8 +80,8 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "TPP Internet"
-      subject.registrar.name.should         == "TPP Internet"
+      subject.registrar.id.should           == "MARKMONITOR"
+      subject.registrar.name.should         == "MarkMonitor Inc."
       subject.registrar.organization.should == nil
       subject.registrar.url.should          == nil
     end
@@ -92,14 +92,18 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == "TPP139202-R"
-      subject.registrant_contacts[0].name.should          == "Domain Admin"
+      subject.registrant_contacts[0].id.should            == "MMR-122026"
+      subject.registrant_contacts[0].name.should          == "Domain Administrator"
       subject.registrant_contacts[0].organization.should  == "Google INC"
       subject.registrant_contacts[0].address.should       == nil
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == nil
       subject.registrant_contacts[0].state.should         == nil
+      subject.registrant_contacts[0].country.should       == nil
       subject.registrant_contacts[0].country_code.should  == nil
+      subject.registrant_contacts[0].phone.should         == nil
+      subject.registrant_contacts[0].fax.should           == nil
+      subject.registrant_contacts[0].email.should         == "Visit whois.ausregistry.com.au for Web based WhoIs"
       subject.registrant_contacts[0].created_on.should    == nil
       subject.registrant_contacts[0].updated_on.should    == nil
     end
@@ -115,8 +119,20 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "TPP139936-C"
-      subject.technical_contacts[0].name.should          == "Domain Admin"
+      subject.technical_contacts[0].id.should            == "MMR-87489"
+      subject.technical_contacts[0].name.should          == "DNS Admin"
+      subject.technical_contacts[0].organization.should  == nil
+      subject.technical_contacts[0].address.should       == nil
+      subject.technical_contacts[0].city.should          == nil
+      subject.technical_contacts[0].zip.should           == nil
+      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].country.should       == nil
+      subject.technical_contacts[0].country_code.should  == nil
+      subject.technical_contacts[0].phone.should         == nil
+      subject.technical_contacts[0].fax.should           == nil
+      subject.technical_contacts[0].email.should         == "Visit whois.ausregistry.com.au for Web based WhoIs"
+      subject.technical_contacts[0].created_on.should    == nil
+      subject.technical_contacts[0].updated_on.should    == nil
     end
   end
   describe "#nameservers" do

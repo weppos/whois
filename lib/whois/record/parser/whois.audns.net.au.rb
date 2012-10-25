@@ -122,7 +122,7 @@ module Whois
               :country      => nil,
               :phone        => nil,
               :fax          => nil,
-              :email        => nil
+              :email        => node("#{element} Email")
             )
           end
         end

@@ -1,20 +1,21 @@
 Domain Name:                     google.com.au
-Last Modified:                   12-Oct-2009 16:05:44 UTC
-Registrar ID:                    TPP Internet
-Registrar Name:                  TPP Internet
-Status:                          ok
+Last Modified:                   09-May-2012 17:09:29 UTC
+Registrar ID:                    MARKMONITOR
+Registrar Name:                  MarkMonitor Inc.
+Status:                          clientDeleteProhibited
+Status:                          clientUpdateProhibited
 
 Registrant:                      Google INC
 Eligibility Type:                Trademark Owner
 Eligibility Name:                GOOGLE
 Eligibility ID:                  TM 788234
 
-Registrant Contact ID:           TPP139202-R
-Registrant Contact Name:         Domain Admin
+Registrant Contact ID:           MMR-122026
+Registrant Contact Name:         Domain Administrator
 Registrant Contact Email:        Visit whois.ausregistry.com.au for Web based WhoIs
 
-Tech Contact ID:                 TPP139936-C
-Tech Contact Name:               Domain Admin
+Tech Contact ID:                 MMR-87489
+Tech Contact Name:               DNS Admin
 Tech Contact Email:              Visit whois.ausregistry.com.au for Web based WhoIs
 
 Name Server:                     ns1.google.com
