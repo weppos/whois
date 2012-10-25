@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_cocca'
+require 'whois/record/parser/base_cocca2'
 
 
 module Whois
@@ -15,27 +15,7 @@ module Whois
     class Parser
 
       # Parser for the whois.na-nic.com.na server.
-      class WhoisNaNicComNa < BaseCocca
-
-        property_supported :status do
-          if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case $1.downcase
-            when "active"
-              :registered
-            when "delegated"
-              :registered
-            when "not registered"
-              :available
-            when "suspended"
-              :inactive
-            else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
-            Whois.bug!(ParserError, "Unable to parse status.")
-          end
-        end
-
+      class WhoisNaNicComNa < BaseCocca2
       end
 
     end

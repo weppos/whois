@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisNaNicComNa, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2007-03-28")
+      subject.created_on.should == Time.parse("2007-03-27 22:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-07-19")
+      subject.updated_on.should == Time.parse("2012-07-19 18:48:27 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-08-20")
+      subject.expires_on.should == Time.parse("2013-08-19 23:00:00 UTC")
     end
   end
   describe "#registrar" do
