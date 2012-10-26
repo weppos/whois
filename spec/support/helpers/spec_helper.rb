@@ -11,7 +11,7 @@ module RSpecSupportSpecHelpers
     File.join(SPEC_ROOT, "fixtures", *names)
   end
 
-private
+  private
 
   # Temporary resets Server @@definitions
   # to let the test setup a custom definition list.
