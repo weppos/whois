@@ -7,17 +7,17 @@ describe Whois::Server::Adapters::Web do
   end
 
 
-  describe "#query" do
+  describe "#lookup" do
     it "raises Whois::WebInterfaceError" do
-      lambda do
-        klass.new(*@definition).query("example.test")
-      end.should raise_error(Whois::WebInterfaceError)
+      expect {
+        klass.new(*@definition).lookup("example.test")
+      }.to raise_error(Whois::WebInterfaceError)
     end
 
     it "customizes the error message with the WHOIS web url" do
-      lambda do
-        klass.new(*@definition).query("example.test")
-      end.should raise_error(Whois::WebInterfaceError, /whois\.test/)
+      expect {
+        klass.new(*@definition).lookup("example.test")
+      }.to raise_error(Whois::WebInterfaceError, /whois\.test/)
     end
   end
 

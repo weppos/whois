@@ -9,7 +9,7 @@
 
 require 'whois/record/part'
 require 'whois/record'
-require 'socket'
+require 'whois/server/socket_handler'
 
 
 module Whois
@@ -20,20 +20,13 @@ module Whois
 
         # Default WHOIS request port.
         DEFAULT_WHOIS_PORT = 43
-
         # Default bind hostname.
         DEFAULT_BIND_HOST = "0.0.0.0"
 
-        # Array of connection errors to rescue and wrap into a {Whois::ConnectionError}
-        RESCUABLE_CONNECTION_ERRORS = [
-          Errno::ECONNRESET,
-          Errno::EHOSTUNREACH,
-          Errno::ECONNREFUSED,
-          SocketError,
-        ]
+        class_attribute :query_handler
+        self.query_handler = SocketHandler.new
 
-
-        # @return [Symbol] The type of WHOIS server
+        # @return [Symbol] The type of WHOIS server.
         attr_reader :type
         # @return [String] The allocation this server is responsible for.
         attr_reader :allocation
@@ -68,7 +61,6 @@ module Whois
         # Checks self and other for equality.
         #
         # @param  [The Whois::Server::Adapters::Base] other
-        #
         # @return [Boolean] Returns true if the other is the same object,
         #         or <tt>other</tt> attributes matches this object attributes.
         #
@@ -98,20 +90,19 @@ module Whois
         end
 
 
-        # Performs a Whois query for <tt>string</tt>
+        # Performs a Whois lookup for <tt>string</tt>
         # using the current server adapter.
-        #
-        # @param  [String] string The string to be sent as query parameter.
-        #
-        # @return [Whois::Record]
         #
         # Internally, this method calls {#request}
         # using the Template Method design pattern.
         #
-        #   server.query("google.com")
+        #   server.lookup("google.com")
         #   # => Whois::Record
         #
-        def query(string)
+        # @param  [String] string The string to be sent as query parameter.
+        # @return [Whois::Record]
+        #
+        def lookup(string)
           buffer_start do |buffer|
             request(string)
             Whois::Record.new(self, buffer)
@@ -125,9 +116,8 @@ module Whois
         # This is the heart of the Template Method design pattern.
         #
         # @param  [String] string The string to be sent as query parameter.
-        #
-        # @raise  [NotImplementedError]
         # @return [void]
+        # @raise  [NotImplementedError]
         # @abstract
         #
         def request(string)
@@ -135,15 +125,13 @@ module Whois
         end
 
 
-      private
+        private
 
         # Store a record part in {#buffer}.
         #
         # @param  [String] body
         # @param  [String] host
         # @return [void]
-        #
-        # @api public
         #
         def buffer_append(body, host)
           @buffer << Whois::Record::Part.new(:body => body, :host => host)
@@ -157,8 +145,14 @@ module Whois
           result
         end
 
-        # @api public
-        def query_the_socket(query, host, port = nil)
+        # Prepares and passes the query to the {#query_handler}.
+        #
+        # @param  [String] query
+        # @param  [String] host
+        # @param  [String] port
+        # @return [String]
+        #
+        def query_prepare(query, host, port = nil)
           args = []
           args.push(host)
           args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
@@ -178,25 +172,10 @@ module Whois
             args.push(options[:bind_port]) if options[:bind_port]
           end
 
-          ask_the_socket(query, *args)
-
-        rescue *RESCUABLE_CONNECTION_ERRORS => error
-          raise ConnectionError, "#{error.class}: #{error.message}"
+          self.class.query_handler.call(query, *args)
         end
 
-        # This method handles the lowest connection
-        # to the WHOIS server.
-        #
-        # This is for internal use only!
-        #
-        # @api private
-        def ask_the_socket(query, *args)
-          client = TCPSocket.new(*args)
-          client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
-          client.read                     # but write/read is more symmetric than puts/read
-        ensure                            # and I really want to use read instead of gets.
-          client.close if client          # If != client something went wrong.
-        end
+        alias :query_the_socket :query_prepare
 
       end
 

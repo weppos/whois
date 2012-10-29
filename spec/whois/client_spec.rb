@@ -48,74 +48,82 @@ describe Whois::Client do
       # http://redmine.ruby-lang.org/issues/show/2617
 
       server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
-      server.expects(:query).with(instance_of(String))
+      server.expects(:lookup).with(instance_of(String))
       Whois::Server.expects(:guess).with(instance_of(String)).returns(server)
+
       klass.new.query(["example", ".", "test"])
     end
 
     it "converts the argument to downcase" do
       server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
-      server.expects(:query).with("example.test")
+      server.expects(:lookup).with("example.test")
       Whois::Server.expects(:guess).with("example.test").returns(server)
+
       klass.new.query("Example.TEST")
     end
 
     it "detects email" do
-      lambda do
+      expect {
         klass.new.query("weppos@weppos.net")
-      end.should raise_error(Whois::ServerNotSupported)
+      }.to raise_error(Whois::ServerNotSupported)
     end
 
     it "works with domain with no whois" do
       Whois::Server.define(:tld, ".nowhois", nil, :adapter => Whois::Server::Adapters::None)
 
-      lambda do
+      expect {
         klass.new.query("domain.nowhois")
-      end.should raise_error(Whois::NoInterfaceError, /no whois server/)
+      }.to raise_error(Whois::NoInterfaceError, /no whois server/)
     end
 
     it "works with domain with web whois" do
       Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :url => "http://www.example.com/")
 
-      lambda do
+      expect {
         klass.new.query("domain.webwhois")
-      end.should raise_error(Whois::WebInterfaceError, /www\.example\.com/)
+      }.to raise_error(Whois::WebInterfaceError, /www\.example\.com/)
     end
 
     it "raises if timeout is exceeded" do
       adapter = Class.new(Whois::Server::Adapters::Base) do
-        def query(*args)
+        def lookup(*)
           sleep(2)
         end
       end
       Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new(:timeout => 1)
-      lambda { client.query("example.test") }.should raise_error(Timeout::Error)
+      expect {
+        client.query("example.test")
+      }.to raise_error(Timeout::Error)
     end
 
     it "does not raise if timeout is not exceeded" do
       adapter = Class.new(Whois::Server::Adapters::Base) do
-        def query(*args)
+        def lookup(*)
           sleep(1)
         end
       end
       Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new(:timeout => 5)
-      lambda { client.query("example.test") }.should_not raise_error
+      expect {
+        client.query("example.test")
+      }.to_not raise_error
     end
 
     it "supports unlimited timeout" do
       adapter = Class.new(Whois::Server::Adapters::Base) do
-        def query(*args)
+        def lookup(*)
           sleep(1)
         end
       end
       Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
       client = klass.new.tap { |c| c.timeout = nil }
-      lambda { client.query("example.test") }.should_not raise_error
+      expect {
+        client.query("example.test")
+      }.to_not raise_error
     end
 
   end

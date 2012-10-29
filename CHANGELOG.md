@@ -7,6 +7,8 @@
 
 - NEW: ruby-whois learns the -h option to pass whois hostname on the fly
 
+- NEW: Ability to pass a custom query_handler to the Server adapter (GH-189)
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
@@ -44,6 +46,11 @@
 - FIXED: whois.nic.cz should support status `To be deleted`.
 
 - FIXED: whois.nic.cz should support multiple status (GH-190).
+
+
+### Backward Incompatibilities
+
+- Whois::Server#query has been renamed to Whois::Server#lookup
 
 
 ## Release 2.7.0

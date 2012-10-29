@@ -89,7 +89,7 @@ module Whois
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
         @server.configure(settings)
-        @server.query(string)
+        @server.lookup(string)
       end
     end
 

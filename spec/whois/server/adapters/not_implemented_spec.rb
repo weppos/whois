@@ -7,17 +7,17 @@ describe Whois::Server::Adapters::NotImplemented do
   end
 
 
-  describe "#query" do
+  describe "#lookup" do
     it "raises Whois::ServerNotImplemented" do
-      lambda do
-        klass.new(*@definition).query("example.test")
-      end.should raise_error(Whois::ServerNotImplemented)
+      expect {
+        klass.new(*@definition).lookup("example.test")
+      }.to raise_error(Whois::ServerNotImplemented)
     end
 
     it "customizes the error message according to the host" do
-      lambda do
-        klass.new(*@definition).query("example.test")
-      end.should raise_error(Whois::ServerNotImplemented, /teredo/)
+      expect {
+        klass.new(*@definition).lookup("example.test")
+      }.to raise_error(Whois::ServerNotImplemented, /teredo/)
     end
   end
 
