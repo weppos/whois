@@ -90,19 +90,19 @@ module Whois
         end
 
 
-        # Performs a Whois query for <tt>string</tt>
+        # Performs a Whois lookup for <tt>string</tt>
         # using the current server adapter.
         #
         # Internally, this method calls {#request}
         # using the Template Method design pattern.
         #
-        #   server.query("google.com")
+        #   server.lookup("google.com")
         #   # => Whois::Record
         #
         # @param  [String] string The string to be sent as query parameter.
         # @return [Whois::Record]
         #
-        def query(string)
+        def lookup(string)
           buffer_start do |buffer|
             request(string)
             Whois::Record.new(self, buffer)

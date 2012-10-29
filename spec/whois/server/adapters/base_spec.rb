@@ -99,9 +99,11 @@ describe Whois::Server::Adapters::Base do
   end
 
 
-  describe "#query" do
+  describe "#lookup" do
     it "raises NotImplementedError" do
-      lambda { klass.new(*definition).query("example.test") }.should raise_error(NotImplementedError)
+      expect {
+        klass.new(*definition).lookup("example.test")
+      }.to raise_error(NotImplementedError)
     end
   end
 

@@ -6,14 +6,14 @@ describe Whois::Server::Adapters::Verisign do
   let(:server) { klass.new(*definition) }
 
 
-  describe "#query" do
+  describe "#lookup" do
     context "without referral" do
       it "returns the WHOIS record" do
         response = "No match for DOMAIN.TEST."
         expected = response
         server.query_handler.expects(:call).with("=domain.test", "whois.test", 43).returns(response)
 
-        record = server.query("domain.test")
+        record = server.lookup("domain.test")
         record.to_s.should  == expected
         record.parts.should have(1).part
         record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.test")]
@@ -28,7 +28,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).with("=domain.test", "whois.test", 43).returns(referral)
         server.query_handler.expects(:call).with("domain.test", "whois.markmonitor.com", 43).returns(response)
 
-        record = server.query("domain.test")
+        record = server.lookup("domain.test")
         record.to_s.should  == expected
         record.parts.should have(2).parts
         record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.test"), Whois::Record::Part.new(:body => response, :host => "whois.markmonitor.com")]
@@ -39,7 +39,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).with("=domain.test", "whois.test", 43).returns(referral)
         server.query_handler.expects(:call).with("domain.test", "whois.markmonitor.com", 43).returns("")
 
-        record = server.query("domain.test")
+        record = server.lookup("domain.test")
         record.parts.should have(2).parts
       end
 
@@ -48,7 +48,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).with("=domain.test", "whois.test", 43).returns(referral)
         server.query_handler.expects(:call).never
 
-        record = server.query("domain.test")
+        record = server.lookup("domain.test")
         record.parts.should have(1).part
       end
 
@@ -59,7 +59,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).with("=domain.test", "whois.test", 43).returns(referral)
         server.query_handler.expects(:call).never
 
-        record = server.query("domain.test")
+        record = server.lookup("domain.test")
         record.parts.should have(1).part
       end
     end

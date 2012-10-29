@@ -5,14 +5,14 @@ describe Whois::Server::Adapters::Standard do
   let(:definition) { [:tld, ".test", "whois.test", {}] }
 
 
-  describe "#query" do
+  describe "#lookup" do
     it "returns the WHOIS record" do
       response = "Whois Response"
       expected = response
       server = klass.new(*definition)
       server.query_handler.expects(:call).with("domain.test", "whois.test", 43).returns(response)
 
-      record = server.query("domain.test")
+      record = server.lookup("domain.test")
       record.to_s.should  == expected
       record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.test")]
     end
@@ -23,7 +23,7 @@ describe Whois::Server::Adapters::Standard do
         server = klass.new(:tld, ".test", "whois.test", { :port => 20 })
         server.query_handler.expects(:call).with("domain.test", "whois.test", 20).returns(response)
 
-        server.query("domain.test")
+        server.lookup("domain.test")
       end
     end
 
@@ -34,7 +34,7 @@ describe Whois::Server::Adapters::Standard do
         server.configure(:bind_host => "192.168.1.100", :bind_port => 3000)
         server.query_handler.expects(:call).with("domain.test", "whois.test", 20, "192.168.1.100", 3000).returns(response)
 
-        server.query("domain.test")
+        server.lookup("domain.test")
       end
     end
   end

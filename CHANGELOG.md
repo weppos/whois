@@ -15,6 +15,10 @@
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
 
+### Backward Incompatibilities
+
+- Whois::Server#query has been renamed to Whois::Server#lookup
+
 
 ## Release 2.7.0
 
