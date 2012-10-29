@@ -107,20 +107,13 @@ describe Whois::Server::Adapters::Base do
 
   describe "#request" do
     it "is an abstract method" do
-      lambda { klass.new(*definition).request("example.test") }.should raise_error(NotImplementedError)
+      expect {
+        klass.new(*definition).request("example.test")
+      }.to raise_error(NotImplementedError)
     end
   end
 
   describe "#query_the_socket" do
-    [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
-      it "re-raises #{error} as Whois::ConnectionError" do
-        klass.query_handler.expects(:execute).raises(error)
-        expect {
-          klass.new(*definition).send(:query_the_socket, "example.com", "whois.test")
-        }.to raise_error(Whois::ConnectionError, "#{error}: #{error.new.message}")
-      end
-    end
-
     context "without :bind_host or :bind_port options" do
       let(:server) { klass.new(:tld, ".test", "whois.test", {}) }
 
