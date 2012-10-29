@@ -175,7 +175,7 @@ module Whois
       end
 
 
-      # @group Methods
+      # @!group Methods
 
       # Collects and returns all the contacts from all the record parts.
       #
@@ -188,10 +188,10 @@ module Whois
         parsers.map(&:contacts).flatten
       end
 
-      # @endgroup
+      # @!endgroup
 
 
-      # @group Response
+      # @!group Response
 
       # Loop through all the record parts to check
       # if at least one part changed.
@@ -259,7 +259,7 @@ module Whois
         any_is?(parsers, :response_unavailable?)
       end
 
-      # @endgroup
+      # @!endgroup
 
 
     private

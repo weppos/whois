@@ -18,7 +18,7 @@ module Whois
   end
 
 
-  # @group Server
+  # @!group Server
 
   # Generic class for server errors.
   class ServerError < Error
@@ -53,10 +53,10 @@ module Whois
   class AllocationUnknown < ServerError
   end
 
-  # @endgroup
+  # @!endgroup
 
 
-  # @group Interface
+  # @!group Interface
 
   # Generic class for interfaces not supported.
   class InterfaceNotSupported < ServerError
@@ -85,10 +85,10 @@ module Whois
 
   end
 
-  # @endgroup
+  # @!endgroup
 
 
-  # @group Parser
+  # @!group Parser
 
   # Generic class for parser errors.
   class ParserError < Error
@@ -115,10 +115,10 @@ module Whois
   class PropertyNotAvailable < ParserError
   end
 
-  # @endgroup
+  # @!endgroup
 
 
-  # @group Response
+  # @!group Response
 
   # Generic class for response errors.
   class ResponseError < Error
@@ -137,6 +137,6 @@ module Whois
   class ResponseIsUnavailable < ResponseError
   end
 
-  # @endgroup
+  # @!endgroup
 
 end

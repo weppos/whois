@@ -223,7 +223,7 @@ module Whois
         end
 
 
-        # @group Properties
+        # @!group Properties
 
         Whois::Record::Parser::PROPERTIES.each do |property|
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
@@ -235,10 +235,10 @@ module Whois
           property_not_implemented(property)
         end
 
-        # @endgroup
+        # @!endgroup
 
 
-        # @group Methods
+        # @!group Methods
 
         # Collects and returns all the available contacts.
         #
@@ -254,10 +254,10 @@ module Whois
           end
         end
 
-        # @endgroup
+        # @!endgroup
 
 
-        # @group Response
+        # @!group Response
 
         # Checks whether the content of this part is different than +other+.
         #
@@ -347,7 +347,7 @@ module Whois
         undef :response_throttled?
         undef :response_unavailable?
 
-        # @endgroup
+        # @!endgroup
 
 
         protected

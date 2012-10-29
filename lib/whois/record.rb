@@ -144,7 +144,7 @@ module Whois
     end
 
 
-    # @group Properties
+    # @!group Properties
 
     # Returns a Hash containing all supported properties for this record
     # along with corresponding values.
@@ -157,10 +157,10 @@ module Whois
       hash
     end
 
-    # @endgroup
+    # @!endgroup
 
 
-    # @group Methods
+    # @!group Methods
 
     # Shortcut for <tt>#registrant_contacts.first</tt>.
     #
@@ -217,10 +217,10 @@ module Whois
       parser.contacts
     end
 
-    # @endgroup
+    # @!endgroup
 
 
-    # @group Response
+    # @!group Response
 
     # Checks whether this {Whois::Record} is different than +other+.
     #
@@ -291,7 +291,7 @@ module Whois
       parser.response_unavailable?
     end
 
-    # @endgroup
+    # @!endgroup
 
 
   private
