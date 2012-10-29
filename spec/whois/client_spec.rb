@@ -42,16 +42,18 @@ describe Whois::Client do
 
   describe "#query" do
     it "converts the argument to string" do
-      # I can't use the String in place of instance_of(String)
-      # because Array#to_s behaves differently
-      # on Ruby 1.8.7 and Ruby 1.9.1
-      # http://redmine.ruby-lang.org/issues/show/2617
+      query = ["example", ".", "test"]
+      query.instance_eval do
+        def to_s
+          join
+        end
+      end
 
       server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
-      server.expects(:lookup).with(instance_of(String))
-      Whois::Server.expects(:guess).with(instance_of(String)).returns(server)
+      server.expects(:lookup).with("example.test")
+      Whois::Server.expects(:guess).with("example.test").returns(server)
 
-      klass.new.query(["example", ".", "test"])
+      klass.new.query(query)
     end
 
     it "converts the argument to downcase" do
