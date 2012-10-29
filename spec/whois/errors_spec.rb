@@ -8,7 +8,9 @@ describe Whois::WebInterfaceError do
     end
 
     it "requires the URL argument" do
-      lambda { klass.new }.should raise_error(ArgumentError)
+      expect {
+        klass.new
+      }.to raise_error(ArgumentError)
     end
   end
 

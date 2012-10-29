@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe Whois::Record::Parser do
 
-  before(:each) do
-    @record = Whois::Record.new(nil, [])
-  end
+  let(:record) { Whois::Record.new(nil, []) }
 
 
   describe ".parser_klass" do
@@ -46,12 +44,12 @@ describe Whois::Record::Parser do
   describe "#initialize" do
     it "requires an record" do
       lambda { klass.new }.should raise_error(ArgumentError)
-      lambda { klass.new(@record) }.should_not raise_error
+      lambda { klass.new(record) }.should_not raise_error
     end
 
     it "sets record from argument" do
-      instance = klass.new(@record)
-      instance.record.should be(@record)
+      instance = klass.new(record)
+      instance.record.should be(record)
     end
   end
 
@@ -246,11 +244,11 @@ describe Whois::Record::Parser do
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do
-        klass.new(@record).changed?(Object.new)
+        klass.new(record).changed?(Object.new)
       end.should raise_error
 
       lambda do
-        klass.new(@record).changed?(klass.new(@record))
+        klass.new(record).changed?(klass.new(record))
       end.should_not raise_error
     end
   end
@@ -258,16 +256,16 @@ describe Whois::Record::Parser do
   describe "#unchanged?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do
-        klass.new(@record).unchanged?(Object.new)
+        klass.new(record).unchanged?(Object.new)
       end.should raise_error
 
       lambda do
-        klass.new(@record).unchanged?(klass.new(@record))
+        klass.new(record).unchanged?(klass.new(record))
       end.should_not raise_error
     end
 
     it "returns true if self and other references the same object" do
-      instance = klass.new(@record)
+      instance = klass.new(record)
       instance.unchanged?(instance).should be_true
     end
 

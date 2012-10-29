@@ -2,27 +2,29 @@ require 'spec_helper'
 
 describe Whois::Record do
 
-  before(:each) do
-    @server   = Whois::Server.factory(:tld, ".foo", "whois.example.test")
-    @parts    = [
-        Whois::Record::Part.new(:body => "This is a record from foo.", :host => "foo.example.test"),
-        Whois::Record::Part.new(:body => "This is a record from bar.", :host => "bar.example.test")
-    ]
-    @content  = @parts.map(&:body).join("\n")
-  end
+  let(:server) {
+    Whois::Server.factory(:tld, ".foo", "whois.example.test")
+  }
+  let(:parts) {[
+    Whois::Record::Part.new(body: "This is a record from foo.", host: "foo.example.test"),
+    Whois::Record::Part.new(body: "This is a record from bar.", host: "bar.example.test")
+  ]}
+  let(:content) {
+    parts.map(&:body).join("\n")
+  }
 
 
   describe "#initialize" do
     it "requires a server and parts" do
       lambda { klass.new }.should raise_error(ArgumentError)
-      lambda { klass.new(@server) }.should raise_error(ArgumentError)
-      lambda { klass.new(@server, @parts) }.should_not raise_error
+      lambda { klass.new(server) }.should raise_error(ArgumentError)
+      lambda { klass.new(server, parts) }.should_not raise_error
     end
     
     it "sets server and parts from arguments" do
-      instance = klass.new(@server, @parts)
-      instance.server.should be(@server)
-      instance.parts.should be(@parts)
+      instance = klass.new(server, parts)
+      instance.server.should be(server)
+      instance.parts.should be(parts)
 
       instance = klass.new(nil, nil)
       instance.server.should be_nil
@@ -33,19 +35,19 @@ describe Whois::Record do
 
   describe "#to_s" do
     it "delegates to #content" do
-      klass.new(nil, [@parts[0]]).to_s.should == @parts[0].body
-      klass.new(nil, @parts).to_s.should == @parts.map(&:body).join("\n")
+      klass.new(nil, [parts[0]]).to_s.should == parts[0].body
+      klass.new(nil, parts).to_s.should == parts.map(&:body).join("\n")
       klass.new(nil, []).to_s.should == ""
     end
   end
 
   describe "#inspect" do
     it "inspects the record content" do
-      klass.new(nil, [@parts[0]]).inspect.should == @parts[0].body.inspect
+      klass.new(nil, [parts[0]]).inspect.should == parts[0].body.inspect
     end
 
     it "joins multiple parts" do
-      klass.new(nil, @parts).inspect.should == @parts.map(&:body).join("\n").inspect
+      klass.new(nil, parts).inspect.should == parts.map(&:body).join("\n").inspect
     end
 
     it "joins empty parts" do
@@ -55,14 +57,14 @@ describe Whois::Record do
 
   describe "#==" do
     it "returns true when other is the same instance" do
-      one = two = klass.new(@server, @parts)
+      one = two = klass.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has same class and has the same parts" do
-      one, two = klass.new(@server, @parts), klass.new(@server, @parts)
+      one, two = klass.new(server, parts), klass.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true
@@ -70,47 +72,47 @@ describe Whois::Record do
 
     it "returns true when other has descendant class and has the same parts" do
       subklass = Class.new(klass)
-      one, two = klass.new(@server, @parts), subklass.new(@server, @parts)
+      one, two = klass.new(server, parts), subklass.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has same class and has equal parts" do
-      one, two = klass.new(@server, @parts), klass.new(@server, @parts.dup)
+      one, two = klass.new(server, parts), klass.new(server, parts.dup)
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has same class, different server and the same parts" do
-      one, two = klass.new(@server, @parts), klass.new(nil, @parts)
+      one, two = klass.new(server, parts), klass.new(nil, parts)
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns false when other has different class and has the same parts" do
-      one, two = klass.new(@server, @parts), Struct.new(:server, :parts).new(@server, @parts)
+      one, two = klass.new(server, parts), Struct.new(:server, :parts).new(server, parts)
 
       (one == two).should be_false
       (one.eql? two).should be_false
     end
 
     it "returns false when other has different parts" do
-      one, two = klass.new(@server, @parts), klass.new(@server, [])
+      one, two = klass.new(server, parts), klass.new(server, [])
 
       (one == two).should be_false
       (one.eql? two).should be_false
     end
 
     it "returns false when other is string and has the same content" do
-      one, two = klass.new(@server, @parts), klass.new(@server, @parts).to_s
+      one, two = klass.new(server, parts), klass.new(server, parts).to_s
 
       (one == two).should be_false
       (one.eql? two).should be_false
     end
 
     it "returns false when other is string and has different content" do
-      one, two = klass.new(@server, @parts), "different"
+      one, two = klass.new(server, parts), "different"
 
       (one == two).should be_false
       (one.eql? two).should be_false
@@ -120,28 +122,28 @@ describe Whois::Record do
 
   describe "match" do
     it "delegates to content" do
-      klass.new(@server, @parts).match(/record/).should be_a(MatchData)
-      klass.new(@server, @parts).match(/record/)[0].should == "record"
+      klass.new(server, parts).match(/record/).should be_a(MatchData)
+      klass.new(server, parts).match(/record/)[0].should == "record"
 
-      klass.new(@server, @parts).match(/nomatch/).should be_nil
+      klass.new(server, parts).match(/nomatch/).should be_nil
     end
   end
 
   describe "match" do
     it "calls match and checks for match" do
-      klass.new(@server, @parts).match?(/record/).should  == true
-      klass.new(@server, @parts).match?(/nomatch/).should == false
+      klass.new(server, parts).match?(/record/).should  == true
+      klass.new(server, parts).match?(/nomatch/).should == false
     end
   end
 
 
   describe "#content" do
     it "returns the part body" do
-      klass.new(nil, [@parts[0]]).content.should == @parts[0].body
+      klass.new(nil, [parts[0]]).content.should == parts[0].body
     end
 
     it "joins multiple parts" do
-      klass.new(nil, @parts).content.should == @parts.map(&:body).join("\n")
+      klass.new(nil, parts).content.should == parts.map(&:body).join("\n")
     end
 
     it "returns an empty string when no parts" do
@@ -151,16 +153,16 @@ describe Whois::Record do
 
   describe "#parser" do
     it "returns a Parser" do
-      klass.new(nil, @parts).parser.should be_a(Whois::Record::Parser)
+      klass.new(nil, parts).parser.should be_a(Whois::Record::Parser)
     end
 
     it "initializes the parser with self" do
-      record = klass.new(nil, @parts)
+      record = klass.new(nil, parts)
       record.parser.record.should be(record)
     end
 
     it "memoizes the value" do
-      record = klass.new(nil, @parts)
+      record = klass.new(nil, parts)
       record.instance_eval { @parser }.should be_nil
       parser = record.parser
       record.instance_eval { @parser }.should be(parser)
@@ -288,8 +290,8 @@ describe Whois::Record do
     end
 
     it "delegates to #parser if self and other references different objects" do
-      other = klass.new(nil, @parts)
-      instance = klass.new(nil, @parts)
+      other = klass.new(nil, parts)
+      instance = klass.new(nil, parts)
       instance.parser.expects(:unchanged?).with(other.parser)
 
       instance.unchanged?(other)

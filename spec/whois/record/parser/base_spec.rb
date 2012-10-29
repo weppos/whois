@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Whois::Record::Parser::Base do
 
-  before(:each) do
-    @part = Whois::Record::Part.new(:body => "This is the response.", :host => "whois.example.test")
-  end
+  let(:part) {
+    Whois::Record::Part.new(body: "This is the response.", host: "whois.example.test")
+  }
 
 
   describe ".property_register" do
@@ -20,16 +20,16 @@ describe Whois::Record::Parser::Base do
     it "returns false if the property is not supported" do
       koncrete = Class.new(klass) do
       end
-      koncrete.new(@part).property_supported?(:disclaimer).should be_false
-      koncrete.new(@part).respond_to?(:disclaimer).should be_true
+      koncrete.new(part).property_supported?(:disclaimer).should be_false
+      koncrete.new(part).respond_to?(:disclaimer).should be_true
     end
 
     it "returns true if the property is supported" do
       koncrete = Class.new(klass) do
         property_register(:disclaimer, :supported) {}
       end
-      koncrete.new(@part).property_supported?(:disclaimer).should be_true
-      koncrete.new(@part).respond_to?(:disclaimer).should be_true
+      koncrete.new(part).property_supported?(:disclaimer).should be_true
+      koncrete.new(part).respond_to?(:disclaimer).should be_true
     end
   end
 
@@ -37,18 +37,18 @@ describe Whois::Record::Parser::Base do
   describe "#initialize" do
     it "requires a part" do
       lambda { klass.new }.should raise_error(ArgumentError)
-      lambda { klass.new(@part) }.should_not raise_error
+      lambda { klass.new(part) }.should_not raise_error
     end
 
     it "sets the part" do
-      klass.new(@part).part.should be(@part)
+      klass.new(part).part.should be(part)
     end
   end
 
   describe "#content" do
     it "returns the part body" do
-      i = klass.new(@part)
-      i.content.should be(@part.body)
+      i = klass.new(part)
+      i.content.should be(part.body)
     end
   end
 
@@ -99,11 +99,11 @@ describe Whois::Record::Parser::Base do
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do
-        klass.new(@part).changed?(Object.new)
+        klass.new(part).changed?(Object.new)
       end.should raise_error
 
       lambda do
-        klass.new(@part).changed?(klass.new(@part))
+        klass.new(part).changed?(klass.new(part))
       end.should_not raise_error
     end
   end
@@ -111,16 +111,16 @@ describe Whois::Record::Parser::Base do
   describe "#unchanged?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do
-        klass.new(@part).unchanged?(Object.new)
+        klass.new(part).unchanged?(Object.new)
       end.should raise_error
 
       lambda do
-        klass.new(@part).unchanged?(klass.new(@part))
+        klass.new(part).unchanged?(klass.new(part))
       end.should_not raise_error
     end
 
     it "returns true if self and other references the same object" do
-      i = klass.new(@part)
+      i = klass.new(part)
       i.unchanged?(i).should be_true
     end
 
@@ -146,13 +146,13 @@ describe Whois::Record::Parser::Base do
         property_supported(:registrant_contacts) { [c1, c2] }
         property_supported(:admin_contacts)      { [] }
         property_supported(:technical_contacts)  { [c3] }
-      end.new(@part)
+      end.new(part)
 
       koncrete.contacts.should == [c1, c2, c3]
     end
 
     it "returns an empty array when no contact is supported" do
-      i = klass.new(@part)
+      i = klass.new(part)
       i.contacts.should == []
     end
   end
@@ -160,48 +160,48 @@ describe Whois::Record::Parser::Base do
 
   describe "#response_incomplete?" do
     it "is undefined" do
-      klass.new(@part).respond_to?(:response_incomplete?).should be_false
+      klass.new(part).respond_to?(:response_incomplete?).should be_false
     end
 
     # it "returns nil" do
-    #   i = klass.new(@part)
+    #   i = klass.new(part)
     #   i.response_incomplete?.should be_nil
     # end
     #
     # it "is false" do
-    #   i = klass.new(@part)
+    #   i = klass.new(part)
     #   i.response_incomplete?.should be_false
     # end
   end
 
   describe "#response_throttled?" do
     it "is undefined" do
-      klass.new(@part).respond_to?(:response_throttled?).should be_false
+      klass.new(part).respond_to?(:response_throttled?).should be_false
     end
 
     # it "returns nil" do
-    #   i = klass.new(@part)
+    #   i = klass.new(part)
     #   i.response_throttled?.should be_nil
     # end
     #
     # it "is false" do
-    #   i = klass.new(@part)
+    #   i = klass.new(part)
     #   i.response_throttled?.should be_false
     # end
   end
 
   describe "#response_unavailable?" do
     it "is undefined" do
-      klass.new(@part).respond_to?(:response_unavailable?).should be_false
+      klass.new(part).respond_to?(:response_unavailable?).should be_false
     end
 
     # it "returns nil" do
-    #   i = klass.new(@part)
+    #   i = klass.new(part)
     #   i.response_unavailable?.should be_nil
     # end
     #
     # it "is false" do
-    #   i = klass.new(@part)
+    #   i = klass.new(part)
     #   i.response_unavailable?.should be_false
     # end
   end
