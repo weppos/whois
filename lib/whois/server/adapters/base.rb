@@ -152,7 +152,7 @@ module Whois
         # @param  [String] port
         # @return [String]
         #
-        def query_prepare(query, host, port = nil)
+        def query(query, host, port = nil)
           args = []
           args.push(host)
           args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
@@ -175,7 +175,7 @@ module Whois
           self.class.query_handler.call(query, *args)
         end
 
-        alias :query_the_socket :query_prepare
+        alias :query_the_socket :query
 
       end
 
