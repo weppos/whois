@@ -84,7 +84,7 @@ module Whois
     # This is a technical limitation. Browse the lib/whois/record/parsers folder
     # to view all available parsers.
     #
-    # @param  [String] string The string to be sent as query parameter.
+    # @param  [String] object The string to be sent as query parameter.
     #         It is intended to be a domain name, otherwise this method
     #         may return unexpected responses.
     # @return [Boolean]
