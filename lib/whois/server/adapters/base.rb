@@ -61,7 +61,6 @@ module Whois
         # Checks self and other for equality.
         #
         # @param  [The Whois::Server::Adapters::Base] other
-        #
         # @return [Boolean] Returns true if the other is the same object,
         #         or <tt>other</tt> attributes matches this object attributes.
         #
@@ -94,15 +93,14 @@ module Whois
         # Performs a Whois query for <tt>string</tt>
         # using the current server adapter.
         #
-        # @param  [String] string The string to be sent as query parameter.
-        #
-        # @return [Whois::Record]
-        #
         # Internally, this method calls {#request}
         # using the Template Method design pattern.
         #
         #   server.query("google.com")
         #   # => Whois::Record
+        #
+        # @param  [String] string The string to be sent as query parameter.
+        # @return [Whois::Record]
         #
         def query(string)
           buffer_start do |buffer|
@@ -118,9 +116,8 @@ module Whois
         # This is the heart of the Template Method design pattern.
         #
         # @param  [String] string The string to be sent as query parameter.
-        #
-        # @raise  [NotImplementedError]
         # @return [void]
+        # @raise  [NotImplementedError]
         # @abstract
         #
         def request(string)
@@ -148,6 +145,13 @@ module Whois
           result
         end
 
+        # Prepares and passes the query to the {#query_handler}.
+        #
+        # @param  [String] query
+        # @param  [String] host
+        # @param  [String] port
+        # @return [String]
+        #
         def query_prepare(query, host, port = nil)
           args = []
           args.push(host)

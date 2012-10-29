@@ -28,7 +28,14 @@ module Whois
           SocketError,
       ]
 
-      # TODO: *args might probably be a Hash
+      # Performs the Socket request.
+      #
+      # @todo *args might probably be a Hash.
+      #
+      # @param  [String] query
+      # @param  [Array] args
+      # @return [String]
+      #
       def call(query, *args)
         execute(query, *args)
       rescue *RESCUABLE_CONNECTION_ERRORS => error
@@ -40,13 +47,12 @@ module Whois
       # It opens the socket passing given +args+,
       # sends the +query+ and reads the response.
       #
-      # This is for internal use only!
-      #
       # @param  [String] query
       # @param  [Array] args
       # @return [String]
       #
       # @api private
+      #
       def execute(query, *args)
         client = TCPSocket.new(*args)
         client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
