@@ -343,9 +343,9 @@ module Whois
         end
 
         # Let them be documented
-        undef :response_incomplete?
-        undef :response_throttled?
-        undef :response_unavailable?
+        undef response_incomplete?
+        undef response_throttled?
+        undef response_unavailable?
 
         # @!endgroup
 
