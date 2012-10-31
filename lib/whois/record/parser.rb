@@ -22,9 +22,9 @@ module Whois
     class Parser
 
       METHODS = [
-        :changed?, :unchanged?,
         :contacts,
-        # :response_throttled?, :response_incomplete?,
+        :changed?, :unchanged?,
+        # :response_incomplete?, :response_throttled?, :response_unavailable?
       ]
 
       PROPERTIES = [
@@ -263,7 +263,7 @@ module Whois
       # @!endgroup
 
 
-    private
+      private
 
       # @api private
       def self.define_missing_method(method)
