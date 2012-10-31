@@ -299,6 +299,7 @@ module Whois
           content_for_scanner == other.content_for_scanner
         end
 
+
         # Checks whether this is an incomplete response.
         #
         # @return [Boolean]
@@ -352,46 +353,45 @@ module Whois
 
         protected
 
-          def content_for_scanner
-            @content_for_scanner ||= content.to_s.gsub(/\r\n/, "\n")
-          end
+        def content_for_scanner
+          @content_for_scanner ||= content.to_s.gsub(/\r\n/, "\n")
+        end
 
-          def cached_properties_fetch(key)
-            if !@cached_properties.key?(key)
-              @cached_properties[key] = yield
-            end
-            @cached_properties[key]
+        def cached_properties_fetch(key)
+          if !@cached_properties.key?(key)
+            @cached_properties[key] = yield
           end
+          @cached_properties[key]
+        end
+
 
         private
 
-          # @api private
-          def typecast(value, type)
-            if Array == type
-              Array.wrap(value)
+        def typecast(value, type)
+          if Array == type
+            Array.wrap(value)
+          else
+            value
+          end
+        end
+
+        def handle_property(property, *args)
+          unless property_supported?(property)
+            return send(:"_property_#{property}", *args)
+          end
+
+          cached_properties_fetch(property) do
+            validate!
+            value = send(:"_property_#{property}", *args)
+
+            case property.to_s
+            when /_contacts$/, "nameservers"
+              typecast(value, Array)
             else
               value
             end
           end
-
-          # @api private
-          def handle_property(property, *args)
-            unless property_supported?(property)
-              return send(:"_property_#{property}", *args)
-            end
-
-            cached_properties_fetch(property) do
-              validate!
-              value = send(:"_property_#{property}", *args)
-
-              case property.to_s
-              when /_contacts$/, "nameservers"
-                typecast(value, Array)
-              else
-                value
-              end
-            end
-          end
+        end
 
       end
 

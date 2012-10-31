@@ -223,6 +223,7 @@ module Whois
         parsers.size == other.parsers.size && all_in_parallel?(parsers, other.parsers) { |one, two| one.unchanged?(two) }
       end
 
+
       # Loop through all the parts to check if at least
       # one part is an incomplete response.
       #
