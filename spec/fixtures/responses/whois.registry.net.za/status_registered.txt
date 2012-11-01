@@ -1,0 +1,39 @@
+    Domain Name:
+        broccoliwafflesareawesome.co.za
+
+    Registrant:
+        Fred Flintstone
+        Email: someguy@somedomain.co.za
+        Tel: +27.219000000
+        Fax: +27.219001000
+
+    Registrant's Address:
+        30 Frazzita Business Park Durbanville
+        Cape Town
+        ZA
+        7550
+
+    Registrar:
+        EPAG Domainservices [ ID = epag ] 
+
+    Relevant Dates:
+        Registration Date: 2012-03-27
+        Renewal Date:      2013-03-27
+
+    Domain Status:
+        ok, autorenew
+
+    Pending Timer Events:
+        None
+ 
+    Name Servers:
+        ns2.host-h.net
+        ns1.dns-h.com
+        ns1.host-h.net
+
+    WHOIS lookup made at 2012-07-01 17:22 UTC
+
+--
+The use of this Whois facility is subject to the following terms and
+conditions. https://registry.net.za/whois_terms
+Copyright (c) UniForum SA 1995-2012
