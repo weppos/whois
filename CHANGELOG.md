@@ -41,6 +41,8 @@
 
 - CHANGED: Whois::Server#query renamed to Whois::Server#lookup
 
+- CHANGED: :referral_whois and :referral_url no longer exist as properties.
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
@@ -55,6 +57,13 @@
 - Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
 
 - Whois::Server#query has been renamed to Whois::Server#lookup
+
+- :referral_whois and :referral_url no longer exist as properties.
+  The parsers where the propertie was supported still supports the property
+  by providing a corresponding method.
+
+  However, you cannot call the method on the response anymore.
+  Instead, you have to invoke the method directly on the parser instance.
 
 
 ## Release 2.7.0
