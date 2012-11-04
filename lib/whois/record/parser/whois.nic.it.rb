@@ -32,11 +32,6 @@ module Whois
         property_not_supported :domain_id
 
 
-        property_not_supported :referral_whois
-
-        property_not_supported :referral_url
-
-
         property_supported :status do
           case s = node("Status").to_s.downcase
           when /^ok/, "active", /\bclient/

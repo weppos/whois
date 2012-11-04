@@ -36,16 +36,6 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
       lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  describe "#referral_whois" do
-    it do
-      subject.referral_whois.should == "whois.encirca.com"
-    end
-  end
-  describe "#referral_url" do
-    it do
-      subject.referral_url.should == "http://www.encirca.com"
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == "ACTIVE"
@@ -96,6 +86,16 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
       subject.nameservers[0].name.should == "ns2.registry.jobs"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
       subject.nameservers[1].name.should == "ns1.registry.jobs"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      subject.referral_whois.should == "whois.encirca.com"
+    end
+  end
+  describe "#referral_url" do
+    it do
+      subject.referral_url.should == "http://www.encirca.com"
     end
   end
 end

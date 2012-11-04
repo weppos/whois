@@ -34,11 +34,6 @@ module Whois
         property_not_supported :domain_id
 
 
-        property_not_supported :referral_whois
-
-        property_not_supported :referral_url
-
-
         # == Values for Status
         #
         # @see http://www.auda.org.au/policies/auda-2002-28/

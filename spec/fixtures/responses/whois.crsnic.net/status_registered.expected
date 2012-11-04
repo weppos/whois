@@ -9,13 +9,6 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
-#referral_whois
-  should: %s == "whois.markmonitor.com"
-
-#referral_url
-  should: %s == "http://www.markmonitor.com"
-
-
 #status
   should: %s == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
 
@@ -58,3 +51,11 @@
   should: %s[2].name == "ns3.google.com"
   should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns4.google.com"
+
+
+
+#referral_whois
+  should: %s == "whois.markmonitor.com"
+
+#referral_url
+  should: %s == "http://www.markmonitor.com"

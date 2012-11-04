@@ -9,13 +9,6 @@
   should: %s == "D6394-PRO"
 
 
-#referral_whois
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#referral_url
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-
 #status
   should: %s == ["CLIENT TRANSFER PROHIBITED", "DELETE PROHIBITED"]
 

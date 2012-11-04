@@ -9,13 +9,6 @@
   should: %s == "20030311s10001s00033735-cn"
 
 
-#referral_url
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#referral_whois
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-
 #status
   should: %s == ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited", "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"]
 

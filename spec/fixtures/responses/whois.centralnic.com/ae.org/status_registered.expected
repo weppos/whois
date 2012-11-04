@@ -9,13 +9,6 @@
   should: %s == "CNIC-DO716047"
 
 
-#referral_whois
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#referral_url
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-
 #status
   should: %s == ["PENDING DELETE", "PENDING DELETE RESTORABLE"]
 

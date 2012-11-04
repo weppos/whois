@@ -36,16 +36,6 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
       lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  describe "#referral_whois" do
-    it do
-      subject.referral_whois.should == "whois.dynadot.com"
-    end
-  end
-  describe "#referral_url" do
-    it do
-      subject.referral_url.should == "http://www.dynadot.com"
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == "CLIENT-XFER-PROHIBITED"
@@ -92,6 +82,16 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
       subject.nameservers[0].name.should == "ns1.slicehost.net"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
       subject.nameservers[1].name.should == "ns2.slicehost.net"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      subject.referral_whois.should == "whois.dynadot.com"
+    end
+  end
+  describe "#referral_url" do
+    it do
+      subject.referral_url.should == "http://www.dynadot.com"
     end
   end
 end

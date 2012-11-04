@@ -31,16 +31,6 @@ describe Whois::Record::Parser::WhoisUa, "status_available.expected" do
       lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  describe "#referral_whois" do
-    it do
-      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
-  describe "#referral_url" do
-    it do
-      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == :available
