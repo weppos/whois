@@ -92,10 +92,7 @@ module Whois
         end
 
         def parse_date(date_string)
-          if date_string
-            date_parts = date_string.split("-")
-            Time.new(*date_parts,nil,nil,nil,"+02:00")
-          end
+          Time.parse(date_string) if date_string
         end
 
       end

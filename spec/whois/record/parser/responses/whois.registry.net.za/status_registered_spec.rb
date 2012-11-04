@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#created_on" do
     it do
-      subject.created_on.should == Time.new(2012,3,27,nil,nil,nil,"+02:00")
+      subject.created_on.should == Time.parse("2012-03-27")
     end
   end
   describe "#status" do
@@ -80,7 +80,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should == Time.new(2013,3,27,nil,nil,nil,"+02:00")
+      subject.expires_on.should == Time.parse("2013-03-27")
     end
   end
   describe "#disclaimer" do
