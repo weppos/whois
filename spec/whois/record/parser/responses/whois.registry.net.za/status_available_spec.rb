@@ -71,4 +71,34 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_available.expected" 
       subject.disclaimer.should == nil
     end
   end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { subject.referral_whois }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { subject.referral_url }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#updated_on" do
+    it do
+      lambda { subject.updated_on }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      lambda { subject.technical_contacts }.should raise_error Whois::PropertyNotSupported
+    end
+  end
 end
