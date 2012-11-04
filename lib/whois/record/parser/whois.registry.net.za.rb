@@ -38,10 +38,8 @@ module Whois
         end
 
         property_supported :nameservers do
-          if registered?
-            node(:nameservers).map { |nameserver| Record::Nameserver.new(:name => nameserver) }
-          else
-            []
+          Array.wrap(node(:nameservers)).map do |nameserver|
+            Record::Nameserver.new(:name => nameserver)
           end
         end
 
@@ -53,10 +51,8 @@ module Whois
 
         # The response for this property gets wrapped in an array by Whois::Record::Parser::Base#handle_property
         property_supported :registrant_contacts do
-          if registered?
+          node(:registrant_name) do
             build_registrant_contacts
-          else
-            []
           end
         end
 
@@ -88,9 +84,7 @@ module Whois
         end
 
         def registrant_details
-          node(:registrant_name) do
-            { :name => node(:registrant_name), :email => node(:registrant_email), :phone => node(:registrant_telephone), :fax => node(:registrant_fax)}
-          end
+          { :name => node(:registrant_name), :email => node(:registrant_email), :phone => node(:registrant_telephone), :fax => node(:registrant_fax)}
         end
 
         def registrant_address_details
