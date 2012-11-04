@@ -17,6 +17,24 @@ module Whois
       class WhoisRegistryNetZa < Base
         include Scanners::Nodable
 
+        property_supported :disclaimer do
+          node(:disclaimer)
+        end
+
+        property_supported :domain do
+          node(:domain_name)
+        end
+
+        property_not_supported :domain_id
+
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+        property_supported :status do
+          node(:status)
+        end
+
         property_supported :available? do
           node(:available) ? true : false
         end
@@ -25,22 +43,14 @@ module Whois
           !available?
         end
 
-        property_supported :domain do
-          node(:domain_name)
-        end
-
         property_supported :created_on do
           parse_date(node(:registration_date))
         end
 
+        property_not_supported :updated_on
+
         property_supported :expires_on do
           parse_date(node(:renewal_date))
-        end
-
-        property_supported :nameservers do
-          Array.wrap(node(:nameservers)).map do |nameserver|
-            Record::Nameserver.new(:name => nameserver)
-          end
         end
 
         property_supported :registrar do
@@ -56,20 +66,15 @@ module Whois
           end
         end
 
-        property_supported :status do
-          node(:status)
-        end
-
-        property_supported :disclaimer do
-          node(:disclaimer)
-        end
-
-        property_not_supported :domain_id
-        property_not_supported :referral_whois
-        property_not_supported :referral_url
-        property_not_supported :updated_on
         property_not_supported :admin_contacts
+
         property_not_supported :technical_contacts
+
+        property_supported :nameservers do
+          Array.wrap(node(:nameservers)).map do |nameserver|
+            Record::Nameserver.new(:name => nameserver)
+          end
+        end
 
         def parse
           Scanners::WhoisRegistryNetZa.new(content_for_scanner).parse

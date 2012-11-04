@@ -1,18 +1,40 @@
+#disclaimer
+  should: %s == "The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2012\n"
+
+
+#domain
+  should: %s == "broccoliwafflesareawesome.co.za"
+
+#domain_id
+  should: %s raise_error Whois::PropertyNotSupported
+
+
+#referral_whois
+  should: %s raise_error Whois::PropertyNotSupported
+
+#referral_url
+  should: %s raise_error Whois::PropertyNotSupported
+
+
+#status
+  should: %s == ['ok', 'autorenew']
+
 #available?
   should: %s == false
 
 #registered?
   should: %s == true
 
-#nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(3)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns2.host-h.net"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1.dns-h.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns1.host-h.net"
+
+#created_on
+  should: %s == Time.parse("2012-03-27")
+
+#updated_on
+  should: %s raise_error Whois::PropertyNotSupported
+
+#expires_on
+  should: %s == Time.parse("2013-03-27")
+
 
 #registrar
   should: %s CLASS(registrar)
@@ -30,35 +52,19 @@
   should: %s[0].fax          == "+27.219001000"
   should: %s[0].address      == "30 Frazzita Business Park Durbanville Cape Town ZA 7550"
 
-#domain
-  should: %s == "broccoliwafflesareawesome.co.za"
-
-#created_on
-  should: %s == Time.parse("2012-03-27")
-
-#status
-  should: %s == ['ok', 'autorenew']
-
-#expires_on
-  should: %s == Time.parse("2013-03-27")
-
-#disclaimer
-  should: %s == "The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2012\n"
-
-#domain_id
-  should: %s raise_error Whois::PropertyNotSupported
-
-#referral_whois
-  should: %s raise_error Whois::PropertyNotSupported
-
-#referral_url
-  should: %s raise_error Whois::PropertyNotSupported
-
-#updated_on
-  should: %s raise_error Whois::PropertyNotSupported
-
 #admin_contacts
   should: %s raise_error Whois::PropertyNotSupported
 
 #technical_contacts
   should: %s raise_error Whois::PropertyNotSupported
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns2.host-h.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns1.dns-h.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns1.host-h.net"

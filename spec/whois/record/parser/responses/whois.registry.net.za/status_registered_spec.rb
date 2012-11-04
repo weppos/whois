@@ -21,6 +21,36 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      subject.disclaimer.should == "The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2012\n"
+    end
+  end
+  describe "#domain" do
+    it do
+      subject.domain.should == "broccoliwafflesareawesome.co.za"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      lambda { subject.referral_whois }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#referral_url" do
+    it do
+      lambda { subject.referral_url }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#status" do
+    it do
+      subject.status.should == ['ok', 'autorenew']
+    end
+  end
   describe "#available?" do
     it do
       subject.available?.should == false
@@ -31,16 +61,19 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
       subject.registered?.should == true
     end
   end
-  describe "#nameservers" do
+  describe "#created_on" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns2.host-h.net"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.dns-h.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns1.host-h.net"
+      subject.created_on.should == Time.parse("2012-03-27")
+    end
+  end
+  describe "#updated_on" do
+    it do
+      lambda { subject.updated_on }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#expires_on" do
+    it do
+      subject.expires_on.should == Time.parse("2013-03-27")
     end
   end
   describe "#registrar" do
@@ -63,51 +96,6 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
       subject.registrant_contacts[0].address.should      == "30 Frazzita Business Park Durbanville Cape Town ZA 7550"
     end
   end
-  describe "#domain" do
-    it do
-      subject.domain.should == "broccoliwafflesareawesome.co.za"
-    end
-  end
-  describe "#created_on" do
-    it do
-      subject.created_on.should == Time.parse("2012-03-27")
-    end
-  end
-  describe "#status" do
-    it do
-      subject.status.should == ['ok', 'autorenew']
-    end
-  end
-  describe "#expires_on" do
-    it do
-      subject.expires_on.should == Time.parse("2013-03-27")
-    end
-  end
-  describe "#disclaimer" do
-    it do
-      subject.disclaimer.should == "The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2012\n"
-    end
-  end
-  describe "#domain_id" do
-    it do
-      lambda { subject.domain_id }.should raise_error Whois::PropertyNotSupported
-    end
-  end
-  describe "#referral_whois" do
-    it do
-      lambda { subject.referral_whois }.should raise_error Whois::PropertyNotSupported
-    end
-  end
-  describe "#referral_url" do
-    it do
-      lambda { subject.referral_url }.should raise_error Whois::PropertyNotSupported
-    end
-  end
-  describe "#updated_on" do
-    it do
-      lambda { subject.updated_on }.should raise_error Whois::PropertyNotSupported
-    end
-  end
   describe "#admin_contacts" do
     it do
       lambda { subject.admin_contacts }.should raise_error Whois::PropertyNotSupported
@@ -116,6 +104,18 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   describe "#technical_contacts" do
     it do
       lambda { subject.technical_contacts }.should raise_error Whois::PropertyNotSupported
+    end
+  end
+  describe "#nameservers" do
+    it do
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(3).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns2.host-h.net"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns1.dns-h.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns1.host-h.net"
     end
   end
 end
