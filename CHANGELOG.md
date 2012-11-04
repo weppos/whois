@@ -5,7 +5,7 @@
 
 - SERVER: Updated .HN TLD server.
 
-- NEW: ruby-whois learns the -h option to pass whois hostname on the fly
+- NEW: ruby-whois learned the -h option to pass whois hostname on the fly
 
 - NEW: Ability to pass a custom query_handler to the Server adapter (GH-189)
 
