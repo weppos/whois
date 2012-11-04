@@ -46,10 +46,8 @@ module Whois
         end
 
         property_supported :registrar do
-          if node(:registrar_id)
+          node(:registrar_id) do
             Whois::Record::Registrar.new(:name => node(:registrar_name), :id => node(:registrar_id))
-          else
-            nil
           end
         end
 
