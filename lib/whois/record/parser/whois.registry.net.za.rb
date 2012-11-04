@@ -88,7 +88,7 @@ module Whois
         end
 
         def registrant_details
-          if node(:registrant_name)
+          node(:registrant_name) do
             { :name => node(:registrant_name), :email => node(:registrant_email), :phone => node(:registrant_telephone), :fax => node(:registrant_fax)}
           end
         end
@@ -101,8 +101,6 @@ module Whois
           if date_string
             date_parts = date_string.split("-")
             Time.new(*date_parts,nil,nil,nil,"+02:00")
-          else
-            nil
           end
         end
 
