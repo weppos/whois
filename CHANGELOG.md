@@ -45,6 +45,8 @@
 
 - CHANGED: Removed parser aliases.
 
+- CHANGED: Removed deprecated options[:web] for :web adapter.
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
