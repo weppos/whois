@@ -1,8 +1,8 @@
 #available?
-  should: %s be_false
+  should: %s == false
 
 #registered?
-  should: %s be_true
+  should: %s == true
 
 #nameservers
   should: %s CLASS(array)

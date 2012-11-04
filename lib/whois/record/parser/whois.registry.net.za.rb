@@ -18,7 +18,7 @@ module Whois
         include Scanners::Nodable
 
         property_supported :available? do
-          node(:available)
+          node(:available) ? true : false
         end
 
         property_supported :registered? do

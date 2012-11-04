@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
 
   describe "#available?" do
     it do
-      subject.available?.should be_false
+      subject.available?.should == false
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should be_true
+      subject.registered?.should == true
     end
   end
   describe "#nameservers" do
