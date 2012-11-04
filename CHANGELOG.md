@@ -43,6 +43,8 @@
 
 - CHANGED: :referral_whois and :referral_url no longer exist as properties.
 
+- CHANGED: Removed parser aliases.
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
