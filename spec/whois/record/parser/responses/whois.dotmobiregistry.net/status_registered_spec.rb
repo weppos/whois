@@ -36,16 +36,6 @@ describe Whois::Record::Parser::WhoisDotmobiregistryNet, "status_registered.expe
       subject.domain_id.should == "D117-MOBI"
     end
   end
-  describe "#referral_whois" do
-    it do
-      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
-  describe "#referral_url" do
-    it do
-      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]

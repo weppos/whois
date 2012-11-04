@@ -31,18 +31,6 @@ module Whois
         property_not_supported :domain_id
 
 
-
-        property_supported :referral_whois do
-          node("Whois Server")
-        end
-
-        property_supported :referral_url do
-          node("Referral URL") do |raw|
-            last_useful_item(raw)
-          end
-        end
-
-
         property_supported :status do
           node("Status")
         end
@@ -95,6 +83,17 @@ module Whois
           !!node("response:unavailable")
         end
 
+        def referral_whois
+          node("Whois Server")
+        end
+
+        def referral_url
+          node("Referral URL") do |lines|
+            last_useful_item(lines)
+          end
+        end
+
+
         # Initializes a new {Scanners::Verisign} instance
         # passing the {#content_for_scanner}
         # and calls +parse+ on it.
@@ -105,7 +104,7 @@ module Whois
         end
 
 
-      private
+        private
 
         # In case of "SPAM Response", the response contains more than one item
         # for the same value and the value becomes an Array.

@@ -24,13 +24,13 @@ module Whois
       METHODS = [
         :contacts,
         :changed?, :unchanged?,
-        # :response_incomplete?, :response_throttled?, :response_unavailable?
+        # :response_incomplete?, :response_throttled?, :response_unavailable?,
+        # :referral_whois, :referral_url,
       ]
 
       PROPERTIES = [
         :disclaimer,
         :domain, :domain_id,
-        :referral_whois, :referral_url,
         :status, :available?, :registered?,
         :created_on, :updated_on, :expires_on,
         :registrar,

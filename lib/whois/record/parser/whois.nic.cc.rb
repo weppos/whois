@@ -31,15 +31,6 @@ module Whois
         property_not_supported :domain_id
 
 
-        property_supported :referral_whois do
-          node("Whois Server")
-        end
-
-        property_supported :referral_url do
-          node("Referral URL")
-        end
-
-
         property_supported :status do
           node("Status")
         end
@@ -77,6 +68,15 @@ module Whois
           Array.wrap(node("Name Server")).reject { |value| value =~ /no nameserver/i }.map do |name|
             Record::Nameserver.new(:name => name.downcase)
           end
+        end
+
+
+        def referral_whois
+          node("Whois Server")
+        end
+
+        def referral_url
+          node("Referral URL")
         end
 
 

@@ -36,16 +36,6 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.domain_id.should == "CNIC-DO557730"
     end
   end
-  describe "#referral_whois" do
-    it do
-      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
-  describe "#referral_url" do
-    it do
-      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == ["OK"]

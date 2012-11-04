@@ -9,13 +9,6 @@
   should: %s == "D37288-LRMS"
 
 
-#referral_whois
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-#referral_url
-  should: %s raise_error(Whois::PropertyNotSupported)
-
-
 #status
   should: %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
 

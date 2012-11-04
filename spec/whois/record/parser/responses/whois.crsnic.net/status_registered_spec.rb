@@ -36,16 +36,6 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
       lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  describe "#referral_whois" do
-    it do
-      subject.referral_whois.should == "whois.markmonitor.com"
-    end
-  end
-  describe "#referral_url" do
-    it do
-      subject.referral_url.should == "http://www.markmonitor.com"
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
@@ -100,6 +90,16 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
       subject.nameservers[2].name.should == "ns3.google.com"
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
       subject.nameservers[3].name.should == "ns4.google.com"
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      subject.referral_whois.should == "whois.markmonitor.com"
+    end
+  end
+  describe "#referral_url" do
+    it do
+      subject.referral_url.should == "http://www.markmonitor.com"
     end
   end
 end

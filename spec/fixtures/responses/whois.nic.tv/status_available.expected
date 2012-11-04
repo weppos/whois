@@ -8,13 +8,6 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
-#referral_whois
-  should: %s == nil
-
-#referral_url
-  should: %s == nil
-
-
 #status
   should: %s == nil
 
@@ -42,3 +35,11 @@
 #nameservers
   should: %s CLASS(array)
   should: %s == []
+
+
+
+#referral_whois
+  should: %s == nil
+
+#referral_url
+  should: %s == nil

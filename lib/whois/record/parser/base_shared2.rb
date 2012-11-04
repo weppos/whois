@@ -38,11 +38,6 @@ module Whois
         end
 
 
-        property_not_supported :referral_whois
-
-        property_not_supported :referral_url
-
-
         property_supported :status do
           node("Domain Status")
         end

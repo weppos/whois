@@ -36,16 +36,6 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
       subject.domain_id.should == "D93126-ASIA"
     end
   end
-  describe "#referral_whois" do
-    it do
-      lambda { subject.referral_whois }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
-  describe "#referral_url" do
-    it do
-      lambda { subject.referral_url }.should raise_error(Whois::PropertyNotSupported)
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == ["OK"]

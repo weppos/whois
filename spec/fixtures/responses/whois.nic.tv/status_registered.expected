@@ -8,13 +8,6 @@
   should: %s raise_error(Whois::PropertyNotSupported)
 
 
-#referral_whois
-  should: %s == "whois.dynadot.com"
-
-#referral_url
-  should: %s == "http://www.dynadot.com"
-
-
 #status
   should: %s == "CLIENT-XFER-PROHIBITED"
 
@@ -49,3 +42,11 @@
   should: %s[0].name == "ns1.slicehost.net"
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.slicehost.net"
+
+
+
+#referral_whois
+  should: %s == "whois.dynadot.com"
+
+#referral_url
+  should: %s == "http://www.dynadot.com"

@@ -36,16 +36,6 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_available.expected" do
       lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
     end
   end
-  describe "#referral_whois" do
-    it do
-      subject.referral_whois.should == nil
-    end
-  end
-  describe "#referral_url" do
-    it do
-      subject.referral_url.should == nil
-    end
-  end
   describe "#status" do
     it do
       subject.status.should == nil
@@ -85,6 +75,16 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_available.expected" do
     it do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should == []
+    end
+  end
+  describe "#referral_whois" do
+    it do
+      subject.referral_whois.should == nil
+    end
+  end
+  describe "#referral_url" do
+    it do
+      subject.referral_url.should == nil
     end
   end
 end
