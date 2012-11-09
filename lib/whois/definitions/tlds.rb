@@ -247,7 +247,7 @@ Whois::Server.define :tld, ".pn", nil, { :adapter => :web, :url => "http://www.p
 Whois::Server.define :tld, ".pr", "whois.nic.pr"
 Whois::Server.define :tld, ".ps", "whois.pnina.ps"
 Whois::Server.define :tld, ".pt", "whois.dns.pt"
-Whois::Server.define :tld, ".pw", nil, { :adapter => :none }
+Whois::Server.define :tld, ".pw", "whois.nic.pw"
 Whois::Server.define :tld, ".py", nil, { :adapter => :web, :url => "http://www.nic.py/consultas.html" }
 Whois::Server.define :tld, ".qa", "whois.registry.qa"
 Whois::Server.define :tld, ".re", "whois.nic.fr"

@@ -5,7 +5,9 @@
 
 - SERVER: Updated .HN TLD server.
 
-* SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD server.
+- SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD server.
+
+- SERVER: Updated .PW TLD server.
 
 - NEW: ruby-whois learned the -h option to pass whois hostname on the fly
 
