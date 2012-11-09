@@ -354,6 +354,7 @@ Whois::Server.define :tld, ".xn--mgbayh7gpa", nil, { :adapter => :web, :url => "
 Whois::Server.define :tld, ".xn--mgbbh1a71e", nil, { :adapter => :none }
 Whois::Server.define :tld, ".xn--mgbc0a9azcg", nil, { :adapter => :none }
 Whois::Server.define :tld, ".xn--mgberp4a5d4ar", "whois.nic.net.sa"
+Whois::Server.define :tld, ".xn--mgbx4cd0ab", "whois.domainregistry.my"
 Whois::Server.define :tld, ".xn--o3cw4h", "whois.thnic.co.th"
 Whois::Server.define :tld, ".xn--ogbpf8fl", nil, { :adapter => :none }
 Whois::Server.define :tld, ".xn--p1ai", "whois.tcinet.ru"

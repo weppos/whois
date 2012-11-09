@@ -5,6 +5,8 @@
 
 - SERVER: Updated .HN TLD server.
 
+* SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD server.
+
 - NEW: ruby-whois learned the -h option to pass whois hostname on the fly
 
 - NEW: Ability to pass a custom query_handler to the Server adapter (GH-189)
