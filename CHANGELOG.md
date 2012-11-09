@@ -13,6 +13,8 @@
 
 - NEW: Ability to pass a custom query_handler to the Server adapter (GH-189)
 
+- NEW: Added full whois.nic.pw parser.
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable

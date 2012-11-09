@@ -13,7 +13,7 @@
 require 'spec_helper'
 require 'whois/record/parser/whois.nic.la.rb'
 
-describe Whois::Record::Parser::WhoisCentralnicCom, "property_status_multiple.expected" do
+describe Whois::Record::Parser::WhoisNicLa, "property_status_multiple.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.la/property_status_multiple.txt")

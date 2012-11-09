@@ -15,11 +15,11 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.la server.
+      # Parser for the whois.nic.pw server.
       #
       # It aliases the whois.centralnic.com parser because
-      # the .LA TLD is powered by Centralnic.
-      class WhoisNicLa < WhoisCentralnicCom
+      # the .PW TLD is powered by Centralnic.
+      class WhoisNicPw < WhoisCentralnicCom
       end
 
     end
