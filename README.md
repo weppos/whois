@@ -50,17 +50,6 @@ The best way to install *Whois* is via [RubyGems](https://rubygems.org/).
 You might need administrator privileges on your system to install the gem.
 
 
-## Upgrade
-
-Install the newer version via RubyGems.
-
-    $ gem install whois
-
-Minor and bugfix releases normally won't break backwards-compatibility. You can read the CHANGELOG.md file to learn about the changes in each release.
-
-Read the [Upgrading](http://www.ruby-whois.org/manual/upgrading/) documentation page for detailed information about incompatible changes and further instructions.
-
-
 ## Getting Started
 
 Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://www.ruby-whois.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
