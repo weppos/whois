@@ -16,14 +16,6 @@ module Whois
       #
       # Provides ability to query Verisign WHOIS interfaces.
       #
-      # The following WHOIS servers are currently known
-      # to require the Verisign adapter:
-      #
-      # - whois.nic.tv
-      # - whois.crsnic.net
-      # - jobswhois.verisign-grs.com
-      # - whois.nic.cc
-      #
       class Verisign < Base
 
         # Executes a WHOIS query to the Verisign WHOIS interface,
@@ -37,23 +29,23 @@ module Whois
           response = query_the_socket("=#{string}", host)
           buffer_append response, host
 
-          if endpoint = extract_referral(response)
-            response = query_the_socket(string, endpoint)
-            buffer_append response, endpoint
+          if referral = extract_referral(response)
+            response = query_the_socket(string, referral)
+            buffer_append(response, referral)
           end
         end
 
 
         private
 
-          def extract_referral(response)
-            if response =~ /Domain Name:/
-              endpoint = response.scan(/Whois Server: (.+?)$/).flatten.last
-              endpoint.strip! if endpoint != nil
-              endpoint = nil  if endpoint == "not defined"
-              endpoint
-            end
+        def extract_referral(response)
+          if response =~ /Domain Name:/
+            server = response.scan(/Whois Server: (.+?)$/).flatten.last
+            server.strip! if server != nil
+            server = nil  if server == "not defined"
+            server
           end
+        end
 
       end
 

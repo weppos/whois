@@ -16,11 +16,6 @@ module Whois
       #
       # Provides ability to query Afilias WHOIS interfaces.
       #
-      # The following WHOIS servers are currently known
-      # to require the Afilias adapter:
-      #
-      # - whois.afilias-grs.info
-      #
       class Afilias < Base
 
         # Executes a WHOIS query to the Afilias WHOIS interface,
@@ -34,20 +29,20 @@ module Whois
           response = query_the_socket(string, host)
           buffer_append response, host
 
-          if endpoint = extract_referral(response)
-            response = query_the_socket(string, endpoint)
-            buffer_append response, endpoint
+          if referral = extract_referral(response)
+            response = query_the_socket(string, referral)
+            buffer_append(response, referral)
           end
         end
 
 
         private
 
-          def extract_referral(response)
-            if response =~ /Domain Name:/ && response =~ /Whois Server:(\S+)/
-              $1
-            end
+        def extract_referral(response)
+          if response =~ /Domain Name:/
+            response.slice(/Whois Server:(\S+)/, 1)
           end
+        end
 
       end
 
