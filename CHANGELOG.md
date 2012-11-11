@@ -3,11 +3,11 @@
 
 ## master
 
-- SERVER: Updated .HN TLD server.
+- SERVER: Updated .AZ, .FM, .MC, .HN, .PH, .PW, .RW, .TD, .COM.UY, .VN TLD definitions.
 
-- SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD server.
+- SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD definition.
 
-- SERVER: Updated .PW TLD server.
+- SERVER: Removed .XN--MGBA3A4F16A IDN TLD definition.
 
 - NEW: ruby-whois learned the -h option to pass whois hostname on the fly
 
