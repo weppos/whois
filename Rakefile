@@ -34,7 +34,7 @@ spec = Gem::Specification.new do |s|
 
   s.add_development_dependency "rake",  "~> 0.9"
   s.add_development_dependency "rspec", "~> 2.11.0"
-  s.add_development_dependency "mocha"
+  s.add_development_dependency "mocha", "~> 0.12.0"
   s.add_development_dependency "yard"
 
   s.post_install_message = <<EOS
