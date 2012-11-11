@@ -41,6 +41,8 @@ module Whois
     #         to the specific local port.
     # @option settings [String, nil] :host (nil)
     #         The server host to query. Leave it blank for intelligent detection.
+    # @option settings [Boolean, nil] :referral (nil)
+    #         Set to +false+ to disable queries to referral WHOIS servers.
     #
     # @yield  [self]
     #

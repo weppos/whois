@@ -15,6 +15,8 @@
 
 - NEW: Added full whois.nic.pw parser.
 
+- NEW: Ability to disable referral queries setting option :referral => false
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable

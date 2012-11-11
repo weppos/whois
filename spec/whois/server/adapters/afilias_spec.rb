@@ -9,11 +9,11 @@ describe Whois::Server::Adapters::Afilias do
   describe "#lookup" do
     context "without referral" do
       it "returns the WHOIS record" do
-        response = "No match for DOMAIN.TEST."
+        response = "No match for example.test."
         expected = response
-        server.query_handler.expects(:call).with("domain.test", "whois.afilias-grs.info", 43).returns(response)
+        server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(response)
 
-        record = server.lookup("domain.test")
+        record = server.lookup("example.test")
         record.to_s.should  == expected
         record.parts.should have(1).part
         record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.afilias-grs.info")]
@@ -23,15 +23,25 @@ describe Whois::Server::Adapters::Afilias do
     context "with referral" do
       it "follows all referrals" do
         referral = File.read(fixture("referrals/afilias.bz.txt"))
-        response = "Match for DOMAIN.TEST."
+        response = "Match for example.test."
         expected = referral + "\n" + response
-        server.query_handler.expects(:call).with("domain.test", "whois.afilias-grs.info", 43).returns(referral)
-        server.query_handler.expects(:call).with("domain.test", "whois.belizenic.bz", 43).returns(response)
+        server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(referral)
+        server.query_handler.expects(:call).with("example.test", "whois.belizenic.bz", 43).returns(response)
 
-        record = server.lookup("domain.test")
+        record = server.lookup("example.test")
         record.to_s.should  == expected
         record.parts.should have(2).parts
         record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.afilias-grs.info"), Whois::Record::Part.new(:body => response, :host => "whois.belizenic.bz")]
+      end
+
+      it "ignores referral if options[:referral] is false" do
+        referral = File.read(fixture("referrals/afilias.bz.txt"))
+        server.options[:referral] = false
+        server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(referral)
+        server.query_handler.expects(:call).with("example.test", "whois.belizenic.bz", 43).never
+
+        record = server.lookup("example.test")
+        record.parts.should have(1).part
       end
     end
   end

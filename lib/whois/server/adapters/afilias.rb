@@ -29,7 +29,7 @@ module Whois
           response = query_the_socket(string, host)
           buffer_append response, host
 
-          if referral = extract_referral(response)
+          if options[:referral] != false && referral = extract_referral(response)
             response = query_the_socket(string, referral)
             buffer_append(response, referral)
           end
