@@ -40,33 +40,25 @@ module Whois
 
         tokenizer :get_registrant_details do
           if find_heading("Registrant")
-            registrant_lines = content_in_category.split("\n")
-            @ast["field:registrant_name"] = registrant_lines.shift
-            ["registrant_email", "registrant_telephone", "registrant_fax"].each do |contact_method|
-              @ast["field:#{contact_method}"] = registrant_lines.shift.split(":").last.strip
-            end
+            @ast["field:registrant_details"] = content_in_category
           end
         end
 
         tokenizer :get_registrant_address do
           if find_heading("Registrant's Address")
-            @ast["field:registrant_address"] = content_in_category.gsub(/\n\s+/, " ")
+            @ast["field:registrant_address"] = content_in_category
           end
         end
 
         tokenizer :get_registrar_details do
           if find_heading("Registrar")
-            content_in_category =~ /(.+) \[ ID = (.+) \]/
-            @ast["field:registrar_name"] = $1.strip
-            @ast["field:registrar_id"] = $2.strip
+            @ast["field:registrar"] = content_in_category
           end
         end
 
         tokenizer :get_dates do
           if find_heading("Relevant Dates")
-            dates = content_in_category.split("\n")
-            @ast["field:registration_date"] = dates.shift.split(":").last.strip
-            @ast["field:renewal_date"] = dates.shift.split(":").last.strip
+            @ast["field:dates"] = content_in_category
           end
         end
 
@@ -85,7 +77,7 @@ module Whois
 
         tokenizer :get_nameservers do
           if find_heading("Name Servers")
-            @ast["field:nameservers"] = content_in_category.gsub(/\n\s+/, ",").split(",")
+            @ast["field:nameservers"] = content_in_category
           end
         end
 

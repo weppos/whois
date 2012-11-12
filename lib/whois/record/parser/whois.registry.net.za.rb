@@ -44,24 +44,31 @@ module Whois
         end
 
         property_supported :created_on do
-          parse_date(node("field:registration_date"))
+          node("field:dates") do
+            node("field:dates") =~ /Registration Date:\s*(\d{4}-\d{2}-\d{2})/
+            parse_date($1)
+          end
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          parse_date(node("field:renewal_date"))
+          node("field:dates") do
+            node("field:dates") =~ /Renewal Date:\s*(\d{4}-\d{2}-\d{2})/
+            parse_date($1)
+          end
         end
 
         property_supported :registrar do
-          node("field:registrar_id") do
-            Whois::Record::Registrar.new(:name => node("field:registrar_name"), :id => node("field:registrar_id"))
+          node("field:registrar") do
+            node("field:registrar") =~ /(.+) \[ ID = (.+) \]/
+            Whois::Record::Registrar.new(:name => $1.strip, :id => $2.strip)
           end
         end
 
         # The response for this property gets wrapped in an array by Whois::Record::Parser::Base#handle_property
         property_supported :registrant_contacts do
-          node("field:registrant_name") do
+          node("field:registrant_details") do
             build_registrant_contacts
           end
         end
@@ -71,8 +78,11 @@ module Whois
         property_not_supported :technical_contacts
 
         property_supported :nameservers do
-          Array.wrap(node("field:nameservers")).map do |nameserver|
-            Record::Nameserver.new(:name => nameserver)
+          node("field:nameservers") do
+            nameservers = node("field:nameservers").gsub(/\n\s+/, ",").split(",")
+            Array.wrap(nameservers).map do |nameserver|
+              Record::Nameserver.new(:name => nameserver)
+            end
           end
         end
 
@@ -89,14 +99,16 @@ module Whois
         end
 
         def registrant_details
-          {
-            :name => node("field:registrant_name"), :email => node("field:registrant_email"),
-            :phone => node("field:registrant_telephone"), :fax => node("field:registrant_fax")
-          }
+          registrant_lines = node("field:registrant_details").split("\n")
+          details = { :name => registrant_lines.shift }
+          [:email, :phone, :fax].each do |contact_method|
+            details[contact_method] = registrant_lines.shift.split(":").last.strip
+          end
+          details
         end
 
         def registrant_address_details
-          { :address => node("field:registrant_address") }
+          { :address => node("field:registrant_address").gsub(/\n\s+/, " ") }
         end
 
         def parse_date(date_string)
