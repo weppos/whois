@@ -15,6 +15,8 @@
 
 - NEW: Added full whois.nic.pw parser.
 
+- NEW: Support for non-deep querying (GH-112)
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
@@ -52,6 +54,8 @@
 - CHANGED: Removed parser aliases.
 
 - CHANGED: Removed deprecated options[:web] for :web adapter.
+
+- CHANGED: Updated whois.nic.pr parser to the new response format.
 
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 

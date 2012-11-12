@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicPr, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.pr"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -39,7 +49,7 @@ describe Whois::Record::Parser::WhoisNicPr, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2003-01-25")
+      subject.created_on.should == Time.parse("2005-09-15")
     end
   end
   describe "#updated_on" do
@@ -50,12 +60,41 @@ describe Whois::Record::Parser::WhoisNicPr, "status_registered.expected" do
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2011-01-25")
+      subject.expires_on.should == Time.parse("2013-09-15")
+    end
+  end
+  describe "#registrar" do
+    it do
+      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      lambda { subject.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      lambda { subject.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(4).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.google.com"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.google.com"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.google.com"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns4.google.com"
     end
   end
 end

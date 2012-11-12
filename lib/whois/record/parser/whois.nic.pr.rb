@@ -14,18 +14,23 @@ module Whois
   class Record
     class Parser
 
+      # Parser for the whois.nic.pr server.
       #
-      # = whois.nic.pr parser
-      #
-      # Parser for the whois.nic.or server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisNicPr < Base
+
+        property_supported :domain do
+          if content_for_scanner =~ /^Domain:\s+(.+)\n/
+            $1
+          elsif content_for_scanner =~ /^The domain (.+?) is not registered\.\n/
+            $1
+          end
+        end
+
+        property_not_supported :domain_id
+
 
         property_supported :status do
           if available?
@@ -36,7 +41,7 @@ module Whois
         end
 
         property_supported :available? do
-          !(content_for_scanner =~ /^Domain: (.+?)\n/)
+          !!(content_for_scanner =~ /^The domain (.+?) is not registered\.\n/)
         end
 
         property_supported :registered? do
@@ -45,7 +50,7 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Created on:(.+?)\n/
+          if content_for_scanner =~ /Created On:\s+(.+)\n/
             Time.parse($1)
           end
         end
@@ -53,13 +58,26 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expires on:(.+?)\n/
+          if content_for_scanner =~ /Expires On:\s+(.+)\n/
             Time.parse($1)
           end
         end
 
 
-        property_not_supported :nameservers
+        property_not_supported :registrar
+
+        property_not_supported :registrant_contacts
+
+        property_not_supported :admin_contacts
+
+        property_not_supported :technical_contacts
+
+
+        property_supported :nameservers do
+          content_for_scanner.scan(/DNS:\s+(.+)\n/).flatten.map do |name|
+            Record::Nameserver.new(:name => name)
+          end
+        end
 
       end
 

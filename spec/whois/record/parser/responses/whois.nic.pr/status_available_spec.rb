@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicPr, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "u34jedzcq.pr"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :available
@@ -51,9 +61,30 @@ describe Whois::Record::Parser::WhoisNicPr, "status_available.expected" do
       subject.expires_on.should == nil
     end
   end
+  describe "#registrar" do
+    it do
+      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      lambda { subject.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      lambda { subject.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end
