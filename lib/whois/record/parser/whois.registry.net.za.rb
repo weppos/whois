@@ -18,11 +18,11 @@ module Whois
         include Scanners::Nodable
 
         property_supported :disclaimer do
-          node(:disclaimer)
+          node("field:disclaimer")
         end
 
         property_supported :domain do
-          node(:domain_name)
+          node("field:domain_name")
         end
 
         property_not_supported :domain_id
@@ -32,11 +32,11 @@ module Whois
         property_not_supported :referral_url
 
         property_supported :status do
-          node(:status)
+          node("field:status")
         end
 
         property_supported :available? do
-          node(:available) ? true : false
+          node("status:available") ? true : false
         end
 
         property_supported :registered? do
@@ -44,24 +44,24 @@ module Whois
         end
 
         property_supported :created_on do
-          parse_date(node(:registration_date))
+          parse_date(node("field:registration_date"))
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          parse_date(node(:renewal_date))
+          parse_date(node("field:renewal_date"))
         end
 
         property_supported :registrar do
-          node(:registrar_id) do
-            Whois::Record::Registrar.new(:name => node(:registrar_name), :id => node(:registrar_id))
+          node("field:registrar_id") do
+            Whois::Record::Registrar.new(:name => node("field:registrar_name"), :id => node("field:registrar_id"))
           end
         end
 
         # The response for this property gets wrapped in an array by Whois::Record::Parser::Base#handle_property
         property_supported :registrant_contacts do
-          node(:registrant_name) do
+          node("field:registrant_name") do
             build_registrant_contacts
           end
         end
@@ -71,7 +71,7 @@ module Whois
         property_not_supported :technical_contacts
 
         property_supported :nameservers do
-          Array.wrap(node(:nameservers)).map do |nameserver|
+          Array.wrap(node("field:nameservers")).map do |nameserver|
             Record::Nameserver.new(:name => nameserver)
           end
         end
@@ -89,11 +89,14 @@ module Whois
         end
 
         def registrant_details
-          { :name => node(:registrant_name), :email => node(:registrant_email), :phone => node(:registrant_telephone), :fax => node(:registrant_fax)}
+          {
+            :name => node("field:registrant_name"), :email => node("field:registrant_email"),
+            :phone => node("field:registrant_telephone"), :fax => node("field:registrant_fax")
+          }
         end
 
         def registrant_address_details
-          { :address => node(:registrant_address) }
+          { :address => node("field:registrant_address") }
         end
 
         def parse_date(date_string)
