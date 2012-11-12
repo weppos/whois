@@ -18,20 +18,20 @@ OptionParser.new do |opts|
   opts.separator    ""
   opts.separator    "Options:"
 
-  opts.on("-t", "--timeout [SECONDS]", Integer, "specify the timeout value") do |seconds|
+  opts.on("-t", "--timeout [SECONDS]", Integer, "set the timeout") do |seconds|
     options.timeout = seconds
-  end
-
-  opts.on_tail("--help", "Show this message") do
-    puts opts
-    exit
   end
 
   opts.on("-h", "--host [HOST]", String, "connect to server HOST") do |host|
     options.host = host
   end
 
-  opts.on_tail("-v", "--version", "show version") do
+  opts.on_tail("--help", "show this help and exit") do
+    puts opts
+    exit
+  end
+
+  opts.on_tail("--version", "output version information and exit") do
     puts "#{Whois::NAME} #{Whois::VERSION}"
     exit
   end
