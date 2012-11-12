@@ -1,62 +1,31 @@
+%
+% NIC.PR WHOIS server.
+%
+% Disclaimer
+% The data in NIC.PR's WHOIS database is provided to you by NIC.PR
+% for information purposes only, that is to assist you in obtaining
+% information about or related to a domain name registration record.
+% NIC.PR makes this information available "as is", and does not 
+% guarantee its accuracy. By submitting a WHOIS query, you agree that
+% you will use this data only for lawful purposes and that, under no
+% circumstances will you use this data to: (1) allow, enable, or 
+% otherwise support the transmission of mass unsolicited, commercial 
+% advertising or solicitations via direct mail, electronic mail, 
+% including spam or by telephone; or (2) enable high volume, 
+% automated, electronic processes or robotic, including mining this 
+% data for your own personal or commercial purposes that apply to 
+% NIC.PR (or its systems). The compilation, repackaging, dissemination
+% or other use of this data is expressly prohibited without the prior
+% written consent of NIC.PR. NIC.PR reserves the right to modify 
+% these terms at any time. By sub-mitting this query, you agree to 
+% abide by these terms.
 
+Domain:       google.pr
 
-Whois Disclaimer
+Created On:   2005-09-15
+Expires On:   2013-09-15
 
-
-The data in nic.pr's WHOIS database is provided to you by nic.pr for information
-purposes only, that is to assist you in obtaining information about or related to
-a domain name registration record. Nic.pr makes this information available "as is",
-and does not guarantee its accuracy. By submitting a WHOIS query, you agree that you
-will use this data only for lawful purposes and that, under no circumstances will
-you use this data to: (1) allow, enable, or otherwise support the transmission of
-mass unsolicited, commercial advertising or solicitations via direct mail, electronic
-mail, including spam or by telephone; or (2) enable high volume, automated, electronic
-processes or robotic, including mining this data for your own personal or commercial
-purposes that apply to nic.pr (or its systems). The compilation, repackaging, dissemi-
-nation or other use of this data is expressly prohibited without the prior written
-consent of nic.pr. Nic.pr reserves the right to modify these terms at any time. By sub-
-mitting this query, you agree to abide by these terms.
-
-
-
-Domain: google.com.pr
-
-----Organization Contact:----
-Google Inc.
-1600 Amphitheatre Parkway
-Mountain View, CA, 94043
-US
-+1.6503300100
-+1.6503300100
-dns-admin@google.com
-
-----Administrative Contact:----
-DNS Admin
-Google Inc.
-1600 Amphitheatre Parkway
-Mountain View, CA, 94043
-US
-+1.6506181434
-+1.6503300100
-dns-admin@google.com
-
-----Technical Contact:----
-DNS Admin
-Google Inc.
-1600 Amphitheatre Parkway
-Mountain View, CA, 94043
-+1.6506181434
-+1.6503300100
-dns-admin@google.com
-
-----Billing Contact:----
-MarkMonitor
-PMB 155 
-10400 Overland Road
-Boise, Idaho, 83709-1433
-+1 208 389 5799
-+1 208 389 5740
-dnbilling@alldomains.com
-Created on: 2003-01-25 
-Expires on: 2011-01-25 
-
+DNS:          ns1.google.com
+DNS:          ns2.google.com
+DNS:          ns3.google.com
+DNS:          ns4.google.com
