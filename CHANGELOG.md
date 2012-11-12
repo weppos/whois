@@ -15,7 +15,7 @@
 
 - NEW: Added full whois.nic.pw parser.
 
-- NEW: Ability to disable referral queries setting option :referral => false
+- NEW: Support for non-deep querying (GH-112)
 
 - CHANGED: Dropped support for Ruby 1.8
 
