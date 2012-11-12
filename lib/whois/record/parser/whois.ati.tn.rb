@@ -16,7 +16,7 @@ module Whois
     class Parser
 
       # Parser for the whois.ati.tn server.
-      # 
+      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #

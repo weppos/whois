@@ -14,7 +14,7 @@ module Whois
     class Parser
 
       # Parser for the whois.cctld.by server.
-      # 
+      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #

@@ -15,7 +15,7 @@ module Whois
     class Parser
 
       # Parser for the whois.godaddy.com server.
-      # 
+      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
@@ -41,13 +41,13 @@ module Whois
         #     Time.parse($1)
         #   end
         # end
-        # 
+        #
         # property_supported :updated_on do
         #   if content_for_scanner =~ /Last Updated on: (.+)\n/
         #     Time.parse($1)
         #   end
         # end
-        # 
+        #
         # property_supported :expires_on do
         #   if content_for_scanner =~ /Expires on: (.+)\n/
         #     Time.parse($1)

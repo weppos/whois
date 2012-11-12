@@ -15,7 +15,7 @@ module Whois
     class Parser
 
       # Parser for the whois.registry.om server.
-      # 
+      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
