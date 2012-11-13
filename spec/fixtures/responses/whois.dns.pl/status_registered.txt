@@ -1,8 +1,8 @@
 
 DOMAIN NAME:           google.pl
 registrant type:       organization
-nameservers:           ns2.google.com.
-                       ns1.google.com.
+nameservers:           ns2.google.com. 
+                       ns1.google.com. 
 created:               2002.09.19 13:00:00
 last modified:         2012.08.17 11:21:09
 renewal date:          2013.09.18 14:00:00

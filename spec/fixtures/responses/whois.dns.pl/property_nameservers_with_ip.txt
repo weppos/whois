@@ -1,32 +1,24 @@
 
 DOMAIN NAME:           pentex.pl
-registrant's handle:   tdc4473086545641 (INDIVIDUAL)
-nameservers:           ns2.pentex.pl. [94.23.90.95]
-                       ns1.pentex.pl. [83.142.46.21]
-created:              2001.06.20 13:00:00
-last modified:        2010.06.19 15:53:22
+registrant type:       individual
+nameservers:           dns1.pentex.pl. [188.165.232.46]
+                       dns2.pentex.pl. [83.142.46.21]
+created:               2001.06.20 13:00:00
+last modified:         2012.06.19 15:56:18
+renewal date:          2013.06.19 14:00:00
 
 no option
 
-TECHNICAL CONTACT:
-company: Albert Jerka, Andrzej Kostrzewa
-        AZ.pl Sp. z o.o.
-street: Sosnowa 6a
-city: 71-468 Szczecin
-location: PL
-handle: tdc8616666759345
-phone:  +48.914243780
-fax:  +48.914243799
-last modified: 2010.07.19
+dnssec:                Unsigned
 
 
 REGISTRAR:
-AZ.pl Sp. z o.o.
-ul. Sosnowa 6a
-71-468 Szczecin
-Polska/Poland
-+48.91 4243780
-domena@az.pl
+OVH SAS
+2 Rue Kellermann
+59100 Roubaix
+Francja/France
++48.71 7860700
+pomoc@ovh.pl
 
 WHOIS displays data with a delay not exceeding 15 minutes in relation to the .pl Registry system
 Registrant data available at http://dns.pl/cgi-bin/en_whois.pl

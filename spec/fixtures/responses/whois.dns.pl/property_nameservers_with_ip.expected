@@ -2,8 +2,8 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns2.pentex.pl"
-  should: %s[0].ipv4 == "94.23.90.95"
+  should: %s[0].name == "dns1.pentex.pl"
+  should: %s[0].ipv4 == "188.165.232.46"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1.pentex.pl"
+  should: %s[1].name == "dns2.pentex.pl"
   should: %s[1].ipv4 == "83.142.46.21"

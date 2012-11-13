@@ -26,10 +26,10 @@ describe Whois::Record::Parser::WhoisDnsPl, "property_nameservers_with_ip.expect
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns2.pentex.pl"
-      subject.nameservers[0].ipv4.should == "94.23.90.95"
+      subject.nameservers[0].name.should == "dns1.pentex.pl"
+      subject.nameservers[0].ipv4.should == "188.165.232.46"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.pentex.pl"
+      subject.nameservers[1].name.should == "dns2.pentex.pl"
       subject.nameservers[1].ipv4.should == "83.142.46.21"
     end
   end
