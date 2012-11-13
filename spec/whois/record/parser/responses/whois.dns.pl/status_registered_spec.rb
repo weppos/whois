@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.pl"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -52,6 +62,45 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
     it do
       subject.expires_on.should be_a(Time)
       subject.expires_on.should == Time.parse("2013-09-18 14:00:00")
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "Markmonitor, Inc."
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      lambda { subject.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == "ks_5271013"
+      subject.technical_contacts[0].name.should          == nil
+      subject.technical_contacts[0].organization.should  == "DNS Admin\nGoogle Inc."
+      subject.technical_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.technical_contacts[0].city.should          == "Mountain View"
+      subject.technical_contacts[0].zip.should           == "94043"
+      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].country.should       == nil
+      subject.technical_contacts[0].country_code.should  == "US"
+      subject.technical_contacts[0].phone.should         == "+1.6503300100"
+      subject.technical_contacts[0].fax.should           == "+1.6506188571"
+      subject.technical_contacts[0].email.should         == nil
     end
   end
   describe "#nameservers" do

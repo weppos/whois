@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.pl"
+
+#domain_id
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -19,6 +26,38 @@
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2013-09-18 14:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Markmonitor, Inc."
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+#registrant_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#admin_contacts
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "ks_5271013"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "DNS Admin\nGoogle Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6503300100"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == nil
 
 
 #nameservers

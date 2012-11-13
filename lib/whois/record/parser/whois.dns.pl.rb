@@ -16,14 +16,19 @@ module Whois
 
       # Parser for the whois.dns.pl server.
       #
-      # @note This parser is just a stub and provides only a few basic methods
-      #   to check for domain availability and get domain status.
-      #   Please consider to contribute implementing missing methods.
-      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
       class WhoisDnsPl < Base
+
+        property_supported :domain do
+          if content_for_scanner =~ /DOMAIN NAME:\s+(.+)\n/
+            $1
+          end
+        end
+
+        property_not_supported :domain_id
+
 
         property_supported :status do
           if available?
@@ -61,6 +66,25 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          match = content_for_scanner.slice(/REGISTRAR:\n((.+\n)+)\n/, 1)
+          return unless match
+
+          lines = match.split("\n")
+          Record::Registrar.new(
+            :name         => lines[0]
+          )
+        end
+
+        property_not_supported :registrant_contacts
+
+        property_not_supported :admin_contacts
+
+        property_supported :technical_contacts do
+          build_contact("TECHNICAL CONTACT", Record::Contact::TYPE_TECHNICAL)
+        end
+
+
         property_supported :nameservers do
           content_for_scanner.scan(/nameservers:\s+(.+)\n(.+)\n/).flatten.map do |line|
             line.strip!
@@ -70,6 +94,45 @@ module Whois
               Record::Nameserver.new(:name => line.chomp("."))
             end
           end
+        end
+
+
+        private
+
+        def build_contact(element, type)
+          match = content_for_scanner.slice(/#{element}:\n((.+\n)+)\n/, 1)
+          return unless match
+
+          values = parse_contact_block(match.split("\n"))
+          zip, city = values["city"].match(/(.+?) (.+)/)[1..2]
+
+          Record::Contact.new(
+            :type         => type,
+            :id           => values["handle"],
+            :name         => nil,
+            :organization => values["company"],
+            :address      => values["street"],
+            :city         => city,
+            :zip          => zip,
+            :state        => nil,
+            :country_code => values["location"],
+            :phone        => values["phone"],
+            :fax          => values["fax"],
+            :email        => nil
+          )
+        end
+
+        def parse_contact_block(lines)
+          key  = nil
+          hash = {}
+          lines.each do |line|
+            if line =~ /(.+):(.+)/
+              hash[key = $1] = $2.strip
+            else
+              hash[key] += "\n#{line.strip}"
+            end
+          end
+          hash
         end
 
       end

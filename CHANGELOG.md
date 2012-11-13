@@ -17,6 +17,8 @@
 
 - NEW: Support for non-deep querying (GH-112)
 
+* NEW: Added full whois.dns.pl parser.
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
