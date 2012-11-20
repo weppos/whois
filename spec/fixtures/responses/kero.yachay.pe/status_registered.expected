@@ -29,3 +29,8 @@
   should: %s[2].name == "ns3.google.com"
   should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns4.google.com"
+
+
+
+#response_throttled?
+  should: %s == false

@@ -62,4 +62,9 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_available.expecte
       subject.response_throttled?.should == false
     end
   end
+  describe "#response_unavailable?" do
+    it do
+      subject.response_unavailable?.should == false
+    end
+  end
 end

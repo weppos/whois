@@ -22,3 +22,8 @@
   should: %s CLASS(array)
   should: %s SIZE(0)
   should: %s == []
+
+
+
+#response_throttled?
+  should: %s == false

@@ -23,5 +23,9 @@
   should: %s == []
 
 
+
 #response_throttled?
+  should: %s == false
+
+#response_unavailable?
   should: %s == false

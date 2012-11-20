@@ -17,7 +17,9 @@
 
 - NEW: Support for non-deep querying (GH-112)
 
-* NEW: Added full whois.dns.pl parser.
+- NEW: Added full whois.dns.pl parser.
+
+- NEW: kero.yachay.pe parser now recognizes throttled responses.
 
 - CHANGED: Dropped support for Ruby 1.8
 

@@ -21,3 +21,8 @@
 #nameservers
   should: %s CLASS(array)
   should: %s == []
+
+
+
+#response_throttled?
+  should: %s == false

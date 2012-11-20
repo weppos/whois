@@ -65,4 +65,9 @@ describe Whois::Record::Parser::KeroYachayPe, "status_registered.expected" do
       subject.nameservers[3].name.should == "ns4.google.com"
     end
   end
+  describe "#response_throttled?" do
+    it do
+      subject.response_throttled?.should == false
+    end
+  end
 end
