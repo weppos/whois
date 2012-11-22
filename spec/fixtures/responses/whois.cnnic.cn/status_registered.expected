@@ -21,20 +21,20 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2003-03-17 12:20:00")
+  should: %s == Time.parse("2003-03-17 12:20:05")
 
 #updated_on
   should: %s raise_error(Whois::PropertyNotSupported)
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-03-17 12:48:00")
+  should: %s == Time.parse("2014-03-17 12:48:36")
 
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == "MarkMonitor, Inc."
-  should: %s.name         == "MarkMonitor, Inc."
+  should: %s.id           == "MarkMonitor Inc."
+  should: %s.name         == "MarkMonitor Inc."
   should: %s.organization == nil
 
 #registrant_contacts
@@ -42,18 +42,13 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == nil
-  should: %s[0].name         == "Domain Admin"
-  should: %s[0].organization == "Google Ireland Holdings"
+  should: %s[0].id           == "cnnic-zdmd-022"
+  should: %s[0].name         == "Google Ireland Holdings"
+  should: %s[0].organization == nil
 
 #admin_contacts
   should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == nil
-  should: %s[0].name         == nil
-  should: %s[0].email        == "dns-admin@google.com"
+  should: %s == []
 
 #technical_contacts
   should: %s raise_error(Whois::PropertyNotSupported)
@@ -61,17 +56,15 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(5)
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.google.cn"
+  should: %s[0].name == "ns2.google.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.google.com"
+  should: %s[1].name == "ns1.google.com"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns1.google.com"
+  should: %s[2].name == "ns3.google.com"
   should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns3.google.com"
-  should: %s[4] CLASS(nameserver)
-  should: %s[4].name == "ns4.google.com"
+  should: %s[3].name == "ns4.google.com"
 
 
 #reserved?

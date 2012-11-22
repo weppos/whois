@@ -54,7 +54,7 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2003-03-17 12:20:00")
+      subject.created_on.should == Time.parse("2003-03-17 12:20:05")
     end
   end
   describe "#updated_on" do
@@ -65,14 +65,14 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_registered.expected" do
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-03-17 12:48:00")
+      subject.expires_on.should == Time.parse("2014-03-17 12:48:36")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "MarkMonitor, Inc."
-      subject.registrar.name.should         == "MarkMonitor, Inc."
+      subject.registrar.id.should           == "MarkMonitor Inc."
+      subject.registrar.name.should         == "MarkMonitor Inc."
       subject.registrar.organization.should == nil
     end
   end
@@ -82,20 +82,15 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_registered.expected" do
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should           == nil
-      subject.registrant_contacts[0].name.should         == "Domain Admin"
-      subject.registrant_contacts[0].organization.should == "Google Ireland Holdings"
+      subject.registrant_contacts[0].id.should           == "cnnic-zdmd-022"
+      subject.registrant_contacts[0].name.should         == "Google Ireland Holdings"
+      subject.registrant_contacts[0].organization.should == nil
     end
   end
   describe "#admin_contacts" do
     it do
       subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      subject.admin_contacts[0].id.should           == nil
-      subject.admin_contacts[0].name.should         == nil
-      subject.admin_contacts[0].email.should        == "dns-admin@google.com"
+      subject.admin_contacts.should == []
     end
   end
   describe "#technical_contacts" do
@@ -106,17 +101,15 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_registered.expected" do
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(5).items
+      subject.nameservers.should have(4).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.google.cn"
+      subject.nameservers[0].name.should == "ns2.google.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.google.com"
+      subject.nameservers[1].name.should == "ns1.google.com"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns1.google.com"
+      subject.nameservers[2].name.should == "ns3.google.com"
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns3.google.com"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "ns4.google.com"
+      subject.nameservers[3].name.should == "ns4.google.com"
     end
   end
   describe "#reserved?" do

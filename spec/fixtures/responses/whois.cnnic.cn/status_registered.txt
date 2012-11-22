@@ -6,14 +6,14 @@ Domain Status: clientUpdateProhibited
 Domain Status: serverUpdateProhibited
 Domain Status: clientTransferProhibited
 Domain Status: serverTransferProhibited
-Registrant Organization: Google Ireland Holdings
-Registrant Name: Domain Admin
-Administrative Email: dns-admin@google.com
-Sponsoring Registrar: MarkMonitor, Inc.
-Name Server:ns1.google.cn
-Name Server:ns2.google.com
-Name Server:ns1.google.com
-Name Server:ns3.google.com
-Name Server:ns4.google.com
-Registration Date: 2003-03-17 12:20
-Expiration Date: 2012-03-17 12:48
+Registrant ID: cnnic-zdmd-022
+Registrant: Google Ireland Holdings
+Registrant Contact Email: dns-admin@google.com
+Sponsoring Registrar: MarkMonitor Inc.
+Name Server: ns2.google.com
+Name Server: ns1.google.com
+Name Server: ns3.google.com
+Name Server: ns4.google.com
+Registration Date: 2003-03-17 12:20:05
+Expiration Date: 2014-03-17 12:48:36
+DNSSEC: unsigned

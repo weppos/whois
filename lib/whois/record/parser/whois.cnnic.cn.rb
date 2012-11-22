@@ -41,7 +41,7 @@ module Whois
         end
 
         property_supported :registered? do
-          reserved? || !available?
+          !reserved? && !available?
         end
 
         # NEWPROPERTY
@@ -64,8 +64,8 @@ module Whois
         property_supported :registrar do
           node("Sponsoring Registrar") do |value|
             Record::Registrar.new(
-              :id =>    value,
-              :name =>  value
+              :id   => value,
+              :name => value
             )
           end
         end
@@ -101,17 +101,14 @@ module Whois
       private
 
         def build_contact(element, type)
-          n = node("#{element} Name")
-          o = node("#{element} Organization")
-          e = node("#{element} Email")
-          return if n.nil? && o.nil? && e.nil?
-
-          Record::Contact.new(
-            :type         => type,
-            :name         => n,
-            :organization => o,
-            :email        => e
-          )
+          node("#{element}") do |value|
+            Record::Contact.new(
+              :type         => type,
+              :id           => node("#{element} ID"),
+              :name         => value,
+              :email        => node("#{element} Contact Email")
+            )
+          end
         end
 
       end

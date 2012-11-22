@@ -5,7 +5,7 @@
   should: %s == false
 
 #registered?
-  should: %s == true
+  should: %s == false
 
 
 #reserved?
