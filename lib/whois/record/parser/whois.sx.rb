@@ -24,21 +24,26 @@ module Whois
       class WhoisSx < Base
         include Scanners::Nodable
 
-        property_not_supported :disclaimer
+        property_supported :disclaimer do
+          node("field:disclaimer")
+        end
 
 
         property_supported :domain do
-          "#{node('Domain')}.sx"
+          node("Domain Name", &:downcase)
         end
 
-        property_not_supported :domain_id
+        property_supported :domain_id do
+          node("Domain ID")
+        end
 
 
         property_supported :status do
-          case (s = node('Status'))
-          when /free/
+          s = node("Domain Status")
+          case
+          when node("status:available")
             :available
-          when 'active'
+          when s == "ok"
             :registered
           else
             Whois.bug!(ParserError, "Unknown status `#{s}'.")
@@ -54,37 +59,44 @@ module Whois
         end
 
 
-        property_not_supported :created_on
+        property_supported :created_on do
+          node("Creation Date") { |value| parse_time(value) }
+        end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          node("Updated Date") { |value| parse_time(value) }
+        end
 
-        property_not_supported :expires_on
+        property_supported :expires_on do
+          node("Registry Expiry Date") { |value| parse_time(value) }
+        end
 
 
         property_supported :registrar do
-          node('Registrar') do |hash|
+          node("Sponsoring Registrar") do |value|
             Record::Registrar.new(
-                :name         => hash['Name'],
-                :url          => hash['Website']
+                :name         => value
             )
           end
         end
 
 
         property_supported :registrant_contacts do
-          build_contact('Registrant', Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
-        property_not_supported :admin_contacts
+        property_supported :admin_contacts do
+          build_contact("Admin", Whois::Record::Contact::TYPE_ADMIN)
+        end
 
-        property_not_supported :technical_contacts
+        property_supported :technical_contacts do
+          build_contact("Tech", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
 
 
         property_supported :nameservers do
-          node('Name servers') do |names|
-            names.map do |name|
-              Record::Nameserver.new(:name => name)
-            end
+          Array.wrap(node("Name Server")).map do |name|
+            Record::Nameserver.new(:name => name)
           end
         end
 
@@ -101,13 +113,23 @@ module Whois
 
         private
 
+        def parse_time(value)
+          # Hack to remove usec. Do you know a better way?
+          Time.utc(*Time.parse(value).to_a)
+        end
+
         def build_contact(element, type)
-          node("#{element}") do |array|
+          node("#{element} ID") do |id|
             Record::Contact.new(
                 :type         => type,
-                :id           => nil,
-                :name         => array[0],
-                :email        => nil
+                :id           => id,
+                :name         => node("#{element} Name"),
+                :organization => node("#{element} Organization"),
+                :address      => node("#{element} Street"),
+                :city        => node("#{element} City"),
+                :zip          => node("#{element} Postal Code"),
+                :country      => node("#{element} Country"),
+                :email        => node("#{element} Email")
             )
           end
         end

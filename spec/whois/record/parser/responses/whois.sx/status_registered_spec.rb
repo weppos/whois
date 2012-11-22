@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisSx, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      lambda { subject.disclaimer }.should raise_error(Whois::PropertyNotSupported)
+      subject.disclaimer.should == "WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS\nThe WHOIS service offered by OpenRegistry and the access to the\nrecords in the OpenRegistry WHOIS database are provided for information\npurposes only. It allows persons to check whether a specific domain name\nis still available or not and to obtain information related to the\nregistration records of existing domain names. You are not authorized to\naccess or query our WHOIS  database through the use of electronic\nprocesses that are high-volume and  automated except as reasonably\nnecessary to register domain names or modify existing registrations.\n\nOpenRegistry cannot, under any circumstances, be held liable should the\nstored information prove to be wrong, incomplete or inaccurate in any sense.\n\nBy submitting a WHOIS query you agree not to use the information made\navailable to:\n- Allow, enable or otherwise support the transmission of unsolicited,\ncommercial advertising or other solicitations whether via email, telephone\nor otherwise;\n- Target advertising in any possible way;\n- Cause nuisance in any possible way to the registrants by sending (whether\nby automated, electronic processes capable of enabling high volumes or\nother possible means) messages to them.\n\nWithout prejudice to the above, it is explicitly forbidden to extract, copy\nand/or use or re-utilise in any form and  by any means (electronically or\nnot) the whole or a quantitatively or qualitatively substantial part of the\ncontents of the WHOIS database without prior and explicit permission by\nOpenRegistry, nor in any attempt hereof, to apply automated, electronic\nprocesses to OpenRegistry (or its systems).\n\nBy submitting the query you agree that any reproduction and/or transmission\nof data for commercial purposes will always be considered as the extraction\nof a substantial part of the content of the WHOIS database. You also agree\nto abide by this policy and accept that OpenRegistry can take measures to\nlimit the use of its WHOIS services in order to protect the privacy of its\nregistrants and/or the integrity of the database. OpenRegistry reserves the\nright  to restrict your access to the WHOIS database in its sole discretion\nto ensure operational stability.  OpenRegistry may restrict or terminate your\naccess to the WHOIS database for failure to abide by these terms of use.\n\nOpenRegistry reserves the right to modify these terms at any time."
     end
   end
   describe "#domain" do
@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisSx, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      subject.domain_id.should == "d5-sx"
     end
   end
   describe "#status" do
@@ -53,26 +53,29 @@ describe Whois::Record::Parser::WhoisSx, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2011-12-09 14:07:22 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2012-08-29 11:36:37 UTC")
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2021-12-09 14:07:22 UTC")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "SX Registry S.A."
+      subject.registrar.name.should         == "SX Registry \"PROMOTIONAL\" Registrar"
       subject.registrar.organization.should == nil
-      subject.registrar.url.should          == "http://registry.sx"
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do
@@ -81,28 +84,58 @@ describe Whois::Record::Parser::WhoisSx, "status_registered.expected" do
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == nil
-      subject.registrant_contacts[0].name.should          == "SX Registry S.A."
-      subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
-      subject.registrant_contacts[0].city.should          == nil
-      subject.registrant_contacts[0].zip.should           == nil
+      subject.registrant_contacts[0].id.should            == "C65"
+      subject.registrant_contacts[0].name.should          == "SX Registry SA administrator"
+      subject.registrant_contacts[0].organization.should  == "SX Registry SA"
+      subject.registrant_contacts[0].address.should       == "2, rue Léon Laval"
+      subject.registrant_contacts[0].city.should          == "Leudelange"
+      subject.registrant_contacts[0].zip.should           == "L3372"
       subject.registrant_contacts[0].state.should         == nil
-      subject.registrant_contacts[0].country.should       == nil
+      subject.registrant_contacts[0].country.should       == "LUXEMBOURG"
       subject.registrant_contacts[0].country_code.should  == nil
       subject.registrant_contacts[0].phone.should         == nil
       subject.registrant_contacts[0].fax.should           == nil
-      subject.registrant_contacts[0].email.should         == nil
+      subject.registrant_contacts[0].email.should         == "registry@registry.sx"
     end
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::PropertyNotSupported)
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should have(1).items
+      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].id.should            == "C65"
+      subject.admin_contacts[0].name.should          == "SX Registry SA administrator"
+      subject.admin_contacts[0].organization.should  == "SX Registry SA"
+      subject.admin_contacts[0].address.should       == "2, rue Léon Laval"
+      subject.admin_contacts[0].city.should          == "Leudelange"
+      subject.admin_contacts[0].zip.should           == "L3372"
+      subject.admin_contacts[0].state.should         == nil
+      subject.admin_contacts[0].country.should       == "LUXEMBOURG"
+      subject.admin_contacts[0].country_code.should  == nil
+      subject.admin_contacts[0].phone.should         == nil
+      subject.admin_contacts[0].fax.should           == nil
+      subject.admin_contacts[0].email.should         == "registry@registry.sx"
     end
   end
   describe "#technical_contacts" do
     it do
-      lambda { subject.technical_contacts }.should raise_error(Whois::PropertyNotSupported)
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == "C65"
+      subject.technical_contacts[0].name.should          == "SX Registry SA administrator"
+      subject.technical_contacts[0].organization.should  == "SX Registry SA"
+      subject.technical_contacts[0].address.should       == "2, rue Léon Laval"
+      subject.technical_contacts[0].city.should          == "Leudelange"
+      subject.technical_contacts[0].zip.should           == "L3372"
+      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].country.should       == "LUXEMBOURG"
+      subject.technical_contacts[0].country_code.should  == nil
+      subject.technical_contacts[0].phone.should         == nil
+      subject.technical_contacts[0].fax.should           == nil
+      subject.technical_contacts[0].email.should         == "registry@registry.sx"
     end
   end
   describe "#nameservers" do

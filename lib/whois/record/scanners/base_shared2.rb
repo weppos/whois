@@ -8,7 +8,6 @@
 
 
 require 'whois/record/scanners/base'
-require 'whois/record/scanners/base_shared2'
 
 
 module Whois

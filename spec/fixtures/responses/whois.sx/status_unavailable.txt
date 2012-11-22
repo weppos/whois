@@ -1,40 +1,6 @@
 
-Domain Name: WHOIS.SX
-Domain ID: d5-sx
-Updated Date: 2012-08-29T11:36:37.915Z
-Creation Date: 2011-12-09T14:07:22.794Z
-Registry Expiry Date: 2021-12-09T14:07:22.794Z
-Sponsoring Registrar: SX Registry "PROMOTIONAL" Registrar
-Domain Status: ok
-Registrant ID: C65
-Registrant Name: SX Registry SA administrator
-Registrant Organization: SX Registry SA
-Registrant Street: 2, rue Léon Laval
-Registrant City: Leudelange
-Registrant Postal Code: L3372
-Registrant Country: LUXEMBOURG
-Registrant Email: registry@registry.sx
-Admin ID: C65
-Admin Name: SX Registry SA administrator
-Admin Organization: SX Registry SA
-Admin Street: 2, rue Léon Laval
-Admin City: Leudelange
-Admin Postal Code: L3372
-Admin Country: LUXEMBOURG
-Admin Email: registry@registry.sx
-Tech ID: C65
-Tech Name: SX Registry SA administrator
-Tech Organization: SX Registry SA
-Tech Street: 2, rue Léon Laval
-Tech City: Leudelange
-Tech Postal Code: L3372
-Tech Country: LUXEMBOURG
-Tech Email: registry@registry.sx
-Name Server: a.ns.sx
-Name Server: b.ns.sx
-Name Server: c.ns.sx
-DNSSEC: signedDelegation
->>> Last update of WHOIS database: 2012-11-22T11:55:18.532Z <<<
+Status: PREMIUM NAME (No match for domain "domain.sx")
+>>> Last update of WHOIS database: 2012-11-22T12:01:41.176Z <<<
 
 % WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS
 % The WHOIS service offered by OpenRegistry and the access to the

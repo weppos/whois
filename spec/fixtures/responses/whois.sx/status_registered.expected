@@ -1,12 +1,12 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s == "WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS\nThe WHOIS service offered by OpenRegistry and the access to the\nrecords in the OpenRegistry WHOIS database are provided for information\npurposes only. It allows persons to check whether a specific domain name\nis still available or not and to obtain information related to the\nregistration records of existing domain names. You are not authorized to\naccess or query our WHOIS  database through the use of electronic\nprocesses that are high-volume and  automated except as reasonably\nnecessary to register domain names or modify existing registrations.\n\nOpenRegistry cannot, under any circumstances, be held liable should the\nstored information prove to be wrong, incomplete or inaccurate in any sense.\n\nBy submitting a WHOIS query you agree not to use the information made\navailable to:\n- Allow, enable or otherwise support the transmission of unsolicited,\ncommercial advertising or other solicitations whether via email, telephone\nor otherwise;\n- Target advertising in any possible way;\n- Cause nuisance in any possible way to the registrants by sending (whether\nby automated, electronic processes capable of enabling high volumes or\nother possible means) messages to them.\n\nWithout prejudice to the above, it is explicitly forbidden to extract, copy\nand/or use or re-utilise in any form and  by any means (electronically or\nnot) the whole or a quantitatively or qualitatively substantial part of the\ncontents of the WHOIS database without prior and explicit permission by\nOpenRegistry, nor in any attempt hereof, to apply automated, electronic\nprocesses to OpenRegistry (or its systems).\n\nBy submitting the query you agree that any reproduction and/or transmission\nof data for commercial purposes will always be considered as the extraction\nof a substantial part of the content of the WHOIS database. You also agree\nto abide by this policy and accept that OpenRegistry can take measures to\nlimit the use of its WHOIS services in order to protect the privacy of its\nregistrants and/or the integrity of the database. OpenRegistry reserves the\nright  to restrict your access to the WHOIS database in its sole discretion\nto ensure operational stability.  OpenRegistry may restrict or terminate your\naccess to the WHOIS database for failure to abide by these terms of use.\n\nOpenRegistry reserves the right to modify these terms at any time."
 
 
 #domain
   should: %s == "whois.sx"
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s == "d5-sx"
 
 
 #status
@@ -20,45 +20,78 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-12-09 14:07:22 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-08-29 11:36:37 UTC")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2021-12-09 14:07:22 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == nil
-  should: %s.name         == "SX Registry S.A."
+  should: %s.name         == "SX Registry \"PROMOTIONAL\" Registrar"
   should: %s.organization == nil
-  should: %s.url          == "http://registry.sx"
+  should: %s.url          == nil
 
 #registrant_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == nil
-  should: %s[0].name          == "SX Registry S.A."
-  should: %s[0].organization  == nil
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
-  should: %s[0].zip           == nil
+  should: %s[0].id            == "C65"
+  should: %s[0].name          == "SX Registry SA administrator"
+  should: %s[0].organization  == "SX Registry SA"
+  should: %s[0].address       == "2, rue Léon Laval"
+  should: %s[0].city          == "Leudelange"
+  should: %s[0].zip           == "L3372"
   should: %s[0].state         == nil
-  should: %s[0].country       == nil
+  should: %s[0].country       == "LUXEMBOURG"
   should: %s[0].country_code  == nil
   should: %s[0].phone         == nil
   should: %s[0].fax           == nil
-  should: %s[0].email         == nil
+  should: %s[0].email         == "registry@registry.sx"
 
 #admin_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "C65"
+  should: %s[0].name          == "SX Registry SA administrator"
+  should: %s[0].organization  == "SX Registry SA"
+  should: %s[0].address       == "2, rue Léon Laval"
+  should: %s[0].city          == "Leudelange"
+  should: %s[0].zip           == "L3372"
+  should: %s[0].state         == nil
+  should: %s[0].country       == "LUXEMBOURG"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "registry@registry.sx"
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "C65"
+  should: %s[0].name          == "SX Registry SA administrator"
+  should: %s[0].organization  == "SX Registry SA"
+  should: %s[0].address       == "2, rue Léon Laval"
+  should: %s[0].city          == "Leudelange"
+  should: %s[0].zip           == "L3372"
+  should: %s[0].state         == nil
+  should: %s[0].country       == "LUXEMBOURG"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "registry@registry.sx"
 
 
 #nameservers
