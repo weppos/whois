@@ -53,7 +53,7 @@ module Whois
 
         property_supported :created_on do
           if content_for_scanner =~ /Created on\.+:(.+)\n/
-            Time.parse($1)
+            Time.parse($1) unless $1 == "null"
           end
         end
 

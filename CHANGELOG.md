@@ -73,6 +73,8 @@
 
 - FIXED: whois.nic.cz should support multiple status (GH-190).
 
+- FIXED: whois.nic.lk crashes when the creation date is 'null'.
+
 
 ### Backward Incompatibilities
 
