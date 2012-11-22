@@ -26,9 +26,9 @@ module Whois
 
 
         tokenizer :scan_available do
-          if @input.scan(/^Status: AVAILABLE \(No match for domain "(.+)"\)\n/)
-            @ast["Domain Name"] = @input[1]
-            @ast["status:available"] = true
+          if @input.scan(/^Status: (.+) \(No match for domain "(.+)"\)\n/)
+            @ast["Domain Status"] = @input[1]
+            @ast["Domain Name"] = @input[2]
           end
         end
 

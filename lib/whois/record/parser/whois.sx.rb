@@ -39,12 +39,13 @@ module Whois
 
 
         property_supported :status do
-          s = node("Domain Status")
-          case
-          when node("status:available")
+          case (s = node("Domain Status", &:downcase))
+          when "available"
             :available
-          when s == "ok"
+          when "ok"
             :registered
+          when "premium name"
+            :unavailable
           else
             Whois.bug!(ParserError, "Unknown status `#{s}'.")
           end
@@ -55,7 +56,7 @@ module Whois
         end
 
         property_supported :registered? do
-          !available?
+          status == :registered
         end
 
 

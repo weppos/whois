@@ -1,0 +1,46 @@
+
+Status: PREMIUM NAME (No match for domain "domain.sx")
+>>> Last update of WHOIS database: 2012-11-22T12:01:41.176Z <<<
+
+% WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS
+% The WHOIS service offered by OpenRegistry and the access to the
+% records in the OpenRegistry WHOIS database are provided for information
+% purposes only. It allows persons to check whether a specific domain name
+% is still available or not and to obtain information related to the
+% registration records of existing domain names. You are not authorized to
+% access or query our WHOIS  database through the use of electronic
+% processes that are high-volume and  automated except as reasonably
+% necessary to register domain names or modify existing registrations.
+%
+% OpenRegistry cannot, under any circumstances, be held liable should the
+% stored information prove to be wrong, incomplete or inaccurate in any sense.
+%
+% By submitting a WHOIS query you agree not to use the information made
+% available to:
+%   - Allow, enable or otherwise support the transmission of unsolicited,
+%     commercial advertising or other solicitations whether via email, telephone
+%     or otherwise;
+%   - Target advertising in any possible way;
+%   - Cause nuisance in any possible way to the registrants by sending (whether
+%     by automated, electronic processes capable of enabling high volumes or
+%     other possible means) messages to them.
+%
+% Without prejudice to the above, it is explicitly forbidden to extract, copy
+% and/or use or re-utilise in any form and  by any means (electronically or
+% not) the whole or a quantitatively or qualitatively substantial part of the
+% contents of the WHOIS database without prior and explicit permission by
+% OpenRegistry, nor in any attempt hereof, to apply automated, electronic
+% processes to OpenRegistry (or its systems).
+%
+% By submitting the query you agree that any reproduction and/or transmission
+% of data for commercial purposes will always be considered as the extraction
+% of a substantial part of the content of the WHOIS database. You also agree
+% to abide by this policy and accept that OpenRegistry can take measures to
+% limit the use of its WHOIS services in order to protect the privacy of its
+% registrants and/or the integrity of the database. OpenRegistry reserves the
+% right  to restrict your access to the WHOIS database in its sole discretion
+% to ensure operational stability.  OpenRegistry may restrict or terminate your
+% access to the WHOIS database for failure to abide by these terms of use.
+%
+% OpenRegistry reserves the right to modify these terms at any time.
+
