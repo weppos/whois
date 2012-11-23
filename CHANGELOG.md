@@ -75,6 +75,8 @@
 
 - FIXED: whois.nic.lk crashes when the creation date is 'null'.
 
+- FIXED: whois.domainregistry.ie may return a contact entry with no details.
+
 
 ### Backward Incompatibilities
 

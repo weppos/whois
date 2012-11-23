@@ -112,13 +112,13 @@ module Whois
 
         def build_contact(element, type)
           Array.wrap(node(element)).map do |id|
-            contact = node("field:#{id}")
+            next unless (contact = node("field:#{id}"))
             Record::Contact.new(
               :type         => type,
               :id           => id,
               :name         => contact["person"]
             )
-          end
+          end.compact
         end
 
       end
