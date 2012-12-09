@@ -5,7 +5,7 @@
 
 - SERVER: Added .AX TLD definition.
 
-- SERVER: Updated .AZ, .FM, .MC, .HN, .PH, .PW, .RW, .TD, .COM.UY, .VN TLD definitions.
+- SERVER: Updated .AZ, .CO.ZA, .FM, .MC, .HN, .PH, .PW, .RW, .TD, .COM.UY, .VN TLD definitions.
 
 - SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD definition.
 
@@ -70,6 +70,8 @@
 - CHANGED: Updated whois.cnnic.cn parser to the new response format.
 
 - CHANGED: Updated whois.thnic.co.th parser to the new response format (GH-194). [Thanks @ATimofeev]
+
+- CHANGED: whois.coza.net.za became whois.registry.net.za (GH-191). [Thanks @rorymckinley]
 
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
