@@ -69,6 +69,8 @@
 
 - CHANGED: Updated whois.cnnic.cn parser to the new response format.
 
+- CHANGED: Updated whois.thnic.co.th parser to the new response format (GH-194). [Thanks @ATimofeev]
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
