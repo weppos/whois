@@ -41,7 +41,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^% No entries found for the selected source/)
+          !!(content_for_scanner =~ /^% No match for/)
         end
 
         property_supported :registered? do
@@ -50,19 +50,19 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /^Created Date: (.+?)\n/
+          if content_for_scanner =~ /^Created date: (.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /^Updated Date: (.+?)\n/
+          if content_for_scanner =~ /^Updated date: (.+?)\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /^Exp Date: (.+?)\n/
+          if content_for_scanner =~ /^Exp date: (.+?)\n/
             Time.parse($1)
           end
         end

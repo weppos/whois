@@ -1,5 +1,4 @@
 
-Whois Server Version 1.5
+Whois Server Version 2.1.0
 
-% No entries found for the selected source(s).
-
+% No match for "U34JEDZCQ.CO.TH".
