@@ -1,0 +1,32 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-08-03")
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns.regeringen.ax"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.regeringen.ax"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns2.alcom.aland.fi"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns3.alcom.aland.fi"

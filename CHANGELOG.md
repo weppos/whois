@@ -3,6 +3,8 @@
 
 ## master
 
+- SERVER: Added .AX TLD definition.
+
 - SERVER: Updated .AZ, .FM, .MC, .HN, .PH, .PW, .RW, .TD, .COM.UY, .VN TLD definitions.
 
 - SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD definition.
@@ -20,6 +22,8 @@
 - NEW: Added full whois.dns.pl parser.
 
 - NEW: kero.yachay.pe parser now recognizes throttled responses.
+
+- NEW: Added whois.ax parser.
 
 - CHANGED: Dropped support for Ruby 1.8
 

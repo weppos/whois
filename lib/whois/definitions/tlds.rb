@@ -66,7 +66,7 @@ Whois::Server.define :tld, ".priv.at", "whois.nic.priv.at"
 Whois::Server.define :tld, ".at", "whois.nic.at"
 Whois::Server.define :tld, ".au", "whois.audns.net.au"
 Whois::Server.define :tld, ".aw", nil, { :adapter => :none }
-Whois::Server.define :tld, ".ax", nil, { :adapter => :none }
+Whois::Server.define :tld, ".ax", "whois.ax"
 Whois::Server.define :tld, ".az", nil, { :adapter => :web, :url => "http://www.nic.az/" }
 Whois::Server.define :tld, ".ba", nil, { :adapter => :web, :url => "http://www.nic.ba/stream/whois/" }
 Whois::Server.define :tld, ".bb", nil, { :adapter => :web, :url => "http://whois.telecoms.gov.bb/search_domain.php" }
