@@ -21,15 +21,13 @@ module Whois
           node("field:disclaimer")
         end
 
+
         property_supported :domain do
           node("field:domain_name")
         end
 
         property_not_supported :domain_id
 
-        property_not_supported :referral_whois
-
-        property_not_supported :referral_url
 
         property_supported :status do
           node("field:status")
@@ -42,6 +40,7 @@ module Whois
         property_supported :registered? do
           !available?
         end
+
 
         property_supported :created_on do
           node("field:dates") do
@@ -59,6 +58,7 @@ module Whois
           end
         end
 
+
         property_supported :registrar do
           node("field:registrar") do
             node("field:registrar") =~ /(.+) \[ ID = (.+) \]/
@@ -66,7 +66,6 @@ module Whois
           end
         end
 
-        # The response for this property gets wrapped in an array by Whois::Record::Parser::Base#handle_property
         property_supported :registrant_contacts do
           node("field:registrant_details") do
             build_registrant_contacts
@@ -77,6 +76,7 @@ module Whois
 
         property_not_supported :technical_contacts
 
+
         property_supported :nameservers do
           node("field:nameservers") do
             nameservers = node("field:nameservers").gsub(/\n\s+/, ",").split(",")
@@ -86,9 +86,11 @@ module Whois
           end
         end
 
+
         def parse
           Scanners::WhoisRegistryNetZa.new(content_for_scanner).parse
         end
+
 
         private
 
