@@ -14,11 +14,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-09-23")
+  should: %s == Time.parse("2012-09-07")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-10-07")
+  should: %s == Time.parse("2013-10-07")
 
 
 #nameservers
