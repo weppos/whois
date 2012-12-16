@@ -154,6 +154,11 @@ module Whois
         #
         def query(query, host, port = nil)
           args = []
+          if options[:socks_server]
+            require 'socksify'
+            host = TCPSocket::SOCKSConnectionPeerAddress.new(
+                options[:socks_server], options[:socks_port], host)
+          end
           args.push(host)
           args.push(port || options[:port] || DEFAULT_WHOIS_PORT)
 
