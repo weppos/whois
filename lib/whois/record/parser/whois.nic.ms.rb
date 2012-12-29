@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_cocca'
+require 'whois/record/parser/base_cocca2'
 
 
 module Whois
