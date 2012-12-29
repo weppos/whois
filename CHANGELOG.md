@@ -71,6 +71,8 @@
 
 - CHANGED: Updated whois.thnic.co.th parser to the new response format (GH-194). [Thanks @ATimofeev]
 
+- CHANGED: Updated whois.nic.ms parser to the new response format.
+
 - CHANGED: whois.coza.net.za became whois.registry.net.za (GH-191). [Thanks @rorymckinley]
 
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.

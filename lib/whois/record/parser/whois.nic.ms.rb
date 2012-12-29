@@ -19,7 +19,7 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicMs < BaseCocca
+      class WhoisNicMs < BaseCocca2
       end
 
     end

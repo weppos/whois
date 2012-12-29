@@ -1,3 +1,6 @@
+Domain Name: u34jedzcq.ms
+Domain Status: Available
+
 TERMS OF USE: 
 You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated.  
 
@@ -7,9 +10,5 @@ You agree that you may use this Data only for lawful purposes and that under no 
                   or
  (2) enable high volume, automated, electronic processes. The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
-Domain Information
-Query: u34jedzcq.ms
-Status: Not Registered
 
-
-
+>>> Last update of WHOIS database: 2012-12-29T22:54:13.681Z <<<
