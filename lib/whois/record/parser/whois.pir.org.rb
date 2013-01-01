@@ -28,14 +28,6 @@ module Whois
           !!node("response:throttled")
         end
 
-      private
-
-        def decompose_registrar(value)
-          if value =~ /(.+?) \((.+?)\)/
-            [$2, $1]
-          end
-        end
-
       end
 
     end
