@@ -87,6 +87,8 @@
 
 - FIXED: whois.domainregistry.ie may return a contact entry with no details.
 
+- FIXED: whois.jprs.jp should support status `Deleted`.
+
 
 ### Backward Incompatibilities
 
