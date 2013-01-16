@@ -3,7 +3,7 @@ rvm:
   - 1.9.2
   - 1.9.3
   - jruby-19mode
-  - rbx-19mode
+  - ruby-head
 notifications:
   recipients:
     - weppos@weppos.net
