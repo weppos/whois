@@ -46,14 +46,18 @@ module Whois
           end
         end
 
-        property_not_supported :updated_on
+        # This method is modified by Yang on 01/15/2013
+		property_supported :updated_on do
+          if content_for_scanner =~ /^\s+Modified Date:\s+(.*)\n/
+            Time.parse($1)
+          end	
+		end 
 
         property_supported :expires_on do
           if content_for_scanner =~ /^\s+Expiration Date:\s+(.*)\n/
             Time.parse($1)
           end
         end
-
 
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers:\n((.+\n)+)\n/
@@ -81,6 +85,43 @@ module Whois
             end
           end
         end
+		
+		# The following methods are implemented by Yang on 1/15/2013
+		# ----------------------------------------------------------------------------
+        property_supported :domain do
+          return $1 if content_for_scanner =~ /Domain Name:\s+(.*)\s+\n/i
+        end
+		
+		property_not_supported :domain_id
+		
+        property_supported :registrar do
+          return $1 if content_for_scanner =~ /Registrar:\s+(.*)\s+\n/i
+        end
+		
+        property_supported :admin_contacts do
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+		
+      private
+
+        def build_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  values=$1 if content_for_scanner =~ /#{element}:\n\s*\n((.+\n)+)\n/
+		  values.scan(/^\s+(.+):\s*(.+)\s*\n/).map do |entry|
+              reg["name"]=entry[1] if entry[0] =~ /Name/i
+			  reg["email"]=entry[1] if entry[0]=~ /Email/i
+          end
+		  return reg
+        end	
+		# ----------------------------------------------------------------------------		
 
       end
 
