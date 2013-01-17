@@ -59,7 +59,9 @@ module Whois
         end
 
 
-        property_not_supported :created_on
+        property_supported :created_on do
+          node("registration") { |value| Time.parse(value) }
+        end
 
         property_not_supported :updated_on
 

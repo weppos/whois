@@ -20,7 +20,8 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2002-03-21")
 
 #updated_on
   should: %s raise_error(Whois::PropertyNotSupported)
@@ -46,8 +47,8 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id            == "KR59-IEDR"
-  should: %s[0].name          == "Kulpreet Rana"
+  should: %s[0].id            == "AAV410-IEDR"
+  should: %s[0].name          == "Christina Chiou"
 
 #technical_contacts
   should: %s CLASS(array)

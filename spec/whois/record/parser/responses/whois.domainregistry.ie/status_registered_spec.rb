@@ -53,7 +53,8 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_registered.expect
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2002-03-21")
     end
   end
   describe "#updated_on" do
