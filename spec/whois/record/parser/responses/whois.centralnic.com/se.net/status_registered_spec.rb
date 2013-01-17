@@ -143,9 +143,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns2.do-go-com"
+      subject.nameservers[0].name.should == "ns2.do-go.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.do-go-com"
+      subject.nameservers[1].name.should == "ns1.do-go.com"
     end
   end
 end
