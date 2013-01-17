@@ -68,7 +68,8 @@ describe Whois::Record::Parser::WhoisCmcIq, "status_available.expected" do
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

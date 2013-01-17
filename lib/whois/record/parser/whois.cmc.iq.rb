@@ -20,7 +20,6 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisCmcIq < BaseCocca2
-        property_not_supported :nameservers
       end
 
     end
