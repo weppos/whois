@@ -25,18 +25,18 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-01-16 16:25:57 UTC")
+  should: %s == Time.parse("2012-12-03 18:03:47 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-11-23 23:59:59 UTC")
+  should: %s == Time.parse("2013-11-23 23:59:59 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == "H67436"
   should: %s.name         == nil
-  should: %s.organization == "United Domains AG"
+  should: %s.organization == "united-domains AG"
   should: %s.url          == "http://www.united-domains.de"
 
 #registrant_contacts
@@ -47,7 +47,7 @@
   should: %s[0].id            == "H1062079"
   should: %s[0].name          == "GSN Electronics Incorporation Pte Ltd"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "Straits Trading Building 9 Battery Road 16-08\nSingapore"
   should: %s[0].city          == nil
   should: %s[0].zip           == "049910"
   should: %s[0].state         == nil
@@ -62,11 +62,11 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id            == "H161687"
+  should: %s[0].id            == "AUTO-DRZK-SNVHSY"
   should: %s[0].name          == "Pauline Ang"
   should: %s[0].organization  == "GSN Electronics Incorporation Pte Ltd"
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
+  should: %s[0].address       == "Straits Trading Building 9 Battery Road 16-08"
+  should: %s[0].city          == "Singapore"
   should: %s[0].zip           == "049910"
   should: %s[0].state         == nil
   should: %s[0].country       == nil
@@ -80,18 +80,18 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "H94152"
-  should: %s[0].name          == nil
-  should: %s[0].organization  == nil
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
-  should: %s[0].zip           == nil
-  should: %s[0].state         == nil
+  should: %s[0].id            == "C-UHM65D7-TJGULR"
+  should: %s[0].name          == "Host Master"
+  should: %s[0].organization  == "united-domains AG"
+  should: %s[0].address       == "Gautinger Str. 10"
+  should: %s[0].city          == "Starnberg"
+  should: %s[0].zip           == "82319"
+  should: %s[0].state         == "Bayern"
   should: %s[0].country       == nil
-  should: %s[0].country_code  == nil
-  should: %s[0].phone         == nil
-  should: %s[0].fax           == nil
-  should: %s[0].email         == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == "+49.8151368670"
+  should: %s[0].fax           == "+49.81513686777"
+  should: %s[0].email         == "hostmaster@united-domains.de"
 
 
 #nameservers

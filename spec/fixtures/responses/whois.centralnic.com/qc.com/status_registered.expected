@@ -10,7 +10,7 @@
 
 
 #status
-  should: %s == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
+  should: %s == ["OK"]
 
 #available?
   should: %s == false
@@ -25,7 +25,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-10-15 16:31:54 UTC")
+  should: %s == Time.parse("2012-11-23 18:03:55 UTC")
 
 #expires_on
   should: %s CLASS(time)
@@ -34,10 +34,10 @@
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == "H87003"
+  should: %s.id           == "7065-EN"
   should: %s.name         == nil
-  should: %s.organization == "Registerapi"
-  should: %s.url          == "http://www.dotster.com/"
+  should: %s.organization == "eNom, Inc."
+  should: %s.url          == "http://www.enom.com/"
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -47,7 +47,7 @@
   should: %s[0].id            == "H1062277"
   should: %s[0].name          == "helene"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "309 Laurendeau, Magog Qc"
   should: %s[0].city          == nil
   should: %s[0].zip           == "J1X 3W4"
   should: %s[0].state         == nil
@@ -65,7 +65,7 @@
   should: %s[0].id            == "H114589"
   should: %s[0].name          == "helene viens"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "309 Laurendeau, Magog Qc"
   should: %s[0].city          == nil
   should: %s[0].zip           == "J1X 3W4"
   should: %s[0].state         == nil
@@ -83,7 +83,7 @@
   should: %s[0].id            == "H114590"
   should: %s[0].name          == "helene viens"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "309 Laurendeau, Magog Qc"
   should: %s[0].city          == nil
   should: %s[0].zip           == "J1X 3W4"
   should: %s[0].state         == nil
@@ -96,12 +96,8 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(4)
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns4.mydomain.com"
+  should: %s[0].name == "t1.zoneedit.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns3.mydomain.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns2.mydomain.com"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns1.mydomain.com"
+  should: %s[1].name == "ns12.zoneedit.com"

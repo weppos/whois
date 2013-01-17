@@ -127,7 +127,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "H78362"
       subject.technical_contacts[0].name.should          == "Mr Simon Williams"
       subject.technical_contacts[0].organization.should  == "E-VELOCITY LTD"
-      subject.technical_contacts[0].address.should       == nil
+      subject.technical_contacts[0].address.should       == "P.O Box 3295\nBrighton"
       subject.technical_contacts[0].city.should          == nil
       subject.technical_contacts[0].zip.should           == "BN50 9EY"
       subject.technical_contacts[0].state.should         == nil
@@ -143,9 +143,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns60.eukdns.com"
+      subject.nameservers[0].name.should == "ns38.eukdns.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns61.eukdns.com"
+      subject.nameservers[1].name.should == "ns37.eukdns.com"
     end
   end
 end

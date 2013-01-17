@@ -98,6 +98,6 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns2020.hostgator.com"
+  should: %s[0].name == "ns2.do-go.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2019.hostgator.com"
+  should: %s[1].name == "ns1.do-go.com"

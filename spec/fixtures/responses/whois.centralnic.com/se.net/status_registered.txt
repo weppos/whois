@@ -65,8 +65,8 @@ Sponsoring Registrar Country:AE
 Sponsoring Registrar Phone:+971-72046060
 Sponsoring Registrar FAX:+971-72046061
 Sponsoring Registrar Website:http://www.publicdomainregistry.com
-Name Server:NS2020.HOSTGATOR.COM
-Name Server:NS2019.HOSTGATOR.COM
+Name Server:NS2.DO-GO.COM
+Name Server:NS1.DO-GO.COM
 DNSSEC:Unsigned
 
 

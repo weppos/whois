@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1063006"
       subject.registrant_contacts[0].name.should          == "MegaWeb Internet Services cc"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
+      subject.registrant_contacts[0].address.should       == "PO Box 3738\nCramerview"
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == "2060"
       subject.registrant_contacts[0].state.should         == nil
@@ -107,7 +107,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "H119106"
       subject.admin_contacts[0].name.should          == "Liz Hart"
       subject.admin_contacts[0].organization.should  == "Siyenza Management"
-      subject.admin_contacts[0].address.should       == nil
+      subject.admin_contacts[0].address.should       == "PO Box 3738\nCramerview"
       subject.admin_contacts[0].city.should          == nil
       subject.admin_contacts[0].zip.should           == "2060"
       subject.admin_contacts[0].state.should         == nil

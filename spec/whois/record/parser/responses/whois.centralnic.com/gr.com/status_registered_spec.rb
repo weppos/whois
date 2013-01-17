@@ -97,21 +97,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#admin_contacts" do
     it do
       subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      subject.admin_contacts[0].id.should            == "H1346485"
-      subject.admin_contacts[0].name.should          == nil
-      subject.admin_contacts[0].organization.should  == nil
-      subject.admin_contacts[0].address.should       == nil
-      subject.admin_contacts[0].city.should          == nil
-      subject.admin_contacts[0].zip.should           == nil
-      subject.admin_contacts[0].state.should         == nil
-      subject.admin_contacts[0].country.should       == nil
-      subject.admin_contacts[0].country_code.should  == nil
-      subject.admin_contacts[0].phone.should         == nil
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == nil
+      subject.admin_contacts.should have(0).items
     end
   end
   describe "#technical_contacts" do
@@ -137,19 +123,11 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(6).items
+      subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns5.centralnic-dns.com"
+      subject.nameservers[0].name.should == "f1g1ns1.dnspod.net"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns4.centralnic-dns.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns1.centralnic-dns.com"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns0.centralnic-dns.com"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "ns3.centralnic-dns.com"
-      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[5].name.should == "ns2.centralnic-dns.com"
+      subject.nameservers[1].name.should == "f1g1ns2.dnspod.net"
     end
   end
 end

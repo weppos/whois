@@ -44,16 +44,6 @@ Tech Country:GB
 Tech Phone:+44.8700170900
 Tech FAX:+44.8700170901
 Tech Email:domains@centralnic.com
-Billing ID:H1323241
-Billing Name:Reserved Domains
-Billing Organization:CentralNic Ltd
-Billing Street1:35-39 Moorgate
-Billing City:London
-Billing Postal Code:EC2R 6AR
-Billing Country:GB
-Billing Phone:+44.8700170900
-Billing FAX:+44.8700170901
-Billing Email:domains@centralnic.com
 Sponsoring Registrar ID:H1323241
 Sponsoring Registrar Organization:CentralNic Ltd
 Sponsoring Registrar Street1:35-39 Moorgate

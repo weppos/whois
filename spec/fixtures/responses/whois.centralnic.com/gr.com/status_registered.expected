@@ -55,21 +55,7 @@
 
 #admin_contacts
   should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id            == "H1346485"
-  should: %s[0].name          == nil
-  should: %s[0].organization  == nil
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
-  should: %s[0].zip           == nil
-  should: %s[0].state         == nil
-  should: %s[0].country       == nil
-  should: %s[0].country_code  == nil
-  should: %s[0].phone         == nil
-  should: %s[0].fax           == nil
-  should: %s[0].email         == nil
+  should: %s SIZE(0)
 
 #technical_contacts
   should: %s CLASS(array)
@@ -92,16 +78,8 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(6)
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns5.centralnic-dns.com"
+  should: %s[0].name == "f1g1ns1.dnspod.net"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns4.centralnic-dns.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns1.centralnic-dns.com"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns0.centralnic-dns.com"
-  should: %s[4] CLASS(nameserver)
-  should: %s[4].name == "ns3.centralnic-dns.com"
-  should: %s[5] CLASS(nameserver)
-  should: %s[5].name == "ns2.centralnic-dns.com"
+  should: %s[1].name == "f1g1ns2.dnspod.net"

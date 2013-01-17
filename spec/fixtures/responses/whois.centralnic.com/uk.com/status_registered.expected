@@ -83,7 +83,7 @@
   should: %s[0].id            == "H78362"
   should: %s[0].name          == "Mr Simon Williams"
   should: %s[0].organization  == "E-VELOCITY LTD"
-  should: %s[0].address       == nil
+  should: %s[0].address       == "P.O Box 3295\nBrighton"
   should: %s[0].city          == nil
   should: %s[0].zip           == "BN50 9EY"
   should: %s[0].state         == nil
@@ -98,6 +98,6 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns60.eukdns.com"
+  should: %s[0].name == "ns38.eukdns.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns61.eukdns.com"
+  should: %s[1].name == "ns37.eukdns.com"

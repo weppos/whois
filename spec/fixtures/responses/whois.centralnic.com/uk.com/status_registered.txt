@@ -37,28 +37,22 @@ Admin Email:ray@hatley.co.uk
 Tech ID:H78362
 Tech Name:Mr Simon Williams
 Tech Organization:E-VELOCITY LTD
+Tech Street1:P.O Box 3295
+Tech Street2:Brighton
 Tech Postal Code:BN50 9EY
 Tech Country:GB
 Tech Phone:+44.1273684969
 Tech Email:simon@e-velocity.co.uk
-Billing ID:H1045821
-Billing Name:Mr. Ray Hatley
-Billing Street1:Tallow House
-Billing Street2:65-66 Lower Galdeford
-Billing City:Ludlow
-Billing State/Province:Shropshire
-Billing Postal Code:SY8 1RU
-Billing Country:GB
-Billing Phone:+44.1584873633
-Billing Email:ray@hatley.co.uk
 Sponsoring Registrar ID:H78362
 Sponsoring Registrar Organization:E-VELOCITY LTD
+Sponsoring Registrar Street1:P.O Box 3295
+Sponsoring Registrar Street2:Brighton
 Sponsoring Registrar Postal Code:BN50 9EY
 Sponsoring Registrar Country:GB
 Sponsoring Registrar Phone:01273 684969
 Sponsoring Registrar Website:http://www.e-velocity.co.uk/
-Name Server:NS60.EUKDNS.COM.
-Name Server:NS61.EUKDNS.COM.
+Name Server:NS38.EUKDNS.COM
+Name Server:NS37.EUKDNS.COM
 DNSSEC:Unsigned
 
 

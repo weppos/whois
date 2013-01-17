@@ -16,6 +16,8 @@ Expiration Date:28-Feb-2014 23:59:59 UTC
 Status:OK
 Registrant ID:H1056361
 Registrant Name:Century Leisure plc
+Registrant Street1:61 Shaftesbury Avenue
+Registrant Street2:London
 Registrant Postal Code:W1D 6LG
 Registrant Country:GB
 Registrant Phone:+44.2075343080
@@ -23,6 +25,8 @@ Registrant Email:pierre@centuryclub.co.uk
 Admin ID:H239313
 Admin Name:Pierre Condou
 Admin Organization:Century Leisure plc
+Admin Street1:61 Shaftesbury Avenue
+Admin Street2:London
 Admin Postal Code:W1D 6LG
 Admin Country:GB
 Admin Phone:+44.2075343080
@@ -39,12 +43,6 @@ Tech Country:GB
 Tech Phone:+44.8458590018
 Tech FAX:+44.8701650437
 Tech Email:hosting-domains@webfusion.com
-Billing ID:H1056361
-Billing Name:Century Leisure plc
-Billing Postal Code:W1D 6LG
-Billing Country:GB
-Billing Phone:+44.2075343080
-Billing Email:pierre@centuryclub.co.uk
 Sponsoring Registrar ID:I6467
 Sponsoring Registrar IANA ID:1515
 Sponsoring Registrar Organization:Webfusion

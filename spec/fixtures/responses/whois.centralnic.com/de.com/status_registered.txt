@@ -11,9 +11,10 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO819205
 Domain Name:BOERSE.DE.COM
 Created On:28-Nov-2011 21:38:30 UTC
-Last Updated On:16-Jan-2012 16:26:04 UTC
+Last Updated On:07-Jan-2013 13:10:46 UTC
 Expiration Date:28-Nov-2012 23:59:59 UTC
-Status:TRANSFER PROHIBITED
+Status:PENDING DELETE
+Status:PENDING DELETE RESTORABLE
 Registrant ID:T2187-GANDI-VKXS
 Registrant Name:Dhananjeyan Thangavelu
 Registrant Organization:LTV Global Inc.

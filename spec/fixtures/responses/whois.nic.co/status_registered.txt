@@ -64,9 +64,9 @@ Last Updated by Registrar:                   MELBOURNE IT LTD
 Last Transferred Date:                       Mon Mar 14 22:21:58 GMT 2011
 Domain Registration Date:                    Mon Apr 26 07:50:40 GMT 2010
 Domain Expiration Date:                      Thu Apr 25 23:59:59 GMT 2013
-Domain Last Updated Date:                    Wed Aug 15 18:57:42 GMT 2012
+Domain Last Updated Date:                    Mon Oct 08 06:05:55 GMT 2012
 
->>>> Whois database was last updated on: Tue Sep 18 14:32:43 GMT 2012 <<<<
+>>>> Whois database was last updated on: Wed Jan 16 16:17:31 GMT 2013 <<<<
 .CO Internet, S.A.S., the Administrator for .CO, has collected this
 information for the WHOIS database through Accredited Registrars.  
 This information is provided to you for informational purposes only 

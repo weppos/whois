@@ -16,6 +16,8 @@ Expiration Date:14-Aug-2013 23:59:59 UTC
 Status:OK
 Registrant ID:H1045382
 Registrant Name:Regent Inns Plc
+Registrant Street1:77 Muswell Hill
+Registrant Street2:London
 Registrant Postal Code:N10 3PJ
 Registrant Country:GB
 Registrant Phone:+44.2083753155
@@ -24,6 +26,8 @@ Registrant Email:john.boyle@regent-inns.plc.uk
 Admin ID:H64717
 Admin Name:John Boyle
 Admin Organization:Regent Inns Plc
+Admin Street1:77 Muswell Hill
+Admin Street2:London
 Admin Postal Code:N10 3PJ
 Admin Country:GB
 Admin Phone:+44.2083753155
@@ -32,19 +36,18 @@ Admin Email:john.boyle@regent-inns.plc.uk
 Tech ID:H126914
 Tech Name:Constantine Pagonis
 Tech Organization:iTransact Ltd
+Tech Street1:PO Box 430
+Tech Street2:Cambridge
+Tech Street3:Cambs
 Tech Postal Code:CB1 2WE
 Tech Country:GB
 Tech Phone:+44.1223700322
 Tech Email:constantine@itransact.ltd.uk
-Billing ID:H1045382
-Billing Name:Regent Inns Plc
-Billing Postal Code:N10 3PJ
-Billing Country:GB
-Billing Phone:+44.2083753155
-Billing FAX:+44.2083753001
-Billing Email:john.boyle@regent-inns.plc.uk
 Sponsoring Registrar ID:H126914
 Sponsoring Registrar Organization:iTransact Ltd
+Sponsoring Registrar Street1:PO Box 430
+Sponsoring Registrar Street2:Cambridge
+Sponsoring Registrar Street3:Cambs
 Sponsoring Registrar Postal Code:CB1 2WE
 Sponsoring Registrar Country:GB
 Sponsoring Registrar Phone:01223 700322

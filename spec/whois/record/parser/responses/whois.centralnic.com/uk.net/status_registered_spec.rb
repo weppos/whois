@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1056361"
       subject.registrant_contacts[0].name.should          == "Century Leisure plc"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
+      subject.registrant_contacts[0].address.should       == "61 Shaftesbury Avenue\nLondon"
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == "W1D 6LG"
       subject.registrant_contacts[0].state.should         == nil
@@ -107,7 +107,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "H239313"
       subject.admin_contacts[0].name.should          == "Pierre Condou"
       subject.admin_contacts[0].organization.should  == "Century Leisure plc"
-      subject.admin_contacts[0].address.should       == nil
+      subject.admin_contacts[0].address.should       == "61 Shaftesbury Avenue\nLondon"
       subject.admin_contacts[0].city.should          == nil
       subject.admin_contacts[0].zip.should           == "W1D 6LG"
       subject.admin_contacts[0].state.should         == nil

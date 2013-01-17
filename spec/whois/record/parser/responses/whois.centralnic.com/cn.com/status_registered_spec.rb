@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-01-16 16:25:57 UTC")
+      subject.updated_on.should == Time.parse("2012-12-03 18:03:47 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-11-23 23:59:59 UTC")
+      subject.expires_on.should == Time.parse("2013-11-23 23:59:59 UTC")
     end
   end
   describe "#registrar" do
@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "H67436"
       subject.registrar.name.should         == nil
-      subject.registrar.organization.should == "United Domains AG"
+      subject.registrar.organization.should == "united-domains AG"
       subject.registrar.url.should          == "http://www.united-domains.de"
     end
   end
@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1062079"
       subject.registrant_contacts[0].name.should          == "GSN Electronics Incorporation Pte Ltd"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
+      subject.registrant_contacts[0].address.should       == "Straits Trading Building 9 Battery Road 16-08\nSingapore"
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == "049910"
       subject.registrant_contacts[0].state.should         == nil
@@ -104,11 +104,11 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      subject.admin_contacts[0].id.should            == "H161687"
+      subject.admin_contacts[0].id.should            == "AUTO-DRZK-SNVHSY"
       subject.admin_contacts[0].name.should          == "Pauline Ang"
       subject.admin_contacts[0].organization.should  == "GSN Electronics Incorporation Pte Ltd"
-      subject.admin_contacts[0].address.should       == nil
-      subject.admin_contacts[0].city.should          == nil
+      subject.admin_contacts[0].address.should       == "Straits Trading Building 9 Battery Road 16-08"
+      subject.admin_contacts[0].city.should          == "Singapore"
       subject.admin_contacts[0].zip.should           == "049910"
       subject.admin_contacts[0].state.should         == nil
       subject.admin_contacts[0].country.should       == nil
@@ -124,18 +124,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "H94152"
-      subject.technical_contacts[0].name.should          == nil
-      subject.technical_contacts[0].organization.should  == nil
-      subject.technical_contacts[0].address.should       == nil
-      subject.technical_contacts[0].city.should          == nil
-      subject.technical_contacts[0].zip.should           == nil
-      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].id.should            == "C-UHM65D7-TJGULR"
+      subject.technical_contacts[0].name.should          == "Host Master"
+      subject.technical_contacts[0].organization.should  == "united-domains AG"
+      subject.technical_contacts[0].address.should       == "Gautinger Str. 10"
+      subject.technical_contacts[0].city.should          == "Starnberg"
+      subject.technical_contacts[0].zip.should           == "82319"
+      subject.technical_contacts[0].state.should         == "Bayern"
       subject.technical_contacts[0].country.should       == nil
-      subject.technical_contacts[0].country_code.should  == nil
-      subject.technical_contacts[0].phone.should         == nil
-      subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == nil
+      subject.technical_contacts[0].country_code.should  == "DE"
+      subject.technical_contacts[0].phone.should         == "+49.8151368670"
+      subject.technical_contacts[0].fax.should           == "+49.81513686777"
+      subject.technical_contacts[0].email.should         == "hostmaster@united-domains.de"
     end
   end
   describe "#nameservers" do

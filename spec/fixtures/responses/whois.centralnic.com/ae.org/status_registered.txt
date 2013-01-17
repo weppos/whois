@@ -11,10 +11,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO716047
 Domain Name:QROPS.AE.ORG
 Created On:11-Oct-2010 12:08:35 UTC
-Last Updated On:16-Oct-2012 00:15:11 UTC
-Expiration Date:11-Oct-2012 23:59:59 UTC
-Status:PENDING DELETE
-Status:PENDING DELETE RESTORABLE
+Last Updated On:03-Nov-2012 00:16:13 UTC
+Expiration Date:11-Oct-2013 23:59:59 UTC
+Status:OK
 Registrant ID:H280468
 Registrant Name:Domain Admin
 Registrant Organization:PrivacyProtect.org
@@ -66,8 +65,8 @@ Sponsoring Registrar Country:AE
 Sponsoring Registrar Phone:+971-72046060
 Sponsoring Registrar FAX:+971-72046061
 Sponsoring Registrar Website:http://www.publicdomainregistry.com
-Name Server:DNS2.PARKPAGE.FOUNDATIONAPI.COM
-Name Server:DNS.PARKPAGE.FOUNDATIONAPI.COM
+Name Server:NS49.HOSTING-UAE.COM
+Name Server:NS50.HOSTING-UAE.COM
 DNSSEC:Unsigned
 
 

@@ -47,7 +47,7 @@
   should: %s[0].id            == "H1063006"
   should: %s[0].name          == "MegaWeb Internet Services cc"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "PO Box 3738\nCramerview"
   should: %s[0].city          == nil
   should: %s[0].zip           == "2060"
   should: %s[0].state         == nil
@@ -65,7 +65,7 @@
   should: %s[0].id            == "H119106"
   should: %s[0].name          == "Liz Hart"
   should: %s[0].organization  == "Siyenza Management"
-  should: %s[0].address       == nil
+  should: %s[0].address       == "PO Box 3738\nCramerview"
   should: %s[0].city          == nil
   should: %s[0].zip           == "2060"
   should: %s[0].state         == nil

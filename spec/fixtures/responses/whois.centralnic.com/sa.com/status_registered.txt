@@ -45,16 +45,6 @@ Tech Postal Code:SL6 1QZ
 Tech Country:GB
 Tech Phone:+44.2031377651
 Tech Email:sales@hostroute.com
-Billing ID:H323273
-Billing Name:Maarten Groos
-Billing Street1:farm 215 fynbos reserve
-Billing Street2:PO Box 1314
-Billing City:Gansbaai
-Billing State/Province:Western Cape
-Billing Postal Code:7220
-Billing Country:ZA
-Billing Phone:+27.283880920
-Billing Email:maarten@farm215.co.za
 Sponsoring Registrar ID:C30342
 Sponsoring Registrar Organization:Hostroute 
 Sponsoring Registrar Street1:St Andrew's House

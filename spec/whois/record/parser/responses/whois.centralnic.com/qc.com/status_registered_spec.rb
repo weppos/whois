@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      subject.status.should == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
+      subject.status.should == ["OK"]
     end
   end
   describe "#available?" do
@@ -60,7 +60,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-10-15 16:31:54 UTC")
+      subject.updated_on.should == Time.parse("2012-11-23 18:03:55 UTC")
     end
   end
   describe "#expires_on" do
@@ -72,10 +72,10 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "H87003"
+      subject.registrar.id.should           == "7065-EN"
       subject.registrar.name.should         == nil
-      subject.registrar.organization.should == "Registerapi"
-      subject.registrar.url.should          == "http://www.dotster.com/"
+      subject.registrar.organization.should == "eNom, Inc."
+      subject.registrar.url.should          == "http://www.enom.com/"
     end
   end
   describe "#registrant_contacts" do
@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1062277"
       subject.registrant_contacts[0].name.should          == "helene"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
+      subject.registrant_contacts[0].address.should       == "309 Laurendeau, Magog Qc"
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == "J1X 3W4"
       subject.registrant_contacts[0].state.should         == nil
@@ -107,7 +107,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "H114589"
       subject.admin_contacts[0].name.should          == "helene viens"
       subject.admin_contacts[0].organization.should  == nil
-      subject.admin_contacts[0].address.should       == nil
+      subject.admin_contacts[0].address.should       == "309 Laurendeau, Magog Qc"
       subject.admin_contacts[0].city.should          == nil
       subject.admin_contacts[0].zip.should           == "J1X 3W4"
       subject.admin_contacts[0].state.should         == nil
@@ -127,7 +127,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "H114590"
       subject.technical_contacts[0].name.should          == "helene viens"
       subject.technical_contacts[0].organization.should  == nil
-      subject.technical_contacts[0].address.should       == nil
+      subject.technical_contacts[0].address.should       == "309 Laurendeau, Magog Qc"
       subject.technical_contacts[0].city.should          == nil
       subject.technical_contacts[0].zip.should           == "J1X 3W4"
       subject.technical_contacts[0].state.should         == nil
@@ -141,15 +141,11 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
+      subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns4.mydomain.com"
+      subject.nameservers[0].name.should == "t1.zoneedit.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns3.mydomain.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns2.mydomain.com"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns1.mydomain.com"
+      subject.nameservers[1].name.should == "ns12.zoneedit.com"
     end
   end
 end

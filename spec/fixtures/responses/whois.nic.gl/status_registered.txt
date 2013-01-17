@@ -3,8 +3,8 @@ Domain Information
 Query: google.gl
 Status: Delegated
 Created: 11 Mar 2003
-Modified: 10 Mar 2012
-Expires: 01 Jan 2013
+Modified: 05 Dec 2012
+Expires: 01 Jan 2014
 Name Servers:
     ns1.google.com
     ns2.google.com

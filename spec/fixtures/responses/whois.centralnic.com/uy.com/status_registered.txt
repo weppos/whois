@@ -45,15 +45,6 @@ Tech Country:GB
 Tech Phone:+44.8458590018
 Tech FAX:+44.8701650437
 Tech Email:hosting-domains@webfusion.com
-Billing ID:H1090697
-Billing Name:directfromowner
-Billing Street1:Christopher Court
-Billing Street2:Leeds
-Billing Street3:Yorkshire
-Billing Postal Code:LS6 2JX
-Billing Country:GB
-Billing Phone:+44.7733410198
-Billing Email:biznesinternet@hotmail.com
 Sponsoring Registrar ID:I6467
 Sponsoring Registrar IANA ID:1515
 Sponsoring Registrar Organization:Webfusion

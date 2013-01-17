@@ -47,7 +47,7 @@
   should: %s[0].id            == "H1056361"
   should: %s[0].name          == "Century Leisure plc"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "61 Shaftesbury Avenue\nLondon"
   should: %s[0].city          == nil
   should: %s[0].zip           == "W1D 6LG"
   should: %s[0].state         == nil
@@ -65,7 +65,7 @@
   should: %s[0].id            == "H239313"
   should: %s[0].name          == "Pierre Condou"
   should: %s[0].organization  == "Century Leisure plc"
-  should: %s[0].address       == nil
+  should: %s[0].address       == "61 Shaftesbury Avenue\nLondon"
   should: %s[0].city          == nil
   should: %s[0].zip           == "W1D 6LG"
   should: %s[0].state         == nil

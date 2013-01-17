@@ -83,7 +83,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1044037"
       subject.registrant_contacts[0].name.should          == "Vantage Media Corporation"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
+      subject.registrant_contacts[0].address.should       == "2101 Rosecrans Ave.\nSuite 2000"
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == "90245"
       subject.registrant_contacts[0].state.should         == nil
@@ -103,7 +103,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "H143205"
       subject.admin_contacts[0].name.should          == "Domain Administrator"
       subject.admin_contacts[0].organization.should  == "Vantage Media LLC"
-      subject.admin_contacts[0].address.should       == nil
+      subject.admin_contacts[0].address.should       == "2101 Rosecrans Ave.\nSuite 2000"
       subject.admin_contacts[0].city.should          == nil
       subject.admin_contacts[0].zip.should           == "90245"
       subject.admin_contacts[0].state.should         == nil
@@ -123,7 +123,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "H143205"
       subject.technical_contacts[0].name.should          == "Domain Administrator"
       subject.technical_contacts[0].organization.should  == "Vantage Media LLC"
-      subject.technical_contacts[0].address.should       == nil
+      subject.technical_contacts[0].address.should       == "2101 Rosecrans Ave.\nSuite 2000"
       subject.technical_contacts[0].city.should          == nil
       subject.technical_contacts[0].zip.should           == "90245"
       subject.technical_contacts[0].state.should         == nil

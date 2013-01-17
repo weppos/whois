@@ -16,6 +16,8 @@ Expiration Date:20-Oct-2014 23:59:59 UTC
 Status:OK
 Registrant ID:H1044037
 Registrant Name:Vantage Media Corporation
+Registrant Street1:2101 Rosecrans Ave.
+Registrant Street2:Suite 2000
 Registrant Postal Code:90245
 Registrant Country:US
 Registrant Phone:+1.3102196200
@@ -24,6 +26,8 @@ Registrant Email:domainadmin@vantagemedia.com
 Admin ID:H143205
 Admin Name:Domain Administrator
 Admin Organization:Vantage Media LLC
+Admin Street1:2101 Rosecrans Ave.
+Admin Street2:Suite 2000
 Admin Postal Code:90245
 Admin Country:US
 Admin Phone:+1.3102196200
@@ -32,6 +36,8 @@ Admin Email:domainadmin@vantagemedia.com
 Tech ID:H143205
 Tech Name:Domain Administrator
 Tech Organization:Vantage Media LLC
+Tech Street1:2101 Rosecrans Ave.
+Tech Street2:Suite 2000
 Tech Postal Code:90245
 Tech Country:US
 Tech Phone:+1.3102196200
@@ -40,6 +46,8 @@ Tech Email:domainadmin@vantagemedia.com
 Billing ID:H143205
 Billing Name:Domain Administrator
 Billing Organization:Vantage Media LLC
+Billing Street1:2101 Rosecrans Ave.
+Billing Street2:Suite 2000
 Billing Postal Code:90245
 Billing Country:US
 Billing Phone:+1.3102196200

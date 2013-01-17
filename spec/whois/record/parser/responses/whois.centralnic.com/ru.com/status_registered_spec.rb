@@ -83,8 +83,8 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1037013"
       subject.registrant_contacts[0].name.should          == "Anthony Lloyd, SRK Consulting (UK) Limited"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
-      subject.registrant_contacts[0].city.should          == nil
+      subject.registrant_contacts[0].address.should       == "5th Floor\nChurchill House\n17 Churchill Way"
+      subject.registrant_contacts[0].city.should          == "Cardiff"
       subject.registrant_contacts[0].zip.should           == "CF10 2HH"
       subject.registrant_contacts[0].state.should         == nil
       subject.registrant_contacts[0].country.should       == nil
@@ -103,8 +103,8 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "H265405"
       subject.admin_contacts[0].name.should          == "Anthony Lloyd"
       subject.admin_contacts[0].organization.should  == "SRK Consulting (UK) Limited"
-      subject.admin_contacts[0].address.should       == nil
-      subject.admin_contacts[0].city.should          == nil
+      subject.admin_contacts[0].address.should       == "5th Floor\nChurchill House\n17 Churchill Way"
+      subject.admin_contacts[0].city.should          == "Cardiff"
       subject.admin_contacts[0].zip.should           == "CF10 2HH"
       subject.admin_contacts[0].state.should         == nil
       subject.admin_contacts[0].country.should       == nil
@@ -123,8 +123,8 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "H265405"
       subject.technical_contacts[0].name.should          == "Anthony Lloyd"
       subject.technical_contacts[0].organization.should  == "SRK Consulting (UK) Limited"
-      subject.technical_contacts[0].address.should       == nil
-      subject.technical_contacts[0].city.should          == nil
+      subject.technical_contacts[0].address.should       == "5th Floor\nChurchill House\n17 Churchill Way"
+      subject.technical_contacts[0].city.should          == "Cardiff"
       subject.technical_contacts[0].zip.should           == "CF10 2HH"
       subject.technical_contacts[0].state.should         == nil
       subject.technical_contacts[0].country.should       == nil

@@ -43,8 +43,8 @@
   should: %s[0].id            == "H1037013"
   should: %s[0].name          == "Anthony Lloyd, SRK Consulting (UK) Limited"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
+  should: %s[0].address       == "5th Floor\nChurchill House\n17 Churchill Way"
+  should: %s[0].city          == "Cardiff"
   should: %s[0].zip           == "CF10 2HH"
   should: %s[0].state         == nil
   should: %s[0].country       == nil
@@ -61,8 +61,8 @@
   should: %s[0].id            == "H265405"
   should: %s[0].name          == "Anthony Lloyd"
   should: %s[0].organization  == "SRK Consulting (UK) Limited"
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
+  should: %s[0].address       == "5th Floor\nChurchill House\n17 Churchill Way"
+  should: %s[0].city          == "Cardiff"
   should: %s[0].zip           == "CF10 2HH"
   should: %s[0].state         == nil
   should: %s[0].country       == nil
@@ -79,8 +79,8 @@
   should: %s[0].id            == "H265405"
   should: %s[0].name          == "Anthony Lloyd"
   should: %s[0].organization  == "SRK Consulting (UK) Limited"
-  should: %s[0].address       == nil
-  should: %s[0].city          == nil
+  should: %s[0].address       == "5th Floor\nChurchill House\n17 Churchill Way"
+  should: %s[0].city          == "Cardiff"
   should: %s[0].zip           == "CF10 2HH"
   should: %s[0].state         == nil
   should: %s[0].country       == nil

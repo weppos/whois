@@ -10,7 +10,7 @@
 
 
 #status
-  should: %s == ["PENDING DELETE", "PENDING DELETE RESTORABLE"]
+  should: %s == ["OK"]
 
 #available?
   should: %s == false
@@ -25,11 +25,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-10-16 00:15:11 UTC")
+  should: %s == Time.parse("2012-11-03 00:16:13 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-10-11 23:59:59 UTC")
+  should: %s == Time.parse("2013-10-11 23:59:59 UTC")
 
 
 #registrar
@@ -98,6 +98,6 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "dns2.parkpage.foundationapi.com"
+  should: %s[0].name == "ns49.hosting-uae.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "dns.parkpage.foundationapi.com"
+  should: %s[1].name == "ns50.hosting-uae.com"

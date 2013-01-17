@@ -87,7 +87,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "H1045382"
       subject.registrant_contacts[0].name.should          == "Regent Inns Plc"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == nil
+      subject.registrant_contacts[0].address.should       == "77 Muswell Hill\nLondon"
       subject.registrant_contacts[0].city.should          == nil
       subject.registrant_contacts[0].zip.should           == "N10 3PJ"
       subject.registrant_contacts[0].state.should         == nil
@@ -107,7 +107,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "H64717"
       subject.admin_contacts[0].name.should          == "John Boyle"
       subject.admin_contacts[0].organization.should  == "Regent Inns Plc"
-      subject.admin_contacts[0].address.should       == nil
+      subject.admin_contacts[0].address.should       == "77 Muswell Hill\nLondon"
       subject.admin_contacts[0].city.should          == nil
       subject.admin_contacts[0].zip.should           == "N10 3PJ"
       subject.admin_contacts[0].state.should         == nil
@@ -127,7 +127,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "H126914"
       subject.technical_contacts[0].name.should          == "Constantine Pagonis"
       subject.technical_contacts[0].organization.should  == "iTransact Ltd"
-      subject.technical_contacts[0].address.should       == nil
+      subject.technical_contacts[0].address.should       == "PO Box 430\nCambridge\nCambs"
       subject.technical_contacts[0].city.should          == nil
       subject.technical_contacts[0].zip.should           == "CB1 2WE"
       subject.technical_contacts[0].state.should         == nil

@@ -16,6 +16,8 @@ Expiration Date:17-Nov-2013 23:59:59 UTC
 Status:OK
 Registrant ID:H1063006
 Registrant Name:MegaWeb Internet Services cc
+Registrant Street1:PO Box 3738
+Registrant Street2:Cramerview
 Registrant Postal Code:2060
 Registrant Country:ZA
 Registrant Phone:+27.0114851984
@@ -24,6 +26,8 @@ Registrant Email:dns-admin@megaweb.co.za
 Admin ID:H119106
 Admin Name:Liz Hart
 Admin Organization:Siyenza Management
+Admin Street1:PO Box 3738
+Admin Street2:Cramerview
 Admin Postal Code:2060
 Admin Country:ZA
 Admin Phone:+27.0114851984
@@ -38,13 +42,6 @@ Tech Country:ZA
 Tech Phone:+27.027114851984
 Tech FAX:+27.027114851986
 Tech Email:dns-admin@megaweb.co.za
-Billing ID:H1063006
-Billing Name:MegaWeb Internet Services cc
-Billing Postal Code:2060
-Billing Country:ZA
-Billing Phone:+27.0114851984
-Billing FAX:+27.0114855999
-Billing Email:dns-admin@megaweb.co.za
 Sponsoring Registrar ID:C12112
 Sponsoring Registrar Organization:Megaweb Internet Services
 Sponsoring Registrar City:Gauteng

@@ -2,29 +2,23 @@ Domain Name: google.mu
 Domain ID: 70557-CoCCA
 WHOIS Server: @ CoCCA
 Referral URL: 
-Updated Date: 2012-03-20T16:05:41.695Z
+Updated Date: 2012-11-17T20:14:57.899Z
 Creation Date: 2000-12-20T13:00:00.000Z
-Registry Expiry Date: 2012-12-19T13:00:00.000Z
+Registry Expiry Date: 2013-12-19T13:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientTransferProhibited
 Domain Status: ok
+Domain Status: clientTransferProhibited
 Domain Status: clientUpdateProhibited
 Domain Status: clientDeleteProhibited
 
 Registrant ID: 177502-CoCCA
-Registrant Name: DNS Admin
 Registrant Organization: Google Inc.
 Registrant Street: 1600 Amphitheatre Parkway
 Registrant City: Mountain View
 Registrant State/Province: CA
 Registrant Postal Code: 94043
 Registrant Country: US
-Registrant Phone: +1.6502530000
-Registrant Phone Ext: 
-Registrant Fax: +1.6506188571
-Registrant Fax Ext: 
-Registrant Email: dns-admin@google.com
 
 Admin ID: 177502-CoCCA
 Admin Organization: Google Inc.
@@ -40,17 +34,6 @@ Admin Fax Ext:
 Admin Email: dns-admin@google.com
 
 Tech ID: 177502-CoCCA
-Tech Organization: Google Inc.
-Tech Street: 1600 Amphitheatre Parkway
-Tech City: Mountain View
-Tech State/Province: CA
-Tech Postal Code: 94043
-Tech Country: US
-Tech Phone: +1.6502530000
-Tech Phone Ext: 
-Tech Fax: +1.6506188571
-Tech Fax Ext: 
-Tech Email: dns-admin@google.com
 
 Name Server: ns1.google.com
 Name Server: ns2.google.com
@@ -76,6 +59,6 @@ TERMS OF USE: You are not authorized to access or query our Whois database throu
 
 Internet Direct Ltd makes every effort to maintain the completeness and accuracy of the Whois data, but cannot guarantee that the results are error-free. Therefore, any data provided through the Whois service are on an "as is" basis without any warranties. BY USING THE WHOIS SERVICE AND THE DATA CONTAINED HEREIN OR IN ANY REPORT GENERATED WITH RESPECT THERETO, IT IS ACCEPTED THAT Internet Direct Ltd IS NOT LIABLE FOR ANY DAMAGES OF ANY KIND ARISING OUT OF, OR IN CONNECTION WITH, THE REPORT OR THE INFORMATION PROVIDED BY THE WHOIS SERVICE, NOR OMISSIONS OR MISSING INFORMATION. THE RESULTS OF ANY WHOIS REPORT OR INFORMATION PROVIDED BY THE WHOIS SERVICE CANNOT BE RELIED UPON IN CONTEMPLATION OF LEGAL PROCEEDINGS WITHOUT FURTHER VERIFICATION, NOR DO SUCH RESULTS CONSTITUTE A LEGAL OPINION. Acceptance of the results of the Whois constitutes acceptance of these terms, conditions and limitations. Whois data may be requested only for lawful purposes, in particular, to protect legal rights and obligations. Illegitimate uses of Whois data include, but are not limited to, unsolicited email, data mining, direct marketing or any other improper purpose. Any request made for Whois data will be documented by Internet Direct Ltd but will not be used for any commercial purpose whatsoever. NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT INDICATIVE OF THE AVAILABILITY OF A DOMAIN NAME.
 
-? 1995-2009 Internet Direct Ltd, All rights reserved.
+? 1995-2012 Internet Direct Ltd, All rights reserved.
 
->>> Last update of WHOIS database: 2012-10-18T03:02:58.423Z <<<
+>>> Last update of WHOIS database: 2013-01-16T16:20:26.631Z <<<

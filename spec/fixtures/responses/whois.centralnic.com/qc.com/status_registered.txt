@@ -11,48 +11,43 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO327026
 Domain Name:CEO.QC.COM
 Created On:08-Oct-2004 02:12:49 UTC
-Last Updated On:15-Oct-2012 16:31:54 UTC
+Last Updated On:23-Nov-2012 18:03:55 UTC
 Expiration Date:08-Oct-2014 23:59:59 UTC
-Status:TRANSFER PROHIBITED
-Status:RENEW PERIOD
+Status:OK
 Registrant ID:H1062277
 Registrant Name:helene
+Registrant Street1:309 Laurendeau, Magog Qc
 Registrant Postal Code:J1X 3W4
 Registrant Country:CA
 Registrant Phone:+1.8198438380
 Registrant Email:docjgs@videotron.ca
 Admin ID:H114589
 Admin Name:helene viens
+Admin Street1:309 Laurendeau, Magog Qc
 Admin Postal Code:J1X 3W4
 Admin Country:CA
 Admin Phone:+1.8198438380
 Admin Email:docjgs@videotron.ca
 Tech ID:H114590
 Tech Name:helene viens
+Tech Street1:309 Laurendeau, Magog Qc
 Tech Postal Code:J1X 3W4
 Tech Country:CA
 Tech Phone:+1.8198438380
 Tech Email:docjgs@videotron.ca
-Billing ID:H1062277
-Billing Name:helene
-Billing Postal Code:J1X 3W4
-Billing Country:CA
-Billing Phone:+1.8198438380
-Billing Email:docjgs@videotron.ca
-Sponsoring Registrar ID:H87003
-Sponsoring Registrar IANA ID:72
-Sponsoring Registrar Organization:Registerapi
-Sponsoring Registrar Street1:8100 NE Parkway Drive, Suite 300 
-Sponsoring Registrar City:Vancouver WA
-Sponsoring Registrar Postal Code:98662
+Sponsoring Registrar ID:7065-EN
+Sponsoring Registrar IANA ID:48
+Sponsoring Registrar Organization:eNom, Inc.
+Sponsoring Registrar Street1:15801 NE 24th St.
+Sponsoring Registrar City:Bellevue
+Sponsoring Registrar State/Province:WA
+Sponsoring Registrar Postal Code:98008
 Sponsoring Registrar Country:US
-Sponsoring Registrar Phone:1 (360) 253 2210, ext. Account
-Sponsoring Registrar FAX:1 (360) 253-4234
-Sponsoring Registrar Website:http://www.dotster.com/
-Name Server:NS4.MYDOMAIN.COM
-Name Server:NS3.MYDOMAIN.COM
-Name Server:NS2.MYDOMAIN.COM
-Name Server:NS1.MYDOMAIN.COM
+Sponsoring Registrar Phone:425-274-4500
+Sponsoring Registrar FAX:425-974-4796
+Sponsoring Registrar Website:http://www.enom.com/
+Name Server:T1.ZONEEDIT.COM
+Name Server:NS12.ZONEEDIT.COM
 DNSSEC:Unsigned
 
 

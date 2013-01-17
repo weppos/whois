@@ -43,7 +43,7 @@
   should: %s[0].id            == "H1044037"
   should: %s[0].name          == "Vantage Media Corporation"
   should: %s[0].organization  == nil
-  should: %s[0].address       == nil
+  should: %s[0].address       == "2101 Rosecrans Ave.\nSuite 2000"
   should: %s[0].city          == nil
   should: %s[0].zip           == "90245"
   should: %s[0].state         == nil
@@ -61,7 +61,7 @@
   should: %s[0].id            == "H143205"
   should: %s[0].name          == "Domain Administrator"
   should: %s[0].organization  == "Vantage Media LLC"
-  should: %s[0].address       == nil
+  should: %s[0].address       == "2101 Rosecrans Ave.\nSuite 2000"
   should: %s[0].city          == nil
   should: %s[0].zip           == "90245"
   should: %s[0].state         == nil
@@ -79,7 +79,7 @@
   should: %s[0].id            == "H143205"
   should: %s[0].name          == "Domain Administrator"
   should: %s[0].organization  == "Vantage Media LLC"
-  should: %s[0].address       == nil
+  should: %s[0].address       == "2101 Rosecrans Ave.\nSuite 2000"
   should: %s[0].city          == nil
   should: %s[0].zip           == "90245"
   should: %s[0].state         == nil
