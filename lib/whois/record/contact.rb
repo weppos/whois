@@ -47,6 +47,7 @@ module Whois
       TYPE_REGISTRANT = 1
       TYPE_ADMIN = 2
       TYPE_TECHNICAL = 3
+      TYPE_BILLING = 4 
 
     end
 
