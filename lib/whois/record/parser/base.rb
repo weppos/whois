@@ -248,7 +248,7 @@ module Whois
         # @see Whois::Record::Parser#contacts
         #
         def contacts
-          [:registrant_contacts, :admin_contacts, :technical_contacts].inject([]) do |contacts, property|
+          [:registrant_contacts, :admin_contacts, :technical_contacts, :billing_contacts].inject([]) do |contacts, property|
             contacts += send(property) if property_supported?(property)
             contacts
           end
