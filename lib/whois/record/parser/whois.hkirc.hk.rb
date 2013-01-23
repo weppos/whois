@@ -76,43 +76,47 @@ module Whois
 		
         property_supported :registrar do
           reg=Record::Registrar.new
-		  content_for_scanner.scan(/^(Registrar.*):\s+(.+)\n/).map do |entry|
-            reg["organization"] = entry[1] if entry[0] =~ /Registrar\sContact/i
+		  content_for_scanner.scan(/^(Registrar.*?):\s+(.+)\n/).map do |entry|
 			reg["name"] = entry[1] if entry[0] =~ /Registrar\sName$/i	
+			reg["url"] = entry[1] if entry[0] =~ /Registrar\sContact/i
           end
 		  return reg
         end
 
         property_supported :registrant_contacts do
-          build_contact("Registrant Contact Information", Whois::Record::Contact::TYPE_REGISTRANT)
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
-          build_contact("Administrative Contact Information", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Administrative", Whois::Record::Contact::TYPE_ADMIN)
         end
 		
         property_supported :technical_contacts do
-          build_contact("Technical Contact Information", Whois::Record::Contact::TYPE_TECHNICAL)
+          build_contact("Technical", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 		
       private
 
-        def build_contact(element, type)
+        def build_contact(element,type)
           reg=Record::Contact.new(:type => type)
-		  values=$1 if content_for_scanner =~ /#{element}:\n\n((.+\n)+)\n\n\n\n/
-		  values.scan(/^(.+):\s*(.+)\s*\n/).map do |entry|
-              reg["name"]=entry[1] if entry[0] =~ /Company(|English\s)Name/i
-			  reg["email"]=entry[1] if entry[0]=~ /Email/i
-              reg["address"]=entry[1] if entry[0]=~ /Address/i
-              reg["country_code"]=entry[1] if entry[0]=~ /Country/i
-			  reg["phone"]=entry[1] if entry[0]=~ /Phone/i
-			  reg["fax"]=entry[1] if entry[0]=~ /Fax/i
-          end
+		  if content_for_scanner.gsub(/(\(|\)|\/)/,' ') =~ /^(#{element}\sContact\sInformation\:\n\n((.+\n)+)\n\n\n)/i
+		  #if content_for_scanner.sub(%r{(\(|\|\/)},'') =~ /^(#{element}\sContact\sInformation((.*\n)+)(\n\n\n\n)?)/i
+				values=$1 
+			    values.scan(/^(.+):\s*(.+)\s*\n/).map do |entry|	
+				  reg["name"]=entry[1] if entry[0] =~ /Company\s(|English\s)Name/i
+				  reg["email"]=entry[1] if entry[0]=~ /Email/i
+				  reg["address"]=entry[1] if entry[0]=~ /Address/i
+				  reg["country_code"]=entry[1] if entry[0]=~ /Country/i
+				  reg["phone"]=entry[1] if entry[0]=~ /Phone/i
+				  reg["fax"]=entry[1] if entry[0]=~ /Fax/i
+				end
+		  end
 		  return reg
         end	
-		# ----------------------------------------------------------------------------			
+		
+		# ----------------------------------------------------------------------------		
+		
       end
-
     end
   end
 end
