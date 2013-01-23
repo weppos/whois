@@ -66,6 +66,51 @@ module Whois
           end
         end
 
+		# The following methods are implemented by Yang Li on 01/23/2013
+		# ----------------------------------------------------------------------------
+        property_supported :domain do
+          return $1 if content_for_scanner =~ /Domain Name:\s+(.*)\n/i
+        end
+		
+		property_not_supported :domain_id
+		
+        property_supported :registrar do
+          reg=Record::Registrar.new
+		  content_for_scanner.scan(/^(Registrar.*):\s+(.+)\n/).map do |entry|
+            reg["organization"] = entry[1] if entry[0] =~ /Registrar\sContact/i
+			reg["name"] = entry[1] if entry[0] =~ /Registrar\sName$/i	
+          end
+		  return reg
+        end
+
+        property_supported :registrant_contacts do
+          build_contact("Registrant Contact Information", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("Administrative Contact Information", Whois::Record::Contact::TYPE_ADMIN)
+        end
+		
+        property_supported :technical_contacts do
+          build_contact("Technical Contact Information", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+		
+      private
+
+        def build_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  values=$1 if content_for_scanner =~ /#{element}:\n\n((.+\n)+)\n\n\n\n/
+		  values.scan(/^(.+):\s*(.+)\s*\n/).map do |entry|
+              reg["name"]=entry[1] if entry[0] =~ /Company(|English\s)Name/i
+			  reg["email"]=entry[1] if entry[0]=~ /Email/i
+              reg["address"]=entry[1] if entry[0]=~ /Address/i
+              reg["country_code"]=entry[1] if entry[0]=~ /Country/i
+			  reg["phone"]=entry[1] if entry[0]=~ /Phone/i
+			  reg["fax"]=entry[1] if entry[0]=~ /Fax/i
+          end
+		  return reg
+        end	
+		# ----------------------------------------------------------------------------			
       end
 
     end
