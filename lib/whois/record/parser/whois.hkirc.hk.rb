@@ -41,7 +41,6 @@ module Whois
           !available?
         end
 
-
         property_supported :created_on do
           if content_for_scanner =~ /Domain Name Commencement Date:\s(.+?)\n/
             Time.parse($1)
@@ -57,7 +56,6 @@ module Whois
           end
         end
 
-
         property_supported :nameservers do
           if content_for_scanner =~ /Name Servers Information:\n\n((.+\n)+)\n/
             $1.split("\n").map do |name|
@@ -69,7 +67,7 @@ module Whois
 		# The following methods are implemented by Yang Li on 01/23/2013
 		# ----------------------------------------------------------------------------
         property_supported :domain do
-          return $1 if content_for_scanner =~ /Domain Name:\s+(.*)\n/i
+           return $1 if content_for_scanner =~ /Domain Name:\s+(.*)\n/i
         end
 		
 		property_not_supported :domain_id
@@ -100,10 +98,11 @@ module Whois
         def build_contact(element,type)
           reg=Record::Contact.new(:type => type)
 		  if content_for_scanner.gsub(/(\(|\)|\/)/,' ') =~ /^(#{element}\sContact\sInformation\:\n\n((.+\n)+)\n\n\n)/i
-		  #if content_for_scanner.sub(%r{(\(|\|\/)},'') =~ /^(#{element}\sContact\sInformation((.*\n)+)(\n\n\n\n)?)/i
 				values=$1 
-			    values.scan(/^(.+):\s*(.+)\s*\n/).map do |entry|	
-				  reg["name"]=entry[1] if entry[0] =~ /Company\s(|English\s)Name/i
+			    lines=values.split(%r{\n}).delete_if {|x| x !~ /:/}
+				lines.each do |ent|
+				  entry=ent.split(':')
+				  reg["name"]=entry[1] if entry[0] =~ /Company\s(|English\s*)Name/i
 				  reg["email"]=entry[1] if entry[0]=~ /Email/i
 				  reg["address"]=entry[1] if entry[0]=~ /Address/i
 				  reg["country_code"]=entry[1] if entry[0]=~ /Country/i
