@@ -71,8 +71,57 @@ module Whois
           end
         end
 
-      end
+		# The following methods are implemented by Yang Li on 01/24/2013
+		# ----------------------------------------------------------------------------
+        property_supported :domain do
+          return $1.strip if content_for_scanner =~ /Domain Name:\s+(.*)\n/i
+        end
+		
+		property_not_supported :domain_id
+		
+        property_not_supported :registrar 
+		
+		property_supported :admin_contacts do
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+		
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
 
+        property_supported :technical_contacts do
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+        property_supported :billing_contacts do
+          build_contact("Billing Contact", Whois::Record::Contact::TYPE_BILLING)
+        end
+		
+      private
+
+        def build_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  if content_for_scanner =~ /^#{element}:\n((.+\n)+)\n/i
+			  line_num=1
+			  $1.split(%r{\n}).each do |line|
+				reg["name"]=line.strip if line_num==1
+				reg["organization"]=line.strip if line_num==2
+				reg["address"]=line.strip if line_num==3
+				reg["city"]=line.strip if line_num==4
+				reg["state"]=line.strip if line_num==5
+				reg["country"]=line.strip if line_num==6
+				reg["zip"]=line.strip.split(':').last if line_num==7
+				reg["phone"]=line.strip.split(':').last if line_num==8
+				reg["fax"]=line.strip.split(':').last if line_num==9				
+				reg["email"]=line.strip if line_num==10
+				line_num=line_num+1
+			  end			  
+          end
+		  return reg
+        end	
+		# ----------------------------------------------------------------------------
+		
+      end
     end
   end
 end
