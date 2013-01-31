@@ -8,6 +8,7 @@
 
 
 require 'ipaddr'
+require 'json'
 
 
 module Whois
@@ -46,9 +47,25 @@ module Whois
     # by the Ruby interpreter (scroll down to the bottom of this file).
     #
     # @return [void]
-    def self.load_definitions
-      Dir[File.dirname(__FILE__) + '/definitions/*.rb'].each { |file| load(file) }
+    def self.load_definitions(type = :json)
+      if type == :json
+        Dir[File.expand_path("../../../data/*.json", __FILE__)].each { |f| load_json(f) }
+      else
+        Dir[File.dirname(__FILE__) + "/definitions/*.rb"].each { |f| load_ruby(f) }
+      end
     end
+
+    def self.load_ruby(file)
+      load(file)
+    end
+
+    def self.load_json(file)
+      type = File.basename(file, File.extname(file)).to_sym
+      JSON.load(File.read(file)).each do |allocation, settings|
+        define(type, allocation, settings.delete("host"), settings)
+      end
+    end
+
 
     # Lookup and returns the definition list for given <tt>type</tt>,
     # or all definitions if <tt>type</tt> is <tt>nil</tt>.
