@@ -1,0 +1,1302 @@
+{
+  ".ae.org": {
+    "host": "whois.centralnic.com"
+  },
+  ".ar.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".br.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".cn.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".com.de": {
+    "host": "whois.centralnic.com"
+  },
+  ".de.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".eu.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".gb.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".gb.net": {
+    "host": "whois.centralnic.com"
+  },
+  ".gr.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".hu.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".jpn.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".kr.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".no.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".qc.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".ru.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".sa.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".se.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".se.net": {
+    "host": "whois.centralnic.com"
+  },
+  ".uk.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".uk.net": {
+    "host": "whois.centralnic.com"
+  },
+  ".us.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".us.org": {
+    "host": "whois.centralnic.com"
+  },
+  ".uy.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".za.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".com": {
+    "host": "whois.crsnic.net",
+    "adapter": "verisign"
+  },
+  ".za.net": {
+    "host": "whois.za.net"
+  },
+  ".net": {
+    "host": "whois.crsnic.net",
+    "adapter": "verisign"
+  },
+  ".eu.org": {
+    "host": "whois.eu.org"
+  },
+  ".za.org": {
+    "host": "whois.za.org"
+  },
+  ".org": {
+    "host": "whois.pir.org"
+  },
+  ".edu": {
+    "host": "whois.educause.edu"
+  },
+  ".gov": {
+    "host": "whois.nic.gov"
+  },
+  ".int": {
+    "host": "whois.iana.org"
+  },
+  ".mil": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".e164.arpa": {
+    "host": "whois.ripe.net"
+  },
+  ".in-addr.arpa": {
+    "host": null,
+    "adapter": "arpa"
+  },
+  ".arpa": {
+    "host": "whois.iana.org"
+  },
+  ".aero": {
+    "host": "whois.aero"
+  },
+  ".asia": {
+    "host": "whois.nic.asia"
+  },
+  ".biz": {
+    "host": "whois.biz"
+  },
+  ".cat": {
+    "host": "whois.cat",
+    "adapter": "formatted",
+    "format": "-C US-ASCII ace %s"
+  },
+  ".coop": {
+    "host": "whois.nic.coop"
+  },
+  ".info": {
+    "host": "whois.afilias.info"
+  },
+  ".jobs": {
+    "host": "jobswhois.verisign-grs.com",
+    "adapter": "verisign"
+  },
+  ".mobi": {
+    "host": "whois.dotmobiregistry.net"
+  },
+  ".museum": {
+    "host": "whois.museum"
+  },
+  ".name": {
+    "host": "whois.nic.name",
+    "adapter": "formatted",
+    "format": "domain=%s"
+  },
+  ".pro": {
+    "host": "whois.registrypro.pro"
+  },
+  ".tel": {
+    "host": "whois.nic.tel"
+  },
+  ".travel": {
+    "host": "whois.nic.travel"
+  },
+  ".ac": {
+    "host": "whois.nic.ac"
+  },
+  ".ad": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ae": {
+    "host": "whois.aeda.net.ae"
+  },
+  ".af": {
+    "host": "whois.nic.af"
+  },
+  ".ag": {
+    "host": "whois.nic.ag"
+  },
+  ".ai": {
+    "host": "whois.ai"
+  },
+  ".al": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".am": {
+    "host": "whois.nic.am"
+  },
+  ".an": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ao": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".aq": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ar": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.ar/"
+  },
+  ".as": {
+    "host": "whois.nic.as"
+  },
+  ".priv.at": {
+    "host": "whois.nic.priv.at"
+  },
+  ".at": {
+    "host": "whois.nic.at"
+  },
+  ".au": {
+    "host": "whois.audns.net.au"
+  },
+  ".aw": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ax": {
+    "host": "whois.ax"
+  },
+  ".az": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.az/"
+  },
+  ".ba": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.ba/stream/whois/"
+  },
+  ".bb": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://whois.telecoms.gov.bb/search_domain.php"
+  },
+  ".bd": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://whois.btcl.net.bd/"
+  },
+  ".be": {
+    "host": "whois.dns.be"
+  },
+  ".bf": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".bg": {
+    "host": "whois.register.bg"
+  },
+  ".bh": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".bi": {
+    "host": "whois1.nic.bi"
+  },
+  ".bj": {
+    "host": "whois.nic.bj"
+  },
+  ".bm": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"
+  },
+  ".bn": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".bo": {
+    "host": "whois.nic.bo"
+  },
+  ".br": {
+    "host": "whois.registro.br"
+  },
+  ".bs": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.bs/cgi-bin/search.pl"
+  },
+  ".bt": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.bt/"
+  },
+  ".bv": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".by": {
+    "host": "whois.cctld.by"
+  },
+  ".bw": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".bz": {
+    "host": "whois.afilias-grs.info",
+    "adapter": "afilias"
+  },
+  ".co.ca": {
+    "host": "whois.co.ca"
+  },
+  ".ca": {
+    "host": "whois.cira.ca"
+  },
+  ".cc": {
+    "host": "whois.nic.cc",
+    "adapter": "verisign"
+  },
+  ".cd": {
+    "host": "whois.nic.cd"
+  },
+  ".cf": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".cg": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.cg/cgi-bin/whois.pl"
+  },
+  ".ch": {
+    "host": "whois.nic.ch"
+  },
+  ".ci": {
+    "host": "whois.nic.ci"
+  },
+  ".ck": {
+    "host": "whois.nic.ck"
+  },
+  ".cl": {
+    "host": "whois.nic.cl"
+  },
+  ".cm": {
+    "host": "whois.netcom.cm"
+  },
+  ".edu.cn": {
+    "host": "whois.edu.cn"
+  },
+  ".cn": {
+    "host": "whois.cnnic.cn"
+  },
+  ".co": {
+    "host": "whois.nic.co"
+  },
+  ".cr": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do"
+  },
+  ".cu": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.cu/"
+  },
+  ".cv": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.dns.cv/"
+  },
+  ".cw": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".cx": {
+    "host": "whois.nic.cx"
+  },
+  ".cy": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.cy/nslookup/online_database.php"
+  },
+  ".cz": {
+    "host": "whois.nic.cz"
+  },
+  ".de": {
+    "host": "whois.denic.de",
+    "adapter": "formatted",
+    "format": "-T dn,ace %s"
+  },
+  ".dj": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.dj/whois.php"
+  },
+  ".dk": {
+    "host": "whois.dk-hostmaster.dk",
+    "adapter": "formatted",
+    "format": "--show-handles %s"
+  },
+  ".dm": {
+    "host": "whois.nic.dm"
+  },
+  ".do": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.do/whois-h.php3"
+  },
+  ".dz": {
+    "host": "whois.nic.dz"
+  },
+  ".ec": {
+    "host": "whois.nic.ec"
+  },
+  ".ee": {
+    "host": "whois.tld.ee"
+  },
+  ".eg": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://lookup.egregistry.eg/english.aspx"
+  },
+  ".er": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".es": {
+    "host": null,
+    "adapter": "web",
+    "url": "https://www.nic.es/"
+  },
+  ".et": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".eu": {
+    "host": "whois.eu"
+  },
+  ".fi": {
+    "host": "whois.fi"
+  },
+  ".fj": {
+    "host": "whois.usp.ac.fj"
+  },
+  ".fk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".fm": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://dot.fm/whois.html"
+  },
+  ".fo": {
+    "host": "whois.nic.fo"
+  },
+  ".aeroport.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".avocat.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".chambagri.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".chirurgiens-dentistes.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".experts-comptables.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".geometre-expert.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".medecin.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".notaires.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".pharmacien.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".port.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".veterinaire.fr": {
+    "host": "whois.smallregistry.net"
+  },
+  ".fr": {
+    "host": "whois.nic.fr"
+  },
+  ".ga": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gb": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gd": {
+    "host": "whois.adamsnames.tc"
+  },
+  ".ge": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.registration.ge/"
+  },
+  ".gf": {
+    "host": null,
+    "adapter": "web",
+    "url": "https://www.dom-enic.com/whois.html"
+  },
+  ".gg": {
+    "host": "whois.gg"
+  },
+  ".gh": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.gh/customer/search_c.htm"
+  },
+  ".gi": {
+    "host": "whois.afilias-grs.info",
+    "adapter": "afilias"
+  },
+  ".gl": {
+    "host": "whois.nic.gl"
+  },
+  ".gm": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.gm/htmlpages/whois.htm"
+  },
+  ".gn": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gp": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gq": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gr": {
+    "host": null,
+    "adapter": "web",
+    "url": "https://grweb.ics.forth.gr/Whois?lang=en"
+  },
+  ".gs": {
+    "host": "whois.nic.gs"
+  },
+  ".gt": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.gt/whois.html"
+  },
+  ".gu": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://gadao.gov.gu/domainsearch.htm"
+  },
+  ".gw": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gy": {
+    "host": "whois.registry.gy"
+  },
+  ".hk": {
+    "host": "whois.hkirc.hk"
+  },
+  ".hm": {
+    "host": "whois.registry.hm"
+  },
+  ".hn": {
+    "host": "whois.nic.hn"
+  },
+  ".hr": {
+    "host": "whois.dns.hr"
+  },
+  ".ht": {
+    "host": "whois.nic.ht"
+  },
+  ".hu": {
+    "host": "whois.nic.hu"
+  },
+  ".id": {
+    "host": "whois.pandi.or.id"
+  },
+  ".ie": {
+    "host": "whois.domainregistry.ie"
+  },
+  ".il": {
+    "host": "whois.isoc.org.il"
+  },
+  ".im": {
+    "host": "whois.nic.im"
+  },
+  ".in": {
+    "host": "whois.registry.in"
+  },
+  ".io": {
+    "host": "whois.nic.io"
+  },
+  ".iq": {
+    "host": "whois.cmc.iq"
+  },
+  ".ir": {
+    "host": "whois.nic.ir"
+  },
+  ".is": {
+    "host": "whois.isnic.is"
+  },
+  ".it": {
+    "host": "whois.nic.it"
+  },
+  ".je": {
+    "host": "whois.je"
+  },
+  ".jm": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".jo": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.dns.jo/Whois.aspx"
+  },
+  ".jp": {
+    "host": "whois.jprs.jp",
+    "adapter": "formatted",
+    "format": "%s/e"
+  },
+  ".ke": {
+    "host": "whois.kenic.or.ke"
+  },
+  ".kg": {
+    "host": "whois.domain.kg"
+  },
+  ".kh": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ki": {
+    "host": "whois.nic.ki"
+  },
+  ".km": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".kn": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.kn/"
+  },
+  ".kp": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".kr": {
+    "host": "whois.nic.or.kr"
+  },
+  ".kw": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.kw/"
+  },
+  ".ky": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://kynseweb.messagesecure.com/kywebadmin/"
+  },
+  ".kz": {
+    "host": "whois.nic.kz"
+  },
+  ".la": {
+    "host": "whois.nic.la"
+  },
+  ".lb": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.aub.edu.lb/lbdr/"
+  },
+  ".lc": {
+    "host": "whois.afilias-grs.info",
+    "adapter": "afilias"
+  },
+  ".li": {
+    "host": "whois.nic.li"
+  },
+  ".lk": {
+    "host": "whois.nic.lk"
+  },
+  ".lr": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ls": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.co.ls/co.asp"
+  },
+  ".lt": {
+    "host": "whois.domreg.lt"
+  },
+  ".lu": {
+    "host": "whois.dns.lu"
+  },
+  ".lv": {
+    "host": "whois.nic.lv"
+  },
+  ".ly": {
+    "host": "whois.nic.ly"
+  },
+  ".ma": {
+    "host": "whois.iam.net.ma"
+  },
+  ".mc": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".md": {
+    "host": "whois.nic.md"
+  },
+  ".me": {
+    "host": "whois.meregistry.net"
+  },
+  ".mg": {
+    "host": "whois.nic.mg"
+  },
+  ".mh": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".mk": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://dns.marnet.net.mk/registar.php"
+  },
+  ".ml": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".mm": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".mn": {
+    "host": "whois.afilias-grs.info",
+    "adapter": "afilias"
+  },
+  ".mo": {
+    "host": "whois.monic.mo"
+  },
+  ".mp": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".mq": {
+    "host": null,
+    "adapter": "web",
+    "url": "https://www.dom-enic.com/whois.html"
+  },
+  ".mr": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ms": {
+    "host": "whois.nic.ms"
+  },
+  ".mt": {
+    "host": null,
+    "adapter": "web",
+    "url": "https://www.nic.org.mt/dotmt/"
+  },
+  ".mu": {
+    "host": "whois.nic.mu"
+  },
+  ".mv": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".mw": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.registrar.mw/"
+  },
+  ".mx": {
+    "host": "whois.nic.mx"
+  },
+  ".my": {
+    "host": "whois.domainregistry.my"
+  },
+  ".mz": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".na": {
+    "host": "whois.na-nic.com.na"
+  },
+  ".nc": {
+    "host": "whois.nc"
+  },
+  ".ne": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".nf": {
+    "host": "whois.nic.net.nf"
+  },
+  ".ng": {
+    "host": "whois.nic.net.ng"
+  },
+  ".ni": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.ni/"
+  },
+  ".nl": {
+    "host": "whois.domain-registry.nl"
+  },
+  ".no": {
+    "host": "whois.norid.no"
+  },
+  ".np": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://register.mos.com.np/userSearchInc.asp"
+  },
+  ".nr": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.cenpac.net.nr/dns/whois.html"
+  },
+  ".nu": {
+    "host": "whois.nic.nu"
+  },
+  ".nz": {
+    "host": "whois.srs.net.nz"
+  },
+  ".om": {
+    "host": "whois.registry.om"
+  },
+  ".pa": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.pa/"
+  },
+  ".pe": {
+    "host": "kero.yachay.pe"
+  },
+  ".pf": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".pg": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".ph": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.dot.ph/whois"
+  },
+  ".pk": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.pknic.net.pk/"
+  },
+  ".co.pl": {
+    "host": "whois.co.pl"
+  },
+  ".pl": {
+    "host": "whois.dns.pl"
+  },
+  ".pm": {
+    "host": "whois.nic.fr"
+  },
+  ".pn": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.pitcairn.pn/PnRegistry/"
+  },
+  ".pr": {
+    "host": "whois.nic.pr"
+  },
+  ".ps": {
+    "host": "whois.pnina.ps"
+  },
+  ".pt": {
+    "host": "whois.dns.pt"
+  },
+  ".pw": {
+    "host": "whois.nic.pw"
+  },
+  ".py": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.py/consultas.html"
+  },
+  ".qa": {
+    "host": "whois.registry.qa"
+  },
+  ".re": {
+    "host": "whois.nic.fr"
+  },
+  ".ro": {
+    "host": "whois.rotld.ro"
+  },
+  ".rs": {
+    "host": "whois.rnids.rs"
+  },
+  ".edu.ru": {
+    "host": "whois.informika.ru"
+  },
+  ".ru": {
+    "host": "whois.tcinet.ru"
+  },
+  ".rw": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".sa": {
+    "host": "saudinic.net.sa"
+  },
+  ".sb": {
+    "host": "whois.nic.net.sb"
+  },
+  ".sc": {
+    "host": "whois.afilias-grs.info",
+    "adapter": "afilias"
+  },
+  ".sd": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".se": {
+    "host": "whois.nic-se.se"
+  },
+  ".sg": {
+    "host": "whois.sgnic.sg"
+  },
+  ".sh": {
+    "host": "whois.nic.sh"
+  },
+  ".si": {
+    "host": "whois.arnes.si"
+  },
+  ".sj": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".sk": {
+    "host": "whois.sk-nic.sk"
+  },
+  ".sl": {
+    "host": "whois.nic.sl"
+  },
+  ".sm": {
+    "host": "whois.nic.sm"
+  },
+  ".sn": {
+    "host": "whois.nic.sn"
+  },
+  ".so": {
+    "host": "whois.nic.so"
+  },
+  ".sr": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".st": {
+    "host": "whois.nic.st"
+  },
+  ".su": {
+    "host": "whois.tcinet.ru"
+  },
+  ".sv": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.uca.edu.sv/dns/"
+  },
+  ".sx": {
+    "host": "whois.sx"
+  },
+  ".sy": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".sz": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".tc": {
+    "host": "whois.adamsnames.tc"
+  },
+  ".td": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.td/"
+  },
+  ".tf": {
+    "host": "whois.nic.fr"
+  },
+  ".tg": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.tg/"
+  },
+  ".th": {
+    "host": "whois.thnic.co.th"
+  },
+  ".tj": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.tj/whois.html"
+  },
+  ".tk": {
+    "host": "whois.dot.tk"
+  },
+  ".tl": {
+    "host": "whois.nic.tl"
+  },
+  ".tm": {
+    "host": "whois.nic.tm"
+  },
+  ".tn": {
+    "host": "whois.ati.tn"
+  },
+  ".to": {
+    "host": "whois.tonic.to"
+  },
+  ".tp": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".tr": {
+    "host": "whois.nic.tr"
+  },
+  ".tt": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.tt/cgi-bin/search.pl"
+  },
+  ".tv": {
+    "host": "whois.nic.tv",
+    "adapter": "verisign"
+  },
+  ".tw": {
+    "host": "whois.twnic.net.tw"
+  },
+  ".tz": {
+    "host": "whois.tznic.or.tz"
+  },
+  ".in.ua": {
+    "host": "whois.in.ua"
+  },
+  ".ua": {
+    "host": "whois.ua"
+  },
+  ".ug": {
+    "host": "whois.co.ug"
+  },
+  ".ac.uk": {
+    "host": "whois.ja.net"
+  },
+  ".bl.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".british-library.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".gov.uk": {
+    "host": "whois.ja.net"
+  },
+  ".icnet.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".jet.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".mod.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".nhs.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".nls.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".parliament.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".police.uk": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".uk": {
+    "host": "whois.nic.uk"
+  },
+  ".us": {
+    "host": "whois.nic.us"
+  },
+  ".com.uy": {
+    "host": null,
+    "adapter": "web",
+    "url": "https://nic.anteldata.com.uy/dns/consultaWhois/whois.action"
+  },
+  ".uy": {
+    "host": "whois.nic.org.uy"
+  },
+  ".uz": {
+    "host": "whois.cctld.uz"
+  },
+  ".va": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".vc": {
+    "host": "whois.afilias-grs.info",
+    "adapter": "afilias"
+  },
+  ".ve": {
+    "host": "whois.nic.ve"
+  },
+  ".vg": {
+    "host": "whois.adamsnames.tc"
+  },
+  ".vi": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.nic.vi/whoisform.htm"
+  },
+  ".vn": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://en.vnnic.vn/"
+  },
+  ".vu": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://www.vunic.vu/whois.html"
+  },
+  ".wf": {
+    "host": "whois.nic.fr"
+  },
+  ".ws": {
+    "host": "whois.samoanic.ws"
+  },
+  ".ye": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".yt": {
+    "host": "whois.nic.fr"
+  },
+  ".ac.za": {
+    "host": "whois.ac.za"
+  },
+  ".co.za": {
+    "host": "whois.registry.net.za"
+  },
+  ".gov.za": {
+    "host": "whois.gov.za"
+  },
+  ".org.za": {
+    "host": "whois.org.za"
+  },
+  ".za": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".zm": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".zw": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xxx": {
+    "host": "whois.nic.xxx"
+  },
+  ".xn--3e0b707e": {
+    "host": "whois.kr"
+  },
+  ".xn--45brj9c": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--80ao21a": {
+    "host": "whois.nic.kz"
+  },
+  ".xn--90a3ac": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--clchc0ea0b2g2a9gcd": {
+    "host": "whois.sgnic.sg"
+  },
+  ".xn--fiqs8s": {
+    "host": "cwhois.cnnic.cn"
+  },
+  ".xn--fiqz9s": {
+    "host": "cwhois.cnnic.cn"
+  },
+  ".xn--fpcrj9c3d": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--fzc2c9e2c": {
+    "host": "whois.nic.lk"
+  },
+  ".xn--gecrj9c": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--h2brj9c": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--j6w193g": {
+    "host": "whois.hkirc.hk"
+  },
+  ".xn--kprw13d": {
+    "host": "whois.twnic.net.tw"
+  },
+  ".xn--kpry57d": {
+    "host": "whois.twnic.net.tw"
+  },
+  ".xn--lgbbat1ad8j": {
+    "host": "whois.nic.dz"
+  },
+  ".xn--mgb9awbf": {
+    "host": "whois.registry.om"
+  },
+  ".xn--mgbaam7a8h": {
+    "host": "whois.aeda.net.ae"
+  },
+  ".xn--mgbayh7gpa": {
+    "host": null,
+    "adapter": "web",
+    "url": "http://idn.jo/whois_a.aspx"
+  },
+  ".xn--mgbbh1a71e": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--mgbc0a9azcg": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--mgberp4a5d4ar": {
+    "host": "whois.nic.net.sa"
+  },
+  ".xn--mgbx4cd0ab": {
+    "host": "whois.domainregistry.my"
+  },
+  ".xn--o3cw4h": {
+    "host": "whois.thnic.co.th"
+  },
+  ".xn--ogbpf8fl": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--p1ai": {
+    "host": "whois.tcinet.ru"
+  },
+  ".xn--pgbs0dh": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--s9brj9c": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--wgbh1c": {
+    "host": "whois.dotmasr.eg"
+  },
+  ".xn--wgbl6a": {
+    "host": "whois.registry.qa"
+  },
+  ".xn--xkc2al3hye2a": {
+    "host": "whois.nic.lk"
+  },
+  ".xn--xkc2dl3a5ee0h": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".xn--yfro4i67o": {
+    "host": "whois.sgnic.sg"
+  },
+  ".xn--ygbi2ammx": {
+    "host": "whois.pnina.ps"
+  }
+}

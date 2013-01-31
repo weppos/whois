@@ -6,6 +6,9 @@ require 'fileutils'
 require 'whois'
 require 'json'
 
+Whois::Server.definitions.clear
+Whois::Server.load_definitions(:ruby)
+
 def convert(type)
   defs = Whois::Server.definitions(type)
   json = {}
@@ -18,7 +21,8 @@ def convert(type)
 end
 
 def write(type, content)
-  File.open(File.expand_path("../../lib/whois/definitions/#{type}.json", __FILE__), "w+") do |f|
+  FileUtils.mkdir_p(File.expand_path("../../data", __FILE__))
+  File.open(File.expand_path("../../data/#{type}.json", __FILE__), "w+") do |f|
     f.write(content)
   end
 end
