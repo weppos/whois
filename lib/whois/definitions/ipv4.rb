@@ -1,4 +1,4 @@
-Whois::Server.define :ipv4, "0.0.0.0/8", nil, :adapter => Whois::Server::Adapters::None
+Whois::Server.define :ipv4, "0.0.0.0/8", nil, { :adapter => :none }
 Whois::Server.define :ipv4, "1.0.0.0/8", "whois.apnic.net"
 Whois::Server.define :ipv4, "2.0.0.0/8", "whois.ripe.net"
 Whois::Server.define :ipv4, "5.0.0.0/8", "whois.ripe.net"

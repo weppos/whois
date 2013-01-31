@@ -1,4 +1,4 @@
-Whois::Server.define :ipv6, "2001:0000::/32", "teredo", :adapter => Whois::Server::Adapters::NotImplemented
+Whois::Server.define :ipv6, "2001:0000::/32", "teredo", { :adapter => :not_implemented }
 Whois::Server.define :ipv6, "2001:0200::/23", "whois.apnic.net"
 Whois::Server.define :ipv6, "2001:0400::/23", "whois.arin.net"
 Whois::Server.define :ipv6, "2001:0600::/23", "whois.ripe.net"
@@ -19,7 +19,7 @@ Whois::Server.define :ipv6, "2001:4A00::/23", "whois.ripe.net"
 Whois::Server.define :ipv6, "2001:4C00::/22", "whois.ripe.net"
 Whois::Server.define :ipv6, "2001:5000::/20", "whois.ripe.net"
 Whois::Server.define :ipv6, "2001:8000::/18", "whois.apnic.net"
-Whois::Server.define :ipv6, "2002:0000::/16", "6to4", :adapter => Whois::Server::Adapters::NotImplemented
+Whois::Server.define :ipv6, "2002:0000::/16", "6to4", { :adapter => :not_implemented }
 Whois::Server.define :ipv6, "2003:0000::/18", "whois.ripe.net"
 Whois::Server.define :ipv6, "2400:0000::/20", "whois.nic.or.kr"
 Whois::Server.define :ipv6, "2400:0000::/12", "whois.apnic.net"
