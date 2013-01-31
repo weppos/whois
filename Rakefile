@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
 
   s.files             = %w( LICENSE.txt .yardopts ) +
                         Dir.glob("*.{md,gemspec}") +
-                        Dir.glob("{bin,lib}/**/*")
+                        Dir.glob("{bin,data,lib}/**/*")
   s.executables       = %w( ruby-whois )
   s.require_paths     = %w( lib )
 
