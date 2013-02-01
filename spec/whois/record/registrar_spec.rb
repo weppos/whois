@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'whois/record/registrar'
+
 
 describe Whois::Record::Registrar do
 

@@ -29,6 +29,8 @@
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
 
+- CHANGED: Definitions are now stored as JSON.
+
 - CHANGED: Updated whois.nic.af parser to the new response format.
 
 - CHANGED: Updated whois.nic.cx parser to the new response format.

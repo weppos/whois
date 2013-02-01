@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'whois/record/nameserver'
+
 
 describe Whois::Record::Nameserver do
 

@@ -7,13 +7,15 @@
 #++
 
 
-require 'whois/record/parser'
-require 'whois/record/parser/base'
+require 'whois/record/part'
 
 
 module Whois
 
   class Record
+
+    autoload :Parser, 'whois/record/parser'
+
 
     # @return [Whois::Server] The server that originated this record.
     attr_reader :server

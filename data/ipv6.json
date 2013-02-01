@@ -1,0 +1,100 @@
+{
+  "2001:0000::/32": {
+    "host": "teredo",
+    "adapter": "not_implemented"
+  },
+  "2001:0200::/23": {
+    "host": "whois.apnic.net"
+  },
+  "2001:0400::/23": {
+    "host": "whois.arin.net"
+  },
+  "2001:0600::/23": {
+    "host": "whois.ripe.net"
+  },
+  "2001:0800::/22": {
+    "host": "whois.ripe.net"
+  },
+  "2001:0C00::/22": {
+    "host": "whois.apnic.net"
+  },
+  "2001:1000::/22": {
+    "host": "whois.lacnic.net"
+  },
+  "2001:1400::/22": {
+    "host": "whois.ripe.net"
+  },
+  "2001:1800::/23": {
+    "host": "whois.arin.net"
+  },
+  "2001:1A00::/23": {
+    "host": "whois.ripe.net"
+  },
+  "2001:1C00::/22": {
+    "host": "whois.ripe.net"
+  },
+  "2001:2000::/19": {
+    "host": "whois.ripe.net"
+  },
+  "2001:4000::/23": {
+    "host": "whois.ripe.net"
+  },
+  "2001:4200::/23": {
+    "host": "whois.afrinic.net"
+  },
+  "2001:4400::/23": {
+    "host": "whois.apnic.net"
+  },
+  "2001:4600::/23": {
+    "host": "whois.ripe.net"
+  },
+  "2001:4800::/23": {
+    "host": "whois.arin.net"
+  },
+  "2001:4A00::/23": {
+    "host": "whois.ripe.net"
+  },
+  "2001:4C00::/22": {
+    "host": "whois.ripe.net"
+  },
+  "2001:5000::/20": {
+    "host": "whois.ripe.net"
+  },
+  "2001:8000::/18": {
+    "host": "whois.apnic.net"
+  },
+  "2002:0000::/16": {
+    "host": "6to4",
+    "adapter": "not_implemented"
+  },
+  "2003:0000::/18": {
+    "host": "whois.ripe.net"
+  },
+  "2400:0000::/20": {
+    "host": "whois.nic.or.kr"
+  },
+  "2400:0000::/12": {
+    "host": "whois.apnic.net"
+  },
+  "2600:0000::/12": {
+    "host": "whois.arin.net"
+  },
+  "2610:0000::/23": {
+    "host": "whois.arin.net"
+  },
+  "2620:0000::/23": {
+    "host": "whois.arin.net"
+  },
+  "2800:0000::/12": {
+    "host": "whois.lacnic.net"
+  },
+  "2A00:0000::/12": {
+    "host": "whois.ripe.net"
+  },
+  "2C00:0000::/12": {
+    "host": "whois.afrinic.net"
+  },
+  "3FFE:0000::/16": {
+    "host": "whois.6bone.net"
+  }
+}

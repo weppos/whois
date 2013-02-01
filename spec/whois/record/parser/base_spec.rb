@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'whois/record/parser/base'
+
 
 describe Whois::Record::Parser::Base do
 
