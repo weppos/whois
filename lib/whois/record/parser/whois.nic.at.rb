@@ -62,7 +62,7 @@ module Whois
 		# The following methods are implemented by Yang Li on 01/29/2013
 		# ----------------------------------------------------------------------------
         property_supported :domain do
-          return $1 if content_for_scanner =~ /domain:\s+(.*)\n/i
+           return $1 if content_for_scanner =~ /domain:\s+(.*)\n/i
         end
 		
 		property_not_supported :domain_id
@@ -87,10 +87,10 @@ module Whois
 
         def build_contact(index, type)
           reg=Record::Contact.new(:type => type)
-		  contacts=content_for_scanner.scan(/^personname:\s+\n((.+\n)+)\n/)
-		  contacts[index].join.scan(/(.+):(.+)\n/).map do |entry|
+		  contacts=content_for_scanner.scan(/^(personname:.+\n((.+\n)+))\n/)
+		  contacts[index][0].scan(/(.+):(.+)\n/).map do |entry|
               reg["id"]=entry[1].strip if entry[0] =~ /nic-hdl/i
-              reg["name"]=entry[1].strip if entry[0] =~ /organization/i
+              reg["name"]=entry[1].strip if entry[0] =~ /personname/i
               reg["organization"]=entry[1].strip if entry[0]=~ /organization/i
               reg["address"]=entry[1].strip if entry[0]=~ /street\saddress/i
               reg["city"]= entry[1].strip if entry[0]=~ /city/i
