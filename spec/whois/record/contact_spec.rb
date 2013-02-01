@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'whois/record/contact'
+
 
 describe Whois::Record::Contact do
 

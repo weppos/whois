@@ -16,8 +16,8 @@ module Whois
     # The list of properties and methods is available
     # in the following constants:
     #
-    # * {Whois::Record::METHODS}
-    # * {Whois::Record::PROPERTIES}
+    # * {Whois::Record::Parser::METHODS}
+    # * {Whois::Record::Parser::PROPERTIES}
     #
     class Parser
 
