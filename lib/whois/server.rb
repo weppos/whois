@@ -59,10 +59,15 @@ module Whois
       load(file)
     end
 
+    # Loads the definitions from a JSON file.
+    #
+    # @param  [String] file The path to the definition file.
+    #
+    # @return [void]
     def self.load_json(file)
       type = File.basename(file, File.extname(file)).to_sym
       JSON.load(File.read(file)).each do |allocation, settings|
-        define(type, allocation, settings.delete("host"), settings)
+        define(type, allocation, settings.delete("host"), Hash[settings.map { |k,v| [k.to_sym, v] }])
       end
     end
 
@@ -179,7 +184,7 @@ module Whois
     #         An adapter that can be used to perform queries.
     #
     def self.factory(type, allocation, host, options = {})
-      options = Hash[options.map {|k,v| [k.to_sym, v] }]
+      options = options.dup
       adapter = options.delete(:adapter) || Adapters::Standard
       adapter = Adapters.const_get(camelize(adapter)) unless adapter.respond_to?(:new)
       adapter.new(type, allocation, host, options)

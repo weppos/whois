@@ -1,6 +1,44 @@
 require 'spec_helper'
 
 describe Whois::Server do
+  describe ".load_json" do
+    it "loads a definition from a JSON file" do
+      File.expects(:read).with("tld.json").returns(<<-JSON)
+{
+  ".ae.org": {
+    "host": "whois.centralnic.com"
+  },
+  ".ar.com": {
+    "host": "whois.centralnic.com"
+  }
+}
+      JSON
+      with_definitions do
+        klass.load_json("tld.json")
+        klass.definitions(:tld).should eq([
+          [".ae.org", "whois.centralnic.com", {}],
+          [".ar.com", "whois.centralnic.com", {}],
+        ])
+      end
+    end
+
+    it "convert option keys to Symbol" do
+      File.expects(:read).with("tld.json").returns(<<-JSON)
+{
+  ".com": {
+    "host": "whois.crsnic.net",
+    "adapter": "verisign"
+  }
+}
+      JSON
+      with_definitions do
+        klass.load_json("tld.json")
+        klass.definitions(:tld).should eq([
+          [".com", "whois.crsnic.net", adapter: "verisign"],
+        ])
+      end
+    end
+  end
 
   describe ".definitions" do
     it "returns the definitions hash when type argument is nil" do
@@ -83,14 +121,16 @@ describe Whois::Server do
       s.args.should == [:tld, ".test", "whois.test", {}]
     end
 
-    it "accepts an :adapter option as Symbol, load Class and returns an instance of given adapter" do
+    it "accepts an :adapter option as Symbol or String, load Class and returns an instance of given adapter" do
       s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => :none)
+      s.should be_a(Whois::Server::Adapters::None)
+      s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => "none")
       s.should be_a(Whois::Server::Adapters::None)
     end
 
     it "deletes the adapter option" do
       s = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => Whois::Server::Adapters::None, :foo => "bar")
-      s.options.should == { :foo => "bar" }
+      s.options.should eq({ :foo => "bar" })
     end
   end
 
