@@ -179,7 +179,7 @@ module Whois
     #         An adapter that can be used to perform queries.
     #
     def self.factory(type, allocation, host, options = {})
-      options = options.dup
+      options = Hash[options.map {|k,v| [k.to_sym, v] }]
       adapter = options.delete(:adapter) || Adapters::Standard
       adapter = Adapters.const_get(camelize(adapter)) unless adapter.respond_to?(:new)
       adapter.new(type, allocation, host, options)
