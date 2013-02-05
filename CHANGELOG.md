@@ -77,6 +77,8 @@
 
 - CHANGED: whois.coza.net.za became whois.registry.net.za (GH-191). [Thanks @rorymckinley]
 
+- CHANGED: Definitions are now stored as JSON.
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).

@@ -47,16 +47,8 @@ module Whois
     # by the Ruby interpreter (scroll down to the bottom of this file).
     #
     # @return [void]
-    def self.load_definitions(type = :json)
-      if type == :json
-        Dir[File.expand_path("../../../data/*.json", __FILE__)].each { |f| load_json(f) }
-      else
-        Dir[File.dirname(__FILE__) + "/definitions/*.rb"].each { |f| load_ruby(f) }
-      end
-    end
-
-    def self.load_ruby(file)
-      load(file)
+    def self.load_definitions
+      Dir[File.expand_path("../../../data/*.json", __FILE__)].each { |f| load_json(f) }
     end
 
     # Loads the definitions from a JSON file.
