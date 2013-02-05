@@ -209,7 +209,21 @@ module Whois
       end
     end
 
-    # Collects and returns all the contacts.
+    # Shortcut for <tt>billing_contacts.first</tt>.
+    #
+    # @return [Whois::Record::Contact]
+    #         If the property is supported and a contact exists.
+    # @return [nil]
+    #         If the property is not supported or the contact doesn't exist.
+    #
+    # @see Whois::Record#billing_contacts
+    #
+    def billing_contact
+      if property_supported?(:billing_contacts)
+        parser.billing_contacts.first
+      end
+    end
+
     #
     # @return [Array<Whois::Record::Contact>]
     #

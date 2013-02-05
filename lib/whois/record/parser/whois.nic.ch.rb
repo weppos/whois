@@ -75,9 +75,67 @@ module Whois
             order.map { |name| list[name] }
           end
         end
+		
+		# The following methods are implemented by Yang Li on 01/29/2013
+		# ----------------------------------------------------------------------------
+        property_supported :domain do
+           return $1 if content_for_scanner =~ /Domain name:\n(.+\..+)\n/i
+        end
+		
+		property_not_supported :domain_id
 
+        property_not_supported :registrar 
+		
+		property_not_supported :admin_contacts
+
+        property_supported :registrant_contacts do
+          build_contact("Holder of domain name", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :technical_contacts do
+          build_tech_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+        property_not_supported :billing_contacts 
+		
+      private
+
+        def build_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  if content_for_scanner =~ /^(#{element}:\n(.+\n)+)\n/i
+			  line_num=1
+			  $1.split(%r{\n}).each do |line|
+				reg["name"]=line.strip if line_num==3
+				reg["organization"]=line.strip if line_num==2
+				reg["address"]=line.strip if line_num==4
+				reg["city"]=line.strip if line_num==5
+				reg["country"]=line.strip if line_num==6
+				line_num=line_num+1
+			  end			  
+          end
+		  return reg
+        end	
+		
+        def build_tech_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  if content_for_scanner =~ /^(#{element}:\n(.+\n)+)\n/i
+			  line_num=1
+			  $1.split(%r{\n}).each do |line|
+				reg["organization"]=line.strip if line_num==2
+				reg["name"]=line.strip if line_num==3
+				addrs=line.strip if line_num==4
+				addrs="#{addrs}"+"\n"+line.strip if line_num==5
+				reg["address"]=addrs if line_num==5	
+				reg["city"]=line.strip if line_num==6
+				reg["country"]=line.strip if line_num==7
+				line_num=line_num+1
+			  end			  
+          end
+		  return reg
+        end
+		# ----------------------------------------------------------------------------
+		
       end
-
     end
   end
 end

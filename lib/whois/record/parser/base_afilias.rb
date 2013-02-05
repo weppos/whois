@@ -93,6 +93,9 @@ module Whois
           build_contact("Tech", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
+        property_supported :billing_contacts do
+          build_contact("Billing", Whois::Record::Contact::TYPE_BILLING)
+        end
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject(&:empty?).map do |name|

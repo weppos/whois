@@ -98,6 +98,12 @@ module Whois
           end
         end
 
+        property_supported :billing_contacts do
+          id = node(node('nsset'))['billing-c'] rescue nil
+          if id
+            build_contact(id, Record::Contact::TYPE_BILLING)
+          end
+        end
 
         property_supported :nameservers do
           lines = node(node('nsset'))['nserver'] rescue nil

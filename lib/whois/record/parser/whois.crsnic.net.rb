@@ -5,8 +5,6 @@
 #
 # Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
-
-
 require 'whois/record/parser/base'
 require 'whois/record/scanners/verisign'
 
@@ -17,12 +15,11 @@ module Whois
 
       # Parser for the whois.crsnic.net server.
       class WhoisCrsnicNet < Base
-        include Scanners::Nodable
+        include Scanners::Ast
 
         property_supported :disclaimer do
           node("Disclaimer")
         end
-
 
         property_supported :domain do
           node("Domain Name") { |raw| raw.downcase }
@@ -30,6 +27,15 @@ module Whois
 
         property_not_supported :domain_id
 
+        property_supported :referral_whois do
+          node("Whois Server")
+        end
+
+        property_supported :referral_url do
+          node("Referral URL") do |raw|
+            last_useful_item(raw)
+          end
+        end
 
         property_supported :status do
           node("Status")
@@ -43,7 +49,6 @@ module Whois
           !available?
         end
 
-
         property_supported :created_on do
           node("Creation Date") { |raw| Time.parse(raw) }
         end
@@ -56,7 +61,6 @@ module Whois
           node("Expiration Date") { |raw| Time.parse(raw) }
         end
 
-
         property_supported :registrar do
           node("Registrar") do |raw|
             Whois::Record::Registrar.new(
@@ -67,14 +71,12 @@ module Whois
           end
         end
 
-
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject { |value| value =~ / / }.map do |name|
             Record::Nameserver.new(:name => name.downcase)
           end
         end
-
-
+		
         # Checks whether this response contains a message
         # that can be reconducted to a "WHOIS Server Unavailable" status.
         #
@@ -83,37 +85,24 @@ module Whois
           !!node("response:unavailable")
         end
 
-        def referral_whois
-          node("Whois Server")
-        end
-
-        def referral_url
-          node("Referral URL") do |lines|
-            last_useful_item(lines)
-          end
-        end
-
-
         # Initializes a new {Scanners::Verisign} instance
-        # passing the {#content_for_scanner}
+        # passing the #{content_for_scanner}
         # and calls +parse+ on it.
         #
         # @return [Hash]
         def parse
           Scanners::Verisign.new(content_for_scanner).parse
         end
-
-
-        private
+		
+      private
 
         # In case of "SPAM Response", the response contains more than one item
         # for the same value and the value becomes an Array.
         def last_useful_item(values)
           values.is_a?(Array) ? values.last : values
         end
-
+		
       end
-
     end
   end
 end

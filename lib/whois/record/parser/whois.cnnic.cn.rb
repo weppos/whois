@@ -17,7 +17,7 @@ module Whois
 
       # Parser for the whois.cnnic.cn server.
       class WhoisCnnicCn < Base
-        include Scanners::Nodable
+        include Scanners::Ast
 
 
         property_not_supported :disclaimer
@@ -32,6 +32,11 @@ module Whois
         end
 
 
+        property_not_supported :referral_whois
+
+        property_not_supported :referral_url
+
+
         property_supported :status do
           Array.wrap node("Domain Status")
         end
@@ -41,7 +46,7 @@ module Whois
         end
 
         property_supported :registered? do
-          !reserved? && !available?
+          reserved? || !available?
         end
 
         # NEWPROPERTY
@@ -64,8 +69,8 @@ module Whois
         property_supported :registrar do
           node("Sponsoring Registrar") do |value|
             Record::Registrar.new(
-              :id   => value,
-              :name => value
+              :id =>    value,
+              :name =>  value
             )
           end
         end
@@ -74,9 +79,7 @@ module Whois
           build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
 
-        property_supported :admin_contacts do
-          build_contact("Administrative", Whois::Record::Contact::TYPE_ADMIN)
-        end
+        property_not_supported :admin_contacts 
 
         property_not_supported :technical_contacts
 
@@ -99,16 +102,19 @@ module Whois
 
 
       private
-
+		# Modified by Yang Li 01/24/2013
         def build_contact(element, type)
-          node("#{element}") do |value|
-            Record::Contact.new(
-              :type         => type,
-              :id           => node("#{element} ID"),
-              :name         => value,
-              :email        => node("#{element} Contact Email")
-            )
-          end
+          n = node("#{element}")
+          o = node("#{element}")
+          e = node("#{element} Contact Email")
+          return if n.nil? && o.nil? && e.nil?
+
+          Record::Contact.new(
+            :type         => type,
+            :name         => n,
+            :organization => o,
+            :email        => e
+          )
         end
 
       end

@@ -70,8 +70,60 @@ module Whois
           end
         end
 
-      end
+		# The following methods are implemented by Yang Li on 01/29/2013
+		# ----------------------------------------------------------------------------
+        property_supported :domain do
+          return $1 if content_for_scanner =~ /domainname:\s+(.*)\n/i
+        end
+		
+		property_supported :domain_id do
+          return $1 if content_for_scanner =~ /Domain ID:\s+(.*)\n/i
+        end
+		
+        property_supported :registrar do
+          reg=Record::Registrar.new
+		  content_for_scanner.scan(/^registrar-(.*):\s+(.+)\n/).map do |entry|
+			reg["name"] = entry[1] if entry[0] =~ /name/i
+			reg["url"] = entry[1] if entry[0] =~ /url/i		
+			reg["email"] = entry[1] if entry[0] =~ /email/i
+			reg["country"] = entry[1] if entry[0] =~ /country/i				
+          end
+		  return reg
+        end
 
+        property_supported :registrant_contacts do
+          build_contact("org", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("adm", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("tec", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+        property_not_supported :billing_contacts 
+		
+      private
+
+        def build_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  content_for_scanner.scan(/^#{element}-(.*):\s+(.+)\n/).map do |entry|
+              reg["name"]=entry[1] if entry[0] =~ /name/i
+              reg["address"]=entry[1] if entry[0]=~ /address/i
+              reg["city"]= entry[1] if entry[0]=~ /city/i
+              reg["zip"]=entry[1] if entry[0]=~ /ZipCode/i
+              reg["country_code"]=entry[1] if entry[0]=~ /country/i
+			  reg["phone"]=entry[1] if entry[0]=~ /#{element}\sPhone\sNumber/i
+			  reg["fax"]=entry[1] if entry[0]=~ /#{element}\sFacsimile\sNumber/i
+			  reg["email"]=entry[1] if entry[0]=~ /#{element}\sEmail/i
+          end
+		  return reg
+        end	
+		# ----------------------------------------------------------------------------
+		
+      end
     end
   end
 end

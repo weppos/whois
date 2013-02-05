@@ -30,11 +30,11 @@ module Whois
 
       PROPERTIES = [
         :disclaimer,
-        :domain, :domain_id,
+        :domain, :domain_id, :referral_whois, :referral_url,
         :status, :available?, :registered?,
         :created_on, :updated_on, :expires_on,
         :registrar,
-        :registrant_contacts, :admin_contacts, :technical_contacts,
+        :registrant_contacts, :admin_contacts, :technical_contacts, :billing_contacts,
         :nameservers,
       ]
 
