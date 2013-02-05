@@ -5,7 +5,7 @@
 
 - SERVER: Added .AX TLD definition.
 
-- SERVER: Updated .AZ, .CO.ZA, .FM, .MC, .HN, .PH, .PW, .RW, .TD, .COM.UY, .VN TLD definitions.
+- SERVER: Updated .AZ, .CO.ZA, .FM, .MC, .HN, .PH, .PW, .RW, .SA, .TD, .COM.UY, .VN TLD definitions.
 
 - SERVER: Added .XN--MGBX4CD0AB (.مليسيا, Malaysia) IDN TLD definition.
 

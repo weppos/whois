@@ -256,7 +256,7 @@ Whois::Server.define :tld, ".rs", "whois.rnids.rs"
 Whois::Server.define :tld, ".edu.ru", "whois.informika.ru"
 Whois::Server.define :tld, ".ru", "whois.tcinet.ru"
 Whois::Server.define :tld, ".rw", nil, { :adapter => :none }
-Whois::Server.define :tld, ".sa", "saudinic.net.sa"
+Whois::Server.define :tld, ".sa", "whois.nic.net.sa"
 Whois::Server.define :tld, ".sb", "whois.nic.net.sb"
 Whois::Server.define :tld, ".sc", "whois.afilias-grs.info", { :adapter => :afilias }
 Whois::Server.define :tld, ".sd", nil, { :adapter => :none }
