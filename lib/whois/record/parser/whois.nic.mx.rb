@@ -74,8 +74,50 @@ module Whois
           end
         end
 
-      end
+		# The following methods are implemented by Yang Li on 02/05/2013
+		# ----------------------------------------------------------------------------
+        property_supported :domain do
+          return $1 if content_for_scanner =~ /Domain Name:\s+(.*)\n/i
+        end
+		
+		property_not_supported :domain_id
+		
+        property_not_supported :registrar 
+		
+		property_supported :admin_contacts do
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMIN)
+        end
 
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+        property_supported :billing_contacts do
+          build_contact("Billing Contact", Whois::Record::Contact::TYPE_BILLING)
+        end
+		
+      private
+
+        def build_contact(element, type)
+          reg=Record::Contact.new(:type => type)
+		  if content_for_scanner =~ /^#{element}:\n((.+\n)+)\n/i
+			  $1.scan(/^(.+):(.+)\n/).map do |entry|
+				  reg["name"]=entry[1].strip if entry[0] =~ /Name/i
+				  reg["organization"]=entry[1].strip if entry[0]=~ /Name/i
+				  reg["city"]= entry[1].strip if entry[0]=~ /City/i
+				  reg["state"]=entry[1].strip if entry[0]=~ /State/i
+				  reg["country"]=entry[1].strip if entry[0]=~ /Country/i
+			  end
+          end
+		  return reg
+        end	
+		# ----------------------------------------------------------------------------
+		
+      end
     end
   end
 end
