@@ -1,0 +1,52 @@
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=4.2.2.1?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       4.0.0.0 - 4.255.255.255
+CIDR:           4.0.0.0/8
+OriginAS:       
+NetName:        LVLT-ORG-4-8
+NetHandle:      NET-4-0-0-0-1
+Parent:         
+NetType:        Direct Allocation
+RegDate:        1992-12-01
+Updated:        2012-02-24
+Ref:            http://whois.arin.net/rest/net/NET-4-0-0-0-1
+
+
+OrgName:        Level 3 Communications, Inc.
+OrgId:          LVLT
+Address:        1025 Eldorado Blvd.
+City:           Broomfield
+StateProv:      CO
+PostalCode:     80021
+Country:        US
+RegDate:        1998-05-22
+Updated:        2012-01-30
+Comment:        ADDRESSES WITHIN THIS BLOCK ARE NON-PORTABLE
+Ref:            http://whois.arin.net/rest/org/LVLT
+
+OrgTechHandle: IPADD5-ARIN
+OrgTechName:   ipaddressing
+OrgTechPhone:  +1-877-453-8353 
+OrgTechEmail:  ipaddressing@level3.com
+OrgTechRef:    http://whois.arin.net/rest/poc/IPADD5-ARIN
+
+OrgNOCHandle: NOCSU27-ARIN
+OrgNOCName:   NOC Support
+OrgNOCPhone:  +1-877-453-8353 
+OrgNOCEmail:  noc.coreip@level3.com
+OrgNOCRef:    http://whois.arin.net/rest/poc/NOCSU27-ARIN
+
+OrgAbuseHandle: APL8-ARIN
+OrgAbuseName:   Abuse POC LVLT
+OrgAbusePhone:  +1-877-453-8353 
+OrgAbuseEmail:  security@level3.com
+OrgAbuseRef:    http://whois.arin.net/rest/poc/APL8-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+
