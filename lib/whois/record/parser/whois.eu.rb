@@ -73,6 +73,18 @@ module Whois
           end
         end
 
+
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   -1: Still in grace period, wait 7777777 seconds
+        #
+        def response_throttled?
+          !!(content_for_scanner =~ /Still in grace period/)
+        end
+
       end
 
     end

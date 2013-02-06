@@ -25,6 +25,8 @@
 
 - NEW: Added whois.ax parser.
 
+- NEW: whois.eu parser now recognizes throttled responses.
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
