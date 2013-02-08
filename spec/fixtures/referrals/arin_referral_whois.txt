@@ -1,0 +1,56 @@
+#
+# Query terms are ambiguous.  The query is assumed to be:
+#     "n 130.66.76.222"
+#
+# Use "?" to get help.
+#
+
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=130.66.76.222?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       130.66.0.0 - 130.67.255.255
+CIDR:           130.66.0.0/15
+OriginAS:       
+NetName:        RIPE-ERX-130-66-0-0
+NetHandle:      NET-130-66-0-0-1
+Parent:         NET-130-0-0-0-0
+NetType:        Early Registrations, Transferred to RIPE NCC
+Comment:        These addresses have been further assigned to users in
+Comment:        the RIPE NCC region.  Contact information can be found in
+Comment:        the RIPE database at http://www.ripe.net/whois
+RegDate:        2003-11-12
+Updated:        2003-11-12
+Ref:            http://whois.arin.net/rest/net/NET-130-66-0-0-1
+
+OrgName:        RIPE Network Coordination Centre
+OrgId:          RIPE
+Address:        P.O. Box 10096
+City:           Amsterdam
+StateProv:      
+PostalCode:     1001EB
+Country:        NL
+RegDate:        
+Updated:        2011-09-24
+Ref:            http://whois.arin.net/rest/org/RIPE
+
+ReferralServer: whois://whois.ripe.net:43
+
+OrgAbuseHandle: RNO29-ARIN
+OrgAbuseName:   RIPE NCC Operations
+OrgAbusePhone:  +31 20 535 4444 
+OrgAbuseEmail:  hostmaster@ripe.net
+OrgAbuseRef:    http://whois.arin.net/rest/poc/RNO29-ARIN
+
+OrgTechHandle: RNO29-ARIN
+OrgTechName:   RIPE NCC Operations
+OrgTechPhone:  +31 20 535 4444 
+OrgTechEmail:  hostmaster@ripe.net
+OrgTechRef:    http://whois.arin.net/rest/poc/RNO29-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+

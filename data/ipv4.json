@@ -145,7 +145,8 @@
     "host": "whois.apnic.net"
   },
   "0.0.0.0/1": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "133.0.0.0/8": {
     "host": "whois.nic.ad.jp"
@@ -163,7 +164,8 @@
     "host": "whois.ripe.net"
   },
   "141.86.0.0/16": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "141.64.0.0/11": {
     "host": "whois.ripe.net"
@@ -364,16 +366,19 @@
     "host": "whois.lacnic.net"
   },
   "128.0.0.0/2": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "192.71.0.0/16": {
     "host": "whois.ripe.net"
   },
   "192.72.253.0/24": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "192.72.254.0/24": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "192.72.0.0/16": {
     "host": "whois.apnic.net"
@@ -397,7 +402,8 @@
     "host": "whois.ripe.net"
   },
   "192.0.0.0/8": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "193.0.0.0/8": {
     "host": "whois.ripe.net"
@@ -409,7 +415,8 @@
     "host": "whois.afrinic.net"
   },
   "198.0.0.0/7": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "200.17.0.0/16": {
     "host": "whois.nic.br"
@@ -505,10 +512,12 @@
     "host": "rwhois.gin.ntt.net"
   },
   "204.0.0.0/6": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "208.0.0.0/7": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "209.94.192.0/19": {
     "host": "whois.lacnic.net"
@@ -634,10 +643,12 @@
     "host": "whois.ripe.net"
   },
   "214.0.0.0/7": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "216.0.0.0/8": {
-    "host": "whois.arin.net"
+    "host": "whois.arin.net",
+    "adapter": "arin"
   },
   "217.0.0.0/8": {
     "host": "whois.ripe.net"

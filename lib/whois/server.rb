@@ -25,6 +25,7 @@ module Whois
     # customized to handle WHOIS queries for a type or a group of servers.
     module Adapters
       autoload :Base,             "whois/server/adapters/base"
+      autoload :Arin,             "whois/server/adapters/arin"
       autoload :Arpa,             "whois/server/adapters/arpa"
       autoload :Afilias,          "whois/server/adapters/afilias"
       autoload :Formatted,        "whois/server/adapters/formatted"
