@@ -48,8 +48,8 @@ module Whois
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Last modified : (.+)\n/
-            Time.parse($1)
+          if content_for_scanner =~ /Last modified : (.+)\n/ && !(value = $1).empty?
+            Time.parse(value)
           end
         end
 

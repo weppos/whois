@@ -95,6 +95,8 @@
 
 - FIXED: whois.jprs.jp should support status `Deleted`.
 
+- FIXED: whois.nic.kz crashes when last update date is blank.
+
 
 ### Backward Incompatibilities
 

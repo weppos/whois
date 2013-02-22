@@ -1,0 +1,38 @@
+Whois Server for the KZ top level domain name.
+This server is maintained by KazNIC Organization, a ccTLD manager for Kazakhstan Republic.
+
+Domain Name............: pedamotor.kz
+
+Organization Using Domain Name
+Name...................: Tsymbal Eugeniy
+Organization Name......: NUR-LIGHT TOO
+Street Address.........: Abay str 5, 1
+City...................: Almaty
+State..................: 
+Postal Code............: 483331
+Country................: KZ
+
+Administrative Contact/Agent
+NIC Handle.............: PS0000001408-KZ
+Name...................: Tsymbal Eugeniy
+Phone Number...........: +7-727-2954585 
+Fax Number.............: +7-727-3827662 
+Email Address..........: eas_kz@mail.ru
+
+Nameserver in listed order
+
+Primary server.........: ns.ps.kz
+Primary ip address.....: 195.210.46.2
+
+Secondary server.......: ns1.ps.kz
+Secondary ip address...: 195.93.152.9
+
+
+Domain created: 2010-09-13 06:40:28 (GMT+0:00)
+Last modified : 
+Domain status : clientTransferProhibited - 
+                clientRenewProhibited - 
+                
+Registar created: ICPS
+Current Registar: ICPS
+
