@@ -1,0 +1,11 @@
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-01-30 18:55:00")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2010-03-06 15:53:04")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2014-01-30")

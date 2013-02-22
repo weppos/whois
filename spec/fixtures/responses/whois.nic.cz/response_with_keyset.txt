@@ -1,0 +1,84 @@
+%  (c) 2006-2013 CZ.NIC, z.s.p.o.
+% 
+% Intended use of supplied data and information
+% 
+% Data contained in the domain name register, as well as information
+% supplied through public information services of CZ.NIC association,
+% are appointed only for purposes connected with Internet network
+% administration and operation, or for the purpose of legal or other
+% similar proceedings, in process as regards a matter connected
+% particularly with holding and using a concrete domain name.
+% 
+% Full text available at:
+% http://www.nic.cz/page/306/intended-use-of-supplied-data-and-information/
+% 
+% See also a search service at http://www.nic.cz/whois/
+% 
+% 
+% Whoisd Server Version: 3.6.0
+% Timestamp: Fri Feb 22 11:20:02 2013
+
+domain:       realityporno.cz
+registrant:   SB:GLOBE-SPKA040146
+admin-c:      GLOBE-PKVO462567
+nsset:        NSS:GLOBE-SGLO000001:1
+keyset:       A24-KEYSET
+registrar:    REG-ACTIVE24
+status:       paid and in zone
+registered:   30.01.2006 18:55:00
+changed:      06.03.2010 15:53:04
+expire:       30.01.2014
+
+contact:      SB:GLOBE-SPKA040146
+org:          PK62, a.s
+name:         PK62, a.s
+address:      Bohdalecka 6/1420
+address:      Praha 10
+address:      10100
+address:      CZ
+e-mail:       domeny@pk62.cz
+registrar:    REG-ACTIVE24
+created:      19.11.2004 15:05:00
+
+contact:      GLOBE-PKVO462567
+name:         Pavel Kvoriak
+address:      Bohdalecka 6/1420
+address:      Praha 10
+address:      10100
+address:      CZ
+phone:        +420.281090653
+fax-no:       +420.281090622
+e-mail:       domeny@pk62.cz
+registrar:    REG-ACTIVE24
+created:      19.11.2004 14:05:00
+
+nsset:        NSS:GLOBE-SGLO000001:1
+nserver:      beta.ns.active24.cz (81.0.238.27, 2001:1528:151::12)
+nserver:      gama.ns.active24.sk 
+nserver:      alfa.ns.active24.cz (81.95.96.2, 2a02:4a8:ac24:100::96:2)
+tech-c:       ACTIVE24
+registrar:    REG-ACTIVE24
+created:      01.10.2007 02:00:00
+changed:      19.07.2011 15:27:33
+
+contact:      ACTIVE24
+org:          ACTIVE 24, s.r.o.
+name:         ACTIVE 24, s.r.o.
+address:      Sokolovská 394/17
+address:      Praha 8
+address:      186 00
+address:      CZ
+phone:        +420.234262000
+fax-no:       +420.234262009
+registrar:    REG-ACTIVE24
+created:      29.04.2008 12:35:02
+changed:      28.11.2012 15:33:24
+
+keyset:       A24-KEYSET
+dnskey:       257 3 5 AwEAAaZg1mHVw0d/qllyQBGqnRGJGRbL/51OuJ/QmAwt5VACOeIbRjAOfZ5RDvnjc9IekSVgXiSjDuO+gSm63bvFHTiGLKUnJD03TmB12oOctDB0pMs0eQT+2HoKdkgmqipzqYssVZOdcb/t/NP3fq3xLdYlJgTBmx1769NsyF602her5PSojVcxRjUlqqA4zNmN9K2r6+xrbhSHf0+dGC2u8O4bW1qGEoeo2M+xr7oUiUL8yH5n0DbhxcribLcuGro1LTn4s3P9xTYGSRb0Pd9rK0s7csb7FxyGdwsOqmZr47t3UQn2pp8q4guca2ef/hjevkq+wVZv/eUHhu6FzMCYTqc=
+tech-c:       ACTIVE24
+registrar:    REG-ACTIVE24
+created:      26.11.2008 14:12:02
+changed:      07.10.2011 21:51:15
+
+

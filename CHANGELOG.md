@@ -97,6 +97,8 @@
 
 - FIXED: whois.nic.kz crashes when last update date is blank.
 
+- FIXED: whois.nic.cz crashes when keyset node is present in the whois response.
+
 
 ### Backward Incompatibilities
 
