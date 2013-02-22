@@ -1,6 +1,6 @@
 Not found: u34jedzcq.co
 
->>>> Whois database was last updated on: Wed Jan 16 16:17:31 GMT 2013 <<<<
+>>>> Whois database was last updated on: Fri Feb 22 10:35:15 GMT 2013 <<<<
 .CO Internet, S.A.S., the Administrator for .CO, has collected this
 information for the WHOIS database through Accredited Registrars.  
 This information is provided to you for informational purposes only 
@@ -35,4 +35,4 @@ NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT
 INDICATIVE OF THE AVAILABILITY OF A DOMAIN NAME.   
  
 All domain names are subject to certain additional domain name registration 
-rules. For details, please visit our site at www.cointernet.co <http://www.cointernet.co>. 
+rules. For details, please visit our site at www.cointernet.co <http://www.cointernet.co>.

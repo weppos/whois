@@ -2,7 +2,7 @@ google.cl:
 
 ACE: google.cl (RFC-3490, RFC-3491, RFC-3492)
 
-Google Inc. Representada por NameAction Chile S.A. (ASESORIAS NAMEACTION CHILE S.A)
+Google Inc. Representada por NameAction Chile S.A. (ASESORIAS NAMEACTION CHILE LIMITADA)
 
 Contacto Administrativo (Administrative Contact):
     Nombre      : Markmonitor Tech
@@ -19,10 +19,10 @@ Servidores de nombre (Domain servers):
     ns2.google.com (216.239.34.10)
 
 Última modificación al formulario
-    (Database last updated on): 23 de agosto de 2010 (10:07:55 GMT)
+    (Database last updated on): 23 de agosto de 2012 (10:10:08 GMT)
 
 Más información (More information):
     http://www.nic.cl/cgi-bin/dom-CL?q=google
 
-Este mensajes está impreso en ISO8859-1
-(This message is printed in ISO8859-1)
+Este mensajes está impreso en ISO-8859-1
+(This message is printed in ISO-8859-1)

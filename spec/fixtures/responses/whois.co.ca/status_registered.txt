@@ -1,18 +1,11 @@
 domain: internet.co.ca
-admin_mailbox: info@internet.co.ca
-admin_name: Daniel Zeng
-admin_phone: 905-528-2108
 date_approved: 2005-06-25 16:03:30
-date_renewal: 2011-06-25
+date_renewal: 2013-06-25
 ns1_hostname: ns1.canadawebhosting.com
 ns1_netaddress: 65.39.254.5
 ns2_hostname: ns2.canadawebhosting.com
 ns2_netaddress: 216.187.107.134
-organization: Internet.co.ca
 registrar: RegCA Enterprises Inc. (www.reg.ca)
-tech_mailbox: info@internet.co.ca
-tech_name: Daniel Zeng
-tech_phone: 905-528-2108
 
 This information is collected for information purposes only, and is intended
 only for determining the owner of .CO.CA domains.  No guarantees will be made

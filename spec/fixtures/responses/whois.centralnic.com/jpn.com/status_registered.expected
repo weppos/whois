@@ -25,7 +25,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-09-10 11:47:09 UTC")
+  should: %s == Time.parse("2013-02-20 22:17:40 UTC")
 
 #expires_on
   should: %s CLASS(time)
@@ -44,54 +44,54 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == "H1090485"
-  should: %s[0].name          == "deron simons"
-  should: %s[0].organization  == nil
-  should: %s[0].address       == "Select garden centre\nsundridge\nsevenoaks"
-  should: %s[0].city          == "kent"
-  should: %s[0].zip           == "TN14 6ED"
-  should: %s[0].state         == nil
+  should: %s[0].id            == "MNT78E22765897"
+  should: %s[0].name          == "Identity Protection Service"
+  should: %s[0].organization  == "Identity Protect Limited"
+  should: %s[0].address       == "PO Box 795"
+  should: %s[0].city          == "Godalming"
+  should: %s[0].zip           == "GU7 9GA"
+  should: %s[0].state         == "Surrey"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "GB"
-  should: %s[0].phone         == "+44.7957842260"
-  should: %s[0].fax           == nil
-  should: %s[0].email         == "deronsimons@aol.com"
+  should: %s[0].phone         == "+44.1483307527"
+  should: %s[0].fax           == "+44.1483304031"
+  should: %s[0].email         == "koi.jpn.com@identity-protect.org"
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id            == "H312617"
-  should: %s[0].name          == "deron simons"
-  should: %s[0].organization  == "deron simons"
-  should: %s[0].address       == "Select garden centre\nsundridge\nsevenoaks"
-  should: %s[0].city          == "kent"
-  should: %s[0].zip           == "TN14 6ED"
-  should: %s[0].state         == nil
+  should: %s[0].id            == "MNT78E22765897"
+  should: %s[0].name          == "Identity Protection Service"
+  should: %s[0].organization  == "Identity Protect Limited"
+  should: %s[0].address       == "PO Box 795"
+  should: %s[0].city          == "Godalming"
+  should: %s[0].zip           == "GU7 9GA"
+  should: %s[0].state         == "Surrey"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "GB"
-  should: %s[0].phone         == "+44.7957842260"
-  should: %s[0].fax           == nil
-  should: %s[0].email         == "deronsimons@aol.com"
+  should: %s[0].phone         == "+44.1483307527"
+  should: %s[0].fax           == "+44.1483304031"
+  should: %s[0].email         == "koi.jpn.com@identity-protect.org"
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "I6467"
-  should: %s[0].name          == "Domain Admin"
-  should: %s[0].organization  == "Webfusion"
-  should: %s[0].address       == "5 Roundwood Avenue\nStockley Park"
-  should: %s[0].city          == "Uxbridge"
-  should: %s[0].zip           == "UB11 1FF"
-  should: %s[0].state         == "Middlesex"
+  should: %s[0].id            == "MNT78E22765897"
+  should: %s[0].name          == "Identity Protection Service"
+  should: %s[0].organization  == "Identity Protect Limited"
+  should: %s[0].address       == "PO Box 795"
+  should: %s[0].city          == "Godalming"
+  should: %s[0].zip           == "GU7 9GA"
+  should: %s[0].state         == "Surrey"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "GB"
-  should: %s[0].phone         == "+44.8458590018"
-  should: %s[0].fax           == "+44.8701650437"
-  should: %s[0].email         == "hosting-domains@webfusion.com"
+  should: %s[0].phone         == "+44.1483307527"
+  should: %s[0].fax           == "+44.1483304031"
+  should: %s[0].email         == "koi.jpn.com@identity-protect.org"
 
 
 #nameservers

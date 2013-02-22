@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_available.expected" do
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2010 Canadian Internet Registration Authority, (http://www.cira.ca/)"
+      subject.disclaimer.should == "Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal\nNotice, available at http://www.cira.ca/legal-notice/?lang=en\n\n(c) 2013 Canadian Internet Registration Authority, (http://www.cira.ca/)"
     end
   end
   describe "#domain" do

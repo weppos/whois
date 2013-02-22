@@ -38,10 +38,10 @@ Tech Email:docjgs@videotron.ca
 Sponsoring Registrar ID:7065-EN
 Sponsoring Registrar IANA ID:48
 Sponsoring Registrar Organization:eNom, Inc.
-Sponsoring Registrar Street1:15801 NE 24th St.
-Sponsoring Registrar City:Bellevue
+Sponsoring Registrar Street1:5808 Lake Washington Boulevard
+Sponsoring Registrar City:Kirkland
 Sponsoring Registrar State/Province:WA
-Sponsoring Registrar Postal Code:98008
+Sponsoring Registrar Postal Code:98034
 Sponsoring Registrar Country:US
 Sponsoring Registrar Phone:425-274-4500
 Sponsoring Registrar FAX:425-974-4796

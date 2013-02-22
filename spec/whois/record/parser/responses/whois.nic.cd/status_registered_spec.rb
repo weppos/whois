@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED"]
+      subject.status.should == ["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED"]
     end
   end
   describe "#available?" do
@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-10-01 00:00:00")
+      subject.expires_on.should == Time.parse("2013-10-01 00:00:00")
     end
   end
   describe "#nameservers" do

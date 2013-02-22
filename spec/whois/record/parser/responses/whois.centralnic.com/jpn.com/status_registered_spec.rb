@@ -60,7 +60,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-09-10 11:47:09 UTC")
+      subject.updated_on.should == Time.parse("2013-02-20 22:17:40 UTC")
     end
   end
   describe "#expires_on" do
@@ -84,18 +84,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == "H1090485"
-      subject.registrant_contacts[0].name.should          == "deron simons"
-      subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == "Select garden centre\nsundridge\nsevenoaks"
-      subject.registrant_contacts[0].city.should          == "kent"
-      subject.registrant_contacts[0].zip.should           == "TN14 6ED"
-      subject.registrant_contacts[0].state.should         == nil
+      subject.registrant_contacts[0].id.should            == "MNT78E22765897"
+      subject.registrant_contacts[0].name.should          == "Identity Protection Service"
+      subject.registrant_contacts[0].organization.should  == "Identity Protect Limited"
+      subject.registrant_contacts[0].address.should       == "PO Box 795"
+      subject.registrant_contacts[0].city.should          == "Godalming"
+      subject.registrant_contacts[0].zip.should           == "GU7 9GA"
+      subject.registrant_contacts[0].state.should         == "Surrey"
       subject.registrant_contacts[0].country.should       == nil
       subject.registrant_contacts[0].country_code.should  == "GB"
-      subject.registrant_contacts[0].phone.should         == "+44.7957842260"
-      subject.registrant_contacts[0].fax.should           == nil
-      subject.registrant_contacts[0].email.should         == "deronsimons@aol.com"
+      subject.registrant_contacts[0].phone.should         == "+44.1483307527"
+      subject.registrant_contacts[0].fax.should           == "+44.1483304031"
+      subject.registrant_contacts[0].email.should         == "koi.jpn.com@identity-protect.org"
     end
   end
   describe "#admin_contacts" do
@@ -104,18 +104,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      subject.admin_contacts[0].id.should            == "H312617"
-      subject.admin_contacts[0].name.should          == "deron simons"
-      subject.admin_contacts[0].organization.should  == "deron simons"
-      subject.admin_contacts[0].address.should       == "Select garden centre\nsundridge\nsevenoaks"
-      subject.admin_contacts[0].city.should          == "kent"
-      subject.admin_contacts[0].zip.should           == "TN14 6ED"
-      subject.admin_contacts[0].state.should         == nil
+      subject.admin_contacts[0].id.should            == "MNT78E22765897"
+      subject.admin_contacts[0].name.should          == "Identity Protection Service"
+      subject.admin_contacts[0].organization.should  == "Identity Protect Limited"
+      subject.admin_contacts[0].address.should       == "PO Box 795"
+      subject.admin_contacts[0].city.should          == "Godalming"
+      subject.admin_contacts[0].zip.should           == "GU7 9GA"
+      subject.admin_contacts[0].state.should         == "Surrey"
       subject.admin_contacts[0].country.should       == nil
       subject.admin_contacts[0].country_code.should  == "GB"
-      subject.admin_contacts[0].phone.should         == "+44.7957842260"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "deronsimons@aol.com"
+      subject.admin_contacts[0].phone.should         == "+44.1483307527"
+      subject.admin_contacts[0].fax.should           == "+44.1483304031"
+      subject.admin_contacts[0].email.should         == "koi.jpn.com@identity-protect.org"
     end
   end
   describe "#technical_contacts" do
@@ -124,18 +124,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "I6467"
-      subject.technical_contacts[0].name.should          == "Domain Admin"
-      subject.technical_contacts[0].organization.should  == "Webfusion"
-      subject.technical_contacts[0].address.should       == "5 Roundwood Avenue\nStockley Park"
-      subject.technical_contacts[0].city.should          == "Uxbridge"
-      subject.technical_contacts[0].zip.should           == "UB11 1FF"
-      subject.technical_contacts[0].state.should         == "Middlesex"
+      subject.technical_contacts[0].id.should            == "MNT78E22765897"
+      subject.technical_contacts[0].name.should          == "Identity Protection Service"
+      subject.technical_contacts[0].organization.should  == "Identity Protect Limited"
+      subject.technical_contacts[0].address.should       == "PO Box 795"
+      subject.technical_contacts[0].city.should          == "Godalming"
+      subject.technical_contacts[0].zip.should           == "GU7 9GA"
+      subject.technical_contacts[0].state.should         == "Surrey"
       subject.technical_contacts[0].country.should       == nil
       subject.technical_contacts[0].country_code.should  == "GB"
-      subject.technical_contacts[0].phone.should         == "+44.8458590018"
-      subject.technical_contacts[0].fax.should           == "+44.8701650437"
-      subject.technical_contacts[0].email.should         == "hosting-domains@webfusion.com"
+      subject.technical_contacts[0].phone.should         == "+44.1483307527"
+      subject.technical_contacts[0].fax.should           == "+44.1483304031"
+      subject.technical_contacts[0].email.should         == "koi.jpn.com@identity-protect.org"
     end
   end
   describe "#nameservers" do

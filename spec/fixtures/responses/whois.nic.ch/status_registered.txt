@@ -17,9 +17,10 @@ Technical contact:
 Google Inc.
 DNS Admin
 2400 E. Bayshore Pkwy
- 
 US-94043 Mountain View
 United States
+
+DNSSEC:N
 
 Name servers:
 ns1.google.com

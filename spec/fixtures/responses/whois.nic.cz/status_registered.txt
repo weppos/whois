@@ -1,4 +1,4 @@
-%  (c) 2006-2012 CZ.NIC, z.s.p.o.
+%  (c) 2006-2013 CZ.NIC, z.s.p.o.
 % 
 % Intended use of supplied data and information
 % 
@@ -15,8 +15,8 @@
 % See also a search service at http://www.nic.cz/whois/
 % 
 % 
-% Whoisd Server Version: 3.4.0
-% Timestamp: Tue Jul 03 14:52:17 2012
+% Whoisd Server Version: 3.6.0
+% Timestamp: Fri Feb 22 11:36:51 2013
 
 domain:       google.cz
 registrant:   MM12383

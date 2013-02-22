@@ -66,7 +66,7 @@ Domain Registration Date:                    Mon Apr 26 07:50:40 GMT 2010
 Domain Expiration Date:                      Thu Apr 25 23:59:59 GMT 2013
 Domain Last Updated Date:                    Mon Oct 08 06:05:55 GMT 2012
 
->>>> Whois database was last updated on: Wed Jan 16 16:17:31 GMT 2013 <<<<
+>>>> Whois database was last updated on: Fri Feb 22 10:32:52 GMT 2013 <<<<
 .CO Internet, S.A.S., the Administrator for .CO, has collected this
 information for the WHOIS database through Accredited Registrars.  
 This information is provided to you for informational purposes only 
@@ -101,4 +101,4 @@ NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT
 INDICATIVE OF THE AVAILABILITY OF A DOMAIN NAME.   
  
 All domain names are subject to certain additional domain name registration 
-rules. For details, please visit our site at www.cointernet.co <http://www.cointernet.co>. 
+rules. For details, please visit our site at www.cointernet.co <http://www.cointernet.co>.
