@@ -95,8 +95,6 @@
 
 - FIXED: whois.jprs.jp should support status `Deleted`.
 
-- FIXED: Fixed parsing of nameservers on register.com (GH-207).
-
 
 ### Backward Incompatibilities
 
