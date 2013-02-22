@@ -71,8 +71,10 @@ module Whois
         property_supported :nameservers do
           if content_for_scanner =~ /(?:DNS|Name) Servers:\n((.+\n)+)\n/
             $1.split("\n").map do |line|
-              Record::Nameserver.new(:name => line.strip)
-            end
+              stripped = line.strip
+              next if stripped.empty? || !line.start_with?(' ')
+              Record::Nameserver.new(:name => stripped)
+            end.compact
           end
         end
 
