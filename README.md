@@ -194,4 +194,4 @@ See the [CHANGELOG](CHANGELOG.md) file for details.
 
 ## License
 
-Copyright (c) 2009-2012 Simone Carletti. This is Free Software distributed under the MIT license.
+Copyright (c) 2009-2013 Simone Carletti. This is Free Software distributed under the MIT license.
