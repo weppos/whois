@@ -1,5 +1,12 @@
+#domain
+  should: %s == "travel.travel"
+
+#domain_id
+  should: %s == "D24096-TRAVEL"
+
+
 #status
-  should: %s == ["ok"]
+  should: %s == "ok"
 
 #available?
   should: %s == false
@@ -10,21 +17,81 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2005-10-04 21:44:27 UTC")
+  should: %s == Time.parse("2005-10-04 21:44:27 GMT")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2006-07-23 16:08:37 UTC")
+  should: %s == Time.parse("2010-11-22 23:14:32 GMT")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-10-03 23:59:59 UTC")
+  should: %s == Time.parse("2021-10-03 23:59:59 GMT")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "NEUSTAR GATEWAY"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "TRALLIANCE"
+  should: %s[0].name          == "Tralliance Corporation"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "110 East Broward Blvd, 14th floor"
+  should: %s[0].city          == "Fort Lauderdale"
+  should: %s[0].zip           == "33301"
+  should: %s[0].state         == "FL"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.9547695999"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "info@tralliance.travel"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "TRALLIANCE"
+  should: %s[0].name          == "Tralliance Corporation"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "110 East Broward Blvd, 14th floor"
+  should: %s[0].city          == "Fort Lauderdale"
+  should: %s[0].zip           == "33301"
+  should: %s[0].state         == "FL"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.9547695999"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "info@tralliance.travel"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "TRALLIANCE"
+  should: %s[0].name          == "Tralliance Corporation"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "110 East Broward Blvd, 14th floor"
+  should: %s[0].city          == "Fort Lauderdale"
+  should: %s[0].zip           == "33301"
+  should: %s[0].state         == "FL"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.9547695999"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "info@tralliance.travel"
 
 
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "netsys.com"
+  should: %s[0].name == "ns01-mia.theglobe.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns01-mia.theglobe.com"
+  should: %s[1].name == "netsys.com"

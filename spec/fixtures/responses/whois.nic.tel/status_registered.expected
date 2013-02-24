@@ -1,5 +1,12 @@
+#domain
+  should: %s == "google.tel"
+
+#domain_id
+  should: %s == "D587349-TEL"
+
+
 #status
-  should: %s == :registered
+  should: %s == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
 
 #available?
   should: %s == false
@@ -10,15 +17,75 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-04-19 12:36:25 UTC")
+  should: %s == Time.parse("2009-03-23 23:59:59 GMT")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-04-20 12:39:49 UTC")
+  should: %s == Time.parse("2013-02-19 10:23:33 GMT")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-04-18 23:59:59 UTC")
+  should: %s == Time.parse("2014-03-22 23:59:59 GMT")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "292"
+  should: %s.name         == "MARKMONITOR, INC."
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "MMR-2383"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "MMR-2383"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "MMR-2383"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country       == "United States"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
 
 
 #nameservers

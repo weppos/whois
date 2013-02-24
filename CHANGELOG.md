@@ -27,6 +27,12 @@
 
 - NEW: whois.eu parser now recognizes throttled responses.
 
+- NEW: Added full whois.nic.us parser.
+
+- NEW: Added full whois.nic.travel parser.
+
+- NEW: Added full whois.nic.tel parser.
+
 - CHANGED: Dropped support for Ruby 1.8
 
 - CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable

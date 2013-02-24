@@ -1,6 +1,7 @@
 Domain Name:                                 TRAVEL.TRAVEL
 Domain ID:                                   D24096-TRAVEL
 Sponsoring Registrar:                        NEUSTAR GATEWAY
+Registrar URL (registration services):       whois.neustar.us
 Domain Status:                               ok
 Registrant ID:                               TRALLIANCE
 Registrant Name:                             Tralliance Corporation
@@ -42,15 +43,15 @@ Technical Contact Country:                   United States
 Technical Contact Country Code:              US
 Technical Contact Phone Number:              +1.9547695999
 Technical Contact Email:                     info@tralliance.travel
-Name Server:                                 NETSYS.COM
 Name Server:                                 NS01-MIA.THEGLOBE.COM
+Name Server:                                 NETSYS.COM
 Created by Registrar:                        NEUSTAR GATEWAY
-Last Updated by Registrar:                   NMUTONYI
+Last Updated by Registrar:                   NEUSTAR GATEWAY
 Domain Registration Date:                    Tue Oct 04 21:44:27 GMT 2005
-Domain Expiration Date:                      Sun Oct 03 23:59:59 GMT 2010
-Domain Last Updated Date:                    Sun Jul 23 16:08:37 GMT 2006
+Domain Expiration Date:                      Sun Oct 03 23:59:59 GMT 2021
+Domain Last Updated Date:                    Mon Nov 22 23:14:32 GMT 2010
 
->>>> Whois database was last updated on: Fri Dec 25 21:30:26 GMT 2009 <<<<
+>>>> Whois database was last updated on: Sun Feb 24 17:57:36 GMT 2013 <<<<
 
 Tralliance, Inc., the Registry Operator for .travel, has collected this information
 for the WHOIS database through an ICANN-Accredited Registrar.  This information
