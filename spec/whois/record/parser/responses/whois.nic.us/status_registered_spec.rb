@@ -39,19 +39,19 @@ describe Whois::Record::Parser::WhoisNicUs, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2002-04-19 23:15:57 UTC")
+      subject.created_on.should == Time.parse("2002-04-19 23:15:57 GMT")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-03-17 09:40:30 UTC")
+      subject.updated_on.should == Time.parse("2012-10-17 22:46:23 GMT")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-04-18 23:59:59 UTC")
+      subject.expires_on.should == Time.parse("2013-04-18 23:59:59 GMT")
     end
   end
   describe "#nameservers" do

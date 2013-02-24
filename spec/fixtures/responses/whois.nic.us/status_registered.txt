@@ -1,64 +1,67 @@
 Domain Name:                                 GOOGLE.US
 Domain ID:                                   D775573-US
 Sponsoring Registrar:                        MARKMONITOR, INC.
+Sponsoring Registrar IANA ID:                292
 Registrar URL (registration services):       whois.markmonitor.com
 Domain Status:                               clientDeleteProhibited
 Domain Status:                               clientTransferProhibited
 Domain Status:                               clientUpdateProhibited
-Registrant ID:                               MMR-32103
-Registrant Name:                             DNS Admin
+Registrant ID:                               MMR-135878
+Registrant Name:                             Google Inc
 Registrant Organization:                     Google Inc.
-Registrant Address1:                         2400 E. Bayshore Pkwy
+Registrant Address1:                         1600 Amphitheatre Parkway
 Registrant City:                             Mountain View
 Registrant State/Province:                   CA
 Registrant Postal Code:                      94043
 Registrant Country:                          United States
 Registrant Country Code:                     US
-Registrant Phone Number:                     +1.6503300100
-Registrant Facsimile Number:                 +1.6506181499
-Registrant Email:                            dns-admin@GOOGLE.COM
+Registrant Phone Number:                     +1.6502530000
+Registrant Facsimile Number:                 +1.6502530001
+Registrant Email:                            dns-admin@google.com
 Registrant Application Purpose:              P1
-Registrant Nexus Category:                   C11
-Administrative Contact ID:                   MMR-32104
-Administrative Contact Name:                 DNS Admin
+Registrant Nexus Category:                   C21
+Administrative Contact ID:                   MMR-136042
+Administrative Contact Name:                 Christina Chiou
 Administrative Contact Organization:         Google Inc.
-Administrative Contact Address1:             2400 E. Bayshore Pkwy
+Administrative Contact Address1:             1600 Amphitheatre Parkway
 Administrative Contact City:                 Mountain View
 Administrative Contact State/Province:       CA
 Administrative Contact Postal Code:          94043
 Administrative Contact Country:              United States
 Administrative Contact Country Code:         US
-Administrative Contact Phone Number:         +1.6503300100
-Administrative Contact Facsimile Number:     +1.6506181499
-Administrative Contact Email:                dns-admin@GOOGLE.COM
-Billing Contact ID:                          MMR-32106
-Billing Contact Name:                        DNS Admin
+Administrative Contact Phone Number:         +1.6502530000
+Administrative Contact Facsimile Number:     +1.6502530001
+Administrative Contact Email:                dns-admin@google.com
+Administrative Application Purpose:          P1
+Administrative Nexus Category:               C21
+Billing Contact ID:                          MMR-136042
+Billing Contact Name:                        Christina Chiou
 Billing Contact Organization:                Google Inc.
-Billing Contact Address1:                    2400 E. Bayshore Pkwy
+Billing Contact Address1:                    1600 Amphitheatre Parkway
 Billing Contact City:                        Mountain View
 Billing Contact State/Province:              CA
 Billing Contact Postal Code:                 94043
 Billing Contact Country:                     United States
 Billing Contact Country Code:                US
-Billing Contact Phone Number:                +1.6503300100
-Billing Contact Facsimile Number:            +1.6506181499
-Billing Contact Email:                       dns-admin@GOOGLE.COM
-Billing Application Purpose:                 P3
-Billing Nexus Category:                      C11
-Technical Contact ID:                        MMR-32105
-Technical Contact Name:                      DNS Admin
+Billing Contact Phone Number:                +1.6502530000
+Billing Contact Facsimile Number:            +1.6502530001
+Billing Contact Email:                       dns-admin@google.com
+Billing Application Purpose:                 P1
+Billing Nexus Category:                      C21
+Technical Contact ID:                        MMR-136042
+Technical Contact Name:                      Christina Chiou
 Technical Contact Organization:              Google Inc.
-Technical Contact Address1:                  2400 E. Bayshore Pkwy
+Technical Contact Address1:                  1600 Amphitheatre Parkway
 Technical Contact City:                      Mountain View
 Technical Contact State/Province:            CA
 Technical Contact Postal Code:               94043
 Technical Contact Country:                   United States
 Technical Contact Country Code:              US
-Technical Contact Phone Number:              +1.6503300100
-Technical Contact Facsimile Number:          +1.6506181499
+Technical Contact Phone Number:              +1.6502530000
+Technical Contact Facsimile Number:          +1.6502530001
 Technical Contact Email:                     dns-admin@google.com
-Technical Application Purpose:               P3
-Technical Nexus Category:                    C11
+Technical Application Purpose:               P1
+Technical Nexus Category:                    C21
 Name Server:                                 NS1.GOOGLE.COM
 Name Server:                                 NS2.GOOGLE.COM
 Name Server:                                 NS3.GOOGLE.COM
@@ -67,10 +70,10 @@ Created by Registrar:                        BULKREGISTER.COM, INC.
 Last Updated by Registrar:                   MARKMONITOR, INC.
 Last Transferred Date:                       Fri Jul 22 18:37:41 GMT 2005
 Domain Registration Date:                    Fri Apr 19 23:15:57 GMT 2002
-Domain Expiration Date:                      Sun Apr 18 23:59:59 GMT 2010
-Domain Last Updated Date:                    Tue Mar 17 09:40:30 GMT 2009
+Domain Expiration Date:                      Thu Apr 18 23:59:59 GMT 2013
+Domain Last Updated Date:                    Wed Oct 17 22:46:23 GMT 2012
 
->>>> Whois database was last updated on: Wed Dec 23 14:00:09 GMT 2009 <<<<
+>>>> Whois database was last updated on: Sun Feb 24 17:09:26 GMT 2013 <<<<
 
 NeuStar, Inc., the Registry Administrator for .US, has collected this
 information for the WHOIS database through a .US-Accredited Registrar.
