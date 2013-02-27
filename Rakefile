@@ -32,9 +32,9 @@ spec = Gem::Specification.new do |s|
   s.executables       = %w( ruby-whois )
   s.require_paths     = %w( lib )
 
-  s.add_development_dependency "rake",  "~> 0.9"
-  s.add_development_dependency "rspec", "~> 2.11.0"
-  s.add_development_dependency "mocha", "~> 0.12.0"
+  s.add_development_dependency "rake",  "~> 10.0.0"
+  s.add_development_dependency "rspec", "~> 2.12.0"
+  s.add_development_dependency "mocha", "~> 0.13.0"
   s.add_development_dependency "yard"
 
   s.post_install_message = <<EOS
