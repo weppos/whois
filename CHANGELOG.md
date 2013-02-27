@@ -107,6 +107,8 @@
 
 - FIXED: whois.nic.cz crashes when nsset node has the same ID of a contact.
 
+- FIXED: whois.register.com fails to parse name servers in some cases (GH-207). [Thanks @stormsilver]
+
 
 ### Backward Incompatibilities
 

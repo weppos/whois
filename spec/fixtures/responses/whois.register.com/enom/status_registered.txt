@@ -1,0 +1,91 @@
+
+The data in Register.com's WHOIS database is provided to you by
+Register.com for information purposes only, that is, to assist you in
+obtaining information about or related to a domain name registration
+record.  Register.com makes this information available "as is," and
+does not guarantee its accuracy.  By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that,
+under no circumstances will you use this data to: (1) allow, enable,
+or otherwise support the transmission of mass unsolicited, commercial
+advertising or solicitations via direct mail, electronic mail, or by
+telephone; or (2) enable high volume, automated, electronic processes
+that apply to Register.com (or its systems).  The compilation,
+repackaging, dissemination or other use of this data is expressly
+prohibited without the prior written consent of Register.com.
+Register.com reserves the right to modify these terms at any time.
+By submitting this query, you agree to abide by these terms.
+
+
+=-=-=-=
+
+	
+Domain name: cramerdev.com
+  Is the domain you want taken? Make an offer: http://www.afternic.com/rcom.php?ref_id=2987&name=cramerdev.com
+
+Registrant Contact:
+   Cramer Development
+   Josh Cramer ()
+   
+   Fax: 
+   226 S. Clinton Street
+   Iowa City, IA 52240
+   US
+
+Administrative Contact:
+   Cramer Development Incorporated
+   Host Master (domains@cramerdev.com)
+   +1.5152920050
+   Fax: 
+   226 S Clinton St
+   Iowa City, IA 52245
+   US
+
+Technical Contact:
+   Cramer Development Incorporated
+   Host Master (domains@cramerdev.com)
+   +1.5152920050
+   Fax: 
+   226 S Clinton St
+   Iowa City, IA 52245
+   US
+
+Status: Locked
+
+Name Servers:
+   dns01.gpn.register.com
+   dns02.gpn.register.com
+   dns03.gpn.register.com
+   dns04.gpn.register.com
+   dns05.gpn.register.com
+   
+Creation date: 14 Mar 2002 00:19:48
+Expiration date: 13 Mar 2014 23:19:00
+
+
+   
+
+=-=-=-=
+The data in this whois database is provided to you for information
+purposes only, that is, to assist you in obtaining information about or
+related to a domain name registration record. We make this information
+available "as is," and do not guarantee its accuracy. By submitting a
+whois query, you agree that you will use this data only for lawful
+purposes and that, under no circumstances will you use this data to: (1)
+enable high volume, automated, electronic processes that stress or load
+this whois database system providing you this information; or (2) allow,
+enable, or otherwise support the transmission of mass unsolicited,
+commercial advertising or solicitations via direct mail, electronic
+mail, or by telephone. The compilation, repackaging, dissemination or
+other use of this data is expressly prohibited without prior written
+consent from us.  
+
+We reserve the right to modify these terms at any time. By submitting 
+this query, you agree to abide by these terms.
+Version 6.3 4/3/2002
+
+
+Visit AboutUs.org for more information about cramerdev.com
+
+<A HREF="http://www.aboutus.org/cramerdev.com">AboutUs: cramerdev.com</A>
+
+Register your domain name at http://www.register.com

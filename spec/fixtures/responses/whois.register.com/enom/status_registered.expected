@@ -17,7 +17,7 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-03-14 00:19:00")
+  should: %s == Time.parse("2014-03-13 23:19:00")
 
 
 #registrar
@@ -38,9 +38,10 @@
   should: %s[0].city         == "Iowa City"
   should: %s[0].zip          == "52240"
   should: %s[0].state        == "IA"
+  should: %s[0].country      == nil
   should: %s[0].country_code == "US"
   should: %s[0].phone        == nil
-  should: %s[0].fax          == nil
+  should: %s[0].fax          == ""
   should: %s[0].email        == nil
 
 #admin_contacts
@@ -54,9 +55,10 @@
   should: %s[0].city         == "Iowa City"
   should: %s[0].zip          == "52245"
   should: %s[0].state        == "IA"
+  should: %s[0].country      == nil
   should: %s[0].country_code == "US"
   should: %s[0].phone        == "+1.5152920050"
-  should: %s[0].fax          == nil
+  should: %s[0].fax          == ""
   should: %s[0].email        == "domains@cramerdev.com"
 
 #technical_contacts
@@ -70,9 +72,10 @@
   should: %s[0].city         == "Iowa City"
   should: %s[0].zip          == "52245"
   should: %s[0].state        == "IA"
+  should: %s[0].country      == nil
   should: %s[0].country_code == "US"
   should: %s[0].phone        == "+1.5152920050"
-  should: %s[0].fax          == nil
+  should: %s[0].fax          == ""
   should: %s[0].email        == "domains@cramerdev.com"
 
 
