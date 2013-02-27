@@ -1,0 +1,17 @@
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].id            == "WEBAREAL-CZ"
+  should: %s[0].name          == "Jaroslav Hansal"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "Rudolfovská tř. 247/85\nČeské Budějovice\n37001\nCZ"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "info@webareal.cz"
+  should: %s[0].created_on    == Time.parse("2009-04-10 14:48:02")
