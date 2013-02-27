@@ -33,11 +33,11 @@ module Whois
         end
 
         tokenizer :scan_section do
-          if @input.scan(/\n(?:contact|nsset|keyset):\s+(.+)\n/)
-            @tmp['_section'] = @input[1].strip
+          if @input.scan(/\n(contact|nsset|keyset):\s+(.+)\n/)
+            @tmp["_section"] = "node:#{@input[1]}/#{@input[2].strip}"
             while scan_keyvalue
             end
-            @tmp.delete('_section')
+            @tmp.delete("_section")
           end
         end
 

@@ -105,6 +105,8 @@
 
 - FIXED: whois.nic.cz crashes when keyset node is present in the whois response.
 
+- FIXED: whois.nic.cz crashes when nsset node has the same ID of a contact.
+
 
 ### Backward Incompatibilities
 

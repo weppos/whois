@@ -92,7 +92,7 @@ module Whois
         end
 
         property_supported :technical_contacts do
-          id = node(node('nsset'))['tech-c'] rescue nil
+          id = node_nsset['tech-c'] rescue nil
           if id
             build_contact(id, Record::Contact::TYPE_TECHNICAL)
           end
@@ -100,7 +100,7 @@ module Whois
 
 
         property_supported :nameservers do
-          lines = node(node('nsset'))['nserver'] rescue nil
+          lines = node_nsset['nserver'] rescue nil
           Array.wrap(lines).map do |line|
             if line =~ /(.+) \((.+)\)/
               name = $1
@@ -125,8 +125,12 @@ module Whois
 
       private
 
+        def node_nsset
+          node("node:nsset/#{node("nsset")}")
+        end
+
         def build_contact(element, type)
-          node(element) do |hash|
+          node("node:contact/#{element}") do |hash|
             address = hash['street'] || hash['address']
             address = address.join("\n") if address.respond_to?(:join)
 
