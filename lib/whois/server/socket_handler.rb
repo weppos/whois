@@ -25,6 +25,7 @@ module Whois
           Errno::ECONNRESET,
           Errno::EHOSTUNREACH,
           Errno::ECONNREFUSED,
+          Errno::ETIMEDOUT,
           SocketError,
       ]
 

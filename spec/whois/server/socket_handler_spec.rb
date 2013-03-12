@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Whois::Server::SocketHandler do
 
   describe "#call" do
-    [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, SocketError ].each do |error|
+    [ Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, Errno::ETIMEDOUT, SocketError ].each do |error|
       it "re-raises #{error} as Whois::ConnectionError" do
         subject.expects(:execute).raises(error)
         expect {
