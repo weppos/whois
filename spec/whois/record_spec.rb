@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Whois::Record do
 
+  subject { klass.new(server, parts) }
+
   let(:server) {
     Whois::Server.factory(:tld, ".foo", "whois.example.test")
   }
@@ -120,19 +122,19 @@ describe Whois::Record do
   end
 
 
-  describe "match" do
+  describe "#match" do
     it "delegates to content" do
-      klass.new(server, parts).match(/record/).should be_a(MatchData)
-      klass.new(server, parts).match(/record/)[0].should == "record"
+      subject.match(/record/).should be_a(MatchData)
+      subject.match(/record/)[0].should == "record"
 
-      klass.new(server, parts).match(/nomatch/).should be_nil
+      subject.match(/nomatch/).should be_nil
     end
   end
 
-  describe "match" do
+  describe "#match?" do
     it "calls match and checks for match" do
-      klass.new(server, parts).match?(/record/).should  == true
-      klass.new(server, parts).match?(/nomatch/).should == false
+      subject.match?(/record/).should  == true
+      subject.match?(/nomatch/).should == false
     end
   end
 
@@ -153,41 +155,38 @@ describe Whois::Record do
 
   describe "#parser" do
     it "returns a Parser" do
-      klass.new(nil, parts).parser.should be_a(Whois::Record::Parser)
+      subject.parser.should be_a(Whois::Record::Parser)
     end
 
     it "initializes the parser with self" do
-      record = klass.new(nil, parts)
-      record.parser.record.should be(record)
+      subject.parser.record.should be(subject)
     end
 
     it "memoizes the value" do
-      record = klass.new(nil, parts)
-      record.instance_eval { @parser }.should be_nil
-      parser = record.parser
-      record.instance_eval { @parser }.should be(parser)
+      subject.instance_eval { @parser }.should be_nil
+      parser = subject.parser
+      subject.instance_eval { @parser }.should be(parser)
     end
   end
 
 
   describe "#properties" do
     it "returns a Hash" do
-      klass.new(nil, []).properties.should be_a(Hash)
+      subject.properties.should be_a(Hash)
     end
 
     it "returns both nil and not-nil values" do
-      r = klass.new(nil, [])
-      r.expects(:domain).returns("")
-      r.expects(:created_on).returns(nil)
-      r.expects(:expires_on).returns(Time.parse("2010-10-10"))
-      p = r.properties
+      subject.expects(:domain).returns("")
+      subject.expects(:created_on).returns(nil)
+      subject.expects(:expires_on).returns(Time.parse("2010-10-10"))
+      p = subject.properties
       p[:domain].should == ""
       p[:created_on].should == nil
       p[:expires_on].should == Time.parse("2010-10-10")
     end
 
     it "fetches all parser property" do
-      klass.new(nil, []).properties.keys.should =~ Whois::Record::Parser::PROPERTIES 
+      subject.properties.keys.should =~ Whois::Record::Parser::PROPERTIES
     end
   end
 
@@ -300,34 +299,30 @@ describe Whois::Record do
 
   describe "#contacts" do
     it "delegates to parser" do
-      record = klass.new(nil, [])
-      record.parser.expects(:contacts).returns([:one, :two])
-      record.contacts.should == [:one, :two]
+      subject.parser.expects(:contacts).returns([:one, :two])
+      subject.contacts.should == [:one, :two]
     end
   end
 
 
   describe "#response_incomplete?" do
     it "delegates to #parser" do
-      i = klass.new(nil, [])
-      i.parser.expects(:response_incomplete?)
-      i.response_incomplete?
+      subject.parser.expects(:response_incomplete?)
+      subject.response_incomplete?
     end
   end
 
   describe "#response_throttled?" do
     it "delegates to #parser" do
-      i = klass.new(nil, [])
-      i.parser.expects(:response_throttled?)
-      i.response_throttled?
+      subject.parser.expects(:response_throttled?)
+      subject.response_throttled?
     end
   end
 
   describe "#response_unavailable?" do
     it "delegates to #parser" do
-      i = klass.new(nil, [])
-      i.parser.expects(:response_unavailable?)
-      i.response_unavailable?
+      subject.parser.expects(:response_unavailable?)
+      subject.response_unavailable?
     end
   end
 
@@ -338,21 +333,18 @@ describe Whois::Record do
 
     context "when a parser question method/property" do
       it "calls the corresponding no-question method" do
-        record = klass.new(nil, [])
-        record.expects(:status)
-        record.status?
+        subject.expects(:status)
+        subject.status?
       end
 
       it "returns true if the property is not nil" do
-        record = klass.new(nil, [])
-        record.expects(:status).returns("available")
-        record.status?.should == true
+        subject.expects(:status).returns("available")
+        subject.status?.should == true
       end
 
       it "returns false if the property is nil" do
-        record = klass.new(nil, [])
-        record.expects(:status).returns(nil)
-        record.status?.should == false
+        subject.expects(:status).returns(nil)
+        subject.status?.should == false
       end
     end
 
