@@ -133,8 +133,8 @@ module Whois
       @parser ||= Parser.new(self)
     end
 
-    # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
-    # is supported by any available parser for this record.
+    # Checks if the <tt>property</tt> passed as symbol
+    # is supported in any of the parsers.
     #
     # @param  [Symbol] property The name of the property to check.
     # @return [Boolean]

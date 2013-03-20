@@ -360,7 +360,7 @@ module Whois
       #
       def select_parser(property, status = :any)
         parsers.each do |parser|
-          return parser if parser.class.property_registered?(property, status)
+          return parser if parser.class.property_state?(property, status)
         end
         nil
       end

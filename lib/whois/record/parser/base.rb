@@ -37,15 +37,15 @@ module Whois
         # @return [Symbol, nil]
         #
         # @example Undefined property
-        #   property_status(:disclaimer)
+        #   property_state(:disclaimer)
         #   # => nil
         #
         # @example Defined property
         #   property_register(:disclaimer, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED) {}
-        #   property_status(:disclaimer)
+        #   property_state(:disclaimer)
         #   # => :supported
         #
-        def self.property_status(property)
+        def self.property_state(property)
           self._properties[property]
         end
 
@@ -57,15 +57,15 @@ module Whois
         # @return [Boolean]
         #
         # @example Not-registered property
-        #   property_registered?(:disclaimer)
+        #   property_state?(:disclaimer)
         #   # => false
         #
         # @example Registered property
         #   property_register(:disclaimer) {}
-        #   property_registered?(:disclaimer)
+        #   property_state?(:disclaimer)
         #   # => true
         #
-        def self.property_registered?(property, status = :any)
+        def self.property_state?(property, status = :any)
           if status == :any
             self._properties.key?(property)
           else
@@ -161,7 +161,7 @@ module Whois
         # @return [Boolean]
         #
         def property_supported?(property)
-          self.class.property_registered?(property, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
+          self.class.property_state?(property, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
         end
 
 
