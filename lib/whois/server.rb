@@ -9,6 +9,7 @@
 
 require 'ipaddr'
 require 'json'
+require 'whois/server/adapters/base'
 
 
 module Whois
@@ -24,7 +25,6 @@ module Whois
     # WHOIS server adapters. Each adapter is a subclass of {Whois::Server::Adapters::Base},
     # customized to handle WHOIS queries for a type or a group of servers.
     module Adapters
-      autoload :Base,             "whois/server/adapters/base"
       autoload :Arpa,             "whois/server/adapters/arpa"
       autoload :Afilias,          "whois/server/adapters/afilias"
       autoload :Formatted,        "whois/server/adapters/formatted"
