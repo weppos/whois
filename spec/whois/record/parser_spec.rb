@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Whois::Record::Parser do
 
+  subject { described_class.new(record) }
+
   let(:record) { Whois::Record.new(nil, []) }
 
 
@@ -48,8 +50,49 @@ describe Whois::Record::Parser do
     end
 
     it "sets record from argument" do
-      instance = klass.new(record)
-      instance.record.should be(record)
+      klass.new(record).record.should be(record)
+    end
+  end
+
+  describe "#respond_to?" do
+    before(:all) do
+      @_properties  = Whois::Record::Parser::PROPERTIES.dup
+      @_methods     = Whois::Record::Parser::METHODS.dup
+    end
+
+    after(:all) do
+      Whois::Record::Parser::PROPERTIES.clear
+      Whois::Record::Parser::PROPERTIES.push(*@_properties)
+      Whois::Record::Parser::METHODS.clear
+      Whois::Record::Parser::METHODS.push(*@_methods)
+    end
+
+    it "returns true if method is in self" do
+      subject.respond_to?(:to_s).should be_true
+    end
+
+    it "returns true if method is in hierarchy" do
+      subject.respond_to?(:nil?).should be_true
+    end
+
+    it "returns true if method is a property" do
+      Whois::Record::Parser::PROPERTIES << :test_property
+      subject.respond_to?(:test_property).should be_true
+    end
+
+    it "returns false if method is a property?" do
+      Whois::Record::Parser::PROPERTIES << :test_property
+      subject.respond_to?(:test_property?).should be_false
+    end
+
+    it "returns true if method is a method" do
+      Whois::Record::Parser::METHODS << :test_method
+      subject.respond_to?(:test_method).should be_true
+    end
+
+    it "returns false if method is a method" do
+      Whois::Record::Parser::METHODS << :test_method
+      subject.respond_to?(:test_method?).should be_false
     end
   end
 

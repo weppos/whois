@@ -153,7 +153,7 @@ module Whois
       #
       # @return [Boolean]
       def respond_to?(symbol, include_private = false)
-        super || PROPERTIES.include?(symbol) || METHODS.include?(symbol)
+        respond_to_parser_method?(symbol) || super
       end
 
 
@@ -294,6 +294,10 @@ module Whois
             delegate_method_to_parsers(:#{method}, *args, &block)
           end
         RUBY
+      end
+
+      def respond_to_parser_method?(symbol)
+        Parser::PROPERTIES.include?(symbol) || Parser::METHODS.include?(symbol)
       end
 
       def method_missing(method, *args, &block)
