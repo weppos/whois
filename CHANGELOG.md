@@ -113,6 +113,8 @@
 
 - FIXED: whois.nc crashes when the address is missing the state.
 
+- FIXED: Whois::Record#respond_to? doesn't recognize property? of method? methods.
+
 
 ### Backward Incompatibilities
 

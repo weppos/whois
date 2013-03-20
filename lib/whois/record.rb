@@ -43,7 +43,7 @@ module Whois
     # @return [Boolean]
     #
     def respond_to?(symbol, include_private = false)
-      super || Parser::PROPERTIES.include?(symbol) || Parser::METHODS.include?(symbol)
+      respond_to_parser_method?(symbol) || super
     end
 
     # Returns a String representation of this record.
@@ -297,6 +297,11 @@ module Whois
 
 
   private
+
+    def respond_to_parser_method?(symbol)
+      name = symbol.to_s =~ /\?$/ ? symbol.to_s[0..-2] : symbol
+      Parser::PROPERTIES.include?(name.to_sym) || Parser::METHODS.include?(name.to_sym)
+    end
 
     # @api private
     def self.define_property_method(method)
