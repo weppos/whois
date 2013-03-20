@@ -10,13 +10,13 @@ describe Whois::Server::Adapters::NotImplemented do
   describe "#lookup" do
     it "raises Whois::ServerNotImplemented" do
       expect {
-        klass.new(*@definition).lookup("example.test")
+        described_class.new(*@definition).lookup("example.test")
       }.to raise_error(Whois::ServerNotImplemented)
     end
 
     it "customizes the error message according to the host" do
       expect {
-        klass.new(*@definition).lookup("example.test")
+        described_class.new(*@definition).lookup("example.test")
       }.to raise_error(Whois::ServerNotImplemented, /teredo/)
     end
   end

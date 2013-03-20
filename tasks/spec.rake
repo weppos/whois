@@ -25,7 +25,7 @@ namespace :spec do
 require 'spec_helper'
 require 'whois/record/parser/%{khost}.rb'
 
-describe %{klass}, "%{descr}" do
+describe %{described_class}, "%{descr}" do
 
   subject do
     file = fixture("responses", "%{fixture}")
@@ -63,11 +63,11 @@ end
   task :generate_parsers do
     Dir["#{SOURCE_DIR}/**/*.expected"].each do |source_path|
 
-      # Generate the filename and klass name from the test file.
+      # Generate the filename and described_class name from the test file.
       parts = (source_path.split("/") - SOURCE_PARTS)
       khost = parts.first
       kfile = parts.last
-      klass = Whois::Record::Parser.parser_klass(khost)
+      described_class = Whois::Record::Parser.parser_klass(khost)
 
       target_path = File.join(TARGET_DIR, *parts).gsub(".expected", "_spec.rb")
 
@@ -119,7 +119,7 @@ end
 
       describe = <<-RUBY
 #{TPL_DESCRIBE % {
-  :klass    => klass,
+  :described_class    => described_class,
   :khost    => khost,
   :descr    => kfile,
   :sfile    => relativize(source_path),
@@ -160,23 +160,23 @@ end
     [m, s, c]
   end
 
-  def _build_condition_typeof(klass)
-    case klass
+  def _build_condition_typeof(described_class)
+    case described_class
     when "array"      then "Array"
     when "time"       then "Time"
     when "contact"    then "Whois::Record::Contact"
     when "registrar"  then "Whois::Record::Registrar"
     when "nameserver" then "Whois::Record::Nameserver"
     else
-      raise "Unknown class `#{klass}'"
+      raise "Unknown class `#{described_class}'"
     end
   end
 
-  def _build_condition_typecast(klass, value)
-    case klass
+  def _build_condition_typecast(described_class, value)
+    case described_class
     when "time"       then %Q{Time.parse("#{value}")}
     else
-      raise "Unknown class `#{klass}'"
+      raise "Unknown class `#{described_class}'"
     end
   end
 

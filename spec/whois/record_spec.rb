@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Whois::Record do
 
-  subject { klass.new(server, parts) }
+  subject { described_class.new(server, parts) }
 
   let(:server) {
     Whois::Server.factory(:tld, ".foo", "whois.example.test")
@@ -18,17 +18,17 @@ describe Whois::Record do
 
   describe "#initialize" do
     it "requires a server and parts" do
-      lambda { klass.new }.should raise_error(ArgumentError)
-      lambda { klass.new(server) }.should raise_error(ArgumentError)
-      lambda { klass.new(server, parts) }.should_not raise_error
+      lambda { described_class.new }.should raise_error(ArgumentError)
+      lambda { described_class.new(server) }.should raise_error(ArgumentError)
+      lambda { described_class.new(server, parts) }.should_not raise_error
     end
     
     it "sets server and parts from arguments" do
-      instance = klass.new(server, parts)
+      instance = described_class.new(server, parts)
       instance.server.should be(server)
       instance.parts.should be(parts)
 
-      instance = klass.new(nil, nil)
+      instance = described_class.new(nil, nil)
       instance.server.should be_nil
       instance.parts.should be_nil
     end
@@ -79,84 +79,84 @@ describe Whois::Record do
 
   describe "#to_s" do
     it "delegates to #content" do
-      klass.new(nil, [parts[0]]).to_s.should == parts[0].body
-      klass.new(nil, parts).to_s.should == parts.map(&:body).join("\n")
-      klass.new(nil, []).to_s.should == ""
+      described_class.new(nil, [parts[0]]).to_s.should == parts[0].body
+      described_class.new(nil, parts).to_s.should == parts.map(&:body).join("\n")
+      described_class.new(nil, []).to_s.should == ""
     end
   end
 
   describe "#inspect" do
     it "inspects the record content" do
-      klass.new(nil, [parts[0]]).inspect.should == parts[0].body.inspect
+      described_class.new(nil, [parts[0]]).inspect.should == parts[0].body.inspect
     end
 
     it "joins multiple parts" do
-      klass.new(nil, parts).inspect.should == parts.map(&:body).join("\n").inspect
+      described_class.new(nil, parts).inspect.should == parts.map(&:body).join("\n").inspect
     end
 
     it "joins empty parts" do
-      klass.new(nil, []).inspect.should == "".inspect
+      described_class.new(nil, []).inspect.should == "".inspect
     end
   end
 
   describe "#==" do
     it "returns true when other is the same instance" do
-      one = two = klass.new(server, parts)
+      one = two = described_class.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has same class and has the same parts" do
-      one, two = klass.new(server, parts), klass.new(server, parts)
+      one, two = described_class.new(server, parts), described_class.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has descendant class and has the same parts" do
-      subklass = Class.new(klass)
-      one, two = klass.new(server, parts), subklass.new(server, parts)
+      subklass = Class.new(described_class)
+      one, two = described_class.new(server, parts), subklass.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has same class and has equal parts" do
-      one, two = klass.new(server, parts), klass.new(server, parts.dup)
+      one, two = described_class.new(server, parts), described_class.new(server, parts.dup)
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns true when other has same class, different server and the same parts" do
-      one, two = klass.new(server, parts), klass.new(nil, parts)
+      one, two = described_class.new(server, parts), described_class.new(nil, parts)
       (one == two).should be_true
       (one.eql? two).should be_true
     end
 
     it "returns false when other has different class and has the same parts" do
-      one, two = klass.new(server, parts), Struct.new(:server, :parts).new(server, parts)
+      one, two = described_class.new(server, parts), Struct.new(:server, :parts).new(server, parts)
 
       (one == two).should be_false
       (one.eql? two).should be_false
     end
 
     it "returns false when other has different parts" do
-      one, two = klass.new(server, parts), klass.new(server, [])
+      one, two = described_class.new(server, parts), described_class.new(server, [])
 
       (one == two).should be_false
       (one.eql? two).should be_false
     end
 
     it "returns false when other is string and has the same content" do
-      one, two = klass.new(server, parts), klass.new(server, parts).to_s
+      one, two = described_class.new(server, parts), described_class.new(server, parts).to_s
 
       (one == two).should be_false
       (one.eql? two).should be_false
     end
 
     it "returns false when other is string and has different content" do
-      one, two = klass.new(server, parts), "different"
+      one, two = described_class.new(server, parts), "different"
 
       (one == two).should be_false
       (one.eql? two).should be_false
@@ -183,15 +183,15 @@ describe Whois::Record do
 
   describe "#content" do
     it "returns the part body" do
-      klass.new(nil, [parts[0]]).content.should == parts[0].body
+      described_class.new(nil, [parts[0]]).content.should == parts[0].body
     end
 
     it "joins multiple parts" do
-      klass.new(nil, parts).content.should == parts.map(&:body).join("\n")
+      described_class.new(nil, parts).content.should == parts.map(&:body).join("\n")
     end
 
     it "returns an empty string when no parts" do
-      klass.new(nil, []).content.should == ""
+      described_class.new(nil, []).content.should == ""
     end
   end
 
@@ -253,39 +253,39 @@ describe Whois::Record do
 
   describe "property" do
     it "returns value when the property is supported" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.created_on.should == Date.parse("2010-10-20")
     end
 
     it "returns nil when the property is not supported" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.updated_on.should be_nil
     end
 
     it "returns nil when the property is not implemented" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.expires_on.should be_nil
     end
   end
 
   describe "property?" do
     it "returns true when the property is supported and has no value" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.status?.should == false
     end
 
     it "returns false when the property is supported and has q value" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.created_on?.should == true
     end
 
     it "returns false when the property is not supported" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.updated_on?.should == false
     end
 
     it "returns false when the property is not implemented" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
+      r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.expires_on?.should == false
     end
   end
@@ -294,11 +294,11 @@ describe Whois::Record do
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do
-        klass.new(nil, []).changed?(Object.new)
+        described_class.new(nil, []).changed?(Object.new)
       end.should raise_error
 
       lambda do
-        klass.new(nil, []).changed?(klass.new(nil, []))
+        described_class.new(nil, []).changed?(described_class.new(nil, []))
       end.should_not raise_error
     end
   end
@@ -306,22 +306,22 @@ describe Whois::Record do
   describe "#unchanged?" do
     it "raises if the argument is not an instance of the same class" do
       lambda do
-        klass.new(nil, []).unchanged?(Object.new)
+        described_class.new(nil, []).unchanged?(Object.new)
       end.should raise_error
 
       lambda do
-        klass.new(nil, []).unchanged?(klass.new(nil, []))
+        described_class.new(nil, []).unchanged?(described_class.new(nil, []))
       end.should_not raise_error
     end
 
     it "returns true if self and other references the same object" do
-      instance = klass.new(nil, [])
+      instance = described_class.new(nil, [])
       instance.unchanged?(instance).should be_true
     end
 
     it "delegates to #parser if self and other references different objects" do
-      other = klass.new(nil, parts)
-      instance = klass.new(nil, parts)
+      other = described_class.new(nil, parts)
+      instance = described_class.new(nil, parts)
       instance.parser.expects(:unchanged?).with(other.parser)
 
       instance.unchanged?(other)
@@ -385,7 +385,7 @@ describe Whois::Record do
           def happy; "yes"; end
         end
 
-        record = klass.new(nil, [])
+        record = described_class.new(nil, [])
         lambda do
           record.happy.should == "yes"
         end.should_not raise_error
@@ -396,13 +396,13 @@ describe Whois::Record do
 
       it "does not catch all methods" do
         lambda do
-          klass.new(nil, []).i_am_not_defined
+          described_class.new(nil, []).i_am_not_defined
         end.should raise_error(NoMethodError)
       end
 
       it "does not catch all question methods" do
         lambda do
-          klass.new(nil, []).i_am_not_defined?
+          described_class.new(nil, []).i_am_not_defined?
         end.should raise_error(NoMethodError)
       end
     end

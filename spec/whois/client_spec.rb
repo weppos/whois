@@ -4,38 +4,38 @@ describe Whois::Client do
 
   describe "#initialize" do
     it "accepts a zero parameters" do
-      lambda { klass.new }.should_not raise_error
+      lambda { described_class.new }.should_not raise_error
     end
 
     it "accepts a settings parameter" do
-      lambda { klass.new({ :foo => "bar" }) }.should_not raise_error
+      lambda { described_class.new({ :foo => "bar" }) }.should_not raise_error
     end
 
 
     it "accepts a timeout setting with a value in seconds" do
-      client = klass.new(:timeout => 100)
+      client = described_class.new(:timeout => 100)
       client.timeout.should == 100
     end
 
     it "accepts a timeout setting with a nil value" do
-      client = klass.new(:timeout => nil)
+      client = described_class.new(:timeout => nil)
       client.timeout.should be_nil
     end
 
     it "accepts a block" do
-      klass.new do |client|
-        client.should be_instance_of(klass)
+      described_class.new do |client|
+        client.should be_instance_of(described_class)
       end
     end
 
 
     it "defaults timeout setting to DEFAULT_TIMEOUT" do
-      client = klass.new
-      client.timeout.should == klass::DEFAULT_TIMEOUT
+      client = described_class.new
+      client.timeout.should == described_class::DEFAULT_TIMEOUT
     end
 
     it "sets settings to given argument, except timeout" do
-      client = klass.new(:timeout => nil, :foo => "bar")
+      client = described_class.new(:timeout => nil, :foo => "bar")
       client.settings.should == { :foo => "bar" }
     end
   end
@@ -53,7 +53,7 @@ describe Whois::Client do
       server.expects(:lookup).with("example.test")
       Whois::Server.expects(:guess).with("example.test").returns(server)
 
-      klass.new.lookup(query)
+      described_class.new.lookup(query)
     end
 
     it "converts the argument to downcase" do
@@ -61,12 +61,12 @@ describe Whois::Client do
       server.expects(:lookup).with("example.test")
       Whois::Server.expects(:guess).with("example.test").returns(server)
 
-      klass.new.lookup("Example.TEST")
+      described_class.new.lookup("Example.TEST")
     end
 
     it "detects email" do
       expect {
-        klass.new.lookup("weppos@weppos.net")
+        described_class.new.lookup("weppos@weppos.net")
       }.to raise_error(Whois::ServerNotSupported)
     end
 
@@ -74,7 +74,7 @@ describe Whois::Client do
       Whois::Server.define(:tld, ".nowhois", nil, :adapter => Whois::Server::Adapters::None)
 
       expect {
-        klass.new.lookup("domain.nowhois")
+        described_class.new.lookup("domain.nowhois")
       }.to raise_error(Whois::NoInterfaceError, /no whois server/)
     end
 
@@ -82,7 +82,7 @@ describe Whois::Client do
       Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :url => "http://www.example.com/")
 
       expect {
-        klass.new.lookup("domain.webwhois")
+        described_class.new.lookup("domain.webwhois")
       }.to raise_error(Whois::WebInterfaceError, /www\.example\.com/)
     end
 
@@ -94,7 +94,7 @@ describe Whois::Client do
       end
       Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
-      client = klass.new(:timeout => 1)
+      client = described_class.new(:timeout => 1)
       expect {
         client.lookup("example.test")
       }.to raise_error(Timeout::Error)
@@ -108,7 +108,7 @@ describe Whois::Client do
       end
       Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
-      client = klass.new(:timeout => 5)
+      client = described_class.new(:timeout => 5)
       expect {
         client.lookup("example.test")
       }.to_not raise_error
@@ -122,7 +122,7 @@ describe Whois::Client do
       end
       Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
 
-      client = klass.new.tap { |c| c.timeout = nil }
+      client = described_class.new.tap { |c| c.timeout = nil }
       expect {
         client.lookup("example.test")
       }.to_not raise_error
@@ -134,7 +134,7 @@ describe Whois::Client do
   need_connectivity do
     describe "#query" do
       it "sends a query for given domain" do
-        record = klass.new.lookup("weppos.it")
+        record = described_class.new.lookup("weppos.it")
         assert record.match?(/Domain:\s+weppos\.it/)
         assert record.match?(/Created:/)
       end

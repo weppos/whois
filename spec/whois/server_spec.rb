@@ -14,8 +14,8 @@ describe Whois::Server do
 }
       JSON
       with_definitions do
-        klass.load_json("tld.json")
-        klass.definitions(:tld).should eq([
+        described_class.load_json("tld.json")
+        described_class.definitions(:tld).should eq([
           [".ae.org", "whois.centralnic.com", {}],
           [".ar.com", "whois.centralnic.com", {}],
         ])
@@ -32,8 +32,8 @@ describe Whois::Server do
 }
       JSON
       with_definitions do
-        klass.load_json("tld.json")
-        klass.definitions(:tld).should eq([
+        described_class.load_json("tld.json")
+        described_class.definitions(:tld).should eq([
           [".com", "whois.crsnic.net", adapter: "verisign"],
         ])
       end
@@ -43,13 +43,13 @@ describe Whois::Server do
   describe ".definitions" do
     it "returns the definitions hash when type argument is nil" do
       with_definitions do
-        d = klass.definitions
+        d = described_class.definitions
         d.should be_a(Hash)
         d.keys.should =~ [:tld, :ipv4, :ipv6]
       end
 
       with_definitions do
-        d = klass.definitions(nil)
+        d = described_class.definitions(nil)
         d.should be_a(Hash)
         d.keys.should =~ [:tld, :ipv4, :ipv6]
       end
@@ -58,7 +58,7 @@ describe Whois::Server do
     it "returns the definitions array for given type when type argument is not nil and given type exists" do
       with_definitions do
         Whois::Server.define(:foo, ".foo", "whois.foo")
-        d = klass.definitions(:foo)
+        d = described_class.definitions(:foo)
         d.should be_a(Array)
         d.should == [[".foo", "whois.foo", {}]]
       end
@@ -66,7 +66,7 @@ describe Whois::Server do
 
     it "returns nil when type argument is not nil and given type doesn't exist" do
       with_definitions do
-        d = klass.definitions(:foo)
+        d = described_class.definitions(:foo)
         d.should be_nil
       end
     end
@@ -76,21 +76,21 @@ describe Whois::Server do
     it "adds a new definition with given arguments" do
       with_definitions do
         Whois::Server.define(:foo, ".foo", "whois.foo")
-        klass.definitions(:foo).should == [[".foo", "whois.foo", {}]]
+        described_class.definitions(:foo).should == [[".foo", "whois.foo", {}]]
       end
     end
 
     it "accepts a hash of options" do
       with_definitions do
         Whois::Server.define(:foo, ".foo", "whois.foo", :foo => "bar")
-        klass.definitions(:foo).should == [[".foo", "whois.foo", { :foo => "bar" }]]
+        described_class.definitions(:foo).should == [[".foo", "whois.foo", { :foo => "bar" }]]
       end
     end
 
     it "accepts any kind of definition type" do
       with_definitions do
         Whois::Server.define(:ipv4, ".foo", "whois.foo", :foo => "bar")
-        klass.definitions(:ipv4).should == [[".foo", "whois.foo", { :foo => "bar" }]]
+        described_class.definitions(:ipv4).should == [[".foo", "whois.foo", { :foo => "bar" }]]
       end
     end
   end

@@ -10,13 +10,13 @@ describe Whois::Server::Adapters::Web do
   describe "#lookup" do
     it "raises Whois::WebInterfaceError" do
       expect {
-        klass.new(*@definition).lookup("example.test")
+        described_class.new(*@definition).lookup("example.test")
       }.to raise_error(Whois::WebInterfaceError)
     end
 
     it "customizes the error message with the WHOIS web url" do
       expect {
-        klass.new(*@definition).lookup("example.test")
+        described_class.new(*@definition).lookup("example.test")
       }.to raise_error(Whois::WebInterfaceError, /whois\.test/)
     end
   end
