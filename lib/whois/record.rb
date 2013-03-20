@@ -295,12 +295,7 @@ module Whois
     # @!endgroup
 
 
-  private
-
-    def respond_to_parser_method?(symbol)
-      name = symbol.to_s =~ /\?$/ ? symbol.to_s[0..-2] : symbol
-      Parser::PROPERTIES.include?(name.to_sym) || Parser::METHODS.include?(name.to_sym)
-    end
+    private
 
     # @api private
     def self.define_property_method(method)
@@ -331,6 +326,11 @@ module Whois
           !#{method}.nil?
         end
       RUBY
+    end
+
+    def respond_to_parser_method?(symbol)
+      name = symbol.to_s =~ /\?$/ ? symbol.to_s[0..-2] : symbol
+      Parser::PROPERTIES.include?(name.to_sym) || Parser::METHODS.include?(name.to_sym)
     end
 
     # Delegates all method calls to the internal parser.

@@ -110,9 +110,9 @@ module Whois
   class PropertyNotSupported < ParserError
   end
 
-  # Raised when you are trying to access a property that is not supported
+  # Raised when you are trying to access an attribute that is not supported
   # by any of the parsers available for current WHOIS record.
-  class PropertyNotAvailable < ParserError
+  class AttributeNotAvailable < ParserError
   end
 
   # @!endgroup

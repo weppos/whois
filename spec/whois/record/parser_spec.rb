@@ -111,14 +111,14 @@ describe Whois::Record::Parser do
       lambda do
         r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
         klass.new(r).created_on
-      end.should raise_error(Whois::PropertyNotAvailable)
+      end.should raise_error(Whois::AttributeNotAvailable)
     end
 
     it "raises when zero parts" do
       lambda do
         r = Whois::Record.new(nil, [])
         klass.new(r).created_on
-      end.should raise_error(Whois::ParserError)
+      end.should raise_error(Whois::ParserError, /the Record is empty/)
     end
 
     it "does not delegate unknown properties" do
