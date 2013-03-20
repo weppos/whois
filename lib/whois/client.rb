@@ -73,26 +73,32 @@ module Whois
     end
 
 
-    # Queries the right WHOIS server for <tt>object</tt>
+    # Lookups the right WHOIS server for <tt>object</tt>
     # and returns the response from the server.
     #
-    # @param  [#to_s] object The string to be sent as query parameter.
+    # @param  [#to_s] object The string to be sent as lookup parameter.
     # @return [Whois::Record] The object containing the WHOIS response.
     #
     # @raise  [Timeout::Error]
     #
     # @example
     #
-    #   client.query("google.com")
+    #   client.lookup("google.com")
     #   # => #<Whois::Record>
     #
-    def query(object)
+    def lookup(object)
       string = object.to_s.downcase
       Timeout::timeout(timeout) do
         @server = Server.guess(string)
         @server.configure(settings)
         @server.lookup(string)
       end
+    end
+
+    # @deprecated
+    def query(*args)
+      Whois.deprecate("Client#query is deprecated, use Client#lookup instead.")
+      lookup(*args)
     end
 
   end

@@ -38,7 +38,7 @@ module Whois
     #   Whois::Client.new.query("google.com")
     #
     def query(object)
-      Client.new.query(object)
+      Client.new.lookup(object)
     end
 
     alias_method :whois, :query

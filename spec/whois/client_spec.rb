@@ -40,7 +40,7 @@ describe Whois::Client do
     end
   end
 
-  describe "#query" do
+  describe "#lookup" do
     it "converts the argument to string" do
       query = ["example", ".", "test"]
       query.instance_eval do
@@ -53,7 +53,7 @@ describe Whois::Client do
       server.expects(:lookup).with("example.test")
       Whois::Server.expects(:guess).with("example.test").returns(server)
 
-      klass.new.query(query)
+      klass.new.lookup(query)
     end
 
     it "converts the argument to downcase" do
@@ -61,12 +61,12 @@ describe Whois::Client do
       server.expects(:lookup).with("example.test")
       Whois::Server.expects(:guess).with("example.test").returns(server)
 
-      klass.new.query("Example.TEST")
+      klass.new.lookup("Example.TEST")
     end
 
     it "detects email" do
       expect {
-        klass.new.query("weppos@weppos.net")
+        klass.new.lookup("weppos@weppos.net")
       }.to raise_error(Whois::ServerNotSupported)
     end
 
@@ -74,7 +74,7 @@ describe Whois::Client do
       Whois::Server.define(:tld, ".nowhois", nil, :adapter => Whois::Server::Adapters::None)
 
       expect {
-        klass.new.query("domain.nowhois")
+        klass.new.lookup("domain.nowhois")
       }.to raise_error(Whois::NoInterfaceError, /no whois server/)
     end
 
@@ -82,7 +82,7 @@ describe Whois::Client do
       Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :url => "http://www.example.com/")
 
       expect {
-        klass.new.query("domain.webwhois")
+        klass.new.lookup("domain.webwhois")
       }.to raise_error(Whois::WebInterfaceError, /www\.example\.com/)
     end
 
@@ -96,7 +96,7 @@ describe Whois::Client do
 
       client = klass.new(:timeout => 1)
       expect {
-        client.query("example.test")
+        client.lookup("example.test")
       }.to raise_error(Timeout::Error)
     end
 
@@ -110,7 +110,7 @@ describe Whois::Client do
 
       client = klass.new(:timeout => 5)
       expect {
-        client.query("example.test")
+        client.lookup("example.test")
       }.to_not raise_error
     end
 
@@ -124,7 +124,7 @@ describe Whois::Client do
 
       client = klass.new.tap { |c| c.timeout = nil }
       expect {
-        client.query("example.test")
+        client.lookup("example.test")
       }.to_not raise_error
     end
 
@@ -134,7 +134,7 @@ describe Whois::Client do
   need_connectivity do
     describe "#query" do
       it "sends a query for given domain" do
-        record = klass.new.query("weppos.it")
+        record = klass.new.lookup("weppos.it")
         assert record.match?(/Domain:\s+weppos\.it/)
         assert record.match?(/Created:/)
       end

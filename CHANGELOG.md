@@ -87,6 +87,8 @@
 
 - CHANGED: Definitions are now stored as JSON.
 
+- CHANGED: Deprecate Whois::Client#query in favor of Whois::Client#lookup
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).

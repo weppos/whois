@@ -35,7 +35,7 @@ describe Whois do
             returns(response)
 
         client = Whois::Client.new(:bind_host => "192.168.1.1", :bind_port => 3000)
-        client.query("example.it")
+        client.lookup("example.it")
       end
     end
   end
@@ -50,7 +50,7 @@ describe Whois do
             returns(response)
 
         client = Whois::Client.new(:bind_port => 3000)
-        client.query("example.it")
+        client.lookup("example.it")
       end
     end
   end
@@ -65,7 +65,7 @@ describe Whois do
             returns(response)
 
         client = Whois::Client.new(:host => "whois.example.com")
-        record = client.query("example.it")
+        record = client.lookup("example.it")
         record.parts.size.should == 1
         record.parts.first.body.should == response
         record.parts.first.host.should == "whois.example.com"

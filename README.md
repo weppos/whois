@@ -62,46 +62,46 @@ Check out the following examples:
 
     # Domain WHOIS
     w = Whois::Client.new
-    w.query("google.com")
+    w.lookup("google.com")
     # => #<Whois::Record>
 
     # TLD WHOIS
     w = Whois::Client.new
-    w.query(".com")
+    w.lookup(".com")
     # => #<Whois::Record>
 
     # IPv4 WHOIS
     w = Whois::Client.new
-    w.query("74.125.67.100")
+    w.lookup("74.125.67.100")
     # => #<Whois::Record>
 
     # IPv6 WHOIS
     w = Whois::Client.new
-    w.query("2001:db8::1428:57ab")
+    w.lookup("2001:db8::1428:57ab")
     # => #<Whois::Record>
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
     w = Whois::Client.new
-    w.query("google.com")
-    w.query(".com")
-    w.query("74.125.67.100")
-    w.query("2001:db8::1428:57ab")
-    w.query("google.it")
+    w.lookup("google.com")
+    w.lookup(".com")
+    w.lookup("74.125.67.100")
+    w.lookup("2001:db8::1428:57ab")
+    w.lookup("google.it")
 
 If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the {Whois} module provides an all-in-one method called {Whois.whois}. This is the simplest way to send a WHOIS request.
 
-    Whois.whois("google.com")
+    Whois.lookup("google.com")
     # => #<Whois::Record>
 
 Did I mention you can even use blocks?
 
     Whois::Client.new do |w|
-      w.query("google.com")
-      w.query(".com")
-      w.query("74.125.67.100")
-      w.query("2001:db8::1428:57ab")
-      w.query("google.it")
+      w.lookup("google.com")
+      w.lookup(".com")
+      w.lookup("74.125.67.100")
+      w.lookup("2001:db8::1428:57ab")
+      w.lookup("google.it")
     end
 
 ### Consuming the Record
@@ -147,7 +147,7 @@ Off course, you can customize the timeout value setting a different value. If ti
     w.timeout = 5
     w.timeout # => 5
   
-    w.query("google.com")
+    w.lookup("google.com")
 
 
 ## Acknowledgments
