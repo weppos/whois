@@ -12,9 +12,9 @@ describe Whois::Record::Parser::Base do
   describe ".property_register" do
     it "register given property" do
       koncrete = Class.new(klass)
-      koncrete.property_register(:greetings, :supported)
+      koncrete.property_register(:greetings, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
 
-      koncrete._properties[:greetings].should == :supported
+      koncrete._properties[:greetings].should eq(Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
     end
   end
 
@@ -28,7 +28,7 @@ describe Whois::Record::Parser::Base do
 
     it "returns true if the property is supported" do
       koncrete = Class.new(klass) do
-        property_register(:disclaimer, :supported) {}
+        property_register(:disclaimer, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED) {}
       end
       koncrete.new(part).property_supported?(:disclaimer).should be_true
       koncrete.new(part).respond_to?(:disclaimer).should be_true

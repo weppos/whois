@@ -18,7 +18,6 @@ module Whois
   class Record
     class Parser
 
-
       # Represents the abstract base parser class for all
       # server-specific parser implementations.
       #
@@ -42,7 +41,7 @@ module Whois
         #   # => nil
         #
         # @example Defined property
-        #   property_register(:disclaimer, :supported) {}
+        #   property_register(:disclaimer, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED) {}
         #   property_status(:disclaimer)
         #   # => :supported
         #
@@ -86,10 +85,10 @@ module Whois
         end
 
 
-        # Registers a <tt>property</tt> as <tt>:not_implemented</tt>
+        # Registers a <tt>property</tt> as "not implemented"
         # and defines the corresponding private _property_PROPERTY method.
         #
-        # A :not_implemented property always raises a <tt>PropertyNotImplemented</tt> error
+        # A "not implemented" property always raises a <tt>PropertyNotImplemented</tt> error
         # when the property method is called.
         #
         # @param  [Symbol] property
@@ -100,7 +99,7 @@ module Whois
         #   property_not_implemented(:disclaimer)
         #
         def self.property_not_implemented(property)
-          property_register(property, :not_implemented)
+          property_register(property, Whois::Record::Parser::PROPERTY_STATE_NOT_IMPLEMENTED)
 
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
             def _property_#{property}(*args)
@@ -111,10 +110,10 @@ module Whois
           RUBY
         end
 
-        # Registers a <tt>property</tt> as <tt>:not_supported</tt>
+        # Registers a <tt>property</tt> as "not supported"
         # and defines the corresponding private _property_PROPERTY method.
         #
-        # A :not_implemented property always raises a <tt>PropertyNotSupported</tt> error
+        # A "not supported" property always raises a <tt>PropertyNotSupported</tt> error
         # when the property method is called.
         #
         # @param  [Symbol] property
@@ -125,7 +124,7 @@ module Whois
         #   property_not_supported(:disclaimer)
         #
         def self.property_not_supported(property)
-          property_register(property, :not_supported)
+          property_register(property, Whois::Record::Parser::PROPERTY_STATE_NOT_SUPPORTED)
 
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
             def _property_#{property}(*args)
@@ -136,7 +135,7 @@ module Whois
           RUBY
         end
 
-        # Registers a <tt>property</tt> as <tt>:supported</tt>
+        # Registers a <tt>property</tt> as "supported"
         # and defines the corresponding private _property_PROPERTY method.
         #
         # @param  [Symbol] property
@@ -149,7 +148,7 @@ module Whois
         #   end
         #
         def self.property_supported(property, &block)
-          property_register(property, :supported)
+          property_register(property, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
 
           define_method("_property_#{property}", &block)
           private :"_property_#{property}"
@@ -162,7 +161,7 @@ module Whois
         # @return [Boolean]
         #
         def property_supported?(property)
-          self.class.property_registered?(property, :supported)
+          self.class.property_registered?(property, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
         end
 
 

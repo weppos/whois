@@ -7,6 +7,9 @@
 #++
 
 
+require 'whois/record/parser/base'
+
+
 module Whois
   class Record
 
@@ -37,6 +40,10 @@ module Whois
         :registrant_contacts, :admin_contacts, :technical_contacts,
         :nameservers,
       ]
+
+      PROPERTY_STATE_NOT_IMPLEMENTED = :not_implemented
+      PROPERTY_STATE_NOT_SUPPORTED = :not_supported
+      PROPERTY_STATE_SUPPORTED = :supported
 
 
       # Returns the proper parser instance for given <tt>part</tt>.
@@ -293,13 +300,13 @@ module Whois
 
         # Select a parser where the property is supported
         # and call the method.
-        elsif parser = select_parser(method, :supported)
+        elsif (parser = select_parser(method, PROPERTY_STATE_SUPPORTED))
           parser.send(method, *args, &block)
 
         # Select a parser where the property is defined but not supported
         # and call the method.
         # The call is expected to raise an exception.
-        elsif parser = select_parser(method, :not_supported)
+        elsif (parser = select_parser(method, PROPERTY_STATE_NOT_SUPPORTED))
           parser.send(method, *args, &block)
 
         # The property is not supported nor defined.
@@ -348,7 +355,7 @@ module Whois
       #   select_parser(:nameservers)
       #   # => #<Whois::Record::Parser::WhoisExampleCom>
       #
-      #   select_parser(:nameservers, :supported)
+      #   select_parser(:nameservers, PROPERTY_STATE_SUPPORTED)
       #   # => nil
       #
       def select_parser(property, status = :any)
