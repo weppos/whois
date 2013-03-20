@@ -221,10 +221,10 @@ describe Whois::Record do
       subject.expects(:domain).returns("")
       subject.expects(:created_on).returns(nil)
       subject.expects(:expires_on).returns(Time.parse("2010-10-10"))
-      p = subject.properties
-      p[:domain].should == ""
-      p[:created_on].should == nil
-      p[:expires_on].should == Time.parse("2010-10-10")
+      properties = subject.properties
+      properties[:domain].should == ""
+      properties[:created_on].should == nil
+      properties[:expires_on].should == Time.parse("2010-10-10")
     end
 
     it "fetches all parser property" do
@@ -244,21 +244,10 @@ describe Whois::Record do
     # property_not_defined :expires_on
   end
 
-  describe "#property_supported?" do
-    it "returns true if the property is supported" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.property_supported?(:status).should == true
-      r.property_supported?(:created_on).should == true
-    end
-
-    it "returns false if the property is not supported" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.property_supported?(:updated_on).should == false
-    end
-
-    it "returns false if the property is not defined" do
-      r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.property_supported?(:expires_on).should == false
+  describe "#property_any_supported?" do
+    it "delegates to parsers" do
+      subject.parser.expects(:property_any_supported?).with(:example).returns(true)
+      subject.property_any_supported?(:example).should be_true
     end
   end
 

@@ -170,30 +170,30 @@ describe Whois::Record::Parser do
     end
   end
 
-  describe "#property_supported?" do
+  describe "#property_any_supported?" do
     it "returns false when 0 parts" do
       record = Whois::Record.new(nil, [])
-      klass.new(record).property_supported?(:disclaimer).should be_false
+      klass.new(record).property_any_supported?(:disclaimer).should be_false
     end
 
     it "returns true when 1 part supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
-      klass.new(record).property_supported?(:disclaimer).should be_true
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "whois.nic.it")])
+      klass.new(record).property_any_supported?(:disclaimer).should be_true
     end
 
     it "returns false when 1 part supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "missing.nic.it")])
-      klass.new(record).property_supported?(:disclaimer).should be_false
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "missing.nic.it")])
+      klass.new(record).property_any_supported?(:disclaimer).should be_false
     end
 
     it "returns true when 2 parts" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "whois.crsnic.net"), Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
-      klass.new(record).property_supported?(:disclaimer).should be_true
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "whois.crsnic.net"), Whois::Record::Part.new(host: "whois.nic.it")])
+      klass.new(record).property_any_supported?(:disclaimer).should be_true
     end
 
     it "returns true when 1 part supported 1 part not supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "missing.nic.it"), Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
-      klass.new(record).property_supported?(:disclaimer).should be_true
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "missing.nic.it"), Whois::Record::Part.new(host: "whois.nic.it")])
+      klass.new(record).property_any_supported?(:disclaimer).should be_true
     end
   end
 

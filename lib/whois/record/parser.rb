@@ -170,14 +170,14 @@ module Whois
         @parsers ||= init_parsers
       end
 
-      # Returns <tt>true</tt> if the <tt>property</tt> passed as symbol
-      # is supported by any available parser.
+      # Checks if the <tt>property</tt> passed as symbol
+      # is supported in any of the parsers.
       #
       # @return [Boolean]
       #
       # @see Whois::Record::Parser::Base.property_supported?
       #
-      def property_supported?(property)
+      def property_any_supported?(property)
         parsers.any? { |parser| parser.property_supported?(property) }
       end
 

@@ -139,10 +139,10 @@ module Whois
     # @param  [Symbol] property The name of the property to check.
     # @return [Boolean]
     #
-    # @see Whois::Record::Parser#property_supported?
+    # @see Whois::Record::Parser#property_any_supported?
     #
-    def property_supported?(property)
-      parser.property_supported?(property)
+    def property_any_supported?(property)
+      parser.property_any_supported?(property)
     end
 
 
@@ -174,7 +174,7 @@ module Whois
     # @see Whois::Record#registrant_contacts
     #
     def registrant_contact
-      if property_supported?(:registrant_contacts)
+      if property_any_supported?(:registrant_contacts)
         parser.registrant_contacts.first
       end
     end
@@ -189,7 +189,7 @@ module Whois
     # @see Whois::Record#admin_contacts
     #
     def admin_contact
-      if property_supported?(:admin_contacts)
+      if property_any_supported?(:admin_contacts)
         parser.admin_contacts.first
       end
     end
@@ -204,7 +204,7 @@ module Whois
     # @see Whois::Record#technical_contacts
     #
     def technical_contact
-      if property_supported?(:technical_contacts)
+      if property_any_supported(:technical_contacts)
         parser.technical_contacts.first
       end
     end
@@ -258,8 +258,7 @@ module Whois
         raise(ArgumentError, "Can't compare `#{self.class}' with `#{other.class}'")
       end
 
-      equal?(other) ||
-      parser.unchanged?(other.parser)
+      equal?(other) || parser.unchanged?(other.parser)
     end
 
 
@@ -307,7 +306,7 @@ module Whois
     def self.define_property_method(method)
       class_eval <<-RUBY, __FILE__, __LINE__ + 1
         def #{method}(*args, &block)
-          if property_supported?(:#{method})
+          if property_any_supported?(:#{method})
             parser.#{method}(*args, &block)
           end
         end

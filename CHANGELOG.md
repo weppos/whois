@@ -89,6 +89,8 @@
 
 - CHANGED: Deprecate Whois::Client#query in favor of Whois::Client#lookup
 
+- CHANGED: Renamed Whois::Record#property_supported? and Whois::Record::Parser#property_supported? to #property_any_supported?
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
