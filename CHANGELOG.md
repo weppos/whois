@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 3.0.0
 
 - SERVER: Added .AX TLD definition.
 

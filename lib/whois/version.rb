@@ -11,8 +11,8 @@ module Whois
 
   # Holds information about library version.
   module Version
-    MAJOR = 2
-    MINOR = 7
+    MAJOR = 3
+    MINOR = 0
     PATCH = 0
     BUILD = nil
 
