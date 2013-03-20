@@ -9,15 +9,15 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
   should: %s CLASS(time)
   should: %s == Time.parse("2002-10-13")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)

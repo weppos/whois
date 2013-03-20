@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
 
   describe "#status" do
     it do
-      lambda { subject.status }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.status }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#available?" do
@@ -44,7 +44,7 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do

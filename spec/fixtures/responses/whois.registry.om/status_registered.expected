@@ -1,12 +1,12 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
   should: %s == "rop.gov.om"
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
@@ -20,13 +20,13 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #registrar
@@ -55,7 +55,7 @@
   should: %s[0].email         == "Visit whois.registry.om for Web based WhoIs"
 
 #admin_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
   should: %s CLASS(array)

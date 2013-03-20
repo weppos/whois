@@ -316,7 +316,7 @@ module Whois
         elsif (parser = select_parser { |p| p.class.property_state?(method, PROPERTY_STATE_NOT_SUPPORTED) })
           parser.send(method, *args, &block)
         else
-          raise AttributeNotAvailable, "Unable to find a parser for property `#{method}'"
+          raise AttributeNotImplemented, "Unable to find a parser for property `#{method}'"
         end
       end
 
@@ -326,7 +326,7 @@ module Whois
         elsif (parser = select_parser { |p| p.respond_to?(method) })
           parser.send(method, *args, &block)
         else
-          raise AttributeNotAvailable, "Unable to find a parser for method `#{method}'"
+          nil
         end
       end
 

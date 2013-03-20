@@ -88,7 +88,7 @@ module Whois
         # Registers a <tt>property</tt> as "not implemented"
         # and defines the corresponding private _property_PROPERTY method.
         #
-        # A "not implemented" property always raises a <tt>PropertyNotImplemented</tt> error
+        # A "not implemented" property always raises a <tt>AttributeNotImplemented</tt> error
         # when the property method is called.
         #
         # @param  [Symbol] property
@@ -103,7 +103,7 @@ module Whois
 
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
             def _property_#{property}(*args)
-              raise PropertyNotImplemented
+              raise AttributeNotImplemented
             end
 
             private :_property_#{property}
@@ -113,7 +113,7 @@ module Whois
         # Registers a <tt>property</tt> as "not supported"
         # and defines the corresponding private _property_PROPERTY method.
         #
-        # A "not supported" property always raises a <tt>PropertyNotSupported</tt> error
+        # A "not supported" property always raises a <tt>AttributeNotSupported</tt> error
         # when the property method is called.
         #
         # @param  [Symbol] property
@@ -128,7 +128,7 @@ module Whois
 
           class_eval(<<-RUBY, __FILE__, __LINE__ + 1)
             def _property_#{property}(*args)
-              raise PropertyNotSupported
+              raise AttributeNotSupported
             end
 
             private :_property_#{property}

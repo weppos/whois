@@ -1,12 +1,12 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
   should: %s == nil
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
@@ -20,28 +20,28 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   should: %s == nil
 
 
 #registrar
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
   should: %s CLASS(array)
   should: %s == []
 
 #admin_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)

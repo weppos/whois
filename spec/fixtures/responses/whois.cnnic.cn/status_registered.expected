@@ -1,5 +1,5 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
@@ -24,7 +24,7 @@
   should: %s == Time.parse("2003-03-17 12:20:05")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   should: %s CLASS(time)
@@ -51,7 +51,7 @@
   should: %s == []
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

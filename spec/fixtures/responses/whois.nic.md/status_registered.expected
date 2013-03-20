@@ -1,12 +1,12 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
   should: %s == "google.md"
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
@@ -24,7 +24,7 @@
   should: %s == Time.parse("2006-05-02")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   should: %s CLASS(time)
@@ -32,7 +32,7 @@
 
 
 #registrar
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -43,10 +43,10 @@
   should: %s[0].name         == "Google Inc."
 
 #admin_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

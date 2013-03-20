@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisSkNicSk, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do

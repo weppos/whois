@@ -1,12 +1,12 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
   should: %s == "google.com.au"
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
@@ -20,14 +20,14 @@
 
 
 #created_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
   should: %s CLASS(time)
   should: %s == Time.parse("2012-05-09 17:09:29 UTC")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #registrar
@@ -58,7 +58,7 @@
   should: %s[0].updated_on    == nil
 
 #admin_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
   should: %s CLASS(array)

@@ -17,4 +17,4 @@
   should: %s == Time.parse("2007-04-09")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)

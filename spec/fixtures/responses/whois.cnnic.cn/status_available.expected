@@ -1,5 +1,5 @@
 #disclaimer
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
@@ -23,7 +23,7 @@
   should: %s == nil
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   should: %s == nil
@@ -41,7 +41,7 @@
   should: %s == []
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

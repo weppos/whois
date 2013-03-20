@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_available.expecte
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
@@ -58,7 +58,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_available.expecte
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
@@ -68,7 +68,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_available.expecte
   end
   describe "#registrar" do
     it do
-      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrar }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrant_contacts" do

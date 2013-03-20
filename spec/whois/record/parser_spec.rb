@@ -104,14 +104,14 @@ describe Whois::Record::Parser do
       lambda do
         r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.unsupported.test"), Whois::Record::Part.new(:body => "", :host => "parser.unsupported.test")])
         klass.new(r).created_on
-      end.should raise_error(Whois::PropertyNotSupported)
+      end.should raise_error(Whois::AttributeNotSupported)
     end
 
     it "raises when parsers are undefined" do
       lambda do
         r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
         klass.new(r).created_on
-      end.should raise_error(Whois::AttributeNotAvailable)
+      end.should raise_error(Whois::AttributeNotImplemented)
     end
 
     it "raises when zero parts" do

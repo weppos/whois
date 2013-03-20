@@ -100,19 +100,12 @@ module Whois
   class ParserNotFound < ParserError
   end
 
-  # Raised when the property method has not been overwritten (implemented)
-  # in a child parser class.
-  class PropertyNotImplemented < ParserError
+  # Raised when you are trying to access an attribute that has not been implemented.
+  class AttributeNotImplemented < ParserError
   end
 
-  # Raised when you are trying to access a property that is not supported
-  # for the current WHOIS record.
-  class PropertyNotSupported < ParserError
-  end
-
-  # Raised when you are trying to access an attribute that is not supported
-  # by any of the parsers available for current WHOIS record.
-  class AttributeNotAvailable < ParserError
+  # Raised when you are trying to access an attribute that is not supported.
+  class AttributeNotSupported < ParserError
   end
 
   # @!endgroup

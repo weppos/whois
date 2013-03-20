@@ -13,7 +13,7 @@
   should: %s == Time.parse("2010-11-12")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   should: %s CLASS(time)
@@ -27,7 +27,7 @@
   should: %s.organization == nil
 
 #registrant_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #admin_contacts
   should: %s CLASS(array)
@@ -42,7 +42,7 @@
   should: %s[0].email        == "liderkubani@gmail.com"
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

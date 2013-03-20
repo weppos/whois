@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
 
   describe "#status" do
     it do
-      lambda { subject.status }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.status }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#available?" do

@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisUa, "property_contacts_multiple.expected" d
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
@@ -66,12 +66,12 @@ describe Whois::Record::Parser::WhoisUa, "property_contacts_multiple.expected" d
   end
   describe "#registrar" do
     it do
-      lambda { subject.registrar }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrar }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrant_contacts" do
     it do
-      lambda { subject.registrant_contacts }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.registrant_contacts }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#admin_contacts" do

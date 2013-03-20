@@ -6,7 +6,7 @@
   should: %s == "dr-foo-bar-baz.chirurgiens-dentistes.fr"
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status

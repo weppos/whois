@@ -38,22 +38,22 @@ describe Whois::Record::Parser::WhoisEuOrg, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.nameservers }.should raise_error(Whois::AttributeNotSupported)
     end
   end
 end

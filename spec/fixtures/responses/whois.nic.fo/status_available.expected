@@ -2,7 +2,7 @@
   should: %s == nil
 
 #domain_id
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
@@ -26,7 +26,7 @@
 
 
 #registrar
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
   should: %s CLASS(array)

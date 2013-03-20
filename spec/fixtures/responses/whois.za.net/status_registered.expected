@@ -17,7 +17,7 @@
   should: %s == Time.parse("2002-03-29 22:03:53 UTC")
 
 #expires_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

@@ -6,7 +6,7 @@
   should: %s == "broccoliwafflesareawesome.co.za"
 
 #domain_id
-  should: %s raise_error Whois::PropertyNotSupported
+  should: %s raise_error Whois::AttributeNotSupported
 
 
 #status
@@ -23,7 +23,7 @@
   should: %s == Time.parse("2012-03-27")
 
 #updated_on
-  should: %s raise_error Whois::PropertyNotSupported
+  should: %s raise_error Whois::AttributeNotSupported
 
 #expires_on
   should: %s == Time.parse("2013-03-27")
@@ -46,10 +46,10 @@
   should: %s[0].address      == "30 Frazzita Business Park Durbanville Cape Town ZA 7550"
 
 #admin_contacts
-  should: %s raise_error Whois::PropertyNotSupported
+  should: %s raise_error Whois::AttributeNotSupported
 
 #technical_contacts
-  should: %s raise_error Whois::PropertyNotSupported
+  should: %s raise_error Whois::AttributeNotSupported
 
 
 #nameservers

@@ -234,10 +234,10 @@ describe Whois::Record::Parser::Base, "Parser Behavior" do
   context "property not supported" do
     it "raises Whois::ResponseIsThrottled when the response is throttled" do
       i = Klass.new(Whois::Record::Part.new(:body => "", :host => "throttled.whois.test"))
-      lambda { i.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { i.domain_id }.should raise_error(Whois::AttributeNotSupported)
 
       i = Klass.new(Whois::Record::Part.new(:body => "", :host => "success.whois.test"))
-      lambda { i.domain_id }.should raise_error(Whois::PropertyNotSupported)
+      lambda { i.domain_id }.should raise_error(Whois::AttributeNotSupported)
     end
   end
 

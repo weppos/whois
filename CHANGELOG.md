@@ -91,6 +91,10 @@
 
 - CHANGED: Renamed Whois::Record#property_supported? and Whois::Record::Parser#property_supported? to #property_any_supported?
 
+- CHANGED: Renamed Whois::PropertyNotSupported to Whois::AttributeNotSupported.
+
+- CHANGED: Renamed Whois::PropertyNotImplemented to Whois::AttributeNotImplemented.
+
 - FIXED: whois.domainregistry.ie should support status `Active - LOCKED`.
 
 - FIXED: whois.nic.uk fails to parse registrars without URL (GH-188).
@@ -132,6 +136,11 @@
 
   However, you cannot call the method on the response anymore.
   Instead, you have to invoke the method directly on the parser instance.
+
+- The exceptions raised in case of not supported property changed from -> to
+  - Whois::PropertyNotSupported -> Whois::AttributeNotSupported
+  - Whois::PropertyNotImplemented -> Whois::AttributeNotImplemented
+  - Whois::PropertyNotAvailable -> Whois::AttributeNotImplemented
 
 
 ## Release 2.7.0

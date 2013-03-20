@@ -13,7 +13,7 @@
   should: %s == Time.parse("2004-03-04")
 
 #updated_on
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   should: %s CLASS(time)
@@ -27,7 +27,7 @@
   should: %s.organization == nil
 
 #registrant_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #admin_contacts
   should: %s SIZE(1)
@@ -37,7 +37,7 @@
   should: %s[0].url          == "https://www.nic.ru/whois"
 
 #technical_contacts
-  should: %s raise_error(Whois::PropertyNotSupported)
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

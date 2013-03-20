@@ -44,7 +44,7 @@ describe Whois::Record::Parser::WhoisDkHostmasterDk, "status_registered.expected
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do

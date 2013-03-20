@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_registered.expect
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::PropertyNotSupported)
+      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do

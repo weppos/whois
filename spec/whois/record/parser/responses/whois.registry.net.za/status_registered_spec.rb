@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error Whois::PropertyNotSupported
+      lambda { subject.domain_id }.should raise_error Whois::AttributeNotSupported
     end
   end
   describe "#status" do
@@ -58,7 +58,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error Whois::PropertyNotSupported
+      lambda { subject.updated_on }.should raise_error Whois::AttributeNotSupported
     end
   end
   describe "#expires_on" do
@@ -88,12 +88,12 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error Whois::PropertyNotSupported
+      lambda { subject.admin_contacts }.should raise_error Whois::AttributeNotSupported
     end
   end
   describe "#technical_contacts" do
     it do
-      lambda { subject.technical_contacts }.should raise_error Whois::PropertyNotSupported
+      lambda { subject.technical_contacts }.should raise_error Whois::AttributeNotSupported
     end
   end
   describe "#nameservers" do
