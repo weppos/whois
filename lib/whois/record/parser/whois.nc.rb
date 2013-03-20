@@ -76,18 +76,20 @@ module Whois
               index += 1
             end
 
-            zip, city = address[-2].match(/(\d+) (.+)/)[1, 2]
+            lines = address.dup
+            country = lines[-1] =~ /(\d+)/ ? nil : lines.pop
+            zip, city = lines.pop.match(/(\d+) (.+)/)[1, 2]
 
             Record::Contact.new(
               :type         => Whois::Record::Contact::TYPE_REGISTRANT,
               :id           => nil,
               :name         => node("Registrant name"),
               :organization => nil,
-              :address      => address[0..-3].join("\n"),
+              :address      => lines.join("\n"),
               :city         => city,
               :zip          => zip,
               :state        => nil,
-              :country      => address[-1],
+              :country      => country,
               :phone        => nil,
               :fax          => nil,
               :email        => nil

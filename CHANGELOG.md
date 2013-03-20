@@ -109,6 +109,8 @@
 
 - FIXED: whois.register.com fails to parse name servers in some cases (GH-207). [Thanks @stormsilver]
 
+- FIXED: whois.nc crashes when the address is missing the state.
+
 
 ### Backward Incompatibilities
 
