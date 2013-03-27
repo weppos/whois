@@ -76,6 +76,23 @@ module Whois
         end
 
 
+        # EXAMPLE: nic.be
+        # Domain:	nic.be
+        property_supported :domain do 
+          content_for_scanner.slice(/Domain:\s*(.+?)\n/, 1)
+        end
+
+        # EXAMPLE: nic.be
+        # Registrar:
+	# 	Name:	 Telenet NV
+	# 	Website: www.hostbasket.com
+        property_supported :registrar do
+          name = content_for_scanner.slice(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/, 1)
+          url = content_for_scanner.slice(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/, 2)
+          name and url and Record::Registrar.new(:name => name.strip, :url => url.strip)
+        end
+
+
         # Checks whether the response has been throttled.
         #
         # @return [Boolean]
