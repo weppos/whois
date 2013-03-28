@@ -31,7 +31,7 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+?)\n/
             case (s = $1.downcase)
-            when /^ok-until/
+            when "ok", /^ok-until/
               :registered
             else
               Whois.bug!(ParserError, "Unknown status `#{s}'.")

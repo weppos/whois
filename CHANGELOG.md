@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+- FIXED: whois.ua should support status `ok`.
+
+
 ## Release 3.0.0
 
 - SERVER: Added .AX TLD definition.
