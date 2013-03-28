@@ -1,0 +1,10 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == ""
+  should: %s[0].email        == "steve@selftours.co.za"
+  should: %s[0].phone        == "+27.443841912"
+  should: %s[0].fax          == "+27.443840914"
+  should: %s[0].address      == "P.O. Box 2745 Knysna 6570\nKNYSNA\nZA\n6570"

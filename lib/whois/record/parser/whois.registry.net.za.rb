@@ -1,3 +1,12 @@
+#--
+# Ruby Whois
+#
+# An intelligent pure Ruby WHOIS client and parser.
+#
+# Copyright (c) 2009-2013 Simone Carletti <weppos@weppos.net>
+#++
+
+
 require 'whois/record/parser/base'
 require 'whois/record/scanners/whois.registry.net.za'
 
@@ -5,6 +14,7 @@ require 'whois/record/scanners/whois.registry.net.za'
 module Whois
   class Record
     class Parser
+
       # Parser for the whois.registry.za.net server.
       #
       # @note This parser is just a stub and provides only a few basic methods
@@ -18,19 +28,21 @@ module Whois
         include Scanners::Nodable
 
         property_supported :disclaimer do
-          node("field:disclaimer")
+          node("node:disclaimer")
         end
 
 
         property_supported :domain do
-          node("field:domain_name")
+          node("node:domain")
         end
 
         property_not_supported :domain_id
 
 
         property_supported :status do
-          node("field:status")
+          node("node:status") do |string|
+            string.split(", ")
+          end
         end
 
         property_supported :available? do
@@ -43,8 +55,8 @@ module Whois
 
 
         property_supported :created_on do
-          node("field:dates") do
-            node("field:dates") =~ /Registration Date:\s*(\d{4}-\d{2}-\d{2})/
+          node("node:dates") do |array|
+            array[0] =~ /Registration Date:\s*(\d{4}-\d{2}-\d{2})/
             parse_date($1)
           end
         end
@@ -52,22 +64,22 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          node("field:dates") do
-            node("field:dates") =~ /Renewal Date:\s*(\d{4}-\d{2}-\d{2})/
+          node("node:dates") do |array|
+            array[1] =~ /Renewal Date:\s*(\d{4}-\d{2}-\d{2})/
             parse_date($1)
           end
         end
 
 
         property_supported :registrar do
-          node("field:registrar") do
-            node("field:registrar") =~ /(.+) \[ ID = (.+) \]/
+          node("node:registrar") do |string|
+            string =~ /(.+) \[ ID = (.+) \]/
             Whois::Record::Registrar.new(:name => $1.strip, :id => $2.strip)
           end
         end
 
         property_supported :registrant_contacts do
-          node("field:registrant_details") do
+          node("node:registrant_details") do
             build_registrant_contacts
           end
         end
@@ -78,9 +90,8 @@ module Whois
 
 
         property_supported :nameservers do
-          node("field:nameservers") do
-            nameservers = node("field:nameservers").gsub(/\n\s+/, ",").split(",")
-            Array.wrap(nameservers).map do |nameserver|
+          node("node:nameservers") do |array|
+            Array.wrap(array).map do |nameserver|
               Record::Nameserver.new(:name => nameserver)
             end
           end
@@ -101,23 +112,23 @@ module Whois
         end
 
         def registrant_details
-          registrant_lines = node("field:registrant_details").split("\n")
-          details = { :name => registrant_lines.shift }
+          lines   = node("node:registrant_details")
+          details = { :name => lines.shift }
           [:email, :phone, :fax].each do |contact_method|
-            details[contact_method] = registrant_lines.shift.split(":").last.strip
+            details[contact_method] = lines.shift.split(":").last.strip
           end
           details
         end
 
         def registrant_address_details
-          { :address => node("field:registrant_address").gsub(/\n\s+/, " ") }
+          { :address => node("node:registrant_address").join("\n") }
         end
 
         def parse_date(date_string)
           Time.parse(date_string) if date_string
         end
-
       end
+
     end
   end
 end

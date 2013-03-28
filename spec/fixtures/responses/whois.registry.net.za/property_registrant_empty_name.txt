@@ -1,0 +1,39 @@
+    Domain Name:
+        webpromotions.co.za
+
+    Registrant:
+        
+        Email: steve@selftours.co.za
+        Tel: +27.443841912
+        Fax: +27.443840914
+
+    Registrant's Address:
+        P.O. Box 2745 Knysna 6570
+        KNYSNA
+        ZA
+        6570
+
+    Registrar:
+        Hetzner (Pty) Ltd [ ID = hetzner ] 
+
+    Relevant Dates:
+        Registration Date: 2003-05-15
+        Renewal Date:      2013-05-15
+
+    Domain Status:
+        ok, autorenew
+
+    Pending Timer Events:
+        None
+ 
+    Name Servers:
+        ns2.host-h.net
+        ns1.dns-h.com
+        ns1.host-h.net
+
+    WHOIS lookup made at 2013-03-28 14:14 UTC
+
+--
+The use of this Whois facility is subject to the following terms and
+conditions. https://registry.net.za/whois_terms
+Copyright (c) UniForum SA 1995-2013

@@ -83,7 +83,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
       subject.registrant_contacts[0].email.should        == "someguy@somedomain.co.za"
       subject.registrant_contacts[0].phone.should        == "+27.219000000"
       subject.registrant_contacts[0].fax.should          == "+27.219001000"
-      subject.registrant_contacts[0].address.should      == "30 Frazzita Business Park Durbanville Cape Town ZA 7550"
+      subject.registrant_contacts[0].address.should      == "30 Frazzita Business Park Durbanville\nCape Town\nZA\n7550"
     end
   end
   describe "#admin_contacts" do
