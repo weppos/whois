@@ -1,0 +1,37 @@
+    Domain Name:
+        worrall.co.za
+
+    Registrant:
+        Appleford=2C Geoff
+        Email: geoff@4sightsport.com
+        Tel: +27.339400274
+        Fax:
+
+    Registrant's Address:
+        330 Gowrie Farm=2C Nottingham Road=2C South
+
+    Registrar:
+        UniForum S.A. [ ID = uniforum ] 
+
+    Relevant Dates:
+        Registration Date: 2012-01-28
+        Renewal Date:      2014-01-28
+
+    Domain Status:
+        ok, autorenew
+
+    Pending Timer Events:
+        None
+ 
+    Name Servers:
+        ns1.dnsimple.com
+        ns2.dnsimple.com
+        ns3.dnsimple.com
+        ns4.dnsimple.com
+
+    WHOIS lookup made at 2013-03-28 18:04 UTC
+
+--
+The use of this Whois facility is subject to the following terms and
+conditions. https://registry.net.za/whois_terms
+Copyright (c) UniForum SA 1995-2013

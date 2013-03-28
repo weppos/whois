@@ -107,21 +107,21 @@ module Whois
 
         def build_registrant_contacts
           Whois::Record::Contact.new(
-            {:type => Whois::Record::Contact::TYPE_REGISTRANT}.merge(registrant_details).merge(registrant_address_details)
+            { type: Whois::Record::Contact::TYPE_REGISTRANT}.merge(registrant_details).merge(registrant_address_details)
           )
         end
 
         def registrant_details
           lines   = node("node:registrant_details")
-          details = { :name => lines.shift }
+          details = { name: lines.shift }
           [:email, :phone, :fax].each do |contact_method|
-            details[contact_method] = lines.shift.split(":").last.strip
+            details[contact_method] = lines.shift.split(":", 2)[1].strip
           end
           details
         end
 
         def registrant_address_details
-          { :address => node("node:registrant_address").join("\n") }
+          { address: Array.wrap(node("node:registrant_address")).join("\n") }
         end
 
         def parse_date(date_string)
