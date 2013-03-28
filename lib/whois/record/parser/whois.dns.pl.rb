@@ -60,7 +60,7 @@ module Whois
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /renewal date:\s+(.+?)\n/
+          if content_for_scanner =~ /renewal date:\s+(.+?)\n/ && $1 != "not defined"
             Time.parse($1)
           end
         end

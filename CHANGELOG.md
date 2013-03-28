@@ -7,6 +7,8 @@
 
 - FIXED: whois.registry.net.za crashes when the registrant doesn't have a name.
 
+- FIXED: whois.dns.pl crashes when expiration date is not defined.
+
 
 ## Release 3.0.0
 
