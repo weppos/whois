@@ -22,10 +22,7 @@ module Whois
       # Array of connection errors to rescue
       # and wrap into a {Whois::ConnectionError}
       RESCUABLE_CONNECTION_ERRORS = [
-          Errno::ECONNRESET,
-          Errno::EHOSTUNREACH,
-          Errno::ECONNREFUSED,
-          Errno::ETIMEDOUT,
+          SystemCallError,
           SocketError,
       ]
 
