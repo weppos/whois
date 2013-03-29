@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'whois/server/socket_handler'
 
 describe Whois::Server::SocketHandler do
 
