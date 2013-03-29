@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "u34jedzcq.be"
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :available
@@ -55,6 +60,11 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_available.expected" do
     it do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should == []
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
     end
   end
 end
