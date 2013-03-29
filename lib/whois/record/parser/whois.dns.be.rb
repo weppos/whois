@@ -81,9 +81,10 @@ module Whois
         end
 
         property_supported :registrar do
-          name = content_for_scanner.slice(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/, 1)
-          url = content_for_scanner.slice(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/, 2)
-          name and url and Record::Registrar.new(:name => name.strip, :url => url.strip)
+          if (match = content_for_scanner.match(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/))
+            name, url = match.to_a[1..2]
+            Record::Registrar.new(name: name.strip, url: url.strip)
+          end
         end
 
 
