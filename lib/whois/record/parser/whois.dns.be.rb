@@ -76,6 +76,18 @@ module Whois
         end
 
 
+        property_supported :domain do 
+          content_for_scanner.slice(/Domain:\s*(.+?)\n/, 1)
+        end
+
+        property_supported :registrar do
+          if (match = content_for_scanner.match(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/))
+            name, url = match.to_a[1..2]
+            Record::Registrar.new(name: name.strip, url: url.strip)
+          end
+        end
+
+
         # Checks whether the response has been throttled.
         #
         # @return [Boolean]

@@ -1,3 +1,6 @@
+#domain
+  should: %s == "u34jedzcq.be"
+
 #status
   should: %s == :available
 
@@ -21,3 +24,6 @@
 #nameservers
   should: %s CLASS(array)
   should: %s == []
+
+#registrar
+  should: %s == nil

@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.be"
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -64,6 +69,14 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_registered.expected" do
       subject.nameservers[2].name.should == "ns1.google.com"
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
       subject.nameservers[3].name.should == "ns2.google.com"
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should   == nil
+      subject.registrar.name.should == "MarkMonitor"
+      subject.registrar.url.should  == "http://www.markmonitor.com"
     end
   end
 end
