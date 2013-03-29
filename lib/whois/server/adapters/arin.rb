@@ -3,7 +3,7 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2013 Simone Carletti <weppos@weppos.net>
 #++
 
 
@@ -29,20 +29,19 @@ module Whois
           response = query_the_socket(string, host)
           buffer_append response, host
 
-          if options[:referral] != false && referral = extract_referral(response)
+          if options[:referral] != false && (referral = extract_referral(response))
             response = query_the_socket(string, referral[:host], referral[:port])
             buffer_append(response, referral[:host])
           end
-
         end
 
         private
 
         def extract_referral(response)
-          return unless response[/ReferralServer:\s*r?whois:\/\/([\w\.]+):?(\d+)/]
+          return unless response =~ /ReferralServer:\s*r?whois:\/\/([\w\.]+):?(\d+)/
           {
-            :host => $1,
-            :port => $2 ? $2.to_i : nil
+            host: $1,
+            port: $2 ? $2.to_i : nil
           }
         end
 
