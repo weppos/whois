@@ -1,0 +1,62 @@
+#
+# Query terms are ambiguous.  The query is assumed to be:
+#     "n 69.65.39.166"
+#
+# Use "?" to get help.
+#
+
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=69.65.39.166?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       69.65.0.0 - 69.65.63.255
+CIDR:           69.65.0.0/18
+OriginAS:       
+NetName:        IPNAP
+NetHandle:      NET-69-65-0-0-1
+Parent:         NET-69-0-0-0-0
+NetType:        Direct Allocation
+Comment:        www.gigenet.com
+RegDate:        2003-07-30
+Updated:        2012-03-02
+Ref:            http://whois.arin.net/rest/net/NET-69-65-0-0-1
+
+OrgName:        GigeNET
+OrgId:          DMPL
+Address:        545 E Algonquin Rd
+Address:        Suite D
+City:           Arlington Heights
+StateProv:      IL
+PostalCode:     60005
+Country:        US
+RegDate:        2011-03-04
+Updated:        2011-06-23
+Comment:        http://www.gigenet.com
+Ref:            http://whois.arin.net/rest/org/DMPL
+
+ReferralServer: rwhois://rwhois.servernap.net:4321
+
+OrgTechHandle: IPADM152-ARIN
+OrgTechName:   IP Administrator
+OrgTechPhone:  +1-800-561-2656 
+OrgTechEmail:  ip-admin@coloquest.com
+OrgTechRef:    http://whois.arin.net/rest/poc/IPADM152-ARIN
+
+OrgNOCHandle: IPADM152-ARIN
+OrgNOCName:   IP Administrator
+OrgNOCPhone:  +1-800-561-2656 
+OrgNOCEmail:  ip-admin@coloquest.com
+OrgNOCRef:    http://whois.arin.net/rest/poc/IPADM152-ARIN
+
+OrgAbuseHandle: ABUSE2935-ARIN
+OrgAbuseName:   Abuse Department
+OrgAbusePhone:  +1-800-561-2656 
+OrgAbuseEmail:  abuse@gigenet.com
+OrgAbuseRef:    http://whois.arin.net/rest/poc/ABUSE2935-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+
