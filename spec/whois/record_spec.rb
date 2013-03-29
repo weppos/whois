@@ -115,8 +115,8 @@ describe Whois::Record do
     end
 
     it "returns true when other has descendant class and has the same parts" do
-      subdescribed_class = Class.new(described_class)
-      one, two = described_class.new(server, parts), subdescribed_class.new(server, parts)
+      subklass = Class.new(described_class)
+      one, two = described_class.new(server, parts), subklass.new(server, parts)
 
       (one == two).should be_true
       (one.eql? two).should be_true

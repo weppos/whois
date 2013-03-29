@@ -67,7 +67,7 @@ end
       parts = (source_path.split("/") - SOURCE_PARTS)
       khost = parts.first
       kfile = parts.last
-      described_class = Whois::Record::Parser.parser_described_class(khost)
+      described_class = Whois::Record::Parser.parser_klass(khost)
 
       target_path = File.join(TARGET_DIR, *parts).gsub(".expected", "_spec.rb")
 

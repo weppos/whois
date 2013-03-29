@@ -46,8 +46,8 @@ describe Whois::Server::Adapters::Base do
     end
 
     it "returns true when other has descendant class and has the same attributes" do
-      subdescribed_class = Class.new(described_class)
-      one, two = described_class.new(*definition), subdescribed_class.new(*definition)
+      subklass = Class.new(described_class)
+      one, two = described_class.new(*definition), subklass.new(*definition)
 
       (one == two).should be_true
       (one.eql? two).should be_true

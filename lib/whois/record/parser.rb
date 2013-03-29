@@ -64,7 +64,7 @@ module Whois
       #   # => #<Whois::Record::Parser::Blank>
       #
       def self.parser_for(part)
-        parser_described_class(part.host).new(part)
+        parser_klass(part.host).new(part)
       end
 
       # Detects the proper parser class according to given <tt>host</tt>
@@ -84,17 +84,17 @@ module Whois
       #
       # @example
       #
-      #   Parser.parser_described_class("missing.example.com")
+      #   Parser.parser_klass("missing.example.com")
       #   # => Whois::Record::Parser::Blank
       #
       #   # Define a custom parser for missing.example.com
       #   class Whois::Record::Parser::MissingExampleCom
       #   end
       #
-      #   Parser.parser_described_class("missing.example.com")
+      #   Parser.parser_klass("missing.example.com")
       #   # => Whois::Record::Parser::MissingExampleCom
       #
-      def self.parser_described_class(host)
+      def self.parser_klass(host)
         name = host_to_parser(host)
         Parser.const_defined?(name) || autoload(host)
         Parser.const_get(name)
