@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Whois::Server::Adapters::Arin do
 
   let(:definition) { [:ipv4, "0.0.0.0/1", "whois.arin.net"] }
-  let(:server) { klass.new(*definition) }
+  let(:server) { described_class.new(*definition) }
 
   describe "#lookup" do
     context "without referral" do
