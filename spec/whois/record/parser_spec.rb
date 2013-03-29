@@ -7,14 +7,14 @@ describe Whois::Record::Parser do
   let(:record) { Whois::Record.new(nil, []) }
 
 
-  describe ".parser_klass" do
+  describe ".parser_described_class" do
     it "returns the parser hostname converted into a class" do
       require 'whois/record/parser/whois.crsnic.net'
-      described_class.parser_klass("whois.crsnic.net").should == Whois::Record::Parser::WhoisCrsnicNet
+      described_class.parser_described_class("whois.crsnic.net").should == Whois::Record::Parser::WhoisCrsnicNet
     end
 
     it "recognizes and lazy-loads classes" do
-      described_class.parser_klass("whois.nic.it").name.should == "Whois::Record::Parser::WhoisNicIt"
+      described_class.parser_described_class("whois.nic.it").name.should == "Whois::Record::Parser::WhoisNicIt"
     end
 
     it "recognizes preloaded classes" do
@@ -22,11 +22,11 @@ describe Whois::Record::Parser do
         class PreloadedParserTest
         end
       RUBY
-      described_class.parser_klass("preloaded.parser.test").name.should == "Whois::Record::Parser::PreloadedParserTest"
+      described_class.parser_described_class("preloaded.parser.test").name.should == "Whois::Record::Parser::PreloadedParserTest"
     end
 
     it "returns the blank parser if the parser doesn't exist" do
-      described_class.parser_klass("whois.missing.test").name.should == "Whois::Record::Parser::Blank"
+      described_class.parser_described_class("whois.missing.test").name.should == "Whois::Record::Parser::Blank"
     end
   end
 
