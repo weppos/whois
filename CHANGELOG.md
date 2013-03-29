@@ -11,6 +11,8 @@
 
 - FIXED: whois.dns.pl crashes when expiration date is not defined.
 
+- FIXED: Handle ReferralServer directive in ARIN whois queries (GH-204, GH-37). [Thanks @linrock]
+
 
 ## Release 3.0.0
 
