@@ -43,7 +43,7 @@ namespace :server do
         when /^WEB (.*)$/       then [nil, { :adapter => Whois::Server::Adapters::Web, :web => $1 }]
         when "CRSNIC"           then ["whois.crsnic.net", { :adapter => Whois::Server::Adapters::Verisign }]
         when /^VERISIGN (.*)$/  then [$1, { :adapter => Whois::Server::Adapters::Verisign }]
-        when "PIR"              then ["whois.publicinterestregistry.net", { :adapter => Whois::Server::Adapters::Pir }]
+        when "PIR"              then ["whois.publicinterestregistry.net", { :adapter => Whois::Server::Adapters::Afilias }]
         when "AFILIAS"          then ["whois.afilias-grs.info", { :adapter => Whois::Server::Adapters::Afilias }]
         when "NICCC"            then ["whois.nic.cc", { :adapter => Whois::Server::Adapters::Verisign }]
         else                    [instructions]
