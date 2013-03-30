@@ -1,6 +1,7 @@
 #domain
   should: %s == "google.be"
 
+
 #status
   should: %s == :registered
 
@@ -22,6 +23,13 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id   == nil
+  should: %s.name == "MarkMonitor"
+  should: %s.url  == "http://www.markmonitor.com"
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(4)
@@ -33,9 +41,3 @@
   should: %s[2].name == "ns1.google.com"
   should: %s[3] CLASS(nameserver)
   should: %s[3].name == "ns2.google.com"
-
-#registrar
-  should: %s CLASS(registrar)
-  should: %s.id   == nil
-  should: %s.name == "MarkMonitor"
-  should: %s.url  == "http://www.markmonitor.com"

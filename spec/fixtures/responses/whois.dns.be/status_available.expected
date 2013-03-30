@@ -1,6 +1,7 @@
 #domain
   should: %s == "u34jedzcq.be"
 
+
 #status
   should: %s == :available
 
@@ -21,9 +22,10 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 
+#registrar
+  should: %s == nil
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s == []
-
-#registrar
-  should: %s == nil

@@ -25,6 +25,11 @@ module Whois
       #
       class WhoisDnsBe < Base
 
+        property_supported :domain do
+          content_for_scanner.slice(/Domain:\s+(.+?)\n/, 1)
+        end
+
+
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
@@ -63,6 +68,14 @@ module Whois
         property_not_supported :expires_on
 
 
+        property_supported :registrar do
+          if (match = content_for_scanner.match(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/))
+            name, url = match.to_a[1..2]
+            Record::Registrar.new(name: name.strip, url: url.strip)
+          end
+        end
+
+
         property_supported :nameservers do
           if content_for_scanner =~ /Nameservers:\s((.+\n)+)\n/
             $1.split("\n").map do |line|
@@ -72,18 +85,6 @@ module Whois
                 Record::Nameserver.new(:name => line.strip)
               end
             end
-          end
-        end
-
-
-        property_supported :domain do 
-          content_for_scanner.slice(/Domain:\s*(.+?)\n/, 1)
-        end
-
-        property_supported :registrar do
-          if (match = content_for_scanner.match(/Registrar:\s+Name:(.+?)\s*Website:(.+?)\n/))
-            name, url = match.to_a[1..2]
-            Record::Registrar.new(name: name.strip, url: url.strip)
           end
         end
 

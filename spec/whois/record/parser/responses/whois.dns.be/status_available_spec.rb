@@ -56,15 +56,15 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_available.expected" do
       lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
+    end
+  end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should == []
-    end
-  end
-  describe "#registrar" do
-    it do
-      subject.registrar.should == nil
     end
   end
 end
