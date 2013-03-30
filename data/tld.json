@@ -879,6 +879,9 @@
     "adapter": "web",
     "url": "http://www.pitcairn.pn/PnRegistry/"
   },
+  ".post": {
+    "host": "whois.dotpostregistry.net"
+  },
   ".pr": {
     "host": "whois.nic.pr"
   },
