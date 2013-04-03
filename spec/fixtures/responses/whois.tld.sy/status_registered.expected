@@ -1,0 +1,44 @@
+#domain
+  should: %s == "tld.sy"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2010-12-02 16:01:27 UTC")
+
+#updated_on
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2017-12-01 22:00:00 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "nans"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns9.tld.sy"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns3.tld.sy"

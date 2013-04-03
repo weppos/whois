@@ -9,6 +9,8 @@
 
 - NEW: Added full whois.dotpostregistry.net parser (GH-192).
 
+- NEW: Added full whois.tld.sy parser (GH-196).
+
 - CHANGED: Rescue all SystemCallError instead of a few Errno errors (GH-212). [Thanks @mat813]
 
 - FIXED: whois.ua should support status `ok`.
