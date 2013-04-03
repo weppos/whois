@@ -95,12 +95,6 @@ module Whois
       end
     end
 
-    # @deprecated
-    def query(*args)
-      Whois.deprecate("Client#query is deprecated, use Client#lookup instead.")
-      lookup(*args)
-    end
-
   end
 
 end
