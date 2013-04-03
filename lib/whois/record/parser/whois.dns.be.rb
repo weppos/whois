@@ -93,7 +93,15 @@ module Whois
         #
         # @return [Boolean]
         def response_throttled?
-          !!(content_for_scanner =~ /^% (Excessive querying|Maximum queries per hour reached)/)
+          !!(content_for_scanner =~ /^% (Excessive querying|Maximum queries per hour reached)/) ||
+          response_blocked?
+        end
+
+        # Checks whether the server has been blocked.
+        #
+        # @return [Boolean]
+        def response_blocked?
+          !!(content_for_scanner =~ /^-3: IP address blocked/)
         end
 
       end

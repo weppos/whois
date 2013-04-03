@@ -1,0 +1,5 @@
+#response_throttled?
+  should: %s == true
+
+#response_blocked?
+  should: %s == true
