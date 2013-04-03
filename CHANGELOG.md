@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 3.1.0
 
 - SERVER: Added .POST (GH-192) TLD definition.
 
