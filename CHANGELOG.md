@@ -3,7 +3,7 @@
 
 ## master
 
-- SERVER: Added .POST TLD definition (GH-192).
+- SERVER: Added .POST (GH-192), .SY (GH-196) TLD definitions.
 
 - NEW: Added #domain and #registrar to whois.dns.be parser (GH-216). [Thanks @chuckadams]
 
