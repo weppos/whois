@@ -269,8 +269,7 @@
     "url": "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"
   },
   ".bn": {
-    "host": null,
-    "adapter": "none"
+    "host": "whois.bn"
   },
   ".bo": {
     "host": "whois.nic.bo"
