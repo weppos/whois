@@ -37,9 +37,6 @@ module Whois
             when "not available"    then :registered
             when "quarantine"       then :redemption
             when "out of service"   then :redemption
-            # old response
-            when "registered"       then :registered
-            when "free"             then :available
             else
               Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
