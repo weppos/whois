@@ -204,7 +204,7 @@ module Whois
     # @see Whois::Record#technical_contacts
     #
     def technical_contact
-      if property_any_supported(:technical_contacts)
+      if property_any_supported?(:technical_contacts)
         parser.technical_contacts.first
       end
     end
