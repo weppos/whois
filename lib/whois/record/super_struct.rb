@@ -46,8 +46,7 @@ class SuperStruct < Struct
     elsif args.size == 0
       super
     else
-      Whois.deprecate "Passing a list of arguments to #{self.class} is deprecated, please use the Hash syntax."
-      super
+      raise ArgumentError
     end
     yield(self) if block_given?
   end

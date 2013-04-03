@@ -19,6 +19,8 @@
 
 - CHANGED: Removed deprecated method Whois::Client#query.
 
+- CHANGED: Removed deprecated initialization of SuperStruct via Array.
+
 - FIXED: whois.ua should support status `ok`.
 
 - FIXED: whois.registry.net.za crashes when the registrant doesn't have a name.
