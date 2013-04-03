@@ -3,13 +3,17 @@
 
 ## master
 
-- SERVER: Added .POST (GH-192), .SY (GH-196) TLD definitions.
+- SERVER: Added .POST (GH-192) TLD definition.
+
+- SERVER: Updated .BN (GH-214), .SY (GH-196) TLD definitions.
 
 - NEW: Added #domain and #registrar to whois.dns.be parser (GH-216). [Thanks @chuckadams]
 
 - NEW: Added full whois.dotpostregistry.net parser (GH-192).
 
 - NEW: Added full whois.tld.sy parser (GH-196).
+
+- NEW: Added whois.bn parser (GH-214).
 
 - CHANGED: Rescue all SystemCallError instead of a few Errno errors (GH-212). [Thanks @mat813]
 
