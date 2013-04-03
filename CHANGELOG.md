@@ -13,6 +13,8 @@
 
 - NEW: Added full whois.tld.sy parser (GH-196).
 
+- NEW: Added whois.bn parser (GH-214).
+
 - CHANGED: Rescue all SystemCallError instead of a few Errno errors (GH-212). [Thanks @mat813]
 
 - FIXED: whois.ua should support status `ok`.

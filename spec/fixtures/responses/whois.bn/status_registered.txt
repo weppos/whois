@@ -1,0 +1,19 @@
+swhoisd 3.0
+Searching for telbru.com.bn.  Found 1 record(s) matching telbru.com.bn.
+
+Domain:                   (Handle telbru-com-bn-dom)
+Name:                     TelBru Berhad
+Domain Name:              telbru.com.bn
+Name Server 1:            dns1-tl.brunet.bn
+NS1 IP address:           202.160.8.2
+Country:                  Brunei
+Contact Handle:           telbru-com-bn.pr
+Administrative Contact:   Hamdan Ladis
+Email address:            dns@brunet.bn
+Technical Contact:        Jeffrey Tan Siaw Wei
+Email address:            dns@brunet.bn
+Created:                  2011-06-15 14:54PM
+Last Updated:             2011-06-15 14:54PM
+
+To single out one record, look it up with "!XXX", where XXX is the handle.
+
