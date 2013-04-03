@@ -985,8 +985,7 @@
     "host": "whois.sx"
   },
   ".sy": {
-    "host": null,
-    "adapter": "none"
+    "host": "whois.tld.sy"
   },
   ".sz": {
     "host": null,
