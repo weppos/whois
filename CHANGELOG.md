@@ -19,6 +19,8 @@
 
 - FIXED: Handle ReferralServer directive in ARIN whois queries (GH-204, GH-37). [Thanks @linrock]
 
+- FIXED: Record#technical_contact raised a NoMethodError (GH-217). [Thanks @yspro]
+
 
 ## Release 3.0.0
 
