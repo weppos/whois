@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisDnsBe, "property_nameservers_with_ip.expect
       subject.nameservers[1].ipv4.should == "80.169.63.207"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
       subject.nameservers[2].name.should == "ns2.register.be"
-      subject.nameservers[2].ipv4.should == "194.78.23.152"
+      subject.nameservers[2].ipv4.should == "217.21.176.34"
     end
   end
 end
