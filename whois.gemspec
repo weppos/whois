@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "whois"
-  s.version = "3.1.0"
+  s.version = "3.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simone Carletti"]
-  s.date = "2013-04-03"
+  s.date = "2013-04-04"
   s.description = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, parse and convert responses into easy-to-use Ruby objects."
   s.email = ["weppos@weppos.net"]
   s.executables = ["ruby-whois"]
