@@ -35,7 +35,7 @@ module Whois
     #   # => #<Whois::Record>
     #
     #   # Equivalent to
-    #   Whois::Client.new.query("google.com")
+    #   Whois::Client.new.lookup("google.com")
     #
     def query(object)
       Client.new.lookup(object)

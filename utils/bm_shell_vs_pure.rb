@@ -9,6 +9,6 @@ Benchmark.bmbm do |x|
     DOMAINS.each { |d| `whois #{d}` }
   end
   x.report("pure")  do
-    DOMAINS.each { |d| Whois::Client.new.query(d) }
+    DOMAINS.each { |d| Whois::Client.new.lookup(d) }
   end
 end

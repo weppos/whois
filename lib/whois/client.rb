@@ -48,20 +48,20 @@ module Whois
     #
     # @example Creating a new Client
     #   client = Whois::Client.new
-    #   client.query("google.com")
+    #   client.lookup("google.com")
     #
     # @example Creating a new Client with custom settings
     #   client = Whois::Client.new(:timeout => nil)
-    #   client.query("google.com")
+    #   client.lookup("google.com")
     #
     # @example Creating a new Client an yield the instance
     #   Whois::Client.new do |c|
-    #     c.query("google.com")
+    #     c.lookup("google.com")
     #   end
     #
     # @example Binding the requests to a custom local IP
     #   client = Whois::Client.new(:bind_host => "127.0.0.1", :bind_port => 80)
-    #   client.query("google.com")
+    #   client.lookup("google.com")
     #
     def initialize(settings = {})
       settings = settings.dup
