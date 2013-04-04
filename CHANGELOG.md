@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+- FIXED: ARIN queries required additional params (GH-220, GH-10). [Thanks @linrock]
+
+
 ## Release 3.1.1
 
 - FIXED: Fixed CLI crash (GH-219). [Thanks @linrock]
