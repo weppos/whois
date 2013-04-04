@@ -26,7 +26,7 @@ defs.each do |tld, node|
   subdir   = node["_subdir"] ? "/#{node["_subdir"]}" : ""
   fixtures.each do |name, domain|
     begin
-      record = client.query(domain)
+      record = client.lookup(domain)
       part   = record.parts.first
       target = File.expand_path("../../spec/fixtures/responses/#{part.host}#{subdir}/#{name}.txt", __FILE__)
       FileUtils.mkdir_p(File.dirname(target))
