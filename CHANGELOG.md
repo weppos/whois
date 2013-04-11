@@ -5,6 +5,8 @@
 
 - FIXED: ARIN queries required additional params (GH-220, GH-10). [Thanks @linrock]
 
+- FIXED: Fixed ARPA Reverse DNS lookup.
+
 
 ## Release 3.1.1
 

@@ -14,7 +14,9 @@ module Whois
       class Arpa < Base
 
         def request(string)
-          Server.guess(inaddr_to_ip(string)).query(string)
+          record = Server.guess(inaddr_to_ip(string)).lookup(string)
+          part   = record.parts.first
+          buffer_append part.body, part.host
         end
 
 
