@@ -1,0 +1,89 @@
+#status
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2005-01-30")
+
+#updated_on
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2020-01-30")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "NOM IQ LTD (DBA COM LAUDE)"
+  should: %s.url          == "http://www.comlaude.com"
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "Domain Manager"
+  should: %s[0].organization == "Nom-IQ Ltd dba Com Laude"
+  should: %s[0].address      == nil
+  should: %s[0].city         == nil
+  should: %s[0].zip          == nil
+  should: %s[0].state        == nil
+  should: %s[0].country      == nil
+  should: %s[0].phone        == "+44.2078360070"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "admin@comlaude.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "Domain Manager"
+  should: %s[0].organization == "Nom-IQ Ltd dba Com Laude"
+  should: %s[0].address      == nil
+  should: %s[0].city         == nil
+  should: %s[0].zip          == nil
+  should: %s[0].state        == nil
+  should: %s[0].country      == nil
+  should: %s[0].phone        == "+44.2078360070"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "admin@comlaude.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "Technical Manager"
+  should: %s[0].organization == "Com Laude"
+  should: %s[0].address      == nil
+  should: %s[0].city         == nil
+  should: %s[0].zip          == nil
+  should: %s[0].state        == nil
+  should: %s[0].country      == nil
+  should: %s[0].phone        == "+44.2074218250"
+  should: %s[0].fax          == "+44.8700118187"
+  should: %s[0].email        == "hostmaster@comlaude.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "dns1.comlaude-dns.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "dns2.comlaude-dns.net"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "dns3.comlaude-dns.co.uk"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "dns4.comlaude-dns.eu"

@@ -1,0 +1,78 @@
+
+-------------------------------------------------------------------------------
+Com Laude registers, maintains and renews domain names around the world for
+leading intellectual property owners and the law firms that support them.
+If you have queries about this domain, you may contact us via our website
+at www.comlaude.com.
+-------------------------------------------------------------------------------
+
+The data in the Com Laude Whois database is provided to assist you in obtaining
+information about a domain name registration record.  Com Laude makes this
+information available "as is," and does not guarantee its accuracy.
+By submitting a WHOIS query, you agree that you will use this data only for
+lawful purposes and that, under no circumstances will you use this data to:
+
+(1) allow, enable, or otherwise support the transmission of mass unsolicited,
+commercial advertising or solicitations via e-mail (spam), telephone or fax; or
+(2) enable high volume, automated, electronic processes that that send queries
+or data to Com Laude or the systems of any Registry Operator or ICANN-Accredited
+registrar.  The compilation, repackaging, dissemination or other use of this
+data is expressly prohibited without the prior written consent of Com Laude.
+
+Com Laude reserves the right to modify these terms at any time. By submitting
+this query, you agree to abide by these terms. If you fail to abide by this
+policy, we may terminate your access to this WHOIS database.
+
+Domain name:  comlaude.com
+Registered: 2005-01-30
+Expires:  2020-01-30
+
+Registrar:  Com Laude
+    Com Laude is a business name of Nom IQ Ltd, a UK based company.
+
+Registrant Contact:
+    Domain Manager
+    Nom-IQ Ltd dba Com Laude
+    2nd Floor, 28-30 Little Russell Street
+    London WC1A 2HN
+    United Kingdom
+    Phone: +44.2078360070
+    Email: admin@comlaude.com
+
+
+Admin Contact:
+    Domain Manager
+    Nom-IQ Ltd dba Com Laude
+    2nd Floor, 28-30 Little Russell Street
+    London WC1A 2HN
+    United Kingdom
+    Phone: +44.2078360070
+    Email: admin@comlaude.com
+
+
+Technical Contact:
+    Technical Manager
+    Com Laude
+    2nd floor, 28-30 Little Russell Street
+    London WC1A 2HN
+    London
+    United Kingdom
+    Phone: +44.2074218250
+    Fax: +44.8700118187
+    Email: hostmaster@comlaude.com
+
+
+Nameservers:
+    dns1.comlaude-dns.com
+    dns2.comlaude-dns.net
+    dns3.comlaude-dns.co.uk
+    dns4.comlaude-dns.eu
+
+
+-------------------------------------------------------------------------------
+Com Laude protects intellectual property in the domain name system. Com Laude
+only registers domain names for legitimate rights owners. Should you have any
+queries about the legitimacy of this name or our work as a UK based, ICANN
+Accredited Registrar, contact us at: Com Laude, 116 Long Acre, Covent Garden,
+London WC2E 9SU, UK.  Com Laude is a business name of Nom IQ Ltd.
+-------------------------------------------------------------------------------
