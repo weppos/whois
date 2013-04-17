@@ -3,6 +3,8 @@
 
 ## master
 
+- NEW: Added full whois.comlaude.com parser (GH-222). [Thanks @delwyn] 
+
 - FIXED: ARIN queries required additional params (GH-220, GH-10). [Thanks @linrock]
 
 - FIXED: Fixed ARPA Reverse DNS lookup.
