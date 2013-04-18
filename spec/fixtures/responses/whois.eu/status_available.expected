@@ -18,6 +18,10 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
 #nameservers
   should: %s CLASS(array)
   should: %s == []
