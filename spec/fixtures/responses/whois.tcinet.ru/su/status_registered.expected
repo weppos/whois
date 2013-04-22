@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.su"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == ["REGISTERED", "DELEGATED", "UNVERIFIED"]
 

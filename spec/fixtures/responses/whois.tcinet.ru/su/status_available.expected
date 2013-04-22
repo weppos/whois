@@ -1,3 +1,10 @@
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == []
 

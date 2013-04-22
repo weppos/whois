@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.ru"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == ["REGISTERED", "DELEGATED", "VERIFIED"]

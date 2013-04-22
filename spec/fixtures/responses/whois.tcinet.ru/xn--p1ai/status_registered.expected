@@ -1,3 +1,10 @@
+#domain
+  should: %s == "xn----8sbc3ahklcs4adf.xn--p1ai"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == ["REGISTERED", "DELEGATED", "VERIFIED"]
 

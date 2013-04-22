@@ -26,6 +26,15 @@ module Whois
       # @since  2.1.0
       class WhoisTcinetRu < Base
 
+        property_supported :domain do
+          if content_for_scanner =~ /domain:\s+(.+?)\n/
+            $1.downcase
+          end
+        end
+
+        property_not_supported :domain_id
+
+
         property_supported :status do
           if content_for_scanner =~ /state:\s+(.+?)\n/
             $1.split(",").map(&:strip)
