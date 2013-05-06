@@ -12,13 +12,13 @@
 % available to:
 %
 % - allow, enable or otherwise support the transmission of unsolicited,
-%   commercial advertising or other solicitations whether via email or
-%   otherwise;
+% commercial advertising or other solicitations whether via email or
+% otherwise;
 % - target advertising in any possible way;
 %
 % - to cause nuisance in any possible way to the registrants by sending
-%   (whether by automated, electronic processes capable of enabling
-%   high volumes or other possible means) messages to them.
+% (whether by automated, electronic processes capable of enabling
+% high volumes or other possible means) messages to them.
 %
 % Without prejudice to the above, it is explicitly forbidden to extract,
 % copy and/or use or re-utilise in any form and by any means
@@ -42,22 +42,30 @@
 % webbased whois service available from the EURid website www.eurid.eu
 %
 % WHOIS google
-Domain:	google
+Domain: google
 
 Registrant:
-	NOT DISCLOSED!
-	Visit www.eurid.eu for webbased whois.
+NOT DISCLOSED!
+Visit www.eurid.eu for webbased whois.
 
-Registrar Technical Contacts:
+Technical:
+Name: DNS Admin
+Organisation: Google Inc.
+Language: en
+Phone: +1.6506234000
+Fax: +1.6506188571
+Email: dns-admin@google.com
 
 Registrar:
-	Name:	 eMarkMonitor, Inc.
-	Website: www.markmonitor.com
+Name:  MarkMonitor Inc.
+Website: www.markmonitor.com
 
 Name servers:
-	ns1.google.com
-	ns2.google.com
-	ns3.google.com
-	ns4.google.com
+ns1.google.com
+ns2.google.com
+ns3.google.com
+ns4.google.com
+
+Keys:
 
 Please visit www.eurid.eu for more info.

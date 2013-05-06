@@ -51,6 +51,19 @@ describe Whois::Record::Parser::WhoisEu, "status_registered.expected" do
       lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should have(1).items
+      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].name.should         == "DNS Admin"
+      subject.technical_contacts[0].organization.should == "Google Inc."
+      subject.technical_contacts[0].phone.should        == "+1.6506234000"
+      subject.technical_contacts[0].fax.should          == "+1.6506188571"
+      subject.technical_contacts[0].email.should        == "dns-admin@google.com"
+    end
+  end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
