@@ -51,15 +51,41 @@ module Whois
         property_not_supported :expires_on
 
 
+        # Technical Contact
+        #
+        # Technical:
+        # Name: DNS Admin
+        # Organisation: Google Inc.
+        # Language: en
+        # Phone: +1.6506234000
+        # Fax: +1.6506188571
+        # Email: dns-admin@google.com
+        #
+        property_supported :technical_contacts do
+          if content_for_scanner =~ /Technical:\s((.+\n)+)\n/
+            lines = $1
+            Record::Contact.new(
+              :type         => Record::Contact::TYPE_TECHNICAL,
+              :id           => nil,
+              :name         => lines.slice(/Name:\s*(.*)/, 1),
+              :organization => lines.slice(/Organisation:\s*(.*)/, 1),
+              :phone        => lines.slice(/Phone:\s*(.*)/, 1),
+              :fax          => lines.slice(/Fax:\s*(.*)/, 1),
+              :email        => lines.slice(/Email:\s*(.*)/, 1)
+            )
+          end
+        end
+
+
         # Nameservers are listed in the following formats:
         #
         #   Name servers:
-        #           dns1.servicemagic.eu
-        #           dns2.servicemagic.eu
+        #   dns1.servicemagic.eu
+        #   dns2.servicemagic.eu
         #
         #   Name servers:
-        #           dns1.servicemagic.eu (91.121.133.61)
-        #           dns2.servicemagic.eu (91.121.103.77)
+        #   dns1.servicemagic.eu (91.121.133.61)
+        #   dns2.servicemagic.eu (91.121.103.77)
         #
         property_supported :nameservers do
           if content_for_scanner =~ /Name\sservers:\s((.+\n)+)\n/
