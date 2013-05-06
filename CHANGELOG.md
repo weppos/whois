@@ -13,6 +13,8 @@
 
 - FIXED: whois.nic.uk should support status `no longer required` (GH-225)
 
+- FIXED: whois.rotld.ro should support status `UpdateProhibited` (GH-224)
+
 
 ## Release 3.1.1
 

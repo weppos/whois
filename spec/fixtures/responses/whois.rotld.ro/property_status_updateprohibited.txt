@@ -1,0 +1,28 @@
+
+% Whois Server Version 3.0 - whois.rotld.ro:43
+
+% Rights restricted by copyright.
+% Specifically, this data MAY ONLY be used for Internet operational
+% purposes. It may not be used for targeted advertising or any
+% other purpose.
+
+% Este INTERZISA folosirea datelor de pe acest server in oricare
+% alt scop decat operarea retelei. In special este INTERZISA
+% folosirea lor in scopuri publicitare.
+
+% Top Level Domain : ro
+% Maintainance : www.rotld.ro
+
+  Domain Name: google.ro
+  Registered On: 2000-07-17
+  Registrar: MarkMonitor Inc.
+  Referral URL: 
+
+  Nameserver: ns4.google.com
+  Nameserver: ns1.google.com
+  Nameserver: ns3.google.com
+  Nameserver: ns2.google.com
+
+  Domain Status: UpdateProhibited
+
+
