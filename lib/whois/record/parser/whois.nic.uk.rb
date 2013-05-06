@@ -38,6 +38,8 @@ module Whois
               :registered
             when "renewal request being processed."
               :registered
+            when "no longer required"
+              :registered
             when "no registration status listed."
               :reserved
             # NEWSTATUS (redemption?)

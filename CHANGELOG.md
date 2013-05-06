@@ -11,6 +11,8 @@
 
 - FIXED: Fixed ARPA Reverse DNS lookup.
 
+- FIXED: whois.nic.uk should support status `no longer required` (GH-225)
+
 
 ## Release 3.1.1
 
