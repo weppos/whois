@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 3.1.2
 
 - NEW: Added full whois.comlaude.com parser (GH-222). [Thanks @delwyn] 
 
