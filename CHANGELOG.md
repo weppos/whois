@@ -7,6 +7,8 @@
 
 - NEW: Added #domain, #domain_id to whois.tcinet.ru.
 
+- NEW: Added full whois.eu parser (GH-223). [Thanks @delwyn]
+
 - FIXED: ARIN queries required additional params (GH-220, GH-10). [Thanks @linrock]
 
 - FIXED: Fixed ARPA Reverse DNS lookup.

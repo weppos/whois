@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.eu"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -17,6 +24,20 @@
 #expires_on
   should: %s raise_error(Whois::AttributeNotSupported)
 
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor Inc."
+  should: %s.organization == nil
+  should: %s.url          == "www.markmonitor.com"
+
+
+#registrant_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
   should: %s CLASS(array)

@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisEu, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "u34jedzcq.eu"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :available
@@ -49,6 +59,21 @@ describe Whois::Record::Parser::WhoisEu, "status_available.expected" do
   describe "#expires_on" do
     it do
       lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      lambda { subject.registrant_contacts }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#technical_contacts" do

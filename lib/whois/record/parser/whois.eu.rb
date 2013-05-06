@@ -14,18 +14,18 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.eu parser
-      #
       # Parser for the whois.eu server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisEu < Base
+
+        property_supported :domain do
+          if content_for_scanner =~ /Domain:\s+(.+)\n/
+            "#{$1.downcase}.eu"
+          end
+        end
+
+        property_not_supported :domain_id
+
 
         property_supported :status do
           if available?
@@ -50,6 +50,20 @@ module Whois
 
         property_not_supported :expires_on
 
+
+        property_supported :registrar do
+          if content_for_scanner =~ /Registrar:\s((.+\n)+)\n/
+            lines = $1
+            Record::Registrar.new(
+                name:         lines.slice(/Name:\s+(.+)/, 1),
+                url:          lines.slice(/Website:\s+(.+)/, 1)
+            )
+          end
+        end
+
+        property_not_supported :registrant_contacts
+
+        property_not_supported :admin_contacts
 
         # Technical Contact
         #
