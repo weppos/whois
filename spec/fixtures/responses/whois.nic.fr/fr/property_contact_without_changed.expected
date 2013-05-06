@@ -1,0 +1,18 @@
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "JMR39-FRNIC"
+  should: %s[0].name          == "Jean Marc Raimondo"
+  should: %s[0].organization  == "1C2"
+  should: %s[0].address       == "20-22, rue Louis Armand\n75015 Paris"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "FR"
+  should: %s[0].phone         == "+33 1 30 62 40 06"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "jmr@1c2.com"
+  should: %s[0].updated_on    == nil

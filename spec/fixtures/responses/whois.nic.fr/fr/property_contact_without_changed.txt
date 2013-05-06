@@ -1,0 +1,115 @@
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
+%% Rights restricted by copyright.
+%% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
+%%
+%% Use '-h' option to obtain more information about this service.
+%%
+%% [87.21.235.18 REQUEST] >> 1c2.fr
+%%
+%% RL Net [##########] - RL IP [#########.]
+%%
+
+domain:      1c2.fr
+status:      ACTIVE
+hold:        NO
+holder-c:    U351-FRNIC
+admin-c:     JMR39-FRNIC
+tech-c:      HMO7-FRNIC
+tech-c:      AV372-FRNIC
+zone-c:      NFC1-FRNIC
+nsl-id:      NSL1231-FRNIC
+registrar:   MAGIC ON LINE
+anniversary: 20/05
+created:     20/05/2004
+last-update: 16/07/2004
+source:      FRNIC
+
+ns-list:     NSL1231-FRNIC
+nserver:     ns.magic.fr [188.130.24.5]
+nserver:     ns2.magic.fr [62.39.164.10]
+source:      FRNIC
+
+registrar:   MAGIC ON LINE
+type:        Isp Option 1
+address:     134 Avenue du Président Wilson
+address:     MONTREUIL SOUS BOIS CEDEX
+country:     FR
+phone:       +33 1 41 58 22 50
+fax-no:      +33 1 56 72 93 30
+e-mail:      pbarouk@magic.fr
+website:     http://www.magic.fr
+anonymous:   NO
+registered:  01/01/1998
+source:      FRNIC
+
+nic-hdl:     JMR39-FRNIC
+type:        PERSON
+contact:     Jean Marc Raimondo
+address:     1C2
+address:     20-22, rue Louis Armand
+address:     75015 Paris
+country:     FR
+phone:       +33 1 30 62 40 06
+e-mail:      jmr@1c2.com
+registrar:   MAGIC ON LINE
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+
+nic-hdl:     U351-FRNIC
+type:        ORGANIZATION
+contact:     1C2
+address:     20-22, rue Louis Armand
+address:     75015 Paris
+country:     FR
+phone:       +33 1 30 62 40 06
+e-mail:      jmr@1c2.com
+registrar:   MAGIC ON LINE
+changed:     09/10/2008 whoismaster@nic.fr
+anonymous:   NO
+obsoleted:   NO
+eligstatus:  ok
+eligdate:    16/07/2004 00:00:00
+source:      FRNIC
+
+nic-hdl:     HMO7-FRNIC
+type:        ROLE
+contact:     Hostmaster Magic OnLine
+address:     CTS Informatique
+address:     130-134, avenue du President Wilson
+address:     93512 Montreuil Cedex
+country:     FR
+phone:       +33 1 41 58 22 50
+e-mail:      hostmaster@magic.fr
+admin-c:     PB1693-FRNIC
+tech-c:      EC80-FRNIC
+notify:      hostmaster@magic.fr
+registrar:   MAGIC ON LINE
+changed:     22/03/2007 hostmaster@magic.fr
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+
+nic-hdl:     AV372-FRNIC
+type:        PERSON
+contact:     Alain Villatte
+address:     MAGIC ONLINE
+address:     45, rue de la Procession
+address:     75015 Paris
+country:     FR
+phone:       +33 1 53 69 54 59
+fax-no:      +33 1 53 69 54 56
+e-mail:      villatte@magic.fr
+notify:      hostmaster@magic.fr
+registrar:   MAGIC ON LINE
+changed:     17/09/2007 JES@OLEANE.NET
+anonymous:   NO
+obsoleted:   NO
+source:      FRNIC
+

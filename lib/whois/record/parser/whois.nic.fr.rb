@@ -139,22 +139,19 @@ module Whois
             end
           end
 
+          updated_on = values["changed"] ? Time.utc(*values["changed"].split(" ").first.split("/").reverse) : nil
+
           Record::Contact.new({
             :type         => type,
             :id           => id,
             :name         => name,
             :organization => organization,
             :address      => address,
-            # :city         => nil,
-            # :zip          => nil,
-            # :state        => nil,
-            # :country      => nil,
             :country_code => values["country"],
             :phone        => values["phone"],
             :fax          => values["fax-no"],
             :email        => values["e-mail"],
-            # :created_on   => nil,
-            :updated_on   => Time.utc(*values["changed"].split(" ").first.split("/").reverse),
+            :updated_on   => updated_on,
           })
         end
 

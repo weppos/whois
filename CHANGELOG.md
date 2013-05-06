@@ -13,9 +13,11 @@
 
 - FIXED: Fixed ARPA Reverse DNS lookup.
 
-- FIXED: whois.nic.uk should support status `no longer required` (GH-225)
+- FIXED: whois.nic.uk should support status `no longer required` (GH-225).
 
-- FIXED: whois.rotld.ro should support status `UpdateProhibited` (GH-224)
+- FIXED: whois.rotld.ro should support status `UpdateProhibited` (GH-224).
+
+- FIXED: whois.nic.fr parser crashes when the contact has no changed attribute (GH-226).
 
 
 ## Release 3.1.1
