@@ -4,6 +4,8 @@
 
 - SERVER: Updated .TC (GH-228) TLD definition.
 
+- NEW: Added full whois.meridiantld.net parser (GH-228).
+
 
 ## Release 3.1.2
 
