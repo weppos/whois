@@ -14,10 +14,7 @@ module Whois
   class Record
     module Scanners
 
-      # Scanner for the whois.nic.dm record.
-      #
-      # @since  RELEASE
-      class WhoisNicDm < Base
+      class BaseShared3 < Base
 
         self.tokenizers += [
             :scan_disclaimer,

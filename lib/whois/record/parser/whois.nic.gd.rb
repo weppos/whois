@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.dm server.
+      # Parser for the whois.nic.gd server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicDm < BaseShared3
+      class WhoisNicGd < BaseShared3
       end
 
     end

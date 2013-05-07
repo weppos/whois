@@ -18,8 +18,6 @@ module Whois
       # Shared parser 1.
       #
       # @abstract
-      #
-      # @since  RELEASE
       class BaseShared1 < Base
         include Scanners::Nodable
 
