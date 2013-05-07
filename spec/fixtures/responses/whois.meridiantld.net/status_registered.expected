@@ -1,0 +1,49 @@
+#domain
+  should: %s == "google.tc"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-10-11 21:00:00 UTC")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-12 21:26:49 UTC")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-10-12 21:00:00 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.google.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.google.com"
