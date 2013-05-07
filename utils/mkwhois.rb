@@ -18,5 +18,5 @@ r.parts.each do |part|
   target = File.expand_path("../../spec/fixtures/responses/#{part.host}/#{n}.txt", __FILE__)
   FileUtils.mkdir_p(File.dirname(target))
   File.open(target, "w+") { |f| f.write(part.body) }
-  puts "Saved #{target}"
+  puts "#{target}"
 end
