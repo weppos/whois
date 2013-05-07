@@ -1,0 +1,100 @@
+#disclaimer
+  should: %s == nil
+
+
+#domain
+  should: %s == "google.gd"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2006-12-11 00:00:00")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-01 00:02:54")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-12-11 00:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor Inc."
+  should: %s.organization == nil
+  should: %s.url          == "www.markmonitor.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "P-GFI26"
+  should: %s[0].name          == "Google, Inc."
+  should: %s[0].organization  == "Google, Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6503300100"
+  should: %s[0].fax           == "+1.6506181499"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "P-GFI26"
+  should: %s[0].name          == "Google, Inc."
+  should: %s[0].organization  == "Google, Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6503300100"
+  should: %s[0].fax           == "+1.6506181499"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "P-GFI26"
+  should: %s[0].name          == "Google, Inc."
+  should: %s[0].organization  == "Google, Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == nil
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6503300100"
+  should: %s[0].fax           == "+1.6506181499"
+  should: %s[0].email         == "dns-admin@google.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.google.com"
