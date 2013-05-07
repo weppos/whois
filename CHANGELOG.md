@@ -2,7 +2,7 @@
 
 ## Master
 
-- SERVER: Updated .TC (GH-228) TLD definition.
+- SERVER: Updated .GD (GH-227), .TC (GH-228) TLD definitions.
 
 - NEW: Added full whois.meridiantld.net parser (GH-228).
 
