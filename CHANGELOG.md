@@ -1,5 +1,9 @@
 # Changelog
 
+## Master
+
+- SERVER: Updated .TC (GH-228) TLD definition.
+
 
 ## Release 3.1.2
 
