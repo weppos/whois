@@ -60,7 +60,7 @@ describe Whois::Record::Parser::WhoisNc, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-02-13")
+      subject.updated_on.should == Time.parse("2013-04-03")
     end
   end
   describe "#expires_on" do

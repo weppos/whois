@@ -10,7 +10,7 @@ Registrant:  GOOGLE INC.
 
 
     Domain Name:		GOOGLE.CD
-    Creation Date:		30-Sep-2006 22:26:42
+    Creation Date:		01-Oct-2006 00:00:00
     Expiration Date:	01-Oct-2013 00:00:00
     Domain Status:		OK
     Domain Status:		CLIENT UPDATE PROHIBITED

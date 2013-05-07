@@ -36,8 +36,8 @@
   should: %s CLASS(registrar)
   should: %s.id           == "C30342"
   should: %s.name         == nil
-  should: %s.organization == "Hostroute"
-  should: %s.url          == "http://www.hostroute.com"
+  should: %s.organization == "Paragon Internet Group"
+  should: %s.url          == "http://www.paragon.net.uk"
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -82,7 +82,7 @@
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "C30342"
   should: %s[0].name          == "Seb de Lemos"
-  should: %s[0].organization  == "Hostroute"
+  should: %s[0].organization  == "Paragon Internet Group"
   should: %s[0].address       == "St Andrew's House\nSt Mary's Walk"
   should: %s[0].city          == "Maidenhead"
   should: %s[0].zip           == "SL6 1QZ"
@@ -91,7 +91,7 @@
   should: %s[0].country_code  == "GB"
   should: %s[0].phone         == "+44.2031377651"
   should: %s[0].fax           == nil
-  should: %s[0].email         == "sales@hostroute.com"
+  should: %s[0].email         == "domains@paragon.net.uk"
 
 
 #nameservers

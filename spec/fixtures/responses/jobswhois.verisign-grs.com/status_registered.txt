@@ -1,22 +1,25 @@
 
-Whois Server Version 1.0
+Whois Server Version 2.0
 
 Domain names can now be registered with many different competing registrars. 
 Go to http://registrar.verisign-grs.com/whois/ for detailed information.
 
    Domain Name: GOTO.JOBS
-   Registrar: ENCIRCA, INC
-   Whois Server: whois.encirca.com
-   Referral URL: http://www.encirca.com
-   Name Server: NS2.REGISTRY.JOBS
+   Domain ID: 91478530
+   Whois Server: whois.nameshare.com
+   Referral URL: http://www.nameshare.com
+   Updated Date: 2013-02-05T03:02:36Z
+   Creation Date: 2010-02-04T18:54:33Z
+   Expiration Date: 2014-02-04T18:54:33Z
+   Sponsoring Registrar: NAME SHARE, INC
+   Sponsoring Registrar IANA ID: 667
+   Domain Status: ACTIVE
    Name Server: NS1.REGISTRY.JOBS
-   Status: ACTIVE
-   Updated Date: 20-feb-2009
-   Creation Date: 21-feb-2006
-   Expiration Date: 21-feb-2010
+   Name Server: NS2.REGISTRY.JOBS
+   DNSSEC: Unsigned delegation
 
 
->>> Last update of whois database: Wed, 23 Dec 2009 08:01:53 EST <<<
+>>> Last update of whois database: 2013-05-07T12:21:16Z <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

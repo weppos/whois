@@ -11,8 +11,8 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO557730
 Domain Name:HOTEL.AR.COM
 Created On:25-Apr-2008 16:22:13 UTC
-Last Updated On:26-Apr-2012 08:18:55 UTC
-Expiration Date:25-Apr-2013 23:59:59 UTC
+Last Updated On:26-Apr-2013 00:15:40 UTC
+Expiration Date:25-Apr-2014 23:59:59 UTC
 Status:OK
 Registrant ID:H1323241
 Registrant Name:Reserved Domains

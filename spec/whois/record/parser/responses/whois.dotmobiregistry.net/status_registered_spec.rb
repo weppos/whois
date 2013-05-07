@@ -60,21 +60,21 @@ describe Whois::Record::Parser::WhoisDotmobiregistryNet, "status_registered.expe
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-04-09 09:17:18 UTC")
+      subject.updated_on.should == Time.parse("2013-04-09 09:24:02 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-05-11 21:08:42 UTC")
+      subject.expires_on.should == Time.parse("2014-05-11 21:08:42 UTC")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "292"
-      subject.registrar.name.should         == "MarkMonitor Inc"
-      subject.registrar.organization.should == "MarkMonitor Inc"
+      subject.registrar.name.should         == "MarkMonitor Inc."
+      subject.registrar.organization.should == "MarkMonitor Inc."
     end
   end
   describe "#registrant_contacts" do

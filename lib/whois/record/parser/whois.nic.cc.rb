@@ -25,18 +25,20 @@ module Whois
 
 
         property_supported :domain do
-          node("Domain Name") { |raw| raw.downcase }
+          node("Domain Name", &:downcase)
         end
 
-        property_not_supported :domain_id
+        property_supported :domain_id do
+          node("Domain ID")
+        end
 
 
         property_supported :status do
-          node("Status")
+          node("Domain Status")
         end
 
         property_supported :available? do
-          node("Registrar").nil?
+          node("Sponsoring Registrar").nil?
         end
 
         property_supported :registered? do
@@ -45,22 +47,27 @@ module Whois
 
 
         property_supported :created_on do
-          node("Creation Date") { |raw| Time.parse(raw) }
+          node("Creation Date") { |value| Time.parse(value) }
         end
 
         property_supported :updated_on do
-          node("Updated Date") { |raw| Time.parse(raw) }
+          node("Updated Date") { |value| Time.parse(value) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |raw| Time.parse(raw) }
+          node("Expiration Date") { |value| Time.parse(value) }
         end
 
 
         property_supported :registrar do
-          # Return nil because when the response contains more than one registrar section
-          # the response can be messy. See, for instance, the Verisign response for google.com.
-          nil
+          node("Sponsoring Registrar") do |value|
+            Whois::Record::Registrar.new(
+                :id           => node("Sponsoring Registrar IANA ID"),
+                :name         => value,
+                :organization => value,
+                :url          => referral_url
+            )
+          end
         end
 
 

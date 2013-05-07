@@ -28,17 +28,17 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
   end
   describe "#domain" do
     it do
-      subject.domain.should == "registrypro.pro"
+      subject.domain.should == "google.pro"
     end
   end
   describe "#domain_id" do
     it do
-      subject.domain_id.should == "D6394-PRO"
+      subject.domain_id.should == "D11545-PRO"
     end
   end
   describe "#status" do
     it do
-      subject.status.should == ["CLIENT TRANSFER PROHIBITED", "DELETE PROHIBITED"]
+      subject.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
     end
   end
   describe "#available?" do
@@ -54,27 +54,27 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2004-08-18 00:00:00 UTC")
+      subject.created_on.should == Time.parse("2008-07-22 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-06-14 21:27:09 UTC")
+      subject.updated_on.should == Time.parse("2012-09-18 18:11:31 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2017-01-26 00:00:00 UTC")
+      subject.expires_on.should == Time.parse("2013-09-08 00:00:00 UTC")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "R2338-PRO"
-      subject.registrar.name.should         == "Corporation Service Company dba CSC Corporate Domains, Inc"
-      subject.registrar.organization.should == "Corporation Service Company dba CSC Corporate Domains, Inc"
+      subject.registrar.id.should           == "R2341-PRO"
+      subject.registrar.name.should         == "MarkMonitor Inc."
+      subject.registrar.organization.should == "MarkMonitor Inc."
     end
   end
   describe "#registrant_contacts" do
@@ -83,17 +83,17 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == "RSC-1"
-      subject.registrant_contacts[0].name.should          == "Afilias Limited"
-      subject.registrant_contacts[0].organization.should  == "Afilias Limited"
-      subject.registrant_contacts[0].address.should       == "2 La Touche House\nIFSC"
-      subject.registrant_contacts[0].city.should          == "Dublin"
-      subject.registrant_contacts[0].zip.should           == "1"
-      subject.registrant_contacts[0].state.should         == "IL"
-      subject.registrant_contacts[0].country_code.should  == "IE"
-      subject.registrant_contacts[0].phone.should         == "+353.14310511"
-      subject.registrant_contacts[0].fax.should           == "+353.14310557"
-      subject.registrant_contacts[0].email.should         == "domainadmin@afilias.info"
+      subject.registrant_contacts[0].id.should            == "google"
+      subject.registrant_contacts[0].name.should          == "DNS Admin"
+      subject.registrant_contacts[0].organization.should  == "Google Inc."
+      subject.registrant_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.registrant_contacts[0].city.should          == "Mountain View"
+      subject.registrant_contacts[0].zip.should           == "94043"
+      subject.registrant_contacts[0].state.should         == "CA"
+      subject.registrant_contacts[0].country_code.should  == "US"
+      subject.registrant_contacts[0].phone.should         == "+1.6502530000"
+      subject.registrant_contacts[0].fax.should           == "+1.6506188571"
+      subject.registrant_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#admin_contacts" do
@@ -102,17 +102,17 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
-      subject.admin_contacts[0].id.should            == "RSC-1"
-      subject.admin_contacts[0].name.should          == "Afilias Limited"
-      subject.admin_contacts[0].organization.should  == "Afilias Limited"
-      subject.admin_contacts[0].address.should       == "2 La Touche House\nIFSC"
-      subject.admin_contacts[0].city.should          == "Dublin"
-      subject.admin_contacts[0].zip.should           == "1"
-      subject.admin_contacts[0].state.should         == "IL"
-      subject.admin_contacts[0].country_code.should  == "IE"
-      subject.admin_contacts[0].phone.should         == "+353.14310511"
-      subject.admin_contacts[0].fax.should           == "+353.14310557"
-      subject.admin_contacts[0].email.should         == "domainadmin@afilias.info"
+      subject.admin_contacts[0].id.should            == "google"
+      subject.admin_contacts[0].name.should          == "DNS Admin"
+      subject.admin_contacts[0].organization.should  == "Google Inc."
+      subject.admin_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.admin_contacts[0].city.should          == "Mountain View"
+      subject.admin_contacts[0].zip.should           == "94043"
+      subject.admin_contacts[0].state.should         == "CA"
+      subject.admin_contacts[0].country_code.should  == "US"
+      subject.admin_contacts[0].phone.should         == "+1.6502530000"
+      subject.admin_contacts[0].fax.should           == "+1.6506188571"
+      subject.admin_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#technical_contacts" do
@@ -121,33 +121,27 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "RSC-1"
-      subject.technical_contacts[0].name.should          == "Afilias Limited"
-      subject.technical_contacts[0].organization.should  == "Afilias Limited"
-      subject.technical_contacts[0].address.should       == "2 La Touche House\nIFSC"
-      subject.technical_contacts[0].city.should          == "Dublin"
-      subject.technical_contacts[0].zip.should           == "1"
-      subject.technical_contacts[0].state.should         == "IL"
-      subject.technical_contacts[0].country_code.should  == "IE"
-      subject.technical_contacts[0].phone.should         == "+353.14310511"
-      subject.technical_contacts[0].fax.should           == "+353.14310557"
-      subject.technical_contacts[0].email.should         == "domainadmin@afilias.info"
+      subject.technical_contacts[0].id.should            == "google"
+      subject.technical_contacts[0].name.should          == "DNS Admin"
+      subject.technical_contacts[0].organization.should  == "Google Inc."
+      subject.technical_contacts[0].address.should       == "1600 Amphitheatre Parkway"
+      subject.technical_contacts[0].city.should          == "Mountain View"
+      subject.technical_contacts[0].zip.should           == "94043"
+      subject.technical_contacts[0].state.should         == "CA"
+      subject.technical_contacts[0].country_code.should  == "US"
+      subject.technical_contacts[0].phone.should         == "+1.6502530000"
+      subject.technical_contacts[0].fax.should           == "+1.6506188571"
+      subject.technical_contacts[0].email.should         == "dns-admin@google.com"
     end
   end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(5).items
+      subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.ams1.afilias-nst.info"
+      subject.nameservers[0].name.should == "ns2.google.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.mia1.afilias-nst.info"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns1.sea1.afilias-nst.info"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns1.yyz1.afilias-nst.info"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "ns1.hkg1.afilias-nst.info"
+      subject.nameservers[1].name.should == "ns1.google.com"
     end
   end
 end

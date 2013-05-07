@@ -11,8 +11,8 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO403461
 Domain Name:HOTEL.GB.COM
 Created On:23-Apr-2006 06:26:11 UTC
-Last Updated On:11-Jul-2012 08:02:10 UTC
-Expiration Date:23-Apr-2013 23:59:59 UTC
+Last Updated On:02-May-2013 08:06:42 UTC
+Expiration Date:23-Apr-2014 23:59:59 UTC
 Status:OK
 Registrant ID:INX-10599082com
 Registrant Name:Hotel Reservation Service Robert Ragge GmbH

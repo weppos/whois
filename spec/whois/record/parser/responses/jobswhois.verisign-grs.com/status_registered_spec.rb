@@ -33,7 +33,7 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      subject.domain_id.should == "91478530"
     end
   end
   describe "#status" do
@@ -54,28 +54,28 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-02-21")
+      subject.created_on.should == Time.parse("2010-02-04 18:54:33 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-02-20")
+      subject.updated_on.should == Time.parse("2013-02-05 03:02:36 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-02-21")
+      subject.expires_on.should == Time.parse("2014-02-04 18:54:33 UTC")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "ENCIRCA, INC"
-      subject.registrar.organization.should == "ENCIRCA, INC"
-      subject.registrar.url.should          == "http://www.encirca.com"
+      subject.registrar.id.should           == "667"
+      subject.registrar.name.should         == "NAME SHARE, INC"
+      subject.registrar.organization.should == "NAME SHARE, INC"
+      subject.registrar.url.should          == "http://www.nameshare.com"
     end
   end
   describe "#nameservers" do
@@ -83,19 +83,19 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns2.registry.jobs"
+      subject.nameservers[0].name.should == "ns1.registry.jobs"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.registry.jobs"
+      subject.nameservers[1].name.should == "ns2.registry.jobs"
     end
   end
   describe "#referral_whois" do
     it do
-      subject.referral_whois.should == "whois.encirca.com"
+      subject.referral_whois.should == "whois.nameshare.com"
     end
   end
   describe "#referral_url" do
     it do
-      subject.referral_url.should == "http://www.encirca.com"
+      subject.referral_url.should == "http://www.nameshare.com"
     end
   end
 end

@@ -19,65 +19,69 @@ Domain ID: REG-D3862
 Domain Name: gencat.cat
 Domain Name ACE: gencat.cat
 Domain Language: ca
-Registrar ID: R-2001 (Nominalia)
+Registrar ID: R-2024 (10dencehispahard S.L. (CDmon.com))
 Created On: 2006-02-14 09:12:37 GMT
-Last Updated On: 2009-03-31 16:22:42 GMT
-Expiration Date: 2010-02-14 09:12:37 GMT
+Last Updated On: 2012-06-01 11:25:51 GMT
+Expiration Date: 2020-02-14 09:12:37 GMT
 Status: ok
-Registrant ID: NOM_P_15605701
-Registrant Name: Generalitat de Catalunya Departament de la Presidencia
-Registrant Organization: 
+Registrant ID: CD126562321349
+Registrant Name: Departament de la Presidencia - Generalitat de Catalunya
+Registrant Organization: Departament de la Presidencia - Generalitat de Catalunya
 Registrant Street: Via Laietana, 14
+Registrant Street: 
 Registrant City: Barcelona
-Registrant State/Province: BARCELONA
+Registrant State/Province: Barcelona
 Registrant Postal Code: 08003
 Registrant Country: ES
 Registrant Phone: +34.935676330
 Registrant Phone Ext: 
 Registrant Fax: 
 Registrant Fax Ext: 
-Registrant Email: jcolomer@gencat.net
-Admin ID: NOM_8727301
-Admin Name: Marta Continente Gonzalo
-Admin Organization: Generalitat de Catalunya Departament de la Presidencia (2)
+Registrant Email: dominisgencat@gencat.cat
+Admin ID: CD126562321411
+Admin Name: Direccio General Atencio Ciutadana i Difusio (Generalitat de Catalunya)
+Admin Organization: 
 Admin Street: Via Laietana, 14
+Admin Street: 
 Admin City: Barcelona
 Admin State/Province: BARCELONA
 Admin Postal Code: 08003
 Admin Country: ES
 Admin Phone: +34.935676330
 Admin Phone Ext: 
-Admin Fax: +34.935676331
+Admin Fax: 
 Admin Fax Ext: 
-Admin Email: dominisgencat@gencat.net
-Tech ID: NOM_8727401
-Tech Name: Jaume Colomer Garcia
-Tech Organization: Generalitat de Catalunya - Departament de la Presidencia
-Tech Street: Via Laietana, 14
+Admin Email: dominisgencat@gencat.cat
+Tech ID: CD126562321482
+Tech Name: Carles Corcoll Lopez
+Tech Organization: Carles Corcoll Lopez
+Tech Street: Via Laietana 14 3a planta
+Tech Street: 
 Tech City: Barcelona
 Tech State/Province: BARCELONA
 Tech Postal Code: 08003
 Tech Country: ES
 Tech Phone: +34.935676330
 Tech Phone Ext: 
-Tech Fax: +34.935676331
+Tech Fax: 
 Tech Fax Ext: 
-Tech Email: dominisgencat@gencat.net
-Billing ID: NOM_8727401
-Billing Name: Jaume Colomer Garcia
-Billing Organization: Generalitat de Catalunya - Departament de la Presidencia
+Tech Email: dominisgencat@gencat.cat
+Billing ID: CD126562321532
+Billing Name: DGAC Direccio General Atencio Ciutadana
+Billing Organization: DGAC Direccio General Atencio Ciutadana
 Billing Street: Via Laietana, 14
+Billing Street: 
 Billing City: Barcelona
-Billing State/Province: BARCELONA
+Billing State/Province: Barcelona
 Billing Postal Code: 08003
 Billing Country: ES
 Billing Phone: +34.935676330
 Billing Phone Ext: 
-Billing Fax: +34.935676331
+Billing Fax: 
 Billing Fax Ext: 
-Billing Email: dominisgencat@gencat.net
-Name Server: dns2.gencat.cat 83.247.132.4
-Name Server ACE: dns2.gencat.cat 83.247.132.4
+Billing Email: dominisgencat@gencat.cat
 Name Server: dns.gencat.net 
 Name Server ACE: dns.gencat.net 
+Name Server: dns2.gencat.cat 83.247.132.4
+Name Server ACE: dns2.gencat.cat 83.247.132.4
 

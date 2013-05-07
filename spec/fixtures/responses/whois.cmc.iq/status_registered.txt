@@ -1,6 +1,6 @@
 Domain Name: google.iq
 Domain ID: 895-CoCCA
-WHOIS Server: CMC  IQ REG
+WHOIS Server: whois.cmc.iq
 Referral URL: 
 Updated Date: 2012-10-17T06:21:08.173Z
 Creation Date: 2010-10-03T21:00:00.000Z
@@ -24,4 +24,4 @@ TERMS OF USE: You are not authorized to access or query our WHOIS database throu
 The data is for information purposes only. We do not guarantee its accuracy. By submitting a WHOIS query, you agree to abide by the following terms of use: You agree that you may use this Data only for lawful purposes and that under no circumstances will you use this Data to: (1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via e-mail, telephone, or facsimile; or (2) enable high volume, automated, electronic processes that apply to CMC it's members (or CMC or member computer systems). The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
 
->>> Last update of WHOIS database: 2013-02-22T07:03:42.188Z <<<
+>>> Last update of WHOIS database: 2013-05-07T09:20:31.509Z <<<

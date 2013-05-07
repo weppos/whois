@@ -1,8 +1,8 @@
 Domain name:           google.ca
 Domain status:         registered
 Creation date:         2000/10/03
-Expiry date:           2013/04/28
-Updated date:          2012/03/27
+Expiry date:           2014/04/28
+Updated date:          2013/03/27
 
 Registrar:
     Name:              Webnames.ca Inc.
@@ -33,7 +33,7 @@ Name servers:
     ns3.google.com
     ns4.google.com
 
-% WHOIS look-up made at 2013-02-22 10:35:20 (GMT)
+% WHOIS look-up made at 2013-05-07 12:22:26 (GMT)
 %
 % Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
 % Notice, available at http://www.cira.ca/legal-notice/?lang=en 

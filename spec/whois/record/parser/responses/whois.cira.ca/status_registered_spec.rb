@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-03-27 00:00:00")
+      subject.updated_on.should == Time.parse("2013-03-27 00:00:00")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-04-28 00:00:00")
+      subject.expires_on.should == Time.parse("2014-04-28 00:00:00")
     end
   end
   describe "#registrar" do

@@ -39,7 +39,7 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-09-30 22:26:42")
+      subject.created_on.should == Time.parse("2006-10-01 00:00:00")
     end
   end
   describe "#updated_on" do

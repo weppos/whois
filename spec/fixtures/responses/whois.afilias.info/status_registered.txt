@@ -18,8 +18,8 @@ you agree to abide by this policy.
 Domain ID:D37288-LRMS
 Domain Name:GOOGLE.INFO
 Created On:31-Jul-2001 23:57:50 UTC
-Last Updated On:05-Mar-2009 22:39:19 UTC
-Expiration Date:31-Jul-2010 23:57:50 UTC
+Last Updated On:29-Jun-2012 09:23:55 UTC
+Expiration Date:31-Jul-2013 23:57:50 UTC
 Trademark Name:GOOGLE
 Trademark Date:1999-09-17
 Trademark Country:Mexico
@@ -101,4 +101,5 @@ Name Server:
 Name Server: 
 Name Server: 
 Name Server: 
+
 

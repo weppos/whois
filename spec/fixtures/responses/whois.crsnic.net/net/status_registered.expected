@@ -3,44 +3,59 @@
 
 
 #domain
-  should: %s == "googlelkjhgfdfghjklkjhgf.net"
+  should: %s == "google.net"
 
 #domain_id
   should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
-  should: %s == nil
+  should: %s == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited", "serverDeleteProhibited", "serverTransferProhibited", "serverUpdateProhibited"]
 
 #available?
-  should: %s == true
+  should: %s == false
 
 #registered?
-  should: %s == false
+  should: %s == true
 
 
 #created_on
-  should: %s == nil
+  should: %s CLASS(time)
+  should: %s == Time.parse("1999-03-15")
 
 #updated_on
-  should: %s == nil
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-02-11")
 
 #expires_on
-  should: %s == nil
+  should: %s CLASS(time)
+  should: %s == Time.parse("2014-03-15")
 
 
 #registrar
-  should: %s == nil
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MARKMONITOR INC."
+  should: %s.organization == "MARKMONITOR INC."
+  should: %s.url          == "http://www.markmonitor.com"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s == []
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.google.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.google.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.google.com"
 
 
 
 #referral_whois
-  should: %s == nil
+  should: %s == "whois.markmonitor.com"
 
 #referral_url
-  should: %s == nil
+  should: %s == "http://www.markmonitor.com"

@@ -2,56 +2,57 @@ Domain Name:                                 GOOGLE.BIZ
 Domain ID:                                   D2835288-BIZ
 Sponsoring Registrar:                        MARKMONITOR, INC.
 Sponsoring Registrar IANA ID:                292
+Registrar URL (registration services):       whois.markmonitor.com
 Domain Status:                               clientDeleteProhibited
 Domain Status:                               clientTransferProhibited
 Domain Status:                               clientUpdateProhibited
-Registrant ID:                               MMR-32103
+Registrant ID:                               MMR-87489
 Registrant Name:                             DNS Admin
 Registrant Organization:                     Google Inc.
-Registrant Address1:                         2400 E. Bayshore Pkwy
+Registrant Address1:                         1600 Amphitheatre Parkway
 Registrant City:                             Mountain View
 Registrant State/Province:                   CA
 Registrant Postal Code:                      94043
 Registrant Country:                          United States
 Registrant Country Code:                     US
-Registrant Phone Number:                     +1.6503300100
-Registrant Facsimile Number:                 +1.6506181499
-Registrant Email:                            dns-admin@GOOGLE.COM
-Administrative Contact ID:                   MMR-32104
+Registrant Phone Number:                     +1.6502530000
+Registrant Facsimile Number:                 +1.6502530001
+Registrant Email:                            dns-admin@google.com
+Administrative Contact ID:                   MMR-87489
 Administrative Contact Name:                 DNS Admin
 Administrative Contact Organization:         Google Inc.
-Administrative Contact Address1:             2400 E. Bayshore Pkwy
+Administrative Contact Address1:             1600 Amphitheatre Parkway
 Administrative Contact City:                 Mountain View
 Administrative Contact State/Province:       CA
 Administrative Contact Postal Code:          94043
 Administrative Contact Country:              United States
 Administrative Contact Country Code:         US
-Administrative Contact Phone Number:         +1.6503300100
-Administrative Contact Facsimile Number:     +1.6506181499
-Administrative Contact Email:                dns-admin@GOOGLE.COM
-Billing Contact ID:                          MMR-32106
+Administrative Contact Phone Number:         +1.6502530000
+Administrative Contact Facsimile Number:     +1.6502530001
+Administrative Contact Email:                dns-admin@google.com
+Billing Contact ID:                          MMR-87489
 Billing Contact Name:                        DNS Admin
 Billing Contact Organization:                Google Inc.
-Billing Contact Address1:                    2400 E. Bayshore Pkwy
+Billing Contact Address1:                    1600 Amphitheatre Parkway
 Billing Contact City:                        Mountain View
 Billing Contact State/Province:              CA
 Billing Contact Postal Code:                 94043
 Billing Contact Country:                     United States
 Billing Contact Country Code:                US
-Billing Contact Phone Number:                +1.6503300100
-Billing Contact Facsimile Number:            +1.6506181499
-Billing Contact Email:                       dns-admin@GOOGLE.COM
-Technical Contact ID:                        MMR-32105
+Billing Contact Phone Number:                +1.6502530000
+Billing Contact Facsimile Number:            +1.6502530001
+Billing Contact Email:                       dns-admin@google.com
+Technical Contact ID:                        MMR-87489
 Technical Contact Name:                      DNS Admin
 Technical Contact Organization:              Google Inc.
-Technical Contact Address1:                  2400 E. Bayshore Pkwy
+Technical Contact Address1:                  1600 Amphitheatre Parkway
 Technical Contact City:                      Mountain View
 Technical Contact State/Province:            CA
 Technical Contact Postal Code:               94043
 Technical Contact Country:                   United States
 Technical Contact Country Code:              US
-Technical Contact Phone Number:              +1.6503300100
-Technical Contact Facsimile Number:          +1.6506181499
+Technical Contact Phone Number:              +1.6502530000
+Technical Contact Facsimile Number:          +1.6502530001
 Technical Contact Email:                     dns-admin@google.com
 Name Server:                                 NS1.GOOGLE.COM
 Name Server:                                 NS2.GOOGLE.COM
@@ -61,10 +62,10 @@ Created by Registrar:                        ENOM, INC.
 Last Updated by Registrar:                   MARKMONITOR, INC.
 Last Transferred Date:                       Fri Jul 22 16:43:18 GMT 2005
 Domain Registration Date:                    Wed Mar 27 00:01:00 GMT 2002
-Domain Expiration Date:                      Fri Mar 26 23:59:59 GMT 2010
-Domain Last Updated Date:                    Sun Mar 01 12:01:04 GMT 2009
+Domain Expiration Date:                      Wed Mar 26 23:59:59 GMT 2014
+Domain Last Updated Date:                    Fri Feb 22 10:23:59 GMT 2013
 
->>>> Whois database was last updated on: Fri Dec 25 14:38:18 GMT 2009 <<<<
+>>>> Whois database was last updated on: Tue May 07 12:18:44 GMT 2013 <<<<
 
 NeuStar, Inc., the Registry Operator for .BIZ, has collected this information
 for the WHOIS database through an ICANN-Accredited Registrar. This information

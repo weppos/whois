@@ -8,7 +8,7 @@ Domain Information
 Query: google.bi
 Status: Delegated
 Created: 30 Sep 2002
-Modified: 23 Sep 2012
+Modified: 21 Mar 2013
 Expires: 30 Sep 2013
 Name Servers:
     ns1.google.com

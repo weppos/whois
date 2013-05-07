@@ -10,23 +10,23 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2006-02-14 09:12:37 UTC")
+  should: %s == Time.parse("2006-02-14 09:12:37 GMT")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-03-31 16:22:42 UTC")
+  should: %s == Time.parse("2012-06-01 11:25:51 GMT")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-02-14 09:12:37 UTC")
+  should: %s == Time.parse("2020-02-14 09:12:37 GMT")
 
 
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "dns2.gencat.cat"
-  should: %s[0].ipv4 == "83.247.132.4"
+  should: %s[0].name == "dns.gencat.net"
+  should: %s[0].ipv4 == nil
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "dns.gencat.net"
-  should: %s[1].ipv4 == nil
+  should: %s[1].name == "dns2.gencat.cat"
+  should: %s[1].ipv4 == "83.247.132.4"

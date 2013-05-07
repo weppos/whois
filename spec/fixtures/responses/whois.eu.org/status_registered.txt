@@ -1,19 +1,18 @@
-domain:      ECRYPT.EU.ORG
-address:     Dept. Electrical Engineering - ESAT, K.U.Leuven
-address:     Kasteelpark Arenberg 10
-address:     3001 Heverlee
-address:     Belgium
-changed:     2004-04-16 00:00:00+02:00
-tech-c:      FS35-FREE
-admin-c:     FS35-FREE
+domain:      GOOGLE.EU.ORG
+address:     Mueller Michael
+address:     Wilhelm-Busch-Str. 35
+address:     32108 Bad Salzuflen
+address:     Germany
+changed:     2003-03-28 00:00:00+01:00
+tech-c:      MM114-FREE
+admin-c:     MM114-FREE
 
-person:      Frank Schoeters
-nic-hdl:     FS35-FREE
-ext-hdl:     FSX73
-address:     Kasteelpark Arenberg 10
-address:     3001 Heverlee
-address:     Belgium
-phone:       +32 16 321017
-e-mail:      Frank.Schoeters@esat.kuleuven.ac.be
-changed:     2004-04-16 00:00:00+02:00
+person:      Mueller Michael
+nic-hdl:     MM114-FREE
+address:     Wilhelm-Busch-Str. 35
+address:     32108 Bad Salzuflen
+address:     Germany
+phone:       +49 005222 94569
+e-mail:      mm114-15699d5591658560229e1e03b7bdc05b@handles.eu.org
+changed:     2003-09-14 00:00:00+02:00
 

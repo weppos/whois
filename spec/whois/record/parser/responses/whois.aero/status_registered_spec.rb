@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisAero, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2008-03-05 14:32:18 UTC")
+      subject.updated_on.should == Time.parse("2013-04-09 06:35:03 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-03-26 06:48:27 UTC")
+      subject.expires_on.should == Time.parse("2014-03-26 06:48:27 UTC")
     end
   end
   describe "#registrar" do
@@ -139,13 +139,13 @@ describe Whois::Record::Parser::WhoisAero, "status_registered.expected" do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(4).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns2.srilankan.aero"
+      subject.nameservers[0].name.should == "dns1.srilankan.aero"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns1.srilankan.aero"
+      subject.nameservers[1].name.should == "dns2.srilankan.aero"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "s1.ns.slt.lk"
+      subject.nameservers[2].name.should == "s2.ns.slt.lk"
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "s2.ns.slt.lk"
+      subject.nameservers[3].name.should == "s1.ns.slt.lk"
     end
   end
 end

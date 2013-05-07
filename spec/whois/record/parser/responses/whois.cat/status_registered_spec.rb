@@ -39,19 +39,19 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-02-14 09:12:37 UTC")
+      subject.created_on.should == Time.parse("2006-02-14 09:12:37 GMT")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-03-31 16:22:42 UTC")
+      subject.updated_on.should == Time.parse("2012-06-01 11:25:51 GMT")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-02-14 09:12:37 UTC")
+      subject.expires_on.should == Time.parse("2020-02-14 09:12:37 GMT")
     end
   end
   describe "#nameservers" do
@@ -59,11 +59,11 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns2.gencat.cat"
-      subject.nameservers[0].ipv4.should == "83.247.132.4"
+      subject.nameservers[0].name.should == "dns.gencat.net"
+      subject.nameservers[0].ipv4.should == nil
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns.gencat.net"
-      subject.nameservers[1].ipv4.should == nil
+      subject.nameservers[1].name.should == "dns2.gencat.cat"
+      subject.nameservers[1].ipv4.should == "83.247.132.4"
     end
   end
 end

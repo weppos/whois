@@ -25,11 +25,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2008-03-16 04:30:25 UTC")
+  should: %s == Time.parse("2013-01-15 22:20:13 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-01-15 11:28:02 UTC")
+  should: %s == Time.parse("2014-01-15 11:28:02 UTC")
 
 
 #registrar
@@ -44,57 +44,65 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == "FR-1158300cc88a"
-  should: %s[0].name         == "Pioneer Domain (Temporary Delegation)"
-  should: %s[0].organization == "DotAsia Organisation"
-  should: %s[0].address      == "Unit 617, Miramar Tower\n132 Nathan Road"
-  should: %s[0].city         == "Tsim Sha Tsui"
-  should: %s[0].zip          == "HK"
-  should: %s[0].state        == "Kowloon"
+  should: %s[0].id           == "FR-132aa75b4bf65"
+  should: %s[0].name         == "RAXCO ASSETS CORP."
+  should: %s[0].organization == "RAXCO ASSETS CORP."
+  should: %s[0].address      == "RM 1201-1204 12/F\nSEA BIRD HSE\n22-28 WYNDHAM ST CENTRAL HK"
+  should: %s[0].city         == "Hong Kong"
+  should: %s[0].zip          == ""
+  should: %s[0].state        == ""
   should: %s[0].country_code == "HK"
-  should: %s[0].phone        == "+852.35202635"
-  should: %s[0].fax          == ""
-  should: %s[0].email        == "domains@registry.asia"
+  should: %s[0].phone        == "+852.21190333"
+  should: %s[0].fax          == "+852.23045326"
+  should: %s[0].email        == "eddie.yeung@bingogroup.com.hk"
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == "FR-11582fd1b4a9"
-  should: %s[0].name         == "DotAsia Organisation"
-  should: %s[0].organization == "DotAsia Organisation"
-  should: %s[0].address      == "Unit 617, Miramar Tower\n132 Nathan Road"
-  should: %s[0].city         == "Tsim Sha Tsui"
-  should: %s[0].zip          == "HK"
-  should: %s[0].state        == "Kowloon"
+  should: %s[0].id           == "FR-132aa7afe0967"
+  should: %s[0].name         == "Eddie Yeung"
+  should: %s[0].organization == "RAXCO ASSETS CORP."
+  should: %s[0].address      == "RM 1201-1204 12/F\nSEA BIRD HSE\n22-28 WYNDHAM ST CENTRAL HK"
+  should: %s[0].city         == "Hong Kong"
+  should: %s[0].zip          == ""
+  should: %s[0].state        == ""
   should: %s[0].country_code == "HK"
-  should: %s[0].phone        == "+852.35202635"
+  should: %s[0].phone        == "+852.21190333"
   should: %s[0].fax          == ""
-  should: %s[0].email        == "domains@registry.asia"
+  should: %s[0].email        == "eddie.yeung@bingogroup.com.hk"
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id           == "FR-11582fd1b4a9"
-  should: %s[0].name         == "DotAsia Organisation"
-  should: %s[0].organization == "DotAsia Organisation"
-  should: %s[0].address      == "Unit 617, Miramar Tower\n132 Nathan Road"
-  should: %s[0].city         == "Tsim Sha Tsui"
-  should: %s[0].zip          == "HK"
-  should: %s[0].state        == "Kowloon"
+  should: %s[0].id           == "FR-132aa7afe0967"
+  should: %s[0].name         == "Eddie Yeung"
+  should: %s[0].organization == "RAXCO ASSETS CORP."
+  should: %s[0].address      == "RM 1201-1204 12/F\nSEA BIRD HSE\n22-28 WYNDHAM ST CENTRAL HK"
+  should: %s[0].city         == "Hong Kong"
+  should: %s[0].zip          == ""
+  should: %s[0].state        == ""
   should: %s[0].country_code == "HK"
-  should: %s[0].phone        == "+852.35202635"
+  should: %s[0].phone        == "+852.21190333"
   should: %s[0].fax          == ""
-  should: %s[0].email        == "domains@registry.asia"
+  should: %s[0].email        == "eddie.yeung@bingogroup.com.hk"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(2)
+  should: %s SIZE(6)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.dotasia.org"
+  should: %s[0].name == "ns1.dnspod.net"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.dotasia.org"
+  should: %s[1].name == "ns2.dnspod.net"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.dnspod.net"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.dnspod.net"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns5.dnspod.net"
+  should: %s[5] CLASS(nameserver)
+  should: %s[5].name == "ns6.dnspod.net"

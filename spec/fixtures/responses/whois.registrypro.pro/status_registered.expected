@@ -3,14 +3,14 @@
 
 
 #domain
-  should: %s == "registrypro.pro"
+  should: %s == "google.pro"
 
 #domain_id
-  should: %s == "D6394-PRO"
+  should: %s == "D11545-PRO"
 
 
 #status
-  should: %s == ["CLIENT TRANSFER PROHIBITED", "DELETE PROHIBITED"]
+  should: %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
 
 #available?
   should: %s == false
@@ -21,85 +21,79 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2004-08-18 00:00:00 UTC")
+  should: %s == Time.parse("2008-07-22 00:00:00 UTC")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-06-14 21:27:09 UTC")
+  should: %s == Time.parse("2012-09-18 18:11:31 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2017-01-26 00:00:00 UTC")
+  should: %s == Time.parse("2013-09-08 00:00:00 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == "R2338-PRO"
-  should: %s.name         == "Corporation Service Company dba CSC Corporate Domains, Inc"
-  should: %s.organization == "Corporation Service Company dba CSC Corporate Domains, Inc"
+  should: %s.id           == "R2341-PRO"
+  should: %s.name         == "MarkMonitor Inc."
+  should: %s.organization == "MarkMonitor Inc."
 
 #registrant_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == "RSC-1"
-  should: %s[0].name          == "Afilias Limited"
-  should: %s[0].organization  == "Afilias Limited"
-  should: %s[0].address       == "2 La Touche House\nIFSC"
-  should: %s[0].city          == "Dublin"
-  should: %s[0].zip           == "1"
-  should: %s[0].state         == "IL"
-  should: %s[0].country_code  == "IE"
-  should: %s[0].phone         == "+353.14310511"
-  should: %s[0].fax           == "+353.14310557"
-  should: %s[0].email         == "domainadmin@afilias.info"
+  should: %s[0].id            == "google"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id            == "RSC-1"
-  should: %s[0].name          == "Afilias Limited"
-  should: %s[0].organization  == "Afilias Limited"
-  should: %s[0].address       == "2 La Touche House\nIFSC"
-  should: %s[0].city          == "Dublin"
-  should: %s[0].zip           == "1"
-  should: %s[0].state         == "IL"
-  should: %s[0].country_code  == "IE"
-  should: %s[0].phone         == "+353.14310511"
-  should: %s[0].fax           == "+353.14310557"
-  should: %s[0].email         == "domainadmin@afilias.info"
+  should: %s[0].id            == "google"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "RSC-1"
-  should: %s[0].name          == "Afilias Limited"
-  should: %s[0].organization  == "Afilias Limited"
-  should: %s[0].address       == "2 La Touche House\nIFSC"
-  should: %s[0].city          == "Dublin"
-  should: %s[0].zip           == "1"
-  should: %s[0].state         == "IL"
-  should: %s[0].country_code  == "IE"
-  should: %s[0].phone         == "+353.14310511"
-  should: %s[0].fax           == "+353.14310557"
-  should: %s[0].email         == "domainadmin@afilias.info"
+  should: %s[0].id            == "google"
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == "1600 Amphitheatre Parkway"
+  should: %s[0].city          == "Mountain View"
+  should: %s[0].zip           == "94043"
+  should: %s[0].state         == "CA"
+  should: %s[0].country_code  == "US"
+  should: %s[0].phone         == "+1.6502530000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(5)
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.ams1.afilias-nst.info"
+  should: %s[0].name == "ns2.google.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1.mia1.afilias-nst.info"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns1.sea1.afilias-nst.info"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns1.yyz1.afilias-nst.info"
-  should: %s[4] CLASS(nameserver)
-  should: %s[4].name == "ns1.hkg1.afilias-nst.info"
+  should: %s[1].name == "ns1.google.com"

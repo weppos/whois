@@ -87,9 +87,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrant_contacts[0].id.should            == "36542943"
       subject.registrant_contacts[0].name.should          == "Antonio Camarotti Pinto"
       subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == "Rua Tapinas\n118"
+      subject.registrant_contacts[0].address.should       == "Rua Urussui, 238\n#22"
       subject.registrant_contacts[0].city.should          == "Sao Paulo"
-      subject.registrant_contacts[0].zip.should           == "04531-050"
+      subject.registrant_contacts[0].zip.should           == "04542-050"
       subject.registrant_contacts[0].state.should         == "Sao Paulo"
       subject.registrant_contacts[0].country.should       == nil
       subject.registrant_contacts[0].country_code.should  == "BR"
@@ -107,9 +107,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts[0].id.should            == "36542943"
       subject.admin_contacts[0].name.should          == "Antonio Camarotti Pinto"
       subject.admin_contacts[0].organization.should  == nil
-      subject.admin_contacts[0].address.should       == "Rua Tapinas\n118"
+      subject.admin_contacts[0].address.should       == "Rua Urussui, 238\n#22"
       subject.admin_contacts[0].city.should          == "Sao Paulo"
-      subject.admin_contacts[0].zip.should           == "04531-050"
+      subject.admin_contacts[0].zip.should           == "04542-050"
       subject.admin_contacts[0].state.should         == "Sao Paulo"
       subject.admin_contacts[0].country.should       == nil
       subject.admin_contacts[0].country_code.should  == "BR"
@@ -127,9 +127,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].id.should            == "36542943"
       subject.technical_contacts[0].name.should          == "Antonio Camarotti Pinto"
       subject.technical_contacts[0].organization.should  == nil
-      subject.technical_contacts[0].address.should       == "Rua Tapinas\n118"
+      subject.technical_contacts[0].address.should       == "Rua Urussui, 238\n#22"
       subject.technical_contacts[0].city.should          == "Sao Paulo"
-      subject.technical_contacts[0].zip.should           == "04531-050"
+      subject.technical_contacts[0].zip.should           == "04542-050"
       subject.technical_contacts[0].state.should         == "Sao Paulo"
       subject.technical_contacts[0].country.should       == nil
       subject.technical_contacts[0].country_code.should  == "BR"
@@ -141,15 +141,11 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
+      subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "a.dns.terra.com"
+      subject.nameservers[0].name.should == "ns25.worldnic.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "c.dns.terra.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "b.dns.terra.com.br"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "d.dns.terra.com.br"
+      subject.nameservers[1].name.should == "ns26.worldnic.com"
     end
   end
 end

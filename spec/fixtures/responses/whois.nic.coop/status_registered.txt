@@ -9,7 +9,7 @@ The domain records that match "calgary.coop" are listed below.
 
 Domain ID:               7441D-COOP
 Domain Name:             calgary.coop
-Expiry Date:             31 Jan 2012 22:12:44 UTC
+Expiry Date:             31 Jan 2017 22:12:44 UTC
 Domain Status:           ok
 Sponsoring registrar:    domains.coop
 Sponsoring registrar ID: 465
@@ -18,7 +18,7 @@ Created by ID:           0
 Last updated by:         domains.coop
 Last updated by ID:      465
 Created:                 31 Jan 2002 22:12:44 UTC
-Last updated:            17 Jan 2007 23:58:04 UTC
+Last updated:            04 Jan 2012 18:30:54 UTC
 Last transferred:        
 
 Contact Type:            registrant

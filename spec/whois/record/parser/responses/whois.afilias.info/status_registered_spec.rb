@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-03-05 22:39:19 UTC")
+      subject.updated_on.should == Time.parse("2012-06-29 09:23:55 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-07-31 23:57:50 UTC")
+      subject.expires_on.should == Time.parse("2013-07-31 23:57:50 UTC")
     end
   end
   describe "#registrar" do

@@ -26,17 +26,17 @@ integrity of the database.
 Domain ID:D117-MOBI
 Domain Name:GOOGLE.MOBI
 Created On:11-May-2006 21:08:42 UTC
-Last Updated On:09-Apr-2009 09:17:18 UTC
-Expiration Date:11-May-2010 21:08:42 UTC
+Last Updated On:09-Apr-2013 09:24:02 UTC
+Expiration Date:11-May-2014 21:08:42 UTC
 Last Transferred Date:22-Sep-2006 10:24:54 UTC
 Trademark Name:GOOGLE
 Trademark Country:US
 Trademark Number:2884502
 Date Trademark Applied For:1998-09-16
 Date Trademark Registered:2004-09-14
-Sponsoring Registrar:MarkMonitor Inc (292)
+Sponsoring Registrar:MarkMonitor Inc. (292)
 Created by Registrar:mTLD Mobile Top Level Domain (4000002)
-Last Updated by Registrar:MarkMonitor Inc (292)
+Last Updated by Registrar:MarkMonitor Inc. (292)
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED
 Status:CLIENT UPDATE PROHIBITED

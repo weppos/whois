@@ -26,128 +26,102 @@ integrity of the database.
 Domain ID:D93126-ASIA
 Domain Name:CJ7.ASIA
 Domain Create Date:15-Jan-2008 11:28:02 UTC
-Domain Expiration Date:15-Jan-2010 11:28:02 UTC
-Domain Last Updated Date:16-Mar-2008 04:30:25 UTC
+Domain Expiration Date:15-Jan-2014 11:28:02 UTC
+Domain Last Updated Date:15-Jan-2013 22:20:13 UTC
 Last Transferred Date:
-IPR Name:DotAsia Organisation Ltd
-IPR Number:
+IPR Name:CJ7
 IPR CC Locality:HK
-IPR Applied:
-IPR Registered:
-IPR Class:
-IPR form:
-IPR Entitlement:
 IPR Type:SR1
 Created by:dotASIA R4-ASIA (9998)
 Last Updated by Registrar:ASIA Registry R6-ASIA (9996)
 Sponsoring Registrar:dotASIA R4-ASIA (9998)
-Registration Agent ID:
-Registration Agent Name:
-Registration Agent Organization:
-Registration Agent Address:
-Registration Agent Address2:
-Registration Agent Address3:
-Registration Agent City:
-Registration Agent State/Province:
-Registration Agent Country/Economy:
-Registration Agent Postal Code:
-Registration Agent Phone:
-Registration Agent Phone Ext.:
-Registration Agent FAX:
-Registration Agent FAX Ext.:
-Registration Agent E-mail:
-Maintainer URL:
 Domain Status:OK
-Registrant ID:FR-1158300cc88a
-Registrant Name:Pioneer Domain (Temporary Delegation)
-Registrant Organization:DotAsia Organisation
-Registrant Address:Unit 617, Miramar Tower
-Registrant Address2:132 Nathan Road
-Registrant Address3:
-Registrant City:Tsim Sha Tsui
-Registrant State/Province:Kowloon
+Registrant ID:FR-132aa75b4bf65
+Registrant Name:RAXCO ASSETS CORP.
+Registrant Organization:RAXCO ASSETS CORP.
+Registrant Address:RM 1201-1204 12/F
+Registrant Address2:SEA BIRD HSE
+Registrant Address3:22-28 WYNDHAM ST CENTRAL HK
+Registrant City:Hong Kong
+Registrant State/Province:
 Registrant Country/Economy:HK
-Registrant Postal Code:HK
-Registrant Phone:+852.35202635
+Registrant Postal Code:
+Registrant Phone:+852.21190333
 Registrant Phone Ext.:
-Registrant FAX:
+Registrant FAX:+852.23045326
 Registrant FAX Ext.:
-Registrant E-mail:domains@registry.asia
-Administrative ID:FR-11582fd1b4a9
-Administrative Name:DotAsia Organisation
-Administrative Organization:DotAsia Organisation
-Administrative Address:Unit 617, Miramar Tower
-Administrative Address2:132 Nathan Road
-Administrative Address3:
-Administrative City:Tsim Sha Tsui
-Administrative State/Province:Kowloon
+Registrant E-mail:eddie.yeung@bingogroup.com.hk
+Administrative ID:FR-132aa7afe0967
+Administrative Name:Eddie Yeung
+Administrative Organization:RAXCO ASSETS CORP.
+Administrative Address:RM 1201-1204 12/F
+Administrative Address2:SEA BIRD HSE
+Administrative Address3:22-28 WYNDHAM ST CENTRAL HK
+Administrative City:Hong Kong
+Administrative State/Province:
 Administrative Country/Economy:HK
-Administrative Postal Code:HK
-Administrative Phone:+852.35202635
+Administrative Postal Code:
+Administrative Phone:+852.21190333
 Administrative Phone Ext.:
 Administrative FAX:
 Administrative FAX Ext.:
-Administrative E-mail:domains@registry.asia
-Technical ID:FR-11582fd1b4a9
-Technical Name:DotAsia Organisation
-Technical Organization:DotAsia Organisation
-Technical Address:Unit 617, Miramar Tower
-Technical Address2:132 Nathan Road
-Technical Address3:
-Technical City:Tsim Sha Tsui
-Technical State/Province:Kowloon
+Administrative E-mail:eddie.yeung@bingogroup.com.hk
+Technical ID:FR-132aa7afe0967
+Technical Name:Eddie Yeung
+Technical Organization:RAXCO ASSETS CORP.
+Technical Address:RM 1201-1204 12/F
+Technical Address2:SEA BIRD HSE
+Technical Address3:22-28 WYNDHAM ST CENTRAL HK
+Technical City:Hong Kong
+Technical State/Province:
 Technical Country/Economy:HK
-Technical Postal Code:HK
-Technical Phone:+852.35202635
+Technical Postal Code:
+Technical Phone:+852.21190333
 Technical Phone Ext.:
 Technical FAX:
 Technical FAX Ext.:
-Technical E-mail:domains@registry.asia
-Billing ID:FR-11582fd1b4a9
-Billing Name:DotAsia Organisation
-Billing Organization:DotAsia Organisation
-Billing Address:Unit 617, Miramar Tower
-Billing Address2:132 Nathan Road
-Billing Address3:
-Billing City:Tsim Sha Tsui
-Billing State/Province:Kowloon
+Technical E-mail:eddie.yeung@bingogroup.com.hk
+Billing ID:FR-132aa774c1b66
+Billing Name:Frankie Chan
+Billing Organization:RAXCO ASSETS CORP.
+Billing Address:RM 1201-1204 12/F
+Billing Address2:SEA BIRD HSE
+Billing Address3:22-28 WYNDHAM ST CENTRAL HK
+Billing City:Hong Kong
+Billing State/Province:
 Billing Country/Economy:HK
-Billing Postal Code:HK
-Billing Phone:+852.35202635
+Billing Postal Code:
+Billing Phone:+852.21190333
 Billing Phone Ext.:
 Billing FAX:
 Billing FAX Ext.:
-Billing E-mail:domains@registry.asia
-CED ID:FR-11582fd1b4a9
+Billing E-mail:eddie.yeung@bingogroup.com.hk
+CED ID:FR-132aa75b4bf65
 CED CC Locality:HK
-CED State/Province:
-CED City:
 CED Type of Legal Entity:Corporations or Companies
-CED Type (Other):
 CED Form of Identification:Certificate of Incorporation or equivalent business registration certificate
-CED Form of ID (Other):
-CED Identification Number:1073566
-Operations and Notifications ID:FR-11582fd1b4a9
-Operations and Notifications Name:DotAsia Organisation
-Operations and Notifications Organization:DotAsia Organisation
-Operations and Notifications Address:Unit 617, Miramar Tower
-Operations and Notifications Address2:132 Nathan Road
-Operations and Notifications Address3:
-Operations and Notifications City:Tsim Sha Tsui
-Operations and Notifications State/Province:Kowloon
+CED Identification Number:35119870
+Operations and Notifications ID:FR-132aa75b4bf65
+Operations and Notifications Name:RAXCO ASSETS CORP.
+Operations and Notifications Organization:RAXCO ASSETS CORP.
+Operations and Notifications Address:RM 1201-1204 12/F
+Operations and Notifications Address2:SEA BIRD HSE
+Operations and Notifications Address3:22-28 WYNDHAM ST CENTRAL HK
+Operations and Notifications City:Hong Kong
+Operations and Notifications State/Province:
 Operations and Notifications Country/Economy:HK
-Operations and Notifications Postal Code:HK
-Operations and Notifications Phone:+852.35202635
+Operations and Notifications Postal Code:
+Operations and Notifications Phone:+852.21190333
 Operations and Notifications Phone Ext.:
-Operations and Notifications FAX:
+Operations and Notifications FAX:+852.23045326
 Operations and Notifications FAX Ext.:
-Operations and Notifications E-mail:domains@registry.asia
-Nameservers:NS1.DOTASIA.ORG
-Nameservers:NS2.DOTASIA.ORG
-Nameservers: 
-Nameservers: 
-Nameservers: 
-Nameservers: 
+Operations and Notifications E-mail:eddie.yeung@bingogroup.com.hk
+Nameservers:NS1.DNSPOD.NET
+Nameservers:NS2.DNSPOD.NET
+Nameservers:NS3.DNSPOD.NET
+Nameservers:NS4.DNSPOD.NET
+Nameservers:NS5.DNSPOD.NET
+Nameservers:NS6.DNSPOD.NET
 Nameservers: 
 Nameservers: 
 Nameservers: 

@@ -36,7 +36,7 @@ Admin Phone:+27.283880920
 Admin Email:maarten@farm215.co.za
 Tech ID:C30342
 Tech Name:Seb de Lemos
-Tech Organization:Hostroute 
+Tech Organization:Paragon Internet Group
 Tech Street1:St Andrew's House
 Tech Street2:St Mary's Walk
 Tech City:Maidenhead
@@ -44,9 +44,9 @@ Tech State/Province:Berkshire
 Tech Postal Code:SL6 1QZ
 Tech Country:GB
 Tech Phone:+44.2031377651
-Tech Email:sales@hostroute.com
+Tech Email:domains@paragon.net.uk
 Sponsoring Registrar ID:C30342
-Sponsoring Registrar Organization:Hostroute 
+Sponsoring Registrar Organization:Paragon Internet Group
 Sponsoring Registrar Street1:St Andrew's House
 Sponsoring Registrar Street2:St Mary's Walk
 Sponsoring Registrar City:Maidenhead
@@ -54,7 +54,7 @@ Sponsoring Registrar State/Province:Berkshire
 Sponsoring Registrar Postal Code:SL6 1QZ
 Sponsoring Registrar Country:GB
 Sponsoring Registrar Phone:020 3137 7651
-Sponsoring Registrar Website:http://www.hostroute.com
+Sponsoring Registrar Website:http://www.paragon.net.uk
 Name Server:NS1191.WEBSITEWELCOME.COM
 Name Server:NS1192.WEBSITEWELCOME.COM
 DNSSEC:Unsigned

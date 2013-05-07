@@ -19,10 +19,10 @@ Domain ID:D246-AERO
 Domain Name:SRILANKAN.AERO
 ENS_AuthId:E0261-SITA
 Created On:26-Mar-2002 06:48:27 UTC
-Expires On:26-Mar-2010 06:48:27 UTC
-Updated On:05-Mar-2008 14:32:18 UTC
+Expires On:26-Mar-2014 06:48:27 UTC
+Updated On:09-Apr-2013 06:35:03 UTC
 Created By:Tuonome IT (380)
-Updated By:Tuonome IT (380)
+Updated By:Afilias Internal (984)
 Sponsoring Registrar:Tuonome IT (380)
 Domain Status:OK
 Maintainer:http://www.tuonome.aero
@@ -86,10 +86,10 @@ Tech Phone Ext.:
 Tech FAX:+94.197335160
 Tech FAX Ext.:
 Tech Email:domregister@srilankan.aero
-Name Server:DNS2.SRILANKAN.AERO
 Name Server:DNS1.SRILANKAN.AERO
-Name Server:S1.NS.SLT.LK
+Name Server:DNS2.SRILANKAN.AERO
 Name Server:S2.NS.SLT.LK
+Name Server:S1.NS.SLT.LK
 Name Server: 
 Name Server: 
 Name Server: 

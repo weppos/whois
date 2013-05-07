@@ -21,11 +21,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-10-08 06:05:55 GMT")
+  should: %s == Time.parse("2013-04-16 13:53:26 GMT")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-04-25 23:59:59 GMT")
+  should: %s == Time.parse("2015-04-25 23:59:59 GMT")
 
 
 #registrar

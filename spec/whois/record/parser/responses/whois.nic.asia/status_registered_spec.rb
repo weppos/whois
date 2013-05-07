@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2008-03-16 04:30:25 UTC")
+      subject.updated_on.should == Time.parse("2013-01-15 22:20:13 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-01-15 11:28:02 UTC")
+      subject.expires_on.should == Time.parse("2014-01-15 11:28:02 UTC")
     end
   end
   describe "#registrar" do
@@ -84,17 +84,17 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should           == "FR-1158300cc88a"
-      subject.registrant_contacts[0].name.should         == "Pioneer Domain (Temporary Delegation)"
-      subject.registrant_contacts[0].organization.should == "DotAsia Organisation"
-      subject.registrant_contacts[0].address.should      == "Unit 617, Miramar Tower\n132 Nathan Road"
-      subject.registrant_contacts[0].city.should         == "Tsim Sha Tsui"
-      subject.registrant_contacts[0].zip.should          == "HK"
-      subject.registrant_contacts[0].state.should        == "Kowloon"
+      subject.registrant_contacts[0].id.should           == "FR-132aa75b4bf65"
+      subject.registrant_contacts[0].name.should         == "RAXCO ASSETS CORP."
+      subject.registrant_contacts[0].organization.should == "RAXCO ASSETS CORP."
+      subject.registrant_contacts[0].address.should      == "RM 1201-1204 12/F\nSEA BIRD HSE\n22-28 WYNDHAM ST CENTRAL HK"
+      subject.registrant_contacts[0].city.should         == "Hong Kong"
+      subject.registrant_contacts[0].zip.should          == ""
+      subject.registrant_contacts[0].state.should        == ""
       subject.registrant_contacts[0].country_code.should == "HK"
-      subject.registrant_contacts[0].phone.should        == "+852.35202635"
-      subject.registrant_contacts[0].fax.should          == ""
-      subject.registrant_contacts[0].email.should        == "domains@registry.asia"
+      subject.registrant_contacts[0].phone.should        == "+852.21190333"
+      subject.registrant_contacts[0].fax.should          == "+852.23045326"
+      subject.registrant_contacts[0].email.should        == "eddie.yeung@bingogroup.com.hk"
     end
   end
   describe "#admin_contacts" do
@@ -103,17 +103,17 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      subject.admin_contacts[0].id.should           == "FR-11582fd1b4a9"
-      subject.admin_contacts[0].name.should         == "DotAsia Organisation"
-      subject.admin_contacts[0].organization.should == "DotAsia Organisation"
-      subject.admin_contacts[0].address.should      == "Unit 617, Miramar Tower\n132 Nathan Road"
-      subject.admin_contacts[0].city.should         == "Tsim Sha Tsui"
-      subject.admin_contacts[0].zip.should          == "HK"
-      subject.admin_contacts[0].state.should        == "Kowloon"
+      subject.admin_contacts[0].id.should           == "FR-132aa7afe0967"
+      subject.admin_contacts[0].name.should         == "Eddie Yeung"
+      subject.admin_contacts[0].organization.should == "RAXCO ASSETS CORP."
+      subject.admin_contacts[0].address.should      == "RM 1201-1204 12/F\nSEA BIRD HSE\n22-28 WYNDHAM ST CENTRAL HK"
+      subject.admin_contacts[0].city.should         == "Hong Kong"
+      subject.admin_contacts[0].zip.should          == ""
+      subject.admin_contacts[0].state.should        == ""
       subject.admin_contacts[0].country_code.should == "HK"
-      subject.admin_contacts[0].phone.should        == "+852.35202635"
+      subject.admin_contacts[0].phone.should        == "+852.21190333"
       subject.admin_contacts[0].fax.should          == ""
-      subject.admin_contacts[0].email.should        == "domains@registry.asia"
+      subject.admin_contacts[0].email.should        == "eddie.yeung@bingogroup.com.hk"
     end
   end
   describe "#technical_contacts" do
@@ -122,27 +122,35 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should           == "FR-11582fd1b4a9"
-      subject.technical_contacts[0].name.should         == "DotAsia Organisation"
-      subject.technical_contacts[0].organization.should == "DotAsia Organisation"
-      subject.technical_contacts[0].address.should      == "Unit 617, Miramar Tower\n132 Nathan Road"
-      subject.technical_contacts[0].city.should         == "Tsim Sha Tsui"
-      subject.technical_contacts[0].zip.should          == "HK"
-      subject.technical_contacts[0].state.should        == "Kowloon"
+      subject.technical_contacts[0].id.should           == "FR-132aa7afe0967"
+      subject.technical_contacts[0].name.should         == "Eddie Yeung"
+      subject.technical_contacts[0].organization.should == "RAXCO ASSETS CORP."
+      subject.technical_contacts[0].address.should      == "RM 1201-1204 12/F\nSEA BIRD HSE\n22-28 WYNDHAM ST CENTRAL HK"
+      subject.technical_contacts[0].city.should         == "Hong Kong"
+      subject.technical_contacts[0].zip.should          == ""
+      subject.technical_contacts[0].state.should        == ""
       subject.technical_contacts[0].country_code.should == "HK"
-      subject.technical_contacts[0].phone.should        == "+852.35202635"
+      subject.technical_contacts[0].phone.should        == "+852.21190333"
       subject.technical_contacts[0].fax.should          == ""
-      subject.technical_contacts[0].email.should        == "domains@registry.asia"
+      subject.technical_contacts[0].email.should        == "eddie.yeung@bingogroup.com.hk"
     end
   end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
+      subject.nameservers.should have(6).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.dotasia.org"
+      subject.nameservers[0].name.should == "ns1.dnspod.net"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.dotasia.org"
+      subject.nameservers[1].name.should == "ns2.dnspod.net"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.dnspod.net"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns4.dnspod.net"
+      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[4].name.should == "ns5.dnspod.net"
+      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[5].name.should == "ns6.dnspod.net"
     end
   end
 end

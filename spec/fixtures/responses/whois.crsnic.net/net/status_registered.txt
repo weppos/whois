@@ -16,11 +16,14 @@ for detailed information.
    Status: clientDeleteProhibited
    Status: clientTransferProhibited
    Status: clientUpdateProhibited
-   Updated Date: 10-feb-2009
+   Status: serverDeleteProhibited
+   Status: serverTransferProhibited
+   Status: serverUpdateProhibited
+   Updated Date: 11-feb-2013
    Creation Date: 15-mar-1999
-   Expiration Date: 15-mar-2010
+   Expiration Date: 15-mar-2014
 
->>> Last update of whois database: Sun, 20 Sep 2009 12:42:50 UTC <<<
+>>> Last update of whois database: Tue, 07 May 2013 12:20:38 UTC <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

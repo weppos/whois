@@ -74,8 +74,8 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "C30342"
       subject.registrar.name.should         == nil
-      subject.registrar.organization.should == "Hostroute"
-      subject.registrar.url.should          == "http://www.hostroute.com"
+      subject.registrar.organization.should == "Paragon Internet Group"
+      subject.registrar.url.should          == "http://www.paragon.net.uk"
     end
   end
   describe "#registrant_contacts" do
@@ -126,7 +126,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
       subject.technical_contacts[0].id.should            == "C30342"
       subject.technical_contacts[0].name.should          == "Seb de Lemos"
-      subject.technical_contacts[0].organization.should  == "Hostroute"
+      subject.technical_contacts[0].organization.should  == "Paragon Internet Group"
       subject.technical_contacts[0].address.should       == "St Andrew's House\nSt Mary's Walk"
       subject.technical_contacts[0].city.should          == "Maidenhead"
       subject.technical_contacts[0].zip.should           == "SL6 1QZ"
@@ -135,7 +135,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.technical_contacts[0].country_code.should  == "GB"
       subject.technical_contacts[0].phone.should         == "+44.2031377651"
       subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "sales@hostroute.com"
+      subject.technical_contacts[0].email.should         == "domains@paragon.net.uk"
     end
   end
   describe "#nameservers" do

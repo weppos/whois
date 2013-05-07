@@ -47,9 +47,9 @@
   should: %s[0].id            == "36542943"
   should: %s[0].name          == "Antonio Camarotti Pinto"
   should: %s[0].organization  == nil
-  should: %s[0].address       == "Rua Tapinas\n118"
+  should: %s[0].address       == "Rua Urussui, 238\n#22"
   should: %s[0].city          == "Sao Paulo"
-  should: %s[0].zip           == "04531-050"
+  should: %s[0].zip           == "04542-050"
   should: %s[0].state         == "Sao Paulo"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "BR"
@@ -65,9 +65,9 @@
   should: %s[0].id            == "36542943"
   should: %s[0].name          == "Antonio Camarotti Pinto"
   should: %s[0].organization  == nil
-  should: %s[0].address       == "Rua Tapinas\n118"
+  should: %s[0].address       == "Rua Urussui, 238\n#22"
   should: %s[0].city          == "Sao Paulo"
-  should: %s[0].zip           == "04531-050"
+  should: %s[0].zip           == "04542-050"
   should: %s[0].state         == "Sao Paulo"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "BR"
@@ -83,9 +83,9 @@
   should: %s[0].id            == "36542943"
   should: %s[0].name          == "Antonio Camarotti Pinto"
   should: %s[0].organization  == nil
-  should: %s[0].address       == "Rua Tapinas\n118"
+  should: %s[0].address       == "Rua Urussui, 238\n#22"
   should: %s[0].city          == "Sao Paulo"
-  should: %s[0].zip           == "04531-050"
+  should: %s[0].zip           == "04542-050"
   should: %s[0].state         == "Sao Paulo"
   should: %s[0].country       == nil
   should: %s[0].country_code  == "BR"
@@ -96,12 +96,8 @@
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(4)
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "a.dns.terra.com"
+  should: %s[0].name == "ns25.worldnic.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "c.dns.terra.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "b.dns.terra.com.br"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "d.dns.terra.com.br"
+  should: %s[1].name == "ns26.worldnic.com"

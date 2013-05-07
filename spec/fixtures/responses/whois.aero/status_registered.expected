@@ -25,11 +25,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2008-03-05 14:32:18 UTC")
+  should: %s == Time.parse("2013-04-09 06:35:03 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-03-26 06:48:27 UTC")
+  should: %s == Time.parse("2014-03-26 06:48:27 UTC")
 
 
 #registrar
@@ -94,10 +94,10 @@
   should: %s CLASS(array)
   should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "dns2.srilankan.aero"
+  should: %s[0].name == "dns1.srilankan.aero"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "dns1.srilankan.aero"
+  should: %s[1].name == "dns2.srilankan.aero"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "s1.ns.slt.lk"
+  should: %s[2].name == "s2.ns.slt.lk"
   should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "s2.ns.slt.lk"
+  should: %s[3].name == "s1.ns.slt.lk"

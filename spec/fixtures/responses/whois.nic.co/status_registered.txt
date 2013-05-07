@@ -63,10 +63,10 @@ Created by Registrar:                        INJECTCSR
 Last Updated by Registrar:                   MELBOURNE IT LTD
 Last Transferred Date:                       Mon Mar 14 22:21:58 GMT 2011
 Domain Registration Date:                    Mon Apr 26 07:50:40 GMT 2010
-Domain Expiration Date:                      Thu Apr 25 23:59:59 GMT 2013
-Domain Last Updated Date:                    Mon Oct 08 06:05:55 GMT 2012
+Domain Expiration Date:                      Sat Apr 25 23:59:59 GMT 2015
+Domain Last Updated Date:                    Tue Apr 16 13:53:26 GMT 2013
 
->>>> Whois database was last updated on: Fri Feb 22 10:32:52 GMT 2013 <<<<
+>>>> Whois database was last updated on: Tue May 07 12:18:16 GMT 2013 <<<<
 .CO Internet, S.A.S., the Administrator for .CO, has collected this
 information for the WHOIS database through Accredited Registrars.  
 This information is provided to you for informational purposes only 

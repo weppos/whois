@@ -4,7 +4,7 @@ Whois .NC
 Domain : domaine.nc
 Created on : 2006-05-14
 Expires on : 2016-05-14
-Last updated on : 2012-02-13
+Last updated on : 2013-04-03
 
 Domain server 1 : any-ns1.nc
 Domain server 2 : ns1.nc

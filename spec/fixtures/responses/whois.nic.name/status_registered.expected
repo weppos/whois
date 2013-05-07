@@ -1,5 +1,5 @@
 #status
-  should: %s == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
+  should: %s == ["ok"]
 
 #available?
   should: %s == false
@@ -14,11 +14,11 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-10-17 18:42:56 UTC")
+  should: %s == Time.parse("2013-04-08 11:33:07 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-04-19 12:22:08 UTC")
+  should: %s == Time.parse("2014-04-19 12:22:08 UTC")
 
 
 #nameservers

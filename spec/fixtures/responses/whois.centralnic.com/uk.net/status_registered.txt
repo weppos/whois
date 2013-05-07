@@ -11,38 +11,53 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 Domain ID:CNIC-DO393884
 Domain Name:PARAMOUNT.UK.NET
 Created On:28-Feb-2006 12:17:01 UTC
-Last Updated On:12-Mar-2012 14:07:36 UTC
+Last Updated On:03-Apr-2013 12:59:45 UTC
 Expiration Date:28-Feb-2014 23:59:59 UTC
 Status:OK
-Registrant ID:H1056361
-Registrant Name:Century Leisure plc
-Registrant Street1:61 Shaftesbury Avenue
-Registrant Street2:London
-Registrant Postal Code:W1D 6LG
+Registrant ID:MNT60424953041
+Registrant Name:Identity Protection Service
+Registrant Organization:Identity Protect Limited
+Registrant Street1:PO Box 795
+Registrant City:Godalming
+Registrant State/Province:Surrey
+Registrant Postal Code:GU7 9GA
 Registrant Country:GB
-Registrant Phone:+44.2075343080
-Registrant Email:pierre@centuryclub.co.uk
-Admin ID:H239313
-Admin Name:Pierre Condou
-Admin Organization:Century Leisure plc
-Admin Street1:61 Shaftesbury Avenue
-Admin Street2:London
-Admin Postal Code:W1D 6LG
+Registrant Phone:+44.1483307527
+Registrant FAX:+44.1483304031
+Registrant Email:paramount.uk.net@identity-protect.org
+Admin ID:MNT60424953041
+Admin Name:Identity Protection Service
+Admin Organization:Identity Protect Limited
+Admin Street1:PO Box 795
+Admin City:Godalming
+Admin State/Province:Surrey
+Admin Postal Code:GU7 9GA
 Admin Country:GB
-Admin Phone:+44.2075343080
-Admin Email:pierre@centuryclub.co.uk
-Tech ID:I6467
-Tech Name:Domain Admin
-Tech Organization:Webfusion
-Tech Street1:5 Roundwood Avenue
-Tech Street2:Stockley Park
-Tech City:Uxbridge
-Tech State/Province:Middlesex
-Tech Postal Code:UB11 1FF
+Admin Phone:+44.1483307527
+Admin FAX:+44.1483304031
+Admin Email:paramount.uk.net@identity-protect.org
+Tech ID:MNT60424953041
+Tech Name:Identity Protection Service
+Tech Organization:Identity Protect Limited
+Tech Street1:PO Box 795
+Tech City:Godalming
+Tech State/Province:Surrey
+Tech Postal Code:GU7 9GA
 Tech Country:GB
-Tech Phone:+44.8458590018
-Tech FAX:+44.8701650437
-Tech Email:hosting-domains@webfusion.com
+Tech Phone:+44.1483307527
+Tech FAX:+44.1483304031
+Tech Email:paramount.uk.net@identity-protect.org
+Billing ID:MNT60424953041
+Billing Name:Identity Protection Service
+Billing Organization:Identity Protect Limited
+Billing Street1:PO Box 795
+Billing City:Godalming
+Billing State/Province:Surrey
+Billing Postal Code:GU7 9GA
+Billing Country:GB
+Billing Phone:+44.1483307527
+Billing FAX:+44.1483304031
+Billing Email:paramount.uk.net@identity-protect.org
 Sponsoring Registrar ID:I6467
 Sponsoring Registrar IANA ID:1515
 Sponsoring Registrar Organization:Webfusion

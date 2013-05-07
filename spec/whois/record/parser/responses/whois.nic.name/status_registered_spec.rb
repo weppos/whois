@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicName, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
+      subject.status.should == ["ok"]
     end
   end
   describe "#available?" do
@@ -45,13 +45,13 @@ describe Whois::Record::Parser::WhoisNicName, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-10-17 18:42:56 UTC")
+      subject.updated_on.should == Time.parse("2013-04-08 11:33:07 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-04-19 12:22:08 UTC")
+      subject.expires_on.should == Time.parse("2014-04-19 12:22:08 UTC")
     end
   end
   describe "#nameservers" do

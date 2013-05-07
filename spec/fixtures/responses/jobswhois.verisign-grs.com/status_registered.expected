@@ -6,7 +6,7 @@
   should: %s == "goto.jobs"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "91478530"
 
 
 #status
@@ -21,37 +21,37 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2006-02-21")
+  should: %s == Time.parse("2010-02-04 18:54:33 UTC")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-02-20")
+  should: %s == Time.parse("2013-02-05 03:02:36 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-02-21")
+  should: %s == Time.parse("2014-02-04 18:54:33 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == nil
-  should: %s.name         == "ENCIRCA, INC"
-  should: %s.organization == "ENCIRCA, INC"
-  should: %s.url          == "http://www.encirca.com"
+  should: %s.id           == "667"
+  should: %s.name         == "NAME SHARE, INC"
+  should: %s.organization == "NAME SHARE, INC"
+  should: %s.url          == "http://www.nameshare.com"
 
 
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns2.registry.jobs"
+  should: %s[0].name == "ns1.registry.jobs"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1.registry.jobs"
+  should: %s[1].name == "ns2.registry.jobs"
 
 
 
 #referral_whois
-  should: %s == "whois.encirca.com"
+  should: %s == "whois.nameshare.com"
 
 #referral_url
-  should: %s == "http://www.encirca.com"
+  should: %s == "http://www.nameshare.com"

@@ -25,18 +25,18 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-04-09 09:17:18 UTC")
+  should: %s == Time.parse("2013-04-09 09:24:02 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-05-11 21:08:42 UTC")
+  should: %s == Time.parse("2014-05-11 21:08:42 UTC")
 
 
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == "292"
-  should: %s.name         == "MarkMonitor Inc"
-  should: %s.organization == "MarkMonitor Inc"
+  should: %s.name         == "MarkMonitor Inc."
+  should: %s.organization == "MarkMonitor Inc."
 
 #registrant_contacts
   should: %s CLASS(array)

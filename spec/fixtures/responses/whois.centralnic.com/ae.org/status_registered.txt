@@ -57,7 +57,7 @@ Billing Email:contact@privacyprotect.org
 Sponsoring Registrar ID:H269407
 Sponsoring Registrar IANA ID:303
 Sponsoring Registrar Organization:PDR Ltd. d/b/a PublicDomainRegistry.com
-Sponsoring Registrar Street1:Address:  F/19, RAK FTZ, Ras Al Khaimah, UAE , P.O Box #16113
+Sponsoring Registrar Street1:F/19, RAK FTZ, Ras Al Khaimah, UAE , P.O Box #16113
 Sponsoring Registrar City:Ras Al Khaimah	
 Sponsoring Registrar State/Province:Ras Al Khaimah	
 Sponsoring Registrar Postal Code:P.O Box #16113

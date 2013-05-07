@@ -22,21 +22,18 @@ documented by VeriSign, Inc. but will not be used for any commercial purpose wha
  **** 
 Domain Name ID: 2788515DOMAIN-NAME
 Domain Name: CARLETTI.NAME
-Sponsoring Registrar ID: 44REGISTRAR-NAME
-Sponsoring Registrar: GoDaddy.com, LLC
-Domain Status: clientDeleteProhibited
-Domain Status: clientRenewProhibited
-Domain Status: clientTransferProhibited
-Domain Status: clientUpdateProhibited
+Sponsoring Registrar ID: 30REGISTRAR-NAME
+Sponsoring Registrar: eNom, Inc.
+Domain Status: ok
 Registrant ID: 7903395CONTACT-NAME
-Admin ID: 7903397CONTACT-NAME
-Tech ID: 7903396CONTACT-NAME
-Billing ID: 7903398CONTACT-NAME
-Name Server ID: 1016683HOST-NAME
+Admin ID: 10919759CONTACT-NAME
+Tech ID: 10919759CONTACT-NAME
+Billing ID: 10919759CONTACT-NAME
+Name Server ID: 1038925HOST-NAME
 Name Server: NS1.DREAMHOST.COM
-Name Server ID: 1016684HOST-NAME
+Name Server ID: 1038926HOST-NAME
 Name Server: NS2.DREAMHOST.COM
 Created On: 2006-04-19T12:22:08Z
-Expires On: 2013-04-19T12:22:08Z
-Updated On: 2011-10-17T18:42:56Z
+Expires On: 2014-04-19T12:22:08Z
+Updated On: 2013-04-08T11:33:07Z
 

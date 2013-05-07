@@ -25,18 +25,20 @@ module Whois
 
 
         property_supported :domain do
-          node("Domain Name") { |raw| raw.downcase }
+          node("Domain Name", &:downcase)
         end
 
-        property_not_supported :domain_id
+        property_supported :domain_id do
+          node("Domain ID")
+        end
 
 
         property_supported :status do
-          node("Status")
+          node("Domain Status")
         end
 
         property_supported :available? do
-          node("Registrar").nil?
+          node("Sponsoring Registrar").nil?
         end
 
         property_supported :registered? do
@@ -45,24 +47,25 @@ module Whois
 
 
         property_supported :created_on do
-          node("Creation Date") { |raw| Time.parse(raw) }
+          node("Creation Date") { |value| Time.parse(value) }
         end
 
         property_supported :updated_on do
-          node("Updated Date") { |raw| Time.parse(raw) }
+          node("Updated Date") { |value| Time.parse(value) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |raw| Time.parse(raw) }
+          node("Expiration Date") { |value| Time.parse(value) }
         end
 
 
         property_supported :registrar do
-          node("Registrar") do |raw|
+          node("Sponsoring Registrar") do |value|
             Whois::Record::Registrar.new(
-                :name => last_useful_item(raw), 
-                :organization => last_useful_item(raw),
-                :url => referral_url
+                :id           => node("Sponsoring Registrar IANA ID"),
+                :name         => value,
+                :organization => value,
+                :url          => referral_url
             )
           end
         end
@@ -80,9 +83,7 @@ module Whois
         end
 
         def referral_url
-          node("Referral URL") do |lines|
-            last_useful_item(lines)
-          end
+          node("Referral URL")
         end
 
 
@@ -93,15 +94,6 @@ module Whois
         # @return [Hash]
         def parse
           Scanners::Verisign.new(content_for_scanner).parse
-        end
-
-
-        private
-
-        # In case of "SPAM Response", the response contains more than one item
-        # for the same value and the value becomes an Array.
-        def last_useful_item(values)
-          values.is_a?(Array) ? values.last : values
         end
 
       end
