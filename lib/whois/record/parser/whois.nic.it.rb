@@ -51,6 +51,8 @@ module Whois
             :redemption
           when "unassignable"
             :unavailable
+          when "reserved"
+            :reserved
           when "available"
             :available
           when /^inactive/

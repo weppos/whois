@@ -12,6 +12,8 @@
 
 - FIXED: whois.denic.de parser crashes when error 55000000010
 
+- FIXED: whois.nic.it crashes when status is `reserved` (GH-233).
+
 
 ## Release 3.1.2
 
