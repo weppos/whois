@@ -19,6 +19,7 @@ module Whois
         self.tokenizers += [
             :skip_empty_line,
             :scan_response_throttled,
+            :scan_response_error,
             :scan_disclaimer,
             :scan_pair,
             :scan_contact,
@@ -29,6 +30,13 @@ module Whois
         tokenizer :scan_response_throttled do
           if @input.match?(/^% Error: 55000000002/)
             @ast["response:throttled"] = true
+            @input.skip(/^.+\n/)
+          end
+        end
+
+        tokenizer :scan_response_error do
+          if @input.match?(/^% Error: 55000000010/)
+            @ast["response:error"] = true
             @input.skip(/^.+\n/)
           end
         end

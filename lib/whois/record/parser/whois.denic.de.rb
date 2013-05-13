@@ -48,7 +48,11 @@ module Whois
           when "failed"
             :registered
           else
-            Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
+            if response_error?
+              :invalid
+            else
+              Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
+            end
           end
         end
 
@@ -120,6 +124,10 @@ module Whois
           !!node("response:throttled")
         end
 
+        def response_error?
+          !!node("response:error")
+        end
+
 
         # NEWPROPERTY
         def version
@@ -133,7 +141,8 @@ module Whois
         # NEWPROPERTY
         def invalid?
           cached_properties_fetch :invalid? do
-            node("Status") == "invalid"
+            node("Status") == "invalid" ||
+            response_error?
           end
         end
 
