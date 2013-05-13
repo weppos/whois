@@ -36,32 +36,24 @@ module Whois
 
 
         property_supported :status do
-          if node("Status")
-            case node("Status")
-              when "connect"    then :registered
-              when "free"       then :available
-              when "invalid"    then :invalid
-              # NEWSTATUS (inactive)
-              # The domain is registered, but there is not DNS entry for it.
-              when "failed"     then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
-            end
+          case node("Status")
+          when "connect"
+            :registered
+          when "free"
+            :available
+          when "invalid"
+            :invalid
+          # NEWSTATUS (inactive)
+          # The domain is registered, but there is not DNS entry for it.
+          when "failed"
+            :registered
           else
-            if version < "2.0"
-              if invalid?
-                :invalid
-              else
-                :available
-              end
-            else
-              Whois.bug!(ParserError, "Unable to parse status.")
-            end
+            Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
           end
         end
 
         property_supported :available? do
-          !invalid? && (!!node("status:available") || node("Status") == "free")
+          !invalid? && node("Status") == "free"
         end
 
         property_supported :registered? do
@@ -72,7 +64,7 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          node("Changed") { |raw| Time.parse(raw) }
+          node("Changed") { |value| Time.parse(value) }
         end
 
         property_not_supported :expires_on
@@ -96,8 +88,6 @@ module Whois
         property_supported :admin_contacts do
           build_contact("Admin-C", Whois::Record::Contact::TYPE_ADMIN)
         end
-
-        # FIXME: check against different schema
 
         property_supported :technical_contacts do
           build_contact("Tech-C", Whois::Record::Contact::TYPE_TECHNICAL)
@@ -143,7 +133,7 @@ module Whois
         # NEWPROPERTY
         def invalid?
           cached_properties_fetch :invalid? do
-            !!node("status:invalid") || node("Status") == "invalid"
+            node("Status") == "invalid"
           end
         end
 
