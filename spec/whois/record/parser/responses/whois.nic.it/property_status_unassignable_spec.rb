@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicIt, "property_status_unassignable.expect
 
   describe "#status" do
     it do
-      subject.status.should == :reserved
+      subject.status.should == :unavailable
     end
   end
   describe "#available?" do

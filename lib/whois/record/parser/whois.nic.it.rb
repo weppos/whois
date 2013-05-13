@@ -50,7 +50,7 @@ module Whois
           when /^pendingdelete/
             :redemption
           when "unassignable"
-            :reserved
+            :unavailable
           when "available"
             :available
           when /^inactive/
@@ -65,13 +65,13 @@ module Whois
         end
 
         property_supported :registered? do
-          status != :reserved &&
-          !available?
+          !available? &&
+          !unavailable?
         end
 
         # NEWPROPERTY
-        def reserved?
-          status == :reserved
+        def unavailable?
+          status == :unavailable
         end
 
 

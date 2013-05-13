@@ -1,5 +1,5 @@
 #status
-  should: %s == :reserved
+  should: %s == :unavailable
 
 #available?
   should: %s == false

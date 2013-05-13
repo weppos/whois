@@ -8,6 +8,10 @@
 
 - NEW: Added full whois.nic.gd parser (GH-227).
 
+- CHANGED: whois.nic.it status is :unavailable when the whois status is `unassignable`
+
+- FIXED: whois.denic.de parser crashes when error 55000000010
+
 
 ## Release 3.1.2
 

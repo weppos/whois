@@ -1,12 +1,8 @@
 #status
-  should: %s == :reserved
+  should: %s == :unavailable
 
 #available?
   should: %s == false
 
 #registered?
   should: %s == false
-
-
-#reserved?
-  should: %s == true
