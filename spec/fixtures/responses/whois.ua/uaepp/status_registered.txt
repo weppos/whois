@@ -1,0 +1,92 @@
+% request from 87.21.235.97
+% This is the Ukrainian Whois query server #B.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+domain:           google.com.ua
+dom-public:       NO
+registrant:       com-gi8-1
+admin-c:          com-gi8-1
+tech-c:           com-gi8-1
+mnt-by:           ua.imena
+nserver:          ns3.google.com
+nserver:          ns1.google.com
+nserver:          ns4.google.com
+nserver:          ns2.google.com
+status:           ok
+created:          2002-12-04 00:00:00+02
+modified:         2013-04-15 20:00:10+03
+expires:          2013-12-04 00:00:00+02
+source:           UAEPP
+
+% Registrar:
+% ==========
+registrar:        ua.imena
+organization:     "Internet Invest" Ltd
+organization-loc: ТОВ "Інтернет Інвест"
+url:              http://www.imena.ua
+city:             Kyiv
+country:          UA
+source:           UAEPP
+
+% Registrant:
+% ===========
+contact-id:       com-gi8-1
+person:           Google Inc.
+organization:     Google Inc.
+e-mail:           dns-admin@google.com
+address:          1600 Amphitheatre Parkway Mountain View CA 94043 US
+address:          n/a
+country:          UA
+country-loc:      UA
+phone:            +16503300100
+fax:              +16506188571
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2013-03-31 19:13:45+03
+source:           UAEPP
+
+
+% Administrative Contacts:
+% =======================
+contact-id:       com-gi8-1
+person:           Google Inc.
+organization:     Google Inc.
+e-mail:           dns-admin@google.com
+address:          1600 Amphitheatre Parkway Mountain View CA 94043 US
+address:          n/a
+country:          UA
+country-loc:      UA
+phone:            +16503300100
+fax:              +16506188571
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2013-03-31 19:13:45+03
+source:           UAEPP
+
+
+% Technical Contacts:
+% ===================
+contact-id:       com-gi8-1
+person:           Google Inc.
+organization:     Google Inc.
+e-mail:           dns-admin@google.com
+address:          1600 Amphitheatre Parkway Mountain View CA 94043 US
+address:          n/a
+country:          UA
+country-loc:      UA
+phone:            +16503300100
+fax:              +16506188571
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2013-03-31 19:13:45+03
+source:           UAEPP
+
+
+
+% Query time:     5 msec
+

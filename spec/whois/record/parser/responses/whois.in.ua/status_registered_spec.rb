@@ -44,13 +44,13 @@ describe Whois::Record::Parser::WhoisInUa, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-02-14 22:22:14 UTC")
+      subject.updated_on.should == Time.parse("2012-12-16 13:41:04")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2011-02-14 00:00:00 UTC")
+      subject.expires_on.should == Time.parse("2013-12-18 00:00:00")
     end
   end
   describe "#nameservers" do
@@ -58,11 +58,11 @@ describe Whois::Record::Parser::WhoisInUa, "status_registered.expected" do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(3).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns10.uadns.com"
+      subject.nameservers[0].name.should == "ns12.uadns.com"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
       subject.nameservers[1].name.should == "ns11.uadns.com"
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns12.uadns.com"
+      subject.nameservers[2].name.should == "ns10.uadns.com"
     end
   end
 end

@@ -1,0 +1,36 @@
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "KG780-UANIC"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Kyivstar GSM"
+  should: %s[0].address       == "Chervonozoryanyi Av., 51"
+  should: %s[0].city          == "KYIV"
+  should: %s[0].zip           == "03110"
+  should: %s[0].state         == nil
+  should: %s[0].country       == "UA"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+380 (67) 2372213"
+  should: %s[0].fax           == "+380 (44) 2473954"
+  should: %s[0].email         == "dnsmaster@kyivstar.net"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  should: %s[1] CLASS(contact)
+  should: %s[1].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[1].id            == "EIC-UANIC"
+  should: %s[1].name          == nil
+  should: %s[1].organization  == "\"ElVisti Information Center\", LLC\nООО \"Информационный центр \"Электронные вести\"\nТОВ \"ІЦ ЕЛВІСТІ\""
+  should: %s[1].address       == "а/с, 151"
+  should: %s[1].city          == "КИЇВ"
+  should: %s[1].zip           == "03037"
+  should: %s[1].state         == nil
+  should: %s[1].country       == "UA"
+  should: %s[1].country_code  == nil
+  should: %s[1].phone         == "+38044 239-90-91"
+  should: %s[1].fax           == nil
+  should: %s[1].email         == "hostmaster@visti.net"
+  should: %s[1].created_on    == nil
+  should: %s[1].updated_on    == Time.parse("2011-12-15 11:33:14")
+

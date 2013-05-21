@@ -14,25 +14,24 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.in.ua parser
-      #
       # Parser for the whois.in.ua server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisInUa < Base
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+?)\n/
             case $1.split("-").first.downcase
-              when "ok" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "ok"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -53,21 +52,21 @@ module Whois
         property_supported :updated_on do
           if content_for_scanner =~ /changed:\s+(.*)\n/
             time = $1.split(" ").last
-            DateTime.strptime(time, "%Y%m%d%H%M%S").to_time
+            Time.strptime(time, "%Y%m%d%H%M%S")
           end
         end
 
         property_supported :expires_on do
           if content_for_scanner =~ /status:\s+(.*)\n/
             time = $1.split(" ").last
-            DateTime.strptime(time, "%Y%m%d%H%M%S").to_time
+            Time.strptime(time, "%Y%m%d%H%M%S")
           end
         end
 
 
         property_supported :nameservers do
           content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(:name => name.strip.downcase)
+            Record::Nameserver.new(name: name.strip.downcase)
           end
         end
 

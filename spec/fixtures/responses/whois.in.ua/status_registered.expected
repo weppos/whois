@@ -13,19 +13,19 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-02-14 22:22:14 UTC")
+  should: %s == Time.parse("2012-12-16 13:41:04")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-02-14 00:00:00 UTC")
+  should: %s == Time.parse("2013-12-18 00:00:00")
 
 
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(3)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns10.uadns.com"
+  should: %s[0].name == "ns12.uadns.com"
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns11.uadns.com"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns12.uadns.com"
+  should: %s[2].name == "ns10.uadns.com"

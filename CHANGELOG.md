@@ -14,6 +14,8 @@
 
 - FIXED: whois.nic.it crashes when status is `reserved` (GH-233).
 
+- FIXED: whois.ua is mixing two kinds of responses (GH-235).
+
 
 ## Release 3.1.2
 
