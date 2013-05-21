@@ -42,7 +42,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /No entries found for domain/)
+          !!(content_for_scanner =~ /No entries found for/)
         end
 
         property_supported :registered? do
