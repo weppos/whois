@@ -1,6 +1,6 @@
 # Changelog
 
-## Master
+## Release 3.1.3
 
 - SERVER: Updated .GD (GH-227), .TC (GH-228) TLD definitions.
 
