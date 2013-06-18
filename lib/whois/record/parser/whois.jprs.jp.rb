@@ -45,6 +45,8 @@ module Whois
               :registered
             when "deleted"
               :suspended
+            when "reserved"
+              :reserved
             else
               Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -59,6 +61,11 @@ module Whois
 
         property_supported :registered? do
           !available?
+        end
+
+        # NEWPROPERTY
+        def reserved?
+          status == :reserved
         end
 
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## Master
+
+- FIXED: whois.jprs.jp crashes when status is `reserved` for ne.jp SLD.
+
+
+
 ## Release 3.1.3
 
 - SERVER: Updated .GD (GH-227), .TC (GH-228) TLD definitions.
