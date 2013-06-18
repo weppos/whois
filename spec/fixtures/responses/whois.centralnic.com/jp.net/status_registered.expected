@@ -1,0 +1,103 @@
+#disclaimer
+  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+
+
+#domain
+  should: %s == "ntt.jp.net"
+
+#domain_id
+  should: %s == "CNIC-DO846061"
+
+
+#status
+  should: %s == ["OK"]
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-03-16 11:47:23 UTC")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-01-24 16:57:19 UTC")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2018-03-16 23:59:59 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "H1605993"
+  should: %s.name         == nil
+  should: %s.organization == "GMO"
+  should: %s.url          == "http://www.onamae.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "136151BCEFE"
+  should: %s[0].name          == "zhijian xia"
+  should: %s[0].organization  == "zhijian xia"
+  should: %s[0].address       == "Chuo\n3-23-20"
+  should: %s[0].city          == "Warabi-shi"
+  should: %s[0].zip           == "335-0004"
+  should: %s[0].state         == "Saitama"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "JP"
+  should: %s[0].phone         == "+81.08037215656"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "xia@ingame.jp"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "136151BD1A1"
+  should: %s[0].name          == "zhijian xia"
+  should: %s[0].organization  == "zhijian xia"
+  should: %s[0].address       == "Chuo\n3-23-20"
+  should: %s[0].city          == "Warabi-shi"
+  should: %s[0].zip           == "335-0004"
+  should: %s[0].state         == "Saitama"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "JP"
+  should: %s[0].phone         == "+81.08037215656"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "xia@ingame.jp"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "136151BD459"
+  should: %s[0].name          == "Technical Contact"
+  should: %s[0].organization  == "GMO Internet Inc."
+  should: %s[0].address       == "26-1 Sakuragaoka-cho\nCerulean Tower 11F"
+  should: %s[0].city          == "Shibuya-ku"
+  should: %s[0].zip           == "150-8512"
+  should: %s[0].state         == "Tokyo"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "JP"
+  should: %s[0].phone         == "+81.0354562555"
+  should: %s[0].fax           == "+81.0354562556"
+  should: %s[0].email         == "admin@onamae.com"
+
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "dns1.onamae.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "dns2.onamae.com"
