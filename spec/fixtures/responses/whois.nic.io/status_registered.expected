@@ -6,7 +6,7 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 #domain
-  should: %s == "drop.io"
+  should: %s == "redis.io"
 
 
 #status
@@ -26,14 +26,32 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2014-05-28")
 
 
 #registrar
   should: %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Salvatore Sanfilippo"
+  should: %s[0].organization  == "Salvatore Sanfilippo"
+  should: %s[0].address       == "Via F.Alaimo, 2"
+  should: %s[0].city          == "Campobello di Licata (AG"
+  should: %s[0].zip           == nil
+  should: %s[0].state         == "."
+  should: %s[0].country       == "IT"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 #admin_contacts
   should: %s raise_error(Whois::AttributeNotSupported)
@@ -43,4 +61,13 @@
 
 
 #nameservers
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.iwantmyname.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.iwantmyname.net"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.iwantmyname.net"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.iwantmyname.net"

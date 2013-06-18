@@ -26,14 +26,15 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == nil
 
 
 #registrar
   should: %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(array)
+  should: %s == []
 
 #admin_contacts
   should: %s raise_error(Whois::AttributeNotSupported)
@@ -43,4 +44,5 @@
 
 
 #nameservers
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(array)
+  should: %s == []

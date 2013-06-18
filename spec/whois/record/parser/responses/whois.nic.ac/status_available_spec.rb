@@ -63,7 +63,7 @@ describe Whois::Record::Parser::WhoisNicAc, "status_available.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.expires_on.should == nil
     end
   end
   describe "#registrar" do
@@ -73,7 +73,8 @@ describe Whois::Record::Parser::WhoisNicAc, "status_available.expected" do
   end
   describe "#registrant_contacts" do
     it do
-      lambda { subject.registrant_contacts }.should raise_error(Whois::AttributeNotSupported)
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
     end
   end
   describe "#admin_contacts" do
@@ -88,7 +89,8 @@ describe Whois::Record::Parser::WhoisNicAc, "status_available.expected" do
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::AttributeNotSupported)
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should == []
     end
   end
 end

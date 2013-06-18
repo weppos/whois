@@ -1,2 +1,17 @@
-Domain "DROP.IO" - Not available
-For more information please go to http://www.nic.io/
+
+Domain : redis.io
+Status : Live
+Expiry : 2014-05-28
+
+NS 1   : ns1.iwantmyname.net
+NS 2   : ns2.iwantmyname.net
+NS 3   : ns3.iwantmyname.net
+NS 4   : ns4.iwantmyname.net
+
+Owner  : Salvatore Sanfilippo
+       : Salvatore Sanfilippo
+       : Via F.Alaimo, 2
+       : Campobello di Licata (AG
+       : .
+       : IT
+

@@ -4,8 +4,9 @@
 
 - SERVER: Added .JP.NET (GH-240) TLD definition.
 
-- FIXED: whois.jprs.jp crashes when status is `reserved` for ne.jp SLD.
+- CHANGED: Updated whois.nic.ac, whois.nic.io, and whois.nic.sh parsers to the new response format (GH-238).
 
+- FIXED: whois.jprs.jp crashes when status is `reserved` for ne.jp SLD.
 
 
 ## Release 3.1.3

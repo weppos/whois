@@ -7,67 +7,19 @@
 #++
 
 
-require 'whois/record/parser/base'
+require 'whois/record/parser/base_icb'
 
 
 module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic.sh parser
-      #
       # Parser for the whois.nic.sh server.
       #
-      class WhoisNicSh < Base
-
-        property_not_supported :disclaimer
-
-
-        property_supported :domain do
-          if content_for_scanner =~ /Domain "(.+?)"/
-            $1.downcase
-          end
-        end
-
-        property_not_supported :domain_id
-
-
-        property_supported :status do
-          if available?
-            :available
-          else
-            :registered
-          end
-        end
-
-        property_supported :available? do
-          !!(content_for_scanner =~ /- Available/)
-        end
-
-        property_supported :registered? do
-          !available?
-        end
-
-
-        property_not_supported :created_on
-
-        property_not_supported :updated_on
-
-        property_not_supported :expires_on
-
-
-        property_not_supported :registrar
-
-        property_not_supported :registrant_contacts
-
-        property_not_supported :admin_contacts
-
-        property_not_supported :technical_contacts
-
-
-        property_not_supported :nameservers
-
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
+      class WhoisNicSh < BaseIcb
       end
 
     end

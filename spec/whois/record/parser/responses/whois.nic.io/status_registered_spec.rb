@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisNicIo, "status_registered.expected" do
   end
   describe "#domain" do
     it do
-      subject.domain.should == "drop.io"
+      subject.domain.should == "redis.io"
     end
   end
   describe "#status" do
@@ -63,7 +63,8 @@ describe Whois::Record::Parser::WhoisNicIo, "status_registered.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2014-05-28")
     end
   end
   describe "#registrar" do
@@ -73,7 +74,24 @@ describe Whois::Record::Parser::WhoisNicIo, "status_registered.expected" do
   end
   describe "#registrant_contacts" do
     it do
-      lambda { subject.registrant_contacts }.should raise_error(Whois::AttributeNotSupported)
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == nil
+      subject.registrant_contacts[0].name.should          == "Salvatore Sanfilippo"
+      subject.registrant_contacts[0].organization.should  == "Salvatore Sanfilippo"
+      subject.registrant_contacts[0].address.should       == "Via F.Alaimo, 2"
+      subject.registrant_contacts[0].city.should          == "Campobello di Licata (AG"
+      subject.registrant_contacts[0].zip.should           == nil
+      subject.registrant_contacts[0].state.should         == "."
+      subject.registrant_contacts[0].country.should       == "IT"
+      subject.registrant_contacts[0].country_code.should  == nil
+      subject.registrant_contacts[0].phone.should         == nil
+      subject.registrant_contacts[0].fax.should           == nil
+      subject.registrant_contacts[0].email.should         == nil
+      subject.registrant_contacts[0].created_on.should    == nil
+      subject.registrant_contacts[0].updated_on.should    == nil
     end
   end
   describe "#admin_contacts" do
@@ -88,7 +106,16 @@ describe Whois::Record::Parser::WhoisNicIo, "status_registered.expected" do
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::AttributeNotSupported)
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(4).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.iwantmyname.net"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.iwantmyname.net"
+      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[2].name.should == "ns3.iwantmyname.net"
+      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[3].name.should == "ns4.iwantmyname.net"
     end
   end
 end

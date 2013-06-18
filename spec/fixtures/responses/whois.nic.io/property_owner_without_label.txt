@@ -1,17 +1,16 @@
 
-Domain : google.ac
+Domain : google.io
 Status : Live
-Expiry : 2014-04-03
+Expiry : 2013-09-30
 
 NS 1   : ns1.google.com
 NS 2   : ns2.google.com
 NS 3   : ns3.google.com
 NS 4   : ns4.google.com
 
-Owner  : DNS Administrator
-       : Google, Inc.
-       : 1600 Amphitheatre Parkway
+       : GOOGLE INC.
+       : 2400 E. Bayshore Pkwy
        : Mountain View
        : CA
-       : USA
+       : US
 
