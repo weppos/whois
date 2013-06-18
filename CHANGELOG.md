@@ -2,6 +2,8 @@
 
 ## Master
 
+- SERVER: Added .JP.NET (GH-240) TLD definition.
+
 - FIXED: whois.jprs.jp crashes when status is `reserved` for ne.jp SLD.
 
 
