@@ -32,6 +32,9 @@
   ".hu.com": {
     "host": "whois.centralnic.com"
   },
+  ".jp.net": {
+    "host": "whois.centralnic.com"
+  },
   ".jpn.com": {
     "host": "whois.centralnic.com"
   },
