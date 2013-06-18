@@ -129,19 +129,22 @@ module Whois
         end
 
 
-        # Attempts to detect and returns the
-        # schema version.
+        # Attempts to detect and returns the version.
         #
         # TODO: This is very empiric.
         #       Use the available status in combination with the creation date label.
-        def schema
-          @schema ||= if content_for_scanner =~ /^% \(c\) (.+?) Canadian Internet Registration Authority/
-            case $1
-            when "2007" then "1"
-            when "2010" then "2"
+        #
+        # NEWPROPERTY
+        def version
+          cached_properties_fetch :version do
+            version = if content_for_scanner =~ /^% \(c\) (.+?) Canadian Internet Registration Authority/
+              case $1
+              when "2007" then "1"
+              when "2010" then "2"
+              end
             end
+            version || Whois.bug!(ParserError, "Unable to detect version.")
           end
-          @schema || Whois.bug!(ParserError, "Unable to detect schema version.")
         end
 
         # NEWPROPERTY
