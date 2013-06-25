@@ -11,7 +11,7 @@ require 'time'
 require 'whois/record/contact'
 require 'whois/record/registrar'
 require 'whois/record/nameserver'
-require 'whois/record/scanners/nodable'
+require 'whois/record/scanners/scannable'
 
 
 module Whois

@@ -19,7 +19,9 @@ module Whois
       #
       # @abstract
       class BaseAfilias < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::BaseAfilias
 
 
         property_supported :disclaimer do
@@ -98,16 +100,6 @@ module Whois
           Array.wrap(node("Name Server")).reject(&:empty?).map do |name|
             Nameserver.new(:name => name.downcase)
           end
-        end
-
-
-        # Initializes a new {Scanners::Afilias} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::BaseAfilias.new(content_for_scanner).parse
         end
 
 

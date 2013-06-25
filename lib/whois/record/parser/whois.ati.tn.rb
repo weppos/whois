@@ -20,9 +20,11 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.6.0
       class WhoisAtiTn < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisAtiTn
+
 
         property_supported :disclaimer do
           node("field:disclaimer")
@@ -92,17 +94,7 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::WhoisAtiTn} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisAtiTn.new(content_for_scanner).parse
-        end
-
-
-        private
+      private
 
         def build_contact(element, type)
           node("#{element} Name") do

@@ -17,7 +17,9 @@ module Whois
 
       # Parser for the whois.cnnic.cn server.
       class WhoisCnnicCn < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisCnnicCn
 
 
         property_not_supported :disclaimer
@@ -85,16 +87,6 @@ module Whois
           Array.wrap(node("Name Server")).map do |name|
             Nameserver.new(:name => name.downcase)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisCnnicCn} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisCnnicCn.new(content_for_scanner).parse
         end
 
 

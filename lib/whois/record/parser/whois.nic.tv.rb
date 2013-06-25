@@ -17,7 +17,10 @@ module Whois
 
       # Parser for the whois.nic.tv server.
       class WhoisNicTv < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::Verisign
+
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -77,16 +80,6 @@ module Whois
 
         def referral_url
           node("Referral URL")
-        end
-
-
-        # Initializes a new {Scanners::Verisign} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::Verisign.new(content_for_scanner).parse
         end
 
       end

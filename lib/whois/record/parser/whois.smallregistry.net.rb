@@ -20,7 +20,10 @@ module Whois
       # @author Mathieu Arnold <m@absolight.fr>
       #
       class WhoisSmallregistryNet < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisSmallregistryNet
+
 
         property_supported :disclaimer do
           node("field:disclaimer") do |str|
@@ -103,16 +106,6 @@ module Whois
           Array.wrap(node("name_servers")).map do |hash|
             Record::Nameserver.new(:name => hash)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisSmallregistryNet} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisSmallregistryNet.new(content_for_scanner).parse
         end
 
 

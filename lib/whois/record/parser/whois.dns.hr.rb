@@ -20,9 +20,11 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.4.0
       class WhoisDnsHr < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisDnsHr
+
 
         property_not_supported :disclaimer
 
@@ -89,16 +91,6 @@ module Whois
 
 
         property_not_supported :nameservers
-
-
-        # Initializes a new {Scanners::WhoisDnsHr} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisDnsHr.new(content_for_scanner).parse
-        end
 
       end
 

@@ -21,7 +21,10 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisCiraCa < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisCiraCa
+
 
         property_supported :disclaimer do
            node("field:disclaimer")
@@ -158,16 +161,6 @@ module Whois
           cached_properties_fetch(:invalid?) do
             status == :invalid
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisCiraCa} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisCiraCa.new(content_for_scanner).parse
         end
 
 

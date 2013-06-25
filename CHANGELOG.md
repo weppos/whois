@@ -125,7 +125,7 @@
 
 - CHANGED: Dropped support for Ruby 1.8
 
-- CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
+- CHANGED: Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Scannable
 
 - CHANGED: Definitions are now stored as JSON.
 
@@ -216,7 +216,7 @@
 
 - Removed compatibility with Ruby 1.8
 
-- Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Nodable
+- Renamed Whois::Record::Scanners::Ast to Renamed Whois::Record::Scanners::Scannable
 
 - Whois::Server#query has been renamed to Whois::Server#lookup
 

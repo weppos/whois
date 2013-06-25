@@ -17,7 +17,9 @@ module Whois
 
       # Parser for the whois.centralnic.net server.
       class WhoisCentralnicCom < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisCentralnicCom
 
 
         property_supported :disclaimer do
@@ -91,17 +93,7 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::WhoisCentralnicCom} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisCentralnicCom.new(content_for_scanner).parse
-        end
-
-
-        private
+      private
 
         def build_contact(element, type)
           node("#{element} ID") do

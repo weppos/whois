@@ -21,7 +21,10 @@ module Whois
       # @author Gábor Vészi <veszig@done.hu>
       #
       class WhoisNicHu < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisNicHu
+
 
         property_supported :disclaimer do
           node("field:disclaimer")
@@ -123,16 +126,6 @@ module Whois
           cached_properties_fetch(:zone_contact) do
             build_contact("zone-c", nil)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisNicHu} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisNicHu.new(content_for_scanner).parse
         end
 
 

@@ -20,9 +20,11 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.5.0
       class WhoisAudnsNetAu < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisAudnsNetAu
+
 
         property_not_supported :disclaimer
 
@@ -88,16 +90,6 @@ module Whois
           Array.wrap(node("Name Server")).map do |name|
             Record::Nameserver.new(:name => name)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisAudnsNetAu} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisAudnsNetAu.new(content_for_scanner).parse
         end
 
 

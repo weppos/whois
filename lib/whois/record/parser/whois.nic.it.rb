@@ -17,7 +17,9 @@ module Whois
 
       # Parser for the whois.nic.it server.
       class WhoisNicIt < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisNicIt
 
 
         property_supported :disclaimer do
@@ -126,15 +128,6 @@ module Whois
         # @return [Boolean]
         def response_unavailable?
           !!node("response:unavailable")
-        end
-
-        # Initializes a new {Scanners::WhoisNicIt} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisNicIt.new(content_for_scanner).parse
         end
 
 

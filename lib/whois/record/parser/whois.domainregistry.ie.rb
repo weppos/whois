@@ -21,7 +21,10 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisDomainregistryIe < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisDomainregistryIe
+
 
         property_supported :disclaimer do
           node("field:disclaimer")
@@ -97,16 +100,6 @@ module Whois
             name, ipv4 = line.split(/\s+/)
             Record::Nameserver.new(:name => name, :ipv4 => ipv4)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisDomainregistryIe} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisDomainregistryIe.new(content_for_scanner).parse
         end
 
 

@@ -19,7 +19,10 @@ module Whois
       #
       # @abstract
       class BaseShared1 < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::BaseShared1
+
 
         property_not_supported :disclaimer
 
@@ -80,16 +83,6 @@ module Whois
               Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end
-        end
-
-
-        # Initializes a new {Scanners::BaseShared1} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::BaseShared1.new(content_for_scanner).parse
         end
 
 

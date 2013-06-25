@@ -20,9 +20,11 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.6.2
       class WhoisSx < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisSx
+
 
         property_supported :disclaimer do
           node("field:disclaimer")
@@ -102,17 +104,7 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::WhoisSx} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisSx.new(content_for_scanner).parse
-        end
-
-
-        private
+      private
 
         def parse_time(value)
           # Hack to remove usec. Do you know a better way?

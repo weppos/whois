@@ -23,7 +23,10 @@ module Whois
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
       # @since  2.5.0
       class WhoisCctldBy < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisCctldBy
+
 
         property_not_supported :disclaimer
 
@@ -86,16 +89,6 @@ module Whois
           Array.wrap(node("Name Server")).map do |name|
             Nameserver.new(:name => name.downcase)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisCctldBy} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisCctldBy.new(content_for_scanner).parse
         end
 
       end

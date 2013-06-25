@@ -21,7 +21,10 @@ module Whois
       # @author Aaron Mueller <mail@aaron-mueller.de>
       #
       class WhoisDenicDe < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisDenicDe
+
 
         property_supported :disclaimer do
           node("Disclaimer")
@@ -144,16 +147,6 @@ module Whois
             node("Status") == "invalid" ||
             response_error?
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisDenicDe} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisDenicDe.new(content_for_scanner).parse
         end
 
 

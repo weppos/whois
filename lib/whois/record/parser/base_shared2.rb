@@ -19,7 +19,10 @@ module Whois
       #
       # @abstract
       class BaseShared2 < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::BaseShared2
+
 
         # Actually the :disclaimer is supported,
         # but extracting it with the current scanner
@@ -89,16 +92,6 @@ module Whois
           Array.wrap(node("Name Server")).map do |name|
             Nameserver.new(:name => name.downcase)
           end
-        end
-
-
-        # Initializes a new {Scanners::BaseShared2} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::BaseShared2.new(content_for_scanner).parse
         end
 
 

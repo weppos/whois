@@ -25,7 +25,10 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisRegistryNetZa < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisRegistryNetZa
+
 
         property_supported :disclaimer do
           node("node:disclaimer")
@@ -98,12 +101,7 @@ module Whois
         end
 
 
-        def parse
-          Scanners::WhoisRegistryNetZa.new(content_for_scanner).parse
-        end
-
-
-        private
+      private
 
         def build_registrant_contacts
           Whois::Record::Contact.new(
@@ -127,6 +125,7 @@ module Whois
         def parse_date(date_string)
           Time.parse(date_string) if date_string
         end
+
       end
 
     end

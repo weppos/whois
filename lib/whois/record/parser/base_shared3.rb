@@ -19,7 +19,10 @@ module Whois
       #
       # @abstract
       class BaseShared3 < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::BaseShared3
+
 
         property_supported :disclaimer do
           node("field:disclaimer")
@@ -96,17 +99,7 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::BaseShared3} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::BaseShared3.new(content_for_scanner).parse
-        end
-
-
-        private
+      private
 
         def build_contact(element, type)
           node("#{element}-contact") do |raw|

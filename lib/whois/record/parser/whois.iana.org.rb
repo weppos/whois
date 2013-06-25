@@ -17,7 +17,10 @@ module Whois
 
       # Parser for the whois.iana.org server.
       class WhoisIanaOrg < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::Iana
+
 
         property_supported :status do
           if available?
@@ -69,16 +72,6 @@ module Whois
               Record::Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end
-        end
-
-
-        # Initializes a new {Scanners::Iana} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::Iana.new(content_for_scanner).parse
         end
 
 

@@ -14,18 +14,18 @@ module Whois
   class Record
     module Scanners
 
-      # The Nodable module tries to emulate a super-simple Abstract Syntax Tree structure
+      # The Scannable module tries to emulate a super-simple Abstract Syntax Tree structure
       # including method for accessing ast nodes.
       #
       # == Usage
       #
-      # Include the Nodable module and provide a <tt>parse</tt> instance method.
-      # <tt>parse</tt> should returns a Hash representing the AST.
+      # Include the Scannable module and set the `self.scanner` value.
       #
-      #   def parse
-      #     Scanner.new.parse
+      #   class ParserFoo
+      #     include Scannable
+      #
+      #     self.scanner = ScannerFoo
       #   end
-      #   # => { "created_on" => "2009-12-12", ... }
       #
       # Now you can access the AST using the <tt>node</tt> method.
       #
@@ -38,7 +38,11 @@ module Whois
       #   node? "created_at"
       #   # => false
       #
-      module Nodable
+      module Scannable
+
+        def self.included(base)
+          base.class_attribute :scanner
+        end
 
         def node(key)
           if block_given?
@@ -52,6 +56,10 @@ module Whois
 
         def node?(key)
           !ast[key].nil?
+        end
+
+        def parse
+          self.scanner.new(content_for_scanner).parse
         end
 
       private

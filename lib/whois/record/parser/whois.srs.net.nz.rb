@@ -21,7 +21,10 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisSrsNetNz < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisSrsNetNz
+
 
         property_supported :domain do
           node("domain_name")
@@ -116,15 +119,6 @@ module Whois
         end
 
 
-        # Initializes a new {Scanners::WhoisSrsNetNz} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisSrsNetNz.new(content_for_scanner).parse
-        end
-
         # NEWPROPERTY
         def valid?
           cached_properties_fetch(:valid?) do
@@ -139,7 +133,8 @@ module Whois
           end
         end
 
-        private
+      
+      private
 
         def build_contact(element, type)
           node("#{element}_contact_name") do

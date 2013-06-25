@@ -20,9 +20,11 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.4.0
       class WhoisNc < Base
-        include Scanners::Nodable
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisNc
+
 
         property_not_supported :disclaimer
 
@@ -104,7 +106,7 @@ module Whois
 
         property_supported :nameservers do
           nameservers = []
-          index   = 1
+          index = 1
           while line = node("Domain server #{index}")
             nameservers << line
             index += 1
@@ -113,16 +115,6 @@ module Whois
           nameservers.map do |name|
             Record::Nameserver.new(:name => name)
           end
-        end
-
-
-        # Initializes a new {Scanners::WhoisNc} instance
-        # passing the {#content_for_scanner}
-        # and calls +parse+ on it.
-        #
-        # @return [Hash]
-        def parse
-          Scanners::WhoisNc.new(content_for_scanner).parse
         end
 
       end
