@@ -2,7 +2,7 @@
 
 ## Master
 
-- SERVER: Added .JP.NET (GH-240) TLD definition.
+- SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definition.
 
 - CHANGED: Updated whois.nic.ac, whois.nic.io, and whois.nic.sh parsers to the new response format (GH-238).
 
