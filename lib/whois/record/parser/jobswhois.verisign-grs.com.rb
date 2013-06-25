@@ -16,6 +16,10 @@ module Whois
     class Parser
 
       # Parser for the jobswhois.verisign-grs.com server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class JobswhoisVerisignGrsCom < Base
         include Scanners::Nodable
 
