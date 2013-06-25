@@ -2,7 +2,7 @@
   should: %s == "google.ki"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "18030-CoCCA"
 
 
 #status

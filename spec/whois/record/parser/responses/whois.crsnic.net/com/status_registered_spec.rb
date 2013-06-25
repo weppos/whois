@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
   end
   describe "#domain" do
     it do
-      subject.domain.should == "google.net"
+      subject.domain.should == "google.com"
     end
   end
   describe "#domain_id" do
@@ -94,7 +94,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
   end
   describe "#referral_whois" do
     it do
-      subject.referral_whois.should == "whois.markmonitor.com"
+      subject.referral_whois.should == ["whois.PublicDomainRegistry.com", "whois.PublicDomainRegistry.com", "whois.tucows.com", "whois.domaincontext.com", "whois.PublicDomainRegistry.com", "whois.PublicDomainRegistry.com", "whois.PublicDomainRegistry.com", "whois.rrpproxy.net", "whois.onlinenic.com", "whois.domain.com", "whois.PublicDomainRegistry.com", "whois.PublicDomainRegistry.com", "whois.webnic.cc", "whois.PublicDomainRegistry.com", "whois.enterprice.net", "whois.melbourneit.com", "whois.godaddy.com", "whois.godaddy.com", "whois.enom.com", "whois.omnis.com", "whois.PublicDomainRegistry.com", "whois.wildwestdomains.com", "whois.PublicDomainRegistry.com", "whois.syra.com.au", "whois.PublicDomainRegistry.com", "whois.enom.com", "whois.name.com", "whois.gandi.net", "whois.hostingservicesinc.net", "grs-whois.hichina.com", "whois.tucows.com", "whois.godaddy.com", "whois.namesecure.com", "whois.paycenter.com.cn", "whois.enom.com", "whois.instra.net", "whois.planetdomain.com", "whois.enom.com", "whois.enom.com", "whois.tucows.com", "whois.markmonitor.com"]
     end
   end
   describe "#referral_url" do

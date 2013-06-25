@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisTldSy, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      subject.domain_id.should == "7-sy"
     end
   end
   describe "#status" do

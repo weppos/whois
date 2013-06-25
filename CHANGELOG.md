@@ -4,6 +4,8 @@
 
 - SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definition.
 
+- NEW: Added #domain_id to CoCCA parsers.
+
 - CHANGED: Updated whois.nic.ac, whois.nic.io, and whois.nic.sh parsers to the new response format (GH-238).
 
 - CHANGED: Updated whois2.nic.bi parser to the new response format.

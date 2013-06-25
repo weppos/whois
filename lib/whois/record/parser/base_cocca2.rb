@@ -20,11 +20,12 @@ module Whois
       class BaseCocca2 < Base
 
         property_supported :domain do
-          content_for_scanner =~ /Domain Name: (.+)\n/
-          $1 || Whois.bug!(ParserError, "Unable to parse domain.")
+          content_for_scanner.slice(/Domain Name: (.+)\n/, 1)
         end
 
-        property_not_supported :domain_id
+        property_supported :domain_id do
+          content_for_scanner.slice(/Domain ID: (.+)\n/, 1)
+        end
 
         # TODO: /pending delete/ => :redemption
         # TODO: /pending purge/  => :redemption

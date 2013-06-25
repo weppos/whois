@@ -2,7 +2,7 @@
   should: %s == "tld.sy"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "7-sy"
 
 
 #status

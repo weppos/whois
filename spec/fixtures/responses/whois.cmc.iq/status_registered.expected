@@ -2,7 +2,7 @@
   should: %s == "google.iq"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "895-CoCCA"
 
 
 #status

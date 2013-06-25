@@ -2,7 +2,7 @@
   should: %s == "google.gy"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "573328-CoCCA"
 
 
 #status

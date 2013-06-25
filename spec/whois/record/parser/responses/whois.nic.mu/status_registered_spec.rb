@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisNicMu, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      subject.domain_id.should == "70557-CoCCA"
     end
   end
   describe "#status" do

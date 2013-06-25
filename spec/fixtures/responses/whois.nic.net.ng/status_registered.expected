@@ -2,7 +2,7 @@
   should: %s == "nic.net.ng"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "6808-NIRA"
 
 
 #status
