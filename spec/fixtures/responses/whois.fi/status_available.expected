@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "More information is available at https://domain.fi/\nCopyright (c) Finnish Communications Regulatory Authority"
+
+
+#domain
+  should: %s == nil
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == :available
 
@@ -12,10 +23,24 @@
   should: %s == nil
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == nil
 
 #expires_on
   should: %s == nil
+
+
+#registrar
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#technical_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

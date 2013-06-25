@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s == "More information is available at https://domain.fi/\nCopyright (c) Finnish Communications Regulatory Authority"
+
+
+#domain
+  should: %s == "google.fi"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -13,11 +24,42 @@
   should: %s == Time.parse("2006-06-30")
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-06-07")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-07-04")
+  should: %s == Time.parse("2014-07-04")
+
+
+#registrar
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "09073468"
+  should: %s[0].name          == "Domain Administrator"
+  should: %s[0].organization  == "Google Finland Oy"
+  should: %s[0].address       == "Mannerheimintie 12 B"
+  should: %s[0].city          == "HELSINKI"
+  should: %s[0].zip           == "00100"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "35896966890"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#technical_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers

@@ -27,6 +27,7 @@
   should: %s CLASS(time)
   should: %s == Time.parse("2014-02-17 00:00:00 +13:00")
 
+
 #registrar
   should: %s CLASS(registrar)
   should: %s.id           == nil
@@ -93,6 +94,7 @@
   should: %s[0].email         == "dns-admin@google.com"
   should: %s[0].created_on    == nil
   should: %s[0].updated_on    == nil
+
 
 #nameservers
   should: %s CLASS(array)

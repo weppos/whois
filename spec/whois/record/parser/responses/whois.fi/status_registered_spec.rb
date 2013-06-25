@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisFi, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      subject.disclaimer.should == "More information is available at https://domain.fi/\nCopyright (c) Finnish Communications Regulatory Authority"
+    end
+  end
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.fi"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -44,13 +59,51 @@ describe Whois::Record::Parser::WhoisFi, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2013-06-07")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-07-04")
+      subject.expires_on.should == Time.parse("2014-07-04")
+    end
+  end
+  describe "#registrar" do
+    it do
+      lambda { subject.registrar }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should            == "09073468"
+      subject.registrant_contacts[0].name.should          == "Domain Administrator"
+      subject.registrant_contacts[0].organization.should  == "Google Finland Oy"
+      subject.registrant_contacts[0].address.should       == "Mannerheimintie 12 B"
+      subject.registrant_contacts[0].city.should          == "HELSINKI"
+      subject.registrant_contacts[0].zip.should           == "00100"
+      subject.registrant_contacts[0].state.should         == nil
+      subject.registrant_contacts[0].country.should       == nil
+      subject.registrant_contacts[0].country_code.should  == nil
+      subject.registrant_contacts[0].phone.should         == "35896966890"
+      subject.registrant_contacts[0].fax.should           == nil
+      subject.registrant_contacts[0].email.should         == nil
+      subject.registrant_contacts[0].created_on.should    == nil
+      subject.registrant_contacts[0].updated_on.should    == nil
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      lambda { subject.technical_contacts }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do

@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.fi.rb'
 
 
 module Whois
@@ -16,23 +17,34 @@ module Whois
 
       # Parser for the whois.fi server.
       #
-      # @note This parser is just a stub and provides only a few basic methods
-      #   to check for domain availability and get domain status.
-      #   Please consider to contribute implementing missing methods.
-      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.4.0
       class WhoisFi < Base
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisFi
+
+
+        property_supported :disclaimer do
+          node("field:disclaimer")
+        end
+
+
+        property_supported :domain do
+          node("domain")
+        end
+
+        property_not_supported :domain_id
+
 
         property_supported :status do
-          if content_for_scanner =~ /status:\s+(.+?)\n/
-            case $1.downcase
-              when "granted"
-                :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+          if registered?
+            case node("status", &:downcase)
+            when "granted"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -40,7 +52,7 @@ module Whois
         end
 
         property_supported :available? do
-          (status == :available)
+          !!node("status:available")
         end
 
         property_supported :registered? do
@@ -49,23 +61,45 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /created:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("created") { |value| Time.parse(value) }
         end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          node("modified") { |value| Time.parse(value) }
+        end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /expires:\s+(.+)\n/
-            Time.parse($1)
+          node("expires") { |value| Time.parse(value) }
+        end
+
+
+        property_not_supported :registrar
+        
+        property_supported :registrant_contacts do
+          node("descr") do |array|
+            address = node("address")
+            
+            Record::Contact.new(
+              type:         Record::Contact::TYPE_REGISTRANT,
+              id:           array[1],
+              name:         address[0],
+              organization: array[0],
+              address:      address[1],
+              zip:          address[2],
+              city:         address[3],
+              phone:        node("phone")
+            )
           end
         end
+
+        property_not_supported :admin_contacts
+
+        property_not_supported :technical_contacts
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
-            Record::Nameserver.new(:name => line.split(" ").first)
+          Array.wrap(node("nserver")).map do |line|
+            Record::Nameserver.new(name: line.split(" ").first)
           end
         end
 
