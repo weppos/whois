@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.srs.net.nz.rb'
 
 
 module Whois
@@ -16,19 +17,23 @@ module Whois
 
       # Parser for the whois.srs.net.nz server.
       #
-      # @note This parser is just a stub and provides only a few basic methods
-      #   to check for domain availability and get domain status.
-      #   Please consider to contribute implementing missing methods.
-      #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
       class WhoisSrsNetNz < Base
+        include Scanners::Nodable
+
+        property_supported :domain do
+          node("domain_name")
+        end
+
+        property_not_supported :domain_id
+
 
         # @see http://dnc.org.nz/content/srs-whois-spec-1.0.html
         property_supported :status do
-          if content_for_scanner =~ /query_status:\s(.+)\n/
-            case (s = $1.downcase)
+          node("query_status") do |value|
+            case value.downcase
             when "200 active"
               :registered
             # The domain is no longer active but is in the period prior
@@ -42,11 +47,9 @@ module Whois
             when /invalid characters/
               :invalid
             else
-              Whois.bug!(ParserError, "Unknown status `#{s}'.")
+              Whois.bug!(ParserError, "Unknown status `#{value}'.")
             end
-          else
-            Whois.bug!(ParserError, "Unable to parse status.")
-          end
+          end || Whois.bug!(ParserError, "Unable to parse status.")
         end
 
         property_supported :available? do
@@ -59,28 +62,43 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /domain_dateregistered:\s(.+)\n/
-            Time.parse($1)
-          end
+          node("domain_dateregistered") { |value| Time.parse(value) }
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /domain_datelastmodified:\s(.+)\n/
-            Time.parse($1)
-          end
+          node("domain_datelastmodified") { |value| Time.parse(value) }
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /domain_datebilleduntil:\s(.+)\n/
-            Time.parse($1)
+          node("domain_datebilleduntil") { |value| Time.parse(value) }
+        end
+
+
+        property_supported :registrar do
+          node("registrar_name") do |value|
+            Record::Registrar.new(
+              name:         value
+            )
           end
+        end
+
+        property_supported :registrant_contacts do
+          build_contact("registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("admin", Whois::Record::Contact::TYPE_ADMIN)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("technical", Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/ns_name_[\d]+:\s(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(:name => name)
-          end
+          (1..4).map do |i|
+            node("ns_name_0#{i}") { |value| Record::Nameserver.new(name: value) }
+          end.compact
         end
 
 
@@ -93,10 +111,19 @@ module Whois
         #
         def response_throttled?
           cached_properties_fetch(:response_throttled?) do
-            !!(content_for_scanner =~ /^query_status: 440 Request Denied/)
+            node("query_status") == "440 Request Denied"
           end
         end
 
+
+        # Initializes a new {Scanners::WhoisSrsNetNz} instance
+        # passing the {#content_for_scanner}
+        # and calls +parse+ on it.
+        #
+        # @return [Hash]
+        def parse
+          Scanners::WhoisSrsNetNz.new(content_for_scanner).parse
+        end
 
         # NEWPROPERTY
         def valid?
@@ -109,6 +136,26 @@ module Whois
         def invalid?
           cached_properties_fetch(:invalid?) do
             status == :invalid
+          end
+        end
+
+        private
+
+        def build_contact(element, type)
+          node("#{element}_contact_name") do
+            Record::Contact.new(
+              type:         type,
+              id:           nil,
+              name:         node("#{element}_contact_name"),
+              address:      node("#{element}_contact_address1"),
+              city:         node("#{element}_contact_city"),
+              zip:          node("#{element}_contact_postalcode"),
+              state:        node("#{element}_contact_province"),
+              country:      node("#{element}_contact_country"),
+              phone:        node("#{element}_contact_phone"),
+              fax:          node("#{element}_contact_fax"),
+              email:        node("#{element}_contact_email")
+            )
           end
         end
 
