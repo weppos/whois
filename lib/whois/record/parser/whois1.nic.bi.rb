@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_cocca'
+require 'whois/record/parser/base_cocca2'
 
 
 module Whois
@@ -19,7 +19,7 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class Whois1NicBi < BaseCocca
+      class Whois1NicBi < BaseCocca2
       end
 
     end

@@ -6,6 +6,8 @@
 
 - CHANGED: Updated whois.nic.ac, whois.nic.io, and whois.nic.sh parsers to the new response format (GH-238).
 
+- CHANGED: Updated whois2.nic.bi parser to the new response format.
+
 - FIXED: whois.jprs.jp crashes when status is `reserved` for ne.jp SLD.
 
 - FIXED: Arin adapter is incorrectly passing an Arin flag to referral queries.

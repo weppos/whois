@@ -28,7 +28,7 @@ describe Whois::Record::Parser::Whois1NicBi, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      subject.domain_id.should == "2633NIC-BI"
     end
   end
   describe "#status" do
@@ -49,26 +49,26 @@ describe Whois::Record::Parser::Whois1NicBi, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2002-09-30")
+      subject.created_on.should == Time.parse("2002-09-29 22:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2013-03-21")
+      subject.updated_on.should == Time.parse("2013-05-20 14:10:41 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-09-30")
+      subject.expires_on.should == Time.parse("2013-09-29 22:00:00 UTC")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "MarkMonito"
+      subject.registrar.name.should         == "Afriregister"
       subject.registrar.url.should          == nil
     end
   end
