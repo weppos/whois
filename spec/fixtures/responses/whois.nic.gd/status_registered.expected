@@ -51,10 +51,13 @@
   should: %s[0].city          == "Mountain View"
   should: %s[0].zip           == "94043"
   should: %s[0].state         == nil
+  should: %s[0].country       == nil
   should: %s[0].country_code  == "US"
   should: %s[0].phone         == "+1.6503300100"
   should: %s[0].fax           == "+1.6506181499"
   should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 #admin_contacts
   should: %s CLASS(array)
@@ -68,10 +71,13 @@
   should: %s[0].city          == "Mountain View"
   should: %s[0].zip           == "94043"
   should: %s[0].state         == nil
+  should: %s[0].country       == nil
   should: %s[0].country_code  == "US"
   should: %s[0].phone         == "+1.6503300100"
   should: %s[0].fax           == "+1.6506181499"
   should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 #technical_contacts
   should: %s CLASS(array)
@@ -85,10 +91,13 @@
   should: %s[0].city          == "Mountain View"
   should: %s[0].zip           == "94043"
   should: %s[0].state         == nil
+  should: %s[0].country       == nil
   should: %s[0].country_code  == "US"
   should: %s[0].phone         == "+1.6503300100"
   should: %s[0].fax           == "+1.6506181499"
   should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 
 #nameservers

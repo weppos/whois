@@ -43,12 +43,21 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].name         == "DNS Admin"
-  should: %s[0].organization == "Google Inc."
-  should: %s[0].phone        == "+1.6506234000"
-  should: %s[0].fax          == "+1.6506188571"
-  should: %s[0].email        == "dns-admin@google.com"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == nil
+  should: %s[0].name          == "DNS Admin"
+  should: %s[0].organization  == "Google Inc."
+  should: %s[0].address       == nil
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+1.6506234000"
+  should: %s[0].fax           == "+1.6506188571"
+  should: %s[0].email         == "dns-admin@google.com"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 
 #nameservers

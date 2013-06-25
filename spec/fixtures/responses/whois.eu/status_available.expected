@@ -28,7 +28,6 @@
 #registrar
   should: %s == nil
 
-
 #registrant_contacts
   should: %s raise_error(Whois::AttributeNotSupported)
 

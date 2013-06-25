@@ -63,14 +63,13 @@ module Whois
 
 
         property_supported :registrar do
-          node("Registrar") do |str|
+          node("Registrar") do |value|
             Record::Registrar.new(
               :id           => nil,
-              :name         => node("Registrar")
+              :name         => value
             )
           end
         end
-
 
         property_supported :registrant_contacts do
           build_contact("Owner", Whois::Record::Contact::TYPE_REGISTRANT)
@@ -103,7 +102,7 @@ module Whois
         end
 
 
-      private
+        private
 
         def build_contact(element, type)
           node("#{element} Name") do

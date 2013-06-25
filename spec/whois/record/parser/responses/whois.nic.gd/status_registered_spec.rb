@@ -91,10 +91,13 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
       subject.registrant_contacts[0].city.should          == "Mountain View"
       subject.registrant_contacts[0].zip.should           == "94043"
       subject.registrant_contacts[0].state.should         == nil
+      subject.registrant_contacts[0].country.should       == nil
       subject.registrant_contacts[0].country_code.should  == "US"
       subject.registrant_contacts[0].phone.should         == "+1.6503300100"
       subject.registrant_contacts[0].fax.should           == "+1.6506181499"
       subject.registrant_contacts[0].email.should         == "dns-admin@google.com"
+      subject.registrant_contacts[0].created_on.should    == nil
+      subject.registrant_contacts[0].updated_on.should    == nil
     end
   end
   describe "#admin_contacts" do
@@ -110,10 +113,13 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
       subject.admin_contacts[0].city.should          == "Mountain View"
       subject.admin_contacts[0].zip.should           == "94043"
       subject.admin_contacts[0].state.should         == nil
+      subject.admin_contacts[0].country.should       == nil
       subject.admin_contacts[0].country_code.should  == "US"
       subject.admin_contacts[0].phone.should         == "+1.6503300100"
       subject.admin_contacts[0].fax.should           == "+1.6506181499"
       subject.admin_contacts[0].email.should         == "dns-admin@google.com"
+      subject.admin_contacts[0].created_on.should    == nil
+      subject.admin_contacts[0].updated_on.should    == nil
     end
   end
   describe "#technical_contacts" do
@@ -129,10 +135,13 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
       subject.technical_contacts[0].city.should          == "Mountain View"
       subject.technical_contacts[0].zip.should           == "94043"
       subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].country.should       == nil
       subject.technical_contacts[0].country_code.should  == "US"
       subject.technical_contacts[0].phone.should         == "+1.6503300100"
       subject.technical_contacts[0].fax.should           == "+1.6506181499"
       subject.technical_contacts[0].email.should         == "dns-admin@google.com"
+      subject.technical_contacts[0].created_on.should    == nil
+      subject.technical_contacts[0].updated_on.should    == nil
     end
   end
   describe "#nameservers" do

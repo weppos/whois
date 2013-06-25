@@ -85,12 +85,21 @@ describe Whois::Record::Parser::WhoisEu, "status_registered.expected" do
       subject.technical_contacts.should be_a(Array)
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == "DNS Admin"
-      subject.technical_contacts[0].organization.should == "Google Inc."
-      subject.technical_contacts[0].phone.should        == "+1.6506234000"
-      subject.technical_contacts[0].fax.should          == "+1.6506188571"
-      subject.technical_contacts[0].email.should        == "dns-admin@google.com"
+      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
+      subject.technical_contacts[0].id.should            == nil
+      subject.technical_contacts[0].name.should          == "DNS Admin"
+      subject.technical_contacts[0].organization.should  == "Google Inc."
+      subject.technical_contacts[0].address.should       == nil
+      subject.technical_contacts[0].city.should          == nil
+      subject.technical_contacts[0].zip.should           == nil
+      subject.technical_contacts[0].state.should         == nil
+      subject.technical_contacts[0].country.should       == nil
+      subject.technical_contacts[0].country_code.should  == nil
+      subject.technical_contacts[0].phone.should         == "+1.6506234000"
+      subject.technical_contacts[0].fax.should           == "+1.6506188571"
+      subject.technical_contacts[0].email.should         == "dns-admin@google.com"
+      subject.technical_contacts[0].created_on.should    == nil
+      subject.technical_contacts[0].updated_on.should    == nil
     end
   end
   describe "#nameservers" do
