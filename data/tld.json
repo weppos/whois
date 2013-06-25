@@ -1144,7 +1144,7 @@
   ".vn": {
     "host": null,
     "adapter": "web",
-    "url": "http://en.vnnic.vn/"
+    "url": "http://www.vnnic.vn/en/domain"
   },
   ".vu": {
     "host": null,
@@ -1228,6 +1228,9 @@
   ".xn--h2brj9c": {
     "host": null,
     "adapter": "none"
+  },
+  ".xn--j1amh": {
+    "host": "whois.ua"
   },
   ".xn--j6w193g": {
     "host": "whois.hkirc.hk"
