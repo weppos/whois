@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO275307
 Domain Name:COLLEGE.US.COM
-Created On:20-Oct-2003 10:03:28 UTC
-Last Updated On:16-Jan-2012 16:27:26 UTC
-Expiration Date:20-Oct-2014 23:59:59 UTC
+Created On:2003-10-20T10:03:28.0Z
+Last Updated On:2012-01-16T16:27:26.0Z
+Expiration Date:2014-10-20T23:59:59.0Z
 Status:OK
 Registrant ID:H1044037
 Registrant Name:Vantage Media Corporation

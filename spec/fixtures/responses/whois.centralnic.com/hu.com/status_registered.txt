@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO592232
 Domain Name:XXX.HU.COM
-Created On:27-Aug-2008 23:18:29 UTC
-Last Updated On:03-Jul-2012 00:15:58 UTC
-Expiration Date:27-Aug-2013 23:59:59 UTC
+Created On:2008-08-27T23:18:29.0Z
+Last Updated On:2012-07-03T00:15:58.0Z
+Expiration Date:2013-08-27T23:59:59.0Z
 Status:TRANSFER PROHIBITED
 Registrant ID:37300766
 Registrant Name:DIANAMIC ABRASIVE PRODUCTS INC

@@ -45,13 +45,13 @@ describe Whois::Record::Parser::WhoisSrsNetNz, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-01-16 23:16:18 +13:00")
+      subject.updated_on.should == Time.parse("2013-01-16 23:20:24 +13:00")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-02-17 00:00:00 +13:00")
+      subject.expires_on.should == Time.parse("2014-02-17 00:00:00 +13:00")
     end
   end
   describe "#nameservers" do

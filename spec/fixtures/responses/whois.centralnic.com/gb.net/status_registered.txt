@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO875262
 Domain Name:HOTEL.GB.NET
-Created On:28-Jun-2012 00:33:28 UTC
-Last Updated On:19-Feb-2013 22:09:39 UTC
-Expiration Date:28-Jun-2013 23:59:59 UTC
+Created On:2012-06-28T00:33:28.0Z
+Last Updated On:2013-02-19T22:09:39.0Z
+Expiration Date:2013-06-28T23:59:59.0Z
 Status:OK
 Registrant ID:MNT14821952066
 Registrant Name:Identity Protection Service

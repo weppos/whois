@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO393884
 Domain Name:PARAMOUNT.UK.NET
-Created On:28-Feb-2006 12:17:01 UTC
-Last Updated On:03-Apr-2013 12:59:45 UTC
-Expiration Date:28-Feb-2014 23:59:59 UTC
+Created On:2006-02-28T12:17:01.0Z
+Last Updated On:2013-04-03T12:59:45.0Z
+Expiration Date:2014-02-28T23:59:59.0Z
 Status:OK
 Registrant ID:MNT60424953041
 Registrant Name:Identity Protection Service

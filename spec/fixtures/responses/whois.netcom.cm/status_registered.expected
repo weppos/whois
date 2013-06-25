@@ -21,7 +21,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-09-06 15:34 WAT")
+  should: %s == Time.parse("2013-05-20 21:30 WAT")
 
 #expires_on
   should: %s CLASS(time)

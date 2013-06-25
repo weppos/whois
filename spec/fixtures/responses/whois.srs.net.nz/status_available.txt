@@ -2,7 +2,7 @@
 % Users confirm on submission their agreement to all published Terms
 %
 version: 5.00
-query_datetime: 2012-05-03T20:25:07+12:00
+query_datetime: 2013-06-25T21:14:19+12:00
 domain_name: u34jedzcq.co.nz
 query_status: 220 Available
 %

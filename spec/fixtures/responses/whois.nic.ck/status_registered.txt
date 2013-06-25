@@ -10,9 +10,9 @@ zone-c:      ODA1-CKNIC
 billing-c:   MM15-CKNIC
 nserver:     ns1.google.com
 nserver:     ns2.google.com
-remarks:     expires 20111101
+remarks:     expires 20131101
 mnt-by:      CK-NIC-MNT
-changed:     marion@telecom.co.ck 20091006
+changed:     marion@telecom.co.ck 20111004
 source:      CKNIC
 
 role:        Oyster DNS Admin

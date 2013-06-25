@@ -66,7 +66,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "status_registered.expected" d
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-07-31")
+      subject.expires_on.should == Time.parse("2014-07-31")
     end
   end
   describe "#registrar" do

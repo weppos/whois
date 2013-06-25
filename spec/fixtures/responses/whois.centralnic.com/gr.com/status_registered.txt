@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO735168
 Domain Name:GOOGLE.GR.COM
-Created On:07-Feb-2011 13:10:14 UTC
-Last Updated On:23-Jun-2012 10:38:02 UTC
-Expiration Date:07-Feb-2015 23:59:59 UTC
+Created On:2011-02-07T13:10:14.0Z
+Last Updated On:2012-06-23T10:38:02.0Z
+Expiration Date:2015-02-07T23:59:59.0Z
 Status:OK
 Registrant ID:H1346485
 Tech ID:H1346485

@@ -13,6 +13,6 @@ address:     Wilhelm-Busch-Str. 35
 address:     32108 Bad Salzuflen
 address:     Germany
 phone:       +49 005222 94569
-e-mail:      mm114-15699d5591658560229e1e03b7bdc05b@handles.eu.org
+e-mail:      mm114-bf340a68c81593a29e91b0e7e8317d2c@handles.eu.org
 changed:     2003-09-14 00:00:00+02:00
 

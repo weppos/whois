@@ -1,6 +1,6 @@
 Domain Name: google.mu
 Domain ID: 70557-CoCCA
-WHOIS Server: .MU Registry
+WHOIS Server: whois.nic.mu
 Referral URL: 
 Updated Date: 2012-11-17T20:14:57.899Z
 Creation Date: 2000-12-20T13:00:00.000Z
@@ -9,15 +9,21 @@ Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
 Domain Status: clientUpdateProhibited
 Domain Status: ok
-Domain Status: clientTransferProhibited
 Domain Status: clientDeleteProhibited
+Domain Status: clientTransferProhibited
 
 Registrant ID: 177502-CoCCA
+Registrant Organization: Google Inc.
 Registrant Street: 1600 Amphitheatre Parkway
 Registrant City: Mountain View
 Registrant State/Province: CA
 Registrant Postal Code: 94043
 Registrant Country: US
+Registrant Phone: +1.6502530000
+Registrant Phone Ext: 
+Registrant Fax: +1.6506188571
+Registrant Fax Ext: 
+Registrant Email: dns-admin@google.com
 
 Admin ID: 177502-CoCCA
 Admin Organization: Google Inc.
@@ -71,4 +77,4 @@ Internet Direct Ltd makes every effort to maintain the completeness and accuracy
 
 ? 1995-2013 Internet Direct Ltd, All rights reserved.
 
->>> Last update of WHOIS database: 2013-05-07T12:21:07.365Z <<<
+>>> Last update of WHOIS database: 2013-06-25T09:13:17.969Z <<<

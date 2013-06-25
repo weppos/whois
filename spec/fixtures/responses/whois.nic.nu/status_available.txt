@@ -1,8 +1,4 @@
 ------------------------------------------------------------------------
-Database last updated: 2010-Jan-08 15:01:41 GMT
-------------------------------------------------------------------------
-Galba:~ mmk$ whois u34jedzcq.nu
-------------------------------------------------------------------------
 .NU Domain Ltd Whois service
 
 NO MATCH for domain "u34jedzcq.nu" (ASCII): 
@@ -15,5 +11,5 @@ registered in .nu is available upon request from support@nic.nu
 
 Copyright by .NU Domain Ltd - http://www.nunames.nu
 ------------------------------------------------------------------------
-Database last updated: 2010-Jan-08 15:01:41 GMT
+Database last updated: 2013-Jun-25 07:44:25 GMT
 ------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-% .be Whois Server 5.0
+% .be Whois Server 6.1
 %
 % The WHOIS service offered by DNS.be and the access to the records in the DNS.be
 % WHOIS database are provided for information purposes only. It allows
@@ -61,5 +61,7 @@ Nameservers:
 	ns2.google.com
 
 Keys:
+
+Flags:
 
 Please visit www.dns.be for more info.

@@ -12,9 +12,9 @@ Technical Contact:
     US
     Phone: +1 650 318 0200 (voice)  +1 650 618 1499 (fax)
 
-Record last updated on 11-May-2009.
-Record expires on 07-Jun-2010.
-Record created on 07-Jun-1999.
+Record last updated on 2012-Jul-23.
+Record expires on 2014-Jun-7.
+Record created on 1999-Jun-7.
 Record status: Active
 Registrar of record: eMarkMonitor, Inc.
 ReferralServer: whois://whois.markmonitor.com
@@ -31,5 +31,5 @@ registered in .nu is available upon request from support@nic.nu
 
 Copyright by .NU Domain Ltd - http://www.nunames.nu
 ------------------------------------------------------------------------
-Database last updated: 2010-Jan-08 15:01:41 GMT
+Database last updated: 2013-Jun-25 07:44:25 GMT
 ------------------------------------------------------------------------

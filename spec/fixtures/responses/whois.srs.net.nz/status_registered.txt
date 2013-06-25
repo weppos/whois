@@ -2,12 +2,12 @@
 % Users confirm on submission their agreement to all published Terms
 %
 version: 5.00
-query_datetime: 2012-05-03T20:26:25+12:00
+query_datetime: 2013-06-25T21:14:20+12:00
 domain_name: google.co.nz
 query_status: 200 Active
 domain_dateregistered: 1999-02-17T00:00:00+13:00
-domain_datebilleduntil: 2013-02-17T00:00:00+13:00
-domain_datelastmodified: 2012-01-16T23:16:18+13:00
+domain_datebilleduntil: 2014-02-17T00:00:00+13:00
+domain_datelastmodified: 2013-01-16T23:20:24+13:00
 domain_delegaterequested: yes
 domain_signed: no
 %

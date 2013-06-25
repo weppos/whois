@@ -29,7 +29,7 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-07-31")
+  should: %s == Time.parse("2014-07-31")
 
 
 #registrar

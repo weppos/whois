@@ -24,7 +24,7 @@ Domain Name ID: 2788515DOMAIN-NAME
 Domain Name: CARLETTI.NAME
 Sponsoring Registrar ID: 30REGISTRAR-NAME
 Sponsoring Registrar: eNom, Inc.
-Domain Status: ok
+Domain Status: clientTransferProhibited
 Registrant ID: 7903395CONTACT-NAME
 Admin ID: 10919759CONTACT-NAME
 Tech ID: 10919759CONTACT-NAME
@@ -35,5 +35,5 @@ Name Server ID: 1038926HOST-NAME
 Name Server: NS2.DREAMHOST.COM
 Created On: 2006-04-19T12:22:08Z
 Expires On: 2014-04-19T12:22:08Z
-Updated On: 2013-04-08T11:33:07Z
+Updated On: 2013-06-11T16:51:16Z
 

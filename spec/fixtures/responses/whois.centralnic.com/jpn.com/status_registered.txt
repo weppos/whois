@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO492866
 Domain Name:KOI.JPN.COM
-Created On:29-Jun-2007 13:42:35 UTC
-Last Updated On:20-Feb-2013 22:17:40 UTC
-Expiration Date:29-Jun-2013 23:59:59 UTC
+Created On:2007-06-29T13:42:35.0Z
+Last Updated On:2013-02-20T22:17:40.0Z
+Expiration Date:2013-06-29T23:59:59.0Z
 Status:OK
 Registrant ID:MNT78E22765897
 Registrant Name:Identity Protection Service

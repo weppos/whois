@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO86293
 Domain Name:HISTORY.UK.COM
-Created On:31-Aug-2001 11:50:57 UTC
-Last Updated On:16-Jan-2012 16:26:58 UTC
-Expiration Date:31-Aug-2013 23:59:59 UTC
+Created On:2001-08-31T11:50:57.0Z
+Last Updated On:2012-01-16T16:26:58.0Z
+Expiration Date:2013-08-31T23:59:59.0Z
 Status:OK
 Registrant ID:H1045821
 Registrant Name:Mr. Ray Hatley

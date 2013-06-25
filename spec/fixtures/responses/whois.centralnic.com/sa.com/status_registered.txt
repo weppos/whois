@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO501005
 Domain Name:FYNBOS.SA.COM
-Created On:27-Sep-2007 18:14:53 UTC
-Last Updated On:01-Oct-2012 00:28:35 UTC
-Expiration Date:27-Sep-2013 23:59:59 UTC
+Created On:2007-09-27T18:14:53.0Z
+Last Updated On:2012-10-01T00:28:35.0Z
+Expiration Date:2013-09-27T23:59:59.0Z
 Status:OK
 Registrant ID:H323273
 Registrant Name:Maarten Groos

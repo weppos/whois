@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO569707
 Domain Name:ACADEMYART.KR.COM
-Created On:11-Jun-2008 21:25:43 UTC
-Last Updated On:16-Jan-2012 16:25:41 UTC
-Expiration Date:11-Jun-2014 23:59:59 UTC
+Created On:2008-06-11T21:25:43.0Z
+Last Updated On:2012-01-16T16:25:41.0Z
+Expiration Date:2014-06-11T23:59:59.0Z
 Status:TRANSFER PROHIBITED
 Registrant ID:41619876
 Registrant Name:Academy of  Art College

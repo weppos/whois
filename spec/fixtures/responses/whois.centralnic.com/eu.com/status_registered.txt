@@ -10,9 +10,9 @@ blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 
 Domain ID:CNIC-DO85080
 Domain Name:WALKABOUT.EU.COM
-Created On:14-Aug-2001 10:14:41 UTC
-Last Updated On:16-Jan-2012 16:26:29 UTC
-Expiration Date:14-Aug-2013 23:59:59 UTC
+Created On:2001-08-14T10:14:41.0Z
+Last Updated On:2012-01-16T16:26:29.0Z
+Expiration Date:2013-08-14T23:59:59.0Z
 Status:OK
 Registrant ID:H1045382
 Registrant Name:Regent Inns Plc

@@ -14,7 +14,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-11-10")
+  should: %s == Time.parse("2012-08-07")
 
 #expires_on
   should: %s raise_error(Whois::AttributeNotSupported)
@@ -24,60 +24,81 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == nil
-  should: %s[0].name         == nil
-  should: %s[0].organization == "North Atlantic Treaty Organization"
-  should: %s[0].address      == "Blvd Leopold III"
-  should: %s[0].city         == "1110 Brussels"
-  should: %s[0].zip          == "Brussels"
-  should: %s[0].country      == "Belgium"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "North Atlantic Treaty Organization"
+  should: %s[0].address       == "Blvd Leopold III"
+  should: %s[0].city          == "1110 Brussels"
+  should: %s[0].zip           == "Brussels"
+  should: %s[0].country       == "Belgium"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 #admin_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == nil
-  should: %s[0].name         == "Aidan Murdock"
-  should: %s[0].organization == nil
-  should: %s[0].address      == "SHAPE"
-  should: %s[0].city         == "NCSA/SDD/SAL"
-  should: %s[0].zip          == "Casteau Hainaut 7010"
-  should: %s[0].country      == "Belgium"
-  should: %s[0].phone        == "+32 65 44 7244"
-  should: %s[0].fax          == "+32 65 44 7221"
-  should: %s[0].email        == "aidan.murdock@ncsa.nato.int"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Aidan Murdock"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "SHAPE"
+  should: %s[0].city          == "NCIA SP SDD SAS NAR"
+  should: %s[0].zip           == "Mons Hainaut 7010"
+  should: %s[0].country       == "Belgium"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+32 65 44 9168"
+  should: %s[0].fax           == "+32 65 44 9480"
+  should: %s[0].email         == "aidan.murdock@ncia.nato.int"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id           == nil
-  should: %s[0].name         == "Jack Smits"
-  should: %s[0].organization == nil
-  should: %s[0].address      == "SHAPE"
-  should: %s[0].city         == "NCSA/SMD"
-  should: %s[0].zip          == "Casteau Hainaut 7010"
-  should: %s[0].country      == "Belgium"
-  should: %s[0].phone        == "+32 65 44 7534"
-  should: %s[0].fax          == "+32 65 44 7556"
-  should: %s[0].email        == "jack.smits@ncsa.nato.int"
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Francesco Conserva"
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "SHAPE"
+  should: %s[0].city          == "NCIA SP SMD ENT EMA"
+  should: %s[0].zip           == "Mons Hainaut 7010"
+  should: %s[0].country       == "Belgium"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+32 65 44 7534"
+  should: %s[0].fax           == "+32 65 44 7556"
+  should: %s[0].email         == "francesco.conserva@ncia.nato.int"
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(4)
+  should: %s SIZE(7)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "max.nra.nato.int"
-  should: %s[0].ipv4 == "192.101.252.69"
+  should: %s[0].name == "globe.nc3a.nato.int"
+  should: %s[0].ipv4 == "192.41.140.178"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "maxima.nra.nato.int"
-  should: %s[1].ipv4 == "193.110.130.68"
+  should: %s[1].name == "max.nra.nato.int"
+  should: %s[1].ipv4 == "192.101.252.69"
   should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns.namsa.nato.int"
-  should: %s[2].ipv4 == "208.161.248.15"
+  should: %s[2].name == "maxima.nra.nato.int"
+  should: %s[2].ipv4 == "193.110.130.68"
   should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns.nc3a.nato.int"
-  should: %s[3].ipv4 == "195.169.116.6"
+  should: %s[3].name == "ns.namsa.nato.int"
+  should: %s[3].ipv4 == "193.168.11.15"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "ns.saclantc.nato.int"
+  should: %s[4].ipv4 == "192.106.197.1"
+  should: %s[5] CLASS(nameserver)
+  should: %s[5].name == "ns1.cs.ucl.ac.uk"
+  should: %s[5].ipv4 == "128.16.5.32"
+  should: %s[6] CLASS(nameserver)
+  should: %s[6].name == "ns1.drenet.dnd.ca"
+  should: %s[6].ipv4 == "131.136.242.3"

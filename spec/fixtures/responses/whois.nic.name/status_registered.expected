@@ -1,5 +1,5 @@
 #status
-  should: %s == ["ok"]
+  should: %s == ["clientTransferProhibited"]
 
 #available?
   should: %s == false
@@ -14,7 +14,7 @@
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-04-08 11:33:07 UTC")
+  should: %s == Time.parse("2013-06-11 16:51:16 UTC")
 
 #expires_on
   should: %s CLASS(time)

@@ -60,6 +60,6 @@ Name Servers:
 
 Domain record activated:    10-May-1999
 Domain record last updated: 04-Apr-2012
-Domain expires:             31-Jul-2013
+Domain expires:             31-Jul-2014
 
 

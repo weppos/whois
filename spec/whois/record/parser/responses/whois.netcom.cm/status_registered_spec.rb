@@ -55,7 +55,7 @@ describe Whois::Record::Parser::WhoisNetcomCm, "status_registered.expected" do
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-09-06 15:34 WAT")
+      subject.updated_on.should == Time.parse("2013-05-20 21:30 WAT")
     end
   end
   describe "#expires_on" do
