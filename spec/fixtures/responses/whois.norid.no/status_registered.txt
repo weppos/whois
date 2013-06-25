@@ -3,32 +3,36 @@
 
 Domain Information
 
+NORID Handle...............: GOO371D-NORID
 Domain Name................: google.no
-Organization Handle........: GNA78O-NORID
+Domain Holder Handle.......: GNA233O-NORID
 Registrar Handle...........: REG466-NORID
-Legal-c Handle.............: RH1355P-NORID
-Tech-c Handle..............: JM722P-NORID
-Zone-c Handle..............: JM722P-NORID
-Nameserver Handle..........: NS3569H-NORID
-Nameserver Handle..........: NS3570H-NORID
-Nameserver Handle..........: NS3568H-NORID
-Nameserver Handle..........: NS3571H-NORID
+Legal-c Handle.............: RH3332P-NORID
+Tech-c Handle..............: MS5407P-NORID
+Name Server Handle.........: NSGO26H-NORID
+Name Server Handle.........: NSGO27H-NORID
+Name Server Handle.........: NSGO28H-NORID
+Name Server Handle.........: NSGO29H-NORID
 
 Additional information:
 Created:         2001-02-26
-Last updated:    2006-12-07
+Last updated:    2013-01-27
 
-NORID Handle...............: GNA78O-NORID
-Organization Name..........: Google Norway AS
-Organization Number........: 988588261
+NORID Handle...............: GNA233O-NORID
+Type.......................: organization
+Name.......................: Google Norway AS
+Id Type....................: organization_number
+Id Number..................: 988588261
+Registrar Handle...........: REG466-NORID
 Post Address...............: Beddingen 10
-Postal Code................: N-7014
+Postal Code................: NO-7014
 Postal Area................: Trondheim
-Country....................: Norway
-Phone Number...............: +47 23 89 40 00
-Fax Number.................: +47 23 89 40 01
+Country....................: NO
+Phone Number...............: +47.23894000
+Fax Number.................: +47.23894001
 Email Address..............: Dns-admin@google.com
 
 Additional information:
-Last update:     2005-11-09
+Created:         2010-10-01
+Last updated:    2010-10-01
 
