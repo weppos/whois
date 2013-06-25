@@ -24,7 +24,7 @@ describe Whois::Server::Adapters::Arin do
         response = "Whois Response"
         expected = referral + "\n" + response
         server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(referral)
-        server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.ripe.net", 43).returns(response)
+        server.query_handler.expects(:call).with("0.0.0.0", "whois.ripe.net", 43).returns(response)
 
         record = server.lookup("0.0.0.0")
         record.to_s.should  == expected
@@ -38,7 +38,7 @@ describe Whois::Server::Adapters::Arin do
         response = "Whois Response"
         expected = referral + "\n" + response
         server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(referral)
-        server.query_handler.expects(:call).with("n + 0.0.0.0", "rwhois.servernap.net", 4321).returns(response)
+        server.query_handler.expects(:call).with("0.0.0.0", "rwhois.servernap.net", 4321).returns(response)
 
         record = server.lookup("0.0.0.0")
         record.to_s.should  == expected
@@ -51,7 +51,7 @@ describe Whois::Server::Adapters::Arin do
         referral = File.read(fixture("referrals/arin_referral_whois.txt"))
         server.options[:referral] = false
         server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(referral)
-        server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.ripe.net", 43).never
+        server.query_handler.expects(:call).with("0.0.0.0", "whois.ripe.net", 43).never
        
         record = server.lookup("0.0.0.0")
         record.parts.should have(1).part

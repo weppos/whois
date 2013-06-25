@@ -8,6 +8,8 @@
 
 - FIXED: whois.jprs.jp crashes when status is `reserved` for ne.jp SLD.
 
+- FIXED: Arin adapter is incorrectly passing an Arin flag to referral queries.
+
 
 ## Release 3.1.3
 

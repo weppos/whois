@@ -1,0 +1,50 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '128.79.0.0 - 128.79.63.0'
+
+inetnum:        128.79.0.0 - 128.79.63.0
+netname:        BOUYGTEL-ISP-CABLE
+descr:          Pool for Broadband CABLE customers
+remarks:        INFRA-AW
+country:        FR
+admin-c:        NOCB1-RIPE
+tech-c:         NOCB1-RIPE
+status:         ASSIGNED PA
+mnt-by:         BYTEL-MNT
+mnt-lower:      BYTEL-MNT
+mnt-routes:     BYTEL-MNT
+source:         RIPE # Filtered
+
+role:           Network Operation Centre Bouygues Telecom FAI
+remarks:        Bouygues Telecom ISP
+address:        Bouygues Telecom
+address:        13-15 avenue du Marechal Juin
+address:        92366 Meudon-la-Foret cedex
+address:        France
+abuse-mailbox:  abuse_box@bouyguestelecom.fr
+admin-c:        LH761-RIPE
+admin-c:        FT4354-RIPE
+tech-c:         LH761-RIPE
+tech-c:         FT4354-RIPE
+nic-hdl:        NOCB1-RIPE
+mnt-by:         BYTEL-MNT
+source:         RIPE # Filtered
+
+% Information related to '128.78.0.0/15AS5410'
+
+route:          128.78.0.0/15
+descr:          BOUYGUES Telecom ISP Wireline
+origin:         AS5410
+mnt-by:         BYTEL-MNT
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.66.3 (WHOIS2)
+
+
