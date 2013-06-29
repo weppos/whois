@@ -1,6 +1,7 @@
 # Changelog
 
-## Master
+
+## Release 3.2.0
 
 - SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definition.
 
