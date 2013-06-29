@@ -96,8 +96,19 @@ module Whois
           end
         end
 
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   Looup quota exceeded.
+        #
+        def response_throttled?
+          !!(content_for_scanner =~ /^request limit exceeded for/)
+        end
 
-        private
+
+      private
 
         def build_contact(element, type)
           match = content_for_scanner.slice(/#{element}:\n((.+\n)+)\n/, 1)

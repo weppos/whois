@@ -67,4 +67,9 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_available.expected" do
       subject.nameservers.should == []
     end
   end
+  describe "#response_throttled?" do
+    it do
+      subject.response_throttled?.should == false
+    end
+  end
 end

@@ -113,4 +113,9 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
       subject.nameservers[1].name.should == "ns1.google.com"
     end
   end
+  describe "#response_throttled?" do
+    it do
+      subject.response_throttled?.should == false
+    end
+  end
 end

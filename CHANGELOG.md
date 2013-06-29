@@ -10,6 +10,8 @@
 
 - NEW: Added full whois.fi parser.
 
+- NEW: whois.dns.pl parser now recognizes throttled responses.
+
 - CHANGED: Updated whois.nic.ac, whois.nic.io, and whois.nic.sh parsers to the new response format (GH-238).
 
 - CHANGED: Updated whois1.nic.bi parser to the new response format.

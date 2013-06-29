@@ -67,3 +67,7 @@
   should: %s[0].name == "ns2.google.com"
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns1.google.com"
+
+
+#response_throttled?
+  should: %s == false
