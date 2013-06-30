@@ -67,7 +67,7 @@ describe Whois::Record::Parser::WhoisMeridiantldNet, "status_registered.expected
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
+      subject.registrar.id.should           == "292"
       subject.registrar.name.should         == "MarkMonitor"
       subject.registrar.organization.should == nil
       subject.registrar.url.should          == nil

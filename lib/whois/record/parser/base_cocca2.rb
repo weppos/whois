@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/base_cocca2.rb'
 
 
 module Whois
@@ -18,28 +19,31 @@ module Whois
       #
       # @abstract
       class BaseCocca2 < Base
+        include Scanners::Scannable
+
+        self.scanner = Scanners::BaseCocca2
+
 
         property_supported :domain do
-          content_for_scanner.slice(/Domain Name: (.+)\n/, 1)
+          node("Domain Name")
         end
 
         property_supported :domain_id do
-          content_for_scanner.slice(/Domain ID: (.+)\n/, 1)
+          node("Domain ID")
         end
+
 
         # TODO: /pending delete/ => :redemption
         # TODO: /pending purge/  => :redemption
         property_supported :status do
-          list = statuses
+          list = Array.wrap(node("Domain Status")).map(&:downcase)
           case
-            when list.empty?
-              Whois.bug!(ParserError, "Unable to parse status.")
-            when list.include?("available")
-              :available
-            when list.include?("ok")
-              :registered
-            else
-              Whois.bug!(ParserError, "Unknown status `#{list.join(", ")}'.")
+          when list.include?("available")
+            :available
+          when list.include?("ok")
+            :registered
+          else
+            Whois.bug!(ParserError, "Unknown status `#{list.join(", ")}'.")
           end
         end
 
@@ -53,48 +57,37 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Creation Date: (.+?)\n/
-            parse_time($1)
-          end
+          node("Creation Date") { |value| parse_time(value) }
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Updated Date: (.+?)\n/
-            parse_time($1)
-          end
+          node("Updated Date") { |value| parse_time(value) }
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Registry Expiry Date: (.+?)\n/
-            parse_time($1)
-          end
+          node("Registry Expiry Date") { |value| parse_time(value) }
         end
 
 
         property_supported :registrar do
-          if content_for_scanner =~ /Sponsoring Registrar: (.+?)\n/
+          if node("Sponsoring Registrar")
             Record::Registrar.new(
-                :name         => $1,
-                :organization => nil,
-                :url          => content_for_scanner.slice(/Sponsoring Registrar URL: (.+)\n/, 1)
+                id:           node("Sponsoring Registrar IANA ID").presence,
+                name:         node("Sponsoring Registrar"),
+                url:          node("Sponsoring Registrar URL").presence
             )
           end
         end
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server: (.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(:name => name)
+          Array.wrap(node("Name Server")).map do |name|
+            Record::Nameserver.new(name: name)
           end
         end
 
 
-        def statuses
-          content_for_scanner.scan(/Domain Status: (.+)\n/).flatten.map(&:downcase)
-        end
-
-
-        private
+      private
 
         def parse_time(value)
           # Hack to remove usec. Do you know a better way?
