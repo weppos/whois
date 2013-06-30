@@ -16,73 +16,73 @@ module Whois
 
       class WhoisRegistryNetZa < Base
         self.tokenizers += [
-          :get_availability,
-          :get_domain,
-          :get_registrant_details,
-          :get_registrant_address,
-          :get_registrar_details,
-          :get_dates,
-          :get_status,
-          :get_pending_timer_events,
-          :get_nameservers,
-          :get_disclaimer
+            :scan_availability,
+            :scan_domain,
+            :scan_registrant_details,
+            :scan_registrant_address,
+            :scan_registrar_details,
+            :scan_dates,
+            :scan_status,
+            :scan_pending_timer_events,
+            :scan_nameservers,
+            :scan_disclaimer
         ]
 
-        tokenizer :get_availability do
+        tokenizer :scan_availability do
           if @input.scan_until(/^Available\n$/m)
             @ast["status:available"] = true
           end
         end
 
-        tokenizer :get_domain do
+        tokenizer :scan_domain do
           if find_heading("Domain Name")
             @ast["node:domain"] = content_in_category
           end
         end
 
-        tokenizer :get_registrant_details do
+        tokenizer :scan_registrant_details do
           if find_heading("Registrant")
             @ast["node:registrant_details"] = content_in_category
           end
         end
 
-        tokenizer :get_registrant_address do
+        tokenizer :scan_registrant_address do
           if find_heading("Registrant's Address")
             @ast["node:registrant_address"] = content_in_category
           end
         end
 
-        tokenizer :get_registrar_details do
+        tokenizer :scan_registrar_details do
           if find_heading("Registrar")
             @ast["node:registrar"] = content_in_category
           end
         end
 
-        tokenizer :get_dates do
+        tokenizer :scan_dates do
           if find_heading("Relevant Dates")
             @ast["node:dates"] = content_in_category
           end
         end
 
-        tokenizer :get_status do
+        tokenizer :scan_status do
           if find_heading("Domain Status")
             @ast["node:status"] = content_in_category
           end
         end
 
-        tokenizer :get_pending_timer_events do
+        tokenizer :scan_pending_timer_events do
           if find_heading("Pending Timer Events")
             @ast["node:pending_timer_events"] = content_in_category
           end
         end
 
-        tokenizer :get_nameservers do
+        tokenizer :scan_nameservers do
           if find_heading("Name Servers")
             @ast["node:nameservers"] = content_in_category
           end
         end
 
-        tokenizer :get_disclaimer do
+        tokenizer :scan_disclaimer do
           @input.skip_until(/\n--\n/m)
           @ast["node:disclaimer"] = @input.scan_until(/.*$/m)
         end

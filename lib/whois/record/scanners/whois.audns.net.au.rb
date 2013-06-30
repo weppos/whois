@@ -15,8 +15,6 @@ module Whois
     module Scanners
 
       # Scanner for the whois.audns.net.au record.
-      #
-      # @since  2.5.0
       class WhoisAudnsNetAu < Base
 
         self.tokenizers += [

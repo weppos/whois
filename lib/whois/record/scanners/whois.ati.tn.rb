@@ -15,8 +15,6 @@ module Whois
     module Scanners
 
       # Scanner for the whois.ati.tn record.
-      #
-      # @since  2.6.0
       class WhoisAtiTn < Base
 
         self.tokenizers += [
