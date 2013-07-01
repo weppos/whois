@@ -8,6 +8,8 @@
 
 - CHANGED: Updated whois.nic.mg parsers to the new response format.
 
+- CHANGED: Updated whois.nic.cd parsers to the new response format.
+
 
 ## Release 3.2.0
 

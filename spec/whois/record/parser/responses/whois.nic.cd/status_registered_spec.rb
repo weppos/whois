@@ -21,9 +21,19 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.cd"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      subject.domain_id.should == "5758-CD"
+    end
+  end
   describe "#status" do
     it do
-      subject.status.should == ["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED"]
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
@@ -39,18 +49,28 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-10-01 00:00:00")
+      subject.created_on.should == Time.parse("2006-09-29 22:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2013-04-17 14:40:48 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-10-01 00:00:00")
+      subject.expires_on.should == Time.parse("2013-09-30 22:00:00 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "MARKMONITOR"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#nameservers" do

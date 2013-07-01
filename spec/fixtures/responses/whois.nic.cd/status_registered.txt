@@ -1,87 +1,40 @@
+Domain Name: google.cd
+Domain ID: 5758-CD
+Updated Date: 2013-04-17T14:40:48.947Z
+Creation Date: 2006-09-29T22:00:00.000Z
+Registry Expiry Date: 2013-09-30T22:00:00.000Z
+Sponsoring Registrar: MARKMONITOR
+Sponsoring Registrar IANA ID: 
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: ok
+Domain Status: clientRenewProhibited
+Domain Status: clientDeleteProhibited
 
-----------------------------------------------------------------------  
- WHOIS Server
----------------------------------------------------------------------- 
+Registrant ID: 5579-CD
 
-The following data is provided for information purposes only.
+Admin ID: 5579-CD
 
-Registrar:   MARKMONITOR INC 
-Registrant:  GOOGLE INC.
+Billing ID: 5566-CD
 
+Tech ID: 5572-CD
+Tech Phone: 1.650253
+Tech Phone Ext: 
+Tech Fax: 1.650618857
+Tech Fax Ext: 
+Tech Email: dns-admin@google.com
 
-    Domain Name:		GOOGLE.CD
-    Creation Date:		01-Oct-2006 00:00:00
-    Expiration Date:	01-Oct-2013 00:00:00
-    Domain Status:		OK
-    Domain Status:		CLIENT UPDATE PROHIBITED
-    Domain Status:		CLIENT TRANSFER PROHIBITED
-    Domain Status:		CLIENT DELETE PROHIBITED
+Name Server: ns1.google.com
+Name Server: ns2.google.com
+Name Server: ns3.google.com
+Name Server: ns4.google.com
 
-
-    Owner/Main Contact:
-
-        Name:           GOOGLE INC. (CD21236T)        
-        Registered Address(line1):	1600 AMPHITHEATRE PARKWAY
-        Registered Address(line2):	
-        Registered Address(line3):	
-        Registered State:		CA
-        Registered Country:		US
-        Registered Postalcode:	94043
-
-
-
-    Administrative Contact:
-          
-        Name:           GOOGLE INC. (CD21236T)        
-        Registered Address(line1):	1600 AMPHITHEATRE PARKWAY
-        Registered Address(line2):	
-        Registered Address(line3):	
-        Registered State:		CA
-        Registered Country:		US
-        Registered Postalcode:	94043
+DNSSEC: unsigned
 
 
+TERMS OF USE: You are not authorized to access or query our WHOIS database through the use of electronic processes that are high-volume and automated. This WHOIS database is provided by CDnic as a service to the internet community on behalf of Congo, the Democratic Republic (La Republique Democratique du Congo ? RDC). 
 
-    Technical Contact:
-        
-        Name:           GOOGLE INC. (CD21236T)        
-        Registered Address(line1):	1600 AMPHITHEATRE PARKWAY
-        Registered Address(line2):	
-        Registered Address(line3):	
-        Registered State:		CA
-        Registered Country:		US
-        Registered Postalcode:	94043
-
-        Telephone:			+1.6502530000
-        Facsimile:			+1.6506188571  
-        EMAIL:				dns-admin@google.com
+The data is for information purposes only. CDnic does not guarantee its accuracy. By submitting a WHOIS query, you agree to abide by the following terms of use: You agree that you may use this Data only for lawful purposes and that under no circumstances will you use this Data to: (1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via e-mail, telephone, or facsimile; or (2) enable high volume, automated, electronic processes that apply to CDnic it's members (or CDnic or member computer systems). The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
 
-
-    Billing Contact:
-          
-        Name:           MARKMONITOR (CD10789T)        
-        Registered Address(line1):	391 N. ANCESTOR PL.
-        Registered Address(line2):	
-        Registered Address(line3): 	
-        Registered State:		ID
-        Registered Country:		US
-        Registered Postalcode:	83704
-
-
-
-    Name Servers:
-        NS1.GOOGLE.COM
-        NS2.GOOGLE.COM
-        NS3.GOOGLE.COM
-        NS4.GOOGLE.COM
-
-
-         
-
-
-
-
-
-
-
+>>> Last update of WHOIS database: 2013-06-30T14:52:15.383Z <<<

@@ -21,9 +21,19 @@ describe Whois::Record::Parser::WhoisNicCd, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "u34jedzcq.cd"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      subject.domain_id.should == nil
+    end
+  end
   describe "#status" do
     it do
-      subject.status.should == []
+      subject.status.should == :available
     end
   end
   describe "#available?" do
@@ -43,12 +53,17 @@ describe Whois::Record::Parser::WhoisNicCd, "status_available.expected" do
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should == nil
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
     end
   end
   describe "#nameservers" do

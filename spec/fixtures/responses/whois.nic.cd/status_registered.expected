@@ -1,5 +1,12 @@
+#domain
+  should: %s == "google.cd"
+
+#domain_id
+  should: %s == "5758-CD"
+
+
 #status
-  should: %s == ["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED"]
+  should: %s == :registered
 
 #available?
   should: %s == false
@@ -10,14 +17,24 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2006-10-01 00:00:00")
+  should: %s == Time.parse("2006-09-29 22:00:00 UTC")
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-04-17 14:40:48 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-10-01 00:00:00")
+  should: %s == Time.parse("2013-09-30 22:00:00 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MARKMONITOR"
+  should: %s.organization == nil
+  should: %s.url          == nil
+
 
 #nameservers
   should: %s CLASS(array)
