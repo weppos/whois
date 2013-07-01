@@ -36,7 +36,8 @@
   should: %s CLASS(registrar)
   should: %s.id           == "R43-LRCC"
   should: %s.name         == "GibNet Registrar"
-  should: %s.organization == "GibNet Registrar"
+  should: %s.organization == nil
+  should: %s.url          == nil
 
 #registrant_contacts
   should: %s CLASS(array)

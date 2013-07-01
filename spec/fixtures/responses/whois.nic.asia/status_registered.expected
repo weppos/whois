@@ -36,7 +36,7 @@
   should: %s CLASS(registrar)
   should: %s.id           == "9998"
   should: %s.name         == "dotASIA R4-ASIA"
-  should: %s.organization == "dotASIA R4-ASIA"
+  should: %s.organization == nil
   should: %s.url          == nil
 
 #registrant_contacts

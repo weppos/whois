@@ -80,4 +80,4 @@ The data is for information purposes only. NIC.BI does not guarantee its accurac
 The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
 
->>> Last update of WHOIS database: 2013-06-25T07:57:08.954Z <<<
+>>> Last update of WHOIS database: 2013-06-30T15:00:06.689Z <<<

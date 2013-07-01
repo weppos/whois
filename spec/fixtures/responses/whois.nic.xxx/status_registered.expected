@@ -35,7 +35,8 @@
   should: %s CLASS(registrar)
   should: %s.id           == "R2-ICM"
   should: %s.name         == "Domainmonster.com"
-  should: %s.organization == "Domainmonster.com"
+  should: %s.organization == nil
+  should: %s.url          == nil
 
 #registrant_contacts
   should: %s CLASS(array)

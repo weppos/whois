@@ -37,6 +37,7 @@ module Whois
 
 
         property_supported :status do
+          # OK, RENEW PERIOD, ...
           Array.wrap(node("Status"))
         end
 

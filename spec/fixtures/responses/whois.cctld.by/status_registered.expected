@@ -21,15 +21,15 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2003-02-02 15:50:44 UTC")
+  should: %s == Time.parse("2003-02-02")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-12-20 08:36:13 UTC")
+  should: %s == Time.parse("2012-11-15")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-12-21 10:07:40 UTC")
+  should: %s == Time.parse("2013-12-21")
 
 
 #registrar

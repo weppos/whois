@@ -76,9 +76,8 @@ module Whois
                 Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
 
             Record::Registrar.new(
-                :id =>            parts[0],
-                :name =>          parts[1],
-                :organization =>  parts[1]
+                id:           parts[0],
+                name:         parts[1]
             )
           end
         end

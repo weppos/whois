@@ -74,7 +74,8 @@ describe Whois::Record::Parser::WhoisDotpostregistryNet, "status_registered.expe
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R4947-POST"
       subject.registrar.name.should         == "Universal Postal Union"
-      subject.registrar.organization.should == "Universal Postal Union"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

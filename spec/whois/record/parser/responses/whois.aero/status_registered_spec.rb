@@ -74,7 +74,8 @@ describe Whois::Record::Parser::WhoisAero, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "380"
       subject.registrar.name.should         == "Tuonome IT"
-      subject.registrar.organization.should == "Tuonome IT"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

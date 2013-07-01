@@ -1,0 +1,45 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+domain:       IP6.ARPA
+
+organisation: Internet Assigned Numbers Authority (IANA)
+address:      4676 Admiralty Way
+address:      Suite 330
+address:      Marina del Rey California 90292-6610
+address:      US
+
+contact:      administrative
+organisation: Internet Architecture Board (IAB)
+organisation: c/o IETF Administrative Support Activity, ISOC
+address:      1775 Wiehle Ave.
+address:      Suite 102
+address:      Reston Virginia 20190-5108
+address:      United States
+phone:        +1 703 326 9880
+fax-no:       +1 703 326 9881
+e-mail:       iab@iab.org
+
+contact:      technical
+organisation: Internet Assigned Numbers Authority (IANA)
+address:      4676 Admiralty Way
+address:      Suite 330
+address:      Marina del Rey California 90292-6610
+address:      United States
+phone:        +1 310 823 9358
+fax-no:       +1 310 823 8649
+e-mail:       iana@iana.org
+
+nserver:      A.IP6-SERVERS.ARPA 199.212.0.73 2001:500:13:0:0:0:0:73
+nserver:      B.IP6-SERVERS.ARPA 199.253.182.182 2001:500:86::86
+nserver:      C.IP6-SERVERS.ARPA 196.216.169.11 2001:43f8:110::11
+nserver:      D.IP6-SERVERS.ARPA 200.7.86.53 2001:13c7:7012::53
+nserver:      E.IP6-SERVERS.ARPA 2001:dc0:2001:a:4608::59 202.12.29.59
+nserver:      F.IP6-SERVERS.ARPA 193.0.9.2 2001:67c:e0::2
+ds-rdata:     13880 8 2 068554efcb5861f42af93ef8e79c442a86c16fc5652e6b6d2419ed527f344d17
+
+created:      2001-11-10
+changed:      2011-07-21
+source:       IANA
+

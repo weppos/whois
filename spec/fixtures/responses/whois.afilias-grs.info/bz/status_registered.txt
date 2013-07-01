@@ -18,8 +18,8 @@ you agree to abide by this policy.
 Domain ID:D354967-LRCC
 Domain Name:GOOGLE.BZ
 Created On:12-Feb-2006 18:08:52 UTC
-Last Updated On:11-Jan-2011 10:18:34 UTC
-Expiration Date:12-Feb-2012 18:08:52 UTC
+Last Updated On:11-Jan-2013 10:17:13 UTC
+Expiration Date:12-Feb-2014 18:08:52 UTC
 Sponsoring Registrar:MarkMonitor, Inc. (R22-LRCC)
 Whois Server:whois.markmonitor.com
 Referral URL:http://www.markmonitor.com

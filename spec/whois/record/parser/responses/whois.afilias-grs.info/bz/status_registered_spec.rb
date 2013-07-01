@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-01-11 10:18:34 UTC")
+      subject.updated_on.should == Time.parse("2013-01-11 10:17:13 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-02-12 18:08:52 UTC")
+      subject.expires_on.should == Time.parse("2014-02-12 18:08:52 UTC")
     end
   end
   describe "#registrar" do
@@ -74,7 +74,8 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R22-LRCC"
       subject.registrar.name.should         == "MarkMonitor, Inc."
-      subject.registrar.organization.should == "MarkMonitor, Inc."
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

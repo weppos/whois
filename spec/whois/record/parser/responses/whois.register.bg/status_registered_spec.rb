@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisRegisterBg, "status_registered.expected" do
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-06-30 00:00:00")
+      subject.expires_on.should == Time.parse("2014-06-30 00:00:00")
     end
   end
   describe "#nameservers" do

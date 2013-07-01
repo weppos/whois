@@ -73,7 +73,8 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R2-ICM"
       subject.registrar.name.should         == "Domainmonster.com"
-      subject.registrar.organization.should == "Domainmonster.com"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do
