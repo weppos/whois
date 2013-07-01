@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisPninaPs, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.ps"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -39,18 +49,18 @@ describe Whois::Record::Parser::WhoisPninaPs, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2004-05-19")
+      subject.created_on.should == Time.parse("2004-05-19 00:00:00")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2014-05-19")
+      subject.expires_on.should == Time.parse("2014-05-19 00:00:00")
     end
   end
   describe "#nameservers" do

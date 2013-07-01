@@ -15,55 +15,56 @@ compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
 
 Domain Information
-Query: zumba.ps
+Query: next.ps
 Status: Active - Pending Transfer
-Created: 27 Oct 2010
-Expires: 27 Oct 2011
+Created: 10 Mar 2007
+Expires: 10 Mar 2018
 Name Servers:
-    c.ns.zerigo.net
-    b.ns.zerigo.net
-    a.ns.zerigo.net
+    ns1.topteamdns.com
+    ns2.topteamdns.com
 
 Registrar Information
-Registrar Name: INSTRA
-Address: Level2, 222-225 Beach Road,Mordialloc,Victoria 3195,Australi
-Phone: +61 3 997831800
-Fax: +61 3 97836844
+Registrar Name: Next Communications technologies Co Ltd.
+Address: GAZA-Palestine
+Phone: 2856588
+Fax: 2856183
 
 
 
 
 Registrant:
-Name: Rodrigo Faerman
+Name: ashraf ibraheem asfour
 Address:
-	3801 N 29th Ave
-	Hollywood	US
-Phone Number: 1-95-492-53755
+	gaza
+	gaza 0000
+	PS
+Phone Number: 972-8-2877783
+Fax Number: 972-8-2870887
 
 
 Admin Contact:
-Name: Antonio Lentino
+Name: Next Communications Technologies
 Address:
-	Lot 5 -38 Hartnett Dirve-Seaford-  Victoria  3198
-	Melbourne	AU
-Phone Number: 61-39-7831800
-Fax Number: 61-39-7836844
+	gaza
+	gaza	PS
+Phone Number: 972-8-2877783
+Fax Number: 972-2-2977457
 
 
 Technical Contact:
-Name: Phillip Parker
+Name: Next Communications Technologies
 Address:
-	Level2- 222-225 Beach Road-Mordialloc-Victoria 319
-	Melbourne	AU
-Phone Number: 61-3-997831800
-Fax Number: 61-3-97836844
+	gaza
+	gaza	PS
+Phone Number: 972-8-2877783
+Fax Number: 972-2-2977457
 
 
 Billing Contact:
-Name: Antonio Lentino
+Name: Next Communications Technologies
 Address:
-	Lot 5 -38 Hartnett Dirve-Seaford-  Victoria  3198
-	Melbourne	AU
-Phone Number: 61-39-7831800
-Fax Number: 61-39-7836844
+	gaza
+	gaza	PS
+Phone Number: 972-8-2877783
+Fax Number: 972-2-2977457
 

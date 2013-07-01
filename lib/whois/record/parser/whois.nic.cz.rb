@@ -21,10 +21,10 @@ module Whois
       #
       class WhoisNicCz < BaseWhoisd
         self.status_mapping = {
-          'paid and in zone' => :registered,
-          'update prohibited' => :registered,
-          'expired' => :expired,
-          'to be deleted' => :expired,
+          "paid and in zone" => :registered,
+          "update prohibited" => :registered,
+          "expired" => :expired,
+          "to be deleted" => :expired,
         }
       end
 

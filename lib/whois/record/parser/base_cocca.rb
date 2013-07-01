@@ -19,6 +19,15 @@ module Whois
       # @abstract
       class BaseCocca < Base
 
+        class_attribute :status_mapping
+
+        self.status_mapping = {
+          "active" => :registered,
+          "delegated" => :registered,
+          "not registered" => :available,
+        }
+
+
         property_supported :domain do
           content_for_scanner =~ /Query:\s+(.+?)\n/
           $1 || Whois.bug!(ParserError, "Unable to parse domain.")
@@ -29,16 +38,8 @@ module Whois
 
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
-            case $1.downcase
-            when "active"
-              :registered
-            when "delegated"
-              :registered
-            when "not registered"
-              :available
-            else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
+            status = $1.downcase
+            self.class.status_mapping[status] || Whois.bug!(ParserError, "Unknown status `#{status}'.")
           else
             Whois.bug!(ParserError, "Unable to parse status.")
           end
