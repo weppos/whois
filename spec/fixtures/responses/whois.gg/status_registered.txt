@@ -29,8 +29,7 @@ without notice.
 Domain Information
 Query: google.gg
 Status: Active
-Created: 30 Apr 2003
-Modified: 31 Mar 2011
+Created: 30 Apr 2003 00:00 UTC
 Name Servers:
     ns1.google.com
     ns2.google.com
@@ -47,8 +46,4 @@ Registration URL: http://www.markmonitor.com
 Registrant:
 Name: Google Inc.
 Organisation: Google Inc.
-Address:
-	1600 Amphitheatre Parkway
-	Mountain View, CA 94043
-	US
 
