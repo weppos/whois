@@ -75,9 +75,9 @@ module Whois
         property_supported :registrar do
           if content_for_scanner =~ /Registrar Name: (.+)\n/
             Record::Registrar.new(
-                :name         => $1,
-                :organization => nil,
-                :url          => content_for_scanner.slice(/Registration URL: (.+)\n/, 1)
+                name:         $1,
+                organization: nil,
+                url:          content_for_scanner.slice(/Registration URL: (.+)\n/, 1)
             )
           end
         end

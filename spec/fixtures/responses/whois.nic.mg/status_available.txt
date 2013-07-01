@@ -1,3 +1,6 @@
+Domain Name: u34jedzcq.mg
+Domain Status: Available
+
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
 automated.  Whois database is provided by NIC-MG as a service to the internet
@@ -14,9 +17,5 @@ that apply to NIC-MG it's members (or NIC-MG or member computer systems). The
 compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
 
-Domain Information
-Query: u34jedzcq.mg
-Status: Not Registered
 
-
-
+>>> Last update of WHOIS database: 2013-07-01T09:19:01.999Z <<<

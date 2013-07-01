@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicMg, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.mg"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      subject.domain_id.should == "1915-nicmg"
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -39,19 +49,28 @@ describe Whois::Record::Parser::WhoisNicMg, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2009-06-18")
+      subject.created_on.should == Time.parse("2009-06-18 08:38:20 UTC")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-06-23")
+      subject.updated_on.should == Time.parse("2012-10-26 13:56:38 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-11-27")
+      subject.expires_on.should == Time.parse("2013-11-26 21:00:00 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "MarkMonitor"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == "http://www.markmonitor.com"
     end
   end
   describe "#nameservers" do
