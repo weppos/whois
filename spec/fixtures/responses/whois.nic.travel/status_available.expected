@@ -28,6 +28,7 @@
 #registrar
   should: %s == nil
 
+
 #registrant_contacts
   should: %s CLASS(array)
   should: %s == []

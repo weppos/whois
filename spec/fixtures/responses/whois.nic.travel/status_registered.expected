@@ -33,6 +33,7 @@
   should: %s.id           == nil
   should: %s.name         == "NEUSTAR GATEWAY"
 
+
 #registrant_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)

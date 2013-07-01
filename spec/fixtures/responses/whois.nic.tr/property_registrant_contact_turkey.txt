@@ -1,0 +1,50 @@
+** Registrant:
+   Hotel Bilgisayar Hizmetleri San. Tic. Turizm Ltd. Þti.
+   Cumhuriyet Cd. No:61 Bingül Han Asma Kat
+   Elmadað
+   Ýstanbul,
+     Türkiye
+   romeo6860@yahoo.com
+   + 90-212-2473997-
+   + 90-212-2473995
+
+
+** Administrative Contact:
+NIC Handle		: hbh18-metu
+Organization Name	: Hotel Bilgisayar Hizmetleri San.Tic.Tur.Ltd.Sti
+Address			: Cumhuriyet.cad.No:61 Bingul han asma kat
+			  Elmada-ISTANBUL
+			  Ýstanbul,
+			  Türkiye
+Phone			: + 90-212-2473997-
+Fax			: + 90-212-2473995-
+
+
+** Technical Contact:
+NIC Handle		: hbh18-metu
+Organization Name	: Hotel Bilgisayar Hizmetleri San.Tic.Tur.Ltd.Sti
+Address			: Cumhuriyet.cad.No:61 Bingul han asma kat
+			  Elmada-ISTANBUL
+			  Ýstanbul,
+			  Türkiye
+Phone			: + 90-212-2473997-
+Fax			: + 90-212-2473995-
+
+
+** Billing Contact:
+NIC Handle		: hbh18-metu
+Organization Name	: Hotel Bilgisayar Hizmetleri San.Tic.Tur.Ltd.Sti
+Address			: Cumhuriyet.cad.No:61 Bingul han asma kat
+			  Elmada-ISTANBUL
+			  Ýstanbul,
+			  Türkiye
+Phone			: + 90-212-2473997-
+Fax			: + 90-212-2473995-
+
+
+** Domain Servers:
+ns.hotel.com.tr	208.43.89.120
+
+** Additional Info:
+Created on..............: 2004-Jun-18.
+Expires on..............: 2014-Jun-17.

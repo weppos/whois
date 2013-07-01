@@ -1,12 +1,12 @@
 ** Registrant:
-   Google Inc.
-   1600 Amphitheatre Parkway
-   Mountain View CA
+   Yahoo Ýnc.
+   701 First Avenue Sunnyvale Ca 94089
+   
    Out of Turkey,
      United States of America
-   dns-admin@google.com
-   + 1-650-2530000-
-   + 1-650-2530001-
+   domainadmin@yahoo-inc.com
+   + 901-408-3493300-
+   + 901-408-3493301
 
 
 ** Administrative Contact:
@@ -40,11 +40,9 @@ Fax			: + 90-312-4733039-
 
 
 ** Domain Servers:
-ns1.google.com
-ns2.google.com
-ns3.google.com
-ns4.google.com
+ns1.yahoo.com
+ns5.yahoo.com
 
 ** Additional Info:
-Created on..............: 2001-Aug-23.
-Expires on..............: 2013-Aug-22.
+Created on..............: 1998-Sep-22.
+Expires on..............: 2013-Sep-21.

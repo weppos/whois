@@ -1,3 +1,14 @@
+#disclaimer
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#domain
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -17,13 +28,76 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-08-22 00:00:00 UTC")
+  should: %s == Time.parse("2013-08-22 00:00:00 UTC")
+
+
+#registrar
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Google Inc."
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "1600 Amphitheatre Parkway\nMountain View CA"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == "United States of America"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+ 1-650-2530000-"
+  should: %s[0].fax           == "+ 1-650-2530001-"
+  should: %s[0].email         == "dns-admin@google.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == "mi154-metu"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "MarkMonitor, Inc"
+  should: %s[0].address       == "Hidden upon user request"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "Hidden upon user request"
+  should: %s[0].fax           == "Hidden upon user request"
+  should: %s[0].email         == nil
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "btl1-metu"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "BERÝL TEKNOLOJÝ LTD. ÞTÝ."
+  should: %s[0].address       == "Ceyhun Atuf Kansu Cad. Bayraktar Ýþ Merkezi\nNo:114 G-4 Balgat\nAnkara,06520\nTürkiye"
+  should: %s[0].city          == nil
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+ 90-312-4733035-"
+  should: %s[0].fax           == "+ 90-312-4733039-"
+  should: %s[0].email         == nil
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(2)
+  should: %s SIZE(4)
   should: %s[0] CLASS(nameserver)
   should: %s[0].name == "ns1.google.com"
   should: %s[1] CLASS(nameserver)
   should: %s[1].name == "ns2.google.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.google.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.google.com"

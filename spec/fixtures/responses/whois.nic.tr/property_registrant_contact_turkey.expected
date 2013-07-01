@@ -1,0 +1,17 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "Hotel Bilgisayar Hizmetleri San. Tic. Turizm Ltd. Þti."
+  should: %s[0].organization  == nil
+  should: %s[0].address       == "Cumhuriyet Cd. No:61 Bingül Han Asma Kat\nElmadað"
+  should: %s[0].city          == "Ýstanbul"
+  should: %s[0].zip           == nil
+  should: %s[0].state         == nil
+  should: %s[0].country       == "Türkiye"
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+ 90-212-2473997-"
+  should: %s[0].fax           == "+ 90-212-2473995"
+  should: %s[0].email         == "romeo6860@yahoo.com"
