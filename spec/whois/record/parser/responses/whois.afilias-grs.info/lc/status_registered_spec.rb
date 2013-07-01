@@ -102,7 +102,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should           == "LC-51893"
       subject.admin_contacts[0].name.should         == "Nic LC Hostmaster"
       subject.admin_contacts[0].organization.should == "Nic LC"

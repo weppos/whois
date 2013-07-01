@@ -87,7 +87,7 @@ module Whois
 
         property_supported :admin_contacts do
           node('admin-c') do |value|
-            build_contact(value, Record::Contact::TYPE_ADMIN)
+            build_contact(value, Record::Contact::TYPE_ADMINISTRATIVE)
           end
         end
 

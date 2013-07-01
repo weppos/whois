@@ -79,7 +79,7 @@ module Whois
         end
 
         property_supported :admin_contacts do
-          parse_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+          parse_contact("admin-c", Whois::Record::Contact::TYPE_ADMINISTRATIVE)
         end
 
         property_supported :technical_contacts do

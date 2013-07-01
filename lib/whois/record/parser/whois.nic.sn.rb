@@ -80,7 +80,7 @@ module Whois
 
         property_supported :admin_contacts do
           if content_for_scanner =~ /Administrative Contact's handle:\s+(.+)\n/
-            build_contact($1, Whois::Record::Contact::TYPE_ADMIN)
+            build_contact($1, Whois::Record::Contact::TYPE_ADMINISTRATIVE)
           end
         end
 

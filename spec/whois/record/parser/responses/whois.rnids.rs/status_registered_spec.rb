@@ -95,7 +95,7 @@ describe Whois::Record::Parser::WhoisRnidsRs, "status_registered.expected" do
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == nil
       subject.admin_contacts[0].name.should          == "Domain Administrator, Drustvo za marketing Google DOO"
       subject.admin_contacts[0].address.should       == "Marsala Birjuzova 47/18, Beograd, Serbia"

@@ -85,7 +85,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].name.should          == "DreamHost Web Hosting"
       subject.admin_contacts[0].organization.should  == "New Dream Network, LLC."
       subject.admin_contacts[0].address.should       == "PMB #257\n417 Associated Rd."

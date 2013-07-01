@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
       subject.registrant_contacts.should be_a(Array)
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.registrant_contacts[0].id.should            == "com-gi8-1"
       subject.registrant_contacts[0].name.should          == "Google Inc."
       subject.registrant_contacts[0].organization.should  == "Google Inc."
@@ -96,7 +96,7 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == "com-gi8-1"
       subject.admin_contacts[0].name.should          == "Google Inc."
       subject.admin_contacts[0].organization.should  == "Google Inc."

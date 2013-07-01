@@ -44,9 +44,20 @@ module Whois
                                     :phone, :fax, :email, :url,
                                     :created_on, :updated_on)
 
-      TYPE_REGISTRANT = 1
-      TYPE_ADMIN = 2
-      TYPE_TECHNICAL = 3
+      TYPE_REGISTRANT     = 1
+      TYPE_ADMINISTRATIVE = 2
+      TYPE_TECHNICAL      = 3
+
+
+      def self.const_missing(name)
+        case name
+        when :TYPE_ADMIN
+          Whois.deprecate("Whois::Record::Contact::TYPE_ADMIN is now Whois::Record::Contact::TYPE_ADMINISTRATIVE")
+          self.const_set(name, TYPE_ADMINISTRATIVE)
+        else
+          super
+        end
+      end
 
     end
 

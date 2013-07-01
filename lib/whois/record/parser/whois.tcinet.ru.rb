@@ -81,7 +81,7 @@ module Whois
           email = content_for_scanner[/e-mail:\s+(.+)\n/, 1]
           contact = if url or email
             Record::Contact.new(
-              :type         => Record::Contact::TYPE_ADMIN,
+              :type         => Record::Contact::TYPE_ADMINISTRATIVE,
               :url          => url,
               :email        => email,
               :name         => content_for_scanner[/person:\s+(.+)\n/, 1],

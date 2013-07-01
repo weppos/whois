@@ -18,6 +18,8 @@
 
 - CHANGED: Updated whois.pnina.ps parsers to the new response format.
 
+- CHANGED: Deprecate Whois::Record::Contact::TYPE_ADMIN in favor of Whois::Record::Contact::TYPE_ADMINISTRATIVE
+
 
 ## Release 3.2.0
 

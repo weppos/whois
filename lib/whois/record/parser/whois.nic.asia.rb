@@ -42,7 +42,7 @@ module Whois
 
 
         property_supported :admin_contacts do
-          build_contact("Administrative", Whois::Record::Contact::TYPE_ADMIN)
+          build_contact("Administrative", Whois::Record::Contact::TYPE_ADMINISTRATIVE)
         end
 
         property_supported :technical_contacts do

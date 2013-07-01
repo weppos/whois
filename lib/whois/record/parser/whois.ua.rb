@@ -201,11 +201,11 @@ module Whois
         property_not_supported :registrar
 
         property_supported :registrant_contacts do
-          subparser.build_contact("registrant", Whois::Record::Contact::TYPE_ADMIN)
+          subparser.build_contact("registrant", Whois::Record::Contact::TYPE_ADMINISTRATIVE)
         end
 
         property_supported :admin_contacts do
-          subparser.build_contact("admin-c", Whois::Record::Contact::TYPE_ADMIN)
+          subparser.build_contact("admin-c", Whois::Record::Contact::TYPE_ADMINISTRATIVE)
         end
 
         property_supported :technical_contacts do

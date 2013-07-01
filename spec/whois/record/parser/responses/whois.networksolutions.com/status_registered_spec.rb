@@ -84,7 +84,7 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].name.should         == "Communications, XIF ContactMiddleName"
       subject.admin_contacts[0].organization.should == "XIF Communications"
       subject.admin_contacts[0].address.should      == "1200 New Hampshire Avenue NW\nSuite 410"

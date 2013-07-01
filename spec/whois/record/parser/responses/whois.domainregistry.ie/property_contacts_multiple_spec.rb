@@ -26,11 +26,11 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_contacts_multip
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(2).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == "JL241-IEDR"
       subject.admin_contacts[0].name.should          == "Jonathan Lundberg"
       subject.admin_contacts[1].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[1].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[1].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[1].id.should            == "JM474-IEDR"
       subject.admin_contacts[1].name.should          == "John Moylan"
     end

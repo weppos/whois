@@ -67,7 +67,7 @@ module Whois
         end
 
         property_supported :admin_contacts do
-          build_contact('Administrative Contact:', Record::Contact::TYPE_ADMIN)
+          build_contact('Administrative Contact:', Record::Contact::TYPE_ADMINISTRATIVE)
         end
 
         property_supported :technical_contacts do

@@ -102,7 +102,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should           == "FR-1103549674779"
       subject.admin_contacts[0].name.should         == "Jimmy Imossi"
       subject.admin_contacts[0].organization.should == "Broadband Gibraltar Limited"

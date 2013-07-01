@@ -103,7 +103,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == "AUTO-DRZK-SNVHSY"
       subject.admin_contacts[0].name.should          == "Pauline Ang"
       subject.admin_contacts[0].organization.should  == "GSN Electronics Incorporation Pte Ltd"

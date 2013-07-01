@@ -60,7 +60,7 @@
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   should: %s[0].id           == "LC-51893"
   should: %s[0].name         == "Nic LC Hostmaster"
   should: %s[0].organization == "Nic LC"

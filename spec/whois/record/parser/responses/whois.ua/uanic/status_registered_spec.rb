@@ -80,7 +80,7 @@ describe Whois::Record::Parser::WhoisUa, "status_registered.expected" do
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == "KG780-UANIC"
       subject.admin_contacts[0].name.should          == nil
       subject.admin_contacts[0].organization.should  == "Kyivstar GSM"

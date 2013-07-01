@@ -88,7 +88,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_registered.expect
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMIN
+      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == "AAV410-IEDR"
       subject.admin_contacts[0].name.should          == "Christina Chiou"
     end
