@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisMeregistryNet, "status_registered.expected"
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R45-ME"
       subject.registrar.name.should         == "MarkMonitor Inc"
-      subject.registrar.organization.should == "MarkMonitor Inc"
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == nil
     end
   end

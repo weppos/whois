@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.gg"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == :registered
 
@@ -10,14 +17,13 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2003-04-30 00:00:00")
+  should: %s == Time.parse("2003-04-30 00:00:00 UTC")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-03-31 00:00:00")
+  should: %s == nil
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == nil
 
 
 #nameservers

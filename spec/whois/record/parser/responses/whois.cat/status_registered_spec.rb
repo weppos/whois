@@ -59,11 +59,11 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
       subject.nameservers.should be_a(Array)
       subject.nameservers.should have(2).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns.gencat.net"
-      subject.nameservers[0].ipv4.should == nil
+      subject.nameservers[0].name.should == "dns2.gencat.cat"
+      subject.nameservers[0].ipv4.should == "83.247.132.4"
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns2.gencat.cat"
-      subject.nameservers[1].ipv4.should == "83.247.132.4"
+      subject.nameservers[1].name.should == "dns.gencat.net"
+      subject.nameservers[1].ipv4.should == nil
     end
   end
 end

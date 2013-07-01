@@ -74,7 +74,8 @@ describe Whois::Record::Parser::WhoisDotmobiregistryNet, "status_registered.expe
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "292"
       subject.registrar.name.should         == "MarkMonitor Inc."
-      subject.registrar.organization.should == "MarkMonitor Inc."
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

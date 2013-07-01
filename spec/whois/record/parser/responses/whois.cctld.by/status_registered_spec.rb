@@ -54,19 +54,19 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2003-02-02 15:50:44 UTC")
+      subject.created_on.should == Time.parse("2003-02-02")
     end
   end
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-12-20 08:36:13 UTC")
+      subject.updated_on.should == Time.parse("2012-11-15")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-12-21 10:07:40 UTC")
+      subject.expires_on.should == Time.parse("2013-12-21")
     end
   end
   describe "#registrar" do

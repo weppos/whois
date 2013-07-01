@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
   end
   describe "#status" do
     it do
-      subject.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+      subject.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED", "RENEWPERIOD"]
     end
   end
   describe "#available?" do
@@ -60,21 +60,22 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
   describe "#updated_on" do
     it do
       subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-06-29 09:23:55 UTC")
+      subject.updated_on.should == Time.parse("2013-06-29 09:26:18 UTC")
     end
   end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-07-31 23:57:50 UTC")
+      subject.expires_on.should == Time.parse("2014-07-31 23:57:50 UTC")
     end
   end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R151-LRMS"
-      subject.registrar.name.should         == "Markmonitor Inc."
-      subject.registrar.organization.should == "Markmonitor Inc."
+      subject.registrar.name.should         == "Delaware Corporation"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

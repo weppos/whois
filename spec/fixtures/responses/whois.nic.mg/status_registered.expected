@@ -1,3 +1,10 @@
+#domain
+  should: %s == "google.mg"
+
+#domain_id
+  should: %s == "1915-nicmg"
+
+
 #status
   should: %s == :registered
 
@@ -10,15 +17,23 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2009-06-18")
+  should: %s == Time.parse("2009-06-18 08:38:20 UTC")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-06-23")
+  should: %s == Time.parse("2012-10-26 13:56:38 UTC")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2010-11-27")
+  should: %s == Time.parse("2013-11-26 21:00:00 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "MarkMonitor"
+  should: %s.organization == nil
+  should: %s.url          == "http://www.markmonitor.com"
 
 
 #nameservers

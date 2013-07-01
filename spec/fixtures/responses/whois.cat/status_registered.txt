@@ -80,8 +80,8 @@ Billing Phone Ext:
 Billing Fax: 
 Billing Fax Ext: 
 Billing Email: dominisgencat@gencat.cat
-Name Server: dns.gencat.net 
-Name Server ACE: dns.gencat.net 
 Name Server: dns2.gencat.cat 83.247.132.4
 Name Server ACE: dns2.gencat.cat 83.247.132.4
+Name Server: dns.gencat.net
+Name Server ACE: dns.gencat.net
 

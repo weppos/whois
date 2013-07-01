@@ -12,8 +12,9 @@ Domain ID:CNIC-DO492866
 Domain Name:KOI.JPN.COM
 Created On:2007-06-29T13:42:35.0Z
 Last Updated On:2013-02-20T22:17:40.0Z
-Expiration Date:2013-06-29T23:59:59.0Z
+Expiration Date:2015-06-29T23:59:59.0Z
 Status:OK
+Status:RENEW PERIOD
 Registrant ID:MNT78E22765897
 Registrant Name:Identity Protection Service
 Registrant Organization:Identity Protect Limited

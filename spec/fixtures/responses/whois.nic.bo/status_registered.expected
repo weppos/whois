@@ -24,7 +24,7 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-08-22")
+  should: %s == Time.parse("2013-08-22")
 
 
 #nameservers

@@ -3,11 +3,12 @@ DOMAIN NAME: google.bg
 requested on: 13/03/2003 00:00:00 EET
 processed from: 13/03/2003 00:00:00 EET
 activated on: 30/06/2003 00:00:00 EEST
-expires at: 30/06/2010 00:00:00 EEST
+expires at: 30/06/2014 00:00:00 EEST
 registration status: Registered
 
 REGISTRANT:
 Google Inc.
+  1600 Amphithetre Parkway, Mountain View CA 94043 US
   N/A, 1000
   BULGARIA
 
@@ -28,7 +29,7 @@ TECHNICAL CONTACT(S):
   dns-admin@google.com
   Google Inc.
   1600 Amphitheatre Parkway, Mountain View CA 94043 US
-  N/A, 
+  N/A, N/A
   .
   tel: +1 6503300100
   fax: +1 6506181499

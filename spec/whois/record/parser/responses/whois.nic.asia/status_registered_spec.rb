@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "9998"
       subject.registrar.name.should         == "dotASIA R4-ASIA"
-      subject.registrar.organization.should == "dotASIA R4-ASIA"
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == nil
     end
   end

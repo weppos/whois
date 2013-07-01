@@ -1,6 +1,6 @@
 domain: internet.co.ca
 date_approved: 2005-06-25 16:03:30
-date_renewal: 2013-06-25
+date_renewal: 2014-06-25
 ns1_hostname: ns1.canadawebhosting.com
 ns1_netaddress: 65.39.254.5
 ns2_hostname: ns2.canadawebhosting.com

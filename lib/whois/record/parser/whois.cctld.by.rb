@@ -21,7 +21,6 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       # @author Aliaksei Kliuchnikau <aliaksei.kliuchnikau@gmail.com>
-      # @since  2.5.0
       class WhoisCctldBy < Base
         include Scanners::Scannable
 

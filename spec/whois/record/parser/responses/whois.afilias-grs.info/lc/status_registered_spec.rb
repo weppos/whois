@@ -74,7 +74,8 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R144-LRCC"
       subject.registrar.name.should         == "NicLc Registrar"
-      subject.registrar.organization.should == "NicLc Registrar"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

@@ -1,5 +1,0 @@
-#nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.pnn-ps.com"

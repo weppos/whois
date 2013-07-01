@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisPirOrg, "status_registered.expected" do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R37-LROR"
       subject.registrar.name.should         == "MarkMonitor Inc."
-      subject.registrar.organization.should == "MarkMonitor Inc."
+      subject.registrar.organization.should == nil
       subject.registrar.url.should          == nil
     end
   end

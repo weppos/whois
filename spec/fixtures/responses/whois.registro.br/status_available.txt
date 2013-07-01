@@ -5,7 +5,7 @@
 %  being prohibited its distribution, comercialization or
 %  reproduction, in particular, to use it for advertising or
 %  any similar purpose.
-%  2009-12-25 20:11:55 (BRST -02:00)
+%  2013-06-30 20:11:01 (BRT -03:00)
 
 % Query rate limit exceeded. Reduced information.
 % Use https://registro.br/cgi-bin/avail/ for domain availability.

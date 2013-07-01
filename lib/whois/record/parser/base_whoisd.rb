@@ -21,14 +21,13 @@ module Whois
       class BaseWhoisd < Base
         include Scanners::Scannable
 
-        self.scanner = Scanners::BaseWhoisd
-
-
         class_attribute :status_mapping
+
         self.status_mapping = {
-          'paid and in zone' => :registered,
-          'expired' => :expired,
+          "paid and in zone" => :registered,
+          "expired" => :expired,
         }
+        self.scanner = Scanners::BaseWhoisd
 
 
         property_supported :domain do

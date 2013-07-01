@@ -18,16 +18,17 @@ you agree to abide by this policy.
 Domain ID:D37288-LRMS
 Domain Name:GOOGLE.INFO
 Created On:31-Jul-2001 23:57:50 UTC
-Last Updated On:29-Jun-2012 09:23:55 UTC
-Expiration Date:31-Jul-2013 23:57:50 UTC
+Last Updated On:29-Jun-2013 09:26:18 UTC
+Expiration Date:31-Jul-2014 23:57:50 UTC
 Trademark Name:GOOGLE
 Trademark Date:1999-09-17
 Trademark Country:Mexico
 Trademark Number:622722
-Sponsoring Registrar:Markmonitor Inc. (R151-LRMS)
+Sponsoring Registrar:Delaware Corporation (R151-LRMS)
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED
 Status:CLIENT UPDATE PROHIBITED
+Status:RENEWPERIOD
 Registrant ID:mmr-32097
 Registrant Name:DNS Admin
 Registrant Organization:Google Inc.

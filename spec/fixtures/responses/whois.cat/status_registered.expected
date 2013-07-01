@@ -25,8 +25,8 @@
   should: %s CLASS(array)
   should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "dns.gencat.net"
-  should: %s[0].ipv4 == nil
+  should: %s[0].name == "dns2.gencat.cat"
+  should: %s[0].ipv4 == "83.247.132.4"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "dns2.gencat.cat"
-  should: %s[1].ipv4 == "83.247.132.4"
+  should: %s[1].name == "dns.gencat.net"
+  should: %s[1].ipv4 == nil

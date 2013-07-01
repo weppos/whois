@@ -74,7 +74,8 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == "R2341-PRO"
       subject.registrar.name.should         == "MarkMonitor Inc."
-      subject.registrar.organization.should == "MarkMonitor Inc."
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#registrant_contacts" do

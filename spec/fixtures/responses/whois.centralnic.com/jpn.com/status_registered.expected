@@ -10,7 +10,7 @@
 
 
 #status
-  should: %s == ["OK"]
+  should: %s == ["OK", "RENEW PERIOD"]
 
 #available?
   should: %s == false
@@ -29,7 +29,7 @@
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2013-06-29 23:59:59 UTC")
+  should: %s == Time.parse("2015-06-29 23:59:59 UTC")
 
 
 #registrar
