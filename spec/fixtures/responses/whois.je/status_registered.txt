@@ -29,7 +29,6 @@ Domain Information
 Query: google.je
 Status: Active
 Created: 31 Oct 2002 00:00 UTC
-Modified: 05 Oct 2011 14:28 UTC
 Name Servers:
     ns1.google.com
     ns2.google.com
@@ -46,8 +45,4 @@ Registration URL: http://www.markmonitor.com
 Registrant:
 Name: Google Inc.
 Organisation: Google Inc.
-Address:
-	1600 Amphitheatre Parkway
-	Mountain View, CA 94043
-	US
 

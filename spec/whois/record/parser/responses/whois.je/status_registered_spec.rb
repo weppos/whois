@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisJe, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.je"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -44,13 +54,12 @@ describe Whois::Record::Parser::WhoisJe, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2011-10-05 14:28:00 UTC")
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.expires_on.should == nil
     end
   end
   describe "#nameservers" do
