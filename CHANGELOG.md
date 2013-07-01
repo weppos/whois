@@ -4,6 +4,8 @@
 
 - CHANGED: Updated whois.nic.hn parsers to the new response format.
 
+- CHANGED: Updated whois.nic.as parsers to the new response format.
+
 
 
 ## Release 3.2.0

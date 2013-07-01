@@ -1,3 +1,10 @@
+#domain
+  should: %s == "u34jedzcq.as"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
 #status
   should: %s == :available
 
@@ -9,13 +16,17 @@
 
 
 #created_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == nil
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == nil
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == nil
+
+
+#registrar
+  should: %s == nil
 
 
 #nameservers

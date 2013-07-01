@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicAs, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      subject.domain.should == "google.as"
+    end
+  end
+  describe "#domain_id" do
+    it do
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :registered
@@ -38,17 +48,28 @@ describe Whois::Record::Parser::WhoisNicAs, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2000-08-02 00:00:00 UTC")
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.updated_on.should == nil
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2013-08-02 00:00:00 UTC")
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.id.should           == nil
+      subject.registrar.name.should         == "Markmonitor"
+      subject.registrar.organization.should == nil
+      subject.registrar.url.should          == nil
     end
   end
   describe "#nameservers" do
@@ -57,16 +78,16 @@ describe Whois::Record::Parser::WhoisNicAs, "status_registered.expected" do
       subject.nameservers.should have(4).items
       subject.nameservers[0].should be_a(Whois::Record::Nameserver)
       subject.nameservers[0].name.should == "ns1.google.com"
-      subject.nameservers[0].ipv4.should == "216.239.32.10"
+      subject.nameservers[0].ipv4.should == nil
       subject.nameservers[1].should be_a(Whois::Record::Nameserver)
       subject.nameservers[1].name.should == "ns2.google.com"
-      subject.nameservers[1].ipv4.should == "216.239.34.10"
+      subject.nameservers[1].ipv4.should == nil
       subject.nameservers[2].should be_a(Whois::Record::Nameserver)
       subject.nameservers[2].name.should == "ns3.google.com"
-      subject.nameservers[2].ipv4.should == "216.239.36.10"
+      subject.nameservers[2].ipv4.should == nil
       subject.nameservers[3].should be_a(Whois::Record::Nameserver)
       subject.nameservers[3].name.should == "ns4.google.com"
-      subject.nameservers[3].ipv4.should == "216.239.38.10"
+      subject.nameservers[3].ipv4.should == nil
     end
   end
 end

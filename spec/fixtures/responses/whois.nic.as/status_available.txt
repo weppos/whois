@@ -1,12 +1,10 @@
-ASNIC Whois Server V3.1.0
+TERMS OF USE: You are not authorized to access or query our WHOIS database through the use of electronic processes that are high-volume and automated.  THis WHOIS database is provided by as a service to the internet community.
 
-Domain Not Found
+The data is for information purposes only. We do not guarantee its accuracy. By submitting a WHOIS query, you agree to abide by the following terms of use: You agree that you may use this Data only for lawful purposes and that under no circumstances will you use this Data to: (1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via e-mail, telephone, or facsimile; or (2) enable high volume, automated, electronic processes that apply to CoCCA it's members (or CoCCA or member computer systems). The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
-Access to ASNIC's WHOIS information is provided to assist persons in
-determining the contents of a domain name registration record in ASNIC's
-registrar database.  The data in this record is provided by ASNIC for
-informational purposes only, and ASNIC does not guarantee its accuracy.
-Compilation, repackaging, dissemination, or other use of the WHOIS database
-in its entirety, or a substantial portion thereof, is not allowed without
-ASNIC's prior written permission.  By submitting this query, you agree to abide
-by this policy.  All rights reserved.
+Domain Information
+Query: u34jedzcq.as
+Status: Not Registered
+
+
+
