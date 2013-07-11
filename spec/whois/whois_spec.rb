@@ -71,4 +71,13 @@ describe Whois do
     end
   end
 
+  describe ".lookup" do
+    it "it exists" do
+      defined?(Whois.lookup).should eql('method')
+    end
+
+    it "method whois should be an alias for lookup" do
+      Whois.method(:lookup) == Whois.method(:whois)
+    end
+  end
 end

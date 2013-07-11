@@ -31,18 +31,22 @@ module Whois
     # @return [Whois::Record] The record containing the response from the WHOIS server.
     #
     # @example
-    #   Whois.query("google.com")
+    #   Whois.lookup("google.com")
     #   # => #<Whois::Record>
     #
     #   # Equivalent to
     #   Whois::Client.new.lookup("google.com")
     #
-    def query(object)
+    def lookup(object)
       Client.new.lookup(object)
     end
 
-    alias_method :whois, :query
+    alias_method :whois, :lookup
 
+    def query(object)
+      deprecate("Whois.query is now Whois.lookup")
+      lookup(object)
+    end
 
     # Checks whether the object represented by <tt>object</tt> is available.
     #
@@ -67,10 +71,10 @@ module Whois
     #   # => true
     #
     def available?(object)
-      result = query(object).available?
+      result = lookup(object).available?
       if result.nil?
         warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.query('#{object}') instead."
+              "Use Whois.lookup('#{object}') instead."
       end
       result
     end
@@ -98,10 +102,10 @@ module Whois
     #   # => false
     #
     def registered?(object)
-      result = query(object).registered?
+      result = lookup(object).registered?
       if result.nil?
         warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.query('#{object}') instead."
+              "Use Whois.lookup('#{object}') instead."
       end
       result
     end

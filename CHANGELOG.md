@@ -2,6 +2,8 @@
 
 # Master
 
+- CHANGED: Deprecated Whois.query. Replaced with Whois.lookup to match client. Fixed README to use Whois.whois instead of Whois.lookup
+
 - NEW: Added full whois.nic.tr parser.
 
 - CHANGED: Updated whois.nic.hn parsers to the new response format.

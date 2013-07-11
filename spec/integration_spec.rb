@@ -13,7 +13,7 @@ describe Whois do
             with("example.it", "whois.nic.it", 43).
             returns(response)
 
-        record = Whois.query("example.it")
+        record = Whois.lookup("example.it")
 
         record.should be_a(Whois::Record)
         record.should be_available

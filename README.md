@@ -91,7 +91,7 @@ The query method is stateless. For this reason, you can safely re-use the same c
 
 If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the {Whois} module provides an all-in-one method called {Whois.whois}. This is the simplest way to send a WHOIS request.
 
-    Whois.lookup("google.com")
+    Whois.whois("google.com")
     # => #<Whois::Record>
 
 Did I mention you can even use blocks?
