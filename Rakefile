@@ -24,6 +24,7 @@ spec = Gem::Specification.new do |s|
   s.authors           = ["Simone Carletti"]
   s.email             = ["weppos@weppos.net"]
   s.homepage          = "http://www.ruby-whois.org/"
+  s.license           = "MIT"
   s.rubyforge_project = "whois"
 
   s.files             = %w( LICENSE.txt .yardopts ) +
