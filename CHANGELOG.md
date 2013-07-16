@@ -1,5 +1,12 @@
 # Changelog
 
+# Master
+
+- SERVER: Added .CF TLD definition.
+
+- NEW: Added whois.dot.cf parser.
+
+
 ## Release 3.2.1
 
 - NEW: Added full whois.nic.tr parser.
@@ -23,7 +30,7 @@
 
 ## Release 3.2.0
 
-- SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definition.
+- SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definitions.
 
 - NEW: Added #domain_id to CoCCA parsers.
 

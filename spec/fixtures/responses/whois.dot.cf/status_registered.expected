@@ -1,0 +1,34 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-03-28 00:00:00")
+
+#updated_on
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#expires_on
+  should: %s == nil
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(5)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "dns5.nettica.com"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "dns1.nettica.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "dns2.nettica.com"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "dns3.nettica.com"
+  should: %s[4] CLASS(nameserver)
+  should: %s[4].name == "dns4.nettica.com"

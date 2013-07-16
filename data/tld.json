@@ -319,8 +319,7 @@
     "host": "whois.nic.cd"
   },
   ".cf": {
-    "host": null,
-    "adapter": "none"
+    "host": "whois.dot.cf"
   },
   ".cg": {
     "host": null,

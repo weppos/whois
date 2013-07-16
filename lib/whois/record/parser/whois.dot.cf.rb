@@ -14,7 +14,7 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.dot.tk server.
+      # Parser for the whois.dot.cf server.
       #
       # @note This parser is just a stub and provides only a few basic methods
       #   to check for domain availability and get domain status.
@@ -23,7 +23,7 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisDotTk < Base
+      class WhoisDotCf < Base
 
         property_supported :status do
           if available?
@@ -52,7 +52,8 @@ module Whois
 
         property_supported :expires_on do
           if content_for_scanner =~ /Record will expire on:\s(.+)\n/
-            Time.strptime($1, "%m/%d/%Y")
+            value = $1.strip
+            Time.strptime(value, "%m/%d/%Y") if value.present?
           end
         end
 

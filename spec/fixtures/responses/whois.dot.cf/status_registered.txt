@@ -1,0 +1,64 @@
+
+   Domain name:
+      DOT.CF Active
+
+   Owner contact:
+      Organization: Centrafrique TLD B.V.
+      Name:         Mr Joost  Zuurbier 
+      Address:      Keizersgracht 213
+      Zipcode:      1016DT  
+      City:         Amsterdam 
+      State:        Noord-Holland
+      Country:      Netherlands
+      Phone:        20-5315726
+      Fax:          20-5315721
+      E-mail:       info@centrafriquetld.com
+
+   Admin contact:
+      Organization: Centrafrique TLD B.V.
+      Name:         Mr Joost  Zuurbier 
+      Address:      Keizersgracht 213
+      Zipcode:      1016DT  
+      City:         Amsterdam 
+      State:        Noord-Holland
+      Country:      Netherlands
+      Phone:        20-5315726
+      Fax:          20-5315721
+      E-mail:       info@centrafriquetld.com
+
+   Billing contact:
+      Organization: Centrafrique TLD B.V.
+      Name:         Mr Joost  Zuurbier 
+      Address:      Keizersgracht 213
+      Zipcode:      1016DT  
+      City:         Amsterdam 
+      State:        Noord-Holland
+      Country:      Netherlands
+      Phone:        20-5315726
+      Fax:          20-5315721
+      E-mail:       info@centrafriquetld.com
+
+   Tech contact:
+      Organization: Centrafrique TLD B.V.
+      Name:         Mr Joost  Zuurbier 
+      Address:      Keizersgracht 213
+      Zipcode:      1016DT  
+      City:         Amsterdam 
+      State:        Noord-Holland
+      Country:      Netherlands
+      Phone:        20-5315726
+      Fax:          20-5315721
+      E-mail:       info@centrafriquetld.com
+
+   Domain Nameservers:
+      DNS5.NETTICA.COM
+      DNS1.NETTICA.COM
+      DNS2.NETTICA.COM
+      DNS3.NETTICA.COM
+      DNS4.NETTICA.COM
+
+
+   Domain registered: 03/28/2013
+   Record will expire on: 
+   Record maintained by: Dot CF Domain Registry
+
