@@ -39,7 +39,7 @@ describe Whois::Record::Parser::WhoisDotTk, "status_registered.expected" do
   describe "#created_on" do
     it do
       subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2001-12-18 00:00:00 UTC")
+      subject.created_on.should == Time.parse("2001-12-18 00:00:00")
     end
   end
   describe "#updated_on" do
@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisDotTk, "status_registered.expected" do
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2012-03-02 00:00:00 UTC")
+      subject.expires_on.should == Time.parse("2012-03-02 00:00:00")
     end
   end
   describe "#nameservers" do
