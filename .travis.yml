@@ -8,3 +8,6 @@ rvm:
 notifications:
   recipients:
     - weppos@weppos.net
+matrix:
+  allow_failures:
+    - rvm: jruby-19mode
