@@ -1,6 +1,6 @@
 # Changelog
 
-# Master
+## Release 3.2.1
 
 - NEW: Added full whois.nic.tr parser.
 
