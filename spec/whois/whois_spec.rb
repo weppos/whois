@@ -80,12 +80,9 @@ describe Whois do
       Whois.method(:lookup) == Whois.method(:whois)
     end
 
-	it "delegates to a new client" do
-		client = mock()
-		client.expects(:lookup).with("example.com").returns(:result)
-		Whois::Client.any_instance.expects(:new).returns(client)
-
-		expect(described_class.lookup("example.com")).to eql(:result)
-	end
+    it "same output as client" do
+      result = Whois::Client.new.lookup("example.com") 
+      expect(described_class.lookup("example.com")).to eq(result)
+	  end
   end
 end
