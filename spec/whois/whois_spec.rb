@@ -80,7 +80,7 @@ describe Whois do
       Whois.method(:lookup) == Whois.method(:whois)
     end
 
-    it "same output as client" do
+    it "has same output as client" do
       result = Whois::Client.new.lookup("example.com") 
       expect(described_class.lookup("example.com")).to eq(result)
 	  end
