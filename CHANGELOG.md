@@ -6,6 +6,8 @@
 
 - NEW: Added whois.dot.cf parser.
 
+- CHANGED: Deprecated Whois.query. Replaced with Whois.lookup to match client. Fixed README to use Whois.whois instead of Whois.lookup
+
 
 ## Release 3.2.1
 
