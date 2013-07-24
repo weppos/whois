@@ -72,17 +72,12 @@ describe Whois do
   end
 
   describe ".lookup" do
-    it "it exists" do
-      defined?(Whois.lookup).should eql('method')
-    end
+    it "delegates the lookup to a new client" do
+      client = mock()
+      client.expects(:lookup).with("example.com").returns(:result)
+      Whois::Client.expects(:new).returns(client)
 
-    it "method whois should be an alias for lookup" do
-      Whois.method(:lookup) == Whois.method(:whois)
+      expect(described_class.lookup("example.com")).to eq(:result)
     end
-
-    it "has same output as client" do
-      result = Whois::Client.new.lookup("example.com") 
-      expect(described_class.lookup("example.com")).to eq(result)
-	  end
   end
 end
