@@ -1,0 +1,17 @@
+{
+  "131072 133119": {
+    "host": "whois.apnic.net"
+  },
+  "196608 199679": {
+    "host": "whois.ripe.net"
+  },
+  "262144 263679": {
+    "host": "whois.lacnic.net"
+  },
+  "327680 328703": {
+    "host": "whois.afrinic.net"
+  },
+  "393216 394239": {
+    "host": "whois.arin.net"
+  }
+}

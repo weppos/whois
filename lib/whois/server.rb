@@ -296,11 +296,10 @@ module Whois
 
     def self.find_for_asn(string)
       asn = string[/\d+/].to_i
-      if asn <= 65535
-        definitions(:asn16).each do |definition|
-          if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
-            return factory(:asn16, *definition)
-          end
+      asn_type = asn <= 65535 ? :asn16 : :asn32
+      definitions(asn_type).each do |definition|
+        if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
+          return factory(asn_type, *definition)
         end
       end
       raise AllocationUnknown, "Unknown AS number - `#{asn}'."
