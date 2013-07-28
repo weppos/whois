@@ -45,13 +45,13 @@ describe Whois::Server do
       with_definitions do
         d = described_class.definitions
         d.should be_a(Hash)
-        d.keys.should =~ [:tld, :ipv4, :ipv6]
+        d.keys.should =~ [:tld, :ipv4, :ipv6, :asn16]
       end
 
       with_definitions do
         d = described_class.definitions(nil)
         d.should be_a(Hash)
-        d.keys.should =~ [:tld, :ipv4, :ipv6]
+        d.keys.should =~ [:tld, :ipv4, :ipv6, :asn16]
       end
     end
 
@@ -165,6 +165,12 @@ describe Whois::Server do
       s.type.should == :ipv6
     end
 
+    it "recognizes asn16" do
+      s = Whois::Server.guess("AS23456")
+      s.should be_a(Whois::Server::Adapters::Base)
+      s.type.should == :asn16
+    end
+
     it "recognizes email" do
       lambda do
         s = Whois::Server.guess("email@example.org")
@@ -252,6 +258,24 @@ describe Whois::Server do
         with_definitions do
           lambda {
             Whois::Server.guess("f53")
+          }.should raise_error(Whois::AllocationUnknown)
+        end
+      end
+    end
+
+    context "when the input is an asn16" do
+      it "lookups definitions and returns the adapter" do
+        with_definitions do
+          Whois::Server.define(:asn16, "0 65535", "whois.test")
+          Whois::Server.guess("AS65535").should == Whois::Server.factory(:asn16, "0 65535", "whois.test")
+        end
+      end
+
+      it "raises if definition is not found" do
+        with_definitions do
+          Whois::Server.define(:asn16, "0 60000", "whois.test")
+          lambda {
+            Whois::Server.guess("AS65535")
           }.should raise_error(Whois::AllocationUnknown)
         end
       end
