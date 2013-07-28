@@ -47,7 +47,7 @@ module Whois
   class ServerNotSupported < ServerError
   end
 
-  # Raised when unknown AS number of IP network. (\x06)
+  # Raised when unknown AS number or IP network. (\x06)
   #
   # Definition is recognized.
   class AllocationUnknown < ServerError

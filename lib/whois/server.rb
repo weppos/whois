@@ -235,7 +235,12 @@ module Whois
         return server
       end
 
-      # Gave Over
+      # ASN match
+      if matches_asn?(string)
+        return find_for_asn(string)
+      end
+
+      # Game Over
       raise ServerNotFound, "Unable to find a WHOIS server for `#{string}'"
     end
 
@@ -259,6 +264,9 @@ module Whois
       string =~ /@/
     end
 
+    def self.matches_asn?(string)
+      string =~ /^as\d+$/i
+    end
 
     def self.find_for_ip(string)
       begin
@@ -284,6 +292,18 @@ module Whois
         return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
       end
       nil
+    end
+
+    def self.find_for_asn(string)
+      asn = string[/\d+/].to_i
+      if asn <= 65535
+        definitions(:asn16).each do |definition|
+          if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
+            return factory(:asn16, *definition)
+          end
+        end
+      end
+      raise AllocationUnknown, "Unknown AS number - `#{asn}'."
     end
 
 
