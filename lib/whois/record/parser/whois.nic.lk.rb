@@ -59,7 +59,7 @@ module Whois
 
         property_supported :updated_on do
           if content_for_scanner =~ /Record last updated on\.+:(.+)\n/
-            Time.parse($1)
+            Time.parse($1) unless $1 == "null"
           end
         end
 

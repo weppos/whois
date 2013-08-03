@@ -1,0 +1,31 @@
+
+
+This Service is Provided by the LK Domain Registry - Sri Lanka
+	Visit LK Domain at www.nic.lk
+	Contact Us at +94(0)112-4216061
+
+
+Registrant:
+	WELIGAMA HOTEL PROPERTIES LIMITED
+Domain Name:
+	clear.lk
+Cateogry:
+	CAT1
+
+
+Created on...............:2012-11-01
+Expires on...............:2013-11-01
+Record last updated on...:null
+
+Resource Records:
+
+clear.lk.	A	65.39.205.54
+www.clear.lk.	CNAME	five.squarespace.com.
+
+
+Mail Server Records:
+10	aspmx.l.google.com.	
+20	alt1.aspmx.l.google.com.	
+30	alt2.aspmx.l.google.com.	
+
+

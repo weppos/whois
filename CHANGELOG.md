@@ -1,5 +1,6 @@
 # Changelog
 
+
 # Master
 
 - SERVER: Added .CF TLD definition.
@@ -7,6 +8,8 @@
 - NEW: Added whois.dot.cf parser.
 
 - CHANGED: Deprecated Whois.query. Replaced with Whois.lookup to match client. Fixed README to use Whois.whois instead of Whois.lookup
+
+- FIXED: whois.nic.lk crashes when the update date is 'null'.
 
 
 ## Release 3.2.1
