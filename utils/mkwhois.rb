@@ -12,7 +12,7 @@ end
 d = ARGV.shift || raise("Missing domain")
 n = ARGV.shift || raise("Missing file name")
 
-r = Whois.query(d)
+r = Whois.lookup(d)
 
 r.parts.each do |part|
   target = File.expand_path("../../spec/fixtures/responses/#{part.host}/#{n}.txt", __FILE__)
