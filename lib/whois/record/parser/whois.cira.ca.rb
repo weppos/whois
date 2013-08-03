@@ -49,6 +49,8 @@ module Whois
               :registered
             when "to be released"
               :registered
+            when "pending delete"
+              :registered
             when "available"
               :available
             when "unavailable"

@@ -11,6 +11,8 @@
 
 - FIXED: whois.nic.lk crashes when the update date is 'null'.
 
+- FIXED: whois.cira.ca should support 'pending delete' status.
+
 
 ## Release 3.2.1
 
