@@ -28,8 +28,8 @@ module Whois
           def status
             if content =~ /status:\s+(.+?)\n/
               case (s = $1.downcase)
-              when "ok"
-                :registered
+              when "ok"               then :registered
+              when "redemptionperiod" then :redemption
               else
                 Whois.bug!(ParserError, "Unknown status `#{s}'.")
               end
