@@ -9,7 +9,6 @@
 
 require 'whois/record/parser/base'
 
-
 module Whois
   class Record
     class Parser
@@ -50,6 +49,34 @@ module Whois
 
         property_not_supported :expires_on
 
+        # Registrant is given in the following format:
+        #
+        #   Holder of domain name:
+        #   Name
+        #   Address line 1
+        #   Address line 2
+        #   Address line n
+        #   Contractual Language: language
+        #
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /Holder of domain name:\n(.+?)\n(.+?)\nContractual Language:.*\n\n/m
+            Record::Contact.new({ :name => $1, :address => $2, :type => Whois::Record::Contact::TYPE_REGISTRANT })
+          end
+        end
+
+        # Technical contact is given in the following format:
+        #
+        #   Technical contact:
+        #   Name
+        #   Address line 1
+        #   Address line 2
+        #   Address line n
+        #
+        property_supported :technical_contacts do
+          if content_for_scanner =~ /Technical contact:\n(.+?)\n(.+?)\n\n/m
+            Record::Contact.new({ :name => $1, :address => $2, :type => Whois::Record::Contact::TYPE_TECHNICAL })
+          end
+        end
 
         # Nameservers are listed in the following formats:
         #
@@ -77,7 +104,6 @@ module Whois
         end
 
       end
-
     end
   end
 end
