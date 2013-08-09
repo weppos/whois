@@ -1,0 +1,212 @@
+{
+  "248 251": {
+    "host": "whois.ripe.net"
+  },
+  "306 371": {
+    "host": "whois.nic.mil"
+  },
+  "379 508": {
+    "host": "whois.nic.mil"
+  },
+  "1101 1200": {
+    "host": "whois.ripe.net"
+  },
+  "1267 1275": {
+    "host": "whois.ripe.net"
+  },
+  "1877 1901": {
+    "host": "whois.ripe.net"
+  },
+  "2043 2043": {
+    "host": "whois.ripe.net"
+  },
+  "2047 2047": {
+    "host": "whois.ripe.net"
+  },
+  "2057 2136": {
+    "host": "whois.ripe.net"
+  },
+  "2387 2488": {
+    "host": "whois.ripe.net"
+  },
+  "2497 2528": {
+    "host": "whois.nic.ad.jp"
+  },
+  "2585 2614": {
+    "host": "whois.ripe.net"
+  },
+  "2773 2822": {
+    "host": "whois.ripe.net"
+  },
+  "2830 2879": {
+    "host": "whois.ripe.net"
+  },
+  "3154 3353": {
+    "host": "whois.ripe.net"
+  },
+  "4608 4864": {
+    "host": "whois.apnic.net"
+  },
+  "5120 5376": {
+    "host": "whois.nic.mil"
+  },
+  "5377 5631": {
+    "host": "whois.ripe.net"
+  },
+  "5800 6055": {
+    "host": "whois.nic.mil"
+  },
+  "6656 6911": {
+    "host": "whois.ripe.net"
+  },
+  "7467 7722": {
+    "host": "whois.apnic.net"
+  },
+  "8192 9215": {
+    "host": "whois.ripe.net"
+  },
+  "9591 9622": {
+    "host": "whois.nic.ad.jp"
+  },
+  "9628 9647": {
+    "host": "whois.nic.or.kr"
+  },
+  "9683 9712": {
+    "host": "whois.nic.or.kr"
+  },
+  "9753 9784": {
+    "host": "whois.nic.or.kr"
+  },
+  "9840 9871": {
+    "host": "whois.nic.or.kr"
+  },
+  "9943 9982": {
+    "host": "whois.nic.or.kr"
+  },
+  "9990 10021": {
+    "host": "whois.nic.ad.jp"
+  },
+  "9216 10067": {
+    "host": "whois.apnic.net"
+  },
+  "10034 10073": {
+    "host": "whois.nic.or.kr"
+  },
+  "10154 10198": {
+    "host": "whois.nic.or.kr"
+  },
+  "10074 10239": {
+    "host": "whois.apnic.net"
+  },
+  "12288 13311": {
+    "host": "whois.ripe.net"
+  },
+  "15360 16383": {
+    "host": "whois.ripe.net"
+  },
+  "17503 17534": {
+    "host": "whois.nic.ad.jp"
+  },
+  "17567 17616": {
+    "host": "whois.nic.or.kr"
+  },
+  "17673 17704": {
+    "host": "whois.nic.ad.jp"
+  },
+  "17832 17880": {
+    "host": "whois.nic.or.kr"
+  },
+  "17408 18431": {
+    "host": "whois.apnic.net"
+  },
+  "17930 17961": {
+    "host": "whois.nic.ad.jp"
+  },
+  "18067 18098": {
+    "host": "whois.nic.ad.jp"
+  },
+  "18121 18152": {
+    "host": "whois.nic.ad.jp"
+  },
+  "18259 18290": {
+    "host": "whois.nic.ad.jp"
+  },
+  "18259 18290": {
+    "host": "whois.nic.ad.jp"
+  },
+  "20480 21503": {
+    "host": "whois.ripe.net"
+  },
+  "23552 24575": {
+    "host": "whois.apnic.net"
+  },
+  "23552 23601": {
+    "host": "whois.nic.or.kr"
+  },
+  "23612 23643": {
+    "host": "whois.nic.ad.jp"
+  },
+  "24576 25599": {
+    "host": "whois.ripe.net"
+  },
+  "26592 26623": {
+    "host": "whois.lacnic.net"
+  },
+  "27648 28671": {
+    "host": "whois.lacnic.net"
+  },
+  "28672 29695": {
+    "host": "whois.ripe.net"
+  },
+  "30980 30999": {
+    "host": "whois.afrinic.net"
+  },
+  "30720 31743": {
+    "host": "whois.ripe.net"
+  },
+  "34515 34519": {
+    "host": "whois.afrinic.net"
+  },
+  "33792 35839": {
+    "host": "whois.ripe.net"
+  },
+  "36864 37887": {
+    "host": "whois.afrinic.net"
+  },
+  "37888 38911": {
+    "host": "whois.apnic.net"
+  },
+  "38912 39935": {
+    "host": "whois.ripe.net"
+  },
+  "40960 45055": {
+    "host": "whois.ripe.net"
+  },
+  "45056 46079": {
+    "host": "whois.apnic.net"
+  },
+  "47104 52223": {
+    "host": "whois.ripe.net"
+  },
+  "52224 53247": {
+    "host": "whois.lacnic.net"
+  },
+  "55296 56319": {
+    "host": "whois.apnic.net"
+  },
+  "56320 58367": {
+    "host": "whois.ripe.net"
+  },
+  "58368 59391": {
+    "host": "whois.apnic.net"
+  },
+  "59392 61439": {
+    "host": "whois.ripe.net"
+  },
+  "61440 61951": {
+    "host": "whois.lacnic.net"
+  },
+  "1 63487": {
+    "host": "whois.arin.net"
+  }
+}
