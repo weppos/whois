@@ -1,0 +1,106 @@
+% request from 2a02:2c40:100:a000:40a3:5d78:c4df:66a6
+% This is the Ukrainian Whois query server #F.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+domain:           oogle.com.ua
+dom-public:       NO
+registrant:       pl-imena-1
+admin-c:          pl-imena-1
+tech-c:           pl-imena-1
+mnt-by:           ua.imena
+nserver:          ns3.imena.com.ua
+nserver:          ns2.imena.com.ua
+nserver:          ns1.imena.com.ua
+status:           AutoRenewGracePeriod
+created:          2010-07-18 15:15:39+03
+modified:         2013-07-19 04:23:16+03
+expires:          2013-07-18 15:15:38+03
+source:           UAEPP
+
+% Registrar:
+% ==========
+registrar:        ua.imena
+organization:     "Internet Invest" Ltd
+organization-loc: п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+url:              http://www.imena.ua
+city:             Kyiv
+country:          UA
+source:           UAEPP
+
+% Registrant:
+% ===========
+contact-id:       pl-imena-1
+person:           "Internet Invest" Ltd
+person-loc:       п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+organization:     "Internet Invest" Ltd
+organization-loc: п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+e-mail:           hostmaster@imena.ua
+address:          Gaidara st. 50
+address:          KYIV
+postal-code:      01033
+country:          UA
+address-loc:      n/a
+country-loc:      UA
+phone:            +380.442010102
+fax:              +380.442010100
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2002-08-17 00:00:00+03
+modified:         2011-11-22 14:35:00+02
+source:           UAEPP
+
+
+% Administrative Contacts:
+% =======================
+contact-id:       pl-imena-1
+person:           "Internet Invest" Ltd
+person-loc:       п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+organization:     "Internet Invest" Ltd
+organization-loc: п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+e-mail:           hostmaster@imena.ua
+address:          Gaidara st. 50
+address:          KYIV
+postal-code:      01033
+country:          UA
+address-loc:      n/a
+country-loc:      UA
+phone:            +380.442010102
+fax:              +380.442010100
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2002-08-17 00:00:00+03
+modified:         2011-11-22 14:35:00+02
+source:           UAEPP
+
+
+% Technical Contacts:
+% ===================
+contact-id:       pl-imena-1
+person:           "Internet Invest" Ltd
+person-loc:       п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+organization:     "Internet Invest" Ltd
+organization-loc: п╒п·п▓ "п├пҐя┌п╣я─пҐп╣я┌ п├пҐп╡п╣я│я┌"
+e-mail:           hostmaster@imena.ua
+address:          Gaidara st. 50
+address:          KYIV
+postal-code:      01033
+country:          UA
+address-loc:      n/a
+country-loc:      UA
+phone:            +380.442010102
+fax:              +380.442010100
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2002-08-17 00:00:00+03
+modified:         2011-11-22 14:35:00+02
+source:           UAEPP
+
+
+
+% Query time:     4 msec
+

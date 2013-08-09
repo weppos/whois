@@ -32,6 +32,8 @@ module Whois
                 :registered
               when "redemptionperiod"
                 :redemption
+              when "clienthold", "autorenewgraceperiod"
+                :registered
               else
                 Whois.bug!(ParserError, "Unknown status `#{s}'.")
               end
