@@ -1,0 +1,76 @@
+IP: UNABLE TO RESOLVE
+% request from 2a02:2c40:100:a000:e866:6bdf:6b2e:b132
+% This is the Ukrainian Whois query server #F.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+domain:           googlw.com.ua
+dom-public:       NO
+registrant:       frh-qrlkjdef1llb
+admin-c:          frh-clwxo1st7ewr
+tech-c:           frh-hsa3zl8hqqso
+mnt-by:           ua.freehost
+nserver:          ns2.notpaid.com.ua
+nserver:          ns1.notpaid.com.ua
+status:           RedemptionPeriod
+created:          2012-06-19 10:13:30+03
+modified:         2013-07-19 00:01:45+03
+expires:          2013-06-19 10:13:30+03
+source:           UAEPP
+
+% Registrar:
+% ==========
+registrar:        ua.freehost
+organization:     Freehost
+organization-loc: ПП "Фріхост"
+url:              http://www.freehost.ua
+city:             Kyiv
+country:          UA
+source:           UAEPP
+
+% Registrant:
+% ===========
+contact-id:       frh-qrlkjdef1llb
+person:           not published
+organization:     KOT-studiya
+e-mail:           not published
+address:          n/a
+mnt-by:           ua.freehost
+status:           ok
+status:           linked
+created:          2013-04-02 20:59:40+03
+source:           UAEPP
+
+
+% Administrative Contacts:
+% =======================
+contact-id:       frh-clwxo1st7ewr
+person:           not published
+organization:     KOT-studiya
+e-mail:           not published
+address:          n/a
+mnt-by:           ua.freehost
+status:           ok
+status:           linked
+created:          2013-04-02 20:59:41+03
+source:           UAEPP
+
+
+% Technical Contacts:
+% ===================
+contact-id:       frh-hsa3zl8hqqso
+person:           not published
+organization:     KOT-studiya
+e-mail:           not published
+address:          n/a
+mnt-by:           ua.freehost
+status:           ok
+status:           linked
+created:          2013-04-10 16:38:54+03
+source:           UAEPP
+
+
+
+% Query time:     4 msec
+
