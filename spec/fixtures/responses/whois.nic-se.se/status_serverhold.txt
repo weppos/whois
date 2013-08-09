@@ -1,0 +1,38 @@
+# Copyright (c) 1997- .SE (The Internet Infrastructure Foundation).
+# All rights reserved.
+
+# The information obtained through searches, or otherwise, is protected
+# by the Swedish Copyright Act (1960:729) and international conventions.
+# It is also subject to database protection according to the Swedish
+# Copyright Act.
+
+# Any use of this material to target advertising or
+# similar activities is forbidden and will be prosecuted.
+# If any of the information below is transferred to a third
+# party, it must be done in its entirety. This server must
+# not be used as a backend for a search engine.
+
+# Result of search for registered domain names under
+# the .SE top level domain.
+
+# The data is in the UTF-8 character set and the result is
+# printed with eight bits.
+
+state:            deactivated
+domain:           ogogle.se
+holder:           magnus4427-00001
+admin-c:          -
+tech-c:           -
+billing-c:        -
+created:          2008-06-14
+modified:         2012-02-20
+expires:          2013-06-14
+transferred:      2009-06-04
+deactivationdate: 2013-07-15
+date_to_delete:   2013-09-13
+date_to_release:  2013-10-06
+nserver:          ns1.binero.se
+nserver:          ns2.binero.se
+dnssec:           unsigned delegation
+status:           serverHold
+registrar:        Frobbit AB
