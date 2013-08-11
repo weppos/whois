@@ -89,7 +89,7 @@ module Whois
     def lookup(object)
       string = object.to_s.downcase
       Timeout::timeout(timeout) do
-        @server = Server.guess(string)
+        @server = Server.guess_with_fallback(string, settings)
         @server.configure(settings)
         @server.lookup(string)
       end

@@ -245,6 +245,21 @@ module Whois
     end
 
 
+    # Try to guess the right server, or use the Standard adapter if necessary.
+    #
+    # @param  [String] string
+    # @param  [Hash] settings Hash of settings originally sent to the client.
+    # @return [Whois::Server::Adapters::Base]
+    #
+    def self.guess_with_fallback(string, settings)
+      server = guess(string)
+      if settings[:host] && server.host != settings[:host]
+        return Adapters::Standard.new(server.type, server.allocation, server.host, server.options)
+      end
+      server
+    end
+
+
   private
 
     def self.camelize(string)
