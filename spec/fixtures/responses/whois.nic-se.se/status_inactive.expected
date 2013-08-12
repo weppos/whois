@@ -1,5 +1,5 @@
 #status
-  should: %s == :inactive
+  should: %s == ["inactive"]
 
 #available?
   should: %s == false

@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-
+require 'whois/record/scanners/whois.nic-se.se.rb'
 
 module Whois
   class Record
@@ -19,34 +19,29 @@ module Whois
       #
       # Parser for the whois.nic-se.se server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       # @author Simone Carletti <weppos@weppos.net>
       # @author Mikkel Kristensen <mikkel@tdx.dk>
+      # @author Pieter Agten <pieter.agten@gmail.com>
       #
       class WhoisNicSeSe < Base
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisNicSeSe
+
+        property_supported :disclaimer do
+          node("disclaimer")
+        end
 
         property_supported :status do
-          # Two keys available: state and status.
-          if content_for_scanner =~ /status:\s+(.+?)\n/
-            case $1.downcase
-              when "ok" then :registered
-              when "inactive" then :inactive
-              when "serverhold" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
-            end
-          else
+          if available?
             :available
+          else
+            Array.wrap(node("status"))
           end
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /" not found./)
+          !!node("not_found")
         end
 
         property_supported :registered? do
@@ -55,21 +50,15 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /created:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("created") { |value| Time.parse(value) }
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /expires:\s+(.+)\n/
-            Time.parse($1)
-          end
+          node("expires") { |value| Time.parse(value) }
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /modified:\s+(.+)\n/
-            Time.parse($1) unless $1 == '-'
-          end
+          node("modified") { |value| Time.parse(value) unless value == '-'}
         end
 
 
@@ -79,9 +68,11 @@ module Whois
         #   nserver:  ns2.loopia.se 93.188.0.21
         #
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
-            name, ipv4 = line.split(/\s+/)
-            Record::Nameserver.new(:name => name, :ipv4 => ipv4)
+          node("nserver") do |values|
+            values.map do |line|
+              name, ipv4 = line.split(/\s+/)
+              Record::Nameserver.new(:name => name, :ipv4 => ipv4)
+            end
           end
         end
 
