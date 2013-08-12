@@ -17,6 +17,13 @@
 #expires_on
   should: %s raise_error(Whois::AttributeNotSupported)
 
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
 
 #nameservers
   should: %s CLASS(array)
