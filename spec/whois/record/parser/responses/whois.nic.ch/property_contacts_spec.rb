@@ -39,4 +39,9 @@ describe Whois::Record::Parser::WhoisNicCh, "property_contacts.expected" do
       subject.technical_contacts[0].address.should == "xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina"
     end
   end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
 end

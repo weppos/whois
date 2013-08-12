@@ -11,3 +11,6 @@
   should: %s[0] CLASS(contact)
   should: %s[0].name == "xie huijie"
   should: %s[0].address == "xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina"
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)

@@ -78,6 +78,8 @@ module Whois
           end
         end
 
+        property_not_supported :admin_contacts
+
         # Nameservers are listed in the following formats:
         #
         #   ns1.citrin.ch
