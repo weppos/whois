@@ -41,9 +41,37 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_available.expected" do
       subject.created_on.should == nil
     end
   end
+  describe "#updated_on" do
+    it do
+      subject.updated_on.should == nil
+    end
+  end
   describe "#expires_on" do
     it do
       subject.expires_on.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
     end
   end
   describe "#nameservers" do

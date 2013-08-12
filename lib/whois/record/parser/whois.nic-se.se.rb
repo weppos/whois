@@ -62,6 +62,25 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          node("registrar") { |name| Record::Registrar.new(:name => name) unless name == '-' }
+        end
+
+        property_supported :registrant_contacts do
+          node("holder") { |id| Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_REGISTRANT) unless id == '-' }
+        end
+
+        property_supported :admin_contacts do
+          admin_contacts = []
+          node("admin-c") { |id| admin_contacts << Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_ADMINISTRATIVE) unless id == '-' }
+          node("billing-c") { |id| admin_contacts << Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_ADMINISTRATIVE) unless id == '-' }
+          admin_contacts
+        end
+
+        property_supported :technical_contacts do
+          node("tech-c") { |id| Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_TECHNICAL) unless id == '-' }
+        end
+
         # Nameservers are listed in the following formats:
         #
         #   nserver:  ns2.loopia.se

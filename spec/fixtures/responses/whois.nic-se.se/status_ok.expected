@@ -12,13 +12,25 @@
   should: %s CLASS(time)
   should: %s == Time.parse("2008-10-20")
 
-#expires_on
+#updated_on
   should: %s CLASS(time)
   should: %s == Time.parse("2009-08-01")
 
 #expires_on
   should: %s CLASS(time)
   should: %s == Time.parse("2010-10-20")
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].id == "googoo5855-00001"
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.name == "MarkMonitor Inc"
 
 
 #nameservers

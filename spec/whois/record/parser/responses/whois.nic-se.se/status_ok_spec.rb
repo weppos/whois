@@ -42,10 +42,30 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_ok.expected" do
       subject.created_on.should == Time.parse("2008-10-20")
     end
   end
+  describe "#updated_on" do
+    it do
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2009-08-01")
+    end
+  end
   describe "#expires_on" do
     it do
       subject.expires_on.should be_a(Time)
       subject.expires_on.should == Time.parse("2010-10-20")
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].id.should == "googoo5855-00001"
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.name.should == "MarkMonitor Inc"
     end
   end
   describe "#nameservers" do
