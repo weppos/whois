@@ -44,7 +44,7 @@ module Whois
             when "granted"
               :registered
             else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+              Whois.bug!(ParserError, "Unknown status `#{node("status")}'.")
             end
           else
             :available
