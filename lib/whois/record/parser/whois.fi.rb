@@ -43,8 +43,10 @@ module Whois
             case node("status", &:downcase)
             when "granted"
               :registered
+            when "grace period"
+              :registered
             else
-              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+              Whois.bug!(ParserError, "Unknown status `#{node("status")}'.")
             end
           else
             :available
