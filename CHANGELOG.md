@@ -15,6 +15,8 @@
 
 - FIXED: whois.cira.ca should support 'pending delete' status.
 
+- FIXED: whois.fi should support 'Grace Period' status (GH-252). [Thanks @Pietr]
+
 
 ## Release 3.2.1
 
