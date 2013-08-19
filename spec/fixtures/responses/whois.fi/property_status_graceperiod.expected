@@ -1,0 +1,71 @@
+#disclaimer
+  should: %s == "More information is available at https://domain.fi/\nCopyright (c) Finnish Communications Regulatory Authority"
+
+
+#domain
+  should: %s == "oogle.fi"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-06-21")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-06-22")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-06-21")
+
+
+#registrar
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "NURMI"
+  should: %s[0].name          == "-"
+  should: %s[0].organization  == "Minna"
+  should: %s[0].address       == "Huovitie 3"
+  should: %s[0].city          == "HELSINKI"
+  should: %s[0].zip           == "00400"
+  should: %s[0].state         == nil
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == nil
+  should: %s[0].phone         == "+358201599789"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+  should: %s[0].created_on    == nil
+  should: %s[0].updated_on    == nil
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#technical_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "a.ns.netim.net"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "b.ns.netim.net"
