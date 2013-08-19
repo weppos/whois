@@ -81,7 +81,7 @@ describe Whois::Record::Parser::WhoisFi, "status_graceperiod.expected" do
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       subject.registrant_contacts[0].id.should            == "NURMI"
-      subject.registrant_contacts[0].name.should          == nil
+      subject.registrant_contacts[0].name.should          == "-"
       subject.registrant_contacts[0].organization.should  == "Minna"
       subject.registrant_contacts[0].address.should       == "Huovitie 3"
       subject.registrant_contacts[0].city.should          == "HELSINKI"
