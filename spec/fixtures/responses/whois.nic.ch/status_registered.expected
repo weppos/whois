@@ -25,6 +25,8 @@
   should: %s[0].name == "Google Inc."
   should: %s[0].address == "Administrator Domain\nAmphitheatre Parkway 1600\nUS-94043 Mountain View, CA\nUnited States"
 
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
   should: %s CLASS(array)

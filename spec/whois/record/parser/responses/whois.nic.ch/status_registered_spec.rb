@@ -60,6 +60,11 @@ describe Whois::Record::Parser::WhoisNicCh, "status_registered.expected" do
       subject.registrant_contacts[0].address.should == "Administrator Domain\nAmphitheatre Parkway 1600\nUS-94043 Mountain View, CA\nUnited States"
     end
   end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#technical_contacts" do
     it do
       subject.technical_contacts.should be_a(Array)
