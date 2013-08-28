@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_serverhold.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      subject.status.should == ["serverHold"]
     end
   end
   describe "#available?" do
@@ -34,6 +34,48 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_serverhold.expected" do
   describe "#registered?" do
     it do
       subject.registered?.should == true
+    end
+  end
+  describe "#created_on" do
+    it do
+      subject.created_on.should be_a(Time)
+      subject.created_on.should == Time.parse("2008-06-14")
+    end
+  end
+  describe "#updated_on" do
+    it do
+      subject.updated_on.should be_a(Time)
+      subject.updated_on.should == Time.parse("2012-02-20")
+    end
+  end
+  describe "#expires_on" do
+    it do
+      subject.expires_on.should be_a(Time)
+      subject.expires_on.should == Time.parse("2013-06-14")
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should have(1).items
+      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
+      subject.registrant_contacts[0].id.should == "magnus4427-00001"
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.name.should == "Frobbit AB"
+    end
+  end
+  describe "#nameservers" do
+    it do
+      subject.nameservers.should be_a(Array)
+      subject.nameservers.should have(2).items
+      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[0].name.should == "ns1.binero.se"
+      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
+      subject.nameservers[1].name.should == "ns2.binero.se"
     end
   end
 end

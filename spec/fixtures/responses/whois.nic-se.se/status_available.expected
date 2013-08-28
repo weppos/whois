@@ -11,10 +11,26 @@
 #created_on
   should: %s == nil
 
-#created_on
+#updated_on
   should: %s == nil
 
 #expires_on
+  should: %s == nil
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#registrar
   should: %s == nil
 
 

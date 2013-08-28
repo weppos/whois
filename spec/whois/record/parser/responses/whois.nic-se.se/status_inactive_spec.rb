@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_inactive.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :inactive
+      subject.status.should == ["inactive"]
     end
   end
   describe "#available?" do
@@ -34,6 +34,45 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_inactive.expected" do
   describe "#registered?" do
     it do
       subject.registered?.should == true
+    end
+  end
+  describe "#created_on" do
+    it do
+      subject.created_on.should == Time.parse("2000-11-01")
+    end
+  end
+  describe "#updated_on" do
+    it do
+      subject.updated_on.should == nil
+    end
+  end
+  describe "#expires_on" do
+    it do
+      subject.expires_on.should == Time.parse("2006-04-18")
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should be_a(Whois::Record::Registrar)
+      subject.registrar.name.should == "CoreRegistry"
     end
   end
 end
