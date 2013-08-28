@@ -18,6 +18,24 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].name == "Google Inc."
+  should: %s[0].address == "Administrator Domain\nAmphitheatre Parkway 1600\nUS-94043 Mountain View, CA\nUnited States"
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].name == "Google Inc."
+  should: %s[0].address == "DNS Admin\n2400 E. Bayshore Pkwy\nUS-94043 Mountain View\nUnited States"
+
+
 #nameservers
   should: %s CLASS(array)
   should: %s SIZE(4)

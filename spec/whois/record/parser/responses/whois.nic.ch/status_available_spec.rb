@@ -51,6 +51,23 @@ describe Whois::Record::Parser::WhoisNicCh, "status_available.expected" do
       lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
     end
   end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
+    end
+  end
   describe "#nameservers" do
     it do
       subject.nameservers.should be_a(Array)

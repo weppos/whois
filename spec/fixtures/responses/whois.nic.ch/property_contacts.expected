@@ -1,0 +1,16 @@
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].name == "EISD John"
+  should: %s[0].address == "Room 208, Furong Road, Changsha City\nCN-41000 Changsha\nChina"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].name == "xie huijie"
+  should: %s[0].address == "xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina"
+
+#admin_contacts
+  should: %s raise_error(Whois::AttributeNotSupported)
