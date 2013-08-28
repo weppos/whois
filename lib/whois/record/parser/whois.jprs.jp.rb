@@ -41,7 +41,7 @@ module Whois
             end
           elsif content_for_scanner =~ /\[State\]\s+(.+)\n/
             case $1.split(" ").first.downcase
-            when "connected"
+            when "connected", "registered"
               :registered
             when "deleted"
               :suspended
