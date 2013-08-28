@@ -9,6 +9,8 @@
 
 - NEW: Added support for ASN queries (GH-243). [Thanks @linrock]
 
+- FIXED: Added contact support for whois.nic.ch (GH-246). [Thanks @Pietr]
+
 - CHANGED: Deprecated Whois.query. Replaced with Whois.lookup to match client. Fixed README to use Whois.whois instead of Whois.lookup
 
 - FIXED: whois.nic.lk crashes when the update date is 'null'.
@@ -16,6 +18,10 @@
 - FIXED: whois.cira.ca should support 'pending delete' status.
 
 - FIXED: whois.fi should support 'Grace Period' status (GH-252). [Thanks @Pietr]
+
+- FIXED: additional status for whois.ua (GH-244). [Thanks @Pietr]
+
+- FIXED: whois.jprs.jp should support 'Registered' status (GH-253). [Thanks @Pietr]
 
 
 ## Release 3.2.1
