@@ -53,8 +53,8 @@ describe Whois::Server::Adapters::Verisign do
       end
 
       it "ignores referral if options[:referral] is false" do
-        referral = File.read(fixture("referrals/crsnic.com_referral_not_defined.txt"))
-        # server.options[:referral] = false
+        referral = File.read(fixture("referrals/crsnic.com.txt"))
+        server.options[:referral] = false
         server.query_handler.expects(:call).with("=example.test", "whois.test", 43).returns(referral)
         server.query_handler.expects(:call).never
 
