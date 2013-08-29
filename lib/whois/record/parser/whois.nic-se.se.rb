@@ -14,9 +14,6 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.nic-se.se
-      #
       # Parser for the whois.nic-se.se server.
       #
       # @author Simone Carletti <weppos@weppos.net>
@@ -28,9 +25,11 @@ module Whois
 
         self.scanner = Scanners::WhoisNicSeSe
 
+
         property_supported :disclaimer do
           node("disclaimer")
         end
+
 
         property_supported :status do
           if available?
@@ -58,13 +57,14 @@ module Whois
         end
 
         property_supported :updated_on do
-          node("modified") { |value| Time.parse(value) unless value == '-'}
+          node("modified") { |value| Time.parse(value) unless value == '-' }
         end
 
 
         property_supported :registrar do
           node("registrar") { |name| Record::Registrar.new(:name => name) unless name == '-' }
         end
+
 
         property_supported :registrant_contacts do
           node("holder") { |id| Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_REGISTRANT) unless id == '-' }
@@ -80,6 +80,7 @@ module Whois
         property_supported :technical_contacts do
           node("tech-c") { |id| Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_TECHNICAL) unless id == '-' }
         end
+
 
         # Nameservers are listed in the following formats:
         #

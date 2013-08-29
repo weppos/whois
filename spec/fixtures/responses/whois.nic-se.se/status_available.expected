@@ -18,6 +18,10 @@
   should: %s == nil
 
 
+#registrar
+  should: %s == nil
+
+
 #registrant_contacts
   should: %s CLASS(array)
   should: %s == []
@@ -29,9 +33,6 @@
 #technical_contacts
   should: %s CLASS(array)
   should: %s == []
-
-#registrar
-  should: %s == nil
 
 
 #nameservers
