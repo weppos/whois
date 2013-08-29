@@ -1,0 +1,35 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s == Time.parse("2000-11-01")
+
+#updated_on
+  should: %s == nil
+
+#expires_on
+  should: %s == Time.parse("2006-04-18")
+
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s == []
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.name == "CoreRegistry"

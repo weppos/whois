@@ -54,7 +54,7 @@ module Whois
         # Scan a key/value pair and stores the result in the current target.
         # target is the global @ast if no '_section' is set, else '_section' is used.
         tokenizer :scan_keyvalue do
-          if @input.scan(/(.+?):(.*?)\n/)
+          if @input.scan(/(.+?):(.*?)(\n|\z)/)
             key, value = @input[1].strip, @input[2].strip
             target = @tmp['_section'] ? (@ast[@tmp['_section']] ||= {}) : @ast
 

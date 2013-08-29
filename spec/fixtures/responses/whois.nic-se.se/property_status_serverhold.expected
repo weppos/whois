@@ -6,4 +6,3 @@
 
 #registered?
   should: %s == true
-

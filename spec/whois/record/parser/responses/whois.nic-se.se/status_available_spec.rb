@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      subject.disclaimer.should == "Copyright (c) 1997- .SE (The Internet Infrastructure Foundation). All rights reserved. The information obtained through searches, or otherwise, is protected by the Swedish Copyright Act (1960:729) and international conventions. It is also subject to database protection according to the Swedish Copyright Act. Any use of this material to target advertising or similar activities is forbidden and will be prosecuted. If any of the information below is transferred to a third party, it must be done in its entirety. This server must not be used as a backend for a search engine."
+    end
+  end
   describe "#status" do
     it do
       subject.status.should == :available
@@ -41,9 +46,37 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_available.expected" do
       subject.created_on.should == nil
     end
   end
+  describe "#updated_on" do
+    it do
+      subject.updated_on.should == nil
+    end
+  end
   describe "#expires_on" do
     it do
       subject.expires_on.should == nil
+    end
+  end
+  describe "#registrar" do
+    it do
+      subject.registrar.should == nil
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      subject.registrant_contacts.should be_a(Array)
+      subject.registrant_contacts.should == []
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
