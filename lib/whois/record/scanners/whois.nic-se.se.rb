@@ -20,7 +20,7 @@ module Whois
             :skip_empty_line,
             :scan_available,
             :scan_disclaimer,
-            :scan_pair,
+            :scan_keyvalue,
         ]
 
 
@@ -38,26 +38,6 @@ module Whois
             @ast["field:disclaimer"] = lines.join(" ")
           end
         end
-
-        tokenizer :scan_pair do
-          parse_pair(@ast)
-        end
-
-      private
-
-        def parse_pair(store)
-          if @input.scan(/(.+?):(.*)(\n|\z)/)
-            key, value = @input[1].strip, @input[2].strip
-            if store[key].nil?
-              store[key] = value
-            else
-              store[key].is_a?(Array) || store[key] = [store[key]]
-              store[key] << value
-            end
-            store
-          end
-        end
-
 
       end
 
