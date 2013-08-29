@@ -18,14 +18,14 @@ module Whois
 
         self.tokenizers += [
             :skip_empty_line,
-            :scan_not_found,
+            :scan_available,
             :scan_disclaimer,
             :scan_pair,
         ]
 
 
-        tokenizer :scan_not_found do
-          @ast["not_found"] = true if @input.skip(/".*" not found\.\n/)
+        tokenizer :scan_available do
+          @ast["status:available"] = true if @input.skip(/".*" not found\.\n/)
         end
 
         tokenizer :scan_disclaimer do
@@ -35,7 +35,7 @@ module Whois
               lines << @input[1].strip unless @input[1].strip == ""
             end
             @input.skip_until(/# printed with .+ bits\.\n/m)
-            @ast["disclaimer"] = lines.join(" ")
+            @ast["field:disclaimer"] = lines.join(" ")
           end
         end
 

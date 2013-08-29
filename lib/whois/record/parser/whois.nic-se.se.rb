@@ -27,7 +27,7 @@ module Whois
 
 
         property_supported :disclaimer do
-          node("disclaimer")
+          node("field:disclaimer")
         end
 
 
@@ -40,7 +40,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!node("not_found")
+          !!node("status:available")
         end
 
         property_supported :registered? do
