@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_status_inactive.expected
 
   describe "#status" do
     it do
-      subject.status.should == ["inactive"]
+      subject.status.should == :registered
     end
   end
   describe "#available?" do

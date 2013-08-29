@@ -35,7 +35,7 @@ module Whois
           if available?
             :available
           else
-            Array.wrap(node("status"))
+            :registered
           end
         end
 

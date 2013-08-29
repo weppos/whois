@@ -1,5 +1,5 @@
 #status
-  should: %s == ["serverHold"]
+  should: %s == :registered
 
 #available?
   should: %s == false

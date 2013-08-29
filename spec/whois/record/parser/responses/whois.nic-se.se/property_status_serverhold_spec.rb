@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_status_serverhold.expect
 
   describe "#status" do
     it do
-      subject.status.should == ["serverHold"]
+      subject.status.should == :registered
     end
   end
   describe "#available?" do
