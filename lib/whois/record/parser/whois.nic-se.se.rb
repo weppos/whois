@@ -67,18 +67,15 @@ module Whois
 
 
         property_supported :registrant_contacts do
-          node("holder") { |id| Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_REGISTRANT) unless id == '-' }
+          build_contact(Whois::Record::Contact::TYPE_REGISTRANT, node("holder"))
         end
 
         property_supported :admin_contacts do
-          admin_contacts = []
-          node("admin-c") { |id| admin_contacts << Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_ADMINISTRATIVE) unless id == '-' }
-          node("billing-c") { |id| admin_contacts << Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_ADMINISTRATIVE) unless id == '-' }
-          admin_contacts
+          build_contact(Whois::Record::Contact::TYPE_ADMINISTRATIVE, node("admin-c"))
         end
 
         property_supported :technical_contacts do
-          node("tech-c") { |id| Record::Contact.new(:id => id, :type => Whois::Record::Contact::TYPE_TECHNICAL) unless id == '-' }
+          build_contact(Whois::Record::Contact::TYPE_TECHNICAL, node("tech-c"))
         end
 
 
@@ -94,6 +91,18 @@ module Whois
               Record::Nameserver.new(:name => name, :ipv4 => ipv4)
             end
           end
+        end
+
+
+        private
+
+        def build_contact(type, id)
+          return if id.nil? || id == "-"
+
+          Record::Contact.new(
+              type: type,
+              id: id
+          )
         end
 
       end

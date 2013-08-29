@@ -65,7 +65,30 @@ describe Whois::Record::Parser::WhoisNicSeSe, "status_registered.expected" do
       subject.registrant_contacts.should be_a(Array)
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].id.should == "googoo5855-00001"
+      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
+      subject.registrant_contacts[0].id.should           == "googoo5855-00001"
+      subject.registrant_contacts[0].name.should         == nil
+      subject.registrant_contacts[0].organization.should == nil
+      subject.registrant_contacts[0].address.should      == nil
+      subject.registrant_contacts[0].city.should         == nil
+      subject.registrant_contacts[0].zip.should          == nil
+      subject.registrant_contacts[0].state.should        == nil
+      subject.registrant_contacts[0].country_code.should == nil
+      subject.registrant_contacts[0].phone.should        == nil
+      subject.registrant_contacts[0].fax.should          == nil
+      subject.registrant_contacts[0].email.should        == nil
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      subject.admin_contacts.should be_a(Array)
+      subject.admin_contacts.should == []
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      subject.technical_contacts.should be_a(Array)
+      subject.technical_contacts.should == []
     end
   end
   describe "#nameservers" do
