@@ -40,7 +40,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
       subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "Go Daddy"
+      subject.registrar.name.should         == "GoDaddy.com, LLC"
       subject.registrar.url.should          == "http://www.godaddy.com/"
     end
   end
@@ -50,8 +50,8 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       subject.registrant_contacts.should have(1).items
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == "Go Daddy"
-      subject.registrant_contacts[0].organization.should == ""
+      subject.registrant_contacts[0].name.should         == "Go Daddy Go Daddy"
+      subject.registrant_contacts[0].organization.should == "Go Daddy"
       subject.registrant_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
       subject.registrant_contacts[0].city.should         == "Scottsdale"
       subject.registrant_contacts[0].zip.should          == "85260"
@@ -68,7 +68,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].name.should         == "Go Daddy, Go Daddy"
+      subject.admin_contacts[0].name.should         == "Go Daddy Go Daddy"
       subject.admin_contacts[0].organization.should == "Go Daddy"
       subject.admin_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
       subject.admin_contacts[0].city.should         == "Scottsdale"
@@ -86,7 +86,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == "Go Daddy, Go Daddy"
+      subject.technical_contacts[0].name.should         == "Go Daddy Go Daddy"
       subject.technical_contacts[0].organization.should == "Go Daddy"
       subject.technical_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
       subject.technical_contacts[0].city.should         == "Scottsdale"
