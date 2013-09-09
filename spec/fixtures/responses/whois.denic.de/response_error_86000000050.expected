@@ -1,0 +1,14 @@
+#status
+  should: %s == :invalid
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == false
+
+#response_throttled?
+  should: %s == false
+
+#response_error?
+  should: %s == true
