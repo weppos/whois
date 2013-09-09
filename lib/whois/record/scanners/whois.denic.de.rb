@@ -34,8 +34,9 @@ module Whois
           end
         end
 
+        # Any error except 'response throttled'
         tokenizer :scan_response_error do
-          if @input.match?(/^% Error: 55000000010/)
+          if @input.match?(/^% Error: (?!55000000002)/) 
             @ast["response:error"] = true
             @input.skip(/^.+\n/)
           end
