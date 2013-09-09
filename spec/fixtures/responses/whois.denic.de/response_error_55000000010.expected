@@ -6,3 +6,9 @@
 
 #registered?
   should: %s == false
+
+#response_throttled?
+  should: %s == false
+
+#response_error?
+  should: %s == true

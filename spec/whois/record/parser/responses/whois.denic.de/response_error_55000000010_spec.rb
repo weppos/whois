@@ -36,4 +36,14 @@ describe Whois::Record::Parser::WhoisDenicDe, "response_error_55000000010.expect
       subject.registered?.should == false
     end
   end
+  describe "#response_throttled?" do
+    it do
+      subject.response_throttled?.should == false
+    end
+  end
+  describe "#response_error?" do
+    it do
+      subject.response_error?.should == true
+    end
+  end
 end
