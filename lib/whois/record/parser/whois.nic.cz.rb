@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base_whoisd'
+require 'whois/record/scanners/whois.nic.cz.rb'
 
 
 module Whois
@@ -20,12 +21,20 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisNicCz < BaseWhoisd
+
+        self.scanner = Scanners::WhoisNicCz
+
         self.status_mapping = {
           "paid and in zone" => :registered,
           "update prohibited" => :registered,
           "expired" => :expired,
           "to be deleted" => :expired,
         }
+
+        def response_throttled?
+          !!node("response:throttled")
+        end
+
       end
 
     end
