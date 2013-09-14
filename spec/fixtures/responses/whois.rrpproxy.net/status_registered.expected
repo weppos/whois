@@ -1,0 +1,93 @@
+#disclaimer
+  should: %s == "This data is provided by Hosting Concepts for information purposes, and to assist persons obtaining information about or related to domain name registration records. Hosting Concepts does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to this WHOIS server. These terms may be changed without prior notice. By submitting this query, you agree to abide by this policy."
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#domain
+  should: %s == "OPENPROVIDER.COM"
+
+#status
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+#created_on
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Hosting Concepts"
+  should: %s.url          == "-"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "P-AEV84"
+  should: %s[0].name          == "Arno"
+  should: %s[0].organization  == "Openprovider"
+  should: %s[0].address       == "Willem Buytewechstraat 40"
+  should: %s[0].city          == "Rotterdam"
+  should: %s[0].zip           == "3024 BN"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "NL"
+  should: %s[0].phone         == "+31 104482299"
+  should: %s[0].fax           == "+31 102440250"
+  should: %s[0].email         == "domreg@openprovider.nl"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  should: %s[0].id            == "P-AEV84"
+  should: %s[0].name          == "Arno"
+  should: %s[0].organization  == "Openprovider"
+  should: %s[0].address       == "Willem Buytewechstraat 40"
+  should: %s[0].city          == "Rotterdam"
+  should: %s[0].zip           == "3024 BN"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "NL"
+  should: %s[0].phone         == "+31 104482299"
+  should: %s[0].fax           == "+31 102440250"
+  should: %s[0].email         == "domreg@openprovider.nl"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "P-AEV84"
+  should: %s[0].name          == "Arno"
+  should: %s[0].organization  == "Openprovider"
+  should: %s[0].address       == "Willem Buytewechstraat 40"
+  should: %s[0].city          == "Rotterdam"
+  should: %s[0].zip           == "3024 BN"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "NL"
+  should: %s[0].phone         == "+31 104482299"
+  should: %s[0].fax           == "+31 102440250"
+  should: %s[0].email         == "domreg@openprovider.nl"
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(3)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.openprovider.nl"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.openprovider.be"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.openprovider.eu"
