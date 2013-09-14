@@ -5,10 +5,7 @@
   should: %s raise_error(Whois::AttributeNotSupported)
 
 #domain
-  should: %s == "OPENPROVIDER.COM"
-
-#status
-  should: %s raise_error(Whois::AttributeNotSupported)
+  should: %s == "openprovider.com"
 
 #available?
   should: %s == false
@@ -16,20 +13,12 @@
 #registered?
   should: %s == true
 
-#created_on
-  should: %s raise_error(Whois::AttributeNotSupported)
-
-#updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
-
-#expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
-
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == nil
-  should: %s.name         == "Hosting Concepts"
-  should: %s.url          == "-"
+  should: %s.id                 == nil
+  should: %s.name               == nil
+  should: %s.organization       == "Hosting Concepts"
+  should: %s.url                == "-"
 
 #registrant_contacts
   should: %s CLASS(array)
@@ -37,7 +26,7 @@
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   should: %s[0].id            == "P-AEV84"
-  should: %s[0].name          == "Arno"
+  should: %s[0].name          == "Arno Vis"
   should: %s[0].organization  == "Openprovider"
   should: %s[0].address       == "Willem Buytewechstraat 40"
   should: %s[0].city          == "Rotterdam"
@@ -54,7 +43,7 @@
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   should: %s[0].id            == "P-AEV84"
-  should: %s[0].name          == "Arno"
+  should: %s[0].name          == "Arno Vis"
   should: %s[0].organization  == "Openprovider"
   should: %s[0].address       == "Willem Buytewechstraat 40"
   should: %s[0].city          == "Rotterdam"
@@ -71,7 +60,7 @@
   should: %s[0] CLASS(contact)
   should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   should: %s[0].id            == "P-AEV84"
-  should: %s[0].name          == "Arno"
+  should: %s[0].name          == "Arno Vis"
   should: %s[0].organization  == "Openprovider"
   should: %s[0].address       == "Willem Buytewechstraat 40"
   should: %s[0].city          == "Rotterdam"

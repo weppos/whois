@@ -33,12 +33,7 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
   end
   describe "#domain" do
     it do
-      subject.domain.should == "OPENPROVIDER.COM"
-    end
-  end
-  describe "#status" do
-    it do
-      lambda { subject.status }.should raise_error(Whois::AttributeNotSupported)
+      subject.domain.should == "openprovider.com"
     end
   end
   describe "#available?" do
@@ -51,27 +46,13 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       subject.registered?.should == true
     end
   end
-  describe "#created_on" do
-    it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
-    end
-  end
-  describe "#updated_on" do
-    it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
-    end
-  end
-  describe "#expires_on" do
-    it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
-    end
-  end
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "Hosting Concepts"
-      subject.registrar.url.should          == "-"
+      subject.registrar.id.should                 == nil
+      subject.registrar.name.should               == nil
+      subject.registrar.organization.should       == "Hosting Concepts"
+      subject.registrar.url.should                == "-"
     end
   end
   describe "#registrant_contacts" do
@@ -81,7 +62,7 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
       subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
       subject.registrant_contacts[0].id.should            == "P-AEV84"
-      subject.registrant_contacts[0].name.should          == "Arno"
+      subject.registrant_contacts[0].name.should          == "Arno Vis"
       subject.registrant_contacts[0].organization.should  == "Openprovider"
       subject.registrant_contacts[0].address.should       == "Willem Buytewechstraat 40"
       subject.registrant_contacts[0].city.should          == "Rotterdam"
@@ -100,7 +81,7 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
       subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
       subject.admin_contacts[0].id.should            == "P-AEV84"
-      subject.admin_contacts[0].name.should          == "Arno"
+      subject.admin_contacts[0].name.should          == "Arno Vis"
       subject.admin_contacts[0].organization.should  == "Openprovider"
       subject.admin_contacts[0].address.should       == "Willem Buytewechstraat 40"
       subject.admin_contacts[0].city.should          == "Rotterdam"
@@ -119,7 +100,7 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
       subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
       subject.technical_contacts[0].id.should            == "P-AEV84"
-      subject.technical_contacts[0].name.should          == "Arno"
+      subject.technical_contacts[0].name.should          == "Arno Vis"
       subject.technical_contacts[0].organization.should  == "Openprovider"
       subject.technical_contacts[0].address.should       == "Willem Buytewechstraat 40"
       subject.technical_contacts[0].city.should          == "Rotterdam"

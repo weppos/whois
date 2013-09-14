@@ -28,17 +28,12 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      subject.domain_id.should == nil
+      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
     it do
       subject.domain.should == nil
-    end
-  end
-  describe "#status" do
-    it do
-      subject.status.should == []
     end
   end
   describe "#available?" do
@@ -49,21 +44,6 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_available.expected" do
   describe "#registered?" do
     it do
       subject.registered?.should == false
-    end
-  end
-  describe "#created_on" do
-    it do
-      subject.created_on.should == nil
-    end
-  end
-  describe "#updated_on" do
-    it do
-      subject.updated_on.should == nil
-    end
-  end
-  describe "#expires_on" do
-    it do
-      subject.expires_on.should == nil
     end
   end
   describe "#registrar" do
