@@ -15,10 +15,9 @@
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id                 == nil
-  should: %s.name               == nil
-  should: %s.organization       == "Hosting Concepts"
-  should: %s.url                == "-"
+  should: %s.name         == "Key-Systems"
+  should: %s.organization == "Key-Systems GmbH"
+  should: %s.url          == "http://www.domaindiscount24.com/"
 
 #registrant_contacts
   should: %s CLASS(array)

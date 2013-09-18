@@ -14,7 +14,10 @@
   should: %s == false
 
 #registrar
-  should: %s == nil
+  should: %s CLASS(registrar)
+  should: %s.name         == "Key-Systems"
+  should: %s.organization == "Key-Systems GmbH"
+  should: %s.url          == "http://www.domaindiscount24.com/"
 
 #registrant_contacts
   should: %s CLASS(array)

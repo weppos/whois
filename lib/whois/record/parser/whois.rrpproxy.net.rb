@@ -56,14 +56,11 @@ module Whois
         end
 
         property_supported :registrar do
-          node('RSP') do
-            Record::Registrar.new(
-                :id           => nil,
-                :name         => nil,
-                :organization => node('RSP'),
-                :url          => node('URL')
-            )
-          end
+          Record::Registrar.new(
+              :name => 'Key-Systems',
+              :organization => 'Key-Systems GmbH',
+              :url  => 'http://www.domaindiscount24.com/'
+          )
         end
 
         property_supported :registrant_contacts do

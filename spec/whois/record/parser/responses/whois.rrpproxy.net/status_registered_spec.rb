@@ -49,10 +49,9 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
   describe "#registrar" do
     it do
       subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should                 == nil
-      subject.registrar.name.should               == nil
-      subject.registrar.organization.should       == "Hosting Concepts"
-      subject.registrar.url.should                == "-"
+      subject.registrar.name.should         == "Key-Systems"
+      subject.registrar.organization.should == "Key-Systems GmbH"
+      subject.registrar.url.should          == "http://www.domaindiscount24.com/"
     end
   end
   describe "#registrant_contacts" do
