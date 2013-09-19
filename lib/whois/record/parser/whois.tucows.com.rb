@@ -108,6 +108,10 @@ module Whois
           end
         end
 
+        def response_throttled?
+          !!(content_for_scanner =~ /Maximum Daily connection limit reached./)
+        end
+
 
         private
 
