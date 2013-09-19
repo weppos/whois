@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/scanners/whois.centralnic.com'
+require 'whois/record/scanners/whois.tucows.com'
 
 
 module Whois
@@ -25,6 +25,14 @@ module Whois
       # @since  3.2.1
       #
       class WhoisTucowsCom < Base
+        include Scanners::Scannable
+
+        self.scanner = Scanners::WhoisTucowsCom
+
+
+        property_supported :disclaimer do
+          node("field:disclaimer")
+        end
 
         property_supported :domain do
           if content_for_scanner =~ /Domain name:\s(.+)\n/
