@@ -1,0 +1,54 @@
+The data in Ascio Technologies' WHOIS database is provided
+by Ascio Technologies for information purposes only. By submitting
+a WHOIS query, you agree that you will use this data only for lawful
+purpose. In addition, you agree not to:
+(a) use the data to allow, enable, or otherwise support any marketing
+activities, regardless of the medium used. Such media include but are
+not limited to e-mail, telephone, facsimile, postal mail, SMS, and
+wireless alerts; or
+(b) use the data to enable high volume, automated, electronic processes
+that sendqueries or data to the systems of any Registry Operator or
+ICANN-Accredited registrar, except as reasonably necessary to register
+domain names or modify existing registrations.
+(c) sell or redistribute the data except insofar as it has been
+incorporated into a value-added product or service that does not permit
+the extraction of a substantial portion of the bulk data from the value-added
+product or service for use by other parties.
+Ascio Technologies reserves the right to modify these terms at any time.
+Ascio Technologies cannot guarantee the accuracy of the data provided.
+By accessing and using Ascio Technologies WHOIS service, you agree to these terms.
+
+NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT
+INDICATIVE OF THE AVAILABILITY OF A DOMAIN NAME.
+Registrant:
+  Siemens AG (SIEMENSA240)
+  Wittelsbacherplatz 2
+
+  Muenchen, Bayern, 80333
+  DE
+
+  Domain name: siemens.com
+
+Administrative and Technical contact:
+  Rinske, Gerald (GR43003)
+  Siemens AG
+  Otto-Hahn-Ring 6
+
+  Munich, Bavaria, 81739
+  DE
+  hostmaster@siemens.com
+  +49.8963647713 Fax: +49.8963625949
+
+Record created:           2007-02-05 09:46:11
+Record last updated:      2013-06-20 13:00:49
+Record expires:           2013-09-28 00:00:00
+
+Domain servers in listed order:
+  ns-ext.siemens.de (NSEXTSIE84913)
+  ns-ext.siemens.com (NSEXTSIE08148)
+  ns-ext.siemens.net (NSEXTSIE38515)
+  ns-ext.siemens.com.sg (NSEXTSIE19504)
+
+Registrar Name: Ascio Technologies, Inc
+Registrar WHOIS: whois.ascio.com
+Registrar Homepage: http://www.ascio.com

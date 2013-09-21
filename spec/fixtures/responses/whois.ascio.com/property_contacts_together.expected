@@ -1,0 +1,103 @@
+#disclaimer
+  should: %s == "The data in Ascio Technologies' WHOIS database is provided by Ascio Technologies for information purposes only. By submitting a WHOIS query, you agree that you will use this data only for lawful purpose. In addition, you agree not to: (a) use the data to allow, enable, or otherwise support any marketing activities, regardless of the medium used. Such media include but are not limited to e-mail, telephone, facsimile, postal mail, SMS, and wireless alerts; or (b) use the data to enable high volume, automated, electronic processes that sendqueries or data to the systems of any Registry Operator or ICANN-Accredited registrar, except as reasonably necessary to register domain names or modify existing registrations. (c) sell or redistribute the data except insofar as it has been incorporated into a value-added product or service that does not permit the extraction of a substantial portion of the bulk data from the value-added product or service for use by other parties. Ascio Technologies reserves the right to modify these terms at any time. Ascio Technologies cannot guarantee the accuracy of the data provided. By accessing and using Ascio Technologies WHOIS service, you agree to these terms."
+
+#domain
+  should: %s == "siemens.com"
+
+#domain_id
+  should: %s raise_error(Whois::AttributeNotSupported)
+
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2007-02-05 09:46:11")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-06-20 13:00:49")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2013-09-28 00:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == "ASCIOTEC1364"
+  should: %s.name         == "Ascio Technologies"
+  should: %s.organization == "Ascio Technologies, Inc"
+  should: %s.url          == "http://www.ascio.com/"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == "SIEMENSA240"
+  should: %s[0].name          == nil
+  should: %s[0].organization  == "Siemens AG"
+  should: %s[0].address       == "Wittelsbacherplatz 2"
+  should: %s[0].city          == "Muenchen"
+  should: %s[0].zip           == "80333"
+  should: %s[0].state         == "Bayern"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == nil
+  should: %s[0].fax           == nil
+  should: %s[0].email         == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  should: %s[0].id            == "GR43003"
+  should: %s[0].name          == "Gerald Rinske"
+  should: %s[0].organization  == "Siemens AG"
+  should: %s[0].address       == "Otto-Hahn-Ring 6"
+  should: %s[0].city          == "Munich"
+  should: %s[0].zip           == "81739"
+  should: %s[0].state         == "Bavaria"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == "+49.8963647713"
+  should: %s[0].fax           == "+49.8963625949"
+  should: %s[0].email         == "hostmaster@siemens.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == "GR43003"
+  should: %s[0].name          == "Gerald Rinske"
+  should: %s[0].organization  == "Siemens AG"
+  should: %s[0].address       == "Otto-Hahn-Ring 6"
+  should: %s[0].city          == "Munich"
+  should: %s[0].zip           == "81739"
+  should: %s[0].state         == "Bavaria"
+  should: %s[0].country       == nil
+  should: %s[0].country_code  == "DE"
+  should: %s[0].phone         == "+49.8963647713"
+  should: %s[0].fax           == "+49.8963625949"
+  should: %s[0].email         == "hostmaster@siemens.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns-ext.siemens.de"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns-ext.siemens.com"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns-ext.siemens.net"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns-ext.siemens.com.sg"
