@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCat, "property_status_missing.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == nil
+      expect(subject.status).to eq(nil)
     end
   end
 end

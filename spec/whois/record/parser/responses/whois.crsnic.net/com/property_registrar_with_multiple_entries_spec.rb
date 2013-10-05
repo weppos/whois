@@ -23,11 +23,11 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "property_registrar_with_multipl
 
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "MARKMONITOR INC."
-      subject.registrar.organization.should == "MARKMONITOR INC."
-      subject.registrar.url.should          == "http://www.markmonitor.com"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("MARKMONITOR INC.")
+      expect(subject.registrar.organization).to eq("MARKMONITOR INC.")
+      expect(subject.registrar.url).to eq("http://www.markmonitor.com")
     end
   end
 end

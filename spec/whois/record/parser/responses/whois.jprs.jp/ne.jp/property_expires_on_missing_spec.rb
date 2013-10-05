@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_expires_on_missing.expect
 
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
 end

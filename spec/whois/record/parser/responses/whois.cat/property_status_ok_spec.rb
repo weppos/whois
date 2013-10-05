@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCat, "property_status_ok.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["ok"]
+      expect(subject.status).to eq(["ok"])
     end
   end
 end

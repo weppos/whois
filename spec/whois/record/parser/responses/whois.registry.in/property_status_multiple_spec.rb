@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_multiple.expec
 
   describe "#status" do
     it do
-      subject.status.should == ["CLIENT DELETE PROHIBITED", "CLIENT RENEW PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT RENEW PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"])
     end
   end
 end

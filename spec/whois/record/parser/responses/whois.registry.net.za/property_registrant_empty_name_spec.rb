@@ -23,15 +23,15 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "property_registrant_empty_n
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == ""
-      subject.registrant_contacts[0].email.should        == "steve@selftours.co.za"
-      subject.registrant_contacts[0].phone.should        == "+27.443841912"
-      subject.registrant_contacts[0].fax.should          == "+27.443840914"
-      subject.registrant_contacts[0].address.should      == "P.O. Box 2745 Knysna 6570\nKNYSNA\nZA\n6570"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("")
+      expect(subject.registrant_contacts[0].email).to eq("steve@selftours.co.za")
+      expect(subject.registrant_contacts[0].phone).to eq("+27.443841912")
+      expect(subject.registrant_contacts[0].fax).to eq("+27.443840914")
+      expect(subject.registrant_contacts[0].address).to eq("P.O. Box 2745 Knysna 6570\nKNYSNA\nZA\n6570")
     end
   end
 end

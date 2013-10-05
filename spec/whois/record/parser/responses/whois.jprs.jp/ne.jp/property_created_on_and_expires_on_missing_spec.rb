@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_created_on_and_expires_on
 
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
 end

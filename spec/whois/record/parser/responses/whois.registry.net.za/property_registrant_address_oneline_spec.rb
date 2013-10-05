@@ -23,15 +23,15 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "property_registrant_address
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == "Appleford=2C Geoff"
-      subject.registrant_contacts[0].email.should        == "geoff@4sightsport.com"
-      subject.registrant_contacts[0].phone.should        == "+27.339400274"
-      subject.registrant_contacts[0].fax.should          == ""
-      subject.registrant_contacts[0].address.should      == "330 Gowrie Farm=2C Nottingham Road=2C South"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("Appleford=2C Geoff")
+      expect(subject.registrant_contacts[0].email).to eq("geoff@4sightsport.com")
+      expect(subject.registrant_contacts[0].phone).to eq("+27.339400274")
+      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].address).to eq("330 Gowrie Farm=2C Nottingham Road=2C South")
     end
   end
 end

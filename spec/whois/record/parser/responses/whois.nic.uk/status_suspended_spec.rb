@@ -23,50 +23,50 @@ describe Whois::Record::Parser::WhoisNicUk, "status_suspended.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2008-08-30")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2008-08-30"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-02-09")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2012-02-09"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2010-08-30")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2010-08-30"))
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "KEY-SYSTEMS-DE"
-      subject.registrar.name.should         == "Key-Systems GmbH"
-      subject.registrar.name.should         == "Key-Systems GmbH"
-      subject.registrar.url.should          == "http://www.Key-Systems.net"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq("KEY-SYSTEMS-DE")
+      expect(subject.registrar.name).to eq("Key-Systems GmbH")
+      expect(subject.registrar.name).to eq("Key-Systems GmbH")
+      expect(subject.registrar.url).to eq("http://www.Key-Systems.net")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
 end

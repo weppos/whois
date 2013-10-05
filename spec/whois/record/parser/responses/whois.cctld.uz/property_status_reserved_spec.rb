@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisCctldUz, "property_status_reserved.expected
 
   describe "#status" do
     it do
-      subject.status.should == :reserved
+      expect(subject.status).to eq(:reserved)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
 end

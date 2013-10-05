@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisTcinetRu, "property_nameservers_with_ip.exp
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns.masterhost.ru"
-      subject.nameservers[0].ipv4.should == "217.16.20.30"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.masterhost.ru"
-      subject.nameservers[1].ipv4.should == "217.16.16.30"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns2.masterhost.ru"
-      subject.nameservers[2].ipv4.should == "217.16.22.30"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns.masterhost.ru")
+      expect(subject.nameservers[0].ipv4).to eq("217.16.20.30")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns1.masterhost.ru")
+      expect(subject.nameservers[1].ipv4).to eq("217.16.16.30")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns2.masterhost.ru")
+      expect(subject.nameservers[2].ipv4).to eq("217.16.22.30")
     end
   end
 end

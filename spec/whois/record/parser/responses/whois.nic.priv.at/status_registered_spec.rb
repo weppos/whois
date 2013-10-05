@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisNicPrivAt, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
@@ -43,8 +43,8 @@ describe Whois::Record::Parser::WhoisNicPrivAt, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2002-10-13")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2002-10-13"))
     end
   end
   describe "#expires_on" do

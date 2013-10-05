@@ -23,38 +23,38 @@ describe Whois::Record::Parser::WhoisNicName, "status_available.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == []
+      expect(subject.status).to eq([])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == true
+      expect(subject.available?).to eq(true)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should == nil
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
 end

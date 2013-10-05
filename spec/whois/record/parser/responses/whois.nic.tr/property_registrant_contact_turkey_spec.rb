@@ -23,22 +23,22 @@ describe Whois::Record::Parser::WhoisNicTr, "property_registrant_contact_turkey.
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == nil
-      subject.registrant_contacts[0].name.should          == "Hotel Bilgisayar Hizmetleri San. Tic. Turizm Ltd. Þti."
-      subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == "Cumhuriyet Cd. No:61 Bingül Han Asma Kat\nElmadað"
-      subject.registrant_contacts[0].city.should          == "Ýstanbul"
-      subject.registrant_contacts[0].zip.should           == nil
-      subject.registrant_contacts[0].state.should         == nil
-      subject.registrant_contacts[0].country.should       == "Türkiye"
-      subject.registrant_contacts[0].country_code.should  == nil
-      subject.registrant_contacts[0].phone.should         == "+ 90-212-2473997-"
-      subject.registrant_contacts[0].fax.should           == "+ 90-212-2473995"
-      subject.registrant_contacts[0].email.should         == "romeo6860@yahoo.com"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Hotel Bilgisayar Hizmetleri San. Tic. Turizm Ltd. Þti.")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("Cumhuriyet Cd. No:61 Bingül Han Asma Kat\nElmadað")
+      expect(subject.registrant_contacts[0].city).to eq("Ýstanbul")
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country).to eq("Türkiye")
+      expect(subject.registrant_contacts[0].country_code).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("+ 90-212-2473997-")
+      expect(subject.registrant_contacts[0].fax).to eq("+ 90-212-2473995")
+      expect(subject.registrant_contacts[0].email).to eq("romeo6860@yahoo.com")
     end
   end
 end

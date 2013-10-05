@@ -23,56 +23,56 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should          == "adequatehq.com Private Registrant"
-      subject.registrant_contacts[0].organization.should  == "A Happy DreamHost Customer"
-      subject.registrant_contacts[0].address.should       == "417 Associated Rd #324"
-      subject.registrant_contacts[0].city.should          == "Brea"
-      subject.registrant_contacts[0].zip.should           == "92821"
-      subject.registrant_contacts[0].state.should         == "CA"
-      subject.registrant_contacts[0].country_code.should  == "US"
-      subject.registrant_contacts[0].phone.should         == "+1.2139471032"
-      subject.registrant_contacts[0].fax.should           == nil
-      subject.registrant_contacts[0].email.should         == "adequatehq.com@proxy.dreamhost.com"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("adequatehq.com Private Registrant")
+      expect(subject.registrant_contacts[0].organization).to eq("A Happy DreamHost Customer")
+      expect(subject.registrant_contacts[0].address).to eq("417 Associated Rd #324")
+      expect(subject.registrant_contacts[0].city).to eq("Brea")
+      expect(subject.registrant_contacts[0].zip).to eq("92821")
+      expect(subject.registrant_contacts[0].state).to eq("CA")
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+      expect(subject.registrant_contacts[0].phone).to eq("+1.2139471032")
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq("adequatehq.com@proxy.dreamhost.com")
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].name.should          == "adequatehq.com Private Registrant"
-      subject.admin_contacts[0].organization.should  == "A Happy DreamHost Customer"
-      subject.admin_contacts[0].address.should       == "417 Associated Rd #324"
-      subject.admin_contacts[0].city.should          == "Brea"
-      subject.admin_contacts[0].zip.should           == "92821"
-      subject.admin_contacts[0].state.should         == "CA"
-      subject.admin_contacts[0].country_code.should  == "US"
-      subject.admin_contacts[0].phone.should         == "+1.2139471032"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "adequatehq.com@proxy.dreamhost.com"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].name).to eq("adequatehq.com Private Registrant")
+      expect(subject.admin_contacts[0].organization).to eq("A Happy DreamHost Customer")
+      expect(subject.admin_contacts[0].address).to eq("417 Associated Rd #324")
+      expect(subject.admin_contacts[0].city).to eq("Brea")
+      expect(subject.admin_contacts[0].zip).to eq("92821")
+      expect(subject.admin_contacts[0].state).to eq("CA")
+      expect(subject.admin_contacts[0].country_code).to eq("US")
+      expect(subject.admin_contacts[0].phone).to eq("+1.2139471032")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("adequatehq.com@proxy.dreamhost.com")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should          == "adequatehq.com Private Registrant"
-      subject.technical_contacts[0].organization.should  == "A Happy DreamHost Customer"
-      subject.technical_contacts[0].address.should       == "417 Associated Rd #324"
-      subject.technical_contacts[0].city.should          == "Brea"
-      subject.technical_contacts[0].zip.should           == "92821"
-      subject.technical_contacts[0].state.should         == "CA"
-      subject.technical_contacts[0].country_code.should  == "US"
-      subject.technical_contacts[0].phone.should         == "+1.2139471032"
-      subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "adequatehq.com@proxy.dreamhost.com"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("adequatehq.com Private Registrant")
+      expect(subject.technical_contacts[0].organization).to eq("A Happy DreamHost Customer")
+      expect(subject.technical_contacts[0].address).to eq("417 Associated Rd #324")
+      expect(subject.technical_contacts[0].city).to eq("Brea")
+      expect(subject.technical_contacts[0].zip).to eq("92821")
+      expect(subject.technical_contacts[0].state).to eq("CA")
+      expect(subject.technical_contacts[0].country_code).to eq("US")
+      expect(subject.technical_contacts[0].phone).to eq("+1.2139471032")
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq("adequatehq.com@proxy.dreamhost.com")
     end
   end
 end

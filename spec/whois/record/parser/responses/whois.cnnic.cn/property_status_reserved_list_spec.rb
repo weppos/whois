@@ -23,22 +23,22 @@ describe Whois::Record::Parser::WhoisCnnicCn, "property_status_reserved_list.exp
 
   describe "#status" do
     it do
-      subject.status.should == []
+      expect(subject.status).to eq([])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
   describe "#reserved?" do
     it do
-      subject.reserved?.should == true
+      expect(subject.reserved?).to eq(true)
     end
   end
 end

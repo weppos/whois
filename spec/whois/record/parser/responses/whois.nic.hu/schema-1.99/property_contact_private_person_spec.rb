@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisNicHu, "property_contact_private_person.exp
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should           == nil
-      subject.registrant_contacts[0].name.should         =~ /Buruzs/
-      subject.registrant_contacts[0].organization.should == nil
-      subject.registrant_contacts[0].address.should      == nil
-      subject.registrant_contacts[0].city.should         == nil
-      subject.registrant_contacts[0].zip.should          == nil
-      subject.registrant_contacts[0].state.should        == nil
-      subject.registrant_contacts[0].country_code.should == nil
-      subject.registrant_contacts[0].phone.should        == nil
-      subject.registrant_contacts[0].fax.should          == nil
-      subject.registrant_contacts[0].email.should        == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to match(/Buruzs/)
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq(nil)
+      expect(subject.registrant_contacts[0].city).to eq(nil)
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
 end

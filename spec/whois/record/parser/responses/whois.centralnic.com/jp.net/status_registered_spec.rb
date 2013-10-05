@@ -23,129 +23,129 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+      expect(subject.disclaimer).to eq("This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/")
     end
   end
   describe "#domain" do
     it do
-      subject.domain.should == "ntt.jp.net"
+      expect(subject.domain).to eq("ntt.jp.net")
     end
   end
   describe "#domain_id" do
     it do
-      subject.domain_id.should == "CNIC-DO846061"
+      expect(subject.domain_id).to eq("CNIC-DO846061")
     end
   end
   describe "#status" do
     it do
-      subject.status.should == ["OK"]
+      expect(subject.status).to eq(["OK"])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2012-03-16 11:47:23 UTC")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2012-03-16 11:47:23 UTC"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2013-01-24 16:57:19 UTC")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2013-01-24 16:57:19 UTC"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2018-03-16 23:59:59 UTC")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2018-03-16 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "H1605993"
-      subject.registrar.name.should         == nil
-      subject.registrar.organization.should == "GMO"
-      subject.registrar.url.should          == "http://www.onamae.com"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq("H1605993")
+      expect(subject.registrar.name).to eq(nil)
+      expect(subject.registrar.organization).to eq("GMO")
+      expect(subject.registrar.url).to eq("http://www.onamae.com")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == "136151BCEFE"
-      subject.registrant_contacts[0].name.should          == "zhijian xia"
-      subject.registrant_contacts[0].organization.should  == "zhijian xia"
-      subject.registrant_contacts[0].address.should       == "Chuo\n3-23-20"
-      subject.registrant_contacts[0].city.should          == "Warabi-shi"
-      subject.registrant_contacts[0].zip.should           == "335-0004"
-      subject.registrant_contacts[0].state.should         == "Saitama"
-      subject.registrant_contacts[0].country.should       == nil
-      subject.registrant_contacts[0].country_code.should  == "JP"
-      subject.registrant_contacts[0].phone.should         == "+81.08037215656"
-      subject.registrant_contacts[0].fax.should           == nil
-      subject.registrant_contacts[0].email.should         == "xia@ingame.jp"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq("136151BCEFE")
+      expect(subject.registrant_contacts[0].name).to eq("zhijian xia")
+      expect(subject.registrant_contacts[0].organization).to eq("zhijian xia")
+      expect(subject.registrant_contacts[0].address).to eq("Chuo\n3-23-20")
+      expect(subject.registrant_contacts[0].city).to eq("Warabi-shi")
+      expect(subject.registrant_contacts[0].zip).to eq("335-0004")
+      expect(subject.registrant_contacts[0].state).to eq("Saitama")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq("JP")
+      expect(subject.registrant_contacts[0].phone).to eq("+81.08037215656")
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq("xia@ingame.jp")
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].id.should            == "136151BD1A1"
-      subject.admin_contacts[0].name.should          == "zhijian xia"
-      subject.admin_contacts[0].organization.should  == "zhijian xia"
-      subject.admin_contacts[0].address.should       == "Chuo\n3-23-20"
-      subject.admin_contacts[0].city.should          == "Warabi-shi"
-      subject.admin_contacts[0].zip.should           == "335-0004"
-      subject.admin_contacts[0].state.should         == "Saitama"
-      subject.admin_contacts[0].country.should       == nil
-      subject.admin_contacts[0].country_code.should  == "JP"
-      subject.admin_contacts[0].phone.should         == "+81.08037215656"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "xia@ingame.jp"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("136151BD1A1")
+      expect(subject.admin_contacts[0].name).to eq("zhijian xia")
+      expect(subject.admin_contacts[0].organization).to eq("zhijian xia")
+      expect(subject.admin_contacts[0].address).to eq("Chuo\n3-23-20")
+      expect(subject.admin_contacts[0].city).to eq("Warabi-shi")
+      expect(subject.admin_contacts[0].zip).to eq("335-0004")
+      expect(subject.admin_contacts[0].state).to eq("Saitama")
+      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].country_code).to eq("JP")
+      expect(subject.admin_contacts[0].phone).to eq("+81.08037215656")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("xia@ingame.jp")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "136151BD459"
-      subject.technical_contacts[0].name.should          == "Technical Contact"
-      subject.technical_contacts[0].organization.should  == "GMO Internet Inc."
-      subject.technical_contacts[0].address.should       == "26-1 Sakuragaoka-cho\nCerulean Tower 11F"
-      subject.technical_contacts[0].city.should          == "Shibuya-ku"
-      subject.technical_contacts[0].zip.should           == "150-8512"
-      subject.technical_contacts[0].state.should         == "Tokyo"
-      subject.technical_contacts[0].country.should       == nil
-      subject.technical_contacts[0].country_code.should  == "JP"
-      subject.technical_contacts[0].phone.should         == "+81.0354562555"
-      subject.technical_contacts[0].fax.should           == "+81.0354562556"
-      subject.technical_contacts[0].email.should         == "admin@onamae.com"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("136151BD459")
+      expect(subject.technical_contacts[0].name).to eq("Technical Contact")
+      expect(subject.technical_contacts[0].organization).to eq("GMO Internet Inc.")
+      expect(subject.technical_contacts[0].address).to eq("26-1 Sakuragaoka-cho\nCerulean Tower 11F")
+      expect(subject.technical_contacts[0].city).to eq("Shibuya-ku")
+      expect(subject.technical_contacts[0].zip).to eq("150-8512")
+      expect(subject.technical_contacts[0].state).to eq("Tokyo")
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq("JP")
+      expect(subject.technical_contacts[0].phone).to eq("+81.0354562555")
+      expect(subject.technical_contacts[0].fax).to eq("+81.0354562556")
+      expect(subject.technical_contacts[0].email).to eq("admin@onamae.com")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns1.onamae.com"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns2.onamae.com"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("dns1.onamae.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("dns2.onamae.com")
     end
   end
 end

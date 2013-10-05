@@ -23,14 +23,14 @@ describe Whois::Record::Parser::WhoisKr, "property_nameservers_with_ip.expected"
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "prmns.lg.co.kr"
-      subject.nameservers[0].ipv4.should == "165.243.5.15"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "secns.lg.co.kr"
-      subject.nameservers[1].ipv4.should == "203.247.133.133"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("prmns.lg.co.kr")
+      expect(subject.nameservers[0].ipv4).to eq("165.243.5.15")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("secns.lg.co.kr")
+      expect(subject.nameservers[1].ipv4).to eq("203.247.133.133")
     end
   end
 end

@@ -28,18 +28,18 @@ describe Whois::Record::Parser::WhoisComlaudeCom, "status_registered.expected" d
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2005-01-30")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2005-01-30"))
     end
   end
   describe "#updated_on" do
@@ -49,84 +49,84 @@ describe Whois::Record::Parser::WhoisComlaudeCom, "status_registered.expected" d
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2020-01-30")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2020-01-30"))
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "NOM IQ LTD (DBA COM LAUDE)"
-      subject.registrar.url.should          == "http://www.comlaude.com"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("NOM IQ LTD (DBA COM LAUDE)")
+      expect(subject.registrar.url).to eq("http://www.comlaude.com")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == "Domain Manager"
-      subject.registrant_contacts[0].organization.should == "Nom-IQ Ltd dba Com Laude"
-      subject.registrant_contacts[0].address.should      == nil
-      subject.registrant_contacts[0].city.should         == nil
-      subject.registrant_contacts[0].zip.should          == nil
-      subject.registrant_contacts[0].state.should        == nil
-      subject.registrant_contacts[0].country.should      == nil
-      subject.registrant_contacts[0].phone.should        == "+44.2078360070"
-      subject.registrant_contacts[0].fax.should          == nil
-      subject.registrant_contacts[0].email.should        == "admin@comlaude.com"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("Domain Manager")
+      expect(subject.registrant_contacts[0].organization).to eq("Nom-IQ Ltd dba Com Laude")
+      expect(subject.registrant_contacts[0].address).to eq(nil)
+      expect(subject.registrant_contacts[0].city).to eq(nil)
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("+44.2078360070")
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq("admin@comlaude.com")
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].name.should         == "Domain Manager"
-      subject.admin_contacts[0].organization.should == "Nom-IQ Ltd dba Com Laude"
-      subject.admin_contacts[0].address.should      == nil
-      subject.admin_contacts[0].city.should         == nil
-      subject.admin_contacts[0].zip.should          == nil
-      subject.admin_contacts[0].state.should        == nil
-      subject.admin_contacts[0].country.should      == nil
-      subject.admin_contacts[0].phone.should        == "+44.2078360070"
-      subject.admin_contacts[0].fax.should          == nil
-      subject.admin_contacts[0].email.should        == "admin@comlaude.com"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].name).to eq("Domain Manager")
+      expect(subject.admin_contacts[0].organization).to eq("Nom-IQ Ltd dba Com Laude")
+      expect(subject.admin_contacts[0].address).to eq(nil)
+      expect(subject.admin_contacts[0].city).to eq(nil)
+      expect(subject.admin_contacts[0].zip).to eq(nil)
+      expect(subject.admin_contacts[0].state).to eq(nil)
+      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].phone).to eq("+44.2078360070")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("admin@comlaude.com")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == "Technical Manager"
-      subject.technical_contacts[0].organization.should == "Com Laude"
-      subject.technical_contacts[0].address.should      == nil
-      subject.technical_contacts[0].city.should         == nil
-      subject.technical_contacts[0].zip.should          == nil
-      subject.technical_contacts[0].state.should        == nil
-      subject.technical_contacts[0].country.should      == nil
-      subject.technical_contacts[0].phone.should        == "+44.2074218250"
-      subject.technical_contacts[0].fax.should          == "+44.8700118187"
-      subject.technical_contacts[0].email.should        == "hostmaster@comlaude.com"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("Technical Manager")
+      expect(subject.technical_contacts[0].organization).to eq("Com Laude")
+      expect(subject.technical_contacts[0].address).to eq(nil)
+      expect(subject.technical_contacts[0].city).to eq(nil)
+      expect(subject.technical_contacts[0].zip).to eq(nil)
+      expect(subject.technical_contacts[0].state).to eq(nil)
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].phone).to eq("+44.2074218250")
+      expect(subject.technical_contacts[0].fax).to eq("+44.8700118187")
+      expect(subject.technical_contacts[0].email).to eq("hostmaster@comlaude.com")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns1.comlaude-dns.com"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns2.comlaude-dns.net"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "dns3.comlaude-dns.co.uk"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "dns4.comlaude-dns.eu"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("dns1.comlaude-dns.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("dns2.comlaude-dns.net")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("dns3.comlaude-dns.co.uk")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("dns4.comlaude-dns.eu")
     end
   end
 end

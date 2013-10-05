@@ -23,11 +23,11 @@ describe Whois::Record::Parser::WhoisNicUk, "property_registrar_without_trading_
 
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "NETNAMES"
-      subject.registrar.name.should         == "NetNames Limited"
-      subject.registrar.name.should         == "NetNames Limited"
-      subject.registrar.url.should          == "http://www.netnames.co.uk"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq("NETNAMES")
+      expect(subject.registrar.name).to eq("NetNames Limited")
+      expect(subject.registrar.name).to eq("NetNames Limited")
+      expect(subject.registrar.url).to eq("http://www.netnames.co.uk")
     end
   end
 end

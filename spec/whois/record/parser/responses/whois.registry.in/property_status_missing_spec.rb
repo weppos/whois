@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_missing.expect
 
   describe "#status" do
     it do
-      subject.status.should == []
+      expect(subject.status).to eq([])
     end
   end
 end

@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisNicIt, "property_contact_with_organization.
 
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].id.should           == "TT4277-ITNIC"
-      subject.admin_contacts[0].name.should         == "Tsao Tu"
-      subject.admin_contacts[0].organization.should == "Tu Tsao"
-      subject.admin_contacts[0].address.should      == "30 Herbert Street"
-      subject.admin_contacts[0].city.should         == "Dublin"
-      subject.admin_contacts[0].zip.should          == "2"
-      subject.admin_contacts[0].state.should        == "IE"
-      subject.admin_contacts[0].country_code.should == "IE"
-      subject.admin_contacts[0].created_on.should   == Time.parse("2008-11-27 16:47:22")
-      subject.admin_contacts[0].updated_on.should   == Time.parse("2008-11-27 16:47:22")
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("TT4277-ITNIC")
+      expect(subject.admin_contacts[0].name).to eq("Tsao Tu")
+      expect(subject.admin_contacts[0].organization).to eq("Tu Tsao")
+      expect(subject.admin_contacts[0].address).to eq("30 Herbert Street")
+      expect(subject.admin_contacts[0].city).to eq("Dublin")
+      expect(subject.admin_contacts[0].zip).to eq("2")
+      expect(subject.admin_contacts[0].state).to eq("IE")
+      expect(subject.admin_contacts[0].country_code).to eq("IE")
+      expect(subject.admin_contacts[0].created_on).to eq(Time.parse("2008-11-27 16:47:22"))
+      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2008-11-27 16:47:22"))
     end
   end
 end

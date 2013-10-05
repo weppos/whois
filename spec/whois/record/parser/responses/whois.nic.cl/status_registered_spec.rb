@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisNicCl, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
@@ -48,20 +48,20 @@ describe Whois::Record::Parser::WhoisNicCl, "status_registered.expected" do
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns3.google.com"
-      subject.nameservers[0].ipv4.should == "216.239.36.10"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns4.google.com"
-      subject.nameservers[1].ipv4.should == "216.239.38.10"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns1.google.com"
-      subject.nameservers[2].ipv4.should == "216.239.32.10"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns2.google.com"
-      subject.nameservers[3].ipv4.should == "216.239.34.10"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns3.google.com")
+      expect(subject.nameservers[0].ipv4).to eq("216.239.36.10")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns4.google.com")
+      expect(subject.nameservers[1].ipv4).to eq("216.239.38.10")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns1.google.com")
+      expect(subject.nameservers[2].ipv4).to eq("216.239.32.10")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns2.google.com")
+      expect(subject.nameservers[3].ipv4).to eq("216.239.34.10")
     end
   end
 end

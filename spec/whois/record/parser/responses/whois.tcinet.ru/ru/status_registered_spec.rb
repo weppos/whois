@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
 
   describe "#domain" do
     it do
-      subject.domain.should == "google.ru"
+      expect(subject.domain).to eq("google.ru")
     end
   end
   describe "#domain_id" do
@@ -33,23 +33,23 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == ["REGISTERED", "DELEGATED", "VERIFIED"]
+      expect(subject.status).to eq(["REGISTERED", "DELEGATED", "VERIFIED"])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2004-03-04")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2004-03-04"))
     end
   end
   describe "#updated_on" do
@@ -59,16 +59,16 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-03-05")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2013-03-05"))
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "RU-CENTER-REG-RIPN"
-      subject.registrar.name.should         == nil
-      subject.registrar.organization.should == nil
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq("RU-CENTER-REG-RIPN")
+      expect(subject.registrar.name).to eq(nil)
+      expect(subject.registrar.organization).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
@@ -78,11 +78,11 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].organization.should == "Google Inc."
-      subject.admin_contacts[0].url.should          == "https://www.nic.ru/whois"
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].organization).to eq("Google Inc.")
+      expect(subject.admin_contacts[0].url).to eq("https://www.nic.ru/whois")
     end
   end
   describe "#technical_contacts" do
@@ -92,16 +92,16 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.google.com"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.google.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.google.com"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns4.google.com"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.google.com")
     end
   end
 end

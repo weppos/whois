@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisAtiTn, "status_available.expected" do
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "All rights reserved.\nCopyright \"Tunisian Internet Agency - http://whois.tn\""
+      expect(subject.disclaimer).to eq("All rights reserved.\nCopyright \"Tunisian Internet Agency - http://whois.tn\"")
     end
   end
   describe "#domain" do
     it do
-      subject.domain.should == nil
+      expect(subject.domain).to eq(nil)
     end
   end
   describe "#domain_id" do
@@ -38,22 +38,22 @@ describe Whois::Record::Parser::WhoisAtiTn, "status_available.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == :available
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == true
+      expect(subject.available?).to eq(true)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#updated_on" do
@@ -68,31 +68,31 @@ describe Whois::Record::Parser::WhoisAtiTn, "status_available.expected" do
   end
   describe "#registrar" do
     it do
-      subject.registrar.should == nil
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should == []
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to eq([])
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should == []
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to eq([])
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should == []
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to eq([])
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
 end

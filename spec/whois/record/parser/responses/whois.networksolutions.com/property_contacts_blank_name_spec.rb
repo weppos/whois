@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "property_contacts_bla
 
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == ""
-      subject.technical_contacts[0].organization.should == "Earthlink Inc"
-      subject.technical_contacts[0].address.should      == "1430 West Peachtree St. NW, Ste. 400"
-      subject.technical_contacts[0].city.should         == "Atlanta"
-      subject.technical_contacts[0].zip.should          == "30309"
-      subject.technical_contacts[0].state.should        == "GA"
-      subject.technical_contacts[0].country_code.should == "US"
-      subject.technical_contacts[0].phone.should        == "888-932-1997"
-      subject.technical_contacts[0].fax.should          == "123 123 1234"
-      subject.technical_contacts[0].email.should        == "hostmaster@earthlink.net"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("")
+      expect(subject.technical_contacts[0].organization).to eq("Earthlink Inc")
+      expect(subject.technical_contacts[0].address).to eq("1430 West Peachtree St. NW, Ste. 400")
+      expect(subject.technical_contacts[0].city).to eq("Atlanta")
+      expect(subject.technical_contacts[0].zip).to eq("30309")
+      expect(subject.technical_contacts[0].state).to eq("GA")
+      expect(subject.technical_contacts[0].country_code).to eq("US")
+      expect(subject.technical_contacts[0].phone).to eq("888-932-1997")
+      expect(subject.technical_contacts[0].fax).to eq("123 123 1234")
+      expect(subject.technical_contacts[0].email).to eq("hostmaster@earthlink.net")
     end
   end
 end

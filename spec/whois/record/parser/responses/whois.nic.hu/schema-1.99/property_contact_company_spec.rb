@@ -23,21 +23,21 @@ describe Whois::Record::Parser::WhoisNicHu, "property_contact_company.expected" 
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should           == nil
-      subject.registrant_contacts[0].name.should         == "Google, Inc."
-      subject.registrant_contacts[0].organization.should == "Google, Inc."
-      subject.registrant_contacts[0].address.should      == "Amphitheatre Pkwy 1600."
-      subject.registrant_contacts[0].city.should         == "Mountain View"
-      subject.registrant_contacts[0].zip.should          == "CA-94043"
-      subject.registrant_contacts[0].state.should        == nil
-      subject.registrant_contacts[0].country_code.should == "US"
-      subject.registrant_contacts[0].phone.should        == "+1 650 253 0000"
-      subject.registrant_contacts[0].fax.should          == "+1 650 253 0001"
-      subject.registrant_contacts[0].email.should        == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Google, Inc.")
+      expect(subject.registrant_contacts[0].organization).to eq("Google, Inc.")
+      expect(subject.registrant_contacts[0].address).to eq("Amphitheatre Pkwy 1600.")
+      expect(subject.registrant_contacts[0].city).to eq("Mountain View")
+      expect(subject.registrant_contacts[0].zip).to eq("CA-94043")
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+      expect(subject.registrant_contacts[0].phone).to eq("+1 650 253 0000")
+      expect(subject.registrant_contacts[0].fax).to eq("+1 650 253 0001")
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
 end

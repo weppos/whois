@@ -23,22 +23,22 @@ describe Whois::Record::Parser::WhoisNicCz, "case_nset_contact_same_name.expecte
 
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].id.should            == "WEBAREAL-CZ"
-      subject.technical_contacts[0].name.should          == "Jaroslav Hansal"
-      subject.technical_contacts[0].organization.should  == nil
-      subject.technical_contacts[0].address.should       == "Rudolfovská tř. 247/85\nČeské Budějovice\n37001\nCZ"
-      subject.technical_contacts[0].city.should          == nil
-      subject.technical_contacts[0].zip.should           == nil
-      subject.technical_contacts[0].state.should         == nil
-      subject.technical_contacts[0].country.should       == nil
-      subject.technical_contacts[0].country_code.should  == nil
-      subject.technical_contacts[0].phone.should         == nil
-      subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "info@webareal.cz"
-      subject.technical_contacts[0].created_on.should    == Time.parse("2009-04-10 14:48:02")
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].id).to eq("WEBAREAL-CZ")
+      expect(subject.technical_contacts[0].name).to eq("Jaroslav Hansal")
+      expect(subject.technical_contacts[0].organization).to eq(nil)
+      expect(subject.technical_contacts[0].address).to eq("Rudolfovská tř. 247/85\nČeské Budějovice\n37001\nCZ")
+      expect(subject.technical_contacts[0].city).to eq(nil)
+      expect(subject.technical_contacts[0].zip).to eq(nil)
+      expect(subject.technical_contacts[0].state).to eq(nil)
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq(nil)
+      expect(subject.technical_contacts[0].phone).to eq(nil)
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq("info@webareal.cz")
+      expect(subject.technical_contacts[0].created_on).to eq(Time.parse("2009-04-10 14:48:02"))
     end
   end
 end

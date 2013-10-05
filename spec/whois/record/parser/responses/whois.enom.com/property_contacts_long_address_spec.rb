@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisEnomCom, "property_contacts_long_address.ex
 
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == "Matt Barrie"
-      subject.technical_contacts[0].organization.should == "Freelancer Technology Pty Limited"
-      subject.technical_contacts[0].address.should      == "Suite 501\n35 Lime Street"
-      subject.technical_contacts[0].city.should         == "Sydney"
-      subject.technical_contacts[0].zip.should          == "2000"
-      subject.technical_contacts[0].state.should        == "NSW"
-      subject.technical_contacts[0].country_code.should == "AU"
-      subject.technical_contacts[0].phone.should        == "+61.292793305"
-      subject.technical_contacts[0].fax.should          == "+61.292793305"
-      subject.technical_contacts[0].email.should        == "noc@freelancer.com"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("Matt Barrie")
+      expect(subject.technical_contacts[0].organization).to eq("Freelancer Technology Pty Limited")
+      expect(subject.technical_contacts[0].address).to eq("Suite 501\n35 Lime Street")
+      expect(subject.technical_contacts[0].city).to eq("Sydney")
+      expect(subject.technical_contacts[0].zip).to eq("2000")
+      expect(subject.technical_contacts[0].state).to eq("NSW")
+      expect(subject.technical_contacts[0].country_code).to eq("AU")
+      expect(subject.technical_contacts[0].phone).to eq("+61.292793305")
+      expect(subject.technical_contacts[0].fax).to eq("+61.292793305")
+      expect(subject.technical_contacts[0].email).to eq("noc@freelancer.com")
     end
   end
 end

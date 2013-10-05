@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_invalid.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :invalid
+      expect(subject.status).to eq(:invalid)
     end
   end
   describe "#valid?" do
     it do
-      subject.valid?.should == false
+      expect(subject.valid?).to eq(false)
     end
   end
   describe "#invalid?" do
     it do
-      subject.invalid?.should == true
+      expect(subject.invalid?).to eq(true)
     end
   end
 end

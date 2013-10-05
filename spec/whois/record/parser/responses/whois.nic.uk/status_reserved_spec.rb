@@ -23,92 +23,92 @@ describe Whois::Record::Parser::WhoisNicUk, "status_reserved.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :reserved
+      expect(subject.status).to eq(:reserved)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("1996-08-01")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("1996-08-01"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-03-23")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2012-03-23"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "Nominet"
-      subject.registrar.organization.should == "Nominet UK"
-      subject.registrar.url.should          == "http://www.nic.uk/"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("Nominet")
+      expect(subject.registrar.organization).to eq("Nominet UK")
+      expect(subject.registrar.url).to eq("http://www.nic.uk/")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should           == nil
-      subject.registrant_contacts[0].name.should         == "Nominet UK"
-      subject.registrant_contacts[0].organization.should == nil
-      subject.registrant_contacts[0].address.should      == "Minerva House, Edmund Halley Road\nOxford Science Park"
-      subject.registrant_contacts[0].city.should         == "Oxford"
-      subject.registrant_contacts[0].zip.should          == "OX4 4DQ"
-      subject.registrant_contacts[0].state.should        == "Oxon"
-      subject.registrant_contacts[0].country.should      == "United Kingdom"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Nominet UK")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("Minerva House, Edmund Halley Road\nOxford Science Park")
+      expect(subject.registrant_contacts[0].city).to eq("Oxford")
+      expect(subject.registrant_contacts[0].zip).to eq("OX4 4DQ")
+      expect(subject.registrant_contacts[0].state).to eq("Oxon")
+      expect(subject.registrant_contacts[0].country).to eq("United Kingdom")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "nom-ns1.nominet.org.uk"
-      subject.nameservers[0].ipv4.should == "213.248.199.16"
-      subject.nameservers[0].ipv6.should == nil
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "nom-ns2.nominet.org.uk"
-      subject.nameservers[1].ipv4.should == "195.66.240.250"
-      subject.nameservers[1].ipv6.should == "2a01:40:1001:37::2"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "nom-ns3.nominet.org.uk"
-      subject.nameservers[2].ipv4.should == "213.219.13.194"
-      subject.nameservers[2].ipv6.should == nil
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("nom-ns1.nominet.org.uk")
+      expect(subject.nameservers[0].ipv4).to eq("213.248.199.16")
+      expect(subject.nameservers[0].ipv6).to eq(nil)
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("nom-ns2.nominet.org.uk")
+      expect(subject.nameservers[1].ipv4).to eq("195.66.240.250")
+      expect(subject.nameservers[1].ipv6).to eq("2a01:40:1001:37::2")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("nom-ns3.nominet.org.uk")
+      expect(subject.nameservers[2].ipv4).to eq("213.219.13.194")
+      expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == false
+      expect(subject.response_throttled?).to eq(false)
     end
   end
   describe "#valid?" do
     it do
-      subject.valid?.should == true
+      expect(subject.valid?).to eq(true)
     end
   end
   describe "#invalid?" do
     it do
-      subject.invalid?.should == false
+      expect(subject.invalid?).to eq(false)
     end
   end
 end

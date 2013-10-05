@@ -23,8 +23,8 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_updates_on_error_out-of-r
 
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-10-18 11:30:47 JST")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2010-10-18 11:30:47 JST"))
     end
   end
 end

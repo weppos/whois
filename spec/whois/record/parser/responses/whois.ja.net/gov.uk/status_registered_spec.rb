@@ -23,57 +23,57 @@ describe Whois::Record::Parser::WhoisJaNet, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2003-09-17")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2003-09-17"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-01-13")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2010-01-13"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2011-03-30")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2011-03-30"))
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(8).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "eur5.akam.net"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "eur6.akam.net"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns1-173.akam.net"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns1-31.akam.net"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "usc4.akam.net"
-      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[5].name.should == "use10.akam.net"
-      subject.nameservers[6].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[6].name.should == "usw2.akam.net"
-      subject.nameservers[7].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[7].name.should == "usw4.akam.net"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(8).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("eur5.akam.net")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("eur6.akam.net")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns1-173.akam.net")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns1-31.akam.net")
+      expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[4].name).to eq("usc4.akam.net")
+      expect(subject.nameservers[5]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[5].name).to eq("use10.akam.net")
+      expect(subject.nameservers[6]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[6].name).to eq("usw2.akam.net")
+      expect(subject.nameservers[7]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[7].name).to eq("usw4.akam.net")
     end
   end
 end

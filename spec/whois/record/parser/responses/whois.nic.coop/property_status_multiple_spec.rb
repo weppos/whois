@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicCoop, "property_status_multiple.expected
 
   describe "#status" do
     it do
-      subject.status.should == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
+      expect(subject.status).to eq(["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"])
     end
   end
 end

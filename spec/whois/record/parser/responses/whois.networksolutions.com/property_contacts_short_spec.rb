@@ -23,55 +23,55 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "property_contacts_sho
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].organization.should == "mpowers LLC"
-      subject.registrant_contacts[0].address.should      == "21010 Southbank St #575"
-      subject.registrant_contacts[0].city.should         == "Potomac Falls"
-      subject.registrant_contacts[0].zip.should          == "20165"
-      subject.registrant_contacts[0].state.should        == "VA"
-      subject.registrant_contacts[0].country_code.should == "US"
-      subject.registrant_contacts[0].phone.should        == nil
-      subject.registrant_contacts[0].fax.should          == nil
-      subject.registrant_contacts[0].email.should        == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].organization).to eq("mpowers LLC")
+      expect(subject.registrant_contacts[0].address).to eq("21010 Southbank St #575")
+      expect(subject.registrant_contacts[0].city).to eq("Potomac Falls")
+      expect(subject.registrant_contacts[0].zip).to eq("20165")
+      expect(subject.registrant_contacts[0].state).to eq("VA")
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].name.should         == "mpowers LLC"
-      subject.admin_contacts[0].organization.should == nil
-      subject.admin_contacts[0].address.should      == "21010 Southbank St #575"
-      subject.admin_contacts[0].city.should         == "Potomac Falls"
-      subject.admin_contacts[0].zip.should          == "20165"
-      subject.admin_contacts[0].state.should        == "VA"
-      subject.admin_contacts[0].country_code.should == "US"
-      subject.admin_contacts[0].phone.should        == "+1.5712832829"
-      subject.admin_contacts[0].fax.should          == nil
-      subject.admin_contacts[0].email.should        == "michael@mpowers.net"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].name).to eq("mpowers LLC")
+      expect(subject.admin_contacts[0].organization).to eq(nil)
+      expect(subject.admin_contacts[0].address).to eq("21010 Southbank St #575")
+      expect(subject.admin_contacts[0].city).to eq("Potomac Falls")
+      expect(subject.admin_contacts[0].zip).to eq("20165")
+      expect(subject.admin_contacts[0].state).to eq("VA")
+      expect(subject.admin_contacts[0].country_code).to eq("US")
+      expect(subject.admin_contacts[0].phone).to eq("+1.5712832829")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("michael@mpowers.net")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == "mpowers LLC"
-      subject.technical_contacts[0].organization.should == nil
-      subject.technical_contacts[0].address.should      == "21010 Southbank St #575"
-      subject.technical_contacts[0].city.should         == "Potomac Falls"
-      subject.technical_contacts[0].zip.should          == "20165"
-      subject.technical_contacts[0].state.should        == "VA"
-      subject.technical_contacts[0].country_code.should == "US"
-      subject.technical_contacts[0].phone.should        == "+1.5712832829"
-      subject.technical_contacts[0].fax.should          == nil
-      subject.technical_contacts[0].email.should        == "michael@mpowers.net"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("mpowers LLC")
+      expect(subject.technical_contacts[0].organization).to eq(nil)
+      expect(subject.technical_contacts[0].address).to eq("21010 Southbank St #575")
+      expect(subject.technical_contacts[0].city).to eq("Potomac Falls")
+      expect(subject.technical_contacts[0].zip).to eq("20165")
+      expect(subject.technical_contacts[0].state).to eq("VA")
+      expect(subject.technical_contacts[0].country_code).to eq("US")
+      expect(subject.technical_contacts[0].phone).to eq("+1.5712832829")
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq("michael@mpowers.net")
     end
   end
 end

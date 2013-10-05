@@ -23,8 +23,8 @@ describe Whois::Record::Parser::WhoisNicVe, "property_nameservers_missing.expect
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
 end

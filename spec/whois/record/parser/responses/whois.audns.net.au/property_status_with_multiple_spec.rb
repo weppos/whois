@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "property_status_with_multiple.
 
   describe "#status" do
     it do
-      subject.status.should == ["serverHold (Expired)", "serverUpdateProhibited (Expired)"]
+      expect(subject.status).to eq(["serverHold (Expired)", "serverUpdateProhibited (Expired)"])
     end
   end
 end

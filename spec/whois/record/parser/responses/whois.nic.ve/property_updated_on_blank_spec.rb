@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicVe, "property_updated_on_blank.expected"
 
   describe "#updated_on" do
     it do
-      subject.updated_on.should == nil
+      expect(subject.updated_on).to eq(nil)
     end
   end
 end

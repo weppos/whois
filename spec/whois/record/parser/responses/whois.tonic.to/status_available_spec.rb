@@ -38,17 +38,17 @@ describe Whois::Record::Parser::WhoisTonicTo, "status_available.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == :available
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == true
+      expect(subject.available?).to eq(true)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
   describe "#created_on" do
@@ -93,7 +93,7 @@ describe Whois::Record::Parser::WhoisTonicTo, "status_available.expected" do
   end
   describe "#response_incomplete?" do
     it do
-      subject.response_incomplete?.should == false
+      expect(subject.response_incomplete?).to eq(false)
     end
   end
 end

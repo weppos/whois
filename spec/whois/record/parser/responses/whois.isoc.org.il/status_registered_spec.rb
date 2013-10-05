@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
@@ -43,8 +43,8 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2010-10-07")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2010-10-07"))
     end
   end
   describe "#expires_on" do
@@ -54,20 +54,20 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "status_registered.expected" do
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(6).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns.isoc.org.il"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "grappa.isoc.org.il"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "aristo.tau.ac.il"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "relay.huji.ac.il"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "drns.isoc.org.il"
-      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[5].name.should == "sps-pb.isc.org"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(6).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns.isoc.org.il")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("grappa.isoc.org.il")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("aristo.tau.ac.il")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("relay.huji.ac.il")
+      expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[4].name).to eq("drns.isoc.org.il")
+      expect(subject.nameservers[5]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[5].name).to eq("sps-pb.isc.org")
     end
   end
 end

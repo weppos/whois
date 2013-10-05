@@ -23,26 +23,26 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_contacts_multip
 
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(2).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].id.should            == "JL241-IEDR"
-      subject.admin_contacts[0].name.should          == "Jonathan Lundberg"
-      subject.admin_contacts[1].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[1].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[1].id.should            == "JM474-IEDR"
-      subject.admin_contacts[1].name.should          == "John Moylan"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(2).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("JL241-IEDR")
+      expect(subject.admin_contacts[0].name).to eq("Jonathan Lundberg")
+      expect(subject.admin_contacts[1]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[1].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[1].id).to eq("JM474-IEDR")
+      expect(subject.admin_contacts[1].name).to eq("John Moylan")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "JM474-IEDR"
-      subject.technical_contacts[0].name.should          == "John Moylan"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("JM474-IEDR")
+      expect(subject.technical_contacts[0].name).to eq("John Moylan")
     end
   end
 end

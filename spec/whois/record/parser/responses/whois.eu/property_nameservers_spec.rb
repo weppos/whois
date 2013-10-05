@@ -23,22 +23,22 @@ describe Whois::Record::Parser::WhoisEu, "property_nameservers.expected" do
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(5).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "a.nic.eu"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "l.nic.eu"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "p.nic.eu"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns1.eurid.eu"
-      subject.nameservers[3].ipv4.should == "91.220.191.220"
-      subject.nameservers[3].ipv6.should == nil
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "ns2.eurid.eu"
-      subject.nameservers[4].ipv4.should == "195.234.53.220"
-      subject.nameservers[4].ipv6.should == nil
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(5).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("a.nic.eu")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("l.nic.eu")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("p.nic.eu")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns1.eurid.eu")
+      expect(subject.nameservers[3].ipv4).to eq("91.220.191.220")
+      expect(subject.nameservers[3].ipv6).to eq(nil)
+      expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[4].name).to eq("ns2.eurid.eu")
+      expect(subject.nameservers[4].ipv4).to eq("195.234.53.220")
+      expect(subject.nameservers[4].ipv6).to eq(nil)
     end
   end
 end

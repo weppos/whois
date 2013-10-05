@@ -23,47 +23,47 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["ok"]
+      expect(subject.status).to eq(["ok"])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-02-14 09:12:37 GMT")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2006-02-14 09:12:37 GMT"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-06-01 11:25:51 GMT")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2012-06-01 11:25:51 GMT"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2020-02-14 09:12:37 GMT")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2020-02-14 09:12:37 GMT"))
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns2.gencat.cat"
-      subject.nameservers[0].ipv4.should == "83.247.132.4"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns.gencat.net"
-      subject.nameservers[1].ipv4.should == nil
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("dns2.gencat.cat")
+      expect(subject.nameservers[0].ipv4).to eq("83.247.132.4")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("dns.gencat.net")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
     end
   end
 end

@@ -23,16 +23,16 @@ describe Whois::Record::Parser::WhoisNicCh, "property_nameservers_with_ip.expect
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.citrin.ch"
-      subject.nameservers[0].ipv4.should == "193.247.72.8"
-      subject.nameservers[0].ipv6.should == "2001:8a8:21:5::11"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.citrin.ch"
-      subject.nameservers[1].ipv4.should == "62.12.149.3"
-      subject.nameservers[1].ipv6.should == "2001:8a8:21:5::12"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.citrin.ch")
+      expect(subject.nameservers[0].ipv4).to eq("193.247.72.8")
+      expect(subject.nameservers[0].ipv6).to eq("2001:8a8:21:5::11")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.citrin.ch")
+      expect(subject.nameservers[1].ipv4).to eq("62.12.149.3")
+      expect(subject.nameservers[1].ipv6).to eq("2001:8a8:21:5::12")
     end
   end
 end

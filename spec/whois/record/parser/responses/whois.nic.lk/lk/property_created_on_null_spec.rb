@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicLk, "property_created_on_null.expected" 
 
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
 end

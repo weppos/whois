@@ -23,29 +23,29 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2000-07-27")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2000-07-27"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2009-06-03")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2009-06-03"))
     end
   end
   describe "#expires_on" do
@@ -55,79 +55,79 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == "GI658-FRNIC"
-      subject.registrant_contacts[0].name.should          == nil
-      subject.registrant_contacts[0].organization.should  == "Google Inc."
-      subject.registrant_contacts[0].address.should       == "1600, Amphitheatre Parkway\n94043 Mountain View Ca"
-      subject.registrant_contacts[0].city.should          == nil
-      subject.registrant_contacts[0].zip.should           == nil
-      subject.registrant_contacts[0].state.should         == nil
-      subject.registrant_contacts[0].country.should       == nil
-      subject.registrant_contacts[0].country_code.should  == "US"
-      subject.registrant_contacts[0].phone.should         == "+1 650 253 0000"
-      subject.registrant_contacts[0].fax.should           == "+1 650 618 8571"
-      subject.registrant_contacts[0].email.should         == "dns-admin@google.com"
-      subject.registrant_contacts[0].updated_on.should    == Time.parse("2009-07-09 00:00:00 UTC")
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq("GI658-FRNIC")
+      expect(subject.registrant_contacts[0].name).to eq(nil)
+      expect(subject.registrant_contacts[0].organization).to eq("Google Inc.")
+      expect(subject.registrant_contacts[0].address).to eq("1600, Amphitheatre Parkway\n94043 Mountain View Ca")
+      expect(subject.registrant_contacts[0].city).to eq(nil)
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+      expect(subject.registrant_contacts[0].phone).to eq("+1 650 253 0000")
+      expect(subject.registrant_contacts[0].fax).to eq("+1 650 618 8571")
+      expect(subject.registrant_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2009-07-09 00:00:00 UTC"))
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].id.should            == "TT599-FRNIC"
-      subject.admin_contacts[0].name.should          == "Tu Tsao"
-      subject.admin_contacts[0].organization.should  == "Google France"
-      subject.admin_contacts[0].address.should       == "38, avenue de l'Opera\n75002 Paris"
-      subject.admin_contacts[0].city.should          == nil
-      subject.admin_contacts[0].zip.should           == nil
-      subject.admin_contacts[0].state.should         == nil
-      subject.admin_contacts[0].country.should       == nil
-      subject.admin_contacts[0].country_code.should  == "FR"
-      subject.admin_contacts[0].phone.should         == "+33 6 50 33 00 10"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "dns-admin@google.com"
-      subject.admin_contacts[0].updated_on.should    == Time.parse("2009-02-24 00:00:00 UTC")
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("TT599-FRNIC")
+      expect(subject.admin_contacts[0].name).to eq("Tu Tsao")
+      expect(subject.admin_contacts[0].organization).to eq("Google France")
+      expect(subject.admin_contacts[0].address).to eq("38, avenue de l'Opera\n75002 Paris")
+      expect(subject.admin_contacts[0].city).to eq(nil)
+      expect(subject.admin_contacts[0].zip).to eq(nil)
+      expect(subject.admin_contacts[0].state).to eq(nil)
+      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].country_code).to eq("FR")
+      expect(subject.admin_contacts[0].phone).to eq("+33 6 50 33 00 10")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2009-02-24 00:00:00 UTC"))
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "MC239-FRNIC"
-      subject.technical_contacts[0].name.should          == "MARKMONITOR CCOPS"
-      subject.technical_contacts[0].organization.should  == "eMarkmonitor Inc. dba MarkMonitor"
-      subject.technical_contacts[0].address.should       == "PMB 155\n10400 Overland Road\n83709-1433 Boise, Id\nUS"
-      subject.technical_contacts[0].city.should          == nil
-      subject.technical_contacts[0].zip.should           == nil
-      subject.technical_contacts[0].state.should         == nil
-      subject.technical_contacts[0].country.should       == nil
-      subject.technical_contacts[0].country_code.should  == nil
-      subject.technical_contacts[0].phone.should         == "+01 2083895740"
-      subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "ccops@markmonitor.com"
-      subject.technical_contacts[0].updated_on.should    == Time.parse("2008-10-10 00:00:00 UTC")
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("MC239-FRNIC")
+      expect(subject.technical_contacts[0].name).to eq("MARKMONITOR CCOPS")
+      expect(subject.technical_contacts[0].organization).to eq("eMarkmonitor Inc. dba MarkMonitor")
+      expect(subject.technical_contacts[0].address).to eq("PMB 155\n10400 Overland Road\n83709-1433 Boise, Id\nUS")
+      expect(subject.technical_contacts[0].city).to eq(nil)
+      expect(subject.technical_contacts[0].zip).to eq(nil)
+      expect(subject.technical_contacts[0].state).to eq(nil)
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq(nil)
+      expect(subject.technical_contacts[0].phone).to eq("+01 2083895740")
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq("ccops@markmonitor.com")
+      expect(subject.technical_contacts[0].updated_on).to eq(Time.parse("2008-10-10 00:00:00 UTC"))
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.google.com"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.google.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.google.com"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns4.google.com"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.google.com")
     end
   end
 end

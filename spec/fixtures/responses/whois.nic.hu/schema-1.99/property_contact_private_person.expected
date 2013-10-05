@@ -3,7 +3,7 @@
   %s[0] CLASS(contact)
   %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   %s[0].id           == nil
-  %s[0].name         =~ /Buruzs/
+  %s[0].name         %MATCH{Buruzs}
   %s[0].organization == nil
   %s[0].address      == nil
   %s[0].city         == nil

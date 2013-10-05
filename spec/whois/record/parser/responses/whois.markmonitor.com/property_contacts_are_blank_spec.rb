@@ -23,28 +23,28 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "property_contacts_are_blan
 
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "Markmonitor.com"
-      subject.registrar.url.should          == "http://www.markmonitor.com"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("Markmonitor.com")
+      expect(subject.registrar.url).to eq("http://www.markmonitor.com")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(0).items
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(0).items
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(0).items
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(0).items
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(0).items
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(0).items
     end
   end
 end

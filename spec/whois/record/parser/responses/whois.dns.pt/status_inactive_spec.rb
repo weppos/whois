@@ -23,23 +23,23 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_inactive.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :inactive
+      expect(subject.status).to eq(:inactive)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2009-02-09 00:00:00 UTC")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2009-02-09 00:00:00 UTC"))
     end
   end
   describe "#updated_on" do
@@ -49,14 +49,14 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_inactive.expected" do
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2014-03-01 00:00:00 UTC")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2014-03-01 00:00:00 UTC"))
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(0).items
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(0).items
     end
   end
 end

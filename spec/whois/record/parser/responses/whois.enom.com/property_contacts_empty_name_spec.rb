@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisEnomCom, "property_contacts_empty_name.expe
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == ""
-      subject.registrant_contacts[0].organization.should == "Ben Cohen"
-      subject.registrant_contacts[0].address.should      == "9 Carolyn Ct."
-      subject.registrant_contacts[0].city.should         == "Owings Mills"
-      subject.registrant_contacts[0].zip.should          == "21117"
-      subject.registrant_contacts[0].state.should        == "MD"
-      subject.registrant_contacts[0].country_code.should == "US"
-      subject.registrant_contacts[0].phone.should        == ""
-      subject.registrant_contacts[0].fax.should          == ""
-      subject.registrant_contacts[0].email.should        == ""
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("")
+      expect(subject.registrant_contacts[0].organization).to eq("Ben Cohen")
+      expect(subject.registrant_contacts[0].address).to eq("9 Carolyn Ct.")
+      expect(subject.registrant_contacts[0].city).to eq("Owings Mills")
+      expect(subject.registrant_contacts[0].zip).to eq("21117")
+      expect(subject.registrant_contacts[0].state).to eq("MD")
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+      expect(subject.registrant_contacts[0].phone).to eq("")
+      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].email).to eq("")
     end
   end
 end

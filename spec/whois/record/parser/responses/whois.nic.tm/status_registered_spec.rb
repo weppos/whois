@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisNicTm, "status_registered.expected" do
   end
   describe "#domain" do
     it do
-      subject.domain.should == "google.tm"
+      expect(subject.domain).to eq("google.tm")
     end
   end
   describe "#domain_id" do
@@ -38,17 +38,17 @@ describe Whois::Record::Parser::WhoisNicTm, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do

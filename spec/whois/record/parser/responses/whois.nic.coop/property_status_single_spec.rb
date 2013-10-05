@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicCoop, "property_status_single.expected" 
 
   describe "#status" do
     it do
-      subject.status.should == ["ok"]
+      expect(subject.status).to eq(["ok"])
     end
   end
 end

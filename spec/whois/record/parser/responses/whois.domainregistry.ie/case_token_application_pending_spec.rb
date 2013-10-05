@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "case_token_application_p
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
 end

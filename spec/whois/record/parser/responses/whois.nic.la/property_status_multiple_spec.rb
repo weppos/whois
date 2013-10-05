@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicLa, "property_status_multiple.expected" 
 
   describe "#status" do
     it do
-      subject.status.should == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
+      expect(subject.status).to eq(["TRANSFER PROHIBITED", "RENEW PERIOD"])
     end
   end
 end

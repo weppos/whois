@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicTravel, "property_status_multiple.expect
 
   describe "#status" do
     it do
-      subject.status.should == ["clientDeleteProhibited", "clientTransferProhibited"]
+      expect(subject.status).to eq(["clientDeleteProhibited", "clientTransferProhibited"])
     end
   end
 end

@@ -23,17 +23,17 @@ describe Whois::Record::Parser::WhoisNicKz, "property_status_multiple.expected" 
 
   describe "#status" do
     it do
-      subject.status.should == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited"]
+      expect(subject.status).to eq(["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited"])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
 end

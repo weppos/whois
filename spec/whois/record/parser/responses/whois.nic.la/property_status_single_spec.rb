@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicLa, "property_status_single.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["OK"]
+      expect(subject.status).to eq(["OK"])
     end
   end
 end

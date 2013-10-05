@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicFr, "response_throttled.expected" do
 
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == true
+      expect(subject.response_throttled?).to eq(true)
     end
   end
 end

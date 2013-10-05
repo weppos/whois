@@ -23,17 +23,17 @@ describe Whois::Record::Parser::KeroYachayPe, "status_inactive.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :inactive
+      expect(subject.status).to eq(:inactive)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
@@ -53,14 +53,14 @@ describe Whois::Record::Parser::KeroYachayPe, "status_inactive.expected" do
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(0).items
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(0).items
+      expect(subject.nameservers).to eq([])
     end
   end
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == false
+      expect(subject.response_throttled?).to eq(false)
     end
   end
 end

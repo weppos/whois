@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_ok.expected" d
 
   describe "#status" do
     it do
-      subject.status.should == ["OK"]
+      expect(subject.status).to eq(["OK"])
     end
   end
 end

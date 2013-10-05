@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisMeregistryNet, "property_updated_on_is_blan
 
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_nil
+      expect(subject.updated_on).to be_nil
     end
   end
 end

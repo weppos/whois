@@ -23,22 +23,22 @@ describe Whois::Record::Parser::WhoisGovZa, "status_available.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :available
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == true
+      expect(subject.available?).to eq(true)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#updated_on" do

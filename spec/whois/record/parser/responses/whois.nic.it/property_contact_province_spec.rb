@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisNicIt, "property_contact_province.expected"
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should           == "HTML1-ITNIC"
-      subject.registrant_contacts[0].name.should         == "HTML.it srl"
-      subject.registrant_contacts[0].organization.should == "HTML.it srl"
-      subject.registrant_contacts[0].address.should      == "Viale Alessandrino, 595"
-      subject.registrant_contacts[0].city.should         == "Roma"
-      subject.registrant_contacts[0].zip.should          == "00172"
-      subject.registrant_contacts[0].state.should        == "RM"
-      subject.registrant_contacts[0].country_code.should == "IT"
-      subject.registrant_contacts[0].created_on.should   == Time.parse("2007-03-01 10:28:08")
-      subject.registrant_contacts[0].updated_on.should   == Time.parse("2007-03-01 10:28:08")
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq("HTML1-ITNIC")
+      expect(subject.registrant_contacts[0].name).to eq("HTML.it srl")
+      expect(subject.registrant_contacts[0].organization).to eq("HTML.it srl")
+      expect(subject.registrant_contacts[0].address).to eq("Viale Alessandrino, 595")
+      expect(subject.registrant_contacts[0].city).to eq("Roma")
+      expect(subject.registrant_contacts[0].zip).to eq("00172")
+      expect(subject.registrant_contacts[0].state).to eq("RM")
+      expect(subject.registrant_contacts[0].country_code).to eq("IT")
+      expect(subject.registrant_contacts[0].created_on).to eq(Time.parse("2007-03-01 10:28:08"))
+      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2007-03-01 10:28:08"))
     end
   end
 end

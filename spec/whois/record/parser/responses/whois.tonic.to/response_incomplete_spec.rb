@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisTonicTo, "response_incomplete.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == :incomplete
+      expect(subject.status).to eq(:incomplete)
     end
   end
   describe "#response_incomplete?" do
     it do
-      subject.response_incomplete?.should == true
+      expect(subject.response_incomplete?).to eq(true)
     end
   end
 end

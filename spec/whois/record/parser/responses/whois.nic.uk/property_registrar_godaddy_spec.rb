@@ -23,11 +23,11 @@ describe Whois::Record::Parser::WhoisNicUk, "property_registrar_godaddy.expected
 
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == "GODADDY"
-      subject.registrar.name.should         == "GoDaddy.com, LLP."
-      subject.registrar.name.should         == "GoDaddy.com, LLP."
-      subject.registrar.url.should          == nil
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq("GODADDY")
+      expect(subject.registrar.name).to eq("GoDaddy.com, LLP.")
+      expect(subject.registrar.name).to eq("GoDaddy.com, LLP.")
+      expect(subject.registrar.url).to eq(nil)
     end
   end
 end

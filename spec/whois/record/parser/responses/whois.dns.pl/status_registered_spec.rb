@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
 
   describe "#domain" do
     it do
-      subject.domain.should == "google.pl"
+      expect(subject.domain).to eq("google.pl")
     end
   end
   describe "#domain_id" do
@@ -33,44 +33,44 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2002-09-19 13:00:00")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2002-09-19 13:00:00"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2012-08-17 11:21:09")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2012-08-17 11:21:09"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-09-18 14:00:00")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2013-09-18 14:00:00"))
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "Markmonitor, Inc."
-      subject.registrar.organization.should == nil
-      subject.registrar.url.should          == nil
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("Markmonitor, Inc.")
+      expect(subject.registrar.organization).to eq(nil)
+      expect(subject.registrar.url).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
@@ -85,37 +85,37 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "ks_5271013"
-      subject.technical_contacts[0].name.should          == nil
-      subject.technical_contacts[0].organization.should  == "DNS Admin\nGoogle Inc."
-      subject.technical_contacts[0].address.should       == "1600 Amphitheatre Parkway"
-      subject.technical_contacts[0].city.should          == "Mountain View"
-      subject.technical_contacts[0].zip.should           == "94043"
-      subject.technical_contacts[0].state.should         == nil
-      subject.technical_contacts[0].country.should       == nil
-      subject.technical_contacts[0].country_code.should  == "US"
-      subject.technical_contacts[0].phone.should         == "+1.6503300100"
-      subject.technical_contacts[0].fax.should           == "+1.6506188571"
-      subject.technical_contacts[0].email.should         == nil
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("ks_5271013")
+      expect(subject.technical_contacts[0].name).to eq(nil)
+      expect(subject.technical_contacts[0].organization).to eq("DNS Admin\nGoogle Inc.")
+      expect(subject.technical_contacts[0].address).to eq("1600 Amphitheatre Parkway")
+      expect(subject.technical_contacts[0].city).to eq("Mountain View")
+      expect(subject.technical_contacts[0].zip).to eq("94043")
+      expect(subject.technical_contacts[0].state).to eq(nil)
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq("US")
+      expect(subject.technical_contacts[0].phone).to eq("+1.6503300100")
+      expect(subject.technical_contacts[0].fax).to eq("+1.6506188571")
+      expect(subject.technical_contacts[0].email).to eq(nil)
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns2.google.com"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.google.com"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns1.google.com")
     end
   end
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == false
+      expect(subject.response_throttled?).to eq(false)
     end
   end
 end

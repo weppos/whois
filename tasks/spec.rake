@@ -46,7 +46,7 @@ end
   RUBY
 
   TPL_MATCH = <<-RUBY.chomp!
-      subject.%{attribute}.should %{match}
+      expect(subject.%{attribute}).to %{match}
   RUBY
 
   TPL_MATCH_RAISE = <<-RUBY.chomp!
@@ -92,7 +92,7 @@ end
         case line
         when ""
           # skip empty line
-        when /^\s*$/, /^\/\//
+        when /^\s*$/, /^\s*\/\//
           # skip comment line
         when /^#([^\s]+)/
           tests[match = $1] = []
@@ -139,21 +139,26 @@ end
 
   def _parse_assertion(method, condition)
     m = method
-    c = condition
+    c = condition.strip
 
-    case condition
+    case
 
-    # %s CLASS(time)
-    # ->
-    # %s be_a(time)
-    when /^CLASS\((.+)\)$/
+    # %s CLASS(time) -> %s be_a(time)
+    when c =~ /^CLASS\((.+)\)$/
       c = "be_a(#{_build_condition_typeof($1)})"
 
-    # %s SIZE(3)
-    # ->
-    # %s have(3).items
-    when /^SIZE\((.+)\)$/
+    # %s SIZE(3) -> %s have(3).items
+    when c =~ /^SIZE\((.+)\)$/
       c = "have(#{$1}).items"
+
+    # %s == "foo"
+    when c =~ /^== (.+)$/
+      c = "eq(#{$1})"
+
+    # %s =~ "foo"
+    when c =~ /^%MATCH\{(.+)\}$/
+      c = "match(/#{$1}/)"
+
     end
 
     [m, c]

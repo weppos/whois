@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "response_unavailable.expected" 
 
   describe "#response_unavailable?" do
     it do
-      subject.response_unavailable?.should == true
+      expect(subject.response_unavailable?).to eq(true)
     end
   end
 end

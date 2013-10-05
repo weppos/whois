@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCat, "property_status_multiple.expected" do
 
   describe "#status" do
     it do
-      subject.status.should == ["clientTransferProhibited", "clientDeleteProhibited"]
+      expect(subject.status).to eq(["clientTransferProhibited", "clientDeleteProhibited"])
     end
   end
 end

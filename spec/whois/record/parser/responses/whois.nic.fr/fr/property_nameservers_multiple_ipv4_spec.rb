@@ -23,16 +23,16 @@ describe Whois::Record::Parser::WhoisNicFr, "property_nameservers_multiple_ipv4.
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.boursedirect.fr"
-      subject.nameservers[0].ipv4.should == "212.157.203.190"
-      subject.nameservers[0].ipv6.should == nil
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.boursedirect.fr"
-      subject.nameservers[1].ipv4.should == "212.157.203.189"
-      subject.nameservers[1].ipv6.should == nil
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.boursedirect.fr")
+      expect(subject.nameservers[0].ipv4).to eq("212.157.203.190")
+      expect(subject.nameservers[0].ipv6).to eq(nil)
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.boursedirect.fr")
+      expect(subject.nameservers[1].ipv4).to eq("212.157.203.189")
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

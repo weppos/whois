@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisNicIt, "property_technical_contact.expected
 
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should           == "TS7016-ITNIC"
-      subject.technical_contacts[0].name.should         == "Technical Services"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("TS7016-ITNIC")
+      expect(subject.technical_contacts[0].name).to eq("Technical Services")
     end
   end
 end

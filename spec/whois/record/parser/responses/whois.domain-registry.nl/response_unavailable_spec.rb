@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "response_unavailable.exp
 
   describe "#response_unavailable?" do
     it do
-      subject.response_unavailable?.should == true
+      expect(subject.response_unavailable?).to eq(true)
     end
   end
 end

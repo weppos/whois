@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDnsPl, "property_expires_on_not_defined.exp
 
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
 end

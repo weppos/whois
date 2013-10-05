@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDnsBe, "response_throttled_limit.expected" 
 
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == true
+      expect(subject.response_throttled?).to eq(true)
     end
   end
 end

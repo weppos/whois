@@ -23,20 +23,20 @@ describe Whois::Record::Parser::WhoisRegistroBr, "property_nameservers_with_ip.e
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.hostgator.com.br"
-      subject.nameservers[0].ipv4.should == "74.53.28.178"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.hostgator.com.br"
-      subject.nameservers[1].ipv4.should == "74.53.28.179"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.hostgator.com.br"
-      subject.nameservers[2].ipv4.should == "174.133.202.50"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns4.hostgator.com.br"
-      subject.nameservers[3].ipv4.should == "174.133.202.51"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.hostgator.com.br")
+      expect(subject.nameservers[0].ipv4).to eq("74.53.28.178")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.hostgator.com.br")
+      expect(subject.nameservers[1].ipv4).to eq("74.53.28.179")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.hostgator.com.br")
+      expect(subject.nameservers[2].ipv4).to eq("174.133.202.50")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.hostgator.com.br")
+      expect(subject.nameservers[3].ipv4).to eq("174.133.202.51")
     end
   end
 end
