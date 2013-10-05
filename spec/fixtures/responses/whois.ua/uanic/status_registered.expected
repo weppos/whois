@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2002-09-03 00:00:00")
+  %s %TIME{2002-09-03 00:00:00}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2012-07-30 16:42:30")
+  %s %TIME{2012-07-30 16:42:30}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2014-09-03 12:18:52")
+  %s %TIME{2014-09-03 12:18:52}
 
 
 #registrar
@@ -53,7 +53,7 @@
   %s[0].fax           == "+380 (44) 2473954"
   %s[0].email         == "dnsmaster@kyivstar.net"
   %s[0].created_on    == nil
-  %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  %s[0].updated_on    %TIME{2008-09-02 12:52:47}
 
 #technical_contacts
   %s %CLASS{array}
@@ -73,7 +73,7 @@
   %s[0].fax           == "+380 (44) 2473954"
   %s[0].email         == "dnsmaster@kyivstar.net"
   %s[0].created_on    == nil
-  %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  %s[0].updated_on    %TIME{2008-09-02 12:52:47}
 
 
 #nameservers

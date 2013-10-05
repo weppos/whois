@@ -10,11 +10,11 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("1995-01-01")
+  %s %TIME{1995-01-01}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2004-09-17")
+  %s %TIME{2004-09-17}
 
 #expires_on
   %s raise_error(Whois::AttributeNotSupported)
@@ -37,7 +37,7 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == nil
-  %s[0].updated_on    == Time.parse("2008-10-09 00:00:00 UTC")
+  %s[0].updated_on    %TIME{2008-10-09 00:00:00 UTC}
 
 #admin_contacts
   %s %CLASS{array}
@@ -56,7 +56,7 @@
   %s[0].phone         == "+33 1 39 30 83 00"
   %s[0].fax           == nil
   %s[0].email         == "hostmaster@nic.fr"
-  %s[0].updated_on    == Time.parse("2005-08-23 00:00:00 UTC")
+  %s[0].updated_on    %TIME{2005-08-23 00:00:00 UTC}
 
 #technical_contacts
   %s %CLASS{array}
@@ -75,7 +75,7 @@
   %s[0].phone         == "+33 1 39 30 83 00"
   %s[0].fax           == nil
   %s[0].email         == "hostmaster@nic.fr"
-  %s[0].updated_on    == Time.parse("2005-08-23 00:00:00 UTC")
+  %s[0].updated_on    %TIME{2005-08-23 00:00:00 UTC}
 
 
 #nameservers

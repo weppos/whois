@@ -14,4 +14,4 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == "info@webareal.cz"
-  %s[0].created_on    == Time.parse("2009-04-10 14:48:02")
+  %s[0].created_on    %TIME{2009-04-10 14:48:02}

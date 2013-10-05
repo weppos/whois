@@ -10,11 +10,11 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2004-06-15")
+  %s %TIME{2004-06-15}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2009-05-18")
+  %s %TIME{2009-05-18}
 
 #expires_on
   %s raise_error(Whois::AttributeNotSupported)

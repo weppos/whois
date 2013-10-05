@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2010-06-03 03:34:05")
+  %s %TIME{2010-06-03 03:34:05}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2011-07-12 12:52:57")
+  %s %TIME{2011-07-12 12:52:57}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2014-01-03")
+  %s %TIME{2014-01-03}
 
 
 #registrar
@@ -48,7 +48,7 @@
   %s[0].phone         == "+298.322400"
   %s[0].fax           == nil
   %s[0].email         == nil
-  %s[0].created_on    == Time.parse("2010-07-21 19:11:55")
+  %s[0].created_on    %TIME{2010-07-21 19:11:55}
 
 #admin_contacts
   %s %CLASS{array}
@@ -70,7 +70,7 @@
   %s[0].phone         == "+298.322400"
   %s[0].fax           == nil
   %s[0].email         == nil
-  %s[0].created_on    == Time.parse("2010-07-21 19:11:55")
+  %s[0].created_on    %TIME{2010-07-21 19:11:55}
 
 
 #nameservers

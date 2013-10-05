@@ -17,14 +17,14 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2004-03-04")
+  %s %TIME{2004-03-04}
 
 #updated_on
   %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2013-03-05")
+  %s %TIME{2013-03-05}
 
 
 #registrar

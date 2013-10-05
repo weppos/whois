@@ -27,7 +27,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2014-06-06")
+  %s %TIME{2014-06-06}
 
 
 #registrar

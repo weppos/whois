@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("1999-02-17 00:00:00 +13:00")
+  %s %TIME{1999-02-17 00:00:00 +13:00}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2013-01-16 23:20:24 +13:00")
+  %s %TIME{2013-01-16 23:20:24 +13:00}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2014-02-17 00:00:00 +13:00")
+  %s %TIME{2014-02-17 00:00:00 +13:00}
 
 
 #registrar

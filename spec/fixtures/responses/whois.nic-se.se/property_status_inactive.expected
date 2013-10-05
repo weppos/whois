@@ -9,13 +9,13 @@
 
 
 #created_on
-  %s == Time.parse("2000-11-01")
+  %s %TIME{2000-11-01}
 
 #updated_on
   %s == nil
 
 #expires_on
-  %s == Time.parse("2006-04-18")
+  %s %TIME{2006-04-18}
 
 
 #registrant_contacts

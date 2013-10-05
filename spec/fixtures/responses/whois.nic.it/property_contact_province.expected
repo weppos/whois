@@ -11,5 +11,5 @@
   %s[0].zip          == "00172"
   %s[0].state        == "RM"
   %s[0].country_code == "IT"
-  %s[0].created_on   == Time.parse("2007-03-01 10:28:08")
-  %s[0].updated_on   == Time.parse("2007-03-01 10:28:08")
+  %s[0].created_on   %TIME{2007-03-01 10:28:08}
+  %s[0].updated_on   %TIME{2007-03-01 10:28:08}

@@ -21,15 +21,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("1999-12-10 00:00:00")
+  %s %TIME{1999-12-10 00:00:00}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2008-11-27 16:47:22")
+  %s %TIME{2008-11-27 16:47:22}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2009-11-27 00:00:00")
+  %s %TIME{2009-11-27 00:00:00}
 
 
 #registrar
@@ -51,8 +51,8 @@
   %s[0].zip           == "2"
   %s[0].state         == "IE"
   %s[0].country_code  == "IE"
-  %s[0].created_on    == Time.parse("2008-11-27 16:47:22")
-  %s[0].updated_on    == Time.parse("2008-11-27 16:47:22")
+  %s[0].created_on    %TIME{2008-11-27 16:47:22}
+  %s[0].updated_on    %TIME{2008-11-27 16:47:22}
 
 #admin_contacts
   %s %CLASS{array}
@@ -67,8 +67,8 @@
   %s[0].zip           == "2"
   %s[0].state         == "IE"
   %s[0].country_code  == "IE"
-  %s[0].created_on    == Time.parse("2008-11-27 16:47:22")
-  %s[0].updated_on    == Time.parse("2008-11-27 16:47:22")
+  %s[0].created_on    %TIME{2008-11-27 16:47:22}
+  %s[0].updated_on    %TIME{2008-11-27 16:47:22}
 
 #technical_contacts
   %s %CLASS{array}

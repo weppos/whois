@@ -13,7 +13,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2011-04-26 17:57:27")
+  %s %TIME{2011-04-26 17:57:27}
 
 #expires_on
   %s raise_error(Whois::AttributeNotSupported)

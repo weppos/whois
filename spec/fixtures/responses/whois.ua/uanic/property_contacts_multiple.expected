@@ -16,7 +16,7 @@
   %s[0].fax           == "+380 (44) 2473954"
   %s[0].email         == "dnsmaster@kyivstar.net"
   %s[0].created_on    == nil
-  %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  %s[0].updated_on    %TIME{2008-09-02 12:52:47}
   %s[1] %CLASS{contact}
   %s[1].type          == Whois::Record::Contact::TYPE_TECHNICAL
   %s[1].id            == "EIC-UANIC"
@@ -32,5 +32,5 @@
   %s[1].fax           == nil
   %s[1].email         == "hostmaster@visti.net"
   %s[1].created_on    == nil
-  %s[1].updated_on    == Time.parse("2011-12-15 11:33:14")
+  %s[1].updated_on    %TIME{2011-12-15 11:33:14}
 

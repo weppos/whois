@@ -21,7 +21,7 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2009-05-14 00:00:00")
+  %s %TIME{2009-05-14 00:00:00}
 
 #updated_on
   %s raise_error(Whois::AttributeNotSupported)
@@ -54,8 +54,8 @@
   %s[0].phone         == "+1 925 685 9600"
   %s[0].fax           == "+1 925 685 9620"
   %s[0].email         == "dns-admin@google.com"
-  %s[0].created_on    == Time.parse("2009-05-14 00:00:00")
-  %s[0].updated_on    == Time.parse("2010-07-18 00:00:00")
+  %s[0].created_on    %TIME{2009-05-14 00:00:00}
+  %s[0].updated_on    %TIME{2010-07-18 00:00:00}
 
 #admin_contacts
   %s %CLASS{array}
@@ -74,8 +74,8 @@
   %s[0].phone         == "+1 925 685 9600"
   %s[0].fax           == "+1 925 685 9620"
   %s[0].email         == "dns-admin@google.com"
-  %s[0].created_on    == Time.parse("2009-05-14 00:00:00")
-  %s[0].updated_on    == Time.parse("2010-07-18 00:00:00")
+  %s[0].created_on    %TIME{2009-05-14 00:00:00}
+  %s[0].updated_on    %TIME{2010-07-18 00:00:00}
 
 #technical_contacts
   %s %CLASS{array}
@@ -94,8 +94,8 @@
   %s[0].phone         == "+1 925 685 9600"
   %s[0].fax           == "+1 925 685 9620"
   %s[0].email         == "dns-admin@google.com"
-  %s[0].created_on    == Time.parse("2009-05-14 00:00:00")
-  %s[0].updated_on    == Time.parse("2010-07-18 00:00:00")
+  %s[0].created_on    %TIME{2009-05-14 00:00:00}
+  %s[0].updated_on    %TIME{2010-07-18 00:00:00}
 
 
 #nameservers

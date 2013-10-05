@@ -10,11 +10,11 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("1996-08-01")
+  %s %TIME{1996-08-01}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2012-03-23")
+  %s %TIME{2012-03-23}
 
 #expires_on
   %s == nil

@@ -10,14 +10,14 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("04.07.2010 05:05:30")
+  %s %TIME{04.07.2010 05:05:30}
 
 #updated_on
   %s == nil
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("05.01.2011")
+  %s %TIME{05.01.2011}
 
 
 #nameservers

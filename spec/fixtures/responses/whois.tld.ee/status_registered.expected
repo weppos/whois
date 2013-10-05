@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2010-07-04 07:10:32")
+  %s %TIME{2010-07-04 07:10:32}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2010-12-10 13:37:11")
+  %s %TIME{2010-12-10 13:37:11}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2012-12-10")
+  %s %TIME{2012-12-10}
 
 
 #registrar
@@ -52,7 +52,7 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == "Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS"
-  %s[0].created_on    == Time.parse("2010-12-09 16:08:33")
+  %s[0].created_on    %TIME{2010-12-09 16:08:33}
 
 #admin_contacts
   %s %CLASS{array}
@@ -71,7 +71,7 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == "Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS"
-  %s[0].created_on    == Time.parse("2010-12-10 13:35:38")
+  %s[0].created_on    %TIME{2010-12-10 13:35:38}
 
 #technical_contacts
   %s %CLASS{array}
@@ -90,7 +90,7 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == "Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS"
-  %s[0].created_on    == Time.parse("2010-12-09 16:08:33")
+  %s[0].created_on    %TIME{2010-12-09 16:08:33}
 
 
 #nameservers

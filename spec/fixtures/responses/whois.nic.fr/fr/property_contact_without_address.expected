@@ -14,4 +14,4 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == nil
-  %s[0].updated_on    == Time.parse("2007-09-03 00:00:00 UTC")
+  %s[0].updated_on    %TIME{2007-09-03 00:00:00 UTC}

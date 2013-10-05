@@ -10,14 +10,14 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2000-08-29")
+  %s %TIME{2000-08-29}
 
 #updated_on
   %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2011-11-09")
+  %s %TIME{2011-11-09}
 
 
 #nameservers

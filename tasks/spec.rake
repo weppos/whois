@@ -143,13 +143,17 @@ end
 
     case
 
-    # %s %CLASS{time) -> %s be_a(time}
+    # %s %CLASS{time} -> %s be_a(time)
     when c =~ /^%CLASS\{(.+)\}$/
       c = "be_a(#{_build_condition_typeof($1)})"
 
-    # %s %SIZE{3) -> %s have(3}.items
+    # %s %SIZE{3} -> %s have(3).items
     when c =~ /^%SIZE\{(.+)\}$/
       c = "have(#{$1}).items"
+
+    # %s %TIME{3} -> %s have(3}.items
+    when c =~ /^%TIME\{(.+)\}$/
+      c = "eq(Time.parse(\"#{$1}\"))"
 
     # %s =~ "foo"
     when c =~ /^%MATCH\{(.+)\}$/

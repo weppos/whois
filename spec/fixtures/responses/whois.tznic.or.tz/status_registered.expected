@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2009-07-27 11:01:10")
+  %s %TIME{2009-07-27 11:01:10}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2010-08-30 15:47:56")
+  %s %TIME{2010-08-30 15:47:56}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2012-07-27")
+  %s %TIME{2012-07-27}
 
 
 #registrar
@@ -52,7 +52,7 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == "mcollins@dailynews.co.tz"
-  %s[0].created_on    == Time.parse("2010-08-30 15:46:35")
+  %s[0].created_on    %TIME{2010-08-30 15:46:35}
 
 #admin_contacts
   %s %CLASS{array}
@@ -71,7 +71,7 @@
   %s[0].phone         == nil
   %s[0].fax           == nil
   %s[0].email         == "mcollins@dailynews.co.tz"
-  %s[0].created_on    == Time.parse("2010-08-30 15:46:35")
+  %s[0].created_on    %TIME{2010-08-30 15:46:35}
 
 #technical_contacts
   %s %CLASS{array}
@@ -90,7 +90,7 @@
   %s[0].phone         == "+255.755763951"
   %s[0].fax           == nil
   %s[0].email         == "jacobn@twigaonline.com"
-  %s[0].created_on    == Time.parse("2009-08-24 06:21:51")
+  %s[0].created_on    %TIME{2009-08-24 06:21:51}
 
 
 #nameservers

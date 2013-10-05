@@ -11,5 +11,5 @@
   %s[0].zip          == "2"
   %s[0].state        == "IE"
   %s[0].country_code == "IE"
-  %s[0].created_on   == Time.parse("2008-11-27 16:47:22")
-  %s[0].updated_on   == Time.parse("2008-11-27 16:47:22")
+  %s[0].created_on   %TIME{2008-11-27 16:47:22}
+  %s[0].updated_on   %TIME{2008-11-27 16:47:22}

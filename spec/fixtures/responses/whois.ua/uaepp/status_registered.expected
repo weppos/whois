@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s == Time.parse("2002-12-04 00:00:00 +02:00")
+  %s %TIME{2002-12-04 00:00:00 +02:00}
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2013-04-15 20:00:10 +03:00")
+  %s %TIME{2013-04-15 20:00:10 +03:00}
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2013-12-04 00:00:00 +02:00")
+  %s %TIME{2013-12-04 00:00:00 +02:00}
 
 
 #registrar
@@ -48,7 +48,7 @@
   %s[0].phone         == "+16503300100"
   %s[0].fax           == "+16506188571"
   %s[0].email         == "dns-admin@google.com"
-  %s[0].created_on    == Time.parse("2013-03-31 19:13:45 +03:00")
+  %s[0].created_on    %TIME{2013-03-31 19:13:45 +03:00}
   %s[0].updated_on    == nil
 
 #admin_contacts
@@ -68,7 +68,7 @@
   %s[0].phone         == "+16503300100"
   %s[0].fax           == "+16506188571"
   %s[0].email         == "dns-admin@google.com"
-  %s[0].created_on    == Time.parse("2013-03-31 19:13:45 +03:00")
+  %s[0].created_on    %TIME{2013-03-31 19:13:45 +03:00}
   %s[0].updated_on    == nil
 
 #technical_contacts
@@ -88,7 +88,7 @@
   %s[0].phone         == "+16503300100"
   %s[0].fax           == "+16506188571"
   %s[0].email         == "dns-admin@google.com"
-  %s[0].created_on    == Time.parse("2013-03-31 19:13:45 +03:00")
+  %s[0].created_on    %TIME{2013-03-31 19:13:45 +03:00}
   %s[0].updated_on    == nil
 
 
