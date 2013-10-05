@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
 
   subject do
     file = fixture("responses", "whois.dreamhost.com/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

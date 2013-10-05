@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicGl, "property_status_delegated.expected"
 
   subject do
     file = fixture("responses", "whois.nic.gl/property_status_delegated.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

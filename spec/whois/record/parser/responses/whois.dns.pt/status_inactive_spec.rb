@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_inactive.expected" do
 
   subject do
     file = fixture("responses", "whois.dns.pt/status_inactive.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

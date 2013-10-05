@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisPninaPs, "property_status_active_pending_tr
 
   subject do
     file = fixture("responses", "whois.pnina.ps/property_status_active_pending_transfer.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

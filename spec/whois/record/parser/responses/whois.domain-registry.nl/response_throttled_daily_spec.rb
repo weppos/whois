@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "response_throttled_daily
 
   subject do
     file = fixture("responses", "whois.domain-registry.nl/response_throttled_daily.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "property_nameserver_no_nameserv
 
   subject do
     file = fixture("responses", "whois.crsnic.net/com/property_nameserver_no_nameserver.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicIt, "property_status_no_provider.expecte
 
   subject do
     file = fixture("responses", "whois.nic.it/property_status_no_provider.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

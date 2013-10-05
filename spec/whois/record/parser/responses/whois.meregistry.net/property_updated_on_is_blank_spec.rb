@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisMeregistryNet, "property_updated_on_is_blan
 
   subject do
     file = fixture("responses", "whois.meregistry.net/property_updated_on_is_blank.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

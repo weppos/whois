@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisEnomCom, "property_contacts_long_address.ex
 
   subject do
     file = fixture("responses", "whois.enom.com/property_contacts_long_address.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

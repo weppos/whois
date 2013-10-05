@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisSmallregistryNet, "status_available.expecte
 
   subject do
     file = fixture("responses", "whois.smallregistry.net/status_available.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

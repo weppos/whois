@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "property_nameservers_without_i
 
   subject do
     file = fixture("responses", "whois.registry.qa/property_nameservers_without_ips.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

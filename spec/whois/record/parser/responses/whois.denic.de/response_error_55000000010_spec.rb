@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "response_error_55000000010.expect
 
   subject do
     file = fixture("responses", "whois.denic.de/response_error_55000000010.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

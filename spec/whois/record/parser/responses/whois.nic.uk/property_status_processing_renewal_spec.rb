@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicUk, "property_status_processing_renewal.
 
   subject do
     file = fixture("responses", "whois.nic.uk/property_status_processing_renewal.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

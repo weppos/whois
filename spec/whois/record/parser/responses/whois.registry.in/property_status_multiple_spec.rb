@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_multiple.expec
 
   subject do
     file = fixture("responses", "whois.registry.in/property_status_multiple.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

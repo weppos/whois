@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicCz, "case_nset_contact_same_name.expecte
 
   subject do
     file = fixture("responses", "whois.nic.cz/case_nset_contact_same_name.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

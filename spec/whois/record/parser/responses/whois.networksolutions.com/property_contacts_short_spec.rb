@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "property_contacts_sho
 
   subject do
     file = fixture("responses", "whois.networksolutions.com/property_contacts_short.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

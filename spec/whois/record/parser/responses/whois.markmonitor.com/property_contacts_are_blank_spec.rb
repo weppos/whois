@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "property_contacts_are_blan
 
   subject do
     file = fixture("responses", "whois.markmonitor.com/property_contacts_are_blank.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

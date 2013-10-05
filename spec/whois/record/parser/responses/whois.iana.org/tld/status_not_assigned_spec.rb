@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
 
   subject do
     file = fixture("responses", "whois.iana.org/tld/status_not_assigned.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

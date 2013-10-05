@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDotCf, "property_expires_on_blank.expected"
 
   subject do
     file = fixture("responses", "whois.dot.cf/property_expires_on_blank.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

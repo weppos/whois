@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_contacts_multip
 
   subject do
     file = fixture("responses", "whois.domainregistry.ie/property_contacts_multiple.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

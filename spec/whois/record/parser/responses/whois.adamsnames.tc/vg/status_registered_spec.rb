@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisAdamsnamesTc, "status_registered.expected" 
 
   subject do
     file = fixture("responses", "whois.adamsnames.tc/vg/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRnidsRs, "property_status_locked.expected" 
 
   subject do
     file = fixture("responses", "whois.rnids.rs/property_status_locked.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

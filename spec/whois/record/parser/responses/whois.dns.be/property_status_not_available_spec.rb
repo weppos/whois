@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDnsBe, "property_status_not_available.expec
 
   subject do
     file = fixture("responses", "whois.dns.be/property_status_not_available.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

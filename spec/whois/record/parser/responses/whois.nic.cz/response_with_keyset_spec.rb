@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicCz, "response_with_keyset.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.cz/response_with_keyset.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

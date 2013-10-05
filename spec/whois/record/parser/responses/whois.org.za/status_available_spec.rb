@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisOrgZa, "status_available.expected" do
 
   subject do
     file = fixture("responses", "whois.org.za/status_available.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

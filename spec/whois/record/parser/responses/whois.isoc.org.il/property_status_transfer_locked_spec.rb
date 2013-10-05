@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "property_status_transfer_locked
 
   subject do
     file = fixture("responses", "whois.isoc.org.il/property_status_transfer_locked.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

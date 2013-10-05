@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicVe, "status_inactive.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.ve/status_inactive.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

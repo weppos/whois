@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "property_status_with_multiple.
 
   subject do
     file = fixture("responses", "whois.audns.net.au/property_status_with_multiple.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

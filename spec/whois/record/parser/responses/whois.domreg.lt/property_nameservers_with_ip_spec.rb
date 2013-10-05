@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDomregLt, "property_nameservers_with_ip.exp
 
   subject do
     file = fixture("responses", "whois.domreg.lt/property_nameservers_with_ip.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

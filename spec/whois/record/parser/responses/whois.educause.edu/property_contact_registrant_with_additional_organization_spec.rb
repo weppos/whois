@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contact_registrant_w
 
   subject do
     file = fixture("responses", "whois.educause.edu/property_contact_registrant_with_additional_organization.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

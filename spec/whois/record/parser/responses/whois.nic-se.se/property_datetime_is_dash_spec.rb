@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_datetime_is_dash.expecte
 
   subject do
     file = fixture("responses", "whois.nic-se.se/property_datetime_is_dash.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

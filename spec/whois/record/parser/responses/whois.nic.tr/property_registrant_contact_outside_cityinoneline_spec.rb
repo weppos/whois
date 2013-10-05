@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicTr, "property_registrant_contact_outside
 
   subject do
     file = fixture("responses", "whois.nic.tr/property_registrant_contact_outside_cityinoneline.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

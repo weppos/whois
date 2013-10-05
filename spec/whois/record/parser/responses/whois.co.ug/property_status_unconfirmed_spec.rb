@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisCoUg, "property_status_unconfirmed.expected
 
   subject do
     file = fixture("responses", "whois.co.ug/property_status_unconfirmed.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

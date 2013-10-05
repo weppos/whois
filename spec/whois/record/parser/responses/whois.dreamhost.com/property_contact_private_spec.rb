@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
 
   subject do
     file = fixture("responses", "whois.dreamhost.com/property_contact_private.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

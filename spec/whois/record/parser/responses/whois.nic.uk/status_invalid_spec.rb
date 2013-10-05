@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicUk, "status_invalid.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.uk/status_invalid.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisCiraCa, "property_status_autorenew_grace.ex
 
   subject do
     file = fixture("responses", "whois.cira.ca/property_status_autorenew_grace.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

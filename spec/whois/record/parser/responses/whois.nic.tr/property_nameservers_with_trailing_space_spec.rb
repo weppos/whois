@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicTr, "property_nameservers_with_trailing_
 
   subject do
     file = fixture("responses", "whois.nic.tr/property_nameservers_with_trailing_space.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

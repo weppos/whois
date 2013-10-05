@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRegistroBr, "status_available_limited.expec
 
   subject do
     file = fixture("responses", "whois.registro.br/status_available_limited.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

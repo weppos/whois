@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisCctldUz, "property_expires_on_dash.expected
 
   subject do
     file = fixture("responses", "whois.cctld.uz/property_expires_on_dash.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

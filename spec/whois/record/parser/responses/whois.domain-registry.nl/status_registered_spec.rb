@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_registered.expect
 
   subject do
     file = fixture("responses", "whois.domain-registry.nl/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

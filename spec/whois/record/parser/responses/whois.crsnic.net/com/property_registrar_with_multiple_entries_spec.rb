@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "property_registrar_with_multipl
 
   subject do
     file = fixture("responses", "whois.crsnic.net/com/property_registrar_with_multiple_entries.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

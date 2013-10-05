@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisSrsNetNz, "property_status_pendingrelease.e
 
   subject do
     file = fixture("responses", "whois.srs.net.nz/property_status_pendingrelease.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

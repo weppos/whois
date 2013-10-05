@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_expired.expected" do
 
   subject do
     file = fixture("responses", "whois.tld.ee/status_expired.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

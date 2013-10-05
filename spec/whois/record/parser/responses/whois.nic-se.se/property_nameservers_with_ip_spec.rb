@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_nameservers_with_ip.expe
 
   subject do
     file = fixture("responses", "whois.nic-se.se/property_nameservers_with_ip.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

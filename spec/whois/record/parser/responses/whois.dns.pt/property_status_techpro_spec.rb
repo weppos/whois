@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "property_status_techpro.expected" d
 
   subject do
     file = fixture("responses", "whois.dns.pt/property_status_techpro.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

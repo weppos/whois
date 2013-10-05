@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicMu, "property_status_ok.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.mu/property_status_ok.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

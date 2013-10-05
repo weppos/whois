@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_state_deleted.expected" d
 
   subject do
     file = fixture("responses", "whois.jprs.jp/co.jp/property_state_deleted.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicUk, "property_status_registered_until_ex
 
   subject do
     file = fixture("responses", "whois.nic.uk/property_status_registered_until_expiry_date.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

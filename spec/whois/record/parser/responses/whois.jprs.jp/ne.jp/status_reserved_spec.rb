@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "status_reserved.expected" do
 
   subject do
     file = fixture("responses", "whois.jprs.jp/ne.jp/status_reserved.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

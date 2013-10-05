@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
 
   subject do
     file = fixture("responses", "whois.afilias-grs.info/mn/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

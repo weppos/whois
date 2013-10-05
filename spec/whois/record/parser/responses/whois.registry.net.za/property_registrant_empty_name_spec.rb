@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "property_registrant_empty_n
 
   subject do
     file = fixture("responses", "whois.registry.net.za/property_registrant_empty_name.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

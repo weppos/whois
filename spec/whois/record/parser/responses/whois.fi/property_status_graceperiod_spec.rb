@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisFi, "property_status_graceperiod.expected" 
 
   subject do
     file = fixture("responses", "whois.fi/property_status_graceperiod.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

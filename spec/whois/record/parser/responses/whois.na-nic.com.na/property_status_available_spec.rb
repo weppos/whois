@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNaNicComNa, "property_status_available.expe
 
   subject do
     file = fixture("responses", "whois.na-nic.com.na/property_status_available.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

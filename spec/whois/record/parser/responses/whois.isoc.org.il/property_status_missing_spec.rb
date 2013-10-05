@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "property_status_missing.expecte
 
   subject do
     file = fixture("responses", "whois.isoc.org.il/property_status_missing.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRotldRo, "property_status_updateprohibited.
 
   subject do
     file = fixture("responses", "whois.rotld.ro/property_status_updateprohibited.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

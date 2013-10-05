@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisRnidsRs, "property_nameservers_hyphenated.e
 
   subject do
     file = fixture("responses", "whois.rnids.rs/property_nameservers_hyphenated.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

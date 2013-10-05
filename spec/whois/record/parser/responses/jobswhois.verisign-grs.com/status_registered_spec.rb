@@ -17,7 +17,7 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
 
   subject do
     file = fixture("responses", "jobswhois.verisign-grs.com/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 

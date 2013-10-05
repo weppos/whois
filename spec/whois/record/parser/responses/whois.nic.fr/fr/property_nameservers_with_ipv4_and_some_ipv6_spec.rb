@@ -17,7 +17,7 @@ describe Whois::Record::Parser::WhoisNicFr, "property_nameservers_with_ipv4_and_
 
   subject do
     file = fixture("responses", "whois.nic.fr/fr/property_nameservers_with_ipv4_and_some_ipv6.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
