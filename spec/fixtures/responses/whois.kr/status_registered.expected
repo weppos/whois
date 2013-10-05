@@ -14,11 +14,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s == Time.parse("2007-10-06")
+  %s == Time.parse("2010-10-04")
 
 #expires_on
   %s %CLASS{time}
-  %s == Time.parse("2011-03-02")
+  %s == Time.parse("2014-03-02")
 
 
 #nameservers

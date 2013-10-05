@@ -14,16 +14,14 @@ module Whois
   class Record
     class Parser
 
-      #
-      # = whois.kr parser
-      #
       # Parser for the whois.kr server.
       #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
+      # @note This parser is just a stub and provides only a few basic methods
+      #   to check for domain availability and get domain status.
+      #   Please consider to contribute implementing missing methods.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
       #
       class WhoisKr < Base
 
@@ -36,7 +34,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /domain name is not registered/)
+          !!(content_for_scanner =~ /^Above domain name is not registered to KRNIC/)
         end
 
         property_supported :registered? do
@@ -51,7 +49,7 @@ module Whois
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Last updated Date\s+:\s+(.+)\n/
+          if content_for_scanner =~ /Last Updated Date\s+:\s+(.+)\n/
             Time.parse($1)
           end
         end
