@@ -1,8 +1,8 @@
 #status
-  should: %s == :available
+  %s == :available
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false

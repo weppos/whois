@@ -1,28 +1,28 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2000-09-11")
+  %s CLASS(time)
+  %s == Time.parse("2000-09-11")
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.peer1.net"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.peer1.net"
+  %s CLASS(array)
+  %s SIZE(2)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "ns1.peer1.net"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "ns2.peer1.net"

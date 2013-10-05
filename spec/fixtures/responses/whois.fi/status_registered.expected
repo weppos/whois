@@ -1,75 +1,75 @@
 #disclaimer
-  should: %s == "More information is available at https://domain.fi/\nCopyright (c) Finnish Communications Regulatory Authority"
+  %s == "More information is available at https://domain.fi/\nCopyright (c) Finnish Communications Regulatory Authority"
 
 
 #domain
-  should: %s == "google.fi"
+  %s == "google.fi"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2006-06-30")
+  %s CLASS(time)
+  %s == Time.parse("2006-06-30")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2013-06-07")
+  %s CLASS(time)
+  %s == Time.parse("2013-06-07")
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2014-07-04")
+  %s CLASS(time)
+  %s == Time.parse("2014-07-04")
 
 
 #registrar
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == "09073468"
-  should: %s[0].name          == "Domain Administrator"
-  should: %s[0].organization  == "Google Finland Oy"
-  should: %s[0].address       == "Mannerheimintie 12 B"
-  should: %s[0].city          == "HELSINKI"
-  should: %s[0].zip           == "00100"
-  should: %s[0].state         == nil
-  should: %s[0].country       == nil
-  should: %s[0].country_code  == nil
-  should: %s[0].phone         == "35896966890"
-  should: %s[0].fax           == nil
-  should: %s[0].email         == nil
-  should: %s[0].created_on    == nil
-  should: %s[0].updated_on    == nil
+  %s CLASS(array)
+  %s SIZE(1)
+  %s[0] CLASS(contact)
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == "09073468"
+  %s[0].name          == "Domain Administrator"
+  %s[0].organization  == "Google Finland Oy"
+  %s[0].address       == "Mannerheimintie 12 B"
+  %s[0].city          == "HELSINKI"
+  %s[0].zip           == "00100"
+  %s[0].state         == nil
+  %s[0].country       == nil
+  %s[0].country_code  == nil
+  %s[0].phone         == "35896966890"
+  %s[0].fax           == nil
+  %s[0].email         == nil
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
 
 #admin_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(4)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.google.com"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.google.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.google.com"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns4.google.com"
+  %s CLASS(array)
+  %s SIZE(4)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "ns1.google.com"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "ns2.google.com"
+  %s[2] CLASS(nameserver)
+  %s[2].name == "ns3.google.com"
+  %s[3] CLASS(nameserver)
+  %s[3].name == "ns4.google.com"

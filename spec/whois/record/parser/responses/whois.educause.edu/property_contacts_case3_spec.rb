@@ -26,6 +26,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case3.expec
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.//.should %s[0].type          == ANYTHING
       subject.admin_contacts[0].id.should            == nil
       subject.admin_contacts[0].name.should          == "Tracy L. Smith\nUniversity of Illinois at Urbana-Champaign\nCITES  2105 Digital Computer Laboratory"
       subject.admin_contacts[0].organization.should  == nil

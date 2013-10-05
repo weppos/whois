@@ -1,29 +1,29 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2001-06-15 00:00:00")
+  %s CLASS(time)
+  %s == Time.parse("2001-06-15 00:00:00")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2009-11-04 16:23:11")
+  %s CLASS(time)
+  %s == Time.parse("2009-11-04 16:23:11")
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "seciu.edu.uy"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "tacuabe.rau.edu.uy"
+  %s CLASS(array)
+  %s SIZE(2)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "seciu.edu.uy"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "tacuabe.rau.edu.uy"

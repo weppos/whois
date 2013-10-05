@@ -1,2 +1,2 @@
 #created_on
-  should: %s == nil
+  %s == nil

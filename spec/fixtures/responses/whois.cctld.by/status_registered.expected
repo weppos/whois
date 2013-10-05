@@ -1,57 +1,57 @@
 #disclaimer
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
-  should: %s == "active.by"
+  %s == "active.by"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2003-02-02")
+  %s CLASS(time)
+  %s == Time.parse("2003-02-02")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2012-11-15")
+  %s CLASS(time)
+  %s == Time.parse("2012-11-15")
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2013-12-21")
+  %s CLASS(time)
+  %s == Time.parse("2013-12-21")
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == "Active Technologies LLC"
-  should: %s.name         == "Active Technologies LLC"
-  should: %s.organization == "Active Technologies LLC"
+  %s CLASS(registrar)
+  %s.id           == "Active Technologies LLC"
+  %s.name         == "Active Technologies LLC"
+  %s.organization == "Active Technologies LLC"
 
 #registrant_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #admin_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.activeby.net"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.activeby.net"
+  %s CLASS(array)
+  %s SIZE(2)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "ns1.activeby.net"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "ns2.activeby.net"

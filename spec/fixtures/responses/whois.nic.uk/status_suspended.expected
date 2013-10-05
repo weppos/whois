@@ -1,34 +1,34 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2008-08-30")
+  %s CLASS(time)
+  %s == Time.parse("2008-08-30")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2012-02-09")
+  %s CLASS(time)
+  %s == Time.parse("2012-02-09")
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2010-08-30")
+  %s CLASS(time)
+  %s == Time.parse("2010-08-30")
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == "KEY-SYSTEMS-DE"
-  should: %s.name         == "Key-Systems GmbH"
-  should: %s.name         == "Key-Systems GmbH"
-  should: %s.url          == "http://www.Key-Systems.net"
+  %s CLASS(registrar)
+  %s.id           == "KEY-SYSTEMS-DE"
+  %s.name         == "Key-Systems GmbH"
+  %s.name         == "Key-Systems GmbH"
+  %s.url          == "http://www.Key-Systems.net"
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []

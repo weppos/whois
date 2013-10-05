@@ -1,32 +1,32 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2009-05-13")
+  %s CLASS(time)
+  %s == Time.parse("2009-05-13")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2010-04-20")
+  %s CLASS(time)
+  %s == Time.parse("2010-04-20")
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-05-13")
+  %s CLASS(time)
+  %s == Time.parse("2011-05-13")
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.google.com"
-  should: %s[0].ipv4 == "216.239.32.10"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.google.com"
-  should: %s[1].ipv4 == "216.239.34.10"
+  %s CLASS(array)
+  %s SIZE(2)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "ns1.google.com"
+  %s[0].ipv4 == "216.239.32.10"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "ns2.google.com"
+  %s[1].ipv4 == "216.239.34.10"

@@ -26,6 +26,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case4.expec
       subject.admin_contacts.should be_a(Array)
       subject.admin_contacts.should have(1).items
       subject.admin_contacts[0].should be_a(Whois::Record::Contact)
+      subject.//.should %s[0].type          == ANYTHING
       subject.admin_contacts[0].id.should            == nil
       subject.admin_contacts[0].name.should          == "ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology"
       subject.admin_contacts[0].organization.should  == nil

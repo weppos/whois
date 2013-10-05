@@ -1,9 +1,9 @@
 #status
-  should: %s == :invalid
+  %s == :invalid
 
 
 #valid?
-  should: %s == false
+  %s == false
 
 #invalid?
-  should: %s == true
+  %s == true

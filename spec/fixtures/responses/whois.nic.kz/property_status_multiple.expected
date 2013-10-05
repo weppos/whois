@@ -1,8 +1,8 @@
 #status
-  should: %s == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited"]
+  %s == ["clientDeleteProhibited", "clientRenewProhibited", "clientTransferProhibited"]
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true

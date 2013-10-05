@@ -1,55 +1,55 @@
 #disclaimer
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #domain
-  should: %s == "umac.mo"
+  %s == "umac.mo"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == nil
-  should: %s.name         == "MONIC"
-  should: %s.organization == nil
-  should: %s.url          == nil
+  %s CLASS(registrar)
+  %s.id           == nil
+  %s.name         == "MONIC"
+  %s.organization == nil
+  %s.url          == nil
 
 #registrant_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #admin_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "umacsn1.umac.mo"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "umacsn2.umac.mo"
+  %s CLASS(array)
+  %s SIZE(2)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "umacsn1.umac.mo"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "umacsn2.umac.mo"

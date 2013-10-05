@@ -1,37 +1,37 @@
 #status
-  should: %s == :available
+  %s == :available
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("1999-09-27")
+  %s CLASS(time)
+  %s == Time.parse("1999-09-27")
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []

@@ -1,34 +1,34 @@
 #domain
-  should: %s == "u34jedzcq.gl"
+  %s == "u34jedzcq.gl"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #status
-  should: %s == :available
+  %s == :available
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s == nil
+  %s == nil
 
 
 #registrar
-  should: %s == nil
+  %s == nil
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []

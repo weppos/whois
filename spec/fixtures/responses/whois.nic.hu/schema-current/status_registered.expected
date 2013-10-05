@@ -1,50 +1,50 @@
 #disclaimer
-  should: %s == nil
+  %s == nil
 
 
 #domain
-  should: %s == "google.hu"
+  %s == "google.hu"
 
 #domain_id
-  should: %s == nil
+  %s == nil
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #registrar
-  should: %s == nil
+  %s == nil
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []

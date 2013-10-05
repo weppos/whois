@@ -1,28 +1,28 @@
 #status
-  should: %s == :available
+  %s == :available
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #created_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s raise_error(Whois::AttributeNotSupported)
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 
 
 #response_throttled?
-  should: %s == false
+  %s == false

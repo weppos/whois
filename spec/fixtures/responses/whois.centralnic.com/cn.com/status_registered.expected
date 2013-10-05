@@ -1,103 +1,103 @@
 #disclaimer
-  should: %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
+  %s == "This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/"
 
 
 #domain
-  should: %s == "gsn.cn.com"
+  %s == "gsn.cn.com"
 
 #domain_id
-  should: %s == "CNIC-DO323367"
+  %s == "CNIC-DO323367"
 
 
 #status
-  should: %s == ["TRANSFER PROHIBITED"]
+  %s == ["TRANSFER PROHIBITED"]
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2005-11-23 15:44:03 UTC")
+  %s CLASS(time)
+  %s == Time.parse("2005-11-23 15:44:03 UTC")
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2013-04-19 11:39:32 UTC")
+  %s CLASS(time)
+  %s == Time.parse("2013-04-19 11:39:32 UTC")
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2013-11-23 23:59:59 UTC")
+  %s CLASS(time)
+  %s == Time.parse("2013-11-23 23:59:59 UTC")
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == "H67436"
-  should: %s.name         == nil
-  should: %s.organization == "united-domains AG"
-  should: %s.url          == "http://www.united-domains.de"
+  %s CLASS(registrar)
+  %s.id           == "H67436"
+  %s.name         == nil
+  %s.organization == "united-domains AG"
+  %s.url          == "http://www.united-domains.de"
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id            == "H1062079"
-  should: %s[0].name          == "GSN Electronics Incorporation Pte Ltd"
-  should: %s[0].organization  == nil
-  should: %s[0].address       == "Straits Trading Building 9 Battery Road 16-08\nSingapore"
-  should: %s[0].city          == nil
-  should: %s[0].zip           == "049910"
-  should: %s[0].state         == nil
-  should: %s[0].country       == nil
-  should: %s[0].country_code  == "SG"
-  should: %s[0].phone         == "+65.62336919"
-  should: %s[0].fax           == nil
-  should: %s[0].email         == "abuse@gsn.in"
+  %s CLASS(array)
+  %s SIZE(1)
+  %s[0] CLASS(contact)
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == "H1062079"
+  %s[0].name          == "GSN Electronics Incorporation Pte Ltd"
+  %s[0].organization  == nil
+  %s[0].address       == "Straits Trading Building 9 Battery Road 16-08\nSingapore"
+  %s[0].city          == nil
+  %s[0].zip           == "049910"
+  %s[0].state         == nil
+  %s[0].country       == nil
+  %s[0].country_code  == "SG"
+  %s[0].phone         == "+65.62336919"
+  %s[0].fax           == nil
+  %s[0].email         == "abuse@gsn.in"
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  should: %s[0].id            == "AUTO-DRZK-SNVHSY"
-  should: %s[0].name          == "Pauline Ang"
-  should: %s[0].organization  == "GSN Electronics Incorporation Pte Ltd"
-  should: %s[0].address       == "Straits Trading Building 9 Battery Road 16-08"
-  should: %s[0].city          == "Singapore"
-  should: %s[0].zip           == "049910"
-  should: %s[0].state         == nil
-  should: %s[0].country       == nil
-  should: %s[0].country_code  == "SG"
-  should: %s[0].phone         == "+65.62336919"
-  should: %s[0].fax           == nil
-  should: %s[0].email         == "abuse@gsn.in"
+  %s CLASS(array)
+  %s SIZE(1)
+  %s[0] CLASS(contact)
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == "AUTO-DRZK-SNVHSY"
+  %s[0].name          == "Pauline Ang"
+  %s[0].organization  == "GSN Electronics Incorporation Pte Ltd"
+  %s[0].address       == "Straits Trading Building 9 Battery Road 16-08"
+  %s[0].city          == "Singapore"
+  %s[0].zip           == "049910"
+  %s[0].state         == nil
+  %s[0].country       == nil
+  %s[0].country_code  == "SG"
+  %s[0].phone         == "+65.62336919"
+  %s[0].fax           == nil
+  %s[0].email         == "abuse@gsn.in"
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "C-UHM65D7-TJGULR"
-  should: %s[0].name          == "Host Master"
-  should: %s[0].organization  == "united-domains AG"
-  should: %s[0].address       == "Gautinger Str. 10"
-  should: %s[0].city          == "Starnberg"
-  should: %s[0].zip           == "82319"
-  should: %s[0].state         == "Bayern"
-  should: %s[0].country       == nil
-  should: %s[0].country_code  == "DE"
-  should: %s[0].phone         == "+49.8151368670"
-  should: %s[0].fax           == "+49.81513686777"
-  should: %s[0].email         == "hostmaster@united-domains.de"
+  %s CLASS(array)
+  %s SIZE(1)
+  %s[0] CLASS(contact)
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == "C-UHM65D7-TJGULR"
+  %s[0].name          == "Host Master"
+  %s[0].organization  == "united-domains AG"
+  %s[0].address       == "Gautinger Str. 10"
+  %s[0].city          == "Starnberg"
+  %s[0].zip           == "82319"
+  %s[0].state         == "Bayern"
+  %s[0].country       == nil
+  %s[0].country_code  == "DE"
+  %s[0].phone         == "+49.8151368670"
+  %s[0].fax           == "+49.81513686777"
+  %s[0].email         == "hostmaster@united-domains.de"
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.meteos.it"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.meteos.it"
+  %s CLASS(array)
+  %s SIZE(2)
+  %s[0] CLASS(nameserver)
+  %s[0].name == "ns1.meteos.it"
+  %s[1] CLASS(nameserver)
+  %s[1].name == "ns2.meteos.it"

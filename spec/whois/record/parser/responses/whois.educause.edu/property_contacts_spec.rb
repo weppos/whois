@@ -26,6 +26,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts.expected" d
       subject.technical_contacts.should be_a(Array)
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.//.should %s[0].type          == ANYTHING
       subject.technical_contacts[0].id.should            == nil
       subject.technical_contacts[0].name.should          == "Dennis L Noordam\nWindows System Administrator\nNorth Idaho College"
       subject.technical_contacts[0].organization.should  == nil

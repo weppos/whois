@@ -1,46 +1,46 @@
 #domain
-  should: %s == "u34jedzcq.biz"
+  %s == "u34jedzcq.biz"
 
 #domain_id
-  should: %s == nil
+  %s == nil
 
 
 #status
-  should: %s == nil
+  %s == nil
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s == nil
+  %s == nil
 
 
 #registrar
-  should: %s == nil
+  %s == nil
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s CLASS(array)
+  %s == []

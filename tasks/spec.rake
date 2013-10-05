@@ -46,11 +46,11 @@ end
   RUBY
 
   TPL_MATCH = <<-RUBY.chomp!
-      subject.%{attribute}.%{should} %{match}
+      subject.%{attribute}.should %{match}
   RUBY
 
   TPL_MATCH_RAISE = <<-RUBY.chomp!
-      lambda { subject.%{attribute} }.%{should} %{match}
+      lambda { subject.%{attribute} }.should %{match}
   RUBY
 
   def relativize(path)
@@ -76,11 +76,11 @@ end
       #
       #   {
       #     "domain" => [
-      #       ["%s", "should", "== \"google.biz\""]
+      #       ["%s", "== \"google.biz\""]
       #     ],
       #     "created_on" => [
-      #       ["%s", "should", "be_a(Time)"],
-      #       ["%s", "should", "== Time.parse(\"2002-03-27 00:01:00 UTC\")"]
+      #       ["%s", "be_a(Time)"],
+      #       ["%s", "== Time.parse(\"2002-03-27 00:01:00 UTC\")"]
       #     ]
       #   }
       #
@@ -92,12 +92,12 @@ end
         case line
         when ""
           # skip empty line
-        when /^\s*\/\//
+        when /^\s*$/, /^\/\//
           # skip comment line
         when /^#([^\s]+)/
           tests[match = $1] = []
-        when /^\s+(.+?): (.+?) (.+)/
-          tests[match] << _parse_assertion($2, $1, $3)
+        when /^\s+(.+?) (.+)/
+          tests[match] << _parse_assertion($1, $2)
         else
           raise "Invalid Line `#{line}' in `#{source_path}'"
         end
@@ -106,15 +106,15 @@ end
       # Generate the RSpec content and
       # write one file for every test.
       contexts = tests.map do |attr, specs|
-        matches = specs.map do |method, should, condition|
+        matches = specs.map do |method, condition|
           attribute = method % attr
           if condition.index("raise_")
-            TPL_MATCH_RAISE % { :attribute => attribute, :should => should, :match => condition }
+            TPL_MATCH_RAISE % { attribute: attribute, match: condition }
           else
-            TPL_MATCH % { :attribute => attribute, :should => should, :match => condition }
+            TPL_MATCH % { attribute: attribute, match: condition }
           end
         end.join("\n")
-        TPL_CONTEXT % { :descr => attr, :examples => matches }
+        TPL_CONTEXT % { descr: attr, examples: matches }
       end.join("\n")
 
       describe = <<-RUBY
@@ -137,27 +137,26 @@ end
   end
 
 
-  def _parse_assertion(method, should, condition)
+  def _parse_assertion(method, condition)
     m = method
-    s = should
     c = condition
 
     case condition
 
-    # should: %s CLASS(time)
+    # %s CLASS(time)
     # ->
-    # should: %s be_a(time)
+    # %s be_a(time)
     when /^CLASS\((.+)\)$/
       c = "be_a(#{_build_condition_typeof($1)})"
 
-    # should: %s SIZE(3)
+    # %s SIZE(3)
     # ->
-    # should: %s have(3).items
+    # %s have(3).items
     when /^SIZE\((.+)\)$/
       c = "have(#{$1}).items"
     end
 
-    [m, s, c]
+    [m, c]
   end
 
   def _build_condition_typeof(described_class)
@@ -174,7 +173,8 @@ end
 
   def _build_condition_typecast(described_class, value)
     case described_class
-    when "time"       then %Q{Time.parse("#{value}")}
+    when "time"
+      %Q{Time.parse("#{value}")}
     else
       raise "Unknown class `#{described_class}'"
     end

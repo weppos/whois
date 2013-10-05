@@ -1,8 +1,8 @@
 #status
-  should: %s == :redemption
+  %s == :redemption
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true

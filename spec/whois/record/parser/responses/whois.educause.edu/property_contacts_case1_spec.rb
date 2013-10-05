@@ -26,6 +26,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case1.expec
       subject.technical_contacts.should be_a(Array)
       subject.technical_contacts.should have(1).items
       subject.technical_contacts[0].should be_a(Whois::Record::Contact)
+      subject.//.should %s[0].type          == ANYTHING
       subject.technical_contacts[0].id.should            == nil
       subject.technical_contacts[0].name.should          == "Information Technology\nEDUCAUSE"
       subject.technical_contacts[0].organization.should  == nil
