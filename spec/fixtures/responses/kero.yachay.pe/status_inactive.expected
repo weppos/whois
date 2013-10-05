@@ -19,8 +19,8 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(0)
+  %s %CLASS{array}
+  %s %SIZE{0}
   %s == []
 
 

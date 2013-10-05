@@ -30,7 +30,7 @@
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == nil
   %s.name         == "MONIC"
   %s.organization == nil
@@ -47,9 +47,9 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "umacsn1.umac.mo"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "umacsn2.umac.mo"

@@ -18,16 +18,16 @@
   %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []
 
 #admin_contacts
   %s raise_error(Whois::AttributeNotSupported)
 
 #technical_contacts
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []
 
 #nameservers
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []

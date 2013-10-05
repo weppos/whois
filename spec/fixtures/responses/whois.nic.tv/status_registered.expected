@@ -19,15 +19,15 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2009-04-21")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2009-11-19")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2010-04-21")
 
 
@@ -36,11 +36,11 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.slicehost.net"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.slicehost.net"
 
 

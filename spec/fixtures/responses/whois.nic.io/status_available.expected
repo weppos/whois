@@ -33,7 +33,7 @@
   %s raise_error(Whois::AttributeNotSupported)
 
 #registrant_contacts
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []
 
 #admin_contacts
@@ -44,5 +44,5 @@
 
 
 #nameservers
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []

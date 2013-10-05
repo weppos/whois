@@ -9,24 +9,24 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2006-02-14 09:12:37 GMT")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2012-06-01 11:25:51 GMT")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2020-02-14 09:12:37 GMT")
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "dns2.gencat.cat"
   %s[0].ipv4 == "83.247.132.4"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "dns.gencat.net"
   %s[1].ipv4 == nil

@@ -9,7 +9,7 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-03-28 00:00:00")
 
 #updated_on
@@ -20,15 +20,15 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(5)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{5}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "dns5.nettica.com"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "dns1.nettica.com"
-  %s[2] CLASS(nameserver)
+  %s[2] %CLASS{nameserver}
   %s[2].name == "dns2.nettica.com"
-  %s[3] CLASS(nameserver)
+  %s[3] %CLASS{nameserver}
   %s[3].name == "dns3.nettica.com"
-  %s[4] CLASS(nameserver)
+  %s[4] %CLASS{nameserver}
   %s[4].name == "dns4.nettica.com"

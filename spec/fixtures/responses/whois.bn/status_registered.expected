@@ -9,11 +9,11 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2011-06-15 14:54:00")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2011-06-15 14:54:00")
 
 #expires_on
@@ -21,7 +21,7 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "dns1-tl.brunet.bn"

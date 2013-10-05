@@ -9,28 +9,28 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("1997-09-22 21:00:00")
 
 #updated_on
   %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-09-21 21:00:00")
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == nil
   %s.name         == "DreamHost"
   %s.organization == "New Dream Network, LLC."
   %s.url          == "http://www.dreamhost.com/"
 
 #registrant_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   %s[0].name          == "DreamHost Web Hosting"
   %s[0].organization  == "New Dream Network, LLC."
@@ -44,9 +44,9 @@
   %s[0].email         == "internic@dreamhost.com"
 
 #admin_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   %s[0].name          == "DreamHost Web Hosting"
   %s[0].organization  == "New Dream Network, LLC."
@@ -60,9 +60,9 @@
   %s[0].email         == "internic@dreamhost.com"
 
 #technical_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].name          == "DreamHost Web Hosting"
   %s[0].organization  == "New Dream Network, LLC."
@@ -77,11 +77,11 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(3)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{3}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.dreamhost.com"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.dreamhost.com"
-  %s[2] CLASS(nameserver)
+  %s[2] %CLASS{nameserver}
   %s[2].name == "ns3.dreamhost.com"

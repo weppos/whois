@@ -9,11 +9,11 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2001-06-15 00:00:00")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2009-11-04 16:23:11")
 
 #expires_on
@@ -21,9 +21,9 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "seciu.edu.uy"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "tacuabe.rau.edu.uy"

@@ -12,17 +12,17 @@
   %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2011-10-04")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-11-01")
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.google.com"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.google.com"

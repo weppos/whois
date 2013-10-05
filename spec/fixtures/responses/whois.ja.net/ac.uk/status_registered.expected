@@ -9,30 +9,30 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2003-11-07")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2010-05-16")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2012-06-16")
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(4)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "agate.lut.ac.uk"
   %s[0].ipv4 == "158.125.1.100"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "bgate.lut.ac.uk"
   %s[1].ipv4 == nil
-  %s[2] CLASS(nameserver)
+  %s[2] %CLASS{nameserver}
   %s[2].name == "cgate.lut.ac.uk"
   %s[2].ipv4 == nil
-  %s[3] CLASS(nameserver)
+  %s[3] %CLASS{nameserver}
   %s[3].name == "ns3.ja.net"
   %s[3].ipv4 == nil

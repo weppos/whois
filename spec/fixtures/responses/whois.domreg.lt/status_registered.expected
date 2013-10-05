@@ -9,7 +9,7 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("1999-06-06")
 
 #updated_on
@@ -20,11 +20,11 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(3)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{3}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.google.com"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.google.com"
-  %s[2] CLASS(nameserver)
+  %s[2] %CLASS{nameserver}
   %s[2].name == "ns3.google.com"

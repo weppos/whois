@@ -16,19 +16,19 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2004-03-04")
 
 #updated_on
   %s raise_error(Whois::AttributeNotSupported)
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-03-05")
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == "RU-CENTER-REG-RIPN"
   %s.name         == nil
   %s.organization == nil
@@ -37,8 +37,8 @@
   %s raise_error(Whois::AttributeNotSupported)
 
 #admin_contacts
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   %s[0].organization == "Google Inc."
   %s[0].url          == "https://www.nic.ru/whois"
@@ -48,13 +48,13 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(4)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.google.com"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.google.com"
-  %s[2] CLASS(nameserver)
+  %s[2] %CLASS{nameserver}
   %s[2].name == "ns3.google.com"
-  %s[3] CLASS(nameserver)
+  %s[3] %CLASS{nameserver}
   %s[3].name == "ns4.google.com"

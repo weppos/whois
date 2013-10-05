@@ -12,7 +12,7 @@
   %s == nil
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("1999-09-27")
 
 #expires_on
@@ -20,18 +20,18 @@
 
 
 #registrant_contacts
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []
 
 #admin_contacts
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []
 
 #technical_contacts
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []
 
 
 #nameservers
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []

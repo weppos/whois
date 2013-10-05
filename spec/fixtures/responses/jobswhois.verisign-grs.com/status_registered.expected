@@ -20,20 +20,20 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2010-02-04 18:54:33 UTC")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-02-05 03:02:36 UTC")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2014-02-04 18:54:33 UTC")
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == "667"
   %s.name         == "NAME SHARE, INC"
   %s.organization == "NAME SHARE, INC"
@@ -41,11 +41,11 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.registry.jobs"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.registry.jobs"
 
 

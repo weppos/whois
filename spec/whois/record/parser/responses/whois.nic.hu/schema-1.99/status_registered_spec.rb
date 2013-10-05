@@ -72,7 +72,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq("1960108002")
-      expect(subject.registrar.name).to eq("3C Kft. CLASS(registrar)")
+      expect(subject.registrar.name).to eq("3C Kft. %CLASS{registrar}")
       expect(subject.registrar.organization).to eq("3C Ltd.")
     end
   end
@@ -102,7 +102,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
       expect(subject.admin_contacts[0].id).to eq("2000466366")
-      expect(subject.admin_contacts[0].name).to eq("3C Kft. CLASS(registrar)")
+      expect(subject.admin_contacts[0].name).to eq("3C Kft. %CLASS{registrar}")
       expect(subject.admin_contacts[0].organization).to eq(nil)
       expect(subject.admin_contacts[0].address).to eq("Konkoly Thege út 29-33.")
       expect(subject.admin_contacts[0].city).to eq("Budapest")
@@ -168,7 +168,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_registered.expected" do
       expect(subject.registrar_contact).to be_a(Whois::Record::Contact)
       expect(subject.registrar_contact.type).to eq(nil)
       expect(subject.registrar_contact.id).to eq("1960108002")
-      expect(subject.registrar_contact.name).to eq("3C Kft. CLASS(registrar)")
+      expect(subject.registrar_contact.name).to eq("3C Kft. %CLASS{registrar}")
       expect(subject.registrar_contact.organization).to eq("3C Ltd.")
       expect(subject.registrar_contact.address).to eq("Konkoly Thege út 29-33.")
       expect(subject.registrar_contact.city).to eq("Budapest")

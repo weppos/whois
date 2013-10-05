@@ -9,20 +9,20 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2008-08-30")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2012-02-09")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2010-08-30")
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == "KEY-SYSTEMS-DE"
   %s.name         == "Key-Systems GmbH"
   %s.name         == "Key-Systems GmbH"
@@ -30,5 +30,5 @@
 
 
 #nameservers
-  %s CLASS(array)
+  %s %CLASS{array}
   %s == []

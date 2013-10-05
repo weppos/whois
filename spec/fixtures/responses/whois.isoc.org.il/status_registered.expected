@@ -12,7 +12,7 @@
   %s raise_error(Whois::AttributeNotSupported)
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2010-10-07")
 
 #expires_on
@@ -20,17 +20,17 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(6)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{6}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns.isoc.org.il"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "grappa.isoc.org.il"
-  %s[2] CLASS(nameserver)
+  %s[2] %CLASS{nameserver}
   %s[2].name == "aristo.tau.ac.il"
-  %s[3] CLASS(nameserver)
+  %s[3] %CLASS{nameserver}
   %s[3].name == "relay.huji.ac.il"
-  %s[4] CLASS(nameserver)
+  %s[4] %CLASS{nameserver}
   %s[4].name == "drns.isoc.org.il"
-  %s[5] CLASS(nameserver)
+  %s[5] %CLASS{nameserver}
   %s[5].name == "sps-pb.isc.org"

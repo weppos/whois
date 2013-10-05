@@ -20,29 +20,29 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2004-12-20 13:34:34 UTC")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2008-12-20 19:25:54 UTC")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2009-12-20 13:34:34 UTC")
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == "R43-LRCC"
   %s.name         == "GibNet Registrar"
   %s.organization == nil
   %s.url          == nil
 
 #registrant_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   %s[0].id           == "FR-1103549674779"
   %s[0].name         == "Jimmy Imossi"
@@ -57,9 +57,9 @@
   %s[0].email        == "jimossi@sapphire.gi"
 
 #admin_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   %s[0].id           == "FR-1103549674779"
   %s[0].name         == "Jimmy Imossi"
@@ -74,9 +74,9 @@
   %s[0].email        == "jimossi@sapphire.gi"
 
 #technical_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].id           == "FR-10a223e2e4cf0"
   %s[0].name         == "Tech Dept"
@@ -92,9 +92,9 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1-a.sapphire.gi"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2-a.sapphire.gi"

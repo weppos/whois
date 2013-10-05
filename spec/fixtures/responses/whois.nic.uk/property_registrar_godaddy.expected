@@ -1,5 +1,5 @@
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == "GODADDY"
   %s.name         == "GoDaddy.com, LLP."
   %s.name         == "GoDaddy.com, LLP."

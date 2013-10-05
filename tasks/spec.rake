@@ -143,21 +143,21 @@ end
 
     case
 
-    # %s CLASS(time) -> %s be_a(time)
-    when c =~ /^CLASS\((.+)\)$/
+    # %s %CLASS{time) -> %s be_a(time}
+    when c =~ /^%CLASS\{(.+)\}$/
       c = "be_a(#{_build_condition_typeof($1)})"
 
-    # %s SIZE(3) -> %s have(3).items
-    when c =~ /^SIZE\((.+)\)$/
+    # %s %SIZE{3) -> %s have(3}.items
+    when c =~ /^%SIZE\{(.+)\}$/
       c = "have(#{$1}).items"
-
-    # %s == "foo"
-    when c =~ /^== (.+)$/
-      c = "eq(#{$1})"
 
     # %s =~ "foo"
     when c =~ /^%MATCH\{(.+)\}$/
       c = "match(/#{$1}/)"
+
+    # %s == "foo"
+    when c =~ /^== (.+)$/
+      c = "eq(#{$1})"
 
     end
 

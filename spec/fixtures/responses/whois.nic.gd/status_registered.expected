@@ -20,29 +20,29 @@
 
 
 #created_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2006-12-11 00:00:00")
 
 #updated_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-03-01 00:02:54")
 
 #expires_on
-  %s CLASS(time)
+  %s %CLASS{time}
   %s == Time.parse("2013-12-11 00:00:00")
 
 
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == nil
   %s.name         == "MarkMonitor Inc."
   %s.organization == nil
   %s.url          == "www.markmonitor.com"
 
 #registrant_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   %s[0].id            == "P-GFI26"
   %s[0].name          == "Google, Inc."
@@ -60,9 +60,9 @@
   %s[0].updated_on    == nil
 
 #admin_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   %s[0].id            == "P-GFI26"
   %s[0].name          == "Google, Inc."
@@ -80,9 +80,9 @@
   %s[0].updated_on    == nil
 
 #technical_contacts
-  %s CLASS(array)
-  %s SIZE(1)
-  %s[0] CLASS(contact)
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].id            == "P-GFI26"
   %s[0].name          == "Google, Inc."
@@ -101,9 +101,9 @@
 
 
 #nameservers
-  %s CLASS(array)
-  %s SIZE(2)
-  %s[0] CLASS(nameserver)
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.google.com"
-  %s[1] CLASS(nameserver)
+  %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.google.com"

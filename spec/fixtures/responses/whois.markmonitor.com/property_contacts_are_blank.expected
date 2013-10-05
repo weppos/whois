@@ -1,17 +1,17 @@
 #registrar
-  %s CLASS(registrar)
+  %s %CLASS{registrar}
   %s.id           == nil
   %s.name         == "Markmonitor.com"
   %s.url          == "http://www.markmonitor.com"
 
 #registrant_contacts
-  %s CLASS(array)
-  %s SIZE(0)
+  %s %CLASS{array}
+  %s %SIZE{0}
 
 #admin_contacts
-  %s CLASS(array)
-  %s SIZE(0)
+  %s %CLASS{array}
+  %s %SIZE{0}
 
 #technical_contacts
-  %s CLASS(array)
-  %s SIZE(0)
+  %s %CLASS{array}
+  %s %SIZE{0}
