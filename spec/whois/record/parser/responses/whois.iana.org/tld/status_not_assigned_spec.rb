@@ -49,7 +49,7 @@ describe Whois::Record::Parser::WhoisIanaOrg, "status_not_assigned.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrant_contacts" do

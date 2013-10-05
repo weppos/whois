@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisMonicMo, "status_available.expected" do
 
   describe "#disclaimer" do
     it do
-      lambda { subject.disclaimer }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisMonicMo, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
@@ -53,17 +53,17 @@ describe Whois::Record::Parser::WhoisMonicMo, "status_available.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.created_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrar" do
@@ -73,17 +73,17 @@ describe Whois::Record::Parser::WhoisMonicMo, "status_available.expected" do
   end
   describe "#registrant_contacts" do
     it do
-      lambda { subject.registrant_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.registrant_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#technical_contacts" do
     it do
-      lambda { subject.technical_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.technical_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do

@@ -9,13 +9,13 @@
 
 
 #created_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
   %s == nil
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers

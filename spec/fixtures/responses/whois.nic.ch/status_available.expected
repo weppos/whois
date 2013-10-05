@@ -9,20 +9,20 @@
 
 
 #created_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #registrant_contacts
   %s %CLASS{array}
   %s == []
 
 #admin_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #technical_contacts
   %s %CLASS{array}

@@ -13,7 +13,7 @@
   %s %TIME{2000-08-29}
 
 #updated_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
   %s %CLASS{time}

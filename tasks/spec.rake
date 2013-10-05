@@ -50,7 +50,7 @@ end
   RUBY
 
   TPL_MATCH_RAISE = <<-RUBY.chomp!
-      lambda { subject.%{attribute} }.should %{match}
+      expect { subject.%{attribute} }.to %{match}
   RUBY
 
   def relativize(path)
@@ -108,7 +108,7 @@ end
       contexts = tests.map do |attr, specs|
         matches = specs.map do |method, condition|
           attribute = method % attr
-          if condition.index("raise_")
+          if condition.index("raise_error")
             TPL_MATCH_RAISE % { attribute: attribute, match: condition }
           else
             TPL_MATCH % { attribute: attribute, match: condition }
@@ -151,9 +151,13 @@ end
     when c =~ /^%SIZE\{(.+)\}$/
       c = "have(#{$1}).items"
 
-    # %s %TIME{3} -> %s have(3}.items
+    # %s %TIME{...} -> %s Time.parse(...)
     when c =~ /^%TIME\{(.+)\}$/
       c = "eq(Time.parse(\"#{$1}\"))"
+
+    # %s %ERROR{...} -> %s raise_error(...)
+    when c =~ /^%ERROR\{(.+)\}$/
+      c = "raise_error(Whois::#{$1})"
 
     # %s =~ "foo"
     when c =~ /^%MATCH\{(.+)\}$/

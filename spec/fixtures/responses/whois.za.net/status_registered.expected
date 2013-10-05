@@ -17,7 +17,7 @@
   %s %TIME{2002-03-29 22:03:53 UTC}
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers

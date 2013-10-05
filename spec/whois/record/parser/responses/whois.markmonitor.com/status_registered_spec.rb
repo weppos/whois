@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
 
   describe "#status" do
     it do
-      lambda { subject.status }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#available?" do

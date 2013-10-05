@@ -17,4 +17,4 @@
   %s %TIME{2007-04-09}
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}

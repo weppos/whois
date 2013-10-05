@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisNicDm, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do

@@ -13,4 +13,4 @@
   %s[0].address == "xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina"
 
 #admin_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}

@@ -5,7 +5,7 @@
   %s == "thinkcode.tv"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status

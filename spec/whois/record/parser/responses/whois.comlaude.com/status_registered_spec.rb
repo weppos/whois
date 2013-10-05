@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisComlaudeCom, "status_registered.expected" d
 
   describe "#status" do
     it do
-      lambda { subject.status }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#available?" do
@@ -44,7 +44,7 @@ describe Whois::Record::Parser::WhoisComlaudeCom, "status_registered.expected" d
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do

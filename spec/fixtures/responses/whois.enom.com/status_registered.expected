@@ -1,5 +1,5 @@
 #status
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #available?
   %s == false
@@ -13,7 +13,7 @@
   %s %TIME{2004-06-16 18:07:25}
 
 #updated_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
   %s %CLASS{time}

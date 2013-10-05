@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_invalid.expected" do
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
@@ -53,7 +53,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_invalid.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.created_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do
@@ -63,7 +63,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_invalid.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrar" do

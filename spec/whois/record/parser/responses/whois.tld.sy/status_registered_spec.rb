@@ -54,7 +54,7 @@ describe Whois::Record::Parser::WhoisTldSy, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do

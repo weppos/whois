@@ -9,14 +9,14 @@
 
 
 #created_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
   %s %CLASS{time}
   %s %TIME{2008-11-09}
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers

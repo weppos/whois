@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisInUa, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.created_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do

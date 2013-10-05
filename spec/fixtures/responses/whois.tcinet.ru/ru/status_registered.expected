@@ -2,7 +2,7 @@
   %s == "google.ru"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
@@ -20,7 +20,7 @@
   %s %TIME{2004-03-04}
 
 #updated_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
   %s %CLASS{time}
@@ -34,7 +34,7 @@
   %s.organization == nil
 
 #registrant_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #admin_contacts
   %s %SIZE{1}
@@ -44,7 +44,7 @@
   %s[0].url          == "https://www.nic.ru/whois"
 
 #technical_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers

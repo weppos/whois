@@ -1,5 +1,5 @@
 #status
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #available?
   %s == false

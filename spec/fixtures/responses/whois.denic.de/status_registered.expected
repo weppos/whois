@@ -6,7 +6,7 @@
   %s == "google.de"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
@@ -20,14 +20,14 @@
 
 
 #created_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
   %s %CLASS{time}
   %s == Time.parse('2010-09-08 22:40:48 +0200')
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #registrar

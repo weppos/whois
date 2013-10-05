@@ -1,12 +1,12 @@
 #disclaimer
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #domain
   %s == "google.com.au"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
@@ -20,14 +20,14 @@
 
 
 #created_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
   %s %CLASS{time}
   %s %TIME{2012-05-09 17:09:29 UTC}
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #registrar
@@ -58,7 +58,7 @@
   %s[0].updated_on    == nil
 
 #admin_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #technical_contacts
   %s %CLASS{array}

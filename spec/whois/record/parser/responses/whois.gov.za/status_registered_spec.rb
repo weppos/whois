@@ -44,17 +44,17 @@ describe Whois::Record::Parser::WhoisGovZa, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.nameservers }.to raise_error(Whois::AttributeNotSupported)
     end
   end
 end

@@ -38,12 +38,12 @@ describe Whois::Record::Parser::WhoisNicCl, "status_available.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.created_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do

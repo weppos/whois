@@ -2,7 +2,7 @@
   %s == "xn----8sbc3ahklcs4adf.xn--p1ai"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
@@ -20,7 +20,7 @@
   %s %TIME{2010-11-12}
 
 #updated_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
   %s %CLASS{time}
@@ -34,7 +34,7 @@
   %s.organization == nil
 
 #registrant_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #admin_contacts
   %s %CLASS{array}
@@ -49,7 +49,7 @@
   %s[0].email        == "liderkubani@gmail.com"
 
 #technical_contacts
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers

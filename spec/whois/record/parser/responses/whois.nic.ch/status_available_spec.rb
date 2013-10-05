@@ -38,17 +38,17 @@ describe Whois::Record::Parser::WhoisNicCh, "status_available.expected" do
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.created_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrant_contacts" do
@@ -59,7 +59,7 @@ describe Whois::Record::Parser::WhoisNicCh, "status_available.expected" do
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#technical_contacts" do

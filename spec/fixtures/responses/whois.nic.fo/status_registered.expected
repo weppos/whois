@@ -2,7 +2,7 @@
   %s == "nic.fo"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
@@ -29,7 +29,7 @@
 
 
 #registrar
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #registrant_contacts
   %s %CLASS{array}

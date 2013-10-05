@@ -41,7 +41,7 @@ describe Whois::Record::Parser::WhoisNicCh, "property_contacts.expected" do
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
 end

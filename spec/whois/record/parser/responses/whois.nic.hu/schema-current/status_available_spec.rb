@@ -63,7 +63,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_available.expected" do
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrar" do

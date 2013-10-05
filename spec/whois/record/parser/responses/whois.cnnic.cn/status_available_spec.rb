@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_available.expected" do
 
   describe "#disclaimer" do
     it do
-      lambda { subject.disclaimer }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
@@ -58,7 +58,7 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_available.expected" do
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
@@ -85,7 +85,7 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_available.expected" do
   end
   describe "#technical_contacts" do
     it do
-      lambda { subject.technical_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.technical_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do

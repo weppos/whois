@@ -17,7 +17,7 @@
   %s %TIME{2004-09-17}
 
 #expires_on
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #registrant_contacts

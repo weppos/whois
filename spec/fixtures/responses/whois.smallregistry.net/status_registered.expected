@@ -6,7 +6,7 @@
   %s == "dr-foo-bar-baz.chirurgiens-dentistes.fr"
 
 #domain_id
-  %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
