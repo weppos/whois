@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisRegistryIn, "property_status_missing.expect
 
   subject do
     file = fixture("responses", "whois.registry.in/property_status_missing.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == []
+      expect(subject.status).to eq([])
     end
   end
 end

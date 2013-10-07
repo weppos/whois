@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "response_throttled.expec
 
   subject do
     file = fixture("responses", "whois.domain-registry.nl/response_throttled.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == true
+      expect(subject.response_throttled?).to eq(true)
     end
   end
 end

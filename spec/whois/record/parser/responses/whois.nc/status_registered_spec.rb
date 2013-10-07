@@ -17,101 +17,101 @@ describe Whois::Record::Parser::WhoisNc, "status_registered.expected" do
 
   subject do
     file = fixture("responses", "whois.nc/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      lambda { subject.disclaimer }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
     it do
-      subject.domain.should == "domaine.nc"
+      expect(subject.domain).to eq("domaine.nc")
     end
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-05-14")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2006-05-14"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2013-04-03")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2013-04-03"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2016-05-14")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2016-05-14"))
     end
   end
   describe "#registrar" do
     it do
-      lambda { subject.registrar }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.registrar }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == "CCTLD"
-      subject.registrant_contacts[0].organization.should == nil
-      subject.registrant_contacts[0].address.should      == "1 RUE MONCHOVET\n7 EME ETAGE\nLE WARUNA 1"
-      subject.registrant_contacts[0].city.should         == "NOUMEA CEDEX"
-      subject.registrant_contacts[0].zip.should          == "98841"
-      subject.registrant_contacts[0].state.should        == nil
-      subject.registrant_contacts[0].country.should      == "NEW CALEDONIA"
-      subject.registrant_contacts[0].phone.should        == nil
-      subject.registrant_contacts[0].fax.should          == nil
-      subject.registrant_contacts[0].email.should        == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("CCTLD")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("1 RUE MONCHOVET\n7 EME ETAGE\nLE WARUNA 1")
+      expect(subject.registrant_contacts[0].city).to eq("NOUMEA CEDEX")
+      expect(subject.registrant_contacts[0].zip).to eq("98841")
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country).to eq("NEW CALEDONIA")
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#technical_contacts" do
     it do
-      lambda { subject.technical_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.technical_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "any-ns1.nc"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.nc"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns2.nc"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("any-ns1.nc")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns1.nc")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns2.nc")
     end
   end
 end

@@ -17,55 +17,55 @@ describe Whois::Record::Parser::WhoisNicBo, "status_registered.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.bo/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#domain" do
     it do
-      subject.domain.should == "google.bo"
+      expect(subject.domain).to eq("google.bo")
     end
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2006-08-22")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2006-08-22"))
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2013-08-22")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2013-08-22"))
     end
   end
   describe "#nameservers" do
     it do
-      lambda { subject.nameservers }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.nameservers }.to raise_error(Whois::AttributeNotSupported)
     end
   end
 end

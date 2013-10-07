@@ -17,54 +17,54 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_redemption.expect
 
   subject do
     file = fixture("responses", "whois.domain-registry.nl/status_redemption.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :redemption
+      expect(subject.status).to eq(:redemption)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should == nil
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == false
+      expect(subject.response_throttled?).to eq(false)
     end
   end
   describe "#response_unavailable?" do
     it do
-      subject.response_unavailable?.should == false
+      expect(subject.response_unavailable?).to eq(false)
     end
   end
 end

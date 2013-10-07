@@ -1,52 +1,52 @@
 #disclaimer
-  should: %s == "Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan."
+  %s == "Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan."
 
 
 #domain
-  should: %s == "ezitvps.hu"
+  %s == "ezitvps.hu"
 
 #domain_id
-  should: %s == nil
+  %s == nil
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #registrar
-  should: %s == nil
+  %s == nil
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 
 #zone_contact
-  should: %s == nil
+  %s == nil
 
 #registrar_contact
-  should: %s == nil
+  %s == nil

@@ -17,55 +17,55 @@ describe Whois::Record::Parser::WhoisDotCf, "status_registered.expected" do
 
   subject do
     file = fixture("responses", "whois.dot.cf/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2013-03-28 00:00:00")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2013-03-28 00:00:00"))
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(5).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "dns5.nettica.com"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "dns1.nettica.com"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "dns2.nettica.com"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "dns3.nettica.com"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "dns4.nettica.com"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(5).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("dns5.nettica.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("dns1.nettica.com")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("dns2.nettica.com")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("dns3.nettica.com")
+      expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[4].name).to eq("dns4.nettica.com")
     end
   end
 end

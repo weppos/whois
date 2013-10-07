@@ -17,26 +17,26 @@ describe Whois::Record::Parser::WhoisNc, "property_contact_without_state_and_add
 
   subject do
     file = fixture("responses", "whois.nc/property_contact_without_state_and_address.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == "DTSI"
-      subject.registrant_contacts[0].organization.should == nil
-      subject.registrant_contacts[0].address.should      == "BP 15101"
-      subject.registrant_contacts[0].city.should         == "NOUMEA CEDEX"
-      subject.registrant_contacts[0].zip.should          == "98804"
-      subject.registrant_contacts[0].state.should        == nil
-      subject.registrant_contacts[0].country.should      == nil
-      subject.registrant_contacts[0].phone.should        == nil
-      subject.registrant_contacts[0].fax.should          == nil
-      subject.registrant_contacts[0].email.should        == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("DTSI")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("BP 15101")
+      expect(subject.registrant_contacts[0].city).to eq("NOUMEA CEDEX")
+      expect(subject.registrant_contacts[0].zip).to eq("98804")
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
 end

@@ -17,97 +17,97 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
 
   subject do
     file = fixture("responses", "whois.godaddy.com/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      lambda { subject.status }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "GoDaddy.com, LLC"
-      subject.registrar.url.should          == "http://www.godaddy.com/"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("GoDaddy.com, LLC")
+      expect(subject.registrar.url).to eq("http://www.godaddy.com/")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should         == "Go Daddy Go Daddy"
-      subject.registrant_contacts[0].organization.should == "Go Daddy"
-      subject.registrant_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
-      subject.registrant_contacts[0].city.should         == "Scottsdale"
-      subject.registrant_contacts[0].zip.should          == "85260"
-      subject.registrant_contacts[0].state.should        == "Arizona"
-      subject.registrant_contacts[0].country.should      == "United States"
-      subject.registrant_contacts[0].phone.should        == nil
-      subject.registrant_contacts[0].fax.should          == nil
-      subject.registrant_contacts[0].email.should        == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("Go Daddy Go Daddy")
+      expect(subject.registrant_contacts[0].organization).to eq("Go Daddy")
+      expect(subject.registrant_contacts[0].address).to eq("14455 N Hayden Rd Suite 219")
+      expect(subject.registrant_contacts[0].city).to eq("Scottsdale")
+      expect(subject.registrant_contacts[0].zip).to eq("85260")
+      expect(subject.registrant_contacts[0].state).to eq("Arizona")
+      expect(subject.registrant_contacts[0].country).to eq("United States")
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].name.should         == "Go Daddy Go Daddy"
-      subject.admin_contacts[0].organization.should == "Go Daddy"
-      subject.admin_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
-      subject.admin_contacts[0].city.should         == "Scottsdale"
-      subject.admin_contacts[0].zip.should          == "85260"
-      subject.admin_contacts[0].state.should        == "Arizona"
-      subject.admin_contacts[0].country.should      == "United States"
-      subject.admin_contacts[0].phone.should        == "+1.4805058800"
-      subject.admin_contacts[0].fax.should          == "+1.4805058844"
-      subject.admin_contacts[0].email.should        == "dns@jomax.net"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].name).to eq("Go Daddy Go Daddy")
+      expect(subject.admin_contacts[0].organization).to eq("Go Daddy")
+      expect(subject.admin_contacts[0].address).to eq("14455 N Hayden Rd Suite 219")
+      expect(subject.admin_contacts[0].city).to eq("Scottsdale")
+      expect(subject.admin_contacts[0].zip).to eq("85260")
+      expect(subject.admin_contacts[0].state).to eq("Arizona")
+      expect(subject.admin_contacts[0].country).to eq("United States")
+      expect(subject.admin_contacts[0].phone).to eq("+1.4805058800")
+      expect(subject.admin_contacts[0].fax).to eq("+1.4805058844")
+      expect(subject.admin_contacts[0].email).to eq("dns@jomax.net")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should         == "Go Daddy Go Daddy"
-      subject.technical_contacts[0].organization.should == "Go Daddy"
-      subject.technical_contacts[0].address.should      == "14455 N Hayden Rd Suite 219"
-      subject.technical_contacts[0].city.should         == "Scottsdale"
-      subject.technical_contacts[0].zip.should          == "85260"
-      subject.technical_contacts[0].state.should        == "Arizona"
-      subject.technical_contacts[0].country.should      == "United States"
-      subject.technical_contacts[0].phone.should        == "+1.4805058800"
-      subject.technical_contacts[0].fax.should          == "+1.4805058844"
-      subject.technical_contacts[0].email.should        == "dns@jomax.net"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("Go Daddy Go Daddy")
+      expect(subject.technical_contacts[0].organization).to eq("Go Daddy")
+      expect(subject.technical_contacts[0].address).to eq("14455 N Hayden Rd Suite 219")
+      expect(subject.technical_contacts[0].city).to eq("Scottsdale")
+      expect(subject.technical_contacts[0].zip).to eq("85260")
+      expect(subject.technical_contacts[0].state).to eq("Arizona")
+      expect(subject.technical_contacts[0].country).to eq("United States")
+      expect(subject.technical_contacts[0].phone).to eq("+1.4805058800")
+      expect(subject.technical_contacts[0].fax).to eq("+1.4805058844")
+      expect(subject.technical_contacts[0].email).to eq("dns@jomax.net")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "CNS1.SECURESERVER.NET"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "CNS2.SECURESERVER.NET"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "CNS3.SECURESERVER.NET"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("CNS1.SECURESERVER.NET")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("CNS2.SECURESERVER.NET")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("CNS3.SECURESERVER.NET")
     end
   end
 end

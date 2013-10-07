@@ -1,12 +1,12 @@
 #status
-  should: %s == :reserved
+  %s == :reserved
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #reserved?
-  should: %s == true
+  %s == true

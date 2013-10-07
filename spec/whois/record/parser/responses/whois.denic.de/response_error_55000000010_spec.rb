@@ -17,23 +17,23 @@ describe Whois::Record::Parser::WhoisDenicDe, "response_error_55000000010.expect
 
   subject do
     file = fixture("responses", "whois.denic.de/response_error_55000000010.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :invalid
+      expect(subject.status).to eq(:invalid)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
 end

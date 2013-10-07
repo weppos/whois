@@ -17,20 +17,20 @@ describe Whois::Record::Parser::WhoisNicHu, "property_contact_without_address.ex
 
   subject do
     file = fixture("responses", "whois.nic.hu/schema-1.99/property_contact_without_address.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].address.should      == nil
-      subject.registrant_contacts[0].city.should         == nil
-      subject.registrant_contacts[0].zip.should          == nil
-      subject.registrant_contacts[0].state.should        == nil
-      subject.registrant_contacts[0].country_code.should == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].address).to eq(nil)
+      expect(subject.registrant_contacts[0].city).to eq(nil)
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq(nil)
     end
   end
 end

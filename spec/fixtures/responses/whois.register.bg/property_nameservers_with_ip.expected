@@ -1,9 +1,9 @@
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "chicken.orbitel.bg"
-  should: %s[0].ipv4 == "195.24.32.5"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns.orbitel.bg"
-  should: %s[1].ipv4 == "195.24.32.2"
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "chicken.orbitel.bg"
+  %s[0].ipv4 == "195.24.32.5"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns.orbitel.bg"
+  %s[1].ipv4 == "195.24.32.2"

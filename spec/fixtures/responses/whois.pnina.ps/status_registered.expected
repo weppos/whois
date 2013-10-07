@@ -1,38 +1,38 @@
 #domain
-  should: %s == "google.ps"
+  %s == "google.ps"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2004-05-19 00:00:00")
+  %s %CLASS{time}
+  %s %TIME{2004-05-19 00:00:00}
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2014-05-19 00:00:00")
+  %s %CLASS{time}
+  %s %TIME{2014-05-19 00:00:00}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(3)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.google.com"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.google.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.google.com"
+  %s %CLASS{array}
+  %s %SIZE{3}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.google.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.google.com"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns3.google.com"

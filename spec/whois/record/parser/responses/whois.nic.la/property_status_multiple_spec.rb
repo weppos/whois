@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisNicLa, "property_status_multiple.expected" 
 
   subject do
     file = fixture("responses", "whois.nic.la/property_status_multiple.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
+      expect(subject.status).to eq(["TRANSFER PROHIBITED", "RENEW PERIOD"])
     end
   end
 end

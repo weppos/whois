@@ -1,42 +1,42 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2003-09-17")
+  %s %CLASS{time}
+  %s %TIME{2003-09-17}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2010-01-13")
+  %s %CLASS{time}
+  %s %TIME{2010-01-13}
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-03-30")
+  %s %CLASS{time}
+  %s %TIME{2011-03-30}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(8)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "eur5.akam.net"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "eur6.akam.net"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns1-173.akam.net"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns1-31.akam.net"
-  should: %s[4] CLASS(nameserver)
-  should: %s[4].name == "usc4.akam.net"
-  should: %s[5] CLASS(nameserver)
-  should: %s[5].name == "use10.akam.net"
-  should: %s[6] CLASS(nameserver)
-  should: %s[6].name == "usw2.akam.net"
-  should: %s[7] CLASS(nameserver)
-  should: %s[7].name == "usw4.akam.net"
+  %s %CLASS{array}
+  %s %SIZE{8}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "eur5.akam.net"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "eur6.akam.net"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns1-173.akam.net"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns1-31.akam.net"
+  %s[4] %CLASS{nameserver}
+  %s[4].name == "usc4.akam.net"
+  %s[5] %CLASS{nameserver}
+  %s[5].name == "use10.akam.net"
+  %s[6] %CLASS{nameserver}
+  %s[6].name == "usw2.akam.net"
+  %s[7] %CLASS{nameserver}
+  %s[7].name == "usw4.akam.net"

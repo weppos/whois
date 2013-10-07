@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisNicLk, "property_created_on_null.expected" 
 
   subject do
     file = fixture("responses", "whois.nic.lk/lk/property_created_on_null.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
 end

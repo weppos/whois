@@ -1,11 +1,11 @@
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.boursedirect.fr"
-  should: %s[0].ipv4 == "212.157.203.190"
-  should: %s[0].ipv6 == nil
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.boursedirect.fr"
-  should: %s[1].ipv4 == "212.157.203.189"
-  should: %s[1].ipv6 == nil
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.boursedirect.fr"
+  %s[0].ipv4 == "212.157.203.190"
+  %s[0].ipv6 == nil
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.boursedirect.fr"
+  %s[1].ipv4 == "212.157.203.189"
+  %s[1].ipv6 == nil

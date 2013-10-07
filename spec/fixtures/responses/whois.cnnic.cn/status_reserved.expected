@@ -1,12 +1,12 @@
 #status
-  should: %s == []
+  %s == []
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #reserved?
-  should: %s == true
+  %s == true

@@ -17,26 +17,26 @@ describe Whois::Record::Parser::WhoisNicIt, "property_contact_with_company_in_ad
 
   subject do
     file = fixture("responses", "whois.nic.it/property_contact_with_company_in_address.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should           == "AARS1-ITNIC"
-      subject.technical_contacts[0].name.should         == "Andrea Antonio Renato Stratta"
-      subject.technical_contacts[0].organization.should == "UCI Italia Srl"
-      subject.technical_contacts[0].address.should      == "Via E. Fermi, 161"
-      subject.technical_contacts[0].city.should         == "Roma"
-      subject.technical_contacts[0].zip.should          == "00146"
-      subject.technical_contacts[0].state.should        == "RM"
-      subject.technical_contacts[0].country_code.should == "IT"
-      subject.technical_contacts[0].created_on.should   == Time.parse("2006-08-16 00:00:00")
-      subject.technical_contacts[0].updated_on.should   == Time.parse("2007-03-01 07:48:42")
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("AARS1-ITNIC")
+      expect(subject.technical_contacts[0].name).to eq("Andrea Antonio Renato Stratta")
+      expect(subject.technical_contacts[0].organization).to eq("UCI Italia Srl")
+      expect(subject.technical_contacts[0].address).to eq("Via E. Fermi, 161")
+      expect(subject.technical_contacts[0].city).to eq("Roma")
+      expect(subject.technical_contacts[0].zip).to eq("00146")
+      expect(subject.technical_contacts[0].state).to eq("RM")
+      expect(subject.technical_contacts[0].country_code).to eq("IT")
+      expect(subject.technical_contacts[0].created_on).to eq(Time.parse("2006-08-16 00:00:00"))
+      expect(subject.technical_contacts[0].updated_on).to eq(Time.parse("2007-03-01 07:48:42"))
     end
   end
 end
