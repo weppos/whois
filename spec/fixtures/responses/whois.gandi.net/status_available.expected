@@ -1,51 +1,51 @@
 #disclaimer
-  should: %s == nil
+  %s == nil
 
 
 #domain
-  should: %s == nil
+  %s == nil
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s == nil
+  %s == nil
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == nil
-  should: %s.name         == "GANDI Registrar"
-  should: %s.organization == "GANDI Registrar"
-  should: %s.url          == nil
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "GANDI Registrar"
+  %s.organization == "GANDI Registrar"
+  %s.url          == nil
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
