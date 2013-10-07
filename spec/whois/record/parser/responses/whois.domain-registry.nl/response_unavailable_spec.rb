@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "response_unavailable.exp
 
   subject do
     file = fixture("responses", "whois.domain-registry.nl/response_unavailable.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#response_unavailable?" do
     it do
-      subject.response_unavailable?.should == true
+      expect(subject.response_unavailable?).to eq(true)
     end
   end
 end

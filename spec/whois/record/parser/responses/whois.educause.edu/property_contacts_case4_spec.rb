@@ -17,27 +17,27 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case4.expec
 
   subject do
     file = fixture("responses", "whois.educause.edu/property_contacts_case4.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].id.should            == nil
-      subject.admin_contacts[0].name.should          == "ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology"
-      subject.admin_contacts[0].organization.should  == nil
-      subject.admin_contacts[0].address.should       == nil
-      subject.admin_contacts[0].city.should          == "Syracuse"
-      subject.admin_contacts[0].zip.should           == "13244"
-      subject.admin_contacts[0].state.should         == "NY"
-      subject.admin_contacts[0].country.should       == "UNITED STATES"
-      subject.admin_contacts[0].country_code.should  == nil
-      subject.admin_contacts[0].phone.should         == "(315) 443-6189"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "itsoffice@syr.edu"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].id).to eq(nil)
+      expect(subject.admin_contacts[0].name).to eq("ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology")
+      expect(subject.admin_contacts[0].organization).to eq(nil)
+      expect(subject.admin_contacts[0].address).to eq(nil)
+      expect(subject.admin_contacts[0].city).to eq("Syracuse")
+      expect(subject.admin_contacts[0].zip).to eq("13244")
+      expect(subject.admin_contacts[0].state).to eq("NY")
+      expect(subject.admin_contacts[0].country).to eq("UNITED STATES")
+      expect(subject.admin_contacts[0].country_code).to eq(nil)
+      expect(subject.admin_contacts[0].phone).to eq("(315) 443-6189")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("itsoffice@syr.edu")
     end
   end
 end

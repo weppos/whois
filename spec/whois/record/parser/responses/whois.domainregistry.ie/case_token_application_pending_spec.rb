@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "case_token_application_p
 
   subject do
     file = fixture("responses", "whois.domainregistry.ie/case_token_application_pending.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
 end

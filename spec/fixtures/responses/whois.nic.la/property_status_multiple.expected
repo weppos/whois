@@ -1,2 +1,2 @@
 #status
-  should: %s == ["TRANSFER PROHIBITED", "RENEW PERIOD"]
+  %s == ["TRANSFER PROHIBITED", "RENEW PERIOD"]

@@ -1,71 +1,71 @@
 #disclaimer
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #domain
-  should: %s == "google.cn"
+  %s == "google.cn"
 
 #domain_id
-  should: %s == "20030311s10001s00033735-cn"
+  %s == "20030311s10001s00033735-cn"
 
 
 #status
-  should: %s == ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited", "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"]
+  %s == ["clientDeleteProhibited", "serverDeleteProhibited", "clientUpdateProhibited", "serverUpdateProhibited", "clientTransferProhibited", "serverTransferProhibited"]
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2003-03-17 12:20:05")
+  %s %CLASS{time}
+  %s %TIME{2003-03-17 12:20:05}
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2014-03-17 12:48:36")
+  %s %CLASS{time}
+  %s %TIME{2014-03-17 12:48:36}
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == "MarkMonitor Inc."
-  should: %s.name         == "MarkMonitor Inc."
-  should: %s.organization == nil
+  %s %CLASS{registrar}
+  %s.id           == "MarkMonitor Inc."
+  %s.name         == "MarkMonitor Inc."
+  %s.organization == nil
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == "cnnic-zdmd-022"
-  should: %s[0].name         == "Google Ireland Holdings"
-  should: %s[0].organization == nil
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id           == "cnnic-zdmd-022"
+  %s[0].name         == "Google Ireland Holdings"
+  %s[0].organization == nil
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #technical_contacts
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(4)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns2.google.com"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1.google.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.google.com"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns4.google.com"
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns2.google.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns1.google.com"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns3.google.com"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns4.google.com"
 
 
 #reserved?
-  should: %s == false
+  %s == false

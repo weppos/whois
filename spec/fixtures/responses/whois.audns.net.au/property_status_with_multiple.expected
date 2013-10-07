@@ -1,2 +1,2 @@
 #status
-  should: %s == ["serverHold (Expired)", "serverUpdateProhibited (Expired)"]
+  %s == ["serverHold (Expired)", "serverUpdateProhibited (Expired)"]

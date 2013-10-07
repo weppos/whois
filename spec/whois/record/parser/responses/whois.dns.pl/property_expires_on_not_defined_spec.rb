@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisDnsPl, "property_expires_on_not_defined.exp
 
   subject do
     file = fixture("responses", "whois.dns.pl/property_expires_on_not_defined.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
 end

@@ -17,18 +17,18 @@ describe Whois::Record::Parser::WhoisDnsBe, "response_blocked.expected" do
 
   subject do
     file = fixture("responses", "whois.dns.be/response_blocked.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == true
+      expect(subject.response_throttled?).to eq(true)
     end
   end
   describe "#response_blocked?" do
     it do
-      subject.response_blocked?.should == true
+      expect(subject.response_blocked?).to eq(true)
     end
   end
 end

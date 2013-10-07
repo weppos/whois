@@ -1,34 +1,34 @@
 #status
-  should: %s == ["serverDeleteProhibited", "serverTransferProhibited"]
+  %s == ["serverDeleteProhibited", "serverTransferProhibited"]
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-01-24 02:22:24 UTC")
+  %s %CLASS{time}
+  %s %TIME{2011-01-24 02:22:24 UTC}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-01-25 04:20:26 UTC")
+  %s %CLASS{time}
+  %s %TIME{2011-01-25 04:20:26 UTC}
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2014-01-24 02:22:24 UTC")
+  %s %CLASS{time}
+  %s %TIME{2014-01-24 02:22:24 UTC}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(4)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.google.com"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.google.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.google.com"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns4.google.com"
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.google.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.google.com"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns3.google.com"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns4.google.com"

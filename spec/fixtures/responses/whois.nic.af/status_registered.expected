@@ -1,49 +1,49 @@
 #domain
-  should: %s == "google.af"
+  %s == "google.af"
 
 #domain_id
-  should: %s == "345679-CoCCA"
+  %s == "345679-CoCCA"
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2009-10-05 03:51:17 UTC")
+  %s %CLASS{time}
+  %s %TIME{2009-10-05 03:51:17 UTC}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2012-04-30 14:49:02 UTC")
+  %s %CLASS{time}
+  %s %TIME{2012-04-30 14:49:02 UTC}
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2013-05-05 03:51:17 UTC")
+  %s %CLASS{time}
+  %s %TIME{2013-05-05 03:51:17 UTC}
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == nil
-  should: %s.name         == "MarkMonitor"
-  should: %s.organization == nil
-  should: %s.url          == "http://www.markmonitor.com"
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "MarkMonitor"
+  %s.organization == nil
+  %s.url          == "http://www.markmonitor.com"
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(4)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.google.com"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.google.com"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns3.google.com"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "ns4.google.com"
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.google.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.google.com"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns3.google.com"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns4.google.com"

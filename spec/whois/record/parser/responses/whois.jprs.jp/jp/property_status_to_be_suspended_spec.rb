@@ -17,23 +17,23 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_status_to_be_suspended.ex
 
   subject do
     file = fixture("responses", "whois.jprs.jp/jp/property_status_to_be_suspended.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :redemption
+      expect(subject.status).to eq(:redemption)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
 end

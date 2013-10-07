@@ -17,14 +17,14 @@ describe Whois::Record::Parser::WhoisMeregistryNet, "property_nameservers_is_bla
 
   subject do
     file = fixture("responses", "whois.meregistry.net/property_nameservers_is_blank.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
 end

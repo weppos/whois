@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_updated_on_unknown.e
 
   subject do
     file = fixture("responses", "whois.educause.edu/property_updated_on_unknown.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#updated_on" do
     it do
-      subject.updated_on.should == nil
+      expect(subject.updated_on).to eq(nil)
     end
   end
 end

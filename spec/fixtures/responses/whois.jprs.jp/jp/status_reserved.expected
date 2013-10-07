@@ -1,24 +1,24 @@
 #status
-  should: %s == :reserved
+  %s == :reserved
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2001-02-21 00:00:00")
+  %s %CLASS{time}
+  %s %TIME{2001-02-21 00:00:00}
 
 #expires_on
-  should: %s == nil
+  %s == nil
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []

@@ -17,23 +17,23 @@ describe Whois::Record::Parser::WhoisNicIt, "property_status_unassignable.expect
 
   subject do
     file = fixture("responses", "whois.nic.it/property_status_unassignable.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :unavailable
+      expect(subject.status).to eq(:unavailable)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
 end

@@ -17,18 +17,18 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_contacts_not_ma
 
   subject do
     file = fixture("responses", "whois.domainregistry.ie/property_contacts_not_matching_id.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "KG37-IEDR"
-      subject.technical_contacts[0].name.should          == "Michael McGovern"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("KG37-IEDR")
+      expect(subject.technical_contacts[0].name).to eq("Michael McGovern")
     end
   end
 end

@@ -1,27 +1,27 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-06-15 14:54:00")
+  %s %CLASS{time}
+  %s %TIME{2011-06-15 14:54:00}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-06-15 14:54:00")
+  %s %CLASS{time}
+  %s %TIME{2011-06-15 14:54:00}
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "dns1-tl.brunet.bn"
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "dns1-tl.brunet.bn"

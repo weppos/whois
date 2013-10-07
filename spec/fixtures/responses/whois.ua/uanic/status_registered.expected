@@ -1,85 +1,85 @@
 #domain
-  should: %s == "kyivstar.ua"
+  %s == "kyivstar.ua"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2002-09-03 00:00:00")
+  %s %CLASS{time}
+  %s %TIME{2002-09-03 00:00:00}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2012-07-30 16:42:30")
+  %s %CLASS{time}
+  %s %TIME{2012-07-30 16:42:30}
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2014-09-03 12:18:52")
+  %s %CLASS{time}
+  %s %TIME{2014-09-03 12:18:52}
 
 
 #registrar
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(0)
+  %s %CLASS{array}
+  %s %SIZE{0}
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  should: %s[0].id            == "KG780-UANIC"
-  should: %s[0].name          == nil
-  should: %s[0].organization  == "Kyivstar GSM"
-  should: %s[0].address       == "Chervonozoryanyi Av., 51"
-  should: %s[0].city          == "KYIV"
-  should: %s[0].zip           == "03110"
-  should: %s[0].state         == nil
-  should: %s[0].country       == "UA"
-  should: %s[0].country_code  == nil
-  should: %s[0].phone         == "+380 (67) 2372213"
-  should: %s[0].fax           == "+380 (44) 2473954"
-  should: %s[0].email         == "dnsmaster@kyivstar.net"
-  should: %s[0].created_on    == nil
-  should: %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == "KG780-UANIC"
+  %s[0].name          == nil
+  %s[0].organization  == "Kyivstar GSM"
+  %s[0].address       == "Chervonozoryanyi Av., 51"
+  %s[0].city          == "KYIV"
+  %s[0].zip           == "03110"
+  %s[0].state         == nil
+  %s[0].country       == "UA"
+  %s[0].country_code  == nil
+  %s[0].phone         == "+380 (67) 2372213"
+  %s[0].fax           == "+380 (44) 2473954"
+  %s[0].email         == "dnsmaster@kyivstar.net"
+  %s[0].created_on    == nil
+  %s[0].updated_on    %TIME{2008-09-02 12:52:47}
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id            == "KG780-UANIC"
-  should: %s[0].name          == nil
-  should: %s[0].organization  == "Kyivstar GSM"
-  should: %s[0].address       == "Chervonozoryanyi Av., 51"
-  should: %s[0].city          == "KYIV"
-  should: %s[0].zip           == "03110"
-  should: %s[0].state         == nil
-  should: %s[0].country       == "UA"
-  should: %s[0].country_code  == nil
-  should: %s[0].phone         == "+380 (67) 2372213"
-  should: %s[0].fax           == "+380 (44) 2473954"
-  should: %s[0].email         == "dnsmaster@kyivstar.net"
-  should: %s[0].created_on    == nil
-  should: %s[0].updated_on    == Time.parse("2008-09-02 12:52:47")
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == "KG780-UANIC"
+  %s[0].name          == nil
+  %s[0].organization  == "Kyivstar GSM"
+  %s[0].address       == "Chervonozoryanyi Av., 51"
+  %s[0].city          == "KYIV"
+  %s[0].zip           == "03110"
+  %s[0].state         == nil
+  %s[0].country       == "UA"
+  %s[0].country_code  == nil
+  %s[0].phone         == "+380 (67) 2372213"
+  %s[0].fax           == "+380 (44) 2473954"
+  %s[0].email         == "dnsmaster@kyivstar.net"
+  %s[0].created_on    == nil
+  %s[0].updated_on    %TIME{2008-09-02 12:52:47}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns2.elvisti.kiev.ua"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns.kyivstar.net"
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns2.elvisti.kiev.ua"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns.kyivstar.net"

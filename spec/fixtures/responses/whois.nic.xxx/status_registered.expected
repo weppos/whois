@@ -1,99 +1,99 @@
 #disclaimer
-  should: %s == "Access to the .XXX WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the ICM Registry database. The data in this record is provided by ICM Registry for informational purposes only, and ICM does not guarantee its accuracy. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or ICM except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. ICM reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
+  %s == "Access to the .XXX WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the ICM Registry database. The data in this record is provided by ICM Registry for informational purposes only, and ICM does not guarantee its accuracy. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or ICM except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. ICM reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy."
 
 
 #domain
-  should: %s == "masala.xxx"
+  %s == "masala.xxx"
 
 #domain_id
-  should: %s == "D372-ICM"
+  %s == "D372-ICM"
 
 
 #status
-  should: %s == ["OK"]
+  %s == ["OK"]
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-08-09 17:48:52.556689 UTC")
+  %s %CLASS{time}
+  %s %TIME{2011-08-09 17:48:52.556689 UTC}
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2012-08-09 17:48:52.556689")
+  %s %CLASS{time}
+  %s %TIME{2012-08-09 17:48:52.556689}
 
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == "R2-ICM"
-  should: %s.name         == "Domainmonster.com"
-  should: %s.organization == nil
-  should: %s.url          == nil
+  %s %CLASS{registrar}
+  %s.id           == "R2-ICM"
+  %s.name         == "Domainmonster.com"
+  %s.organization == nil
+  %s.url          == nil
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == "C7-ICM"
-  should: %s[0].name         == "Domainmonster.com Privacy Service"
-  should: %s[0].organization == "Mesh Digital Ltd (Domainmonster.com)"
-  should: %s[0].address      == "PO Box 795"
-  should: %s[0].city         == "Godalming"
-  should: %s[0].zip          == "GU7 9GA"
-  should: %s[0].state        == "Surrey"
-  should: %s[0].country_code == "UB"
-  should: %s[0].phone        == "44.14833075"
-  should: %s[0].fax          == "+44.148330403"
-  should: %s[0].email        == "support@domainmonster.com"
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id           == "C7-ICM"
+  %s[0].name         == "Domainmonster.com Privacy Service"
+  %s[0].organization == "Mesh Digital Ltd (Domainmonster.com)"
+  %s[0].address      == "PO Box 795"
+  %s[0].city         == "Godalming"
+  %s[0].zip          == "GU7 9GA"
+  %s[0].state        == "Surrey"
+  %s[0].country_code == "UB"
+  %s[0].phone        == "44.14833075"
+  %s[0].fax          == "+44.148330403"
+  %s[0].email        == "support@domainmonster.com"
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  should: %s[0].id           == "C7-ICM"
-  should: %s[0].name         == "Domainmonster.com Privacy Service"
-  should: %s[0].organization == "Mesh Digital Ltd (Domainmonster.com)"
-  should: %s[0].address      == "PO Box 795"
-  should: %s[0].city         == "Godalming"
-  should: %s[0].zip          == "GU7 9GA"
-  should: %s[0].state        == "Surrey"
-  should: %s[0].country_code == "UB"
-  should: %s[0].phone        == "44.14833075"
-  should: %s[0].fax          == "+44.148330403"
-  should: %s[0].email        == "support@domainmonster.com"
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id           == "C7-ICM"
+  %s[0].name         == "Domainmonster.com Privacy Service"
+  %s[0].organization == "Mesh Digital Ltd (Domainmonster.com)"
+  %s[0].address      == "PO Box 795"
+  %s[0].city         == "Godalming"
+  %s[0].zip          == "GU7 9GA"
+  %s[0].state        == "Surrey"
+  %s[0].country_code == "UB"
+  %s[0].phone        == "44.14833075"
+  %s[0].fax          == "+44.148330403"
+  %s[0].email        == "support@domainmonster.com"
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s SIZE(1)
-  should: %s[0] CLASS(contact)
-  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id           == "C7-ICM"
-  should: %s[0].name         == "Domainmonster.com Privacy Service"
-  should: %s[0].organization == "Mesh Digital Ltd (Domainmonster.com)"
-  should: %s[0].address      == "PO Box 795"
-  should: %s[0].city         == "Godalming"
-  should: %s[0].zip          == "GU7 9GA"
-  should: %s[0].state        == "Surrey"
-  should: %s[0].country_code == "UB"
-  should: %s[0].phone        == "44.14833075"
-  should: %s[0].fax          == "+44.148330403"
-  should: %s[0].email        == "support@domainmonster.com"
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id           == "C7-ICM"
+  %s[0].name         == "Domainmonster.com Privacy Service"
+  %s[0].organization == "Mesh Digital Ltd (Domainmonster.com)"
+  %s[0].address      == "PO Box 795"
+  %s[0].city         == "Godalming"
+  %s[0].zip          == "GU7 9GA"
+  %s[0].state        == "Surrey"
+  %s[0].country_code == "UB"
+  %s[0].phone        == "44.14833075"
+  %s[0].fax          == "+44.148330403"
+  %s[0].email        == "support@domainmonster.com"
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns33.domaincontrol.com"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns34.domaincontrol.com"
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns33.domaincontrol.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns34.domaincontrol.com"

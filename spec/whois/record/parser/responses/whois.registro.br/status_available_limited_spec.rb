@@ -17,18 +17,18 @@ describe Whois::Record::Parser::WhoisRegistroBr, "status_available_limited.expec
 
   subject do
     file = fixture("responses", "whois.registro.br/status_available_limited.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#available?" do
     it do
-      subject.available?.should == true
+      expect(subject.available?).to eq(true)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
 end

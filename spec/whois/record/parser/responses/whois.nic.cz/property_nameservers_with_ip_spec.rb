@@ -17,24 +17,24 @@ describe Whois::Record::Parser::WhoisNicCz, "property_nameservers_with_ip.expect
 
   subject do
     file = fixture("responses", "whois.nic.cz/property_nameservers_with_ip.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns.kraxnet.com"
-      subject.nameservers[0].ipv4.should == nil
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.kraxnet.cz"
-      subject.nameservers[1].ipv4.should == "178.217.247.1"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns.kraxnet.cz"
-      subject.nameservers[2].ipv4.should == "178.217.247.2"
-      subject.nameservers[2].ipv6.should == "2a02:1360::56"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns.kraxnet.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns1.kraxnet.cz")
+      expect(subject.nameservers[1].ipv4).to eq("178.217.247.1")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns.kraxnet.cz")
+      expect(subject.nameservers[2].ipv4).to eq("178.217.247.2")
+      expect(subject.nameservers[2].ipv6).to eq("2a02:1360::56")
     end
   end
 end

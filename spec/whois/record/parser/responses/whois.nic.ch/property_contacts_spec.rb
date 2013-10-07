@@ -17,31 +17,31 @@ describe Whois::Record::Parser::WhoisNicCh, "property_contacts.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.ch/property_contacts.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].name.should == "EISD John"
-      subject.registrant_contacts[0].address.should == "Room 208, Furong Road, Changsha City\nCN-41000 Changsha\nChina"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].name).to eq("EISD John")
+      expect(subject.registrant_contacts[0].address).to eq("Room 208, Furong Road, Changsha City\nCN-41000 Changsha\nChina")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].name.should == "xie huijie"
-      subject.technical_contacts[0].address.should == "xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].name).to eq("xie huijie")
+      expect(subject.technical_contacts[0].address).to eq("xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina")
     end
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
 end
