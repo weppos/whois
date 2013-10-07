@@ -1,36 +1,36 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2010-10-07")
+  %s %CLASS{time}
+  %s %TIME{2010-10-07}
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(6)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns.isoc.org.il"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "grappa.isoc.org.il"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "aristo.tau.ac.il"
-  should: %s[3] CLASS(nameserver)
-  should: %s[3].name == "relay.huji.ac.il"
-  should: %s[4] CLASS(nameserver)
-  should: %s[4].name == "drns.isoc.org.il"
-  should: %s[5] CLASS(nameserver)
-  should: %s[5].name == "sps-pb.isc.org"
+  %s %CLASS{array}
+  %s %SIZE{6}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns.isoc.org.il"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "grappa.isoc.org.il"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "aristo.tau.ac.il"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "relay.huji.ac.il"
+  %s[4] %CLASS{nameserver}
+  %s[4].name == "drns.isoc.org.il"
+  %s[5] %CLASS{nameserver}
+  %s[5].name == "sps-pb.isc.org"

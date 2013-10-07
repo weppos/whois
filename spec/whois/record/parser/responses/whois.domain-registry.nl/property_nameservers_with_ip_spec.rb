@@ -17,20 +17,20 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "property_nameservers_wit
 
   subject do
     file = fixture("responses", "whois.domain-registry.nl/property_nameservers_with_ip.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(2).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.tntpost.nl"
-      subject.nameservers[0].ipv4.should == "145.78.21.10"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.tntpost.nl"
-      subject.nameservers[1].ipv4.should == "80.69.76.10"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.tntpost.nl")
+      expect(subject.nameservers[0].ipv4).to eq("145.78.21.10")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.tntpost.nl")
+      expect(subject.nameservers[1].ipv4).to eq("80.69.76.10")
     end
   end
 end

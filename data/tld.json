@@ -657,7 +657,7 @@
     "adapter": "none"
   },
   ".kr": {
-    "host": "whois.nic.or.kr"
+    "host": "whois.kr"
   },
   ".kw": {
     "host": null,

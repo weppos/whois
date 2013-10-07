@@ -17,26 +17,26 @@ describe Whois::Record::Parser::WhoisDomregLt, "property_nameservers_with_ip.exp
 
   subject do
     file = fixture("responses", "whois.domreg.lt/property_nameservers_with_ip.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(4).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.serveriai.lt"
-      subject.nameservers[0].ipv4.should == "79.98.25.142"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.serveriai.lt"
-      subject.nameservers[1].ipv4.should == "174.36.250.192"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.serveriai.lt"
-      subject.nameservers[2].ipv4.should == "79.98.29.142"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns4.serveriai.lt"
-      subject.nameservers[3].ipv4.should == "67.228.39.192"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.serveriai.lt")
+      expect(subject.nameservers[0].ipv4).to eq("79.98.25.142")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.serveriai.lt")
+      expect(subject.nameservers[1].ipv4).to eq("174.36.250.192")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.serveriai.lt")
+      expect(subject.nameservers[2].ipv4).to eq("79.98.29.142")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.serveriai.lt")
+      expect(subject.nameservers[3].ipv4).to eq("67.228.39.192")
     end
   end
 end

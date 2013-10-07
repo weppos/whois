@@ -17,25 +17,25 @@ describe Whois::Record::Parser::WhoisNicSeSe, "property_datetime_is_dash.expecte
 
   subject do
     file = fixture("responses", "whois.nic-se.se/property_datetime_is_dash.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("2010-08-05")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2010-08-05"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should == nil
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2011-08-05")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2011-08-05"))
     end
   end
 end

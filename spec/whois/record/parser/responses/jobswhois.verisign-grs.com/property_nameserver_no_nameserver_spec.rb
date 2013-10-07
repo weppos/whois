@@ -17,14 +17,14 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "property_nameserver_no
 
   subject do
     file = fixture("responses", "jobswhois.verisign-grs.com/property_nameserver_no_nameserver.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
 end

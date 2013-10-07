@@ -1,2 +1,2 @@
 #status
-  should: %s == ["OK"]
+  %s == ["OK"]

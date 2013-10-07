@@ -1,11 +1,11 @@
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []

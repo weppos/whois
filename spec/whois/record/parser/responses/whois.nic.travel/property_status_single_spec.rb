@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisNicTravel, "property_status_single.expected
 
   subject do
     file = fixture("responses", "whois.nic.travel/property_status_single.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == "ok"
+      expect(subject.status).to eq("ok")
     end
   end
 end

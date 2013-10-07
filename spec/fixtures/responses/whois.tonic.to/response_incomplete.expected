@@ -1,6 +1,6 @@
 #status
-  should: %s == :incomplete
+  %s == :incomplete
 
 
 #response_incomplete?
-  should: %s == true
+  %s == true

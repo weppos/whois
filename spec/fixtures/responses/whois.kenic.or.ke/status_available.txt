@@ -14,11 +14,9 @@
 % Types of queries are: domains (.KE) and POCs.
 
 
-
 Domain Information
 Query: u34jedzcq.ke
 Status: Not Registered
-
 
 
 

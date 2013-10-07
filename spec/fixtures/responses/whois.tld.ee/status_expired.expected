@@ -1,31 +1,31 @@
 #status
-  should: %s == :expired
+  %s == :expired
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("04.07.2010 05:05:30")
+  %s %CLASS{time}
+  %s %TIME{04.07.2010 05:05:30}
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("05.01.2011")
+  %s %CLASS{time}
+  %s %TIME{05.01.2011}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1550.hostgator.com"
-  should: %s[0].ipv4 == "174.132.145.195"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1549.hostgator.com"
-  should: %s[1].ipv4 == "174.132.145.194"
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1550.hostgator.com"
+  %s[0].ipv4 == "174.132.145.195"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns1549.hostgator.com"
+  %s[1].ipv4 == "174.132.145.194"

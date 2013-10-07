@@ -1,31 +1,31 @@
 #domain
-  should: %s == "google.bo"
+  %s == "google.bo"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2006-08-22")
+  %s %CLASS{time}
+  %s %TIME{2006-08-22}
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2013-08-22")
+  %s %CLASS{time}
+  %s %TIME{2013-08-22}
 
 
 #nameservers
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}

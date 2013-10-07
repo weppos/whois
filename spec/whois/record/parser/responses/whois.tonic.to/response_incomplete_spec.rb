@@ -17,18 +17,18 @@ describe Whois::Record::Parser::WhoisTonicTo, "response_incomplete.expected" do
 
   subject do
     file = fixture("responses", "whois.tonic.to/response_incomplete.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == :incomplete
+      expect(subject.status).to eq(:incomplete)
     end
   end
   describe "#response_incomplete?" do
     it do
-      subject.response_incomplete?.should == true
+      expect(subject.response_incomplete?).to eq(true)
     end
   end
 end

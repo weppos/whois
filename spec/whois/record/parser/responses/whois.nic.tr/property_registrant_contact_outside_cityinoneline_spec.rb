@@ -17,28 +17,28 @@ describe Whois::Record::Parser::WhoisNicTr, "property_registrant_contact_outside
 
   subject do
     file = fixture("responses", "whois.nic.tr/property_registrant_contact_outside_cityinoneline.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == nil
-      subject.registrant_contacts[0].name.should          == "Yahoo Ýnc."
-      subject.registrant_contacts[0].organization.should  == nil
-      subject.registrant_contacts[0].address.should       == "701 First Avenue Sunnyvale Ca 94089"
-      subject.registrant_contacts[0].city.should          == nil
-      subject.registrant_contacts[0].zip.should           == nil
-      subject.registrant_contacts[0].state.should         == nil
-      subject.registrant_contacts[0].country.should       == "United States of America"
-      subject.registrant_contacts[0].country_code.should  == nil
-      subject.registrant_contacts[0].phone.should         == "+ 901-408-3493300-"
-      subject.registrant_contacts[0].fax.should           == "+ 901-408-3493301"
-      subject.registrant_contacts[0].email.should         == "domainadmin@yahoo-inc.com"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Yahoo Ýnc.")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("701 First Avenue Sunnyvale Ca 94089")
+      expect(subject.registrant_contacts[0].city).to eq(nil)
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country).to eq("United States of America")
+      expect(subject.registrant_contacts[0].country_code).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("+ 901-408-3493300-")
+      expect(subject.registrant_contacts[0].fax).to eq("+ 901-408-3493301")
+      expect(subject.registrant_contacts[0].email).to eq("domainadmin@yahoo-inc.com")
     end
   end
 end

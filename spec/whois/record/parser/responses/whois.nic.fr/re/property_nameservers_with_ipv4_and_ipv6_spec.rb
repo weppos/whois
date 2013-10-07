@@ -17,26 +17,26 @@ describe Whois::Record::Parser::WhoisNicFr, "property_nameservers_with_ipv4_and_
 
   subject do
     file = fixture("responses", "whois.nic.fr/re/property_nameservers_with_ipv4_and_ipv6.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.nic.fr"
-      subject.nameservers[0].ipv4.should == "192.93.0.1"
-      subject.nameservers[0].ipv6.should == "2001:660:3005:1::1:1"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.nic.fr"
-      subject.nameservers[1].ipv4.should == "192.93.0.4"
-      subject.nameservers[1].ipv6.should == "2001:660:3005:1::1:2"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.nic.fr"
-      subject.nameservers[2].ipv4.should == "192.134.0.49"
-      subject.nameservers[2].ipv6.should == "2001:660:3006:1::1:1"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.nic.fr")
+      expect(subject.nameservers[0].ipv4).to eq("192.93.0.1")
+      expect(subject.nameservers[0].ipv6).to eq("2001:660:3005:1::1:1")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.nic.fr")
+      expect(subject.nameservers[1].ipv4).to eq("192.93.0.4")
+      expect(subject.nameservers[1].ipv6).to eq("2001:660:3005:1::1:2")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.nic.fr")
+      expect(subject.nameservers[2].ipv4).to eq("192.134.0.49")
+      expect(subject.nameservers[2].ipv6).to eq("2001:660:3006:1::1:1")
     end
   end
 end

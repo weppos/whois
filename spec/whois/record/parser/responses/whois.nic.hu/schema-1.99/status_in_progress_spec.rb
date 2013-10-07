@@ -17,86 +17,86 @@ describe Whois::Record::Parser::WhoisNicHu, "status_in_progress.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.hu/schema-1.99/status_in_progress.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan."
+      expect(subject.disclaimer).to eq("Rights restricted by copyright. Szerzõi jog fenntartva.\n-Legal usage of this service requires that you agree to\nabide by the rules and conditions set forth at\nhttp://www.domain.hu/domain/English/domainsearch/feltetelek.html\n-A szolgaltatas csak a\nhttp://www.domain.hu/domain/domainsearch/feltetelek.html címen\nelérhetõ feltételek elfogadása és betartása mellett\nhasználható legálisan.")
     end
   end
   describe "#domain" do
     it do
-      subject.domain.should == "ezitvps.hu"
+      expect(subject.domain).to eq("ezitvps.hu")
     end
   end
   describe "#domain_id" do
     it do
-      subject.domain_id.should == nil
+      expect(subject.domain_id).to eq(nil)
     end
   end
   describe "#status" do
     it do
-      subject.status.should == :registered
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should == nil
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should == nil
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should == nil
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should == []
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to eq([])
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should == []
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to eq([])
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should == []
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to eq([])
     end
   end
   describe "#zone_contact" do
     it do
-      subject.zone_contact.should == nil
+      expect(subject.zone_contact).to eq(nil)
     end
   end
   describe "#registrar_contact" do
     it do
-      subject.registrar_contact.should == nil
+      expect(subject.registrar_contact).to eq(nil)
     end
   end
 end

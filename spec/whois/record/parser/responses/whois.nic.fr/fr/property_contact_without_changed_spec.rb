@@ -17,29 +17,29 @@ describe Whois::Record::Parser::WhoisNicFr, "property_contact_without_changed.ex
 
   subject do
     file = fixture("responses", "whois.nic.fr/fr/property_contact_without_changed.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].id.should            == "JMR39-FRNIC"
-      subject.admin_contacts[0].name.should          == "Jean Marc Raimondo"
-      subject.admin_contacts[0].organization.should  == "1C2"
-      subject.admin_contacts[0].address.should       == "20-22, rue Louis Armand\n75015 Paris"
-      subject.admin_contacts[0].city.should          == nil
-      subject.admin_contacts[0].zip.should           == nil
-      subject.admin_contacts[0].state.should         == nil
-      subject.admin_contacts[0].country.should       == nil
-      subject.admin_contacts[0].country_code.should  == "FR"
-      subject.admin_contacts[0].phone.should         == "+33 1 30 62 40 06"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "jmr@1c2.com"
-      subject.admin_contacts[0].updated_on.should    == nil
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("JMR39-FRNIC")
+      expect(subject.admin_contacts[0].name).to eq("Jean Marc Raimondo")
+      expect(subject.admin_contacts[0].organization).to eq("1C2")
+      expect(subject.admin_contacts[0].address).to eq("20-22, rue Louis Armand\n75015 Paris")
+      expect(subject.admin_contacts[0].city).to eq(nil)
+      expect(subject.admin_contacts[0].zip).to eq(nil)
+      expect(subject.admin_contacts[0].state).to eq(nil)
+      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].country_code).to eq("FR")
+      expect(subject.admin_contacts[0].phone).to eq("+33 1 30 62 40 06")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("jmr@1c2.com")
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
 end

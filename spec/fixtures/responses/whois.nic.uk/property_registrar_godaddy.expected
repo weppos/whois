@@ -1,6 +1,6 @@
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.id           == "GODADDY"
-  should: %s.name         == "GoDaddy.com, LLP."
-  should: %s.name         == "GoDaddy.com, LLP."
-  should: %s.url          == nil
+  %s %CLASS{registrar}
+  %s.id           == "GODADDY"
+  %s.name         == "GoDaddy.com, LLP."
+  %s.name         == "GoDaddy.com, LLP."
+  %s.url          == nil

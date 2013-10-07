@@ -1,5 +1,5 @@
 #created_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s == nil
+  %s == nil

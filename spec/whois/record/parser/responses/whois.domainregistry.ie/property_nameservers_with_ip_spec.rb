@@ -17,32 +17,32 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_nameservers_wit
 
   subject do
     file = fixture("responses", "whois.domainregistry.ie/property_nameservers_with_ip.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(6).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.dns.ie"
-      subject.nameservers[0].ipv4.should == "208.94.148.4"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.dns.ie"
-      subject.nameservers[1].ipv4.should == "208.80.124.4"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.dns.ie"
-      subject.nameservers[2].ipv4.should == "208.80.126.4"
-      subject.nameservers[3].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[3].name.should == "ns4.dns.ie"
-      subject.nameservers[3].ipv4.should == "208.80.125.4"
-      subject.nameservers[4].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[4].name.should == "ns5.dns.ie"
-      subject.nameservers[4].ipv4.should == "208.80.127.4"
-      subject.nameservers[5].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[5].name.should == "ns6.dns.ie"
-      subject.nameservers[5].ipv4.should == "208.94.149.4"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(6).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.dns.ie")
+      expect(subject.nameservers[0].ipv4).to eq("208.94.148.4")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.dns.ie")
+      expect(subject.nameservers[1].ipv4).to eq("208.80.124.4")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.dns.ie")
+      expect(subject.nameservers[2].ipv4).to eq("208.80.126.4")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.dns.ie")
+      expect(subject.nameservers[3].ipv4).to eq("208.80.125.4")
+      expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[4].name).to eq("ns5.dns.ie")
+      expect(subject.nameservers[4].ipv4).to eq("208.80.127.4")
+      expect(subject.nameservers[5]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[5].name).to eq("ns6.dns.ie")
+      expect(subject.nameservers[5].ipv4).to eq("208.94.149.4")
     end
   end
 end
