@@ -17,134 +17,134 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
 
   subject do
     file = fixture("responses", "whois.tucows.com/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "The Data in the Tucows Registrar WHOIS database is provided to you by Tucows\nfor information purposes only, and may be used to assist you in obtaining\ninformation about or related to a domain name's registration record.\n\nTucows makes this information available \"as is,\" and does not guarantee its\naccuracy.\n\nBy submitting a WHOIS query, you agree that you will use this data only for\nlawful purposes and that, under no circumstances will you use this data to:\na) allow, enable, or otherwise support the transmission by e-mail,\ntelephone, or facsimile of mass, unsolicited, commercial advertising or\nsolicitations to entities other than the data recipient's own existing\ncustomers; or (b) enable high volume, automated, electronic processes that\nsend queries or data to the systems of any Registry Operator or\nICANN-Accredited registrar, except as reasonably necessary to register\ndomain names or modify existing registrations.\n\nThe compilation, repackaging, dissemination or other use of this Data is\nexpressly prohibited without the prior written consent of Tucows.\n\nTucows reserves the right to terminate your access to the Tucows WHOIS\ndatabase in its sole discretion, including without limitation, for excessive\nquerying of the WHOIS database or for failure to otherwise abide by this\npolicy.\n\nTucows reserves the right to modify these terms at any time.\n\nBy submitting this query, you agree to abide by these terms.\n\nNOTE: THE WHOIS DATABASE IS A CONTACT DATABASE ONLY.  LACK OF A DOMAIN\nRECORD DOES NOT SIGNIFY DOMAIN AVAILABILITY.\n"
+      expect(subject.disclaimer).to eq("The Data in the Tucows Registrar WHOIS database is provided to you by Tucows\nfor information purposes only, and may be used to assist you in obtaining\ninformation about or related to a domain name's registration record.\n\nTucows makes this information available \"as is,\" and does not guarantee its\naccuracy.\n\nBy submitting a WHOIS query, you agree that you will use this data only for\nlawful purposes and that, under no circumstances will you use this data to:\na) allow, enable, or otherwise support the transmission by e-mail,\ntelephone, or facsimile of mass, unsolicited, commercial advertising or\nsolicitations to entities other than the data recipient's own existing\ncustomers; or (b) enable high volume, automated, electronic processes that\nsend queries or data to the systems of any Registry Operator or\nICANN-Accredited registrar, except as reasonably necessary to register\ndomain names or modify existing registrations.\n\nThe compilation, repackaging, dissemination or other use of this Data is\nexpressly prohibited without the prior written consent of Tucows.\n\nTucows reserves the right to terminate your access to the Tucows WHOIS\ndatabase in its sole discretion, including without limitation, for excessive\nquerying of the WHOIS database or for failure to otherwise abide by this\npolicy.\n\nTucows reserves the right to modify these terms at any time.\n\nBy submitting this query, you agree to abide by these terms.\n\nNOTE: THE WHOIS DATABASE IS A CONTACT DATABASE ONLY.  LACK OF A DOMAIN\nRECORD DOES NOT SIGNIFY DOMAIN AVAILABILITY.\n")
     end
   end
   describe "#domain" do
     it do
-      subject.domain.should == "tucows.com"
+      expect(subject.domain).to eq("tucows.com")
     end
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
     it do
-      subject.status.should == ["clientTransferProhibited", "clientUpdateProhibited", "serverDeleteProhibited", "serverTransferProhibited", "serverUpdateProhibited"]
+      expect(subject.status).to eq(["clientTransferProhibited", "clientUpdateProhibited", "serverDeleteProhibited", "serverTransferProhibited", "serverUpdateProhibited"])
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#created_on" do
     it do
-      subject.created_on.should be_a(Time)
-      subject.created_on.should == Time.parse("1995-09-07")
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("1995-09-07"))
     end
   end
   describe "#updated_on" do
     it do
-      subject.updated_on.should be_a(Time)
-      subject.updated_on.should == Time.parse("2013-08-07")
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2013-08-07"))
     end
   end
   describe "#expires_on" do
     it do
-      subject.expires_on.should be_a(Time)
-      subject.expires_on.should == Time.parse("2014-09-06")
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2014-09-06"))
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.id.should           == nil
-      subject.registrar.name.should         == "TUCOWS"
-      subject.registrar.organization.should == "TUCOWS, INC."
-      subject.registrar.url.should          == "http://tucowsdomains.com/"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("TUCOWS")
+      expect(subject.registrar.organization).to eq("TUCOWS, INC.")
+      expect(subject.registrar.url).to eq("http://tucowsdomains.com/")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].name.should          == nil
-      subject.registrant_contacts[0].organization.should  == "Tucows.com Co"
-      subject.registrant_contacts[0].address.should       == "96 Mowat Avenue"
-      subject.registrant_contacts[0].city.should          == "Toronto"
-      subject.registrant_contacts[0].zip.should           == "M6K3M1"
-      subject.registrant_contacts[0].state.should         == "Ontario"
-      subject.registrant_contacts[0].country_code.should  == "CA"
-      subject.registrant_contacts[0].phone.should         == nil
-      subject.registrant_contacts[0].fax.should           == nil
-      subject.registrant_contacts[0].email.should         == nil
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).item
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq(nil)
+      expect(subject.registrant_contacts[0].organization).to eq("Tucows.com Co")
+      expect(subject.registrant_contacts[0].address).to eq("96 Mowat Avenue")
+      expect(subject.registrant_contacts[0].city).to eq("Toronto")
+      expect(subject.registrant_contacts[0].zip).to eq("M6K3M1")
+      expect(subject.registrant_contacts[0].state).to eq("Ontario")
+      expect(subject.registrant_contacts[0].country_code).to eq("CA")
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].name.should          == "DNS Administrator"
-      subject.admin_contacts[0].organization.should  == nil
-      subject.admin_contacts[0].address.should       == "96 Mowat Avenue"
-      subject.admin_contacts[0].city.should          == "Toronto"
-      subject.admin_contacts[0].zip.should           == "M6K3M1"
-      subject.admin_contacts[0].state.should         == "Ontario"
-      subject.admin_contacts[0].country_code.should  == "CA"
-      subject.admin_contacts[0].phone.should         == "+1.4165350123x0000"
-      subject.admin_contacts[0].fax.should           == nil
-      subject.admin_contacts[0].email.should         == "dnsadmin@tucows.com"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).item
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].name).to eq("DNS Administrator")
+      expect(subject.admin_contacts[0].organization).to eq(nil)
+      expect(subject.admin_contacts[0].address).to eq("96 Mowat Avenue")
+      expect(subject.admin_contacts[0].city).to eq("Toronto")
+      expect(subject.admin_contacts[0].zip).to eq("M6K3M1")
+      expect(subject.admin_contacts[0].state).to eq("Ontario")
+      expect(subject.admin_contacts[0].country_code).to eq("CA")
+      expect(subject.admin_contacts[0].phone).to eq("+1.4165350123x0000")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("dnsadmin@tucows.com")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].name.should          == "DNS Administrator"
-      subject.technical_contacts[0].organization.should  == nil
-      subject.technical_contacts[0].address.should       == "96 Mowat Avenue"
-      subject.technical_contacts[0].city.should          == "Toronto"
-      subject.technical_contacts[0].zip.should           == "M6K3M1"
-      subject.technical_contacts[0].state.should         == "Ontario"
-      subject.technical_contacts[0].country_code.should  == "CA"
-      subject.technical_contacts[0].phone.should         == "+1.4165350123x0000"
-      subject.technical_contacts[0].fax.should           == nil
-      subject.technical_contacts[0].email.should         == "dnsadmin@tucows.com"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).item
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("DNS Administrator")
+      expect(subject.technical_contacts[0].organization).to eq(nil)
+      expect(subject.technical_contacts[0].address).to eq("96 Mowat Avenue")
+      expect(subject.technical_contacts[0].city).to eq("Toronto")
+      expect(subject.technical_contacts[0].zip).to eq("M6K3M1")
+      expect(subject.technical_contacts[0].state).to eq("Ontario")
+      expect(subject.technical_contacts[0].country_code).to eq("CA")
+      expect(subject.technical_contacts[0].phone).to eq("+1.4165350123x0000")
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq("dnsadmin@tucows.com")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns3.tucows.com"
-      subject.nameservers[0].ipv4.should == "64.99.97.32"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns1.tucows.com"
-      subject.nameservers[1].ipv4.should == "216.40.47.20"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns2.tucows.com"
-      subject.nameservers[2].ipv4.should == "64.98.148.15"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns3.tucows.com")
+      expect(subject.nameservers[0].ipv4).to eq("64.99.97.32")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns1.tucows.com")
+      expect(subject.nameservers[1].ipv4).to eq("216.40.47.20")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns2.tucows.com")
+      expect(subject.nameservers[2].ipv4).to eq("64.98.148.15")
     end
   end
 end
