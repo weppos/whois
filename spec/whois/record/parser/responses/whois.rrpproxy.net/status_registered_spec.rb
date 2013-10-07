@@ -17,110 +17,110 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
 
   subject do
     file = fixture("responses", "whois.rrpproxy.net/status_registered.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#disclaimer" do
     it do
-      subject.disclaimer.should == "This data is provided by Hosting Concepts for information purposes, and to assist persons obtaining information about or related to domain name registration records. Hosting Concepts does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to this WHOIS server. These terms may be changed without prior notice. By submitting this query, you agree to abide by this policy."
+      expect(subject.disclaimer).to eq("This data is provided by Hosting Concepts for information purposes, and to assist persons obtaining information about or related to domain name registration records. Hosting Concepts does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to this WHOIS server. These terms may be changed without prior notice. By submitting this query, you agree to abide by this policy.")
     end
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
     it do
-      subject.domain.should == "openprovider.com"
+      expect(subject.domain).to eq("openprovider.com")
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == false
+      expect(subject.available?).to eq(false)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == true
+      expect(subject.registered?).to eq(true)
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should be_a(Whois::Record::Registrar)
-      subject.registrar.name.should         == "Key-Systems"
-      subject.registrar.organization.should == "Key-Systems GmbH"
-      subject.registrar.url.should          == "http://www.domaindiscount24.com/"
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.name).to eq("Key-Systems")
+      expect(subject.registrar.organization).to eq("Key-Systems GmbH")
+      expect(subject.registrar.url).to eq("http://www.domaindiscount24.com/")
     end
   end
   describe "#registrant_contacts" do
     it do
-      subject.registrant_contacts.should be_a(Array)
-      subject.registrant_contacts.should have(1).items
-      subject.registrant_contacts[0].should be_a(Whois::Record::Contact)
-      subject.registrant_contacts[0].type.should          == Whois::Record::Contact::TYPE_REGISTRANT
-      subject.registrant_contacts[0].id.should            == "P-AEV84"
-      subject.registrant_contacts[0].name.should          == "Arno Vis"
-      subject.registrant_contacts[0].organization.should  == "Openprovider"
-      subject.registrant_contacts[0].address.should       == "Willem Buytewechstraat 40"
-      subject.registrant_contacts[0].city.should          == "Rotterdam"
-      subject.registrant_contacts[0].zip.should           == "3024 BN"
-      subject.registrant_contacts[0].country.should       == nil
-      subject.registrant_contacts[0].country_code.should  == "NL"
-      subject.registrant_contacts[0].phone.should         == "+31 104482299"
-      subject.registrant_contacts[0].fax.should           == "+31 102440250"
-      subject.registrant_contacts[0].email.should         == "domreg@openprovider.nl"
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq("P-AEV84")
+      expect(subject.registrant_contacts[0].name).to eq("Arno Vis")
+      expect(subject.registrant_contacts[0].organization).to eq("Openprovider")
+      expect(subject.registrant_contacts[0].address).to eq("Willem Buytewechstraat 40")
+      expect(subject.registrant_contacts[0].city).to eq("Rotterdam")
+      expect(subject.registrant_contacts[0].zip).to eq("3024 BN")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq("NL")
+      expect(subject.registrant_contacts[0].phone).to eq("+31 104482299")
+      expect(subject.registrant_contacts[0].fax).to eq("+31 102440250")
+      expect(subject.registrant_contacts[0].email).to eq("domreg@openprovider.nl")
     end
   end
   describe "#admin_contacts" do
     it do
-      subject.admin_contacts.should be_a(Array)
-      subject.admin_contacts.should have(1).items
-      subject.admin_contacts[0].should be_a(Whois::Record::Contact)
-      subject.admin_contacts[0].type.should          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-      subject.admin_contacts[0].id.should            == "P-AEV84"
-      subject.admin_contacts[0].name.should          == "Arno Vis"
-      subject.admin_contacts[0].organization.should  == "Openprovider"
-      subject.admin_contacts[0].address.should       == "Willem Buytewechstraat 40"
-      subject.admin_contacts[0].city.should          == "Rotterdam"
-      subject.admin_contacts[0].zip.should           == "3024 BN"
-      subject.admin_contacts[0].country.should       == nil
-      subject.admin_contacts[0].country_code.should  == "NL"
-      subject.admin_contacts[0].phone.should         == "+31 104482299"
-      subject.admin_contacts[0].fax.should           == "+31 102440250"
-      subject.admin_contacts[0].email.should         == "domreg@openprovider.nl"
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("P-AEV84")
+      expect(subject.admin_contacts[0].name).to eq("Arno Vis")
+      expect(subject.admin_contacts[0].organization).to eq("Openprovider")
+      expect(subject.admin_contacts[0].address).to eq("Willem Buytewechstraat 40")
+      expect(subject.admin_contacts[0].city).to eq("Rotterdam")
+      expect(subject.admin_contacts[0].zip).to eq("3024 BN")
+      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].country_code).to eq("NL")
+      expect(subject.admin_contacts[0].phone).to eq("+31 104482299")
+      expect(subject.admin_contacts[0].fax).to eq("+31 102440250")
+      expect(subject.admin_contacts[0].email).to eq("domreg@openprovider.nl")
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should have(1).items
-      subject.technical_contacts[0].should be_a(Whois::Record::Contact)
-      subject.technical_contacts[0].type.should          == Whois::Record::Contact::TYPE_TECHNICAL
-      subject.technical_contacts[0].id.should            == "P-AEV84"
-      subject.technical_contacts[0].name.should          == "Arno Vis"
-      subject.technical_contacts[0].organization.should  == "Openprovider"
-      subject.technical_contacts[0].address.should       == "Willem Buytewechstraat 40"
-      subject.technical_contacts[0].city.should          == "Rotterdam"
-      subject.technical_contacts[0].zip.should           == "3024 BN"
-      subject.technical_contacts[0].country.should       == nil
-      subject.technical_contacts[0].country_code.should  == "NL"
-      subject.technical_contacts[0].phone.should         == "+31 104482299"
-      subject.technical_contacts[0].fax.should           == "+31 102440250"
-      subject.technical_contacts[0].email.should         == "domreg@openprovider.nl"
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq("P-AEV84")
+      expect(subject.technical_contacts[0].name).to eq("Arno Vis")
+      expect(subject.technical_contacts[0].organization).to eq("Openprovider")
+      expect(subject.technical_contacts[0].address).to eq("Willem Buytewechstraat 40")
+      expect(subject.technical_contacts[0].city).to eq("Rotterdam")
+      expect(subject.technical_contacts[0].zip).to eq("3024 BN")
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq("NL")
+      expect(subject.technical_contacts[0].phone).to eq("+31 104482299")
+      expect(subject.technical_contacts[0].fax).to eq("+31 102440250")
+      expect(subject.technical_contacts[0].email).to eq("domreg@openprovider.nl")
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should have(3).items
-      subject.nameservers[0].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[0].name.should == "ns1.openprovider.nl"
-      subject.nameservers[1].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[1].name.should == "ns2.openprovider.be"
-      subject.nameservers[2].should be_a(Whois::Record::Nameserver)
-      subject.nameservers[2].name.should == "ns3.openprovider.eu"
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.openprovider.nl")
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.openprovider.be")
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.openprovider.eu")
     end
   end
 end

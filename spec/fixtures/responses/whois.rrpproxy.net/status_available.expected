@@ -1,36 +1,36 @@
 #disclaimer
-  should: %s == "The data in the WHOIS database of Key-Systems GmbH is provided by Key-Systems GmbH for information purposes, and to assist persons in obtaining information about or related to domain name registration records. Key-Systems GmbH does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to Key-Systems GmbH or its systems. Key-Systems GmbH reserves the right to modify these terms. By submitting"
+  %s == "The data in the WHOIS database of Key-Systems GmbH is provided by Key-Systems GmbH for information purposes, and to assist persons in obtaining information about or related to domain name registration records. Key-Systems GmbH does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to Key-Systems GmbH or its systems. Key-Systems GmbH reserves the right to modify these terms. By submitting"
 
 #domain_id
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #domain
-  should: %s == nil
+  %s == nil
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 #registrar
-  should: %s CLASS(registrar)
-  should: %s.name         == "Key-Systems"
-  should: %s.organization == "Key-Systems GmbH"
-  should: %s.url          == "http://www.domaindiscount24.com/"
+  %s %CLASS{registrar}
+  %s.name         == "Key-Systems"
+  %s.organization == "Key-Systems GmbH"
+  %s.url          == "http://www.domaindiscount24.com/"
 
 #registrant_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #admin_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #technical_contacts
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
