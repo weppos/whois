@@ -1,35 +1,35 @@
 #domain
-  should: %s == "u34jedzcq.be"
+  %s == "u34jedzcq.be"
 
 
 #status
-  should: %s == :available
+  %s == :available
 
 #available?
-  should: %s == true
+  %s == true
 
 #registered?
-  should: %s == false
+  %s == false
 
 
 #created_on
-  should: %s == nil
+  %s == nil
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #registrar
-  should: %s == nil
+  %s == nil
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []
 
 
 #response_throttled?
-  should: %s == false
+  %s == false

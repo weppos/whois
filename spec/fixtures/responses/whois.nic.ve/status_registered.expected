@@ -1,25 +1,25 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2010-10-27 12:23:43")
+  %s %CLASS{time}
+  %s %TIME{2010-10-27 12:23:43}
 
 #updated_on
-  should: %s == nil
+  %s == nil
 
 #expires_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2011-10-27 12:23:43")
+  %s %CLASS{time}
+  %s %TIME{2011-10-27 12:23:43}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s == []
+  %s %CLASS{array}
+  %s == []

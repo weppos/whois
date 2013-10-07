@@ -2,7 +2,7 @@ $:.unshift(File.dirname(__FILE__) + '/../lib')
 require 'benchmark'
 require 'delegate'
 
-class Foo < DelegateClass(String)
+class Foo < Delegate%CLASS{String}
   attr_reader :optional
   def initialize(mandatory, optional = nil)
     super(String.new(mandatory))

@@ -1,20 +1,20 @@
 #status
-  should: %s == :registered
+  %s == :registered
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2006-11-15")
+  %s %CLASS{time}
+  %s %TIME{2006-11-15}
 
 #updated_on
-  should: %s CLASS(time)
-  should: %s == Time.parse("2007-04-09")
+  %s %CLASS{time}
+  %s %TIME{2007-04-09}
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}

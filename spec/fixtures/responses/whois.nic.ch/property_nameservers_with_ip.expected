@@ -1,11 +1,11 @@
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(2)
-  should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns1.citrin.ch"
-  should: %s[0].ipv4 == "193.247.72.8"
-  should: %s[0].ipv6 == "2001:8a8:21:5::11"
-  should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns2.citrin.ch"
-  should: %s[1].ipv4 == "62.12.149.3"
-  should: %s[1].ipv6 == "2001:8a8:21:5::12"
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.citrin.ch"
+  %s[0].ipv4 == "193.247.72.8"
+  %s[0].ipv6 == "2001:8a8:21:5::11"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.citrin.ch"
+  %s[1].ipv4 == "62.12.149.3"
+  %s[1].ipv6 == "2001:8a8:21:5::12"

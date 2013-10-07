@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisNicLa, "property_status_single.expected" do
 
   subject do
     file = fixture("responses", "whois.nic.la/property_status_single.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#status" do
     it do
-      subject.status.should == ["OK"]
+      expect(subject.status).to eq(["OK"])
     end
   end
 end

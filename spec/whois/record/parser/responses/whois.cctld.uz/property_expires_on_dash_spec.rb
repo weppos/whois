@@ -17,13 +17,13 @@ describe Whois::Record::Parser::WhoisCctldUz, "property_expires_on_dash.expected
 
   subject do
     file = fixture("responses", "whois.cctld.uz/property_expires_on_dash.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#expires_on" do
     it do
-      subject.expires_on.should == nil
+      expect(subject.expires_on).to eq(nil)
     end
   end
 end

@@ -1,29 +1,29 @@
 #status
-  should: %s == :inactive
+  %s == :inactive
 
 #available?
-  should: %s == false
+  %s == false
 
 #registered?
-  should: %s == true
+  %s == true
 
 
 #created_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #updated_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
-  should: %s raise_error(Whois::AttributeNotSupported)
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers
-  should: %s CLASS(array)
-  should: %s SIZE(0)
-  should: %s == []
+  %s %CLASS{array}
+  %s %SIZE{0}
+  %s == []
 
 
 
 #response_throttled?
-  should: %s == false
+  %s == false

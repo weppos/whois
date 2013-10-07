@@ -17,80 +17,80 @@ describe Whois::Record::Parser::WhoisEu, "status_available.expected" do
 
   subject do
     file = fixture("responses", "whois.eu/status_available.txt")
-    part = Whois::Record::Part.new(:body => File.read(file))
+    part = Whois::Record::Part.new(body: File.read(file))
     described_class.new(part)
   end
 
   describe "#domain" do
     it do
-      subject.domain.should == "u34jedzcq.eu"
+      expect(subject.domain).to eq("u34jedzcq.eu")
     end
   end
   describe "#domain_id" do
     it do
-      lambda { subject.domain_id }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
     it do
-      subject.status.should == :available
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do
     it do
-      subject.available?.should == true
+      expect(subject.available?).to eq(true)
     end
   end
   describe "#registered?" do
     it do
-      subject.registered?.should == false
+      expect(subject.registered?).to eq(false)
     end
   end
   describe "#created_on" do
     it do
-      lambda { subject.created_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.created_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#updated_on" do
     it do
-      lambda { subject.updated_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
     it do
-      lambda { subject.expires_on }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrar" do
     it do
-      subject.registrar.should == nil
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
     it do
-      lambda { subject.registrant_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.registrant_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#admin_contacts" do
     it do
-      lambda { subject.admin_contacts }.should raise_error(Whois::AttributeNotSupported)
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#technical_contacts" do
     it do
-      subject.technical_contacts.should be_a(Array)
-      subject.technical_contacts.should == []
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to eq([])
     end
   end
   describe "#nameservers" do
     it do
-      subject.nameservers.should be_a(Array)
-      subject.nameservers.should == []
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to eq([])
     end
   end
   describe "#response_throttled?" do
     it do
-      subject.response_throttled?.should == false
+      expect(subject.response_throttled?).to eq(false)
     end
   end
 end
