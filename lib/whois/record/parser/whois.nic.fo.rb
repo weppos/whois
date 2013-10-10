@@ -19,7 +19,6 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @since  2.6.4
       class WhoisNicFo < BaseWhoisd
 
         property_not_supported :registrar

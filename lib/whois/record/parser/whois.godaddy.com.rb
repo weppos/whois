@@ -21,7 +21,7 @@ module Whois
       #
       # @author Simone Carletti
       # @author Tom Nicholls <tom.nicholls@oii.ox.ac.uk>
-      # @since  2.1.0
+      #
       class WhoisGodaddyCom < Base
 
         property_not_supported :status

@@ -15,8 +15,6 @@ module Whois
     module Scanners
 
       # Scanner for the whois.domainregistry.ie server.
-      #
-      # @since  2.5.0
       class WhoisDomainregistryIe < Base
 
         self.tokenizers += [

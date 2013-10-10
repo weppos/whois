@@ -22,7 +22,6 @@ module Whois
       #
       # @author Simone Carletti
       # @author Igor Dolzhikov <bluesriverz@gmail.com>
-      # @since  3.2.1
       #
       class WhoisGandiNet < Base
         include Scanners::Scannable
