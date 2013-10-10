@@ -1,0 +1,85 @@
+--- #YAML:1.0
+# GANDI Registrar whois database for .COM, .NET, .ORG., .INFO, .BIZ, .NAME
+#
+# Access and use restricted pursuant to French law on personal data.
+# Copy of whole or part of the data without permission from GANDI
+# is strictly forbidden.
+# The sole owner of a domain is the entity described in the relevant
+# 'domain:' record.
+# Domain ownership disputes should be settled using ICANN's Uniform Dispute
+# Resolution Policy: http://www.icann.org/udrp/udrp.htm
+# For inquiries about 'by policy' protection, please check directly
+# with the appropriate registry (Eurid, AFNIC, Red.es)
+#
+# Acces et utilisation soumis a la legislation francaise sur
+# les donnees personnelles.
+# Copie de tout ou partie de la base interdite sans autorisation de GANDI.
+# Le possesseur d'un domaine est l'entite decrite dans
+# l'enregistrement 'domain:' correspondant.
+# Un desaccord sur la possession d'un nom de domaine peut etre resolu
+# en suivant la Uniform Dispute Resolution Policy de l'ICANN:
+# http://www.icann.org/udrp/udrp.htm
+# Pour obtenir les informations en status 'Protected by policy', contactez
+# directement le registre concerne (Eurid, AFNIC, Red.es)
+#
+# 2013-09-19 09:10:21 CEST
+
+domain: gandi.net
+reg_created: 1999-05-21 10:09:21
+expires: 2023-05-21 14:09:56
+created: 2000-02-23 12:12:59
+changed: 2013-06-17 11:07:35
+transfer-prohibited: yes
+ns0: dns0.gandi.net 217.70.177.39
+ns1: dns1.gandi.net 217.70.177.45
+ns2: dns2.gandi.net 217.70.183.211
+ns3: dns3.gandi.net 217.70.179.36
+owner-c:
+  nic-hdl: GS1833-GANDI
+  owner-name: Gandi SAS
+  organisation: Gandi SAS
+  person: Stephan Ramoin
+  address: 63-65 Boulevard Massena
+  zipcode: 75013
+  city: Paris
+  country: France
+  phone: +33.143737851
+  fax: +33.143731851
+  email: 61ebd5b3df9f45f2b3f67f6dd01e1049-523678@contact.gandi.net
+  lastupdated: 2013-08-13 10:23:30
+admin-c:
+  nic-hdl: NG270-GANDI
+  organisation: GANDI SAS
+  person: NOC GANDI
+  address: 63-65 Boulevard MASSENA
+  zipcode: 75013
+  city: Paris
+  country: France
+  phone: +33.143737851
+  fax: +33.143731851
+  email: 12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net
+  lastupdated: 2013-04-04 15:53:42
+tech-c:
+  nic-hdl: NG270-GANDI
+  organisation: GANDI SAS
+  person: NOC GANDI
+  address: 63-65 Boulevard MASSENA
+  zipcode: 75013
+  city: Paris
+  country: France
+  phone: +33.143737851
+  fax: +33.143731851
+  email: 12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net
+  lastupdated: 2013-04-04 15:53:42
+bill-c:
+  nic-hdl: NG270-GANDI
+  organisation: GANDI SAS
+  person: NOC GANDI
+  address: 63-65 Boulevard MASSENA
+  zipcode: 75013
+  city: Paris
+  country: France
+  phone: +33.143737851
+  fax: +33.143731851
+  email: 12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net
+  lastupdated: 2013-04-04 15:53:42
