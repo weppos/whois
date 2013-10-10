@@ -26,6 +26,7 @@
   %s %CLASS{time}
   %s %TIME{16/09/14}
 
+
 #registrant_contacts
   %s %CLASS{array}
   %s %SIZE{1}
@@ -38,6 +39,7 @@
 
 #technical_contacts
   %s %ERROR{AttributeNotSupported}
+
 
 #nameservers
   %s %CLASS{array}

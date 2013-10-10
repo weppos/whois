@@ -25,6 +25,17 @@
   %s == nil
 
 
+#registrant_contacts
+  %s %CLASS{array}
+  %s == []
+
+#admin_contacts
+  %s %ERROR{AttributeNotSupported}
+
+#technical_contacts
+  %s %ERROR{AttributeNotSupported}
+
+
 #nameservers
   %s %CLASS{array}
   %s == []
