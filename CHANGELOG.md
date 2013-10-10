@@ -7,6 +7,8 @@
 
 - NEW: Added whois.nic.es parser (GH-267). [Thanks @takama]
 
+- NEW: Added whois.gandi.net parser (GH-261). [Thanks @takama]
+
 
 ## Release 3.3.0
 

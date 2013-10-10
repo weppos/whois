@@ -9,7 +9,6 @@
   %s %ERROR{AttributeNotSupported}
 
 
-
 #available?
   %s == false
 
@@ -90,6 +89,7 @@
   %s[0].fax           == "+33.143731851"
   %s[0].email         == "12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net"
   %s[0].updated_on    %TIME{2013-04-04 15:53:42}
+
 
 #nameservers
   %s %CLASS{array}
