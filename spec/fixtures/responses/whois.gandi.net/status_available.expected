@@ -1,0 +1,51 @@
+#disclaimer
+  %s == nil
+
+
+#domain
+  %s == nil
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#available?
+  %s == true
+
+#registered?
+  %s == false
+
+
+#created_on
+  %s == nil
+
+#updated_on
+  %s == nil
+
+#expires_on
+  %s == nil
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "GANDI Registrar"
+  %s.organization == "GANDI Registrar"
+  %s.url          == nil
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s == []
+
+#admin_contacts
+  %s %CLASS{array}
+  %s == []
+
+#technical_contacts
+  %s %CLASS{array}
+  %s == []
+
+
+#nameservers
+  %s %CLASS{array}
+  %s == []
