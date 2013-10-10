@@ -1,9 +1,11 @@
 # Changelog
 
 
-## Release 3.2.1
+## master
 
-- SERVER: Updated .KR TLD definition.
+- SERVER: Updated .KR, .ES (GH-267) TLD definitions.
+
+- NEW: Added whois.nic.es parser (GH-267). [Thanks @takama]
 
 
 ## Release 3.3.0

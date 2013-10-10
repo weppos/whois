@@ -29,6 +29,7 @@ module Whois
 
         property_not_supported :domain_id
 
+
         property_supported :status do
           if available?
             :available
@@ -60,21 +61,22 @@ module Whois
           end
         end
 
+
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant Name:\s+(.+)\n/
             Record::Contact.new(
-                :type         => Whois::Record::Contact::TYPE_REGISTRANT,
-                :id           => nil,
-                :name         => $1.to_s.strip,
-                :organization => nil,
-                :address      => nil,
-                :city         => nil,
-                :zip          => nil,
-                :state        => nil,
-                :country      => nil,
-                :phone        => nil,
-                :fax          => nil,
-                :email        => nil
+                type:         Whois::Record::Contact::TYPE_REGISTRANT,
+                id:           nil,
+                name:         $1.to_s.strip,
+                organization: nil,
+                address:      nil,
+                city:         nil,
+                zip:          nil,
+                state:        nil,
+                country:      nil,
+                phone:        nil,
+                fax:          nil,
+                email:        nil
             )
           end
         end
@@ -83,9 +85,10 @@ module Whois
 
         property_not_supported :technical_contacts
 
+
         property_supported :nameservers do
           content_for_scanner.scan(/Name Server \d{1}:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(:name => name)
+            Record::Nameserver.new(name: name)
           end
         end
 
