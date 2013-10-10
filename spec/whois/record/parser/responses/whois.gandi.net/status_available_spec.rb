@@ -36,6 +36,11 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_available.expected" do
       expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
+  describe "#status" do
+    it do
+      expect(subject.status).to eq(:available)
+    end
+  end
   describe "#available?" do
     it do
       expect(subject.available?).to eq(true)

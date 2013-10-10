@@ -9,6 +9,9 @@
   %s %ERROR{AttributeNotSupported}
 
 
+#status
+  %s == :registered
+
 #available?
   %s == false
 

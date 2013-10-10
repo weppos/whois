@@ -9,6 +9,9 @@
   %s %ERROR{AttributeNotSupported}
 
 
+#status
+  %s == :available
+
 #available?
   %s == true
 

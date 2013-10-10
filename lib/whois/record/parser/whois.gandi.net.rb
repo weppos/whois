@@ -41,6 +41,14 @@ module Whois
         property_not_supported :domain_id
 
 
+        property_supported :status do
+          if available?
+            :available
+          else
+            :registered
+          end
+        end
+
         property_supported :available? do
           !!node("status:available")
         end
@@ -82,6 +90,7 @@ module Whois
         property_supported :technical_contacts do
           build_contact("tech-c", Whois::Record::Contact::TYPE_TECHNICAL)
         end
+
 
         property_supported :nameservers do
           content_for_scanner.scan(/^ns\d{1}:\s(.*)/).flatten.map do |line|
