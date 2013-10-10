@@ -62,6 +62,14 @@ module Whois
         end
 
 
+        property_supported :registrar do
+          Record::Registrar.new(
+              :name         => 'ES-NIC',
+              :organization => 'ES-NIC Delegated Internet Registry for Spain',
+          )
+        end
+
+
         property_supported :registrant_contacts do
           if content_for_scanner =~ /Registrant Name:\s+(.+)\n/
             Record::Contact.new(
