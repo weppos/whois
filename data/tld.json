@@ -422,9 +422,7 @@
     "adapter": "none"
   },
   ".es": {
-    "host": null,
-    "adapter": "web",
-    "url": "https://www.nic.es/"
+    "host": "whois.nic.es"
   },
   ".et": {
     "host": null,
