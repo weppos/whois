@@ -1,5 +1,12 @@
+#domain
+  %s == "enom.com"
+
+#domain_id
+  %s == nil
+
+
 #status
-  %s %ERROR{AttributeNotSupported}
+  %s == :registered
 
 #available?
   %s == false
@@ -10,21 +17,21 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2004-06-16 18:07:25}
+  %s %TIME{24 Oct 1997 00:00:00}
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 #expires_on
-  %s %CLASS{time}
-  %s %TIME{2015-06-16 00:00:00}
+  %s == nil
 
 
 #registrar
   %s %CLASS{registrar}
   %s.id           == nil
-  %s.name         == "eNom Inc."
-  %s.url          == "http://www.enom.com/"
+  %s.name         == "eNom, Inc."
+  %s.organization == "eNom, Inc."
+  %s.url          == nil
 
 
 #registrant_contacts
@@ -32,12 +39,13 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  %s[0].name         == "Host Master"
-  %s[0].organization == "AdBrite, Inc."
-  %s[0].address      == "731 Market Street, Suite 500"
-  %s[0].city         == "San Francisco"
-  %s[0].zip          == "94103"
-  %s[0].state        == "CA"
+  %s[0].id           == nil
+  %s[0].name         == "DNS MANAGER"
+  %s[0].organization == "ENOM, INC."
+  %s[0].address      == "P.O. BOX 7449, 5808 LAKE WASHINGTON BLVD. NE, SUITE 300"
+  %s[0].city         == "KIRKLAND"
+  %s[0].zip          == "98033"
+  %s[0].state        == "WA"
   %s[0].country_code == "US"
   %s[0].phone        == ""
   %s[0].fax          == ""
@@ -48,50 +56,42 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  %s[0].name         == "Host Master"
-  %s[0].organization == "AdBrite, Inc."
-  %s[0].address      == "731 Market Street, Suite 500"
-  %s[0].city         == "San Francisco"
-  %s[0].zip          == "94103"
-  %s[0].state        == "CA"
+  %s[0].id           == nil
+  %s[0].name         == "DNS MANAGER"
+  %s[0].organization == "ENOM, INC."
+  %s[0].address      == "P.O. BOX 7449, 5808 LAKE WASHINGTON BLVD. NE, SUITE 300"
+  %s[0].city         == "KIRKLAND"
+  %s[0].zip          == "98033"
+  %s[0].state        == "WA"
   %s[0].country_code == "US"
-  %s[0].phone        == "4159750916"
-  %s[0].fax          == ""
-  %s[0].email        == "hostmaster@adbrite.com"
+  %s[0].phone        == "+1.4259744689"
+  %s[0].fax          == "+1.4259744791"
+  %s[0].email        == "DOMAINS@DEMANDMEDIA.COM"
 
 #technical_contacts
   %s %CLASS{array}
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  %s[0].name         == "Host Master"
-  %s[0].organization == "AdBrite, Inc."
-  %s[0].address      == "731 Market Street, Suite 500"
-  %s[0].city         == "San Francisco"
-  %s[0].zip          == "94103"
-  %s[0].state        == "CA"
+  %s[0].id           == nil
+  %s[0].name         == "DNS MANAGER"
+  %s[0].organization == "ENOM, INC."
+  %s[0].address      == "P.O. BOX 7449, 5808 LAKE WASHINGTON BLVD. NE, SUITE 300"
+  %s[0].city         == "KIRKLAND"
+  %s[0].zip          == "98033"
+  %s[0].state        == "WA"
   %s[0].country_code == "US"
-  %s[0].phone        == "4159750916"
-  %s[0].fax          == ""
-  %s[0].email        == "hostmaster@adbrite.com"
+  %s[0].phone        == "+1.4259744689"
+  %s[0].fax          == "+1.4259744791"
+  %s[0].email        == "DOMAINS@DEMANDMEDIA.COM"
 
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{8}
+  %s %SIZE{3}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "asia3.akam.net"
+  %s[0].name == "dns11.enom.com"
   %s[1] %CLASS{nameserver}
-  %s[1].name == "aus1.akam.net"
+  %s[1].name == "dns12.enom.com"
   %s[2] %CLASS{nameserver}
-  %s[2].name == "eur1.akam.net"
-  %s[3] %CLASS{nameserver}
-  %s[3].name == "eur2.akam.net"
-  %s[4] %CLASS{nameserver}
-  %s[4].name == "ns1-105.akam.net"
-  %s[5] %CLASS{nameserver}
-  %s[5].name == "ns1-232.akam.net"
-  %s[6] %CLASS{nameserver}
-  %s[6].name == "usc2.akam.net"
-  %s[7] %CLASS{nameserver}
-  %s[7].name == "usw6.akam.net"
+  %s[2].name == "dns13.enom.com"

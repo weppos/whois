@@ -1,54 +1,49 @@
-=-=-=-=
+Visit AboutUs.org for more information about enom.com
+<a href="http://www.aboutus.org/enom.com">AboutUs: enom.com</a>
 
-	
-Domain name: adbrite.com
+Domain Name: enom.com
+Creation Date: 24 Oct 1997 00:00:00
+Registrar: eNom, Inc.
+Registrant Name: DNS MANAGER
+Registrant Organization: ENOM, INC.
+Registrant Street: P.O. BOX 7449
+Registrant Street: 5808 LAKE WASHINGTON BLVD. NE, SUITE 300
+Registrant City: KIRKLAND
+Registrant State/Province: WA
+Registrant Postal Code: 98033
+Registrant Country: US
+Admin Name: DNS MANAGER
+Admin Organization: ENOM, INC.
+Admin Street: P.O. BOX 7449
+Admin Street: 5808 LAKE WASHINGTON BLVD. NE, SUITE 300
+Admin City: KIRKLAND
+Admin State/Province: WA
+Admin Postal Code: 98033
+Admin Country: US
+Admin Phone: +1.4259744689
+Admin Phone Ext: 
+Admin Fax: +1.4259744791
+Admin Fax Ext:
+Admin Email: DOMAINS@DEMANDMEDIA.COM
+Tech Name: DNS MANAGER
+Tech Organization: ENOM, INC.
+Tech Street: P.O. BOX 7449
+Tech Street: 5808 LAKE WASHINGTON BLVD. NE, SUITE 300
+Tech City: KIRKLAND
+Tech State/Province: WA
+Tech Postal Code: 98033
+Tech Country: US
+Tech Phone: +1.4259744689
+Tech Phone Ext: 
+Tech Fax: +1.4259744791
+Tech Fax Ext: 
+Tech Email: DOMAINS@DEMANDMEDIA.COM
+Name Servers: Dns11.enom.com
+Name Servers: Dns12.enom.com
+Name Servers: Dns13.enom.com
 
-Registrant Contact:
-   AdBrite, Inc.
-   Host Master ()
-   
-   Fax: 
-   731 Market Street, Suite 500
-   San Francisco, CA 94103
-   US
-
-Administrative Contact:
-   AdBrite, Inc.
-   Host Master (hostmaster@adbrite.com)
-   4159750916
-   Fax: 
-   731 Market Street, Suite 500
-   San Francisco, CA 94103
-   US
-
-Technical Contact:
-   AdBrite, Inc.
-   Host Master (hostmaster@adbrite.com)
-   4159750916
-   Fax: 
-   731 Market Street, Suite 500
-   San Francisco, CA 94103
-   US
-
-Status: Active
-
-Name Servers:
-   asia3.akam.net
-   aus1.akam.net
-   eur1.akam.net
-   eur2.akam.net
-   ns1-105.akam.net
-   ns1-232.akam.net
-   usc2.akam.net
-   usw6.akam.net
-   
-Creation date: 16 Jun 2004 18:07:25
-Expiration date: 16 Jun 2015 00:00:00
-
-
-   
 Get Noticed on the Internet!  Increase visibility for this domain name by listing it at www.whoisbusinesslistings.com
-=-=-=-=
+
 The data in this whois database is provided to you for information
 purposes only, that is, to assist you in obtaining information about or
 related to a domain name registration record. We make this information
