@@ -1,0 +1,103 @@
+#disclaimer
+  %s == "The data in Ascio Technologies' WHOIS database is provided by Ascio Technologies for information purposes only. By submitting a WHOIS query, you agree that you will use this data only for lawful purpose. In addition, you agree not to: (a) use the data to allow, enable, or otherwise support any marketing activities, regardless of the medium used. Such media include but are not limited to e-mail, telephone, facsimile, postal mail, SMS, and wireless alerts; or (b) use the data to enable high volume, automated, electronic processes that sendqueries or data to the systems of any Registry Operator or ICANN-Accredited registrar, except as reasonably necessary to register domain names or modify existing registrations. (c) sell or redistribute the data except insofar as it has been incorporated into a value-added product or service that does not permit the extraction of a substantial portion of the bulk data from the value-added product or service for use by other parties. Ascio Technologies reserves the right to modify these terms at any time. Ascio Technologies cannot guarantee the accuracy of the data provided. By accessing and using Ascio Technologies WHOIS service, you agree to these terms."
+
+#domain
+  %s == "ascio.com"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2005-03-01 14:11:50}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2013-06-02 00:23:21}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2014-05-31 00:00:00}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == "ASCIOTEC1364"
+  %s.name         == "Ascio Technologies"
+  %s.organization == "Ascio Technologies, Inc"
+  %s.url          == "http://www.ascio.com/"
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == "ASCIOTEC1364"
+  %s[0].name          == nil
+  %s[0].organization  == "ASCIO Technologies Inc."
+  %s[0].address       == "Islands Brygge 55"
+  %s[0].city          == "Copenhagen"
+  %s[0].zip           == "2300"
+  %s[0].state         == "S"
+  %s[0].country       == nil
+  %s[0].country_code  == "DK"
+  %s[0].phone         == nil
+  %s[0].fax           == nil
+  %s[0].email         == nil
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == "TH6437"
+  %s[0].name          == "Technical Hostmaster"
+  %s[0].organization  == "Speednames"
+  %s[0].address       == "Rejsbygade 8a"
+  %s[0].city          == "Copenhagen"
+  %s[0].zip           == "1759"
+  %s[0].state         == "DK"
+  %s[0].country       == nil
+  %s[0].country_code  == "DK"
+  %s[0].phone         == "+45.33886300"
+  %s[0].fax           == "+45.33886301"
+  %s[0].email         == "hostmaster@speednames.com"
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == "NH323743"
+  %s[0].name          == "Netnames Hostmaster"
+  %s[0].organization  == "Group NBT"
+  %s[0].address       == "3rd Floor Prospero House 241 Borough High St."
+  %s[0].city          == "London"
+  %s[0].zip           == "SE1 1GA"
+  %s[0].state         == nil
+  %s[0].country       == nil
+  %s[0].country_code  == "GB"
+  %s[0].phone         == "+44.2070159370"
+  %s[0].fax           == "+44.2070159375"
+  %s[0].email         == "hostmaster@netnames.net"
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.ascio.net"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.ascio.net"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns3.ascio.net"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns4.ascio.net"
