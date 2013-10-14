@@ -61,6 +61,11 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_available.expected" do
       expect(subject.expires_on).to eq(nil)
     end
   end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to eq(nil)
+    end
+  end
   describe "#registrant_contacts" do
     it do
       expect(subject.registrant_contacts).to be_a(Array)

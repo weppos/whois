@@ -78,11 +78,12 @@ module Whois
 
 
         property_supported :registrar do
+          return unless node('Registrar IANA ID')
           Record::Registrar.new(
-              :id           => node('Registrar IANA ID'),
-              :name         => node('Registrar'),
-              :organization => node('Registrar'),
-              :url          => node('Registrar URL'),
+              id:           node('Registrar IANA ID'),
+              name:         node('Registrar'),
+              organization: node('Registrar'),
+              url:          node('Registrar URL'),
           )
         end
 

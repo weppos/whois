@@ -9,6 +9,8 @@
 
 - NEW: Added whois.gandi.net parser (GH-261). [Thanks @takama]
 
+- CHANGED: Updated whois.enom.com parsers to the new response format (GH-269). [Thanks @takama]
+
 
 ## Release 3.3.0
 
