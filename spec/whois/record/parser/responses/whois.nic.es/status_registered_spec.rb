@@ -63,6 +63,15 @@ describe Whois::Record::Parser::WhoisNicEs, "status_registered.expected" do
       expect(subject.expires_on).to eq(Time.parse("16/09/14"))
     end
   end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("ES-NIC")
+      expect(subject.registrar.organization).to eq("ES-NIC Delegated Internet Registry for Spain")
+      expect(subject.registrar.url).to eq(nil)
+    end
+  end
   describe "#registrant_contacts" do
     it do
       expect(subject.registrant_contacts).to be_a(Array)
