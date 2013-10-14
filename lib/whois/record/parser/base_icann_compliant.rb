@@ -78,7 +78,7 @@ module Whois
 
 
         property_supported :registrar do
-          return unless node('Registrar IANA ID')
+          return unless node('Registrar')
           Record::Registrar.new(
               id:           node('Registrar IANA ID'),
               name:         node('Registrar'),
