@@ -4,6 +4,10 @@
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
+- NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
+
+- NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
+
 
 
 ## Release 3.3.1

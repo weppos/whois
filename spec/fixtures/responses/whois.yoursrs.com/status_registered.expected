@@ -35,6 +35,7 @@
   %s.organization == nil
   %s.url          == nil
 
+
 #registrant_contacts
   %s %CLASS{array}
   %s %SIZE{1}

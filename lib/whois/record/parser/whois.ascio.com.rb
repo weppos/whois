@@ -22,16 +22,17 @@ module Whois
       #
       # @author Simone Carletti
       # @author Igor Dolzhikov <bluesriverz@gmail.com>
-      # @since  3.2.1
       #
       class WhoisAscioCom < Base
         include Scanners::Scannable
 
         self.scanner = Scanners::WhoisAscioCom
 
+
         property_supported :disclaimer do
           node("field:disclaimer")
         end
+
 
         property_supported :domain do
           if content_for_scanner =~ /Domain name: (.+)\n/
@@ -40,6 +41,7 @@ module Whois
         end
 
         property_not_supported :domain_id
+
 
         property_supported :available? do
           !!(content_for_scanner =~ /^Object not found/)
@@ -70,13 +72,15 @@ module Whois
 
 
         property_supported :registrar do
+          return unless registered?
           Record::Registrar.new(
-              :id           => "ASCIOTEC1364",
-              :name         => "Ascio Technologies",
-              :organization => "Ascio Technologies, Inc",
-              :url          => "http://www.ascio.com/"
+              id:           "ASCIOTEC1364",
+              name:         "Ascio Technologies",
+              organization: "Ascio Technologies, Inc",
+              url:          "http://www.ascio.com/"
           )
         end
+
 
         property_supported :registrant_contacts do
           build_contact('Registrant:', Record::Contact::TYPE_REGISTRANT)
@@ -104,7 +108,7 @@ module Whois
             $1.split("\n").map do |line|
               # ns1.ascio.net (NSASCION521)
               name  = line.strip.split(" ").first
-              Record::Nameserver.new(:name => name.downcase)
+              Record::Nameserver.new(name: name.downcase)
             end
           end
         end
@@ -172,18 +176,18 @@ module Whois
           end
           country_code = lines[3]
           Record::Contact.new(
-              :type         => type,
-              :id           => id,
-              :name         => name,
-              :organization => organization,
-              :address      => address,
-              :city         => city,
-              :state        => state,
-              :zip          => zip,
-              :country_code => country_code,
-              :email        => email,
-              :phone        => phone,
-              :fax          => fax
+              type:         type,
+              id:           id,
+              name:         name,
+              organization: organization,
+              address:      address,
+              city:         city,
+              state:        state,
+              zip:          zip,
+              country_code: country_code,
+              email:        email,
+              phone:        phone,
+              fax:          fax
           )
         end
 

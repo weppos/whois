@@ -22,7 +22,6 @@ module Whois
       #
       # @author Simone Carletti
       # @author Igor Dolzhikov <bluesriverz@gmail.com>
-      # @since  3.3.0
       #
       class WhoisYoursrsCom < Base
         include Scanners::Scannable
@@ -35,6 +34,7 @@ module Whois
         end
 
         property_not_supported :domain_id
+
 
         property_supported :status do
           Array.wrap(node("Status"))
@@ -80,6 +80,7 @@ module Whois
           end
         end
 
+
         property_supported :registrant_contacts do
           build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
         end
@@ -95,7 +96,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject(&:empty?).map do |name|
-            Nameserver.new(:name => name.downcase)
+            Nameserver.new(name: name.downcase)
           end
         end
 
@@ -110,18 +111,18 @@ module Whois
                 join("\n")
 
             Record::Contact.new(
-                :type         => type,
-                :id           => node("#{element} ID"),
-                :name         => node("#{element} Name"),
-                :organization => node("#{element} Organization"),
-                :address      => address,
-                :city         => node("#{element} City"),
-                :zip          => node("#{element} Postal Code"),
-                :state        => node("#{element} State"),
-                :country_code => node("#{element} Country"),
-                :phone        => node("#{element} Phone"),
-                :fax          => node("#{element} Fax"),
-                :email        => node("#{element} Email")
+                type:         type,
+                id:           node("#{element} ID"),
+                name:         node("#{element} Name"),
+                organization: node("#{element} Organization"),
+                address:      address,
+                city:         node("#{element} City"),
+                zip:          node("#{element} Postal Code"),
+                state:        node("#{element} State"),
+                country_code: node("#{element} Country"),
+                phone:        node("#{element} Phone"),
+                fax:          node("#{element} Fax"),
+                email:        node("#{element} Email")
             )
           end
         end

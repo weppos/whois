@@ -20,11 +20,8 @@
 
 
 #registrar
-  %s %CLASS{registrar}
-  %s.id           == "ASCIOTEC1364"
-  %s.name         == "Ascio Technologies"
-  %s.organization == "Ascio Technologies, Inc"
-  %s.url          == "http://www.ascio.com/"
+  %s == nil
+
 
 #registrant_contacts
   %s %CLASS{array}

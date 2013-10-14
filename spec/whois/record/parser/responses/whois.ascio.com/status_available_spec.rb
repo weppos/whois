@@ -53,11 +53,7 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_available.expected" do
   end
   describe "#registrar" do
     it do
-      expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("ASCIOTEC1364")
-      expect(subject.registrar.name).to eq("Ascio Technologies")
-      expect(subject.registrar.organization).to eq("Ascio Technologies, Inc")
-      expect(subject.registrar.url).to eq("http://www.ascio.com/")
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#registrant_contacts" do

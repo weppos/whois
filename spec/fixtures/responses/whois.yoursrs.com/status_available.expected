@@ -28,6 +28,7 @@
 #registrar
   %s == nil
 
+
 #registrant_contacts
   %s %CLASS{array}
   %s == []
