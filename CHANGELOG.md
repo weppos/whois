@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 3.3.1
 
 - SERVER: Updated .KR, .ES (GH-267) TLD definitions.
 
