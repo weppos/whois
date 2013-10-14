@@ -1,11 +1,16 @@
 #disclaimer
   %s == "This data is provided by Hosting Concepts for information purposes, and to assist persons obtaining information about or related to domain name registration records. Hosting Concepts does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to this WHOIS server. These terms may be changed without prior notice. By submitting this query, you agree to abide by this policy."
 
-#domain_id
-  %s %ERROR{AttributeNotSupported}
 
 #domain
   %s == "openprovider.com"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :registered
 
 #available?
   %s == false
@@ -13,11 +18,13 @@
 #registered?
   %s == true
 
+
 #registrar
   %s %CLASS{registrar}
   %s.name         == "Key-Systems"
   %s.organization == "Key-Systems GmbH"
   %s.url          == "http://www.domaindiscount24.com/"
+
 
 #registrant_contacts
   %s %CLASS{array}
@@ -69,6 +76,7 @@
   %s[0].phone         == "+31 104482299"
   %s[0].fax           == "+31 102440250"
   %s[0].email         == "domreg@openprovider.nl"
+
 
 #nameservers
   %s %CLASS{array}

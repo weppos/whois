@@ -26,14 +26,19 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       expect(subject.disclaimer).to eq("This data is provided by Hosting Concepts for information purposes, and to assist persons obtaining information about or related to domain name registration records. Hosting Concepts does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to this WHOIS server. These terms may be changed without prior notice. By submitting this query, you agree to abide by this policy.")
     end
   end
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq("openprovider.com")
+    end
+  end
   describe "#domain_id" do
     it do
       expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
-  describe "#domain" do
+  describe "#status" do
     it do
-      expect(subject.domain).to eq("openprovider.com")
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do

@@ -8,6 +8,8 @@
 
 - NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
 
+- NEW: Added whois.rrpproxy.net parser (GH-259). [Thanks @takama]
+
 
 
 ## Release 3.3.1

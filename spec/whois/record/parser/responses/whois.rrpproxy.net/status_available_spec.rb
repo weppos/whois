@@ -26,14 +26,19 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_available.expected" do
       expect(subject.disclaimer).to eq("The data in the WHOIS database of Key-Systems GmbH is provided by Key-Systems GmbH for information purposes, and to assist persons in obtaining information about or related to domain name registration records. Key-Systems GmbH does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to Key-Systems GmbH or its systems. Key-Systems GmbH reserves the right to modify these terms. By submitting")
     end
   end
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq(nil)
+    end
+  end
   describe "#domain_id" do
     it do
       expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
-  describe "#domain" do
+  describe "#status" do
     it do
-      expect(subject.domain).to eq(nil)
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do
@@ -48,10 +53,7 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_available.expected" do
   end
   describe "#registrar" do
     it do
-      expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.name).to eq("Key-Systems")
-      expect(subject.registrar.organization).to eq("Key-Systems GmbH")
-      expect(subject.registrar.url).to eq("http://www.domaindiscount24.com/")
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
