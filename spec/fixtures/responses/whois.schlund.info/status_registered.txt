@@ -1,0 +1,66 @@
+% The data in the WHOIS database of 1&1 Internet AG is provided by
+% 1&1 for information purposes, and to assist persons in obtaining
+% information about or related to a domain name registration record.
+% 1&1 does not guarantee its accuracy. By submitting a WHOIS query,
+% you agree that you will use this data only for lawful purposes and that,
+% under no circumstances, you will use this data to
+%  (1) allow, enable, or otherwise support the transmission by e-mail,
+%      telephone, or facsimile of mass, unsolicited, commercial advertising or
+%      solicitations to entities other than the data recipient's own existing
+%      customers; or
+%  (2) enable high volume, automated, electronic processes that send queries or
+%      data to the systems of any Registry Operator or ICANN-Accredited registrar,
+%      except as reasonably necessary to register domain names or modify existing
+%      registrations.
+% 1&1 reserves the right to modify these terms at any time.
+% By submitting this query, you agree to abide by this policy.
+
+Domain Name:                             schlund.com
+Registrar WHOIS Server:                  whois.1und1.info
+Registrar URL:                           http://1and1.com
+Updated Date:                            2013-10-09 00:00:00
+Creation Date:                           1996-10-10 00:00:00
+Registrar Registration Expiration Date:  2014-10-09 00:00:00
+Registrar:                               1&1 Internet AG
+Registrar IANA ID:                       83
+Registrar Abuse Contact Email:           abuse@1and1.com
+
+Domain Status:                           clientTransferProhibited
+
+Registrant Name:                         Markus Huhn
+Registrant Organization:                 1&1 Internet AG
+Registrant Street:                       Elgendorfer Str. 57
+Registrant City:                         Montabaur
+Registrant Postal Code:                  56410
+Registrant Country:                      DE
+Registrant Phone:                        +49.2602960
+Registrant Fax:                          +49.72191374215
+Registrant Email:                        hostmaster@1und1.de
+
+Admin Name:                              Markus Huhn
+Admin Organization:                      1&1 Internet AG
+Admin Street:                            Elgendorfer Str. 57
+Admin City:                              Montabaur
+Admin Postal Code:                       56410
+Admin Country:                           DE
+Admin Phone:                             +49.2602960
+Admin Fax:                               +49.72191374215
+Admin Email:                             hostmaster@1und1.de
+
+Tech Name:                               Hostmaster EINSUNDEINS
+Tech Organization:                       1&1 Internet AG
+Tech Street:                             Brauerstr. 48
+Tech City:                               Karlsruhe
+Tech Postal Code:                        76135
+Tech Country:                            DE
+Tech Phone:                              +49.7219600
+Tech Fax:                                +49.72191374248
+Tech Email:                              hostmaster@1und1.de
+
+Name Server:                             ns-1and1.ui-dns.com
+Name Server:                             ns-1and1.ui-dns.org
+Name Server:                             ns-1and1.ui-dns.de
+Name Server:                             ns-1and1.ui-dns.biz
+
+% URL of the ICANN WHOIS Data Problem Reporting System:  http://wdprs.internic.net/
+% See http://registrar.1und1.info for information about 1&1 Internet AG
