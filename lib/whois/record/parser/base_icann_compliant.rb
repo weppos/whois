@@ -71,7 +71,7 @@ module Whois
         end
 
         property_supported :expires_on do
-          node('Registrar Registration Expiration Date') do |value|
+          node(regular_node(/Registrar.* Expiration Date/)) do |value|
             Time.parse(value)
           end
         end
