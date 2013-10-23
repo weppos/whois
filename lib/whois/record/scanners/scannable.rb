@@ -62,6 +62,14 @@ module Whois
           self.scanner.new(content_for_scanner).parse
         end
 
+        def regular_node(pattern)
+          ast.each_key do |key|
+            if key.match(pattern)
+              return key
+            end
+          end
+        end
+
       private
 
         def ast

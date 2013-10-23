@@ -105,7 +105,7 @@ module Whois
         private
 
         def build_contact(element, type)
-          node("#{element} ID") do
+          node("#{element} Name") do
             address = (1..3).
                 map { |i| node("#{element} Street#{i}") }.
                 delete_if { |i| i.nil? || i.empty? }.
@@ -119,10 +119,10 @@ module Whois
                 :address      => address,
                 :city         => node("#{element} City"),
                 :zip          => node("#{element} Postal Code"),
-                :state        => node("#{element} State/Province"),
+                :state        => node(regular_node(/#{element} State(?:\/Province)?/)),
                 :country_code => node("#{element} Country"),
                 :phone        => node("#{element} Phone"),
-                :fax          => node("#{element} FAX"),
+                :fax          => node(regular_node(/#{element} fax/i)),
                 :email        => node("#{element} Email")
             )
           end

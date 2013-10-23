@@ -1,0 +1,98 @@
+#disclaimer
+  %s == "GMO Internet, Inc. whois server 2.0\n\nThis server only serves information on GMO Internet,Inc.-maintained domain names\nFor more information, please contact hostmaster@gmo.jp."
+
+
+#domain
+  %s == "discount-domain.com"
+
+#domain_id
+  %s == nil
+
+
+#status
+  %s == ["ACTIVE"]
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{1999-08-02 22:07:26.0}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2013-07-19 01:26:58.0}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2014-08-03 02:07:21.0}
+
+
+#registrar
+  %s == nil
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id           == nil
+  %s[0].name         == "GMO Internet, Inc."
+  %s[0].organization == "GMO Internet, Inc."
+  %s[0].address      == "26-1 Sakuragaoka-cho\nCerulean Tower"
+  %s[0].city         == "Shibuya-ku"
+  %s[0].zip          == "150-8512"
+  %s[0].state        == "Tokyo"
+  %s[0].country_code == "JP"
+  %s[0].phone        == "03-5456-2555"
+  %s[0].fax          == "03-5456-2556"
+  %s[0].email        == "legal@gmo.jp"
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id           == nil
+  %s[0].name         == "GMO Internet, Inc."
+  %s[0].organization == "GMO Internet, Inc."
+  %s[0].address      == "26-1 Sakuragaoka-cho\nCerulean Tower"
+  %s[0].city         == "Shibuya-ku"
+  %s[0].zip          == "150-8512"
+  %s[0].state        == "Tokyo"
+  %s[0].country_code == "JP"
+  %s[0].phone        == "03-5456-2555"
+  %s[0].fax          == "03-5456-2556"
+  %s[0].email        == "legal@gmo.jp"
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id           == nil
+  %s[0].name         == "GMO Internet, Inc."
+  %s[0].organization == "GMO Internet, Inc."
+  %s[0].address      == "26-1 Sakuragaoka-cho\nCerulean Tower"
+  %s[0].city         == "Shibuya-ku"
+  %s[0].zip          == "150-8512"
+  %s[0].state        == "Tokyo"
+  %s[0].country_code == "JP"
+  %s[0].phone        == "03-5456-2555"
+  %s[0].fax          == "03-5456-2556"
+  %s[0].email        == "legal@gmo.jp"
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{3}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "dns.interq.or.jp"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "dns1.interq.or.jp"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "dns2.interq.or.jp"
