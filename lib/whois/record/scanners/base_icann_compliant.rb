@@ -18,15 +18,18 @@ module Whois
       class BaseIcannCompliant < Base
 
         self.tokenizers += [
-            :scan_available,
             :skip_head,
+            :scan_available,
+            :skip_empty_line,
+            :skip_blank_line,
             :scan_keyvalue,
             :skip_end,
         ]
 
 
         tokenizer :scan_available do
-          if @input.skip(/^Domain not found\.\n/)
+          if @input.skip(/^Domain not found\.\n/) || 
+            @input.skip_until(/is not registered here.\n/)
             @ast['status:available'] = true
           end
         end
