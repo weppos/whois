@@ -20,13 +20,15 @@ module Whois
         self.tokenizers += [
             :scan_available,
             :skip_head,
+            :skip_empty_line,
+            :skip_blank_line,
             :scan_keyvalue,
             :skip_end,
         ]
 
 
         tokenizer :scan_available do
-          if @input.skip(/^Domain not found\.\n/)
+          if @input.skip(/^Domain not found\.\n/) || @input.skip_until(/^No details found/)
             @ast['status:available'] = true
           end
         end
