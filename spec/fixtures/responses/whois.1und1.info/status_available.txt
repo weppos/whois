@@ -1,0 +1,21 @@
+% The data in the WHOIS database of 1&1 Internet AG is provided by
+% 1&1 for information purposes, and to assist persons in obtaining
+% information about or related to a domain name registration record.
+% 1&1 does not guarantee its accuracy. By submitting a WHOIS query,
+% you agree that you will use this data only for lawful purposes and that,
+% under no circumstances, you will use this data to
+%  (1) allow, enable, or otherwise support the transmission by e-mail,
+%      telephone, or facsimile of mass, unsolicited, commercial advertising or
+%      solicitations to entities other than the data recipient's own existing
+%      customers; or
+%  (2) enable high volume, automated, electronic processes that send queries or
+%      data to the systems of any Registry Operator or ICANN-Accredited registrar,
+%      except as reasonably necessary to register domain names or modify existing
+%      registrations.
+% 1&1 reserves the right to modify these terms at any time.
+% By submitting this query, you agree to abide by this policy.
+
+Domain sadasdsa.com is not registered here.
+
+% URL of the ICANN WHOIS Data Problem Reporting System:  http://wdprs.internic.net/
+% See http://registrar.1und1.info for information about 1&1 Internet AG
