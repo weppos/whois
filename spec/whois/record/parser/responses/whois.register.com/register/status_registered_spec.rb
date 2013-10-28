@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
 
   describe "#status" do
     it do
-      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.status).to eq(["clientTransferProhibited","clientUpdateProhibited","clientRenewProhibited","clientDeleteProhibited"])
     end
   end
   describe "#available?" do
@@ -39,26 +39,27 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("1994-11-01"))
+      expect(subject.created_on).to eq(Time.parse("1994-11-01T00:00:00-0500"))
     end
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2009-08-26T00:00:00-0400"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2019-08-04"))
+      expect(subject.expires_on).to eq(Time.parse("2019-08-04T00:00:00-0400"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.id).to eq("9")
       expect(subject.registrar.name).to eq("Register.com")
-      expect(subject.registrar.url).to eq("http://www.register.com/")
+      expect(subject.registrar.url).to eq("http://www.register.com")
     end
   end
   describe "#registrant_contacts" do
@@ -75,7 +76,7 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
       expect(subject.registrant_contacts[0].state).to eq("NY")
       expect(subject.registrant_contacts[0].country_code).to eq("US")
       expect(subject.registrant_contacts[0].phone).to eq("+1.9027492701")
-      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq("")
       expect(subject.registrant_contacts[0].email).to eq("domainregistrar@register.com")
     end
   end
@@ -93,7 +94,7 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
       expect(subject.admin_contacts[0].state).to eq("NY")
       expect(subject.admin_contacts[0].country_code).to eq("US")
       expect(subject.admin_contacts[0].phone).to eq("+1.9027492701")
-      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].fax).to eq("")
       expect(subject.admin_contacts[0].email).to eq("domainregistrar@register.com")
     end
   end
@@ -111,7 +112,7 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
       expect(subject.technical_contacts[0].state).to eq("NY")
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("+1.9027492701")
-      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].fax).to eq("")
       expect(subject.technical_contacts[0].email).to eq("domainregistrar@register.com")
     end
   end

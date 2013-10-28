@@ -1,4 +1,3 @@
-
 The data in Register.com's WHOIS database is provided to you by
 Register.com for information purposes only, that is, to assist you in
 obtaining information about or related to a domain name registration
@@ -16,76 +15,78 @@ Register.com reserves the right to modify these terms at any time.
 By submitting this query, you agree to abide by these terms.
 
 
-=-=-=-=
-
-	
-Domain name: cramerdev.com
-  Is the domain you want taken? Make an offer: http://www.afternic.com/rcom.php?ref_id=2987&name=cramerdev.com
-
-Registrant Contact:
-   Cramer Development
-   Josh Cramer ()
-   
-   Fax: 
-   226 S. Clinton Street
-   Iowa City, IA 52240
-   US
-
-Administrative Contact:
-   Cramer Development Incorporated
-   Host Master (domains@cramerdev.com)
-   +1.5152920050
-   Fax: 
-   226 S Clinton St
-   Iowa City, IA 52245
-   US
-
-Technical Contact:
-   Cramer Development Incorporated
-   Host Master (domains@cramerdev.com)
-   +1.5152920050
-   Fax: 
-   226 S Clinton St
-   Iowa City, IA 52245
-   US
-
-Status: Locked
-
-Name Servers:
-   dns01.gpn.register.com
-   dns02.gpn.register.com
-   dns03.gpn.register.com
-   dns04.gpn.register.com
-   dns05.gpn.register.com
-   
-Creation date: 14 Mar 2002 00:19:48
-Expiration date: 13 Mar 2014 23:19:00
 
 
-   
+Domain Name: register.com
+Registry Domain ID: 
+Registrar WHOIS Server: whois.register.com
+Registrar URL: http://www.register.com
+Updated Date: 2009-08-26T00:00:00-0400
+Creation Date: 1994-11-01T00:00:00-0500
+Registrar Registration Expiration Date: 2019-08-04T00:00:00-0400
+Registrar: Register.com
+Registrar IANA ID: 9
+Registrar Abuse Contact Email: abuse@web.com
+Registrar Abuse Contact Phone: +1.4042602594
+Reseller: 
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientRenewProhibited
+Domain Status: clientDeleteProhibited
 
-=-=-=-=
-The data in this whois database is provided to you for information
-purposes only, that is, to assist you in obtaining information about or
-related to a domain name registration record. We make this information
-available "as is," and do not guarantee its accuracy. By submitting a
-whois query, you agree that you will use this data only for lawful
-purposes and that, under no circumstances will you use this data to: (1)
-enable high volume, automated, electronic processes that stress or load
-this whois database system providing you this information; or (2) allow,
-enable, or otherwise support the transmission of mass unsolicited,
-commercial advertising or solicitations via direct mail, electronic
-mail, or by telephone. The compilation, repackaging, dissemination or
-other use of this data is expressly prohibited without prior written
-consent from us.  
+Registry Registrant ID:
+Registrant Name: Domain Registrar
+Registrant Organization: Register.Com, Inc.
+Registrant Street: 575 8th Avenue 
+Registrant City: New York
+Registrant State/Province: NY
+Registrant Postal Code: 10018
+Registrant Country: US
+Registrant Phone: +1.9027492701
+Registrant Phone Ext.:
+Registrant Fax: 
+Registrant Fax Ext.:
+Registrant Email: domainregistrar@register.com
+Registry Admin ID:
+Admin Name: Domain Registrar
+Admin Organization: Register.Com, Inc.
+Admin Street: 575 8th Avenue 
+Admin City: New York
+Admin State/Province: NY
+Admin Postal Code: 10018
+Admin Country: US
+Admin Phone: +1.9027492701
+Admin Phone Ext.:
+Admin Fax: 
+Admin Fax Ext.:
+Admin Email: domainregistrar@register.com
+Registry Tech ID:
+Tech Name: Domain Registrar
+Tech Organization: Register.Com, Inc.
+Tech Street: 575 8th Avenue 
+Tech City: New York
+Tech State/Province: NY
+Tech Postal Code: 10018
+Tech Country: US
+Tech Phone: +1.9027492701
+Tech Phone Ext.:
+Tech Fax: 
+Tech Fax Ext.:
+Tech Email: domainregistrar@register.com
+Name Server: ns2.register.com
+Name Server: ns3.register.com
+Name Server: ns4.register.com
+Name Server: ns5.register.com
+Name Server: ns6.register.com
+Name Server: ns1.register.com
 
-We reserve the right to modify these terms at any time. By submitting 
-this query, you agree to abide by these terms.
-Version 6.3 4/3/2002
+DNSSEC:
 
 
-Visit AboutUs.org for more information about cramerdev.com
+Visit AboutUs.org for more information about register.com
 
-<A HREF="http://www.aboutus.org/cramerdev.com">AboutUs: cramerdev.com</A>
+<A HREF="http://www.aboutus.org/register.com">AboutUs: register.com</A>
 
 Register your domain name at http://www.register.com
+
+
