@@ -1,0 +1,6 @@
+GMO Internet, Inc. whois server 2.0
+
+This server only serves information on GMO Internet,Inc.-maintained domain names
+For more information, please contact hostmaster@gmo.jp.
+
+No match for "asdasdasdas.com".

@@ -1,0 +1,58 @@
+GMO Internet, Inc. whois server 2.0
+
+This server only serves information on GMO Internet,Inc.-maintained domain names
+For more information, please contact hostmaster@gmo.jp.
+
+Domain Handle: 210738
+Domain Name: discount-domain.com
+Created On: 1999-08-02 22:07:26.0
+Last Updated On: 2013-07-19 01:26:58.0
+Expiration Date: 2014-08-03 02:07:21.0
+Status: ACTIVE
+Registrant Name: GMO Internet, Inc.
+Registrant Organization: GMO Internet, Inc.
+Registrant Street1: 26-1 Sakuragaoka-cho
+Registrant Street2: Cerulean Tower
+Registrant City: Shibuya-ku
+Registrant State: Tokyo
+Registrant Postal Code: 150-8512
+Registrant Country: JP
+Registrant Phone: 03-5456-2555
+Registrant Fax: 03-5456-2556
+Registrant Email: legal@gmo.jp
+Admin Name: GMO Internet, Inc.
+Admin Organization: GMO Internet, Inc.
+Admin Street1: 26-1 Sakuragaoka-cho
+Admin Street2: Cerulean Tower
+Admin City: Shibuya-ku
+Admin State: Tokyo
+Admin Postal Code: 150-8512
+Admin Country: JP
+Admin Phone: 03-5456-2555
+Admin Fax: 03-5456-2556
+Admin Email: legal@gmo.jp
+Billing Name: GMO Internet, Inc.
+Billing Organization: GMO Internet, Inc.
+Billing Street1: 26-1 Sakuragaoka-cho
+Billing Street2: Cerulean Tower
+Billing City: Shibuya-ku
+Billing State: Tokyo
+Billing Postal Code: 150-8512
+Billing Country: JP
+Billing Phone: 03-5456-2555
+Billing Fax: 03-5456-2556
+Billing Email: legal@gmo.jp
+Tech Name: GMO Internet, Inc.
+Tech Organization: GMO Internet, Inc.
+Tech Street1: 26-1 Sakuragaoka-cho
+Tech Street2: Cerulean Tower
+Tech City: Shibuya-ku
+Tech State: Tokyo
+Tech Postal Code: 150-8512
+Tech Country: JP
+Tech Phone: 03-5456-2555
+Tech Fax: 03-5456-2556
+Tech Email: legal@gmo.jp
+Name Server: dns.interq.or.jp
+Name Server: dns1.interq.or.jp
+Name Server: dns2.interq.or.jp
