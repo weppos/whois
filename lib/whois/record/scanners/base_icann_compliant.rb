@@ -26,13 +26,13 @@ module Whois
 
 
         tokenizer :scan_available do
-          if @input.skip(/^Domain not found\.\n/)
+          if @input.skip(/^Domain not found\.\n/) || @input.skip(/^No matching domain name found\.\n/)
             @ast['status:available'] = true
           end
         end
 
         tokenizer :skip_head do
-          if @input.skip_until(/^Domain Name:/)
+          if @input.skip_until(/Domain Name:/)
             @input.scan(/\s(.+)\n/)
             @ast['domain:name'] = @input[1].strip
           end

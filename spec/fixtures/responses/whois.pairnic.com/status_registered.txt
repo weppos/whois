@@ -1,0 +1,70 @@
+    Domain Name: pairnic.com
+    Registry Domain ID: 2806983_DOMAIN_COM-VRSN
+    Registrar WHOIS Server: whois.pairnic.com
+    Registrar URL: https://www.pairnic.com
+    Updated Date:  2012-09-04T13:55:30.0000Z
+    Creation Date: 1998-12-19T05:00:00.0000Z
+    Registrar Registration Expiration Date: 2017-12-18T19:00:-0500Z
+    Registrar: pairNIC INC
+    Registrar IANA ID: 99
+    Registrar Abuse Contact Email: abuse@pairnic.com
+    Registrar Abuse Contact Phone: +1.8887247642
+    Domain Status: 3
+    Registry Registrant ID: 753531
+    Registrant Name: Domain Administrator
+    Registrant Organization: pair Networks, Inc.
+    Registrant Street: 2403 Sidney Street Suite 210
+    Registrant City: Pittsburgh
+    Registrant State/Province: PA
+    Registrant Postal Code: 15203
+    Registrant Country: US
+    Registry Admin ID: 753250
+    Admin Name: Domain Administrator
+    Admin Organization: pair Networks, Inc.
+    Admin Street: 2403 Sidney Street Suite 210
+    Admin City: Pittsburgh
+    Admin State/Province: PA
+    Admin Postal Code: 15203
+    Admin Country: US
+    Admin Phone: +1.4123817247
+    Admin Phone Ext: 
+    Admin Fax: +1.4123819997
+    Admin Fax Ext: 
+    Admin Email: domain@pair.com
+    Registry Tech ID: 753250
+    Tech Name: Domain Administrator
+    Tech Organization: pair Networks, Inc.
+    Tech Street: 2403 Sidney Street Suite 210
+    Tech City: Pittsburgh
+    Tech State/Province: PA
+    Tech Postal Code: 15203
+    Tech Country: US
+    Tech Phone: +1.4123817247
+    Tech Phone Ext: 
+    Tech Fax: +1.4123819997
+    Tech Fax Ext: 
+    Tech Email: domain@pair.com
+    Name Server: NS0.NS0.COM
+    Name Server: NS00.NS0.COM
+    DNSSEC: 
+    URL of the ICANN WHOIS Data Problem Reporting System:
+    http://wdprs.internic.net/
+    >>> Last update of WHOIS database: 2012-09-04T13:55:30.0000Z <<<
+
+NOTICE AND TERMS OF USE: By submitting a WHOIS query, you agree to abide by the
+following terms of use: You agree that you may use this Data only for lawful
+purposes and that under no circumstances will you use this Data to: (a) allow,
+enable, or otherwise support the transmission by e-mail, telephone, or
+facsimile of mass, unsolicited, commercial advertising or solicitations; or (b)
+enable high volume, automated, electronic processes that send queries or data
+to the systems of any Registry Operator or ICANN-Accredited registrar, except
+as reasonably necessary to register domain names or modify existing
+registrations. pairNIC reserves all rights and remedies it now has or may have
+in the future, including, but not limited to, the right to terminate your
+access to the WHOIS database in its sole discretion, for any violations by you
+of these terms of use, including without limitation, for excessive querying of
+the WHOIS database or for failure to otherwise abide by these terms of use.
+pairNIC reserves the right to modify these terms at any time.
+
+** Register Now at http://www.pairNIC.com/ **
+
