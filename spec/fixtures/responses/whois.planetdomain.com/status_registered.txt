@@ -1,0 +1,62 @@
+---WHOIS details provided by NetRegistry pty ltd.
+
+NOTICE: Access to WHOIS information is provided to assist persons in
+determining the contents of a domain name registration record in the NetRegistry
+registry database. The data in this record is provided by Net Registry
+for informational purposes only, and NetRegistry does not guarantee its
+accuracy.  This service is intended only for query-based access.  You agree
+that you will use this data only for lawful purposes and that, under no
+circumstances will you use this data to: (a) allow, enable, or otherwise
+support the transmission by e-mail, telephone, or facsimile of mass
+unsolicited, commercial advertising or solicitations to entities other than
+the data recipient's own existing customers; or (b) enable high volume,
+automated, electronic processes that send queries or data to the systems of
+Registry Operator or any ICANN-Accredited Registrar, except as reasonably
+necessary to register domain names or modify existing registrations.  All
+rights reserved. NetRegistry reserves the right to modify these terms at any
+time. By submitting this query, you agree to abide by this policy.
+
+Domain Details
+
+Domain Name:                 planetdomain.com
+Creation Date:               22-May-2008
+Expiration Date:             26-Sep-2016
+Status:                      clientTransferProhibited
+
+Registrant ID:               0
+Registrant Name:             Domain Privacy Services
+Registrant Organization:     Domain Privacy Services
+Registrant Street 1:         PO BOX 270
+Registrant City:             Broadway
+Registrant State/Province:   NSW
+Registrant Postal Code:      2007
+Registrant Country:          Australia
+Registrant Phone:            +61 2 9934 0501
+Registrant FAX:              +61 2 8079 0742
+Registrant Email:            planetdomain.com.pd@domainprivacyservices.com.au
+
+Admin Name:                  Domain Privacy Services
+Admin Organization:          Domain Privacy Services
+Admin Street 1:              PO BOX 270
+Admin City:                  Broadway
+Admin State/Province:        NSW
+Admin Postal Code:           2007
+Admin Country:               
+Admin Phone:                 +61 2 9934 0501
+Admin FAX:                   +61 2 8079 0742
+Admin Email:                 planetdomain.com.pd@domainprivacyservices.com.au
+
+Tech Name:                   Domain Privacy Services
+Tech Organization:           Domain Privacy Services
+Tech Street 1:               PO BOX 270
+Tech City:                   Broadway
+Tech State/Province:         NSW
+Tech Postal Code:            2007
+Tech Country:                
+Tech Phone:                  +61 2 9934 0501
+Tech FAX:                    +61 2 8079 0742
+Tech Email:                  planetdomain.com.pd@domainprivacyservices.com.au
+
+Name Server 1:               ns1.planetdomain.com
+Name Server 2:               ns2.planetdomain.com
+
