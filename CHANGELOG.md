@@ -13,7 +13,9 @@
 
 - NEW: Added whois.rrpproxy.net parser (GH-259). [Thanks @takama]
 
-- FIXED: whois.dns.be crashes when the status is `not allowd`.
+- FIXED: whois.dns.be crashes when the status is `not allowed`.
+
+- FIXED: whois.nic.io crashes when the domain is reserved.
 
 - CHANGED: Changed .NU TLD to the new response format and parser (GH-265).
 
