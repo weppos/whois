@@ -2,6 +2,13 @@
   %s == "Copyright (c) 1997- .SE (The Internet Infrastructure Foundation). All rights reserved. The information obtained through searches, or otherwise, is protected by the Swedish Copyright Act (1960:729) and international conventions. It is also subject to database protection according to the Swedish Copyright Act. Any use of this material to target advertising or similar activities is forbidden and will be prosecuted. If any of the information below is transferred to a third party, it must be done in its entirety. This server must not be used as a backend for a search engine."
 
 
+#domain
+  %s == "google.se"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
 #status
   %s == :registered
 
@@ -18,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2009-08-01}
+  %s %TIME{2013-09-18}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2010-10-20}
+  %s %TIME{2014-10-20}
 
 
 #registrar
@@ -35,7 +42,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  %s[0].id           == "googoo5855-00001"
+  %s[0].id           == "mmr8008-53808"
   %s[0].name         == nil
   %s[0].organization == nil
   %s[0].address      == nil

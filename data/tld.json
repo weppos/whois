@@ -935,7 +935,7 @@
     "adapter": "none"
   },
   ".se": {
-    "host": "whois.nic-se.se"
+    "host": "whois.iis.se"
   },
   ".sg": {
     "host": "whois.sgnic.sg"

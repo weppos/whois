@@ -15,12 +15,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.iis.nu server.
+      # Parser for the whois.iis.se server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisIisNu < BaseIisse
+      class WhoisIisSe < BaseIisse
       end
 
     end

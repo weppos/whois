@@ -26,7 +26,7 @@ module Whois
 
 
         tokenizer :scan_available do
-          if @input.skip(/^domain "(.+)" not found.+\n/)
+          if @input.skip(/^(domain )?"(.+)" not found.+\n/)
             @ast["status:available"] = true
           end
         end
