@@ -63,11 +63,6 @@ module Whois
           !available?
         end
 
-        # NEWPROPERTY
-        def reserved?
-          status == :reserved
-        end
-
 
         # TODO: timezone ('Asia/Tokyo')
         property_supported :created_on do
@@ -95,6 +90,12 @@ module Whois
           content_for_scanner.scan(/\[Name Server\][\s\t]+([^\s\n]+?)\n/).flatten.map do |name|
             Record::Nameserver.new(:name => name)
           end
+        end
+
+
+        # NEWPROPERTY
+        def reserved?
+          status == :reserved
         end
 
       end
