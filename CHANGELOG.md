@@ -1,5 +1,6 @@
 # Changelog
 
+
 # master
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
@@ -11,6 +12,8 @@
 - NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
 
 - NEW: Added whois.rrpproxy.net parser (GH-259). [Thanks @takama]
+
+- FIXED: whois.dns.be crashes when the status is `not allowd`.
 
 - CHANGED: Changed .NU TLD to the new response format and parser (GH-265).
 

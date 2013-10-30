@@ -41,3 +41,11 @@
   %s[2].name == "ns1.google.com"
   %s[3] %CLASS{nameserver}
   %s[3].name == "ns2.google.com"
+
+
+#response_throttled?
+  %s == false
+
+
+#invalid?
+  %s == false

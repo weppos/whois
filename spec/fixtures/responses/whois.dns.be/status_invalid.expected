@@ -1,12 +1,12 @@
 #domain
-  %s == "u34jedzcq.be"
+  %s == "www.kimdemolenaer.be"
 
 
 #status
-  %s == :available
+  %s == :invalid
 
 #available?
-  %s == true
+  %s == false
 
 #registered?
   %s == false
@@ -36,4 +36,4 @@
 
 
 #invalid?
-  %s == false
+  %s == true
