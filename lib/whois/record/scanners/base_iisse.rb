@@ -14,7 +14,8 @@ module Whois
   class Record
     module Scanners
 
-      class WhoisNicSeSe < Base
+      # Scanner for the IIS.se company.
+      class BaseIisse < Base
 
         self.tokenizers += [
             :skip_empty_line,
@@ -25,13 +26,15 @@ module Whois
 
 
         tokenizer :scan_available do
-          @ast["status:available"] = true if @input.skip(/".*" not found\.\n/)
+          if @input.skip(/^(domain )?"(.+)" not found.+\n/)
+            @ast["status:available"] = true
+          end
         end
 
         tokenizer :scan_disclaimer do
-          if @input.match?(/# Copyright \(c\) [\d-]* \.SE \(The Internet Infrastructure Foundation\)\.\n# All rights reserved\.\n\n/)
+          if @input.match?(/# Copyright/)
             lines = []
-            while !@input.match?(/# Result of search for registered domain names under\n/) && @input.scan(/#?(.*)\n/)
+            while !@input.match?(/# Result of/) && @input.scan(/#?(.*)\n/)
               lines << @input[1].strip unless @input[1].strip == ""
             end
             @input.skip_until(/# printed with .+ bits\.\n/m)

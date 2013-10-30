@@ -8,27 +8,30 @@
 
 
 require 'whois/record/parser/base'
-require 'whois/record/scanners/whois.nic-se.se.rb'
+require 'whois/record/scanners/base_iisse'
+
 
 module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic-se.se server.
-      #
-      # @author Simone Carletti <weppos@weppos.net>
-      # @author Mikkel Kristensen <mikkel@tdx.dk>
-      # @author Pieter Agten <pieter.agten@gmail.com>
-      #
-      class WhoisNicSeSe < Base
+      # Base parser for IIS.se servers.
+      class BaseIisse < Base
         include Scanners::Scannable
 
-        self.scanner = Scanners::WhoisNicSeSe
+        self.scanner = Scanners::BaseIisse
 
 
         property_supported :disclaimer do
           node("field:disclaimer")
         end
+
+
+        property_supported :domain do
+          node("domain")
+        end
+
+        property_not_supported :domain_id
 
 
         property_supported :status do
@@ -57,12 +60,12 @@ module Whois
         end
 
         property_supported :updated_on do
-          node("modified") { |value| Time.parse(value) unless value == '-' }
+          node("modified") { |value| Time.parse(value) unless value == "-" }
         end
 
 
         property_supported :registrar do
-          node("registrar") { |name| Record::Registrar.new(:name => name) unless name == '-' }
+          node("registrar") { |name| Record::Registrar.new(name: name) unless name == "-" }
         end
 
 
@@ -79,16 +82,14 @@ module Whois
         end
 
 
-        # Nameservers are listed in the following formats:
-        #
-        #   nserver:  ns2.loopia.se
-        #   nserver:  ns2.loopia.se 93.188.0.21
+        # nserver:  ns2.loopia.se
+        # nserver:  ns2.loopia.se 93.188.0.21
         #
         property_supported :nameservers do
           node("nserver") do |values|
             values.map do |line|
               name, ipv4 = line.split(/\s+/)
-              Record::Nameserver.new(:name => name, :ipv4 => ipv4)
+              Record::Nameserver.new(name: name, ipv4: ipv4)
             end
           end
         end

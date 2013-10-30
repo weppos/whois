@@ -4,11 +4,17 @@
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
+- SERVER: Updated .NU (GH-265), .SE TLD definition.
+
 - NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
 
 - NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
 
 - NEW: Added whois.rrpproxy.net parser (GH-259). [Thanks @takama]
+
+- CHANGED: Changed .NU TLD to the new response format and parser (GH-265).
+
+- CHANGED: Changed .SE TLD to the new response format and parser.
 
 
 
