@@ -9,6 +9,8 @@
 
 - SERVER: Added .XN--UNUP4Y (.游戏), .XN--NGBC5AZD (.شبكة), .XN--80ASEHDB (.онлайн), .XN--80ASWG (сайт) IDN TLD definitions.
 
+- SERVER: Updated .XN--J1AMH (.укр) IDN TLD definition.
+
 - NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
 
 - NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
