@@ -1,3 +1,10 @@
+#domain
+  %s == "register.com"
+
+#domain_id
+  %s == ""
+
+
 #status
   %s == ["clientTransferProhibited","clientUpdateProhibited","clientRenewProhibited","clientDeleteProhibited"]
 
