@@ -803,7 +803,7 @@
     "adapter": "none"
   },
   ".nf": {
-    "host": "whois.nic.net.nf"
+    "host": "whois.nic.nf"
   },
   ".ng": {
     "host": "whois.nic.net.ng"
