@@ -27,6 +27,7 @@
 
 - CHANGED: Changed .SE TLD to the new response format and parser.
 
+- CHANGED: Updated whois.register.com parser to the new response format (GH-273). [Thanks @gromnsk]
 
 
 ## Release 3.3.1
@@ -37,7 +38,7 @@
 
 - NEW: Added whois.gandi.net parser (GH-261). [Thanks @takama]
 
-- CHANGED: Updated whois.enom.com parsers to the new response format (GH-269). [Thanks @takama]
+- CHANGED: Updated whois.enom.com parser to the new response format (GH-269). [Thanks @takama]
 
 
 ## Release 3.3.0
@@ -67,19 +68,19 @@
 
 - NEW: Added full whois.nic.tr parser.
 
-- CHANGED: Updated whois.nic.hn parsers to the new response format.
+- CHANGED: Updated whois.nic.hn parser to the new response format.
 
-- CHANGED: Updated whois.nic.as parsers to the new response format.
+- CHANGED: Updated whois.nic.as parser to the new response format.
 
-- CHANGED: Updated whois.nic.mg parsers to the new response format.
+- CHANGED: Updated whois.nic.mg parser to the new response format.
 
-- CHANGED: Updated whois.nic.cd parsers to the new response format.
+- CHANGED: Updated whois.nic.cd parser to the new response format.
 
-- CHANGED: Updated whois.je parsers to the new response format.
+- CHANGED: Updated whois.je parser to the new response format.
 
-- CHANGED: Updated whois.gg parsers to the new response format.
+- CHANGED: Updated whois.gg parser to the new response format.
 
-- CHANGED: Updated whois.pnina.ps parsers to the new response format.
+- CHANGED: Updated whois.pnina.ps parser to the new response format.
 
 - CHANGED: Deprecate Whois::Record::Contact::TYPE_ADMIN in favor of Whois::Record::Contact::TYPE_ADMINISTRATIVE
 
