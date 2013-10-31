@@ -19,7 +19,7 @@
 
 - NEW: Added whois.schlund.info parser (GH-270). [Thanks @takama]
 
-- NEW: Added whois.schlund.info parser (GH-272). [Thanks @gromnsk]
+- NEW: Added whois.udag.net parser (GH-272). [Thanks @gromnsk]
 
 - NEW: Added whois.nic.bj parser (GH-6).
 
