@@ -1198,6 +1198,12 @@
   ".xn--80ao21a": {
     "host": "whois.nic.kz"
   },
+  ".xn--80asehdb": {
+    "host": "whois.online.rs.corenic.net"
+  },
+  ".xn--80aswg": {
+    "host": "whois.online.rs.corenic.net"
+  },
   ".xn--90a3ac": {
     "host": null,
     "adapter": "none"
@@ -1269,6 +1275,9 @@
   ".xn--mgbx4cd0ab": {
     "host": "whois.domainregistry.my"
   },
+  ".xn--ngbc5azd": {
+    "host": "whois.xn--ngbc5azd.aridnrs.net.au"
+  },
   ".xn--o3cw4h": {
     "host": "whois.thnic.co.th"
   },
@@ -1286,6 +1295,9 @@
   ".xn--s9brj9c": {
     "host": null,
     "adapter": "none"
+  },
+  ".xn--unup4y": {
+    "host": "whois.donuts.co"
   },
   ".xn--wgbh1c": {
     "host": "whois.dotmasr.eg"

@@ -7,6 +7,8 @@
 
 - SERVER: Updated .NU (GH-265), .SE TLD definition.
 
+- SERVER: Added .XN--UNUP4Y (.游戏), .XN--NGBC5AZD (.شبكة), .XN--80ASEHDB (.онлайн), .XN--80ASWG (сайт) IDN TLD definitions.
+
 - NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
 
 - NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
