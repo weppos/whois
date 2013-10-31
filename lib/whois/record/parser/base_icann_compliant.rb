@@ -30,7 +30,7 @@ module Whois
 
 
         property_supported :domain do
-          node('domain:name', &:downcase)
+          node('Domain Name', &:downcase)
         end
 
         property_supported :domain_id do

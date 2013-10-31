@@ -20,7 +20,6 @@ module Whois
         self.tokenizers += [
             :skip_empty_line,
             :scan_available,
-            :skip_empty_line,
             :skip_head,
             :scan_keyvalue,
             :skip_end,
@@ -29,7 +28,7 @@ module Whois
         NONE = [/^Domain not found\.\n/, /^Domain [\w\.]+ is not registered here\.\n/]
 
         tokenizer :scan_available do
-          if NONE.any? { |nn| @input.skip_until(nn) }
+          if NONE.any? { |pattern| @input.skip_until(pattern) }
             @ast['status:available'] = true
           end
         end
@@ -37,12 +36,12 @@ module Whois
         tokenizer :skip_head do
           if @input.skip_until(/^Domain Name:/)
             @input.scan(/\s(.+)\n/)
-            @ast['domain:name'] = @input[1].strip
+            @ast["Domain Name"] = @input[1].strip
           end
         end
 
         tokenizer :skip_end do
-          @input.skip_until(/.*$/m)
+          @input.terminate
         end
 
       end
