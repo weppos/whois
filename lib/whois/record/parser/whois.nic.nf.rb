@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.net.nf server.
+      # Parser for the whois.nic.nf server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicNetNf < BaseCocca2
+      class WhoisNicNf < BaseCocca2
       end
 
     end
