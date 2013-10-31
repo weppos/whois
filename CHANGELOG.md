@@ -5,7 +5,7 @@
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
-- SERVER: Updated .NU (GH-265), .SE TLD definition.
+- SERVER: Updated .NU (GH-265), .NU (GH-229), .SE TLD definition.
 
 - SERVER: Added .XN--UNUP4Y (.游戏), .XN--NGBC5AZD (.شبكة), .XN--80ASEHDB (.онлайн), .XN--80ASWG (сайт) IDN TLD definitions.
 
