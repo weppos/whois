@@ -1,0 +1,60 @@
+Domain Name ..................... hichina.com
+Sponsoring Registrar ............ HICHINA ZHICHENG TECHNOLOGY LTD.
+Name Server ..................... ns3.hichina.com
+                                  ns4.hichina.com
+Registrant ID ................... hc0815466063-cn
+Registrant Name ................. Mingjing Ma
+Registrant Organization ......... Beijing Wanwang Zhicheng Keji Youxian Gongsi
+Registrant Address .............. 3 F.,HiChina Mansion,No.27 Gulouwai Avenue Dongcheng
+Registrant City ................. Beijing
+Registrant Province/State ....... Beijing
+Registrant Postal Code .......... 100011
+Registrant Country Code ......... CN
+Registrant Phone Number ......... +86.01062642299 
+Registrant Fax .................. +86.01064242299 
+Registrant Email ................ mamj@hichina.com
+Administrative ID ............... admin
+Administrative Name ............. admin
+Administrative Organization ..... HiChina Web Solutions (Hong Kong) Limited
+Administrative Address .......... 3/F., HiChina Mansion,
+                                  No.27 Gulouwai Avenue Dongcheng District,
+                                  Beijing, China
+Administrative City ............. Beijing
+Administrative Province/State ... Beijing
+Administrative Postal Code ...... 100011
+Administrative Country Code ..... CN
+Administrative Phone Number ..... +86.01064242299 
+Administrative Fax .............. +86.01064254247 
+Administrative Email ............ domainadm@hichina.com
+Billing ID ...................... billing
+Billing Name .................... billing
+Billing Organization ............ HiChina Web Solutions (Hong Kong) Limited
+Billing Address ................. 3/F., HiChina Mansion,
+                                  No.27 Gulouwai Avenue Dongcheng District,
+                                  Beijing, China
+Billing City .................... Beijing
+Billing Province/State .......... Beijing
+Billing Postal Code ............. 100011
+Billing Country Code ............ CN
+Billing Phone Number ............ +86.01064242299 
+Billing Fax ..................... +86.01064254247 
+Billing Email ................... domainadm@hichina.com
+Technical ID .................... tech
+Technical Name .................. tech
+Technical Organization .......... HiChina Web Solutions (Hong Kong) Limited
+Technical Address ............... 3/F., HiChina Mansion,
+                                  No.27 Gulouwai Avenue Dongcheng District,
+                                  Beijing, China
+Technical City .................. Beijing
+Technical Province/State ........ Beijing
+Technical Postal Code ........... 100011
+Technical Country Code .......... CN
+Technical Phone Number .......... +86.01064242299 
+Technical Fax ................... +86.01064254247 
+Technical Email ................. domainadm@hichina.com
+Domain Create Date .............. 1996-04-23 12:00:00
+Expiration Date ................. 2019-04-24 12:00:00
+
+<a href='http://www.net.cn/?utm_campaign=Corn&utm_medium=banner&utm_source=whois' target='_blank'><img src='http://whois.hichina.com/images/whois-banner.gif' border='0'></a>
+
+For complete domain details go to:http://whois.hichina.com/whois/domain/hichina.com
