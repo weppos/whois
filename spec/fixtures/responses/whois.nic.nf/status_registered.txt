@@ -1,16 +1,16 @@
 Domain Name: google.nf
 Domain ID: 26552-CoCCA
-WHOIS Server: whois.nic.nf
+WHOIS Server: whois.coccaregistry.org
 Referral URL: 
-Updated Date: 2012-01-14T11:14:40.418Z
+Updated Date: 2013-10-26T09:17:55.070Z
 Creation Date: 2005-11-27T11:00:00.000Z
-Registry Expiry Date: 2012-11-27T11:00:00.000Z
+Registry Expiry Date: 2014-11-27T11:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
 Domain Status: clientTransferProhibited
-Domain Status: ok
 Domain Status: clientUpdateProhibited
 Domain Status: clientDeleteProhibited
+Domain Status: ok
 
 Registrant ID: 681193-CoCCA
 Registrant Name: DNS Admin
@@ -33,18 +33,15 @@ Name Server: ns4.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: http://www.markmonitor.com
 Sponsoring Registrar Address: MarkMonitor  Emerald Tech Center  391 N. Ancestor Place  Boise, ID 83704          
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 (208) 389-5740
-Sponsoring Registrar Fax: +1 (208) 389-5771
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895771
 Sponsoring Registrar Customer Service Contact: ccops@markmonitor.com
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
-
 
 TERMS OF USE: You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated.  Whois database is provided by CoCCA as a service to the internet community on behalf of CoCCA members. 
 
@@ -52,4 +49,4 @@ The data is for information purposes only. CoCCA does not guarantee its accuracy
 
 CoCCA Helpdesk | http://helpdesk.coccaregistry.net
 
->>> Last update of WHOIS database: 2012-10-18T03:08:58.603Z <<<
+>>> Last update of WHOIS database: 2013-10-31T13:28:59.600Z <<<
