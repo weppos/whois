@@ -14,54 +14,83 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.asia server.
+      # Parser for the whois.nic.bj server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicAsia < BaseAfilias
+      class WhoisNicBj < Base
+
+
+        property_not_supported :disclaimer
+
+
+        property_supported :domain do
+          if section =~ /Domain Name:\s+(.+)\n/
+            $1
+          end
+        end
+
+        property_not_supported :domain_id
+
 
         property_supported :status do
-          Array.wrap(node("Domain Status"))
+          if available?
+            :available
+          else
+            :registered
+          end
+        end
+
+        property_supported :available? do
+          !!(content_for_scanner =~ /^No records matching/)
+        end
+
+        property_supported :registered? do
+          !available?
         end
 
 
         property_supported :created_on do
-          node("Domain Create Date") do |value|
-            Time.parse(value)
+          if section =~ /Created:\s+(.+)\n/
+            Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          node("Domain Last Updated Date") do |value|
-            Time.parse(value)
+          if section =~ /Updated:\s+(.+)\n/
+            Time.parse($1)
           end
         end
 
-        property_supported :expires_on do
-          node("Domain Expiration Date") do |value|
-            Time.parse(value)
+        property_not_supported :expires_on
+
+
+        property_not_supported :registrar
+
+
+        property_supported :registrant_contacts do
+          if section =~ /Name:\s+(.+)\n/
+            Record::Contact.new(
+                type:         Whois::Record::Contact::TYPE_REGISTRANT,
+                name:         $1
+            )
           end
         end
 
+        property_not_supported :admin_contacts
 
-        property_supported :admin_contacts do
-          build_contact("Administrative", Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-        end
-
-        property_supported :technical_contacts do
-          build_contact("Technical", Whois::Record::Contact::TYPE_TECHNICAL)
-        end
+        property_not_supported :technical_contacts
 
 
         property_supported :nameservers do
-          Array.wrap(node("Nameservers")).reject(&:empty?).map do |name|
-            Record::Nameserver.new(:name => name.downcase)
-          end
+          (1..4).map do |i|
+            section =~ /Name Server #{i}:\s+(.+)\n/ ? Record::Nameserver.new(name: $1) : nil
+          end.compact
         end
 
 
-      private
+        private
 
         def build_contact(element, type)
           node("#{element} ID") do
@@ -85,6 +114,11 @@ module Whois
                 :email        => node("#{element} E-mail")
             )
           end
+        end
+
+        def section
+          return @section if @section
+          @section = content_for_scanner =~ /((?:Domain:.+\n)(?:.+:.+\n)+)\n/ ? $1 : ""
         end
 
       end

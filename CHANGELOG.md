@@ -17,6 +17,8 @@
 
 - NEW: Added whois.rrpproxy.net parser (GH-259). [Thanks @takama]
 
+- NEW: Added whois.nic.bj parser (GH-6).
+
 - FIXED: whois.dns.be crashes when the status is `not allowed`.
 
 - FIXED: whois.nic.io crashes when the domain is reserved.
