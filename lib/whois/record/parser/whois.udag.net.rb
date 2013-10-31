@@ -16,6 +16,9 @@ module Whois
 
       # Parser for the whois.udag.net server.
       class WhoisUdagNet < BaseIcannCompliant
+        self.scanner = Scanners::BaseIcannCompliant, {
+            pattern_available: /^We could not find the requested domain on our system/
+        }
       end
 
     end

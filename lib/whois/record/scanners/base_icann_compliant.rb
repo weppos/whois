@@ -25,14 +25,8 @@ module Whois
             :skip_end,
         ]
 
-        NONE = [
-          /^Domain not found\.\n/,
-          /^Domain [\w\.]+ is not registered here\.\n/,
-          /^We could not find the requested domain on our system/
-        ]
-
         tokenizer :scan_available do
-          if NONE.any? { |pattern| @input.skip_until(pattern) }
+          if settings[:pattern_available] && @input.skip_until(settings[:pattern_available])
             @ast['status:available'] = true
           end
         end

@@ -14,8 +14,11 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.Schlund.info server.
+      # Parser for the whois.schlund.info server.
       class WhoisSchlundInfo < BaseIcannCompliant
+        self.scanner = Scanners::BaseIcannCompliant, {
+            pattern_available: /^Domain [\w\.]+ is not registered here\.\n/
+        }
       end
 
     end
