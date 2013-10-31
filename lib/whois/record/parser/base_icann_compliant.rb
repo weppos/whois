@@ -46,6 +46,8 @@ module Whois
             else
               :registered
             end
+          else
+            status
           end
         end
 

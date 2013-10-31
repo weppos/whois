@@ -19,6 +19,7 @@ module Whois
 
         self.tokenizers += [
             :scan_available,
+            :skip_empty_line,
             :skip_head,
             :scan_keyvalue,
             :skip_end,

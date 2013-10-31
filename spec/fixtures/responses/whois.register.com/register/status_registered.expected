@@ -1,5 +1,5 @@
 #status
-  %s %ERROR{AttributeNotSupported}
+  %s == ["clientTransferProhibited","clientUpdateProhibited","clientRenewProhibited","clientDeleteProhibited"]
 
 #available?
   %s == false
@@ -10,21 +10,22 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{1994-11-01}
+  %s %TIME{1994-11-01T00:00:00-0500}
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s %CLASS{time}
+  %s %TIME{2009-08-26T00:00:00-0400}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2019-08-04}
+  %s %TIME{2019-08-04T00:00:00-0400}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == nil
+  %s.id           == "9"
   %s.name         == "Register.com"
-  %s.url          == "http://www.register.com/"
+  %s.url          == "http://www.register.com"
 
 
 #registrant_contacts
@@ -40,7 +41,7 @@
   %s[0].state        == "NY"
   %s[0].country_code == "US"
   %s[0].phone        == "+1.9027492701"
-  %s[0].fax          == nil
+  %s[0].fax          == ""
   %s[0].email        == "domainregistrar@register.com"
 
 #admin_contacts
@@ -56,7 +57,7 @@
   %s[0].state        == "NY"
   %s[0].country_code == "US"
   %s[0].phone        == "+1.9027492701"
-  %s[0].fax          == nil
+  %s[0].fax          == ""
   %s[0].email        == "domainregistrar@register.com"
 
 #technical_contacts
@@ -72,7 +73,7 @@
   %s[0].state        == "NY"
   %s[0].country_code == "US"
   %s[0].phone        == "+1.9027492701"
-  %s[0].fax          == nil
+  %s[0].fax          == ""
   %s[0].email        == "domainregistrar@register.com"
 
 

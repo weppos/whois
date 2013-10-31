@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
 
   describe "#status" do
     it do
-      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.status).to eq(["clientTransferProhibited","clientUpdateProhibited","clientRenewProhibited","clientDeleteProhibited"])
     end
   end
   describe "#available?" do
@@ -39,26 +39,27 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2002-03-14 00:19:48"))
+      expect(subject.created_on).to eq(Time.parse("1994-11-01T00:00:00-0500"))
     end
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2009-08-26T00:00:00-0400"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-03-13 23:19:00"))
+      expect(subject.expires_on).to eq(Time.parse("2019-08-04T00:00:00-0400"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.id).to eq("9")
       expect(subject.registrar.name).to eq("Register.com")
-      expect(subject.registrar.url).to eq("http://www.register.com/")
+      expect(subject.registrar.url).to eq("http://www.register.com")
     end
   end
   describe "#registrant_contacts" do
@@ -67,17 +68,16 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].name).to eq("Josh Cramer")
-      expect(subject.registrant_contacts[0].organization).to eq("Cramer Development")
-      expect(subject.registrant_contacts[0].address).to eq("226 S. Clinton Street")
-      expect(subject.registrant_contacts[0].city).to eq("Iowa City")
-      expect(subject.registrant_contacts[0].zip).to eq("52240")
-      expect(subject.registrant_contacts[0].state).to eq("IA")
-      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Domain Registrar")
+      expect(subject.registrant_contacts[0].organization).to eq("Register.Com, Inc.")
+      expect(subject.registrant_contacts[0].address).to eq("575 8th Avenue")
+      expect(subject.registrant_contacts[0].city).to eq("New York")
+      expect(subject.registrant_contacts[0].zip).to eq("10018")
+      expect(subject.registrant_contacts[0].state).to eq("NY")
       expect(subject.registrant_contacts[0].country_code).to eq("US")
-      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("+1.9027492701")
       expect(subject.registrant_contacts[0].fax).to eq("")
-      expect(subject.registrant_contacts[0].email).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq("domainregistrar@register.com")
     end
   end
   describe "#admin_contacts" do
@@ -86,17 +86,16 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].name).to eq("Host Master")
-      expect(subject.admin_contacts[0].organization).to eq("Cramer Development Incorporated")
-      expect(subject.admin_contacts[0].address).to eq("226 S Clinton St")
-      expect(subject.admin_contacts[0].city).to eq("Iowa City")
-      expect(subject.admin_contacts[0].zip).to eq("52245")
-      expect(subject.admin_contacts[0].state).to eq("IA")
-      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].name).to eq("Domain Registrar")
+      expect(subject.admin_contacts[0].organization).to eq("Register.Com, Inc.")
+      expect(subject.admin_contacts[0].address).to eq("575 8th Avenue")
+      expect(subject.admin_contacts[0].city).to eq("New York")
+      expect(subject.admin_contacts[0].zip).to eq("10018")
+      expect(subject.admin_contacts[0].state).to eq("NY")
       expect(subject.admin_contacts[0].country_code).to eq("US")
-      expect(subject.admin_contacts[0].phone).to eq("+1.5152920050")
+      expect(subject.admin_contacts[0].phone).to eq("+1.9027492701")
       expect(subject.admin_contacts[0].fax).to eq("")
-      expect(subject.admin_contacts[0].email).to eq("domains@cramerdev.com")
+      expect(subject.admin_contacts[0].email).to eq("domainregistrar@register.com")
     end
   end
   describe "#technical_contacts" do
@@ -105,33 +104,34 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].name).to eq("Host Master")
-      expect(subject.technical_contacts[0].organization).to eq("Cramer Development Incorporated")
-      expect(subject.technical_contacts[0].address).to eq("226 S Clinton St")
-      expect(subject.technical_contacts[0].city).to eq("Iowa City")
-      expect(subject.technical_contacts[0].zip).to eq("52245")
-      expect(subject.technical_contacts[0].state).to eq("IA")
-      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].name).to eq("Domain Registrar")
+      expect(subject.technical_contacts[0].organization).to eq("Register.Com, Inc.")
+      expect(subject.technical_contacts[0].address).to eq("575 8th Avenue")
+      expect(subject.technical_contacts[0].city).to eq("New York")
+      expect(subject.technical_contacts[0].zip).to eq("10018")
+      expect(subject.technical_contacts[0].state).to eq("NY")
       expect(subject.technical_contacts[0].country_code).to eq("US")
-      expect(subject.technical_contacts[0].phone).to eq("+1.5152920050")
+      expect(subject.technical_contacts[0].phone).to eq("+1.9027492701")
       expect(subject.technical_contacts[0].fax).to eq("")
-      expect(subject.technical_contacts[0].email).to eq("domains@cramerdev.com")
+      expect(subject.technical_contacts[0].email).to eq("domainregistrar@register.com")
     end
   end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(5).items
+      expect(subject.nameservers).to have(6).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("dns01.gpn.register.com")
+      expect(subject.nameservers[0].name).to eq("ns2.register.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("dns02.gpn.register.com")
+      expect(subject.nameservers[1].name).to eq("ns3.register.com")
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("dns03.gpn.register.com")
+      expect(subject.nameservers[2].name).to eq("ns4.register.com")
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("dns04.gpn.register.com")
+      expect(subject.nameservers[3].name).to eq("ns5.register.com")
       expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[4].name).to eq("dns05.gpn.register.com")
+      expect(subject.nameservers[4].name).to eq("ns6.register.com")
+      expect(subject.nameservers[5]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[5].name).to eq("ns1.register.com")
     end
   end
 end
