@@ -18,8 +18,8 @@ policy.
 Domain ID:D11599-ME
 Domain Name:GOOGLE.ME
 Domain Create Date:13-Jun-2008 17:17:40 UTC
-Domain Last Updated Date:10-Jun-2009 11:00:13 UTC
-Domain Expiration Date:13-Jun-2013 17:17:40 UTC
+Domain Last Updated Date:12-May-2013 09:21:14 UTC
+Domain Expiration Date:13-Jun-2014 17:17:40 UTC
 Last Transferred Date:
 Trademark Name:google
 Trademark Country:BX
@@ -32,6 +32,9 @@ Last Updated by Registrar:MarkMonitor Inc R45-ME
 Domain Status:CLIENT DELETE PROHIBITED
 Domain Status:CLIENT TRANSFER PROHIBITED
 Domain Status:CLIENT UPDATE PROHIBITED
+Domain Status:DELETE PROHIBITED
+Domain Status:TRANSFER PROHIBITED
+Domain Status:UPDATE PROHIBITED
 Registrant ID:mmr-32097
 Registrant Name:DNS Admin
 Registrant Organization:Google Inc.
@@ -90,5 +93,6 @@ Nameservers:
 Nameservers: 
 Nameservers: 
 Nameservers: 
+DNSSEC:Unsigned
 
 

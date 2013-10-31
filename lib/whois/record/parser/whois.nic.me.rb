@@ -14,8 +14,8 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.dotmobiregistry.net server.
-      class WhoisMeregistryNet < BaseAfilias
+      # Parser for the whois.nic.me server.
+      class WhoisNicMe < BaseAfilias
 
         property_supported :status do
           Array.wrap(node("Domain Status"))
@@ -43,7 +43,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Nameservers")).reject(&:empty?).map do |name|
-            Record::Nameserver.new(:name => name.downcase)
+            Record::Nameserver.new(name: name.downcase)
           end
         end
 
@@ -58,18 +58,18 @@ module Whois
                 join("\n")
 
             Record::Contact.new(
-              :type         => type,
-              :id           => node("#{element} ID"),
-              :name         => node("#{element} Name"),
-              :organization => node("#{element} Organization"),
-              :address      => address,
-              :city         => node("#{element} City"),
-              :zip          => node("#{element} Postal Code"),
-              :state        => node("#{element} State/Province"),
-              :country_code => node("#{element} Country/Economy"),
-              :phone        => node("#{element} Phone"),
-              :fax          => node("#{element} FAX"),
-              :email        => node("#{element} E-mail")
+              type:         type,
+              id:           node("#{element} ID"),
+              name:         node("#{element} Name"),
+              organization: node("#{element} Organization"),
+              address:      address,
+              city:         node("#{element} City"),
+              zip:          node("#{element} Postal Code"),
+              state:        node("#{element} State/Province"),
+              country_code: node("#{element} Country/Economy"),
+              phone:        node("#{element} Phone"),
+              fax:          node("#{element} FAX"),
+              email:        node("#{element} E-mail")
             )
           end
         end
