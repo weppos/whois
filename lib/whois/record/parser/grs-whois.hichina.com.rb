@@ -85,8 +85,10 @@ module Whois
 
 
         property_supported :nameservers do
-          Array.wrap(node("Name Server").split).reject(&:empty?).map do |name|
+          if node?("Name Server")
+            Array.wrap(node("Name Server").split).reject(&:empty?).map do |name|
               Nameserver.new(:name => name.downcase)
+            end
           end
         end
 

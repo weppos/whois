@@ -26,7 +26,7 @@ module Whois
 
 
         tokenizer :scan_available do
-          if @input.scan_until(/Not Found!\n/)
+          if @input.skip_until(/Not Found!\n.+/)
             @ast["status:available"] = true
           end
         end
