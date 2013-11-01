@@ -21,9 +21,19 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq("xif.com")
+    end
+  end
+  describe "#domain_id" do
+    it do
+      expect(subject.domain_id).to eq("")
+    end
+  end
   describe "#status" do
     it do
-      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.status).to eq(["clientTransferProhibited"])
     end
   end
   describe "#available?" do
@@ -44,7 +54,8 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2012-02-13"))
     end
   end
   describe "#expires_on" do
@@ -56,9 +67,10 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.name).to eq("Network Solutions")
-      expect(subject.registrar.organization).to eq("Network Solutions, LLC")
-      expect(subject.registrar.url).to eq("http://www.networksolutions.com/")
+      expect(subject.registrar.id).to eq("2")
+      expect(subject.registrar.name).to eq("NETWORK SOLUTIONS, LLC.")
+      expect(subject.registrar.organization).to eq("NETWORK SOLUTIONS, LLC.")
+      expect(subject.registrar.url).to eq("http//www.networksolutions.com/en_US/")
     end
   end
   describe "#registrant_contacts" do
@@ -67,16 +79,16 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].name).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("XIF Communications")
       expect(subject.registrant_contacts[0].organization).to eq("XIF Communications")
-      expect(subject.registrant_contacts[0].address).to eq("1200 New Hampshire Avenue NW\nSuite 410")
+      expect(subject.registrant_contacts[0].address).to eq("1200 New Hampshire Avenue NW")
       expect(subject.registrant_contacts[0].city).to eq("Washington")
       expect(subject.registrant_contacts[0].zip).to eq("20036")
       expect(subject.registrant_contacts[0].state).to eq("DC")
       expect(subject.registrant_contacts[0].country_code).to eq("US")
-      expect(subject.registrant_contacts[0].phone).to eq(nil)
-      expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("202-463-7200")
+      expect(subject.registrant_contacts[0].fax).to eq("999-999-9999")
+      expect(subject.registrant_contacts[0].email).to eq("noc@xif.com")
     end
   end
   describe "#admin_contacts" do
@@ -87,7 +99,7 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
       expect(subject.admin_contacts[0].name).to eq("Communications, XIF ContactMiddleName")
       expect(subject.admin_contacts[0].organization).to eq("XIF Communications")
-      expect(subject.admin_contacts[0].address).to eq("1200 New Hampshire Avenue NW\nSuite 410")
+      expect(subject.admin_contacts[0].address).to eq("1200 New Hampshire Avenue NW")
       expect(subject.admin_contacts[0].city).to eq("Washington")
       expect(subject.admin_contacts[0].zip).to eq("20036")
       expect(subject.admin_contacts[0].state).to eq("DC")
@@ -105,7 +117,7 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].name).to eq("Communications, XIF ContactMiddleName")
       expect(subject.technical_contacts[0].organization).to eq("XIF Communications")
-      expect(subject.technical_contacts[0].address).to eq("1200 New Hampshire Avenue NW\nSuite 410")
+      expect(subject.technical_contacts[0].address).to eq("1200 New Hampshire Avenue NW")
       expect(subject.technical_contacts[0].city).to eq("Washington")
       expect(subject.technical_contacts[0].zip).to eq("20036")
       expect(subject.technical_contacts[0].state).to eq("DC")
@@ -121,18 +133,10 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns01.xif.com")
-      expect(subject.nameservers[0].ipv4).to eq("63.240.200.70")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns-east.cerf.net")
-      expect(subject.nameservers[1].ipv4).to eq("207.252.96.3")
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns-west.cerf.net")
-      expect(subject.nameservers[2].ipv4).to eq("192.153.156.3")
-    end
-  end
-  describe "#response_throttled?" do
-    it do
-      expect(subject.response_throttled?).to eq(false)
     end
   end
 end
