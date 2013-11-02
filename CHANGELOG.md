@@ -27,6 +27,8 @@
 
 - FIXED: whois.nic.io crashes when the domain is reserved.
 
+- FIXED: whois.gandi.net crashes with some domains.
+
 - CHANGED: Changed .NU TLD to the new response format and parser (GH-265).
 
 - CHANGED: Changed .SE TLD to the new response format and parser.
