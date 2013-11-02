@@ -1,7 +1,7 @@
 # Changelog
 
 
-# master
+## Release 3.4.0
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
@@ -10,6 +10,8 @@
 - SERVER: Added .XN--UNUP4Y (.游戏), .XN--NGBC5AZD (.شبكة), .XN--80ASEHDB (.онлайн), .XN--80ASWG (сайт) IDN TLD definitions.
 
 - SERVER: Updated .XN--J1AMH (.укр) IDN TLD definition.
+
+- NEW: Scanners now accepts customizable settings.
 
 - NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
 
