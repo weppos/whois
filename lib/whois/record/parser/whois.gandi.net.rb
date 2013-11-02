@@ -99,7 +99,10 @@ module Whois
         private
 
         def parse
-          result = YAML.load(content_for_scanner)
+          patched = content_for_scanner.dup
+          patched.gsub!(/(zipcode|phone|fax): (.+)/, %Q{\\1: "\\2"})
+
+          result = YAML.load(patched)
           unless result
             result = {}
             result["status:available"] = true
@@ -121,19 +124,16 @@ module Whois
           # lastupdated: 2013-04-04 15:53:42
 
           node(element) do |section|
-            phone = section["phone"]
-            phone = "+#{phone}"
-
             Record::Contact.new(
                 type:         type,
                 id:           section["nic-hdl"],
                 name:         section["person"],
                 organization: section["organisation"],
                 address:      section["address"],
-                zip:          section["zipcode"].to_s,
+                zip:          section["zipcode"],
                 city:         section["city"],
                 country:      section["country"],
-                phone:        section["phone"].to_s,
+                phone:        section["phone"],
                 fax:          section["fax"],
                 email:        section["email"],
                 updated_on:   section["lastupdated"],
