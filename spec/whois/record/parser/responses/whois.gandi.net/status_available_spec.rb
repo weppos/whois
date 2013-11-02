@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_available.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq(nil)
+      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
