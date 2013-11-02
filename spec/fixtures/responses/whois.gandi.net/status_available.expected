@@ -1,5 +1,5 @@
 #disclaimer
-  %s == nil
+  %s %ERROR{AttributeNotSupported}
 
 
 #domain
