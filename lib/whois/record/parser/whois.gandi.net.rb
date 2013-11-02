@@ -55,15 +55,21 @@ module Whois
 
 
         property_supported :created_on do
-          node("created")
+          node("created") do |value|
+            value.is_a?(Time) ? value : Time.parse(value)
+          end
         end
 
         property_supported :updated_on do
-          node("changed")
+          node("changed") do |value|
+            value.is_a?(Time) ? value : Time.parse(value)
+          end
         end
 
         property_supported :expires_on do
-          node("expires")
+          node("expires") do |value|
+            value.is_a?(Time) ? value : Time.parse(value)
+          end
         end
 
 
@@ -136,7 +142,7 @@ module Whois
                 phone:        section["phone"],
                 fax:          section["fax"],
                 email:        section["email"],
-                updated_on:   section["lastupdated"],
+                updated_on:   (value = section["lastupdated"]).is_a?(Time) ? value : Time.parse(value),
             )
           end
         end
