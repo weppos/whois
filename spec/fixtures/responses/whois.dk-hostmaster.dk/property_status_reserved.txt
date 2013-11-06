@@ -1,0 +1,29 @@
+# Hello xxx.xxx.xxx.xxx. Your session has been logged.
+#
+# Copyright (c) 2002 - 2013 by DK Hostmaster A/S
+# 
+# The data in the DK Whois database is provided by DK Hostmaster A/S
+# for information purposes only, and to assist persons in obtaining
+# information about or related to a domain name registration record.
+# We do not guarantee its accuracy. We will reserve the right to remove
+# access for entities abusing the data, without notice.
+# 
+# Any use of this material to target advertising or similar activities
+# are explicitly forbidden and will be prosecuted. DK Hostmaster A/S
+# requests to be notified of any such activities or suspicions thereof.
+
+Domain:               googlle.dk
+DNS:                  googlle.dk
+Registered:           2013-10-24
+Expires:              2014-10-31
+Registration period:  1 year
+VID:                  no
+Status:               Reserved
+
+Nameservers
+Hostname:             ns1.parkingcrew.net
+Hostname:             ns2.parkingcrew.net
+
+# Use option --show-handles to get handle information.
+# Whois HELP for more help.
+
