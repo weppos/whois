@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+- NEW: whois.whois.kenic.or.ke parser now recognizes invalid status.
+
+
 ## Release 3.4.0
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
