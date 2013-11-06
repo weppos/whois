@@ -5,6 +5,8 @@
 
 - NEW: whois.whois.kenic.or.ke parser now recognizes invalid status.
 
+- FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
+
 
 ## Release 3.4.0
 
