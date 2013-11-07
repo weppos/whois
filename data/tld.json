@@ -1154,6 +1154,9 @@
   ".ws": {
     "host": "whois.samoanic.ws"
   },
+  ".xxx": {
+    "host": "whois.nic.xxx"
+  },
   ".ye": {
     "host": null,
     "adapter": "none"
@@ -1184,9 +1187,6 @@
   ".zw": {
     "host": null,
     "adapter": "none"
-  },
-  ".xxx": {
-    "host": "whois.nic.xxx"
   },
   ".xn--3e0b707e": {
     "host": "whois.kr"
