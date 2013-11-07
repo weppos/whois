@@ -86,15 +86,15 @@ module Whois
           address, city, zip, country_code = decompose_address(node("address"))
 
           Record::Contact.new(
-              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
-              :name         => node("name"),
-              :organization => node("org"),
-              :address      => address,
-              :city         => city,
-              :zip          => zip,
-              :country_code => country_code,
-              :phone        => node("phone"),
-              :fax          => node("fax-no")
+              type:         Whois::Record::Contact::TYPE_REGISTRANT,
+              name:         node("name"),
+              organization: node("org"),
+              address:      address,
+              city:         city,
+              zip:          zip,
+              country_code: country_code,
+              phone:        node("phone"),
+              fax:          node("fax-no")
           )
         end
 
@@ -129,7 +129,7 @@ module Whois
         end
 
 
-      private
+        private
 
         def build_contact(element, type)
           node(node(element)) do |raw|
