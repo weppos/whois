@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_available.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq(nil)
+      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      expect(subject.domain_id).to eq(nil)
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
@@ -58,7 +58,7 @@ describe Whois::Record::Parser::WhoisNicHu, "status_available.expected" do
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to eq(nil)
+      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#expires_on" do
@@ -68,31 +68,27 @@ describe Whois::Record::Parser::WhoisNicHu, "status_available.expected" do
   end
   describe "#registrar" do
     it do
-      expect(subject.registrar).to eq(nil)
+      expect { subject.registrar }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#registrant_contacts" do
     it do
-      expect(subject.registrant_contacts).to be_a(Array)
-      expect(subject.registrant_contacts).to eq([])
+      expect { subject.registrant_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#admin_contacts" do
     it do
-      expect(subject.admin_contacts).to be_a(Array)
-      expect(subject.admin_contacts).to eq([])
+      expect { subject.admin_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#technical_contacts" do
     it do
-      expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to eq([])
+      expect { subject.technical_contacts }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#nameservers" do
     it do
-      expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to eq([])
+      expect { subject.nameservers }.to raise_error(Whois::AttributeNotSupported)
     end
   end
 end

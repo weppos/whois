@@ -7,6 +7,8 @@
 
 - FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
 
+- CHANGED: Updated whois.nic.hu parser to the new response format.
+
 
 ## Release 3.4.0
 
