@@ -1188,6 +1188,33 @@
     "host": null,
     "adapter": "none"
   },
+  ".camera": {
+    "host": "whois.donuts.co"
+  },
+  ".clothing": {
+    "host": "whois.donuts.co"
+  },
+  ".equipment": {
+    "host": "whois.donuts.co"
+  },
+  ".guru": {
+    "host": "whois.donuts.co"
+  },
+  ".holdings": {
+    "host": "whois.donuts.co"
+  },
+  ".lighting": {
+    "host": "whois.donuts.co"
+  },
+  ".singles": {
+    "host": "whois.donuts.co"
+  },
+  ".ventures": {
+    "host": "whois.donuts.co"
+  },
+  ".voyage": {
+    "host": "whois.donuts.co"
+  },
   ".xn--3e0b707e": {
     "host": "whois.kr"
   },
