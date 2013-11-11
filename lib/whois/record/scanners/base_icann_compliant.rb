@@ -18,9 +18,10 @@ module Whois
       class BaseIcannCompliant < Base
 
         self.tokenizers += [
-            :skip_empty_line,
-            :scan_available,
             :skip_head,
+            :scan_available,
+            :skip_empty_line,
+            :skip_blank_line,
             :scan_keyvalue,
             :skip_end,
         ]

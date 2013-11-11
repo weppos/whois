@@ -1,5 +1,5 @@
 #domain
-  %s == "u34jedzcq.com"
+  %s == nil
 
 #domain_id
   %s == nil

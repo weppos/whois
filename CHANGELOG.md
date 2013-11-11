@@ -13,6 +13,8 @@
 
 - NEW: Added whois.pairnic.com parser (GH-275). [Thanks @gromnsk]
 
+- NEW: Added whois.1und1.info parser (GH-278). [Thanks @gromnsk]
+
 - FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
 
 - CHANGED: Updated whois.nic.hu parser to the new response format.
