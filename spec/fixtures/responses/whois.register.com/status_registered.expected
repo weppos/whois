@@ -6,7 +6,7 @@
 
 
 #status
-  %s == ["clientTransferProhibited","clientUpdateProhibited","clientRenewProhibited","clientDeleteProhibited"]
+  %s == :registered
 
 #available?
   %s == false
