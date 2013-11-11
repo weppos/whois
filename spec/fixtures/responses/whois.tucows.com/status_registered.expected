@@ -1,0 +1,99 @@
+#domain
+  %s == "tucows.com"
+
+#domain_id
+  %s == ""
+
+
+#status
+  %s == :registered
+
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{1995-09-07 04:00:00}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2013-08-07 23:52:35}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2014-09-06 04:00:00}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == "69"
+  %s.name         == "TUCOWS, INC."
+  %s.organization == "TUCOWS, INC."
+  %s.url          == "http://tucowsdomains.com"
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s have(1).item
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].name          == "DNS Administrator"
+  %s[0].organization  == "Tucows.com Co"
+  %s[0].address       == "96 Mowat Avenue"
+  %s[0].city          == "Toronto"
+  %s[0].zip           == "M6K3M1"
+  %s[0].state         == "Ontario"
+  %s[0].country_code  == "CA"
+  %s[0].phone         == "+1.4165350123 ext: 0000"
+  %s[0].fax           == ""
+  %s[0].email         == "dnsadmin@tucows.com"
+
+#admin_contacts
+  %s %CLASS{array}
+  %s have(1).item
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].name          == "DNS Administrator"
+  %s[0].organization  == "Tucows ( Delaware ) Inc."
+  %s[0].address       == "96 Mowat Avenue"
+  %s[0].city          == "Toronto"
+  %s[0].zip           == "M6K3M1"
+  %s[0].state         == "Ontario"
+  %s[0].country_code  == "CA"
+  %s[0].phone         == "+1.4165350123 ext: 0000"
+  %s[0].fax           == ""
+  %s[0].email         == "dnsadmin@tucows.com"
+
+#technical_contacts
+  %s %CLASS{array}
+  %s have(1).item
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].name          == "DNS Administrator"
+  %s[0].organization  == "Tucows ( Delaware ) Inc."
+  %s[0].address       == "96 Mowat Avenue"
+  %s[0].city          == "Toronto"
+  %s[0].zip           == "M6K3M1"
+  %s[0].state         == "Ontario"
+  %s[0].country_code  == "CA"
+  %s[0].phone         == "+1.4165350123 ext: 0000"
+  %s[0].fax           == ""
+  %s[0].email         == "dnsadmin@tucows.com"
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{3}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns3.tucows.com"
+  %s[0].ipv4 == nil
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns1.tucows.com"
+  %s[1].ipv4 == nil
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns2.tucows.com"
+  %s[2].ipv4 == nil

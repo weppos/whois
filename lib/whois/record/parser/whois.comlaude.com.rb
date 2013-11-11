@@ -18,6 +18,7 @@ module Whois
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
+      #
       class WhoisComlaudeCom < Base
 
         property_not_supported :status

@@ -720,7 +720,7 @@
     "host": "whois.nic.md"
   },
   ".me": {
-    "host": "whois.meregistry.net"
+    "host": "whois.nic.me"
   },
   ".mg": {
     "host": "whois.nic.mg"
@@ -803,7 +803,7 @@
     "adapter": "none"
   },
   ".nf": {
-    "host": "whois.nic.net.nf"
+    "host": "whois.nic.nf"
   },
   ".ng": {
     "host": "whois.nic.net.ng"
@@ -830,7 +830,7 @@
     "url": "http://www.cenpac.net.nr/dns/whois.html"
   },
   ".nu": {
-    "host": "whois.nic.nu"
+    "host": "whois.iis.nu"
   },
   ".nz": {
     "host": "whois.srs.net.nz"
@@ -935,7 +935,7 @@
     "adapter": "none"
   },
   ".se": {
-    "host": "whois.nic-se.se"
+    "host": "whois.iis.se"
   },
   ".sg": {
     "host": "whois.sgnic.sg"
@@ -1154,6 +1154,9 @@
   ".ws": {
     "host": "whois.samoanic.ws"
   },
+  ".xxx": {
+    "host": "whois.nic.xxx"
+  },
   ".ye": {
     "host": null,
     "adapter": "none"
@@ -1185,9 +1188,6 @@
     "host": null,
     "adapter": "none"
   },
-  ".xxx": {
-    "host": "whois.nic.xxx"
-  },
   ".xn--3e0b707e": {
     "host": "whois.kr"
   },
@@ -1197,6 +1197,12 @@
   },
   ".xn--80ao21a": {
     "host": "whois.nic.kz"
+  },
+  ".xn--80asehdb": {
+    "host": "whois.online.rs.corenic.net"
+  },
+  ".xn--80aswg": {
+    "host": "whois.online.rs.corenic.net"
   },
   ".xn--90a3ac": {
     "host": null,
@@ -1227,7 +1233,7 @@
     "adapter": "none"
   },
   ".xn--j1amh": {
-    "host": "whois.ua"
+    "host": "whois.dotukr.com"
   },
   ".xn--j6w193g": {
     "host": "whois.hkirc.hk"
@@ -1269,6 +1275,9 @@
   ".xn--mgbx4cd0ab": {
     "host": "whois.domainregistry.my"
   },
+  ".xn--ngbc5azd": {
+    "host": "whois.nic.xn--ngbc5azd"
+  },
   ".xn--o3cw4h": {
     "host": "whois.thnic.co.th"
   },
@@ -1286,6 +1295,9 @@
   ".xn--s9brj9c": {
     "host": null,
     "adapter": "none"
+  },
+  ".xn--unup4y": {
+    "host": "whois.donuts.co"
   },
   ".xn--wgbh1c": {
     "host": "whois.dotmasr.eg"

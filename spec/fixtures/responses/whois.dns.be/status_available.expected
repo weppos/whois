@@ -33,3 +33,7 @@
 
 #response_throttled?
   %s == false
+
+
+#invalid?
+  %s == false

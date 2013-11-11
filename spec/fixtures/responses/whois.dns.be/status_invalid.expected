@@ -1,0 +1,39 @@
+#domain
+  %s == "www.kimdemolenaer.be"
+
+
+#status
+  %s == :invalid
+
+#available?
+  %s == false
+
+#registered?
+  %s == false
+
+
+#created_on
+  %s == nil
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+
+#registrar
+  %s == nil
+
+
+#nameservers
+  %s %CLASS{array}
+  %s == []
+
+
+#response_throttled?
+  %s == false
+
+
+#invalid?
+  %s == true

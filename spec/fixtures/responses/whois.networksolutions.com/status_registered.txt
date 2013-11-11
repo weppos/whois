@@ -1,65 +1,71 @@
-NOTICE AND TERMS OF USE: You are not authorized to access or query our WHOIS
-database through the use of high-volume, automated, electronic processes. The
-Data in Network Solutions' WHOIS database is provided by Network Solutions for information
-purposes only, and to assist persons in obtaining information about or related
-to a domain name registration record. Network Solutions does not guarantee its accuracy.
-By submitting a WHOIS query, you agree to abide by the following terms of use:
-You agree that you may use this Data only for lawful purposes and that under no
-circumstances will you use this Data to: (1) allow, enable, or otherwise support
-the transmission of mass unsolicited, commercial advertising or solicitations
-via e-mail, telephone, or facsimile; or (2) enable high volume, automated,
-electronic processes that apply to Network Solutions (or its computer systems). The
-compilation, repackaging, dissemination or other use of this Data is expressly
-prohibited without the prior written consent of Network Solutions. You agree not to use
-high-volume, automated, electronic processes to access or query the WHOIS
-database. Network Solutions reserves the right to terminate your access to the WHOIS
-database in its sole discretion, including without limitation, for excessive
-querying of the WHOIS database or for failure to otherwise abide by this policy.
-Network Solutions reserves the right to modify these terms at any time.
+The data in Networksolutions.com's WHOIS database is provided to you by
+Networksolutions.com for information purposes only, that is, to assist you in
+obtaining information about or related to a domain name registration
+record. Networksolutions.com makes this information available "as is," and
+does not guarantee its accuracy. By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that,
+under no circumstances will you use this data to: (1) allow, enable,
+or otherwise support the transmission of mass unsolicited, commercial
+advertising or solicitations via direct mail, electronic mail, or by
+telephone; or (2) enable high volume, automated, electronic processes
+that apply to Networksolutions.com  (or its systems). The compilation,
+repackaging, dissemination or other use of this data is expressly
+prohibited without the prior written consent of Networksolutions.com.
+Networksolutions.com reserves the right to modify these terms at any time.
+By submitting this query, you agree to abide by these terms.
 
-Get a FREE domain name registration, transfer, or renewal with any annual hosting package.
-
-http://www.networksolutions.com
-
-Visit AboutUs.org for more information about XIF.COM
-<a href="http://www.aboutus.org/XIF.COM">AboutUs: XIF.COM </a>
-
-
-
-
-Registrant:
-XIF Communications
-   1200 New Hampshire Avenue NW
-   Suite 410
-   Washington, DC 20036
-   US
-
-   Domain Name: XIF.COM
-
-   ------------------------------------------------------------------------
-   Promote your business to millions of viewers for only $1 a month
-   Learn how you can get an Enhanced Business Listing here for your domain name.
-   Learn more at http://www.NetworkSolutions.com/
-   ------------------------------------------------------------------------
-
-   Administrative Contact, Technical Contact:
-      Communications, XIF ContactMiddleName		noc@xif.com
-      XIF Communications
-      1200 New Hampshire Avenue NW
-      Suite 410
-      Washington, DC 20036
-      US
-      202-463-7200 fax: 202-318-4003
-
-
-   Record expires on 09-Jun-2014.
-   Record created on 10-Jun-1997.
-   Database last updated on 5-Jun-2012 12:20:31 EDT.
-
-   Domain servers in listed order:
-
-   NS01.XIF.COM                 63.240.200.70
-   NS-EAST.CERF.NET             207.252.96.3
-   NS-WEST.CERF.NET             192.153.156.3
-
-
+Domain Name: XIF.COM
+Registry Domain ID:
+Registrar WHOIS Server: whois.networksolutions.com
+Registrar URL: http//www.networksolutions.com/en_US/
+Updated Date: 2012-02-13
+Creation Date: 1997-06-10
+Registrar Registration Expiration Date: 2014-06-09
+Registrar: NETWORK SOLUTIONS, LLC.
+Registrar IANA ID: 2
+Registrar Abuse Contact Email: abuse@web.com
+Registrar Abuse Contact Phone: 1-800-333-7680
+Reseller:
+Domain Status: clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: XIF Communications
+Registrant Organization: XIF Communications
+Registrant Street: 1200 New Hampshire Avenue NW
+Registrant City: Washington
+Registrant State: DC
+Registrant Postal Code: 20036
+Registrant Country: US
+Registrant Phone: 202-463-7200
+Registrant Phone Ext:
+Registrant Fax: 999-999-9999
+Registrant Email: noc@xif.com
+Registry Admin ID:
+Admin Name: Communications, XIF ContactMiddleName
+Admin Organization: XIF Communications
+Admin Street: 1200 New Hampshire Avenue NW
+Admin City: Washington
+Admin State: DC
+Admin Postal Code: 20036
+Admin Country: US
+Admin Phone: 202-463-7200
+Admin Phone Ext:
+Admin Fax: 202-318-4003
+Admin Email: noc@xif.com
+Registry Tech ID:
+Tech Name: Communications, XIF ContactMiddleName
+Tech Organization: XIF Communications
+Tech Street: 1200 New Hampshire Avenue NW
+Tech City: Washington
+Tech State: DC
+Tech Postal Code: 20036
+Tech Country: US
+Tech Phone: 202-463-7200
+Tech Phone Ext:
+Tech Fax: 202-318-4003
+Tech Email: noc@xif.com
+Name Server: NS01.XIF.COM
+Name Server: NS-EAST.CERF.NET
+Name Server: NS-WEST.CERF.NET
+DNSSEC:
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of whois database: Fri, 01 Nov 2013 14:17:32 UTC <<<

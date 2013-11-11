@@ -93,4 +93,9 @@ describe Whois::Record::Parser::WhoisNicIo, "status_available.expected" do
       expect(subject.nameservers).to eq([])
     end
   end
+  describe "#reserved?" do
+    it do
+      expect(subject.reserved?).to eq(false)
+    end
+  end
 end
