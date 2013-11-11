@@ -1,0 +1,41 @@
+#disclaimer
+  %s == "The data in the WHOIS database of Key-Systems GmbH is provided by Key-Systems GmbH for information purposes, and to assist persons in obtaining information about or related to domain name registration records. Key-Systems GmbH does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to Key-Systems GmbH or its systems. Key-Systems GmbH reserves the right to modify these terms. By submitting"
+
+
+#domain
+  %s == nil
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :available
+
+#available?
+  %s == true
+
+#registered?
+  %s == false
+
+
+#registrar
+  %s == nil
+
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s == []
+
+#admin_contacts
+  %s %CLASS{array}
+  %s == []
+
+#technical_contacts
+  %s %CLASS{array}
+  %s == []
+
+
+#nameservers
+  %s %CLASS{array}
+  %s == []

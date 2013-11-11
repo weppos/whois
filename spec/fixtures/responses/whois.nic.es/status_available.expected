@@ -1,0 +1,49 @@
+#domain
+  %s == nil
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :available
+
+#available?
+  %s == true
+
+#registered?
+  %s == false
+
+
+#created_on
+  %s == nil
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s == nil
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "ES-NIC"
+  %s.organization == "ES-NIC Delegated Internet Registry for Spain"
+  %s.url          == nil
+
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s == []
+
+#admin_contacts
+  %s %ERROR{AttributeNotSupported}
+
+#technical_contacts
+  %s %ERROR{AttributeNotSupported}
+
+
+#nameservers
+  %s %CLASS{array}
+  %s == []

@@ -1,0 +1,64 @@
+The data in Ascio Technologies' WHOIS database is provided
+by Ascio Technologies for information purposes only. By submitting
+a WHOIS query, you agree that you will use this data only for lawful
+purpose. In addition, you agree not to:
+(a) use the data to allow, enable, or otherwise support any marketing
+activities, regardless of the medium used. Such media include but are
+not limited to e-mail, telephone, facsimile, postal mail, SMS, and
+wireless alerts; or
+(b) use the data to enable high volume, automated, electronic processes
+that sendqueries or data to the systems of any Registry Operator or
+ICANN-Accredited registrar, except as reasonably necessary to register
+domain names or modify existing registrations.
+(c) sell or redistribute the data except insofar as it has been
+incorporated into a value-added product or service that does not permit
+the extraction of a substantial portion of the bulk data from the value-added
+product or service for use by other parties.
+Ascio Technologies reserves the right to modify these terms at any time.
+Ascio Technologies cannot guarantee the accuracy of the data provided.
+By accessing and using Ascio Technologies WHOIS service, you agree to these terms.
+
+NOTE: FAILURE TO LOCATE A RECORD IN THE WHOIS DATABASE IS NOT
+INDICATIVE OF THE AVAILABILITY OF A DOMAIN NAME.
+Registrant:
+  ASCIO Technologies Inc. (ASCIOTEC1364)
+  Islands Brygge 55
+
+  Copenhagen, S, 2300
+  DK
+
+  Domain name: ascio.com
+
+Technical contact:
+  Hostmaster, Netnames (NH323743)
+  Group NBT
+  3rd Floor Prospero House
+  241 Borough High St.
+  London, SE1 1GA
+  GB
+  hostmaster@netnames.net
+  +44.2070159370 Fax: +44.2070159375
+
+Administrative contact:
+  Hostmaster, Technical (TH6437)
+  Speednames
+  Rejsbygade 8a
+
+  Copenhagen, DK, 1759
+  DK
+  hostmaster@speednames.com
+  +45.33886300 Fax: +45.33886301
+
+Record created:           2005-03-01 14:11:50
+Record last updated:      2013-06-02 00:23:21
+Record expires:           2014-05-31 00:00:00
+
+Domain servers in listed order:
+  ns1.ascio.net (NSASCION521)
+  ns2.ascio.net (NSASCION542)
+  ns3.ascio.net (NSASCION563)
+  ns4.ascio.net (NSASCION141)
+
+Registrar Name: Ascio Technologies, Inc
+Registrar WHOIS: whois.ascio.com
+Registrar Homepage: http://www.ascio.com

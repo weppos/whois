@@ -1,0 +1,111 @@
+#disclaimer
+  %s %ERROR{AttributeNotSupported}
+
+
+#domain
+  %s == "gandi.net"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2000-02-23 12:12:59 UTC}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2023-05-21 14:09:56 UTC}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2013-06-17 11:07:35 UTC}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "GANDI Registrar"
+  %s.organization == "GANDI Registrar"
+  %s.url          == nil
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == "GS1833-GANDI"
+  %s[0].name          == "Stephan Ramoin"
+  %s[0].organization  == "Gandi SAS"
+  %s[0].address       == "63-65 Boulevard Massena"
+  %s[0].city          == "Paris"
+  %s[0].zip           == "75013"
+  %s[0].country       == "France"
+  %s[0].country_code  == nil
+  %s[0].phone         == "+33.143737851"
+  %s[0].fax           == "+33.143731851"
+  %s[0].email         == "61ebd5b3df9f45f2b3f67f6dd01e1049-523678@contact.gandi.net"
+  %s[0].updated_on    %TIME{2013-08-13 10:23:30 UTC}
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == "NG270-GANDI"
+  %s[0].name          == "NOC GANDI"
+  %s[0].organization  == "GANDI SAS"
+  %s[0].address       == "63-65 Boulevard MASSENA"
+  %s[0].city          == "Paris"
+  %s[0].zip           == "75013"
+  %s[0].country       == "France"
+  %s[0].country_code  == nil
+  %s[0].phone         == "+33.143737851"
+  %s[0].fax           == "+33.143731851"
+  %s[0].email         == "12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net"
+  %s[0].updated_on    %TIME{2013-04-04 15:53:42 UTC}
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == "NG270-GANDI"
+  %s[0].name          == "NOC GANDI"
+  %s[0].organization  == "GANDI SAS"
+  %s[0].address       == "63-65 Boulevard MASSENA"
+  %s[0].city          == "Paris"
+  %s[0].zip           == "75013"
+  %s[0].country       == "France"
+  %s[0].country_code  == nil
+  %s[0].phone         == "+33.143737851"
+  %s[0].fax           == "+33.143731851"
+  %s[0].email         == "12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net"
+  %s[0].updated_on    %TIME{2013-04-04 15:53:42 UTC}
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "dns0.gandi.net"
+  %s[0].ipv4 == "217.70.177.39"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "dns1.gandi.net"
+  %s[1].ipv4 == "217.70.177.45"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "dns2.gandi.net"
+  %s[2].ipv4 == "217.70.183.211"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "dns3.gandi.net"
+  %s[3].ipv4 == "217.70.179.36"

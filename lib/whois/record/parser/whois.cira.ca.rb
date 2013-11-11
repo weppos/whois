@@ -88,9 +88,9 @@ module Whois
         property_supported :registrar do
           node("Registrar") do |hash|
             Record::Registrar.new(
-              :id           => hash["Number"],
-              :name         => hash["Name"],
-              :organization => hash["Name"]
+              id:           hash["Number"],
+              name:         hash["Name"],
+              organization: hash["Name"]
             )
           end
         end
@@ -166,7 +166,7 @@ module Whois
         end
 
 
-      private
+        private
 
         def build_contact(element, type)
           node(element) do |hash|

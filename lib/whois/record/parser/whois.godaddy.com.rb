@@ -21,7 +21,7 @@ module Whois
       #
       # @author Simone Carletti
       # @author Tom Nicholls <tom.nicholls@oii.ox.ac.uk>
-      # @since  2.1.0
+      #
       class WhoisGodaddyCom < Base
 
         property_not_supported :status
@@ -57,8 +57,8 @@ module Whois
 
         property_supported :registrar do
           Record::Registrar.new(
-            :name => content_for_scanner[/Registrar: (.+)\n/, 1],
-            :url => "http://www.godaddy.com/"
+              name:         content_for_scanner[/Registrar: (.+)\n/, 1],
+              url:          "http://www.godaddy.com/"
           )
         end
 
@@ -76,7 +76,7 @@ module Whois
 
         property_supported :nameservers do
           content_for_scanner.scan(/Name Server: (.+)\n/).map do |line|
-            Record::Nameserver.new(:name => line[0].strip)
+            Record::Nameserver.new(name: line[0].strip)
           end
         end
 
@@ -84,18 +84,18 @@ module Whois
 
         def build_contact(element, type)
           Record::Contact.new(
-            :type         => type,
-            :id           => nil,
-            :name         => value_for_property(element, 'Name'),
-            :organization => value_for_property(element, 'Organization'),
-            :address      => value_for_property(element, 'Street'),
-            :city         => value_for_property(element, 'City'),
-            :zip          => value_for_property(element, 'Postal Code'),
-            :state        => value_for_property(element, 'State/Province'),
-            :country      => value_for_property(element, 'Country'),
-            :phone        => value_for_property(element, 'Phone'),
-            :fax          => value_for_property(element, 'Fax'),
-            :email        => value_for_property(element, 'Email')
+              type:         type,
+              id:           nil,
+              name:         value_for_property(element, 'Name'),
+              organization: value_for_property(element, 'Organization'),
+              address:      value_for_property(element, 'Street'),
+              city:         value_for_property(element, 'City'),
+              zip:          value_for_property(element, 'Postal Code'),
+              state:        value_for_property(element, 'State/Province'),
+              country:      value_for_property(element, 'Country'),
+              phone:        value_for_property(element, 'Phone'),
+              fax:          value_for_property(element, 'Fax'),
+              email:        value_for_property(element, 'Email')
           )
         end
 
