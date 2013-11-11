@@ -26,11 +26,7 @@ module Whois
         ]
 
         tokenizer :scan_available do
-<<<<<<< HEAD
-          if @input.skip(/^Domain not found\.\n/) || @input.skip(/^No matching domain name found\.\n/)
-=======
           if settings[:pattern_available] && @input.skip_until(settings[:pattern_available])
->>>>>>> master
             @ast['status:available'] = true
           end
         end

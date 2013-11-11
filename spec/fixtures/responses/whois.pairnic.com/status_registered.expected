@@ -6,7 +6,7 @@
 
 
 #status
-  %s == ["3"]
+  %s == :registered
 
 #available?
   %s == false
