@@ -6,7 +6,7 @@
 
 
 #status
-  %s == nil
+  %s == :registered
 
 #available?
   %s == false

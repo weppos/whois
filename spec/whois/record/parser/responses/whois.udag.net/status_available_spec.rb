@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisUdagNet, "status_available.expected" do
 
   describe "#domain" do
     it do
-      expect(subject.domain).to eq(nil)
+      expect(subject.domain).to eq("u34jedzcq.com")
     end
   end
   describe "#domain_id" do
