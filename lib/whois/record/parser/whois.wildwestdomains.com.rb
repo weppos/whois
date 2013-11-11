@@ -15,7 +15,21 @@ module Whois
     class Parser
 
       # Parser for the whois.wildwestdomains.com server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class WhoisWildwestdomainsCom < BaseIcannCompliant
+        self.scanner = Scanners::BaseIcannCompliant, {
+            pattern_available: /^Domain (.+) is not registered here.\n/
+        }
+
+        property_supported :expires_on do
+          node('Registrar Expiration Date') do |value|
+            Time.parse(value)
+          end
+        end
+
       end
 
     end
