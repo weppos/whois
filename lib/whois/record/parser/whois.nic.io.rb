@@ -20,6 +20,29 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisNicIo < BaseIcb
+
+        property_supported :domain do
+          if reserved?
+            nil
+          else
+            super()
+          end
+        end
+
+        property_supported :status do
+          if reserved?
+            :reserved
+          else
+            super()
+          end
+        end
+
+
+        # NEWPROPERTY
+        def reserved?
+          !!content_for_scanner.match(/^Domain reserved\n/)
+        end
+
       end
 
     end

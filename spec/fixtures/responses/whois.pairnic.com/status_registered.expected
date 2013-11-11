@@ -1,0 +1,97 @@
+#domain
+  %s == "pairnic.com"
+
+#domain_id
+  %s == "2806983_DOMAIN_COM-VRSN"
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{1998-12-19T05:00:00.0000Z}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2012-09-04T13:55:30.0000Z}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2017-12-18T19:00:-0500Z}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == "99"
+  %s.name         == "pairNIC INC"
+  %s.organization == "pairNIC INC"
+  %s.url          == "https://www.pairnic.com"
+
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id           == "753531"
+  %s[0].name         == "Domain Administrator"
+  %s[0].organization == "pair Networks, Inc."
+  %s[0].address      == "2403 Sidney Street Suite 210"
+  %s[0].city         == "Pittsburgh"
+  %s[0].zip          == "15203"
+  %s[0].state        == "PA"
+  %s[0].country_code == "US"
+  %s[0].phone        == ""
+  %s[0].fax          == ""
+  %s[0].email        == ""
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id           == "753250"
+  %s[0].name         == "Domain Administrator"
+  %s[0].organization == "pair Networks, Inc."
+  %s[0].address      == "2403 Sidney Street Suite 210"
+  %s[0].city         == "Pittsburgh"
+  %s[0].zip          == "15203"
+  %s[0].state        == "PA"
+  %s[0].country_code == "US"
+  %s[0].phone        == "+1.4123817247"
+  %s[0].fax          == "+1.4123819997"
+  %s[0].email        == "domain@pair.com"
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id           == "753250"
+  %s[0].name         == "Domain Administrator"
+  %s[0].organization == "pair Networks, Inc."
+  %s[0].address      == "2403 Sidney Street Suite 210"
+  %s[0].city         == "Pittsburgh"
+  %s[0].zip          == "15203"
+  %s[0].state        == "PA"
+  %s[0].country_code == "US"
+  %s[0].phone        == "+1.4123817247"
+  %s[0].fax          == "+1.4123819997"
+  %s[0].email        == "domain@pair.com"
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns0.ns0.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns00.ns0.com"

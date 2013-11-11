@@ -1,0 +1,78 @@
+
+# Whois Server Version 1.49
+
+Domain Name: udag.net
+Registry Domain ID: 59973274_DOMAIN_NET-VRSN
+Registrar WHOIS Server: whois.udag.net
+Registrar URL: http://www.united-domains.de/
+Updated Date: 2013-02-12T08:40:19Z
+Creation Date: 2001-02-11T20:15:57Z
+Registrar Registration Expiration Date: 2014-02-11T20:15:57Z
+Registrar: united domains AG
+Registrar IANA ID: 1408
+Registrar Abuse Contact Email: abuse@united-domains.de
+Registrar Abuse Contact Phone: +49.8151368670
+Domain Status: clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: Host Master
+Registrant Organization: united-domains AG
+Registrant Street: Gautinger Str. 10
+Registrant City: Starnberg
+Registrant State/Province: Bayern
+Registrant Postal Code: 82319
+Registrant Country: DE
+Registrant Phone: +49.8151368670
+Registrant Phone Ext:
+Registrant Fax: +49.81513686777
+Registrant Fax Ext:
+Registrant Email: hostmaster@united-domains.de
+Registry Admin ID:
+Admin Name: Hostmaster Hostmaster
+Admin Organization: united-domains AG
+Admin Street: Gautinger Strasse 10
+Admin City: Starnberg
+Admin State/Province: DE
+Admin Postal Code: 82319
+Admin Country: DE
+Admin Phone: +49.8151368670
+Admin Phone Ext:
+Admin Fax: +49.81513686777
+Admin Fax Ext:
+Admin Email: hostmaster@united-domains.de
+Registry Tech ID:
+Tech Name: Host Master
+Tech Organization: united-domains AG
+Tech Street: Gautinger Str. 10
+Tech City: Starnberg
+Tech State/Province: Bayern
+Tech Postal Code: 82319
+Tech Country: DE
+Tech Phone: +49.8151368670
+Tech Phone Ext:
+Tech Fax: +49.81513686777
+Tech Fax Ext:
+Tech Email: hostmaster@united-domains.de
+Name Server: ns1.udagdns.com
+Name Server: ns2.udagdns.com
+Name Server: ns3.udagdns.com
+DNSSEC: 
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2013-02-12T08:40:19Z
+
+# Terms and conditions:
+# 
+# This data is provided by united-domains AG
+# for information purposes, and to assist persons obtaining information
+# about or related to domain name registration records.
+# united-domains AG does not guarantee its accuracy.
+# By submitting a WHOIS query, you agree that you will use this data
+# only for lawful purposes and that, under no circumstances, you will
+# use this data to
+# 1) allow, enable, or otherwise support the transmission of mass
+# unsolicited, commercial advertising or solicitations via E-mail
+# (spam); or
+# 2) enable high volume, automated, electronic processes that apply
+# to this WHOIS server.
+# These terms may be changed without prior notice.
+# By submitting this query, you agree to abide by this policy.
+

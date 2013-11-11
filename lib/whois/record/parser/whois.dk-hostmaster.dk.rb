@@ -35,6 +35,8 @@ module Whois
                 :registered
               when "deactivated"
                 :expired
+              when "reserved"
+                :reserved
               else
                 Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end

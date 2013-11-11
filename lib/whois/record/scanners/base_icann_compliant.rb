@@ -26,23 +26,21 @@ module Whois
             :skip_end,
         ]
 
-
         tokenizer :scan_available do
-          if @input.skip(/^Domain not found\.\n/) || 
-            @input.skip_until(/is not registered here.\n/)
+          if settings[:pattern_available] && @input.skip_until(settings[:pattern_available])
             @ast['status:available'] = true
           end
         end
 
         tokenizer :skip_head do
-          if @input.skip_until(/^Domain Name:/)
+          if @input.skip_until(/Domain Name:/)
             @input.scan(/\s(.+)\n/)
-            @ast['domain:name'] = @input[1].strip
+            @ast["Domain Name"] = @input[1].strip
           end
         end
 
         tokenizer :skip_end do
-          @input.skip_until(/.*$/m)
+          @input.terminate
         end
 
       end

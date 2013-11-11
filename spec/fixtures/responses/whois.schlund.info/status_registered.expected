@@ -1,0 +1,101 @@
+#domain
+  %s == "schlund.com"
+
+#domain_id
+  %s == nil
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{1996-10-10 00:00:00}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2013-10-09 00:00:00}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2014-10-09 00:00:00}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == "83"
+  %s.name         == "1&1 Internet AG"
+  %s.organization == "1&1 Internet AG"
+  %s.url          == "http://1and1.com"
+
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id           == nil
+  %s[0].name         == "Markus Huhn"
+  %s[0].organization == "1&1 Internet AG"
+  %s[0].address      == "Elgendorfer Str. 57"
+  %s[0].city         == "Montabaur"
+  %s[0].zip          == "56410"
+  %s[0].state        == ""
+  %s[0].country_code == "DE"
+  %s[0].phone        == "+49.2602960"
+  %s[0].fax          == "+49.72191374215"
+  %s[0].email        == "hostmaster@1und1.de"
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id           == nil
+  %s[0].name         == "Markus Huhn"
+  %s[0].organization == "1&1 Internet AG"
+  %s[0].address      == "Elgendorfer Str. 57"
+  %s[0].city         == "Montabaur"
+  %s[0].zip          == "56410"
+  %s[0].state        == ""
+  %s[0].country_code == "DE"
+  %s[0].phone        == "+49.2602960"
+  %s[0].fax          == "+49.72191374215"
+  %s[0].email        == "hostmaster@1und1.de"
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id           == nil
+  %s[0].name         == "Hostmaster EINSUNDEINS"
+  %s[0].organization == "1&1 Internet AG"
+  %s[0].address      == "Brauerstr. 48"
+  %s[0].city         == "Karlsruhe"
+  %s[0].zip          == "76135"
+  %s[0].state        == ""
+  %s[0].country_code == "DE"
+  %s[0].phone        == "+49.7219600"
+  %s[0].fax          == "+49.72191374248"
+  %s[0].email        == "hostmaster@1und1.de"
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns-1and1.ui-dns.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns-1and1.ui-dns.org"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns-1and1.ui-dns.de"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns-1and1.ui-dns.biz"

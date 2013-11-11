@@ -7,8 +7,8 @@
 #++
 
 
+require 'yaml'
 require 'whois/record/parser/base'
-require 'whois/record/scanners/whois.gandi.net'
 
 
 module Whois
@@ -20,18 +20,11 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      # @author Simone Carletti
-      # @author Igor Dolzhikov <bluesriverz@gmail.com>
-      #
       class WhoisGandiNet < Base
         include Scanners::Scannable
 
-        self.scanner = Scanners::WhoisGandiNet
 
-
-        property_supported :disclaimer do
-          node("field:disclaimer")
-        end
+        property_not_supported :disclaimer
 
 
         property_supported :domain do
@@ -59,22 +52,28 @@ module Whois
 
 
         property_supported :created_on do
-          node("created") { |str| Time.parse(str) }
+          node("created") do |value|
+            value.is_a?(Time) ? value : Time.parse(value)
+          end
         end
 
         property_supported :updated_on do
-          node("changed") { |str| Time.parse(str) }
+          node("changed") do |value|
+            value.is_a?(Time) ? value : Time.parse(value)
+          end
         end
 
         property_supported :expires_on do
-          node("expires") { |str| Time.parse(str) }
+          node("expires") do |value|
+            value.is_a?(Time) ? value : Time.parse(value)
+          end
         end
 
 
         property_supported :registrar do
           Record::Registrar.new(
-              :name         => 'GANDI Registrar',
-              :organization => 'GANDI Registrar',
+              name:         "GANDI Registrar",
+              organization: "GANDI Registrar",
           )
         end
 
@@ -95,17 +94,26 @@ module Whois
         property_supported :nameservers do
           content_for_scanner.scan(/^ns\d{1}:\s(.*)/).flatten.map do |line|
             name, ipv4 = line.strip.split(" ")
-            Record::Nameserver.new(:name => name.downcase, :ipv4 => ipv4)
+            Record::Nameserver.new(name: name.downcase, ipv4: ipv4)
           end
         end
 
 
         private
 
-        def build_contact(element, type)
-          match = content_for_scanner.slice(/#{element}:\n((\s\s.+\n)*)/, 1)
-          return unless match
+        def parse
+          patched = content_for_scanner.dup
+          patched.gsub!(/(zipcode|phone|fax): (.+)/, %Q{\\1: "\\2"})
 
+          result = YAML.load(patched)
+          unless result
+            result = {}
+            result["status:available"] = true
+          end
+          result
+        end
+
+        def build_contact(element, type)
           # nic-hdl: NG270-GANDI
           # organisation: GANDI SAS
           # person: NOC GANDI
@@ -117,20 +125,23 @@ module Whois
           # fax: +33.143731851
           # email: 12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net
           # lastupdated: 2013-04-04 15:53:42
-          Record::Contact.new(
-              :type         => type,
-              :id           => match.slice(/nic-hdl: (.*)/, 1),
-              :name         => match.slice(/person: (.*)/, 1),
-              :organization => match.slice(/organisation: (.*)/, 1),
-              :address      => match.slice(/address: (.*)/, 1),
-              :zip          => match.slice(/zipcode: (.*)/, 1),
-              :city         => match.slice(/city: (.*)/, 1),
-              :country      => match.slice(/country: (.*)/, 1),
-              :phone        => match.slice(/phone: (.*)/, 1),
-              :fax          => match.slice(/fax: (.*)/, 1),
-              :email        => match.slice(/email: (.*)/, 1),
-              :updated_on   => Time.parse(match.slice(/lastupdated: (.*)/, 1)),
-          )
+
+          node(element) do |section|
+            Record::Contact.new(
+                type:         type,
+                id:           section["nic-hdl"],
+                name:         section["person"],
+                organization: section["organisation"],
+                address:      section["address"],
+                zip:          section["zipcode"],
+                city:         section["city"],
+                country:      section["country"],
+                phone:        section["phone"],
+                fax:          section["fax"],
+                email:        section["email"],
+                updated_on:   (value = section["lastupdated"]).is_a?(Time) ? value : Time.parse(value),
+            )
+          end
         end
 
       end

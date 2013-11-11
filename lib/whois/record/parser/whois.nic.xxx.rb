@@ -25,11 +25,6 @@ module Whois
           end
         end
 
-        # NEWPROPERTY
-        def reserved?
-          !!node("status:reserved")
-        end
-
 
         property_supported :updated_on do
           node("Last Updated On") do |value|
@@ -38,13 +33,19 @@ module Whois
         end
 
 
+        # NEWPROPERTY
+        def reserved?
+          !!node("status:reserved")
+        end
+
+
         private
 
-          def decompose_registrar(value)
-            if value =~ /(.+?) \((.+?)\)/
-              [$1, $2]
-            end
+        def decompose_registrar(value)
+          if value =~ /(.+?) \((.+?)\)/
+            [$1, $2]
           end
+        end
 
       end
 

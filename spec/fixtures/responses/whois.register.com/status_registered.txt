@@ -1,0 +1,92 @@
+The data in Register.com's WHOIS database is provided to you by
+Register.com for information purposes only, that is, to assist you in
+obtaining information about or related to a domain name registration
+record.  Register.com makes this information available "as is," and
+does not guarantee its accuracy.  By submitting a WHOIS query, you
+agree that you will use this data only for lawful purposes and that,
+under no circumstances will you use this data to: (1) allow, enable,
+or otherwise support the transmission of mass unsolicited, commercial
+advertising or solicitations via direct mail, electronic mail, or by
+telephone; or (2) enable high volume, automated, electronic processes
+that apply to Register.com (or its systems).  The compilation,
+repackaging, dissemination or other use of this data is expressly
+prohibited without the prior written consent of Register.com.
+Register.com reserves the right to modify these terms at any time.
+By submitting this query, you agree to abide by these terms.
+
+
+
+
+Domain Name: register.com
+Registry Domain ID: 
+Registrar WHOIS Server: whois.register.com
+Registrar URL: http://www.register.com
+Updated Date: 2009-08-26T00:00:00-0400
+Creation Date: 1994-11-01T00:00:00-0500
+Registrar Registration Expiration Date: 2019-08-04T00:00:00-0400
+Registrar: Register.com
+Registrar IANA ID: 9
+Registrar Abuse Contact Email: abuse@web.com
+Registrar Abuse Contact Phone: +1.4042602594
+Reseller: 
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientRenewProhibited
+Domain Status: clientDeleteProhibited
+
+Registry Registrant ID:
+Registrant Name: Domain Registrar
+Registrant Organization: Register.Com, Inc.
+Registrant Street: 575 8th Avenue 
+Registrant City: New York
+Registrant State/Province: NY
+Registrant Postal Code: 10018
+Registrant Country: US
+Registrant Phone: +1.9027492701
+Registrant Phone Ext.:
+Registrant Fax: 
+Registrant Fax Ext.:
+Registrant Email: domainregistrar@register.com
+Registry Admin ID:
+Admin Name: Domain Registrar
+Admin Organization: Register.Com, Inc.
+Admin Street: 575 8th Avenue 
+Admin City: New York
+Admin State/Province: NY
+Admin Postal Code: 10018
+Admin Country: US
+Admin Phone: +1.9027492701
+Admin Phone Ext.:
+Admin Fax: 
+Admin Fax Ext.:
+Admin Email: domainregistrar@register.com
+Registry Tech ID:
+Tech Name: Domain Registrar
+Tech Organization: Register.Com, Inc.
+Tech Street: 575 8th Avenue 
+Tech City: New York
+Tech State/Province: NY
+Tech Postal Code: 10018
+Tech Country: US
+Tech Phone: +1.9027492701
+Tech Phone Ext.:
+Tech Fax: 
+Tech Fax Ext.:
+Tech Email: domainregistrar@register.com
+Name Server: ns2.register.com
+Name Server: ns3.register.com
+Name Server: ns4.register.com
+Name Server: ns5.register.com
+Name Server: ns6.register.com
+Name Server: ns1.register.com
+
+DNSSEC:
+
+
+Visit AboutUs.org for more information about register.com
+
+<A HREF="http://www.aboutus.org/register.com">AboutUs: register.com</A>
+
+Register your domain name at http://www.register.com
+
+

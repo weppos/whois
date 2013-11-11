@@ -118,4 +118,9 @@ describe Whois::Record::Parser::WhoisNicIo, "status_registered.expected" do
       expect(subject.nameservers[3].name).to eq("ns4.iwantmyname.net")
     end
   end
+  describe "#reserved?" do
+    it do
+      expect(subject.reserved?).to eq(false)
+    end
+  end
 end

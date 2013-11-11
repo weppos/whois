@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("GANDI Registrar whois database for .COM, .NET, .ORG., .INFO, .BIZ, .NAME\nAccess and use restricted pursuant to French law on personal data. Copy of whole or part of the data without permission from GANDI is strictly forbidden. The sole owner of a domain is the entity described in the relevant 'domain:' record. Domain ownership disputes should be settled using ICANN's Uniform Dispute Resolution Policy: http://www.icann.org/udrp/udrp.htm For inquiries about 'by policy' protection, please check directly with the appropriate registry (Eurid, AFNIC, Red.es)\nAcces et utilisation soumis a la legislation francaise sur les donnees personnelles. Copie de tout ou partie de la base interdite sans autorisation de GANDI. Le possesseur d'un domaine est l'entite decrite dans l'enregistrement 'domain:' correspondant. Un desaccord sur la possession d'un nom de domaine peut etre resolu en suivant la Uniform Dispute Resolution Policy de l'ICANN: http://www.icann.org/udrp/udrp.htm Pour obtenir les informations en status 'Protected by policy', contactez directement le registre concerne (Eurid, AFNIC, Red.es)")
+      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#domain" do
@@ -54,19 +54,19 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2000-02-23 12:12:59"))
+      expect(subject.created_on).to eq(Time.parse("2000-02-23 12:12:59 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2023-05-21 14:09:56"))
+      expect(subject.expires_on).to eq(Time.parse("2023-05-21 14:09:56 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-06-17 11:07:35"))
+      expect(subject.updated_on).to eq(Time.parse("2013-06-17 11:07:35 UTC"))
     end
   end
   describe "#registrar" do
@@ -95,7 +95,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
       expect(subject.registrant_contacts[0].phone).to eq("+33.143737851")
       expect(subject.registrant_contacts[0].fax).to eq("+33.143731851")
       expect(subject.registrant_contacts[0].email).to eq("61ebd5b3df9f45f2b3f67f6dd01e1049-523678@contact.gandi.net")
-      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2013-08-13 10:23:30"))
+      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2013-08-13 10:23:30 UTC"))
     end
   end
   describe "#admin_contacts" do
@@ -115,7 +115,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
       expect(subject.admin_contacts[0].phone).to eq("+33.143737851")
       expect(subject.admin_contacts[0].fax).to eq("+33.143731851")
       expect(subject.admin_contacts[0].email).to eq("12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net")
-      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2013-04-04 15:53:42"))
+      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2013-04-04 15:53:42 UTC"))
     end
   end
   describe "#technical_contacts" do
@@ -135,7 +135,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
       expect(subject.technical_contacts[0].phone).to eq("+33.143737851")
       expect(subject.technical_contacts[0].fax).to eq("+33.143731851")
       expect(subject.technical_contacts[0].email).to eq("12e7da77f638acdf8d9f4d0b828ca80c-248842@contact.gandi.net")
-      expect(subject.technical_contacts[0].updated_on).to eq(Time.parse("2013-04-04 15:53:42"))
+      expect(subject.technical_contacts[0].updated_on).to eq(Time.parse("2013-04-04 15:53:42 UTC"))
     end
   end
   describe "#nameservers" do

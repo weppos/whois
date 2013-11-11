@@ -72,4 +72,9 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_available.expected" do
       expect(subject.response_throttled?).to eq(false)
     end
   end
+  describe "#invalid?" do
+    it do
+      expect(subject.invalid?).to eq(false)
+    end
+  end
 end

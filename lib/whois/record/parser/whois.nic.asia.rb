@@ -15,6 +15,10 @@ module Whois
     class Parser
 
       # Parser for the whois.nic.asia server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class WhoisNicAsia < BaseAfilias
 
         property_supported :status do

@@ -46,11 +46,6 @@ module Whois
           !reserved? && !available?
         end
 
-        # NEWPROPERTY
-        def reserved?
-          !!node("status:reserved")
-        end
-
 
         property_supported :created_on do
           node("Registration Date") { |value| Time.parse(value) }
@@ -90,7 +85,13 @@ module Whois
         end
 
 
-      private
+        # NEWPROPERTY
+        def reserved?
+          !!node("status:reserved")
+        end
+
+
+        private
 
         def build_contact(element, type)
           node("#{element}") do |value|

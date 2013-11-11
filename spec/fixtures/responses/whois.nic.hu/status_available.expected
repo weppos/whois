@@ -1,0 +1,47 @@
+#disclaimer
+  %s %ERROR{AttributeNotSupported}
+
+
+#domain
+  %s == nil
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :available
+
+#available?
+  %s == true
+
+#registered?
+  %s == false
+
+
+#created_on
+  %s == nil
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+
+#registrar
+  %s %ERROR{AttributeNotSupported}
+
+
+#registrant_contacts
+  %s %ERROR{AttributeNotSupported}
+
+#admin_contacts
+  %s %ERROR{AttributeNotSupported}
+
+#technical_contacts
+  %s %ERROR{AttributeNotSupported}
+
+
+#nameservers
+  %s %ERROR{AttributeNotSupported}
