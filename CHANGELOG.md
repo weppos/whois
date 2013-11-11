@@ -7,6 +7,8 @@
 
 - NEW: whois.whois.kenic.or.ke parser now recognizes invalid status.
 
+- NEW: Added whois.tucows.com parser (GH-260). [Thanks @takama]
+
 - FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
 
 - CHANGED: Updated whois.nic.hu parser to the new response format.
