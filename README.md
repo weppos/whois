@@ -15,7 +15,7 @@ An extensive test suite is available to verify the library correctness but you m
 
 [Support Whois at Pledgie](http://www.pledgie.com/campaigns/11383).
 
-<a href='http://www.pledgie.com/campaigns/11383'><img alt='Click here to lend your support to: whois and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/11383.png?skin_name=chrome' border='0' /></a>
+<a href='https://pledgie.com/campaigns/11383'><img alt='Click here to lend your support to: whois and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/11383.png?skin_name=chrome' border='0' ></a>
 
 *Whois* is free software, but it costs money to write, test, and distribute it. You can support the development by sending a donation. **Any amount, even $5, is greatly appreciated**.
 
