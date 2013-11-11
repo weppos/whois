@@ -9,6 +9,8 @@
 
 - NEW: Added whois.tucows.com parser (GH-260). [Thanks @takama]
 
+- NEW: Added whois.wildwestdomains.com parser (GH-271). [Thanks @gromnsk]
+
 - FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
 
 - CHANGED: Updated whois.nic.hu parser to the new response format.
