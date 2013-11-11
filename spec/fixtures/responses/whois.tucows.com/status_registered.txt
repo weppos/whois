@@ -1,51 +1,72 @@
-Registrant:
- Tucows.com Co
- 96 Mowat Avenue
- Toronto, Ontario M6K3M1
- CA
+Domain Name: TUCOWS.COM
+Registry Domain ID:
+Registrar WHOIS Server: whois.tucows.com
+Registrar URL: http://tucowsdomains.com
+Updated Date: 2013-08-07 23:52:35
+Creation Date: 1995-09-07 04:00:00
+Registrar Registration Expiration Date: 2014-09-06 04:00:00
+Registrar: TUCOWS, INC.
+Registrar IANA ID: 69
+Registrar Abuse Contact Email:
+Registrar Abuse Contact Phone:
+Reseller: Tucows.com Co.
+Reseller: tucowsdomains@tucows.com
+Reseller: 416-535-0123
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: serverDeleteProhibited
+Domain Status: serverTransferProhibited
+Domain Status: serverUpdateProhibited
+Registry Registrant ID: 
+Registrant Name: DNS Administrator
+Registrant Organization: Tucows.com Co
+Registrant Street: 96 Mowat Avenue
+Registrant City: Toronto
+Registrant State/Province: Ontario
+Registrant Postal Code: M6K3M1
+Registrant Country: CA
+Registrant Phone: +1.4165350123
+Registrant Phone Ext: 0000
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: dnsadmin@tucows.com
+Registry Admin ID: 
+Admin Name: DNS Administrator
+Admin Organization: Tucows ( Delaware ) Inc.
+Admin Street: 96 Mowat Avenue
+Admin City: Toronto
+Admin State/Province: Ontario
+Admin Postal Code: M6K3M1
+Admin Country: CA
+Admin Phone: +1.4165350123
+Admin Phone Ext: 0000
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: dnsadmin@tucows.com
+Registry Tech ID: 
+Tech Name: DNS Administrator
+Tech Organization: Tucows ( Delaware ) Inc.
+Tech Street: 96 Mowat Avenue
+Tech City: Toronto
+Tech State/Province: Ontario
+Tech Postal Code: M6K3M1
+Tech Country: CA
+Tech Phone: +1.4165350123
+Tech Phone Ext: 0000
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: dnsadmin@tucows.com
+Name Server: NS3.TUCOWS.COM
+Name Server: NS1.TUCOWS.COM
+Name Server: NS2.TUCOWS.COM
+DNSSEC: 
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2013-08-07 23:52:35 <<<
 
- Domain name: TUCOWS.COM
-
-
- Administrative Contact:
-    Administrator, DNS  dnsadmin@tucows.com
-    96 Mowat Avenue
-    Toronto, Ontario M6K3M1
-    CA
-    +1.4165350123x0000
- Technical Contact:
-    Administrator, DNS  dnsadmin@tucows.com
-    96 Mowat Avenue
-    Toronto, Ontario M6K3M1
-    CA
-    +1.4165350123x0000
-
-
- Registration Service Provider:
+Registration Service Provider:
     Tucows.com Co., tucowsdomains@tucows.com
     416-535-0123
 
-
-
- Registrar of Record: TUCOWS, INC.
- Record last updated on 07-Aug-2013.
- Record expires on 06-Sep-2014.
- Record created on 07-Sep-1995.
-
- Registrar Domain Name Help Center:
-    http://tucowsdomains.com
-
- Domain servers in listed order:
-    NS3.TUCOWS.COM   64.99.97.32
-    NS1.TUCOWS.COM   216.40.47.20
-    NS2.TUCOWS.COM   64.98.148.15
-
-
- Domain status: clientTransferProhibited
-                clientUpdateProhibited
-                serverDeleteProhibited
-                serverTransferProhibited
-                serverUpdateProhibited
 
 The Data in the Tucows Registrar WHOIS database is provided to you by Tucows
 for information purposes only, and may be used to assist you in obtaining
@@ -78,3 +99,4 @@ By submitting this query, you agree to abide by these terms.
 
 NOTE: THE WHOIS DATABASE IS A CONTACT DATABASE ONLY.  LACK OF A DOMAIN
 RECORD DOES NOT SIGNIFY DOMAIN AVAILABILITY.
+

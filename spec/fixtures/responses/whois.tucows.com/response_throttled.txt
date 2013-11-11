@@ -1,2 +1,0 @@
-IP Address: 37.195.234.43
-Maximum Daily connection limit reached. Lookup refused.

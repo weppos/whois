@@ -21,11 +21,6 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
     described_class.new(part)
   end
 
-  describe "#disclaimer" do
-    it do
-      expect(subject.disclaimer).to eq("The Data in the Tucows Registrar WHOIS database is provided to you by Tucows\nfor information purposes only, and may be used to assist you in obtaining\ninformation about or related to a domain name's registration record.\n\nTucows makes this information available \"as is,\" and does not guarantee its\naccuracy.\n\nBy submitting a WHOIS query, you agree that you will use this data only for\nlawful purposes and that, under no circumstances will you use this data to:\na) allow, enable, or otherwise support the transmission by e-mail,\ntelephone, or facsimile of mass, unsolicited, commercial advertising or\nsolicitations to entities other than the data recipient's own existing\ncustomers; or (b) enable high volume, automated, electronic processes that\nsend queries or data to the systems of any Registry Operator or\nICANN-Accredited registrar, except as reasonably necessary to register\ndomain names or modify existing registrations.\n\nThe compilation, repackaging, dissemination or other use of this Data is\nexpressly prohibited without the prior written consent of Tucows.\n\nTucows reserves the right to terminate your access to the Tucows WHOIS\ndatabase in its sole discretion, including without limitation, for excessive\nquerying of the WHOIS database or for failure to otherwise abide by this\npolicy.\n\nTucows reserves the right to modify these terms at any time.\n\nBy submitting this query, you agree to abide by these terms.\n\nNOTE: THE WHOIS DATABASE IS A CONTACT DATABASE ONLY.  LACK OF A DOMAIN\nRECORD DOES NOT SIGNIFY DOMAIN AVAILABILITY.\n")
-    end
-  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq("tucows.com")
@@ -33,12 +28,12 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq("")
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["clientTransferProhibited", "clientUpdateProhibited", "serverDeleteProhibited", "serverTransferProhibited", "serverUpdateProhibited"])
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -54,28 +49,28 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("1995-09-07"))
+      expect(subject.created_on).to eq(Time.parse("1995-09-07 04:00:00"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-08-07"))
+      expect(subject.updated_on).to eq(Time.parse("2013-08-07 23:52:35"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-09-06"))
+      expect(subject.expires_on).to eq(Time.parse("2014-09-06 04:00:00"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq(nil)
-      expect(subject.registrar.name).to eq("TUCOWS")
+      expect(subject.registrar.id).to eq("69")
+      expect(subject.registrar.name).to eq("TUCOWS, INC.")
       expect(subject.registrar.organization).to eq("TUCOWS, INC.")
-      expect(subject.registrar.url).to eq("http://tucowsdomains.com/")
+      expect(subject.registrar.url).to eq("http://tucowsdomains.com")
     end
   end
   describe "#registrant_contacts" do
@@ -84,16 +79,16 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).item
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].name).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("DNS Administrator")
       expect(subject.registrant_contacts[0].organization).to eq("Tucows.com Co")
       expect(subject.registrant_contacts[0].address).to eq("96 Mowat Avenue")
       expect(subject.registrant_contacts[0].city).to eq("Toronto")
       expect(subject.registrant_contacts[0].zip).to eq("M6K3M1")
       expect(subject.registrant_contacts[0].state).to eq("Ontario")
       expect(subject.registrant_contacts[0].country_code).to eq("CA")
-      expect(subject.registrant_contacts[0].phone).to eq(nil)
-      expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("+1.4165350123 ext: 0000")
+      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].email).to eq("dnsadmin@tucows.com")
     end
   end
   describe "#admin_contacts" do
@@ -103,14 +98,14 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
       expect(subject.admin_contacts[0].name).to eq("DNS Administrator")
-      expect(subject.admin_contacts[0].organization).to eq(nil)
+      expect(subject.admin_contacts[0].organization).to eq("Tucows ( Delaware ) Inc.")
       expect(subject.admin_contacts[0].address).to eq("96 Mowat Avenue")
       expect(subject.admin_contacts[0].city).to eq("Toronto")
       expect(subject.admin_contacts[0].zip).to eq("M6K3M1")
       expect(subject.admin_contacts[0].state).to eq("Ontario")
       expect(subject.admin_contacts[0].country_code).to eq("CA")
-      expect(subject.admin_contacts[0].phone).to eq("+1.4165350123x0000")
-      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].phone).to eq("+1.4165350123 ext: 0000")
+      expect(subject.admin_contacts[0].fax).to eq("")
       expect(subject.admin_contacts[0].email).to eq("dnsadmin@tucows.com")
     end
   end
@@ -121,14 +116,14 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].name).to eq("DNS Administrator")
-      expect(subject.technical_contacts[0].organization).to eq(nil)
+      expect(subject.technical_contacts[0].organization).to eq("Tucows ( Delaware ) Inc.")
       expect(subject.technical_contacts[0].address).to eq("96 Mowat Avenue")
       expect(subject.technical_contacts[0].city).to eq("Toronto")
       expect(subject.technical_contacts[0].zip).to eq("M6K3M1")
       expect(subject.technical_contacts[0].state).to eq("Ontario")
       expect(subject.technical_contacts[0].country_code).to eq("CA")
-      expect(subject.technical_contacts[0].phone).to eq("+1.4165350123x0000")
-      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].phone).to eq("+1.4165350123 ext: 0000")
+      expect(subject.technical_contacts[0].fax).to eq("")
       expect(subject.technical_contacts[0].email).to eq("dnsadmin@tucows.com")
     end
   end
@@ -138,13 +133,13 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns3.tucows.com")
-      expect(subject.nameservers[0].ipv4).to eq("64.99.97.32")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns1.tucows.com")
-      expect(subject.nameservers[1].ipv4).to eq("216.40.47.20")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns2.tucows.com")
-      expect(subject.nameservers[2].ipv4).to eq("64.98.148.15")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
     end
   end
 end
