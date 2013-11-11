@@ -64,7 +64,6 @@ module Whois
           scanner.new(settings).parse(content_for_scanner)
         end
 
-
         private
 
         def ast
