@@ -1,0 +1,103 @@
+#disclaimer
+  %s == "The Data in the Tucows Registrar WHOIS database is provided to you by Tucows\nfor information purposes only, and may be used to assist you in obtaining\ninformation about or related to a domain name's registration record.\n\nTucows makes this information available \"as is,\" and does not guarantee its\naccuracy.\n\nBy submitting a WHOIS query, you agree that you will use this data only for\nlawful purposes and that, under no circumstances will you use this data to:\na) allow, enable, or otherwise support the transmission by e-mail,\ntelephone, or facsimile of mass, unsolicited, commercial advertising or\nsolicitations to entities other than the data recipient's own existing\ncustomers; or (b) enable high volume, automated, electronic processes that\nsend queries or data to the systems of any Registry Operator or\nICANN-Accredited registrar, except as reasonably necessary to register\ndomain names or modify existing registrations.\n\nThe compilation, repackaging, dissemination or other use of this Data is\nexpressly prohibited without the prior written consent of Tucows.\n\nTucows reserves the right to terminate your access to the Tucows WHOIS\ndatabase in its sole discretion, including without limitation, for excessive\nquerying of the WHOIS database or for failure to otherwise abide by this\npolicy.\n\nTucows reserves the right to modify these terms at any time.\n\nBy submitting this query, you agree to abide by these terms.\n\nNOTE: THE WHOIS DATABASE IS A CONTACT DATABASE ONLY.  LACK OF A DOMAIN\nRECORD DOES NOT SIGNIFY DOMAIN AVAILABILITY.\n"
+
+
+#domain
+  %s == "tucows.com"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == ["clientTransferProhibited", "clientUpdateProhibited", "serverDeleteProhibited", "serverTransferProhibited", "serverUpdateProhibited"]
+
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{1995-09-07}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2013-08-07}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2014-09-06}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "TUCOWS"
+  %s.organization == "TUCOWS, INC."
+  %s.url          == "http://tucowsdomains.com/"
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s have(1).item
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].name          == nil
+  %s[0].organization  == "Tucows.com Co"
+  %s[0].address       == "96 Mowat Avenue"
+  %s[0].city          == "Toronto"
+  %s[0].zip           == "M6K3M1"
+  %s[0].state         == "Ontario"
+  %s[0].country_code  == "CA"
+  %s[0].phone         == nil
+  %s[0].fax           == nil
+  %s[0].email         == nil
+
+#admin_contacts
+  %s %CLASS{array}
+  %s have(1).item
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].name          == "DNS Administrator"
+  %s[0].organization  == nil
+  %s[0].address       == "96 Mowat Avenue"
+  %s[0].city          == "Toronto"
+  %s[0].zip           == "M6K3M1"
+  %s[0].state         == "Ontario"
+  %s[0].country_code  == "CA"
+  %s[0].phone         == "+1.4165350123x0000"
+  %s[0].fax           == nil
+  %s[0].email         == "dnsadmin@tucows.com"
+
+#technical_contacts
+  %s %CLASS{array}
+  %s have(1).item
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].name          == "DNS Administrator"
+  %s[0].organization  == nil
+  %s[0].address       == "96 Mowat Avenue"
+  %s[0].city          == "Toronto"
+  %s[0].zip           == "M6K3M1"
+  %s[0].state         == "Ontario"
+  %s[0].country_code  == "CA"
+  %s[0].phone         == "+1.4165350123x0000"
+  %s[0].fax           == nil
+  %s[0].email         == "dnsadmin@tucows.com"
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{3}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns3.tucows.com"
+  %s[0].ipv4 == "64.99.97.32"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns1.tucows.com"
+  %s[1].ipv4 == "216.40.47.20"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns2.tucows.com"
+  %s[2].ipv4 == "64.98.148.15"
