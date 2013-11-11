@@ -71,3 +71,7 @@
   %s[2].name == "ns3.iwantmyname.net"
   %s[3] %CLASS{nameserver}
   %s[3].name == "ns4.iwantmyname.net"
+
+
+#reserved?
+  %s == false

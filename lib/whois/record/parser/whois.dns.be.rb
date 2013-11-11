@@ -33,10 +33,16 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /Status:\s+(.+?)\n/
             case $1.downcase
-            when "available"        then :available
-            when "not available"    then :registered
-            when "quarantine"       then :redemption
-            when "out of service"   then :redemption
+            when "available"
+              :available
+            when "not available"
+              :registered
+            when "quarantine"
+              :redemption
+            when "out of service"
+              :redemption
+            when "not allowed"
+              :invalid
             else
               Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
@@ -46,11 +52,11 @@ module Whois
         end
 
         property_supported :available? do
-          (status == :available)
+          !invalid? && (status == :available)
         end
 
         property_supported :registered? do
-          !available?
+          !invalid? && !available?
         end
 
 
@@ -99,6 +105,14 @@ module Whois
         # @return [Boolean]
         def response_blocked?
           !!(content_for_scanner =~ /^-3: IP address blocked/)
+        end
+
+
+        # NEWPROPERTY
+        def invalid?
+          cached_properties_fetch(:invalid?) do
+            status == :invalid
+          end
         end
 
       end

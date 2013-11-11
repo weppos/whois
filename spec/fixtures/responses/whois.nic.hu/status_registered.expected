@@ -1,0 +1,48 @@
+#disclaimer
+  %s %ERROR{AttributeNotSupported}
+
+
+#domain
+  %s == "google.hu"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2000-03-25 23:20:39}
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+
+#registrar
+  %s %ERROR{AttributeNotSupported}
+
+
+#registrant_contacts
+  %s %ERROR{AttributeNotSupported}
+
+#admin_contacts
+  %s %ERROR{AttributeNotSupported}
+
+#technical_contacts
+  %s %ERROR{AttributeNotSupported}
+
+
+#nameservers
+  %s %ERROR{AttributeNotSupported}

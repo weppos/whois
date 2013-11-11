@@ -1,9 +1,0 @@
-% Whois server 2.02a serving the hu ccTLD
-
-domain:         google.hu
-
-További adatokért ld.:
-http://www.domain.hu/domain/domainsearch/
-For further data see:
-http://www.domain.hu/domain/English/domainsearch/
-

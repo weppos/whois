@@ -21,11 +21,13 @@ module Whois
         end
 
 
-        def initialize(content)
-          @input = StringScanner.new(content)
+        attr_reader :settings
+
+        def initialize(settings = nil)
+          @settings = settings || {}
         end
 
-        def parse
+        def parse(content)
           # The temporary store.
           # Scanners may use this to store pointers, states or other flags.
           @tmp = {}
@@ -33,6 +35,7 @@ module Whois
           # A super-simple AST store.
           @ast = {}
 
+          @input = StringScanner.new(content)
           tokenize until @input.eos?
 
           @ast

@@ -59,18 +59,12 @@ module Whois
         end
 
         def parse
-          self.scanner.new(content_for_scanner).parse
+          scanner  = self.scanner.is_a?(Array) ? self.scanner.first : self.scanner
+          settings = self.scanner.is_a?(Array) ? self.scanner.last  : {}
+          scanner.new(settings).parse(content_for_scanner)
         end
 
-        def regular_node(pattern)
-          ast.each_key do |key|
-            if key.match(pattern)
-              return key
-            end
-          end
-        end
-
-      private
+        private
 
         def ast
           @ast ||= parse

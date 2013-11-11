@@ -16,6 +16,9 @@ module Whois
 
       # Parser for the whois.enom.com server.
       class WhoisEnomCom < BaseIcannCompliant
+        self.scanner = Scanners::BaseIcannCompliant, {
+            pattern_available: /^Domain not found\.\n/
+        }
       end
 
     end

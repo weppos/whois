@@ -22,7 +22,6 @@ module Whois
       # @author Simone Carletti
       # @author Igor Dolzhikov <bluesriverz@gmail.com>
       #
-
       class BaseIcannCompliant < Base
         include Scanners::Scannable
 
@@ -30,7 +29,7 @@ module Whois
 
 
         property_supported :domain do
-          node('domain:name', &:downcase)
+          node('Domain Name', &:downcase)
         end
 
         property_supported :domain_id do
@@ -39,13 +38,11 @@ module Whois
 
 
         property_supported :status do
-          status = Array.wrap(node('Domain Status'))
-          if status.empty?
-            if available?
-              :available
-            else
-              :registered
-            end
+          # status = Array.wrap(node('Domain Status'))
+          if available?
+            :available
+          else
+            :registered
           end
         end
 
@@ -103,7 +100,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node('Name Server') || node('Name Servers')).reject(&:empty?).map do |name|
-            Nameserver.new(:name => name.downcase)
+            Nameserver.new(name: name.downcase)
           end
         end
 
@@ -113,24 +110,27 @@ module Whois
         def build_contact(element, type)
           node("#{element} Name") do
             Record::Contact.new(
-                :type         => type,
-                :id           => node("Registry #{element} ID"),
-                :name         => value_for_property(element, 'Name'),
-                :organization => value_for_property(element, 'Organization'),
-                :address      => value_for_property(element, 'Street'),
-                :city         => value_for_property(element, 'City'),
-                :zip          => value_for_property(element, 'Postal Code'),
-                :state        => value_for_property(element, 'State/Province'),
-                :country_code => value_for_property(element, 'Country'),
-                :phone        =>  [ value_for_property(element, 'Phone'),
-                                    value_for_property(element, 'Phone Ext')
-                                  ].reject(&:empty?).join(' ext: '),
-                :fax          =>  [ value_for_property(element, 'Fax'),
-                                    value_for_property(element, 'Fax Ext')
-                                  ].reject(&:empty?).join(' ext: '),
-                :email        => value_for_property(element, 'Email')
+                type:         type,
+                id:           node("Registry #{element} ID"),
+                name:         value_for_property(element, 'Name'),
+                organization: value_for_property(element, 'Organization'),
+                address:      value_for_property(element, 'Street'),
+                city:         value_for_property(element, 'City'),
+                zip:          value_for_property(element, 'Postal Code'),
+                state:        value_for_property(element, 'State/Province'),
+                country_code: value_for_property(element, 'Country'),
+                phone:        value_for_phone_property(element, 'Phone'),
+                fax:          value_for_phone_property(element, 'Fax'),
+                email:        value_for_property(element, 'Email')
             )
           end
+        end
+
+        def value_for_phone_property(element, property)
+          [
+            value_for_property(element, "#{property}"),
+            value_for_property(element, "#{property} Ext")
+          ].reject(&:empty?).join(' ext: ')
         end
 
         def value_for_property(element, property)

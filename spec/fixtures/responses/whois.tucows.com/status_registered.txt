@@ -1,0 +1,102 @@
+Domain Name: TUCOWS.COM
+Registry Domain ID:
+Registrar WHOIS Server: whois.tucows.com
+Registrar URL: http://tucowsdomains.com
+Updated Date: 2013-08-07 23:52:35
+Creation Date: 1995-09-07 04:00:00
+Registrar Registration Expiration Date: 2014-09-06 04:00:00
+Registrar: TUCOWS, INC.
+Registrar IANA ID: 69
+Registrar Abuse Contact Email:
+Registrar Abuse Contact Phone:
+Reseller: Tucows.com Co.
+Reseller: tucowsdomains@tucows.com
+Reseller: 416-535-0123
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: serverDeleteProhibited
+Domain Status: serverTransferProhibited
+Domain Status: serverUpdateProhibited
+Registry Registrant ID: 
+Registrant Name: DNS Administrator
+Registrant Organization: Tucows.com Co
+Registrant Street: 96 Mowat Avenue
+Registrant City: Toronto
+Registrant State/Province: Ontario
+Registrant Postal Code: M6K3M1
+Registrant Country: CA
+Registrant Phone: +1.4165350123
+Registrant Phone Ext: 0000
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: dnsadmin@tucows.com
+Registry Admin ID: 
+Admin Name: DNS Administrator
+Admin Organization: Tucows ( Delaware ) Inc.
+Admin Street: 96 Mowat Avenue
+Admin City: Toronto
+Admin State/Province: Ontario
+Admin Postal Code: M6K3M1
+Admin Country: CA
+Admin Phone: +1.4165350123
+Admin Phone Ext: 0000
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: dnsadmin@tucows.com
+Registry Tech ID: 
+Tech Name: DNS Administrator
+Tech Organization: Tucows ( Delaware ) Inc.
+Tech Street: 96 Mowat Avenue
+Tech City: Toronto
+Tech State/Province: Ontario
+Tech Postal Code: M6K3M1
+Tech Country: CA
+Tech Phone: +1.4165350123
+Tech Phone Ext: 0000
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: dnsadmin@tucows.com
+Name Server: NS3.TUCOWS.COM
+Name Server: NS1.TUCOWS.COM
+Name Server: NS2.TUCOWS.COM
+DNSSEC: 
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2013-08-07 23:52:35 <<<
+
+Registration Service Provider:
+    Tucows.com Co., tucowsdomains@tucows.com
+    416-535-0123
+
+
+The Data in the Tucows Registrar WHOIS database is provided to you by Tucows
+for information purposes only, and may be used to assist you in obtaining
+information about or related to a domain name's registration record.
+
+Tucows makes this information available "as is," and does not guarantee its
+accuracy.
+
+By submitting a WHOIS query, you agree that you will use this data only for
+lawful purposes and that, under no circumstances will you use this data to:
+a) allow, enable, or otherwise support the transmission by e-mail,
+telephone, or facsimile of mass, unsolicited, commercial advertising or
+solicitations to entities other than the data recipient's own existing
+customers; or (b) enable high volume, automated, electronic processes that
+send queries or data to the systems of any Registry Operator or
+ICANN-Accredited registrar, except as reasonably necessary to register
+domain names or modify existing registrations.
+
+The compilation, repackaging, dissemination or other use of this Data is
+expressly prohibited without the prior written consent of Tucows.
+
+Tucows reserves the right to terminate your access to the Tucows WHOIS
+database in its sole discretion, including without limitation, for excessive
+querying of the WHOIS database or for failure to otherwise abide by this
+policy.
+
+Tucows reserves the right to modify these terms at any time.
+
+By submitting this query, you agree to abide by these terms.
+
+NOTE: THE WHOIS DATABASE IS A CONTACT DATABASE ONLY.  LACK OF A DOMAIN
+RECORD DOES NOT SIGNIFY DOMAIN AVAILABILITY.
+

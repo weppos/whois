@@ -79,4 +79,14 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_registered.expected" do
       expect(subject.nameservers[3].name).to eq("ns2.google.com")
     end
   end
+  describe "#response_throttled?" do
+    it do
+      expect(subject.response_throttled?).to eq(false)
+    end
+  end
+  describe "#invalid?" do
+    it do
+      expect(subject.invalid?).to eq(false)
+    end
+  end
 end

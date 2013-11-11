@@ -46,3 +46,7 @@
 #nameservers
   %s %CLASS{array}
   %s == []
+
+
+#reserved?
+  %s == false
