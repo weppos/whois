@@ -15,6 +15,10 @@ module Whois
     class Parser
 
       # Parser for the whois.enom.com server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class WhoisEnomCom < BaseIcannCompliant
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^Domain not found\.\n/

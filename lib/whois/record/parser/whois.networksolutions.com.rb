@@ -15,6 +15,10 @@ module Whois
     class Parser
 
       # Parser for the whois.networksolutions.com server.
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
       class WhoisNetworksolutionsCom < BaseIcannCompliant
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^No match for "[\w\.]+"\.\n/
