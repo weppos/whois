@@ -1,7 +1,20 @@
 # Changelog
 
 
-# master
+## master
+
+- SERVER: Updated .XN--NGBC5AZD IDN TLD definition.
+
+- NEW: whois.whois.kenic.or.ke parser now recognizes invalid status.
+
+- NEW: Added whois.tucows.com parser (GH-260). [Thanks @takama]
+
+- FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
+
+- CHANGED: Updated whois.nic.hu parser to the new response format.
+
+
+## Release 3.4.0
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
@@ -10,6 +23,8 @@
 - SERVER: Added .XN--UNUP4Y (.游戏), .XN--NGBC5AZD (.شبكة), .XN--80ASEHDB (.онлайн), .XN--80ASWG (сайт) IDN TLD definitions.
 
 - SERVER: Updated .XN--J1AMH (.укр) IDN TLD definition.
+
+- NEW: Scanners now accepts customizable settings.
 
 - NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
 
@@ -26,6 +41,8 @@
 - FIXED: whois.dns.be crashes when the status is `not allowed`.
 
 - FIXED: whois.nic.io crashes when the domain is reserved.
+
+- FIXED: whois.gandi.net crashes with some domains.
 
 - CHANGED: Changed .NU TLD to the new response format and parser (GH-265).
 

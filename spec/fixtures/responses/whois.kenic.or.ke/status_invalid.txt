@@ -1,0 +1,22 @@
+% Copyright KENIC
+
+%  The data below is provided for information purposes
+%  and to assist persons in obtaining information about or
+%  related to domain name registrations.
+%  By submitting a whois query, you agree to use this data
+%  only for lawful purposes.
+
+
+% remarks:     Security issues should also be addressed to noc@kenic.or.ke
+% remarks:     Mail abuse issues should also be addressed to abuse@kenic.or.ke
+ 
+% whois.kenic.or.ke accepts only direct match queries.
+% Types of queries are: domains (.KE) and POCs.
+
+
+Domain Information
+Query: www.housekenya.co.ke
+Status: This WHOIS server does not have any records for that zone.
+
+
+

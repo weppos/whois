@@ -1,22 +1,18 @@
-#disclaimer
-  %s == nil
-
-
 #domain
-  %s == "google.hu"
+  %s == nil
 
 #domain_id
   %s == nil
 
 
 #status
-  %s == :registered
+  %s == :available
 
 #available?
-  %s == false
+  %s == true
 
 #registered?
-  %s == true
+  %s == false
 
 
 #created_on
@@ -26,7 +22,7 @@
   %s == nil
 
 #expires_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 
 #registrar

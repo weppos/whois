@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisUdagNet, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["clientTransferProhibited"])
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do

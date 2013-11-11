@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisRegisterCom, "status_registered.expected" d
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["clientTransferProhibited","clientUpdateProhibited","clientRenewProhibited","clientDeleteProhibited"])
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do

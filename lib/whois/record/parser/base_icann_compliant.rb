@@ -39,15 +39,11 @@ module Whois
 
 
         property_supported :status do
-          status = Array.wrap(node('Domain Status'))
-          if status.empty?
-            if available?
-              :available
-            else
-              :registered
-            end
+          # status = Array.wrap(node('Domain Status'))
+          if available?
+            :available
           else
-            status
+            :registered
           end
         end
 

@@ -1154,6 +1154,9 @@
   ".ws": {
     "host": "whois.samoanic.ws"
   },
+  ".xxx": {
+    "host": "whois.nic.xxx"
+  },
   ".ye": {
     "host": null,
     "adapter": "none"
@@ -1184,9 +1187,6 @@
   ".zw": {
     "host": null,
     "adapter": "none"
-  },
-  ".xxx": {
-    "host": "whois.nic.xxx"
   },
   ".xn--3e0b707e": {
     "host": "whois.kr"
@@ -1276,7 +1276,7 @@
     "host": "whois.domainregistry.my"
   },
   ".xn--ngbc5azd": {
-    "host": "whois.xn--ngbc5azd.aridnrs.net.au"
+    "host": "whois.nic.xn--ngbc5azd"
   },
   ".xn--o3cw4h": {
     "host": "whois.thnic.co.th"

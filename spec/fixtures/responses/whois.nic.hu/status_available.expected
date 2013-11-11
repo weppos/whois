@@ -1,12 +1,12 @@
 #disclaimer
-  %s == nil
+  %s %ERROR{AttributeNotSupported}
 
 
 #domain
   %s == nil
 
 #domain_id
-  %s == nil
+  %s %ERROR{AttributeNotSupported}
 
 
 #status
@@ -23,28 +23,25 @@
   %s == nil
 
 #updated_on
-  %s == nil
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}
 
 
 #registrar
-  %s == nil
+  %s %ERROR{AttributeNotSupported}
+
 
 #registrant_contacts
-  %s %CLASS{array}
-  %s == []
+  %s %ERROR{AttributeNotSupported}
 
 #admin_contacts
-  %s %CLASS{array}
-  %s == []
+  %s %ERROR{AttributeNotSupported}
 
 #technical_contacts
-  %s %CLASS{array}
-  %s == []
+  %s %ERROR{AttributeNotSupported}
 
 
 #nameservers
-  %s %CLASS{array}
-  %s == []
+  %s %ERROR{AttributeNotSupported}
