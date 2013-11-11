@@ -19,6 +19,16 @@ module Whois
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^No match for "[\w\.]+"\.\n/
         }
+
+        private
+
+        def build_contact(element, type)
+          if (contact = super) && !contact.state.present?
+            contact.state = value_for_property(element, 'State')
+          end
+          contact
+        end
+
       end
 
     end

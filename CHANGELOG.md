@@ -13,6 +13,8 @@
 
 - CHANGED: Updated whois.nic.hu parser to the new response format.
 
+- CHANGED: Updated whois.networksolutions.com parser to the new response format (GH-280). [Thanks @takama]
+
 
 ## Release 3.4.0
 

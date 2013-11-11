@@ -22,7 +22,6 @@ module Whois
       # @author Simone Carletti
       # @author Igor Dolzhikov <bluesriverz@gmail.com>
       #
-
       class BaseIcannCompliant < Base
         include Scanners::Scannable
 
@@ -113,27 +112,29 @@ module Whois
             Record::Contact.new(
                 type:         type,
                 id:           node("Registry #{element} ID"),
-                name:         value_for_property(element, ['Name']),
-                organization: value_for_property(element, ['Organization']),
-                address:      value_for_property(element, ['Street']),
-                city:         value_for_property(element, ['City']),
-                zip:          value_for_property(element, ['Postal Code']),
-                state:        value_for_property(element, ['State', 'State/Province']),
-                country_code: value_for_property(element, ['Country']),
-                phone:        [ value_for_property(element, ['Phone']),
-                                  value_for_property(element, ['Phone Ext'])
-                              ].reject(&:empty?).join(' ext: '),
-                fax:          [ value_for_property(element, ['Fax']),
-                                  value_for_property(element, ['Fax Ext'])
-                              ].reject(&:empty?).join(' ext: '),
-                email:        value_for_property(element, ['Email'])
+                name:         value_for_property(element, 'Name'),
+                organization: value_for_property(element, 'Organization'),
+                address:      value_for_property(element, 'Street'),
+                city:         value_for_property(element, 'City'),
+                zip:          value_for_property(element, 'Postal Code'),
+                state:        value_for_property(element, 'State/Province'),
+                country_code: value_for_property(element, 'Country'),
+                phone:        value_for_phone_property(element, 'Phone'),
+                fax:          value_for_phone_property(element, 'Fax'),
+                email:        value_for_property(element, 'Email')
             )
           end
         end
 
-        def value_for_property(element, properties)
-          Array.wrap(properties.collect { |property| node("#{element} #{property}") }).
-              reject(&:nil?).reject(&:empty?).join(', ')
+        def value_for_phone_property(element, property)
+          [
+            value_for_property(element, "#{property}"),
+            value_for_property(element, "#{property} Ext")
+          ].reject(&:empty?).join(' ext: ')
+        end
+
+        def value_for_property(element, property)
+          Array.wrap(node("#{element} #{property}")).reject(&:empty?).join(', ')
         end
 
       end

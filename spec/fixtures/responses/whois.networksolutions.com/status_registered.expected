@@ -6,7 +6,7 @@
 
 
 #status
-  %s == ["clientTransferProhibited"]
+  %s == :registered
 
 #available?
   %s == false
