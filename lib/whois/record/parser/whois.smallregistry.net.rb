@@ -26,9 +26,9 @@ module Whois
 
 
         property_supported :disclaimer do
-          node("field:disclaimer") do |str|
-            str.scan(/# (.+)\n/).flatten.map do |str|
-              token = str.strip
+          node("field:disclaimer") do |alpha|
+            alpha.scan(/# (.+)\n/).flatten.map do |beta|
+              token = beta.strip
               token.gsub!(/\s+/, " ")
             end.join(" ").gsub!(/(\s{2})/, "\n")
           end
