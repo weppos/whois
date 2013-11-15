@@ -1,7 +1,7 @@
 # Changelog
 
 
-## master
+## Release 3.4.1
 
 - SERVER: Updated .XN--NGBC5AZD IDN TLD definition.
 
