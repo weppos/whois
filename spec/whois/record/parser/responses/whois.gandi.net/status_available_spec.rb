@@ -21,11 +21,6 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_available.expected" do
     described_class.new(part)
   end
 
-  describe "#disclaimer" do
-    it do
-      expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
-    end
-  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq(nil)
@@ -33,7 +28,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq(nil)
     end
   end
   describe "#status" do
@@ -68,11 +63,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_available.expected" do
   end
   describe "#registrar" do
     it do
-      expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq(nil)
-      expect(subject.registrar.name).to eq("GANDI Registrar")
-      expect(subject.registrar.organization).to eq("GANDI Registrar")
-      expect(subject.registrar.url).to eq(nil)
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#registrant_contacts" do

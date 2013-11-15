@@ -84,10 +84,13 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
       expect(subject.registrant_contacts[0].city).to eq("KIRKLAND")
       expect(subject.registrant_contacts[0].zip).to eq("98033")
       expect(subject.registrant_contacts[0].state).to eq("WA")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("US")
       expect(subject.registrant_contacts[0].phone).to eq("")
       expect(subject.registrant_contacts[0].fax).to eq("")
       expect(subject.registrant_contacts[0].email).to eq("")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -103,10 +106,13 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
       expect(subject.admin_contacts[0].city).to eq("KIRKLAND")
       expect(subject.admin_contacts[0].zip).to eq("98033")
       expect(subject.admin_contacts[0].state).to eq("WA")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("US")
       expect(subject.admin_contacts[0].phone).to eq("+1.4259744689")
       expect(subject.admin_contacts[0].fax).to eq("+1.4259744791")
       expect(subject.admin_contacts[0].email).to eq("DOMAINS@DEMANDMEDIA.COM")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -122,10 +128,13 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
       expect(subject.technical_contacts[0].city).to eq("KIRKLAND")
       expect(subject.technical_contacts[0].zip).to eq("98033")
       expect(subject.technical_contacts[0].state).to eq("WA")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("+1.4259744689")
       expect(subject.technical_contacts[0].fax).to eq("+1.4259744791")
       expect(subject.technical_contacts[0].email).to eq("DOMAINS@DEMANDMEDIA.COM")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

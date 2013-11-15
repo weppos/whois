@@ -86,10 +86,13 @@ describe Whois::Record::Parser::WhoisWildwestdomainsCom, "status_registered.expe
       expect(subject.registrant_contacts[0].city).to eq("Scottsdale")
       expect(subject.registrant_contacts[0].zip).to eq("85260")
       expect(subject.registrant_contacts[0].state).to eq("Arizona")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("United States")
       expect(subject.registrant_contacts[0].phone).to eq("")
       expect(subject.registrant_contacts[0].fax).to eq("")
       expect(subject.registrant_contacts[0].email).to eq("")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -105,10 +108,13 @@ describe Whois::Record::Parser::WhoisWildwestdomainsCom, "status_registered.expe
       expect(subject.admin_contacts[0].city).to eq("Scottsdale")
       expect(subject.admin_contacts[0].zip).to eq("85260")
       expect(subject.admin_contacts[0].state).to eq("Arizona")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("United States")
       expect(subject.admin_contacts[0].phone).to eq("+1.4805058800")
       expect(subject.admin_contacts[0].fax).to eq("+1.4805058844")
       expect(subject.admin_contacts[0].email).to eq("dns@wildwestdomains.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -124,10 +130,13 @@ describe Whois::Record::Parser::WhoisWildwestdomainsCom, "status_registered.expe
       expect(subject.technical_contacts[0].city).to eq("Scottsdale")
       expect(subject.technical_contacts[0].zip).to eq("85260")
       expect(subject.technical_contacts[0].state).to eq("Arizona")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("United States")
       expect(subject.technical_contacts[0].phone).to eq("+1.4805058800")
       expect(subject.technical_contacts[0].fax).to eq("+1.4805058844")
       expect(subject.technical_contacts[0].email).to eq("dns@wildwestdomains.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

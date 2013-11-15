@@ -1,12 +1,8 @@
-#disclaimer
-  %s %ERROR{AttributeNotSupported}
-
-
 #domain
   %s == nil
 
 #domain_id
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 
 #status
@@ -30,11 +26,8 @@
 
 
 #registrar
-  %s %CLASS{registrar}
-  %s.id           == nil
-  %s.name         == "GANDI Registrar"
-  %s.organization == "GANDI Registrar"
-  %s.url          == nil
+  %s == nil
+
 
 #registrant_contacts
   %s %CLASS{array}

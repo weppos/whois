@@ -21,6 +21,8 @@
 
 - CHANGED: Updated whois.networksolutions.com parser to the new response format (GH-280). [Thanks @takama]
 
+- CHANGED: Updated whois.gandi.net parser to the new response format.
+
 
 ## Release 3.4.0
 
