@@ -1188,19 +1188,41 @@
     "host": null,
     "adapter": "none"
   },
+
+  ".bike": {
+    "host": "whois.donuts.co"
+  },
   ".camera": {
     "host": "whois.donuts.co"
   },
   ".clothing": {
     "host": "whois.donuts.co"
   },
+  ".construction": {
+    "host": "whois.donuts.co"
+  },
+  ".contractors": {
+    "host": "whois.donuts.co"
+  },
   ".equipment": {
+    "host": "whois.donuts.co"
+  },
+  ".estate": {
+    "host": "whois.donuts.co"
+  },
+  ".gallery": {
+    "host": "whois.donuts.co"
+  },
+  ".graphics": {
     "host": "whois.donuts.co"
   },
   ".guru": {
     "host": "whois.donuts.co"
   },
   ".holdings": {
+    "host": "whois.donuts.co"
+  },
+  ".land": {
     "host": "whois.donuts.co"
   },
   ".lighting": {
@@ -1215,6 +1237,7 @@
   ".voyage": {
     "host": "whois.donuts.co"
   },
+
   ".xn--3e0b707e": {
     "host": "whois.kr"
   },
