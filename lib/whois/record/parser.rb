@@ -65,6 +65,9 @@ module Whois
       #
       def self.parser_for(part)
         parser_klass(part.host).new(part)
+      rescue LoadError
+        Parser.const_defined?("Blank") || autoload("blank")
+        Parser::Blank.new(part)
       end
 
       # Detects the proper parser class according to given <tt>host</tt>
@@ -81,27 +84,17 @@ module Whois
       #         a specific parser implementation, then returns
       #         the {Whois::Record::Parser::Blank} {Class}.
       #         The {Class} is expected to be a child of {Whois::Record::Parser::Base}.
+      # @raises LoadError If the class is not found.
       #
       # @example
       #
-      #   Parser.parser_klass("missing.example.com")
-      #   # => Whois::Record::Parser::Blank
-      #
-      #   # Define a custom parser for missing.example.com
-      #   class Whois::Record::Parser::MissingExampleCom
-      #   end
-      #
-      #   Parser.parser_klass("missing.example.com")
-      #   # => Whois::Record::Parser::MissingExampleCom
+      #   Parser.parser_klass("whois.example.com")
+      #   # => Whois::Record::Parser::WhoisExampleCom
       #
       def self.parser_klass(host)
         name = host_to_parser(host)
         Parser.const_defined?(name) || autoload(host)
         Parser.const_get(name)
-
-      rescue LoadError
-        Parser.const_defined?("Blank") || autoload("blank")
-        Parser::Blank
       end
 
       # Converts <tt>host</tt> to the corresponding parser class name.
