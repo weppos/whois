@@ -97,7 +97,7 @@ module Whois
         property_not_supported :technical_contacts
 
         property_supported :nameservers do
-         if content_for_scanner =~ /Domain Servers in listed order:\n((?:.+\n)+)/
+          if content_for_scanner =~ /Domain Servers in listed order:\n((?:.+\n)+)/
             $1.split("\n").map do |name|
               Record::Nameserver.new(:name => name.strip.chomp("."))
             end
