@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2012\n")
+      expect(subject.disclaimer).to eq("The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2013\n")
     end
   end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("broccoliwafflesareawesome.co.za")
+      expect(subject.domain).to eq("google.co.za")
     end
   end
   describe "#domain_id" do
@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(['ok', 'autorenew'])
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -53,7 +53,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#created_on" do
     it do
-      expect(subject.created_on).to eq(Time.parse("2012-03-27"))
+      expect(subject.created_on).to eq(Time.parse("2001-06-25"))
     end
   end
   describe "#updated_on" do
@@ -63,14 +63,16 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   end
   describe "#expires_on" do
     it do
-      expect(subject.expires_on).to eq(Time.parse("2013-03-27"))
+      expect(subject.expires_on).to eq(Time.parse("2014-06-25"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("epag")
-      expect(subject.registrar.name).to eq("EPAG Domainservices")
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("MarkMonitor")
+      expect(subject.registrar.organization).to eq(nil)
+      expect(subject.registrar.url).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
@@ -79,11 +81,18 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].name).to eq("Fred Flintstone")
-      expect(subject.registrant_contacts[0].email).to eq("someguy@somedomain.co.za")
-      expect(subject.registrant_contacts[0].phone).to eq("+27.219000000")
-      expect(subject.registrant_contacts[0].fax).to eq("+27.219001000")
-      expect(subject.registrant_contacts[0].address).to eq("30 Frazzita Business Park Durbanville\nCape Town\nZA\n7550")
+      expect(subject.registrant_contacts[0].name).to eq("Google Inc.")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("1600 Amphitheatre Parkway\nMountain View\nCA\nUS\n94043")
+      expect(subject.registrant_contacts[0].city).to eq(nil)
+      expect(subject.registrant_contacts[0].zip).to eq(nil)
+      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.registrant_contacts[0].fax).to eq("+1.6506188571")
+      expect(subject.registrant_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -99,13 +108,23 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns2.host-h.net")
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns1.dns-h.com")
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns1.host-h.net")
+      expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
 end

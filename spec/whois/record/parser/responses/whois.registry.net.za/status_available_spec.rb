@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_available.expected" 
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(nil)
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do

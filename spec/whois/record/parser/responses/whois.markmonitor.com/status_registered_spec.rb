@@ -59,6 +59,7 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq(nil)
       expect(subject.registrar.name).to eq("Markmonitor.com")
+      expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq("http://www.markmonitor.com")
     end
   end
@@ -78,6 +79,8 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
       expect(subject.registrant_contacts[0].phone).to eq("+1.6506234000")
       expect(subject.registrant_contacts[0].fax).to eq("+1.6506188571")
       expect(subject.registrant_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -96,6 +99,8 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
       expect(subject.admin_contacts[0].phone).to eq("+1.6506234000")
       expect(subject.admin_contacts[0].fax).to eq("+1.6506188571")
       expect(subject.admin_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -114,6 +119,8 @@ describe Whois::Record::Parser::WhoisMarkmonitorCom, "status_registered.expected
       expect(subject.technical_contacts[0].phone).to eq("+1.6506234000")
       expect(subject.technical_contacts[0].fax).to eq("+1.6506188571")
       expect(subject.technical_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

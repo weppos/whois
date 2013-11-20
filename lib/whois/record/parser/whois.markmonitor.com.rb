@@ -54,8 +54,8 @@ module Whois
 
         property_supported :registrar do
           Record::Registrar.new(
-            :name => content_for_scanner.slice(/Registrar Name: (.+)\n/, 1),
-            :url  => content_for_scanner.slice(/Registrar Homepage: (.+)\n/, 1)
+            name: content_for_scanner.slice(/Registrar Name: (.+)\n/, 1),
+            url:  content_for_scanner.slice(/Registrar Homepage: (.+)\n/, 1)
           )
         end
 

@@ -10,7 +10,7 @@
 
 
 #status
-  %s == nil
+  %s == :available
 
 #available?
   %s == true
@@ -31,6 +31,7 @@
 
 #registrar
   %s == nil
+
 
 #registrant_contacts
   %s == []

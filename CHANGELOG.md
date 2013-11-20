@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+- CHANGED: Updated whois.registry.net.za parser to the new response format.
+
 
 ## Release 3.4.1
 

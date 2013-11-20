@@ -43,8 +43,11 @@ module Whois
 
 
         property_supported :status do
-          node("node:status") do |string|
-            string.split(", ")
+          # node("node:status")
+          if registered?
+            :registered
+          else
+            :available
           end
         end
 
@@ -75,15 +78,16 @@ module Whois
 
 
         property_supported :registrar do
-          node("node:registrar") do |string|
-            string =~ /(.+) \[ ID = (.+) \]/
-            Whois::Record::Registrar.new(:name => $1.strip, :id => $2.strip)
+          node("node:registrar") do |text|
+            value = text.lines.first
+            Whois::Record::Registrar.new(name: value.strip)
           end
         end
 
+
         property_supported :registrant_contacts do
-          node("node:registrant_details") do
-            build_registrant_contacts
+          node("node:registrant_details") do |node|
+            build_contact(node)
           end
         end
 
@@ -101,25 +105,24 @@ module Whois
         end
 
 
-      private
+        private
 
-        def build_registrant_contacts
-          Whois::Record::Contact.new(
-            { type: Whois::Record::Contact::TYPE_REGISTRANT}.merge(registrant_details).merge(registrant_address_details)
-          )
-        end
+        def build_contact(node)
+          lines = node.dup
 
-        def registrant_details
-          lines   = node("node:registrant_details")
-          details = { name: lines.shift }
-          [:email, :phone, :fax].each do |contact_method|
-            details[contact_method] = lines.shift.split(":", 2)[1].strip
+          name = lines.shift
+          email, phone, fax = [:email, :phone, :fax].map do |attribute|
+            lines.shift.split(":").last.strip
           end
-          details
-        end
 
-        def registrant_address_details
-          { address: Array.wrap(node("node:registrant_address")).join("\n") }
+          Record::Contact.new(
+              type:         Whois::Record::Contact::TYPE_REGISTRANT,
+              name:         name,
+              address:      Array.wrap(node("node:registrant_address")).join("\n"),
+              phone:        phone,
+              fax:          fax,
+              email:        email
+          )
         end
 
         def parse_date(date_string)
