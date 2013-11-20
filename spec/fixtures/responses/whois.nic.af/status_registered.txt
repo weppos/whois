@@ -1,10 +1,10 @@
 Domain Name: google.af
 Domain ID: 345679-CoCCA
-WHOIS Server: @ CoCCA
+WHOIS Server: whois.coccaregistry.org
 Referral URL: 
-Updated Date: 2012-04-30T14:49:02.256Z
+Updated Date: 2013-04-02T09:17:01.651Z
 Creation Date: 2009-10-05T03:51:17.979Z
-Registry Expiry Date: 2013-05-05T03:51:17.974Z
+Registry Expiry Date: 2014-05-05T03:51:17.974Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
 Domain Status: ok
@@ -46,7 +46,7 @@ Billing City: Boise
 Billing State/Province: Idaho 83709
 Billing Postal Code: 
 Billing Country: US
-Billing Phone: +1 (208) 389 5799
+Billing Phone: +1.2083895799
 Billing Phone Ext: 
 Billing Email: ccops@markmonitor.com
 
@@ -71,18 +71,15 @@ Name Server: ns4.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: http://www.markmonitor.com
 Sponsoring Registrar Address: MarkMonitor  Emerald Tech Center  391 N. Ancestor Place  Boise, ID 83704          
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 (208) 389-5740
-Sponsoring Registrar Fax: +1 (208) 389-5771
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895771
 Sponsoring Registrar Customer Service Contact: ccops@markmonitor.com
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
-
 
 TERMS OF USE: You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated.  Whois database is provided by AFGNIC as a service to the internet community.
 
@@ -90,4 +87,4 @@ The data is for information purposes only. AFGNIC does not guarantee its accurac
 
 ADRAS Helpdesk | http://helpdesk.adras.af
 
->>> Last update of WHOIS database: 2012-10-18T01:13:42.883Z <<<
+>>> Last update of WHOIS database: 2013-11-20T16:57:53.514Z <<<
