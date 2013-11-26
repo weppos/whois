@@ -4,6 +4,8 @@
 
 - CHANGED: Updated whois.registry.net.za parser to the new response format.
 
+- CHANGED: Updated whois.ascio.com parser to the new response format (GH-285). [Thanks @takama]
+
 
 ## Release 3.4.1
 
