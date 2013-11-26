@@ -59,6 +59,6 @@ begin
   puts @client.lookup(object)
 rescue Whois::Error => e
   abort(e.message)
-rescue Timeout::Error => e
+rescue Timeout::Error
   abort("Request Timeout")
 end
