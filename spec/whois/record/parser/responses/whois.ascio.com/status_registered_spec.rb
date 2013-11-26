@@ -21,11 +21,6 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_registered.expected" do
     described_class.new(part)
   end
 
-  describe "#disclaimer" do
-    it do
-      expect(subject.disclaimer).to eq("The data in Ascio Technologies' WHOIS database is provided by Ascio Technologies for information purposes only. By submitting a WHOIS query, you agree that you will use this data only for lawful purpose. In addition, you agree not to: (a) use the data to allow, enable, or otherwise support any marketing activities, regardless of the medium used. Such media include but are not limited to e-mail, telephone, facsimile, postal mail, SMS, and wireless alerts; or (b) use the data to enable high volume, automated, electronic processes that sendqueries or data to the systems of any Registry Operator or ICANN-Accredited registrar, except as reasonably necessary to register domain names or modify existing registrations. (c) sell or redistribute the data except insofar as it has been incorporated into a value-added product or service that does not permit the extraction of a substantial portion of the bulk data from the value-added product or service for use by other parties. Ascio Technologies reserves the right to modify these terms at any time. Ascio Technologies cannot guarantee the accuracy of the data provided. By accessing and using Ascio Technologies WHOIS service, you agree to these terms.")
-    end
-  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq("ascio.com")
@@ -33,7 +28,12 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq("")
+    end
+  end
+  describe "#status" do
+    it do
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -49,28 +49,28 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2005-03-01 14:11:50"))
+      expect(subject.created_on).to eq(Time.parse("2005-03-01 14:11:50 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-06-02 00:23:21"))
+      expect(subject.updated_on).to eq(Time.parse("2013-06-02 00:23:21 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-05-31 00:00:00"))
+      expect(subject.expires_on).to eq(Time.parse("2014-05-31 00:00:00 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("ASCIOTEC1364")
-      expect(subject.registrar.name).to eq("Ascio Technologies")
+      expect(subject.registrar.id).to eq("106")
+      expect(subject.registrar.name).to eq("Ascio Technologies, Inc")
       expect(subject.registrar.organization).to eq("Ascio Technologies, Inc")
-      expect(subject.registrar.url).to eq("http://www.ascio.com/")
+      expect(subject.registrar.url).to eq("http://www.ascio.com")
     end
   end
   describe "#registrant_contacts" do
@@ -79,18 +79,16 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("ASCIOTEC1364")
-      expect(subject.registrant_contacts[0].name).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Hostmaster Ascio")
       expect(subject.registrant_contacts[0].organization).to eq("ASCIO Technologies Inc.")
       expect(subject.registrant_contacts[0].address).to eq("Islands Brygge 55")
       expect(subject.registrant_contacts[0].city).to eq("Copenhagen")
       expect(subject.registrant_contacts[0].zip).to eq("2300")
       expect(subject.registrant_contacts[0].state).to eq("S")
-      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("DK")
-      expect(subject.registrant_contacts[0].phone).to eq(nil)
-      expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq(nil)
+      expect(subject.registrant_contacts[0].phone).to eq("")
+      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].email).to eq("")
     end
   end
   describe "#admin_contacts" do
@@ -99,14 +97,12 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("TH6437")
       expect(subject.admin_contacts[0].name).to eq("Technical Hostmaster")
       expect(subject.admin_contacts[0].organization).to eq("Speednames")
       expect(subject.admin_contacts[0].address).to eq("Rejsbygade 8a")
       expect(subject.admin_contacts[0].city).to eq("Copenhagen")
       expect(subject.admin_contacts[0].zip).to eq("1759")
       expect(subject.admin_contacts[0].state).to eq("DK")
-      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("DK")
       expect(subject.admin_contacts[0].phone).to eq("+45.33886300")
       expect(subject.admin_contacts[0].fax).to eq("+45.33886301")
@@ -119,14 +115,12 @@ describe Whois::Record::Parser::WhoisAscioCom, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("NH323743")
       expect(subject.technical_contacts[0].name).to eq("Netnames Hostmaster")
       expect(subject.technical_contacts[0].organization).to eq("Group NBT")
-      expect(subject.technical_contacts[0].address).to eq("3rd Floor Prospero House 241 Borough High St.")
+      expect(subject.technical_contacts[0].address).to eq("3rd Floor Prospero House, 241 Borough High St.")
       expect(subject.technical_contacts[0].city).to eq("London")
       expect(subject.technical_contacts[0].zip).to eq("SE1 1GA")
-      expect(subject.technical_contacts[0].state).to eq(nil)
-      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].state).to eq("")
       expect(subject.technical_contacts[0].country_code).to eq("GB")
       expect(subject.technical_contacts[0].phone).to eq("+44.2070159370")
       expect(subject.technical_contacts[0].fax).to eq("+44.2070159375")
