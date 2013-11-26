@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.cc server.
+      # Parser for the ccwhois.verisign-grs.com server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicCc < BaseVerisign
+      class CcwhoisVerisignGrsCom < BaseVerisign
       end
 
     end

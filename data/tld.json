@@ -312,7 +312,7 @@
     "host": "whois.cira.ca"
   },
   ".cc": {
-    "host": "whois.nic.cc",
+    "host": "ccwhois.verisign-grs.com",
     "adapter": "verisign"
   },
   ".cd": {
