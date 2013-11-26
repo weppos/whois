@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.crsnic.net server.
+      # Parser for the whois.verisign-grs.com server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisCrsnicNet < BaseVerisign
+      class WhoisVerisignGrsCom < BaseVerisign
 
         property_supported :registrar do
           node("Registrar") do |value|

@@ -15,8 +15,7 @@ describe Whois::Record::Parser do
 
   describe ".parser_klass" do
     it "returns the parser hostname converted into a class" do
-      require 'whois/record/parser/whois.crsnic.net'
-      expect(described_class.parser_klass("whois.crsnic.net").name).to eq("Whois::Record::Parser::WhoisCrsnicNet")
+      expect(described_class.parser_klass("whois.verisign-grs.com").name).to eq("Whois::Record::Parser::WhoisVerisignGrsCom")
     end
 
     it "recognizes and lazy-loads classes" do
@@ -136,29 +135,29 @@ describe Whois::Record::Parser do
     end
 
     it "delegates to first parser when all supported" do
-      r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.supported.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
+      r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.supported.test"), Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
       described_class.new(r).status.should == :status_undefined
-      r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.supported.test")])
+      r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test"), Whois::Record::Part.new(body: "", host: "parser.supported.test")])
       described_class.new(r).status.should == :status_supported
     end
 
     it "delegates to first parser when one supported" do
-      r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.supported.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
+      r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.supported.test"), Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
       described_class.new(r).created_on.should == :created_on_supported
-      r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.supported.test")])
+      r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test"), Whois::Record::Part.new(body: "", host: "parser.supported.test")])
       described_class.new(r).created_on.should == :created_on_supported
     end
 
     it "raises unless at least one is supported" do
       lambda do
-        r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.unsupported.test"), Whois::Record::Part.new(:body => "", :host => "parser.unsupported.test")])
+        r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.unsupported.test"), Whois::Record::Part.new(body: "", host: "parser.unsupported.test")])
         described_class.new(r).created_on
       end.should raise_error(Whois::AttributeNotSupported)
     end
 
     it "raises when parsers are undefined" do
       lambda do
-        r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
+        r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test"), Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
         described_class.new(r).created_on
       end.should raise_error(Whois::AttributeNotImplemented)
     end
@@ -172,7 +171,7 @@ describe Whois::Record::Parser do
 
     it "does not delegate unknown properties" do
       lambda do
-        r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
+        r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
         described_class.new(r).unknown_method
       end.should raise_error(NoMethodError)
     end
@@ -188,32 +187,32 @@ describe Whois::Record::Parser do
     end
 
     it "returns 1 parser when 1 part" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "whois.nic.it")])
       parser = described_class.new(record)
       parser.parsers.should have(1).parsers
     end
 
     it "returns 2 parsers when 2 part" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "whois.crsnic.net"), Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "whois.verisign-grs.com"), Whois::Record::Part.new(body: nil, host: "whois.nic.it")])
       parser = described_class.new(record)
       parser.parsers.should have(2).parsers
     end
 
     it "initializes the parsers in reverse order" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "whois.crsnic.net"), Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "whois.verisign-grs.com"), Whois::Record::Part.new(body: nil, host: "whois.nic.it")])
       parser = described_class.new(record)
       parser.parsers[0].should be_a(Whois::Record::Parser::WhoisNicIt)
-      parser.parsers[1].should be_a(Whois::Record::Parser::WhoisCrsnicNet)
+      parser.parsers[1].should be_a(Whois::Record::Parser::WhoisVerisignGrsCom)
     end
 
     it "returns the host parser when the part is supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "whois.nic.it")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "whois.nic.it")])
       parser = described_class.new(record)
       parser.parsers.first.should be_a(Whois::Record::Parser::WhoisNicIt)
     end
 
     it "returns the Blank parser when the part is not supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "missing.nic.it")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "missing.nic.it")])
       parser = described_class.new(record)
       parser.parsers.first.should be_a(Whois::Record::Parser::Blank)
     end
@@ -236,7 +235,7 @@ describe Whois::Record::Parser do
     end
 
     it "returns true when 2 parts" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "whois.crsnic.net"), Whois::Record::Part.new(host: "whois.nic.it")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "whois.verisign-grs.com"), Whois::Record::Part.new(host: "whois.nic.it")])
       described_class.new(record).property_any_supported?(:disclaimer).should be_true
     end
 
@@ -268,21 +267,21 @@ describe Whois::Record::Parser do
     end
 
     it "returns an array of contact when 1 part is supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "contacts2.test")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "contacts2.test")])
       parser = described_class.new(record)
       parser.contacts.should have(2).contacts
       parser.contacts.should == %w( p2-a1 p2-t1 )
     end
 
     it "returns an array of contact when 1 part is not supported" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "contacts1.test")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "contacts1.test")])
       parser = described_class.new(record)
       parser.contacts.should have(0).contacts
       parser.contacts.should == %w()
     end
 
     it "merges the contacts and returns an array of contact when 2 parts" do
-      record = Whois::Record.new(nil, [Whois::Record::Part.new(:body => nil, :host => "contacts2.test"), Whois::Record::Part.new(:body => nil, :host => "contacts3.test")])
+      record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "contacts2.test"), Whois::Record::Part.new(body: nil, host: "contacts3.test")])
       parser = described_class.new(record)
       parser.contacts.should have(3).contacts
       parser.contacts.should == %w( p3-t1 p2-a1 p2-t1 )
@@ -320,7 +319,7 @@ describe Whois::Record::Parser do
 
     it "returns false if parser and other.parser have different number of elements" do
       instance = described_class.new(Whois::Record.new(nil, []))
-      other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "foo.example.test")]))
+      other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "foo.example.test")]))
       instance.unchanged?(other).should be_false
     end
 
@@ -332,15 +331,15 @@ describe Whois::Record::Parser do
 
 
     it "returns true if every parser in self marches the corresponding parser in other" do
-      instance = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(:body => "hello", :host => "foo.example.test"), Whois::Record::Part.new(:body => "hello", :host => "bar.example.test")]))
-      other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(:body => "hello", :host => "foo.example.test"), Whois::Record::Part.new(:body => "hello", :host => "bar.example.test")]))
+      instance = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "hello", host: "bar.example.test")]))
+      other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "hello", host: "bar.example.test")]))
 
       instance.unchanged?(other).should be_true
     end
 
     it "returns false unless every parser in self marches the corresponding parser in other" do
-      instance = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(:body => "hello", :host => "foo.example.test"), Whois::Record::Part.new(:body => "world", :host => "bar.example.test")]))
-      other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(:body => "hello", :host => "foo.example.test"), Whois::Record::Part.new(:body => "baby!", :host => "bar.example.test")]))
+      instance = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "world", host: "bar.example.test")]))
+      other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "baby!", host: "bar.example.test")]))
 
       instance.unchanged?(other).should be_false
     end
@@ -422,7 +421,7 @@ describe Whois::Record::Parser do
   end
 
   def parsers(*types)
-    described_class.new(Whois::Record.new(nil, types.map { |type| Whois::Record::Part.new(:body => "", :host => "response-#{type}.test") }))
+    described_class.new(Whois::Record.new(nil, types.map { |type| Whois::Record::Part.new(body: "", host: "response-#{type}.test") }))
   end
 
 end

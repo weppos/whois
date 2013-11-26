@@ -78,14 +78,14 @@
     "host": "whois.centralnic.com"
   },
   ".com": {
-    "host": "whois.crsnic.net",
+    "host": "whois.verisign-grs.com",
     "adapter": "verisign"
   },
   ".za.net": {
     "host": "whois.za.net"
   },
   ".net": {
-    "host": "whois.crsnic.net",
+    "host": "whois.verisign-grs.com",
     "adapter": "verisign"
   },
   ".eu.org": {
