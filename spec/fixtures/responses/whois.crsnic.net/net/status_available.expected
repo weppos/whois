@@ -6,11 +6,11 @@
   %s == "u34jedzcq.net"
 
 #domain_id
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 
 #status
-  %s == nil
+  %s == :available
 
 #available?
   %s == true

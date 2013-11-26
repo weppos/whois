@@ -10,7 +10,7 @@
 
 
 #status
-  %s == nil
+  %s == :available
 
 #available?
   %s == true

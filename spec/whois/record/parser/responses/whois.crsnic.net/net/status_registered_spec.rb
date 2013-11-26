@@ -33,12 +33,12 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq(nil)
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited", "serverDeleteProhibited", "serverTransferProhibited", "serverUpdateProhibited"])
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq(nil)
       expect(subject.registrar.name).to eq("MARKMONITOR INC.")
-      expect(subject.registrar.organization).to eq("MARKMONITOR INC.")
+      expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq("http://www.markmonitor.com")
     end
   end
@@ -84,12 +84,20 @@ describe Whois::Record::Parser::WhoisCrsnicNet, "status_registered.expected" do
       expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
   describe "#referral_whois" do

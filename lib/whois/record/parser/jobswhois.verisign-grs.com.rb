@@ -7,8 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base'
-require 'whois/record/scanners/verisign'
+require 'whois/record/parser/base_verisign'
 
 
 module Whois
@@ -20,79 +19,7 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class JobswhoisVerisignGrsCom < Base
-        include Scanners::Scannable
-
-        self.scanner = Scanners::Verisign
-
-
-        property_supported :disclaimer do
-          node("Disclaimer")
-        end
-
-
-        property_supported :domain do
-          node("Domain Name", &:downcase)
-        end
-
-        property_supported :domain_id do
-          node("Domain ID")
-        end
-
-
-        property_supported :status do
-          node("Domain Status")
-        end
-
-        property_supported :available? do
-          node("Sponsoring Registrar").nil?
-        end
-
-        property_supported :registered? do
-          !available?
-        end
-
-
-        property_supported :created_on do
-          node("Creation Date") { |value| Time.parse(value) }
-        end
-
-        property_supported :updated_on do
-          node("Updated Date") { |value| Time.parse(value) }
-        end
-
-        property_supported :expires_on do
-          node("Expiration Date") { |value| Time.parse(value) }
-        end
-
-
-        property_supported :registrar do
-          node("Sponsoring Registrar") do |value|
-            Whois::Record::Registrar.new(
-                :id           => node("Sponsoring Registrar IANA ID"),
-                :name         => value,
-                :organization => value,
-                :url          => referral_url
-            )
-          end
-        end
-
-
-        property_supported :nameservers do
-          Array.wrap(node("Name Server")).reject { |value| value =~ /no nameserver/i }.map do |name|
-            Nameserver.new(:name => name.downcase)
-          end
-        end
-
-
-        def referral_whois
-          node("Whois Server")
-        end
-
-        def referral_url
-          node("Referral URL")
-        end
-
+      class JobswhoisVerisignGrsCom < BaseVerisign
       end
 
     end

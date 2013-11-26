@@ -86,9 +86,9 @@ for detailed information.
 
    Server Name: GOOGLE.COM.SUCKS.FIND.CRACKZ.WITH.SEARCH.GULLI.COM
    IP Address: 80.190.192.24
-   Registrar: EPAG DOMAINSERVICES GMBH
-   Whois Server: whois.enterprice.net
-   Referral URL: http://www.enterprice.net
+   Registrar: CORE INTERNET COUNCIL OF REGISTRARS
+   Whois Server: whois.corenic.net
+   Referral URL: http://www.corenic.net
 
    Server Name: GOOGLE.COM.SPROSIUYANDEKSA.RU
    Registrar: MELBOURNE IT, LTD. D/B/A INTERNET NAMES WORLDWIDE
@@ -96,8 +96,8 @@ for detailed information.
    Referral URL: http://www.melbourneit.com
 
    Server Name: GOOGLE.COM.SPAMMING.IS.UNETHICAL.PLEASE.STOP.THEM.HUAXUEERBAN.COM
-   IP Address: 211.64.175.67
    IP Address: 211.64.175.66
+   IP Address: 211.64.175.67
    Registrar: GODADDY.COM, LLC
    Whois Server: whois.godaddy.com
    Referral URL: http://registrar.godaddy.com
@@ -119,10 +119,27 @@ for detailed information.
    Whois Server: whois.omnis.com
    Referral URL: http://domains.omnis.com
 
+   Server Name: GOOGLE.COM.PK
+   Registrar: BIGROCK SOLUTIONS LIMITED
+   Whois Server: Whois.bigrock.com
+   Referral URL: http://www.bigrock.com
+
    Server Name: GOOGLE.COM.PE
    Registrar: PDR LTD. D/B/A PUBLICDOMAINREGISTRY.COM
    Whois Server: whois.PublicDomainRegistry.com
    Referral URL: http://www.PublicDomainRegistry.com
+
+   Server Name: GOOGLE.COM.NS2.CHALESHGAR.COM
+   IP Address: 8.8.8.8
+   Registrar: REALTIME REGISTER BV
+   Whois Server: whois.yoursrs.com
+   Referral URL: http://www.realtimeregister.com
+
+   Server Name: GOOGLE.COM.NS1.CHALESHGAR.COM
+   IP Address: 8.8.8.8
+   Registrar: REALTIME REGISTER BV
+   Whois Server: whois.yoursrs.com
+   Referral URL: http://www.realtimeregister.com
 
    Server Name: GOOGLE.COM.MY
    Registrar: WILD WEST DOMAINS, LLC
@@ -142,9 +159,9 @@ for detailed information.
 
    Server Name: GOOGLE.COM.LASERPIPE.COM
    IP Address: 209.85.227.106
-   Registrar: PDR LTD. D/B/A PUBLICDOMAINREGISTRY.COM
-   Whois Server: whois.PublicDomainRegistry.com
-   Referral URL: http://www.PublicDomainRegistry.com
+   Registrar: REALTIME REGISTER BV
+   Whois Server: whois.yoursrs.com
+   Referral URL: http://www.realtimeregister.com
 
    Server Name: GOOGLE.COM.IS.NOT.HOSTED.BY.ACTIVEDOMAINDNS.NET
    IP Address: 217.148.161.5
@@ -154,7 +171,7 @@ for detailed information.
 
    Server Name: GOOGLE.COM.IS.HOSTED.ON.PROFITHOSTING.NET
    IP Address: 66.49.213.213
-   Registrar: NAME.COM LLC
+   Registrar: NAME.COM, INC.
    Whois Server: whois.name.com
    Referral URL: http://www.name.com
 
@@ -246,7 +263,7 @@ for detailed information.
    Creation Date: 15-sep-1997
    Expiration Date: 14-sep-2020
 
->>> Last update of whois database: Sun, 30 Jun 2013 23:09:08 UTC <<<
+>>> Last update of whois database: Tue, 26 Nov 2013 17:41:54 UTC <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

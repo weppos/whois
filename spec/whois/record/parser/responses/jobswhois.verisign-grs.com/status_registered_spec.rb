@@ -38,7 +38,7 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq("ACTIVE")
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -74,7 +74,7 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq("667")
       expect(subject.registrar.name).to eq("NAME SHARE, INC")
-      expect(subject.registrar.organization).to eq("NAME SHARE, INC")
+      expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq("http://www.nameshare.com")
     end
   end
@@ -84,8 +84,12 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.registry.jobs")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.registry.jobs")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
   describe "#referral_whois" do

@@ -71,7 +71,11 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
   end
   describe "#registrar" do
     it do
-      expect(subject.registrar).to eq(nil)
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq("48")
+      expect(subject.registrar.name).to eq("ENOM, INC.")
+      expect(subject.registrar.organization).to eq(nil)
+      expect(subject.registrar.url).to eq("http://www.enom.com")
     end
   end
   describe "#nameservers" do
@@ -80,10 +84,16 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end
   describe "#referral_whois" do

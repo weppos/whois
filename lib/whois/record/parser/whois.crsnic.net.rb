@@ -7,8 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base'
-require 'whois/record/scanners/verisign'
+require 'whois/record/parser/base_verisign'
 
 
 module Whois
@@ -16,67 +15,21 @@ module Whois
     class Parser
 
       # Parser for the whois.crsnic.net server.
-      class WhoisCrsnicNet < Base
-        include Scanners::Scannable
-
-        self.scanner = Scanners::Verisign
-
-
-        property_supported :disclaimer do
-          node("Disclaimer")
-        end
-
-
-        property_supported :domain do
-          node("Domain Name") { |raw| raw.downcase }
-        end
-
-        property_not_supported :domain_id
-
-
-        property_supported :status do
-          node("Status")
-        end
-
-        property_supported :available? do
-          node("Registrar").nil?
-        end
-
-        property_supported :registered? do
-          !available?
-        end
-
-
-        property_supported :created_on do
-          node("Creation Date") { |raw| Time.parse(raw) }
-        end
-
-        property_supported :updated_on do
-          node("Updated Date") { |raw| Time.parse(raw) }
-        end
-
-        property_supported :expires_on do
-          node("Expiration Date") { |raw| Time.parse(raw) }
-        end
-
+      #
+      # @see Whois::Record::Parser::Example
+      #   The Example parser for the list of all available methods.
+      #
+      class WhoisCrsnicNet < BaseVerisign
 
         property_supported :registrar do
-          node("Registrar") do |raw|
+          node("Registrar") do |value|
             Whois::Record::Registrar.new(
-                :name         => last_useful_item(raw),
-                :organization => last_useful_item(raw),
-                :url          => referral_url
+                id:           last_useful_item(node("Sponsoring Registrar IANA ID")),
+                name:         last_useful_item(value),
+                url:          referral_url
             )
           end
         end
-
-
-        property_supported :nameservers do
-          Array.wrap(node("Name Server")).reject { |value| value =~ / / }.map do |name|
-            Record::Nameserver.new(:name => name.downcase)
-          end
-        end
-
 
         # Checks whether this response contains a message
         # that can be reconducted to a "WHOIS Server Unavailable" status.
@@ -84,25 +37,6 @@ module Whois
         # @return [Boolean]
         def response_unavailable?
           !!node("response:unavailable")
-        end
-
-        def referral_whois
-          node("Whois Server")
-        end
-
-        def referral_url
-          node("Referral URL") do |lines|
-            last_useful_item(lines)
-          end
-        end
-
-
-      private
-
-        # In case of "SPAM Response", the response contains more than one item
-        # for the same value and the value becomes an Array.
-        def last_useful_item(values)
-          values.is_a?(Array) ? values.last : values
         end
 
       end

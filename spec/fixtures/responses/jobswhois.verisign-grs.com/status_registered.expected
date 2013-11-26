@@ -10,7 +10,7 @@
 
 
 #status
-  %s == "ACTIVE"
+  %s == :registered
 
 #available?
   %s == false
@@ -36,7 +36,7 @@
   %s %CLASS{registrar}
   %s.id           == "667"
   %s.name         == "NAME SHARE, INC"
-  %s.organization == "NAME SHARE, INC"
+  %s.organization == nil
   %s.url          == "http://www.nameshare.com"
 
 
@@ -45,8 +45,12 @@
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.registry.jobs"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.registry.jobs"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
 
 
 

@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisNicCc, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT-DELETE-PROHIBITED", "CLIENT-UPDATE-PROHIBITED", "CLIENT-XFER-PROHIBITED", "SERVER-DELETE-PROHIBITED", "SERVER-UPDATE-PROHIBITED", "SERVER-XFER-PROHIBITED"])
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -74,7 +74,7 @@ describe Whois::Record::Parser::WhoisNicCc, "status_registered.expected" do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq("292")
       expect(subject.registrar.name).to eq("MARKMONITOR INC.")
-      expect(subject.registrar.organization).to eq("MARKMONITOR INC.")
+      expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq("http://www.markmonitor.com")
     end
   end
@@ -84,12 +84,20 @@ describe Whois::Record::Parser::WhoisNicCc, "status_registered.expected" do
       expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
   describe "#referral_whois" do

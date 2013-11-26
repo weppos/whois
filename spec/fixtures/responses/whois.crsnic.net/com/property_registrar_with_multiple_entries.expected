@@ -2,5 +2,5 @@
   %s %CLASS{registrar}
   %s.id           == nil
   %s.name         == "MARKMONITOR INC."
-  %s.organization == "MARKMONITOR INC."
+  %s.organization == nil
   %s.url          == "http://www.markmonitor.com"

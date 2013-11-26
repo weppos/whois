@@ -38,7 +38,7 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_available.expec
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(nil)
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do

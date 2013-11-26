@@ -5,6 +5,8 @@
 
 - CHANGED: Updated whois.nic.tv parser to the new response format (GH-283).
 
+- CHANGED: Updated Verisign parsers, extract common parser.
+
 
 ## Release 3.4.2
 
