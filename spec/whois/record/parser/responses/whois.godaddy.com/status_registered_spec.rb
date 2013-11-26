@@ -41,6 +41,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq(nil)
       expect(subject.registrar.name).to eq("GoDaddy.com, LLC")
+      expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq("http://www.godaddy.com/")
     end
   end
@@ -60,6 +61,8 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       expect(subject.registrant_contacts[0].phone).to eq(nil)
       expect(subject.registrant_contacts[0].fax).to eq(nil)
       expect(subject.registrant_contacts[0].email).to eq(nil)
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -78,6 +81,8 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       expect(subject.admin_contacts[0].phone).to eq("+1.4805058800")
       expect(subject.admin_contacts[0].fax).to eq("+1.4805058844")
       expect(subject.admin_contacts[0].email).to eq("dns@jomax.net")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -96,6 +101,8 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       expect(subject.technical_contacts[0].phone).to eq("+1.4805058800")
       expect(subject.technical_contacts[0].fax).to eq("+1.4805058844")
       expect(subject.technical_contacts[0].email).to eq("dns@jomax.net")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do
@@ -104,10 +111,16 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("CNS1.SECURESERVER.NET")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("CNS2.SECURESERVER.NET")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("CNS3.SECURESERVER.NET")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end
 end

@@ -49,7 +49,7 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("24 Oct 1997 00:00:00"))
+      expect(subject.created_on).to eq(Time.parse("1997-10-24 00:00:00"))
     end
   end
   describe "#updated_on" do
@@ -143,10 +143,16 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("dns11.enom.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("dns12.enom.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("dns13.enom.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end
 end

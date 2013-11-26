@@ -9,6 +9,8 @@
 
 - CHANGED: Updated Verisign parsers, extract common parser.
 
+- CHANGED: Updated whois.markmonitor.com parser to the new response format.
+
 
 ## Release 3.4.2
 

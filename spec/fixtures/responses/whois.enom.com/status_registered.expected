@@ -17,7 +17,7 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{24 Oct 1997 00:00:00}
+  %s %TIME{1997-10-24 00:00:00}
 
 #updated_on
   %s == nil
@@ -100,7 +100,13 @@
   %s %SIZE{3}
   %s[0] %CLASS{nameserver}
   %s[0].name == "dns11.enom.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "dns12.enom.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
   %s[2] %CLASS{nameserver}
   %s[2].name == "dns13.enom.com"
+  %s[2].ipv4 == nil
+  %s[2].ipv6 == nil
