@@ -5,11 +5,11 @@
   %s == "u34jedzcq.tv"
 
 #domain_id
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 
 #status
-  %s == nil
+  %s == :available
 
 #available?
   %s == true

@@ -1,22 +1,27 @@
 
-Whois Server Version 1.0
+Whois Server Version 2.0
 
 Domain names can now be registered with many different competing registrars. 
 Go to http://registrar.verisign-grs.com/whois/ for detailed information.
 
-   Domain Name: THINKCODE.TV
-   Registrar: DYNADOT, LLC
-   Whois Server: whois.dynadot.com
-   Referral URL: http://www.dynadot.com
-   Name Server: NS1.SLICEHOST.NET
-   Name Server: NS2.SLICEHOST.NET
-   Status: CLIENT-XFER-PROHIBITED
-   Updated Date: 19-nov-2009
-   Creation Date: 21-apr-2009
-   Expiration Date: 21-apr-2010
+   Domain Name: GOOGLE.TV
+   Domain ID: 87196881
+   Whois Server: whois.enom.com
+   Referral URL: http://www.enom.com
+   Updated Date: 2013-07-09T17:03:47Z
+   Creation Date: 2002-08-02T12:43:36Z
+   Expiration Date: 2014-08-02T12:43:36Z
+   Sponsoring Registrar: ENOM, INC.
+   Sponsoring Registrar IANA ID: 48
+   Domain Status: CLIENT-DELETE-PROHIBITED
+   Domain Status: CLIENT-XFER-PROHIBITED
+   Name Server: NS1.GOOGLE.COM
+   Name Server: NS2.GOOGLE.COM
+   Name Server: NS3.GOOGLE.COM
+   DNSSEC: Unsigned delegation
 
 
->>> Last update of whois database: Mon, 23 Nov 2009 08:00:57 EST <<<
+>>> Last update of whois database: 2013-11-26T17:05:34Z <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

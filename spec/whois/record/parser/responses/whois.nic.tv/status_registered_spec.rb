@@ -28,17 +28,17 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
   end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("thinkcode.tv")
+      expect(subject.domain).to eq("google.tv")
     end
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq("87196881")
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq("CLIENT-XFER-PROHIBITED")
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -54,19 +54,19 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2009-04-21"))
+      expect(subject.created_on).to eq(Time.parse("2002-08-02 12:43:36 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2009-11-19"))
+      expect(subject.updated_on).to eq(Time.parse("2013-07-09 17:03:47 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2010-04-21"))
+      expect(subject.expires_on).to eq(Time.parse("2014-08-02 12:43:36 UTC"))
     end
   end
   describe "#registrar" do
@@ -77,21 +77,23 @@ describe Whois::Record::Parser::WhoisNicTv, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.slicehost.net")
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.slicehost.net")
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.google.com")
     end
   end
   describe "#referral_whois" do
     it do
-      expect(subject.referral_whois).to eq("whois.dynadot.com")
+      expect(subject.referral_whois).to eq("whois.enom.com")
     end
   end
   describe "#referral_url" do
     it do
-      expect(subject.referral_url).to eq("http://www.dynadot.com")
+      expect(subject.referral_url).to eq("http://www.enom.com")
     end
   end
 end

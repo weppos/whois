@@ -28,18 +28,25 @@ module Whois
 
 
         property_supported :domain do
-          node("Domain Name") { |raw| raw.downcase }
+          node("Domain Name", &:downcase)
         end
 
-        property_not_supported :domain_id
+        property_supported :domain_id do
+          node("Domain ID", &:downcase)
+        end
 
 
         property_supported :status do
-          node("Status")
+          # node("Status")
+          if available?
+            :available
+          else
+            :registered
+          end
         end
 
         property_supported :available? do
-          node("Registrar").nil?
+          !!(content_for_scanner =~ /^No match for/)
         end
 
         property_supported :registered? do
@@ -61,15 +68,13 @@ module Whois
 
 
         property_supported :registrar do
-          # Return nil because when the response contains more than one registrar section
-          # the response can be messy. See, for instance, the Verisign response for google.com.
           nil
         end
 
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject { |value| value =~ /no nameserver/i }.map do |name|
-            Record::Nameserver.new(:name => name.downcase)
+            Record::Nameserver.new(name: name.downcase)
           end
         end
 

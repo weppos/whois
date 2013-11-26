@@ -1,6 +1,11 @@
 # Changelog
 
 
+## Master
+
+- CHANGED: Updated whois.nic.tv parser to the new response format (GH-283).
+
+
 ## Release 3.4.2
 
 - CHANGED: Updated whois.registry.net.za parser to the new response format.

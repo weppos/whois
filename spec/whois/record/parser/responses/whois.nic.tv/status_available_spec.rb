@@ -33,12 +33,12 @@ describe Whois::Record::Parser::WhoisNicTv, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq(nil)
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(nil)
+      expect(subject.status).to eq(:available)
     end
   end
   describe "#available?" do
