@@ -1204,6 +1204,15 @@
   ".contractors": {
     "host": "whois.donuts.co"
   },
+  ".diamonds": {
+    "host": "whois.donuts.co"
+  },
+  ".directory": {
+    "host": "whois.donuts.co"
+  },
+  ".enterprises": {
+    "host": "whois.donuts.co"
+  },
   ".equipment": {
     "host": "whois.donuts.co"
   },
@@ -1222,13 +1231,34 @@
   ".holdings": {
     "host": "whois.donuts.co"
   },
+  ".kitchen": {
+    "host": "whois.donuts.co"
+  },
   ".land": {
     "host": "whois.donuts.co"
   },
   ".lighting": {
     "host": "whois.donuts.co"
   },
+  ".photography": {
+    "host": "whois.donuts.co"
+  },
+  ".sexy": {
+    "host": "whois.uniregistry.net"
+  },
   ".singles": {
+    "host": "whois.donuts.co"
+  },
+  ".tattoo": {
+    "host": "whois.uniregistry.net"
+  },
+  ".technology": {
+    "host": "whois.donuts.co"
+  },
+  ".tips": {
+    "host": "whois.donuts.co"
+  },
+  ".today": {
     "host": "whois.donuts.co"
   },
   ".ventures": {
