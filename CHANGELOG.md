@@ -3,7 +3,7 @@
 
 ## Master
 
-- SERVER: Updated .COM, .NET, .CC TLD definitions.
+- SERVER: Updated .COM, .NET, .CC, .WS TLD definitions.
 
 - CHANGED: Updated whois.nic.tv parser to the new response format (GH-283).
 
