@@ -1,66 +1,75 @@
  
  -------------------------------------------------------------------------------
- Whois server by HKDNR
+ Whois server by HKIRC
  -------------------------------------------------------------------------------
- Domain names in the .com.hk, .net.hk, .edu.hk, .org.hk,
- .gov.hk, idv.hk. and .hk can now be registered with HKDNR.
- Go to http://www.hkdnr.net.hk for detail information.
+ .hk top level Domain names can be registered via HKIRC-Accredited Registrars. 
+ Go to https://www.hkirc.hk/content.jsp?id=280 for details. 
  -------------------------------------------------------------------------------
 
 
 
-Domain Name: GOOGLE.HK
-Contract Version:  HKDNR latest version  
+Domain Name:  GOOGLE.HK 
+
+Domain Status: Active 
+
+Contract Version:   Refer to registrar   
+
+Registrar Name: MARKMONITOR INC.
+
+Registrar Contact Information: Email: ccops@markmonitor.com
+
+Reseller: 
+
+
+
 
 Registrant Contact Information:
 
-
 Company English Name (It should be the same as the registered/corporation name on your Business Register Certificate or relevant documents): GOOGLE INC.
-Company Chinese name: 
-Address: 1600 AMPHITHEATRE PARKWAY  MOUNTAIN VIEW 94043 CA 
+Company Chinese name:  - 
+Address: 1600 AMPHITHEATRE PARKWAY   94043  
 Country: US
 Email: dns-admin@google.com 
 Domain Name Commencement Date: 06-04-2004
-Expiry Date: 31-03-2011 
+Expiry Date: 31-03-2014 
 Re-registration Status:  Complete   
-Name of Registrar:  HKDNR 
-
-
-
 
 
 
 Administrative Contact Information:
 
-
-Given name: DOMAIN    
-Family name: ADMINISTRATOR  
+Given name: DNS    
+Family name: ADMIN  
 Company name: GOOGLE INC.
-Address: 1600 AMPHITHEATRE PARKWAY  MOUNTAIN VIEW 94043 CA
+Address: 1600 AMPHITHEATRE PARKWAY   94043 
 Country: US
-Phone: +1-650-2530000
-Fax: +1-650-6188571
+Phone: +1-6502530000
+Fax: +1-6502530001
 Email: dns-admin@google.com
-Account Name: HK2473632T
+Account Name: HK3602487T
+
+
 
 
 Technical Contact Information:
 
-
-Family name: ADMINISTRATOR  
+Family name: ADMIN  
 Company name: GOOGLE INC.
-Address: 1600 AMPHITHEATRE PARKWAY  MOUNTAIN VIEW 94043 CA
+Address: 1600 AMPHITHEATRE PARKWAY   94043 
 Country: US
-Phone: +1-650-2530000
-Fax: +1-650-6188571
+Phone: +1-6502530000
+Fax: +1-6502530001
 Email: dns-admin@google.com
+
+
 
 
 Name Servers Information:
 
 NS1.GOOGLE.COM
 NS2.GOOGLE.COM
-
+NS3.GOOGLE.COM
+NS4.GOOGLE.COM
 
 
 

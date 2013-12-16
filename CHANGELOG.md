@@ -5,6 +5,8 @@
 
 - SERVER: Updated .COM, .NET, .CC, .WS TLD definitions.
 
+- FIXED: .HK domains not correctly identified as available (GH-290).
+
 - CHANGED: Updated whois.nic.tv parser to the new response format (GH-283).
 
 - CHANGED: Updated Verisign parsers, extract common parser.
