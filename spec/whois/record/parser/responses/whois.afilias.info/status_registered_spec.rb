@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED", "RENEWPERIOD"])
+      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"])
     end
   end
   describe "#available?" do
@@ -73,7 +73,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq("R151-LRMS")
-      expect(subject.registrar.name).to eq("Delaware Corporation")
+      expect(subject.registrar.name).to eq("MarkMonitor Inc.")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)
     end

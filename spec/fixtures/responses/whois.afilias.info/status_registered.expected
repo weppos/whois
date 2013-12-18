@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED", "RENEWPERIOD"]
+  %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
 
 #available?
   %s == false
@@ -35,7 +35,7 @@
 #registrar
   %s %CLASS{registrar}
   %s.id           == "R151-LRMS"
-  %s.name         == "Delaware Corporation"
+  %s.name         == "MarkMonitor Inc."
   %s.organization == nil
   %s.url          == nil
 
