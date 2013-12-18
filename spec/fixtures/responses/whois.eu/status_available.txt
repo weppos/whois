@@ -38,7 +38,7 @@
 %
 % The EURid WHOIS service on port 43 (textual whois) never
 % discloses any information concerning the registrant.
-% Registrant information can be obtained through use of the
+% Registrant and onsite contact information can be obtained through use of the
 % webbased whois service available from the EURid website www.eurid.eu
 %
 % WHOIS u34jedzcq

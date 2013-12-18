@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -wKU
+#!/usr/bin/env ruby -w
 
 $:.unshift(File.expand_path("../../lib", __FILE__))
 
@@ -12,7 +12,7 @@ require 'whois'
 # defs = YAML.load_file(SOURCE)
 
 
-SOURCE = "https://raw.github.com/gist/3907123/tlds.yml"
+SOURCE = "https://gist.github.com/weppos/3907123/raw/tlds.yml"
 uri  = URI.parse(SOURCE)
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true

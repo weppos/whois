@@ -3,7 +3,7 @@
 
 
 #domain
-  %s == "google.it"
+  %s == "u34jedzcq.it"
 
 #domain_id
   %s %ERROR{AttributeNotSupported}

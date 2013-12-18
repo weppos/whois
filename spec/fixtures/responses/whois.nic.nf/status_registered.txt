@@ -2,17 +2,17 @@ Domain Name: google.nf
 Domain ID: 26552-CoCCA
 WHOIS Server: whois.coccaregistry.org
 Referral URL: 
-Updated Date: 2013-10-26T09:17:55.070Z
+Updated Date: 2013-12-06T07:35:49.461Z
 Creation Date: 2005-11-27T11:00:00.000Z
 Registry Expiry Date: 2014-11-27T11:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientTransferProhibited
 Domain Status: clientUpdateProhibited
+Domain Status: clientTransferProhibited
 Domain Status: clientDeleteProhibited
 Domain Status: ok
 
-Registrant ID: 681193-CoCCA
+Registrant ID: 955924-CoCCA
 Registrant Name: DNS Admin
 Registrant Organization: Google Inc.
 Registrant Street: 1600 Amphitheatre Parkway
@@ -49,4 +49,4 @@ The data is for information purposes only. CoCCA does not guarantee its accuracy
 
 CoCCA Helpdesk | http://helpdesk.coccaregistry.net
 
->>> Last update of WHOIS database: 2013-10-31T13:28:59.600Z <<<
+>>> Last update of WHOIS database: 2013-12-18T14:28:34.042Z <<<

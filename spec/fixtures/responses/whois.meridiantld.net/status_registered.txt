@@ -1,15 +1,15 @@
 Domain Name: google.tc
-WHOIS Server: whois.meridiantld.net
-Updated Date: 2013-03-12T21:26:49.850Z
+WHOIS Server: 
+Updated Date: 2013-09-13T14:02:03.674Z
 Creation Date: 2006-10-11T21:00:00.000Z
-Registry Expiry Date: 2013-10-12T21:00:00.000Z
+Registry Expiry Date: 2014-10-12T21:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 292
-Domain Status: ok
-Domain Status: clientRenewProhibited
-Domain Status: clientUpdateProhibited
 Domain Status: clientTransferProhibited
 Domain Status: clientDeleteProhibited
+Domain Status: clientRenewProhibited
+Domain Status: ok
+Domain Status: clientUpdateProhibited
 
 Registrant Name: Google  Inc.
 Registrant Organization: Google Inc.
@@ -70,20 +70,17 @@ Name Server: ns4.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: 
 Sponsoring Registrar Address: 391 N Ancestor Place
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: 1.2083895740
-Sponsoring Registrar Fax: 1.2083895799
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895799
 Sponsoring Registrar Customer Service Contact: 
 Sponsoring Registrar Customer Service Email: 
 Sponsoring Registrar Admin Contact: 
-Sponsoring Registrar Admin Email: 
-
+Sponsoring Registrar Admin Email:
 
 The data in the WHOIS database of Meridian TLD Corporation is provided by Meridian TLD Corporation for information purposes, and to assist persons in obtaining information about or related to domain name registration records. Meridian TLD Corporation does not guarantee its accuracy.By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to
 1) allow, enable, or otherwise support the transmission of mass
@@ -93,4 +90,4 @@ or
 Meridian TLD Corporation reserves the right to modify these terms.
 By submitting this query, you agree to abide by this policy.
 
->>> Last update of WHOIS database: 2013-06-30T19:52:36.931Z <<<
+>>> Last update of WHOIS database: 2013-12-18T13:38:23.836Z <<<

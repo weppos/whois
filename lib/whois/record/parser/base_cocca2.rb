@@ -38,7 +38,7 @@ module Whois
         property_supported :status do
           list = Array.wrap(node("Domain Status")).map(&:downcase)
           case
-          when list.include?("available")
+          when list.include?("no object found")
             :available
           when list.include?("ok")
             :registered

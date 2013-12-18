@@ -16,7 +16,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2011-04-28}
+  %s %TIME{2014-04-28}
 
 
 #nameservers
@@ -24,5 +24,9 @@
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.google.com"
+  %s[0].ipv4 == "216.239.32.10"
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.google.com"
+  %s[1].ipv4 == "216.239.34.10"
+  %s[1].ipv6 == nil

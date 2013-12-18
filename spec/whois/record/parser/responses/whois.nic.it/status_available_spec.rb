@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisNicIt, "status_available.expected" do
   end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("google.it")
+      expect(subject.domain).to eq("u34jedzcq.it")
     end
   end
   describe "#domain_id" do

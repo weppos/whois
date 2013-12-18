@@ -55,7 +55,7 @@ describe Whois::Record::Parser::WhoisNicAf, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-04-02 09:17:01 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-12-06 18:35:04 UTC"))
     end
   end
   describe "#expires_on" do

@@ -24,13 +24,13 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-08-02 00:00:00 UTC}
+  %s %TIME{2014-08-02 00:00:00 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
   %s.id           == nil
-  %s.name         == "Markmonitor"
+  %s.name         == "MarkMonitor Inc."
   %s.organization == nil
   %s.url          == nil
 

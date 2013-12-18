@@ -55,13 +55,13 @@ describe Whois::Record::Parser::WhoisRegistryGy, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-10-15 08:36:53 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-12-06 18:37:40 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-10-04 23:30:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-10-04 23:30:00 UTC"))
     end
   end
   describe "#registrar" do

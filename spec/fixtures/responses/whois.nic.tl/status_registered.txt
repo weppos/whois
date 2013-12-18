@@ -1,18 +1,18 @@
 Domain Name: google.tl
 Domain ID: 19785-CoCCA
-WHOIS Server: @ CoCCA
+WHOIS Server: whois.coccaregistry.org
 Referral URL: 
-Updated Date: 2012-04-26T09:16:39.457Z
+Updated Date: 2013-12-06T07:41:57.133Z
 Creation Date: 2003-05-23T12:00:00.000Z
-Registry Expiry Date: 2013-05-23T12:00:00.000Z
+Registry Expiry Date: 2014-05-23T12:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientTransferProhibited
-Domain Status: ok
 Domain Status: clientUpdateProhibited
+Domain Status: clientTransferProhibited
 Domain Status: clientDeleteProhibited
+Domain Status: ok
 
-Registrant ID: 681195-CoCCA
+Registrant ID: 955939-CoCCA
 Registrant Name: DNS Admin
 Registrant Organization: Google Inc.
 Registrant Street: 1600 Amphitheatre Parkway
@@ -26,7 +26,7 @@ Registrant Fax: +1.6506188571
 Registrant Fax Ext: 
 Registrant Email: dns-admin@google.com
 
-Admin ID: 681195-CoCCA
+Admin ID: 955939-CoCCA
 Admin Name: DNS Admin
 Admin Organization: Google Inc.
 Admin Street: 1600 Amphitheatre Parkway
@@ -45,18 +45,15 @@ Name Server: ns2.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: http://www.markmonitor.com
 Sponsoring Registrar Address: MarkMonitor  Emerald Tech Center  391 N. Ancestor Place  Boise, ID 83704          
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 (208) 389-5740
-Sponsoring Registrar Fax: +1 (208) 389-5771
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895771
 Sponsoring Registrar Customer Service Contact: ccops@markmonitor.com
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
-
 
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
@@ -76,4 +73,4 @@ expressly prohibited.
 
 CoCCA Helpdesk | http://helpdesk.cocca.cx
 
->>> Last update of WHOIS database: 2012-10-18T03:37:27.477Z <<<
+>>> Last update of WHOIS database: 2013-12-18T10:06:08.573Z <<<

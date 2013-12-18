@@ -1,19 +1,19 @@
 Domain Name: google.ms
 Domain ID: 23725-CoCCA
-WHOIS Server: MNI Networks .MS
+WHOIS Server: 
 Referral URL: 
-Updated Date: 2013-05-06T21:44:36.276Z
+Updated Date: 2013-12-06T08:14:24.368Z
 Creation Date: 1999-06-04T12:00:00.000Z
 Registry Expiry Date: 2014-06-04T12:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: ok
-Domain Status: clientTransferProhibited
+Domain Status: clientRenewProhibited
 Domain Status: clientDeleteProhibited
 Domain Status: clientUpdateProhibited
-Domain Status: clientRenewProhibited
+Domain Status: ok
+Domain Status: clientTransferProhibited
 
-Registrant ID: 30483-CoCCA
+Registrant ID: 313268-CoCCA
 Registrant Name: Google, Inc.
 Registrant Organization: 
 Registrant Street: 1600 Amphitheatre Parkway
@@ -28,7 +28,7 @@ Registrant Fax: +1.6506188571
 Registrant Fax Ext: 
 Registrant Email: dns-admin@google.com
 
-Admin ID: 30483-CoCCA
+Admin ID: 313268-CoCCA
 Admin Name: Google, Inc.
 Admin Organization: 
 Admin Street: 1600 Amphitheatre Parkway
@@ -43,7 +43,7 @@ Admin Fax: +1.6506188571
 Admin Fax Ext: 
 Admin Email: dns-admin@google.com
 
-Billing ID: 30501-CoCCA
+Billing ID: 313269-CoCCA
 Billing Name: MarkMonitor
 Billing Organization: 
 Billing Street: 10400 Overland Rd.
@@ -52,9 +52,9 @@ Billing City: Boise
 Billing State/Province: ID 83709-1433
 Billing Postal Code: 
 Billing Country: US
-Billing Phone: +1 208 389 5740
+Billing Phone: +1.2083895740
 Billing Phone Ext: 
-Billing Fax: +1 208 389 5771
+Billing Fax: +1.2083895771
 Billing Fax Ext: 
 Billing Email: ccops@markmonitor.com
 
@@ -63,20 +63,17 @@ Name Server: ns2.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: http://www.markmonitor.com
 Sponsoring Registrar Address: MarkMonitor  Emerald Tech Center  391 N. Ancestor Place  Boise, ID 83704
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 (208) 389-5740
-Sponsoring Registrar Fax: +1 (208) 389-5771
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895771
 Sponsoring Registrar Customer Service Contact: CCOPS
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
 Sponsoring Registrar Admin Contact: Domain Billing
 Sponsoring Registrar Admin Email: ccops@markmonitor.com
-
 
 TERMS OF USE: 
 You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated.  
@@ -87,5 +84,4 @@ You agree that you may use this Data only for lawful purposes and that under no 
                   or
  (2) enable high volume, automated, electronic processes. The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
-
->>> Last update of WHOIS database: 2013-06-30T23:06:14.142Z <<<
+>>> Last update of WHOIS database: 2013-12-18T10:04:12.966Z <<<

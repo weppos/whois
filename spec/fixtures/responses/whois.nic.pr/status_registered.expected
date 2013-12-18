@@ -24,7 +24,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-09-15}
+  %s %TIME{2014-09-15}
 
 
 #registrar

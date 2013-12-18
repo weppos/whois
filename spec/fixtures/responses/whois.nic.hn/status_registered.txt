@@ -1,16 +1,16 @@
 Domain Name: google.hn
 Domain ID: 801220-CoCCA
-WHOIS Server: whois.nic.hn
+WHOIS Server: whois.coccaregistry.org
 Referral URL: 
 Updated Date: 2013-02-19T12:00:12.958Z
 Creation Date: 2003-03-07T05:00:00.000Z
 Registry Expiry Date: 2014-03-07T05:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientDeleteProhibited
-Domain Status: ok
 Domain Status: clientUpdateProhibited
 Domain Status: clientTransferProhibited
+Domain Status: clientDeleteProhibited
+Domain Status: ok
 
 Registrant ID: 490793-CoCCA
 Registrant Name: DNS Admin
@@ -73,19 +73,16 @@ Name Server: ns2.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: http://www.markmonitor.com
 Sponsoring Registrar Address: MarkMonitor  Emerald Tech Center  391 N. Ancestor Place  Boise, ID 83704          
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 (208) 389-5740
+Sponsoring Registrar Phone: +1.2083895740
 Sponsoring Registrar Customer Service Contact: ccops@markmonitor.com
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
 Sponsoring Registrar Admin Contact: Domain Billing
 Sponsoring Registrar Admin Email: ccops@markmonitor.com
-
 
 Terminos de Uso: NIC.HN no se hace responsable por la veracidad de los datos proporcionados, ya que los mismos fueron proporcionados por los Registrantes y Usuarios del Servicio de Registro. La informaci?n desplegada ha sido proporcionada por el Administrador de Nombre de Dominio que corresponda, dicha informacion no es generada por NIC.HN.
 
@@ -95,6 +92,4 @@ La base de datos generada a partir del sistema de delegaci?n, est? protegida por
 
 Si necesita mayor informaci?n sobre los registros aqu? mostrados, favor de comunicarse a contacto@nic.hn
 
-
-
->>> Last update of WHOIS database: 2013-06-30T21:40:11.887Z <<<
+>>> Last update of WHOIS database: 2013-12-18T10:02:23.163Z <<<

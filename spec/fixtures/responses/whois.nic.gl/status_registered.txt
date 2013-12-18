@@ -1,32 +1,43 @@
+Domain Name: google.gl
+Domain ID: Imp669-GL
+WHOIS Server: 
+Referral URL: 
+Updated Date: 2013-12-02T19:11:52.734Z
+Creation Date: 2003-03-11T03:00:00.000Z
+Registry Expiry Date: 2015-01-01T03:00:00.000Z
+Sponsoring Registrar: MarkMonitor
+Sponsoring Registrar IANA ID: 
+Domain Status: clientTransferProhibited
+Domain Status: clientDeleteProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientRenewProhibited
+Domain Status: ok
 
-Domain Information
-Query: google.gl
-Status: Delegated
-Created: 11 Mar 2003
-Modified: 05 Dec 2012
-Expires: 01 Jan 2014
-Name Servers:
-    ns1.google.com
-    ns2.google.com
+Registrant ID: 4738-GL
+Registrant Name: Google Inc.
+Registrant Organization: 
+Registrant Street: 1600 Amphitheatre Parkway
+Registrant City: Mountain View
+Registrant State/Province: CA
+Registrant Postal Code: 94043
+Registrant Country: US
+Registrant Phone: +1.6303300100
+Registrant Phone Ext: 
+Registrant Email: dns-admin@google.com
 
-Registrar Information
-Registrar Name: MarkMonitor
-Registration URL: http://www.markmonitor.com
-Address: 391 N Ancestor Place
-Boise, ID 83704 US
-Country: US
-Customer Service Contact: Matt Serlin
-Customer Service Email: ccops AT markmonitor DOT com
+Name Server: ns1.google.com
+Name Server: ns2.google.com
+
+DNSSEC: unsigned
+
+Additional Section
+
+Sponsoring Registrar URL: http://www.markmonitor.com
+Sponsoring Registrar Address: 391 N Ancestor Place  Boise, ID 83704 US
+Sponsoring Registrar Country: US
+Sponsoring Registrar Customer Service Contact: Matt Serlin
+Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
 
 
 
-
-Registrant:
-Name: Google Inc.
-Address:
-	1600 Amphitheatre Parkway
-	Mountain View, CA 94043
-	US
-Email Address: dns-admin AT google DOT com
-Phone Number: +1 6303300100
-
+>>> Last update of WHOIS database: 2013-12-18T08:44:36.914Z <<<

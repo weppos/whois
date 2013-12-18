@@ -1,5 +1,5 @@
 
-% Whois Server Version 2.17/2009-12-18 - whois.rotld.ro
+% Whois Server Version 3.0 - whois.rotld.ro:43
 
 % Rights restricted by copyright.
 % Specifically, this data MAY ONLY be used for Internet operational
@@ -14,3 +14,4 @@
 % Maintainance : www.rotld.ro
 
 % No entries found for the selected source(s).
+

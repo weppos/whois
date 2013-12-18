@@ -13,7 +13,7 @@ these terms at any time.  By submitting this query, you agree to abide
 by this policy.
 
 Domain name: google.com.fj	Status: Active
-Expires:     28th April 2011
+Expires:     28th April 2014
 
   Registrant:
 	Google Inc.
@@ -21,6 +21,6 @@ Expires:     28th April 2011
 
   Domain servers:
 
-  NS1.GOOGLE.COM                 
-  NS2.GOOGLE.COM                 
+  NS1.GOOGLE.COM                 216.239.32.10
+  NS2.GOOGLE.COM                 216.239.34.10
 

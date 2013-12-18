@@ -31,16 +31,16 @@
 % the domain holder/administrative contact. Information concerning the domain
 % holder/administrative contact can be obtained through use of our web-based
 % whois service available at the DENIC website:
-% http://www.denic.de/en/background/whois-service/webwhois.html
+% http://www.denic.de/en/domains/whois-service/web-whois.html
 % 
 
 Domain: google.de
-Nserver: ns1.google.com.
-Nserver: ns2.google.com.
-Nserver: ns3.google.com.
-Nserver: ns4.google.com.
+Nserver: ns1.google.com
+Nserver: ns2.google.com
+Nserver: ns3.google.com
+Nserver: ns4.google.com
 Status: connect
-Changed: 2010-09-08T22:40:48+02:00
+Changed: 2011-03-30T19:36:27+02:00
 
 [Tech-C]
 Type: PERSON
@@ -53,7 +53,7 @@ CountryCode: US
 Phone: +1.6502530000
 Fax: +1.6506188571
 Email: dns-admin@google.com
-Changed: 2009-10-22T23:01:34+02:00
+Changed: 2011-03-11T00:04:49+01:00
 
 [Zone-C]
 Type: PERSON

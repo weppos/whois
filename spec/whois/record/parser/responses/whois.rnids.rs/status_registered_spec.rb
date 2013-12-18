@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisRnidsRs, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-02-28 04:30:05"))
+      expect(subject.updated_on).to eq(Time.parse("2013-02-07 13:37:16"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-03-10 12:31:19"))
+      expect(subject.expires_on).to eq(Time.parse("2014-03-10 12:31:19"))
     end
   end
   describe "#registrar" do

@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_registered.expected
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-09-18 18:11:31 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-08-07 09:18:18 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-09-08 00:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-09-08 00:00:00 UTC"))
     end
   end
   describe "#registrar" do

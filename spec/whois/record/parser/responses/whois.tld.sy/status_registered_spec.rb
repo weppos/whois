@@ -77,7 +77,7 @@ describe Whois::Record::Parser::WhoisTldSy, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns9.tld.sy")
+      expect(subject.nameservers[0].name).to eq("ns4.tld.sy")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns3.tld.sy")
     end

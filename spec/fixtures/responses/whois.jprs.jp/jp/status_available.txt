@@ -5,8 +5,11 @@
 
 No match!!
 
-With JP WHOIS, you can query JP domain name information.
-Detail: http://jprs.jp/info/jp-whois/
+With JPRS WHOIS, you can query the following domain name information
+sponsored by JPRS.
+    - All of registered JP domain name
+    - gTLD domain name of which sponsoring registrar is JPRS
+Detail: http://jprs.jp/about/dom-search/jprs-whois/ (only in Japanese)
 
 For IP address information, please refer to the following WHOIS servers:
     - JPNIC WHOIS (whois.nic.ad.jp)
@@ -15,3 +18,4 @@ For IP address information, please refer to the following WHOIS servers:
     - RIPE WHOIS (whois.ripe.net)
     - LACNIC WHOIS (whois.lacnic.net)
     - AfriNIC WHOIS (whois.afrinic.net)
+

@@ -39,6 +39,6 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns9.tld.sy"
+  %s[0].name == "ns4.tld.sy"
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns3.tld.sy"

@@ -13,7 +13,15 @@
 
 - CHANGED: Updated whois.markmonitor.com parser to the new response format.
 
-- CHANGED: Updated whois.nic.gs parser to the new response format.
+- CHANGED: Updated Cocca parsers to the new response format (GH-291).
+
+- CHANGED: Updated whois.nic.dz parser to the new response format.
+
+- CHANGED: Updated whois.rotld.ro parser to the new response format.
+
+- CHANGED: Updated whois.pnina.ps parser to the new response format.
+
+- CHANGED: Updated whois.nic.gl parser to the new response format.
 
 
 ## Release 3.4.2
