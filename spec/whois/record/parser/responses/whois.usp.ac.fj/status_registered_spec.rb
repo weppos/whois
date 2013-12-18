@@ -49,7 +49,7 @@ describe Whois::Record::Parser::WhoisUspAcFj, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2011-04-28"))
+      expect(subject.expires_on).to eq(Time.parse("2014-04-28"))
     end
   end
   describe "#nameservers" do
@@ -58,8 +58,12 @@ describe Whois::Record::Parser::WhoisUspAcFj, "status_registered.expected" do
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].ipv4).to eq("216.239.32.10")
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].ipv4).to eq("216.239.34.10")
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end
