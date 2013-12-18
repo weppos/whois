@@ -14,7 +14,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-06-11 16:51:16 UTC}
+  %s %TIME{2013-11-30 18:51:55 UTC}
 
 #expires_on
   %s %CLASS{time}
@@ -23,8 +23,20 @@
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{2}
+  %s %SIZE{4}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns1.dreamhost.com"
+  %s[0].name == "ns1.dnsimple.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns2.dreamhost.com"
+  %s[1].name == "ns2.dnsimple.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
+  %s[1] %CLASS{nameserver}
+  %s[2].name == "ns3.dnsimple.com"
+  %s[2].ipv4 == nil
+  %s[2].ipv6 == nil
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns4.dnsimple.com"
+  %s[3].ipv4 == nil
+  %s[3].ipv6 == nil

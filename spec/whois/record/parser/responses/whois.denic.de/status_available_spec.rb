@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_available.expected" do
   end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("googlededewdedewdewde.de")
+      expect(subject.domain).to eq("u34jedzcq.de")
     end
   end
   describe "#domain_id" do

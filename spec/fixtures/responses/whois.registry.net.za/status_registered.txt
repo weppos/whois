@@ -22,10 +22,10 @@
         Renewal Date:      2014-06-25
 
     Domain Status:
-        pendingTransfer
+        Registered until renewal date
 
     Pending Timer Events:
-        PendingTransferUpdate expires     2013-11-23 14:27
+        None
  
     Name Servers:
         ns1.google.com
@@ -33,7 +33,7 @@
         ns3.google.com
         ns4.google.com
 
-    WHOIS lookup made at 2013-11-20 16:29 UTC
+    WHOIS lookup made at 2013-12-18 10:07 UTC
 
 --
 The use of this Whois facility is subject to the following terms and

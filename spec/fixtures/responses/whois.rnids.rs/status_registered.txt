@@ -18,16 +18,16 @@
 % pogledajte http://www.rnids.rs/whois_sr
 
 Domain name: google.rs.
-Domain status: Active
+Domain status: Locked
 Registration date: 10.03.2008 12:31:19
-Modification date: 28.02.2012 04:30:05
-Expiration date: 10.03.2013 12:31:19
+Modification date: 07.02.2013 13:37:16
+Expiration date: 10.03.2014 12:31:19
 Registrar: NINET Company d.o.o.
 
 
 Owner: Google Inc.
 Address: 1600 Amphitheatre Parkway, Mountain View, United States of America
-ID Number: 
+ID Number: -
 Tax ID: 
 
 

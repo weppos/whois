@@ -15,9 +15,11 @@ DO SUCH RESULTS CONSTITUTE A LEGAL OPINION. Acceptance of the
 results of the Whois constitutes acceptance of these terms, 
 conditions and limitations. Whois data may be requested only for 
 lawful purposes, in particular, to protect legal rights and 
-obligations.  Illegitimate uses of Whois data include, but are not 
+obligations. Illegitimate uses of Whois data include, but are not 
 limited to, unsolicited email, data mining, direct marketing or any 
-other improper purpose.  Any request made for Whois data will be 
+other improper purpose. Any request made for Whois data will be 
 documented by VeriSign, Inc. but will not be used for any commercial purpose whatsoever.
- **** 
-No match.
+ ****
+No match for domain "U34JEDZCQ.NAME".
+>>> Last update of whois database: 2013-12-18T10:00:00Z <<<
+ 
