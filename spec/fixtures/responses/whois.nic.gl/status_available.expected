@@ -2,7 +2,7 @@
   %s == "u34jedzcq.gl"
 
 #domain_id
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 
 #status

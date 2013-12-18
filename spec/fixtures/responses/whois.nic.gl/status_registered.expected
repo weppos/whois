@@ -2,7 +2,7 @@
   %s == "google.gl"
 
 #domain_id
-  %s %ERROR{AttributeNotSupported}
+  %s == "Imp669-GL"
 
 
 #status
@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2003-03-11}
+  %s %TIME{2003-03-11 03:00:00 UTC}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-12-05}
+  %s %TIME{2013-12-02 19:11:52 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-01-01}
+  %s %TIME{2015-01-01 03:00:00 UTC}
 
 
 #registrar
@@ -41,5 +41,9 @@
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.google.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.google.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
