@@ -21,11 +21,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-10-15 08:36:53 UTC}
+  %s %TIME{2013-12-06 18:37:40 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-10-04 23:30:00 UTC}
+  %s %TIME{2014-10-04 23:30:00 UTC}
 
 
 #registrar

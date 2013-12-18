@@ -55,13 +55,13 @@ describe Whois::Record::Parser::WhoisCmcIq, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-10-17 06:21:08 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-09-29 05:19:04 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-10-02 21:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-10-02 21:00:00 UTC"))
     end
   end
   describe "#registrar" do

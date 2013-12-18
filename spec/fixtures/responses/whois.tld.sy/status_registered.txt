@@ -11,7 +11,7 @@ Domain Status: ok
 Registrant ID: 2938-sy
 Registrant Email: domain@tld.sy
 
-Name Server: ns9.tld.sy
+Name Server: ns4.tld.sy
 Name Server: ns3.tld.sy
 
 DNSSEC: unsigned
@@ -19,4 +19,4 @@ DNSSEC: unsigned
 
 
 
->>> Last update of WHOIS database: 2013-04-03T08:55:06.767Z <<<
+>>> Last update of WHOIS database: 2013-12-18T09:55:12.065Z <<<

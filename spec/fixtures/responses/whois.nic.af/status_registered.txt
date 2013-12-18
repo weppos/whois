@@ -2,7 +2,7 @@ Domain Name: google.af
 Domain ID: 345679-CoCCA
 WHOIS Server: whois.coccaregistry.org
 Referral URL: 
-Updated Date: 2013-04-02T09:17:01.651Z
+Updated Date: 2013-12-06T18:35:04.422Z
 Creation Date: 2009-10-05T03:51:17.979Z
 Registry Expiry Date: 2014-05-05T03:51:17.974Z
 Sponsoring Registrar: MarkMonitor
@@ -87,4 +87,4 @@ The data is for information purposes only. AFGNIC does not guarantee its accurac
 
 ADRAS Helpdesk | http://helpdesk.adras.af
 
->>> Last update of WHOIS database: 2013-11-20T16:57:53.514Z <<<
+>>> Last update of WHOIS database: 2013-12-18T10:00:15.981Z <<<

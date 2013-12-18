@@ -23,7 +23,7 @@ module Whois
 
         property_supported :status do
           list = Array.wrap(node("Domain Status")).map(&:downcase)
-          list.include?("no object found") ? :available : super()
+          list.include?("available") ? :available : super()
         end
 
       end

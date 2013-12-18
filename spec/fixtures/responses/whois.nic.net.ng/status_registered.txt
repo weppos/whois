@@ -1,6 +1,6 @@
 Domain Name: nic.net.ng
 Domain ID: 6808-NIRA
-WHOIS Server: NIRA
+WHOIS Server: whois.nic.ng
 Referral URL: 
 Updated Date: 2012-08-24T13:46:14.774Z
 Creation Date: 2009-05-13T14:27:27.009Z
@@ -53,4 +53,4 @@ The data is for information purposes only. NIRA does not guarantee its accuracy.
 (2) Enable high volume, automated, electronic processes that apply to NIRA or     NIRA Accredited Registrars and their computer systems. The  compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
 
->>> Last update of WHOIS database: 2013-05-07T11:38:09.912Z <<<
+>>> Last update of WHOIS database: 2013-12-18T14:13:20.636Z <<<

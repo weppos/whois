@@ -1,18 +1,18 @@
 Domain Name: google.ki
 Domain ID: 18030-CoCCA
-WHOIS Server: whois.coccaregistry.net
+WHOIS Server: whois.coccaregistry.org
 Referral URL: 
-Updated Date: 2012-01-14T11:13:25.012Z
+Updated Date: 2013-12-06T07:34:23.918Z
 Creation Date: 2006-05-15T12:00:00.000Z
-Registry Expiry Date: 2012-11-27T11:00:00.000Z
+Registry Expiry Date: 2014-11-27T11:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientTransferProhibited
-Domain Status: ok
 Domain Status: clientUpdateProhibited
+Domain Status: clientTransferProhibited
 Domain Status: clientDeleteProhibited
+Domain Status: ok
 
-Registrant ID: 681191-CoCCA
+Registrant ID: 955922-CoCCA
 Registrant Name: DNS Admin
 Registrant Organization: Google Inc.
 Registrant Street: 1600 Amphitheatre Parkway
@@ -33,18 +33,15 @@ Name Server: ns4.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
-
 
 Sponsoring Registrar URL: http://www.markmonitor.com
 Sponsoring Registrar Address: MarkMonitor  Emerald Tech Center  391 N. Ancestor Place  Boise, ID 83704          
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 (208) 389-5740
-Sponsoring Registrar Fax: +1 (208) 389-5771
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895771
 Sponsoring Registrar Customer Service Contact: ccops@markmonitor.com
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
-
 
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
@@ -62,5 +59,4 @@ that apply to CoCCA it's members (or CoCCA or member computer systems). The
 compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
 
-
->>> Last update of WHOIS database: 2012-10-18T02:55:21.043Z <<<
+>>> Last update of WHOIS database: 2013-12-18T10:02:23.163Z <<<

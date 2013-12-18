@@ -1,15 +1,15 @@
 Domain Name: google.bi
 Domain ID: 2633NIC-BI
-WHOIS Server: whois1.nic.bi
+WHOIS Server: 
 Referral URL: 
-Updated Date: 2013-05-20T14:10:41.854Z
+Updated Date: 2013-12-05T07:16:04.538Z
 Creation Date: 2002-09-29T22:00:00.000Z
-Registry Expiry Date: 2013-09-29T22:00:00.000Z
-Sponsoring Registrar: Afriregister
+Registry Expiry Date: 2014-09-29T22:00:00.000Z
+Sponsoring Registrar: MarkMonito
 Sponsoring Registrar IANA ID: 
 Domain Status: ok
 
-Registrant ID: 82159NIC-BI
+Registrant ID: 85593NIC-BI
 Registrant Name: DNS Admin
 Registrant Organization: Google Inc.
 Registrant Street: 1600 Amphitheatre Parkway
@@ -21,7 +21,7 @@ Registrant Phone: +1.6506234000
 Registrant Phone Ext: 
 Registrant Email: dns-admin@google.com
 
-Admin ID: 82159NIC-BI
+Admin ID: 85593NIC-BI
 Admin Name: DNS Admin
 Admin Organization: Google Inc.
 Admin Street: 1600 Amphitheatre Parkway
@@ -33,7 +33,7 @@ Admin Phone: +1.6506234000
 Admin Phone Ext: 
 Admin Email: dns-admin@google.com
 
-Billing ID: 82160NIC-BI
+Billing ID: 85594NIC-BI
 Billing Name: MM Domain Administrator
 Billing Organization: MarkMonitor Inc
 Billing Street: 391 N Ancestor Place
@@ -45,7 +45,7 @@ Billing Phone: +1.2083895740
 Billing Phone Ext: 
 Billing Email: ccopsbilling@markmonitor.com
 
-Tech ID: 82159NIC-BI
+Tech ID: 85593NIC-BI
 Tech Name: DNS Admin
 Tech Organization: Google Inc.
 Tech Street: 1600 Amphitheatre Parkway
@@ -64,14 +64,11 @@ Name Server: ns4.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
 
-
-Sponsoring Registrar Country: BI
+Sponsoring Registrar Country: US
 Sponsoring Registrar Admin Contact: 
-Sponsoring Registrar Admin Email: 
-
+Sponsoring Registrar Admin Email:
 
 TERMS OF USE: You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated.  Whois database is provided by NIC.BI as a service to the internet community on behalf of Burundi cctld.)
 
@@ -79,5 +76,4 @@ The data is for information purposes only. NIC.BI does not guarantee its accurac
 
 The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
-
->>> Last update of WHOIS database: 2013-06-30T15:00:06.689Z <<<
+>>> Last update of WHOIS database: 2013-12-18T03:00:07.485Z <<<

@@ -21,7 +21,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-10-26 09:17:55 UTC}
+  %s %TIME{2013-12-06 07:35:49 UTC}
 
 #expires_on
   %s %CLASS{time}

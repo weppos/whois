@@ -48,20 +48,17 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   end
   describe "#created_on" do
     it do
-      expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2006-09-29 22:00:00 UTC"))
+      expect(subject.created_on).to eq(nil)
     end
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-04-17 14:40:48 UTC"))
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do
     it do
-      expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-09-30 22:00:00 UTC"))
+      expect(subject.expires_on).to eq(nil)
     end
   end
   describe "#registrar" do
@@ -76,15 +73,7 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
-      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.google.com")
-      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.google.com")
-      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns3.google.com")
-      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers).to have(0).items
     end
   end
 end

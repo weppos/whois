@@ -1,17 +1,17 @@
 Domain Name: google.na
 Domain ID: 4100-CoCCA
-WHOIS Server: .NA?
+WHOIS Server: 
 Referral URL: 
-Updated Date: 2012-07-19T18:48:27.776Z
+Updated Date: 2013-07-22T17:07:58.776Z
 Creation Date: 2007-03-27T22:00:00.000Z
-Registry Expiry Date: 2013-08-19T23:00:00.000Z
+Registry Expiry Date: 2014-08-19T23:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
+Domain Status: clientRenewProhibited
 Domain Status: clientDeleteProhibited
 Domain Status: ok
-Domain Status: clientRenewProhibited
-Domain Status: clientUpdateProhibited
 Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
 
 Registrant ID: 11969-CoCCA
 Registrant Name: Google Inc
@@ -52,20 +52,17 @@ Name Server: ns1.google.com
 
 DNSSEC: unsigned
 
-
 Additional Section
 
-
 Sponsoring Registrar URL: http://www.markmonitor.com
-Sponsoring Registrar Address: PMB 155  10400 Overland Road  Boise, ID
+Sponsoring Registrar Address: MarkMonitor Inc.  391 N Ancestor Place  Boise, ID 83704
 Sponsoring Registrar Country: US
-Sponsoring Registrar Phone: +1 208 389 5740
-Sponsoring Registrar Fax: +1 208 389 5771
+Sponsoring Registrar Phone: +1.2083895740
+Sponsoring Registrar Fax: +1.2083895771
 Sponsoring Registrar Customer Service Contact: Kevin Pearl
 Sponsoring Registrar Customer Service Email: ccops@markmonitor.com
 Sponsoring Registrar Admin Contact: Kevin Pearl
 Sponsoring Registrar Admin Email: ccops@markmonitor.com
-
 
 TERMS OF USE: You are not authorized to access or query our whois database through the use of electronic processes that are high-volume and/or automated. 
 
@@ -75,6 +72,4 @@ The compilation, repackaging, dissemination or other use of this Data is express
 
 .NA(R), Copyright(C) 1991, 1995, 2008, 2012 Dr Lisse
 
-
-
->>> Last update of WHOIS database: 2012-10-25T09:44:19.640Z <<<
+>>> Last update of WHOIS database: 2013-12-18T10:04:59.934Z <<<

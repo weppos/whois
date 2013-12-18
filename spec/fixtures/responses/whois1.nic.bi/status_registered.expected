@@ -21,17 +21,18 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-05-20 14:10:41 UTC}
+  %s %TIME{2013-12-05 07:16:04 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-09-29 22:00:00 UTC}
+  %s %TIME{2014-09-29 22:00:00 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
   %s.id           == nil
-  %s.name         == "Afriregister"
+  %s.name         == "MarkMonito"
+  %s.organization == nil
   %s.url          == nil
 
 

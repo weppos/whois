@@ -55,20 +55,21 @@ describe Whois::Record::Parser::Whois1NicBi, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-05-20 14:10:41 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-12-05 07:16:04 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-09-29 22:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-09-29 22:00:00 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq(nil)
-      expect(subject.registrar.name).to eq("Afriregister")
+      expect(subject.registrar.name).to eq("MarkMonito")
+      expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)
     end
   end

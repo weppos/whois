@@ -1,5 +1,5 @@
 Domain Name: u34jedzcq.nf
-Domain Status: Available
+Domain Status: No Object Found
 
 TERMS OF USE: You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated.  Whois database is provided by CoCCA as a service to the internet community on behalf of CoCCA members. 
 
@@ -7,4 +7,4 @@ The data is for information purposes only. CoCCA does not guarantee its accuracy
 
 CoCCA Helpdesk | http://helpdesk.coccaregistry.net
 
->>> Last update of WHOIS database: 2013-10-31T13:28:59.600Z <<<
+>>> Last update of WHOIS database: 2013-12-18T14:28:03.586Z <<<
