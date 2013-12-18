@@ -39,7 +39,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /No entries found/)
+          !!(content_for_scanner =~ /^% No entries found/)
         end
 
         property_supported :registered? do
@@ -55,8 +55,8 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(:name => name)
+          content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |name|
+            Record::Nameserver.new(name: name)
           end
         end
 

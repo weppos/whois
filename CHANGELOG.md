@@ -17,6 +17,8 @@
 
 - CHANGED: Updated whois.nic.dz parser to the new response format.
 
+- CHANGED: Updated whois.rotld.ro parser to the new response format.
+
 
 ## Release 3.4.2
 
