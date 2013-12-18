@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simone Carletti"]
-  s.date = "2013-12-10"
+  s.date = "2013-12-18"
   s.description = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, parse and convert responses into easy-to-use Ruby objects."
   s.email = ["weppos@weppos.net"]
   s.executables = ["ruby-whois"]
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.2")
   s.rubyforge_project = "whois"
-  s.rubygems_version = "2.1.10"
+  s.rubygems_version = "2.1.11"
   s.summary = "An intelligent pure Ruby WHOIS client and parser."
 
   if s.respond_to? :specification_version then
