@@ -18,8 +18,8 @@ you agree to abide by this policy.
 Domain ID:D47234-LRCC
 Domain Name:GOOGLE.SC
 Created On:03-Feb-2004 19:19:12 UTC
-Last Updated On:09-Jan-2009 21:53:27 UTC
-Expiration Date:03-Feb-2010 19:19:12 UTC
+Last Updated On:19-Feb-2013 12:00:11 UTC
+Expiration Date:03-Feb-2014 19:19:12 UTC
 Sponsoring Registrar:MarkMonitor, Inc. (R22-LRCC)
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED
@@ -54,19 +54,19 @@ Admin Phone Ext.:
 Admin FAX:+1.20838957
 Admin FAX Ext.:
 Admin Email:ccops@markmonitor.com
-Tech ID:AGRS-129293
-Tech Name:CCOPS
+Tech ID:mmr-33293
+Tech Name:Domain Admin
 Tech Organization:MarkMonitor
-Tech Street1:PMB 155
-Tech Street2:10400 Overland Rd.
+Tech Street1:391 N. Ancestor Place
+Tech Street2:Suite 150
 Tech Street3:
 Tech City:Boise
-Tech State/Province:ID
-Tech Postal Code:83709-1433
+Tech State/Province:CA
+Tech Postal Code:83704
 Tech Country:US
-Tech Phone:+1.20838957
+Tech Phone:+1.2083895740
 Tech Phone Ext.:
-Tech FAX:+1.20838957
+Tech FAX:+1.2083895771
 Tech FAX Ext.:
 Tech Email:ccops@markmonitor.com
 Name Server:NS1.GOOGLE.COM

@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2009-01-09 21:53:27 UTC}
+  %s %TIME{2013-01-19 12:00:11 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2010-02-03 19:19:12 UTC}
+  %s %TIME{2014-02-03 19:19:12 UTC}
 
 
 #registrar
@@ -78,16 +78,16 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  %s[0].id           == "AGRS-129293"
-  %s[0].name         == "CCOPS"
+  %s[0].id           == "mmr-33293"
+  %s[0].name         == "Domain Admin"
   %s[0].organization == "MarkMonitor"
-  %s[0].address      == "PMB 155\n10400 Overland Rd."
+  %s[0].address      == "391 N. Ancestor Place\nSuite 150"
   %s[0].city         == "Boise"
-  %s[0].zip          == "83709-1433"
-  %s[0].state        == "ID"
+  %s[0].zip          == "83704"
+  %s[0].state        == "CA"
   %s[0].country_code == "US"
-  %s[0].phone        == "+1.20838957"
-  %s[0].fax          == "+1.20838957"
+  %s[0].phone        == "+1.2083895740"
+  %s[0].fax          == "+1.2083895771"
   %s[0].email        == "ccops@markmonitor.com"
 
 

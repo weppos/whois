@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisCctldBy, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-11-15"))
+      expect(subject.updated_on).to eq(Time.parse("2013-12-16"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-12-21"))
+      expect(subject.expires_on).to eq(Time.parse("2014-12-21"))
     end
   end
   describe "#registrar" do
