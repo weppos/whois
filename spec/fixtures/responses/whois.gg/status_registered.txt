@@ -37,7 +37,7 @@ Name Servers:
     ns3.google.com
 
 Registrar Information
-Registrar Name: Markmonitor
+Registrar Name: MarkMonitor Inc.
 Registration URL: http://www.markmonitor.com
 
 

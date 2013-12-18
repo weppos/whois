@@ -6,7 +6,7 @@ Domain Information
 Query: google.as
 Status: Active
 Created: 02 Aug 2000 00:00 UTC
-Expires: 02 Aug 2013 00:00 UTC
+Expires: 02 Aug 2014 00:00 UTC
 Name Servers:
     ns1.google.com
     ns2.google.com
@@ -14,7 +14,7 @@ Name Servers:
     ns4.google.com
 
 Registrar Information
-Registrar Name: Markmonitor
+Registrar Name: MarkMonitor Inc.
 
 
 

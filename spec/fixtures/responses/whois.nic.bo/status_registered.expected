@@ -24,7 +24,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-08-22}
+  %s %TIME{2014-08-22}
 
 
 #nameservers

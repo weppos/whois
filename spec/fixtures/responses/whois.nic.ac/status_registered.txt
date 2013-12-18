@@ -8,10 +8,10 @@ NS 2   : ns2.google.com
 NS 3   : ns3.google.com
 NS 4   : ns4.google.com
 
-Owner  : DNS Administrator
-       : Google, Inc.
+Owner  : DNS Admin
+       : Google Inc.
        : 1600 Amphitheatre Parkway
        : Mountain View
        : CA
-       : USA
+       : US
 

@@ -60,14 +60,14 @@ describe Whois::Record::Parser::WhoisNicAs, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-08-02 00:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-08-02 00:00:00 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq(nil)
-      expect(subject.registrar.name).to eq("Markmonitor")
+      expect(subject.registrar.name).to eq("MarkMonitor Inc.")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)
     end

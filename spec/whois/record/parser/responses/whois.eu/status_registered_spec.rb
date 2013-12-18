@@ -83,23 +83,7 @@ describe Whois::Record::Parser::WhoisEu, "status_registered.expected" do
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
-      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
-      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq(nil)
-      expect(subject.technical_contacts[0].name).to eq("DNS Admin")
-      expect(subject.technical_contacts[0].organization).to eq("Google Inc.")
-      expect(subject.technical_contacts[0].address).to eq(nil)
-      expect(subject.technical_contacts[0].city).to eq(nil)
-      expect(subject.technical_contacts[0].zip).to eq(nil)
-      expect(subject.technical_contacts[0].state).to eq(nil)
-      expect(subject.technical_contacts[0].country).to eq(nil)
-      expect(subject.technical_contacts[0].country_code).to eq(nil)
-      expect(subject.technical_contacts[0].phone).to eq("+1.6506234000")
-      expect(subject.technical_contacts[0].fax).to eq("+1.6506188571")
-      expect(subject.technical_contacts[0].email).to eq("dns-admin@google.com")
-      expect(subject.technical_contacts[0].created_on).to eq(nil)
-      expect(subject.technical_contacts[0].updated_on).to eq(nil)
+      expect(subject.technical_contacts).to have(0).items
     end
   end
   describe "#nameservers" do
@@ -107,13 +91,13 @@ describe Whois::Record::Parser::WhoisEu, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].name).to eq("ns4.google.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].name).to eq("ns3.google.com")
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].name).to eq("ns1.google.com")
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[3].name).to eq("ns2.google.com")
     end
   end
   describe "#response_throttled?" do

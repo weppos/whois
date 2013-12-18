@@ -5,10 +5,7 @@
 %  being prohibited its distribution, comercialization or
 %  reproduction, in particular, to use it for advertising or
 %  any similar purpose.
-%  2013-06-30 20:11:01 (BRT -03:00)
-
-% Query rate limit exceeded. Reduced information.
-% Use https://registro.br/cgi-bin/avail/ for domain availability.
+%  2013-12-18 08:01:04 (BRST -02:00)
 
 % No match for domain "u34jedzcq.br"
 
@@ -17,6 +14,6 @@
 % and mail-abuse@cert.br
 %
 % whois.registro.br accepts only direct match queries. Types
-% of queries are: domain (.br), ticket, provider, ID, CIDR
-% block, IP and ASN.
+% of queries are: domain (.br), registrant (tax ID), ticket,
+% provider, contact handle (ID), CIDR block, IP and ASN.
 

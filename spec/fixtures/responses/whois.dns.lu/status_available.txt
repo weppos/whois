@@ -8,7 +8,7 @@
 %
 % By submitting a WHOIS query, you agree to abide by this policy. You acknowledge
 % that the use of the WHOIS database is regulated by the ACCEPTABLE USE POLICY
-% (http://www.dns.lu/en/EN-LUCharteUtil.html), that you are aware of its
+% (http://www.dns.lu/en/support/domainname-availability/whois-gateway/), that you are aware of its
 % content, and that you accept its terms and conditions.
 %
 % You agree especially that you will use this data only for lawful purposes and
@@ -20,7 +20,5 @@
 %
 % All rights reserved.
 %
-% powered by Whois Server 3.1, (c) dns.be
-%
-% WHOIS u34jedzcq
+% WHOIS u34jedzcq.lu
 % No such domain
