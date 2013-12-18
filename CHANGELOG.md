@@ -13,6 +13,8 @@
 
 - CHANGED: Updated whois.markmonitor.com parser to the new response format.
 
+- CHANGED: Updated whois.nic.gs parser to the new response format.
+
 
 ## Release 3.4.2
 

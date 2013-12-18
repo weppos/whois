@@ -1,5 +1,5 @@
 Domain Name: u34jedzcq.gs
-Domain Status: Available
+Domain Status: No Object Found
 
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
@@ -19,4 +19,4 @@ expressly prohibited.
 
 CoCCA Helpdesk | http://helpdesk.cocca.cx
 
->>> Last update of WHOIS database: 2012-10-18T02:31:01.124Z <<<
+>>> Last update of WHOIS database: 2013-12-18T09:46:02.567Z <<<
