@@ -1,0 +1,20 @@
+This is JWhoisServer serving ccTLD dz
+Java Whois Server 0.4.1.0    (c) 2006 - 2012 Klaus Zerwes zero-sys.net
+#########################################################################
+# All data copyright of the organization unit running this server!
+# By querying this server, you agree that you :
+#	-may use this data only for lawful purposes;
+#	-will not re-use data for any kind of support
+#	  for the transmission of unsolicited advertising
+#	  via e-mail, telephone, or facsimile;
+#	-will not reproduce and/or store any part of the data
+#	  without prior permission of the copyright holders;
+#	-are aware of and agree to the fact that all access to the
+#	  server is under constant monitoring and will be logged
+#	  for the purpose of prosecution in case of missuse!
+#########################################################################
+
+NO OBJECT FOUND!
+object:. . . . . . . . . . . . . . . . . . . . . .u34jedzcq.dz
+type:. . . . . . . . . . . . . . . . . . . . . . .templates
+

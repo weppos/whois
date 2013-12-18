@@ -1,0 +1,33 @@
+This is JWhoisServer serving ccTLD dz
+Java Whois Server 0.4.1.0    (c) 2006 - 2012 Klaus Zerwes zero-sys.net
+#########################################################################
+# All data copyright of the organization unit running this server!
+# By querying this server, you agree that you :
+#	-may use this data only for lawful purposes;
+#	-will not re-use data for any kind of support
+#	  for the transmission of unsolicited advertising
+#	  via e-mail, telephone, or facsimile;
+#	-will not reproduce and/or store any part of the data
+#	  without prior permission of the copyright holders;
+#	-are aware of and agree to the fact that all access to the
+#	  server is under constant monitoring and will be logged
+#	  for the purpose of prosecution in case of missuse!
+#########################################################################
+
+Description#. . . . . . . . . . . . . . . . . . . Google Inc
+Nom de domaine#. . . . . . . . . . . . . . . . . .google.dz
+Contact administratif#. . . . . . . . . . . . . . Domain Administrator
+Organisme administratif#. . . . . . . . . . . . . Google INC
+Adresse contact administratif#. . . . . . . . . . 1600 Amphitheatre Parkway, Mountain View, CA 94043 US
+Telephone contact administratif#. . . . . . . . . +16503300100
+Fax contact administratif#. . . . . . . . . . . . +16506188571
+Mail contact administratif#. . . . . . . . . . . .dns-admin@google.com
+Contact technique#. . . . . . . . . . . . . . . . Domain Administrator
+Organisme technique#. . . . . . . . . . . . . . . MARKMONITOR, Inc
+Adresse contact technique#. . . . . . . . . . . . 391 N Ancestor Place Boise, ID 83704 US
+Telephone contact technique#. . . . . . . . . . . +12083895740
+Fax contact technique#. . . . . . . . . . . . . . +12083895771
+Mail contact technique#. . . . . . . . . . . . . .ccops@markmonitor.com
+Registrar#. . . . . . . . . . . . . . . . . . . . cerist
+Date de creation#. . . . . . . . . . . . . . . . .10/01/2007
+
