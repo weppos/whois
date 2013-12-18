@@ -14,7 +14,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-06-01 11:25:51 GMT}
+  %s %TIME{2013-11-27 17:30:59 GMT}
 
 #expires_on
   %s %CLASS{time}
@@ -25,8 +25,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "dns2.gencat.cat"
-  %s[0].ipv4 == "83.247.132.4"
+  %s[0].name == "dns.gencat.net"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "dns.gencat.net"
-  %s[1].ipv4 == nil
+  %s[1].name == "dns2.gencat.cat"
+  %s[1].ipv4 == "83.247.132.4"
+  %s[1].ipv6 == nil

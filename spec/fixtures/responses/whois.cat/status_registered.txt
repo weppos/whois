@@ -21,7 +21,7 @@ Domain Name ACE: gencat.cat
 Domain Language: ca
 Registrar ID: R-2024 (10dencehispahard S.L. (CDmon.com))
 Created On: 2006-02-14 09:12:37 GMT
-Last Updated On: 2012-06-01 11:25:51 GMT
+Last Updated On: 2013-11-27 17:30:59 GMT
 Expiration Date: 2020-02-14 09:12:37 GMT
 Status: ok
 Registrant ID: CD126562321349
@@ -80,8 +80,8 @@ Billing Phone Ext:
 Billing Fax: 
 Billing Fax Ext: 
 Billing Email: dominisgencat@gencat.cat
-Name Server: dns2.gencat.cat 83.247.132.4
-Name Server ACE: dns2.gencat.cat 83.247.132.4
 Name Server: dns.gencat.net
 Name Server ACE: dns.gencat.net
+Name Server: dns2.gencat.cat 83.247.132.4
+Name Server ACE: dns2.gencat.cat 83.247.132.4
 

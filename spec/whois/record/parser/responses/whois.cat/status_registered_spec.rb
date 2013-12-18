@@ -45,7 +45,7 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-06-01 11:25:51 GMT"))
+      expect(subject.updated_on).to eq(Time.parse("2013-11-27 17:30:59 GMT"))
     end
   end
   describe "#expires_on" do
@@ -59,11 +59,13 @@ describe Whois::Record::Parser::WhoisCat, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("dns2.gencat.cat")
-      expect(subject.nameservers[0].ipv4).to eq("83.247.132.4")
+      expect(subject.nameservers[0].name).to eq("dns.gencat.net")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("dns.gencat.net")
-      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].name).to eq("dns2.gencat.cat")
+      expect(subject.nameservers[1].ipv4).to eq("83.247.132.4")
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end
