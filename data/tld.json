@@ -1189,13 +1189,38 @@
     "adapter": "none"
   },
 
+  ".academy": {
+    "host": "whois.donuts.co"
+  },
   ".bike": {
+    "host": "whois.donuts.co"
+  },
+  ".buzz": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".cab": {
     "host": "whois.donuts.co"
   },
   ".camera": {
     "host": "whois.donuts.co"
   },
+  ".camp": {
+    "host": "whois.donuts.co"
+  },
+  ".careers": {
+    "host": "whois.donuts.co"
+  },
+  ".center": {
+    "host": "whois.donuts.co"
+  },
   ".clothing": {
+    "host": "whois.donuts.co"
+  },
+  ".company": {
+    "host": "whois.donuts.co"
+  },
+  ".computer": {
     "host": "whois.donuts.co"
   },
   ".construction": {
@@ -1208,6 +1233,9 @@
     "host": "whois.donuts.co"
   },
   ".directory": {
+    "host": "whois.donuts.co"
+  },
+  ".domains": {
     "host": "whois.donuts.co"
   },
   ".enterprises": {
@@ -1240,13 +1268,37 @@
   ".lighting": {
     "host": "whois.donuts.co"
   },
+  ".limo": {
+    "host": "whois.donuts.co"
+  },
+  ".management": {
+    "host": "whois.donuts.co"
+  },
+  ".menu": {
+    "host": "whois.nic.menu"
+  },
   ".photography": {
+    "host": "whois.donuts.co"
+  },
+  ".photos": {
+    "host": "whois.donuts.co"
+  },
+  ".recipes": {
     "host": "whois.donuts.co"
   },
   ".sexy": {
     "host": "whois.uniregistry.net"
   },
+  ".shoes": {
+    "host": "whois.donuts.co"
+  },
   ".singles": {
+    "host": "whois.donuts.co"
+  },
+  ".systems": {
+    "host": "whois.donuts.co"
+  },
+  ".support": {
     "host": "whois.donuts.co"
   },
   ".tattoo": {
@@ -1262,6 +1314,9 @@
     "host": "whois.donuts.co"
   },
   ".ventures": {
+    "host": "whois.donuts.co"
+  },
+  ".viajes": {
     "host": "whois.donuts.co"
   },
   ".voyage": {
