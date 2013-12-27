@@ -76,7 +76,7 @@ w.lookup("2001:db8::1428:57ab")
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
-```
+```ruby
 w = Whois::Client.new
 w.lookup("google.com")
 w.lookup(".com")
@@ -85,7 +85,7 @@ w.lookup("2001:db8::1428:57ab")
 w.lookup("google.it")
 ```
 
-If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the {Whois} module provides an all-in-one method called {Whois.whois}. This is the simplest way to send a WHOIS request.
+If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the `Whois` module provides an all-in-one method called `Whois.whois`. This is the simplest way to send a WHOIS request.
 
 ```ruby
 Whois.whois("google.com")
