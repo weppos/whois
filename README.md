@@ -52,49 +52,57 @@ Note. This section covers only the essentials for getting started with the Whois
 
 Check out the following examples:
 
-    # Domain WHOIS
-    w = Whois::Client.new
-    w.lookup("google.com")
-    # => #<Whois::Record>
+```ruby
+# Domain WHOIS
+w = Whois::Client.new
+w.lookup("google.com")
+# => #<Whois::Record>
 
-    # TLD WHOIS
-    w = Whois::Client.new
-    w.lookup(".com")
-    # => #<Whois::Record>
+# TLD WHOIS
+w = Whois::Client.new
+w.lookup(".com")
+# => #<Whois::Record>
 
-    # IPv4 WHOIS
-    w = Whois::Client.new
-    w.lookup("74.125.67.100")
-    # => #<Whois::Record>
+# IPv4 WHOIS
+w = Whois::Client.new
+w.lookup("74.125.67.100")
+# => #<Whois::Record>
 
-    # IPv6 WHOIS
-    w = Whois::Client.new
-    w.lookup("2001:db8::1428:57ab")
-    # => #<Whois::Record>
+# IPv6 WHOIS
+w = Whois::Client.new
+w.lookup("2001:db8::1428:57ab")
+# => #<Whois::Record>
+```
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
-    w = Whois::Client.new
-    w.lookup("google.com")
-    w.lookup(".com")
-    w.lookup("74.125.67.100")
-    w.lookup("2001:db8::1428:57ab")
-    w.lookup("google.it")
+```
+w = Whois::Client.new
+w.lookup("google.com")
+w.lookup(".com")
+w.lookup("74.125.67.100")
+w.lookup("2001:db8::1428:57ab")
+w.lookup("google.it")
+```
 
 If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the {Whois} module provides an all-in-one method called {Whois.whois}. This is the simplest way to send a WHOIS request.
 
-    Whois.whois("google.com")
-    # => #<Whois::Record>
+```ruby
+Whois.whois("google.com")
+# => #<Whois::Record>
+```
 
 Did I mention you can even use blocks?
 
-    Whois::Client.new do |w|
-      w.lookup("google.com")
-      w.lookup(".com")
-      w.lookup("74.125.67.100")
-      w.lookup("2001:db8::1428:57ab")
-      w.lookup("google.it")
-    end
+```ruby
+Whois::Client.new do |w|
+  w.lookup("google.com")
+  w.lookup(".com")
+  w.lookup("74.125.67.100")
+  w.lookup("2001:db8::1428:57ab")
+  w.lookup("google.it")
+end
+```
 
 ### Consuming the Record
 
@@ -102,27 +110,29 @@ Any WHOIS query returns a `Whois::Record`. This object looks like a String, but 
 
 `Whois::Record` encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
 
-    r = Whois.whois("google.it")
-    # => #<Whois::Record>
-  
-    r.available?
-    # => false
-    r.registered?
-    # => true
-  
-    r.created_on
-    # => Fri Dec 10 00:00:00 +0100 1999
-  
-    t = r.technical_contact
-    # => #<Whois::Record::Contact>
-    t.id
-    # => "TS7016-ITNIC"
-    t.name
-    # => "Technical Services"
-  
-    r.nameservers.each do |nameserver|
-      puts nameserver
-    end
+```ruby
+r = Whois.whois("google.it")
+# => #<Whois::Record>
+
+r.available?
+# => false
+r.registered?
+# => true
+
+r.created_on
+# => Fri Dec 10 00:00:00 +0100 1999
+
+t = r.technical_contact
+# => #<Whois::Record::Contact>
+t.id
+# => "TS7016-ITNIC"
+t.name
+# => "Technical Services"
+
+r.nameservers.each do |nameserver|
+  puts nameserver
+end
+```
 
 This feature is made possible by the <tt>Whois</tt> record parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
 
@@ -134,12 +144,14 @@ By default, each query run though the client has a timeout value of 5 seconds. I
 
 Off course, you can customize the timeout value setting a different value. If timeout is `nil`, the client will until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know you are doing!
 
-    w = Whois::Client.new(:timeout => 10)
-    w.timeout # => 10
-    w.timeout = 5
-    w.timeout # => 5
-  
-    w.lookup("google.com")
+```ruby
+w = Whois::Client.new(:timeout => 10)
+w.timeout # => 10
+w.timeout = 5
+w.timeout # => 5
+
+w.lookup("google.com")
+```
 
 
 ## Credits
