@@ -1,174 +1,6714 @@
 {
+  "1 6": {
+    "host": "whois.arin.net"
+  },
+  "7": {
+    "host": "whois.ripe.net"
+  },
+  "8 27": {
+    "host": "whois.arin.net"
+  },
+  "28": {
+    "host": "whois.ripe.net"
+  },
+  "29 136": {
+    "host": "whois.arin.net"
+  },
+  "137": {
+    "host": "whois.ripe.net"
+  },
+  "138 172": {
+    "host": "whois.arin.net"
+  },
+  "173": {
+    "host": "whois.apnic.net"
+  },
+  "174 223": {
+    "host": "whois.arin.net"
+  },
+  "224": {
+    "host": "whois.ripe.net"
+  },
+  "225 247": {
+    "host": "whois.arin.net"
+  },
   "248 251": {
     "host": "whois.ripe.net"
   },
-  "306 371": {
-    "host": "whois.nic.mil"
+  "252 260": {
+    "host": "whois.arin.net"
   },
-  "379 508": {
-    "host": "whois.nic.mil"
+  "261": {
+    "host": "whois.ripe.net"
+  },
+  "262 277": {
+    "host": "whois.arin.net"
+  },
+  "278": {
+    "host": "whois.lacnic.net"
+  },
+  "279 285": {
+    "host": "whois.arin.net"
+  },
+  "286": {
+    "host": "whois.ripe.net"
+  },
+  "287": {
+    "host": "whois.arin.net"
+  },
+  "288": {
+    "host": "whois.ripe.net"
+  },
+  "289 293": {
+    "host": "whois.arin.net"
+  },
+  "294": {
+    "host": "whois.ripe.net"
+  },
+  "295 374": {
+    "host": "whois.arin.net"
+  },
+  "375": {
+    "host": "whois.ripe.net"
+  },
+  "376 377": {
+    "host": "whois.arin.net"
+  },
+  "378": {
+    "host": "whois.ripe.net"
+  },
+  "379 512": {
+    "host": "whois.arin.net"
+  },
+  "513": {
+    "host": "whois.ripe.net"
+  },
+  "514 516": {
+    "host": "whois.arin.net"
+  },
+  "517": {
+    "host": "whois.ripe.net"
+  },
+  "518 527": {
+    "host": "whois.arin.net"
+  },
+  "528 529": {
+    "host": "whois.ripe.net"
+  },
+  "530 539": {
+    "host": "whois.arin.net"
+  },
+  "540": {
+    "host": "whois.arin.net"
+  },
+  "541 543": {
+    "host": "whois.arin.net"
+  },
+  "544": {
+    "host": "whois.ripe.net"
+  },
+  "545 552": {
+    "host": "whois.arin.net"
+  },
+  "553": {
+    "host": "whois.ripe.net"
+  },
+  "554 558": {
+    "host": "whois.arin.net"
+  },
+  "559": {
+    "host": "whois.ripe.net"
+  },
+  "560 564": {
+    "host": "whois.arin.net"
+  },
+  "565": {
+    "host": "whois.ripe.net"
+  },
+  "566 579": {
+    "host": "whois.arin.net"
+  },
+  "580": {
+    "host": "whois.arin.net"
+  },
+  "581 589": {
+    "host": "whois.arin.net"
+  },
+  "590": {
+    "host": "whois.ripe.net"
+  },
+  "591 592": {
+    "host": "whois.arin.net"
+  },
+  "593": {
+    "host": "whois.ripe.net"
+  },
+  "594 668": {
+    "host": "whois.arin.net"
+  },
+  "669": {
+    "host": "whois.ripe.net"
+  },
+  "670 675": {
+    "host": "whois.arin.net"
+  },
+  "676": {
+    "host": "whois.lacnic.net"
+  },
+  "677 678": {
+    "host": "whois.arin.net"
+  },
+  "679 680": {
+    "host": "whois.ripe.net"
+  },
+  "681": {
+    "host": "whois.apnic.net"
+  },
+  "682 694": {
+    "host": "whois.arin.net"
+  },
+  "695 697": {
+    "host": "whois.ripe.net"
+  },
+  "698 708": {
+    "host": "whois.arin.net"
+  },
+  "709 710": {
+    "host": "whois.ripe.net"
+  },
+  "711": {
+    "host": "whois.arin.net"
+  },
+  "712": {
+    "host": "whois.ripe.net"
+  },
+  "713 718": {
+    "host": "whois.arin.net"
+  },
+  "719": {
+    "host": "whois.ripe.net"
+  },
+  "720 759": {
+    "host": "whois.arin.net"
+  },
+  "760 761": {
+    "host": "whois.ripe.net"
+  },
+  "762 763": {
+    "host": "whois.arin.net"
+  },
+  "764": {
+    "host": "whois.ripe.net"
+  },
+  "765": {
+    "host": "whois.arin.net"
+  },
+  "766": {
+    "host": "whois.ripe.net"
+  },
+  "767 773": {
+    "host": "whois.arin.net"
+  },
+  "774 783": {
+    "host": "whois.ripe.net"
+  },
+  "784 785": {
+    "host": "whois.arin.net"
+  },
+  "786": {
+    "host": "whois.ripe.net"
+  },
+  "787 788": {
+    "host": "whois.arin.net"
+  },
+  "789 790": {
+    "host": "whois.ripe.net"
+  },
+  "791 1100": {
+    "host": "whois.arin.net"
   },
   "1101 1200": {
     "host": "whois.ripe.net"
   },
+  "1201 1202": {
+    "host": "whois.arin.net"
+  },
+  "1203": {
+    "host": "whois.ripe.net"
+  },
+  "1204": {
+    "host": "whois.arin.net"
+  },
+  "1205": {
+    "host": "whois.ripe.net"
+  },
+  "1206 1212": {
+    "host": "whois.arin.net"
+  },
+  "1213": {
+    "host": "whois.ripe.net"
+  },
+  "1214 1220": {
+    "host": "whois.arin.net"
+  },
+  "1221": {
+    "host": "whois.apnic.net"
+  },
+  "1222 1227": {
+    "host": "whois.arin.net"
+  },
+  "1228 1232": {
+    "host": "whois.afrinic.net"
+  },
+  "1233": {
+    "host": "whois.apnic.net"
+  },
+  "1234 1235": {
+    "host": "whois.ripe.net"
+  },
+  "1236": {
+    "host": "whois.arin.net"
+  },
+  "1237": {
+    "host": "whois.apnic.net"
+  },
+  "1238 1240": {
+    "host": "whois.arin.net"
+  },
+  "1241": {
+    "host": "whois.ripe.net"
+  },
+  "1242 1247": {
+    "host": "whois.arin.net"
+  },
+  "1248": {
+    "host": "whois.ripe.net"
+  },
+  "1249": {
+    "host": "whois.arin.net"
+  },
+  "1250": {
+    "host": "whois.apnic.net"
+  },
+  "1251": {
+    "host": "whois.lacnic.net"
+  },
+  "1252": {
+    "host": "whois.arin.net"
+  },
+  "1253": {
+    "host": "whois.ripe.net"
+  },
+  "1254 1256": {
+    "host": "whois.arin.net"
+  },
+  "1257": {
+    "host": "whois.ripe.net"
+  },
+  "1258 1266": {
+    "host": "whois.arin.net"
+  },
   "1267 1275": {
     "host": "whois.ripe.net"
+  },
+  "1276 1278": {
+    "host": "whois.arin.net"
+  },
+  "1279": {
+    "host": "whois.ripe.net"
+  },
+  "1280 1289": {
+    "host": "whois.arin.net"
+  },
+  "1290": {
+    "host": "whois.ripe.net"
+  },
+  "1291": {
+    "host": "whois.arin.net"
+  },
+  "1292": {
+    "host": "whois.lacnic.net"
+  },
+  "1293 1295": {
+    "host": "whois.arin.net"
+  },
+  "1296": {
+    "host": "whois.lacnic.net"
+  },
+  "1297": {
+    "host": "whois.ripe.net"
+  },
+  "1298": {
+    "host": "whois.arin.net"
+  },
+  "1299 1309": {
+    "host": "whois.ripe.net"
+  },
+  "1310 1317": {
+    "host": "whois.arin.net"
+  },
+  "1318": {
+    "host": "whois.ripe.net"
+  },
+  "1319 1341": {
+    "host": "whois.arin.net"
+  },
+  "1342": {
+    "host": "whois.ripe.net"
+  },
+  "1343 1351": {
+    "host": "whois.arin.net"
+  },
+  "1352 1353": {
+    "host": "whois.ripe.net"
+  },
+  "1354 1546": {
+    "host": "whois.arin.net"
+  },
+  "1547 1547": {
+    "host": "whois.ripe.net"
+  },
+  "1548 1652": {
+    "host": "whois.arin.net"
+  },
+  "1653 1654": {
+    "host": "whois.ripe.net"
+  },
+  "1655 1657": {
+    "host": "whois.arin.net"
+  },
+  "1658": {
+    "host": "whois.arin.net"
+  },
+  "1659": {
+    "host": "whois.apnic.net"
+  },
+  "1660 1662": {
+    "host": "whois.arin.net"
+  },
+  "1663": {
+    "host": "whois.ripe.net"
+  },
+  "1664 1679": {
+    "host": "whois.arin.net"
+  },
+  "1680": {
+    "host": "whois.ripe.net"
+  },
+  "1681 1703": {
+    "host": "whois.arin.net"
+  },
+  "1704": {
+    "host": "whois.apnic.net"
+  },
+  "1705 1706": {
+    "host": "whois.arin.net"
+  },
+  "1707 1726": {
+    "host": "whois.ripe.net"
+  },
+  "1727 1728": {
+    "host": "whois.arin.net"
+  },
+  "1729": {
+    "host": "whois.ripe.net"
+  },
+  "1730 1731": {
+    "host": "whois.arin.net"
+  },
+  "1732": {
+    "host": "whois.ripe.net"
+  },
+  "1733 1737": {
+    "host": "whois.arin.net"
+  },
+  "1738 1739": {
+    "host": "whois.ripe.net"
+  },
+  "1740": {
+    "host": "whois.arin.net"
+  },
+  "1741": {
+    "host": "whois.ripe.net"
+  },
+  "1742 1747": {
+    "host": "whois.arin.net"
+  },
+  "1748": {
+    "host": "whois.ripe.net"
+  },
+  "1749 1751": {
+    "host": "whois.arin.net"
+  },
+  "1752": {
+    "host": "whois.ripe.net"
+  },
+  "1753": {
+    "host": "whois.arin.net"
+  },
+  "1754 1756": {
+    "host": "whois.ripe.net"
+  },
+  "1757 1758": {
+    "host": "whois.arin.net"
+  },
+  "1759": {
+    "host": "whois.ripe.net"
+  },
+  "1760 1763": {
+    "host": "whois.arin.net"
+  },
+  "1764": {
+    "host": "whois.ripe.net"
+  },
+  "1765 1767": {
+    "host": "whois.arin.net"
+  },
+  "1768 1769": {
+    "host": "whois.apnic.net"
+  },
+  "1770 1771": {
+    "host": "whois.ripe.net"
+  },
+  "1772 1773": {
+    "host": "whois.arin.net"
+  },
+  "1774": {
+    "host": "whois.ripe.net"
+  },
+  "1775": {
+    "host": "whois.arin.net"
+  },
+  "1776": {
+    "host": "whois.ripe.net"
+  },
+  "1777 1779": {
+    "host": "whois.arin.net"
+  },
+  "1780": {
+    "host": "whois.ripe.net"
+  },
+  "1781": {
+    "host": "whois.apnic.net"
+  },
+  "1782 1796": {
+    "host": "whois.arin.net"
+  },
+  "1797": {
+    "host": "whois.lacnic.net"
+  },
+  "1798 1830": {
+    "host": "whois.arin.net"
+  },
+  "1831": {
+    "host": "whois.lacnic.net"
+  },
+  "1832": {
+    "host": "whois.arin.net"
+  },
+  "1833": {
+    "host": "whois.ripe.net"
+  },
+  "1834": {
+    "host": "whois.arin.net"
+  },
+  "1835 1837": {
+    "host": "whois.ripe.net"
+  },
+  "1838 1839": {
+    "host": "whois.arin.net"
+  },
+  "1840": {
+    "host": "whois.lacnic.net"
+  },
+  "1841": {
+    "host": "whois.ripe.net"
+  },
+  "1842 1848": {
+    "host": "whois.arin.net"
+  },
+  "1849 1850": {
+    "host": "whois.ripe.net"
+  },
+  "1851": {
+    "host": "whois.apnic.net"
+  },
+  "1852": {
+    "host": "whois.arin.net"
+  },
+  "1853 1854": {
+    "host": "whois.ripe.net"
+  },
+  "1855 1876": {
+    "host": "whois.arin.net"
   },
   "1877 1901": {
     "host": "whois.ripe.net"
   },
-  "2043 2043": {
+  "1902 1903": {
     "host": "whois.ripe.net"
   },
-  "2047 2047": {
+  "1904 1915": {
+    "host": "whois.arin.net"
+  },
+  "1916": {
+    "host": "whois.lacnic.net"
+  },
+  "1917 1920": {
+    "host": "whois.arin.net"
+  },
+  "1921 1923": {
     "host": "whois.ripe.net"
   },
-  "2057 2136": {
+  "1924 1925": {
+    "host": "whois.arin.net"
+  },
+  "1926": {
     "host": "whois.ripe.net"
+  },
+  "1927 1929": {
+    "host": "whois.arin.net"
+  },
+  "1930": {
+    "host": "whois.ripe.net"
+  },
+  "1931 1934": {
+    "host": "whois.arin.net"
+  },
+  "1935 1955": {
+    "host": "whois.ripe.net"
+  },
+  "1956 1959": {
+    "host": "whois.arin.net"
+  },
+  "1960 1962": {
+    "host": "whois.ripe.net"
+  },
+  "1963 1966": {
+    "host": "whois.arin.net"
+  },
+  "1967": {
+    "host": "whois.ripe.net"
+  },
+  "1968 2003": {
+    "host": "whois.arin.net"
+  },
+  "2004": {
+    "host": "whois.ripe.net"
+  },
+  "2005 2011": {
+    "host": "whois.arin.net"
+  },
+  "2012": {
+    "host": "whois.ripe.net"
+  },
+  "2013 2015": {
+    "host": "whois.arin.net"
+  },
+  "2016 2017": {
+    "host": "whois.ripe.net"
+  },
+  "2018": {
+    "host": "whois.afrinic.net"
+  },
+  "2019 2025": {
+    "host": "whois.arin.net"
+  },
+  "2026 2029": {
+    "host": "whois.ripe.net"
+  },
+  "2030 2035": {
+    "host": "whois.arin.net"
+  },
+  "2036": {
+    "host": "whois.ripe.net"
+  },
+  "2037": {
+    "host": "whois.arin.net"
+  },
+  "2038 2040": {
+    "host": "whois.ripe.net"
+  },
+  "2041": {
+    "host": "whois.arin.net"
+  },
+  "2042": {
+    "host": "whois.apnic.net"
+  },
+  "2043": {
+    "host": "whois.ripe.net"
+  },
+  "2044": {
+    "host": "whois.arin.net"
+  },
+  "2045": {
+    "host": "whois.ripe.net"
+  },
+  "2046": {
+    "host": "whois.arin.net"
+  },
+  "2047": {
+    "host": "whois.ripe.net"
+  },
+  "2048": {
+    "host": "whois.arin.net"
+  },
+  "2049": {
+    "host": "whois.ripe.net"
+  },
+  "2050 2056": {
+    "host": "whois.arin.net"
+  },
+  "2057 2106": {
+    "host": "whois.ripe.net"
+  },
+  "2107 2136": {
+    "host": "whois.ripe.net"
+  },
+  "2137 2143": {
+    "host": "whois.arin.net"
+  },
+  "2144": {
+    "host": "whois.apnic.net"
+  },
+  "2145": {
+    "host": "whois.arin.net"
+  },
+  "2146": {
+    "host": "whois.lacnic.net"
+  },
+  "2147 2148": {
+    "host": "whois.ripe.net"
+  },
+  "2149 2173": {
+    "host": "whois.arin.net"
+  },
+  "2174 2273": {
+    "host": "whois.ripe.net"
+  },
+  "2274 2276": {
+    "host": "whois.arin.net"
+  },
+  "2277": {
+    "host": "whois.lacnic.net"
+  },
+  "2278 2377": {
+    "host": "whois.ripe.net"
+  },
+  "2378 2379": {
+    "host": "whois.arin.net"
+  },
+  "2380": {
+    "host": "whois.ripe.net"
+  },
+  "2381 2384": {
+    "host": "whois.arin.net"
+  },
+  "2385": {
+    "host": "whois.apnic.net"
+  },
+  "2386": {
+    "host": "whois.arin.net"
   },
   "2387 2488": {
     "host": "whois.ripe.net"
   },
+  "2489 2493": {
+    "host": "whois.arin.net"
+  },
+  "2494": {
+    "host": "whois.ripe.net"
+  },
+  "2495 2496": {
+    "host": "whois.arin.net"
+  },
   "2497 2528": {
-    "host": "whois.nic.ad.jp"
+    "host": "whois.apnic.net"
+  },
+  "2529 2530": {
+    "host": "whois.ripe.net"
+  },
+  "2531 2536": {
+    "host": "whois.arin.net"
+  },
+  "2537": {
+    "host": "whois.apnic.net"
+  },
+  "2538 2540": {
+    "host": "whois.arin.net"
+  },
+  "2541": {
+    "host": "whois.ripe.net"
+  },
+  "2542 2545": {
+    "host": "whois.arin.net"
+  },
+  "2546 2547": {
+    "host": "whois.ripe.net"
+  },
+  "2548": {
+    "host": "whois.arin.net"
+  },
+  "2549": {
+    "host": "whois.lacnic.net"
+  },
+  "2550 2553": {
+    "host": "whois.arin.net"
+  },
+  "2554": {
+    "host": "whois.apnic.net"
+  },
+  "2555 2560": {
+    "host": "whois.arin.net"
+  },
+  "2561": {
+    "host": "whois.afrinic.net"
+  },
+  "2562": {
+    "host": "whois.arin.net"
+  },
+  "2563": {
+    "host": "whois.apnic.net"
+  },
+  "2564 2568": {
+    "host": "whois.arin.net"
+  },
+  "2569 2570": {
+    "host": "whois.apnic.net"
+  },
+  "2571 2577": {
+    "host": "whois.arin.net"
+  },
+  "2578": {
+    "host": "whois.ripe.net"
+  },
+  "2579 2584": {
+    "host": "whois.arin.net"
   },
   "2585 2614": {
     "host": "whois.ripe.net"
   },
+  "2615 2637": {
+    "host": "whois.arin.net"
+  },
+  "2638": {
+    "host": "whois.lacnic.net"
+  },
+  "2639 2642": {
+    "host": "whois.arin.net"
+  },
+  "2643": {
+    "host": "whois.ripe.net"
+  },
+  "2644 2646": {
+    "host": "whois.arin.net"
+  },
+  "2647": {
+    "host": "whois.ripe.net"
+  },
+  "2648 2682": {
+    "host": "whois.arin.net"
+  },
+  "2683": {
+    "host": "whois.ripe.net"
+  },
+  "2684 2696": {
+    "host": "whois.arin.net"
+  },
+  "2697": {
+    "host": "whois.apnic.net"
+  },
+  "2698 2705": {
+    "host": "whois.arin.net"
+  },
+  "2706": {
+    "host": "whois.apnic.net"
+  },
+  "2707": {
+    "host": "whois.arin.net"
+  },
+  "2708": {
+    "host": "whois.lacnic.net"
+  },
+  "2709 2712": {
+    "host": "whois.arin.net"
+  },
+  "2713": {
+    "host": "whois.apnic.net"
+  },
+  "2714": {
+    "host": "whois.arin.net"
+  },
+  "2715 2716": {
+    "host": "whois.lacnic.net"
+  },
+  "2717 2738": {
+    "host": "whois.arin.net"
+  },
+  "2739": {
+    "host": "whois.lacnic.net"
+  },
+  "2740 2755": {
+    "host": "whois.arin.net"
+  },
+  "2756": {
+    "host": "whois.apnic.net"
+  },
+  "2757 2763": {
+    "host": "whois.arin.net"
+  },
+  "2764": {
+    "host": "whois.apnic.net"
+  },
+  "2765": {
+    "host": "whois.arin.net"
+  },
+  "2766": {
+    "host": "whois.ripe.net"
+  },
+  "2767 2771": {
+    "host": "whois.arin.net"
+  },
+  "2772": {
+    "host": "whois.apnic.net"
+  },
   "2773 2822": {
     "host": "whois.ripe.net"
+  },
+  "2823": {
+    "host": "whois.apnic.net"
+  },
+  "2824 2829": {
+    "host": "whois.arin.net"
   },
   "2830 2879": {
     "host": "whois.ripe.net"
   },
-  "3154 3353": {
+  "2880 2894": {
+    "host": "whois.arin.net"
+  },
+  "2895": {
     "host": "whois.ripe.net"
   },
-  "4608 4864": {
+  "2896 2903": {
+    "host": "whois.arin.net"
+  },
+  "2904": {
+    "host": "whois.lacnic.net"
+  },
+  "2905": {
+    "host": "whois.afrinic.net"
+  },
+  "2906": {
+    "host": "whois.arin.net"
+  },
+  "2907": {
     "host": "whois.apnic.net"
   },
-  "5120 5376": {
-    "host": "whois.nic.mil"
+  "2908 2914": {
+    "host": "whois.arin.net"
   },
-  "5377 5631": {
+  "2915": {
+    "host": "whois.apnic.net"
+  },
+  "2916": {
+    "host": "whois.arin.net"
+  },
+  "2917": {
     "host": "whois.ripe.net"
   },
-  "5800 6055": {
-    "host": "whois.nic.mil"
+  "2918 2920": {
+    "host": "whois.arin.net"
   },
-  "6656 6911": {
+  "2921": {
     "host": "whois.ripe.net"
+  },
+  "2922 2924": {
+    "host": "whois.arin.net"
+  },
+  "2925 2926": {
+    "host": "whois.apnic.net"
+  },
+  "2927 3057": {
+    "host": "whois.arin.net"
+  },
+  "3058": {
+    "host": "whois.ripe.net"
+  },
+  "3059 3066": {
+    "host": "whois.arin.net"
+  },
+  "3067 3068": {
+    "host": "whois.afrinic.net"
+  },
+  "3069 3082": {
+    "host": "whois.arin.net"
+  },
+  "3083 3109": {
+    "host": "whois.ripe.net"
+  },
+  "3110 3131": {
+    "host": "whois.arin.net"
+  },
+  "3132": {
+    "host": "whois.lacnic.net"
+  },
+  "3133 3140": {
+    "host": "whois.arin.net"
+  },
+  "3141": {
+    "host": "whois.lacnic.net"
+  },
+  "3142 3150": {
+    "host": "whois.arin.net"
+  },
+  "3151": {
+    "host": "whois.ripe.net"
+  },
+  "3152 3153": {
+    "host": "whois.arin.net"
+  },
+  "3154 3207": {
+    "host": "whois.ripe.net"
+  },
+  "3208": {
+    "host": "whois.afrinic.net"
+  },
+  "3209 3353": {
+    "host": "whois.ripe.net"
+  },
+  "3354 3356": {
+    "host": "whois.arin.net"
+  },
+  "3357": {
+    "host": "whois.apnic.net"
+  },
+  "3358 3362": {
+    "host": "whois.arin.net"
+  },
+  "3363": {
+    "host": "whois.apnic.net"
+  },
+  "3364 3381": {
+    "host": "whois.arin.net"
+  },
+  "3382": {
+    "host": "whois.apnic.net"
+  },
+  "3383 3390": {
+    "host": "whois.arin.net"
+  },
+  "3391": {
+    "host": "whois.apnic.net"
+  },
+  "3392 3394": {
+    "host": "whois.arin.net"
+  },
+  "3395": {
+    "host": "whois.apnic.net"
+  },
+  "3396 3411": {
+    "host": "whois.arin.net"
+  },
+  "3412 3415": {
+    "host": "whois.ripe.net"
+  },
+  "3416 3448": {
+    "host": "whois.arin.net"
+  },
+  "3449": {
+    "host": "whois.lacnic.net"
+  },
+  "3450": {
+    "host": "whois.arin.net"
+  },
+  "3451 3453": {
+    "host": "whois.arin.net"
+  },
+  "3454": {
+    "host": "whois.lacnic.net"
+  },
+  "3455 3459": {
+    "host": "whois.arin.net"
+  },
+  "3460": {
+    "host": "whois.apnic.net"
+  },
+  "3461": {
+    "host": "whois.arin.net"
+  },
+  "3462": {
+    "host": "whois.apnic.net"
+  },
+  "3463 3483": {
+    "host": "whois.arin.net"
+  },
+  "3484": {
+    "host": "whois.lacnic.net"
+  },
+  "3485 3486": {
+    "host": "whois.arin.net"
+  },
+  "3487": {
+    "host": "whois.lacnic.net"
+  },
+  "3488": {
+    "host": "whois.apnic.net"
+  },
+  "3489 3495": {
+    "host": "whois.arin.net"
+  },
+  "3496": {
+    "host": "whois.lacnic.net"
+  },
+  "3497 3509": {
+    "host": "whois.arin.net"
+  },
+  "3510": {
+    "host": "whois.apnic.net"
+  },
+  "3511 3547": {
+    "host": "whois.arin.net"
+  },
+  "3548": {
+    "host": "whois.lacnic.net"
+  },
+  "3549": {
+    "host": "whois.arin.net"
+  },
+  "3550": {
+    "host": "whois.apnic.net"
+  },
+  "3551": {
+    "host": "whois.lacnic.net"
+  },
+  "3552 3555": {
+    "host": "whois.arin.net"
+  },
+  "3556": {
+    "host": "whois.lacnic.net"
+  },
+  "3557": {
+    "host": "whois.arin.net"
+  },
+  "3558 3559": {
+    "host": "whois.apnic.net"
+  },
+  "3560 3582": {
+    "host": "whois.arin.net"
+  },
+  "3583": {
+    "host": "whois.apnic.net"
+  },
+  "3584 3595": {
+    "host": "whois.arin.net"
+  },
+  "3596 3597": {
+    "host": "whois.lacnic.net"
+  },
+  "3598 3602": {
+    "host": "whois.arin.net"
+  },
+  "3603": {
+    "host": "whois.lacnic.net"
+  },
+  "3604": {
+    "host": "whois.arin.net"
+  },
+  "3605": {
+    "host": "whois.apnic.net"
+  },
+  "3606 3607": {
+    "host": "whois.arin.net"
+  },
+  "3608": {
+    "host": "whois.apnic.net"
+  },
+  "3609 3623": {
+    "host": "whois.arin.net"
+  },
+  "3624": {
+    "host": "whois.ripe.net"
+  },
+  "3625 3630": {
+    "host": "whois.arin.net"
+  },
+  "3631 3632": {
+    "host": "whois.lacnic.net"
+  },
+  "3633 3635": {
+    "host": "whois.arin.net"
+  },
+  "3636": {
+    "host": "whois.lacnic.net"
+  },
+  "3637 3639": {
+    "host": "whois.arin.net"
+  },
+  "3640": {
+    "host": "whois.lacnic.net"
+  },
+  "3641 3660": {
+    "host": "whois.arin.net"
+  },
+  "3661 3662": {
+    "host": "whois.apnic.net"
+  },
+  "3663 3688": {
+    "host": "whois.arin.net"
+  },
+  "3689 3693": {
+    "host": "whois.apnic.net"
+  },
+  "3694 3710": {
+    "host": "whois.arin.net"
+  },
+  "3711": {
+    "host": "whois.apnic.net"
+  },
+  "3712 3716": {
+    "host": "whois.arin.net"
+  },
+  "3717": {
+    "host": "whois.apnic.net"
+  },
+  "3718 3740": {
+    "host": "whois.arin.net"
+  },
+  "3741": {
+    "host": "whois.afrinic.net"
+  },
+  "3742 3746": {
+    "host": "whois.arin.net"
+  },
+  "3747 3748": {
+    "host": "whois.apnic.net"
+  },
+  "3749 3756": {
+    "host": "whois.arin.net"
+  },
+  "3757 3758": {
+    "host": "whois.apnic.net"
+  },
+  "3759 3772": {
+    "host": "whois.arin.net"
+  },
+  "3773": {
+    "host": "whois.apnic.net"
+  },
+  "3774": {
+    "host": "whois.arin.net"
+  },
+  "3775": {
+    "host": "whois.apnic.net"
+  },
+  "3776 3783": {
+    "host": "whois.arin.net"
+  },
+  "3784": {
+    "host": "whois.apnic.net"
+  },
+  "3785": {
+    "host": "whois.arin.net"
+  },
+  "3786 3787": {
+    "host": "whois.apnic.net"
+  },
+  "3788 3789": {
+    "host": "whois.arin.net"
+  },
+  "3790": {
+    "host": "whois.lacnic.net"
+  },
+  "3791 3812": {
+    "host": "whois.arin.net"
+  },
+  "3813": {
+    "host": "whois.apnic.net"
+  },
+  "3814 3815": {
+    "host": "whois.arin.net"
+  },
+  "3816": {
+    "host": "whois.lacnic.net"
+  },
+  "3817 3824": {
+    "host": "whois.arin.net"
+  },
+  "3825": {
+    "host": "whois.apnic.net"
+  },
+  "3826 3835": {
+    "host": "whois.arin.net"
+  },
+  "3836": {
+    "host": "whois.apnic.net"
+  },
+  "3837 3838": {
+    "host": "whois.arin.net"
+  },
+  "3839 3840": {
+    "host": "whois.apnic.net"
+  },
+  "3841 3842": {
+    "host": "whois.arin.net"
+  },
+  "3843": {
+    "host": "whois.ripe.net"
+  },
+  "3844 3904": {
+    "host": "whois.arin.net"
+  },
+  "3905": {
+    "host": "whois.lacnic.net"
+  },
+  "3906 3916": {
+    "host": "whois.arin.net"
+  },
+  "3917 3918": {
+    "host": "whois.ripe.net"
+  },
+  "3919 3928": {
+    "host": "whois.arin.net"
+  },
+  "3929": {
+    "host": "whois.apnic.net"
+  },
+  "3930 3967": {
+    "host": "whois.arin.net"
+  },
+  "3968": {
+    "host": "whois.lacnic.net"
+  },
+  "3969": {
+    "host": "whois.apnic.net"
+  },
+  "3970 3975": {
+    "host": "whois.arin.net"
+  },
+  "3976": {
+    "host": "whois.apnic.net"
+  },
+  "3977 4006": {
+    "host": "whois.arin.net"
+  },
+  "4007": {
+    "host": "whois.apnic.net"
+  },
+  "4008 4039": {
+    "host": "whois.arin.net"
+  },
+  "4040": {
+    "host": "whois.apnic.net"
+  },
+  "4041 4048": {
+    "host": "whois.arin.net"
+  },
+  "4049": {
+    "host": "whois.apnic.net"
+  },
+  "4050 4057": {
+    "host": "whois.arin.net"
+  },
+  "4058": {
+    "host": "whois.apnic.net"
+  },
+  "4059": {
+    "host": "whois.arin.net"
+  },
+  "4060": {
+    "host": "whois.apnic.net"
+  },
+  "4061 4133": {
+    "host": "whois.arin.net"
+  },
+  "4134": {
+    "host": "whois.apnic.net"
+  },
+  "4135 4140": {
+    "host": "whois.arin.net"
+  },
+  "4141": {
+    "host": "whois.lacnic.net"
+  },
+  "4142": {
+    "host": "whois.apnic.net"
+  },
+  "4143 4147": {
+    "host": "whois.arin.net"
+  },
+  "4148": {
+    "host": "whois.ripe.net"
+  },
+  "4149 4157": {
+    "host": "whois.arin.net"
+  },
+  "4158": {
+    "host": "whois.apnic.net"
+  },
+  "4159 4173": {
+    "host": "whois.arin.net"
+  },
+  "4174 4175": {
+    "host": "whois.apnic.net"
+  },
+  "4176 4177": {
+    "host": "whois.arin.net"
+  },
+  "4178": {
+    "host": "whois.afrinic.net"
+  },
+  "4179": {
+    "host": "whois.arin.net"
+  },
+  "4180 4196": {
+    "host": "whois.arin.net"
+  },
+  "4197": {
+    "host": "whois.apnic.net"
+  },
+  "4198 4201": {
+    "host": "whois.arin.net"
+  },
+  "4202": {
+    "host": "whois.apnic.net"
+  },
+  "4203 4208": {
+    "host": "whois.arin.net"
+  },
+  "4209": {
+    "host": "whois.lacnic.net"
+  },
+  "4210 4229": {
+    "host": "whois.arin.net"
+  },
+  "4230": {
+    "host": "whois.lacnic.net"
+  },
+  "4231 4241": {
+    "host": "whois.arin.net"
+  },
+  "4242": {
+    "host": "whois.lacnic.net"
+  },
+  "4243": {
+    "host": "whois.arin.net"
+  },
+  "4244": {
+    "host": "whois.lacnic.net"
+  },
+  "4245 4250": {
+    "host": "whois.arin.net"
+  },
+  "4251": {
+    "host": "whois.apnic.net"
+  },
+  "4252 4269": {
+    "host": "whois.arin.net"
+  },
+  "4270": {
+    "host": "whois.lacnic.net"
+  },
+  "4271 4273": {
+    "host": "whois.arin.net"
+  },
+  "4274": {
+    "host": "whois.apnic.net"
+  },
+  "4275 4351": {
+    "host": "whois.arin.net"
+  },
+  "4352": {
+    "host": "whois.apnic.net"
+  },
+  "4353 4380": {
+    "host": "whois.arin.net"
+  },
+  "4381 4382": {
+    "host": "whois.apnic.net"
+  },
+  "4383 4386": {
+    "host": "whois.arin.net"
+  },
+  "4387": {
+    "host": "whois.lacnic.net"
+  },
+  "4388 4404": {
+    "host": "whois.arin.net"
+  },
+  "4405 4430": {
+    "host": "whois.ripe.net"
+  },
+  "4431": {
+    "host": "whois.apnic.net"
+  },
+  "4432": {
+    "host": "whois.arin.net"
+  },
+  "4433 4434": {
+    "host": "whois.apnic.net"
+  },
+  "4435 4456": {
+    "host": "whois.arin.net"
+  },
+  "4457 4458": {
+    "host": "whois.ripe.net"
+  },
+  "4459 4492": {
+    "host": "whois.arin.net"
+  },
+  "4493": {
+    "host": "whois.lacnic.net"
+  },
+  "4494 4514": {
+    "host": "whois.arin.net"
+  },
+  "4515": {
+    "host": "whois.apnic.net"
+  },
+  "4516 4523": {
+    "host": "whois.arin.net"
+  },
+  "4524": {
+    "host": "whois.ripe.net"
+  },
+  "4525 4527": {
+    "host": "whois.arin.net"
+  },
+  "4528": {
+    "host": "whois.apnic.net"
+  },
+  "4529 4534": {
+    "host": "whois.arin.net"
+  },
+  "4535": {
+    "host": "whois.lacnic.net"
+  },
+  "4536 4537": {
+    "host": "whois.arin.net"
+  },
+  "4538": {
+    "host": "whois.apnic.net"
+  },
+  "4539 4570": {
+    "host": "whois.arin.net"
+  },
+  "4571": {
+    "host": "whois.afrinic.net"
+  },
+  "4572 4587": {
+    "host": "whois.arin.net"
+  },
+  "4588 4589": {
+    "host": "whois.ripe.net"
+  },
+  "4590 4593": {
+    "host": "whois.arin.net"
+  },
+  "4594": {
+    "host": "whois.apnic.net"
+  },
+  "4595 4604": {
+    "host": "whois.arin.net"
+  },
+  "4605": {
+    "host": "whois.apnic.net"
+  },
+  "4606 4607": {
+    "host": "whois.arin.net"
+  },
+  "4608 4865": {
+    "host": "whois.apnic.net"
+  },
+  "4866 4913": {
+    "host": "whois.arin.net"
+  },
+  "4914": {
+    "host": "whois.lacnic.net"
+  },
+  "4915 4925": {
+    "host": "whois.arin.net"
+  },
+  "4926": {
+    "host": "whois.lacnic.net"
+  },
+  "4927 4943": {
+    "host": "whois.arin.net"
+  },
+  "4944": {
+    "host": "whois.lacnic.net"
+  },
+  "4945 4960": {
+    "host": "whois.arin.net"
+  },
+  "4961": {
+    "host": "whois.apnic.net"
+  },
+  "4962 4963": {
+    "host": "whois.arin.net"
+  },
+  "4964": {
+    "host": "whois.lacnic.net"
+  },
+  "4965 4966": {
+    "host": "whois.arin.net"
+  },
+  "4967": {
+    "host": "whois.lacnic.net"
+  },
+  "4968 4973": {
+    "host": "whois.arin.net"
+  },
+  "4974": {
+    "host": "whois.ripe.net"
+  },
+  "4975 4994": {
+    "host": "whois.arin.net"
+  },
+  "4995": {
+    "host": "whois.lacnic.net"
+  },
+  "4996 5004": {
+    "host": "whois.arin.net"
+  },
+  "5005": {
+    "host": "whois.lacnic.net"
+  },
+  "5006 5016": {
+    "host": "whois.arin.net"
+  },
+  "5017 5018": {
+    "host": "whois.apnic.net"
+  },
+  "5019 5050": {
+    "host": "whois.arin.net"
+  },
+  "5051": {
+    "host": "whois.apnic.net"
+  },
+  "5052 5084": {
+    "host": "whois.arin.net"
+  },
+  "5085": {
+    "host": "whois.apnic.net"
+  },
+  "5086": {
+    "host": "whois.arin.net"
+  },
+  "5087": {
+    "host": "whois.apnic.net"
+  },
+  "5088": {
+    "host": "whois.arin.net"
+  },
+  "5089": {
+    "host": "whois.ripe.net"
+  },
+  "5090 5376": {
+    "host": "whois.arin.net"
+  },
+  "5377 5535": {
+    "host": "whois.ripe.net"
+  },
+  "5536": {
+    "host": "whois.afrinic.net"
+  },
+  "5537 5631": {
+    "host": "whois.ripe.net"
+  },
+  "5632": {
+    "host": "whois.arin.net"
+  },
+  "5633": {
+    "host": "whois.lacnic.net"
+  },
+  "5634 5638": {
+    "host": "whois.arin.net"
+  },
+  "5639": {
+    "host": "whois.lacnic.net"
+  },
+  "5640 5647": {
+    "host": "whois.arin.net"
+  },
+  "5648": {
+    "host": "whois.lacnic.net"
+  },
+  "5649 5691": {
+    "host": "whois.arin.net"
+  },
+  "5692": {
+    "host": "whois.lacnic.net"
+  },
+  "5693 5707": {
+    "host": "whois.arin.net"
+  },
+  "5708": {
+    "host": "whois.lacnic.net"
+  },
+  "5709": {
+    "host": "whois.apnic.net"
+  },
+  "5710 5712": {
+    "host": "whois.arin.net"
+  },
+  "5713": {
+    "host": "whois.afrinic.net"
+  },
+  "5714 5721": {
+    "host": "whois.arin.net"
+  },
+  "5722": {
+    "host": "whois.lacnic.net"
+  },
+  "5723 5733": {
+    "host": "whois.arin.net"
+  },
+  "5734": {
+    "host": "whois.afrinic.net"
+  },
+  "5735 5744": {
+    "host": "whois.arin.net"
+  },
+  "5745": {
+    "host": "whois.lacnic.net"
+  },
+  "5746 5771": {
+    "host": "whois.arin.net"
+  },
+  "5772": {
+    "host": "whois.lacnic.net"
+  },
+  "5773 6056": {
+    "host": "whois.arin.net"
+  },
+  "6057": {
+    "host": "whois.lacnic.net"
+  },
+  "6058 6062": {
+    "host": "whois.arin.net"
+  },
+  "6063 6065": {
+    "host": "whois.lacnic.net"
+  },
+  "6066": {
+    "host": "whois.arin.net"
+  },
+  "6067": {
+    "host": "whois.ripe.net"
+  },
+  "6068": {
+    "host": "whois.apnic.net"
+  },
+  "6069 6082": {
+    "host": "whois.arin.net"
+  },
+  "6083": {
+    "host": "whois.afrinic.net"
+  },
+  "6084": {
+    "host": "whois.lacnic.net"
+  },
+  "6085": {
+    "host": "whois.ripe.net"
+  },
+  "6086 6088": {
+    "host": "whois.arin.net"
+  },
+  "6089": {
+    "host": "whois.afrinic.net"
+  },
+  "6090 6120": {
+    "host": "whois.arin.net"
+  },
+  "6121": {
+    "host": "whois.lacnic.net"
+  },
+  "6122 6124": {
+    "host": "whois.arin.net"
+  },
+  "6125": {
+    "host": "whois.lacnic.net"
+  },
+  "6126": {
+    "host": "whois.arin.net"
+  },
+  "6127": {
+    "host": "whois.afrinic.net"
+  },
+  "6128 6132": {
+    "host": "whois.arin.net"
+  },
+  "6133": {
+    "host": "whois.lacnic.net"
+  },
+  "6134": {
+    "host": "whois.arin.net"
+  },
+  "6135": {
+    "host": "whois.lacnic.net"
+  },
+  "6136 6146": {
+    "host": "whois.arin.net"
+  },
+  "6147 6148": {
+    "host": "whois.lacnic.net"
+  },
+  "6149": {
+    "host": "whois.afrinic.net"
+  },
+  "6150 6162": {
+    "host": "whois.arin.net"
+  },
+  "6163": {
+    "host": "whois.apnic.net"
+  },
+  "6164 6167": {
+    "host": "whois.arin.net"
+  },
+  "6168": {
+    "host": "whois.ripe.net"
+  },
+  "6169 6179": {
+    "host": "whois.arin.net"
+  },
+  "6180": {
+    "host": "whois.afrinic.net"
+  },
+  "6181 6186": {
+    "host": "whois.arin.net"
+  },
+  "6187": {
+    "host": "whois.afrinic.net"
+  },
+  "6188 6192": {
+    "host": "whois.arin.net"
+  },
+  "6193": {
+    "host": "whois.lacnic.net"
+  },
+  "6194 6239": {
+    "host": "whois.arin.net"
+  },
+  "6240": {
+    "host": "whois.lacnic.net"
+  },
+  "6241 6261": {
+    "host": "whois.arin.net"
+  },
+  "6262": {
+    "host": "whois.apnic.net"
+  },
+  "6263 6305": {
+    "host": "whois.arin.net"
+  },
+  "6306": {
+    "host": "whois.lacnic.net"
+  },
+  "6307 6319": {
+    "host": "whois.arin.net"
+  },
+  "6320": {
+    "host": "whois.ripe.net"
+  },
+  "6321 6331": {
+    "host": "whois.arin.net"
+  },
+  "6332": {
+    "host": "whois.lacnic.net"
+  },
+  "6333 6341": {
+    "host": "whois.arin.net"
+  },
+  "6342": {
+    "host": "whois.lacnic.net"
+  },
+  "6343 6350": {
+    "host": "whois.arin.net"
+  },
+  "6351": {
+    "host": "whois.afrinic.net"
+  },
+  "6352 6399": {
+    "host": "whois.arin.net"
+  },
+  "6400": {
+    "host": "whois.lacnic.net"
+  },
+  "6401 6411": {
+    "host": "whois.arin.net"
+  },
+  "6412": {
+    "host": "whois.ripe.net"
+  },
+  "6413 6428": {
+    "host": "whois.arin.net"
+  },
+  "6429": {
+    "host": "whois.lacnic.net"
+  },
+  "6430 6457": {
+    "host": "whois.arin.net"
+  },
+  "6458": {
+    "host": "whois.lacnic.net"
+  },
+  "6459 6470": {
+    "host": "whois.arin.net"
+  },
+  "6471": {
+    "host": "whois.lacnic.net"
+  },
+  "6472 6486": {
+    "host": "whois.arin.net"
+  },
+  "6487": {
+    "host": "whois.lacnic.net"
+  },
+  "6488 6494": {
+    "host": "whois.arin.net"
+  },
+  "6495": {
+    "host": "whois.lacnic.net"
+  },
+  "6496 6502": {
+    "host": "whois.arin.net"
+  },
+  "6503": {
+    "host": "whois.lacnic.net"
+  },
+  "6504": {
+    "host": "whois.arin.net"
+  },
+  "6505": {
+    "host": "whois.lacnic.net"
+  },
+  "6506 6528": {
+    "host": "whois.arin.net"
+  },
+  "6529": {
+    "host": "whois.afrinic.net"
+  },
+  "6530 6534": {
+    "host": "whois.arin.net"
+  },
+  "6535": {
+    "host": "whois.lacnic.net"
+  },
+  "6536 6542": {
+    "host": "whois.arin.net"
+  },
+  "6543": {
+    "host": "whois.lacnic.net"
+  },
+  "6544": {
+    "host": "whois.arin.net"
+  },
+  "6545": {
+    "host": "whois.lacnic.net"
+  },
+  "6546 6559": {
+    "host": "whois.arin.net"
+  },
+  "6560": {
+    "host": "whois.afrinic.net"
+  },
+  "6561 6567": {
+    "host": "whois.arin.net"
+  },
+  "6568": {
+    "host": "whois.lacnic.net"
+  },
+  "6569 6589": {
+    "host": "whois.arin.net"
+  },
+  "6590": {
+    "host": "whois.lacnic.net"
+  },
+  "6591 6618": {
+    "host": "whois.arin.net"
+  },
+  "6619": {
+    "host": "whois.apnic.net"
+  },
+  "6620 6647": {
+    "host": "whois.arin.net"
+  },
+  "6648": {
+    "host": "whois.apnic.net"
+  },
+  "6649 6655": {
+    "host": "whois.arin.net"
+  },
+  "6656 6712": {
+    "host": "whois.ripe.net"
+  },
+  "6713": {
+    "host": "whois.afrinic.net"
+  },
+  "6714 6878": {
+    "host": "whois.ripe.net"
+  },
+  "6879": {
+    "host": "whois.afrinic.net"
+  },
+  "6880 6911": {
+    "host": "whois.ripe.net"
+  },
+  "6912 6926": {
+    "host": "whois.arin.net"
+  },
+  "6927": {
+    "host": "whois.lacnic.net"
+  },
+  "6928 6944": {
+    "host": "whois.arin.net"
+  },
+  "6945": {
+    "host": "whois.lacnic.net"
+  },
+  "6946 6956": {
+    "host": "whois.arin.net"
+  },
+  "6957": {
+    "host": "whois.lacnic.net"
+  },
+  "6958 6967": {
+    "host": "whois.arin.net"
+  },
+  "6968": {
+    "host": "whois.afrinic.net"
+  },
+  "6969 7001": {
+    "host": "whois.arin.net"
+  },
+  "7002": {
+    "host": "whois.lacnic.net"
+  },
+  "7003": {
+    "host": "whois.arin.net"
+  },
+  "7004 7005": {
+    "host": "whois.lacnic.net"
+  },
+  "7006 7019": {
+    "host": "whois.arin.net"
+  },
+  "7020": {
+    "host": "whois.afrinic.net"
+  },
+  "7021 7037": {
+    "host": "whois.arin.net"
+  },
+  "7038": {
+    "host": "whois.lacnic.net"
+  },
+  "7039 7047": {
+    "host": "whois.arin.net"
+  },
+  "7048 7049": {
+    "host": "whois.lacnic.net"
+  },
+  "7050 7055": {
+    "host": "whois.arin.net"
+  },
+  "7056": {
+    "host": "whois.lacnic.net"
+  },
+  "7057 7062": {
+    "host": "whois.arin.net"
+  },
+  "7063": {
+    "host": "whois.lacnic.net"
+  },
+  "7064 7079": {
+    "host": "whois.arin.net"
+  },
+  "7080": {
+    "host": "whois.lacnic.net"
+  },
+  "7081 7086": {
+    "host": "whois.arin.net"
+  },
+  "7087": {
+    "host": "whois.lacnic.net"
+  },
+  "7088 7102": {
+    "host": "whois.arin.net"
+  },
+  "7103": {
+    "host": "whois.lacnic.net"
+  },
+  "7104 7119": {
+    "host": "whois.arin.net"
+  },
+  "7120": {
+    "host": "whois.lacnic.net"
+  },
+  "7121 7124": {
+    "host": "whois.arin.net"
+  },
+  "7125": {
+    "host": "whois.lacnic.net"
+  },
+  "7126 7130": {
+    "host": "whois.arin.net"
+  },
+  "7131": {
+    "host": "whois.apnic.net"
+  },
+  "7132 7136": {
+    "host": "whois.arin.net"
+  },
+  "7137": {
+    "host": "whois.lacnic.net"
+  },
+  "7138": {
+    "host": "whois.arin.net"
+  },
+  "7139 7148": {
+    "host": "whois.arin.net"
+  },
+  "7149": {
+    "host": "whois.lacnic.net"
+  },
+  "7150 7153": {
+    "host": "whois.arin.net"
+  },
+  "7154": {
+    "host": "whois.afrinic.net"
+  },
+  "7155 7156": {
+    "host": "whois.arin.net"
+  },
+  "7157": {
+    "host": "whois.lacnic.net"
+  },
+  "7158 7161": {
+    "host": "whois.arin.net"
+  },
+  "7162": {
+    "host": "whois.lacnic.net"
+  },
+  "7163 7166": {
+    "host": "whois.arin.net"
+  },
+  "7167": {
+    "host": "whois.lacnic.net"
+  },
+  "7168 7172": {
+    "host": "whois.arin.net"
+  },
+  "7173": {
+    "host": "whois.lacnic.net"
+  },
+  "7174": {
+    "host": "whois.arin.net"
+  },
+  "7175": {
+    "host": "whois.apnic.net"
+  },
+  "7176 7183": {
+    "host": "whois.arin.net"
+  },
+  "7184": {
+    "host": "whois.lacnic.net"
+  },
+  "7185 7194": {
+    "host": "whois.arin.net"
+  },
+  "7195": {
+    "host": "whois.lacnic.net"
+  },
+  "7196 7198": {
+    "host": "whois.arin.net"
+  },
+  "7199": {
+    "host": "whois.lacnic.net"
+  },
+  "7200 7230": {
+    "host": "whois.arin.net"
+  },
+  "7231": {
+    "host": "whois.afrinic.net"
+  },
+  "7232 7235": {
+    "host": "whois.arin.net"
+  },
+  "7236": {
+    "host": "whois.lacnic.net"
+  },
+  "7237": {
+    "host": "whois.arin.net"
+  },
+  "7238 7297": {
+    "host": "whois.arin.net"
+  },
+  "7298": {
+    "host": "whois.lacnic.net"
+  },
+  "7299 7302": {
+    "host": "whois.arin.net"
+  },
+  "7303": {
+    "host": "whois.lacnic.net"
+  },
+  "7304 7312": {
+    "host": "whois.arin.net"
+  },
+  "7313": {
+    "host": "whois.lacnic.net"
+  },
+  "7314": {
+    "host": "whois.arin.net"
+  },
+  "7315": {
+    "host": "whois.lacnic.net"
+  },
+  "7316 7324": {
+    "host": "whois.arin.net"
+  },
+  "7325": {
+    "host": "whois.lacnic.net"
+  },
+  "7326 7339": {
+    "host": "whois.arin.net"
+  },
+  "7340": {
+    "host": "whois.lacnic.net"
+  },
+  "7341 7364": {
+    "host": "whois.arin.net"
+  },
+  "7365": {
+    "host": "whois.lacnic.net"
+  },
+  "7366 7389": {
+    "host": "whois.arin.net"
+  },
+  "7390": {
+    "host": "whois.afrinic.net"
+  },
+  "7391 7398": {
+    "host": "whois.arin.net"
+  },
+  "7399": {
+    "host": "whois.lacnic.net"
+  },
+  "7400 7407": {
+    "host": "whois.arin.net"
+  },
+  "7408": {
+    "host": "whois.lacnic.net"
+  },
+  "7409 7413": {
+    "host": "whois.arin.net"
+  },
+  "7414": {
+    "host": "whois.lacnic.net"
+  },
+  "7415 7416": {
+    "host": "whois.arin.net"
+  },
+  "7417 7418": {
+    "host": "whois.lacnic.net"
+  },
+  "7419": {
+    "host": "whois.arin.net"
+  },
+  "7420": {
+    "host": "whois.afrinic.net"
+  },
+  "7421 7427": {
+    "host": "whois.arin.net"
+  },
+  "7428": {
+    "host": "whois.lacnic.net"
+  },
+  "7429 7436": {
+    "host": "whois.arin.net"
+  },
+  "7437 7438": {
+    "host": "whois.lacnic.net"
+  },
+  "7439 7459": {
+    "host": "whois.arin.net"
+  },
+  "7460": {
+    "host": "whois.afrinic.net"
+  },
+  "7461 7464": {
+    "host": "whois.arin.net"
+  },
+  "7465": {
+    "host": "whois.lacnic.net"
+  },
+  "7466": {
+    "host": "whois.arin.net"
   },
   "7467 7722": {
     "host": "whois.apnic.net"
   },
-  "8192 9215": {
-    "host": "whois.ripe.net"
+  "7723 7726": {
+    "host": "whois.arin.net"
   },
-  "9591 9622": {
-    "host": "whois.nic.ad.jp"
+  "7727": {
+    "host": "whois.lacnic.net"
   },
-  "9628 9647": {
-    "host": "whois.nic.or.kr"
+  "7728 7737": {
+    "host": "whois.arin.net"
   },
-  "9683 9712": {
-    "host": "whois.nic.or.kr"
+  "7738": {
+    "host": "whois.lacnic.net"
   },
-  "9753 9784": {
-    "host": "whois.nic.or.kr"
+  "7739 7802": {
+    "host": "whois.arin.net"
   },
-  "9840 9871": {
-    "host": "whois.nic.or.kr"
+  "7803": {
+    "host": "whois.lacnic.net"
   },
-  "9943 9982": {
-    "host": "whois.nic.or.kr"
+  "7804 7854": {
+    "host": "whois.arin.net"
   },
-  "9990 10021": {
-    "host": "whois.nic.ad.jp"
-  },
-  "9216 10067": {
+  "7855": {
     "host": "whois.apnic.net"
   },
-  "10034 10073": {
-    "host": "whois.nic.or.kr"
+  "7856 7863": {
+    "host": "whois.arin.net"
   },
-  "10154 10198": {
-    "host": "whois.nic.or.kr"
+  "7864": {
+    "host": "whois.lacnic.net"
   },
-  "10074 10239": {
+  "7865 7889": {
+    "host": "whois.arin.net"
+  },
+  "7890": {
+    "host": "whois.lacnic.net"
+  },
+  "7891 7900": {
+    "host": "whois.arin.net"
+  },
+  "7901": {
     "host": "whois.apnic.net"
   },
-  "12288 13311": {
+  "7902 7905": {
+    "host": "whois.arin.net"
+  },
+  "7906": {
+    "host": "whois.lacnic.net"
+  },
+  "7907": {
+    "host": "whois.arin.net"
+  },
+  "7908": {
+    "host": "whois.lacnic.net"
+  },
+  "7909": {
+    "host": "whois.arin.net"
+  },
+  "7910": {
+    "host": "whois.lacnic.net"
+  },
+  "7911 7926": {
+    "host": "whois.arin.net"
+  },
+  "7927": {
+    "host": "whois.lacnic.net"
+  },
+  "7928 7933": {
+    "host": "whois.arin.net"
+  },
+  "7934": {
+    "host": "whois.lacnic.net"
+  },
+  "7935 7952": {
+    "host": "whois.arin.net"
+  },
+  "7953": {
+    "host": "whois.lacnic.net"
+  },
+  "7954 7964": {
+    "host": "whois.arin.net"
+  },
+  "7965": {
+    "host": "whois.lacnic.net"
+  },
+  "7966 7970": {
+    "host": "whois.arin.net"
+  },
+  "7971 7972": {
+    "host": "whois.afrinic.net"
+  },
+  "7973": {
+    "host": "whois.arin.net"
+  },
+  "7974": {
+    "host": "whois.lacnic.net"
+  },
+  "7975 7979": {
+    "host": "whois.arin.net"
+  },
+  "7980": {
+    "host": "whois.lacnic.net"
+  },
+  "7981 7983": {
+    "host": "whois.arin.net"
+  },
+  "7984": {
+    "host": "whois.lacnic.net"
+  },
+  "7985 7992": {
+    "host": "whois.arin.net"
+  },
+  "7993 7995": {
+    "host": "whois.lacnic.net"
+  },
+  "7996": {
+    "host": "whois.arin.net"
+  },
+  "7997": {
+    "host": "whois.lacnic.net"
+  },
+  "7998 8006": {
+    "host": "whois.arin.net"
+  },
+  "8007": {
+    "host": "whois.lacnic.net"
+  },
+  "8008 8023": {
+    "host": "whois.arin.net"
+  },
+  "8024": {
+    "host": "whois.lacnic.net"
+  },
+  "8025": {
+    "host": "whois.arin.net"
+  },
+  "8026": {
+    "host": "whois.lacnic.net"
+  },
+  "8027 8047": {
+    "host": "whois.arin.net"
+  },
+  "8048": {
+    "host": "whois.lacnic.net"
+  },
+  "8049 8052": {
+    "host": "whois.arin.net"
+  },
+  "8053 8056": {
+    "host": "whois.lacnic.net"
+  },
+  "8057 8064": {
+    "host": "whois.arin.net"
+  },
+  "8065 8066": {
+    "host": "whois.lacnic.net"
+  },
+  "8067 8092": {
+    "host": "whois.arin.net"
+  },
+  "8093": {
     "host": "whois.ripe.net"
   },
-  "15360 16383": {
+  "8094": {
+    "host": "whois.afrinic.net"
+  },
+  "8095": {
+    "host": "whois.arin.net"
+  },
+  "8096": {
+    "host": "whois.lacnic.net"
+  },
+  "8097 8139": {
+    "host": "whois.arin.net"
+  },
+  "8140 8141": {
+    "host": "whois.lacnic.net"
+  },
+  "8142 8150": {
+    "host": "whois.arin.net"
+  },
+  "8151": {
+    "host": "whois.lacnic.net"
+  },
+  "8152 8162": {
+    "host": "whois.arin.net"
+  },
+  "8163": {
+    "host": "whois.lacnic.net"
+  },
+  "8164 8166": {
+    "host": "whois.arin.net"
+  },
+  "8167": {
+    "host": "whois.lacnic.net"
+  },
+  "8168 8177": {
+    "host": "whois.arin.net"
+  },
+  "8178": {
+    "host": "whois.lacnic.net"
+  },
+  "8179 8191": {
+    "host": "whois.arin.net"
+  },
+  "8192 8523": {
     "host": "whois.ripe.net"
   },
-  "17503 17534": {
-    "host": "whois.nic.ad.jp"
+  "8524": {
+    "host": "whois.afrinic.net"
   },
-  "17567 17616": {
-    "host": "whois.nic.or.kr"
+  "8525 8769": {
+    "host": "whois.ripe.net"
   },
-  "17673 17704": {
-    "host": "whois.nic.ad.jp"
+  "8770": {
+    "host": "whois.afrinic.net"
   },
-  "17832 17880": {
-    "host": "whois.nic.or.kr"
+  "8771 9128": {
+    "host": "whois.ripe.net"
+  },
+  "9129": {
+    "host": "whois.afrinic.net"
+  },
+  "9130 9215": {
+    "host": "whois.ripe.net"
+  },
+  "9216 10239": {
+    "host": "whois.apnic.net"
+  },
+  "10240 10246": {
+    "host": "whois.arin.net"
+  },
+  "10247": {
+    "host": "whois.afrinic.net"
+  },
+  "10248 10261": {
+    "host": "whois.arin.net"
+  },
+  "10262": {
+    "host": "whois.afrinic.net"
+  },
+  "10263 10268": {
+    "host": "whois.arin.net"
+  },
+  "10269": {
+    "host": "whois.lacnic.net"
+  },
+  "10270 10276": {
+    "host": "whois.arin.net"
+  },
+  "10277": {
+    "host": "whois.lacnic.net"
+  },
+  "10278 10284": {
+    "host": "whois.arin.net"
+  },
+  "10285": {
+    "host": "whois.lacnic.net"
+  },
+  "10286 10292": {
+    "host": "whois.arin.net"
+  },
+  "10293": {
+    "host": "whois.lacnic.net"
+  },
+  "10294 10298": {
+    "host": "whois.arin.net"
+  },
+  "10299": {
+    "host": "whois.lacnic.net"
+  },
+  "10300": {
+    "host": "whois.arin.net"
+  },
+  "10301": {
+    "host": "whois.lacnic.net"
+  },
+  "10302 10317": {
+    "host": "whois.arin.net"
+  },
+  "10318": {
+    "host": "whois.lacnic.net"
+  },
+  "10319 10330": {
+    "host": "whois.arin.net"
+  },
+  "10331": {
+    "host": "whois.afrinic.net"
+  },
+  "10332 10361": {
+    "host": "whois.arin.net"
+  },
+  "10362": {
+    "host": "whois.lacnic.net"
+  },
+  "10363 10390": {
+    "host": "whois.arin.net"
+  },
+  "10391": {
+    "host": "whois.lacnic.net"
+  },
+  "10392": {
+    "host": "whois.arin.net"
+  },
+  "10393": {
+    "host": "whois.afrinic.net"
+  },
+  "10394 10411": {
+    "host": "whois.arin.net"
+  },
+  "10412": {
+    "host": "whois.lacnic.net"
+  },
+  "10413 10416": {
+    "host": "whois.arin.net"
+  },
+  "10417": {
+    "host": "whois.lacnic.net"
+  },
+  "10418 10419": {
+    "host": "whois.arin.net"
+  },
+  "10420": {
+    "host": "whois.lacnic.net"
+  },
+  "10421 10428": {
+    "host": "whois.arin.net"
+  },
+  "10429": {
+    "host": "whois.lacnic.net"
+  },
+  "10430 10435": {
+    "host": "whois.arin.net"
+  },
+  "10436": {
+    "host": "whois.lacnic.net"
+  },
+  "10437 10451": {
+    "host": "whois.arin.net"
+  },
+  "10452": {
+    "host": "whois.lacnic.net"
+  },
+  "10453": {
+    "host": "whois.arin.net"
+  },
+  "10454": {
+    "host": "whois.lacnic.net"
+  },
+  "10455 10462": {
+    "host": "whois.arin.net"
+  },
+  "10463": {
+    "host": "whois.lacnic.net"
+  },
+  "10464 10473": {
+    "host": "whois.arin.net"
+  },
+  "10474": {
+    "host": "whois.afrinic.net"
+  },
+  "10475": {
+    "host": "whois.arin.net"
+  },
+  "10476": {
+    "host": "whois.lacnic.net"
+  },
+  "10477 10478": {
+    "host": "whois.arin.net"
+  },
+  "10479": {
+    "host": "whois.lacnic.net"
+  },
+  "10480": {
+    "host": "whois.arin.net"
+  },
+  "10481": {
+    "host": "whois.lacnic.net"
+  },
+  "10482 10494": {
+    "host": "whois.arin.net"
+  },
+  "10495": {
+    "host": "whois.lacnic.net"
+  },
+  "10496 10501": {
+    "host": "whois.arin.net"
+  },
+  "10502": {
+    "host": "whois.lacnic.net"
+  },
+  "10503 10504": {
+    "host": "whois.arin.net"
+  },
+  "10505": {
+    "host": "whois.afrinic.net"
+  },
+  "10506 10530": {
+    "host": "whois.arin.net"
+  },
+  "10531": {
+    "host": "whois.lacnic.net"
+  },
+  "10532 10539": {
+    "host": "whois.arin.net"
+  },
+  "10540": {
+    "host": "whois.afrinic.net"
+  },
+  "10541 10559": {
+    "host": "whois.arin.net"
+  },
+  "10560": {
+    "host": "whois.lacnic.net"
+  },
+  "10561 10568": {
+    "host": "whois.arin.net"
+  },
+  "10569": {
+    "host": "whois.lacnic.net"
+  },
+  "10570 10574": {
+    "host": "whois.arin.net"
+  },
+  "10575": {
+    "host": "whois.afrinic.net"
+  },
+  "10576 10585": {
+    "host": "whois.arin.net"
+  },
+  "10586": {
+    "host": "whois.lacnic.net"
+  },
+  "10587 10599": {
+    "host": "whois.arin.net"
+  },
+  "10600": {
+    "host": "whois.lacnic.net"
+  },
+  "10601 10604": {
+    "host": "whois.arin.net"
+  },
+  "10605 10606": {
+    "host": "whois.lacnic.net"
+  },
+  "10607 10616": {
+    "host": "whois.arin.net"
+  },
+  "10617": {
+    "host": "whois.lacnic.net"
+  },
+  "10618 10619": {
+    "host": "whois.arin.net"
+  },
+  "10620": {
+    "host": "whois.lacnic.net"
+  },
+  "10621 10623": {
+    "host": "whois.arin.net"
+  },
+  "10624": {
+    "host": "whois.lacnic.net"
+  },
+  "10625 10629": {
+    "host": "whois.arin.net"
+  },
+  "10630": {
+    "host": "whois.lacnic.net"
+  },
+  "10631 10639": {
+    "host": "whois.arin.net"
+  },
+  "10640": {
+    "host": "whois.lacnic.net"
+  },
+  "10641 10648": {
+    "host": "whois.arin.net"
+  },
+  "10649": {
+    "host": "whois.lacnic.net"
+  },
+  "10650 10669": {
+    "host": "whois.arin.net"
+  },
+  "10670 10671": {
+    "host": "whois.lacnic.net"
+  },
+  "10672 10687": {
+    "host": "whois.arin.net"
+  },
+  "10688": {
+    "host": "whois.lacnic.net"
+  },
+  "10689 10690": {
+    "host": "whois.arin.net"
+  },
+  "10691": {
+    "host": "whois.lacnic.net"
+  },
+  "10692 10696": {
+    "host": "whois.arin.net"
+  },
+  "10697": {
+    "host": "whois.lacnic.net"
+  },
+  "10698 10703": {
+    "host": "whois.arin.net"
+  },
+  "10704": {
+    "host": "whois.lacnic.net"
+  },
+  "10705": {
+    "host": "whois.arin.net"
+  },
+  "10706": {
+    "host": "whois.lacnic.net"
+  },
+  "10707 10714": {
+    "host": "whois.arin.net"
+  },
+  "10715": {
+    "host": "whois.lacnic.net"
+  },
+  "10716 10732": {
+    "host": "whois.arin.net"
+  },
+  "10733": {
+    "host": "whois.lacnic.net"
+  },
+  "10734 10756": {
+    "host": "whois.arin.net"
+  },
+  "10757": {
+    "host": "whois.lacnic.net"
+  },
+  "10758 10777": {
+    "host": "whois.arin.net"
+  },
+  "10778": {
+    "host": "whois.lacnic.net"
+  },
+  "10779 10784": {
+    "host": "whois.arin.net"
+  },
+  "10785": {
+    "host": "whois.lacnic.net"
+  },
+  "10786 10794": {
+    "host": "whois.arin.net"
+  },
+  "10795": {
+    "host": "whois.lacnic.net"
+  },
+  "10796 10797": {
+    "host": "whois.arin.net"
+  },
+  "10798": {
+    "host": "whois.afrinic.net"
+  },
+  "10799 10802": {
+    "host": "whois.arin.net"
+  },
+  "10803": {
+    "host": "whois.afrinic.net"
+  },
+  "10804 10806": {
+    "host": "whois.arin.net"
+  },
+  "10807": {
+    "host": "whois.apnic.net"
+  },
+  "10808 10823": {
+    "host": "whois.arin.net"
+  },
+  "10824": {
+    "host": "whois.lacnic.net"
+  },
+  "10825 10833": {
+    "host": "whois.arin.net"
+  },
+  "10834": {
+    "host": "whois.lacnic.net"
+  },
+  "10835 10840": {
+    "host": "whois.arin.net"
+  },
+  "10841": {
+    "host": "whois.lacnic.net"
+  },
+  "10842 10846": {
+    "host": "whois.arin.net"
+  },
+  "10847": {
+    "host": "whois.lacnic.net"
+  },
+  "10848 10874": {
+    "host": "whois.arin.net"
+  },
+  "10875": {
+    "host": "whois.lacnic.net"
+  },
+  "10876 10880": {
+    "host": "whois.arin.net"
+  },
+  "10881": {
+    "host": "whois.lacnic.net"
+  },
+  "10882 10894": {
+    "host": "whois.arin.net"
+  },
+  "10895": {
+    "host": "whois.lacnic.net"
+  },
+  "10896": {
+    "host": "whois.arin.net"
+  },
+  "10897": {
+    "host": "whois.lacnic.net"
+  },
+  "10898": {
+    "host": "whois.afrinic.net"
+  },
+  "10899 10905": {
+    "host": "whois.arin.net"
+  },
+  "10906": {
+    "host": "whois.lacnic.net"
+  },
+  "10907 10921": {
+    "host": "whois.arin.net"
+  },
+  "10922": {
+    "host": "whois.arin.net"
+  },
+  "10923 10937": {
+    "host": "whois.arin.net"
+  },
+  "10938": {
+    "host": "whois.lacnic.net"
+  },
+  "10939 10953": {
+    "host": "whois.arin.net"
+  },
+  "10954": {
+    "host": "whois.lacnic.net"
+  },
+  "10955 10963": {
+    "host": "whois.arin.net"
+  },
+  "10964": {
+    "host": "whois.lacnic.net"
+  },
+  "10965 10982": {
+    "host": "whois.arin.net"
+  },
+  "10983": {
+    "host": "whois.lacnic.net"
+  },
+  "10984 10985": {
+    "host": "whois.arin.net"
+  },
+  "10986": {
+    "host": "whois.lacnic.net"
+  },
+  "10987 10991": {
+    "host": "whois.arin.net"
+  },
+  "10992": {
+    "host": "whois.lacnic.net"
+  },
+  "10993 11007": {
+    "host": "whois.arin.net"
+  },
+  "11008": {
+    "host": "whois.lacnic.net"
+  },
+  "11009 11013": {
+    "host": "whois.arin.net"
+  },
+  "11014": {
+    "host": "whois.lacnic.net"
+  },
+  "11015 11052": {
+    "host": "whois.arin.net"
+  },
+  "11053": {
+    "host": "whois.lacnic.net"
+  },
+  "11054 11057": {
+    "host": "whois.arin.net"
+  },
+  "11058": {
+    "host": "whois.lacnic.net"
+  },
+  "11059 11062": {
+    "host": "whois.arin.net"
+  },
+  "11063": {
+    "host": "whois.lacnic.net"
+  },
+  "11064 11080": {
+    "host": "whois.arin.net"
+  },
+  "11081": {
+    "host": "whois.lacnic.net"
+  },
+  "11082": {
+    "host": "whois.arin.net"
+  },
+  "11083": {
+    "host": "whois.lacnic.net"
+  },
+  "11084 11086": {
+    "host": "whois.arin.net"
+  },
+  "11087": {
+    "host": "whois.lacnic.net"
+  },
+  "11088 11096": {
+    "host": "whois.arin.net"
+  },
+  "11097": {
+    "host": "whois.lacnic.net"
+  },
+  "11098 11124": {
+    "host": "whois.arin.net"
+  },
+  "11125": {
+    "host": "whois.afrinic.net"
+  },
+  "11126 11135": {
+    "host": "whois.arin.net"
+  },
+  "11136": {
+    "host": "whois.lacnic.net"
+  },
+  "11137 11156": {
+    "host": "whois.arin.net"
+  },
+  "11157": {
+    "host": "whois.afrinic.net"
+  },
+  "11158 11171": {
+    "host": "whois.arin.net"
+  },
+  "11172": {
+    "host": "whois.lacnic.net"
+  },
+  "11173 11192": {
+    "host": "whois.arin.net"
+  },
+  "11193": {
+    "host": "whois.lacnic.net"
+  },
+  "11194 11200": {
+    "host": "whois.arin.net"
+  },
+  "11201": {
+    "host": "whois.afrinic.net"
+  },
+  "11202 11236": {
+    "host": "whois.arin.net"
+  },
+  "11237": {
+    "host": "whois.lacnic.net"
+  },
+  "11238 11241": {
+    "host": "whois.arin.net"
+  },
+  "11242": {
+    "host": "whois.lacnic.net"
+  },
+  "11243 11253": {
+    "host": "whois.arin.net"
+  },
+  "11254": {
+    "host": "whois.lacnic.net"
+  },
+  "11255": {
+    "host": "whois.arin.net"
+  },
+  "11256": {
+    "host": "whois.lacnic.net"
+  },
+  "11257 11258": {
+    "host": "whois.arin.net"
+  },
+  "11259": {
+    "host": "whois.afrinic.net"
+  },
+  "11260 11264": {
+    "host": "whois.arin.net"
+  },
+  "11265": {
+    "host": "whois.afrinic.net"
+  },
+  "11266 11270": {
+    "host": "whois.arin.net"
+  },
+  "11271": {
+    "host": "whois.lacnic.net"
+  },
+  "11272 11283": {
+    "host": "whois.arin.net"
+  },
+  "11284": {
+    "host": "whois.lacnic.net"
+  },
+  "11285 11294": {
+    "host": "whois.arin.net"
+  },
+  "11295": {
+    "host": "whois.lacnic.net"
+  },
+  "11296 11310": {
+    "host": "whois.arin.net"
+  },
+  "11311": {
+    "host": "whois.lacnic.net"
+  },
+  "11312 11314": {
+    "host": "whois.arin.net"
+  },
+  "11315": {
+    "host": "whois.lacnic.net"
+  },
+  "11316 11334": {
+    "host": "whois.arin.net"
+  },
+  "11335": {
+    "host": "whois.lacnic.net"
+  },
+  "11336 11337": {
+    "host": "whois.arin.net"
+  },
+  "11338": {
+    "host": "whois.lacnic.net"
+  },
+  "11339": {
+    "host": "whois.arin.net"
+  },
+  "11340": {
+    "host": "whois.lacnic.net"
+  },
+  "11341": {
+    "host": "whois.ripe.net"
+  },
+  "11342 11355": {
+    "host": "whois.arin.net"
+  },
+  "11356": {
+    "host": "whois.lacnic.net"
+  },
+  "11357 11372": {
+    "host": "whois.arin.net"
+  },
+  "11373": {
+    "host": "whois.lacnic.net"
+  },
+  "11374 11379": {
+    "host": "whois.arin.net"
+  },
+  "11380": {
+    "host": "whois.afrinic.net"
+  },
+  "11381 11389": {
+    "host": "whois.arin.net"
+  },
+  "11390": {
+    "host": "whois.lacnic.net"
+  },
+  "11391": {
+    "host": "whois.arin.net"
+  },
+  "11392": {
+    "host": "whois.lacnic.net"
+  },
+  "11393 11410": {
+    "host": "whois.arin.net"
+  },
+  "11411": {
+    "host": "whois.lacnic.net"
+  },
+  "11412 11414": {
+    "host": "whois.arin.net"
+  },
+  "11415": {
+    "host": "whois.lacnic.net"
+  },
+  "11416 11418": {
+    "host": "whois.arin.net"
+  },
+  "11419": {
+    "host": "whois.lacnic.net"
+  },
+  "11420 11430": {
+    "host": "whois.arin.net"
+  },
+  "11431 11432": {
+    "host": "whois.lacnic.net"
+  },
+  "11433 11446": {
+    "host": "whois.arin.net"
+  },
+  "11447": {
+    "host": "whois.lacnic.net"
+  },
+  "11448 11449": {
+    "host": "whois.arin.net"
+  },
+  "11450 11451": {
+    "host": "whois.lacnic.net"
+  },
+  "11452 11466": {
+    "host": "whois.arin.net"
+  },
+  "11467": {
+    "host": "whois.apnic.net"
+  },
+  "11468 11496": {
+    "host": "whois.arin.net"
+  },
+  "11497 11498": {
+    "host": "whois.lacnic.net"
+  },
+  "11499 11502": {
+    "host": "whois.arin.net"
+  },
+  "11503": {
+    "host": "whois.lacnic.net"
+  },
+  "11504 11513": {
+    "host": "whois.arin.net"
+  },
+  "11514": {
+    "host": "whois.lacnic.net"
+  },
+  "11515 11518": {
+    "host": "whois.arin.net"
+  },
+  "11519": {
+    "host": "whois.lacnic.net"
+  },
+  "11520 11555": {
+    "host": "whois.arin.net"
+  },
+  "11556": {
+    "host": "whois.lacnic.net"
+  },
+  "11557 11561": {
+    "host": "whois.arin.net"
+  },
+  "11562": {
+    "host": "whois.lacnic.net"
+  },
+  "11563 11568": {
+    "host": "whois.arin.net"
+  },
+  "11569": {
+    "host": "whois.afrinic.net"
+  },
+  "11570": {
+    "host": "whois.arin.net"
+  },
+  "11571": {
+    "host": "whois.lacnic.net"
+  },
+  "11572 11580": {
+    "host": "whois.arin.net"
+  },
+  "11581": {
+    "host": "whois.lacnic.net"
+  },
+  "11582 11584": {
+    "host": "whois.arin.net"
+  },
+  "11585": {
+    "host": "whois.lacnic.net"
+  },
+  "11586 11591": {
+    "host": "whois.arin.net"
+  },
+  "11592": {
+    "host": "whois.lacnic.net"
+  },
+  "11593 11598": {
+    "host": "whois.arin.net"
+  },
+  "11599": {
+    "host": "whois.lacnic.net"
+  },
+  "11600 11616": {
+    "host": "whois.arin.net"
+  },
+  "11617": {
+    "host": "whois.lacnic.net"
+  },
+  "11618 11641": {
+    "host": "whois.arin.net"
+  },
+  "11642": {
+    "host": "whois.lacnic.net"
+  },
+  "11643": {
+    "host": "whois.arin.net"
+  },
+  "11644": {
+    "host": "whois.lacnic.net"
+  },
+  "11645": {
+    "host": "whois.afrinic.net"
+  },
+  "11646 11659": {
+    "host": "whois.arin.net"
+  },
+  "11660": {
+    "host": "whois.ripe.net"
+  },
+  "11661 11663": {
+    "host": "whois.arin.net"
+  },
+  "11664": {
+    "host": "whois.lacnic.net"
+  },
+  "11665 11672": {
+    "host": "whois.arin.net"
+  },
+  "11673": {
+    "host": "whois.lacnic.net"
+  },
+  "11674 11676": {
+    "host": "whois.arin.net"
+  },
+  "11677": {
+    "host": "whois.lacnic.net"
+  },
+  "11678 11693": {
+    "host": "whois.arin.net"
+  },
+  "11694": {
+    "host": "whois.lacnic.net"
+  },
+  "11695 11705": {
+    "host": "whois.arin.net"
+  },
+  "11706": {
+    "host": "whois.lacnic.net"
+  },
+  "11707 11743": {
+    "host": "whois.arin.net"
+  },
+  "11744": {
+    "host": "whois.afrinic.net"
+  },
+  "11745 11749": {
+    "host": "whois.arin.net"
+  },
+  "11750 11752": {
+    "host": "whois.lacnic.net"
+  },
+  "11753 11785": {
+    "host": "whois.arin.net"
+  },
+  "11786": {
+    "host": "whois.lacnic.net"
+  },
+  "11787 11799": {
+    "host": "whois.arin.net"
+  },
+  "11800 11802": {
+    "host": "whois.lacnic.net"
+  },
+  "11803 11814": {
+    "host": "whois.arin.net"
+  },
+  "11815 11816": {
+    "host": "whois.lacnic.net"
+  },
+  "11817 11829": {
+    "host": "whois.arin.net"
+  },
+  "11830": {
+    "host": "whois.lacnic.net"
+  },
+  "11831 11834": {
+    "host": "whois.arin.net"
+  },
+  "11835": {
+    "host": "whois.lacnic.net"
+  },
+  "11836 11843": {
+    "host": "whois.arin.net"
+  },
+  "11844": {
+    "host": "whois.lacnic.net"
+  },
+  "11845": {
+    "host": "whois.afrinic.net"
+  },
+  "11846 11887": {
+    "host": "whois.arin.net"
+  },
+  "11888": {
+    "host": "whois.lacnic.net"
+  },
+  "11889 11895": {
+    "host": "whois.arin.net"
+  },
+  "11896": {
+    "host": "whois.lacnic.net"
+  },
+  "11897 11908": {
+    "host": "whois.arin.net"
+  },
+  "11909": {
+    "host": "whois.afrinic.net"
+  },
+  "11910 11920": {
+    "host": "whois.arin.net"
+  },
+  "11921": {
+    "host": "whois.lacnic.net"
+  },
+  "11922 11946": {
+    "host": "whois.arin.net"
+  },
+  "11947": {
+    "host": "whois.lacnic.net"
+  },
+  "11948 11959": {
+    "host": "whois.arin.net"
+  },
+  "11960": {
+    "host": "whois.lacnic.net"
+  },
+  "11961 11992": {
+    "host": "whois.arin.net"
+  },
+  "11993": {
+    "host": "whois.lacnic.net"
+  },
+  "11994 12033": {
+    "host": "whois.arin.net"
+  },
+  "12034": {
+    "host": "whois.lacnic.net"
+  },
+  "12035 12045": {
+    "host": "whois.arin.net"
+  },
+  "12046": {
+    "host": "whois.ripe.net"
+  },
+  "12047 12065": {
+    "host": "whois.arin.net"
+  },
+  "12066": {
+    "host": "whois.lacnic.net"
+  },
+  "12067 12090": {
+    "host": "whois.arin.net"
+  },
+  "12091": {
+    "host": "whois.afrinic.net"
+  },
+  "12092 12126": {
+    "host": "whois.arin.net"
+  },
+  "12127": {
+    "host": "whois.lacnic.net"
+  },
+  "12128 12134": {
+    "host": "whois.arin.net"
+  },
+  "12135 12136": {
+    "host": "whois.lacnic.net"
+  },
+  "12137 12139": {
+    "host": "whois.arin.net"
+  },
+  "12140": {
+    "host": "whois.lacnic.net"
+  },
+  "12141 12142": {
+    "host": "whois.arin.net"
+  },
+  "12143": {
+    "host": "whois.afrinic.net"
+  },
+  "12144 12145": {
+    "host": "whois.arin.net"
+  },
+  "12146": {
+    "host": "whois.lacnic.net"
+  },
+  "12147 12149": {
+    "host": "whois.arin.net"
+  },
+  "12150": {
+    "host": "whois.lacnic.net"
+  },
+  "12151 12247": {
+    "host": "whois.arin.net"
+  },
+  "12248": {
+    "host": "whois.lacnic.net"
+  },
+  "12249 12251": {
+    "host": "whois.arin.net"
+  },
+  "12252": {
+    "host": "whois.lacnic.net"
+  },
+  "12253 12257": {
+    "host": "whois.arin.net"
+  },
+  "12258": {
+    "host": "whois.afrinic.net"
+  },
+  "12259 12263": {
+    "host": "whois.arin.net"
+  },
+  "12264": {
+    "host": "whois.lacnic.net"
+  },
+  "12265 12287": {
+    "host": "whois.arin.net"
+  },
+  "12288 12454": {
+    "host": "whois.ripe.net"
+  },
+  "12455": {
+    "host": "whois.afrinic.net"
+  },
+  "12456 12555": {
+    "host": "whois.ripe.net"
+  },
+  "12556": {
+    "host": "whois.afrinic.net"
+  },
+  "12557 13223": {
+    "host": "whois.ripe.net"
+  },
+  "13224": {
+    "host": "whois.afrinic.net"
+  },
+  "13225 13311": {
+    "host": "whois.ripe.net"
+  },
+  "13312 13315": {
+    "host": "whois.arin.net"
+  },
+  "13316": {
+    "host": "whois.lacnic.net"
+  },
+  "13317": {
+    "host": "whois.arin.net"
+  },
+  "13318": {
+    "host": "whois.lacnic.net"
+  },
+  "13319": {
+    "host": "whois.arin.net"
+  },
+  "13320": {
+    "host": "whois.lacnic.net"
+  },
+  "13321 13352": {
+    "host": "whois.arin.net"
+  },
+  "13353": {
+    "host": "whois.lacnic.net"
+  },
+  "13354 13356": {
+    "host": "whois.arin.net"
+  },
+  "13357": {
+    "host": "whois.lacnic.net"
+  },
+  "13358 13380": {
+    "host": "whois.arin.net"
+  },
+  "13381": {
+    "host": "whois.lacnic.net"
+  },
+  "13382 13401": {
+    "host": "whois.arin.net"
+  },
+  "13402": {
+    "host": "whois.afrinic.net"
+  },
+  "13403 13423": {
+    "host": "whois.arin.net"
+  },
+  "13424": {
+    "host": "whois.lacnic.net"
+  },
+  "13425 13439": {
+    "host": "whois.arin.net"
+  },
+  "13440": {
+    "host": "whois.lacnic.net"
+  },
+  "13441 13458": {
+    "host": "whois.arin.net"
+  },
+  "13459": {
+    "host": "whois.lacnic.net"
+  },
+  "13460 13473": {
+    "host": "whois.arin.net"
+  },
+  "13474": {
+    "host": "whois.lacnic.net"
+  },
+  "13475 13488": {
+    "host": "whois.arin.net"
+  },
+  "13489": {
+    "host": "whois.lacnic.net"
+  },
+  "13490 13494": {
+    "host": "whois.arin.net"
+  },
+  "13495": {
+    "host": "whois.lacnic.net"
+  },
+  "13496 13513": {
+    "host": "whois.arin.net"
+  },
+  "13514": {
+    "host": "whois.lacnic.net"
+  },
+  "13515 13518": {
+    "host": "whois.arin.net"
+  },
+  "13519": {
+    "host": "whois.afrinic.net"
+  },
+  "13520": {
+    "host": "whois.arin.net"
+  },
+  "13521 13522": {
+    "host": "whois.lacnic.net"
+  },
+  "13523 13543": {
+    "host": "whois.arin.net"
+  },
+  "13544": {
+    "host": "whois.lacnic.net"
+  },
+  "13545 13568": {
+    "host": "whois.arin.net"
+  },
+  "13569": {
+    "host": "whois.afrinic.net"
+  },
+  "13570 13578": {
+    "host": "whois.arin.net"
+  },
+  "13579": {
+    "host": "whois.lacnic.net"
+  },
+  "13580 13583": {
+    "host": "whois.arin.net"
+  },
+  "13584 13585": {
+    "host": "whois.lacnic.net"
+  },
+  "13586 13590": {
+    "host": "whois.arin.net"
+  },
+  "13591": {
+    "host": "whois.lacnic.net"
+  },
+  "13592 13642": {
+    "host": "whois.arin.net"
+  },
+  "13643": {
+    "host": "whois.lacnic.net"
+  },
+  "13644 13678": {
+    "host": "whois.arin.net"
+  },
+  "13679": {
+    "host": "whois.lacnic.net"
+  },
+  "13680 13681": {
+    "host": "whois.arin.net"
+  },
+  "13682": {
+    "host": "whois.lacnic.net"
+  },
+  "13683 13760": {
+    "host": "whois.arin.net"
+  },
+  "13761": {
+    "host": "whois.lacnic.net"
+  },
+  "13762 13773": {
+    "host": "whois.arin.net"
+  },
+  "13774": {
+    "host": "whois.lacnic.net"
+  },
+  "13775 13834": {
+    "host": "whois.arin.net"
+  },
+  "13835": {
+    "host": "whois.lacnic.net"
+  },
+  "13836 13853": {
+    "host": "whois.arin.net"
+  },
+  "13854": {
+    "host": "whois.afrinic.net"
+  },
+  "13855 13873": {
+    "host": "whois.arin.net"
+  },
+  "13874": {
+    "host": "whois.lacnic.net"
+  },
+  "13875 13877": {
+    "host": "whois.arin.net"
+  },
+  "13878": {
+    "host": "whois.lacnic.net"
+  },
+  "13879": {
+    "host": "whois.ripe.net"
+  },
+  "13880 13913": {
+    "host": "whois.arin.net"
+  },
+  "13914": {
+    "host": "whois.lacnic.net"
+  },
+  "13915 13928": {
+    "host": "whois.arin.net"
+  },
+  "13929": {
+    "host": "whois.lacnic.net"
+  },
+  "13930 13933": {
+    "host": "whois.arin.net"
+  },
+  "13934 13936": {
+    "host": "whois.lacnic.net"
+  },
+  "13937 13990": {
+    "host": "whois.arin.net"
+  },
+  "13991": {
+    "host": "whois.lacnic.net"
+  },
+  "13992 13998": {
+    "host": "whois.arin.net"
+  },
+  "13999 14000": {
+    "host": "whois.lacnic.net"
+  },
+  "14001 14025": {
+    "host": "whois.arin.net"
+  },
+  "14026": {
+    "host": "whois.lacnic.net"
+  },
+  "14027 14028": {
+    "host": "whois.arin.net"
+  },
+  "14029": {
+    "host": "whois.afrinic.net"
+  },
+  "14030": {
+    "host": "whois.lacnic.net"
+  },
+  "14031 14068": {
+    "host": "whois.arin.net"
+  },
+  "14069": {
+    "host": "whois.lacnic.net"
+  },
+  "14070 14079": {
+    "host": "whois.arin.net"
+  },
+  "14080": {
+    "host": "whois.lacnic.net"
+  },
+  "14081 14083": {
+    "host": "whois.arin.net"
+  },
+  "14084": {
+    "host": "whois.lacnic.net"
+  },
+  "14085 14086": {
+    "host": "whois.arin.net"
+  },
+  "14087": {
+    "host": "whois.lacnic.net"
+  },
+  "14088 14110": {
+    "host": "whois.arin.net"
+  },
+  "14111": {
+    "host": "whois.lacnic.net"
+  },
+  "14112 14114": {
+    "host": "whois.arin.net"
+  },
+  "14115": {
+    "host": "whois.afrinic.net"
+  },
+  "14116": {
+    "host": "whois.arin.net"
+  },
+  "14117": {
+    "host": "whois.lacnic.net"
+  },
+  "14118 14121": {
+    "host": "whois.arin.net"
+  },
+  "14122": {
+    "host": "whois.lacnic.net"
+  },
+  "14123 14177": {
+    "host": "whois.arin.net"
+  },
+  "14178 14179": {
+    "host": "whois.lacnic.net"
+  },
+  "14180 14185": {
+    "host": "whois.arin.net"
+  },
+  "14186 14187": {
+    "host": "whois.lacnic.net"
+  },
+  "14188 14201": {
+    "host": "whois.arin.net"
+  },
+  "14202": {
+    "host": "whois.lacnic.net"
+  },
+  "14203": {
+    "host": "whois.arin.net"
+  },
+  "14204": {
+    "host": "whois.lacnic.net"
+  },
+  "14205 14230": {
+    "host": "whois.arin.net"
+  },
+  "14231 14232": {
+    "host": "whois.lacnic.net"
+  },
+  "14233": {
+    "host": "whois.arin.net"
+  },
+  "14234": {
+    "host": "whois.lacnic.net"
+  },
+  "14235 14248": {
+    "host": "whois.arin.net"
+  },
+  "14249 14250": {
+    "host": "whois.lacnic.net"
+  },
+  "14251 14258": {
+    "host": "whois.arin.net"
+  },
+  "14259": {
+    "host": "whois.lacnic.net"
+  },
+  "14260 14281": {
+    "host": "whois.arin.net"
+  },
+  "14282": {
+    "host": "whois.lacnic.net"
+  },
+  "14283 14284": {
+    "host": "whois.arin.net"
+  },
+  "14285 14286": {
+    "host": "whois.lacnic.net"
+  },
+  "14287 14315": {
+    "host": "whois.arin.net"
+  },
+  "14316": {
+    "host": "whois.lacnic.net"
+  },
+  "14317": {
+    "host": "whois.arin.net"
+  },
+  "14318": {
+    "host": "whois.lacnic.net"
+  },
+  "14319 14330": {
+    "host": "whois.arin.net"
+  },
+  "14331": {
+    "host": "whois.afrinic.net"
+  },
+  "14332 14338": {
+    "host": "whois.arin.net"
+  },
+  "14339": {
+    "host": "whois.lacnic.net"
+  },
+  "14340 14345": {
+    "host": "whois.arin.net"
+  },
+  "14346": {
+    "host": "whois.lacnic.net"
+  },
+  "14347 14376": {
+    "host": "whois.arin.net"
+  },
+  "14377": {
+    "host": "whois.lacnic.net"
+  },
+  "14378 14419": {
+    "host": "whois.arin.net"
+  },
+  "14420": {
+    "host": "whois.lacnic.net"
+  },
+  "14421 14428": {
+    "host": "whois.arin.net"
+  },
+  "14429": {
+    "host": "whois.afrinic.net"
+  },
+  "14430 14456": {
+    "host": "whois.arin.net"
+  },
+  "14457": {
+    "host": "whois.lacnic.net"
+  },
+  "14458 14460": {
+    "host": "whois.arin.net"
+  },
+  "14461 14462": {
+    "host": "whois.arin.net"
+  },
+  "14463": {
+    "host": "whois.lacnic.net"
+  },
+  "14464 14515": {
+    "host": "whois.arin.net"
+  },
+  "14516": {
+    "host": "whois.afrinic.net"
+  },
+  "14517 14521": {
+    "host": "whois.arin.net"
+  },
+  "14522": {
+    "host": "whois.lacnic.net"
+  },
+  "14523 14534": {
+    "host": "whois.arin.net"
+  },
+  "14535": {
+    "host": "whois.lacnic.net"
+  },
+  "14536 14552": {
+    "host": "whois.arin.net"
+  },
+  "14553": {
+    "host": "whois.lacnic.net"
+  },
+  "14554 14559": {
+    "host": "whois.arin.net"
+  },
+  "14560": {
+    "host": "whois.lacnic.net"
+  },
+  "14561 14570": {
+    "host": "whois.arin.net"
+  },
+  "14571": {
+    "host": "whois.lacnic.net"
+  },
+  "14572 14623": {
+    "host": "whois.arin.net"
+  },
+  "14624": {
+    "host": "whois.lacnic.net"
+  },
+  "14625 14649": {
+    "host": "whois.arin.net"
+  },
+  "14650": {
+    "host": "whois.lacnic.net"
+  },
+  "14651 14663": {
+    "host": "whois.arin.net"
+  },
+  "14664": {
+    "host": "whois.lacnic.net"
+  },
+  "14665 14673": {
+    "host": "whois.arin.net"
+  },
+  "14674": {
+    "host": "whois.lacnic.net"
+  },
+  "14675 14691": {
+    "host": "whois.arin.net"
+  },
+  "14692": {
+    "host": "whois.lacnic.net"
+  },
+  "14693 14707": {
+    "host": "whois.arin.net"
+  },
+  "14708 14709": {
+    "host": "whois.lacnic.net"
+  },
+  "14710 14722": {
+    "host": "whois.arin.net"
+  },
+  "14723": {
+    "host": "whois.lacnic.net"
+  },
+  "14724 14753": {
+    "host": "whois.arin.net"
+  },
+  "14754": {
+    "host": "whois.lacnic.net"
+  },
+  "14755 14758": {
+    "host": "whois.arin.net"
+  },
+  "14759": {
+    "host": "whois.lacnic.net"
+  },
+  "14760 14768": {
+    "host": "whois.arin.net"
+  },
+  "14769": {
+    "host": "whois.lacnic.net"
+  },
+  "14770 14794": {
+    "host": "whois.arin.net"
+  },
+  "14795": {
+    "host": "whois.lacnic.net"
+  },
+  "14796 14839": {
+    "host": "whois.arin.net"
+  },
+  "14840": {
+    "host": "whois.lacnic.net"
+  },
+  "14841 14844": {
+    "host": "whois.arin.net"
+  },
+  "14845": {
+    "host": "whois.lacnic.net"
+  },
+  "14846 14866": {
+    "host": "whois.arin.net"
+  },
+  "14867 14868": {
+    "host": "whois.lacnic.net"
+  },
+  "14869 14885": {
+    "host": "whois.arin.net"
+  },
+  "14886": {
+    "host": "whois.lacnic.net"
+  },
+  "14887 14965": {
+    "host": "whois.arin.net"
+  },
+  "14966": {
+    "host": "whois.lacnic.net"
+  },
+  "14967 14969": {
+    "host": "whois.arin.net"
+  },
+  "14970": {
+    "host": "whois.lacnic.net"
+  },
+  "14971 14987": {
+    "host": "whois.arin.net"
+  },
+  "14988": {
+    "host": "whois.afrinic.net"
+  },
+  "14989 15021": {
+    "host": "whois.arin.net"
+  },
+  "15022": {
+    "host": "whois.afrinic.net"
+  },
+  "15023 15029": {
+    "host": "whois.arin.net"
+  },
+  "15030": {
+    "host": "whois.lacnic.net"
+  },
+  "15031 15033": {
+    "host": "whois.arin.net"
+  },
+  "15034": {
+    "host": "whois.lacnic.net"
+  },
+  "15035 15063": {
+    "host": "whois.arin.net"
+  },
+  "15064": {
+    "host": "whois.lacnic.net"
+  },
+  "15065": {
+    "host": "whois.arin.net"
+  },
+  "15066": {
+    "host": "whois.lacnic.net"
+  },
+  "15067 15074": {
+    "host": "whois.arin.net"
+  },
+  "15075": {
+    "host": "whois.lacnic.net"
+  },
+  "15076 15077": {
+    "host": "whois.arin.net"
+  },
+  "15078": {
+    "host": "whois.lacnic.net"
+  },
+  "15079 15106": {
+    "host": "whois.arin.net"
+  },
+  "15107": {
+    "host": "whois.lacnic.net"
+  },
+  "15108 15124": {
+    "host": "whois.arin.net"
+  },
+  "15125": {
+    "host": "whois.lacnic.net"
+  },
+  "15126 15150": {
+    "host": "whois.arin.net"
+  },
+  "15151": {
+    "host": "whois.lacnic.net"
+  },
+  "15152 15158": {
+    "host": "whois.arin.net"
+  },
+  "15159": {
+    "host": "whois.afrinic.net"
+  },
+  "15160 15179": {
+    "host": "whois.arin.net"
+  },
+  "15180": {
+    "host": "whois.lacnic.net"
+  },
+  "15181 15200": {
+    "host": "whois.arin.net"
+  },
+  "15201": {
+    "host": "whois.lacnic.net"
+  },
+  "15202 15207": {
+    "host": "whois.arin.net"
+  },
+  "15208": {
+    "host": "whois.lacnic.net"
+  },
+  "15209 15235": {
+    "host": "whois.arin.net"
+  },
+  "15236": {
+    "host": "whois.lacnic.net"
+  },
+  "15237 15240": {
+    "host": "whois.arin.net"
+  },
+  "15241": {
+    "host": "whois.lacnic.net"
+  },
+  "15242 15245": {
+    "host": "whois.arin.net"
+  },
+  "15246": {
+    "host": "whois.lacnic.net"
+  },
+  "15247 15251": {
+    "host": "whois.arin.net"
+  },
+  "15252": {
+    "host": "whois.lacnic.net"
+  },
+  "15253 15255": {
+    "host": "whois.arin.net"
+  },
+  "15256": {
+    "host": "whois.lacnic.net"
+  },
+  "15257 15273": {
+    "host": "whois.arin.net"
+  },
+  "15274": {
+    "host": "whois.lacnic.net"
+  },
+  "15275 15310": {
+    "host": "whois.arin.net"
+  },
+  "15311": {
+    "host": "whois.lacnic.net"
+  },
+  "15312 15359": {
+    "host": "whois.arin.net"
+  },
+  "15360 15398": {
+    "host": "whois.ripe.net"
+  },
+  "15399": {
+    "host": "whois.afrinic.net"
+  },
+  "15400 15474": {
+    "host": "whois.ripe.net"
+  },
+  "15475": {
+    "host": "whois.afrinic.net"
+  },
+  "15476 15705": {
+    "host": "whois.ripe.net"
+  },
+  "15706": {
+    "host": "whois.afrinic.net"
+  },
+  "15707 15803": {
+    "host": "whois.ripe.net"
+  },
+  "15804": {
+    "host": "whois.afrinic.net"
+  },
+  "15805 15824": {
+    "host": "whois.ripe.net"
+  },
+  "15825": {
+    "host": "whois.afrinic.net"
+  },
+  "15826 15833": {
+    "host": "whois.ripe.net"
+  },
+  "15834": {
+    "host": "whois.afrinic.net"
+  },
+  "15835 15963": {
+    "host": "whois.ripe.net"
+  },
+  "15964": {
+    "host": "whois.afrinic.net"
+  },
+  "15965 16057": {
+    "host": "whois.ripe.net"
+  },
+  "16058": {
+    "host": "whois.afrinic.net"
+  },
+  "16059 16213": {
+    "host": "whois.ripe.net"
+  },
+  "16214": {
+    "host": "whois.afrinic.net"
+  },
+  "16215 16283": {
+    "host": "whois.ripe.net"
+  },
+  "16284": {
+    "host": "whois.afrinic.net"
+  },
+  "16285 16383": {
+    "host": "whois.ripe.net"
+  },
+  "16384 16393": {
+    "host": "whois.arin.net"
+  },
+  "16394 16396": {
+    "host": "whois.arin.net"
+  },
+  "16397": {
+    "host": "whois.lacnic.net"
+  },
+  "16398 16415": {
+    "host": "whois.arin.net"
+  },
+  "16416": {
+    "host": "whois.afrinic.net"
+  },
+  "16417": {
+    "host": "whois.arin.net"
+  },
+  "16418": {
+    "host": "whois.lacnic.net"
+  },
+  "16419 16470": {
+    "host": "whois.arin.net"
+  },
+  "16471": {
+    "host": "whois.lacnic.net"
+  },
+  "16472 16505": {
+    "host": "whois.arin.net"
+  },
+  "16506": {
+    "host": "whois.lacnic.net"
+  },
+  "16507 16521": {
+    "host": "whois.arin.net"
+  },
+  "16522": {
+    "host": "whois.lacnic.net"
+  },
+  "16523 16527": {
+    "host": "whois.arin.net"
+  },
+  "16528": {
+    "host": "whois.lacnic.net"
+  },
+  "16529 16530": {
+    "host": "whois.arin.net"
+  },
+  "16531": {
+    "host": "whois.lacnic.net"
+  },
+  "16532 16546": {
+    "host": "whois.arin.net"
+  },
+  "16547": {
+    "host": "whois.afrinic.net"
+  },
+  "16548 16591": {
+    "host": "whois.arin.net"
+  },
+  "16592": {
+    "host": "whois.lacnic.net"
+  },
+  "16593": {
+    "host": "whois.arin.net"
+  },
+  "16594": {
+    "host": "whois.lacnic.net"
+  },
+  "16595": {
+    "host": "whois.arin.net"
+  },
+  "16596": {
+    "host": "whois.lacnic.net"
+  },
+  "16597 16605": {
+    "host": "whois.arin.net"
+  },
+  "16606 16607": {
+    "host": "whois.lacnic.net"
+  },
+  "16608 16628": {
+    "host": "whois.arin.net"
+  },
+  "16629": {
+    "host": "whois.lacnic.net"
+  },
+  "16630": {
+    "host": "whois.afrinic.net"
+  },
+  "16631 16636": {
+    "host": "whois.arin.net"
+  },
+  "16637": {
+    "host": "whois.afrinic.net"
+  },
+  "16638 16662": {
+    "host": "whois.arin.net"
+  },
+  "16663": {
+    "host": "whois.lacnic.net"
+  },
+  "16664 16684": {
+    "host": "whois.arin.net"
+  },
+  "16685": {
+    "host": "whois.lacnic.net"
+  },
+  "16686 16688": {
+    "host": "whois.arin.net"
+  },
+  "16689": {
+    "host": "whois.lacnic.net"
+  },
+  "16690 16700": {
+    "host": "whois.arin.net"
+  },
+  "16701": {
+    "host": "whois.lacnic.net"
+  },
+  "16702 16711": {
+    "host": "whois.arin.net"
+  },
+  "16712": {
+    "host": "whois.lacnic.net"
+  },
+  "16713 16731": {
+    "host": "whois.arin.net"
+  },
+  "16732": {
+    "host": "whois.lacnic.net"
+  },
+  "16733 16734": {
+    "host": "whois.arin.net"
+  },
+  "16735 16736": {
+    "host": "whois.lacnic.net"
+  },
+  "16737": {
+    "host": "whois.arin.net"
+  },
+  "16738 16741": {
+    "host": "whois.arin.net"
+  },
+  "16742": {
+    "host": "whois.lacnic.net"
+  },
+  "16743 16761": {
+    "host": "whois.arin.net"
+  },
+  "16762": {
+    "host": "whois.lacnic.net"
+  },
+  "16763 16771": {
+    "host": "whois.arin.net"
+  },
+  "16772": {
+    "host": "whois.lacnic.net"
+  },
+  "16773 16779": {
+    "host": "whois.arin.net"
+  },
+  "16780": {
+    "host": "whois.lacnic.net"
+  },
+  "16781 16799": {
+    "host": "whois.arin.net"
+  },
+  "16800": {
+    "host": "whois.afrinic.net"
+  },
+  "16801 16813": {
+    "host": "whois.arin.net"
+  },
+  "16814": {
+    "host": "whois.lacnic.net"
+  },
+  "16815 16846": {
+    "host": "whois.arin.net"
+  },
+  "16847": {
+    "host": "whois.lacnic.net"
+  },
+  "16848": {
+    "host": "whois.arin.net"
+  },
+  "16849": {
+    "host": "whois.lacnic.net"
+  },
+  "16850 16852": {
+    "host": "whois.arin.net"
+  },
+  "16853": {
+    "host": "whois.afrinic.net"
+  },
+  "16854 16863": {
+    "host": "whois.arin.net"
+  },
+  "16864": {
+    "host": "whois.lacnic.net"
+  },
+  "16865 16873": {
+    "host": "whois.arin.net"
+  },
+  "16874": {
+    "host": "whois.lacnic.net"
+  },
+  "16875 16884": {
+    "host": "whois.arin.net"
+  },
+  "16885": {
+    "host": "whois.lacnic.net"
+  },
+  "16886 16890": {
+    "host": "whois.arin.net"
+  },
+  "16891": {
+    "host": "whois.lacnic.net"
+  },
+  "16892 16905": {
+    "host": "whois.arin.net"
+  },
+  "16906": {
+    "host": "whois.lacnic.net"
+  },
+  "16907": {
+    "host": "whois.afrinic.net"
+  },
+  "16908 16910": {
+    "host": "whois.arin.net"
+  },
+  "16911": {
+    "host": "whois.lacnic.net"
+  },
+  "16912 16959": {
+    "host": "whois.arin.net"
+  },
+  "16960": {
+    "host": "whois.lacnic.net"
+  },
+  "16961 16972": {
+    "host": "whois.arin.net"
+  },
+  "16973": {
+    "host": "whois.lacnic.net"
+  },
+  "16974": {
+    "host": "whois.arin.net"
+  },
+  "16975": {
+    "host": "whois.lacnic.net"
+  },
+  "16976 16989": {
+    "host": "whois.arin.net"
+  },
+  "16990": {
+    "host": "whois.lacnic.net"
+  },
+  "16991 17068": {
+    "host": "whois.arin.net"
+  },
+  "17069": {
+    "host": "whois.lacnic.net"
+  },
+  "17070 17071": {
+    "host": "whois.arin.net"
+  },
+  "17072": {
+    "host": "whois.lacnic.net"
+  },
+  "17073 17078": {
+    "host": "whois.arin.net"
+  },
+  "17079": {
+    "host": "whois.lacnic.net"
+  },
+  "17080 17085": {
+    "host": "whois.arin.net"
+  },
+  "17086": {
+    "host": "whois.lacnic.net"
+  },
+  "17087 17107": {
+    "host": "whois.arin.net"
+  },
+  "17108": {
+    "host": "whois.lacnic.net"
+  },
+  "17109 17125": {
+    "host": "whois.arin.net"
+  },
+  "17126": {
+    "host": "whois.lacnic.net"
+  },
+  "17127 17146": {
+    "host": "whois.arin.net"
+  },
+  "17147": {
+    "host": "whois.lacnic.net"
+  },
+  "17148": {
+    "host": "whois.afrinic.net"
+  },
+  "17149 17181": {
+    "host": "whois.arin.net"
+  },
+  "17182": {
+    "host": "whois.lacnic.net"
+  },
+  "17183 17204": {
+    "host": "whois.arin.net"
+  },
+  "17205": {
+    "host": "whois.lacnic.net"
+  },
+  "17206 17207": {
+    "host": "whois.arin.net"
+  },
+  "17208": {
+    "host": "whois.lacnic.net"
+  },
+  "17209 17219": {
+    "host": "whois.arin.net"
+  },
+  "17220": {
+    "host": "whois.afrinic.net"
+  },
+  "17221": {
+    "host": "whois.arin.net"
+  },
+  "17222": {
+    "host": "whois.lacnic.net"
+  },
+  "17223 17248": {
+    "host": "whois.arin.net"
+  },
+  "17249 17250": {
+    "host": "whois.lacnic.net"
+  },
+  "17251 17254": {
+    "host": "whois.arin.net"
+  },
+  "17255": {
+    "host": "whois.lacnic.net"
+  },
+  "17256": {
+    "host": "whois.arin.net"
+  },
+  "17257": {
+    "host": "whois.lacnic.net"
+  },
+  "17258 17259": {
+    "host": "whois.arin.net"
+  },
+  "17260": {
+    "host": "whois.afrinic.net"
+  },
+  "17261 17286": {
+    "host": "whois.arin.net"
+  },
+  "17287": {
+    "host": "whois.lacnic.net"
+  },
+  "17288 17311": {
+    "host": "whois.arin.net"
+  },
+  "17312": {
+    "host": "whois.afrinic.net"
+  },
+  "17313 17328": {
+    "host": "whois.arin.net"
+  },
+  "17329": {
+    "host": "whois.lacnic.net"
+  },
+  "17330 17375": {
+    "host": "whois.arin.net"
+  },
+  "17376": {
+    "host": "whois.lacnic.net"
+  },
+  "17377 17378": {
+    "host": "whois.arin.net"
+  },
+  "17379": {
+    "host": "whois.lacnic.net"
+  },
+  "17380 17398": {
+    "host": "whois.arin.net"
+  },
+  "17399": {
+    "host": "whois.lacnic.net"
+  },
+  "17400": {
+    "host": "whois.afrinic.net"
+  },
+  "17401": {
+    "host": "whois.lacnic.net"
+  },
+  "17402 17407": {
+    "host": "whois.arin.net"
   },
   "17408 18431": {
     "host": "whois.apnic.net"
   },
-  "17930 17961": {
-    "host": "whois.nic.ad.jp"
+  "18432 18448": {
+    "host": "whois.arin.net"
   },
-  "18067 18098": {
-    "host": "whois.nic.ad.jp"
+  "18449": {
+    "host": "whois.lacnic.net"
   },
-  "18121 18152": {
-    "host": "whois.nic.ad.jp"
+  "18450 18454": {
+    "host": "whois.arin.net"
   },
-  "18259 18290": {
-    "host": "whois.nic.ad.jp"
+  "18455": {
+    "host": "whois.lacnic.net"
   },
-  "18259 18290": {
-    "host": "whois.nic.ad.jp"
+  "18456 18465": {
+    "host": "whois.arin.net"
   },
-  "20480 21503": {
+  "18466": {
+    "host": "whois.lacnic.net"
+  },
+  "18467 18478": {
+    "host": "whois.arin.net"
+  },
+  "18479": {
+    "host": "whois.lacnic.net"
+  },
+  "18480 18491": {
+    "host": "whois.arin.net"
+  },
+  "18492": {
+    "host": "whois.lacnic.net"
+  },
+  "18493 18495": {
+    "host": "whois.arin.net"
+  },
+  "18496": {
+    "host": "whois.lacnic.net"
+  },
+  "18497 18531": {
+    "host": "whois.arin.net"
+  },
+  "18532": {
+    "host": "whois.lacnic.net"
+  },
+  "18533 18546": {
+    "host": "whois.arin.net"
+  },
+  "18547": {
+    "host": "whois.lacnic.net"
+  },
+  "18548 18575": {
+    "host": "whois.arin.net"
+  },
+  "18576": {
+    "host": "whois.lacnic.net"
+  },
+  "18577 18578": {
+    "host": "whois.arin.net"
+  },
+  "18579": {
+    "host": "whois.lacnic.net"
+  },
+  "18580 18591": {
+    "host": "whois.arin.net"
+  },
+  "18592": {
+    "host": "whois.lacnic.net"
+  },
+  "18593 18643": {
+    "host": "whois.arin.net"
+  },
+  "18644": {
+    "host": "whois.lacnic.net"
+  },
+  "18645 18666": {
+    "host": "whois.arin.net"
+  },
+  "18667": {
+    "host": "whois.lacnic.net"
+  },
+  "18668 18677": {
+    "host": "whois.arin.net"
+  },
+  "18678": {
+    "host": "whois.lacnic.net"
+  },
+  "18679 18731": {
+    "host": "whois.arin.net"
+  },
+  "18732": {
     "host": "whois.ripe.net"
+  },
+  "18733": {
+    "host": "whois.arin.net"
+  },
+  "18734": {
+    "host": "whois.lacnic.net"
+  },
+  "18735 18738": {
+    "host": "whois.arin.net"
+  },
+  "18739": {
+    "host": "whois.lacnic.net"
+  },
+  "18740 18774": {
+    "host": "whois.arin.net"
+  },
+  "18775": {
+    "host": "whois.afrinic.net"
+  },
+  "18776 18781": {
+    "host": "whois.arin.net"
+  },
+  "18782": {
+    "host": "whois.lacnic.net"
+  },
+  "18783 18808": {
+    "host": "whois.arin.net"
+  },
+  "18809": {
+    "host": "whois.lacnic.net"
+  },
+  "18810 18821": {
+    "host": "whois.arin.net"
+  },
+  "18822": {
+    "host": "whois.lacnic.net"
+  },
+  "18823 18835": {
+    "host": "whois.arin.net"
+  },
+  "18836": {
+    "host": "whois.lacnic.net"
+  },
+  "18837 18839": {
+    "host": "whois.arin.net"
+  },
+  "18840": {
+    "host": "whois.lacnic.net"
+  },
+  "18841 18845": {
+    "host": "whois.arin.net"
+  },
+  "18846": {
+    "host": "whois.lacnic.net"
+  },
+  "18847 18868": {
+    "host": "whois.arin.net"
+  },
+  "18869": {
+    "host": "whois.lacnic.net"
+  },
+  "18870 18880": {
+    "host": "whois.arin.net"
+  },
+  "18881": {
+    "host": "whois.lacnic.net"
+  },
+  "18882 18921": {
+    "host": "whois.arin.net"
+  },
+  "18922": {
+    "host": "whois.afrinic.net"
+  },
+  "18923 18930": {
+    "host": "whois.arin.net"
+  },
+  "18931": {
+    "host": "whois.afrinic.net"
+  },
+  "18932 18940": {
+    "host": "whois.arin.net"
+  },
+  "18941": {
+    "host": "whois.lacnic.net"
+  },
+  "18942 18997": {
+    "host": "whois.arin.net"
+  },
+  "18998": {
+    "host": "whois.lacnic.net"
+  },
+  "18999 19032": {
+    "host": "whois.arin.net"
+  },
+  "19033": {
+    "host": "whois.lacnic.net"
+  },
+  "19034 19036": {
+    "host": "whois.arin.net"
+  },
+  "19037 19038": {
+    "host": "whois.lacnic.net"
+  },
+  "19039 19063": {
+    "host": "whois.arin.net"
+  },
+  "19064": {
+    "host": "whois.lacnic.net"
+  },
+  "19065 19076": {
+    "host": "whois.arin.net"
+  },
+  "19077": {
+    "host": "whois.lacnic.net"
+  },
+  "19078 19088": {
+    "host": "whois.arin.net"
+  },
+  "19089 19090": {
+    "host": "whois.lacnic.net"
+  },
+  "19091 19108": {
+    "host": "whois.arin.net"
+  },
+  "19109": {
+    "host": "whois.lacnic.net"
+  },
+  "19110 19113": {
+    "host": "whois.arin.net"
+  },
+  "19114": {
+    "host": "whois.lacnic.net"
+  },
+  "19115 19131": {
+    "host": "whois.arin.net"
+  },
+  "19132": {
+    "host": "whois.lacnic.net"
+  },
+  "19133 19135": {
+    "host": "whois.arin.net"
+  },
+  "19136": {
+    "host": "whois.afrinic.net"
+  },
+  "19137 19168": {
+    "host": "whois.arin.net"
+  },
+  "19169": {
+    "host": "whois.lacnic.net"
+  },
+  "19170 19177": {
+    "host": "whois.arin.net"
+  },
+  "19178": {
+    "host": "whois.ripe.net"
+  },
+  "19179": {
+    "host": "whois.arin.net"
+  },
+  "19180": {
+    "host": "whois.lacnic.net"
+  },
+  "19181": {
+    "host": "whois.arin.net"
+  },
+  "19182": {
+    "host": "whois.lacnic.net"
+  },
+  "19183 19191": {
+    "host": "whois.arin.net"
+  },
+  "19192": {
+    "host": "whois.lacnic.net"
+  },
+  "19193 19195": {
+    "host": "whois.arin.net"
+  },
+  "19196": {
+    "host": "whois.lacnic.net"
+  },
+  "19197 19199": {
+    "host": "whois.arin.net"
+  },
+  "19200": {
+    "host": "whois.lacnic.net"
+  },
+  "19201 19227": {
+    "host": "whois.arin.net"
+  },
+  "19228": {
+    "host": "whois.lacnic.net"
+  },
+  "19229 19231": {
+    "host": "whois.arin.net"
+  },
+  "19232": {
+    "host": "whois.afrinic.net"
+  },
+  "19233 19243": {
+    "host": "whois.arin.net"
+  },
+  "19244": {
+    "host": "whois.lacnic.net"
+  },
+  "19245 19258": {
+    "host": "whois.arin.net"
+  },
+  "19259": {
+    "host": "whois.lacnic.net"
+  },
+  "19260 19277": {
+    "host": "whois.arin.net"
+  },
+  "19278": {
+    "host": "whois.lacnic.net"
+  },
+  "19279 19314": {
+    "host": "whois.arin.net"
+  },
+  "19315": {
+    "host": "whois.lacnic.net"
+  },
+  "19316 19331": {
+    "host": "whois.arin.net"
+  },
+  "19332": {
+    "host": "whois.lacnic.net"
+  },
+  "19333 19337": {
+    "host": "whois.arin.net"
+  },
+  "19338": {
+    "host": "whois.lacnic.net"
+  },
+  "19339 19360": {
+    "host": "whois.arin.net"
+  },
+  "19361": {
+    "host": "whois.lacnic.net"
+  },
+  "19362 19372": {
+    "host": "whois.arin.net"
+  },
+  "19373": {
+    "host": "whois.lacnic.net"
+  },
+  "19374 19375": {
+    "host": "whois.arin.net"
+  },
+  "19376": {
+    "host": "whois.ripe.net"
+  },
+  "19377 19398": {
+    "host": "whois.arin.net"
+  },
+  "19399": {
+    "host": "whois.ripe.net"
+  },
+  "19400 19410": {
+    "host": "whois.arin.net"
+  },
+  "19411": {
+    "host": "whois.lacnic.net"
+  },
+  "19412 19421": {
+    "host": "whois.arin.net"
+  },
+  "19422": {
+    "host": "whois.lacnic.net"
+  },
+  "19423 19428": {
+    "host": "whois.arin.net"
+  },
+  "19429": {
+    "host": "whois.lacnic.net"
+  },
+  "19430 19446": {
+    "host": "whois.arin.net"
+  },
+  "19447": {
+    "host": "whois.lacnic.net"
+  },
+  "19448 19518": {
+    "host": "whois.arin.net"
+  },
+  "19519": {
+    "host": "whois.lacnic.net"
+  },
+  "19520 19552": {
+    "host": "whois.arin.net"
+  },
+  "19553": {
+    "host": "whois.lacnic.net"
+  },
+  "19554 19581": {
+    "host": "whois.arin.net"
+  },
+  "19582 19583": {
+    "host": "whois.lacnic.net"
+  },
+  "19584 19610": {
+    "host": "whois.arin.net"
+  },
+  "19611": {
+    "host": "whois.lacnic.net"
+  },
+  "19612 19631": {
+    "host": "whois.arin.net"
+  },
+  "19632": {
+    "host": "whois.lacnic.net"
+  },
+  "19633 19675": {
+    "host": "whois.arin.net"
+  },
+  "19676": {
+    "host": "whois.afrinic.net"
+  },
+  "19677 19687": {
+    "host": "whois.arin.net"
+  },
+  "19688": {
+    "host": "whois.lacnic.net"
+  },
+  "19689 19704": {
+    "host": "whois.arin.net"
+  },
+  "19705": {
+    "host": "whois.apnic.net"
+  },
+  "19706 19710": {
+    "host": "whois.arin.net"
+  },
+  "19711": {
+    "host": "whois.afrinic.net"
+  },
+  "19712 19722": {
+    "host": "whois.arin.net"
+  },
+  "19723": {
+    "host": "whois.lacnic.net"
+  },
+  "19724 19730": {
+    "host": "whois.arin.net"
+  },
+  "19731": {
+    "host": "whois.lacnic.net"
+  },
+  "19732 19762": {
+    "host": "whois.arin.net"
+  },
+  "19763": {
+    "host": "whois.lacnic.net"
+  },
+  "19764 19766": {
+    "host": "whois.arin.net"
+  },
+  "19767": {
+    "host": "whois.lacnic.net"
+  },
+  "19768 19831": {
+    "host": "whois.arin.net"
+  },
+  "19832": {
+    "host": "whois.afrinic.net"
+  },
+  "19833 19846": {
+    "host": "whois.arin.net"
+  },
+  "19847": {
+    "host": "whois.afrinic.net"
+  },
+  "19848 19862": {
+    "host": "whois.arin.net"
+  },
+  "19863": {
+    "host": "whois.lacnic.net"
+  },
+  "19864 19872": {
+    "host": "whois.arin.net"
+  },
+  "19873": {
+    "host": "whois.lacnic.net"
+  },
+  "19874 19888": {
+    "host": "whois.arin.net"
+  },
+  "19889": {
+    "host": "whois.lacnic.net"
+  },
+  "19890 19959": {
+    "host": "whois.arin.net"
+  },
+  "19960": {
+    "host": "whois.lacnic.net"
+  },
+  "19961 19977": {
+    "host": "whois.arin.net"
+  },
+  "19978": {
+    "host": "whois.lacnic.net"
+  },
+  "19979 19988": {
+    "host": "whois.arin.net"
+  },
+  "19989 19990": {
+    "host": "whois.lacnic.net"
+  },
+  "19991 20001": {
+    "host": "whois.arin.net"
+  },
+  "20002": {
+    "host": "whois.lacnic.net"
+  },
+  "20003 20010": {
+    "host": "whois.arin.net"
+  },
+  "20011": {
+    "host": "whois.afrinic.net"
+  },
+  "20012 20014": {
+    "host": "whois.arin.net"
+  },
+  "20015": {
+    "host": "whois.lacnic.net"
+  },
+  "20016 20031": {
+    "host": "whois.arin.net"
+  },
+  "20032": {
+    "host": "whois.lacnic.net"
+  },
+  "20033 20042": {
+    "host": "whois.arin.net"
+  },
+  "20043 20044": {
+    "host": "whois.lacnic.net"
+  },
+  "20045 20085": {
+    "host": "whois.arin.net"
+  },
+  "20086": {
+    "host": "whois.afrinic.net"
+  },
+  "20087 20094": {
+    "host": "whois.arin.net"
+  },
+  "20095": {
+    "host": "whois.afrinic.net"
+  },
+  "20096 20105": {
+    "host": "whois.arin.net"
+  },
+  "20106": {
+    "host": "whois.lacnic.net"
+  },
+  "20107 20115": {
+    "host": "whois.arin.net"
+  },
+  "20116 20117": {
+    "host": "whois.lacnic.net"
+  },
+  "20118 20120": {
+    "host": "whois.arin.net"
+  },
+  "20121": {
+    "host": "whois.lacnic.net"
+  },
+  "20122 20141": {
+    "host": "whois.arin.net"
+  },
+  "20142": {
+    "host": "whois.lacnic.net"
+  },
+  "20143 20172": {
+    "host": "whois.arin.net"
+  },
+  "20173": {
+    "host": "whois.lacnic.net"
+  },
+  "20174 20179": {
+    "host": "whois.arin.net"
+  },
+  "20180": {
+    "host": "whois.afrinic.net"
+  },
+  "20181 20190": {
+    "host": "whois.arin.net"
+  },
+  "20191": {
+    "host": "whois.lacnic.net"
+  },
+  "20192 20206": {
+    "host": "whois.arin.net"
+  },
+  "20207": {
+    "host": "whois.lacnic.net"
+  },
+  "20208 20231": {
+    "host": "whois.arin.net"
+  },
+  "20232": {
+    "host": "whois.lacnic.net"
+  },
+  "20233 20243": {
+    "host": "whois.arin.net"
+  },
+  "20244": {
+    "host": "whois.lacnic.net"
+  },
+  "20245 20254": {
+    "host": "whois.arin.net"
+  },
+  "20255 20256": {
+    "host": "whois.lacnic.net"
+  },
+  "20257 20265": {
+    "host": "whois.arin.net"
+  },
+  "20266": {
+    "host": "whois.lacnic.net"
+  },
+  "20267 20293": {
+    "host": "whois.arin.net"
+  },
+  "20294": {
+    "host": "whois.afrinic.net"
+  },
+  "20295 20296": {
+    "host": "whois.arin.net"
+  },
+  "20297": {
+    "host": "whois.lacnic.net"
+  },
+  "20298": {
+    "host": "whois.arin.net"
+  },
+  "20299": {
+    "host": "whois.lacnic.net"
+  },
+  "20300 20304": {
+    "host": "whois.arin.net"
+  },
+  "20305": {
+    "host": "whois.lacnic.net"
+  },
+  "20306 20311": {
+    "host": "whois.arin.net"
+  },
+  "20312": {
+    "host": "whois.lacnic.net"
+  },
+  "20313 20320": {
+    "host": "whois.arin.net"
+  },
+  "20321": {
+    "host": "whois.lacnic.net"
+  },
+  "20322 20344": {
+    "host": "whois.arin.net"
+  },
+  "20345": {
+    "host": "whois.lacnic.net"
+  },
+  "20346 20360": {
+    "host": "whois.arin.net"
+  },
+  "20361": {
+    "host": "whois.lacnic.net"
+  },
+  "20362 20362": {
+    "host": "whois.arin.net"
+  },
+  "20363": {
+    "host": "whois.lacnic.net"
+  },
+  "20364 20417": {
+    "host": "whois.arin.net"
+  },
+  "20418": {
+    "host": "whois.lacnic.net"
+  },
+  "20419 20458": {
+    "host": "whois.arin.net"
+  },
+  "20459": {
+    "host": "whois.afrinic.net"
+  },
+  "20460 20479": {
+    "host": "whois.arin.net"
+  },
+  "20480 20483": {
+    "host": "whois.ripe.net"
+  },
+  "20484": {
+    "host": "whois.afrinic.net"
+  },
+  "20485 20857": {
+    "host": "whois.ripe.net"
+  },
+  "20858": {
+    "host": "whois.afrinic.net"
+  },
+  "20859 20927": {
+    "host": "whois.ripe.net"
+  },
+  "20928": {
+    "host": "whois.afrinic.net"
+  },
+  "20929 21002": {
+    "host": "whois.ripe.net"
+  },
+  "21003": {
+    "host": "whois.afrinic.net"
+  },
+  "21004 21151": {
+    "host": "whois.ripe.net"
+  },
+  "21152": {
+    "host": "whois.afrinic.net"
+  },
+  "21153 21241": {
+    "host": "whois.ripe.net"
+  },
+  "21242": {
+    "host": "whois.afrinic.net"
+  },
+  "21243 21270": {
+    "host": "whois.ripe.net"
+  },
+  "21271": {
+    "host": "whois.afrinic.net"
+  },
+  "21272 21277": {
+    "host": "whois.ripe.net"
+  },
+  "21278": {
+    "host": "whois.afrinic.net"
+  },
+  "21279": {
+    "host": "whois.ripe.net"
+  },
+  "21280": {
+    "host": "whois.afrinic.net"
+  },
+  "21281 21390": {
+    "host": "whois.ripe.net"
+  },
+  "21391": {
+    "host": "whois.afrinic.net"
+  },
+  "21392 21451": {
+    "host": "whois.ripe.net"
+  },
+  "21452": {
+    "host": "whois.afrinic.net"
+  },
+  "21453 21503": {
+    "host": "whois.ripe.net"
+  },
+  "21504 21505": {
+    "host": "whois.arin.net"
+  },
+  "21506": {
+    "host": "whois.lacnic.net"
+  },
+  "21507 21519": {
+    "host": "whois.arin.net"
+  },
+  "21520": {
+    "host": "whois.lacnic.net"
+  },
+  "21521 21570": {
+    "host": "whois.arin.net"
+  },
+  "21571": {
+    "host": "whois.lacnic.net"
+  },
+  "21572 21573": {
+    "host": "whois.arin.net"
+  },
+  "21574 21575": {
+    "host": "whois.lacnic.net"
+  },
+  "21576 21577": {
+    "host": "whois.arin.net"
+  },
+  "21578": {
+    "host": "whois.lacnic.net"
+  },
+  "21579 21589": {
+    "host": "whois.arin.net"
+  },
+  "21590": {
+    "host": "whois.lacnic.net"
+  },
+  "21591 21598": {
+    "host": "whois.arin.net"
+  },
+  "21599": {
+    "host": "whois.lacnic.net"
+  },
+  "21600 21602": {
+    "host": "whois.arin.net"
+  },
+  "21603": {
+    "host": "whois.lacnic.net"
+  },
+  "21604 21611": {
+    "host": "whois.arin.net"
+  },
+  "21612": {
+    "host": "whois.lacnic.net"
+  },
+  "21613": {
+    "host": "whois.arin.net"
+  },
+  "21614": {
+    "host": "whois.lacnic.net"
+  },
+  "21615 21673": {
+    "host": "whois.arin.net"
+  },
+  "21674": {
+    "host": "whois.lacnic.net"
+  },
+  "21675 21691": {
+    "host": "whois.arin.net"
+  },
+  "21692": {
+    "host": "whois.lacnic.net"
+  },
+  "21693 21738": {
+    "host": "whois.arin.net"
+  },
+  "21739": {
+    "host": "whois.afrinic.net"
+  },
+  "21740": {
+    "host": "whois.arin.net"
+  },
+  "21741": {
+    "host": "whois.lacnic.net"
+  },
+  "21742 21752": {
+    "host": "whois.arin.net"
+  },
+  "21753": {
+    "host": "whois.lacnic.net"
+  },
+  "21754 21755": {
+    "host": "whois.arin.net"
+  },
+  "21756": {
+    "host": "whois.lacnic.net"
+  },
+  "21757 21764": {
+    "host": "whois.arin.net"
+  },
+  "21765": {
+    "host": "whois.lacnic.net"
+  },
+  "21766 21767": {
+    "host": "whois.arin.net"
+  },
+  "21768": {
+    "host": "whois.lacnic.net"
+  },
+  "21769 21818": {
+    "host": "whois.arin.net"
+  },
+  "21819": {
+    "host": "whois.afrinic.net"
+  },
+  "21820 21823": {
+    "host": "whois.arin.net"
+  },
+  "21824": {
+    "host": "whois.lacnic.net"
+  },
+  "21825 21825": {
+    "host": "whois.arin.net"
+  },
+  "21826": {
+    "host": "whois.lacnic.net"
+  },
+  "21827 21837": {
+    "host": "whois.arin.net"
+  },
+  "21838": {
+    "host": "whois.lacnic.net"
+  },
+  "21839 21861": {
+    "host": "whois.arin.net"
+  },
+  "21862": {
+    "host": "whois.lacnic.net"
+  },
+  "21863 21882": {
+    "host": "whois.arin.net"
+  },
+  "21883": {
+    "host": "whois.lacnic.net"
+  },
+  "21884 21887": {
+    "host": "whois.arin.net"
+  },
+  "21888": {
+    "host": "whois.lacnic.net"
+  },
+  "21889 21910": {
+    "host": "whois.arin.net"
+  },
+  "21911": {
+    "host": "whois.lacnic.net"
+  },
+  "21912 21916": {
+    "host": "whois.arin.net"
+  },
+  "21917": {
+    "host": "whois.lacnic.net"
+  },
+  "21918 21979": {
+    "host": "whois.arin.net"
+  },
+  "21980": {
+    "host": "whois.lacnic.net"
+  },
+  "21981 22009": {
+    "host": "whois.arin.net"
+  },
+  "22010 22011": {
+    "host": "whois.lacnic.net"
+  },
+  "22012 22018": {
+    "host": "whois.arin.net"
+  },
+  "22019": {
+    "host": "whois.lacnic.net"
+  },
+  "22020 22046": {
+    "host": "whois.arin.net"
+  },
+  "22047": {
+    "host": "whois.lacnic.net"
+  },
+  "22048 22054": {
+    "host": "whois.arin.net"
+  },
+  "22055": {
+    "host": "whois.lacnic.net"
+  },
+  "22056 22079": {
+    "host": "whois.arin.net"
+  },
+  "22080": {
+    "host": "whois.lacnic.net"
+  },
+  "22081 22084": {
+    "host": "whois.arin.net"
+  },
+  "22085": {
+    "host": "whois.lacnic.net"
+  },
+  "22086 22091": {
+    "host": "whois.arin.net"
+  },
+  "22092": {
+    "host": "whois.lacnic.net"
+  },
+  "22093 22107": {
+    "host": "whois.arin.net"
+  },
+  "22108": {
+    "host": "whois.ripe.net"
+  },
+  "22109 22121": {
+    "host": "whois.arin.net"
+  },
+  "22122": {
+    "host": "whois.lacnic.net"
+  },
+  "22123 22127": {
+    "host": "whois.arin.net"
+  },
+  "22128 22129": {
+    "host": "whois.lacnic.net"
+  },
+  "22130 22132": {
+    "host": "whois.arin.net"
+  },
+  "22133": {
+    "host": "whois.lacnic.net"
+  },
+  "22134 22147": {
+    "host": "whois.arin.net"
+  },
+  "22148": {
+    "host": "whois.lacnic.net"
+  },
+  "22149 22176": {
+    "host": "whois.arin.net"
+  },
+  "22177": {
+    "host": "whois.lacnic.net"
+  },
+  "22178 22184": {
+    "host": "whois.arin.net"
+  },
+  "22185": {
+    "host": "whois.lacnic.net"
+  },
+  "22186 22226": {
+    "host": "whois.arin.net"
+  },
+  "22227": {
+    "host": "whois.lacnic.net"
+  },
+  "22228 22249": {
+    "host": "whois.arin.net"
+  },
+  "22250": {
+    "host": "whois.lacnic.net"
+  },
+  "22251 22304": {
+    "host": "whois.arin.net"
+  },
+  "22305": {
+    "host": "whois.lacnic.net"
+  },
+  "22306 22312": {
+    "host": "whois.arin.net"
+  },
+  "22313": {
+    "host": "whois.lacnic.net"
+  },
+  "22314 22340": {
+    "host": "whois.arin.net"
+  },
+  "22341": {
+    "host": "whois.lacnic.net"
+  },
+  "22342 22353": {
+    "host": "whois.arin.net"
+  },
+  "22354 22355": {
+    "host": "whois.afrinic.net"
+  },
+  "22356": {
+    "host": "whois.lacnic.net"
+  },
+  "22357 22367": {
+    "host": "whois.arin.net"
+  },
+  "22368": {
+    "host": "whois.lacnic.net"
+  },
+  "22369 22370": {
+    "host": "whois.arin.net"
+  },
+  "22371": {
+    "host": "whois.lacnic.net"
+  },
+  "22372 22380": {
+    "host": "whois.arin.net"
+  },
+  "22381 22382": {
+    "host": "whois.lacnic.net"
+  },
+  "22383 22385": {
+    "host": "whois.arin.net"
+  },
+  "22386": {
+    "host": "whois.afrinic.net"
+  },
+  "22387 22406": {
+    "host": "whois.arin.net"
+  },
+  "22407": {
+    "host": "whois.lacnic.net"
+  },
+  "22408 22410": {
+    "host": "whois.arin.net"
+  },
+  "22411": {
+    "host": "whois.lacnic.net"
+  },
+  "22412 22430": {
+    "host": "whois.arin.net"
+  },
+  "22431": {
+    "host": "whois.lacnic.net"
+  },
+  "22432 22452": {
+    "host": "whois.arin.net"
+  },
+  "22453": {
+    "host": "whois.lacnic.net"
+  },
+  "22454 22500": {
+    "host": "whois.arin.net"
+  },
+  "22501": {
+    "host": "whois.lacnic.net"
+  },
+  "22502 22507": {
+    "host": "whois.arin.net"
+  },
+  "22508": {
+    "host": "whois.lacnic.net"
+  },
+  "22509 22514": {
+    "host": "whois.arin.net"
+  },
+  "22515": {
+    "host": "whois.lacnic.net"
+  },
+  "22516 22528": {
+    "host": "whois.arin.net"
+  },
+  "22529": {
+    "host": "whois.lacnic.net"
+  },
+  "22530 22540": {
+    "host": "whois.arin.net"
+  },
+  "22541": {
+    "host": "whois.lacnic.net"
+  },
+  "22542 22547": {
+    "host": "whois.arin.net"
+  },
+  "22548": {
+    "host": "whois.lacnic.net"
+  },
+  "22549 22565": {
+    "host": "whois.arin.net"
+  },
+  "22566": {
+    "host": "whois.lacnic.net"
+  },
+  "22567 22571": {
+    "host": "whois.arin.net"
+  },
+  "22572": {
+    "host": "whois.afrinic.net"
+  },
+  "22573 22626": {
+    "host": "whois.arin.net"
+  },
+  "22627": {
+    "host": "whois.ripe.net"
+  },
+  "22628": {
+    "host": "whois.lacnic.net"
+  },
+  "22629 22660": {
+    "host": "whois.arin.net"
+  },
+  "22661": {
+    "host": "whois.lacnic.net"
+  },
+  "22662 22677": {
+    "host": "whois.arin.net"
+  },
+  "22678": {
+    "host": "whois.lacnic.net"
+  },
+  "22679 22682": {
+    "host": "whois.arin.net"
+  },
+  "22683": {
+    "host": "whois.ripe.net"
+  },
+  "22684 22688": {
+    "host": "whois.arin.net"
+  },
+  "22689": {
+    "host": "whois.lacnic.net"
+  },
+  "22690": {
+    "host": "whois.afrinic.net"
+  },
+  "22691 22697": {
+    "host": "whois.arin.net"
+  },
+  "22698 22699": {
+    "host": "whois.lacnic.net"
+  },
+  "22700 22705": {
+    "host": "whois.arin.net"
+  },
+  "22706": {
+    "host": "whois.lacnic.net"
+  },
+  "22707 22723": {
+    "host": "whois.arin.net"
+  },
+  "22724": {
+    "host": "whois.lacnic.net"
+  },
+  "22725": {
+    "host": "whois.arin.net"
+  },
+  "22726": {
+    "host": "whois.lacnic.net"
+  },
+  "22727 22734": {
+    "host": "whois.arin.net"
+  },
+  "22735": {
+    "host": "whois.afrinic.net"
+  },
+  "22736 22744": {
+    "host": "whois.arin.net"
+  },
+  "22745": {
+    "host": "whois.lacnic.net"
+  },
+  "22746 22749": {
+    "host": "whois.arin.net"
+  },
+  "22750": {
+    "host": "whois.afrinic.net"
+  },
+  "22751 22797": {
+    "host": "whois.arin.net"
+  },
+  "22798": {
+    "host": "whois.lacnic.net"
+  },
+  "22799 22817": {
+    "host": "whois.arin.net"
+  },
+  "22818 22819": {
+    "host": "whois.lacnic.net"
+  },
+  "22820 22832": {
+    "host": "whois.arin.net"
+  },
+  "22833": {
+    "host": "whois.lacnic.net"
+  },
+  "22834 22859": {
+    "host": "whois.arin.net"
+  },
+  "22860": {
+    "host": "whois.lacnic.net"
+  },
+  "22861 22868": {
+    "host": "whois.arin.net"
+  },
+  "22869": {
+    "host": "whois.lacnic.net"
+  },
+  "22870 22875": {
+    "host": "whois.arin.net"
+  },
+  "22876": {
+    "host": "whois.lacnic.net"
+  },
+  "22877 22881": {
+    "host": "whois.arin.net"
+  },
+  "22882": {
+    "host": "whois.lacnic.net"
+  },
+  "22883": {
+    "host": "whois.arin.net"
+  },
+  "22884": {
+    "host": "whois.lacnic.net"
+  },
+  "22885 22888": {
+    "host": "whois.arin.net"
+  },
+  "22889": {
+    "host": "whois.lacnic.net"
+  },
+  "22890 22893": {
+    "host": "whois.arin.net"
+  },
+  "22894": {
+    "host": "whois.lacnic.net"
+  },
+  "22895 22907": {
+    "host": "whois.arin.net"
+  },
+  "22908": {
+    "host": "whois.lacnic.net"
+  },
+  "22909 22923": {
+    "host": "whois.arin.net"
+  },
+  "22924": {
+    "host": "whois.lacnic.net"
+  },
+  "22925 22926": {
+    "host": "whois.arin.net"
+  },
+  "22927": {
+    "host": "whois.lacnic.net"
+  },
+  "22928 22938": {
+    "host": "whois.arin.net"
+  },
+  "22939": {
+    "host": "whois.afrinic.net"
+  },
+  "22940 22974": {
+    "host": "whois.arin.net"
+  },
+  "22975": {
+    "host": "whois.lacnic.net"
+  },
+  "22976 23001": {
+    "host": "whois.arin.net"
+  },
+  "23002": {
+    "host": "whois.lacnic.net"
+  },
+  "23003 23006": {
+    "host": "whois.arin.net"
+  },
+  "23007": {
+    "host": "whois.lacnic.net"
+  },
+  "23008 23019": {
+    "host": "whois.arin.net"
+  },
+  "23020": {
+    "host": "whois.lacnic.net"
+  },
+  "23021 23030": {
+    "host": "whois.arin.net"
+  },
+  "23031": {
+    "host": "whois.lacnic.net"
+  },
+  "23032 23057": {
+    "host": "whois.arin.net"
+  },
+  "23058": {
+    "host": "whois.afrinic.net"
+  },
+  "23059 23073": {
+    "host": "whois.arin.net"
+  },
+  "23074": {
+    "host": "whois.lacnic.net"
+  },
+  "23075 23090": {
+    "host": "whois.arin.net"
+  },
+  "23091": {
+    "host": "whois.lacnic.net"
+  },
+  "23092 23104": {
+    "host": "whois.arin.net"
+  },
+  "23105 23106": {
+    "host": "whois.lacnic.net"
+  },
+  "23107 23112": {
+    "host": "whois.arin.net"
+  },
+  "23113": {
+    "host": "whois.lacnic.net"
+  },
+  "23114 23127": {
+    "host": "whois.arin.net"
+  },
+  "23128": {
+    "host": "whois.lacnic.net"
+  },
+  "23129 23139": {
+    "host": "whois.arin.net"
+  },
+  "23140": {
+    "host": "whois.lacnic.net"
+  },
+  "23141 23200": {
+    "host": "whois.arin.net"
+  },
+  "23201 23202": {
+    "host": "whois.lacnic.net"
+  },
+  "23203 23215": {
+    "host": "whois.arin.net"
+  },
+  "23216": {
+    "host": "whois.lacnic.net"
+  },
+  "23217 23241": {
+    "host": "whois.arin.net"
+  },
+  "23242": {
+    "host": "whois.ripe.net"
+  },
+  "23243": {
+    "host": "whois.lacnic.net"
+  },
+  "23244 23245": {
+    "host": "whois.arin.net"
+  },
+  "23246": {
+    "host": "whois.lacnic.net"
+  },
+  "23247 23288": {
+    "host": "whois.arin.net"
+  },
+  "23289": {
+    "host": "whois.lacnic.net"
+  },
+  "23290 23352": {
+    "host": "whois.arin.net"
+  },
+  "23353": {
+    "host": "whois.lacnic.net"
+  },
+  "23354 23359": {
+    "host": "whois.arin.net"
+  },
+  "23360": {
+    "host": "whois.lacnic.net"
+  },
+  "23361 23381": {
+    "host": "whois.arin.net"
+  },
+  "23382 23383": {
+    "host": "whois.lacnic.net"
+  },
+  "23384 23415": {
+    "host": "whois.arin.net"
+  },
+  "23416": {
+    "host": "whois.lacnic.net"
+  },
+  "23417 23455": {
+    "host": "whois.arin.net"
+  },
+  "23456": {
+    "host": ""
+  },
+  "23457 23486": {
+    "host": "whois.arin.net"
+  },
+  "23487 23488": {
+    "host": "whois.lacnic.net"
+  },
+  "23489 23494": {
+    "host": "whois.arin.net"
+  },
+  "23495": {
+    "host": "whois.lacnic.net"
+  },
+  "23496 23540": {
+    "host": "whois.arin.net"
+  },
+  "23541": {
+    "host": "whois.lacnic.net"
+  },
+  "23542 23548": {
+    "host": "whois.arin.net"
+  },
+  "23549": {
+    "host": "whois.afrinic.net"
+  },
+  "23550 23551": {
+    "host": "whois.arin.net"
   },
   "23552 24575": {
     "host": "whois.apnic.net"
   },
-  "23552 23601": {
-    "host": "whois.nic.or.kr"
-  },
-  "23612 23643": {
-    "host": "whois.nic.ad.jp"
-  },
-  "24576 25599": {
+  "24576 24735": {
     "host": "whois.ripe.net"
+  },
+  "24736": {
+    "host": "whois.afrinic.net"
+  },
+  "24737 24756": {
+    "host": "whois.ripe.net"
+  },
+  "24757": {
+    "host": "whois.afrinic.net"
+  },
+  "24758 24787": {
+    "host": "whois.ripe.net"
+  },
+  "24788": {
+    "host": "whois.afrinic.net"
+  },
+  "24789 24800": {
+    "host": "whois.ripe.net"
+  },
+  "24801": {
+    "host": "whois.afrinic.net"
+  },
+  "24802 24834": {
+    "host": "whois.ripe.net"
+  },
+  "24835": {
+    "host": "whois.afrinic.net"
+  },
+  "24836 24862": {
+    "host": "whois.ripe.net"
+  },
+  "24863": {
+    "host": "whois.afrinic.net"
+  },
+  "24864 24877": {
+    "host": "whois.ripe.net"
+  },
+  "24878": {
+    "host": "whois.afrinic.net"
+  },
+  "24879 24986": {
+    "host": "whois.ripe.net"
+  },
+  "24987": {
+    "host": "whois.afrinic.net"
+  },
+  "24988 25162": {
+    "host": "whois.ripe.net"
+  },
+  "25163": {
+    "host": "whois.afrinic.net"
+  },
+  "25164 25249": {
+    "host": "whois.ripe.net"
+  },
+  "25250": {
+    "host": "whois.afrinic.net"
+  },
+  "25251 25361": {
+    "host": "whois.ripe.net"
+  },
+  "25362": {
+    "host": "whois.afrinic.net"
+  },
+  "25363": {
+    "host": "whois.ripe.net"
+  },
+  "25364": {
+    "host": "whois.afrinic.net"
+  },
+  "25365 25542": {
+    "host": "whois.ripe.net"
+  },
+  "25543": {
+    "host": "whois.afrinic.net"
+  },
+  "25544 25567": {
+    "host": "whois.ripe.net"
+  },
+  "25568": {
+    "host": "whois.afrinic.net"
+  },
+  "25569 25575": {
+    "host": "whois.ripe.net"
+  },
+  "25576": {
+    "host": "whois.afrinic.net"
+  },
+  "25577 25599": {
+    "host": "whois.ripe.net"
+  },
+  "25600 25606": {
+    "host": "whois.arin.net"
+  },
+  "25607": {
+    "host": "whois.lacnic.net"
+  },
+  "25608 25619": {
+    "host": "whois.arin.net"
+  },
+  "25620": {
+    "host": "whois.lacnic.net"
+  },
+  "25621 25694": {
+    "host": "whois.arin.net"
+  },
+  "25695": {
+    "host": "whois.afrinic.net"
+  },
+  "25696 25700": {
+    "host": "whois.arin.net"
+  },
+  "25701": {
+    "host": "whois.lacnic.net"
+  },
+  "25702 25704": {
+    "host": "whois.arin.net"
+  },
+  "25705": {
+    "host": "whois.lacnic.net"
+  },
+  "25706 25717": {
+    "host": "whois.arin.net"
+  },
+  "25718": {
+    "host": "whois.lacnic.net"
+  },
+  "25719 25725": {
+    "host": "whois.arin.net"
+  },
+  "25726": {
+    "host": "whois.afrinic.net"
+  },
+  "25727 25733": {
+    "host": "whois.arin.net"
+  },
+  "25734": {
+    "host": "whois.lacnic.net"
+  },
+  "25735 25792": {
+    "host": "whois.arin.net"
+  },
+  "25793": {
+    "host": "whois.afrinic.net"
+  },
+  "25794 25811": {
+    "host": "whois.arin.net"
+  },
+  "25812": {
+    "host": "whois.lacnic.net"
+  },
+  "25813 25817": {
+    "host": "whois.arin.net"
+  },
+  "25818": {
+    "host": "whois.afrinic.net"
+  },
+  "25819 25831": {
+    "host": "whois.arin.net"
+  },
+  "25832": {
+    "host": "whois.lacnic.net"
+  },
+  "25833 25879": {
+    "host": "whois.arin.net"
+  },
+  "25880": {
+    "host": "whois.ripe.net"
+  },
+  "25881 25907": {
+    "host": "whois.arin.net"
+  },
+  "25908": {
+    "host": "whois.lacnic.net"
+  },
+  "25909 25926": {
+    "host": "whois.arin.net"
+  },
+  "25927": {
+    "host": "whois.lacnic.net"
+  },
+  "25928 25932": {
+    "host": "whois.arin.net"
+  },
+  "25933": {
+    "host": "whois.lacnic.net"
+  },
+  "25934 25997": {
+    "host": "whois.arin.net"
+  },
+  "25998": {
+    "host": "whois.lacnic.net"
+  },
+  "25999 26047": {
+    "host": "whois.arin.net"
+  },
+  "26048": {
+    "host": "whois.lacnic.net"
+  },
+  "26049 26060": {
+    "host": "whois.arin.net"
+  },
+  "26061": {
+    "host": "whois.lacnic.net"
+  },
+  "26062 26089": {
+    "host": "whois.arin.net"
+  },
+  "26090": {
+    "host": "whois.lacnic.net"
+  },
+  "26091 26103": {
+    "host": "whois.arin.net"
+  },
+  "26104 26105": {
+    "host": "whois.lacnic.net"
+  },
+  "26106": {
+    "host": "whois.afrinic.net"
+  },
+  "26107": {
+    "host": "whois.lacnic.net"
+  },
+  "26108 26111": {
+    "host": "whois.arin.net"
+  },
+  "26112": {
+    "host": "whois.lacnic.net"
+  },
+  "26113 26117": {
+    "host": "whois.arin.net"
+  },
+  "26118 26119": {
+    "host": "whois.lacnic.net"
+  },
+  "26120 26129": {
+    "host": "whois.arin.net"
+  },
+  "26130": {
+    "host": "whois.afrinic.net"
+  },
+  "26131 26135": {
+    "host": "whois.arin.net"
+  },
+  "26136": {
+    "host": "whois.lacnic.net"
+  },
+  "26137 26161": {
+    "host": "whois.arin.net"
+  },
+  "26162": {
+    "host": "whois.lacnic.net"
+  },
+  "26163 26172": {
+    "host": "whois.arin.net"
+  },
+  "26173": {
+    "host": "whois.lacnic.net"
+  },
+  "26174 26193": {
+    "host": "whois.arin.net"
+  },
+  "26194": {
+    "host": "whois.lacnic.net"
+  },
+  "26195 26209": {
+    "host": "whois.arin.net"
+  },
+  "26210": {
+    "host": "whois.lacnic.net"
+  },
+  "26211 26217": {
+    "host": "whois.arin.net"
+  },
+  "26218": {
+    "host": "whois.lacnic.net"
+  },
+  "26219 26316": {
+    "host": "whois.arin.net"
+  },
+  "26317": {
+    "host": "whois.lacnic.net"
+  },
+  "26318 26417": {
+    "host": "whois.arin.net"
+  },
+  "26418": {
+    "host": "whois.lacnic.net"
+  },
+  "26419 26421": {
+    "host": "whois.arin.net"
+  },
+  "26422": {
+    "host": "whois.afrinic.net"
+  },
+  "26423 26425": {
+    "host": "whois.arin.net"
+  },
+  "26426": {
+    "host": "whois.lacnic.net"
+  },
+  "26427 26433": {
+    "host": "whois.arin.net"
+  },
+  "26434": {
+    "host": "whois.lacnic.net"
+  },
+  "26435 26472": {
+    "host": "whois.arin.net"
+  },
+  "26473": {
+    "host": "whois.lacnic.net"
+  },
+  "26474 26504": {
+    "host": "whois.arin.net"
+  },
+  "26505": {
+    "host": "whois.lacnic.net"
+  },
+  "26506 26591": {
+    "host": "whois.arin.net"
   },
   "26592 26623": {
     "host": "whois.lacnic.net"
   },
+  "26624 26624": {
+    "host": "whois.arin.net"
+  },
+  "26625": {
+    "host": "whois.afrinic.net"
+  },
+  "26626 26753": {
+    "host": "whois.arin.net"
+  },
+  "26754": {
+    "host": "whois.afrinic.net"
+  },
+  "26755 27575": {
+    "host": "whois.arin.net"
+  },
+  "27576": {
+    "host": "whois.afrinic.net"
+  },
+  "27577 27597": {
+    "host": "whois.arin.net"
+  },
+  "27598": {
+    "host": "whois.afrinic.net"
+  },
+  "27599 27647": {
+    "host": "whois.arin.net"
+  },
   "27648 28671": {
     "host": "whois.lacnic.net"
   },
-  "28672 29695": {
+  "28672 28682": {
     "host": "whois.ripe.net"
   },
-  "30980 30999": {
+  "28683": {
     "host": "whois.afrinic.net"
   },
-  "30720 31743": {
+  "28684 28697": {
     "host": "whois.ripe.net"
   },
-  "34515 34519": {
+  "28698": {
     "host": "whois.afrinic.net"
   },
-  "33792 35839": {
+  "28699 28912": {
     "host": "whois.ripe.net"
+  },
+  "28913": {
+    "host": "whois.afrinic.net"
+  },
+  "28914 29090": {
+    "host": "whois.ripe.net"
+  },
+  "29091": {
+    "host": "whois.afrinic.net"
+  },
+  "29092 29337": {
+    "host": "whois.ripe.net"
+  },
+  "29338": {
+    "host": "whois.afrinic.net"
+  },
+  "29339": {
+    "host": "whois.ripe.net"
+  },
+  "29340": {
+    "host": "whois.afrinic.net"
+  },
+  "29341 29427": {
+    "host": "whois.ripe.net"
+  },
+  "29428": {
+    "host": "whois.afrinic.net"
+  },
+  "29429 29494": {
+    "host": "whois.ripe.net"
+  },
+  "29495": {
+    "host": "whois.afrinic.net"
+  },
+  "29496 29543": {
+    "host": "whois.ripe.net"
+  },
+  "29544": {
+    "host": "whois.afrinic.net"
+  },
+  "29545 29570": {
+    "host": "whois.ripe.net"
+  },
+  "29571": {
+    "host": "whois.afrinic.net"
+  },
+  "29572 29613": {
+    "host": "whois.ripe.net"
+  },
+  "29614": {
+    "host": "whois.afrinic.net"
+  },
+  "29615 29673": {
+    "host": "whois.ripe.net"
+  },
+  "29674": {
+    "host": "whois.afrinic.net"
+  },
+  "29675 29695": {
+    "host": "whois.ripe.net"
+  },
+  "29696 29917": {
+    "host": "whois.arin.net"
+  },
+  "29918": {
+    "host": "whois.afrinic.net"
+  },
+  "29919 29974": {
+    "host": "whois.arin.net"
+  },
+  "29975": {
+    "host": "whois.afrinic.net"
+  },
+  "29976 30072": {
+    "host": "whois.arin.net"
+  },
+  "30073": {
+    "host": "whois.afrinic.net"
+  },
+  "30074 30305": {
+    "host": "whois.arin.net"
+  },
+  "30306": {
+    "host": "whois.afrinic.net"
+  },
+  "30307 30428": {
+    "host": "whois.arin.net"
+  },
+  "30429": {
+    "host": "whois.afrinic.net"
+  },
+  "30430 30618": {
+    "host": "whois.arin.net"
+  },
+  "30619": {
+    "host": "whois.afrinic.net"
+  },
+  "30620 30719": {
+    "host": "whois.arin.net"
+  },
+  "30720 30895": {
+    "host": "whois.ripe.net"
+  },
+  "30896": {
+    "host": "whois.afrinic.net"
+  },
+  "30897 30979": {
+    "host": "whois.ripe.net"
+  },
+  "30980": {
+    "host": "whois.afrinic.net"
+  },
+  "30981": {
+    "host": "whois.ripe.net"
+  },
+  "30982 30999": {
+    "host": "whois.afrinic.net"
+  },
+  "31000 31064": {
+    "host": "whois.ripe.net"
+  },
+  "31065": {
+    "host": "whois.afrinic.net"
+  },
+  "31066 31244": {
+    "host": "whois.ripe.net"
+  },
+  "31245": {
+    "host": "whois.afrinic.net"
+  },
+  "31246 31618": {
+    "host": "whois.ripe.net"
+  },
+  "31619": {
+    "host": "whois.afrinic.net"
+  },
+  "31620 31743": {
+    "host": "whois.ripe.net"
+  },
+  "31744 31809": {
+    "host": "whois.arin.net"
+  },
+  "31810": {
+    "host": "whois.afrinic.net"
+  },
+  "31811 31855": {
+    "host": "whois.arin.net"
+  },
+  "31856": {
+    "host": "whois.afrinic.net"
+  },
+  "31857 31959": {
+    "host": "whois.arin.net"
+  },
+  "31960": {
+    "host": "whois.afrinic.net"
+  },
+  "31961 32016": {
+    "host": "whois.arin.net"
+  },
+  "32017": {
+    "host": "whois.afrinic.net"
+  },
+  "32018 32278": {
+    "host": "whois.arin.net"
+  },
+  "32279": {
+    "host": "whois.afrinic.net"
+  },
+  "32280 32397": {
+    "host": "whois.arin.net"
+  },
+  "32398": {
+    "host": "whois.afrinic.net"
+  },
+  "32399 32436": {
+    "host": "whois.arin.net"
+  },
+  "32437": {
+    "host": "whois.afrinic.net"
+  },
+  "32438 32652": {
+    "host": "whois.arin.net"
+  },
+  "32653": {
+    "host": "whois.afrinic.net"
+  },
+  "32654 32713": {
+    "host": "whois.arin.net"
+  },
+  "32714": {
+    "host": "whois.afrinic.net"
+  },
+  "32715 32716": {
+    "host": "whois.arin.net"
+  },
+  "32717": {
+    "host": "whois.afrinic.net"
+  },
+  "32718 32841": {
+    "host": "whois.arin.net"
+  },
+  "32842": {
+    "host": "whois.afrinic.net"
+  },
+  "32843 32859": {
+    "host": "whois.arin.net"
+  },
+  "32860": {
+    "host": "whois.afrinic.net"
+  },
+  "32861 33566": {
+    "host": "whois.arin.net"
+  },
+  "33567": {
+    "host": "whois.afrinic.net"
+  },
+  "33568 33578": {
+    "host": "whois.arin.net"
+  },
+  "33579": {
+    "host": "whois.afrinic.net"
+  },
+  "33580 33761": {
+    "host": "whois.arin.net"
+  },
+  "33762 33791": {
+    "host": "whois.afrinic.net"
+  },
+  "33792 34815": {
+    "host": "whois.ripe.net"
+  },
+  "34816 35839": {
+    "host": "whois.ripe.net"
+  },
+  "35840 36863": {
+    "host": "whois.arin.net"
   },
   "36864 37887": {
     "host": "whois.afrinic.net"
@@ -179,34 +6719,79 @@
   "38912 39935": {
     "host": "whois.ripe.net"
   },
-  "40960 45055": {
+  "39936 40959": {
+    "host": "whois.arin.net"
+  },
+  "40960 41983": {
+    "host": "whois.ripe.net"
+  },
+  "41984 43007": {
+    "host": "whois.ripe.net"
+  },
+  "43008 44031": {
+    "host": "whois.ripe.net"
+  },
+  "44032 45055": {
     "host": "whois.ripe.net"
   },
   "45056 46079": {
     "host": "whois.apnic.net"
   },
-  "47104 52223": {
+  "46080 47103": {
+    "host": "whois.arin.net"
+  },
+  "47104 48127": {
+    "host": "whois.ripe.net"
+  },
+  "48128 49151": {
+    "host": "whois.ripe.net"
+  },
+  "49152 50175": {
+    "host": "whois.ripe.net"
+  },
+  "50176 51199": {
+    "host": "whois.ripe.net"
+  },
+  "51200 52223": {
     "host": "whois.ripe.net"
   },
   "52224 53247": {
     "host": "whois.lacnic.net"
   },
+  "53248 54271": {
+    "host": "whois.arin.net"
+  },
+  "54272 55295": {
+    "host": "whois.arin.net"
+  },
   "55296 56319": {
     "host": "whois.apnic.net"
   },
-  "56320 58367": {
+  "56320 57343": {
+    "host": "whois.ripe.net"
+  },
+  "57344 58367": {
     "host": "whois.ripe.net"
   },
   "58368 59391": {
     "host": "whois.apnic.net"
   },
-  "59392 61439": {
+  "59392 60415": {
+    "host": "whois.ripe.net"
+  },
+  "60416 61439": {
     "host": "whois.ripe.net"
   },
   "61440 61951": {
     "host": "whois.lacnic.net"
   },
-  "1 63487": {
+  "61952 62463": {
+    "host": "whois.ripe.net"
+  },
+  "62464 63487": {
     "host": "whois.arin.net"
+  },
+  "63488 63999": {
+    "host": "whois.apnic.net"
   }
 }
