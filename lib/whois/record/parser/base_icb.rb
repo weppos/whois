@@ -61,10 +61,9 @@ module Whois
         property_not_supported :registrar
 
         property_supported :registrant_contacts do
-          textblock = content_for_scanner.slice(/Owner((?:\s*: .+\n)+)/, 1)
-          return unless textblock
+          lines = content_for_scanner.scan(/^Owner\s+: (.+)\n/).flatten
+          return if lines.empty?
 
-          lines = textblock.scan(/^\s+: (.+)\n/).flatten
           Record::Contact.new(
             type:         Record::Contact::TYPE_REGISTRANT,
             name:         lines[0],

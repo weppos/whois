@@ -2,11 +2,11 @@
   %s %ERROR{AttributeNotSupported}
 
 
-#domain_id
-  %s %ERROR{AttributeNotSupported}
-
 #domain
   %s == "redis.io"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
 
 
 #status

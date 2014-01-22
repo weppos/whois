@@ -86,7 +86,7 @@ end
       #
       tests = {}
       match = nil
-      lines = File.open(source_path)
+      lines = File.open(source_path, "r:UTF-8")
       lines.each do |line|
         line.chomp!
         case line

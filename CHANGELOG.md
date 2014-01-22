@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+- CHANGED: Updated IBC parser and fixtures (.IO, .AC, .SH and .TM).
+
+
 ## Release 3.4.3
 
 - SERVER: Updated .COM, .NET, .CC, .WS TLD definitions.

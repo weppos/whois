@@ -26,14 +26,14 @@ describe Whois::Record::Parser::WhoisNicIo, "status_registered.expected" do
       expect { subject.disclaimer }.to raise_error(Whois::AttributeNotSupported)
     end
   end
-  describe "#domain_id" do
-    it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
-    end
-  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq("redis.io")
+    end
+  end
+  describe "#domain_id" do
+    it do
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do

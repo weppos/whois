@@ -9,9 +9,9 @@ NS 3   : ns3.iwantmyname.net
 NS 4   : ns4.iwantmyname.net
 
 Owner  : Salvatore Sanfilippo
-       : Salvatore Sanfilippo
-       : Via F.Alaimo, 2
-       : Campobello di Licata (AG
-       : .
-       : IT
+Owner  : Salvatore Sanfilippo
+Owner  : Via F.Alaimo, 2
+Owner  : Campobello di Licata (AG
+Owner  : .
+Owner  : IT
 

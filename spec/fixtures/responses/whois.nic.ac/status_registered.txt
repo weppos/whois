@@ -9,9 +9,9 @@ NS 3   : ns3.google.com
 NS 4   : ns4.google.com
 
 Owner  : DNS Admin
-       : Google Inc.
-       : 1600 Amphitheatre Parkway
-       : Mountain View
-       : CA
-       : US
+Owner  : Google Inc.
+Owner  : 1600 Amphitheatre Parkway
+Owner  : Mountain View
+Owner  : CA
+Owner  : US
 
