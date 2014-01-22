@@ -39,7 +39,7 @@ module Whois
 
 
         property_supported :status do
-          case node("status", &:downcase)
+          case node("ren-status", &:downcase)
           when /^active/
             :registered
           when nil

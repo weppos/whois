@@ -100,7 +100,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "status_registered.expect
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].id).to eq("CCA7-IEDR")
-      expect(subject.technical_contacts[0].name).to eq("eMarkmonitor Inc")
+      expect(subject.technical_contacts[0].name).to eq("Markmonitor Inc")
     end
   end
   describe "#nameservers" do

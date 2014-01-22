@@ -10,7 +10,10 @@ admin-c:      AAV410-IEDR
 tech-c:       CCA7-IEDR
 registration: 21-March-2002
 renewal:      21-March-2014
-status:       Active
+holder-type:  Billable
+wipo-status:  N
+ren-status:   Active
+in-zone:      1
 nserver:      ns1.google.com  
 nserver:      ns2.google.com  
 nserver:      ns3.google.com  
@@ -20,7 +23,7 @@ person:       Christina Chiou
 nic-hdl:      AAV410-IEDR
 source:       IEDR
 
-person:       eMarkmonitor Inc
+person:       Markmonitor Inc
 nic-hdl:      CCA7-IEDR
 source:       IEDR
 
