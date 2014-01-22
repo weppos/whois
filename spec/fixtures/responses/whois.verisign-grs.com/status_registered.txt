@@ -198,6 +198,12 @@ for detailed information.
    Whois Server: whois.tucows.com
    Referral URL: http://domainhelp.opensrs.net
 
+   Server Name: GOOGLE.COM.FIBERTREAT.COM
+   IP Address: 64.233.160.5
+   Registrar: GODADDY.COM, LLC
+   Whois Server: whois.godaddy.com
+   Referral URL: http://registrar.godaddy.com
+
    Server Name: GOOGLE.COM.DO
    Registrar: GODADDY.COM, LLC
    Whois Server: whois.godaddy.com
@@ -263,7 +269,7 @@ for detailed information.
    Creation Date: 15-sep-1997
    Expiration Date: 14-sep-2020
 
->>> Last update of whois database: Tue, 26 Nov 2013 18:16:12 UTC <<<
+>>> Last update of whois database: Wed, 22 Jan 2014 22:08:21 UTC <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

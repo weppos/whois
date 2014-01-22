@@ -24,16 +24,27 @@ describe Whois::Record::Parser::WhoisDenicDe, "property_nameservers_with_ip.expe
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers).to have(5).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.prodns.de")
-      expect(subject.nameservers[0].ipv4).to eq("213.160.64.75")
+      expect(subject.nameservers[0].ipv4).to eq("91.233.85.99")
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.prodns.de")
-      expect(subject.nameservers[1].ipv4).to eq("213.160.65.75")
+      expect(subject.nameservers[1].name).to eq("ns2.prodns.eu")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.prodns.de")
-      expect(subject.nameservers[2].ipv4).to eq("83.133.190.12")
+      expect(subject.nameservers[2].ipv4).to eq("91.233.86.99")
+      expect(subject.nameservers[2].ipv6).to eq(nil)
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.prodns.eu")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
+      expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[4].name).to eq("ns5.prodns.de")
+      expect(subject.nameservers[4].ipv4).to eq("65.18.172.184")
+      expect(subject.nameservers[4].ipv6).to eq(nil)
     end
   end
 end

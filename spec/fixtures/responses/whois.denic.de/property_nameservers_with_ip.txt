@@ -31,19 +31,21 @@
 % the domain holder/administrative contact. Information concerning the domain
 % holder/administrative contact can be obtained through use of our web-based
 % whois service available at the DENIC website:
-% http://www.denic.de/en/background/whois-service/webwhois.html
+% http://www.denic.de/en/domains/whois-service/web-whois.html
 % 
 
 Domain: prodns.de
-Nserver: ns1.prodns.de. 213.160.64.75
-Nserver: ns2.prodns.de. 213.160.65.75
-Nserver: ns3.prodns.de. 83.133.190.12
+Nserver: ns1.prodns.de 91.233.85.99
+Nserver: ns2.prodns.eu
+Nserver: ns3.prodns.de 91.233.86.99
+Nserver: ns4.prodns.eu
+Nserver: ns5.prodns.de 65.18.172.184
 Status: connect
-Changed: 2007-08-16T16:03:01+02:00
+Changed: 2013-12-04T14:42:43+01:00
 
 [Tech-C]
-Type: ROLE
-Name: PROHOST ROLE
+Type: PERSON
+Name: Prohost Role
 Address: Koepenweg 8
 PostalCode: 27616
 City: Lunestedt
@@ -51,11 +53,11 @@ CountryCode: DE
 Phone: +49 4748 947983
 Fax: +49 4748 947984
 Email: hostmaster@prohost.de
-Changed: 2004-01-14T04:14:28+01:00
+Changed: 2012-07-05T07:32:27+02:00
 
 [Zone-C]
-Type: ROLE
-Name: PROHOST ROLE
+Type: PERSON
+Name: Prohost Role
 Address: Koepenweg 8
 PostalCode: 27616
 City: Lunestedt
@@ -63,4 +65,4 @@ CountryCode: DE
 Phone: +49 4748 947983
 Fax: +49 4748 947984
 Email: hostmaster@prohost.de
-Changed: 2004-01-14T04:14:28+01:00
+Changed: 2012-07-05T07:32:27+02:00

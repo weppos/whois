@@ -27,7 +27,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2012-09-21}
+  %s %TIME{2014-09-21}
 
 
 #registrar
@@ -41,7 +41,7 @@
   %s[0].id            == nil
   %s[0].name          == "Google Hrvatska d.o.o."
   %s[0].organization  == nil
-  %s[0].address       == "Primorska 26"
+  %s[0].address       == "Ulica Petra Hektorovića 2"
   %s[0].city          == "Zagreb"
   %s[0].zip           == "10 000"
   %s[0].state         == nil

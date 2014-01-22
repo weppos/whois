@@ -33,9 +33,9 @@ Name servers:
     ns3.google.com
     ns4.google.com
 
-% WHOIS look-up made at 2013-05-07 12:22:26 (GMT)
+% WHOIS look-up made at 2014-01-22 22:10:48 (GMT)
 %
 % Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
 % Notice, available at http://www.cira.ca/legal-notice/?lang=en 
 %
-% (c) 2013 Canadian Internet Registration Authority, (http://www.cira.ca/) 
+% (c) 2014 Canadian Internet Registration Authority, (http://www.cira.ca/) 

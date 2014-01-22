@@ -110,7 +110,7 @@ module Whois
           node("Nserver") do |values|
             values.map do |line|
               name, ipv4 = line.split(/\s+/)
-              Record::Nameserver.new(:name => name.chomp("."), :ipv4 => ipv4)
+              Record::Nameserver.new(name: name, ipv4: ipv4)
             end
           end
         end

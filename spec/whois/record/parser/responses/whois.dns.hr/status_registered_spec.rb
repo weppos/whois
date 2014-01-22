@@ -64,7 +64,7 @@ describe Whois::Record::Parser::WhoisDnsHr, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2012-09-21"))
+      expect(subject.expires_on).to eq(Time.parse("2014-09-21"))
     end
   end
   describe "#registrar" do
@@ -81,7 +81,7 @@ describe Whois::Record::Parser::WhoisDnsHr, "status_registered.expected" do
       expect(subject.registrant_contacts[0].id).to eq(nil)
       expect(subject.registrant_contacts[0].name).to eq("Google Hrvatska d.o.o.")
       expect(subject.registrant_contacts[0].organization).to eq(nil)
-      expect(subject.registrant_contacts[0].address).to eq("Primorska 26")
+      expect(subject.registrant_contacts[0].address).to eq("Ulica Petra Hektorovića 2")
       expect(subject.registrant_contacts[0].city).to eq("Zagreb")
       expect(subject.registrant_contacts[0].zip).to eq("10 000")
       expect(subject.registrant_contacts[0].state).to eq(nil)
