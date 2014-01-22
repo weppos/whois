@@ -33,13 +33,11 @@ This library was created to power [RoboWhois](https://www.robowhois.com/) and [R
 For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
 
-## Install
+## Installation
 
-The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) - [Learn more](http://www.ruby-whois.org/manual/installing/)
+The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) - [Learn more](http://www.ruby-whois.org/manual/installing/).
 
     $ gem install whois
-
-For more details visit the [installation page](/manual/installing/).
 
 
 ## Getting Started
