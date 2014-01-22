@@ -22,7 +22,7 @@ Servidores de nombre (Domain servers):
     (Database last updated on): 23 de agosto de 2012 (10:10:08 GMT)
 
 Más información (More information):
-    http://www.nic.cl/cgi-bin/dom-CL?q=google
+    http://www.nic.cl/registry/Whois.do?d=google.cl
 
 Este mensajes está impreso en ISO-8859-1
 (This message is printed in ISO-8859-1)

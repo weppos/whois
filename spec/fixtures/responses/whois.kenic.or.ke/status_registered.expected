@@ -14,11 +14,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-09-21 17:22:00 EAT}
+  %s %TIME{2013-12-16 12:48:00 EAT}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-01-01 00:00:00 EAT}
+  %s %TIME{2015-01-01 00:00:00 EAT}
 
 
 #nameservers

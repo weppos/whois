@@ -23,8 +23,8 @@ registrar: MarkMonitor Inc.
 url: www.markmonitor.com
 status: ACTIVE
 created date: 2004-08-23 23:00:00
-updated date: 2012-07-25 19:49:18
-expiration date: 2013-08-23 23:00:00
+updated date: 2013-07-23 17:50:34
+expiration date: 2014-08-23 23:00:00
 
 owner-contact: P-CQG21
 owner-name: Company Google Inc.

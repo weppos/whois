@@ -85,8 +85,8 @@ Billing Phone Ext:
 Billing Fax: 
 Billing Fax Ext: 
 Billing Email: ck@nic.museum
-Name Server: nic.frd.se 
-Name Server ACE: nic.frd.se 
 Name Server: nic.museum 130.242.24.5
 Name Server ACE: nic.museum 130.242.24.5
+Name Server: nic.frd.se 
+Name Server ACE: nic.frd.se 
 

@@ -1,6 +1,6 @@
 
 Status: AVAILABLE (No match for domain "u34jedzcq.sx")
->>> Last update of WHOIS database: 2012-11-22T11:54:04.786Z <<<
+>>> Last update of WHOIS database: 2014-01-22T22:12:08.820Z <<<
 
 % WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS
 % The WHOIS service offered by OpenRegistry and the access to the

@@ -25,8 +25,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "nic.frd.se"
-  %s[0].ipv4 == nil
+  %s[0].name == "nic.museum"
+  %s[0].ipv4 == "130.242.24.5"
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "nic.museum"
-  %s[1].ipv4 == "130.242.24.5"
+  %s[1].name == "nic.frd.se"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
