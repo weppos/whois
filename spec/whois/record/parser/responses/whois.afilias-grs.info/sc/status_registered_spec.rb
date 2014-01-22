@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"])
+      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED", "RENEWPERIOD"])
     end
   end
   describe "#available?" do
@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-02-19 12:00:11 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2014-01-02 10:20:29 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-02-03 19:19:12 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-02-03 19:19:12 UTC"))
     end
   end
   describe "#registrar" do
@@ -129,10 +129,13 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       expect(subject.technical_contacts[0].city).to eq("Boise")
       expect(subject.technical_contacts[0].zip).to eq("83704")
       expect(subject.technical_contacts[0].state).to eq("CA")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("+1.2083895740")
       expect(subject.technical_contacts[0].fax).to eq("+1.2083895771")
       expect(subject.technical_contacts[0].email).to eq("ccops@markmonitor.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

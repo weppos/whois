@@ -18,14 +18,15 @@ you agree to abide by this policy.
 Domain ID:D354967-LRCC
 Domain Name:GOOGLE.BZ
 Created On:12-Feb-2006 18:08:52 UTC
-Last Updated On:11-Jan-2013 10:17:13 UTC
-Expiration Date:12-Feb-2014 18:08:52 UTC
+Last Updated On:11-Jan-2014 10:18:14 UTC
+Expiration Date:12-Feb-2015 18:08:52 UTC
 Sponsoring Registrar:MarkMonitor, Inc. (R22-LRCC)
 Whois Server:whois.markmonitor.com
 Referral URL:http://www.markmonitor.com
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED
 Status:CLIENT UPDATE PROHIBITED
+Status:RENEWPERIOD
 Name Server:NS1.GOOGLE.COM
 Name Server:NS2.GOOGLE.COM
 Name Server:NS3.GOOGLE.COM

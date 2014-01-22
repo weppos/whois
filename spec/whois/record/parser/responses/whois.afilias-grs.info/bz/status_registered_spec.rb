@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"])
+      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED", "RENEWPERIOD"])
     end
   end
   describe "#available?" do
@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-01-11 10:17:13 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2014-01-11 10:18:14 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-02-12 18:08:52 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-02-12 18:08:52 UTC"))
     end
   end
   describe "#registrar" do

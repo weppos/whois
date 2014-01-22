@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"]
+  %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED", "RENEWPERIOD"]
 
 #available?
   %s == false
@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-01-11 10:17:13 UTC}
+  %s %TIME{2014-01-11 10:18:14 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-02-12 18:08:52 UTC}
+  %s %TIME{2015-02-12 18:08:52 UTC}
 
 
 #registrar

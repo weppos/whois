@@ -19,7 +19,7 @@ Go to http://registrar.verisign-grs.com/whois/ for detailed information.
    DNSSEC: Unsigned delegation
 
 
->>> Last update of whois database: 2013-05-07T12:21:16Z <<<
+>>> Last update of whois database: 2014-01-22T22:09:16Z <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

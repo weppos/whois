@@ -18,12 +18,13 @@ you agree to abide by this policy.
 Domain ID:D47234-LRCC
 Domain Name:GOOGLE.SC
 Created On:03-Feb-2004 19:19:12 UTC
-Last Updated On:19-Feb-2013 12:00:11 UTC
-Expiration Date:03-Feb-2014 19:19:12 UTC
+Last Updated On:02-Jan-2014 10:20:29 UTC
+Expiration Date:03-Feb-2015 19:19:12 UTC
 Sponsoring Registrar:MarkMonitor, Inc. (R22-LRCC)
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED
 Status:CLIENT UPDATE PROHIBITED
+Status:RENEWPERIOD
 Registrant ID:AGRS-129819
 Registrant Name:DNS Admin
 Registrant Organization:Google Inc.
