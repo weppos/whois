@@ -39,22 +39,22 @@ defs.each do |tld, node|
 end
 
 
-skippable = {}
-defs.each do |tld, node|
-  fixtures = node.reject { |k,v| k.index("_") == 0 }.reject { |k,v| node["_#{k}_skipdiff"].nil? }
-  subdir   = node["_subdir"] ? "/#{node["_subdir"]}" : ""
-  fixtures.each do |name, domain|
-    target = "spec/fixtures/responses/#{node["_server"]}#{subdir}/#{name}.txt"
-    skippable[target] = node["_#{name}_skipdiff"]
-  end
-end
+# skippable = {}
+# defs.each do |tld, node|
+#   fixtures = node.reject { |k,v| k.index("_") == 0 }.reject { |k,v| node["_#{k}_skipdiff"].nil? }
+#   subdir   = node["_subdir"] ? "/#{node["_subdir"]}" : ""
+#   fixtures.each do |name, domain|
+#     target = "spec/fixtures/responses/#{node["_server"]}#{subdir}/#{name}.txt"
+#     skippable[target] = node["_#{name}_skipdiff"]
+#   end
+# end
 
-changes = `git status`.scan(/modified:\s+(.+)/).flatten
-changes.each do |path|
-  next unless (alpha = skippable[path])
-  beta = `git show HEAD~1:#{path} | diff - #{path}`.scan(/^(\d+)c\1/).flatten.map(&:to_i)
-  if (alpha - beta) == []
-    `git checkout #{path}`
-    puts "Reset #{path}"
-  end
-end
+# changes = `git status`.scan(/modified:\s+(.+)/).flatten
+# changes.each do |path|
+#   next unless (alpha = skippable[path])
+#   beta = `git show HEAD~1:#{path} | diff - #{path}`.scan(/^(\d+)c\1/).flatten.map(&:to_i)
+#   if (alpha - beta) == []
+#     `git checkout #{path}`
+#     puts "Reset #{path}"
+#   end
+# end
