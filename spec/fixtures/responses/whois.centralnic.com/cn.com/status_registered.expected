@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["TRANSFER PROHIBITED"]
+  %s == ["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"]
 
 #available?
   %s == false
@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-04-19 11:39:32 UTC}
+  %s %TIME{2013-11-26 12:16:45 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-11-23 23:59:59 UTC}
+  %s %TIME{2014-11-23 23:59:59 UTC}
 
 
 #registrar

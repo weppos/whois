@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-01-16 16:26:58 UTC}
+  %s %TIME{2013-09-03 10:36:47 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-08-31 23:59:59 UTC}
+  %s %TIME{2015-08-31 23:59:59 UTC}
 
 
 #registrar
@@ -98,6 +98,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns38.eukdns.com"
+  %s[0].name == "ns37.eukdns.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns37.eukdns.com"
+  %s[1].name == "ns38.eukdns.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

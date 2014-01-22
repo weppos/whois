@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-04-03 13:16:52 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-07-10 00:27:20 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-07-12 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-07-12 23:59:59 UTC"))
     end
   end
   describe "#registrar" do

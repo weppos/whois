@@ -98,6 +98,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns2.myhostcp.com"
+  %s[0].name == "ns1.myhostcp.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns1.myhostcp.com"
+  %s[1].name == "ns2.myhostcp.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

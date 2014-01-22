@@ -1,3 +1,61 @@
+Domain ID:CNIC-DO1423750
+Domain Name:HOTEL.GB.NET
+Created On:2013-08-25T12:36:24.0Z
+Last Updated On:2013-08-30T12:42:09.0Z
+Expiration Date:2014-08-25T23:59:59.0Z
+Status:CLIENT TRANSFER PROHIBITED
+Status:SERVER TRANSFER PROHIBITED
+Registrant ID:R1149-GANDI-PRYP
+Registrant Name:Heinz Pierre Roeser
+Registrant Organization:Roevertrieb
+Registrant Street1:Friedensstr. 77
+Registrant City:Grevenbroich
+Registrant Postal Code:41517
+Registrant Country:DE
+Registrant Phone:+49.218145077
+Registrant Email:roevertrieb@aol.com
+Admin ID:R1149-GANDI-PRYP
+Admin Name:Heinz Pierre Roeser
+Admin Organization:Roevertrieb
+Admin Street1:Friedensstr. 77
+Admin City:Grevenbroich
+Admin Postal Code:41517
+Admin Country:DE
+Admin Phone:+49.218145077
+Admin Email:roevertrieb@aol.com
+Tech ID:R1149-GANDI-PRYP
+Tech Name:Heinz Pierre Roeser
+Tech Organization:Roevertrieb
+Tech Street1:Friedensstr. 77
+Tech City:Grevenbroich
+Tech Postal Code:41517
+Tech Country:DE
+Tech Phone:+49.218145077
+Tech Email:roevertrieb@aol.com
+Billing ID:R1149-GANDI-PRYP
+Billing Name:Heinz Pierre Roeser
+Billing Organization:Roevertrieb
+Billing Street1:Friedensstr. 77
+Billing City:Grevenbroich
+Billing Postal Code:41517
+Billing Country:DE
+Billing Phone:+49.218145077
+Billing Email:roevertrieb@aol.com
+Sponsoring Registrar ID:H1167922
+Sponsoring Registrar IANA ID:81
+Sponsoring Registrar Organization:Gandi SAS
+Sponsoring Registrar Street1:63-65 bd. Massena
+Sponsoring Registrar City:Paris
+Sponsoring Registrar Postal Code:75013
+Sponsoring Registrar Country:FR
+Sponsoring Registrar Phone:+33 1 7039 3740
+Sponsoring Registrar FAX:+33 1 4373 1851
+Sponsoring Registrar Website:http://www.gandi.net/
+Name Server:B.DNS.GANDI.NET
+Name Server:C.DNS.GANDI.NET
+Name Server:A.DNS.GANDI.NET
+DNSSEC:Unsigned
+
 This whois service is provided by CentralNic Ltd and only contains
 information pertaining to Internet domain names we have registered for
 our customers. By using this service you are agreeing (1) not to use any
@@ -7,71 +65,4 @@ any way, (3) not to use any high-volume, automated, electronic processes
 to obtain data from this service. Abuse of this service is monitored and
 actions in contravention of these terms will result in being permanently
 blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
-
-Domain ID:CNIC-DO875262
-Domain Name:HOTEL.GB.NET
-Created On:2012-06-28T00:33:28.0Z
-Last Updated On:2013-02-19T22:09:39.0Z
-Expiration Date:2013-06-28T23:59:59.0Z
-Status:OK
-Registrant ID:MNT14821952066
-Registrant Name:Identity Protection Service
-Registrant Organization:Identity Protect Limited
-Registrant Street1:PO Box 795
-Registrant City:Godalming
-Registrant State/Province:Surrey
-Registrant Postal Code:GU7 9GA
-Registrant Country:GB
-Registrant Phone:+44.1483307527
-Registrant FAX:+44.1483304031
-Registrant Email:hotel.gb.net@identity-protect.org
-Admin ID:MNT14821952066
-Admin Name:Identity Protection Service
-Admin Organization:Identity Protect Limited
-Admin Street1:PO Box 795
-Admin City:Godalming
-Admin State/Province:Surrey
-Admin Postal Code:GU7 9GA
-Admin Country:GB
-Admin Phone:+44.1483307527
-Admin FAX:+44.1483304031
-Admin Email:hotel.gb.net@identity-protect.org
-Tech ID:MNT14821952066
-Tech Name:Identity Protection Service
-Tech Organization:Identity Protect Limited
-Tech Street1:PO Box 795
-Tech City:Godalming
-Tech State/Province:Surrey
-Tech Postal Code:GU7 9GA
-Tech Country:GB
-Tech Phone:+44.1483307527
-Tech FAX:+44.1483304031
-Tech Email:hotel.gb.net@identity-protect.org
-Billing ID:MNT14821952066
-Billing Name:Identity Protection Service
-Billing Organization:Identity Protect Limited
-Billing Street1:PO Box 795
-Billing City:Godalming
-Billing State/Province:Surrey
-Billing Postal Code:GU7 9GA
-Billing Country:GB
-Billing Phone:+44.1483307527
-Billing FAX:+44.1483304031
-Billing Email:hotel.gb.net@identity-protect.org
-Sponsoring Registrar ID:I6467
-Sponsoring Registrar IANA ID:1515
-Sponsoring Registrar Organization:Webfusion
-Sponsoring Registrar Street1:5 Roundwood Avenue
-Sponsoring Registrar Street2:Stockley Park
-Sponsoring Registrar City:Uxbridge
-Sponsoring Registrar State/Province:Middlesex
-Sponsoring Registrar Postal Code:UB11 1FF
-Sponsoring Registrar Country:GB
-Sponsoring Registrar Phone:0845 859 0018
-Sponsoring Registrar FAX:08701 650437
-Sponsoring Registrar Website:http://www.123-reg.co.uk/domain-names/
-Name Server:NS2.123-REG.CO.UK
-Name Server:NS.123-REG.CO.UK
-DNSSEC:Unsigned
-
 

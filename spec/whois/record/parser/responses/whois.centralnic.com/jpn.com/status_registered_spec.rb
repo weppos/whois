@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK", "RENEW PERIOD"])
+      expect(subject.status).to eq(["OK"])
     end
   end
   describe "#available?" do
@@ -60,7 +60,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-02-20 22:17:40 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-07-01 00:18:14 UTC"))
     end
   end
   describe "#expires_on" do
@@ -143,9 +143,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns2.koi.jpn.com")
+      expect(subject.nameservers[0].name).to eq("ns1.chaoshosting.co.uk")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns1.koi.jpn.com")
+      expect(subject.nameservers[1].name).to eq("ns2.chaoshosting.co.uk")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

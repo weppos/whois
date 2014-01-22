@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["clientDeleteProhibited", "clientUpdateProhibited"])
+      expect(subject.status).to eq(["clientDeleteProhibited", "clientUpdateProhibited", "serverDeleteProhibited (Protected by .auLOCKDOWN)", "serverUpdateProhibited (Protected by .auLOCKDOWN)"])
     end
   end
   describe "#available?" do
@@ -59,7 +59,7 @@ describe Whois::Record::Parser::WhoisAudnsNetAu, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-05-09 17:09:29 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-06-05 04:03:08 UTC"))
     end
   end
   describe "#expires_on" do

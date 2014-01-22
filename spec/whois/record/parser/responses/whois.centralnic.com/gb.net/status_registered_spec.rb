@@ -33,12 +33,12 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#domain_id" do
     it do
-      expect(subject.domain_id).to eq("CNIC-DO875262")
+      expect(subject.domain_id).to eq("CNIC-DO1423750")
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"])
     end
   end
   describe "#available?" do
@@ -54,28 +54,28 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2012-06-28 00:33:28 UTC"))
+      expect(subject.created_on).to eq(Time.parse("2013-08-25 12:36:24 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-02-19 22:09:39 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-08-30 12:42:09 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-06-28 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-08-25 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("I6467")
+      expect(subject.registrar.id).to eq("H1167922")
       expect(subject.registrar.name).to eq(nil)
-      expect(subject.registrar.organization).to eq("Webfusion")
-      expect(subject.registrar.url).to eq("http://www.123-reg.co.uk/domain-names/")
+      expect(subject.registrar.organization).to eq("Gandi SAS")
+      expect(subject.registrar.url).to eq("http://www.gandi.net/")
     end
   end
   describe "#registrant_contacts" do
@@ -84,18 +84,20 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("MNT14821952066")
-      expect(subject.registrant_contacts[0].name).to eq("Identity Protection Service")
-      expect(subject.registrant_contacts[0].organization).to eq("Identity Protect Limited")
-      expect(subject.registrant_contacts[0].address).to eq("PO Box 795")
-      expect(subject.registrant_contacts[0].city).to eq("Godalming")
-      expect(subject.registrant_contacts[0].zip).to eq("GU7 9GA")
-      expect(subject.registrant_contacts[0].state).to eq("Surrey")
+      expect(subject.registrant_contacts[0].id).to eq("R1149-GANDI-PRYP")
+      expect(subject.registrant_contacts[0].name).to eq("Heinz Pierre Roeser")
+      expect(subject.registrant_contacts[0].organization).to eq("Roevertrieb")
+      expect(subject.registrant_contacts[0].address).to eq("Friedensstr. 77")
+      expect(subject.registrant_contacts[0].city).to eq("Grevenbroich")
+      expect(subject.registrant_contacts[0].zip).to eq("41517")
+      expect(subject.registrant_contacts[0].state).to eq(nil)
       expect(subject.registrant_contacts[0].country).to eq(nil)
-      expect(subject.registrant_contacts[0].country_code).to eq("GB")
-      expect(subject.registrant_contacts[0].phone).to eq("+44.1483307527")
-      expect(subject.registrant_contacts[0].fax).to eq("+44.1483304031")
-      expect(subject.registrant_contacts[0].email).to eq("hotel.gb.net@identity-protect.org")
+      expect(subject.registrant_contacts[0].country_code).to eq("DE")
+      expect(subject.registrant_contacts[0].phone).to eq("+49.218145077")
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq("roevertrieb@aol.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -104,18 +106,20 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("MNT14821952066")
-      expect(subject.admin_contacts[0].name).to eq("Identity Protection Service")
-      expect(subject.admin_contacts[0].organization).to eq("Identity Protect Limited")
-      expect(subject.admin_contacts[0].address).to eq("PO Box 795")
-      expect(subject.admin_contacts[0].city).to eq("Godalming")
-      expect(subject.admin_contacts[0].zip).to eq("GU7 9GA")
-      expect(subject.admin_contacts[0].state).to eq("Surrey")
+      expect(subject.admin_contacts[0].id).to eq("R1149-GANDI-PRYP")
+      expect(subject.admin_contacts[0].name).to eq("Heinz Pierre Roeser")
+      expect(subject.admin_contacts[0].organization).to eq("Roevertrieb")
+      expect(subject.admin_contacts[0].address).to eq("Friedensstr. 77")
+      expect(subject.admin_contacts[0].city).to eq("Grevenbroich")
+      expect(subject.admin_contacts[0].zip).to eq("41517")
+      expect(subject.admin_contacts[0].state).to eq(nil)
       expect(subject.admin_contacts[0].country).to eq(nil)
-      expect(subject.admin_contacts[0].country_code).to eq("GB")
-      expect(subject.admin_contacts[0].phone).to eq("+44.1483307527")
-      expect(subject.admin_contacts[0].fax).to eq("+44.1483304031")
-      expect(subject.admin_contacts[0].email).to eq("hotel.gb.net@identity-protect.org")
+      expect(subject.admin_contacts[0].country_code).to eq("DE")
+      expect(subject.admin_contacts[0].phone).to eq("+49.218145077")
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq("roevertrieb@aol.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -124,28 +128,38 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("MNT14821952066")
-      expect(subject.technical_contacts[0].name).to eq("Identity Protection Service")
-      expect(subject.technical_contacts[0].organization).to eq("Identity Protect Limited")
-      expect(subject.technical_contacts[0].address).to eq("PO Box 795")
-      expect(subject.technical_contacts[0].city).to eq("Godalming")
-      expect(subject.technical_contacts[0].zip).to eq("GU7 9GA")
-      expect(subject.technical_contacts[0].state).to eq("Surrey")
+      expect(subject.technical_contacts[0].id).to eq("R1149-GANDI-PRYP")
+      expect(subject.technical_contacts[0].name).to eq("Heinz Pierre Roeser")
+      expect(subject.technical_contacts[0].organization).to eq("Roevertrieb")
+      expect(subject.technical_contacts[0].address).to eq("Friedensstr. 77")
+      expect(subject.technical_contacts[0].city).to eq("Grevenbroich")
+      expect(subject.technical_contacts[0].zip).to eq("41517")
+      expect(subject.technical_contacts[0].state).to eq(nil)
       expect(subject.technical_contacts[0].country).to eq(nil)
-      expect(subject.technical_contacts[0].country_code).to eq("GB")
-      expect(subject.technical_contacts[0].phone).to eq("+44.1483307527")
-      expect(subject.technical_contacts[0].fax).to eq("+44.1483304031")
-      expect(subject.technical_contacts[0].email).to eq("hotel.gb.net@identity-protect.org")
+      expect(subject.technical_contacts[0].country_code).to eq("DE")
+      expect(subject.technical_contacts[0].phone).to eq("+49.218145077")
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq("roevertrieb@aol.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns2.123-reg.co.uk")
+      expect(subject.nameservers[0].name).to eq("b.dns.gandi.net")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns.123-reg.co.uk")
+      expect(subject.nameservers[1].name).to eq("c.dns.gandi.net")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("a.dns.gandi.net")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end
 end

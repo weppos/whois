@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["OK", "RENEW PERIOD"]
+  %s == ["OK"]
 
 #available?
   %s == false
@@ -25,7 +25,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-02-20 22:17:40 UTC}
+  %s %TIME{2013-07-01 00:18:14 UTC}
 
 #expires_on
   %s %CLASS{time}
@@ -98,6 +98,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns2.koi.jpn.com"
+  %s[0].name == "ns1.chaoshosting.co.uk"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns1.koi.jpn.com"
+  %s[1].name == "ns2.chaoshosting.co.uk"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

@@ -98,6 +98,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "t1.zoneedit.com"
+  %s[0].name == "ns12.zoneedit.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns12.zoneedit.com"
+  %s[1].name == "t1.zoneedit.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

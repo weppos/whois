@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["TRANSFER PROHIBITED"]
+  %s == ["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"]
 
 #available?
   %s == false
@@ -98,6 +98,10 @@
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns25.worldnic.com"
+  %s[0].name == "ns1.locaweb.com.br"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns26.worldnic.com"
+  %s[1].name == "ns2.locaweb.com.br"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

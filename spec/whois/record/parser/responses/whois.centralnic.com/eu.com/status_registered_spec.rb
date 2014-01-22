@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-01-16 16:26:29 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-08-15 11:25:43 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-08-14 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-08-14 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
@@ -141,11 +141,21 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.itransactuk.net")
+      expect(subject.nameservers[0].name).to eq("ns-1146.awsdns-15.org")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.itransactuk.net")
+      expect(subject.nameservers[1].name).to eq("ns-1741.awsdns-25.co.uk")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
+      expect(subject.nameservers[2].name).to eq("ns-374.awsdns-46.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
+      expect(subject.nameservers[3].name).to eq("ns-914.awsdns-50.net")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
 end

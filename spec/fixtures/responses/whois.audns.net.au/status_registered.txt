@@ -1,9 +1,11 @@
 Domain Name:                     google.com.au
-Last Modified:                   09-May-2012 17:09:29 UTC
+Last Modified:                   05-Jun-2013 04:03:08 UTC
 Registrar ID:                    MARKMONITOR
 Registrar Name:                  MarkMonitor Inc.
 Status:                          clientDeleteProhibited
 Status:                          clientUpdateProhibited
+Status:                          serverDeleteProhibited (Protected by .auLOCKDOWN)
+Status:                          serverUpdateProhibited (Protected by .auLOCKDOWN)
 
 Registrant:                      Google INC
 Eligibility Type:                Trademark Owner

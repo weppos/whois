@@ -94,10 +94,18 @@
   %s %CLASS{array}
   %s %SIZE{4}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns3.p17.dynect.net"
+  %s[0].name == "ns1.p17.dynect.net"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns2.p17.dynect.net"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
   %s[2] %CLASS{nameserver}
-  %s[2].name == "ns4.p17.dynect.net"
+  %s[2].name == "ns3.p17.dynect.net"
+  %s[2].ipv4 == nil
+  %s[2].ipv6 == nil
   %s[3] %CLASS{nameserver}
-  %s[3].name == "ns1.p17.dynect.net"
+  %s[3].name == "ns4.p17.dynect.net"
+  %s[3].ipv4 == nil
+  %s[3].ipv6 == nil

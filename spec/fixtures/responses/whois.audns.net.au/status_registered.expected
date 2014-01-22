@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["clientDeleteProhibited", "clientUpdateProhibited"]
+  %s == ["clientDeleteProhibited", "clientUpdateProhibited", "serverDeleteProhibited (Protected by .auLOCKDOWN)", "serverUpdateProhibited (Protected by .auLOCKDOWN)"]
 
 #available?
   %s == false
@@ -24,7 +24,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-05-09 17:09:29 UTC}
+  %s %TIME{2013-06-05 04:03:08 UTC}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}

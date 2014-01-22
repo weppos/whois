@@ -1,3 +1,64 @@
+Domain ID:CNIC-DO1617446
+Domain Name:HOTEL.SE.NET
+Created On:2013-11-13T10:35:03.0Z
+Last Updated On:2013-11-28T11:49:39.0Z
+Expiration Date:2014-11-13T23:59:59.0Z
+Status:OK
+Registrant ID:scipr000323588
+Registrant Name:Christoph Donath
+Registrant Organization:Christoph Donath
+Registrant Street1:C. Tijarafe 24, 2c
+Registrant City:Cruce de Arinaga
+Registrant State/Province:Palmas (Las)
+Registrant Postal Code:35118
+Registrant Country:ES
+Registrant Phone:+34.667889082
+Registrant Email:info@christophdonath.com
+Admin ID:scipa000323588
+Admin Name:Christoph Donath
+Admin Organization:Christoph Donath
+Admin Street1:C. Tijarafe 24, 2c
+Admin City:Cruce de Arinaga
+Admin State/Province:Palmas (Las)
+Admin Postal Code:35118
+Admin Country:ES
+Admin Phone:+34.667889082
+Admin Email:info@christophdonath.com
+Tech ID:scipt000323588
+Tech Name:Christoph Donath
+Tech Organization:Christoph Donath
+Tech Street1:C. Tijarafe 24, 2c
+Tech City:Cruce de Arinaga
+Tech State/Province:Palmas (Las)
+Tech Postal Code:35118
+Tech Country:ES
+Tech Phone:+34.667889082
+Tech Email:info@christophdonath.com
+Billing ID:scipb000323588
+Billing Name:Christoph Donath
+Billing Organization:Christoph Donath
+Billing Street1:C. Tijarafe 24, 2c
+Billing City:Cruce de Arinaga
+Billing State/Province:Palmas (Las)
+Billing Postal Code:35118
+Billing Country:ES
+Billing Phone:+34.667889082
+Billing Email:info@christophdonath.com
+Sponsoring Registrar ID:H2307235
+Sponsoring Registrar IANA ID:1383
+Sponsoring Registrar Organization:Soluciones Corporativas IP, S.L.U.
+Sponsoring Registrar Street1:C/ Ses Parres esq. Brunete, 21 1º
+Sponsoring Registrar City:Manacor
+Sponsoring Registrar State/Province:Illes Balears
+Sponsoring Registrar Postal Code:07500
+Sponsoring Registrar Country:ES
+Sponsoring Registrar Phone:+34.871986600
+Sponsoring Registrar FAX:+34.871986601
+Sponsoring Registrar Website:www.scip.es
+Name Server:NS8261.HOSTGATOR.COM
+Name Server:NS8262.HOSTGATOR.COM
+DNSSEC:Unsigned
+
 This whois service is provided by CentralNic Ltd and only contains
 information pertaining to Internet domain names we have registered for
 our customers. By using this service you are agreeing (1) not to use any
@@ -7,66 +68,4 @@ any way, (3) not to use any high-volume, automated, electronic processes
 to obtain data from this service. Abuse of this service is monitored and
 actions in contravention of these terms will result in being permanently
 blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
-
-Domain ID:CNIC-DO803850
-Domain Name:HOTEL.SE.NET
-Created On:2011-09-29T12:10:36.0Z
-Last Updated On:2012-09-17T00:16:14.0Z
-Expiration Date:2013-09-29T23:59:59.0Z
-Status:OK
-Registrant ID:H280468
-Registrant Name:Domain Admin
-Registrant Organization:PrivacyProtect.org
-Registrant Street1:ID#10760, PO Box 16
-Registrant Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Registrant City:Nobby Beach
-Registrant Postal Code:QLD 4218
-Registrant Country:AU
-Registrant Phone:+45.36946676
-Registrant Email:contact@privacyprotect.org
-Admin ID:H280468
-Admin Name:Domain Admin
-Admin Organization:PrivacyProtect.org
-Admin Street1:ID#10760, PO Box 16
-Admin Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Admin City:Nobby Beach
-Admin Postal Code:QLD 4218
-Admin Country:AU
-Admin Phone:+45.36946676
-Admin Email:contact@privacyprotect.org
-Tech ID:H280468
-Tech Name:Domain Admin
-Tech Organization:PrivacyProtect.org
-Tech Street1:ID#10760, PO Box 16
-Tech Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Tech City:Nobby Beach
-Tech Postal Code:QLD 4218
-Tech Country:AU
-Tech Phone:+45.36946676
-Tech Email:contact@privacyprotect.org
-Billing ID:H280468
-Billing Name:Domain Admin
-Billing Organization:PrivacyProtect.org
-Billing Street1:ID#10760, PO Box 16
-Billing Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Billing City:Nobby Beach
-Billing Postal Code:QLD 4218
-Billing Country:AU
-Billing Phone:+45.36946676
-Billing Email:contact@privacyprotect.org
-Sponsoring Registrar ID:H269407
-Sponsoring Registrar IANA ID:303
-Sponsoring Registrar Organization:PDR Ltd. d/b/a PublicDomainRegistry.com
-Sponsoring Registrar Street1:F/19, RAK FTZ, Ras Al Khaimah, UAE , P.O Box #16113
-Sponsoring Registrar City:Ras Al Khaimah	
-Sponsoring Registrar State/Province:Ras Al Khaimah	
-Sponsoring Registrar Postal Code:P.O Box #16113
-Sponsoring Registrar Country:AE
-Sponsoring Registrar Phone:+971-72046060
-Sponsoring Registrar FAX:+971-72046061
-Sponsoring Registrar Website:http://www.publicdomainregistry.com
-Name Server:NS2.DO-GO.COM
-Name Server:NS1.DO-GO.COM
-DNSSEC:Unsigned
-
 

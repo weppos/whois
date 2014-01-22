@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["TRANSFER PROHIBITED"])
+      expect(subject.status).to eq(["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"])
     end
   end
   describe "#available?" do
@@ -143,15 +143,25 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(5).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("dbru.br.ns.els-gms.att.net")
+      expect(subject.nameservers[0].name).to eq("ns1.academyart.edu")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("dmtu.mt.ns.els-gms.att.net")
+      expect(subject.nameservers[1].name).to eq("dbru.br.ns.els-gms.att.net")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("cbru.br.ns.els-gms.att.net")
+      expect(subject.nameservers[2].name).to eq("dmtu.mt.ns.els-gms.att.net")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("cmtu.mt.ns.els-gms.att.net")
+      expect(subject.nameservers[3].name).to eq("cbru.br.ns.els-gms.att.net")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
       expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[4].name).to eq("ns1.academyart.edu")
+      expect(subject.nameservers[4].name).to eq("cmtu.mt.ns.els-gms.att.net")
+      expect(subject.nameservers[4].ipv4).to eq(nil)
+      expect(subject.nameservers[4].ipv6).to eq(nil)
     end
   end
 end

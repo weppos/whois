@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-01-16 16:26:29 UTC}
+  %s %TIME{2013-08-15 11:25:43 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-08-14 23:59:59 UTC}
+  %s %TIME{2015-08-14 23:59:59 UTC}
 
 
 #registrar
@@ -96,8 +96,18 @@
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{2}
+  %s %SIZE{4}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns1.itransactuk.net"
+  %s[0].name == "ns-1146.awsdns-15.org"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns2.itransactuk.net"
+  %s[1].name == "ns-1741.awsdns-25.co.uk"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
+  %s[2].name == "ns-374.awsdns-46.com"
+  %s[2].ipv4 == nil
+  %s[2].ipv6 == nil
+  %s[3].name == "ns-914.awsdns-50.net"
+  %s[3].ipv4 == nil
+  %s[3].ipv6 == nil
