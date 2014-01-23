@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Master
+## Release 3.4.3
 
 - SERVER: Updated .COM, .NET, .CC, .WS TLD definitions.
 
