@@ -26,11 +26,6 @@ describe Whois::Record::Parser::WhoisPirOrg, "status_registered.expected" do
       expect(subject.disclaimer).to eq("Access to .ORG WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.")
     end
   end
-  describe "#domain" do
-    it do
-      expect(subject.domain).to eq("google.org")
-    end
-  end
   describe "#domain_id" do
     it do
       expect(subject.domain_id).to eq("D2244233-LROR")
@@ -38,7 +33,7 @@ describe Whois::Record::Parser::WhoisPirOrg, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"])
+      expect(subject.status).to eq(["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"])
     end
   end
   describe "#available?" do
@@ -60,22 +55,20 @@ describe Whois::Record::Parser::WhoisPirOrg, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-09-18 09:20:07 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-09-18 09:17:35 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-10-20 04:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-10-20 04:00:00 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("R37-LROR")
+      expect(subject.registrar.id).to eq("292")
       expect(subject.registrar.name).to eq("MarkMonitor Inc.")
-      expect(subject.registrar.organization).to eq(nil)
-      expect(subject.registrar.url).to eq(nil)
     end
   end
   describe "#registrant_contacts" do
