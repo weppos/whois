@@ -5,6 +5,10 @@
 
 - CHANGED: Updated IBC parser and fixtures (.IO, .AC, .SH and .TM).
 
+- CHANGED: Backported several fixture updates.
+
+- CHANGED: Updated whois.pir.org parser to the new response format (GH-300). [Thanks @muffinista]
+
 
 ## Release 3.4.3
 
