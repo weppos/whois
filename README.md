@@ -1,12 +1,10 @@
 # Whois
 
-<tt>Whois</tt> is an intelligent pure Ruby WHOIS client and parser.
+<tt>Whois</tt> is an intelligent — pure Ruby — WHOIS client and parser.
+
+This library was extracted from [RoboWhois](https://www.robowhois.com/) and [RoboDomain](http://robodomain.com/). It has been performing queries in production since July 2009.
 
 [![Build Status](https://secure.travis-ci.org/weppos/whois.png)](http://travis-ci.org/weppos/whois)
-
-<tt>Whois</tt> is a OS-independent library and doesn't require any external binaries or C libraries: it is a 100% Ruby software.
-
-This library was created to power [RoboWhois](https://www.robowhois.com/) and [RoboDomain](https://www.robodomain.com/). It has been performing queries in production since July 2009.
 
 
 ## Donate a coffee
