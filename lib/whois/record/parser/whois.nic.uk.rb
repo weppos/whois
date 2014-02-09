@@ -42,7 +42,7 @@ module Whois
               :registered
             when "no registration status listed."
               :reserved
-            # NEWSTATUS (redemption?)
+            # NEWSTATUS redemption (https://github.com/weppos/whois/issues/5)
             when "renewal required."
               :registered
             else

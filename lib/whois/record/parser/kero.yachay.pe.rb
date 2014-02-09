@@ -30,6 +30,9 @@ module Whois
             case $1.downcase
             when "active"
               :registered
+            # NEWSTATUS suspended (https://github.com/weppos/whois/issues/5)
+            when "suspended"
+              :registered
             when "not registered"
               :available
             when "inactive"

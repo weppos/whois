@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+- FIXED: kero.yachay.pe crashes when the status is `suspended`.
+
+
 ## Release 3.4.4
 
 - CHANGED: Updated IBC parser and fixtures (.IO, .AC, .SH and .TM).
