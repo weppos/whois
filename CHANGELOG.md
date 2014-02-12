@@ -5,6 +5,8 @@
 
 - FIXED: kero.yachay.pe crashes when the status is `suspended`.
 
+- NEW: Add :invalid check for whois.nic.tr (GH-302).
+
 
 ## Release 3.4.4
 

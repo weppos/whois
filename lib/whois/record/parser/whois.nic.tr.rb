@@ -30,7 +30,10 @@ module Whois
 
 
         property_supported :status do
-          if available?
+          # NEWSTATUS invalid
+          if invalid?
+            :invalid
+          elsif available?
             :available
           else
             :registered
@@ -38,11 +41,11 @@ module Whois
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /No match found for "(.+)"/)
+          !invalid? && !!(content_for_scanner =~ /No match found for "(.+)"/)
         end
 
         property_supported :registered? do
-          !available?
+          !invalid? && !available?
         end
 
 
@@ -110,7 +113,21 @@ module Whois
           end
         end
 
-      private
+
+        def response_error?
+          content_for_scanner =~ /Invalid input/
+        end
+
+
+        # NEWPROPERTY invalid?
+        def invalid?
+          cached_properties_fetch :invalid? do
+            response_error?
+          end
+        end
+
+
+        private
 
         def build_contact(element, type)
           textblock = content_for_scanner.slice(/^\*\* #{element}:\n((?:.+\n)+)\n/, 1)
