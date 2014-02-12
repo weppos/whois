@@ -13,7 +13,7 @@ n. [Technical Contact]          DT033JP
 p. [Name Server]                ns0.future-s.com
 p. [Name Server]                ns1.future-s.com
 s. [Signing Key]                
-[State]                         Connected (2012/02/29)
+[State]                         Connected
 [Registered Date]               2001/02/22
 [Connected Date]                2001/05/21
 [Last Update]                   2011/03/01 01:27:35 (JST)

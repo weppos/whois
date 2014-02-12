@@ -14,7 +14,7 @@ p. [Name Server]                dns1.nc.u-tokyo.ac.jp
 p. [Name Server]                dns2.nc.u-tokyo.ac.jp
 p. [Name Server]                dns3.nc.u-tokyo.ac.jp
 s. [Signing Key]                
-[State]                         Connected (2012/03/31)
+[State]                         Connected
 [Registered Date]                
 [Connected Date]                 
 [Last Update]                   2011/04/01 01:35:47 (JST)

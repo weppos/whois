@@ -82,6 +82,8 @@ module Whois
         property_supported :expires_on do
           if content_for_scanner =~ /\[Expires on\][ \t]+(.*)\n/
             ($1.empty?) ? nil : Time.parse($1)
+          elsif content_for_scanner =~ /^\[State\].*\((.*)(,.*)?\)\n/
+            ($1.empty?) ? nil : Time.parse($1)
           end
         end
 
