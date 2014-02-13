@@ -1341,6 +1341,15 @@
   ".reviews": {
     "host": "whois.unitedtld.com"
   },
+  ".dance": {
+    "host": "whois.unitedtld.com"
+  },
+  ".democrat": {
+    "host": "whois.unitedtld.com"
+  },
+  ".immobilien": {
+    "host": "whois.unitedtld.com"
+  },
   ".maison": {
     "host": "whois.donuts.co"
   },
@@ -1354,6 +1363,122 @@
     "host": "whois.donuts.co"
   },
   ".vision": {
+    "host": "whois.donuts.co"
+  },
+  ".ruhr": {
+    "host": "whois.nic.ruhr"
+  },
+  ".berlin": {
+    "host": "whois.nic.berlin"
+  },
+  ".blue": {
+    "host": "whois.afilias.net"
+  },
+  ".kim": {
+    "host": "whois.afilias.net"
+  },
+  ".build": {
+    "host": "whois.build.aridnrs.net.au"
+  },
+  ".agency": {
+    "host": "whois.donuts.co"
+  },
+  ".bargains": {
+    "host": "whois.donuts.co"
+  },
+  ".boutique": {
+    "host": "whois.donuts.co"
+  },
+  ".builders": {
+    "host": "whois.donuts.co"
+  },
+  ".catering": {
+    "host": "whois.donuts.co"
+  },
+  ".ceo": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".cheap": {
+    "host": "whois.donuts.co"
+  },
+  ".cleaning": {
+    "host": "whois.donuts.co"
+  },
+  ".club": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".codes": {
+    "host": "whois.donuts.co"
+  },
+  ".coffee": {
+    "host": "whois.donuts.co"
+  },
+  ".community": {
+    "host": "whois.donuts.co"
+  },
+  ".cool": {
+    "host": "whois.donuts.co"
+  },
+  ".cruises": {
+    "host": "whois.donuts.co"
+  },
+  ".dating": {
+    "host": "whois.donuts.co"
+  },
+  ".education": {
+    "host": "whois.donuts.co"
+  },
+  ".email": {
+    "host": "whois.donuts.co"
+  },
+  ".events": {
+    "host": "whois.donuts.co"
+  },
+  ".expert": {
+    "host": "whois.donuts.co"
+  },
+  ".exposed": {
+    "host": "whois.donuts.co"
+  },
+  ".farm": {
+    "host": "whois.donuts.co"
+  },
+  ".flights": {
+    "host": "whois.donuts.co"
+  },
+  ".florist": {
+    "host": "whois.donuts.co"
+  },
+  ".gift": {
+    "host": "whois.uniregistry.net"
+  },
+  ".glass": {
+    "host": "whois.donuts.co"
+  },
+  ".guitars": {
+    "host": "whois.donuts.co"
+  },
+  ".holiday": {
+    "host": "whois.donuts.co"
+  },
+  ".house": {
+    "host": "whois.donuts.co"
+  },
+  ".institute": {
+    "host": "whois.donuts.co"
+  },
+  ".kaufen": {
+    "host": "whois.unitedtld.com"
+  },
+  ".link": {
+    "host": "whois.unitedtld.com"
+  },
+  ".kiwi": {
+    "host": "whois.dot-kiwi.com"
+  },
+  ".international": {
     "host": "whois.donuts.co"
   },
 
