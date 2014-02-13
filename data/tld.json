@@ -1322,6 +1322,40 @@
   ".voyage": {
     "host": "whois.donuts.co"
   },
+  ".qpon": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".cards": {
+    "host": "whois.donuts.co"
+  },
+  ".condos": {
+    "host": "whois.donuts.co"
+  },
+  ".foundation": {
+    "host": "whois.donuts.co"
+  },
+  ".futbol": {
+    "host": "whois.unitedtld.com"
+  },
+  ".reviews": {
+    "host": "whois.unitedtld.com"
+  },
+  ".maison": {
+    "host": "whois.donuts.co"
+  },
+  ".parts": {
+    "host": "whois.donuts.co"
+  },
+  ".productions": {
+    "host": "whois.donuts.co"
+  },
+  ".villas": {
+    "host": "whois.donuts.co"
+  },
+  ".vision": {
+    "host": "whois.donuts.co"
+  },
 
   ".xn--3e0b707e": {
     "host": "whois.kr"
