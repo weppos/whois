@@ -7,4 +7,4 @@ The data is for information purposes only. AFGNIC does not guarantee its accurac
 
 ADRAS Helpdesk | http://helpdesk.adras.af
 
->>> Last update of WHOIS database: 2013-11-20T16:57:53.514Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<
