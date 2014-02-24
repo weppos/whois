@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicEc, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq("google.as")
+    end
+  end
+  describe "#domain_id" do
+    it do
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       expect(subject.status).to eq(:registered)
@@ -39,19 +49,28 @@ describe Whois::Record::Parser::WhoisNicEc, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2003-10-16"))
+      expect(subject.created_on).to eq(Time.parse("2003-10-16 00:00:00 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2009-09-15"))
+      expect(subject.updated_on).to eq(Time.parse("2013-09-17 00:00:00 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2010-10-16"))
+      expect(subject.expires_on).to eq(Time.parse("2014-10-16 00:00:00 UTC"))
+    end
+  end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("MarkMonitor Inc.")
+      expect(subject.registrar.organization).to eq(nil)
+      expect(subject.registrar.url).to eq(nil)
     end
   end
   describe "#nameservers" do
@@ -60,12 +79,20 @@ describe Whois::Record::Parser::WhoisNicEc, "status_registered.expected" do
       expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
 end

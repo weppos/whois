@@ -11,6 +11,8 @@
 
 - FIXED: whois.nic.cd crashes because the registry is no longer returning a status.
 
+- CHANGED: Updated whois.nic.ec parser to the new response format.
+
 
 ## Release 3.4.4
 
