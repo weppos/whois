@@ -13,6 +13,8 @@
 
 - CHANGED: Updated whois.nic.ec parser to the new response format.
 
+- CHANGED: Updated whois.pandi.or.id parser to the new response format.
+
 
 ## Release 3.4.4
 
