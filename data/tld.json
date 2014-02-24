@@ -1475,12 +1475,136 @@
   ".link": {
     "host": "whois.unitedtld.com"
   },
+  ".moda": {
+    "host": "whois.unitedtld.com"
+  },
+  ".ninja": {
+    "host": "whois.unitedtld.com"
+  },
+  ".social": {
+    "host": "whois.unitedtld.com"
+  },
   ".kiwi": {
     "host": "whois.dot-kiwi.com"
   },
   ".international": {
     "host": "whois.donuts.co"
   },
+  ".luxury": {
+    "host": "whois.luxury.aridnrs.net.au"
+  },
+  ".marketing": {
+    "host": "whois.donuts.co"
+  },
+  ".monash": {
+    "host": "whois.nic.monash"
+  },
+  ".nagoya": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".tokyo": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".neustar": {
+    "host": null,
+    "adapter": "none"
+  },
+  ".onl": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".rich": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".pink": {
+    "host": "whois.afilias.net"
+  },
+  ".red": {
+    "host": "whois.afilias.net"
+  },
+  ".shiksha": {
+    "host": "whois.afilias.net"
+  },
+  ".partners": {
+    "host": "whois.donuts.co"
+  },
+  ".photo": {
+    "host": "whois.uniregistry.net"
+  },
+  ".pics": {
+    "host": "whois.uniregistry.net"
+  },
+  ".properties": {
+    "host": "whois.donuts.co"
+  },
+  ".rentals": {
+    "host": "whois.donuts.co"
+  },
+  ".repair": {
+    "host": "whois.donuts.co"
+  },
+  ".report": {
+    "host": "whois.donuts.co"
+  },
+  ".solar": {
+    "host": "whois.donuts.co"
+  },
+  ".solutions": {
+    "host": "whois.donuts.co"
+  },
+  ".tienda": {
+    "host": "whois.donuts.co"
+  },
+  ".tools": {
+    "host": "whois.donuts.co"
+  },
+  ".training": {
+    "host": "whois.donuts.co"
+  },
+  ".voting": {
+    "host": "whois.voting.tld-box.at"
+  },
+  ".wang": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".watch": {
+    "host": "whois.donuts.co"
+  },
+  ".works": {
+    "host": "whois.donuts.co"
+  },
+  ".zone": {
+    "host": "whois.donuts.co"
+  },
+  ".wed": {
+    "host": "whois.coccaregistry.org"
+  },
+  ".wien": {
+    "host": "whois.nic.wien"
+  },
+  ".mango": {
+    "host": "whois.mango.coreregistry.net"
+  },
+  ".wiki": {
+    "host": "whois.centralnic.com"
+  },
+  ".xyz": {
+    "host": "whois.centralnic.com"
+  },
+  ".fish": {
+    "host": "whois.donuts.co"
+  },
+  ".industries": {
+    "host": "whois.donuts.co"
+  },
+  ".supply": {
+    "host": "whois.donuts.co"
+  },
+  ".vacations": {
+    "host": "whois.donuts.co"
+  },
+
 
   ".xn--3e0b707e": {
     "host": "whois.kr"
