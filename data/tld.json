@@ -1378,7 +1378,7 @@
     "host": "whois.afilias.net"
   },
   ".build": {
-    "host": "whois.build.aridnrs.net.au"
+    "host": "whois.nic.build"
   },
   ".agency": {
     "host": "whois.donuts.co"
@@ -1491,7 +1491,7 @@
     "host": "whois.donuts.co"
   },
   ".luxury": {
-    "host": "whois.luxury.aridnrs.net.au"
+    "host": "whois.nic.luxury"
   },
   ".marketing": {
     "host": "whois.donuts.co"
@@ -1578,7 +1578,7 @@
     "host": "whois.donuts.co"
   },
   ".wed": {
-    "host": "whois.coccaregistry.org"
+    "host": "whois.nic.wed"
   },
   ".wien": {
     "host": "whois.nic.wien"
