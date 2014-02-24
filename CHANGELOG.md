@@ -9,6 +9,8 @@
 
 - FIXED: kero.yachay.pe crashes when the status is `suspended`.
 
+- FIXED: whois.nic.cd crashes because the registry is no longer returning a status.
+
 
 ## Release 3.4.4
 
