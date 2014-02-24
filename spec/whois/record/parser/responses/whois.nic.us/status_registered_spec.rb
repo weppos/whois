@@ -55,13 +55,13 @@ describe Whois::Record::Parser::WhoisNicUs, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-10-17 22:46:23 GMT"))
+      expect(subject.updated_on).to eq(Time.parse("2013-03-17 09:44:30 GMT"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-04-18 23:59:59 GMT"))
+      expect(subject.expires_on).to eq(Time.parse("2014-04-18 23:59:59 GMT"))
     end
   end
   describe "#registrar" do

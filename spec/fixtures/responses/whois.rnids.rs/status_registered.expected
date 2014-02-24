@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-02-07 13:37:16}
+  %s %TIME{2014-02-11 19:49:38}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-03-10 12:31:19}
+  %s %TIME{2015-03-10 12:31:19}
 
 
 #registrar
@@ -65,8 +65,8 @@
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].id            == nil
-  %s[0].name          == "Domain Provisioning, MarkMonitor"
-  %s[0].address       == "10400 Overland Road, Boise, United States of America"
+  %s[0].name          == "Domain Administrator, MarkMonitor, Inc."
+  %s[0].address       == "391 N Ancestor Place, Boise, ID, United States of America"
   %s[0].email         == nil
 
 

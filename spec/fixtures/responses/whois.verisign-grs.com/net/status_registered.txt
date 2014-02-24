@@ -19,11 +19,11 @@ for detailed information.
    Status: serverDeleteProhibited
    Status: serverTransferProhibited
    Status: serverUpdateProhibited
-   Updated Date: 11-feb-2013
+   Updated Date: 11-feb-2014
    Creation Date: 15-mar-1999
-   Expiration Date: 15-mar-2014
+   Expiration Date: 15-mar-2015
 
->>> Last update of whois database: Wed, 22 Jan 2014 22:08:51 UTC <<<
+>>> Last update of whois database: Tue, 18 Feb 2014 20:37:21 UTC <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

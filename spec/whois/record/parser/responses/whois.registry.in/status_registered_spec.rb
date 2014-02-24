@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT UPDATE PROHIBITED"])
     end
   end
   describe "#available?" do
@@ -58,12 +58,12 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to eq(Time.parse("2009-04-06 18:20:09 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2014-01-13 10:28:18 UTC"))
     end
   end
   describe "#expires_on" do
     it do
-      expect(subject.expires_on).to eq(Time.parse("2011-02-14 20:35:14 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-02-14 20:35:14 UTC"))
     end
   end
   describe "#registrar" do
@@ -79,17 +79,20 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("EPPIPM-143349")
-      expect(subject.registrant_contacts[0].name).to eq("Admin DNS")
-      expect(subject.registrant_contacts[0].organization).to eq("GOOGLE INC.")
+      expect(subject.registrant_contacts[0].id).to eq("mmr-108695")
+      expect(subject.registrant_contacts[0].name).to eq("Christina Chiou")
+      expect(subject.registrant_contacts[0].organization).to eq("Google Inc.")
       expect(subject.registrant_contacts[0].address).to eq("1600 Amphitheatre Parkway")
-      expect(subject.registrant_contacts[0].city).to eq("Mountain View, CA")
+      expect(subject.registrant_contacts[0].city).to eq("Mountain View")
       expect(subject.registrant_contacts[0].zip).to eq("94043")
-      expect(subject.registrant_contacts[0].state).to eq("")
+      expect(subject.registrant_contacts[0].state).to eq("CA")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("US")
-      expect(subject.registrant_contacts[0].phone).to eq("+1.6503300100")
-      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.registrant_contacts[0].fax).to eq("+1.6502530001")
       expect(subject.registrant_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -98,17 +101,20 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("EPPIPM-143349")
-      expect(subject.admin_contacts[0].name).to eq("Admin DNS")
-      expect(subject.admin_contacts[0].organization).to eq("GOOGLE INC.")
+      expect(subject.admin_contacts[0].id).to eq("mmr-108695")
+      expect(subject.admin_contacts[0].name).to eq("Christina Chiou")
+      expect(subject.admin_contacts[0].organization).to eq("Google Inc.")
       expect(subject.admin_contacts[0].address).to eq("1600 Amphitheatre Parkway")
-      expect(subject.admin_contacts[0].city).to eq("Mountain View, CA")
+      expect(subject.admin_contacts[0].city).to eq("Mountain View")
       expect(subject.admin_contacts[0].zip).to eq("94043")
-      expect(subject.admin_contacts[0].state).to eq("")
+      expect(subject.admin_contacts[0].state).to eq("CA")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("US")
-      expect(subject.admin_contacts[0].phone).to eq("+1.6503300100")
-      expect(subject.admin_contacts[0].fax).to eq("")
+      expect(subject.admin_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.admin_contacts[0].fax).to eq("+1.6502530001")
       expect(subject.admin_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -117,17 +123,20 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("EPPIPM-143349")
-      expect(subject.technical_contacts[0].name).to eq("Admin DNS")
-      expect(subject.technical_contacts[0].organization).to eq("GOOGLE INC.")
+      expect(subject.technical_contacts[0].id).to eq("mmr-108695")
+      expect(subject.technical_contacts[0].name).to eq("Christina Chiou")
+      expect(subject.technical_contacts[0].organization).to eq("Google Inc.")
       expect(subject.technical_contacts[0].address).to eq("1600 Amphitheatre Parkway")
-      expect(subject.technical_contacts[0].city).to eq("Mountain View, CA")
+      expect(subject.technical_contacts[0].city).to eq("Mountain View")
       expect(subject.technical_contacts[0].zip).to eq("94043")
-      expect(subject.technical_contacts[0].state).to eq("")
+      expect(subject.technical_contacts[0].state).to eq("CA")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("US")
-      expect(subject.technical_contacts[0].phone).to eq("+1.6503300100")
-      expect(subject.technical_contacts[0].fax).to eq("")
+      expect(subject.technical_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.technical_contacts[0].fax).to eq("+1.6502530001")
       expect(subject.technical_contacts[0].email).to eq("dns-admin@google.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

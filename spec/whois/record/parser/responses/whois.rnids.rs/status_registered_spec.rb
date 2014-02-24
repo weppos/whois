@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisRnidsRs, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-02-07 13:37:16"))
+      expect(subject.updated_on).to eq(Time.parse("2014-02-11 19:49:38"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-03-10 12:31:19"))
+      expect(subject.expires_on).to eq(Time.parse("2015-03-10 12:31:19"))
     end
   end
   describe "#registrar" do
@@ -109,8 +109,8 @@ describe Whois::Record::Parser::WhoisRnidsRs, "status_registered.expected" do
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].id).to eq(nil)
-      expect(subject.technical_contacts[0].name).to eq("Domain Provisioning, MarkMonitor")
-      expect(subject.technical_contacts[0].address).to eq("10400 Overland Road, Boise, United States of America")
+      expect(subject.technical_contacts[0].name).to eq("Domain Administrator, MarkMonitor, Inc.")
+      expect(subject.technical_contacts[0].address).to eq("391 N Ancestor Place, Boise, ID, United States of America")
       expect(subject.technical_contacts[0].email).to eq(nil)
     end
   end

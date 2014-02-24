@@ -8,8 +8,11 @@ Sponsoring Registrar: nans
 Sponsoring Registrar IANA ID: 
 Domain Status: ok
 
-Registrant ID: 2938-sy
+Registrant ID: 6714-sy
 Registrant Email: domain@tld.sy
+
+Billing ID: 6714-sy
+Billing Email: domain@tld.sy
 
 Name Server: ns4.tld.sy
 Name Server: ns3.tld.sy
@@ -19,4 +22,4 @@ DNSSEC: unsigned
 
 
 
->>> Last update of WHOIS database: 2013-12-18T09:55:12.065Z <<<
+>>> Last update of WHOIS database: 2014-02-18T09:55:11.758Z <<<

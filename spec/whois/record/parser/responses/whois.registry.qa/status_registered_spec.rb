@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["serverDeleteProhibited (Legacy)", "serverRenewProhibited (Legacy)", "serverTransferProhibited (Legacy)"])
+      expect(subject.status).to eq(["ok"])
     end
   end
   describe "#available?" do
@@ -90,7 +90,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
       expect(subject.registrant_contacts[0].country_code).to eq(nil)
       expect(subject.registrant_contacts[0].phone).to eq(nil)
       expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq("Visit portal.registry.qa for Web based WhoIs")
+      expect(subject.registrant_contacts[0].email).to eq("Visit www.domains.qa")
     end
   end
   describe "#admin_contacts" do
@@ -114,7 +114,7 @@ describe Whois::Record::Parser::WhoisRegistryQa, "status_registered.expected" do
       expect(subject.technical_contacts[0].country_code).to eq(nil)
       expect(subject.technical_contacts[0].phone).to eq(nil)
       expect(subject.technical_contacts[0].fax).to eq(nil)
-      expect(subject.technical_contacts[0].email).to eq("Visit portal.registry.qa for Web based WhoIs")
+      expect(subject.technical_contacts[0].email).to eq("Visit www.domains.qa")
     end
   end
   describe "#nameservers" do

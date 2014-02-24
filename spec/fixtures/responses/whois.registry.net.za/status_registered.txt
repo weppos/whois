@@ -33,9 +33,9 @@
         ns3.google.com
         ns4.google.com
 
-    WHOIS lookup made at 2013-12-18 10:07 UTC
+    WHOIS lookup made at 2014-02-18 20:44 UTC
 
 --
 The use of this Whois facility is subject to the following terms and
 conditions. https://registry.net.za/whois_terms
-Copyright (c) UniForum SA 1995-2013
+Copyright (c) UniForum SA 1995-2014

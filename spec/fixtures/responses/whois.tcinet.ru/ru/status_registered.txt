@@ -1,6 +1,6 @@
 % By submitting a query to RIPN's Whois Service
 % you agree to abide by the following terms of use:
-% http://www.ripn.net/about/servpol.html#3.2 (in Russian)
+% http://www.ripn.net/about/servpol.html#3.2 (in Russian) 
 % http://www.ripn.net/about/en/servpol.html#3.2 (in English).
 
 domain:        GOOGLE.RU
@@ -13,9 +13,9 @@ org:           Google Inc.
 registrar:     RU-CENTER-REG-RIPN
 admin-contact: https://www.nic.ru/whois
 created:       2004.03.04
-paid-till:     2013.03.05
-free-date:     2013.04.05
+paid-till:     2015.03.05
+free-date:     2015.04.05
 source:        TCI
 
-Last updated on 2012.02.20 04:33:42 MSK
+Last updated on 2014.02.19 00:41:43 MSK
 

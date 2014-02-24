@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisVerisignGrsCom, "status_registered.expected
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-02-11"))
+      expect(subject.updated_on).to eq(Time.parse("2014-02-11"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-03-15"))
+      expect(subject.expires_on).to eq(Time.parse("2015-03-15"))
     end
   end
   describe "#registrar" do

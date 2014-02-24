@@ -70,10 +70,10 @@ Created by Registrar:                        BULKREGISTER.COM, INC.
 Last Updated by Registrar:                   MARKMONITOR, INC.
 Last Transferred Date:                       Fri Jul 22 18:37:41 GMT 2005
 Domain Registration Date:                    Fri Apr 19 23:15:57 GMT 2002
-Domain Expiration Date:                      Thu Apr 18 23:59:59 GMT 2013
-Domain Last Updated Date:                    Wed Oct 17 22:46:23 GMT 2012
+Domain Expiration Date:                      Fri Apr 18 23:59:59 GMT 2014
+Domain Last Updated Date:                    Sun Mar 17 09:44:30 GMT 2013
 
->>>> Whois database was last updated on: Sun Feb 24 17:09:26 GMT 2013 <<<<
+>>>> Whois database was last updated on: Tue Feb 18 20:39:32 GMT 2014 <<<<
 
 NeuStar, Inc., the Registry Administrator for .US, has collected this
 information for the WHOIS database through a .US-Accredited Registrar.

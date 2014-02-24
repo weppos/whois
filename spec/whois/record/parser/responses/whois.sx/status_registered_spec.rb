@@ -60,20 +60,20 @@ describe Whois::Record::Parser::WhoisSx, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-08-29 11:36:37 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-02-25 16:50:39 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2021-12-09 14:07:22 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2022-12-09 14:07:22 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
       expect(subject.registrar.id).to eq(nil)
-      expect(subject.registrar.name).to eq("SX Registry \"PROMOTIONAL\" Registrar")
+      expect(subject.registrar.name).to eq("SX Registry O")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)
     end

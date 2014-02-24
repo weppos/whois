@@ -1,19 +1,19 @@
 Domain Name: google.gy
 Domain ID: 573328-CoCCA
-WHOIS Server: whois.coccaregistry.org
+WHOIS Server: whois.registry.gy
 Referral URL: 
-Updated Date: 2013-12-06T18:37:40.220Z
+Updated Date: 2014-01-16T06:53:13.620Z
 Creation Date: 2008-05-12T17:56:23.090Z
 Registry Expiry Date: 2014-10-04T23:30:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientUpdateProhibited
-Domain Status: clientTransferProhibited
 Domain Status: clientRenewProhibited
-Domain Status: clientDeleteProhibited
 Domain Status: ok
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
 
-Registrant ID: 812193-CoCCA
+Registrant ID: 969683-CoCCA
 Registrant Name: google Inc
 Registrant Organization: 
 Registrant Street: mountain View
@@ -26,7 +26,7 @@ Registrant Phone: +1.6506188571
 Registrant Phone Ext: 
 Registrant Email: dns-admin@google.com
 
-Admin ID: 812195-CoCCA
+Admin ID: 969684-CoCCA
 Admin Name: DNS Admin
 Admin Organization: 
 Admin Street: 1600 Amphitheatre Parkway
@@ -39,9 +39,9 @@ Admin Phone: +1.6506188571
 Admin Phone Ext: 
 Admin Email: dns-admin@google.com
 
-Billing ID: 812194-CoCCA
+Billing ID: 969686-CoCCA
 
-Tech ID: 812196-CoCCA
+Tech ID: 969685-CoCCA
 Tech Name: Unknown
 Tech Organization: 
 Tech Street: Unknown
@@ -84,4 +84,4 @@ to: (1) allow, enable, or otherwise support the transmission of mass
 unsolicited, commercial advertising or solicitations via e-mail, telephone,
 or facsimile; or (2)  The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
->>> Last update of WHOIS database: 2013-12-18T10:02:23.163Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<

@@ -18,53 +18,55 @@ you agree to abide by this policy.
 Domain ID:D21089-AFIN
 Domain Name:GOOGLE.IN
 Created On:14-Feb-2005 20:35:14 UTC
-Last Updated On:06-Apr-2009 18:20:09 UTC
-Expiration Date:14-Feb-2011 20:35:14 UTC
+Last Updated On:13-Jan-2014 10:20:18 UTC
+Expiration Date:14-Feb-2015 20:35:14 UTC
 Sponsoring Registrar:Mark Monitor (R84-AFIN)
-Status:OK
-Registrant ID:EPPIPM-143349
-Registrant Name:Admin DNS
-Registrant Organization:GOOGLE INC.
+Status:CLIENT DELETE PROHIBITED
+Status:CLIENT TRANSFER PROHIBITED
+Status:CLIENT UPDATE PROHIBITED
+Registrant ID:mmr-108695
+Registrant Name:Christina Chiou
+Registrant Organization:Google Inc.
 Registrant Street1:1600 Amphitheatre Parkway
 Registrant Street2:
 Registrant Street3:
-Registrant City:Mountain View, CA
-Registrant State/Province:
+Registrant City:Mountain View
+Registrant State/Province:CA
 Registrant Postal Code:94043
 Registrant Country:US
-Registrant Phone:+1.6503300100
+Registrant Phone:+1.6502530000
 Registrant Phone Ext.:
-Registrant FAX:
+Registrant FAX:+1.6502530001
 Registrant FAX Ext.:
 Registrant Email:dns-admin@google.com
-Admin ID:EPPIPM-143349
-Admin Name:Admin DNS
-Admin Organization:GOOGLE INC.
+Admin ID:mmr-108695
+Admin Name:Christina Chiou
+Admin Organization:Google Inc.
 Admin Street1:1600 Amphitheatre Parkway
 Admin Street2:
 Admin Street3:
-Admin City:Mountain View, CA
-Admin State/Province:
+Admin City:Mountain View
+Admin State/Province:CA
 Admin Postal Code:94043
 Admin Country:US
-Admin Phone:+1.6503300100
+Admin Phone:+1.6502530000
 Admin Phone Ext.:
-Admin FAX:
+Admin FAX:+1.6502530001
 Admin FAX Ext.:
 Admin Email:dns-admin@google.com
-Tech ID:EPPIPM-143349
-Tech Name:Admin DNS
-Tech Organization:GOOGLE INC.
+Tech ID:mmr-108695
+Tech Name:Christina Chiou
+Tech Organization:Google Inc.
 Tech Street1:1600 Amphitheatre Parkway
 Tech Street2:
 Tech Street3:
-Tech City:Mountain View, CA
-Tech State/Province:
+Tech City:Mountain View
+Tech State/Province:CA
 Tech Postal Code:94043
 Tech Country:US
-Tech Phone:+1.6503300100
+Tech Phone:+1.6502530000
 Tech Phone Ext.:
-Tech FAX:
+Tech FAX:+1.6502530001
 Tech FAX Ext.:
 Tech Email:dns-admin@google.com
 Name Server:NS1.GOOGLE.COM
@@ -80,4 +82,6 @@ Name Server:
 Name Server: 
 Name Server: 
 Name Server: 
+DNSSEC:Unsigned
+
 
