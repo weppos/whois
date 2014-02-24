@@ -3,9 +3,11 @@
 
 ## master
 
-- FIXED: kero.yachay.pe crashes when the status is `suspended`.
+- SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD
 
-- NEW: Add :invalid check for whois.nic.tr (GH-302).
+- NEW: Added :invalid check for whois.nic.tr (GH-302).
+
+- FIXED: kero.yachay.pe crashes when the status is `suspended`.
 
 
 ## Release 3.4.4
