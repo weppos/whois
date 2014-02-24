@@ -1,0 +1,28 @@
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %ERROR{AttributeNotSupported}
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{4}
+
+
+
+#response_throttled?
+  %s == false

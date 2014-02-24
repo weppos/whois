@@ -46,12 +46,13 @@ module Whois
             :available
           when "invalid"
             :invalid
-          # NEWSTATUS (inactive)
+          # NEWSTATUS inactive
           # The domain is registered, but there is not DNS entry for it.
           when "failed"
             :registered
           else
             if response_error?
+              # NEWSTATUS invalid
               :invalid
             else
               Whois.bug!(ParserError, "Unknown status `#{node("Status")}'.")
@@ -132,7 +133,6 @@ module Whois
         end
 
 
-        # NEWPROPERTY
         def version
           cached_properties_fetch :version do
             if content_for_scanner =~ /^% Version: (.+)$/
@@ -141,7 +141,7 @@ module Whois
           end
         end
 
-        # NEWPROPERTY
+        # NEWPROPERTY invalid?
         def invalid?
           cached_properties_fetch :invalid? do
             node("Status") == "invalid" ||
