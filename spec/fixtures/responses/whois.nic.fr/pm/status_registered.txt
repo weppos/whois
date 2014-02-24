@@ -10,7 +10,7 @@
 %%
 %% Use '-h' option to obtain more information about this service.
 %%
-%% [87.13.210.104 REQUEST] >> nic.pm
+%% [80.117.237.137 REQUEST] >> nic.pm
 %%
 %% RL Net [##########] - RL IP [########..]
 %%
@@ -42,15 +42,7 @@ source:      FRNIC
 
 registrar:   AFNIC registry
 type:        Isp Option 2
-address:     AFNIC
-address:     Immeuble International éà@à
-address:     Saint Quentin en Yvelines Cedex
-country:     FR
-phone:       01 39 30 83 00
-fax-no:      01 45 56 78 01
-e-mail:      afnic@afnic.fr
-website:     http://www.afnic.fr
-anonymous:   NO
+anonymous:   YES
 registered:  22/05/1997
 source:      FRNIC
 

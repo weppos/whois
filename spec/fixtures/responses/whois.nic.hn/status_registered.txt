@@ -1,16 +1,16 @@
 Domain Name: google.hn
 Domain ID: 801220-CoCCA
-WHOIS Server: whois.coccaregistry.org
+WHOIS Server: whois.nic.hn
 Referral URL: 
-Updated Date: 2013-02-19T12:00:12.958Z
+Updated Date: 2014-02-03T10:22:23.197Z
 Creation Date: 2003-03-07T05:00:00.000Z
-Registry Expiry Date: 2014-03-07T05:00:00.000Z
+Registry Expiry Date: 2015-03-07T05:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientUpdateProhibited
-Domain Status: clientTransferProhibited
-Domain Status: clientDeleteProhibited
 Domain Status: ok
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
 
 Registrant ID: 490793-CoCCA
 Registrant Name: DNS Admin
@@ -92,4 +92,4 @@ La base de datos generada a partir del sistema de delegaci?n, est? protegida por
 
 Si necesita mayor informaci?n sobre los registros aqu? mostrados, favor de comunicarse a contacto@nic.hn
 
->>> Last update of WHOIS database: 2013-12-18T10:02:23.163Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<

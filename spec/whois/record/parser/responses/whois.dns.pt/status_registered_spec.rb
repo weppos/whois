@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-02-28 00:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-02-28 00:00:00 UTC"))
     end
   end
   describe "#nameservers" do

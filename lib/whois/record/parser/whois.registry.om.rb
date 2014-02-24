@@ -20,6 +20,9 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisRegistryOm < BaseShared1
+        property_supported :updated_on do
+          node("Last Modified") { |value| Time.parse(value) }
+        end
       end
 
     end

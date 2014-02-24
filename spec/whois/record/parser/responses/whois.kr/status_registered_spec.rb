@@ -51,7 +51,7 @@ describe Whois::Record::Parser::WhoisKr, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-03-02"))
+      expect(subject.expires_on).to eq(Time.parse("2015-03-02"))
     end
   end
   describe "#nameservers" do

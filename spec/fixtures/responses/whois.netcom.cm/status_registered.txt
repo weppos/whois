@@ -17,8 +17,8 @@ Domain Information
 Query: google.cm
 Status: Active
 Created: 07 Oct 2009 10:02 WAT
-Modified: 20 May 2013 21:30 WAT
-Expires: 07 Oct 2013 10:02 WAT
+Modified: 20 Sep 2013 17:47 WAT
+Expires: 07 Oct 2014 10:02 WAT
 Name Servers:
     ns1.google.com
     ns2.google.com
@@ -26,7 +26,7 @@ Name Servers:
     ns4.google.com
 
 Registrar Information
-Registrar Name: MarkMonitor
+Registrar Name: MarkMonitor Inc.
 
 
 

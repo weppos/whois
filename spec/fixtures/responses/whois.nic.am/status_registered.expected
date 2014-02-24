@@ -14,7 +14,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-05-01}
+  %s %TIME{2014-02-13}
 
 #expires_on
   %s %CLASS{time}

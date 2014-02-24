@@ -46,12 +46,12 @@ Technical Contact Email:                     info@tralliance.travel
 Name Server:                                 NS01-MIA.THEGLOBE.COM
 Name Server:                                 NETSYS.COM
 Created by Registrar:                        NEUSTAR GATEWAY
-Last Updated by Registrar:                   NEUSTAR GATEWAY
+Last Updated by Registrar:                   AHANACEK
 Domain Registration Date:                    Tue Oct 04 21:44:27 GMT 2005
 Domain Expiration Date:                      Sun Oct 03 23:59:59 GMT 2021
-Domain Last Updated Date:                    Mon Nov 22 23:14:32 GMT 2010
+Domain Last Updated Date:                    Wed Sep 18 15:13:32 GMT 2013
 
->>>> Whois database was last updated on: Tue May 07 12:16:57 GMT 2013 <<<<
+>>>> Whois database was last updated on: Tue Feb 18 20:31:29 GMT 2014 <<<<
 
 Tralliance, Inc., the Registry Operator for .travel, has collected this information
 for the WHOIS database through an ICANN-Accredited Registrar.  This information

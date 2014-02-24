@@ -60,19 +60,19 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-01-15 22:20:13 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2014-01-15 22:20:16 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-01-15 11:28:02 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-01-15 11:28:02 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("9998")
+      expect(subject.registrar.id).to eq("800046")
       expect(subject.registrar.name).to eq("dotASIA R4-ASIA")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)

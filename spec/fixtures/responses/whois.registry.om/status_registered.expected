@@ -23,7 +23,8 @@
   %s %ERROR{AttributeNotSupported}
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s %CLASS{time}
+  %s %TIME{2013-10-06 18:20:12 UTC}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}
@@ -52,7 +53,7 @@
   %s[0].country_code  == nil
   %s[0].phone         == nil
   %s[0].fax           == nil
-  %s[0].email         == "Visit whois.registry.om for Web based WhoIs"
+  %s[0].email         == "Visit portal.registry.om/whois for Web based WhoIs"
 
 #admin_contacts
   %s %ERROR{AttributeNotSupported}
@@ -73,21 +74,21 @@
   %s[0].country_code  == nil
   %s[0].phone         == nil
   %s[0].fax           == nil
-  %s[0].email         == "Visit whois.registry.om for Web based WhoIs"
+  %s[0].email         == "Visit portal.registry.om/whois for Web based WhoIs"
 
 
 #nameservers
   %s %CLASS{array}
   %s %SIZE{3}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "om14.omantel.net.om"
-  %s[0].ipv4 == "212.72.23.4"
+  %s[0].name == "ns3.omantel.net.om"
+  %s[0].ipv4 == "62.231.247.70"
   %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "om16.omantel.net.om"
-  %s[1].ipv4 == "212.72.1.186"
+  %s[1].name == "ns1.omantel.net.om"
+  %s[1].ipv4 == "82.178.72.21"
   %s[1].ipv6 == nil
   %s[2] %CLASS{nameserver}
-  %s[2].name == "om41.omantel.net.om"
-  %s[2].ipv4 == "62.231.243.249"
+  %s[2].name == "ns2.omantel.net.om"
+  %s[2].ipv4 == "212.72.4.147"
   %s[2].ipv6 == nil

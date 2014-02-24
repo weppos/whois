@@ -55,7 +55,7 @@ describe Whois::Record::Parser::WhoisNicTravel, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2010-11-22 23:14:32 GMT"))
+      expect(subject.updated_on).to eq(Time.parse("2013-09-18 15:13:32 GMT"))
     end
   end
   describe "#expires_on" do

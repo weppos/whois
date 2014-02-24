@@ -9,7 +9,7 @@ Domain Owner:
 	Loughborough University
 
 Registered By:
-	The JNT Association
+	Jisc Collections and Janet Limited
 
 Servers:
 	agate.lut.ac.uk	158.125.1.100
@@ -29,10 +29,10 @@ Registrant Address:
 	m.s.cook@lboro.ac.uk
 
 Renewal date:
-	Saturday 16th Jun 2012
+	Monday 16th Jun 2014
 
 Entry updated:
-	Sunday 16th May 2010
+	Wednesday 20th March 2013
 
 Entry created:
 	Friday 7th November 2003

@@ -7,11 +7,11 @@ Creation Date: 1999-06-04T12:00:00.000Z
 Registry Expiry Date: 2014-06-04T12:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
+Domain Status: ok
+Domain Status: clientUpdateProhibited
+Domain Status: clientTransferProhibited
 Domain Status: clientRenewProhibited
 Domain Status: clientDeleteProhibited
-Domain Status: clientUpdateProhibited
-Domain Status: ok
-Domain Status: clientTransferProhibited
 
 Registrant ID: 313268-CoCCA
 Registrant Name: Google, Inc.
@@ -84,4 +84,4 @@ You agree that you may use this Data only for lawful purposes and that under no 
                   or
  (2) enable high volume, automated, electronic processes. The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
 
->>> Last update of WHOIS database: 2013-12-18T10:04:12.966Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:41:28.205Z <<<

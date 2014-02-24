@@ -1,15 +1,15 @@
 Domain Name: google.af
 Domain ID: 345679-CoCCA
-WHOIS Server: whois.coccaregistry.org
+WHOIS Server: whois.nic.af
 Referral URL: 
-Updated Date: 2013-12-06T18:35:04.422Z
+Updated Date: 2014-01-16T06:50:48.226Z
 Creation Date: 2009-10-05T03:51:17.979Z
 Registry Expiry Date: 2014-05-05T03:51:17.974Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
 Domain Status: ok
 
-Registrant ID: 88185-CoCCA
+Registrant ID: 969675-CoCCA
 Registrant Name: Google Inc.
 Registrant Organization: 
 Registrant Street: 1600 Amphitheatre Parkway
@@ -23,7 +23,7 @@ Registrant Fax: +1.6506188571
 Registrant Fax Ext: 
 Registrant Email: dns-admin@google.com
 
-Admin ID: 88185-CoCCA
+Admin ID: 969675-CoCCA
 Admin Name: Google Inc.
 Admin Organization: 
 Admin Street: 1600 Amphitheatre Parkway
@@ -37,7 +37,7 @@ Admin Fax: +1.6506188571
 Admin Fax Ext: 
 Admin Email: dns-admin@google.com
 
-Billing ID: 182402-CoCCA
+Billing ID: 969676-CoCCA
 Billing Name: eMarkmonitor Inc. dba MarkMonitor
 Billing Organization: 
 Billing Street: PMB 155
@@ -50,7 +50,7 @@ Billing Phone: +1.2083895799
 Billing Phone Ext: 
 Billing Email: ccops@markmonitor.com
 
-Tech ID: 88185-CoCCA
+Tech ID: 969675-CoCCA
 Tech Name: Google Inc.
 Tech Organization: 
 Tech Street: 1600 Amphitheatre Parkway
@@ -87,4 +87,4 @@ The data is for information purposes only. AFGNIC does not guarantee its accurac
 
 ADRAS Helpdesk | http://helpdesk.adras.af
 
->>> Last update of WHOIS database: 2013-12-18T10:00:15.981Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<

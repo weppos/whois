@@ -1,16 +1,16 @@
 Domain Name: google.tl
 Domain ID: 19785-CoCCA
-WHOIS Server: whois.coccaregistry.org
+WHOIS Server: whois.nic.tl
 Referral URL: 
 Updated Date: 2013-12-06T07:41:57.133Z
 Creation Date: 2003-05-23T12:00:00.000Z
 Registry Expiry Date: 2014-05-23T12:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientUpdateProhibited
-Domain Status: clientTransferProhibited
-Domain Status: clientDeleteProhibited
 Domain Status: ok
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
 
 Registrant ID: 955939-CoCCA
 Registrant Name: DNS Admin
@@ -73,4 +73,4 @@ expressly prohibited.
 
 CoCCA Helpdesk | http://helpdesk.cocca.cx
 
->>> Last update of WHOIS database: 2013-12-18T10:06:08.573Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<

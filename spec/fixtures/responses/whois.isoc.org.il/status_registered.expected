@@ -13,7 +13,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2010-10-07}
+  %s %TIME{2014-01-16}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}
@@ -33,4 +33,4 @@
   %s[4] %CLASS{nameserver}
   %s[4].name == "drns.isoc.org.il"
   %s[5] %CLASS{nameserver}
-  %s[5].name == "sps-pb.isc.org"
+  %s[5].name == "sns-pb.isc.org"

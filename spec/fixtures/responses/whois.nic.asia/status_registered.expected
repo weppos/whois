@@ -25,16 +25,16 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-01-15 22:20:13 UTC}
+  %s %TIME{2014-01-15 22:20:16 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-01-15 11:28:02 UTC}
+  %s %TIME{2015-01-15 11:28:02 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == "9998"
+  %s.id           == "800046"
   %s.name         == "dotASIA R4-ASIA"
   %s.organization == nil
   %s.url          == nil

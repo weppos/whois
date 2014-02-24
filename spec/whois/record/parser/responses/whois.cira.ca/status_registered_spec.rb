@@ -60,21 +60,21 @@ describe Whois::Record::Parser::WhoisCiraCa, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-03-27 00:00:00"))
+      expect(subject.updated_on).to eq(Time.parse("2014-02-13 00:00:00"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-04-28 00:00:00"))
+      expect(subject.expires_on).to eq(Time.parse("2015-04-28 00:00:00"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("70")
-      expect(subject.registrar.name).to eq("Webnames.ca Inc.")
-      expect(subject.registrar.organization).to eq("Webnames.ca Inc.")
+      expect(subject.registrar.id).to eq("5000040")
+      expect(subject.registrar.name).to eq("MarkMonitor International Canada Ltd.")
+      expect(subject.registrar.organization).to eq("MarkMonitor International Canada Ltd.")
       expect(subject.registrar.url).to eq(nil)
     end
   end

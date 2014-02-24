@@ -39,13 +39,13 @@ describe Whois::Record::Parser::WhoisNicMx, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2003-02-24"))
+      expect(subject.created_on).to eq(Time.parse("2009-05-12"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2011-02-23"))
+      expect(subject.expires_on).to eq(Time.parse("2016-05-11"))
     end
   end
   describe "#nameservers" do
@@ -53,14 +53,21 @@ describe Whois::Record::Parser::WhoisNicMx, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(4).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].name).to eq("ns2.google.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[1].name).to eq("ns4.google.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[3].name).to eq("ns1.google.com")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
 end

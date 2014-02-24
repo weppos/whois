@@ -12,7 +12,7 @@ query : google.kr
 책임자 전화번호             : 82.25319000
 등록일                      : 2007. 03. 02.
 최근 정보 변경일            : 2010. 10. 04.
-사용 종료일                 : 2014. 03. 02.
+사용 종료일                 : 2015. 03. 02.
 정보공개여부                : Y
 등록대행자                  : (주)후이즈(http://whois.co.kr)
 
@@ -36,7 +36,7 @@ AC E-Mail                   : dns-admin@google.com
 AC Phone Number             : 82.25319000
 Registered Date             : 2007. 03. 02.
 Last Updated Date           : 2010. 10. 04.
-Expiration Date             : 2014. 03. 02.
+Expiration Date             : 2015. 03. 02.
 Publishes                   : Y
 Authorized Agency           : Whois Corp.(http://whois.co.kr)
 

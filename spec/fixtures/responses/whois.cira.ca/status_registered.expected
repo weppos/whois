@@ -25,18 +25,18 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-03-27 00:00:00}
+  %s %TIME{2014-02-13 00:00:00}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-04-28 00:00:00}
+  %s %TIME{2015-04-28 00:00:00}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == "70"
-  %s.name         == "Webnames.ca Inc."
-  %s.organization == "Webnames.ca Inc."
+  %s.id           == "5000040"
+  %s.name         == "MarkMonitor International Canada Ltd."
+  %s.organization == "MarkMonitor International Canada Ltd."
   %s.url          == nil
 
 #registrant_contacts

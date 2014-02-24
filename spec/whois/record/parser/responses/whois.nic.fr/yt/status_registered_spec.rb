@@ -122,8 +122,8 @@ describe Whois::Record::Parser::WhoisNicFr, "status_registered.expected" do
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.nic.fr")
-      expect(subject.nameservers[0].ipv4).to eq("192.93.0.1")
-      expect(subject.nameservers[0].ipv6).to eq("2001:660:3005:1::1:1")
+      expect(subject.nameservers[0].ipv4).to eq("192.134.4.1")
+      expect(subject.nameservers[0].ipv6).to eq("2001:660:3003:2::4:1")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.nic.fr")
       expect(subject.nameservers[1].ipv4).to eq("192.93.0.4")
