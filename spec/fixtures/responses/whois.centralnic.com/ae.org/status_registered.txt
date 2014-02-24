@@ -1,3 +1,69 @@
+Domain ID:CNIC-DO887354
+Domain Name:KIDZLINK.AE.ORG
+Created On:2012-08-03T15:37:33.0Z
+Last Updated On:2013-06-09T00:12:37.0Z
+Expiration Date:2014-08-03T23:59:59.0Z
+Status:clientTransferProhibited
+Status:serverTransferProhibited
+Registrant ID:RWG000000003DA24
+Registrant Name:IPC C/O Clarenter
+Registrant Organization:Clarenter
+Registrant Street1:110 E Broward Blvd
+Registrant Street2:Ste. 1720
+Registrant City:Fort Lauderdale
+Registrant State/Province:FL
+Registrant Postal Code:33301
+Registrant Country:US
+Registrant Phone:+1.18888443911
+Registrant Email:patricia@internationalpreschoolcurriculum.com
+Admin ID:RWG000000003DA24
+Admin Name:IPC C/O Clarenter
+Admin Organization:Clarenter
+Admin Street1:110 E Broward Blvd
+Admin Street2:Ste. 1720
+Admin City:Fort Lauderdale
+Admin State/Province:FL
+Admin Postal Code:33301
+Admin Country:US
+Admin Phone:+1.18888443911
+Admin Email:patricia@internationalpreschoolcurriculum.com
+Tech ID:RWG000000003DA24
+Tech Name:IPC C/O Clarenter
+Tech Organization:Clarenter
+Tech Street1:110 E Broward Blvd
+Tech Street2:Ste. 1720
+Tech City:Fort Lauderdale
+Tech State/Province:FL
+Tech Postal Code:33301
+Tech Country:US
+Tech Phone:+1.18888443911
+Tech Email:patricia@internationalpreschoolcurriculum.com
+Billing ID:RWG000000003DA25
+Billing Name:Billing Department
+Billing Organization:101Domain, Inc.
+Billing Street1:5858 Edison Pl.
+Billing City:Carlsbad
+Billing State/Province:CA
+Billing Postal Code:92008
+Billing Country:US
+Billing Phone:+1.7604448674
+Billing FAX:+1.7605794996
+Billing Email:tech1@101domain.com
+Sponsoring Registrar ID:H65658
+Sponsoring Registrar IANA ID:1011
+Sponsoring Registrar Organization:101Domain, Inc.
+Sponsoring Registrar Street1:5858 Edison Pl.
+Sponsoring Registrar City:Carlsbad
+Sponsoring Registrar State/Province:CA
+Sponsoring Registrar Postal Code:92008
+Sponsoring Registrar Country:US
+Sponsoring Registrar Phone:+1.7604448674
+Sponsoring Registrar FAX:+1.7605794996
+Sponsoring Registrar Website:http://www.101domain.com
+Name Server:NS37.DOMAINCONTROL.COM
+Name Server:NS38.DOMAINCONTROL.COM
+DNSSEC:Unsigned
+
 This whois service is provided by CentralNic Ltd and only contains
 information pertaining to Internet domain names we have registered for
 our customers. By using this service you are agreeing (1) not to use any
@@ -7,66 +73,4 @@ any way, (3) not to use any high-volume, automated, electronic processes
 to obtain data from this service. Abuse of this service is monitored and
 actions in contravention of these terms will result in being permanently
 blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
-
-Domain ID:CNIC-DO716047
-Domain Name:QROPS.AE.ORG
-Created On:2010-10-11T12:08:35.0Z
-Last Updated On:2012-11-03T00:16:13.0Z
-Expiration Date:2013-10-11T23:59:59.0Z
-Status:OK
-Registrant ID:H280468
-Registrant Name:Domain Admin
-Registrant Organization:PrivacyProtect.org
-Registrant Street1:ID#10760, PO Box 16
-Registrant Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Registrant City:Nobby Beach
-Registrant Postal Code:QLD 4218
-Registrant Country:AU
-Registrant Phone:+45.36946676
-Registrant Email:contact@privacyprotect.org
-Admin ID:H280468
-Admin Name:Domain Admin
-Admin Organization:PrivacyProtect.org
-Admin Street1:ID#10760, PO Box 16
-Admin Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Admin City:Nobby Beach
-Admin Postal Code:QLD 4218
-Admin Country:AU
-Admin Phone:+45.36946676
-Admin Email:contact@privacyprotect.org
-Tech ID:H280468
-Tech Name:Domain Admin
-Tech Organization:PrivacyProtect.org
-Tech Street1:ID#10760, PO Box 16
-Tech Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Tech City:Nobby Beach
-Tech Postal Code:QLD 4218
-Tech Country:AU
-Tech Phone:+45.36946676
-Tech Email:contact@privacyprotect.org
-Billing ID:H280468
-Billing Name:Domain Admin
-Billing Organization:PrivacyProtect.org
-Billing Street1:ID#10760, PO Box 16
-Billing Street2:Note - All Postal Mails Rejected, visit Privacyprotect.org
-Billing City:Nobby Beach
-Billing Postal Code:QLD 4218
-Billing Country:AU
-Billing Phone:+45.36946676
-Billing Email:contact@privacyprotect.org
-Sponsoring Registrar ID:H269407
-Sponsoring Registrar IANA ID:303
-Sponsoring Registrar Organization:PDR Ltd. d/b/a PublicDomainRegistry.com
-Sponsoring Registrar Street1:F/19, RAK FTZ, Ras Al Khaimah, UAE , P.O Box #16113
-Sponsoring Registrar City:Ras Al Khaimah	
-Sponsoring Registrar State/Province:Ras Al Khaimah	
-Sponsoring Registrar Postal Code:P.O Box #16113
-Sponsoring Registrar Country:AE
-Sponsoring Registrar Phone:+971-72046060
-Sponsoring Registrar FAX:+971-72046061
-Sponsoring Registrar Website:http://www.publicdomainregistry.com
-Name Server:NS49.HOSTING-UAE.COM
-Name Server:NS50.HOSTING-UAE.COM
-DNSSEC:Unsigned
-
 

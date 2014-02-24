@@ -3,7 +3,7 @@ Domain Name:HOTEL.AR.COM
 Created On:2008-04-25T16:22:13.0Z
 Last Updated On:2013-04-26T00:15:40.0Z
 Expiration Date:2014-04-25T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1323241
 Registrant Name:Reserved Domains
 Registrant Organization:CentralNic Ltd

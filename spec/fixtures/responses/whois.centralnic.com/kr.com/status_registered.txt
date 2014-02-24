@@ -3,8 +3,8 @@ Domain Name:ACADEMYART.KR.COM
 Created On:2008-06-11T21:25:43.0Z
 Last Updated On:2012-01-16T16:25:41.0Z
 Expiration Date:2014-06-11T23:59:59.0Z
-Status:CLIENT TRANSFER PROHIBITED
-Status:SERVER TRANSFER PROHIBITED
+Status:clientTransferProhibited
+Status:serverTransferProhibited
 Registrant ID:41619876
 Registrant Name:Academy of  Art College
 Registrant Organization:Academy of  Art College

@@ -28,17 +28,17 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("qrops.ae.org")
+      expect(subject.domain).to eq("kidzlink.ae.org")
     end
   end
   describe "#domain_id" do
     it do
-      expect(subject.domain_id).to eq("CNIC-DO716047")
+      expect(subject.domain_id).to eq("CNIC-DO887354")
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["clientTransferProhibited", "serverTransferProhibited"])
     end
   end
   describe "#available?" do
@@ -54,28 +54,28 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2010-10-11 12:08:35 UTC"))
+      expect(subject.created_on).to eq(Time.parse("2012-08-03 15:37:33 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-11-03 00:16:13 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-06-09 00:12:37 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-10-11 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-08-03 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("H269407")
+      expect(subject.registrar.id).to eq("H65658")
       expect(subject.registrar.name).to eq(nil)
-      expect(subject.registrar.organization).to eq("PDR Ltd. d/b/a PublicDomainRegistry.com")
-      expect(subject.registrar.url).to eq("http://www.publicdomainregistry.com")
+      expect(subject.registrar.organization).to eq("101Domain, Inc.")
+      expect(subject.registrar.url).to eq("http://www.101domain.com")
     end
   end
   describe "#registrant_contacts" do
@@ -84,18 +84,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("H280468")
-      expect(subject.registrant_contacts[0].name).to eq("Domain Admin")
-      expect(subject.registrant_contacts[0].organization).to eq("PrivacyProtect.org")
-      expect(subject.registrant_contacts[0].address).to eq("ID#10760, PO Box 16\nNote - All Postal Mails Rejected, visit Privacyprotect.org")
-      expect(subject.registrant_contacts[0].city).to eq("Nobby Beach")
-      expect(subject.registrant_contacts[0].zip).to eq("QLD 4218")
-      expect(subject.registrant_contacts[0].state).to eq(nil)
+      expect(subject.registrant_contacts[0].id).to eq("RWG000000003DA24")
+      expect(subject.registrant_contacts[0].name).to eq("IPC C/O Clarenter")
+      expect(subject.registrant_contacts[0].organization).to eq("Clarenter")
+      expect(subject.registrant_contacts[0].address).to eq("110 E Broward Blvd\nSte. 1720")
+      expect(subject.registrant_contacts[0].city).to eq("Fort Lauderdale")
+      expect(subject.registrant_contacts[0].zip).to eq("33301")
+      expect(subject.registrant_contacts[0].state).to eq("FL")
       expect(subject.registrant_contacts[0].country).to eq(nil)
-      expect(subject.registrant_contacts[0].country_code).to eq("AU")
-      expect(subject.registrant_contacts[0].phone).to eq("+45.36946676")
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+      expect(subject.registrant_contacts[0].phone).to eq("+1.18888443911")
       expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq("contact@privacyprotect.org")
+      expect(subject.registrant_contacts[0].email).to eq("patricia@internationalpreschoolcurriculum.com")
     end
   end
   describe "#admin_contacts" do
@@ -104,18 +104,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("H280468")
-      expect(subject.admin_contacts[0].name).to eq("Domain Admin")
-      expect(subject.admin_contacts[0].organization).to eq("PrivacyProtect.org")
-      expect(subject.admin_contacts[0].address).to eq("ID#10760, PO Box 16\nNote - All Postal Mails Rejected, visit Privacyprotect.org")
-      expect(subject.admin_contacts[0].city).to eq("Nobby Beach")
-      expect(subject.admin_contacts[0].zip).to eq("QLD 4218")
-      expect(subject.admin_contacts[0].state).to eq(nil)
+      expect(subject.admin_contacts[0].id).to eq("RWG000000003DA24")
+      expect(subject.admin_contacts[0].name).to eq("IPC C/O Clarenter")
+      expect(subject.admin_contacts[0].organization).to eq("Clarenter")
+      expect(subject.admin_contacts[0].address).to eq("110 E Broward Blvd\nSte. 1720")
+      expect(subject.admin_contacts[0].city).to eq("Fort Lauderdale")
+      expect(subject.admin_contacts[0].zip).to eq("33301")
+      expect(subject.admin_contacts[0].state).to eq("FL")
       expect(subject.admin_contacts[0].country).to eq(nil)
-      expect(subject.admin_contacts[0].country_code).to eq("AU")
-      expect(subject.admin_contacts[0].phone).to eq("+45.36946676")
+      expect(subject.admin_contacts[0].country_code).to eq("US")
+      expect(subject.admin_contacts[0].phone).to eq("+1.18888443911")
       expect(subject.admin_contacts[0].fax).to eq(nil)
-      expect(subject.admin_contacts[0].email).to eq("contact@privacyprotect.org")
+      expect(subject.admin_contacts[0].email).to eq("patricia@internationalpreschoolcurriculum.com")
     end
   end
   describe "#technical_contacts" do
@@ -124,18 +124,18 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("H280468")
-      expect(subject.technical_contacts[0].name).to eq("Domain Admin")
-      expect(subject.technical_contacts[0].organization).to eq("PrivacyProtect.org")
-      expect(subject.technical_contacts[0].address).to eq("ID#10760, PO Box 16\nNote - All Postal Mails Rejected, visit Privacyprotect.org")
-      expect(subject.technical_contacts[0].city).to eq("Nobby Beach")
-      expect(subject.technical_contacts[0].zip).to eq("QLD 4218")
-      expect(subject.technical_contacts[0].state).to eq(nil)
+      expect(subject.technical_contacts[0].id).to eq("RWG000000003DA24")
+      expect(subject.technical_contacts[0].name).to eq("IPC C/O Clarenter")
+      expect(subject.technical_contacts[0].organization).to eq("Clarenter")
+      expect(subject.technical_contacts[0].address).to eq("110 E Broward Blvd\nSte. 1720")
+      expect(subject.technical_contacts[0].city).to eq("Fort Lauderdale")
+      expect(subject.technical_contacts[0].zip).to eq("33301")
+      expect(subject.technical_contacts[0].state).to eq("FL")
       expect(subject.technical_contacts[0].country).to eq(nil)
-      expect(subject.technical_contacts[0].country_code).to eq("AU")
-      expect(subject.technical_contacts[0].phone).to eq("+45.36946676")
+      expect(subject.technical_contacts[0].country_code).to eq("US")
+      expect(subject.technical_contacts[0].phone).to eq("+1.18888443911")
       expect(subject.technical_contacts[0].fax).to eq(nil)
-      expect(subject.technical_contacts[0].email).to eq("contact@privacyprotect.org")
+      expect(subject.technical_contacts[0].email).to eq("patricia@internationalpreschoolcurriculum.com")
     end
   end
   describe "#nameservers" do
@@ -143,9 +143,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns49.hosting-uae.com")
+      expect(subject.nameservers[0].name).to eq("ns37.domaincontrol.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns50.hosting-uae.com")
+      expect(subject.nameservers[1].name).to eq("ns38.domaincontrol.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

@@ -3,7 +3,7 @@ Domain Name:BESTB.UY.COM
 Created On:2007-07-12T13:49:25.0Z
 Last Updated On:2013-07-10T00:27:20.0Z
 Expiration Date:2015-07-12T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:MNT32524959440
 Registrant Name:Identity Protection Service
 Registrant Organization:Identity Protect Limited

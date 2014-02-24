@@ -3,8 +3,8 @@ Domain Name:GSN.CN.COM
 Created On:2005-11-23T15:44:03.0Z
 Last Updated On:2013-11-26T12:16:45.0Z
 Expiration Date:2014-11-23T23:59:59.0Z
-Status:CLIENT TRANSFER PROHIBITED
-Status:SERVER TRANSFER PROHIBITED
+Status:clientTransferProhibited
+Status:serverTransferProhibited
 Registrant ID:H1062079
 Registrant Name:GSN Electronics Incorporation Pte Ltd
 Registrant Street1:Straits Trading Building 9 Battery Road 16-08

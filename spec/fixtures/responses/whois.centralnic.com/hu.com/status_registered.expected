@@ -3,14 +3,14 @@
 
 
 #domain
-  %s == "xxx.hu.com"
+  %s == "porn.hu.com"
 
 #domain_id
-  %s == "CNIC-DO592232"
+  %s == "CNIC-DO970405"
 
 
 #status
-  %s == ["TRANSFER PROHIBITED"]
+  %s == ["pendingDelete"]
 
 #available?
   %s == false
@@ -21,83 +21,83 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2008-08-27 23:18:29 UTC}
+  %s %TIME{2012-11-28 17:46:03 UTC}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-07-03 00:15:58 UTC}
+  %s %TIME{2014-02-11 00:16:13 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-08-27 23:59:59 UTC}
+  %s %TIME{2013-11-28 23:59:59 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == "H292913"
+  %s.id           == "H65658"
   %s.name         == nil
-  %s.organization == "Network Solutions LLC"
-  %s.url          == "http://www.networksolutions.com/"
+  %s.organization == "101Domain, Inc."
+  %s.url          == "http://www.101domain.com"
 
 #registrant_contacts
   %s %CLASS{array}
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  %s[0].id            == "37300766"
-  %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
-  %s[0].organization  == "DIANAMIC ABRASIVE PRODUCTS INC"
-  %s[0].address       == "2566 INDUSTRIAL ROW DRIVE"
-  %s[0].city          == "TROY"
-  %s[0].zip           == "48084"
+  %s[0].id            == "RWG000000004273D"
+  %s[0].name          == "Gintautas Liaskus"
+  %s[0].organization  == "G.Liaskaus firma INFOMEGA"
+  %s[0].address       == "Kapsu 32-53"
+  %s[0].city          == "Vilnius"
+  %s[0].zip           == "02167"
   %s[0].state         == "MI"
   %s[0].country       == nil
-  %s[0].country_code  == "US"
-  %s[0].phone         == "+1.248280118"
-  %s[0].fax           == nil
-  %s[0].email         == "no.valid.email@worldnic.com"
+  %s[0].country_code  == "LT"
+  %s[0].phone         == "+370.52711457"
+  %s[0].fax           == "+370.52784278"
+  %s[0].email         == "infotau@infotau.lt"
 
 #admin_contacts
   %s %CLASS{array}
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  %s[0].id            == "37300766"
-  %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
-  %s[0].organization  == "DIANAMIC ABRASIVE PRODUCTS INC"
-  %s[0].address       == "2566 INDUSTRIAL ROW DRIVE"
-  %s[0].city          == "TROY"
-  %s[0].zip           == "48084"
+  %s[0].id            == "RWG000000004273D"
+  %s[0].name          == "Gintautas Liaskus"
+  %s[0].organization  == "G.Liaskaus firma INFOMEGA"
+  %s[0].address       == "Kapsu 32-53"
+  %s[0].city          == "Vilnius"
+  %s[0].zip           == "02167"
   %s[0].state         == "MI"
   %s[0].country       == nil
-  %s[0].country_code  == "US"
-  %s[0].phone         == "+1.248280118"
-  %s[0].fax           == nil
-  %s[0].email         == "no.valid.email@worldnic.com"
+  %s[0].country_code  == "LT"
+  %s[0].phone         == "+370.52711457"
+  %s[0].fax           == "+370.52784278"
+  %s[0].email         == "infotau@infotau.lt"
 
 #technical_contacts
   %s %CLASS{array}
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  %s[0].id            == "37300766"
-  %s[0].name          == "DIANAMIC ABRASIVE PRODUCTS INC"
-  %s[0].organization  == "DIANAMIC ABRASIVE PRODUCTS INC"
-  %s[0].address       == "2566 INDUSTRIAL ROW DRIVE"
-  %s[0].city          == "TROY"
-  %s[0].zip           == "48084"
+  %s[0].id            == "RWG000000004273D"
+  %s[0].name          == "Gintautas Liaskus"
+  %s[0].organization  == "G.Liaskaus firma INFOMEGA"
+  %s[0].address       == "Kapsu 32-53"
+  %s[0].city          == "Vilnius"
+  %s[0].zip           == "02167"
   %s[0].state         == "MI"
   %s[0].country       == nil
-  %s[0].country_code  == "US"
-  %s[0].phone         == "+1.248280118"
-  %s[0].fax           == nil
-  %s[0].email         == "no.valid.email@worldnic.com"
+  %s[0].country_code  == "LT"
+  %s[0].phone         == "+370.52711457"
+  %s[0].fax           == "+370.52784278"
+  %s[0].email         == "infotau@infotau.lt"
 
 
 #nameservers
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns27.worldnic.com"
+  %s[0].name == "ns1.sedoparking.com"
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns28.worldnic.com"
+  %s[1].name == "ns2.sedoparking.com"

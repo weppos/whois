@@ -3,7 +3,7 @@ Domain Name:WALKABOUT.EU.COM
 Created On:2001-08-14T10:14:41.0Z
 Last Updated On:2013-08-15T11:25:43.0Z
 Expiration Date:2015-08-14T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1045382
 Registrant Name:Regent Inns Plc
 Registrant Street1:77 Muswell Hill

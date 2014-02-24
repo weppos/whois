@@ -3,8 +3,8 @@ Domain Name:HOTEL.GB.NET
 Created On:2013-08-25T12:36:24.0Z
 Last Updated On:2013-08-30T12:42:09.0Z
 Expiration Date:2014-08-25T23:59:59.0Z
-Status:CLIENT TRANSFER PROHIBITED
-Status:SERVER TRANSFER PROHIBITED
+Status:clientTransferProhibited
+Status:serverTransferProhibited
 Registrant ID:R1149-GANDI-PRYP
 Registrant Name:Heinz Pierre Roeser
 Registrant Organization:Roevertrieb

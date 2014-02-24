@@ -3,7 +3,7 @@ Domain Name:COLLEGE.US.COM
 Created On:2003-10-20T10:03:28.0Z
 Last Updated On:2012-01-16T16:27:26.0Z
 Expiration Date:2014-10-20T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1044037
 Registrant Name:Vantage Media Corporation
 Registrant Street1:2101 Rosecrans Ave.

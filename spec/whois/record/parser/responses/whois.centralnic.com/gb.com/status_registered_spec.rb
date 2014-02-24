@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["serverTransferProhibited"])
     end
   end
   describe "#available?" do
@@ -60,22 +60,22 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-05-02 08:06:42 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2014-02-12 09:45:17 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-04-23 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2016-04-23 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("7145-IX")
+      expect(subject.registrar.id).to eq("H386560")
       expect(subject.registrar.name).to eq(nil)
-      expect(subject.registrar.organization).to eq("InternetX GmbH")
-      expect(subject.registrar.url).to eq("http://www.internetx.de/")
+      expect(subject.registrar.organization).to eq("Wind Internethaus GMBH")
+      expect(subject.registrar.url).to eq("www.windinternethaus.de")
     end
   end
   describe "#registrant_contacts" do
@@ -84,9 +84,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("INX-10599082com")
-      expect(subject.registrant_contacts[0].name).to eq("Hotel Reservation Service Robert Ragge GmbH")
-      expect(subject.registrant_contacts[0].organization).to eq("Hotel Reservation Service Robert Ragge GmbH")
+      expect(subject.registrant_contacts[0].id).to eq("H1049605")
+      expect(subject.registrant_contacts[0].name).to eq("Robert Ragge, Hotel Reservation Service Robert Ragge GmbH")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
       expect(subject.registrant_contacts[0].address).to eq("Blaubach 32")
       expect(subject.registrant_contacts[0].city).to eq("Koeln")
       expect(subject.registrant_contacts[0].zip).to eq("50676")
@@ -104,13 +104,13 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("INX-201727com")
+      expect(subject.admin_contacts[0].id).to eq("H393781")
       expect(subject.admin_contacts[0].name).to eq("Robert Ragge")
       expect(subject.admin_contacts[0].organization).to eq("Hotel Reservation Service Robert Ragge GmbH")
       expect(subject.admin_contacts[0].address).to eq("Blaubach 32")
       expect(subject.admin_contacts[0].city).to eq("Koeln")
       expect(subject.admin_contacts[0].zip).to eq("50676")
-      expect(subject.admin_contacts[0].state).to eq("DE")
+      expect(subject.admin_contacts[0].state).to eq("NRW")
       expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("DE")
       expect(subject.admin_contacts[0].phone).to eq("+49.2212077222")
@@ -124,9 +124,9 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("INX-201728com")
-      expect(subject.technical_contacts[0].name).to eq("Uwe Watzek")
-      expect(subject.technical_contacts[0].organization).to eq("Wind Internethaus GmbH")
+      expect(subject.technical_contacts[0].id).to eq("H1103064")
+      expect(subject.technical_contacts[0].name).to eq("Uwe Watzek, Wind Internethaus GMBH")
+      expect(subject.technical_contacts[0].organization).to eq(nil)
       expect(subject.technical_contacts[0].address).to eq("Am Krebsgraben 15\nHaus 2")
       expect(subject.technical_contacts[0].city).to eq("Villingen-Schwenningen")
       expect(subject.technical_contacts[0].zip).to eq("78048")

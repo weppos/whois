@@ -3,7 +3,7 @@ Domain Name:SRK.RU.COM
 Created On:2006-07-31T10:06:04.0Z
 Last Updated On:2012-07-10T08:16:19.0Z
 Expiration Date:2014-07-31T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1037013
 Registrant Name:Anthony Lloyd, SRK Consulting (UK) Limited
 Registrant Street1:5th Floor

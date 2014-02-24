@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"])
+      expect(subject.status).to eq(["clientTransferProhibited", "serverTransferProhibited"])
     end
   end
   describe "#available?" do
