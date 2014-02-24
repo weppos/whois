@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["pendingDelete"]
+  %s == ["pendingDelete", "pendingDelete"]
 
 #available?
   %s == false
@@ -50,7 +50,7 @@
   %s[0].address       == "Kapsu 32-53"
   %s[0].city          == "Vilnius"
   %s[0].zip           == "02167"
-  %s[0].state         == "MI"
+  %s[0].state         == nil
   %s[0].country       == nil
   %s[0].country_code  == "LT"
   %s[0].phone         == "+370.52711457"
@@ -68,7 +68,7 @@
   %s[0].address       == "Kapsu 32-53"
   %s[0].city          == "Vilnius"
   %s[0].zip           == "02167"
-  %s[0].state         == "MI"
+  %s[0].state         == nil
   %s[0].country       == nil
   %s[0].country_code  == "LT"
   %s[0].phone         == "+370.52711457"
@@ -86,7 +86,7 @@
   %s[0].address       == "Kapsu 32-53"
   %s[0].city          == "Vilnius"
   %s[0].zip           == "02167"
-  %s[0].state         == "MI"
+  %s[0].state         == nil
   %s[0].country       == nil
   %s[0].country_code  == "LT"
   %s[0].phone         == "+370.52711457"

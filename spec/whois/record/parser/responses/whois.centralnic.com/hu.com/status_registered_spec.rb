@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["pendingDelete"])
+      expect(subject.status).to eq(["pendingDelete", "pendingDelete"])
     end
   end
   describe "#available?" do
@@ -90,7 +90,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.registrant_contacts[0].address).to eq("Kapsu 32-53")
       expect(subject.registrant_contacts[0].city).to eq("Vilnius")
       expect(subject.registrant_contacts[0].zip).to eq("02167")
-      expect(subject.registrant_contacts[0].state).to eq("MI")
+      expect(subject.registrant_contacts[0].state).to eq(nil)
       expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("LT")
       expect(subject.registrant_contacts[0].phone).to eq("+370.52711457")
@@ -110,7 +110,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.admin_contacts[0].address).to eq("Kapsu 32-53")
       expect(subject.admin_contacts[0].city).to eq("Vilnius")
       expect(subject.admin_contacts[0].zip).to eq("02167")
-      expect(subject.admin_contacts[0].state).to eq("MI")
+      expect(subject.admin_contacts[0].state).to eq(nil)
       expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("LT")
       expect(subject.admin_contacts[0].phone).to eq("+370.52711457")
@@ -130,7 +130,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
       expect(subject.technical_contacts[0].address).to eq("Kapsu 32-53")
       expect(subject.technical_contacts[0].city).to eq("Vilnius")
       expect(subject.technical_contacts[0].zip).to eq("02167")
-      expect(subject.technical_contacts[0].state).to eq("MI")
+      expect(subject.technical_contacts[0].state).to eq(nil)
       expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("LT")
       expect(subject.technical_contacts[0].phone).to eq("+370.52711457")
