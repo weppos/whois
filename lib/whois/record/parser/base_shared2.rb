@@ -40,7 +40,7 @@ module Whois
 
 
         property_supported :status do
-          node("Domain Status")
+          node("Domain Status") { |value| Array.wrap(value) }
         end
 
         property_supported :available? do

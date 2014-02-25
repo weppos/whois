@@ -72,12 +72,12 @@ module Whois
 
         property_supported :registrar do
           node("Sponsoring Registrar") do |value|
-            parts = decompose_registrar(value) ||
+            id, name = decompose_registrar(value) ||
                 Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
 
             Record::Registrar.new(
-                id:           parts[0],
-                name:         parts[1]
+                id:           id,
+                name:         name
             )
           end
         end
@@ -106,7 +106,7 @@ module Whois
 
         def build_contact(element, type)
           node("#{element} ID") do
-            address = (1..3).
+            address = ["", "1", "2", "3"].
                 map { |i| node("#{element} Street#{i}") }.
                 delete_if { |i| i.nil? || i.empty? }.
                 join("\n")
@@ -122,7 +122,7 @@ module Whois
                 :state        => node("#{element} State/Province"),
                 :country_code => node("#{element} Country"),
                 :phone        => node("#{element} Phone"),
-                :fax          => node("#{element} FAX"),
+                :fax          => node("#{element} FAX") || node("#{element} Fax"),
                 :email        => node("#{element} Email")
             )
           end

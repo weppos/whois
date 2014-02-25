@@ -17,18 +17,35 @@ module Whois
       # Parser for the whois.nic.xxx server.
       class WhoisNicXxx < BaseAfilias
 
+        self.scanner = Scanners::BaseAfilias, {
+            pattern_disclaimer: /^Access to/
+        }
+
+
         property_supported :status do
           if reserved?
             :reserved
           else
-            super()
+            Array.wrap(node("Domain Status"))
+          end
+        end
+        
+
+        property_supported :created_on do
+          node("Creation Date") do |value|
+            Time.parse(value)
           end
         end
 
-
         property_supported :updated_on do
-          node("Last Updated On") do |value|
-            Time.parse(value) unless value.empty?
+          node("Updated Date") do |value|
+            Time.parse(value)
+          end
+        end
+
+        property_supported :expires_on do
+          node("Registry Expiry Date") do |value|
+            Time.parse(value)
           end
         end
 
@@ -36,15 +53,6 @@ module Whois
         # NEWPROPERTY
         def reserved?
           !!node("status:reserved")
-        end
-
-
-        private
-
-        def decompose_registrar(value)
-          if value =~ /(.+?) \((.+?)\)/
-            [$1, $2]
-          end
         end
 
       end
