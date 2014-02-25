@@ -1589,8 +1589,8 @@
   ".wiki": {
     "host": "whois.centralnic.com"
   },
-  ".xyz": {
-    "host": "whois.centralnic.com"
+  ".xyz": { // centralnic
+    "host": "whois.nic.xyz"
   },
   ".fish": {
     "host": "whois.donuts.co"
