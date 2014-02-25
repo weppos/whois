@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "status_registered.expected"
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2013\n")
+      expect(subject.disclaimer).to eq("The use of this Whois facility is subject to the following terms and\nconditions. https://registry.net.za/whois_terms\nCopyright (c) UniForum SA 1995-2014\n")
     end
   end
   describe "#domain" do

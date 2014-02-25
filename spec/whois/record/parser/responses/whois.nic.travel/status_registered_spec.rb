@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisNicTravel, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq("ok")
+      expect(subject.status).to eq(["ok"])
     end
   end
   describe "#available?" do

@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicEc, "status_registered.expected" do
 
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("google.as")
+      expect(subject.domain).to eq("google.ec")
     end
   end
   describe "#domain_id" do
@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisNicEc, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2003-10-16 00:00:00 UTC"))
+      expect(subject.created_on).to eq(Time.parse("2003-10-16 00:00:00"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-09-17 00:00:00 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-09-17 00:00:00"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-10-16 00:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-10-16 00:00:00"))
     end
   end
   describe "#registrar" do
@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisNicEc, "status_registered.expected" do
       expect(subject.registrar.id).to eq(nil)
       expect(subject.registrar.name).to eq("MarkMonitor Inc.")
       expect(subject.registrar.organization).to eq(nil)
-      expect(subject.registrar.url).to eq(nil)
+      expect(subject.registrar.url).to eq("www.markmonitor.com")
     end
   end
   describe "#nameservers" do

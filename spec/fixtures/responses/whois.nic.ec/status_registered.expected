@@ -1,5 +1,5 @@
 #domain
-  %s == "google.as"
+  %s == "google.ec"
 
 #domain_id
   %s %ERROR{AttributeNotSupported}
@@ -17,15 +17,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2003-10-16 00:00:00 UTC}
+  %s %TIME{2003-10-16 00:00:00}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-09-17 00:00:00 UTC}
+  %s %TIME{2013-09-17 00:00:00}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-10-16 00:00:00 UTC}
+  %s %TIME{2014-10-16 00:00:00}
 
 
 #registrar
@@ -33,7 +33,7 @@
   %s.id           == nil
   %s.name         == "MarkMonitor Inc."
   %s.organization == nil
-  %s.url          == nil
+  %s.url          == "www.markmonitor.com"
 
 
 #nameservers

@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/parser/base_cocca'
 
 
 module Whois
