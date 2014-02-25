@@ -13,7 +13,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-07-08 19:35:53 +03:00}
+  %s %TIME{2013-07-08T19:35:53.187695+03:00}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}
