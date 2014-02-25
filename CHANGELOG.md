@@ -11,7 +11,9 @@
 
 - FIXED: whois.nic.cd crashes because the registry is no longer returning a status.
 
-- FIXED: whois.nic.org.uy crashes when update date is blank.
+- FIXED: whois.nic.org.uy crashes when update date is empty.
+
+- FIXED: whois.nic.cx crashes when update date is empty.
 
 - CHANGED: Updated whois.nic.ec parser to the new response format.
 
