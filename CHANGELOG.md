@@ -11,6 +11,8 @@
 
 - FIXED: whois.nic.cd crashes because the registry is no longer returning a status.
 
+- FIXED: whois.nic.org.uy crashes when update date is blank.
+
 - CHANGED: Updated whois.nic.ec parser to the new response format.
 
 - CHANGED: Updated whois.pandi.or.id parser to the new response format.

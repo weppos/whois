@@ -6,7 +6,22 @@ Cualquier consulta sobre este servicio, puede hacerla al correo electronico dns-
 
 Por informacion sobre dominios bajo COM.UY dirigirse a https://nic.anteldata.com.uy/dns/consultaWhois/whois.action
 
-No match for "u34jedzcq.uy".
+Titular: 
+
+   Nombre de Dominio: gub.uy
+   Registrado por: Servicio Central de Informática de la Universidad (SeCIU-UdelaR) (http://www.nic.org.uy)
+
+   Contacto Administrativo: 
+   
+   Contacto Tecnico: 
+   
+   Contacto de Cobranza: 
+
+   Ultima Actualizacion: 
+   Fecha de Creacion: 1990-09-10 00:00:00
+
+   Estatus del dominio: ACTIVO
+
 
 NIC-Uruguay - SeCIU - UdelaR
 http://www.nic.org.uy
