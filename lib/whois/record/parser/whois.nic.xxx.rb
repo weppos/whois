@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_afilias'
+require 'whois/record/parser/base_afilias2'
 
 
 module Whois
@@ -15,7 +15,7 @@ module Whois
     class Parser
 
       # Parser for the whois.nic.xxx server.
-      class WhoisNicXxx < BaseAfilias
+      class WhoisNicXxx < BaseAfilias2
 
         self.scanner = Scanners::BaseAfilias, {
             pattern_disclaimer: /^Access to/
@@ -26,26 +26,7 @@ module Whois
           if reserved?
             :reserved
           else
-            Array.wrap(node("Domain Status"))
-          end
-        end
-        
-
-        property_supported :created_on do
-          node("Creation Date") do |value|
-            Time.parse(value)
-          end
-        end
-
-        property_supported :updated_on do
-          node("Updated Date") do |value|
-            Time.parse(value)
-          end
-        end
-
-        property_supported :expires_on do
-          node("Registry Expiry Date") do |value|
-            Time.parse(value)
+            super()
           end
         end
 

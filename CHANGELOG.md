@@ -15,6 +15,8 @@
 
 - CHANGED: Updated whois.pandi.or.id parser to the new response format.
 
+- CHANGED: Afilias is using a slightly different whois response for some TLDs, including .INFO and .XXX (GH-304)
+
 
 ## Release 3.4.4
 

@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_afilias'
+require 'whois/record/parser/base_afilias2'
 
 
 module Whois
@@ -15,7 +15,12 @@ module Whois
     class Parser
 
       # Parser for the whois.afilias.info server.
-      class WhoisAfiliasInfo < BaseAfilias
+      class WhoisAfiliasInfo < BaseAfilias2
+
+        self.scanner = Scanners::BaseAfilias, {
+            pattern_disclaimer: /^Access to/
+        }
+
       end
 
     end
