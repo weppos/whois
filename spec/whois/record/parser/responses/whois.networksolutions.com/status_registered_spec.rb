@@ -79,16 +79,20 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
       expect(subject.registrant_contacts[0].name).to eq("XIF Communications")
       expect(subject.registrant_contacts[0].organization).to eq("XIF Communications")
       expect(subject.registrant_contacts[0].address).to eq("1200 New Hampshire Avenue NW")
       expect(subject.registrant_contacts[0].city).to eq("Washington")
       expect(subject.registrant_contacts[0].zip).to eq("20036")
       expect(subject.registrant_contacts[0].state).to eq("DC")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("US")
       expect(subject.registrant_contacts[0].phone).to eq("202-463-7200")
       expect(subject.registrant_contacts[0].fax).to eq("999-999-9999")
       expect(subject.registrant_contacts[0].email).to eq("noc@xif.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -97,16 +101,20 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq(nil)
       expect(subject.admin_contacts[0].name).to eq("Communications, XIF ContactMiddleName")
       expect(subject.admin_contacts[0].organization).to eq("XIF Communications")
       expect(subject.admin_contacts[0].address).to eq("1200 New Hampshire Avenue NW")
       expect(subject.admin_contacts[0].city).to eq("Washington")
       expect(subject.admin_contacts[0].zip).to eq("20036")
       expect(subject.admin_contacts[0].state).to eq("DC")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("US")
       expect(subject.admin_contacts[0].phone).to eq("202-463-7200")
       expect(subject.admin_contacts[0].fax).to eq("202-318-4003")
       expect(subject.admin_contacts[0].email).to eq("noc@xif.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -115,16 +123,20 @@ describe Whois::Record::Parser::WhoisNetworksolutionsCom, "status_registered.exp
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq(nil)
       expect(subject.technical_contacts[0].name).to eq("Communications, XIF ContactMiddleName")
       expect(subject.technical_contacts[0].organization).to eq("XIF Communications")
       expect(subject.technical_contacts[0].address).to eq("1200 New Hampshire Avenue NW")
       expect(subject.technical_contacts[0].city).to eq("Washington")
       expect(subject.technical_contacts[0].zip).to eq("20036")
       expect(subject.technical_contacts[0].state).to eq("DC")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("202-463-7200")
       expect(subject.technical_contacts[0].fax).to eq("202-318-4003")
       expect(subject.technical_contacts[0].email).to eq("noc@xif.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

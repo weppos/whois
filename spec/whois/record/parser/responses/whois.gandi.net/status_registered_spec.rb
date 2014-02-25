@@ -79,7 +79,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("")
+      expect(subject.registrant_contacts[0].id).to eq(nil)
       expect(subject.registrant_contacts[0].name).to eq("Stephan RAMOIN")
       expect(subject.registrant_contacts[0].organization).to eq("Gandi SAS")
       expect(subject.registrant_contacts[0].address).to eq("63-65 Boulevard Massena")
@@ -100,7 +100,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("")
+      expect(subject.admin_contacts[0].id).to eq(nil)
       expect(subject.admin_contacts[0].name).to eq("Noc GANDI")
       expect(subject.admin_contacts[0].organization).to eq("GANDI SAS")
       expect(subject.admin_contacts[0].address).to eq("63-65 Boulevard MASSENA")
@@ -121,7 +121,7 @@ describe Whois::Record::Parser::WhoisGandiNet, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("")
+      expect(subject.technical_contacts[0].id).to eq(nil)
       expect(subject.technical_contacts[0].name).to eq("Noc GANDI")
       expect(subject.technical_contacts[0].organization).to eq("GANDI SAS")
       expect(subject.technical_contacts[0].address).to eq("63-65 Boulevard MASSENA")

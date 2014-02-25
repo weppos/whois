@@ -111,7 +111,7 @@ module Whois
           node("#{element} Name") do
             Record::Contact.new(
                 type:         type,
-                id:           node("Registry #{element} ID"),
+                id:           node("Registry #{element} ID").presence,
                 name:         value_for_property(element, 'Name'),
                 organization: value_for_property(element, 'Organization'),
                 address:      value_for_property(element, 'Street'),

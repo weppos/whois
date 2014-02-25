@@ -32,7 +32,6 @@ module Whois
           end
           contact
         end
-
       end
 
     end
