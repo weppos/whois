@@ -21,6 +21,14 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisNicEc < BaseCocca
+        property_supported :status do
+          if content_for_scanner =~ /Status:\s+(.+?)\n/
+            super()
+          else
+            registrar ? :registered : :available
+            # Whois.bug!(ParserError, "Unable to parse status.")
+          end
+        end
       end
 
     end
