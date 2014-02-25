@@ -8,38 +8,36 @@ descr:        Google Inc
 descr:        1600 Ampitheatre Parkway
 descr:        Mountain View, California 94043
 descr:        US
-admin-c:      MTC2-IS
+admin-c:      GI58-IS
 tech-c:       MTC2-IS
 zone-c:       AG49-IS
-billing-c:    CB2-IS
+billing-c:    MTC2-IS
 nserver:      ns1.google.com
 nserver:      ns2.google.com
 created:      May 22 2002
-expires:      May 22 2010
+expires:      May 22 2014
 source:       ISNIC 
 
 person:       Markmonitor Tech Contact
-address:      MarkMonitor
-address:      PMB 155, 10400 Overland Road
-address:      Boise, ID 83709
+address:      391 N. Ancestor Pl.
+address:      Boise, ID 83704
 address:      US
 phone:        +1 208 3895740
-fax-no:       +1 208 3895799
+fax-no:        
 e-mail:       ccops@markmonitor.com
 nic-hdl:      MTC2-IS
 created:      July 22 2004
 source:       ISNIC 
 
-role:         CCOPS Billing
-address:      MarkMonitor Inc.
-address:      10400 Overland Road PMB 155
-address:      Boise, ID 83709
+role:         Google Inc.
+address:      1600 Amphitheatre Parkway
+address:      Mountain View, CA 94043
 address:      US
-phone:        +1 208 3895740
-fax-no:       +1 208 3895771
+phone:         
+fax-no:        
 e-mail:       ccops@markmonitor.com
-nic-hdl:      CB2-IS
-created:      June  8 2006
+nic-hdl:      GI58-IS
+created:      October  9 2012
 source:       ISNIC 
 
 person:       Amit Garg

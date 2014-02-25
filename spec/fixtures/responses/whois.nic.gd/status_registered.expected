@@ -1,5 +1,5 @@
 #disclaimer
-  %s == nil
+  %s == "The data in the WHOIS database of KSregistry GmbH is provided by KSregistry GmbH for information purposes, and to assist persons in obtaining information about or related to domain name registration records. KSregistry GmbH does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to KSregistry GmbH or its systems. KSregistry GmbH reserves the right to modify these terms. By submitting this query, you agree to abide by this policy."
 
 
 #domain
@@ -25,11 +25,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-03-01 00:02:54}
+  %s %TIME{2013-11-12 16:07:05}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-12-11 00:00:00}
+  %s %TIME{2014-12-11 00:00:00}
 
 
 #registrar
@@ -44,7 +44,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  %s[0].id            == "P-GFI26"
+  %s[0].id            == "P-GXI35"
   %s[0].name          == "Google, Inc."
   %s[0].organization  == "Google, Inc."
   %s[0].address       == "1600 Amphitheatre Parkway"
@@ -64,7 +64,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  %s[0].id            == "P-GFI26"
+  %s[0].id            == "P-GXI35"
   %s[0].name          == "Google, Inc."
   %s[0].organization  == "Google, Inc."
   %s[0].address       == "1600 Amphitheatre Parkway"
@@ -84,7 +84,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  %s[0].id            == "P-GFI26"
+  %s[0].id            == "P-GXI35"
   %s[0].name          == "Google, Inc."
   %s[0].organization  == "Google, Inc."
   %s[0].address       == "1600 Amphitheatre Parkway"

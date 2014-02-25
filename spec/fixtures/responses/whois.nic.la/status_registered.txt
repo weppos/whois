@@ -1,15 +1,10 @@
-This whois service is provided by CentralNic Ltd and only contains information
-pertaining to Internet domain names we have registered for our customers. By
-using this service you are agreeing (1) not to use any information presented
-here for any purpose other than determining ownership of domain names (2) not
-to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com
-
 Domain ID:CNIC-DO471480
 Domain Name:GOOGLE.LA
-Created On:18-Jul-2002 01:00:00 UTC
-Last Updated On:15-Sep-2009 16:48:47 UTC
-Expiration Date:18-Jul-2010 23:59:59 UTC
-Status:OK
+Created On:2002-07-18T01:00:00.0Z
+Last Updated On:2013-08-01T15:09:21.0Z
+Expiration Date:2014-07-18T23:59:59.0Z
+Status:clientTransferProhibited
+Status:serverTransferProhibited
 Registrant ID:ndn-96955
 Registrant Name:Google Inc
 Registrant Organization:Google Inc
@@ -43,28 +38,40 @@ Tech Country:US
 Tech Phone:+1.6502530000
 Tech FAX:+1.65067188571
 Tech Email:dns-admin@google.com
-Billing ID:ndn-24412
-Billing Name:Domain Billing
-Billing Organization:Markmonitor
-Billing Street1:10400 Overland Rd.
+Billing ID:LAREG-4FB6D5852C61F054
+Billing Name:MarkMonitor, Inc.
+Billing Organization:MarkMonitor, Inc.
+Billing Street1:391 N Ancestor Place
 Billing City:Boise
 Billing State/Province:ID
-Billing Postal Code:83709
+Billing Postal Code:83704
 Billing Country:US
-Billing Phone:+1.20838957
-Billing Email:ccops@markmonitor.com
-Sponsoring Registrar ID:7279-LN
-Sponsoring Registrar Organization:LA Registry Pte Ltd
-Sponsoring Registrar Street1:120 Telok Ayer Street
-Sponsoring Registrar City:Singapore
-Sponsoring Registrar Postal Code:06859
-Sponsoring Registrar Country:SG
-Sponsoring Registrar Phone:+44.8700170900
-Sponsoring Registrar FAX:+44.8700170901
-Sponsoring Registrar Website:http://www.la/
+Billing Phone:+1.2083895740
+Billing FAX:+1.2083895771
+Billing Email:ccopsbilling@markmonitor.com
+Sponsoring Registrar ID:H2948863
+Sponsoring Registrar IANA ID:1564
+Sponsoring Registrar Organization:TLD Registrar Solutions Ltd
+Sponsoring Registrar Street1:35-39 Moorgate
+Sponsoring Registrar City:London
+Sponsoring Registrar State/Province:London
+Sponsoring Registrar Postal Code:EC2R 6AR
+Sponsoring Registrar Country:GB
+Sponsoring Registrar Phone:020 33 88 0600
+Sponsoring Registrar Website:www.tldregistrarsolutions.com
 Name Server:NS1.GOOGLE.COM
 Name Server:NS2.GOOGLE.COM
 Name Server:NS3.GOOGLE.COM
 Name Server:NS4.GOOGLE.COM
+DNSSEC:Unsigned
 
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names we have registered for
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
 

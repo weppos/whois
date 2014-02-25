@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["serverDeleteProhibited", "serverTransferProhibited"])
+      expect(subject.status).to eq(["clientTransferProhibited"])
     end
   end
   describe "#available?" do
@@ -55,20 +55,20 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-04-16 13:53:26 GMT"))
+      expect(subject.updated_on).to eq(Time.parse("2013-10-14 13:03:24 GMT"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2015-04-25 23:59:59 GMT"))
+      expect(subject.expires_on).to eq(Time.parse("2016-04-25 23:59:59 GMT"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("13")
-      expect(subject.registrar.name).to eq("MELBOURNE IT LTD")
+      expect(subject.registrar.id).to eq("299")
+      expect(subject.registrar.name).to eq("CSC CORPORATE DOMAINS")
     end
   end
   describe "#registrant_contacts" do
@@ -77,7 +77,7 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("TWITTERREG2012")
+      expect(subject.registrant_contacts[0].id).to eq("365684910586C791")
       expect(subject.registrant_contacts[0].name).to eq("Twitter, Inc.")
       expect(subject.registrant_contacts[0].organization).to eq("Twitter, Inc.")
       expect(subject.registrant_contacts[0].address).to eq("1355 Market Street\nSuite 900")
@@ -97,13 +97,13 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("TWITTERADMIN2012")
+      expect(subject.admin_contacts[0].id).to eq("868543810568A633")
       expect(subject.admin_contacts[0].name).to eq("Domain Admin")
       expect(subject.admin_contacts[0].organization).to eq("Twitter, Inc.")
       expect(subject.admin_contacts[0].address).to eq("1355 Market Street\nSuite 900")
       expect(subject.admin_contacts[0].city).to eq("San Francisco")
       expect(subject.admin_contacts[0].zip).to eq("94103")
-      expect(subject.admin_contacts[0].state).to eq("CA")
+      expect(subject.admin_contacts[0].state).to eq("California")
       expect(subject.admin_contacts[0].country).to eq("United States")
       expect(subject.admin_contacts[0].country_code).to eq("US")
       expect(subject.admin_contacts[0].phone).to eq("+1.4152229670")
@@ -117,13 +117,13 @@ describe Whois::Record::Parser::WhoisNicCo, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("TWITTERTECH2012")
+      expect(subject.technical_contacts[0].id).to eq("42101611057C7478")
       expect(subject.technical_contacts[0].name).to eq("Tech Admin")
       expect(subject.technical_contacts[0].organization).to eq("Twitter, Inc.")
       expect(subject.technical_contacts[0].address).to eq("1355 Market Street\nSuite 900")
       expect(subject.technical_contacts[0].city).to eq("San Francisco")
       expect(subject.technical_contacts[0].zip).to eq("94103")
-      expect(subject.technical_contacts[0].state).to eq("CA")
+      expect(subject.technical_contacts[0].state).to eq("California")
       expect(subject.technical_contacts[0].country).to eq("United States")
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("+1.4152229670")

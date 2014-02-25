@@ -12,6 +12,7 @@ Domain Name:  GOOGLE.HK
 
 Domain Status: Active 
 
+
 Contract Version:   Refer to registrar   
 
 Registrar Name: MARKMONITOR INC.
@@ -71,6 +72,11 @@ NS2.GOOGLE.COM
 NS3.GOOGLE.COM
 NS4.GOOGLE.COM
 
+
+
+Status Information:
+
+Domain Prohibit Status: 
 
 
  -------------------------------------------------------------------------------

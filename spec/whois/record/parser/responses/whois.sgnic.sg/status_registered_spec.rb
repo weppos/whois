@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisSgnicSg, "status_registered.expected" do
 
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED"])
+      expect(subject.status).to eq(["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED", "VerifiedID@SG-Not Required"])
     end
   end
   describe "#available?" do
@@ -50,7 +50,7 @@ describe Whois::Record::Parser::WhoisSgnicSg, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2012-01-03 00:00:00"))
+      expect(subject.expires_on).to eq(Time.parse("2015-01-03 00:00:00"))
     end
   end
   describe "#nameservers" do

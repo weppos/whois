@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicLa, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names (2) not to store or reproduce this data in any way. CentralNic Ltd - www.centralnic.com")
+      expect(subject.disclaimer).to eq("This whois service is provided by CentralNic Ltd and only contains information pertaining to Internet domain names we have registered for our customers. By using this service you are agreeing (1) not to use any information presented here for any purpose other than determining ownership of domain names, (2) not to store or reproduce this data in any way, (3) not to use any high-volume, automated, electronic processes to obtain data from this service. Abuse of this service is monitored and actions in contravention of these terms will result in being permanently blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/")
     end
   end
   describe "#domain" do
@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisNicLa, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["clientTransferProhibited", "serverTransferProhibited"])
     end
   end
   describe "#available?" do
@@ -60,22 +60,22 @@ describe Whois::Record::Parser::WhoisNicLa, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2009-09-15 16:48:47 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-08-01 15:09:21 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2010-07-18 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-07-18 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("7279-LN")
+      expect(subject.registrar.id).to eq("H2948863")
       expect(subject.registrar.name).to eq(nil)
-      expect(subject.registrar.organization).to eq("LA Registry Pte Ltd")
-      expect(subject.registrar.url).to eq("http://www.la/")
+      expect(subject.registrar.organization).to eq("TLD Registrar Solutions Ltd")
+      expect(subject.registrar.url).to eq("www.tldregistrarsolutions.com")
     end
   end
   describe "#registrant_contacts" do

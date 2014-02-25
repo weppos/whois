@@ -1,11 +1,10 @@
 Domain Name:                                 T.CO
 Domain ID:                                   D740225-CO
-Sponsoring Registrar:                        MELBOURNE IT LTD
-Sponsoring Registrar IANA ID:                13
-Registrar URL (registration services):       www.melbourneit.com.au
-Domain Status:                               serverDeleteProhibited
-Domain Status:                               serverTransferProhibited
-Registrant ID:                               TWITTERREG2012
+Sponsoring Registrar:                        CSC CORPORATE DOMAINS
+Sponsoring Registrar IANA ID:                299
+Registrar URL (registration services):       whois.corporatedomains.com
+Domain Status:                               clientTransferProhibited
+Registrant ID:                               365684910586C791
 Registrant Name:                             Twitter, Inc.
 Registrant Organization:                     Twitter, Inc.
 Registrant Address1:                         1355 Market Street
@@ -18,37 +17,38 @@ Registrant Country Code:                     US
 Registrant Phone Number:                     +1.4152229670
 Registrant Facsimile Number:                 +1.4152220922
 Registrant Email:                            domains@twitter.com
-Administrative Contact ID:                   TWITTERADMIN2012
+Administrative Contact ID:                   868543810568A633
 Administrative Contact Name:                 Domain Admin
 Administrative Contact Organization:         Twitter, Inc.
 Administrative Contact Address1:             1355 Market Street
 Administrative Contact Address2:             Suite 900
 Administrative Contact City:                 San Francisco
-Administrative Contact State/Province:       CA
+Administrative Contact State/Province:       California
 Administrative Contact Postal Code:          94103
 Administrative Contact Country:              United States
 Administrative Contact Country Code:         US
 Administrative Contact Phone Number:         +1.4152229670
 Administrative Contact Facsimile Number:     +1.4152220922
 Administrative Contact Email:                domains@twitter.com
-Billing Contact ID:                          MIT_BILLING
-Billing Contact Name:                        DBS Billing
-Billing Contact Address1:                    636 Ellis Street
-Billing Contact City:                        Mountain View
-Billing Contact State/Province:              CA
-Billing Contact Postal Code:                 94043
+Billing Contact ID:                          341112710590A136
+Billing Contact Name:                        ccTLD Billing
+Billing Contact Organization:                CSC Corporate Domains, Inc.
+Billing Contact Address1:                    2711 Centerville Rd.
+Billing Contact City:                        Wilmington
+Billing Contact State/Province:              DE
+Billing Contact Postal Code:                 19808
 Billing Contact Country:                     United States
 Billing Contact Country Code:                US
-Billing Contact Phone Number:                +1.8669073267
-Billing Contact Facsimile Number:            +1.6506182574
-Billing Contact Email:                       billing@melbourneitdbs.com
-Technical Contact ID:                        TWITTERTECH2012
+Billing Contact Phone Number:                +1.3026365400
+Billing Contact Facsimile Number:            +1.3026365454
+Billing Contact Email:                       ccTLD-billing@cscinfo.com
+Technical Contact ID:                        42101611057C7478
 Technical Contact Name:                      Tech Admin
 Technical Contact Organization:              Twitter, Inc.
 Technical Contact Address1:                  1355 Market Street
 Technical Contact Address2:                  Suite 900
 Technical Contact City:                      San Francisco
-Technical Contact State/Province:            CA
+Technical Contact State/Province:            California
 Technical Contact Postal Code:               94103
 Technical Contact Country:                   United States
 Technical Contact Country Code:              US
@@ -60,13 +60,13 @@ Name Server:                                 NS2.P34.DYNECT.NET
 Name Server:                                 NS3.P34.DYNECT.NET
 Name Server:                                 NS4.P34.DYNECT.NET
 Created by Registrar:                        INJECTCSR
-Last Updated by Registrar:                   MELBOURNE IT LTD
-Last Transferred Date:                       Mon Mar 14 22:21:58 GMT 2011
+Last Updated by Registrar:                   CSC CORPORATE DOMAINS
+Last Transferred Date:                       Sun Oct 13 16:51:10 GMT 2013
 Domain Registration Date:                    Mon Apr 26 07:50:40 GMT 2010
-Domain Expiration Date:                      Sat Apr 25 23:59:59 GMT 2015
-Domain Last Updated Date:                    Tue Apr 16 13:53:26 GMT 2013
+Domain Expiration Date:                      Mon Apr 25 23:59:59 GMT 2016
+Domain Last Updated Date:                    Mon Oct 14 13:03:24 GMT 2013
 
->>>> Whois database was last updated on: Tue May 07 12:18:16 GMT 2013 <<<<
+>>>> Whois database was last updated on: Tue Feb 18 20:39:30 GMT 2014 <<<<
 .CO Internet, S.A.S., the Administrator for .CO, has collected this
 information for the WHOIS database through Accredited Registrars.  
 This information is provided to you for informational purposes only 

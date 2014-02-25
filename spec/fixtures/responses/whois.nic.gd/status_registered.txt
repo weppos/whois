@@ -1,18 +1,28 @@
+; The data in the WHOIS database of KSregistry GmbH is provided by
+; KSregistry GmbH for information purposes, and to assist persons in
+; obtaining information about or related to domain name registration
+; records. KSregistry GmbH does not guarantee its accuracy.
+; By submitting a WHOIS query, you agree that you will use this data
+; only for lawful purposes and that, under no circumstances, you will
+; use this data to
+; 1) allow, enable, or otherwise support the transmission of mass
+;    unsolicited, commercial advertising or solicitations via E-mail
+;    (spam); or
+; 2) enable high volume, automated, electronic processes that apply
+;    to KSregistry GmbH or its systems.
+; KSregistry GmbH reserves the right to modify these terms.
+; By submitting this query, you agree to abide by this policy.
 
 domain name: GOOGLE.GD
 registrar: MarkMonitor Inc.
 url: www.markmonitor.com
-status: serverUpdateProhibited
-status: serverTransferProhibited
-status: serverRenewProhibited
-status: serverDeleteProhibited
 status: clientupdateprohibited
 status: clienttransferprohibited
 created date: 2006-12-11 00:00:00
-updated date: 2013-03-01 00:02:54
-expiration date: 2013-12-11 00:00:00
+updated date: 2013-11-12 16:07:05
+expiration date: 2014-12-11 00:00:00
 
-owner-contact: P-GFI26
+owner-contact: P-GXI35
 owner-organization: Google, Inc.
 owner-name: Google, Inc.
 owner-street: 1600 Amphitheatre Parkway
@@ -23,7 +33,7 @@ owner-phone: +1.6503300100
 owner-fax: +1.6506181499
 owner-email: dns-admin@google.com
 
-admin-contact: P-GFI26
+admin-contact: P-GXI35
 admin-organization: Google, Inc.
 admin-name: Google, Inc.
 admin-street: 1600 Amphitheatre Parkway
@@ -34,7 +44,7 @@ admin-phone: +1.6503300100
 admin-fax: +1.6506181499
 admin-email: dns-admin@google.com
 
-tech-contact: P-GFI26
+tech-contact: P-GXI35
 tech-organization: Google, Inc.
 tech-name: Google, Inc.
 tech-street: 1600 Amphitheatre Parkway
@@ -45,7 +55,7 @@ tech-phone: +1.6503300100
 tech-fax: +1.6506181499
 tech-email: dns-admin@google.com
 
-billing-contact: P-UGM21
+billing-contact: P-UMM26
 billing-organization: MarkMonitor
 billing-name: UNKNOWN MarkMonitor
 billing-street: 10400 Overland Road
