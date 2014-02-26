@@ -15,6 +15,8 @@
 
 - FIXED: whois.nic.cx crashes when update date is empty.
 
+- FIXED: whois.ati.tn crashes when contact update is "None".
+
 - CHANGED: Updated whois.nic.ec parser to the new response format.
 
 - CHANGED: Updated whois.pandi.or.id parser to the new response format.
