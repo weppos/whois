@@ -1,10 +1,10 @@
 Domain Name:yoursrs.com
 Name Server:ns1.yoursrs.com
 Name Server:ns2.yoursrs.com
-Created On:2007-03-02 12:20:54.0
-Last Updated On:2012-11-25 00:34:05.0
-Expiration Date:2013-11-24 09:40:55.0
-Sponsoring Registrar:Realtime Register B.V. (R802-LRMS)
+Created On:2003-11-24 09:40:55.0
+Last Updated On:2014-01-22 14:04:50.0
+Expiration Date:2014-11-24 09:40:55.0
+Sponsoring Registrar:REALTIME REGISTER B.V.
 Reseller:Realtime Register B.V.
 Status:OK
 Registrant ID:realtimeregister
@@ -29,17 +29,6 @@ TECH Country:NL
 TECH Phone:+31.384530752
 TECH Fax:+31.384540122
 TECH Email:support@realtimeregister.com
-ADMIN ID:realtimeregister
-ADMIN Name:Valentijn Borstlap
-ADMIN Organization:Realtime Register B.V.
-ADMIN Street1:Ceintuurbaan 32a
-ADMIN City:Zwolle
-ADMIN State:Overijssel
-ADMIN Postal Code:8024AA
-ADMIN Country:NL
-ADMIN Phone:+31.384530752
-ADMIN Fax:+31.384540122
-ADMIN Email:support@realtimeregister.com
 BILLING ID:realtimeregister
 BILLING Name:Valentijn Borstlap
 BILLING Organization:Realtime Register B.V.
@@ -51,3 +40,14 @@ BILLING Country:NL
 BILLING Phone:+31.384530752
 BILLING Fax:+31.384540122
 BILLING Email:support@realtimeregister.com
+ADMIN ID:realtimeregister
+ADMIN Name:Valentijn Borstlap
+ADMIN Organization:Realtime Register B.V.
+ADMIN Street1:Ceintuurbaan 32a
+ADMIN City:Zwolle
+ADMIN State:Overijssel
+ADMIN Postal Code:8024AA
+ADMIN Country:NL
+ADMIN Phone:+31.384530752
+ADMIN Fax:+31.384540122
+ADMIN Email:support@realtimeregister.com

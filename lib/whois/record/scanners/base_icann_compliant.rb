@@ -34,7 +34,7 @@ module Whois
 
         tokenizer :skip_head do
           if @input.skip_until(/Domain Name:/)
-            @input.scan(/\s(.+)\n/)
+            @input.scan(/\s?(.+)\n/)
             @ast["Domain Name"] = @input[1].strip
           end
         end
