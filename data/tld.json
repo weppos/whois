@@ -1586,8 +1586,8 @@
   ".mango": {
     "host": "whois.mango.coreregistry.net"
   },
-  ".wiki": {
-    "host": "whois.centralnic.com"
+  ".wiki": { // centralnic
+    "host": "whois.nic.wiki"
   },
   ".xyz": { // centralnic
     "host": "whois.nic.xyz"
