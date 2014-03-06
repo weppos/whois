@@ -1189,6 +1189,7 @@
     "adapter": "none"
   },
 
+
   ".academy": {
     "host": "whois.donuts.co"
   },
@@ -1607,6 +1608,48 @@
   ".supplies": {
     "host": "whois.donuts.co"
   },
+  ".xn--80asehdb": {
+    "host": "whois.online.rs.corenic.net"
+  },
+  ".xn--80aswg": {
+    "host": "whois.online.rs.corenic.net"
+  },
+  ".xn--mgbab2bd": {
+    "host": "whois.bazaar.coreregistry.net"
+  },
+  ".xn--ngbc5azd": {
+    "host": "whois.nic.xn--ngbc5azd"
+  },
+  ".xn--fiq228c5hs": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--55qx5d": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--55qw42g": {
+    "host": "whois.conac.cn"
+  },
+  ".xn--3ds443g": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--6qq986b3xl": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".xn--zfr164b": {
+    "host": "whois.conac.cn"
+  },
+  ".xn--unup4y": {
+    "host": "whois.donuts.co"
+  },
+  ".xn--6frz82g": {
+    "host": "whois.afilias.net"
+  },
+  ".xn--io0a7i": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--3bst00m": {
+    "host": "whois.gtld.knet.cn"
+  },
 
 
   ".xn--3e0b707e": {
@@ -1618,12 +1661,6 @@
   },
   ".xn--80ao21a": {
     "host": "whois.nic.kz"
-  },
-  ".xn--80asehdb": {
-    "host": "whois.online.rs.corenic.net"
-  },
-  ".xn--80aswg": {
-    "host": "whois.online.rs.corenic.net"
   },
   ".xn--90a3ac": {
     "host": null,
@@ -1696,9 +1733,6 @@
   ".xn--mgbx4cd0ab": {
     "host": "whois.domainregistry.my"
   },
-  ".xn--ngbc5azd": {
-    "host": "whois.nic.xn--ngbc5azd"
-  },
   ".xn--o3cw4h": {
     "host": "whois.thnic.co.th"
   },
@@ -1716,9 +1750,6 @@
   ".xn--s9brj9c": {
     "host": null,
     "adapter": "none"
-  },
-  ".xn--unup4y": {
-    "host": "whois.donuts.co"
   },
   ".xn--wgbh1c": {
     "host": "whois.dotmasr.eg"
@@ -1739,40 +1770,10 @@
   ".xn--ygbi2ammx": {
     "host": "whois.pnina.ps"
   },
-  ".xn--3bst00m": {
-    "host": "whois.gtld.knet.cn"
-  },
-  ".xn--3ds443g": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--55qx5d": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--6frz82g": {
-    "host": "whois.afilias.net"
-  },
-  ".xn--6qq986b3xl": {
-    "host": "whois.gtld.knet.cn"
-  },
-  ".xn--fiq228c5hs": {
-    "host": "whois.afilias-srs.net"
-  },
   ".xn--fiq64b": {
     "host": "whois.gtld.knet.cn"
   },
-  ".xn--io0a7i": {
-    "host": "whois.ngtld.cn"
-  },
   ".xn--cg4bki": {
     "host": "whois.kr"
-  },
-  ".xn--mgbab2bd": {
-    "host": "whois.bazaar.coreregistry.net"
-  },
-  ".xn--55qw42g": {
-    "host": "whois.conac.cn"
-  },
-  ".xn--zfr164b": {
-    "host": "whois.conac.cn"
   }
 }
