@@ -3,7 +3,7 @@ Domain Name:HISTORY.UK.COM
 Created On:2001-08-31T11:50:57.0Z
 Last Updated On:2013-09-03T10:36:47.0Z
 Expiration Date:2015-08-31T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1045821
 Registrant Name:Mr. Ray Hatley
 Registrant Street1:Tallow House

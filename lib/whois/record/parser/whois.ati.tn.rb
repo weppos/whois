@@ -99,15 +99,14 @@ module Whois
         def build_contact(element, type)
           node("#{element} Name") do
             Record::Contact.new(
-              :type         => type,
-              :id           => nil,
-              :name         => node("#{element} Name"),
-              :address      => node("#{element} Address"),
-              :phone        => node("#{element} Tel"),
-              :fax          => node("#{element} Fax"),
-              :email        => node("#{element} Email"),
-              :created_on   => node("#{element} Created") { |value| Time.parse(value) },
-              :updated_on   => node("#{element} Updated") { |value| Time.parse(value) }
+              type:         type,
+              name:         node("#{element} Name"),
+              address:      node("#{element} Address"),
+              phone:        node("#{element} Tel"),
+              fax:          node("#{element} Fax"),
+              email:        node("#{element} Email"),
+              created_on:   node("#{element} Created") { |value| Time.parse(value) },
+              updated_on:   node("#{element} Updated") { |value| Time.parse(value) if value != "None" }
             )
           end
         end

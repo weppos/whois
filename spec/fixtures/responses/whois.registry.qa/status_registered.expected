@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["serverDeleteProhibited (Legacy)", "serverRenewProhibited (Legacy)", "serverTransferProhibited (Legacy)"]
+  %s == ["ok"]
 
 #available?
   %s == false
@@ -50,7 +50,7 @@
   %s[0].country_code == nil
   %s[0].phone        == nil
   %s[0].fax          == nil
-  %s[0].email        == "Visit portal.registry.qa for Web based WhoIs"
+  %s[0].email        == "Visit www.domains.qa"
 
 #admin_contacts
   %s %ERROR{AttributeNotSupported}
@@ -70,7 +70,7 @@
   %s[0].country_code == nil
   %s[0].phone        == nil
   %s[0].fax          == nil
-  %s[0].email        == "Visit portal.registry.qa for Web based WhoIs"
+  %s[0].email        == "Visit www.domains.qa"
 
 
 #nameservers

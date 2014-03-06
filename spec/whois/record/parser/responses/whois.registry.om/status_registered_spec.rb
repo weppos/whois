@@ -58,7 +58,8 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2013-10-06 18:20:12 UTC"))
     end
   end
   describe "#expires_on" do
@@ -92,7 +93,7 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
       expect(subject.registrant_contacts[0].country_code).to eq(nil)
       expect(subject.registrant_contacts[0].phone).to eq(nil)
       expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq("Visit whois.registry.om for Web based WhoIs")
+      expect(subject.registrant_contacts[0].email).to eq("Visit portal.registry.om/whois for Web based WhoIs")
     end
   end
   describe "#admin_contacts" do
@@ -117,7 +118,7 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
       expect(subject.technical_contacts[0].country_code).to eq(nil)
       expect(subject.technical_contacts[0].phone).to eq(nil)
       expect(subject.technical_contacts[0].fax).to eq(nil)
-      expect(subject.technical_contacts[0].email).to eq("Visit whois.registry.om for Web based WhoIs")
+      expect(subject.technical_contacts[0].email).to eq("Visit portal.registry.om/whois for Web based WhoIs")
     end
   end
   describe "#nameservers" do
@@ -125,16 +126,16 @@ describe Whois::Record::Parser::WhoisRegistryOm, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(3).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("om14.omantel.net.om")
-      expect(subject.nameservers[0].ipv4).to eq("212.72.23.4")
+      expect(subject.nameservers[0].name).to eq("ns3.omantel.net.om")
+      expect(subject.nameservers[0].ipv4).to eq("62.231.247.70")
       expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("om16.omantel.net.om")
-      expect(subject.nameservers[1].ipv4).to eq("212.72.1.186")
+      expect(subject.nameservers[1].name).to eq("ns1.omantel.net.om")
+      expect(subject.nameservers[1].ipv4).to eq("82.178.72.21")
       expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("om41.omantel.net.om")
-      expect(subject.nameservers[2].ipv4).to eq("62.231.243.249")
+      expect(subject.nameservers[2].name).to eq("ns2.omantel.net.om")
+      expect(subject.nameservers[2].ipv4).to eq("212.72.4.147")
       expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end

@@ -3,7 +3,7 @@ Domain Name:GOOGLE.GR.COM
 Created On:2011-02-07T13:10:14.0Z
 Last Updated On:2012-06-23T10:38:02.0Z
 Expiration Date:2015-02-07T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1346485
 Tech ID:H1346485
 Billing ID:H1346485

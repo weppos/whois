@@ -21,17 +21,17 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-05-20 21:30 WAT}
+  %s %TIME{2013-09-20 17:47 WAT}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-10-07 10:02 WAT}
+  %s %TIME{2014-10-07 10:02 WAT}
 
 
 #registrar
   %s %CLASS{registrar}
   %s.id           == nil
-  %s.name         == "MarkMonitor"
+  %s.name         == "MarkMonitor Inc."
   %s.organization == nil
   %s.url          == nil
 

@@ -3,7 +3,7 @@ Domain Name:HOTEL.SE.COM
 Created On:2008-05-10T05:17:32.0Z
 Last Updated On:2013-06-03T10:33:46.0Z
 Expiration Date:2014-05-10T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:INX-10599082com
 Registrant Name:Hotel Reservation Service Robert Ragge GmbH
 Registrant Organization:Hotel Reservation Service Robert Ragge GmbH
@@ -50,7 +50,6 @@ Billing Phone:+49.2212077222
 Billing FAX:+49.2212077394
 Billing Email:domains@hrs.de
 Sponsoring Registrar ID:7145-IX
-Sponsoring Registrar IANA ID:83
 Sponsoring Registrar Organization:InternetX GmbH
 Sponsoring Registrar Street1:Maximilianstr. 6
 Sponsoring Registrar City:Regensburg

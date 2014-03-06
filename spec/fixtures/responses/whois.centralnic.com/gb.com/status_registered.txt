@@ -1,12 +1,11 @@
 Domain ID:CNIC-DO403461
 Domain Name:HOTEL.GB.COM
 Created On:2006-04-23T06:26:11.0Z
-Last Updated On:2013-05-02T08:06:42.0Z
-Expiration Date:2014-04-23T23:59:59.0Z
-Status:OK
-Registrant ID:INX-10599082com
-Registrant Name:Hotel Reservation Service Robert Ragge GmbH
-Registrant Organization:Hotel Reservation Service Robert Ragge GmbH
+Last Updated On:2014-02-12T09:45:17.0Z
+Expiration Date:2016-04-23T23:59:59.0Z
+Status:serverTransferProhibited
+Registrant ID:H1049605
+Registrant Name:Robert Ragge, Hotel Reservation Service Robert Ragge GmbH
 Registrant Street1:Blaubach 32
 Registrant City:Koeln
 Registrant State/Province:NRW
@@ -15,20 +14,19 @@ Registrant Country:DE
 Registrant Phone:+49.2212077222
 Registrant FAX:+49.2212077394
 Registrant Email:domains@hrs.de
-Admin ID:INX-201727com
+Admin ID:H393781
 Admin Name:Robert Ragge
 Admin Organization:Hotel Reservation Service Robert Ragge GmbH
 Admin Street1:Blaubach 32
 Admin City:Koeln
-Admin State/Province:DE
+Admin State/Province:NRW
 Admin Postal Code:50676
 Admin Country:DE
 Admin Phone:+49.2212077222
 Admin FAX:+49.2212077394
 Admin Email:domains@hrs.de
-Tech ID:INX-201728com
-Tech Name:Uwe Watzek
-Tech Organization:Wind Internethaus GmbH
+Tech ID:H1103064
+Tech Name:Uwe Watzek, Wind Internethaus GMBH
 Tech Street1:Am Krebsgraben 15
 Tech Street2:Haus 2
 Tech City:Villingen-Schwenningen
@@ -38,27 +36,28 @@ Tech Country:DE
 Tech Phone:+49.77214070740
 Tech FAX:+49.77214070741
 Tech Email:info@windinternethaus.de
-Billing ID:INX-10599082com
-Billing Name:Hotel Reservation Service Robert Ragge GmbH
-Billing Organization:Hotel Reservation Service Robert Ragge GmbH
-Billing Street1:Blaubach 32
-Billing City:Koeln
-Billing State/Province:NRW
-Billing Postal Code:50676
+Billing ID:H1103064
+Billing Name:Uwe Watzek, Wind Internethaus GMBH
+Billing Street1:Am Krebsgraben 15
+Billing Street2:Haus 2
+Billing City:Villingen-Schwenningen
+Billing State/Province:Baden-Wuerttemberg
+Billing Postal Code:78048
 Billing Country:DE
-Billing Phone:+49.2212077222
-Billing FAX:+49.2212077394
-Billing Email:domains@hrs.de
-Sponsoring Registrar ID:7145-IX
-Sponsoring Registrar IANA ID:83
-Sponsoring Registrar Organization:InternetX GmbH
-Sponsoring Registrar Street1:Maximilianstr. 6
-Sponsoring Registrar City:Regensburg
-Sponsoring Registrar Postal Code:93047
+Billing Phone:+49.77214070740
+Billing FAX:+49.77214070741
+Billing Email:info@windinternethaus.de
+Sponsoring Registrar ID:H386560
+Sponsoring Registrar Organization:Wind Internethaus GMBH
+Sponsoring Registrar Street1:Am Krebsgraben 15
+Sponsoring Registrar Street2:Haus 2
+Sponsoring Registrar City:Villingen-Schwenningen
+Sponsoring Registrar State/Province:Baden-Wuerttemberg
+Sponsoring Registrar Postal Code:78048
 Sponsoring Registrar Country:DE
-Sponsoring Registrar Phone:+49-941-595590
-Sponsoring Registrar FAX:+49-941-59579054
-Sponsoring Registrar Website:http://www.internetx.de/
+Sponsoring Registrar Phone:+49.77214070740
+Sponsoring Registrar FAX:+49.77214070741
+Sponsoring Registrar Website:www.windinternethaus.de
 Name Server:NS1.HRS.DE
 Name Server:NS2.HRS.DE
 Name Server:NS2.SURFBRETT.DE

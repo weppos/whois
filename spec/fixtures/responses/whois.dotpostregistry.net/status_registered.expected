@@ -71,7 +71,7 @@
   %s[0].country_code  == "IT"
   %s[0].phone         == "+39.0659583671"
   %s[0].fax           == "+39.0698688651"
-  %s[0].email         == "brardinonig@posteitaliane.it"
+  %s[0].email         == "Giovanni.Brardinoni@Postecom.it"
 
 #technical_contacts
   %s %CLASS{array}

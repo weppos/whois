@@ -22,8 +22,11 @@ module Whois
       class WhoisNicCd < BaseCocca2
 
         property_supported :status do
-          list = Array.wrap(node("Domain Status")).map(&:downcase)
-          list.include?("available") ? :available : super()
+          if node("Domain ID")
+            :registered
+          else
+            :available
+          end
         end
 
       end

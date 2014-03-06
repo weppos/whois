@@ -3,7 +3,7 @@ Domain Name:FYNBOS.SA.COM
 Created On:2007-09-27T18:14:53.0Z
 Last Updated On:2013-11-02T13:42:11.0Z
 Expiration Date:2014-09-27T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H323273
 Registrant Name:Maarten Groos
 Registrant Street1:farm 215 fynbos reserve

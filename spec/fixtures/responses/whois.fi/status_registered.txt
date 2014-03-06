@@ -11,10 +11,10 @@ status:   Granted
 created:  30.6.2006
 modified: 7.6.2013
 expires:  4.7.2014
-nserver:  ns1.google.com [Technical Error]
-nserver:  ns2.google.com [Technical Error]
-nserver:  ns3.google.com [Technical Error]
-nserver:  ns4.google.com [Technical Error]
+nserver:  ns1.google.com [Ok]
+nserver:  ns2.google.com [Ok]
+nserver:  ns3.google.com [Ok]
+nserver:  ns4.google.com [Ok]
 dnssec:   no
 
 More information is available at https://domain.fi/

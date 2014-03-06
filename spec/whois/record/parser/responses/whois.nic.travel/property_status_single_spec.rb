@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicTravel, "property_status_single.expected
 
   describe "#status" do
     it do
-      expect(subject.status).to eq("ok")
+      expect(subject.status).to eq(["ok"])
     end
   end
 end

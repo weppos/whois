@@ -51,7 +51,7 @@ Admin Phone:+39.0659583671
 Admin Phone Ext.:
 Admin FAX:+39.0698688651
 Admin FAX Ext.:
-Admin Email:brardinonig@posteitaliane.it
+Admin Email:Giovanni.Brardinoni@Postecom.it
 Billing ID:UPU_C1003
 Billing Name:Plautina Loreti
 Billing Organization:Poste Italiane

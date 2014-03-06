@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq(nil)
+      expect(subject.disclaimer).to eq("The data in the WHOIS database of KSregistry GmbH is provided by KSregistry GmbH for information purposes, and to assist persons in obtaining information about or related to domain name registration records. KSregistry GmbH does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to KSregistry GmbH or its systems. KSregistry GmbH reserves the right to modify these terms. By submitting this query, you agree to abide by this policy.")
     end
   end
   describe "#domain" do
@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-03-01 00:02:54"))
+      expect(subject.updated_on).to eq(Time.parse("2013-11-12 16:07:05"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-12-11 00:00:00"))
+      expect(subject.expires_on).to eq(Time.parse("2014-12-11 00:00:00"))
     end
   end
   describe "#registrar" do
@@ -84,7 +84,7 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("P-GFI26")
+      expect(subject.registrant_contacts[0].id).to eq("P-GXI35")
       expect(subject.registrant_contacts[0].name).to eq("Google, Inc.")
       expect(subject.registrant_contacts[0].organization).to eq("Google, Inc.")
       expect(subject.registrant_contacts[0].address).to eq("1600 Amphitheatre Parkway")
@@ -106,7 +106,7 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("P-GFI26")
+      expect(subject.admin_contacts[0].id).to eq("P-GXI35")
       expect(subject.admin_contacts[0].name).to eq("Google, Inc.")
       expect(subject.admin_contacts[0].organization).to eq("Google, Inc.")
       expect(subject.admin_contacts[0].address).to eq("1600 Amphitheatre Parkway")
@@ -128,7 +128,7 @@ describe Whois::Record::Parser::WhoisNicGd, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("P-GFI26")
+      expect(subject.technical_contacts[0].id).to eq("P-GXI35")
       expect(subject.technical_contacts[0].name).to eq("Google, Inc.")
       expect(subject.technical_contacts[0].organization).to eq("Google, Inc.")
       expect(subject.technical_contacts[0].address).to eq("1600 Amphitheatre Parkway")

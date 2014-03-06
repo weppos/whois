@@ -113,7 +113,7 @@ describe Whois::Record::Parser::WhoisDotpostregistryNet, "status_registered.expe
       expect(subject.admin_contacts[0].country_code).to eq("IT")
       expect(subject.admin_contacts[0].phone).to eq("+39.0659583671")
       expect(subject.admin_contacts[0].fax).to eq("+39.0698688651")
-      expect(subject.admin_contacts[0].email).to eq("brardinonig@posteitaliane.it")
+      expect(subject.admin_contacts[0].email).to eq("Giovanni.Brardinoni@Postecom.it")
     end
   end
   describe "#technical_contacts" do

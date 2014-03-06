@@ -49,7 +49,7 @@ describe Whois::Record::Parser::WhoisNicIm, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2010-07-30 23:59:56"))
+      expect(subject.expires_on).to eq(Time.parse("2014-08-03 23:59:52"))
     end
   end
   describe "#nameservers" do

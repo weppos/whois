@@ -31,15 +31,14 @@ module Whois
         end
 
         property_supported :status do
-          list = Array.wrap(node("Domain Status"))
+          Array.wrap(node("Domain Status"))
         end
 
         property_supported :registrar do
           node('Sponsoring Registrar') do |name|
             Record::Registrar.new(
-                :id           => node('Sponsoring Registrar IANA ID'),
-                :name         => node('Sponsoring Registrar'),
-                :organization => node('Sponsoring Registrar')
+                id:           node('Sponsoring Registrar IANA ID'),
+                name:         node('Sponsoring Registrar')
             )
           end
         end

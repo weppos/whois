@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["ok"])
     end
   end
   describe "#available?" do

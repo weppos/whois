@@ -3,7 +3,7 @@ Domain Name:NTT.JP.NET
 Created On:2012-03-16T11:47:23.0Z
 Last Updated On:2013-01-24T16:57:19.0Z
 Expiration Date:2018-03-16T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:136151BCEFE
 Registrant Name:zhijian xia
 Registrant Organization:zhijian xia
@@ -52,7 +52,7 @@ Billing Email:xia@ingame.jp
 Sponsoring Registrar ID:H1605993
 Sponsoring Registrar IANA ID:49
 Sponsoring Registrar Organization:GMO
-Sponsoring Registrar Street1:Cerulean Tower, 
+Sponsoring Registrar Street1:Cerulean Tower,
 Sponsoring Registrar Street2:26-1 Sakuragaoka-cho
 Sponsoring Registrar City:Shibuya-ku
 Sponsoring Registrar State/Province:Tokyo

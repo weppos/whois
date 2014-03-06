@@ -40,7 +40,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  %s[0].id            == ""
+  %s[0].id            == nil
   %s[0].name          == "Stephan RAMOIN"
   %s[0].organization  == "Gandi SAS"
   %s[0].address       == "63-65 Boulevard Massena"
@@ -59,7 +59,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  %s[0].id            == ""
+  %s[0].id            == nil
   %s[0].name          == "Noc GANDI"
   %s[0].organization  == "GANDI SAS"
   %s[0].address       == "63-65 Boulevard MASSENA"
@@ -78,7 +78,7 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  %s[0].id            == ""
+  %s[0].id            == nil
   %s[0].name          == "Noc GANDI"
   %s[0].organization  == "GANDI SAS"
   %s[0].address       == "63-65 Boulevard MASSENA"

@@ -1,11 +1,29 @@
 {
-  "131072 133119": {
+  "131072 132095": {
     "host": "whois.apnic.net"
   },
-  "196608 199679": {
+  "132096 133119": {
+    "host": "whois.apnic.net"
+  },
+  "133120 133631": {
+    "host": "whois.apnic.net"
+  },
+  "196608 197631": {
     "host": "whois.ripe.net"
   },
-  "262144 263679": {
+  "197632 198655": {
+    "host": "whois.ripe.net"
+  },
+  "198656 199679": {
+    "host": "whois.ripe.net"
+  },
+  "199680 200191": {
+    "host": "whois.ripe.net"
+  },
+  "262144 263167": {
+    "host": "whois.lacnic.net"
+  },
+  "263168 263679": {
     "host": "whois.lacnic.net"
   },
   "327680 328703": {

@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisNicPw, "status_registered.expected" do
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["clientTransferProhibited", "clientUpdateProhibited", "clientDeleteProhibited", "serverTransferProhibited"])
     end
   end
   describe "#available?" do
@@ -59,22 +59,23 @@ describe Whois::Record::Parser::WhoisNicPw, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to eq(nil)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2014-01-18 00:13:36 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2015-02-10 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2017-02-10 23:59:59 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("H135150")
+      expect(subject.registrar.id).to eq("7061-EM")
       expect(subject.registrar.name).to eq(nil)
-      expect(subject.registrar.organization).to eq("Encirca Inc.")
-      expect(subject.registrar.url).to eq("www.encirca.com")
+      expect(subject.registrar.organization).to eq("MarkMonitor, Inc.")
+      expect(subject.registrar.url).to eq("http://www.markmonitor.com/")
     end
   end
   describe "#registrant_contacts" do
@@ -83,18 +84,18 @@ describe Whois::Record::Parser::WhoisNicPw, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("ENCIRCA-19975")
-      expect(subject.registrant_contacts[0].name).to eq("Markmonitor Inc. CCOPS")
-      expect(subject.registrant_contacts[0].organization).to eq(nil)
-      expect(subject.registrant_contacts[0].address).to eq("10400 Overland Road PMB 155")
-      expect(subject.registrant_contacts[0].city).to eq("Boise")
-      expect(subject.registrant_contacts[0].zip).to eq("83709")
-      expect(subject.registrant_contacts[0].state).to eq("ID")
+      expect(subject.registrant_contacts[0].id).to eq("H2396041")
+      expect(subject.registrant_contacts[0].name).to eq("DNS Admin - Google Inc")
+      expect(subject.registrant_contacts[0].organization).to eq("Google Inc")
+      expect(subject.registrant_contacts[0].address).to eq("1600 Amphitheatre Parkway")
+      expect(subject.registrant_contacts[0].city).to eq("Mountain View")
+      expect(subject.registrant_contacts[0].zip).to eq("94043")
+      expect(subject.registrant_contacts[0].state).to eq("CA")
       expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("US")
-      expect(subject.registrant_contacts[0].phone).to eq("+1.2083895740")
-      expect(subject.registrant_contacts[0].fax).to eq("+1.2083895771")
-      expect(subject.registrant_contacts[0].email).to eq("ccops@markmonitor.com")
+      expect(subject.registrant_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.registrant_contacts[0].fax).to eq("+1.6502530001")
+      expect(subject.registrant_contacts[0].email).to eq("dns-admin@google.com")
     end
   end
   describe "#admin_contacts" do
@@ -103,18 +104,18 @@ describe Whois::Record::Parser::WhoisNicPw, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("ENCIRCA-19975")
-      expect(subject.admin_contacts[0].name).to eq("Markmonitor Inc. CCOPS")
-      expect(subject.admin_contacts[0].organization).to eq(nil)
-      expect(subject.admin_contacts[0].address).to eq("10400 Overland Road PMB 155")
-      expect(subject.admin_contacts[0].city).to eq("Boise")
-      expect(subject.admin_contacts[0].zip).to eq("83709")
-      expect(subject.admin_contacts[0].state).to eq("ID")
+      expect(subject.admin_contacts[0].id).to eq("H2396041")
+      expect(subject.admin_contacts[0].name).to eq("DNS Admin - Google Inc")
+      expect(subject.admin_contacts[0].organization).to eq("Google Inc")
+      expect(subject.admin_contacts[0].address).to eq("1600 Amphitheatre Parkway")
+      expect(subject.admin_contacts[0].city).to eq("Mountain View")
+      expect(subject.admin_contacts[0].zip).to eq("94043")
+      expect(subject.admin_contacts[0].state).to eq("CA")
       expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("US")
-      expect(subject.admin_contacts[0].phone).to eq("+1.2083895740")
-      expect(subject.admin_contacts[0].fax).to eq("+1.2083895771")
-      expect(subject.admin_contacts[0].email).to eq("ccops@markmonitor.com")
+      expect(subject.admin_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.admin_contacts[0].fax).to eq("+1.6502530001")
+      expect(subject.admin_contacts[0].email).to eq("dns-admin@google.com")
     end
   end
   describe "#technical_contacts" do
@@ -123,18 +124,18 @@ describe Whois::Record::Parser::WhoisNicPw, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("ENCIRCA-19975")
-      expect(subject.technical_contacts[0].name).to eq("Markmonitor Inc. CCOPS")
-      expect(subject.technical_contacts[0].organization).to eq(nil)
-      expect(subject.technical_contacts[0].address).to eq("10400 Overland Road PMB 155")
-      expect(subject.technical_contacts[0].city).to eq("Boise")
-      expect(subject.technical_contacts[0].zip).to eq("83709")
-      expect(subject.technical_contacts[0].state).to eq("ID")
+      expect(subject.technical_contacts[0].id).to eq("H2396041")
+      expect(subject.technical_contacts[0].name).to eq("DNS Admin - Google Inc")
+      expect(subject.technical_contacts[0].organization).to eq("Google Inc")
+      expect(subject.technical_contacts[0].address).to eq("1600 Amphitheatre Parkway")
+      expect(subject.technical_contacts[0].city).to eq("Mountain View")
+      expect(subject.technical_contacts[0].zip).to eq("94043")
+      expect(subject.technical_contacts[0].state).to eq("CA")
       expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("US")
-      expect(subject.technical_contacts[0].phone).to eq("+1.2083895740")
-      expect(subject.technical_contacts[0].fax).to eq("+1.2083895771")
-      expect(subject.technical_contacts[0].email).to eq("ccops@markmonitor.com")
+      expect(subject.technical_contacts[0].phone).to eq("+1.6502530000")
+      expect(subject.technical_contacts[0].fax).to eq("+1.6502530001")
+      expect(subject.technical_contacts[0].email).to eq("dns-admin@google.com")
     end
   end
   describe "#nameservers" do
@@ -142,19 +143,33 @@ describe Whois::Record::Parser::WhoisNicPw, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(7).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns7.markmonitor.com")
+      expect(subject.nameservers[0].name).to eq("ns1.markmonitor.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns2.markmonitor.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns1.markmonitor.com")
+      expect(subject.nameservers[2].name).to eq("ns3.markmonitor.com")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("ns6.markmonitor.com")
+      expect(subject.nameservers[3].name).to eq("ns4.markmonitor.com")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
       expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[4].name).to eq("ns5.markmonitor.com")
+      expect(subject.nameservers[4].ipv4).to eq(nil)
+      expect(subject.nameservers[4].ipv6).to eq(nil)
       expect(subject.nameservers[5]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[5].name).to eq("ns4.markmonitor.com")
+      expect(subject.nameservers[5].name).to eq("ns6.markmonitor.com")
+      expect(subject.nameservers[5].ipv4).to eq(nil)
+      expect(subject.nameservers[5].ipv6).to eq(nil)
       expect(subject.nameservers[6]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[6].name).to eq("ns3.markmonitor.com")
+      expect(subject.nameservers[6].name).to eq("ns7.markmonitor.com")
+      expect(subject.nameservers[6].ipv4).to eq(nil)
+      expect(subject.nameservers[6].ipv6).to eq(nil)
     end
   end
 end

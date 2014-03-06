@@ -54,8 +54,7 @@ describe Whois::Record::Parser::WhoisMeridiantldNet, "status_registered.expected
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-09-13 14:02:03 UTC"))
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do

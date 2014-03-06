@@ -1,6 +1,6 @@
 [Domain]
-Domain: farug0e7er.lv
+Domain: u34jedzcq.lv
 Status: free
 
 [Whois]
-Updated: 2012-01-30 12:12:27.309824
+Updated: 2014-02-18 18:12:36.561777

@@ -60,13 +60,13 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2009-04-03 15:50:32 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-03-06 10:21:48 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2010-04-07 00:00:00 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-04-07 00:00:00 UTC"))
     end
   end
   describe "#registrar" do
@@ -122,16 +122,16 @@ describe Whois::Record::Parser::WhoisAfiliasGrsInfo, "status_registered.expected
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("MNM-11333")
-      expect(subject.technical_contacts[0].name).to eq("Domain Provisioning")
-      expect(subject.technical_contacts[0].organization).to eq("Markmonitor")
-      expect(subject.technical_contacts[0].address).to eq("10400 Overland RoadPMB 155")
+      expect(subject.technical_contacts[0].id).to eq("mmr-33293")
+      expect(subject.technical_contacts[0].name).to eq("Domain Admin")
+      expect(subject.technical_contacts[0].organization).to eq("MarkMonitor")
+      expect(subject.technical_contacts[0].address).to eq("391 N. Ancestor Place\nSuite 150")
       expect(subject.technical_contacts[0].city).to eq("Boise")
-      expect(subject.technical_contacts[0].zip).to eq("83709")
-      expect(subject.technical_contacts[0].state).to eq("ID")
+      expect(subject.technical_contacts[0].zip).to eq("83704")
+      expect(subject.technical_contacts[0].state).to eq("CA")
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("+1.2083895740")
-      expect(subject.technical_contacts[0].fax).to eq("+1.2083895799")
+      expect(subject.technical_contacts[0].fax).to eq("+1.2083895771")
       expect(subject.technical_contacts[0].email).to eq("ccops@markmonitor.com")
     end
   end

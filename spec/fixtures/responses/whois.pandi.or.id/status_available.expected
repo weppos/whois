@@ -1,5 +1,16 @@
+#disclaimer
+  %s == nil
+
+
+#domain
+  %s == nil
+
+#domain_id
+  %s == nil
+
+
 #status
-  %s == :available
+  %s == []
 
 #available?
   %s == true
@@ -16,6 +27,22 @@
 
 #expires_on
   %s == nil
+
+
+#registrar
+  %s == nil
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s == []
+
+#admin_contacts
+  %s %CLASS{array}
+  %s == []
+
+#technical_contacts
+  %s %CLASS{array}
+  %s == []
 
 
 #nameservers

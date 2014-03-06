@@ -47,6 +47,8 @@ module Whois
 
         property_supported :updated_on do
           if content_for_scanner =~ /Changed:\s+(.+)\n/
+            # Hack to remove usec. Do you know a better way?
+            # Time.utc(*Time.parse($1).to_a)
             Time.parse($1)
           end
         end

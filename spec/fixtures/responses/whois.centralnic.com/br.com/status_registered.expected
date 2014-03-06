@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"]
+  %s == ["clientTransferProhibited", "serverTransferProhibited", "renewPeriod"]
 
 #available?
   %s == false
@@ -29,7 +29,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-04-17 23:59:59 UTC}
+  %s %TIME{2017-04-17 23:59:59 UTC}
 
 
 #registrar

@@ -1,16 +1,16 @@
-%%                                   o . ______________________  _______ o . o
-%% This is the AFNIC Whois server.   . o \_____  \   _  \   _  \/  __   \. o .
-%%                                   o . o/  ____/  /_\  \ /_\  \___    /o . o
-%% complete date format : DD/MM/YYYY . o /       \  \_/   \\_/   \/    / . o .
-%% short date format    : DD/MM      o . \_______ \_____  /____  /__  /. o . o
-%% version              : FRNIC-2.5  . o . o . o \/o . o\/ o . \/. o\/ o . o .
-%%                                   o . o . o . o . o . o . o . o . o . o . o
-%% Rights restricted by copyright.   .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
+%% Rights restricted by copyright.
 %% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
 %%
 %% Use '-h' option to obtain more information about this service.
 %%
-%% [79.3.208.223 REQUEST] >> u34jedzcq.yt
+%% [80.117.237.137 REQUEST] >> u34jedzcq.yt
 %%
 %% RL Net [##########] - RL IP [#########.]
 %%

@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["OK"]
+  %s == ["ok"]
 
 #available?
   %s == false

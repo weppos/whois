@@ -18,8 +18,8 @@ you agree to abide by this policy.
 Domain ID:D444956-LRCC
 Domain Name:GOOGLE.MN
 Created On:07-Apr-2003 00:00:00 UTC
-Last Updated On:03-Apr-2009 15:50:32 UTC
-Expiration Date:07-Apr-2010 00:00:00 UTC
+Last Updated On:06-Mar-2013 10:21:48 UTC
+Expiration Date:07-Apr-2014 00:00:00 UTC
 Sponsoring Registrar:MarkMonitor, Inc. (R22-LRCC)
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED
@@ -54,34 +54,19 @@ Admin Phone Ext.:
 Admin FAX:+165.06188571
 Admin FAX Ext.:
 Admin Email:dns-admin@google.com
-Billing ID:MNM-11333
-Billing Name:Domain Provisioning
-Billing Organization:Markmonitor
-Billing Street1:10400 Overland RoadPMB 155
-Billing Street2:
-Billing Street3:
-Billing City:Boise
-Billing State/Province:ID
-Billing Postal Code:83709
-Billing Country:US
-Billing Phone:+1.2083895740
-Billing Phone Ext.:
-Billing FAX:+1.2083895799
-Billing FAX Ext.:
-Billing Email:ccops@markmonitor.com
-Tech ID:MNM-11333
-Tech Name:Domain Provisioning
-Tech Organization:Markmonitor
-Tech Street1:10400 Overland RoadPMB 155
-Tech Street2:
+Tech ID:mmr-33293
+Tech Name:Domain Admin
+Tech Organization:MarkMonitor
+Tech Street1:391 N. Ancestor Place
+Tech Street2:Suite 150
 Tech Street3:
 Tech City:Boise
-Tech State/Province:ID
-Tech Postal Code:83709
+Tech State/Province:CA
+Tech Postal Code:83704
 Tech Country:US
 Tech Phone:+1.2083895740
 Tech Phone Ext.:
-Tech FAX:+1.2083895799
+Tech FAX:+1.2083895771
 Tech FAX Ext.:
 Tech Email:ccops@markmonitor.com
 Name Server:NS1.GOOGLE.COM

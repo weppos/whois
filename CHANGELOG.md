@@ -3,11 +3,39 @@
 
 ## master
 
+- SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]
+
 - SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD
 
 - NEW: Added :invalid check for whois.nic.tr (GH-302).
 
 - FIXED: kero.yachay.pe crashes when the status is `suspended`.
+
+
+## Release 3.4.5
+
+- SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD, .XN--55QW42G, .XN--ZFR164B
+
+- NEW: Added :invalid check for whois.nic.tr (GH-302).
+
+- FIXED: kero.yachay.pe crashes when the status is `suspended`.
+
+- FIXED: whois.nic.cd crashes because the registry is no longer returning a status.
+
+- FIXED: whois.nic.org.uy crashes when update date is empty.
+
+- FIXED: whois.nic.cx crashes when update date is empty.
+
+- FIXED: whois.ati.tn crashes when contact update is "None".
+
+- CHANGED: Updated whois.nic.ec parser to the new response format.
+
+- CHANGED: Updated whois.pandi.or.id parser to the new response format.
+
+- CHANGED: Updated whois.rrpproxy.net parser to the new response format.
+
+- CHANGED: Afilias is using a slightly different whois response for some TLDs, including .INFO and .XXX (GH-304)
+>>>>>>> master
 
 
 ## Release 3.4.4
@@ -206,7 +234,7 @@
 
 ## Release 3.1.2
 
-- NEW: Added full whois.comlaude.com parser (GH-222). [Thanks @delwyn] 
+- NEW: Added full whois.comlaude.com parser (GH-222). [Thanks @delwyn]
 
 - NEW: Added #domain, #domain_id to whois.tcinet.ru.
 
@@ -961,7 +989,7 @@
 - CHANGED: Renamed Whois::Server::Adapters::Base#append_to_buffer to buffer_append.
 
 - CHANGED: Whois::Answer::Parser::Base#response_throttled? and Whois::Answer::Parser::Base#invalid?
-  are not defined by default. Define the method in the implementation, 
+  are not defined by default. Define the method in the implementation,
   and Whois::Answer::Parser will automatically use it.
 
 - CHANGED: Removed &block from method definition to avoid creating block objects when yield is used (GH-66)
@@ -1244,7 +1272,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 - FIXED: Property cache is missing for some parsers (GH-18)
 
-- FIXED: In some circumstances the whois.jprs.js parser may raise 
+- FIXED: In some circumstances the whois.jprs.js parser may raise
   an Argument out of range error trying to parse the #updated_on property.
 
 - FIXED: The whois.nic.uk parser fails to parse #nameservers when
@@ -1297,7 +1325,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 ## Release 1.3.8
 
-- FIXED: The Verisign WHOIS adapter crashes in some rare circumstances 
+- FIXED: The Verisign WHOIS adapter crashes in some rare circumstances
   when the response from the Verisign database returns a "not defined" value
   for the Referral Whois Server (GH-42)
 
@@ -1794,8 +1822,8 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 - NEW: .ac TLD parser (whois.nic.ac).
 
-- NEW: Added ability to flag a property as :defined, :implemented and :supported. 
-  Parsers now can mark a property as supported or not supported using 
+- NEW: Added ability to flag a property as :defined, :implemented and :supported.
+  Parsers now can mark a property as supported or not supported using
   'property_supported' and 'property_not_supported' methods
   in order to distinguish between properties not supported by the answer
   and methods that still need to be implemented because the parser is incomplete.
@@ -1954,7 +1982,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 - CHANGED: A whois query now returns a custom Whois::Response object instead of a simple string.
   The previous interface is still supported, so you can continue to compare the response with Strings
   but this behavior will be deprecated in a future release.
-  
+
     r = Whois::query("domain.com")
     # supported but deprecated in a future version
     r ## "NOT FOUND"

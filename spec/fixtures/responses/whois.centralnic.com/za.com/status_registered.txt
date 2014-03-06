@@ -3,7 +3,7 @@ Domain Name:SIYENZA.ZA.COM
 Created On:2004-11-17T11:47:29.0Z
 Last Updated On:2013-12-03T12:33:13.0Z
 Expiration Date:2014-11-17T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1063006
 Registrant Name:MegaWeb Internet Services cc
 Registrant Street1:PO Box 3738

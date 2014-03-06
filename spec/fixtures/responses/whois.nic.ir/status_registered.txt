@@ -12,22 +12,31 @@
 domain:		google.ir
 ascii:		google.ir
 remarks:	(Domain Holder) Google Inc.
-remarks:	(Domain Holder Address) 1600 Amphitheatre ParkwayMountain View, CA 94043, USA
-holder-c:	---
-admin-c:	la50-irnic
-tech-c:		la50-irnic
+remarks:	(Domain Holder Address) 1600 Amphitheatre Parkway, Mountain View, CA, US
+holder-c:	go438-irnic
+admin-c:	do210-irnic
+tech-c:		do210-irnic
 nserver:	ns3.google.com
 nserver:	ns4.google.com
 nserver:	ns1.google.com
 nserver:	ns2.google.com
-last-updated:	2008-11-09
+last-updated:	2014-02-17
+expire-date:	2014-12-22
 source:		IRNIC # Filtered
 
-nic-hdl:	la50-irnic
-org:		Law office Dr Laghaee
-e-mail:		legal@laghaee.com
-address:	Vali-Asr Ave, Shahid Atefi West, No. 27, third floor,, Tehran, Tehran, IR
-phone:		+98 21 2205 0579
-fax-no:		+98 21 2205 0150
+nic-hdl:	go438-irnic
+org:		Google Inc.
+e-mail:		support@domainservicesltd.co.uk
+address:	1600 Amphitheatre Parkway, Mountain View, CA, US
+phone:		+1 650 623 4000
+fax-no:		+1 650 618 8571
+source:		IRNIC # Filtered
+
+nic-hdl:	do210-irnic
+org:		Domain Services Ltd
+e-mail:		admin@domainservicesltd.co.uk
+address:	2nd Floor 145-147 St.John Street, London, London, UK
+phone:		+44 87 20229870
+fax-no:		+44 87 20229871
 source:		IRNIC # Filtered
 

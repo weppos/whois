@@ -13,7 +13,11 @@
 % ISOC-IL reserves the right to modify these terms at any time.
 % By submitting this query, you agree to abide by this policy.
  
+query:        isoc.org.il
+
+reg-name:     isoc
 domain:       isoc.org.il
+
 descr:        Israel Internet Association (ISOC-IL)
 descr:        6 Bareket st., POB 7210
 descr:        Petach Tikva
@@ -22,15 +26,15 @@ descr:        Israel
 phone:        +972 3 9700900
 fax-no:       +972 3 9700901
 e-mail:       info-domains AT isoc.org.il
-admin-c:      II-DS1453-IL
-tech-c:       II-AB17965-IL
-zone-c:       II-DS1453-IL
+admin-c:      II-DB11403-IL
+tech-c:       II-DB11403-IL
+zone-c:       II-DB11403-IL
 nserver:      ns.isoc.org.il 
 nserver:      grappa.isoc.org.il 
 nserver:      aristo.tau.ac.il 
 nserver:      relay.huji.ac.il 
 nserver:      drns.isoc.org.il 
-nserver:      sps-pb.isc.org 
+nserver:      sns-pb.isc.org 
 validity:     N/A
 status:       Transfer Locked
 changed:      registrar AT ns.il 19960111 (Assigned)
@@ -48,8 +52,10 @@ changed:      domain-registrar AT isoc.org.il 20100207 (Changed)
 changed:      domain-registrar AT isoc.org.il 20100509 (Changed)
 changed:      domain-registrar AT isoc.org.il 20100511 (Changed)
 changed:      domain-registrar AT isoc.org.il 20101007 (Changed)
+changed:      domain-registrar AT isoc.org.il 20120506 (Changed)
+changed:      domain-registrar AT isoc.org.il 20140116 (Changed)
 
-person:       Doron Shikmoni
+person:       Dina Beer
 address:      Israel Internet Association (ISOC-IL)
 address:      6 Bareket st., POB 7210
 address:      Petach Tikva
@@ -57,26 +63,9 @@ address:      49517
 address:      Israel
 phone:        +972 3 9700900
 fax-no:       +972 3 9700901
-e-mail:       doron AT isoc.org.il
-nic-hdl:      II-DS1453-IL
-changed:      hank AT vm.tau.ac.il 19980702
-changed:      registrar AT ns.il 19990812
-changed:      domain-registrar AT isoc.org.il 20040420
-changed:      domain-registrar AT isoc.org.il 20040420
-changed:      Managing Registrar 20090706
-
-person:       Ariel Biener
-address:      Israel Internet Associaiton (ISOC-IL)
-address:      6 Bareket st., POB 7210
-address:      Petach Tikva
-address:      49517
-address:      Israel
-phone:        +972 3 9700900
-fax-no:       +972 3 9700901
-e-mail:       ariel AT isoc.org.il
-nic-hdl:      II-AB17965-IL
-changed:      Managing Registrar 20100207
-changed:      domain-registrar AT isoc.org.il 20100207
+e-mail:       dina.b AT isoc.org.il
+nic-hdl:      II-DB11403-IL
+changed:      domain-registrar AT isoc.org.il 20140116
 
 registrar name: Israel Internet Association ISOC-IL
 registrar info: www.isoc.org.il

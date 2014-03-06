@@ -18,8 +18,8 @@ you agree to abide by this policy.
 Domain ID:D48552-LRCC
 Domain Name:GOOGLE.AG
 Created On:05-Jan-2003 14:06:59 UTC
-Last Updated On:09-Dec-2009 19:28:04 UTC
-Expiration Date:05-Jan-2011 14:06:59 UTC
+Last Updated On:04-Dec-2013 10:20:49 UTC
+Expiration Date:05-Jan-2015 14:06:59 UTC
 Sponsoring Registrar:MarkMonitor, Inc. (R22-LRCC)
 Status:CLIENT DELETE PROHIBITED
 Status:CLIENT TRANSFER PROHIBITED

@@ -21,6 +21,16 @@ describe Whois::Record::Parser::WhoisNicEc, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq("u34jedzcq.ec")
+    end
+  end
+  describe "#domain_id" do
+    it do
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#status" do
     it do
       expect(subject.status).to eq(:available)
@@ -49,6 +59,11 @@ describe Whois::Record::Parser::WhoisNicEc, "status_available.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to eq(nil)
+    end
+  end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to eq(nil)
     end
   end
   describe "#nameservers" do

@@ -60,7 +60,7 @@ describe Whois::Record::Parser::WhoisTcinetRu, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-03-05"))
+      expect(subject.expires_on).to eq(Time.parse("2015-03-05"))
     end
   end
   describe "#registrar" do

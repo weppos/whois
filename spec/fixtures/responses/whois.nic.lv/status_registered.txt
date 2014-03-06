@@ -1,7 +1,7 @@
 [Domain]
 Domain: google.lv
 Status: active
-Changed: 2009-06-10T00:00:00+03:00
+Changed: 2013-07-08T19:35:53.187695+03:00
 
 [Holder]
 Type: Legal person
@@ -34,4 +34,4 @@ Nserver: ns3.google.com
 Nserver: ns4.google.com
 
 [Whois]
-Updated: 2012-01-30T12:12:27.309824+00:00
+Updated: 2014-02-18T18:12:36.561777+00:00

@@ -13,11 +13,11 @@ Postal Code............: 94043
 Country................: US
 
 Administrative Contact/Agent
-NIC Handle.............: DA141-SL
+NIC Handle.............: C000000197393-KZ
 Name...................: DNS Admin
-Phone Number...........: +1.6503300100 
-Fax Number.............: +1.6506181499 
-Email Address..........: dns-admin@google.com
+Phone Number...........: +1.6502530000 
+Fax Number.............: +1.6506188571 
+Email Address..........: ccops@markmonitor.com
 
 Nameserver in listed order
 
@@ -28,8 +28,8 @@ Secondary server.......: ns2.google.com
 Secondary ip address...: 216.239.34.10
 
 
-Domain created: 1999-06-07 20:01:43.0
-Last modified : 2009-08-21 09:11:45.0
+Domain created: 1999-06-07 13:01:43 (GMT+0:00)
+Last modified : 2012-11-28 03:16:59 (GMT+0:00)
 Domain status : ok - Normal state.
                 
 Registar created: KAZNIC

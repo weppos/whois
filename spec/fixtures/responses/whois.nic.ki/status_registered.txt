@@ -1,16 +1,16 @@
 Domain Name: google.ki
 Domain ID: 18030-CoCCA
-WHOIS Server: whois.coccaregistry.org
+WHOIS Server: whois.nic.ki
 Referral URL: 
 Updated Date: 2013-12-06T07:34:23.918Z
 Creation Date: 2006-05-15T12:00:00.000Z
 Registry Expiry Date: 2014-11-27T11:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientUpdateProhibited
-Domain Status: clientTransferProhibited
-Domain Status: clientDeleteProhibited
 Domain Status: ok
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
 
 Registrant ID: 955922-CoCCA
 Registrant Name: DNS Admin
@@ -59,4 +59,4 @@ that apply to CoCCA it's members (or CoCCA or member computer systems). The
 compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
 
->>> Last update of WHOIS database: 2013-12-18T10:02:23.163Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<

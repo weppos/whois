@@ -3,7 +3,7 @@ Domain Name:HOTEL.SE.NET
 Created On:2013-11-13T10:35:03.0Z
 Last Updated On:2013-11-28T11:49:39.0Z
 Expiration Date:2014-11-13T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:scipr000323588
 Registrant Name:Christoph Donath
 Registrant Organization:Christoph Donath

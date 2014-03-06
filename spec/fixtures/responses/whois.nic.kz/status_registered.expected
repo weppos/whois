@@ -10,11 +10,11 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{1999-06-07 20:01:43}
+  %s %TIME{1999-06-07 13:01:43}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2009-08-21 09:11:45}
+  %s %TIME{2012-11-28 03:16:59}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}

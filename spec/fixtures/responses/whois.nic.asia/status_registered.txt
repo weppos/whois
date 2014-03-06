@@ -26,16 +26,17 @@ integrity of the database.
 Domain ID:D93126-ASIA
 Domain Name:CJ7.ASIA
 Domain Create Date:15-Jan-2008 11:28:02 UTC
-Domain Expiration Date:15-Jan-2014 11:28:02 UTC
-Domain Last Updated Date:15-Jan-2013 22:20:13 UTC
+Domain Expiration Date:15-Jan-2015 11:28:02 UTC
+Domain Last Updated Date:15-Jan-2014 22:20:16 UTC
 Last Transferred Date:
 IPR Name:CJ7
 IPR CC Locality:HK
 IPR Type:SR1
-Created by:dotASIA R4-ASIA (9998)
-Last Updated by Registrar:ASIA Registry R6-ASIA (9996)
-Sponsoring Registrar:dotASIA R4-ASIA (9998)
+Created by:dotASIA R4-ASIA (800046)
+Last Updated by Registrar:ASIA Registry R6-ASIA (700001)
+Sponsoring Registrar:dotASIA R4-ASIA (800046)
 Domain Status:OK
+Status:AUTORENEWPERIOD
 Registrant ID:FR-132aa75b4bf65
 Registrant Name:RAXCO ASSETS CORP.
 Registrant Organization:RAXCO ASSETS CORP.

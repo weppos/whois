@@ -79,17 +79,20 @@ describe Whois::Record::Parser::WhoisUdagNet, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("")
+      expect(subject.registrant_contacts[0].id).to eq(nil)
       expect(subject.registrant_contacts[0].name).to eq("Host Master")
       expect(subject.registrant_contacts[0].organization).to eq("united-domains AG")
       expect(subject.registrant_contacts[0].address).to eq("Gautinger Str. 10")
       expect(subject.registrant_contacts[0].city).to eq("Starnberg")
       expect(subject.registrant_contacts[0].zip).to eq("82319")
       expect(subject.registrant_contacts[0].state).to eq("Bayern")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("DE")
       expect(subject.registrant_contacts[0].phone).to eq("+49.8151368670")
       expect(subject.registrant_contacts[0].fax).to eq("+49.81513686777")
       expect(subject.registrant_contacts[0].email).to eq("hostmaster@united-domains.de")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -98,17 +101,20 @@ describe Whois::Record::Parser::WhoisUdagNet, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("")
+      expect(subject.admin_contacts[0].id).to eq(nil)
       expect(subject.admin_contacts[0].name).to eq("Hostmaster Hostmaster")
       expect(subject.admin_contacts[0].organization).to eq("united-domains AG")
       expect(subject.admin_contacts[0].address).to eq("Gautinger Strasse 10")
       expect(subject.admin_contacts[0].city).to eq("Starnberg")
       expect(subject.admin_contacts[0].zip).to eq("82319")
       expect(subject.admin_contacts[0].state).to eq("DE")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("DE")
       expect(subject.admin_contacts[0].phone).to eq("+49.8151368670")
       expect(subject.admin_contacts[0].fax).to eq("+49.81513686777")
       expect(subject.admin_contacts[0].email).to eq("hostmaster@united-domains.de")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -117,17 +123,20 @@ describe Whois::Record::Parser::WhoisUdagNet, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("")
+      expect(subject.technical_contacts[0].id).to eq(nil)
       expect(subject.technical_contacts[0].name).to eq("Host Master")
       expect(subject.technical_contacts[0].organization).to eq("united-domains AG")
       expect(subject.technical_contacts[0].address).to eq("Gautinger Str. 10")
       expect(subject.technical_contacts[0].city).to eq("Starnberg")
       expect(subject.technical_contacts[0].zip).to eq("82319")
       expect(subject.technical_contacts[0].state).to eq("Bayern")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("DE")
       expect(subject.technical_contacts[0].phone).to eq("+49.8151368670")
       expect(subject.technical_contacts[0].fax).to eq("+49.81513686777")
       expect(subject.technical_contacts[0].email).to eq("hostmaster@united-domains.de")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do

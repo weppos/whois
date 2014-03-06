@@ -8,9 +8,9 @@ Go to http://registrar.verisign-grs.com/whois/ for detailed information.
    Domain ID: 91478530
    Whois Server: whois.nameshare.com
    Referral URL: http://www.nameshare.com
-   Updated Date: 2013-02-05T03:02:36Z
+   Updated Date: 2014-02-05T03:02:48Z
    Creation Date: 2010-02-04T18:54:33Z
-   Expiration Date: 2014-02-04T18:54:33Z
+   Expiration Date: 2015-02-04T18:54:33Z
    Sponsoring Registrar: NAME SHARE, INC
    Sponsoring Registrar IANA ID: 667
    Domain Status: ACTIVE
@@ -19,7 +19,7 @@ Go to http://registrar.verisign-grs.com/whois/ for detailed information.
    DNSSEC: Unsigned delegation
 
 
->>> Last update of whois database: 2014-01-22T22:09:16Z <<<
+>>> Last update of whois database: 2014-02-18T20:38:00Z <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

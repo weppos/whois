@@ -1,16 +1,16 @@
 Domain Name: google.gs
 Domain ID: 4258-CoCCA.gs
-WHOIS Server: whois.coccaregistry.org
+WHOIS Server: whois.nic.gs
 Referral URL: 
 Updated Date: 2013-12-06T07:35:24.997Z
 Creation Date: 2004-07-08T12:00:00.000Z
 Registry Expiry Date: 2014-07-08T12:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 
-Domain Status: clientUpdateProhibited
-Domain Status: clientTransferProhibited
-Domain Status: clientDeleteProhibited
 Domain Status: ok
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
 
 Registrant ID: 955923-CoCCA
 
@@ -44,4 +44,4 @@ expressly prohibited.
 
 CoCCA Helpdesk | http://helpdesk.cocca.cx
 
->>> Last update of WHOIS database: 2013-12-18T10:02:02.432Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:36:02.515Z <<<

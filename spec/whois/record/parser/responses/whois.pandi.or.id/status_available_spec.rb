@@ -21,9 +21,24 @@ describe Whois::Record::Parser::WhoisPandiOrId, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq(nil)
+    end
+  end
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq(nil)
+    end
+  end
+  describe "#domain_id" do
+    it do
+      expect(subject.domain_id).to eq(nil)
+    end
+  end
   describe "#status" do
     it do
-      expect(subject.status).to eq(:available)
+      expect(subject.status).to eq([])
     end
   end
   describe "#available?" do
@@ -49,6 +64,29 @@ describe Whois::Record::Parser::WhoisPandiOrId, "status_available.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to eq(nil)
+    end
+  end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to eq(nil)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to eq([])
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to eq([])
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to eq([])
     end
   end
   describe "#nameservers" do

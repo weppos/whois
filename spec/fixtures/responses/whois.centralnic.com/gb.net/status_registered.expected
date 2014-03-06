@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"]
+  %s == ["clientTransferProhibited", "serverTransferProhibited"]
 
 #available?
   %s == false

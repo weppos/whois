@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["CLIENT TRANSFER PROHIBITED", "SERVER TRANSFER PROHIBITED"])
+      expect(subject.status).to eq(["clientTransferProhibited", "serverTransferProhibited", "renewPeriod"])
     end
   end
   describe "#available?" do
@@ -66,7 +66,7 @@ describe Whois::Record::Parser::WhoisCentralnicCom, "status_registered.expected"
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-04-17 23:59:59 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2017-04-17 23:59:59 UTC"))
     end
   end
   describe "#registrar" do

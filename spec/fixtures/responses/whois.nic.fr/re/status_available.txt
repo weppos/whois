@@ -1,18 +1,18 @@
-%%                                       *    .        *     *
-%% This is the AFNIC Whois server.  *          .   .  /.\      .
-%%                                         .         /.^'\  *
-%% complete date format : DD/MM/YYYY    *        *   /'.'\
-%% short date format    : DD/MM      .       *      /.^'.'\    .
-%% version              : FRNIC-2.5           .  .  /'.^'.\  .
-%%                                       *          ^^|_|^^    *
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format : DD/MM/YYYY
+%% short date format    : DD/MM
+%% version              : FRNIC-2.5
+%%
 %% Rights restricted by copyright.
 %% See http://www.afnic.fr/afnic/web/mentions-legales-whois_en
 %%
 %% Use '-h' option to obtain more information about this service.
 %%
-%% [82.52.147.63 REQUEST] >> u34jedzcq.re
+%% [80.117.237.137 REQUEST] >> u34jedzcq.re
 %%
-%% RL Net [#########.] - RL IP [########..]
+%% RL Net [##########] - RL IP [########..]
 %%
 
 %% No entries found in the AFNIC Database.

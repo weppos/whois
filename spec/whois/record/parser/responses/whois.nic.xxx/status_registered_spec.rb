@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("Access to the .XXX WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the ICM Registry database. The data in this record is provided by ICM Registry for informational purposes only, and ICM does not guarantee its accuracy. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or ICM except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. ICM reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.")
+      expect(subject.disclaimer).to eq("Access to .XXX ICM REGISTRY WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the ICM registry database. The data in this record is provided by ICM Registry for informational purposes only, and ICM does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to(a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. ICM reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.")
     end
   end
   describe "#domain" do
@@ -33,12 +33,12 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
   end
   describe "#domain_id" do
     it do
-      expect(subject.domain_id).to eq("D372-ICM")
+      expect(subject.domain_id).to eq("D130773-XXX")
     end
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["OK"])
+      expect(subject.status).to eq(["ok"])
     end
   end
   describe "#available?" do
@@ -54,25 +54,26 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2011-08-09 17:48:52.556689 UTC"))
+      expect(subject.created_on).to eq(Time.parse("2011-12-01 01:37:55 UTC"))
     end
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to eq(nil)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2013-12-02 22:20:04 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2012-08-09 17:48:52.556689"))
+      expect(subject.expires_on).to eq(Time.parse("2014-12-01 01:37:55 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("R2-ICM")
-      expect(subject.registrar.name).to eq("Domainmonster.com")
+      expect(subject.registrar.id).to eq("R3228-XXX")
+      expect(subject.registrar.name).to eq("Mesh Digital Limited")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)
     end
@@ -83,17 +84,18 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("C7-ICM")
+      expect(subject.registrant_contacts[0].id).to eq("MNT5BB23000590")
       expect(subject.registrant_contacts[0].name).to eq("Domainmonster.com Privacy Service")
-      expect(subject.registrant_contacts[0].organization).to eq("Mesh Digital Ltd (Domainmonster.com)")
+      expect(subject.registrant_contacts[0].organization).to eq("Identity Protect Limited")
       expect(subject.registrant_contacts[0].address).to eq("PO Box 795")
       expect(subject.registrant_contacts[0].city).to eq("Godalming")
       expect(subject.registrant_contacts[0].zip).to eq("GU7 9GA")
       expect(subject.registrant_contacts[0].state).to eq("Surrey")
-      expect(subject.registrant_contacts[0].country_code).to eq("UB")
-      expect(subject.registrant_contacts[0].phone).to eq("44.14833075")
-      expect(subject.registrant_contacts[0].fax).to eq("+44.148330403")
-      expect(subject.registrant_contacts[0].email).to eq("support@domainmonster.com")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
+      expect(subject.registrant_contacts[0].country_code).to eq("GB")
+      expect(subject.registrant_contacts[0].phone).to eq("+44.1483307527")
+      expect(subject.registrant_contacts[0].fax).to eq("+44.1483304031")
+      expect(subject.registrant_contacts[0].email).to eq("masala.xxx@privatemonster.com")
     end
   end
   describe "#admin_contacts" do
@@ -102,17 +104,18 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("C7-ICM")
+      expect(subject.admin_contacts[0].id).to eq("MNT5BB23000590")
       expect(subject.admin_contacts[0].name).to eq("Domainmonster.com Privacy Service")
-      expect(subject.admin_contacts[0].organization).to eq("Mesh Digital Ltd (Domainmonster.com)")
+      expect(subject.admin_contacts[0].organization).to eq("Identity Protect Limited")
       expect(subject.admin_contacts[0].address).to eq("PO Box 795")
       expect(subject.admin_contacts[0].city).to eq("Godalming")
       expect(subject.admin_contacts[0].zip).to eq("GU7 9GA")
       expect(subject.admin_contacts[0].state).to eq("Surrey")
-      expect(subject.admin_contacts[0].country_code).to eq("UB")
-      expect(subject.admin_contacts[0].phone).to eq("44.14833075")
-      expect(subject.admin_contacts[0].fax).to eq("+44.148330403")
-      expect(subject.admin_contacts[0].email).to eq("support@domainmonster.com")
+      expect(subject.admin_contacts[0].country).to eq(nil)
+      expect(subject.admin_contacts[0].country_code).to eq("GB")
+      expect(subject.admin_contacts[0].phone).to eq("+44.1483307527")
+      expect(subject.admin_contacts[0].fax).to eq("+44.1483304031")
+      expect(subject.admin_contacts[0].email).to eq("masala.xxx@privatemonster.com")
     end
   end
   describe "#technical_contacts" do
@@ -121,17 +124,18 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("C7-ICM")
+      expect(subject.technical_contacts[0].id).to eq("MNT5BB23000590")
       expect(subject.technical_contacts[0].name).to eq("Domainmonster.com Privacy Service")
-      expect(subject.technical_contacts[0].organization).to eq("Mesh Digital Ltd (Domainmonster.com)")
+      expect(subject.technical_contacts[0].organization).to eq("Identity Protect Limited")
       expect(subject.technical_contacts[0].address).to eq("PO Box 795")
       expect(subject.technical_contacts[0].city).to eq("Godalming")
       expect(subject.technical_contacts[0].zip).to eq("GU7 9GA")
       expect(subject.technical_contacts[0].state).to eq("Surrey")
-      expect(subject.technical_contacts[0].country_code).to eq("UB")
-      expect(subject.technical_contacts[0].phone).to eq("44.14833075")
-      expect(subject.technical_contacts[0].fax).to eq("+44.148330403")
-      expect(subject.technical_contacts[0].email).to eq("support@domainmonster.com")
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq("GB")
+      expect(subject.technical_contacts[0].phone).to eq("+44.1483307527")
+      expect(subject.technical_contacts[0].fax).to eq("+44.1483304031")
+      expect(subject.technical_contacts[0].email).to eq("masala.xxx@privatemonster.com")
     end
   end
   describe "#nameservers" do
@@ -139,9 +143,9 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns33.domaincontrol.com")
+      expect(subject.nameservers[0].name).to eq("ns39.domaincontrol.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns34.domaincontrol.com")
+      expect(subject.nameservers[1].name).to eq("ns40.domaincontrol.com")
     end
   end
 end

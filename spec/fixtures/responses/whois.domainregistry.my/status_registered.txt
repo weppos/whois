@@ -16,70 +16,70 @@ SEARCH BY DOMAIN NAME
 a [Domain Name]                 google.my
 b [Registration No.]            D6A017331
 c [Record Created]              13-MAY-2009
-d [Record Expired]              13-MAY-2011
-e [Record Last Modified]        20-APR-2010
+d [Record Expired]              13-MAY-2014
+e [Record Last Modified]        11-OCT-2013
 f [Invoicing Party]                            R014
   Network Admin Team
   Integricity Corporation Sdn Bhd
-  Suite S6-S7  
-  Centrepoint Bandar Utama, Lebuh Bandar Utama
-  47800 Petaling Jaya
+  L1-46, First Floor, SStwo Mall  
+  40, Jalan SS2/72
+  47300 Petaling Jaya
   Selangor
   Malaysia
-  lowest.prices@integricity.com
-  (Tel) 603-77257050  
-  (Fax) 03-77255600  
+  domain@fatservers.my
+  (Tel) 603-79570700  
+  (Fax) 603-79572700  
 
 g [Registrant Code]                            INTEG4.ORG
   Integricity Corporation Sdn. Bhd.
   (532745-U)
-  Suite S6-S7  
-  Centrepoint Bandar Utama, Lebuh Bandar Utama  
-  47800 Petaling Jaya
+  L1-46, First Floor, SStwo Mall  
+  40, Jalan SS2/72  
+  47300 Petaling Jaya
   Selangor
-  (Tel) 603-77257050   
-  (Fax) 603-77255600   
+  (Tel) 603-79570700   
+  (Fax) 603-79572700   
 
 h [Administrative Contact Code]                ALEXLAM3.CON
   Network Admin Team
   Integricity Corporation Sdn. Bhd.
-  Suite S6-S7  
-  Centrepoint Bandar Utama, Lebuh Bandar Utama
-  47800 Petaling Jaya
+  L1-46, First Floor, SStwo Mall  
+  40, Jalan SS2/72
+  47300 Petaling Jaya
   Selangor
   Malaysia
-  domain@integricity.com
-  (Tel) 603-77257050   
-  (Fax) 603-77255600   
+  domain@fatservers.my
+  (Tel) 603-79570700   
+  (Fax) 603-79572700   
   
 i [Billing Contact Code]                       ALEXLAM3.CON
   Network Admin Team
   Integricity Corporation Sdn. Bhd.
-  Suite S6-S7  
-  Centrepoint Bandar Utama, Lebuh Bandar Utama
-  47800 Petaling Jaya
+  L1-46, First Floor, SStwo Mall  
+  40, Jalan SS2/72
+  47300 Petaling Jaya
   Selangor
   Malaysia
-  domain@integricity.com
-  (Tel) 603-77257050   
-  (Fax) 603-77255600   
+  domain@fatservers.my
+  (Tel) 603-79570700   
+  (Fax) 603-79572700   
   
 j [Technical Contact Code]                     ALEXLAM3.CON
   Network Admin Team
   Integricity Corporation Sdn. Bhd.
-  Suite S6-S7
-  Centrepoint Bandar Utama, Lebuh Bandar Utama
-  47800 Petaling Jaya
+  L1-46, First Floor, SStwo Mall
+  40, Jalan SS2/72
+  47300 Petaling Jaya
   Selangor
   Malaysia
-  domain@integricity.com
-  (Tel) 603-77257050   
-  (Fax) 603-77255600   
+  domain@fatservers.my
+  (Tel) 603-79570700   
+  (Fax) 603-79572700   
 
-k [Primary Name Server]              NS1GOOG0.SER		
+ k [Primary Name Server]              NS1GOOG0.SER		
   ns1.google.com                     216.239.32.10       
   
-l [Secondary Name Server]            NS2GOOG0.SER	
+ l [Secondary Name Server]            NS2GOOG0.SER	
   ns2.google.com                     216.239.34.10         
   
 

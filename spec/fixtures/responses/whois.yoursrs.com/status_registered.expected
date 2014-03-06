@@ -17,21 +17,21 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2007-03-02 12:20:54.0}
+  %s %TIME{2003-11-24 09:40:55}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-11-25 00:34:05.0}
+  %s %TIME{2014-01-22 14:04:50}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-11-24 09:40:55.0}
+  %s %TIME{2014-11-24 09:40:55}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == "R802-LRMS"
-  %s.name         == "Realtime Register B.V."
+  %s.id           == nil
+  %s.name         == "REALTIME REGISTER B.V."
   %s.organization == nil
   %s.url          == nil
 

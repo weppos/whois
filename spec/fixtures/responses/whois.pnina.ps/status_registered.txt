@@ -6,10 +6,10 @@ Creation Date: 2004-05-18T22:00:00.000Z
 Registry Expiry Date: 2014-05-18T22:00:00.000Z
 Sponsoring Registrar: MarkMonitor Inc.
 Sponsoring Registrar IANA ID: 
-Domain Status: clientRenewProhibited
-Domain Status: clientDeleteProhibited
 Domain Status: clientTransferProhibited
+Domain Status: clientDeleteProhibited
 Domain Status: ok
+Domain Status: clientRenewProhibited
 Domain Status: clientUpdateProhibited
 
 Registrant ID: 21544-PS
@@ -93,4 +93,4 @@ compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
 
 
->>> Last update of WHOIS database: 2013-12-18T10:03:38.349Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:26:27.877Z <<<

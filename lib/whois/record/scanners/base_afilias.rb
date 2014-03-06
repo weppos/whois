@@ -49,7 +49,11 @@ module Whois
         end
 
         tokenizer :scan_disclaimer do
-          if @input.pos == 0 && @input.match?(/^(.+\n){3,}\n/)
+          if settings[:pattern_disclaimer]
+            if @input.match?(settings[:pattern_disclaimer])
+              @ast["field:disclaimer"] = _scan_lines_to_array(/^(.+)\n/).join(" ")
+            end
+          elsif @input.pos == 0 && @input.match?(/^(.+\n){3,}\n/)
             @ast["field:disclaimer"] = _scan_lines_to_array(/^(.+)\n/).join(" ")
           end
         end

@@ -4,14 +4,14 @@
 % Data served below is in Unicode.
 % 
 % Whoisd Server Version: 2.2.0
-% Timestamp: Tue Jul 03 13:25:29 2012
+% Timestamp: Tue Feb 18 20:40:42 2014
 
 domain:       nic.fo
 registrant:   ID005359
 status:       paid and in zone
 registered:   03.06.2010 03:34:05
 changed:      12.07.2011 12:52:57
-expire:       03.01.2014
+expire:       03.01.2015
 
 contact:      ID005359
 org:          FO-umsitingin

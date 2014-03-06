@@ -3,7 +3,7 @@ Domain Name:CEO.QC.COM
 Created On:2004-10-08T02:12:49.0Z
 Last Updated On:2012-11-23T18:03:55.0Z
 Expiration Date:2014-10-08T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:H1062277
 Registrant Name:helene
 Registrant Street1:309 Laurendeau, Magog Qc

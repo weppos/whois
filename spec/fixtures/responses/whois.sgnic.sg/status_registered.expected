@@ -1,5 +1,5 @@
 #status
-  %s == ["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED"]
+  %s == ["OK", "CLIENT UPDATE PROHIBITED", "CLIENT TRANSFER PROHIBITED", "CLIENT DELETE PROHIBITED", "VerifiedID@SG-Not Required"]
 
 #available?
   %s == false
@@ -17,7 +17,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2012-01-03 00:00:00}
+  %s %TIME{2015-01-03 00:00:00}
 
 
 #nameservers

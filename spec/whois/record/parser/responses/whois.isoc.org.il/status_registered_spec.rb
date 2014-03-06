@@ -44,7 +44,7 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2010-10-07"))
+      expect(subject.updated_on).to eq(Time.parse("2014-01-16"))
     end
   end
   describe "#expires_on" do
@@ -67,7 +67,7 @@ describe Whois::Record::Parser::WhoisIsocOrgIl, "status_registered.expected" do
       expect(subject.nameservers[4]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[4].name).to eq("drns.isoc.org.il")
       expect(subject.nameservers[5]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[5].name).to eq("sps-pb.isc.org")
+      expect(subject.nameservers[5].name).to eq("sns-pb.isc.org")
     end
   end
 end

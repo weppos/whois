@@ -2,9 +2,10 @@ Domain ID:CNIC-DO624205
 Domain Name:BILLBOARD.BR.COM
 Created On:2009-04-17T12:22:49.0Z
 Last Updated On:2012-01-16T16:23:18.0Z
-Expiration Date:2014-04-17T23:59:59.0Z
-Status:CLIENT TRANSFER PROHIBITED
-Status:SERVER TRANSFER PROHIBITED
+Expiration Date:2017-04-17T23:59:59.0Z
+Status:clientTransferProhibited
+Status:serverTransferProhibited
+Status:renewPeriod
 Registrant ID:36542943
 Registrant Name:Antonio Camarotti Pinto
 Registrant Street1:Rua Urussui, 238

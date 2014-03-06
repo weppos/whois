@@ -21,19 +21,14 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
     described_class.new(part)
   end
 
-  describe "#disclaimer" do
-    it do
-      expect(subject.disclaimer).to eq("This data is provided by Hosting Concepts for information purposes, and to assist persons obtaining information about or related to domain name registration records. Hosting Concepts does not guarantee its accuracy. By submitting a WHOIS query, you agree that you will use this data only for lawful purposes and that, under no circumstances, you will use this data to 1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via E-mail (spam); or 2) enable high volume, automated, electronic processes that apply to this WHOIS server. These terms may be changed without prior notice. By submitting this query, you agree to abide by this policy.")
-    end
-  end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("openprovider.com")
+      expect(subject.domain).to eq("multisafepay.com")
     end
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq("334322677_DOMAIN_COM-VRSN")
     end
   end
   describe "#status" do
@@ -51,12 +46,30 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       expect(subject.registered?).to eq(true)
     end
   end
+  describe "#created_on" do
+    it do
+      expect(subject.created_on).to be_a(Time)
+      expect(subject.created_on).to eq(Time.parse("2006-02-03 19:44:56 UTC"))
+    end
+  end
+  describe "#updated_on" do
+    it do
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2014-02-04 08:34:14 UTC"))
+    end
+  end
+  describe "#expires_on" do
+    it do
+      expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
+    end
+  end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.name).to eq("Key-Systems")
+      expect(subject.registrar.id).to eq("269")
+      expect(subject.registrar.name).to eq("Key-Systems GmbH")
       expect(subject.registrar.organization).to eq("Key-Systems GmbH")
-      expect(subject.registrar.url).to eq("http://www.domaindiscount24.com/")
+      expect(subject.registrar.url).to eq("http://www.reasonnet.com")
     end
   end
   describe "#registrant_contacts" do
@@ -65,17 +78,20 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("P-AEV84")
-      expect(subject.registrant_contacts[0].name).to eq("Arno Vis")
-      expect(subject.registrant_contacts[0].organization).to eq("Openprovider")
-      expect(subject.registrant_contacts[0].address).to eq("Willem Buytewechstraat 40")
-      expect(subject.registrant_contacts[0].city).to eq("Rotterdam")
-      expect(subject.registrant_contacts[0].zip).to eq("3024 BN")
+      expect(subject.registrant_contacts[0].id).to eq("P-DQJ547")
+      expect(subject.registrant_contacts[0].name).to eq("David Jacobs")
+      expect(subject.registrant_contacts[0].organization).to eq("ReasonNet B.V.")
+      expect(subject.registrant_contacts[0].address).to eq("Gyroscoopweg 134")
+      expect(subject.registrant_contacts[0].city).to eq("Amsterdam")
+      expect(subject.registrant_contacts[0].zip).to eq("1042 AZ")
+      expect(subject.registrant_contacts[0].state).to eq("NH")
       expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("NL")
-      expect(subject.registrant_contacts[0].phone).to eq("+31 104482299")
-      expect(subject.registrant_contacts[0].fax).to eq("+31 102440250")
-      expect(subject.registrant_contacts[0].email).to eq("domreg@openprovider.nl")
+      expect(subject.registrant_contacts[0].phone).to eq("+31.205060035")
+      expect(subject.registrant_contacts[0].fax).to eq("+31.205060038")
+      expect(subject.registrant_contacts[0].email).to eq("domains@reasonnet.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -84,17 +100,20 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("P-AEV84")
-      expect(subject.admin_contacts[0].name).to eq("Arno Vis")
-      expect(subject.admin_contacts[0].organization).to eq("Openprovider")
-      expect(subject.admin_contacts[0].address).to eq("Willem Buytewechstraat 40")
-      expect(subject.admin_contacts[0].city).to eq("Rotterdam")
-      expect(subject.admin_contacts[0].zip).to eq("3024 BN")
+      expect(subject.admin_contacts[0].id).to eq("P-OEG220")
+      expect(subject.admin_contacts[0].name).to eq("Olaf Geurs")
+      expect(subject.admin_contacts[0].organization).to eq("ION")
+      expect(subject.admin_contacts[0].address).to eq("Vlierweg 12")
+      expect(subject.admin_contacts[0].city).to eq("Amsterdam")
+      expect(subject.admin_contacts[0].zip).to eq("1032 LG")
+      expect(subject.admin_contacts[0].state).to eq("NH")
       expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("NL")
-      expect(subject.admin_contacts[0].phone).to eq("+31 104482299")
-      expect(subject.admin_contacts[0].fax).to eq("+31 102440250")
-      expect(subject.admin_contacts[0].email).to eq("domreg@openprovider.nl")
+      expect(subject.admin_contacts[0].phone).to eq("+31.204949100")
+      expect(subject.admin_contacts[0].fax).to eq("")
+      expect(subject.admin_contacts[0].email).to eq("domains@reasonnet.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -103,29 +122,34 @@ describe Whois::Record::Parser::WhoisRrpproxyNet, "status_registered.expected" d
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("P-AEV84")
-      expect(subject.technical_contacts[0].name).to eq("Arno Vis")
-      expect(subject.technical_contacts[0].organization).to eq("Openprovider")
-      expect(subject.technical_contacts[0].address).to eq("Willem Buytewechstraat 40")
-      expect(subject.technical_contacts[0].city).to eq("Rotterdam")
-      expect(subject.technical_contacts[0].zip).to eq("3024 BN")
+      expect(subject.technical_contacts[0].id).to eq("P-OEG220")
+      expect(subject.technical_contacts[0].name).to eq("Olaf Geurs")
+      expect(subject.technical_contacts[0].organization).to eq("ION")
+      expect(subject.technical_contacts[0].address).to eq("Vlierweg 12")
+      expect(subject.technical_contacts[0].city).to eq("Amsterdam")
+      expect(subject.technical_contacts[0].zip).to eq("1032 LG")
+      expect(subject.technical_contacts[0].state).to eq("NH")
       expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("NL")
-      expect(subject.technical_contacts[0].phone).to eq("+31 104482299")
-      expect(subject.technical_contacts[0].fax).to eq("+31 102440250")
-      expect(subject.technical_contacts[0].email).to eq("domreg@openprovider.nl")
+      expect(subject.technical_contacts[0].phone).to eq("+31.204949100")
+      expect(subject.technical_contacts[0].fax).to eq("")
+      expect(subject.technical_contacts[0].email).to eq("domains@reasonnet.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.openprovider.nl")
-      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.openprovider.be")
-      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns3.openprovider.eu")
+      expect(subject.nameservers[0].name).to eq("ns.teletik.nl")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns3.teletik.nl")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

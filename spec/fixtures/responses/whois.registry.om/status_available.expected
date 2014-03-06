@@ -23,7 +23,7 @@
   %s %ERROR{AttributeNotSupported}
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 #expires_on
   %s %ERROR{AttributeNotSupported}

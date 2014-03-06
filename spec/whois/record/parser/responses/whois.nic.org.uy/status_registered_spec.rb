@@ -39,13 +39,13 @@ describe Whois::Record::Parser::WhoisNicOrgUy, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2001-06-15 00:00:00"))
+      expect(subject.created_on).to eq(Time.parse("2012-07-03 20:58:58"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2009-11-04 16:23:11"))
+      expect(subject.updated_on).to eq(Time.parse("2012-09-12 02:32:59"))
     end
   end
   describe "#expires_on" do
@@ -58,9 +58,13 @@ describe Whois::Record::Parser::WhoisNicOrgUy, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("seciu.edu.uy")
+      expect(subject.nameservers[0].name).to eq("ns1.markmonitor.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("tacuabe.rau.edu.uy")
+      expect(subject.nameservers[1].name).to eq("ns3.markmonitor.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

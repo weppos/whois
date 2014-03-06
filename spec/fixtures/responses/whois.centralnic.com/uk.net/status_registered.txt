@@ -3,7 +3,7 @@ Domain Name:PARAMOUNT.UK.NET
 Created On:2006-02-28T12:17:01.0Z
 Last Updated On:2013-04-03T12:59:45.0Z
 Expiration Date:2014-02-28T23:59:59.0Z
-Status:OK
+Status:ok
 Registrant ID:MNT60424953041
 Registrant Name:Identity Protection Service
 Registrant Organization:Identity Protect Limited

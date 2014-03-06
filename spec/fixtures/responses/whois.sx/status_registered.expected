@@ -25,17 +25,17 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-08-29 11:36:37 UTC}
+  %s %TIME{2013-02-25 16:50:39 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2021-12-09 14:07:22 UTC}
+  %s %TIME{2022-12-09 14:07:22 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
   %s.id           == nil
-  %s.name         == "SX Registry \"PROMOTIONAL\" Registrar"
+  %s.name         == "SX Registry O"
   %s.organization == nil
   %s.url          == nil
 

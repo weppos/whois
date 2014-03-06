@@ -49,26 +49,26 @@ describe Whois::Record::Parser::WhoisYoursrsCom, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2007-03-02 12:20:54.0"))
+      expect(subject.created_on).to eq(Time.parse("2003-11-24 09:40:55"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2012-11-25 00:34:05.0"))
+      expect(subject.updated_on).to eq(Time.parse("2014-01-22 14:04:50"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-11-24 09:40:55.0"))
+      expect(subject.expires_on).to eq(Time.parse("2014-11-24 09:40:55"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("R802-LRMS")
-      expect(subject.registrar.name).to eq("Realtime Register B.V.")
+      expect(subject.registrar.id).to eq(nil)
+      expect(subject.registrar.name).to eq("REALTIME REGISTER B.V.")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)
     end

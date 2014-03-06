@@ -1,10 +1,10 @@
 
 Domain Name: WHOIS.SX
 Domain ID: d5-sx
-Updated Date: 2012-08-29T11:36:37.915Z
+Updated Date: 2013-02-25T16:50:39.204Z
 Creation Date: 2011-12-09T14:07:22.794Z
-Registry Expiry Date: 2021-12-09T14:07:22.794Z
-Sponsoring Registrar: SX Registry "PROMOTIONAL" Registrar
+Registry Expiry Date: 2022-12-09T14:07:22.794Z
+Sponsoring Registrar: SX Registry O
 Domain Status: ok
 Registrant ID: C65
 Registrant Name: SX Registry SA administrator
@@ -34,7 +34,7 @@ Name Server: a.ns.sx
 Name Server: b.ns.sx
 Name Server: c.ns.sx
 DNSSEC: signedDelegation
->>> Last update of WHOIS database: 2012-11-22T11:55:18.532Z <<<
+>>> Last update of WHOIS database: 2014-02-18T20:40:36.197Z <<<
 
 % WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS
 % The WHOIS service offered by OpenRegistry and the access to the
