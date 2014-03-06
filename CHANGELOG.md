@@ -1,6 +1,11 @@
 # Changelog
 
 
+## master
+
+- SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]
+
+
 ## Release 3.4.5
 
 - SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD, .XN--55QW42G, .XN--ZFR164B
