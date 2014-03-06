@@ -1193,11 +1193,31 @@
   ".academy": {
     "host": "whois.donuts.co"
   },
+  ".agency": {
+    "host": "whois.donuts.co"
+  },
+  ".bargains": {
+    "host": "whois.donuts.co"
+  },
+  ".berlin": {
+    "host": "whois.nic.berlin"
+  },
   ".bike": {
     "host": "whois.donuts.co"
   },
+  ".blue": {
+    "host": "whois.afilias.net"
+  },
+  ".boutique": {
+    "host": "whois.donuts.co"
+  },
+  ".build": {
+    "host": "whois.nic.build"
+  },
+  ".builders": {
+    "host": "whois.donuts.co"
+  },
   ".buzz": {
-    "host": null,
     "adapter": "none"
   },
   ".cab": {
@@ -1209,195 +1229,19 @@
   ".camp": {
     "host": "whois.donuts.co"
   },
-  ".careers": {
-    "host": "whois.donuts.co"
-  },
-  ".center": {
-    "host": "whois.donuts.co"
-  },
-  ".clothing": {
-    "host": "whois.donuts.co"
-  },
-  ".company": {
-    "host": "whois.donuts.co"
-  },
-  ".computer": {
-    "host": "whois.donuts.co"
-  },
-  ".construction": {
-    "host": "whois.donuts.co"
-  },
-  ".contractors": {
-    "host": "whois.donuts.co"
-  },
-  ".diamonds": {
-    "host": "whois.donuts.co"
-  },
-  ".directory": {
-    "host": "whois.donuts.co"
-  },
-  ".domains": {
-    "host": "whois.donuts.co"
-  },
-  ".enterprises": {
-    "host": "whois.donuts.co"
-  },
-  ".equipment": {
-    "host": "whois.donuts.co"
-  },
-  ".estate": {
-    "host": "whois.donuts.co"
-  },
-  ".gallery": {
-    "host": "whois.donuts.co"
-  },
-  ".graphics": {
-    "host": "whois.donuts.co"
-  },
-  ".guru": {
-    "host": "whois.donuts.co"
-  },
-  ".holdings": {
-    "host": "whois.donuts.co"
-  },
-  ".kitchen": {
-    "host": "whois.donuts.co"
-  },
-  ".land": {
-    "host": "whois.donuts.co"
-  },
-  ".lighting": {
-    "host": "whois.donuts.co"
-  },
-  ".limo": {
-    "host": "whois.donuts.co"
-  },
-  ".management": {
-    "host": "whois.donuts.co"
-  },
-  ".menu": {
-    "host": "whois.nic.menu"
-  },
-  ".photography": {
-    "host": "whois.donuts.co"
-  },
-  ".photos": {
-    "host": "whois.donuts.co"
-  },
-  ".recipes": {
-    "host": "whois.donuts.co"
-  },
-  ".sexy": {
-    "host": "whois.uniregistry.net"
-  },
-  ".shoes": {
-    "host": "whois.donuts.co"
-  },
-  ".singles": {
-    "host": "whois.donuts.co"
-  },
-  ".systems": {
-    "host": "whois.donuts.co"
-  },
-  ".support": {
-    "host": "whois.donuts.co"
-  },
-  ".tattoo": {
-    "host": "whois.uniregistry.net"
-  },
-  ".technology": {
-    "host": "whois.donuts.co"
-  },
-  ".tips": {
-    "host": "whois.donuts.co"
-  },
-  ".today": {
-    "host": "whois.donuts.co"
-  },
-  ".ventures": {
-    "host": "whois.donuts.co"
-  },
-  ".viajes": {
-    "host": "whois.donuts.co"
-  },
-  ".voyage": {
-    "host": "whois.donuts.co"
-  },
-  ".qpon": {
-    "host": null,
-    "adapter": "none"
-  },
   ".cards": {
     "host": "whois.donuts.co"
   },
-  ".condos": {
-    "host": "whois.donuts.co"
-  },
-  ".foundation": {
-    "host": "whois.donuts.co"
-  },
-  ".futbol": {
-    "host": "whois.unitedtld.com"
-  },
-  ".reviews": {
-    "host": "whois.unitedtld.com"
-  },
-  ".dance": {
-    "host": "whois.unitedtld.com"
-  },
-  ".democrat": {
-    "host": "whois.unitedtld.com"
-  },
-  ".immobilien": {
-    "host": "whois.unitedtld.com"
-  },
-  ".maison": {
-    "host": "whois.donuts.co"
-  },
-  ".parts": {
-    "host": "whois.donuts.co"
-  },
-  ".productions": {
-    "host": "whois.donuts.co"
-  },
-  ".villas": {
-    "host": "whois.donuts.co"
-  },
-  ".vision": {
-    "host": "whois.donuts.co"
-  },
-  ".ruhr": {
-    "host": "whois.nic.ruhr"
-  },
-  ".berlin": {
-    "host": "whois.nic.berlin"
-  },
-  ".blue": {
-    "host": "whois.afilias.net"
-  },
-  ".kim": {
-    "host": "whois.afilias.net"
-  },
-  ".build": {
-    "host": "whois.nic.build"
-  },
-  ".agency": {
-    "host": "whois.donuts.co"
-  },
-  ".bargains": {
-    "host": "whois.donuts.co"
-  },
-  ".boutique": {
-    "host": "whois.donuts.co"
-  },
-  ".builders": {
+  ".careers": {
     "host": "whois.donuts.co"
   },
   ".catering": {
     "host": "whois.donuts.co"
   },
+  ".center": {
+    "host": "whois.donuts.co"
+  },
   ".ceo": {
-    "host": null,
     "adapter": "none"
   },
   ".cheap": {
@@ -1406,8 +1250,10 @@
   ".cleaning": {
     "host": "whois.donuts.co"
   },
+  ".clothing": {
+    "host": "whois.donuts.co"
+  },
   ".club": {
-    "host": null,
     "adapter": "none"
   },
   ".codes": {
@@ -1419,19 +1265,58 @@
   ".community": {
     "host": "whois.donuts.co"
   },
+  ".company": {
+    "host": "whois.donuts.co"
+  },
+  ".computer": {
+    "host": "whois.donuts.co"
+  },
+  ".condos": {
+    "host": "whois.donuts.co"
+  },
+  ".construction": {
+    "host": "whois.donuts.co"
+  },
+  ".contractors": {
+    "host": "whois.donuts.co"
+  },
   ".cool": {
     "host": "whois.donuts.co"
   },
   ".cruises": {
     "host": "whois.donuts.co"
   },
+  ".dance": {
+    "host": "whois.unitedtld.com"
+  },
   ".dating": {
+    "host": "whois.donuts.co"
+  },
+  ".democrat": {
+    "host": "whois.unitedtld.com"
+  },
+  ".diamonds": {
+    "host": "whois.donuts.co"
+  },
+  ".directory": {
+    "host": "whois.donuts.co"
+  },
+  ".domains": {
     "host": "whois.donuts.co"
   },
   ".education": {
     "host": "whois.donuts.co"
   },
   ".email": {
+    "host": "whois.donuts.co"
+  },
+  ".enterprises": {
+    "host": "whois.donuts.co"
+  },
+  ".equipment": {
+    "host": "whois.donuts.co"
+  },
+  ".estate": {
     "host": "whois.donuts.co"
   },
   ".events": {
@@ -1446,10 +1331,22 @@
   ".farm": {
     "host": "whois.donuts.co"
   },
+  ".fish": {
+    "host": "whois.donuts.co"
+  },
   ".flights": {
     "host": "whois.donuts.co"
   },
   ".florist": {
+    "host": "whois.donuts.co"
+  },
+  ".foundation": {
+    "host": "whois.donuts.co"
+  },
+  ".futbol": {
+    "host": "whois.unitedtld.com"
+  },
+  ".gallery": {
     "host": "whois.donuts.co"
   },
   ".gift": {
@@ -1458,7 +1355,16 @@
   ".glass": {
     "host": "whois.donuts.co"
   },
+  ".graphics": {
+    "host": "whois.donuts.co"
+  },
   ".guitars": {
+    "host": "whois.donuts.co"
+  },
+  ".guru": {
+    "host": "whois.donuts.co"
+  },
+  ".holdings": {
     "host": "whois.donuts.co"
   },
   ".holiday": {
@@ -1467,77 +1373,113 @@
   ".house": {
     "host": "whois.donuts.co"
   },
+  ".immobilien": {
+    "host": "whois.unitedtld.com"
+  },
+  ".industries": {
+    "host": "whois.donuts.co"
+  },
   ".institute": {
+    "host": "whois.donuts.co"
+  },
+  ".international": {
     "host": "whois.donuts.co"
   },
   ".kaufen": {
     "host": "whois.unitedtld.com"
   },
-  ".link": {
-    "host": "whois.unitedtld.com"
+  ".kim": {
+    "host": "whois.afilias.net"
   },
-  ".moda": {
-    "host": "whois.unitedtld.com"
-  },
-  ".ninja": {
-    "host": "whois.unitedtld.com"
-  },
-  ".social": {
-    "host": "whois.unitedtld.com"
+  ".kitchen": {
+    "host": "whois.donuts.co"
   },
   ".kiwi": {
     "host": "whois.dot-kiwi.com"
   },
-  ".international": {
+  ".land": {
     "host": "whois.donuts.co"
+  },
+  ".lighting": {
+    "host": "whois.donuts.co"
+  },
+  ".limo": {
+    "host": "whois.donuts.co"
+  },
+  ".link": {
+    "host": "whois.unitedtld.com"
   },
   ".luxury": {
     "host": "whois.nic.luxury"
   },
+  ".maison": {
+    "host": "whois.donuts.co"
+  },
+  ".management": {
+    "host": "whois.donuts.co"
+  },
+  ".mango": {
+    "host": "whois.mango.coreregistry.net"
+  },
   ".marketing": {
     "host": "whois.donuts.co"
+  },
+  ".menu": {
+    "host": "whois.nic.menu"
+  },
+  ".moda": {
+    "host": "whois.unitedtld.com"
   },
   ".monash": {
     "host": "whois.nic.monash"
   },
   ".nagoya": {
-    "host": null,
-    "adapter": "none"
-  },
-  ".tokyo": {
-    "host": null,
     "adapter": "none"
   },
   ".neustar": {
-    "host": null,
     "adapter": "none"
+  },
+  ".ninja": {
+    "host": "whois.unitedtld.com"
   },
   ".onl": {
     "host": "whois.afilias-srs.net"
   },
-  ".rich": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".pink": {
-    "host": "whois.afilias.net"
-  },
-  ".red": {
-    "host": "whois.afilias.net"
-  },
-  ".shiksha": {
-    "host": "whois.afilias.net"
-  },
   ".partners": {
+    "host": "whois.donuts.co"
+  },
+  ".parts": {
     "host": "whois.donuts.co"
   },
   ".photo": {
     "host": "whois.uniregistry.net"
   },
+  ".photography": {
+    "host": "whois.donuts.co"
+  },
+  ".photos": {
+    "host": "whois.donuts.co"
+  },
   ".pics": {
     "host": "whois.uniregistry.net"
   },
+  ".pink": {
+    "host": "whois.afilias.net"
+  },
+  ".productions": {
+    "host": "whois.donuts.co"
+  },
   ".properties": {
     "host": "whois.donuts.co"
+  },
+  ".qpon": {
+    "adapter": "none"
+  },
+  ".recipes": {
+    "host": "whois.donuts.co"
+  },
+  ".red": {
+    "host": "whois.afilias.net"
   },
   ".rentals": {
     "host": "whois.donuts.co"
@@ -1548,14 +1490,65 @@
   ".report": {
     "host": "whois.donuts.co"
   },
+  ".reviews": {
+    "host": "whois.unitedtld.com"
+  },
+  ".rich": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".ruhr": {
+    "host": "whois.nic.ruhr"
+  },
+  ".sexy": {
+    "host": "whois.uniregistry.net"
+  },
+  ".shiksha": {
+    "host": "whois.afilias.net"
+  },
+  ".shoes": {
+    "host": "whois.donuts.co"
+  },
+  ".singles": {
+    "host": "whois.donuts.co"
+  },
+  ".social": {
+    "host": "whois.unitedtld.com"
+  },
   ".solar": {
     "host": "whois.donuts.co"
   },
   ".solutions": {
     "host": "whois.donuts.co"
   },
+  ".supplies": {
+    "host": "whois.donuts.co"
+  },
+  ".supply": {
+    "host": "whois.donuts.co"
+  },
+  ".support": {
+    "host": "whois.donuts.co"
+  },
+  ".systems": {
+    "host": "whois.donuts.co"
+  },
+  ".tattoo": {
+    "host": "whois.uniregistry.net"
+  },
+  ".technology": {
+    "host": "whois.donuts.co"
+  },
   ".tienda": {
     "host": "whois.donuts.co"
+  },
+  ".tips": {
+    "host": "whois.donuts.co"
+  },
+  ".today": {
+    "host": "whois.donuts.co"
+  },
+  ".tokyo": {
+    "adapter": "none"
   },
   ".tools": {
     "host": "whois.donuts.co"
@@ -1563,19 +1556,31 @@
   ".training": {
     "host": "whois.donuts.co"
   },
+  ".vacations": {
+    "host": "whois.donuts.co"
+  },
+  ".ventures": {
+    "host": "whois.donuts.co"
+  },
+  ".viajes": {
+    "host": "whois.donuts.co"
+  },
+  ".villas": {
+    "host": "whois.donuts.co"
+  },
+  ".vision": {
+    "host": "whois.donuts.co"
+  },
   ".voting": {
     "host": "whois.voting.tld-box.at"
+  },
+  ".voyage": {
+    "host": "whois.donuts.co"
   },
   ".wang": {
     "host": "whois.gtld.knet.cn"
   },
   ".watch": {
-    "host": "whois.donuts.co"
-  },
-  ".works": {
-    "host": "whois.donuts.co"
-  },
-  ".zone": {
     "host": "whois.donuts.co"
   },
   ".wed": {
@@ -1584,29 +1589,29 @@
   ".wien": {
     "host": "whois.nic.wien"
   },
-  ".mango": {
-    "host": "whois.mango.coreregistry.net"
-  },
   ".wiki": { // centralnic
     "host": "whois.nic.wiki"
   },
-  ".xyz": { // centralnic
-    "host": "whois.nic.xyz"
-  },
-  ".fish": {
+  ".works": {
     "host": "whois.donuts.co"
   },
-  ".industries": {
-    "host": "whois.donuts.co"
+  ".xn--3bst00m": {
+    "host": "whois.gtld.knet.cn"
   },
-  ".supply": {
-    "host": "whois.donuts.co"
+  ".xn--3ds443g": {
+    "host": "whois.afilias-srs.net"
   },
-  ".vacations": {
-    "host": "whois.donuts.co"
+  ".xn--55qw42g": {
+    "host": "whois.conac.cn"
   },
-  ".supplies": {
-    "host": "whois.donuts.co"
+  ".xn--55qx5d": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--6frz82g": {
+    "host": "whois.afilias.net"
+  },
+  ".xn--6qq986b3xl": {
+    "host": "whois.gtld.knet.cn"
   },
   ".xn--80asehdb": {
     "host": "whois.online.rs.corenic.net"
@@ -1614,41 +1619,29 @@
   ".xn--80aswg": {
     "host": "whois.online.rs.corenic.net"
   },
+  ".xn--fiq228c5hs": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--io0a7i": {
+    "host": "whois.ngtld.cn"
+  },
   ".xn--mgbab2bd": {
     "host": "whois.bazaar.coreregistry.net"
   },
   ".xn--ngbc5azd": {
     "host": "whois.nic.xn--ngbc5azd"
   },
-  ".xn--fiq228c5hs": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--55qx5d": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--55qw42g": {
-    "host": "whois.conac.cn"
-  },
-  ".xn--3ds443g": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--6qq986b3xl": {
-    "host": "whois.gtld.knet.cn"
+  ".xn--unup4y": {
+    "host": "whois.donuts.co"
   },
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
   },
-  ".xn--unup4y": {
+  ".xyz": { // centralnic
+    "host": "whois.nic.xyz"
+  },
+  ".zone": {
     "host": "whois.donuts.co"
-  },
-  ".xn--6frz82g": {
-    "host": "whois.afilias.net"
-  },
-  ".xn--io0a7i": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--3bst00m": {
-    "host": "whois.gtld.knet.cn"
   },
 
 
@@ -1656,18 +1649,22 @@
     "host": "whois.kr"
   },
   ".xn--45brj9c": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--80ao21a": {
     "host": "whois.nic.kz"
   },
   ".xn--90a3ac": {
-    "host": null,
     "adapter": "none"
+  },
+  ".xn--cg4bki": {
+    "host": "whois.kr"
   },
   ".xn--clchc0ea0b2g2a9gcd": {
     "host": "whois.sgnic.sg"
+  },
+  ".xn--fiq64b": {
+    "host": "whois.gtld.knet.cn"
   },
   ".xn--fiqs8s": {
     "host": "cwhois.cnnic.cn"
@@ -1676,18 +1673,15 @@
     "host": "cwhois.cnnic.cn"
   },
   ".xn--fpcrj9c3d": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--fzc2c9e2c": {
     "host": "whois.nic.lk"
   },
   ".xn--gecrj9c": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--h2brj9c": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--j1amh": {
@@ -1715,16 +1709,13 @@
     "host": "whois.aeda.net.ae"
   },
   ".xn--mgbayh7gpa": {
-    "host": null,
     "adapter": "web",
     "url": "http://idn.jo/whois_a.aspx"
   },
   ".xn--mgbbh1a71e": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--mgbc0a9azcg": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--mgberp4a5d4ar": {
@@ -1737,18 +1728,15 @@
     "host": "whois.thnic.co.th"
   },
   ".xn--ogbpf8fl": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--p1ai": {
     "host": "whois.tcinet.ru"
   },
   ".xn--pgbs0dh": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--s9brj9c": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--wgbh1c": {
@@ -1761,7 +1749,6 @@
     "host": "whois.nic.lk"
   },
   ".xn--xkc2dl3a5ee0h": {
-    "host": null,
     "adapter": "none"
   },
   ".xn--yfro4i67o": {
@@ -1769,11 +1756,5 @@
   },
   ".xn--ygbi2ammx": {
     "host": "whois.pnina.ps"
-  },
-  ".xn--fiq64b": {
-    "host": "whois.gtld.knet.cn"
-  },
-  ".xn--cg4bki": {
-    "host": "whois.kr"
   }
 }
