@@ -1193,14 +1193,26 @@
   ".academy": {
     "host": "whois.donuts.co"
   },
+  ".actor": {
+    "host": "whois.unitedtld.com"
+  },
   ".agency": {
     "host": "whois.donuts.co"
+  },
+  ".bar": {
+    "host": "whois.centralnic.com"
   },
   ".bargains": {
     "host": "whois.donuts.co"
   },
   ".berlin": {
     "host": "whois.nic.berlin"
+  },
+  ".best": {
+    "adapter": "none"
+  },
+  ".bid": {
+    "adapter": "none"
   },
   ".bike": {
     "host": "whois.donuts.co"
@@ -1246,6 +1258,9 @@
   },
   ".cheap": {
     "host": "whois.donuts.co"
+  },
+  ".christmas": {
+    "host": "whois.uniregistry.net"
   },
   ".cleaning": {
     "host": "whois.donuts.co"
@@ -1397,6 +1412,9 @@
   ".kiwi": {
     "host": "whois.dot-kiwi.com"
   },
+  ".kred": {
+    "adapter": "none"
+  },
   ".land": {
     "host": "whois.donuts.co"
   },
@@ -1442,6 +1460,9 @@
   ".ninja": {
     "host": "whois.unitedtld.com"
   },
+  ".okinawa": {
+    "adapter": "none"
+  },
   ".onl": {
     "host": "whois.afilias-srs.net"
   },
@@ -1471,6 +1492,9 @@
   },
   ".properties": {
     "host": "whois.donuts.co"
+  },
+  ".pub": {
+    "host": "whois.unitedtld.com"
   },
   ".qpon": {
     "adapter": "none"
@@ -1571,8 +1595,14 @@
   ".vision": {
     "host": "whois.donuts.co"
   },
+  ".vote": {
+    "host": "whois.afilias.net"
+  },
   ".voting": {
     "host": "whois.voting.tld-box.at"
+  },
+  ".voto": {
+    "host": "whois.afilias.net"
   },
   ".voyage": {
     "host": "whois.donuts.co"
@@ -1621,6 +1651,9 @@
   },
   ".xn--fiq228c5hs": {
     "host": "whois.afilias-srs.net"
+  },
+  ".xn--d1acj3b": {
+    "host": "whois.nic.xn--d1acj3b"
   },
   ".xn--io0a7i": {
     "host": "whois.ngtld.cn"
