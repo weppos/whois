@@ -105,6 +105,17 @@ module Whois
         end
 
 
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        # @example
+        #   -1: Please go away for 90 Seconds
+        #
+        def response_throttled?
+          !!(content_for_scanner =~ /Please go away for \d+ Seconds/)
+        end
+
         private
 
         def build_contact(node)
