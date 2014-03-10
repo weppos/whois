@@ -28,7 +28,7 @@ module Whois
 
         def build_contact(element, type)
           if (contact = super) && !contact.state.present?
-            contact.state = value_for_property(element, 'State')
+            contact.state = node("#{element} State")
           end
           contact
         end

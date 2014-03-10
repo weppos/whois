@@ -1,0 +1,122 @@
+#domain
+  %s == "whereismy.bike"
+
+#domain_id
+  %s == "C52CECC9AF044831A7335E8A0ECBC349-D"
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2014-02-21 22:55:07 UTC}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2014-02-21 22:55:08 UTC}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2015-02-21 22:55:07 UTC}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == "48"
+  %s.name         == "Enom, Inc."
+  %s.organization == "Enom, Inc."
+  %s.url          == nil
+
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == "8ff85c48fbd456f1"
+  %s[0].name          == "whoisguard protected"
+  %s[0].organization  == "WhoisGuard, Inc."
+  %s[0].address       == "P.O. Box 0823-03411"
+  %s[0].city          == "Panama"
+  %s[0].zip           == "00000"
+  %s[0].state         == "Panama"
+  %s[0].country       == nil
+  %s[0].country_code  == "PA"
+  %s[0].phone         == "+507.8365503"
+  %s[0].fax           == "+51.17057182"
+  %s[0].email         == "legal@whoisguard.com"
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == "8ff85c48fbd456f1"
+  %s[0].name          == "whoisguard protected"
+  %s[0].organization  == "WhoisGuard, Inc."
+  %s[0].address       == "P.O. Box 0823-03411"
+  %s[0].city          == "Panama"
+  %s[0].zip           == "00000"
+  %s[0].state         == "Panama"
+  %s[0].country       == nil
+  %s[0].country_code  == "PA"
+  %s[0].phone         == "+507.8365503"
+  %s[0].fax           == "+51.17057182"
+  %s[0].email         == "legal@whoisguard.com"
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == "8ff85c48fbd456f1"
+  %s[0].name          == "whoisguard protected"
+  %s[0].organization  == "WhoisGuard, Inc."
+  %s[0].address       == "P.O. Box 0823-03411"
+  %s[0].city          == "Panama"
+  %s[0].zip           == "00000"
+  %s[0].state         == "Panama"
+  %s[0].country       == nil
+  %s[0].country_code  == "PA"
+  %s[0].phone         == "+507.8365503"
+  %s[0].fax           == "+51.17057182"
+  %s[0].email         == "legal@whoisguard.com"
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{5}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "dns5.registrar-servers.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "dns3.registrar-servers.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "dns2.registrar-servers.com"
+  %s[2].ipv4 == nil
+  %s[2].ipv6 == nil
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "dns1.registrar-servers.com"
+  %s[3].ipv4 == nil
+  %s[3].ipv6 == nil
+  %s[4] %CLASS{nameserver}
+  %s[4].name == "dns4.registrar-servers.com"
+  %s[4].ipv4 == nil
+  %s[4].ipv6 == nil

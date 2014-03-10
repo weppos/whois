@@ -1,0 +1,59 @@
+Domain Name: whereismy.bike
+Domain ID: C52CECC9AF044831A7335E8A0ECBC349-D
+WHOIS Server: http://www.enom.com
+Referral URL: http://www.enom.com
+Updated Date: 2014-02-21T22:55:08Z
+Creation Date: 2014-02-21T22:55:07Z
+Registry Expiry Date: 2015-02-21T22:55:07Z
+Sponsoring Registrar: Enom, Inc.
+Sponsoring Registrar IANA ID: 48
+DomainStatus: clientTransferProhibited
+Registrant ID: 8ff85c48fbd456f1
+Registrant Name: whoisguard protected
+Registrant Organization: WhoisGuard, Inc.
+Registrant Street: P.O. Box 0823-03411   
+Registrant City: Panama
+Registrant State/Province: Panama
+Registrant Postal Code: 00000
+Registrant Country: PA
+Registrant Phone: +507.8365503
+Registrant Phone Ext: 
+Registrant Fax: +51.17057182
+Registrant Fax Ext: 
+Registrant Email: legal@whoisguard.com
+Admin ID: 8ff85c48fbd456f1
+Admin Name: whoisguard protected
+Admin Organization: WhoisGuard, Inc.
+Admin Street: P.O. Box 0823-03411   
+Admin City: Panama
+Admin State/Province: Panama
+Admin Postal Code: 00000
+Admin Country: PA
+Admin Phone: +507.8365503
+Admin Phone Ext: 
+Admin Fax: +51.17057182
+Admin Fax Ext: 
+Admin Email: legal@whoisguard.com
+Tech ID: 8ff85c48fbd456f1
+Tech Name: whoisguard protected
+Tech Organization: WhoisGuard, Inc.
+Tech Street: P.O. Box 0823-03411   
+Tech City: Panama
+Tech State/Province: Panama
+Tech Postal Code: 00000
+Tech Country: PA
+Tech Phone: +507.8365503
+Tech Phone Ext: 
+Tech Fax: +51.17057182
+Tech Fax Ext: 
+Tech Email: legal@whoisguard.com
+Name Server: dns5.registrar-servers.com
+Name Server: dns3.registrar-servers.com
+Name Server: dns2.registrar-servers.com
+Name Server: dns1.registrar-servers.com
+Name Server: dns4.registrar-servers.com
+DNSSEC: unsigned
+
+>>> Last update of WHOIS database: 2014-03-10T16:17:21Z <<<
+
+Terms of Use: Users accessing the Donuts WHOIS service must agree to use the data only for lawful purposes, and under under no circumstances use the data to: Allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the registrar's own existing customers. Enable high volume, automated, electronic processes that send queries or data to the systems of Donuts or any ICANN-accredited registrar, except as reasonably necessary to register domain names or modify existing registrations. When using the Donuts Whois service, please consider the following: The Whois service is not a replacement for standard EPP commands to the SRS service. Whois is not considered authoritative for registered domain objects. The Whois service may be scheduled for downtime during production or OT&E maintenance periods. Queries to the Whois services are throttled. If too many queries are received from a single IP address within a specified time, the service will begin to reject further queries for a period of time to prevent disruption of Whois service access.

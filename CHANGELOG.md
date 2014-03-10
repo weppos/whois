@@ -5,6 +5,10 @@
 
 - SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]
 
+- SERVER: Added new gTLDs (GH-305)
+
+- NEW: Added whois.donuts.co parser.
+
 - CHANGED: Updated whois.nic.net.sa parser to the new response format.
 
 - CHANGED: Updated whois.nic.cz parser to the new response format.
