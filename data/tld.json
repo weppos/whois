@@ -1487,6 +1487,9 @@
   ".pink": {
     "host": "whois.afilias.net"
   },
+  ".plumbing": {
+    "host": "whois.donuts.co"
+  },
   ".productions": {
     "host": "whois.donuts.co"
   },
@@ -1663,6 +1666,9 @@
   },
   ".xn--ngbc5azd": {
     "host": "whois.nic.xn--ngbc5azd"
+  },
+  ".xn--q9jyb4c": {
+    "host": "domain-registry-whois.l.google.com"
   },
   ".xn--unup4y": {
     "host": "whois.donuts.co"
