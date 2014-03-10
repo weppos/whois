@@ -1,4 +1,4 @@
-%  (c) 2006-2013 CZ.NIC, z.s.p.o.
+%  (c) 2006-2014 CZ.NIC, z.s.p.o.
 % 
 % Intended use of supplied data and information
 % 
@@ -15,18 +15,17 @@
 % See also a search service at http://www.nic.cz/whois/
 % 
 % 
-% Whoisd Server Version: 3.6.0
-% Timestamp: Tue May 07 14:22:50 2013
+% Whoisd Server Version: 3.9.0
+% Timestamp: Tue Feb 18 21:40:33 2014
 
 domain:       google.cz
 registrant:   MM12383
 admin-c:      MM12383
 nsset:        MM1543911
 registrar:    REG-MARKMONITOR
-status:       paid and in zone
 registered:   21.07.2000 15:21:00
 changed:      18.05.2011 23:28:45
-expire:       22.07.2013
+expire:       22.07.2014
 
 contact:      MM12383
 org:          Google Inc.

@@ -24,12 +24,14 @@ module Whois
 
         self.scanner = Scanners::WhoisNicCz
 
-        self.status_mapping = {
-          "paid and in zone" => :registered,
-          "update prohibited" => :registered,
-          "expired" => :expired,
-          "to be deleted" => :expired,
-        }
+        property_supported :status do
+          if available?
+            :available
+          else
+            :registered
+          end
+        end
+
 
         def response_throttled?
           !!node("response:throttled")
