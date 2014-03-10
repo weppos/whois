@@ -60,21 +60,22 @@ describe Whois::Record::Parser::WhoisNicIt, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2008-11-27 16:47:22"))
+      expect(subject.updated_on).to eq(Time.parse("2013-04-21 01:05:35"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2009-11-27 00:00:00"))
+      expect(subject.expires_on).to eq(Time.parse("2014-04-21 00:00:00"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("REGISTER-MNT")
-      expect(subject.registrar.name).to eq("REGISTER-MNT")
-      expect(subject.registrar.organization).to eq("Register.it s.p.a.")
+      expect(subject.registrar.id).to eq("MARKMONITOR-REG")
+      expect(subject.registrar.name).to eq("MARKMONITOR-REG")
+      expect(subject.registrar.organization).to eq("MarkMonitor International Limited")
+      expect(subject.registrar.url).to eq("https://www.markmonitor.com/")
     end
   end
   describe "#registrant_contacts" do
@@ -83,16 +84,20 @@ describe Whois::Record::Parser::WhoisNicIt, "status_registered.expected" do
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("GOOG175-ITNIC")
+      expect(subject.registrant_contacts[0].id).to eq("DUP430692088")
       expect(subject.registrant_contacts[0].name).to eq("Google Ireland Holdings")
-      expect(subject.registrant_contacts[0].organization).to eq(nil)
-      expect(subject.registrant_contacts[0].address).to eq("30 Herbert Street")
+      expect(subject.registrant_contacts[0].organization).to eq("Google Ireland Holdings")
+      expect(subject.registrant_contacts[0].address).to eq("70 Sir John Rogersons Quay")
       expect(subject.registrant_contacts[0].city).to eq("Dublin")
       expect(subject.registrant_contacts[0].zip).to eq("2")
       expect(subject.registrant_contacts[0].state).to eq("IE")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("IE")
-      expect(subject.registrant_contacts[0].created_on).to eq(Time.parse("2008-11-27 16:47:22"))
-      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2008-11-27 16:47:22"))
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq(nil)
+      expect(subject.registrant_contacts[0].created_on).to eq(Time.parse("2013-04-21 01:05:35"))
+      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2013-04-21 01:05:35"))
     end
   end
   describe "#admin_contacts" do
@@ -101,26 +106,38 @@ describe Whois::Record::Parser::WhoisNicIt, "status_registered.expected" do
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("TT4277-ITNIC")
+      expect(subject.admin_contacts[0].id).to eq("DUP142437129")
       expect(subject.admin_contacts[0].name).to eq("Tsao Tu")
       expect(subject.admin_contacts[0].organization).to eq("Tu Tsao")
-      expect(subject.admin_contacts[0].address).to eq("30 Herbert Street")
+      expect(subject.admin_contacts[0].address).to eq("70 Sir John Rogersons Quay")
       expect(subject.admin_contacts[0].city).to eq("Dublin")
       expect(subject.admin_contacts[0].zip).to eq("2")
       expect(subject.admin_contacts[0].state).to eq("IE")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("IE")
-      expect(subject.admin_contacts[0].created_on).to eq(Time.parse("2008-11-27 16:47:22"))
-      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2008-11-27 16:47:22"))
+      expect(subject.admin_contacts[0].phone).to eq(nil)
+      expect(subject.admin_contacts[0].fax).to eq(nil)
+      expect(subject.admin_contacts[0].email).to eq(nil)
+      expect(subject.admin_contacts[0].created_on).to eq(Time.parse("2013-04-21 01:05:35"))
+      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2013-04-21 01:05:35"))
     end
   end
   describe "#technical_contacts" do
     it do
-      expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
-      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
-      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("TS7016-ITNIC")
-      expect(subject.technical_contacts[0].name).to eq("Technical Services")
+      expect(subject.technical_contacts[0].id).to eq("DUP430692088")
+      expect(subject.technical_contacts[0].name).to eq("Google Ireland Holdings")
+      expect(subject.technical_contacts[0].organization).to eq("Google Ireland Holdings")
+      expect(subject.technical_contacts[0].address).to eq("70 Sir John Rogersons Quay")
+      expect(subject.technical_contacts[0].city).to eq("Dublin")
+      expect(subject.technical_contacts[0].zip).to eq("2")
+      expect(subject.technical_contacts[0].state).to eq("IE")
+      expect(subject.technical_contacts[0].country).to eq(nil)
+      expect(subject.technical_contacts[0].country_code).to eq("IE")
+      expect(subject.technical_contacts[0].phone).to eq(nil)
+      expect(subject.technical_contacts[0].fax).to eq(nil)
+      expect(subject.technical_contacts[0].email).to eq(nil)
+      expect(subject.technical_contacts[0].created_on).to eq(Time.parse("2013-04-21 01:05:35"))
+      expect(subject.technical_contacts[0].updated_on).to eq(Time.parse("2013-04-21 01:05:35"))
     end
   end
   describe "#nameservers" do
