@@ -1,5 +1,0 @@
-% SaudiNIC Whois server.
-% Rights restricted by copyright.
-% http://www.nic.net.sa/tools/copyright.php
-
-No match.

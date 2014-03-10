@@ -5,11 +5,7 @@
 
 - SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]
 
-- SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD
-
-- NEW: Added :invalid check for whois.nic.tr (GH-302).
-
-- FIXED: kero.yachay.pe crashes when the status is `suspended`.
+- CHANGED: Updated whois.nic.net.sa parser to the new response format.
 
 
 ## Release 3.4.5
@@ -35,7 +31,6 @@
 - CHANGED: Updated whois.rrpproxy.net parser to the new response format.
 
 - CHANGED: Afilias is using a slightly different whois response for some TLDs, including .INFO and .XXX (GH-304)
->>>>>>> master
 
 
 ## Release 3.4.4
