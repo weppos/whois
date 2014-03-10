@@ -9,6 +9,8 @@
 
 - CHANGED: Updated whois.nic.cz parser to the new response format.
 
+- FIXED: whois.registry.net.za parser crashes with some registrant contact formats.
+
 
 ## Release 3.4.5
 

@@ -1,0 +1,41 @@
+    Domain Name:
+        fnb.co.za
+
+    Registrant:
+        FirstRand Bank Limited
+        
+        Email: domreg.admins@firstrand.co.za
+        Tel: +27.112828000
+        Fax:
+
+    Registrant's Address:
+        2nd floor 4 Merchant Place
+        Cnr Rivonia and Sandton Drive
+        Sandton
+        Gauteng
+        ZA
+        2196
+
+    Registrar:
+        Lexsynergy Limited
+
+    Relevant Dates:
+        Registration Date: 1995-01-01
+        Renewal Date:      2015-01-01
+
+    Domain Status:
+        Registered until renewal date
+
+    Pending Timer Events:
+        None
+ 
+    Name Servers:
+        ns1.fnbconnect.co.za [ 41.183.0.18 ]
+        ns2.fnbconnect.co.za [ 41.183.0.22 ]
+
+    WHOIS lookup made at 2014-03-10 14:22 UTC
+
+--
+The use of this Whois facility is subject to the following terms and
+conditions. https://registry.net.za/whois_terms
+Copyright (c) UniForum SA 1995-2014

@@ -110,10 +110,8 @@ module Whois
         def build_contact(node)
           lines = node.dup
 
-          name = lines.shift
-          email, phone, fax = [:email, :phone, :fax].map do |attribute|
-            lines.shift.split(":").last.strip
-          end
+          fax, phone, email = 3.times.map { lines.pop.split(":", 2).last.strip.presence }
+          name = lines.delete_if(&:blank?).join("\n")
 
           Record::Contact.new(
               type:         Whois::Record::Contact::TYPE_REGISTRANT,
