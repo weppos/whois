@@ -36,7 +36,7 @@ module Whois
 
         property_supported :status do
           case s = node("Status").to_s.downcase
-          when /^ok/, "active", /\bclient/
+          when /^ok/, /\bclient/
             :registered
           when "grace-period", "no-provider"
             :registered
@@ -95,9 +95,10 @@ module Whois
         property_supported :registrar do
           node("Registrar") do |str|
             Record::Registrar.new(
-                :id           => str["Name"],
-                :name         => str["Name"],
-                :organization => str["Organization"]
+                id:           str["Name"],
+                name:         str["Name"],
+                organization: str["Organization"],
+                url:          str["Web"]
             )
           end
         end
