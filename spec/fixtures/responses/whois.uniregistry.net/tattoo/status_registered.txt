@@ -1,0 +1,95 @@
+
+Domain Name:nic.tattoo
+Domain ID:DO_4810ec9890fdf872f2e23b58df485dc4-ISC
+WHOIS Server: whois.uniregistry.net
+Referral URL: http://whois.uniregistry.net
+Updated Date: 2013-11-09T02:51:24.230Z
+Creation Date: 2013-09-16T14:21:26.648Z
+Registry Expiry Date: 2023-09-16T14:21:26.648Z 
+Sponsoring Registrar: Uniregistry, Corp.
+Sponsoring Registrar ID: uniregistry
+Sponsoring Registrar IANA ID: 9999
+Domain Status: serverDeleteProhibited
+Domain Status: serverTransferProhibited
+Domain Status: serverUpdateProhibited
+Registrant ID: uniregistry
+Registrant Name: Uniregistry Registry Internal Resources
+Registrant Organization: Uniregistry, Corp
+Registrant Street: PO Box 1361
+Registrant City: Grand Cayman
+Registrant State/Province: George Town
+Registrant Postal Code: KY1-1108
+Registrant Country: KY
+Registrant Phone: +1.3457496263
+Registrant Fax: +1.3457496263
+Registrant Email: info+whois@uniregistry.com
+Admin ID: tattoo-admin
+Admin Name: Uniregistry admin contact
+Admin Organization: Uniregistry, Corp
+Admin Street: PO Box 1361
+Admin City: Grand Cayman
+Admin State/Province: George Town
+Admin Postal Code: KY1-1108
+Admin Country: KY
+Admin Phone: +1.3457496263
+Admin Fax: +1.3457496263
+Admin Email: admin@nic.tattoo
+Tech ID: tattoo-tech
+Tech Name: Uniregistry tech contact
+Tech Organization: Uniregistry, Corp
+Tech Street: PO Box 1361
+Tech City: Grand Cayman
+Tech State/Province: George Town
+Tech Postal Code: KY1-1108
+Tech Country: KY
+Tech Phone: +1.3457496263
+Tech Fax: +1.3457496263
+Tech Email: tech@nic.tattoo
+Billing ID: tattoo-billing
+Billing Name: Uniregistry billing contact
+Billing Organization: Uniregistry, Corp
+Billing Street: PO Box 1361
+Billing City: Grand Cayman
+Billing State/Province: George Town
+Billing Postal Code: KY1-1108
+Billing Country: KY
+Billing Phone: +1.3457496263
+Billing Fax: +1.3457496263
+Billing Email: billing@nic.tattoo
+Name Server:a.ns.uniregistry.net
+Name Server:tld.isc-sns.info
+Name Server:tld.isc-sns.com
+Name Server:tld.isc-sns.net
+DNSSEC: signedDelegation
+
+>>> Last update of WHOIS database: 2014-03-10T17:08:47.822Z <<<
+
+
+The  WHOIS information provided on this page is intended to provide you
+with relevant contact information for a domain name registrant and the
+identity of certain administrative and technical contacts associated
+with the domain name. 
+
+The data in this record is provided by Uniregistry for informational
+purposes only, and it does not guarantee its accuracy. Uniregistry is
+authoritative for whois information in top-level domains it operates
+under contract with the Internet Corporation for Assigned Names and
+Numbers. Whois information from other top-level domains is provided by
+a third-party under license to Uniregistry. 
+
+This service is intended only for query-based access. By using this
+service, you agree that you will use any data presented only for lawful
+purposes and that, under no circumstances will you use (a) data
+acquired for the purpose of allowing, enabling, or otherwise supporting
+the transmission by e-mail, telephone, facsimile or other
+communications mechanism of mass  unsolicited, commercial advertising
+or solicitations to entities other than your existing  customers; or
+(b) this service to enable high volume, automated, electronic processes
+that send queries or data to the systems of any Registrar or any
+Registry except as reasonably necessary to register domain names or
+modify existing domain name registrations. 
+
+Uniregistry reserves the right to modify these terms at any time. By
+submitting this query, you agree to abide by this policy. All rights
+reserved.
+

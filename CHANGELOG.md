@@ -9,6 +9,8 @@
 
 - NEW: Added whois.donuts.co parser.
 
+- NEW: Added whois.uniregistry.net parser.
+
 - CHANGED: Updated whois.nic.net.sa parser to the new response format.
 
 - CHANGED: Updated whois.nic.cz parser to the new response format.

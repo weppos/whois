@@ -57,19 +57,19 @@ module Whois
 
         property_supported :created_on do
           node('Creation Date') do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 
         property_supported :updated_on do
           node('Updated Date') do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 
         property_supported :expires_on do
           node('Registrar Registration Expiration Date') do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 
@@ -124,6 +124,10 @@ module Whois
                 email:        value_for_property(element, 'Email')
             )
           end
+        end
+
+        def parse_time(value)
+          Time.parse(value)
         end
 
         def value_for_phone_property(element, property)

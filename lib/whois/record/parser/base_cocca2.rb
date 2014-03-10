@@ -87,11 +87,10 @@ module Whois
         end
 
 
-      private
+        private
 
         def parse_time(value)
-          # Hack to remove usec. Do you know a better way?
-          Time.utc(*Time.parse(value).to_a)
+          Time.parse(value).change(usec: 0)
         end
 
       end

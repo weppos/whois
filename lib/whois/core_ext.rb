@@ -7,3 +7,5 @@ else
   require 'whois/core_ext/class/attribute'
   require 'whois/core_ext/object/blank'
 end
+
+require 'whois/core_ext/time/calculations'
