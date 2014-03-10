@@ -7,11 +7,11 @@ Creation Date: 2009-06-18T08:38:20.671Z
 Registry Expiry Date: 2014-11-26T21:00:00.000Z
 Sponsoring Registrar: MarkMonitor 
 Sponsoring Registrar IANA ID: 
-Domain Status: clientTransferProhibited
 Domain Status: ok
-Domain Status: clientDeleteProhibited
-Domain Status: clientUpdateProhibited
 Domain Status: clientRenewProhibited
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
 
 Registrant ID: 4112-nicmg
 Registrant Name: GOOGLE INC
@@ -71,4 +71,4 @@ that apply to NIC-MG it's members (or NIC-MG or member computer systems). The
 compilation, repackaging, dissemination or other use of this Data is
 expressly prohibited.
 
->>> Last update of WHOIS database: 2013-12-18T09:16:03.515Z <<<
+>>> Last update of WHOIS database: 2014-02-18T19:34:43.441Z <<<
