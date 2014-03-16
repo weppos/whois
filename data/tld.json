@@ -1199,8 +1199,8 @@
   ".agency": {
     "host": "whois.donuts.co"
   },
-  ".bar": {
-    "host": "whois.centralnic.com"
+  ".bar": { // centralnic
+    "host": "whois.nic.bar"
   },
   ".bargains": {
     "host": "whois.donuts.co"
@@ -1316,6 +1316,9 @@
   ".directory": {
     "host": "whois.donuts.co"
   },
+  ".dnp": {
+    "adapter": "none"
+  },
   ".domains": {
     "host": "whois.donuts.co"
   },
@@ -1391,6 +1394,9 @@
   ".immobilien": {
     "host": "whois.unitedtld.com"
   },
+  ".ink": {
+    "host": "whois.centralnic.com"
+  },
   ".industries": {
     "host": "whois.donuts.co"
   },
@@ -1399,6 +1405,9 @@
   },
   ".international": {
     "host": "whois.donuts.co"
+  },
+  ".jetzt": {
+    "adapter": "none"
   },
   ".kaufen": {
     "host": "whois.unitedtld.com"
@@ -1652,11 +1661,14 @@
   ".xn--80aswg": {
     "host": "whois.online.rs.corenic.net"
   },
+  ".xn--d1acj3b": {
+    "host": "whois.nic.xn--d1acj3b"
+  },
   ".xn--fiq228c5hs": {
     "host": "whois.afilias-srs.net"
   },
-  ".xn--d1acj3b": {
-    "host": "whois.nic.xn--d1acj3b"
+  ".xn--i1b6b1a6a2e": {
+    "host": "whois.publicinterestregistry.net"
   },
   ".xn--io0a7i": {
     "host": "whois.ngtld.cn"
@@ -1667,8 +1679,17 @@
   ".xn--ngbc5azd": {
     "host": "whois.nic.xn--ngbc5azd"
   },
+  ".xn--nqv7f": {
+    "host": "whois.publicinterestregistry.net"
+  },
+  ".xn--nqv7fs00ema": {
+    "host": "whois.publicinterestregistry.net"
+  },
   ".xn--q9jyb4c": {
     "host": "domain-registry-whois.l.google.com"
+  },
+  ".xn--rhqv96g": {
+    "adapter": "none"
   },
   ".xn--unup4y": {
     "host": "whois.donuts.co"
