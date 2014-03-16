@@ -12,8 +12,8 @@ module Whois
   # Holds information about library version.
   module Version
     MAJOR = 3
-    MINOR = 4
-    PATCH = 5
+    MINOR = 5
+    PATCH = 0
     BUILD = nil
 
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join(".")
