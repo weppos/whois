@@ -16,12 +16,12 @@ This library was extracted from [RoboWhois](https://www.robowhois.com/) and [Rob
 
 ## Features
 
-- Ability to query registry data for [IPv4, IPv6, TLDs, and domain names](http://www.ruby-whois.org/manual/usage/#usage-objects)
-- Ability to [parse WHOIS responses](http://www.ruby-whois.org/manual/parser/)
-- Flexible and extensible interface (e.g. You can define [custom servers](http://www.ruby-whois.org/manual/server/) on the fly)
+- Ability to lookup WHOIS record for [IPv4, IPv6, TLDs, and ICANN new gTLDs](http://ruby-whois.org/manual/usage/#usage-objects)
+- Ability to [parse WHOIS responses](http://ruby-whois.org/manual/parser/)
+- Flexible and extensible interface (e.g. You can define [custom servers](http://ruby-whois.org/manual/server/) on the fly)
 - Object oriented design, featuring 10 different design patterns
 - Pure Ruby library, without any external dependency other than Ruby itself
-- Successfully tested against several [Ruby implementations](http://www.ruby-whois.org/manual/interpreters/)
+- Successfully tested against several [Ruby implementations](http://ruby-whois.org/manual/interpreters/)
 
 
 ## Requirements
@@ -33,14 +33,14 @@ For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
 ## Installation
 
-The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) - [Learn more](http://www.ruby-whois.org/manual/installing/).
+The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/). [Learn more](http://ruby-whois.org/manual/installing/).
 
     $ gem install whois
 
 
 ## Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://www.ruby-whois.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://ruby-whois.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 ### Querying a WHOIS
 
@@ -166,7 +166,7 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 
 ## More Information
 
-- [Homepage](http://www.ruby-whois.org/)
+- [Homepage](http://ruby-whois.org/)
 - [RubyGems](https://rubygems.org/gems/whois)
 - [Issues](https://github.com/weppos/whois)
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/whois-ruby)
