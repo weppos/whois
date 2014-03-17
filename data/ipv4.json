@@ -1,6 +1,5 @@
 {
   "0.0.0.0/8": {
-    "host": null,
     "adapter": "none"
   },
   "1.0.0.0/8": {
@@ -628,7 +627,7 @@
     "host": "whois.nic.or.kr"
   },
   "211.192.0.0/10": {
-    "host": "whois..net"
+    "host": "whois.nic.or.kr"
   },
   "210.0.0.0/7": {
     "host": "whois.apnic.net"
