@@ -113,7 +113,8 @@ module Whois
       def self.host_to_parser(host)
         host.to_s.downcase.
           gsub(/[.-]/, '_').
-          gsub(/(?:^|_)(.)/)  { $1.upcase }
+          gsub(/(?:^|_)(.)/) { $1.upcase }.
+          gsub(/\A(\d+)\z/)  { "Host#{$1}" }
       end
 
       # Requires the file at <tt>whois/record/parser/#{name}</tt>.

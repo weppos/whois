@@ -1,6 +1,11 @@
 # Changelog
 
 
+## Master
+
+- FIXED: NameError: wrong constant name when querying IPs (GH-310).
+
+
 ## Release 3.5.0
 
 - SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]

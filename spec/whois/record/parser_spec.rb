@@ -10,6 +10,7 @@ describe Whois::Record::Parser do
   describe ".parser_for" do
     it "returns the blank parser if the parser doesn't exist" do
       expect(described_class.parser_for(Whois::Record::Part.new(host: "whois.missing.test")).class.name).to eq("Whois::Record::Parser::Blank")
+      expect(described_class.parser_for(Whois::Record::Part.new(host: "216.157.192.3")).class.name).to eq("Whois::Record::Parser::Blank")
     end
   end
 
@@ -36,10 +37,18 @@ describe Whois::Record::Parser do
   end
 
   describe ".host_to_parser" do
-    it "works" do
+    it "converts hostnames to classes" do
       expect(described_class.host_to_parser("whois.it")).to eq("WhoisIt")
       expect(described_class.host_to_parser("whois.nic.it")).to eq("WhoisNicIt")
       expect(described_class.host_to_parser("whois.domain-registry.nl")).to eq("WhoisDomainRegistryNl")
+    end
+
+    it "converts dashes to upcase" do
+      expect(described_class.host_to_parser("whois.domain-registry.nl")).to eq("WhoisDomainRegistryNl")
+    end
+
+    it "prefix IPs" do
+      expect(described_class.host_to_parser("216.157.192.3")).to eq("Host2161571923")
     end
 
     it "downcases hostnames" do
@@ -103,6 +112,8 @@ describe Whois::Record::Parser do
 
 
   describe "property lookup" do
+    require 'whois/record/parser/base'
+
     class Whois::Record::Parser::ParserSupportedTest < Whois::Record::Parser::Base
       property_supported :status do
         :status_supported
