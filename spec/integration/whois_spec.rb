@@ -15,12 +15,12 @@ describe Whois do
 
         record = Whois.lookup("example.it")
 
-        record.should be_a(Whois::Record)
-        record.should be_available
-        record.should_not be_registered
+        expect(record).to be_a(Whois::Record)
+        expect(record.available?).to be_true
+        expect(record.registered?).to be_false
 
-        record.parser.should be_a(Whois::Record::Parser)
-        record.parser.parsers.first.should be_a(Whois::Record::Parser::WhoisNicIt)
+        expect(record.parser).to be_a(Whois::Record::Parser)
+        expect(record.parser.parsers.first).to be_a(Whois::Record::Parser::WhoisNicIt)
       end
     end
   end
@@ -66,9 +66,10 @@ describe Whois do
 
         client = Whois::Client.new(:host => "whois.example.com")
         record = client.lookup("example.it")
-        record.parts.size.should == 1
-        record.parts.first.body.should == response
-        record.parts.first.host.should == "whois.example.com"
+
+        expect(record.parts.size).to eq(1)
+        expect(record.parts.first.body).to eq(response)
+        expect(record.parts.first.host).to eq("whois.example.com")
       end
     end
   end

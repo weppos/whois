@@ -37,25 +37,25 @@ describe Whois::Record::Parser do
 
   describe ".host_to_parser" do
     it "works" do
-      described_class.host_to_parser("whois.it").should == "WhoisIt"
-      described_class.host_to_parser("whois.nic.it").should == "WhoisNicIt"
-      described_class.host_to_parser("whois.domain-registry.nl").should == "WhoisDomainRegistryNl"
+      expect(described_class.host_to_parser("whois.it")).to eq("WhoisIt")
+      expect(described_class.host_to_parser("whois.nic.it")).to eq("WhoisNicIt")
+      expect(described_class.host_to_parser("whois.domain-registry.nl")).to eq("WhoisDomainRegistryNl")
     end
 
     it "downcases hostnames" do
-      described_class.host_to_parser("whois.PublicDomainRegistry.com").should == "WhoisPublicdomainregistryCom"
+      expect(described_class.host_to_parser("whois.PublicDomainRegistry.com")).to eq("WhoisPublicdomainregistryCom")
     end
   end
 
 
   describe "#initialize" do
     it "requires an record" do
-      lambda { described_class.new }.should raise_error(ArgumentError)
-      lambda { described_class.new(record) }.should_not raise_error
+      expect { described_class.new }.to raise_error(ArgumentError)
+      expect { described_class.new(record) }.to_not raise_error
     end
 
     it "sets record from argument" do
-      described_class.new(record).record.should be(record)
+      expect(described_class.new(record).record).to be(record)
     end
   end
 
@@ -73,31 +73,31 @@ describe Whois::Record::Parser do
     end
 
     it "returns true if method is in self" do
-      subject.respond_to?(:to_s).should be_true
+      expect(subject.respond_to?(:to_s)).to be_true
     end
 
     it "returns true if method is in hierarchy" do
-      subject.respond_to?(:nil?).should be_true
+      expect(subject.respond_to?(:nil?)).to be_true
     end
 
     it "returns true if method is a property" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      subject.respond_to?(:test_property).should be_true
+      expect(subject.respond_to?(:test_property)).to be_true
     end
 
     it "returns false if method is a property?" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      subject.respond_to?(:test_property?).should be_false
+      expect(subject.respond_to?(:test_property?)).to be_false
     end
 
     it "returns true if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      subject.respond_to?(:test_method).should be_true
+      expect(subject.respond_to?(:test_method)).to be_true
     end
 
     it "returns false if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      subject.respond_to?(:test_method?).should be_false
+      expect(subject.respond_to?(:test_method?)).to be_false
     end
   end
 
@@ -136,44 +136,44 @@ describe Whois::Record::Parser do
 
     it "delegates to first parser when all supported" do
       r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.supported.test"), Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
-      described_class.new(r).status.should == :status_undefined
+      expect(described_class.new(r).status).to eq(:status_undefined)
       r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test"), Whois::Record::Part.new(body: "", host: "parser.supported.test")])
-      described_class.new(r).status.should == :status_supported
+      expect(described_class.new(r).status).to eq(:status_supported)
     end
 
     it "delegates to first parser when one supported" do
       r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.supported.test"), Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
-      described_class.new(r).created_on.should == :created_on_supported
+      expect(described_class.new(r).created_on).to eq(:created_on_supported)
       r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test"), Whois::Record::Part.new(body: "", host: "parser.supported.test")])
-      described_class.new(r).created_on.should == :created_on_supported
+      expect(described_class.new(r).created_on).to eq(:created_on_supported)
     end
 
     it "raises unless at least one is supported" do
-      lambda do
+      expect {
         r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.unsupported.test"), Whois::Record::Part.new(body: "", host: "parser.unsupported.test")])
         described_class.new(r).created_on
-      end.should raise_error(Whois::AttributeNotSupported)
+      }.to raise_error(Whois::AttributeNotSupported)
     end
 
     it "raises when parsers are undefined" do
-      lambda do
+      expect {
         r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test"), Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
         described_class.new(r).created_on
-      end.should raise_error(Whois::AttributeNotImplemented)
+      }.to raise_error(Whois::AttributeNotImplemented)
     end
 
     it "raises when zero parts" do
-      lambda do
+      expect {
         r = Whois::Record.new(nil, [])
         described_class.new(r).created_on
-      end.should raise_error(Whois::ParserError, /the Record is empty/)
+      }.to raise_error(Whois::ParserError, /the Record is empty/)
     end
 
     it "does not delegate unknown properties" do
-      lambda do
+      expect {
         r = Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "parser.undefined.test")])
         described_class.new(r).unknown_method
-      end.should raise_error(NoMethodError)
+      }.to raise_error(NoMethodError)
     end
   end
 
@@ -347,46 +347,46 @@ describe Whois::Record::Parser do
 
   describe "#response_incomplete?" do
     it "returns false when all parts are complete" do
-      i = parsers("defined-false", "defined-false")
-      i.response_incomplete?.should == false
+      instance = parsers("defined-false", "defined-false")
+      expect(instance.response_incomplete?).to eq(false)
     end
 
     it "returns true when at least one part is incomplete" do
-      i = parsers("defined-false", "defined-true")
-      i.response_incomplete?.should == true
+      instance = parsers("defined-false", "defined-true")
+      expect(instance.response_incomplete?).to eq(true)
 
-      i = parsers("defined-true", "defined-false")
-      i.response_incomplete?.should == true
+      instance = parsers("defined-true", "defined-false")
+      expect(instance.response_incomplete?).to eq(true)
     end
   end
 
   describe "#response_throttled?" do
     it "returns false when all parts are not throttled" do
-      i = parsers("defined-false", "defined-false")
-      i.response_throttled?.should == false
+      instance = parsers("defined-false", "defined-false")
+      expect(instance.response_throttled?).to eq(false)
     end
 
     it "returns true when at least one part is throttled" do
-      i = parsers("defined-false", "defined-true")
-      i.response_throttled?.should == true
+      instance = parsers("defined-false", "defined-true")
+      expect(instance.response_throttled?).to eq(true)
 
-      i = parsers("defined-true", "defined-false")
-      i.response_throttled?.should == true
+      instance = parsers("defined-true", "defined-false")
+      expect(instance.response_throttled?).to eq(true)
     end
   end
 
   describe "#response_unavailable?" do
     it "returns false when all parts are available" do
-      i = parsers("defined-false", "defined-false")
-      i.response_unavailable?.should == false
+      instance = parsers("defined-false", "defined-false")
+      expect(instance.response_unavailable?).to eq(false)
     end
 
     it "returns true when at least one part is unavailable" do
-      i = parsers("defined-false", "defined-true")
-      i.response_unavailable?.should == true
+      instance = parsers("defined-false", "defined-true")
+      expect(instance.response_unavailable?).to eq(true)
 
-      i = parsers("defined-true", "defined-false")
-      i.response_unavailable?.should == true
+      instance = parsers("defined-true", "defined-false")
+      expect(instance.response_unavailable?).to eq(true)
     end
   end
 
