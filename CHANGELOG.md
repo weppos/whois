@@ -1,12 +1,12 @@
 # Changelog
 
 
-## Master
+#### Master
 
 - FIXED: NameError: wrong constant name when querying IPs (GH-310).
 
 
-## Release 3.5.0
+#### Release 3.5.0
 
 - SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]
 
@@ -23,7 +23,7 @@
 - FIXED: whois.registry.net.za parser crashes with some registrant contact formats.
 
 
-## Release 3.4.5
+#### Release 3.4.5
 
 - SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD, .XN--55QW42G, .XN--ZFR164B
 
@@ -48,7 +48,7 @@
 - CHANGED: Afilias is using a slightly different whois response for some TLDs, including .INFO and .XXX (GH-304)
 
 
-## Release 3.4.4
+#### Release 3.4.4
 
 - CHANGED: Updated IBC parser and fixtures (.IO, .AC, .SH and .TM).
 
@@ -57,7 +57,7 @@
 - CHANGED: Updated whois.pir.org parser to the new response format (GH-300). [Thanks @muffinista]
 
 
-## Release 3.4.3
+#### Release 3.4.3
 
 - SERVER: Updated .COM, .NET, .CC, .WS TLD definitions.
 
@@ -80,14 +80,14 @@
 - CHANGED: Updated whois.nic.gl parser to the new response format.
 
 
-## Release 3.4.2
+#### Release 3.4.2
 
 - CHANGED: Updated whois.registry.net.za parser to the new response format.
 
 - CHANGED: Updated whois.ascio.com parser to the new response format (GH-285). [Thanks @takama]
 
 
-## Release 3.4.1
+#### Release 3.4.1
 
 - SERVER: Updated .XN--NGBC5AZD IDN TLD definition.
 
@@ -110,7 +110,7 @@
 - CHANGED: Updated whois.gandi.net parser to the new response format.
 
 
-## Release 3.4.0
+#### Release 3.4.0
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
@@ -147,7 +147,7 @@
 - CHANGED: Updated whois.register.com parser to the new response format (GH-273). [Thanks @gromnsk]
 
 
-## Release 3.3.1
+#### Release 3.3.1
 
 - SERVER: Updated .KR, .ES (GH-267) TLD definitions.
 
@@ -158,7 +158,7 @@
 - CHANGED: Updated whois.enom.com parser to the new response format (GH-269). [Thanks @takama]
 
 
-## Release 3.3.0
+#### Release 3.3.0
 
 - SERVER: Added .CF TLD definition.
 
@@ -181,7 +181,7 @@
 - FIXED: whois.jprs.jp should support `Registered` status (GH-253). [Thanks @Pietr]
 
 
-## Release 3.2.1
+#### Release 3.2.1
 
 - NEW: Added full whois.nic.tr parser.
 
@@ -202,7 +202,7 @@
 - CHANGED: Deprecate Whois::Record::Contact::TYPE_ADMIN in favor of Whois::Record::Contact::TYPE_ADMINISTRATIVE
 
 
-## Release 3.2.0
+#### Release 3.2.0
 
 - SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definitions.
 
@@ -225,7 +225,7 @@
 - FIXED: Arin adapter is incorrectly passing an Arin flag to referral queries.
 
 
-## Release 3.1.3
+#### Release 3.1.3
 
 - SERVER: Updated .GD (GH-227), .TC (GH-228) TLD definitions.
 
@@ -242,7 +242,7 @@
 - FIXED: whois.ua is mixing two kinds of responses (GH-235).
 
 
-## Release 3.1.2
+#### Release 3.1.2
 
 - NEW: Added full whois.comlaude.com parser (GH-222). [Thanks @delwyn]
 
@@ -261,12 +261,12 @@
 - FIXED: whois.nic.fr parser crashes when the contact has no changed attribute (GH-226).
 
 
-## Release 3.1.1
+#### Release 3.1.1
 
 - FIXED: Fixed CLI crash (GH-219). [Thanks @linrock]
 
 
-## Release 3.1.0
+#### Release 3.1.0
 
 - SERVER: Added .POST (GH-192) TLD definition.
 
@@ -297,7 +297,7 @@
 - FIXED: Record#technical_contact raised a NoMethodError (GH-217). [Thanks @yspro]
 
 
-## Release 3.0.0
+#### Release 3.0.0
 
 - SERVER: Added .AX TLD definition.
 
@@ -439,7 +439,7 @@
   - Whois::PropertyNotAvailable -> Whois::AttributeNotImplemented
 
 
-## Release 2.7.0
+#### Release 2.7.0
 
 - SERVER: Added .IQ TLD server (GH-171).
 
@@ -478,7 +478,7 @@
 - CHANGED: whois.dns.pl now supports expires_on (GH-185). [Thanks @y3ti]
 
 
-## Release 2.6.4
+#### Release 2.6.4
 
 - SERVER: Added .CW TLD server.
 
@@ -513,7 +513,7 @@
 - CHANGED: Removed support for .gemtest and removed /spec folder from the packaged gem.
 
 
-## Release 2.6.3
+#### Release 2.6.3
 
 - NEW: whois.registrypro.pro is now a full parser.
 
@@ -526,7 +526,7 @@
 - CHANGED: Updated whois.registrypro.pro parser to the new response format.
 
 
-## Release 2.6.2
+#### Release 2.6.2
 
 - SERVER: Added .SX TLD server (GH-170).
 
@@ -537,7 +537,7 @@
 - NEW: whois.ua parser is now a full parser (GH-169). [Thanks @Uko]
 
 
-## Release 2.6.1
+#### Release 2.6.1
 
 - Reverted partial commit about .SX definitions included in v2.6.0 by mistake.
 
