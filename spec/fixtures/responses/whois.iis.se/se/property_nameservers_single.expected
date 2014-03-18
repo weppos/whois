@@ -1,0 +1,7 @@
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "freja.nhv.se"
+  %s[0].ipv4 == "82.96.40.83"
+  %s[0].ipv6 == nil

@@ -7,6 +7,8 @@
 
 - FIXED: Updated expiration date parsing for Verisign responses.
 
+- FIXED: whois.iis.se parser crashes when the response contains a single nameserver.
+
 
 #### Release 3.5.0
 

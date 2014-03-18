@@ -87,7 +87,7 @@ module Whois
         #
         property_supported :nameservers do
           node("nserver") do |values|
-            values.map do |line|
+            Array.wrap(values).map do |line|
               name, ipv4 = line.split(/\s+/)
               Record::Nameserver.new(name: name, ipv4: ipv4)
             end
