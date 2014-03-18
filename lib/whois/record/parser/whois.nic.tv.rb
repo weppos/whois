@@ -20,11 +20,6 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisNicTv < BaseVerisign
-
-        property_supported :expires_on do
-          node("Registry Expiry Date") { |value| Time.parse(value) }
-        end
-
       end
 
     end

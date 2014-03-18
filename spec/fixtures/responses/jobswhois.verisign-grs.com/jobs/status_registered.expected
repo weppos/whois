@@ -3,10 +3,10 @@
 
 
 #domain
-  %s == "goto.jobs"
+  %s == "google.jobs"
 
 #domain_id
-  %s == "91478530"
+  %s == "86932313"
 
 
 #status
@@ -21,41 +21,41 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2010-02-04 18:54:33 UTC}
+  %s %TIME{2005-09-15 00:00:00 UTC}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2014-02-05 03:02:48 UTC}
+  %s %TIME{2013-08-14 05:20:33 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2015-02-04 18:54:33 UTC}
+  %s %TIME{2014-09-15 00:00:00 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == "667"
-  %s.name         == "NAME SHARE, INC"
+  %s.id           == "292"
+  %s.name         == "MARKMONITOR INC."
   %s.organization == nil
-  %s.url          == "http://www.nameshare.com"
+  %s.url          == "http://www.markmonitor.com"
 
 
 #nameservers
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns1.registry.jobs"
+  %s[0].name == "ns1.google.com"
   %s[0].ipv4 == nil
   %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns2.registry.jobs"
+  %s[1].name == "ns2.google.com"
   %s[1].ipv4 == nil
   %s[1].ipv6 == nil
 
 
 
 #referral_whois
-  %s == "whois.nameshare.com"
+  %s == "whois.markmonitor.com"
 
 #referral_url
-  %s == "http://www.nameshare.com"
+  %s == "http://www.markmonitor.com"

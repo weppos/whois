@@ -86,9 +86,9 @@ for detailed information.
 
    Server Name: GOOGLE.COM.SUCKS.FIND.CRACKZ.WITH.SEARCH.GULLI.COM
    IP Address: 80.190.192.24
-   Registrar: CORE INTERNET COUNCIL OF REGISTRARS
-   Whois Server: whois.corenic.net
-   Referral URL: http://www.corenic.net
+   Registrar: COREHUB, S.R.L.
+   Whois Server: whois.corehub.net
+   Referral URL: http://www.corehub.net
 
    Server Name: GOOGLE.COM.SPROSIUYANDEKSA.RU
    Registrar: MELBOURNE IT, LTD. D/B/A INTERNET NAMES WORLDWIDE
@@ -154,7 +154,7 @@ for detailed information.
    Server Name: GOOGLE.COM.LOLOLOLOLOL.SHTHEAD.COM
    IP Address: 123.123.123.123
    Registrar: CRAZY DOMAINS FZ-LLC
-   Whois Server: whois.syra.com.au
+   Whois Server: whois.crazydomains.com
    Referral URL: http://www.crazydomains.com 
 
    Server Name: GOOGLE.COM.LASERPIPE.COM
@@ -186,17 +186,22 @@ for detailed information.
    Whois Server: whois.hostingservicesinc.net
    Referral URL: http://www.resell.biz
 
-   Server Name: GOOGLE.COM.HICHINA.COM
-   IP Address: 218.103.1.1
-   Registrar: HICHINA ZHICHENG TECHNOLOGY LTD.
-   Whois Server: grs-whois.hichina.com
-   Referral URL: http://www.net.cn
-
    Server Name: GOOGLE.COM.HAS.LESS.FREE.PORN.IN.ITS.SEARCH.ENGINE.THAN.SECZY.COM
    IP Address: 209.187.114.130
    Registrar: TUCOWS DOMAINS INC.
    Whois Server: whois.tucows.com
    Referral URL: http://domainhelp.opensrs.net
+
+   Server Name: GOOGLE.COM.HACKED.BY.JAPTRON.ES
+   Registrar: GODADDY.COM, LLC
+   Whois Server: whois.godaddy.com
+   Referral URL: http://registrar.godaddy.com
+
+   Server Name: GOOGLE.COM.FIBERTREAT.COM
+   IP Address: 64.233.160.5
+   Registrar: GODADDY.COM, LLC
+   Whois Server: whois.godaddy.com
+   Referral URL: http://registrar.godaddy.com
 
    Server Name: GOOGLE.COM.DO
    Registrar: GODADDY.COM, LLC
@@ -263,7 +268,7 @@ for detailed information.
    Creation Date: 15-sep-1997
    Expiration Date: 14-sep-2020
 
->>> Last update of whois database: Tue, 26 Nov 2013 17:41:54 UTC <<<
+>>> Last update of whois database: Tue, 18 Mar 2014 13:37:06 UTC <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

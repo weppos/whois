@@ -5,7 +5,7 @@
 
 - FIXED: NameError: wrong constant name when querying IPs (GH-310).
 
-- FIXED: whois.nic.tv no longer returned the correct expiration date.
+- FIXED: Updated expiration date parsing for Verisign responses.
 
 
 #### Release 3.5.0

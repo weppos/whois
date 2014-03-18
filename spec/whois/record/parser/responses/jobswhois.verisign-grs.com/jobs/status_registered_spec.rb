@@ -28,12 +28,12 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
   end
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("goto.jobs")
+      expect(subject.domain).to eq("google.jobs")
     end
   end
   describe "#domain_id" do
     it do
-      expect(subject.domain_id).to eq("91478530")
+      expect(subject.domain_id).to eq("86932313")
     end
   end
   describe "#status" do
@@ -54,28 +54,28 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2010-02-04 18:54:33 UTC"))
+      expect(subject.created_on).to eq(Time.parse("2005-09-15 00:00:00 UTC"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2014-02-05 03:02:48 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2013-08-14 05:20:33 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2015-02-04 18:54:33 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2014-09-15 00:00:00 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("667")
-      expect(subject.registrar.name).to eq("NAME SHARE, INC")
+      expect(subject.registrar.id).to eq("292")
+      expect(subject.registrar.name).to eq("MARKMONITOR INC.")
       expect(subject.registrar.organization).to eq(nil)
-      expect(subject.registrar.url).to eq("http://www.nameshare.com")
+      expect(subject.registrar.url).to eq("http://www.markmonitor.com")
     end
   end
   describe "#nameservers" do
@@ -83,23 +83,23 @@ describe Whois::Record::Parser::JobswhoisVerisignGrsCom, "status_registered.expe
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers).to have(2).items
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.registry.jobs")
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
       expect(subject.nameservers[0].ipv4).to eq(nil)
       expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.registry.jobs")
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
       expect(subject.nameservers[1].ipv4).to eq(nil)
       expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
   describe "#referral_whois" do
     it do
-      expect(subject.referral_whois).to eq("whois.nameshare.com")
+      expect(subject.referral_whois).to eq("whois.markmonitor.com")
     end
   end
   describe "#referral_url" do
     it do
-      expect(subject.referral_url).to eq("http://www.nameshare.com")
+      expect(subject.referral_url).to eq("http://www.markmonitor.com")
     end
   end
 end

@@ -10,15 +10,15 @@ Go to http://registrar.verisign-grs.com/whois/ for detailed information.
    Referral URL: http://www.markmonitor.com
    Updated Date: 2013-05-06T05:17:44Z
    Creation Date: 1999-06-07T00:00:00Z
-   Expiration Date: 2014-06-07T00:00:00Z
+   Registry Expiry Date: 2014-06-07T00:00:00Z
    Sponsoring Registrar: MARKMONITOR INC.
    Sponsoring Registrar IANA ID: 292
-   Domain Status: CLIENT-DELETE-PROHIBITED
-   Domain Status: CLIENT-UPDATE-PROHIBITED
-   Domain Status: CLIENT-XFER-PROHIBITED
-   Domain Status: SERVER-DELETE-PROHIBITED
-   Domain Status: SERVER-UPDATE-PROHIBITED
-   Domain Status: SERVER-XFER-PROHIBITED
+   Domain Status: clientDeleteProhibited
+   Domain Status: clientTransferProhibited
+   Domain Status: clientUpdateProhibited
+   Domain Status: serverDeleteProhibited
+   Domain Status: serverTransferProhibited
+   Domain Status: serverUpdateProhibited
    Name Server: NS1.GOOGLE.COM
    Name Server: NS2.GOOGLE.COM
    Name Server: NS3.GOOGLE.COM
@@ -26,7 +26,7 @@ Go to http://registrar.verisign-grs.com/whois/ for detailed information.
    DNSSEC: Unsigned delegation
 
 
->>> Last update of whois database: 2014-01-22T22:10:31Z <<<
+>>> Last update of whois database: 2014-03-18T13:32:28Z <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 
