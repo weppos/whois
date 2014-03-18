@@ -10,18 +10,18 @@ Go to http://registrar.verisign-grs.com/whois/ for detailed information.
    Referral URL: http://www.enom.com
    Updated Date: 2013-07-09T17:03:47Z
    Creation Date: 2002-08-02T12:43:36Z
-   Expiration Date: 2014-08-02T12:43:36Z
+   Registry Expiry Date: 2014-08-02T12:43:36Z
    Sponsoring Registrar: ENOM, INC.
    Sponsoring Registrar IANA ID: 48
-   Domain Status: CLIENT-DELETE-PROHIBITED
-   Domain Status: CLIENT-XFER-PROHIBITED
+   Domain Status: clientDeleteProhibited
+   Domain Status: clientTransferProhibited
    Name Server: NS1.GOOGLE.COM
    Name Server: NS2.GOOGLE.COM
    Name Server: NS3.GOOGLE.COM
    DNSSEC: Unsigned delegation
 
 
->>> Last update of whois database: 2013-11-26T17:05:34Z <<<
+>>> Last update of whois database: 2014-03-18T13:18:41Z <<<
 
 NOTICE: The expiration date displayed in this record is the date the 
 registrar's sponsorship of the domain name registration in the registry is 

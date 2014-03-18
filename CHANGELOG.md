@@ -5,6 +5,8 @@
 
 - FIXED: NameError: wrong constant name when querying IPs (GH-310).
 
+- FIXED: whois.nic.tv no longer returned the correct expiration date.
+
 
 #### Release 3.5.0
 
