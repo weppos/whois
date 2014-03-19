@@ -31,6 +31,11 @@ describe Whois::Record::Parser do
       expect(described_class.parser_klass("preloaded.parser.test").name).to eq("Whois::Record::Parser::PreloadedParserTest")
     end
 
+    it "successfully guesses the parser based on body for unknown host" do
+      body = "domain: nic.pm\nstatus: ACTIVE\nhold: NO\nholder-c: APEM2-FRNIC\nadmin-c: NFC1-FRNIC\ntech-c: NFC1-FRNIC\nzone-c: NFC1-FRNIC\nnsl-id: NSL1-FRNIC\nremarks: Website at: http://www.nic.pm/\nremarks: Whois site at: whois.nic.fr\nremarks: Please email mailto: nic@nic.fr\nremarks: Spam mailto: abuse@nic.fr\nremarks: Test mailto: ping@nic.fr\nregistrar: AFNIC registry\nanniversary: 01/01\ncreated: 01/01/1995\nlast-update: 17/09/2004\nsource: FRNIC\n\nns-list: NSL1-FRNIC\nnserver: ns1.nic.fr [192.134.4.1 2001:660:3003:2::4:1]\nnserver: ns2.nic.fr [192.93.0.4 2001:660:3005:1::1:2]\nnserver: ns3.nic.fr [192.134.0.49 2001:660:3006:1::1:1]\nsource: FRNIC\n\nregistrar: AFNIC registry\ntype: Isp Option 2\nanonymous: YES\nregistered: 22/05/1997\nsource: FRNIC\n\nnic-hdl: NFC1-FRNIC\ntype: ROLE\ncontact: NIC France Contact\naddress: AFNIC\naddress: immeuble international\naddress: 2, rue Stephenson\naddress: Montigny le Bretonneux\naddress: 78181 Saint Quentin en Yvelines Cedex\ncountry: FR\nphone: +33 1 39 30 83 00\ne-mail: hostmaster@nic.fr\nadmin-c: NFC1-FRNIC\ntech-c: PL12-FRNIC\ntech-c: JP-FRNIC\ntech-c: MS1887-FRNIC\ntech-c: VL-FRNIC\ntech-c: PR1249-FRNIC\ntech-c: PV827-FRNIC\ntech-c: GO661-FRNIC\ntech-c: MS-FRNIC\ntech-c: AI1-FRNIC\nregistrar: AFNIC registry\nchanged: 23/08/2005 hostmaster@nic.fr\nanonymous: NO\nobsoleted: NO\nsource: FRNIC"
+      expect(described_class.guess_klass(body).name).to eq("Whois::Record::Parser::WhoisNicFr")
+    end
+
     it "raises LoadError if the parser doesn't exist" do
       expect { described_class.parser_klass("whois.missing.test") }.to raise_error(LoadError)
     end
