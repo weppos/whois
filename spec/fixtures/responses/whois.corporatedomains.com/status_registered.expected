@@ -17,15 +17,16 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2002-10-02 00:00:00 -0700}
+  %s %TIME{1992-11-24 00:00:00 -0500}
+  
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-10-29 11:50:06 -0700}
+  %s %TIME{2012-05-16 09:28:56 -0400}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2020-09-13 21:00:00 -0700}
+  %s %TIME{2013-11-23 00:00:00 -0500}
 
 
 #registrar

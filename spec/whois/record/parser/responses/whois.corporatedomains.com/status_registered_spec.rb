@@ -49,19 +49,19 @@ describe Whois::Record::Parser::WhoisCorporatedomainsCom, "status_registered.exp
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2002-10-02 00:00:00 -0700"))
+      expect(subject.created_on).to eq(Time.parse("1992-11-24 00:00:00 -0500"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-10-29 11:50:06 -0700"))
+      expect(subject.updated_on).to eq(Time.parse("2012-05-16 09:28:56 -0400"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2020-09-13 21:00:00 -0700"))
+      expect(subject.expires_on).to eq(Time.parse("2013-11-23 00:00:00 -0500"))
     end
   end
   describe "#registrar" do
