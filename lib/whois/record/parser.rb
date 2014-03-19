@@ -6,6 +6,8 @@
 # Copyright (c) 2009-2014 Simone Carletti <weppos@weppos.net>
 #++
 
+require 'set'
+require "whois/record/parser/signature"
 
 module Whois
   class Record
@@ -46,6 +48,8 @@ module Whois
       # Returns the proper parser instance for given <tt>part</tt>.
       # The parser class is selected according to the
       # value of the <tt>#host</tt> attribute for given <tt>part</tt>.
+      # If the host is not supported by the library, it will try to guess 
+      # the parser based on the body.
       #
       # @param  [Whois::Record::Part] part The part to get the parser for.
       #
@@ -66,8 +70,7 @@ module Whois
       def self.parser_for(part)
         parser_klass(part.host).new(part)
       rescue LoadError
-        Parser.const_defined?("Blank") || autoload("blank")
-        Parser::Blank.new(part)
+        guess_klass(part.body).new(part)
       end
 
       # Detects the proper parser class according to given <tt>host</tt>
@@ -95,6 +98,60 @@ module Whois
         name = host_to_parser(host)
         Parser.const_defined?(name) || autoload(host)
         Parser.const_get(name)
+      end
+
+      # Guesses the parser class according to given <tt>body</tt> 
+      # and returns the class constant.
+      # 
+      # This method extracts the "keywords" from a whois body and compare 
+      # with those of existing sample data that we already had. 
+      #
+      # Keyword is defined as the phrases before ':' character (if exists) of 
+      # every line in body. Within this function the term "signature" is used
+      # to refer a collection of keywords that we extracted from our txt files.
+      #
+      # @param [String] body The body of whois data
+      #
+      # @return [Class] The instance of Class representing the parser Class
+      #         corresponding to <tt>body</tt>. If the guess is failed, it returns
+      #         the {Whois::Record::Parser::Blank} {Class}.
+      #         The {Class} is expected to be a child of {Whois::Record::Parser::Base}.
+      #
+      def self.guess_klass(body)
+
+        # Search for lines that have the colon character and extract
+        # the part before colon as keyword.
+        keywords = body ? body.scan(/^([^:]+)\s*:/).map! {|kw| kw[0].strip()}.to_a : []
+
+        # Sort the array to optimize the arrays comparison later on
+        keywords = keywords.uniq().sort()
+
+        # We loop through the signatures, compare them with our extracted
+        # keywords and take the one that has the most matches.
+        max = 0
+        klass = nil
+        Signature.signatures.each { |key, signature| 
+          intersect_size = (signature & keywords).count
+          if intersect_size > max
+            max = intersect_size
+            klass = key
+          end
+        }
+
+        # Score is calculated by number of matching keywords over total
+        # keywords.
+        score = Float(max)/keywords.count()
+
+        # We only accept this if score is above 0.5
+        if score >= 0.5
+          host = klass.split("__")[0]
+          # Unlike parser_for function, we don't expect LoadError here because
+          # the host is taken from our own list
+          parser_klass(host)        
+        else         
+          Parser.const_defined?("Blank") || autoload("blank")
+          Parser.const_get("Blank")
+        end
       end
 
       # Converts <tt>host</tt> to the corresponding parser class name.
