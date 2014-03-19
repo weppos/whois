@@ -6,7 +6,6 @@
 # Copyright (c) 2009-2014 Simone Carletti <weppos@weppos.net>
 #++
 
-require 'set'
 require "whois/record/parser/signature"
 
 module Whois
