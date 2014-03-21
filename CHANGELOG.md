@@ -11,6 +11,8 @@
 
 - FIXED: whois.iis.se parser crashes when the response contains a single nameserver.
 
+- FIXED: whois.ua parser crashes when the status is clientTransferProhibited.
+
 
 #### Release 3.5.0
 

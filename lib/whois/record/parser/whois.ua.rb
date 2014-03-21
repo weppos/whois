@@ -17,7 +17,7 @@ module Whois
       # Parser for the whois.ua server.
       class WhoisUa < Base
 
-        class Epp
+        class Uaepp
           attr_reader :parent, :content
 
           def initialize(parent, content)
@@ -28,7 +28,7 @@ module Whois
           def status
             if content =~ /status:\s+(.+?)\n/
               case (s = $1.downcase)
-              when "ok", "clienthold", "autorenewgraceperiod"
+              when "ok", "clienthold", "autorenewgraceperiod", "clienttransferprohibited"
                 :registered
               when "redemptionperiod", "pendingdelete"
                 :redemption
@@ -230,7 +230,7 @@ module Whois
             if source == "UANIC"
               Uanic.new(self, content_for_scanner)
             else
-              Epp.new(self, content_for_scanner)
+              Uaepp.new(self, content_for_scanner)
             end
           end
         end

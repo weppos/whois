@@ -1,0 +1,99 @@
+% request from 87.20.192.141
+% This is the Ukrainian Whois query server #I.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+
+domain:           fcbank.com.ua
+dom-public:       NO
+registrant:       com-fac5-1
+admin-c:          com-fac5-1
+tech-c:           com-fac5-1
+mnt-by:           ua.register
+nserver:          ns2.fcbank.com.ua
+nserver:          ns1.fcbank.com.ua
+nserver:          ns.secondary.net.ua
+status:           clientTransferProhibited
+created:          2004-08-06 13:17:36+03
+modified:         2013-06-14 14:09:54+03
+expires:          2014-08-06 13:17:36+03
+source:           UAEPP
+
+% Glue Records:
+% =============
+nserver:          ns1.fcbank.com.ua
+ip-address:       194.50.169.2
+
+nserver:          ns2.fcbank.com.ua
+ip-address:       194.50.169.3
+
+% Registrar:
+% ==========
+registrar:        ua.register
+organization:     "DMedia" Ltd.
+organization-loc: ТОВ "ДіМедіа"
+url:              http://register.ua
+city:             Kyiv
+country:          UA
+source:           UAEPP
+
+% Registrant:
+% ===========
+contact-id:       com-fac5-1
+person:           JSC "Finance and Credit"  Bank
+organization:     JSC "Finance and Credit"  Bank
+e-mail:           hostmaster@fcbank.com.ua
+address:          Artema str 60
+address:          KIEV
+postal-code:      04050
+country:          UA
+country-loc:      UA
+phone:            +380.443642909
+mnt-by:           ua.register
+status:           ok
+status:           linked
+created:          2013-03-31 19:13:37+03
+source:           UAEPP
+
+
+% Administrative Contacts:
+% =======================
+contact-id:       com-fac5-1
+person:           JSC "Finance and Credit"  Bank
+organization:     JSC "Finance and Credit"  Bank
+e-mail:           hostmaster@fcbank.com.ua
+address:          Artema str 60
+address:          KIEV
+postal-code:      04050
+country:          UA
+country-loc:      UA
+phone:            +380.443642909
+mnt-by:           ua.register
+status:           ok
+status:           linked
+created:          2013-03-31 19:13:37+03
+source:           UAEPP
+
+
+% Technical Contacts:
+% ===================
+contact-id:       com-fac5-1
+person:           JSC "Finance and Credit"  Bank
+organization:     JSC "Finance and Credit"  Bank
+e-mail:           hostmaster@fcbank.com.ua
+address:          Artema str 60
+address:          KIEV
+postal-code:      04050
+country:          UA
+country-loc:      UA
+phone:            +380.443642909
+mnt-by:           ua.register
+status:           ok
+status:           linked
+created:          2013-03-31 19:13:37+03
+source:           UAEPP
+
+
+
+% Query time:     22 msec
+
