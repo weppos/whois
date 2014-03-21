@@ -7,8 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base'
-require 'whois/record/scanners/base_shared3'
+require 'whois/record/parser/base_icann_compliant'
 
 
 module Whois
