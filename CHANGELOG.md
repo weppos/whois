@@ -3,6 +3,8 @@
 
 #### Master
 
+- NEW: Added whois.corporatedomains.com parser (GH-311). [Thanks @huyphan]
+
 - FIXED: NameError: wrong constant name when querying IPs (GH-310).
 
 - FIXED: Updated expiration date parsing for Verisign responses.
