@@ -8,7 +8,7 @@
 
 
 require 'whois/record/scanners/base'
-
+require 'yaml'
 
 module Whois
   class Record
