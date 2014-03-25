@@ -34,7 +34,7 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /Record created on (.+)\.\n/
+          if content_for_scanner =~ /Record created on (.+)(\.|\()/
             Time.parse($1)
           end
         end
@@ -42,18 +42,24 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Record expires on (.+)\.\n/
+          if content_for_scanner =~ /Record expires on (.+)(\.|\()/
             Time.parse($1)
           end
         end
 
-
         property_supported :registrar do
-          Record::Registrar.new(
-            :name => "DreamHost",
-            :organization => "New Dream Network, LLC.",
-            :url  => "http://www.dreamhost.com/"
-          )
+          if content_for_scanner =~ /Registration Service Provider: (.+)\n/
+            Record::Registrar.new(
+              :name => $1,
+              :organization => $1
+            )
+          else
+            Record::Registrar.new(
+              :name => "DreamHost",
+              :organization => "New Dream Network, LLC.",
+              :url  => "http://www.dreamhost.com/"
+            )
+          end
         end
 
         property_supported :registrant_contacts do

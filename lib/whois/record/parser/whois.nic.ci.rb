@@ -59,10 +59,40 @@ module Whois
         end
 
 
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /Owner's handle:\s+(.+)\n/
+            build_contact($1, Whois::Record::Contact::TYPE_REGISTRANT)
+          end
+        end
+
+        property_supported :admin_contacts do
+          if content_for_scanner =~ /Administrative Contact's handle:\s+(.+)\n/
+            build_contact($1, Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+          end
+        end
+
+        property_supported :technical_contacts do
+          if content_for_scanner =~ /Technical Contact's handle:\s+(.+)\n/
+            build_contact($1, Whois::Record::Contact::TYPE_TECHNICAL)
+          end
+        end
+
+
         property_supported :nameservers do
           content_for_scanner.scan(/Nameserver:\s+(.+)\n/).flatten.map do |name|
             Record::Nameserver.new(:name => name)
           end
+        end
+
+
+      private
+
+        def build_contact(string, type)
+          Record::Contact.new(
+              :type => type,
+              :id => string,
+              :name => string
+          )
         end
 
       end

@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-
+require 'whois/record/scanners/base_icann_compliant'
 
 module Whois
   class Record
@@ -26,6 +26,8 @@ module Whois
       # and examples.
       #
       class WhoisEuOrg < Base
+        include Scanners::Scannable
+        self.scanner = Scanners::BaseIcannCompliant
 
         property_supported :status do
           if available?
@@ -43,6 +45,9 @@ module Whois
           !available?
         end
 
+        property_supported :domain do
+          node("domain")
+        end
 
         property_not_supported :created_on
 

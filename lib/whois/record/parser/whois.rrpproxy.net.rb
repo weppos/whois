@@ -6,9 +6,7 @@
 # Copyright (c) 2009-2014 Simone Carletti <weppos@weppos.net>
 #++
 
-
 require 'whois/record/parser/base_icann_compliant'
-
 
 module Whois
   class Record
@@ -23,9 +21,6 @@ module Whois
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^No match for "[\w\.]+"\.\n/
         }
-
-
-        property_not_supported :expires_on
 
       end
 

@@ -8,7 +8,7 @@
 
 
 require 'whois/record/parser/base'
-
+require 'whois/record/scanners/base_icann_compliant'
 
 module Whois
   class Record
@@ -24,6 +24,8 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisHkircHk < Base
+        include Scanners::Scannable
+        self.scanner = Scanners::BaseIcannCompliant
 
         property_supported :status do
           if available?
@@ -42,17 +44,19 @@ module Whois
         end
 
 
+        property_supported :domain do
+          node("Domain Name")
+        end
+
         property_supported :created_on do
-          if content_for_scanner =~ /Domain Name Commencement Date:\s(.+?)\n/
-            Time.parse($1)
-          end
+          Time.parse(node("Domain Name Commencement Date"))
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Expiry Date:\s(.+?)\n/
-            time = $1.strip
+          if content_for_scanner = node("Expiry Date")
+            time = content_for_scanner.strip
             Time.parse(time) unless time == 'null'
           end
         end

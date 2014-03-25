@@ -18,7 +18,7 @@ module Whois
       class WhoisAfiliasInfo < BaseAfilias2
 
         self.scanner = Scanners::BaseAfilias, {
-            pattern_disclaimer: /^Access to/
+            pattern_disclaimer: /^(Access to|The  WHOIS information)/
         }
 
       end
