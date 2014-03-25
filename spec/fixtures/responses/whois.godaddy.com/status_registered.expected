@@ -13,7 +13,7 @@
   %s.id           == nil
   %s.name         == "GoDaddy.com, LLC"
   %s.organization == nil
-  %s.url          == "http://www.godaddy.com/"
+  %s.url          == "http://www.godaddy.com"
 
 #registrant_contacts
   %s %CLASS{array}
