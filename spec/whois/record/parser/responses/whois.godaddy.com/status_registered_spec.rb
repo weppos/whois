@@ -42,7 +42,7 @@ describe Whois::Record::Parser::WhoisGodaddyCom, "status_registered.expected" do
       expect(subject.registrar.id).to eq(nil)
       expect(subject.registrar.name).to eq("GoDaddy.com, LLC")
       expect(subject.registrar.organization).to eq(nil)
-      expect(subject.registrar.url).to eq("http://www.godaddy.com/")
+      expect(subject.registrar.url).to eq("http://www.godaddy.com")
     end
   end
   describe "#registrant_contacts" do
