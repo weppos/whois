@@ -12,7 +12,7 @@
   %s == nil
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 #expires_on
   %s == nil
