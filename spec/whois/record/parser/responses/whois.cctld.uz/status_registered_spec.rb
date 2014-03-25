@@ -44,7 +44,8 @@ describe Whois::Record::Parser::WhoisCctldUz, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2010-03-26"))
     end
   end
   describe "#expires_on" do

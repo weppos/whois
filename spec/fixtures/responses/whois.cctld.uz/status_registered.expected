@@ -13,7 +13,8 @@
   %s %TIME{2006-04-13}
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s %CLASS{time}
+  %s %TIME{2010-03-26}
 
 #expires_on
   %s %CLASS{time}
