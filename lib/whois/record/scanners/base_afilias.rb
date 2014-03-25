@@ -24,6 +24,7 @@ module Whois
             :scan_throttled,
             :scan_disclaimer,
             :scan_keyvalue,
+            :skip_end
         ]
 
 
@@ -57,6 +58,11 @@ module Whois
             @ast["field:disclaimer"] = _scan_lines_to_array(/^(.+)\n/).join(" ")
           end
         end
+
+        tokenizer :skip_end do
+          @input.terminate
+        end
+
       end
 
     end
