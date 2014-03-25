@@ -50,15 +50,19 @@ module Whois
 
 
         property_supported :created_on do
-          if content_for_scanner =~ /^Creation Date:(.*)\n/
+          if content_for_scanner =~ /Creation Date:(.*)\n/
             Time.parse($1)
           end
         end
 
-        property_not_supported :updated_on
+        property_supported :updated_on do
+          if content_for_scanner =~ /Updated Date:(.*)\n/
+            Time.parse($1)
+          end
+        end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /^Expiration Date:\s+(.*)\n/
+          if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
             Time.parse($1) unless $1 == '-'
           end
         end
