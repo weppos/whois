@@ -33,29 +33,29 @@ module Whois
         end
 
 
-        # property_supported :created_on do
-        #   if content_for_scanner =~ /Created on: (.+)\n/
-        #     Time.parse($1)
-        #   end
-        # end
-        #
-        # property_supported :updated_on do
-        #   if content_for_scanner =~ /Last Updated on: (.+)\n/
-        #     Time.parse($1)
-        #   end
-        # end
-        #
-        # property_supported :expires_on do
-        #   if content_for_scanner =~ /Expires on: (.+)\n/
-        #     Time.parse($1)
-        #   end
-        # end
+        property_supported :created_on do
+          if content_for_scanner =~ /Creation Date: (.+)\n/
+            Time.parse($1)
+          end
+        end
+        
+        property_supported :updated_on do
+          if content_for_scanner =~ /Updated* Date: (.+)\n/
+            Time.parse($1)
+          end
+        end
+        
+        property_supported :expires_on do
+          if content_for_scanner =~ /Expiration Date: (.+)\n/
+            Time.parse($1)
+          end
+        end
 
 
         property_supported :registrar do
           Record::Registrar.new(
               name:         content_for_scanner[/Registrar: (.+)\n/, 1],
-              url:          "http://www.godaddy.com/"
+              url:          content_for_scanner[/Registrar URL: (.+)\n/, 1],
           )
         end
 
