@@ -27,6 +27,6 @@ class Time
     else
       ::Time.new(new_year, new_month, new_day, new_hour, new_min, new_sec + (new_usec.to_r / 1000000), utc_offset)
     end
-  end unless method_defined? :change
+  end
 
 end
