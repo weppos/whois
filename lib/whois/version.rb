@@ -9,6 +9,10 @@
 
 module Whois
 
+  NAME            = "Whois"
+  GEM             = "whois"
+  AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
+
   # Holds information about library version.
   module Version
     MAJOR = 3
