@@ -11,7 +11,6 @@ require 'active_support/core_ext/array/extract_options'
 require 'active_support/core_ext/array/wrap'
 require 'active_support/core_ext/class/attribute'
 require 'active_support/core_ext/kernel/singleton_class'
-require 'active_support/core_ext/module/remove_method'
 require 'active_support/core_ext/object/blank'
 require 'active_support/core_ext/time/calculations'
 
