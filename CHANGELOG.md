@@ -1,7 +1,7 @@
 # Changelog
 
 
-#### Master
+#### Release 3.5.1
 
 - NEW: Added whois.corporatedomains.com parser (GH-311). [Thanks @huyphan]
 
