@@ -5,6 +5,8 @@
 
 - NEW: Added whois.corporatedomains.com parser (GH-311). [Thanks @huyphan]
 
+- CHANGED: Added ActiveSupport as dependency (GH-317) [Thanks @byroot].
+
 - FIXED: NameError: wrong constant name when querying IPs (GH-310).
 
 - FIXED: Updated expiration date parsing for Verisign responses.
