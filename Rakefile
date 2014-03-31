@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
   s.executables       = %w( ruby-whois )
   s.require_paths     = %w( lib )
 
-  s.add_dependency 'active_support', '>= 3'
+  s.add_dependency "activesupport", ">= 3"
 
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
