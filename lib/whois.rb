@@ -7,7 +7,13 @@
 #++
 
 
-require 'whois/core_ext'
+require 'active_support/core_ext/array/extract_options'
+require 'active_support/core_ext/array/wrap'
+require 'active_support/core_ext/class/attribute'
+require 'active_support/core_ext/kernel/singleton_class'
+require 'active_support/core_ext/object/blank'
+require 'active_support/core_ext/time/calculations'
+
 require 'whois/version'
 require 'whois/errors'
 require 'whois/client'
@@ -16,11 +22,6 @@ require 'whois/record'
 
 
 module Whois
-
-  NAME            = "Whois"
-  GEM             = "whois"
-  AUTHORS         = ["Simone Carletti <weppos@weppos.net>"]
-
 
   class << self
 

@@ -1,7 +1,7 @@
 require 'rubygems'
 
 $:.unshift(File.dirname(__FILE__) + '/lib')
-require 'whois'
+require 'whois/version'
 
 
 # Common package properties
@@ -32,6 +32,8 @@ spec = Gem::Specification.new do |s|
                         Dir.glob("{bin,data,lib}/**/*")
   s.executables       = %w( ruby-whois )
   s.require_paths     = %w( lib )
+
+  s.add_dependency 'active_support', '>= 3'
 
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
