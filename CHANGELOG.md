@@ -1,6 +1,11 @@
 # Changelog
 
 
+#### Release 3.5.2
+
+- SERVER: Added new gTLDs
+
+
 #### Release 3.5.1
 
 - NEW: Added whois.corporatedomains.com parser (GH-311). [Thanks @huyphan]
