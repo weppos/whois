@@ -1703,6 +1703,87 @@
   ".zone": {
     "host": "whois.donuts.co"
   },
+  ".axa": {
+    "adapter": "none"
+  },
+  ".cologne": {
+    "host": "whois-fe1.pdt.cologne.tango.knipp.de"
+  },
+  ".trade": {
+    "adapter": "none"
+  },
+  ".webcam": {
+    "adapter": "none"
+  },
+  ".london": {
+    "host": "whois-lon.mm-registry.com"
+  },
+  ".sohu": {
+    "adapter": "none"
+  },
+  ".ren": {
+    "adapter": "none"
+  },
+  ".black": {
+    "host": "whois.afilias.net"
+  },
+  ".meet": {
+    "host": "whois.afilias.net"
+  },
+  ".archi": {
+    "host": "whois.ksregistry.net"
+  },
+  ".cooking": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".country": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".fishing": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".haus": {
+    "host": "whois.unitedtld.com"
+  },
+  ".horse": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".miami": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".moe": {
+    "adapter": "none"
+  },
+  ".rodeo": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".vegas": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".vodka": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".xn--czru2d": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".consulting": {
+    "host": "whois.unitedtld.com"
+  },
+  ".rest": {
+    "host": "whois.unitedtld.com"
+  },
+  ".saarland": {
+    "host": "whois.ksregistry.net"
+  },
+  ".ryukyu": {
+    "adapter": "none"
+  },
+  ".yokohama": {
+    "adapter": "none"
+  },
+  ".gop": {
+    "host": "whois-cl01.mm-registry.com"
+  },
 
 
   ".xn--3e0b707e": {
