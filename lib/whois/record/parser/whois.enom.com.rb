@@ -23,6 +23,12 @@ module Whois
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^Domain not found\.\n/
         }
+
+        property_supported :updated_on do
+          node('Updated Date') do |value|
+            parse_time(value) unless value.empty?
+          end
+        end
       end
 
     end
