@@ -1,6 +1,11 @@
 # Changelog
 
 
+#### Release 3.5.3
+
+- CHANGED: Updated whois.pir.org to the new response format.
+
+
 #### Release 3.5.2
 
 - SERVER: Added new gTLDs
