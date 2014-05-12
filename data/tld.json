@@ -1131,7 +1131,7 @@
     "host": "whois.nic.ve"
   },
   ".vg": {
-    "host": "whois.adamsnames.tc"
+    "host": "ccwhois.ksregistry.net"
   },
   ".vi": {
     "host": null,
@@ -1254,7 +1254,7 @@
     "host": "whois.donuts.co"
   },
   ".ceo": {
-    "adapter": "none"
+    "host": "whois.nic.ceo"
   },
   ".cheap": {
     "host": "whois.donuts.co"
@@ -1269,7 +1269,7 @@
     "host": "whois.donuts.co"
   },
   ".club": {
-    "adapter": "none"
+    "host": "whois.nic.club"
   },
   ".codes": {
     "host": "whois.donuts.co"
@@ -1783,6 +1783,9 @@
   },
   ".gop": {
     "host": "whois-cl01.mm-registry.com"
+  },
+  ".quebec": {
+    "host": "whois.quebec.rs.corenic.net"
   },
 
 
