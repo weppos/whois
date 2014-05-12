@@ -1787,6 +1787,177 @@
   ".quebec": {
     "host": "whois.quebec.rs.corenic.net"
   },
+  ".college": {
+    "host": "whois.centralnic.com"
+  },
+  ".desi": {
+    "host": "whois.ksregistry.net"
+  },
+  ".feedback": {
+    "host": "whois.centralnic.com"
+  },
+  ".rocks": {
+    "host": "whois.unitedtld.com"
+  },
+  ".xn--ses554g": {
+    "adapter": "none"
+  },
+  ".career": {
+    "adapter": "none"
+  },
+  ".associates": {
+    "host": "whois.donuts.co"
+  },
+  ".capital": {
+    "host": "whois.donuts.co"
+  },
+  ".engineering": {
+    "host": "whois.donuts.co"
+  },
+  ".eus": {
+    "host": "whois.eus.coreregistry.net"
+  },
+  ".gal": {
+    "host": "whois.gal.coreregistry.net"
+  },
+  ".gripe": {
+    "host": "whois.donuts.co"
+  },
+  ".lease": {
+    "host": "whois.donuts.co"
+  },
+  ".media": {
+    "host": "whois.donuts.co"
+  },
+  ".pictures": {
+    "host": "whois.donuts.co"
+  },
+  ".reisen": {
+    "host": "whois.donuts.co"
+  },
+  ".services": {
+    "host": "whois.donuts.co"
+  },
+  ".town": {
+    "host": "whois.donuts.co"
+  },
+  ".toys": {
+    "host": "whois.donuts.co"
+  },
+  ".university": {
+    "host": "whois.donuts.co"
+  },
+  ".xn--cg4bki": {
+    "host": "whois.kr"
+  },
+  ".foo": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".soy": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".frogans": {
+    "host": "whois-frogans.nic.fr"
+  },
+  ".paris": {
+    "host": "whois-paris.nic.fr"
+  },
+  ".blackfriday": {
+    "host": "whois.uniregistry.net"
+  },
+  ".clinic": {
+    "host": "whois.donuts.co"
+  },
+  ".fitness": {
+    "host": "whois.donuts.co"
+  },
+  ".schule": {
+    "host": "whois.donuts.co"
+  },
+  ".care": {
+    "host": "whois.donuts.co"
+  },
+  ".cash": {
+    "host": "whois.donuts.co"
+  },
+  ".dental": {
+    "host": "whois.donuts.co"
+  },
+  ".discount": {
+    "host": "whois.donuts.co"
+  },
+  ".exchange": {
+    "host": "whois.donuts.co"
+  },
+  ".fail": {
+    "host": "whois.donuts.co"
+  },
+  ".financial": {
+    "host": "whois.donuts.co"
+  },
+  ".fund": {
+    "host": "whois.donuts.co"
+  },
+  ".furniture": {
+    "host": "whois.donuts.co"
+  },
+  ".gratis": {
+    "host": "whois.donuts.co"
+  },
+  ".investments": {
+    "host": "whois.donuts.co"
+  },
+  ".limited": {
+    "host": "whois.donuts.co"
+  },
+  ".surgery": {
+    "host": "whois.donuts.co"
+  },
+  ".tax": {
+    "host": "whois.donuts.co"
+  },
+  ".wtf": {
+    "host": "whois.donuts.co"
+  },
+  ".moscow": {
+    "host": "whois.nic.moscow"
+  },
+  ".xn--80adxhks": {
+    "host": "whois.nic.xn--80adxhks"
+  },
+  ".creditcard": {
+    "host": "whois.donuts.co"
+  },
+  ".finance": {
+    "host": "whois.donuts.co"
+  },
+  ".insure": {
+    "host": "whois.donuts.co"
+  },
+  ".wtc": {
+    "host": "whois.nic.wtc"
+  },
+  ".airforce": {
+    "host": "whois.unitedtld.com"
+  },
+  ".bayern": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".globo": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".accountants": {
+    "host": "whois.donuts.co"
+  },
+  ".claims": {
+    "host": "whois.donuts.co"
+  },
+  ".credit": {
+    "host": "whois.donuts.co"
+  },
+  ".digital": {
+    "host": "whois.donuts.co"
+  },
 
 
   ".xn--3e0b707e": {
