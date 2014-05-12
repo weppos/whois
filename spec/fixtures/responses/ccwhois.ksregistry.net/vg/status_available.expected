@@ -1,3 +1,14 @@
+#disclaimer
+  %s == nil
+
+
+#domain
+  %s == nil
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
 #status
   %s == :available
 
@@ -9,13 +20,29 @@
 
 
 #created_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 #updated_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 #expires_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
+
+
+#registrar
+  %s == nil
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s == []
+
+#admin_contacts
+  %s %CLASS{array}
+  %s == []
+
+#technical_contacts
+  %s %CLASS{array}
+  %s == []
 
 
 #nameservers

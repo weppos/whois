@@ -7,6 +7,8 @@
 
 - SERVER: Updated .CEO, .CLUB, .VG
 
+- CHANGED: Updated ccwhois.ksregistry.net to the new response format.
+
 
 #### Release 3.5.3
 
