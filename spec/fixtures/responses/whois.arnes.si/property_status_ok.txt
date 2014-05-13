@@ -28,15 +28,14 @@
 %      o copy, extract and/or publish contents of the WHOIS database.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-domain:             google.si                
+domain:             paypal-topup.si          
 registrar:          AOI d.o.o.               
 registrar-url:      http://www.aoi.eu/arneswhois
-nameserver:         ns1.google.com           
-nameserver:         ns2.google.com           
-nameserver:         ns3.google.com           
-nameserver:         ns4.google.com           
-status:             serverDeleteProhibited,serverTransferProhibited,serverUpdateProhibited
-created:            2005-04-04               
+nameserver:         ns3.isc-sns.info         
+nameserver:         ns1.isc-sns.net          
+nameserver:         ns2.isc-sns.com          
+status:             ok                       
+created:            2012-07-19               
 expire:             2014-07-19               
 source:             ARNES                    
 

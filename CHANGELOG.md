@@ -11,6 +11,8 @@
 
 - CHANGED: Updated whois.gg to the new response format.
 
+- CHANGED: Updated whois.arnesi.si to the new response format.
+
 
 #### Release 3.5.3
 

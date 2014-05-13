@@ -10,6 +10,8 @@
 % or not and to obtain information related to the registration
 % records of existing domain names.
 %
+% This WHOIS service accepts and displays only ASCII characters.
+%
 % Arnes cannot be held liable should the stored information
 % prove to be wrong, incomplete or inaccurate in any sense.
 %
@@ -22,7 +24,8 @@
 %      o Cause nuisance in any possible way to the registrants
 %        by sending (whether by automated, electronic processes
 %        capable of enabling high volumes or other possible
-%        means) messages to them.
+%        means) messages to them;
+%      o copy, extract and/or publish contents of the WHOIS database.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % No entries found for the selected source(s).
