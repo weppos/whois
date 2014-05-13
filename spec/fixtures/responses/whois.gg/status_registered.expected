@@ -2,7 +2,7 @@
   %s == "google.gg"
 
 #domain_id
-  %s %ERROR{AttributeNotSupported}
+  %s == "24221-CI"
 
 
 #status

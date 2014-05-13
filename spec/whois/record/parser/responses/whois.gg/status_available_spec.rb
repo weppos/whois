@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisGg, "status_available.expected" do
   end
   describe "#domain_id" do
     it do
-      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.domain_id).to eq(nil)
     end
   end
   describe "#status" do

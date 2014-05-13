@@ -1,3 +1,6 @@
+Domain Name: u34jedzcq.gg
+Domain Status: Available
+
 This information is provided free of charge from the Channel Islands' 
 Register of Internet Names. The copyright  and database rights in this
 information and in the contents are owned by Island Networks Ltd
@@ -26,9 +29,5 @@ Access may be withdrawn or restricted at any time
 without notice. 
 
 
-Domain Information
-Query: u34jedzcq.gg
-Status: Not Registered
 
-
-
+>>> Last update of WHOIS database: 2014-05-13T07:47:04.784Z <<<

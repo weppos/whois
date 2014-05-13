@@ -1,3 +1,37 @@
+Domain Name: google.gg
+Domain ID: 24221-CI
+WHOIS Server: whois.gg
+Referral URL: 
+Creation Date: 2003-04-30T00:00:00.000Z
+Sponsoring Registrar: MarkMonitor Inc.
+Sponsoring Registrar IANA ID: 
+Domain Status: clientDeleteProhibited
+Domain Status: ok
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+
+Registrant ID: 32764-CI
+
+Admin ID: 32764-CI
+
+Billing ID: 32762-CI
+
+Tech ID: 32764-CI
+
+Name Server: ns1.google.com
+Name Server: ns2.google.com
+Name Server: ns4.google.com
+Name Server: ns3.google.com
+
+DNSSEC: unsigned
+
+
+Additional Section
+
+
+Sponsoring Registrar URL: http://www.markmonitor.com
+
+
 This information is provided free of charge from the Channel Islands' 
 Register of Internet Names. The copyright  and database rights in this
 information and in the contents are owned by Island Networks Ltd
@@ -26,24 +60,5 @@ Access may be withdrawn or restricted at any time
 without notice. 
 
 
-Domain Information
-Query: google.gg
-Status: Active
-Created: 30 Apr 2003 00:00 UTC
-Name Servers:
-    ns1.google.com
-    ns2.google.com
-    ns4.google.com
-    ns3.google.com
 
-Registrar Information
-Registrar Name: MarkMonitor Inc.
-Registration URL: http://www.markmonitor.com
-
-
-
-
-Registrant:
-Name: Google Inc.
-Organisation: Google Inc.
-
+>>> Last update of WHOIS database: 2014-05-13T07:47:04.784Z <<<

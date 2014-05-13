@@ -29,6 +29,7 @@ module Whois
           "TERMS OF USE:", # global
           "Terminos de Uso:", # whois.nic.hn
           "The data in the WHOIS database of Meridian", # whois.meridiantld.net
+          "This information is provided", # whois.gg
         ]
 
         tokenizer :scan_disclaimer do

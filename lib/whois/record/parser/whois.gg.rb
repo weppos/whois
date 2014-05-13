@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_cocca'
+require 'whois/record/parser/base_cocca2'
 
 
 module Whois
@@ -19,7 +19,13 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisGg < BaseCocca
+      class WhoisGg < BaseCocca2
+
+        property_supported :status do
+          list = Array.wrap(node("Domain Status")).map(&:downcase)
+          list.include?("available") ? :available : super()
+        end
+
       end
 
     end
