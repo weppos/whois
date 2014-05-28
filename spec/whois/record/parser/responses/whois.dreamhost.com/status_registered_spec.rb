@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
 
   describe "#status" do
     it do
-      expect { subject.status }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.status).to eq(:registered)
     end
   end
   describe "#available?" do
@@ -39,27 +39,28 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("1997-09-22 21:00:00"))
+      expect(subject.created_on).to eq(Time.parse("1997-09-22 21:00:00 UTC"))
     end
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to be_a(Time)
+      expect(subject.updated_on).to eq(Time.parse("2013-12-14 16:53:27 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2013-09-21 21:00:00"))
+      expect(subject.expires_on).to eq(Time.parse("2015-09-22 04:00:00 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq(nil)
-      expect(subject.registrar.name).to eq("DreamHost")
-      expect(subject.registrar.organization).to eq("New Dream Network, LLC.")
-      expect(subject.registrar.url).to eq("http://www.dreamhost.com/")
+      expect(subject.registrar.id).to eq("431")
+      expect(subject.registrar.name).to eq("DREAMHOST")
+      expect(subject.registrar.organization).to eq("DREAMHOST")
+      expect(subject.registrar.url).to eq("www.dreamhost.com")
     end
   end
   describe "#registrant_contacts" do
@@ -68,16 +69,16 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].name).to eq("DreamHost Web Hosting")
-      expect(subject.registrant_contacts[0].organization).to eq("New Dream Network, LLC.")
-      expect(subject.registrant_contacts[0].address).to eq("PMB #257\n417 Associated Rd.")
-      expect(subject.registrant_contacts[0].city).to eq("Brea")
+      expect(subject.registrant_contacts[0].name).to eq("PRIVATE REGISTRANT")
+      expect(subject.registrant_contacts[0].organization).to eq("A HAPPY DREAMHOST CUSTOMER")
+      expect(subject.registrant_contacts[0].address).to eq("417 ASSOCIATED RD #324, C/O DREAMHOST.COM")
+      expect(subject.registrant_contacts[0].city).to eq("BREA")
       expect(subject.registrant_contacts[0].zip).to eq("92821")
       expect(subject.registrant_contacts[0].state).to eq("CA")
       expect(subject.registrant_contacts[0].country_code).to eq("US")
       expect(subject.registrant_contacts[0].phone).to eq("+1.7147064182")
-      expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq("internic@dreamhost.com")
+      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].email).to eq("YW3GAZMC77BTMTF@PROXY.DREAMHOST.COM")
     end
   end
   describe "#admin_contacts" do
@@ -86,16 +87,16 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].name).to eq("DreamHost Web Hosting")
-      expect(subject.admin_contacts[0].organization).to eq("New Dream Network, LLC.")
-      expect(subject.admin_contacts[0].address).to eq("PMB #257\n417 Associated Rd.")
-      expect(subject.admin_contacts[0].city).to eq("Brea")
+      expect(subject.admin_contacts[0].name).to eq("PRIVATE REGISTRANT")
+      expect(subject.admin_contacts[0].organization).to eq("A HAPPY DREAMHOST CUSTOMER")
+      expect(subject.admin_contacts[0].address).to eq("417 ASSOCIATED RD #324, C/O DREAMHOST.COM")
+      expect(subject.admin_contacts[0].city).to eq("BREA")
       expect(subject.admin_contacts[0].zip).to eq("92821")
       expect(subject.admin_contacts[0].state).to eq("CA")
       expect(subject.admin_contacts[0].country_code).to eq("US")
       expect(subject.admin_contacts[0].phone).to eq("+1.7147064182")
-      expect(subject.admin_contacts[0].fax).to eq(nil)
-      expect(subject.admin_contacts[0].email).to eq("internic@dreamhost.com")
+      expect(subject.admin_contacts[0].fax).to eq("")
+      expect(subject.admin_contacts[0].email).to eq("YW3GAZMC77BTMTF@PROXY.DREAMHOST.COM")
     end
   end
   describe "#technical_contacts" do
@@ -104,16 +105,16 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "status_registered.expected" 
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].name).to eq("DreamHost Web Hosting")
-      expect(subject.technical_contacts[0].organization).to eq("New Dream Network, LLC.")
-      expect(subject.technical_contacts[0].address).to eq("PMB #257\n417 Associated Rd.")
-      expect(subject.technical_contacts[0].city).to eq("Brea")
+      expect(subject.technical_contacts[0].name).to eq("PRIVATE REGISTRANT")
+      expect(subject.technical_contacts[0].organization).to eq("A HAPPY DREAMHOST CUSTOMER")
+      expect(subject.technical_contacts[0].address).to eq("417 ASSOCIATED RD #324, C/O DREAMHOST.COM")
+      expect(subject.technical_contacts[0].city).to eq("BREA")
       expect(subject.technical_contacts[0].zip).to eq("92821")
       expect(subject.technical_contacts[0].state).to eq("CA")
       expect(subject.technical_contacts[0].country_code).to eq("US")
       expect(subject.technical_contacts[0].phone).to eq("+1.7147064182")
-      expect(subject.technical_contacts[0].fax).to eq(nil)
-      expect(subject.technical_contacts[0].email).to eq("internic@dreamhost.com")
+      expect(subject.technical_contacts[0].fax).to eq("")
+      expect(subject.technical_contacts[0].email).to eq("YW3GAZMC77BTMTF@PROXY.DREAMHOST.COM")
     end
   end
   describe "#nameservers" do
