@@ -1,0 +1,53 @@
+Domain Name:yoursrs.com
+Name Server:ns1.yoursrs.com
+Name Server:ns2.yoursrs.com
+Created On:2003-11-24 09:40:55.0
+Last Updated On:
+Expiration Date:2014-11-24 09:40:55.0
+Sponsoring Registrar:REALTIME REGISTER B.V.
+Reseller:Realtime Register B.V.
+Status:OK
+Registrant ID:realtimeregister
+Registrant Name:Valentijn Borstlap
+Registrant Organization:Realtime Register B.V.
+Registrant Street1:Ceintuurbaan 32a
+Registrant City:Zwolle
+Registrant State:Overijssel
+Registrant Postal Code:8024AA
+Registrant Country:NL
+Registrant Phone:+31.384530752
+Registrant Fax:+31.384540122
+Registrant Email:support@realtimeregister.com
+TECH ID:realtimeregister
+TECH Name:Valentijn Borstlap
+TECH Organization:Realtime Register B.V.
+TECH Street1:Ceintuurbaan 32a
+TECH City:Zwolle
+TECH State:Overijssel
+TECH Postal Code:8024AA
+TECH Country:NL
+TECH Phone:+31.384530752
+TECH Fax:+31.384540122
+TECH Email:support@realtimeregister.com
+BILLING ID:realtimeregister
+BILLING Name:Valentijn Borstlap
+BILLING Organization:Realtime Register B.V.
+BILLING Street1:Ceintuurbaan 32a
+BILLING City:Zwolle
+BILLING State:Overijssel
+BILLING Postal Code:8024AA
+BILLING Country:NL
+BILLING Phone:+31.384530752
+BILLING Fax:+31.384540122
+BILLING Email:support@realtimeregister.com
+ADMIN ID:realtimeregister
+ADMIN Name:Valentijn Borstlap
+ADMIN Organization:Realtime Register B.V.
+ADMIN Street1:Ceintuurbaan 32a
+ADMIN City:Zwolle
+ADMIN State:Overijssel
+ADMIN Postal Code:8024AA
+ADMIN Country:NL
+ADMIN Phone:+31.384530752
+ADMIN Fax:+31.384540122
+ADMIN Email:support@realtimeregister.com
