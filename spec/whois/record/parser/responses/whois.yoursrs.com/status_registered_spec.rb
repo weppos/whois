@@ -148,9 +148,7 @@ describe Whois::Record::Parser::WhoisYoursrsCom, "status_registered.expected" do
     end
 
     describe "#updated_on" do
-      it do
-        expect(subject.updated_on).to eq(nil)
-      end
+      its(:updated_on) { should be_nil }
     end
   end
 end
