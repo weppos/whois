@@ -13,6 +13,8 @@
 
 - CHANGED: Updated whois.arnesi.si to the new response format.
 
+- CHANGED: Updated whois.dreamhost.com to the new response format (GH-326). [Thanks @shingonoide]
+
 
 #### Release 3.5.3
 
