@@ -140,15 +140,4 @@ describe Whois::Record::Parser::WhoisYoursrsCom, "status_registered.expected" do
       expect(subject.nameservers[1].name).to eq("ns2.yoursrs.com")
     end
   end
-  describe "blank Last Updated Date: property" do
-    subject do
-      file = fixture("responses", "whois.yoursrs.com/status_registered_with_no_last_updated.txt")
-      part = Whois::Record::Part.new(body: File.read(file))
-      described_class.new(part)
-    end
-
-    describe "#updated_on" do
-      its(:updated_on) { should be_nil }
-    end
-  end
 end

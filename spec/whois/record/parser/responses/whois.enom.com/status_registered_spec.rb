@@ -155,18 +155,4 @@ describe Whois::Record::Parser::WhoisEnomCom, "status_registered.expected" do
       expect(subject.nameservers[2].ipv6).to eq(nil)
     end
   end
-
-  describe "blank Updated Date: property" do
-    subject do
-      file = fixture("responses", "whois.enom.com/status_registered_with_blank_updated_date.txt")
-      part = Whois::Record::Part.new(body: File.read(file))
-      described_class.new(part)
-    end
-
-    describe "#updated_on" do
-      it do
-        expect(subject.updated_on).to eq(nil)
-      end
-    end
-  end
 end
