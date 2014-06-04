@@ -27,16 +27,16 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
       expect(subject.registrant_contacts).to have(1).items
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].name).to eq("adequatehq.com Private Registrant")
-      expect(subject.registrant_contacts[0].organization).to eq("A Happy DreamHost Customer")
-      expect(subject.registrant_contacts[0].address).to eq("417 Associated Rd #324")
-      expect(subject.registrant_contacts[0].city).to eq("Brea")
+      expect(subject.registrant_contacts[0].name).to eq("PRIVATE REGISTRANT")
+      expect(subject.registrant_contacts[0].organization).to eq("A HAPPY DREAMHOST CUSTOMER")
+      expect(subject.registrant_contacts[0].address).to eq("417 ASSOCIATED RD #324, C/O ADEQUATEHQ.COM")
+      expect(subject.registrant_contacts[0].city).to eq("BREA")
       expect(subject.registrant_contacts[0].zip).to eq("92821")
       expect(subject.registrant_contacts[0].state).to eq("CA")
       expect(subject.registrant_contacts[0].country_code).to eq("US")
-      expect(subject.registrant_contacts[0].phone).to eq("+1.2139471032")
-      expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq("adequatehq.com@proxy.dreamhost.com")
+      expect(subject.registrant_contacts[0].phone).to eq("+1.7147064182")
+      expect(subject.registrant_contacts[0].fax).to eq("")
+      expect(subject.registrant_contacts[0].email).to eq("ADEQUATEHQ.COM@PROXY.DREAMHOST.COM")
     end
   end
   describe "#admin_contacts" do
@@ -45,16 +45,16 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
       expect(subject.admin_contacts).to have(1).items
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].name).to eq("adequatehq.com Private Registrant")
-      expect(subject.admin_contacts[0].organization).to eq("A Happy DreamHost Customer")
-      expect(subject.admin_contacts[0].address).to eq("417 Associated Rd #324")
-      expect(subject.admin_contacts[0].city).to eq("Brea")
+      expect(subject.admin_contacts[0].name).to eq("PRIVATE REGISTRANT")
+      expect(subject.admin_contacts[0].organization).to eq("A HAPPY DREAMHOST CUSTOMER")
+      expect(subject.admin_contacts[0].address).to eq("417 ASSOCIATED RD #324, C/O ADEQUATEHQ.COM")
+      expect(subject.admin_contacts[0].city).to eq("BREA")
       expect(subject.admin_contacts[0].zip).to eq("92821")
       expect(subject.admin_contacts[0].state).to eq("CA")
       expect(subject.admin_contacts[0].country_code).to eq("US")
-      expect(subject.admin_contacts[0].phone).to eq("+1.2139471032")
-      expect(subject.admin_contacts[0].fax).to eq(nil)
-      expect(subject.admin_contacts[0].email).to eq("adequatehq.com@proxy.dreamhost.com")
+      expect(subject.admin_contacts[0].phone).to eq("+1.7147064182")
+      expect(subject.admin_contacts[0].fax).to eq("")
+      expect(subject.admin_contacts[0].email).to eq("ADEQUATEHQ.COM@PROXY.DREAMHOST.COM")
     end
   end
   describe "#technical_contacts" do
@@ -63,16 +63,16 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
       expect(subject.technical_contacts).to have(1).items
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].name).to eq("adequatehq.com Private Registrant")
-      expect(subject.technical_contacts[0].organization).to eq("A Happy DreamHost Customer")
-      expect(subject.technical_contacts[0].address).to eq("417 Associated Rd #324")
-      expect(subject.technical_contacts[0].city).to eq("Brea")
+      expect(subject.technical_contacts[0].name).to eq("PRIVATE REGISTRANT")
+      expect(subject.technical_contacts[0].organization).to eq("A HAPPY DREAMHOST CUSTOMER")
+      expect(subject.technical_contacts[0].address).to eq("417 ASSOCIATED RD #324, C/O ADEQUATEHQ.COM")
+      expect(subject.technical_contacts[0].city).to eq("BREA")
       expect(subject.technical_contacts[0].zip).to eq("92821")
       expect(subject.technical_contacts[0].state).to eq("CA")
       expect(subject.technical_contacts[0].country_code).to eq("US")
-      expect(subject.technical_contacts[0].phone).to eq("+1.2139471032")
-      expect(subject.technical_contacts[0].fax).to eq(nil)
-      expect(subject.technical_contacts[0].email).to eq("adequatehq.com@proxy.dreamhost.com")
+      expect(subject.technical_contacts[0].phone).to eq("+1.7147064182")
+      expect(subject.technical_contacts[0].fax).to eq("")
+      expect(subject.technical_contacts[0].email).to eq("ADEQUATEHQ.COM@PROXY.DREAMHOST.COM")
     end
   end
 end
