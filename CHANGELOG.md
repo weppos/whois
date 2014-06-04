@@ -17,6 +17,8 @@
 
 - CHANGED: Updated whois.dreamhost.com to the new response format (GH-326). [Thanks @shingonoide]
 
+- CHANGED: whois.cctld.uz now supports updated_on (GH-315). [Thanks @huyphan]
+
 
 #### Release 3.5.3
 
