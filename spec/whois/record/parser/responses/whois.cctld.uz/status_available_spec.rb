@@ -43,7 +43,7 @@ describe Whois::Record::Parser::WhoisCctldUz, "status_available.expected" do
   end
   describe "#updated_on" do
     it do
-      expect { subject.updated_on }.to raise_error(Whois::AttributeNotSupported)
+      expect(subject.updated_on).to eq(nil)
     end
   end
   describe "#expires_on" do
