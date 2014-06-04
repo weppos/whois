@@ -7,6 +7,8 @@
 
 - SERVER: Updated .CEO, .CLUB, .VG
 
+- NEW: whois.markmonitor.com parser now recognizes throttled responses.
+
 - CHANGED: Updated ccwhois.ksregistry.net to the new response format.
 
 - CHANGED: Updated whois.gg to the new response format.
