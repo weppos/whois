@@ -54,7 +54,7 @@ module Whois
 
         property_supported :updated_on do
           node("Last Updated On") do |value|
-            Time.parse(value)
+            Time.parse(value) unless value.empty?
           end
         end
 
