@@ -7,6 +7,8 @@
 
 - SERVER: Updated .CEO, .CLUB, .VG
 
+- FIXED: whois.enom.com and whois.yoursrs.com parsers crash when trying to access an empty update date (GH-327). [Thanks @alexaitken]
+
 - NEW: whois.markmonitor.com parser now recognizes throttled responses.
 
 - CHANGED: Updated ccwhois.ksregistry.net to the new response format.
