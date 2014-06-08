@@ -1,0 +1,5 @@
+#disclaimer
+  %s == "% Dot IE domain names must:\n\n  -be less than 66 characters in length, including the '.ie' characters\n\n  -not start with a hyphen '-'\n\n  -not have a label ending in a hyphen before the '.ie' e.g. 'xyz-.ie'\n\n  -contain at least 5 characters, including the three for '.ie'\n\n  -have at least one alphabetic character, e.g. ' would be invalid'"
+
+#available?
+  %s == false

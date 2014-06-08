@@ -35,6 +35,8 @@ module Whois
         tokenizer :scan_disclaimer do
           if @input.match?(/^% Rights restricted by copyright/)
             @ast["field:disclaimer"] = _scan_lines_to_array(/^%(.+)\n/).join("\n")
+          elsif @input.match?(/^% Dot IE domain names must:/)
+            @ast["field:disclaimer"] = _scan_lines_to_array(/^%(.+)\n/).join("\n")
           end
         end
 
