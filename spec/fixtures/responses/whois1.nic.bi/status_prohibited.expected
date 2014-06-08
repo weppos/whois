@@ -1,0 +1,31 @@
+#domain
+  %s == "wwwzom.bi"
+
+#domain_id
+  %s == nil
+
+
+#status
+  %s == :reserved
+
+#available?
+  %s == false
+
+
+#created_on
+  %s == nil
+
+#updated_on
+  %s == nil
+
+#expires_on
+  %s == nil
+
+
+#registrar
+  %s == nil
+
+
+#nameservers
+  %s %CLASS{array}
+  %s == []
