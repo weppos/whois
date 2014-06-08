@@ -42,6 +42,8 @@ module Whois
             :available
           when list.include?("ok")
             :registered
+          when list.include?("prohibited string - object cannot be registered")
+            :reserved
           else
             Whois.bug!(ParserError, "Unknown status `#{list.join(", ")}'.")
           end
