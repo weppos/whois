@@ -20,6 +20,20 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisRegistryproPro < BaseAfilias
+
+        property_supported :status do
+          if reserved?
+            :reserved
+          else
+            super()
+          end
+        end
+
+        # NEWPROPERTY
+        def reserved?
+          !!content_for_scanner.match(/Governmental Reserved Name/)
+        end
+
       end
 
     end
