@@ -1,0 +1,5 @@
+#status
+  %s == :reserved
+
+#reserved?
+  %s == true
