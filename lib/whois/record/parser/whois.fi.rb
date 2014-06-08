@@ -39,7 +39,9 @@ module Whois
 
 
         property_supported :status do
-          if registered?
+          if reserved?
+            :reserved
+          elsif registered?
             case node("status", &:downcase)
             when "granted"
               :registered
@@ -76,11 +78,11 @@ module Whois
 
 
         property_not_supported :registrar
-        
+
         property_supported :registrant_contacts do
           node("descr") do |array|
             address = node("address")
-            
+
             Record::Contact.new(
               type:         Record::Contact::TYPE_REGISTRANT,
               id:           array[1],
@@ -103,6 +105,11 @@ module Whois
           Array.wrap(node("nserver")).map do |line|
             Record::Nameserver.new(name: line.split(" ").first)
           end
+        end
+
+        # NEWPROPERTY
+        def reserved?
+          !!content_for_scanner.match(/Domain not available/)
         end
 
       end
