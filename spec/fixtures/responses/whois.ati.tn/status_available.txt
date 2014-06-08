@@ -1,4 +1,8 @@
+This is JWhoisServer serving ccTLD tn;تونس
+Java Whois Server 0.4.1.1    (c) 2006 - 2013 Klaus Zerwes zero-sys.net
 All rights reserved.
 Copyright "Tunisian Internet Agency - http://whois.tn"
 
-Domain u34jedzcq.tn not found
+NO OBJECT FOUND!
+object:.............u34jedzcq.tn
+type:...............domain
