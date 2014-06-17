@@ -101,3 +101,7 @@
   %s[0].name == "ns39.domaincontrol.com"
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns40.domaincontrol.com"
+
+
+#reserved?
+  %s == false

@@ -148,4 +148,9 @@ describe Whois::Record::Parser::WhoisNicXxx, "status_registered.expected" do
       expect(subject.nameservers[1].name).to eq("ns40.domaincontrol.com")
     end
   end
+  describe "#reserved?" do
+    it do
+      expect(subject.reserved?).to eq(false)
+    end
+  end
 end

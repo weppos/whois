@@ -106,3 +106,7 @@
   %s[4].name == "ns5.dnspod.net"
   %s[5] %CLASS{nameserver}
   %s[5].name == "ns6.dnspod.net"
+
+
+#reserved?
+  %s == false

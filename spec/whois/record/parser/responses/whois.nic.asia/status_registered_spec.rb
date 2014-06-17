@@ -153,4 +153,9 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_registered.expected" do
       expect(subject.nameservers[5].name).to eq("ns6.dnspod.net")
     end
   end
+  describe "#reserved?" do
+    it do
+      expect(subject.reserved?).to eq(false)
+    end
+  end
 end
