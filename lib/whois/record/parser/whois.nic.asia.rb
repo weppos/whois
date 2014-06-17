@@ -21,6 +21,11 @@ module Whois
       #
       class WhoisNicAsia < BaseAfilias
 
+        self.scanner = Scanners::BaseAfilias, {
+            pattern_reserved: /^Reserved by DotAsia\n/,
+        }
+
+
         property_supported :status do
           if reserved?
             :reserved

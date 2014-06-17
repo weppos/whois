@@ -18,7 +18,8 @@ module Whois
       class WhoisNicXxx < BaseAfilias2
 
         self.scanner = Scanners::BaseAfilias, {
-            pattern_disclaimer: /^Access to/
+            pattern_disclaimer: /^Access to/,
+            pattern_reserved: /^Reserved by ICM Registry\n/,
         }
 
 
