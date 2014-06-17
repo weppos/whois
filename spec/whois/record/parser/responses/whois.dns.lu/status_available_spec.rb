@@ -51,6 +51,29 @@ describe Whois::Record::Parser::WhoisDnsLu, "status_available.expected" do
       expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to eq(nil)
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to eq([])
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to eq([])
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to eq([])
+    end
+  end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)

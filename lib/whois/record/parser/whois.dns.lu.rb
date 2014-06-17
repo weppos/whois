@@ -60,10 +60,12 @@ module Whois
 
 
         property_supported :registrar do
-          Record::Registrar.new(
-              name:         content_for_scanner[/registrar-name:\s+(.+)\n/, 1],
-              url:          content_for_scanner[/registrar-url:\s+(.+)\n/, 1],
-          )
+          if name = value_for_key('registrar-name')
+            Record::Registrar.new(
+                name:         name,
+                url:          value_for_key('registrar-url'),
+            )
+          end
         end
 
         property_supported :registrant_contacts do
@@ -80,11 +82,11 @@ module Whois
 
 
         property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+          values_for_key('nserver').map do |line|
             if line =~ /(.+) \[(.+)\]/
-              Record::Nameserver.new(:name => $1, :ipv4 => $2)
+              Record::Nameserver.new(name: $1, ipv4: $2)
             else
-              Record::Nameserver.new(:name => line)
+              Record::Nameserver.new(name: line)
             end
           end
         end
@@ -93,26 +95,31 @@ module Whois
         private
 
         def build_contact(element, type)
-          Record::Contact.new(
-              type:         type,
-              id:           nil,
-              name:         value_for_property(element, 'name'),
-              address:      value_for_property(element, 'address'),
-              city:         value_for_property(element, 'city'),
-              zip:          value_for_property(element, 'zipcode'),
-              country_code: value_for_property(element, 'country'),
-              email:        value_for_property(element, 'email')
-          )
+          if name = value_for_key('%s-name' % element)
+            Record::Contact.new(
+                type:         type,
+                id:           nil,
+                name:         name,
+                address:      value_for_key('%s-address' % element),
+                city:         value_for_key('%s-city' % element),
+                zip:          value_for_key('%s-zipcode' % element),
+                country_code: value_for_key('%s-country' % element),
+                email:        value_for_key('%s-email' % element)
+            )
+          end
         end
 
-        def value_for_property(element, property)
-          matches = content_for_scanner.scan(/#{element}-#{property}:\s*(.+)\n/)
-          value = matches.collect(&:first).join(', ')
-          if value == ""
-            nil
+        def value_for_key(key)
+          values = values_for_key(key)
+          if values.size > 1
+            values.join(', ')
           else
-            value
+            values.first
           end
+        end
+
+        def values_for_key(key)
+          content_for_scanner.scan(/#{key}:\s+(.+)\n/).flatten
         end
 
       end

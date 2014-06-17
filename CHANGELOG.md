@@ -2,6 +2,8 @@
 
 #### Master
 
+- NEW: Added registrar and contact support for whois.dns.lu (GH-329). [Thanks @huyphan]
+
 - CHANGED: Updated whois.iis.se and whois.iis.nu to the new response format (GH-328).
 
 
