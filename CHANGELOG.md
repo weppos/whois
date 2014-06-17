@@ -12,6 +12,8 @@
 
 - FIXED: whois.netcom.cm parser crashes when the status is suspended (GH-333). [Thanks @case]
 
+- FIXED: whois.nic.gd parser crashes when the domain is reserved (GH-335). [Thanks @case]
+
 
 #### Release 3.5.4
 
