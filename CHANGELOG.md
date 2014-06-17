@@ -8,6 +8,10 @@
 
 - FIXED: whois.fi parser crashes when the domain is reserved (GH-339). [Thanks @case]
 
+- FIXED: whois.whois.nic.asia parser crashes when the status is reserved (GH-340). [Thanks @case]
+
+- FIXED: whois.netcom.cm parser crashes when the status is suspended (GH-333). [Thanks @case]
+
 
 #### Release 3.5.4
 
