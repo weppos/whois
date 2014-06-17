@@ -22,7 +22,11 @@ module Whois
       class WhoisNicAsia < BaseAfilias
 
         property_supported :status do
-          Array.wrap(node("Domain Status"))
+          if reserved?
+            :reserved
+          else
+            Array.wrap(node("Domain Status"))
+          end
         end
 
 
@@ -58,6 +62,11 @@ module Whois
           Array.wrap(node("Nameservers")).reject(&:empty?).map do |name|
             Record::Nameserver.new(:name => name.downcase)
           end
+        end
+
+        # NEWPROPERTY
+        def reserved?
+          !!content_for_scanner.match(/Reserved by DotAsia/)
         end
 
 

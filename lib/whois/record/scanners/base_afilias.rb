@@ -33,9 +33,12 @@ module Whois
           end
         end
 
-        # .XXX
         tokenizer :scan_reserved do
+          # .XXX
           if @input.scan(/^Reserved by ICM Registry\n/)
+            @ast["status:reserved"] = true
+          # .ASIA
+          elsif @input.scan(/^Reserved by DotAsia\n/)
             @ast["status:reserved"] = true
           end
         end
