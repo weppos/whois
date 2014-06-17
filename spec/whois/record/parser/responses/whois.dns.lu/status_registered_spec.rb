@@ -66,4 +66,52 @@ describe Whois::Record::Parser::WhoisDnsLu, "status_registered.expected" do
       expect(subject.nameservers[3].name).to eq("ns4.google.com")
     end
   end
+  describe "#registrant_contacts" do
+    it do
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].name).to eq("Google Inc.")
+      expect(subject.registrant_contacts[0].address).to eq("1600 Amphitheatre Parkway")
+      expect(subject.registrant_contacts[0].city).to eq("Mountain View")
+      expect(subject.registrant_contacts[0].zip).to eq("94043")
+      expect(subject.registrant_contacts[0].country_code).to eq("US")
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].name).to eq("DNS Admin")
+      expect(subject.admin_contacts[0].address).to eq("Google Inc., 1600 Amphitheatre Parkway")
+      expect(subject.admin_contacts[0].city).to eq("Mountain View")
+      expect(subject.admin_contacts[0].zip).to eq("94043")
+      expect(subject.admin_contacts[0].country_code).to eq("US")
+      expect(subject.admin_contacts[0].email).to eq("dns-admin@google.com")
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].name).to eq("DNS Admin")
+      expect(subject.technical_contacts[0].address).to eq("Google Inc., 1600 Amphitheatre Parkway")
+      expect(subject.technical_contacts[0].city).to eq("Mountain View")
+      expect(subject.technical_contacts[0].zip).to eq("94043")
+      expect(subject.technical_contacts[0].country_code).to eq("US")
+      expect(subject.technical_contacts[0].email).to eq("dns-admin@google.com")
+    end
+  end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.name).to eq("Markmonitor")
+      expect(subject.registrar.url).to eq("http://www.markmonitor.com/")
+    end
+  end
 end

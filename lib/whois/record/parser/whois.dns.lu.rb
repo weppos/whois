@@ -68,8 +68,51 @@ module Whois
           end
         end
 
-      end
+        property_supported :registrar do
+          Record::Registrar.new(
+              name:         content_for_scanner[/registrar-name:\s*(.+)\n/, 1],
+              url:          content_for_scanner[/registrar-url:\s*(.+)\n/, 1],
+          )
+        end
 
+        property_supported :registrant_contacts do
+          build_contact('org', Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact('adm', Record::Contact::TYPE_ADMINISTRATIVE)
+        end
+
+        property_supported :technical_contacts do
+          build_contact('tec', Record::Contact::TYPE_TECHNICAL)
+        end
+
+      private
+
+        def build_contact(element, type)
+          Record::Contact.new(
+              type:         type,
+              id:           nil,
+              name:         value_for_property(element, 'name'),
+              address:      value_for_property(element, 'address'),
+              city:         value_for_property(element, 'city'),
+              zip:          value_for_property(element, 'zipcode'),
+              country_code: value_for_property(element, 'country'),
+              email:        value_for_property(element, 'email')
+          )
+        end
+
+        def value_for_property(element, property)
+          matches = content_for_scanner.scan(/#{element}-#{property}:\s*(.+)\n/)
+          value = matches.collect(&:first).join(', ')
+          if value == ""
+            nil
+          else
+            value
+          end
+        end
+
+      end
     end
   end
 end
