@@ -1,0 +1,45 @@
+#domain
+  %s == "imdb.cm"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2009-08-28 01:00 WAT}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2014-01-24 09:17 WAT}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2011-08-28 01:00 WAT}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == nil
+  %s.name         == "Registrar ANTIC"
+  %s.organization == nil
+  %s.url          == nil
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.refinedhosting.net"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.refinedhosting.net"
