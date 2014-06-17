@@ -22,12 +22,19 @@ module Whois
             :scan_available,
             :scan_disclaimer,
             :scan_keyvalue,
+            :scan_reserved
         ]
 
 
         tokenizer :scan_available do
           if @input.skip(/^Domain not found/)
             @ast["status:available"] = true
+          end
+        end
+
+        tokenizer :scan_reserved do
+          if @input.skip(/^Domain not available/)
+            @ast["status:reserved"] = true
           end
         end
 
