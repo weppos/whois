@@ -28,9 +28,10 @@ module Whois
         property_supported :status do
           if content_for_scanner =~ /domaintype:\s+(.+)\n/
             case $1.downcase
-              when "active" then :registered
-              else
-                Whois.bug!(ParserError, "Unknown status `#{$1}'.")
+            when "active"
+              :registered
+            else
+              Whois.bug!(ParserError, "Unknown status `#{$1}'.")
             end
           else
             :available
@@ -58,20 +59,10 @@ module Whois
         property_not_supported :expires_on
 
 
-        property_supported :nameservers do
-          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
-            if line =~ /(.+) \[(.+)\]/
-              Record::Nameserver.new(:name => $1, :ipv4 => $2)
-            else
-              Record::Nameserver.new(:name => line)
-            end
-          end
-        end
-
         property_supported :registrar do
           Record::Registrar.new(
-              name:         content_for_scanner[/registrar-name:\s*(.+)\n/, 1],
-              url:          content_for_scanner[/registrar-url:\s*(.+)\n/, 1],
+              name:         content_for_scanner[/registrar-name:\s+(.+)\n/, 1],
+              url:          content_for_scanner[/registrar-url:\s+(.+)\n/, 1],
           )
         end
 
@@ -87,7 +78,19 @@ module Whois
           build_contact('tec', Record::Contact::TYPE_TECHNICAL)
         end
 
-      private
+
+        property_supported :nameservers do
+          content_for_scanner.scan(/nserver:\s+(.+)\n/).flatten.map do |line|
+            if line =~ /(.+) \[(.+)\]/
+              Record::Nameserver.new(:name => $1, :ipv4 => $2)
+            else
+              Record::Nameserver.new(:name => line)
+            end
+          end
+        end
+
+
+        private
 
         def build_contact(element, type)
           Record::Contact.new(

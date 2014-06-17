@@ -19,18 +19,10 @@
   %s %ERROR{AttributeNotSupported}
 
 
-#nameservers
-  %s %CLASS{array}
-  %s %SIZE{4}
-  %s[0] %CLASS{nameserver}
-  %s[0].name == "ns1.google.com"
-  %s[1] %CLASS{nameserver}
-  %s[1].name == "ns2.google.com"
-  %s[2] %CLASS{nameserver}
-  %s[2].name == "ns3.google.com"
-  %s[3] %CLASS{nameserver}
-  %s[3].name == "ns4.google.com"
-
+#registrar
+  %s %CLASS{registrar}
+  %s.name         == "Markmonitor"
+  %s.url          == "http://www.markmonitor.com/"
 
 #registrant_contacts
   %s %CLASS{array}
@@ -66,8 +58,16 @@
   %s[0].zip           == "94043"
   %s[0].country_code  == "US"
   %s[0].email         == "dns-admin@google.com"
+  
 
-#registrar
-  %s %CLASS{registrar}
-  %s.name         == "Markmonitor"
-  %s.url          == "http://www.markmonitor.com/"
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.google.com"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.google.com"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "ns3.google.com"
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "ns4.google.com"

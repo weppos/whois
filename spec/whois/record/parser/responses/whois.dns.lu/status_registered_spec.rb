@@ -52,18 +52,11 @@ describe Whois::Record::Parser::WhoisDnsLu, "status_registered.expected" do
       expect { subject.expires_on }.to raise_error(Whois::AttributeNotSupported)
     end
   end
-  describe "#nameservers" do
+  describe "#registrar" do
     it do
-      expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
-      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.google.com")
-      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.google.com")
-      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns3.google.com")
-      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.name).to eq("Markmonitor")
+      expect(subject.registrar.url).to eq("http://www.markmonitor.com/")
     end
   end
   describe "#registrant_contacts" do
@@ -107,11 +100,18 @@ describe Whois::Record::Parser::WhoisDnsLu, "status_registered.expected" do
       expect(subject.technical_contacts[0].email).to eq("dns-admin@google.com")
     end
   end
-  describe "#registrar" do
+  describe "#nameservers" do
     it do
-      expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.name).to eq("Markmonitor")
-      expect(subject.registrar.url).to eq("http://www.markmonitor.com/")
+      expect(subject.nameservers).to be_a(Array)
+      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("ns3.google.com")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("ns4.google.com")
     end
   end
 end
