@@ -64,9 +64,10 @@ module Whois
           end
         end
 
+
         # NEWPROPERTY
         def reserved?
-          !!content_for_scanner.match(/Reserved by DotAsia/)
+          !!node("status:reserved")
         end
 
 
