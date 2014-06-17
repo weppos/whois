@@ -6,6 +6,8 @@
 
 - CHANGED: Updated whois.iis.se and whois.iis.nu to the new response format (GH-328).
 
+- FIXED: whois.fi parser crashes when the domain is reserved (GH-339). [Thanks @case]
+
 
 #### Release 3.5.4
 
