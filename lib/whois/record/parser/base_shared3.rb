@@ -37,7 +37,9 @@ module Whois
 
 
         property_supported :status do
-          if available?
+          if respond_to?(:reserved?) && reserved?
+            :reserved
+          elsif available?
             :available
           else
             :registered
@@ -45,7 +47,7 @@ module Whois
         end
 
         property_supported :available? do
-          !!node("status:available")
+          !(respond_to?(:reserved?) && reserved?) && !!node("status:available")
         end
 
         property_supported :registered? do

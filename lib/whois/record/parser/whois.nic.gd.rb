@@ -21,22 +21,6 @@ module Whois
       #
       class WhoisNicGd < BaseShared3
 
-        property_supported :status do
-          if reserved?
-            :reserved
-          else
-            super()
-          end
-        end
-
-        property_supported :available? do
-          if reserved?
-            false
-          else
-            super()
-          end
-        end
-
         # NEWPROPERTY
         def reserved?
           !!content_for_scanner.match(/RESTRICTED/)
