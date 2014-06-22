@@ -1,6 +1,6 @@
 # Changelog
 
-#### Master
+#### Release 3.5.5
 
 - NEW: Added registrar and contact support for whois.dns.lu (GH-329). [Thanks @huyphan]
 

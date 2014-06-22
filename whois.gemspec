@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
-# stub: whois 3.5.4 ruby lib
+# stub: whois 3.5.5 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "whois"
-  s.version = "3.5.4"
+  s.version = "3.5.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Simone Carletti"]
-  s.date = "2014-06-05"
+  s.date = "2014-06-22"
   s.description = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, parse and convert responses into easy-to-use Ruby objects."
   s.email = ["weppos@weppos.net"]
   s.executables = ["ruby-whois"]
