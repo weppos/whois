@@ -1209,7 +1209,7 @@
     "host": "whois.nic.berlin"
   },
   ".best": {
-    "adapter": "none"
+    "host": "whois.nic.best"
   },
   ".bid": {
     "adapter": "none"
@@ -1957,6 +1957,183 @@
   },
   ".digital": {
     "host": "whois.donuts.co"
+  },
+  ".audio": {
+    "host": "whois.uniregistry.net"
+  },
+  ".hiphop": {
+    "host": "whois.uniregistry.net"
+  },
+  ".juegos": {
+    "host": "whois.uniregistry.net"
+  },
+  ".beer": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".luxe": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".church": {
+    "host": "whois.donuts.co"
+  },
+  ".guide": {
+    "host": "whois.donuts.co"
+  },
+  ".life": {
+    "host": "whois.donuts.co"
+  },
+  ".loans": {
+    "host": "whois.donuts.co"
+  },
+  ".autos": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".homes": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".motorcycles": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".reise": {
+    "host": "whois.reise.tld-box.at"
+  },
+  ".rio": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".versicherung": {
+    "host": "whois.versicherung.tld-box.at"
+  },
+  ".yachts": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--4gbrim": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".degree": {
+    "host": "whois.rightside.co"
+  },
+  ".mortgage": {
+    "host": "whois.rightside.co"
+  },
+  ".space": { // centralnic
+    "host": "whois.nic.space"
+  },
+  ".website": { // centralnic
+    "host": "whois.nic.website"
+  },
+  ".attorney": {
+    "host": "whois.rightside.co"
+  },
+  ".dentist": {
+    "host": "whois.rightside.co"
+  },
+  ".hiv": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".global": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".organic": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--kput3i": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".active": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".green": {
+    "host": "whois.afilias.net"
+  },
+  ".host": {
+    "host": "whois.centralnic.com"
+  },
+  ".lawyer": {
+    "host": "whois.rightside.co"
+  },
+  ".market": {
+    "host": "whois.rightside.co"
+  },
+  ".press": {
+    "host": "whois.centralnic.com"
+  },
+  ".software": {
+    "host": "whois.rightside.co"
+  },
+  ".vet": {
+    "host": "whois.rightside.co"
+  },
+  ".army": {
+    "host": "whois.rightside.co"
+  },
+  ".navy": {
+    "host": "whois.rightside.co"
+  },
+  ".engineer": {
+    "host": "whois.rightside.co"
+  },
+  ".gives": {
+    "host": "whois.rightside.co"
+  },
+  ".rehab": {
+    "host": "whois.rightside.co"
+  },
+  ".republican": {
+    "host": "whois.rightside.co"
+  },
+  ".bio": {
+    "host": "whois.ksregistry.net"
+  },
+  ".hamburg": {
+    "host": "whois.hamburg.tld-box.at"
+  },
+  ".brussels": {
+    "host": "whois.brussels.tld-box.at"
+  },
+  ".vlaanderen": {
+    "host": "whois.vlaanderen.tld-box.at"
+  },
+  ".tirol": { // tld-box
+    "host": "whois.nic.tirol"
+  },
+  ".scot": {
+    "host": "whois.scot.coreregistry.net"
+  },
+  ".bzh": {
+    "host": "whois-bzh.nic.fr"
+  },
+  ".surf": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".nhk": {
+    "adapter": "none"
+  },
+  ".capetown": {
+    "host": "capetown-whois.registry.net.za"
+  },
+  ".durban": {
+    "host": "durban-whois.registry.net.za"
+  },
+  ".joburg": {
+    "host": "joburg-whois.registry.net.za"
+  },
+  ".lotto": {
+    "host": "whois.afilias.net"
+  },
+  ".ovh": {
+    "host": "whois-ovh.nic.fr"
+  },
+  ".physio": { // aridnrs
+    "host": "whois.nic.physio"
+  },
+  ".bmw": {
+    "host": "whois.ksregistry.net"
+  },
+  ".mini": {
+    "host": "whois.ksregistry.net"
+  },
+  ".ceo": {
+    "host": "whois.nic.ceo"
   },
 
 
