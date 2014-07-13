@@ -21,11 +21,11 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2014-01-16 06:52:06 UTC}
+  %s %TIME{2014-06-28 09:18:02 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-07-29 18:15:42 UTC}
+  %s %TIME{2015-07-29 18:15:42 UTC}
 
 
 #registrar
@@ -33,7 +33,7 @@
   %s.id           == nil
   %s.name         == "MarkMonitor"
   %s.organization == nil
-  %s.url          == "http://www.markmonitor.com"
+  %s.url          == nil
 
 
 #nameservers

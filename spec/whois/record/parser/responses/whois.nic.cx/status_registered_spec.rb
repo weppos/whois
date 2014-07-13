@@ -55,13 +55,13 @@ describe Whois::Record::Parser::WhoisNicCx, "status_registered.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2014-01-16 06:52:06 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2014-06-28 09:18:02 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-07-29 18:15:42 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2015-07-29 18:15:42 UTC"))
     end
   end
   describe "#registrar" do
@@ -70,7 +70,7 @@ describe Whois::Record::Parser::WhoisNicCx, "status_registered.expected" do
       expect(subject.registrar.id).to eq(nil)
       expect(subject.registrar.name).to eq("MarkMonitor")
       expect(subject.registrar.organization).to eq(nil)
-      expect(subject.registrar.url).to eq("http://www.markmonitor.com")
+      expect(subject.registrar.url).to eq(nil)
     end
   end
   describe "#nameservers" do
