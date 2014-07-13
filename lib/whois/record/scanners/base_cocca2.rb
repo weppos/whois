@@ -34,7 +34,9 @@ module Whois
 
         tokenizer :scan_disclaimer do
           if @input.match?(/^#{DISCLAIMER_MATCHES.join("|")}/)
-            @ast["field:disclaimer"] = @input.scan_until(/>>>/)
+            @ast["field:disclaimer"] = @input.scan_until(/>>>/) ||
+                                       # special handler for whois.nic.cx exception
+                                       @input.scan_until(/\Z/)
           end
         end
 
