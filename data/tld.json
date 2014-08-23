@@ -220,8 +220,7 @@
     "host": "whois.audns.net.au"
   },
   ".aw": {
-    "host": null,
-    "adapter": "none"
+    "host": "whois.nic.aw"
   },
   ".ax": {
     "host": "whois.ax"
