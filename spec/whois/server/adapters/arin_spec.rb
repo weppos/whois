@@ -65,6 +65,18 @@ describe Whois::Server::Adapters::Arin do
         record = server.lookup("0.0.0.0")
         record.parts.should have(1).part
       end
+
+      it "folows referrals without ports" do
+        referral = File.read(fixture("referrals/arin_referral_apnic.txt"))
+        response = "Whois Response"
+        server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(referral)
+        server.query_handler.expects(:call).with("0.0.0.0", "whois.apnic.net", 43).returns(response)
+
+        record = server.lookup("0.0.0.0")
+        record.parts.should have(2).parts
+        record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.arin.net"),
+                                Whois::Record::Part.new(:body => response, :host => "whois.apnic.net")]
+      end
     end
 
   end

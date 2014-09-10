@@ -1,0 +1,78 @@
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+# If you see inaccuracies in the results, please report at
+# http://www.arin.net/public/whoisinaccuracy/index.xhtml
+#
+
+
+#
+# Query terms are ambiguous.  The query is assumed to be:
+#     "n 144.134.121.81"
+#
+# Use "?" to get help.
+#
+
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=144.134.121.81?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       144.130.0.0 - 144.140.255.255
+CIDR:           144.132.0.0/14, 144.136.0.0/14, 144.130.0.0/15, 144.140.0.0/16
+OriginAS:
+NetName:        APNIC-ERX-144-130-0-0
+NetHandle:      NET-144-130-0-0-1
+Parent:         NET-144-0-0-0-0
+NetType:        Early Registrations, Transferred to APNIC
+Comment:        This IP address range is not registered in the ARIN database.
+Comment:        This range was transferred to the APNIC Whois Database as
+Comment:        part of the ERX (Early Registration Transfer) project.
+Comment:        For details, refer to the APNIC Whois Database via
+Comment:        WHOIS.APNIC.NET or http://wq.apnic.net/apnic-bin/whois.pl
+Comment:
+Comment:        ** IMPORTANT NOTE: APNIC is the Regional Internet Registry
+Comment:        for the Asia Pacific region.  APNIC does not operate networks
+Comment:        using this IP address range and is not able to investigate
+Comment:        spam or abuse reports relating to these addresses.  For more
+Comment:        help, refer to http://www.apnic.net/apnic-info/whois_search2/abuse-and-spamming
+RegDate:        2004-01-07
+Updated:        2009-10-08
+Ref:            http://whois.arin.net/rest/net/NET-144-130-0-0-1
+
+OrgName:        Asia Pacific Network Information Centre
+OrgId:          APNIC
+Address:        PO Box 3646
+City:           South Brisbane
+StateProv:      QLD
+PostalCode:     4101
+Country:        AU
+RegDate:
+Updated:        2012-01-24
+Ref:            http://whois.arin.net/rest/org/APNIC
+
+ReferralServer: whois://whois.apnic.net
+
+OrgTechHandle: AWC12-ARIN
+OrgTechName:   APNIC Whois Contact
+OrgTechPhone:  +61 7 3858 3188
+OrgTechEmail:  search-apnic-not-arin@apnic.net
+OrgTechRef:    http://whois.arin.net/rest/poc/AWC12-ARIN
+
+OrgAbuseHandle: AWC12-ARIN
+OrgAbuseName:   APNIC Whois Contact
+OrgAbusePhone:  +61 7 3858 3188
+OrgAbuseEmail:  search-apnic-not-arin@apnic.net
+OrgAbuseRef:    http://whois.arin.net/rest/poc/AWC12-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+# If you see inaccuracies in the results, please report at
+# http://www.arin.net/public/whoisinaccuracy/index.xhtml
+#
+

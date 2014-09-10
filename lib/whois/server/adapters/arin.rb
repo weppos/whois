@@ -38,7 +38,7 @@ module Whois
         private
 
         def extract_referral(response)
-          return unless response =~ /ReferralServer:\s*r?whois:\/\/([\w\.]+):?(\d+)/
+          return unless response =~ /ReferralServer:\s*r?whois:\/\/([\w.-]+)(?::(\d+))?/
           {
             host: $1,
             port: $2 ? $2.to_i : nil
