@@ -6,10 +6,10 @@
   %s == :available
 
 #available?
-  %s == true
+  %s be_truthy
 
 #registered?
-  %s == false
+  %s be_falsey
 
 
 #created_on
@@ -32,8 +32,8 @@
 
 
 #response_throttled?
-  %s == false
+  %s be_falsey
 
 
 #invalid?
-  %s == false
+  %s be_falsey

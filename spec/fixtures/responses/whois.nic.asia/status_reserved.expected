@@ -13,10 +13,10 @@
   %s == :reserved
 
 #reserved?
-  %s == true
+  %s be_truthy
 
 #available?
-  %s == false
+  %s be_falsey
 
 
 #created_on
@@ -51,4 +51,4 @@
 
 
 #reserved?
-  %s == true
+  %s be_truthy

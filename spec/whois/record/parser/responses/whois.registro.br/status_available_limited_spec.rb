@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisRegistroBr, "status_available_limited.expec
 
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(true)
+      expect(subject.available?).to be_truthy
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(false)
+      expect(subject.registered?).to be_falsey
     end
   end
 end

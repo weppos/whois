@@ -2,10 +2,10 @@
   %s == :registered
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy
 
 
 #created_on
@@ -22,7 +22,7 @@
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{2}
+  %s.size eq(2)
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.everydns.net"
   %s[1] %CLASS{nameserver}

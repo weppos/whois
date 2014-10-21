@@ -1,6 +1,6 @@
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{2}
+  %s.size eq(2)
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.phpsunucu.com"
   %s[1] %CLASS{nameserver}

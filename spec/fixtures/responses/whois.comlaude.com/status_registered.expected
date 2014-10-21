@@ -2,10 +2,10 @@
   %s %ERROR{AttributeNotSupported}
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy
 
 
 #created_on
@@ -29,7 +29,7 @@
 
 #registrant_contacts
   %s %CLASS{array}
-  %s %SIZE{1}
+  %s.size eq(1)
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
   %s[0].name         == "Domain Manager"
@@ -45,7 +45,7 @@
 
 #admin_contacts
   %s %CLASS{array}
-  %s %SIZE{1}
+  %s.size eq(1)
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   %s[0].name         == "Domain Manager"
@@ -61,7 +61,7 @@
 
 #technical_contacts
   %s %CLASS{array}
-  %s %SIZE{1}
+  %s.size eq(1)
   %s[0] %CLASS{contact}
   %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].name         == "Technical Manager"
@@ -78,7 +78,7 @@
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{4}
+  %s.size eq(4)
   %s[0] %CLASS{nameserver}
   %s[0].name == "dns1.comlaude-dns.com"
   %s[1] %CLASS{nameserver}

@@ -2,10 +2,10 @@
   %s == :inactive
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy
 
 
 #created_on
@@ -22,4 +22,4 @@
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{0}
+  %s.size eq(0)

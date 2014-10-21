@@ -28,12 +28,12 @@ describe Whois::Record::Parser::WhoisCoCa, "status_available.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(true)
+      expect(subject.available?).to be_truthy
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(false)
+      expect(subject.registered?).to be_falsey
     end
   end
   describe "#created_on" do
@@ -59,7 +59,7 @@ describe Whois::Record::Parser::WhoisCoCa, "status_available.expected" do
   end
   describe "#reserved?" do
     it do
-      expect(subject.reserved?).to eq(false)
+      expect(subject.reserved?).to be_falsey
     end
   end
 end

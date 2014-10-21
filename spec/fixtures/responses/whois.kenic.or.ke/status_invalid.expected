@@ -2,10 +2,10 @@
   %s == :invalid
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == false
+  %s be_falsey
 
 
 #created_on
@@ -24,4 +24,4 @@
 
 
 #invalid?
-  %s == true
+  %s be_truthy

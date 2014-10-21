@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisRegistryproPro, "status_reserved.expected" 
   end
   describe "#reserved?" do
     it do
-      expect(subject.reserved?).to eq(true)
+      expect(subject.reserved?).to be_truthy
     end
   end
 end

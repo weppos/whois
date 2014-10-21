@@ -2,10 +2,10 @@
   %s == :registered
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy
 
 
 #created_on
@@ -22,6 +22,6 @@
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{1}
+  %s.size eq(1)
   %s[0] %CLASS{nameserver}
   %s[0].name == "dns1-tl.brunet.bn"

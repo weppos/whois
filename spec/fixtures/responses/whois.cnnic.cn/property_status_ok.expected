@@ -2,7 +2,7 @@
   %s == ["ok"]
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy

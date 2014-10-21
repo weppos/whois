@@ -3,4 +3,4 @@
 
 
 #response_incomplete?
-  %s == true
+  %s be_truthy

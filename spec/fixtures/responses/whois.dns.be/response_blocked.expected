@@ -1,5 +1,5 @@
 #response_throttled?
-  %s == true
+  %s be_truthy
 
 #response_blocked?
-  %s == true
+  %s be_truthy

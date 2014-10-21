@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "response_throttled_daily
 
   describe "#response_throttled?" do
     it do
-      expect(subject.response_throttled?).to eq(true)
+      expect(subject.response_throttled?).to be_truthy
     end
   end
 end

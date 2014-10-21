@@ -38,12 +38,12 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.registered?).to be_truthy
     end
   end
   describe "#created_on" do
@@ -115,7 +115,7 @@ describe Whois::Record::Parser::WhoisDnsPl, "status_registered.expected" do
   end
   describe "#response_throttled?" do
     it do
-      expect(subject.response_throttled?).to eq(false)
+      expect(subject.response_throttled?).to be_falsey
     end
   end
 end

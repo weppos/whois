@@ -28,12 +28,12 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_available.expecte
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(true)
+      expect(subject.available?).to be_truthy
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(false)
+      expect(subject.registered?).to be_falsey
     end
   end
   describe "#created_on" do
@@ -59,12 +59,12 @@ describe Whois::Record::Parser::WhoisDomainRegistryNl, "status_available.expecte
   end
   describe "#response_throttled?" do
     it do
-      expect(subject.response_throttled?).to eq(false)
+      expect(subject.response_throttled?).to be_falsey
     end
   end
   describe "#response_unavailable?" do
     it do
-      expect(subject.response_unavailable?).to eq(false)
+      expect(subject.response_unavailable?).to be_falsey
     end
   end
 end

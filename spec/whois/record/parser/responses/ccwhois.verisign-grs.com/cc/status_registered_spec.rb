@@ -43,12 +43,12 @@ describe Whois::Record::Parser::CcwhoisVerisignGrsCom, "status_registered.expect
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.registered?).to be_truthy
     end
   end
   describe "#created_on" do
