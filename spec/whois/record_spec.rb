@@ -18,19 +18,19 @@ describe Whois::Record do
 
   describe "#initialize" do
     it "requires a server and parts" do
-      lambda { described_class.new }.should raise_error(ArgumentError)
-      lambda { described_class.new(server) }.should raise_error(ArgumentError)
-      lambda { described_class.new(server, parts) }.should_not raise_error
+      expect { described_class.new }.to raise_error(ArgumentError)
+      expect { described_class.new(server) }.to raise_error(ArgumentError)
+      expect { described_class.new(server, parts) }.not_to raise_error
     end
     
     it "sets server and parts from arguments" do
       instance = described_class.new(server, parts)
-      instance.server.should be(server)
-      instance.parts.should be(parts)
+      expect(instance.server).to be(server)
+      expect(instance.parts).to be(parts)
 
       instance = described_class.new(nil, nil)
-      instance.server.should be_nil
-      instance.parts.should be_nil
+      expect(instance.server).to be_nil
+      expect(instance.parts).to be_nil
     end
   end
 
@@ -49,53 +49,53 @@ describe Whois::Record do
     end
 
     it "returns true if method is in self" do
-      subject.respond_to?(:to_s).should be_true
+      expect(subject.respond_to?(:to_s)).to be_truthy
     end
 
     it "returns true if method is in hierarchy" do
-      subject.respond_to?(:nil?).should be_true
+      expect(subject.respond_to?(:nil?)).to be_truthy
     end
 
     it "returns true if method is a property" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      subject.respond_to?(:test_property).should be_true
+      expect(subject.respond_to?(:test_property)).to be_truthy
     end
 
     it "returns true if method is a property?" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      subject.respond_to?(:test_property?).should be_true
+      expect(subject.respond_to?(:test_property?)).to be_truthy
     end
 
     it "returns true if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      subject.respond_to?(:test_method).should be_true
+      expect(subject.respond_to?(:test_method)).to be_truthy
     end
 
     it "returns true if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      subject.respond_to?(:test_method?).should be_true
+      expect(subject.respond_to?(:test_method?)).to be_truthy
     end
   end
 
   describe "#to_s" do
     it "delegates to #content" do
-      described_class.new(nil, [parts[0]]).to_s.should == parts[0].body
-      described_class.new(nil, parts).to_s.should == parts.map(&:body).join("\n")
-      described_class.new(nil, []).to_s.should == ""
+      expect(described_class.new(nil, [parts[0]]).to_s).to eq(parts[0].body)
+      expect(described_class.new(nil, parts).to_s).to eq(parts.map(&:body).join("\n"))
+      expect(described_class.new(nil, []).to_s).to eq("")
     end
   end
 
   describe "#inspect" do
     it "inspects the record content" do
-      described_class.new(nil, [parts[0]]).inspect.should == parts[0].body.inspect
+      expect(described_class.new(nil, [parts[0]]).inspect).to eq(parts[0].body.inspect)
     end
 
     it "joins multiple parts" do
-      described_class.new(nil, parts).inspect.should == parts.map(&:body).join("\n").inspect
+      expect(described_class.new(nil, parts).inspect).to eq(parts.map(&:body).join("\n").inspect)
     end
 
     it "joins empty parts" do
-      described_class.new(nil, []).inspect.should == "".inspect
+      expect(described_class.new(nil, []).inspect).to eq("".inspect)
     end
   end
 
@@ -103,118 +103,118 @@ describe Whois::Record do
     it "returns true when other is the same instance" do
       one = two = described_class.new(server, parts)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns true when other has same class and has the same parts" do
       one, two = described_class.new(server, parts), described_class.new(server, parts)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns true when other has descendant class and has the same parts" do
       subklass = Class.new(described_class)
       one, two = described_class.new(server, parts), subklass.new(server, parts)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns true when other has same class and has equal parts" do
       one, two = described_class.new(server, parts), described_class.new(server, parts.dup)
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns true when other has same class, different server and the same parts" do
       one, two = described_class.new(server, parts), described_class.new(nil, parts)
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns false when other has different class and has the same parts" do
       one, two = described_class.new(server, parts), Struct.new(:server, :parts).new(server, parts)
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
 
     it "returns false when other has different parts" do
       one, two = described_class.new(server, parts), described_class.new(server, [])
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
 
     it "returns false when other is string and has the same content" do
       one, two = described_class.new(server, parts), described_class.new(server, parts).to_s
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
 
     it "returns false when other is string and has different content" do
       one, two = described_class.new(server, parts), "different"
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
   end
 
 
   describe "#match" do
     it "delegates to content" do
-      subject.match(/record/).should be_a(MatchData)
-      subject.match(/record/)[0].should == "record"
+      expect(subject.match(/record/)).to be_a(MatchData)
+      expect(subject.match(/record/)[0]).to eq("record")
 
-      subject.match(/nomatch/).should be_nil
+      expect(subject.match(/nomatch/)).to be_nil
     end
   end
 
   describe "#match?" do
     it "calls match and checks for match" do
-      subject.match?(/record/).should  == true
-      subject.match?(/nomatch/).should == false
+      expect(subject.match?(/record/)).to  eq(true)
+      expect(subject.match?(/nomatch/)).to eq(false)
     end
   end
 
 
   describe "#content" do
     it "returns the part body" do
-      described_class.new(nil, [parts[0]]).content.should == parts[0].body
+      expect(described_class.new(nil, [parts[0]]).content).to eq(parts[0].body)
     end
 
     it "joins multiple parts" do
-      described_class.new(nil, parts).content.should == parts.map(&:body).join("\n")
+      expect(described_class.new(nil, parts).content).to eq(parts.map(&:body).join("\n"))
     end
 
     it "returns an empty string when no parts" do
-      described_class.new(nil, []).content.should == ""
+      expect(described_class.new(nil, []).content).to eq("")
     end
   end
 
   describe "#parser" do
     it "returns a Parser" do
-      subject.parser.should be_a(Whois::Record::Parser)
+      expect(subject.parser).to be_a(Whois::Record::Parser)
     end
 
     it "initializes the parser with self" do
-      subject.parser.record.should be(subject)
+      expect(subject.parser.record).to be(subject)
     end
 
     it "memoizes the value" do
-      subject.instance_eval { @parser }.should be_nil
+      expect(subject.instance_eval { @parser }).to be_nil
       parser = subject.parser
-      subject.instance_eval { @parser }.should be(parser)
+      expect(subject.instance_eval { @parser }).to be(parser)
     end
   end
 
 
   describe "#properties" do
     it "returns a Hash" do
-      subject.properties.should be_a(Hash)
+      expect(subject.properties).to be_a(Hash)
     end
 
     it "returns both nil and not-nil values" do
@@ -222,13 +222,13 @@ describe Whois::Record do
       subject.expects(:created_on).returns(nil)
       subject.expects(:expires_on).returns(Time.parse("2010-10-10"))
       properties = subject.properties
-      properties[:domain].should == ""
-      properties[:created_on].should == nil
-      properties[:expires_on].should == Time.parse("2010-10-10")
+      expect(properties[:domain]).to eq("")
+      expect(properties[:created_on]).to eq(nil)
+      expect(properties[:expires_on]).to eq(Time.parse("2010-10-10"))
     end
 
     it "fetches all parser property" do
-      subject.properties.keys.should =~ Whois::Record::Parser::PROPERTIES
+      expect(subject.properties.keys).to match_array(Whois::Record::Parser::PROPERTIES)
     end
   end
 
@@ -247,76 +247,76 @@ describe Whois::Record do
   describe "#property_any_supported?" do
     it "delegates to parsers" do
       subject.parser.expects(:property_any_supported?).with(:example).returns(true)
-      subject.property_any_supported?(:example).should be_true
+      expect(subject.property_any_supported?(:example)).to be_truthy
     end
   end
 
   describe "property" do
     it "returns value when the property is supported" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.created_on.should == Date.parse("2010-10-20")
+      expect(r.created_on).to eq(Date.parse("2010-10-20"))
     end
 
     it "returns nil when the property is not supported" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.updated_on.should be_nil
+      expect(r.updated_on).to be_nil
     end
 
     it "returns nil when the property is not implemented" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.expires_on.should be_nil
+      expect(r.expires_on).to be_nil
     end
   end
 
   describe "property?" do
     it "returns true when the property is supported and has no value" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.status?.should == false
+      expect(r.status?).to eq(false)
     end
 
     it "returns false when the property is supported and has q value" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.created_on?.should == true
+      expect(r.created_on?).to eq(true)
     end
 
     it "returns false when the property is not supported" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.updated_on?.should == false
+      expect(r.updated_on?).to eq(false)
     end
 
     it "returns false when the property is not implemented" do
       r = described_class.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.expires_on?.should == false
+      expect(r.expires_on?).to eq(false)
     end
   end
 
 
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
-      lambda do
+      expect do
         described_class.new(nil, []).changed?(Object.new)
-      end.should raise_error
+      end.to raise_error
 
-      lambda do
+      expect do
         described_class.new(nil, []).changed?(described_class.new(nil, []))
-      end.should_not raise_error
+      end.not_to raise_error
     end
   end
 
   describe "#unchanged?" do
     it "raises if the argument is not an instance of the same class" do
-      lambda do
+      expect do
         described_class.new(nil, []).unchanged?(Object.new)
-      end.should raise_error
+      end.to raise_error
 
-      lambda do
+      expect do
         described_class.new(nil, []).unchanged?(described_class.new(nil, []))
-      end.should_not raise_error
+      end.not_to raise_error
     end
 
     it "returns true if self and other references the same object" do
       instance = described_class.new(nil, [])
-      instance.unchanged?(instance).should be_true
+      expect(instance.unchanged?(instance)).to be_truthy
     end
 
     it "delegates to #parser if self and other references different objects" do
@@ -331,7 +331,7 @@ describe Whois::Record do
   describe "#contacts" do
     it "delegates to parser" do
       subject.parser.expects(:contacts).returns([:one, :two])
-      subject.contacts.should == [:one, :two]
+      expect(subject.contacts).to eq([:one, :two])
     end
   end
 
@@ -370,12 +370,12 @@ describe Whois::Record do
 
       it "returns true if the property is not nil" do
         subject.expects(:status).returns("available")
-        subject.status?.should == true
+        expect(subject.status?).to eq(true)
       end
 
       it "returns false if the property is nil" do
         subject.expects(:status).returns(nil)
-        subject.status?.should == false
+        expect(subject.status?).to eq(false)
       end
     end
 
@@ -386,24 +386,24 @@ describe Whois::Record do
         end
 
         record = described_class.new(nil, [])
-        lambda do
-          record.happy.should == "yes"
-        end.should_not raise_error
-        lambda do
+        expect do
+          expect(record.happy).to eq("yes")
+        end.not_to raise_error
+        expect do
           record.sad
-        end.should raise_error(NoMethodError)
+        end.to raise_error(NoMethodError)
       end
 
       it "does not catch all methods" do
-        lambda do
+        expect do
           described_class.new(nil, []).i_am_not_defined
-        end.should raise_error(NoMethodError)
+        end.to raise_error(NoMethodError)
       end
 
       it "does not catch all question methods" do
-        lambda do
+        expect do
           described_class.new(nil, []).i_am_not_defined?
-        end.should raise_error(NoMethodError)
+        end.to raise_error(NoMethodError)
       end
     end
   end

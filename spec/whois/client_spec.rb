@@ -4,39 +4,39 @@ describe Whois::Client do
 
   describe "#initialize" do
     it "accepts a zero parameters" do
-      lambda { described_class.new }.should_not raise_error
+      expect { described_class.new }.not_to raise_error
     end
 
     it "accepts a settings parameter" do
-      lambda { described_class.new({ :foo => "bar" }) }.should_not raise_error
+      expect { described_class.new({ :foo => "bar" }) }.not_to raise_error
     end
 
 
     it "accepts a timeout setting with a value in seconds" do
       client = described_class.new(:timeout => 100)
-      client.timeout.should == 100
+      expect(client.timeout).to eq(100)
     end
 
     it "accepts a timeout setting with a nil value" do
       client = described_class.new(:timeout => nil)
-      client.timeout.should be_nil
+      expect(client.timeout).to be_nil
     end
 
     it "accepts a block" do
       described_class.new do |client|
-        client.should be_instance_of(described_class)
+        expect(client).to be_instance_of(described_class)
       end
     end
 
 
     it "defaults timeout setting to DEFAULT_TIMEOUT" do
       client = described_class.new
-      client.timeout.should == described_class::DEFAULT_TIMEOUT
+      expect(client.timeout).to eq(described_class::DEFAULT_TIMEOUT)
     end
 
     it "sets settings to given argument, except timeout" do
       client = described_class.new(:timeout => nil, :foo => "bar")
-      client.settings.should == { :foo => "bar" }
+      expect(client.settings).to eq({ :foo => "bar" })
     end
   end
 

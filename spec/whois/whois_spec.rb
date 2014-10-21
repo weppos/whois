@@ -17,7 +17,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 1")
 
-        Whois.available?("example.test").should be_true
+        expect(Whois.available?("example.test")).to be_truthy
       end
     end
 
@@ -26,7 +26,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 2")
 
-        Whois.available?("example.test").should be_false
+        expect(Whois.available?("example.test")).to be_falsey
       end
     end
 
@@ -36,7 +36,7 @@ describe Whois do
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).returns("1 == 2")
         Whois.expects(:warn)
 
-        Whois.available?("example.test").should be_nil
+        expect(Whois.available?("example.test")).to be_nil
       end
     end
   end
@@ -47,7 +47,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 1")
 
-        Whois.registered?("example.test").should be_false
+        expect(Whois.registered?("example.test")).to be_falsey
       end
     end
 
@@ -56,7 +56,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 2")
 
-        Whois.registered?("example.test").should be_true
+        expect(Whois.registered?("example.test")).to be_truthy
       end
     end
 
@@ -66,7 +66,7 @@ describe Whois do
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).returns("1 == 2")
         Whois.expects(:warn)
 
-        Whois.registered?("example.test").should be_nil
+        expect(Whois.registered?("example.test")).to be_nil
       end
     end
   end

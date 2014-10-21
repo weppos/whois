@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contacts_case4.expec
   describe "#admin_contacts" do
     it do
       expect(subject.admin_contacts).to be_a(Array)
-      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts.size).to eq(1)
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].id).to eq(nil)
       expect(subject.admin_contacts[0].name).to eq("ITS Business Office\nSyracuse University\nInformation Technology and Services\nCenter for Science and Technology")

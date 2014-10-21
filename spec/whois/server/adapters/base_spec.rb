@@ -7,26 +7,26 @@ describe Whois::Server::Adapters::Base do
 
   describe "#initialize" do
     it "requires type, allocation, and host parameters" do
-      lambda { described_class.new(:tld) }.should raise_error(ArgumentError)
-      lambda { described_class.new(:tld, ".test") }.should raise_error(ArgumentError)
-      lambda { described_class.new(:tld, ".test", "whois.test") }.should_not raise_error
+      expect { described_class.new(:tld) }.to raise_error(ArgumentError)
+      expect { described_class.new(:tld, ".test") }.to raise_error(ArgumentError)
+      expect { described_class.new(:tld, ".test", "whois.test") }.not_to raise_error
     end
 
     it "accepts an options parameter" do
-      lambda { described_class.new(:tld, ".test", "whois.test", { :foo => "bar" }) }.should_not raise_error
+      expect { described_class.new(:tld, ".test", "whois.test", { :foo => "bar" }) }.not_to raise_error
     end
 
     it "sets instance variables from arguments" do
       a = described_class.new(:tld, ".test", "whois.test", { :foo => "bar" })
-      a.type.should == :tld
-      a.allocation.should == ".test"
-      a.host.should == "whois.test"
-      a.options.should == { :foo => "bar" }
+      expect(a.type).to eq(:tld)
+      expect(a.allocation).to eq(".test")
+      expect(a.host).to eq("whois.test")
+      expect(a.options).to eq({ :foo => "bar" })
     end
 
     it "defaults options to an empty hash" do
       a = described_class.new(:tld, ".test", "whois.test")
-      a.options.should == Hash.new
+      expect(a.options).to eq(Hash.new)
     end
   end
 
@@ -34,44 +34,44 @@ describe Whois::Server::Adapters::Base do
     it "returns true when other is the same instance" do
       one = two = described_class.new(*definition)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns true when other has same class and has the same attributes" do
       one, two = described_class.new(*definition), described_class.new(*definition)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns true when other has descendant class and has the same attributes" do
       subklass = Class.new(described_class)
       one, two = described_class.new(*definition), subklass.new(*definition)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      expect(one == two).to be_truthy
+      expect(one.eql? two).to be_truthy
     end
 
     it "returns false when other has different class and has the same attributes" do
       one, two = described_class.new(*definition), Struct.new(:type, :allocation, :host, :options).new(*definition)
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
 
     it "returns false when other has different attributes" do
       one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".cool", "whois.test")
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
 
     it "returns false when other has different options" do
       one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".test", "whois.test", { :foo => "bar" })
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      expect(one == two).to be_falsey
+      expect(one.eql? two).to be_falsey
     end
   end
 
@@ -80,21 +80,21 @@ describe Whois::Server::Adapters::Base do
     it "merges settings with current options" do
       a = described_class.new(:tld, ".test", "whois.test", { :hello => "world" })
       a.configure(:foo => "bar")
-      a.options.should == { :hello => "world", :foo => "bar" }
+      expect(a.options).to eq({ :hello => "world", :foo => "bar" })
     end
 
     it "gives higher priority to settings argument" do
       a = described_class.new(:tld, ".test", "whois.test", { :foo => "bar" })
-      a.options.should == { :foo => "bar" }
+      expect(a.options).to eq({ :foo => "bar" })
       a.configure(:foo => "baz")
-      a.options.should == { :foo => "baz" }
+      expect(a.options).to eq({ :foo => "baz" })
     end
 
     it "overrides @host if :host option exists" do
       a = described_class.new(:tld, ".test", "whois.test", { :hello => "world" })
       a.configure(:foo => "bar", :host => "whois.example.com")
-      a.options.should == { :hello => "world", :foo => "bar", :host => "whois.example.com" }
-      a.host.should == "whois.example.com"
+      expect(a.options).to eq({ :hello => "world", :foo => "bar", :host => "whois.example.com" })
+      expect(a.host).to eq("whois.example.com")
     end
   end
 

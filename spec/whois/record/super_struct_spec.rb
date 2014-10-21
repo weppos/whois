@@ -5,21 +5,21 @@ describe SuperStruct do
   SuperEroe = Class.new(SuperStruct.new(:name, :supername))
 
   it "inherits from Struct" do
-    SuperEroe.ancestors.should include(Struct)
+    expect(SuperEroe.ancestors).to include(Struct)
   end
 
 
   describe "#initialize" do
     it "initializes a new instance from given hash" do
       i = SuperEroe.new(:name => "Pippo", :supername => "SuperPippo")
-      i.name.should == "Pippo"
-      i.supername.should == "SuperPippo"
+      expect(i.name).to eq("Pippo")
+      expect(i.supername).to eq("SuperPippo")
     end
 
     it "initializes a new instance from given block" do
       SuperEroe.new do |i|
-        i.should be_instance_of(SuperEroe)
-        i.should be_kind_of(SuperStruct)
+        expect(i).to be_instance_of(SuperEroe)
+        expect(i).to be_kind_of(SuperStruct)
       end
     end
   end

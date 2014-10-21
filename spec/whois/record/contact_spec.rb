@@ -5,23 +5,23 @@ require 'whois/record/contact'
 describe Whois::Record::Contact do
 
   it "inherits from SuperStruct" do
-    described_class.ancestors.should include(SuperStruct)
+    expect(described_class.ancestors).to include(SuperStruct)
   end
 
 
   describe "#initialize" do
     it "accepts an empty value" do
-      lambda do
+      expect do
         i = described_class.new
-        i.id.should be_nil
-      end.should_not raise_error
+        expect(i.id).to be_nil
+      end.not_to raise_error
     end
 
     it "accepts an empty hash" do
-      lambda do
+      expect do
         i = described_class.new({})
-        i.id.should be_nil
-      end.should_not raise_error
+        expect(i.id).to be_nil
+      end.not_to raise_error
     end
 
     # it "initializes a new instance from given params" do
@@ -36,10 +36,10 @@ describe Whois::Record::Contact do
     it "initializes a new instance from given hash" do
       i = described_class.new(:id => 10, :name => "John Doe", :type => described_class::TYPE_REGISTRANT)
 
-      i.id.should == 10
-      i.type.should == described_class::TYPE_REGISTRANT
-      i.name.should == "John Doe"
-      i.organization.should be_nil
+      expect(i.id).to eq(10)
+      expect(i.type).to eq(described_class::TYPE_REGISTRANT)
+      expect(i.name).to eq("John Doe")
+      expect(i.organization).to be_nil
     end
 
     it "initializes a new instance from given block" do
@@ -49,10 +49,10 @@ describe Whois::Record::Contact do
         c.name  = "John Doe"
       end
 
-      i.id.should == 10
-      i.type.should == described_class::TYPE_REGISTRANT
-      i.name.should == "John Doe"
-      i.organization.should be_nil
+      expect(i.id).to eq(10)
+      expect(i.type).to eq(described_class::TYPE_REGISTRANT)
+      expect(i.name).to eq("John Doe")
+      expect(i.organization).to be_nil
     end
   end
 
