@@ -2,4 +2,4 @@
   %s == :reserved
 
 #available?
-  %s == false
+  %s be_falsey

@@ -23,12 +23,12 @@ describe Whois::Record::Parser::WhoisDnsBe, "response_blocked.expected" do
 
   describe "#response_throttled?" do
     it do
-      expect(subject.response_throttled?).to eq(true)
+      expect(subject.response_throttled?).to be_truthy
     end
   end
   describe "#response_blocked?" do
     it do
-      expect(subject.response_blocked?).to eq(true)
+      expect(subject.response_blocked?).to be_truthy
     end
   end
 end

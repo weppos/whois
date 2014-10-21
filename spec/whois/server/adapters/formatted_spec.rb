@@ -13,8 +13,8 @@ describe Whois::Server::Adapters::Formatted do
       server.query_handler.expects(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43).returns(response)
 
       record = server.lookup("domain.de")
-      record.to_s.should  == expected
-      record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.denic.de")]
+      expect(record.to_s).to  eq(expected)
+      expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.denic.de")])
     end
 
     context "without format option" do

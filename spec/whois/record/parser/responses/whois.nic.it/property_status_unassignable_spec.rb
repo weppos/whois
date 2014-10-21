@@ -28,12 +28,12 @@ describe Whois::Record::Parser::WhoisNicIt, "property_status_unassignable.expect
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(false)
+      expect(subject.registered?).to be_falsey
     end
   end
 end

@@ -1,6 +1,6 @@
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{2}
+  %s.size eq(2)
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns0.netbenefit.co.uk"
   %s[0].ipv4 == "212.53.64.30"

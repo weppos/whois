@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisTonicTo, "response_incomplete.expected" do
   end
   describe "#response_incomplete?" do
     it do
-      expect(subject.response_incomplete?).to eq(true)
+      expect(subject.response_incomplete?).to be_truthy
     end
   end
 end

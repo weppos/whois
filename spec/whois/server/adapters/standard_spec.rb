@@ -13,8 +13,8 @@ describe Whois::Server::Adapters::Standard do
       server.query_handler.expects(:call).with("domain.test", "whois.test", 43).returns(response)
 
       record = server.lookup("domain.test")
-      record.to_s.should  == expected
-      record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.test")]
+      expect(record.to_s).to  eq(expected)
+      expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.test")])
     end
 
     context "with port option" do

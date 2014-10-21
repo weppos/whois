@@ -28,7 +28,7 @@ describe Whois::Record::Parser::WhoisNicGd, "status_restricted.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
 end

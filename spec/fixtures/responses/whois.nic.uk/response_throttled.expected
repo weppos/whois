@@ -1,2 +1,2 @@
 #response_throttled?
-  %s == true
+  %s be_truthy

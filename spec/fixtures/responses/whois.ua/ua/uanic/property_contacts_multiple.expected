@@ -1,6 +1,6 @@
 #technical_contacts
   %s %CLASS{array}
-  %s %SIZE{2}
+  %s.size eq(2)
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].id            == "KG780-UANIC"

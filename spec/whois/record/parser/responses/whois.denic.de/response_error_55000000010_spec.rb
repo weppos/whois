@@ -28,12 +28,12 @@ describe Whois::Record::Parser::WhoisDenicDe, "response_error_55000000010.expect
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(false)
+      expect(subject.registered?).to be_falsey
     end
   end
 end

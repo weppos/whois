@@ -33,12 +33,12 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_registered.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.registered?).to be_truthy
     end
   end
   describe "#created_on" do
@@ -68,7 +68,7 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns4.google.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
@@ -81,12 +81,12 @@ describe Whois::Record::Parser::WhoisDnsBe, "status_registered.expected" do
   end
   describe "#response_throttled?" do
     it do
-      expect(subject.response_throttled?).to eq(false)
+      expect(subject.response_throttled?).to be_falsey
     end
   end
   describe "#invalid?" do
     it do
-      expect(subject.invalid?).to eq(false)
+      expect(subject.invalid?).to be_falsey
     end
   end
 end

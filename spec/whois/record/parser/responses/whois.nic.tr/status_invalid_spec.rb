@@ -43,12 +43,12 @@ describe Whois::Record::Parser::WhoisNicTr, "status_invalid.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(false)
+      expect(subject.registered?).to be_falsey
     end
   end
   describe "#created_on" do

@@ -13,10 +13,10 @@
   %s == :registered
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy
 
 
 #created_on
@@ -47,4 +47,4 @@
 
 
 #response_incomplete?
-  %s == false
+  %s be_falsey

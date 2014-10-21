@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisEducauseEdu, "property_contact_registrant_w
   describe "#registrant_contacts" do
     it do
       expect(subject.registrant_contacts).to be_a(Array)
-      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts.size).to eq(1)
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
       expect(subject.registrant_contacts[0].id).to eq(nil)

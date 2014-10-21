@@ -43,12 +43,12 @@ describe Whois::Record::Parser::WhoisMonicMo, "status_registered.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.registered?).to be_truthy
     end
   end
   describe "#created_on" do
@@ -93,7 +93,7 @@ describe Whois::Record::Parser::WhoisMonicMo, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("umacsn1.umac.mo")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)

@@ -2,4 +2,4 @@
   %s == :reserved
 
 #reserved?
-  %s == true
+  %s be_truthy

@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryNetZa, "response_throttled.expected
 
   describe "#response_throttled?" do
     it do
-      expect(subject.response_throttled?).to eq(true)
+      expect(subject.response_throttled?).to be_truthy
     end
   end
 end

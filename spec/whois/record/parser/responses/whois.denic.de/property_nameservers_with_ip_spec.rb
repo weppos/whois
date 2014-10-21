@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "property_nameservers_with_ip.expe
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(5).items
+      expect(subject.nameservers.size).to eq(5)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.prodns.de")
       expect(subject.nameservers[0].ipv4).to eq("91.233.85.99")

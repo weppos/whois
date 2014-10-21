@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisVerisignGrsCom, "response_unavailable.expec
 
   describe "#response_unavailable?" do
     it do
-      expect(subject.response_unavailable?).to eq(true)
+      expect(subject.response_unavailable?).to be_truthy
     end
   end
 end

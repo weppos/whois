@@ -28,12 +28,12 @@ describe Whois::Record::Parser::WhoisNicUk, "status_invalid.expected" do
   end
   describe "#valid?" do
     it do
-      expect(subject.valid?).to eq(false)
+      expect(subject.valid?).to be_falsey
     end
   end
   describe "#invalid?" do
     it do
-      expect(subject.invalid?).to eq(true)
+      expect(subject.invalid?).to be_truthy
     end
   end
 end

@@ -43,12 +43,12 @@ describe Whois::Record::Parser::WhoisNicAsia, "status_reserved.expected" do
   end
   describe "#reserved?" do
     it do
-      expect(subject.reserved?).to eq(true)
+      expect(subject.reserved?).to be_truthy
     end
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#created_on" do

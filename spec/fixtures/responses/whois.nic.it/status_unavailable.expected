@@ -2,7 +2,7 @@
   %s == :unavailable
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == false
+  %s be_falsey

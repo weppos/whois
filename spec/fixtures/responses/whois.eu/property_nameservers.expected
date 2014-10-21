@@ -1,6 +1,6 @@
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{5}
+  %s.size eq(5)
   %s[0] %CLASS{nameserver}
   %s[0].name == "a.nic.eu"
   %s[1] %CLASS{nameserver}

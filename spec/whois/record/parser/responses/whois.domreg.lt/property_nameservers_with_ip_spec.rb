@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisDomregLt, "property_nameservers_with_ip.exp
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.serveriai.lt")
       expect(subject.nameservers[0].ipv4).to eq("79.98.25.142")

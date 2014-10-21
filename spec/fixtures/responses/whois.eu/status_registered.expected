@@ -9,10 +9,10 @@
   %s == :registered
 
 #available?
-  %s == false
+  %s be_falsey
 
 #registered?
-  %s == true
+  %s be_truthy
 
 
 #created_on
@@ -41,12 +41,12 @@
 
 #technical_contacts
   %s %CLASS{array}
-  %s %SIZE{0}
+  %s.size eq(0)
 
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{4}
+  %s.size eq(4)
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns4.google.com"
   %s[0].ipv4 == nil
@@ -66,4 +66,4 @@
 
 
 #response_throttled?
-  %s == false
+  %s be_falsey

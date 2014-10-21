@@ -28,12 +28,12 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_status_to_be_suspended.ex
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.registered?).to be_truthy
     end
   end
 end

@@ -1,6 +1,6 @@
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{4}
+  %s.size eq(4)
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns1.hostgator.com.br"
   %s[0].ipv4 == "74.53.28.178"

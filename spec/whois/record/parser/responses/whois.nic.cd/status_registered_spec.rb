@@ -38,12 +38,12 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   end
   describe "#available?" do
     it do
-      expect(subject.available?).to eq(false)
+      expect(subject.available?).to be_falsey
     end
   end
   describe "#registered?" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.registered?).to be_truthy
     end
   end
   describe "#created_on" do
@@ -73,7 +73,7 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(0).items
+      expect(subject.nameservers.size).to eq(0)
     end
   end
 end
