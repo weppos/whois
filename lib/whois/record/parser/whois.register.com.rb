@@ -20,6 +20,11 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisRegisterCom < BaseIcannCompliant
+        property_supported :updated_on do
+          node('Updated Date') do |value|
+            parse_time(value) unless value.empty?
+          end
+        end
       end
 
     end
