@@ -35,7 +35,7 @@ OptionParser.new do |opts|
   end
 
   opts.on_tail("--version", "output version information and exit") do
-    puts "Whois #{Whois::VERSION}"
+    puts "ruby-whois #{Whois::VERSION}"
     exit
   end
 

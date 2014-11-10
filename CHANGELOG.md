@@ -6,6 +6,8 @@
 
 - CHANGED: Updated whois.nic.cx to the new response format.
 
+- FIXED: ruby-whois --version crashes (GH-356). [Thanks @micat]
+
 
 #### Release 3.5.5
 
