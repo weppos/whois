@@ -8,6 +8,8 @@
 
 - FIXED: ruby-whois --version crashes (GH-356). [Thanks @micat]
 
+- FIXED: whois.register.com parser crashes when the update date is empty (GH-353). [Thanks @alexaitken]
+
 
 #### Release 3.5.5
 
