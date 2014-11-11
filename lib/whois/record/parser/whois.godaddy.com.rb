@@ -23,9 +23,8 @@ module Whois
 
         property_not_supported :status
 
-        # The server is contacted only in case of a registered domain.
         property_supported :available? do
-          false
+          !!content_for_scanner =~ /No match for/
         end
 
         property_supported :registered? do
