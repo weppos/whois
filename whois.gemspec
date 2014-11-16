@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
-# stub: whois 3.5.6 ruby lib
+# stub: whois 3.5.7 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "whois"
-  s.version = "3.5.6"
+  s.version = "3.5.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Simone Carletti"]
-  s.date = "2014-11-10"
+  s.date = "2014-11-16"
   s.description = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, parse and convert responses into easy-to-use Ruby objects."
   s.email = ["weppos@weppos.net"]
   s.executables = ["ruby-whois"]
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.post_install_message = "********************************************************************************\n\n  Thank you for installing the whois gem!\n\n  If you like this gem, please support the project.\n  http://pledgie.com/campaigns/11383\n\n  Does your project or organization use this gem? Add it to the apps wiki.\n  https://github.com/weppos/whois/wiki/apps\n\n  Are you looking for a quick and convenient way to perform WHOIS queries?\n  Check out RoboWhois WHOIS API.\n  https://www.robowhois.com/\n\n********************************************************************************\n"
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.2")
   s.rubyforge_project = "whois"
-  s.rubygems_version = "2.2.2"
+  s.rubygems_version = "2.4.4"
   s.summary = "An intelligent pure Ruby WHOIS client and parser."
 
   if s.respond_to? :specification_version then
