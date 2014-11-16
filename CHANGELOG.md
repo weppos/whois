@@ -2,7 +2,9 @@
 
 #### master
 
-- FIXED: Fixed invalid JSON definition file (closes GH-349).
+- FIXED: Fixed invalid JSON definition file (GH-349).
+
+- FIXED: Fixed the ARIN referral regex to correctly consider ports optional (GH-350). [Thanks @jrideout]
 
 
 #### Release 3.5.7
