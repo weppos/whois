@@ -35,15 +35,19 @@ module Whois
 
 
         property_supported :status do
-          Array.wrap(node("Status"))
+          if respond_to?(:reserved?) && reserved?
+            :reserved
+          else
+            Array.wrap(node("Status"))
+          end
         end
 
         property_supported :available? do
-          !!node('status:available')
+          !(respond_to?(:reserved?) && reserved?) && !!node('status:available')
         end
 
         property_supported :registered? do
-          !available?
+          !(respond_to?(:reserved?) && reserved?) && !available?
         end
 
 

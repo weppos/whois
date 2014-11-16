@@ -51,7 +51,7 @@ module Whois
         end
 
         property_supported :registered? do
-          !available?
+          !(respond_to?(:reserved?) && reserved?) && !available?
         end
 
 

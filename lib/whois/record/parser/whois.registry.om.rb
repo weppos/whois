@@ -21,20 +21,18 @@ module Whois
       #
       class WhoisRegistryOm < BaseShared1
 
+        self.scanner = Scanners::BaseShared1, {
+            pattern_reserved: /^Restricted\n/
+        }
+
+
         property_supported :updated_on do
           node("Last Modified") { |value| Time.parse(value) }
         end
 
-        property_supported :status do
-          if reserved?
-            :reserved
-          else
-            super()
-          end
-        end
 
         def reserved?
-          !!content_for_scanner.match(/Restricted/)
+          !!node('status:reserved')
         end
 
       end

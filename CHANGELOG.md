@@ -2,6 +2,8 @@
 
 #### master
 
+- NEW: whois.registry.om now recognizes reserved domains (GH-332). [Thanks @case]
+
 - FIXED: Fixed invalid JSON definition file (GH-349).
 
 - FIXED: Fixed the ARIN referral regex to correctly consider ports optional (GH-350). [Thanks @jrideout]
