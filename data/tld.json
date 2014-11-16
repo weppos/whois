@@ -1186,7 +1186,7 @@
   ".agency": {
     "host": "whois.donuts.co"
   },
-  ".bar": { // centralnic
+  ".bar": {
     "host": "whois.nic.bar"
   },
   ".bargains": {
@@ -1618,7 +1618,7 @@
   ".wien": {
     "host": "whois.nic.wien"
   },
-  ".wiki": { // centralnic
+  ".wiki": {
     "host": "whois.nic.wiki"
   },
   ".works": {
@@ -1684,7 +1684,7 @@
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
   },
-  ".xyz": { // centralnic
+  ".xyz": {
     "host": "whois.nic.xyz"
   },
   ".zone": {
@@ -2002,10 +2002,10 @@
   ".mortgage": {
     "host": "whois.rightside.co"
   },
-  ".space": { // centralnic
+  ".space": {
     "host": "whois.nic.space"
   },
-  ".website": { // centralnic
+  ".website": {
     "host": "whois.nic.website"
   },
   ".attorney": {
@@ -2110,7 +2110,7 @@
   ".ovh": {
     "host": "whois-ovh.nic.fr"
   },
-  ".physio": { // aridnrs
+  ".physio": {
     "host": "whois.nic.physio"
   },
   ".bmw": {

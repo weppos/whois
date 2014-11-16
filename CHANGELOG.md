@@ -1,5 +1,10 @@
 # Changelog
 
+#### master
+
+- FIXED: Fixed invalid JSON definition file (closes GH-349).
+
+
 #### Release 3.5.7
 
 - SERVER: Updated .AW, .BW, .GQ, .MK, .ML, .MZ, .PF, .VU, .ZM, .KIWI, .CAREER, .REISE, .VERSICHERUNG, .HOST, .PRESS, .HAMBURG, .BRUSSELS, .VLAANDEREN
