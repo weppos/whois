@@ -1,14 +1,11 @@
 Domain Name: google.tc
-WHOIS Server: 
+WHOIS Server: whois.meridiantld.net
 Creation Date: 2006-10-11T21:00:00.000Z
 Registry Expiry Date: 2014-10-12T21:00:00.000Z
 Sponsoring Registrar: MarkMonitor
 Sponsoring Registrar IANA ID: 292
 Domain Status: ok
-Domain Status: clientRenewProhibited
-Domain Status: clientDeleteProhibited
-Domain Status: clientUpdateProhibited
-Domain Status: clientTransferProhibited
+Domain Status: serverHold
 
 Registrant Name: Google  Inc.
 Registrant Organization: Google Inc.
@@ -87,4 +84,4 @@ or
 Meridian TLD Corporation reserves the right to modify these terms.
 By submitting this query, you agree to abide by this policy.
 
->>> Last update of WHOIS database: 2014-02-18T20:32:33.295Z <<<
+&gt;&gt;&gt; Last update of WHOIS database: 2014-11-22T14:06:09.520Z &lt;&lt;&lt;

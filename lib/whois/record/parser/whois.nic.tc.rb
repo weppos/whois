@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.meridiantld.net server.
+      # Parser for the whois.nic.tc server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisMeridiantldNet < BaseCocca2
+      class WhoisNicTc < BaseCocca2
       end
 
     end

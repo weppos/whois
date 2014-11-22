@@ -981,7 +981,7 @@
     "adapter": "none"
   },
   ".tc": {
-    "host": "whois.meridiantld.net"
+    "host": "whois.nic.tc"
   },
   ".td": {
     "host": null,

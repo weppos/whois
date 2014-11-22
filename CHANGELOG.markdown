@@ -2,6 +2,8 @@
 
 #### master
 
+- SERVER: Update .TC
+
 - NEW: whois.registry.om now recognizes reserved domains (GH-332). [Thanks @case]
 
 - FIXED: Fixed invalid JSON definition file (GH-349).
