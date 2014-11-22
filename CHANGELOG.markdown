@@ -2,6 +2,8 @@
 
 #### master
 
+- SERVER: Create .FIRMDALE, .MADRID, .XN--FLW351E, .XN--QCKA1PMC, .LDS, .MORMON
+
 - SERVER: Update .TC
 
 - NEW: whois.registry.om now recognizes reserved domains (GH-332). [Thanks @case]

@@ -2467,6 +2467,24 @@
   ".work": {
     "host": "whois-dub.mm-registry.com"
   },
+  ".firmdale": {
+    "host": "whois.nic.firmdale"
+  },
+  ".madrid": {
+    "host": "whois.madrid.rs.corenic.net"
+  },
+  ".xn--flw351e": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".xn--qcka1pmc": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".lds": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".mormon": {
+    "host": "whois.afilias-srs.net"
+  },
 
   ".xn--3e0b707e": {
     "host": "whois.kr"
