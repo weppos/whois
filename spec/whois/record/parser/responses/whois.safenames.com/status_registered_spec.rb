@@ -11,9 +11,9 @@
 #
 
 require 'spec_helper'
-require 'whois/record/parser/whois.safenames.com.rb'
+require 'whois/record/parser/whois.safenames.net.rb'
 
-describe Whois::Record::Parser::WhoisSafenamesCom, "status_registered.expected" do
+describe Whois::Record::Parser::WhoisSafenamesNet, "status_registered.expected" do
 
   subject do
     file = fixture("responses", "whois.safenames.com/status_registered.txt")

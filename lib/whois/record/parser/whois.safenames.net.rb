@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.safenames.com server.
+      # Parser for the whois.safenames.net server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisSafenamesCom < BaseIcannCompliant
+      class WhoisSafenamesNet < BaseIcannCompliant
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^No match for "[\w\.]+"\.\n/
         }
