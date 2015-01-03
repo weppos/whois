@@ -1,4 +1,4 @@
-# Whois
+# [Whois](http://ruby-whois.org/)
 
 <tt>Whois</tt> is an intelligent — pure Ruby — WHOIS client and parser.
 
