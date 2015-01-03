@@ -1,4 +1,4 @@
-# [Whois](http://ruby-whois.org/)
+# [Whois](http://whoisrb.org/)
 
 <tt>Whois</tt> is an intelligent — pure Ruby — WHOIS client and parser.
 
@@ -33,14 +33,14 @@ For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
 ## Installation
 
-The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/). [Learn more](http://ruby-whois.org/manual/installing/).
+The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/). [Learn more](http://whoisrb.org/manual/installing/).
 
     $ gem install whois
 
 
 ## Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://ruby-whois.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://whoisrb.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 ### Querying a WHOIS
 
@@ -152,12 +152,12 @@ w.lookup("google.com")
 
 ## Credits
 
-<tt>Whois</tt> was created and is maintained by [Simone Carletti](http://www.simonecarletti.com/). Many improvements and bugfixes were contributed by the [open source community](https://github.com/weppos/whois/graphs/contributors).
+<tt>Whois</tt> was created and is maintained by [Simone Carletti](http://simonecarletti.com/). Many improvements and bugfixes were contributed by the [open source community](https://github.com/weppos/whois/graphs/contributors).
 
 
 ## Contributing
 
-Direct questions and discussions to [Stack Overflow](http://stackoverflow.com/questions/tagged/whois-ruby).
+Direct questions and discussions to [Stack Overflow](https://stackoverflow.com/questions/tagged/whois-ruby).
 
 [Pull requests](https://github.com/weppos/whois/pulls) are very welcome! Please include spec and/or feature coverage for every patch, and create a topic branch for every separate change you make.
 
@@ -166,12 +166,12 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 
 ## More Information
 
-- [Homepage](http://ruby-whois.org/)
+- [Homepage](http://whoisrb.org/)
 - [RubyGems](https://rubygems.org/gems/whois)
 - [Issues](https://github.com/weppos/whois)
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/whois-ruby)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/whois-ruby)
 
 
 ## License
 
-Copyright (c) 2009-2014 Simone Carletti. This is Free Software distributed under the MIT license.
+Copyright (c) 2009-2015 Simone Carletti. This is Free Software distributed under the MIT license.
