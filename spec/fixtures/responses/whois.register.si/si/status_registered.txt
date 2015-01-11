@@ -11,7 +11,6 @@
 % records of existing domain names.
 %
 % This WHOIS service accepts and displays only ASCII characters.
-%
 % Arnes cannot be held liable should the stored information
 % prove to be wrong, incomplete or inaccurate in any sense.
 %
@@ -28,5 +27,25 @@
 %      o copy, extract and/or publish contents of the WHOIS database.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% No entries found for the selected source(s).
+domain:		google.si
+registrar:	AOI d.o.o.
+registrar-url:	http://www.aoi.eu/arneswhois
+nameserver:	ns1.google.com
+nameserver:	ns2.google.com
+nameserver:	ns3.google.com
+nameserver:	ns4.google.com
+registrant:	G79455
+status:		server_delete_prohibited, server_transfer_prohibited, server_update_prohibited
+created:	2005-04-04
+expire:		2015-07-19
+source:		ARNES
 
+Domain holder:
+NOT DISCLOSED
+
+Tech:
+NOT DISCLOSED
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For more information, please visit http://www.registry.si/whois.html
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
