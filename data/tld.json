@@ -2135,7 +2135,7 @@
     "adapter": "none"
   },
   ".whoswho": {
-    "adapter": "none"
+    "host": "whois.nic.whoswho"
   },
   ".williamhill": {
     "adapter": "none"
