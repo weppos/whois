@@ -2521,6 +2521,12 @@
   ".xn--45q11c": {
     "adapter": "none"
   },
+  ".koeln": {
+    "host": "whois-fe1.pdt.koeln.tango.knipp.de"
+  },
+  ".xn--c1avg": {
+    "host": "whois.publicinterestregistry.net"
+  },
 
 
   ".xn--3e0b707e": {
