@@ -2527,6 +2527,9 @@
   ".xn--c1avg": {
     "host": "whois.publicinterestregistry.net"
   },
+  ".nyc": {
+    "host": "whois.nic.nyc"
+  },
 
 
   ".xn--3e0b707e": {
