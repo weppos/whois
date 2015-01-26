@@ -2533,6 +2533,21 @@
   ".samsung": {
     "host": "whois.nic.samsung"
   },
+  ".coach": {
+    "host": "whois.donuts.co"
+  },
+  ".everbank": {
+    "host": "whois.nic.everbank"
+  },
+  ".legal": {
+    "host": "whois.donuts.co"
+  },
+  ".memorial": {
+    "host": "whois.donuts.co"
+  },
+  ".money": {
+    "host": "whois.donuts.co"
+  },
 
 
   ".xn--3e0b707e": {
