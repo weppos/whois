@@ -2485,6 +2485,9 @@
   ".mormon": {
     "host": "whois.afilias-srs.net"
   },
+  ".kyoto": {
+    "host": "whois.nic.tokyo"
+  },
 
   ".xn--3e0b707e": {
     "host": "whois.kr"

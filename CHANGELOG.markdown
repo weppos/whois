@@ -3,6 +3,8 @@
 
 #### master
 
+SERVER: Add .KYOTO
+
 SERVER: Update .SI, .WHOSWHO
 
 
