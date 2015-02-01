@@ -2548,6 +2548,18 @@
   ".money": {
     "host": "whois.donuts.co"
   },
+  ".aquarelle": {
+    "host": "whois-aquarelle.nic.fr"
+  },
+  ".irish": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".latrobe": {
+    "host": "whois.nic.latrobe"
+  },
+  ".xn--hxt814e": {
+    "host": "whois.nic.xn--hxt814e"
+  },
 
 
   ".xn--3e0b707e": {
