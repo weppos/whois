@@ -1772,7 +1772,7 @@
     "host": "whois-cl01.mm-registry.com"
   },
   ".quebec": {
-    "host": "whois.quebec.rs.corenic.net"
+    "host": "whois.nic.quebec"
   },
   ".college": {
     "host": "whois.centralnic.com"

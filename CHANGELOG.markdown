@@ -5,7 +5,7 @@
 
 SERVER: Add .KYOTO, .ONE
 
-SERVER: Update .SI, .WHOSWHO
+SERVER: Update .SI, .WHOSWHO, .QUEBEC
 
 
 #### Release 3.5.8
