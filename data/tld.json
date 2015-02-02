@@ -2488,6 +2488,10 @@
   ".kyoto": {
     "host": "whois.nic.tokyo"
   },
+  ".one": {
+    "host": "whois.nic.one"
+  },
+
 
   ".xn--3e0b707e": {
     "host": "whois.kr"
