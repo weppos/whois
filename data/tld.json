@@ -2029,6 +2029,9 @@
   ".active": {
     "host": "whois.afilias-srs.net"
   },
+  ".adult": {
+    "host": "whois.afilias-srs.net"
+  },
   ".green": {
     "host": "whois.afilias.net"
   },
@@ -2485,11 +2488,20 @@
   ".mormon": {
     "host": "whois.afilias-srs.net"
   },
+  ".porn": {
+    "host": "whois.afilias-srs.net"
+  },
   ".kyoto": {
     "host": "whois.nic.tokyo"
   },
-  ".one": {
-    "host": "whois.nic.one"
+  ".eurovision": {
+    "host": "whois.nic.eurovision"
+  },
+  ".fashion": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".trust": {
+    "host": "whois.nic.trust"
   },
 
 
