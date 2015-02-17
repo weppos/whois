@@ -2503,6 +2503,15 @@
   ".trust": {
     "host": "whois.nic.trust"
   },
+  ".xn--czrs0t": {
+    "host": "whois.donuts.co"
+  },
+  ".samsung": {
+    "host": "whois.nic.xn--cg4bki"
+  },
+  ".cartier": {
+    "adapter": "none"
+  },
 
 
   ".xn--3e0b707e": {
