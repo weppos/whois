@@ -2533,6 +2533,9 @@
   ".samsung": {
     "host": "whois.nic.samsung"
   },
+  ".doosan": {
+    "host": "whois.nic.doosan"
+  },
   ".coach": {
     "host": "whois.donuts.co"
   },
