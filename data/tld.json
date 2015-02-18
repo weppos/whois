@@ -2563,6 +2563,15 @@
   ".sky": {
     "host": "whois.nic.sky"
   },
+  ".dev": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".docs": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".tires": {
+    "host": "whois.donuts.co"
+  },
 
 
   ".xn--3e0b707e": {
