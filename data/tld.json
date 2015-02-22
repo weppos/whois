@@ -2512,6 +2512,15 @@
   ".cartier": {
     "adapter": "none"
   },
+  ".cricket": {
+    "host": "whois.nic.cricket"
+  },
+  ".party": {
+    "adapter": "none"
+  },
+  ".xn--45q11c": {
+    "adapter": "none"
+  },
 
 
   ".xn--3e0b707e": {
