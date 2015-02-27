@@ -2575,6 +2575,9 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".ntt": {
+    "adapter": "none"
+  },
 
 
   ".xn--3e0b707e": {
