@@ -2578,6 +2578,15 @@
   ".ntt": {
     "adapter": "none"
   },
+  ".amsterdam": {
+    "host": "whois.nic.amsterdam"
+  },
+  ".flowers": {
+    "host": "whois.uniregistry.net"
+  },
+  ".ggee": {
+    "host": "whois.nic.gmo"
+  },
 
 
   ".xn--3e0b707e": {
