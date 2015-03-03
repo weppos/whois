@@ -2587,11 +2587,20 @@
   ".ggee": {
     "host": "whois.nic.gmo"
   },
+  ".nico": {
+    "host": "whois.nic.gmo"
+  },
+  ".saxo": {
+    "host": "whois.aridnrs.net.au"
+  },
   ".gdn": {
     "host": "whois.gdnregistry.com"
   },
   ".cbn": {
     "adapter": "none"
+  },
+  ".apartments": {
+    "host": "whois.donuts.co"
   },
 
 
