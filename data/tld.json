@@ -2222,7 +2222,7 @@
     "host": "whois.nic.gent"
   },
   ".reit": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.reit"
   },
   ".android": {
     "host": "domain-registry-whois.l.google.com"
@@ -2621,10 +2621,16 @@
     "host": "whois.afilias-srs.net"
   },
   ".pictet": {
-    "host": ""
+    "adapter": "none"
   },
   ".xin": {
     "host": "whois.afilias-srs.net"
+  },
+  ".fans": {
+    "host": "whois.nic.fans"
+  },
+  ".fans": {
+    "host": "whois.nic.fans"
   },
 
 
