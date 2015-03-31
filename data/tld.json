@@ -268,7 +268,7 @@
   ".bm": {
     "host": null,
     "adapter": "web",
-    "url": "http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"
+    "url": "http://www.bermudanic.bm/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"
   },
   ".bn": {
     "host": "whois.bn"
