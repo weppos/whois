@@ -2629,8 +2629,11 @@
   ".fans": {
     "host": "whois.nic.fans"
   },
-  ".fans": {
-    "host": "whois.nic.fans"
+  ".mma": {
+    "host": "whois-mma.nic.fr"
+  },
+  ".xn--30rr7y": {
+    "host": "whois.nic.wang"
   },
 
 
