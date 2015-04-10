@@ -2642,6 +2642,12 @@
     "host": "whois.afilias-srs.net"
   },
   ".xn--nyqy26a": {
+    "adapter": "none"
+  },
+  ".racing": {
+    "adapter": "none"
+  },
+  ".cyou": {
     "host": "whois.afilias-srs.net"
   },
 
@@ -2756,6 +2762,6 @@
     "host": "whois.sgnic.sg"
   },
   ".xn--ygbi2ammx": {
-    "adapter": "none"
+    "host": "whois.pnina.ps"
   }
 }

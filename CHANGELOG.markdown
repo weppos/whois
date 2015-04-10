@@ -3,7 +3,7 @@
 
 ## master
 
-- SERVER: Add .MMA, .XN--30RR7Y, .LOVE, .SCHOLARSHIPS, .XN--NYQY26A
+- SERVER: Add .MMA, .XN--30RR7Y, .LOVE, .SCHOLARSHIPS, .XN--NYQY26A, .CYOU, .RACING
 
 
 #### Release 3.5.9
