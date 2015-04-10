@@ -2635,6 +2635,15 @@
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
   },
+  ".love": {
+    "host": "whois.centralnic.com"
+  },
+  ".scholarships": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--nyqy26a": {
+    "host": "whois.afilias-srs.net"
+  },
 
 
   ".xn--3e0b707e": {
@@ -2747,6 +2756,6 @@
     "host": "whois.sgnic.sg"
   },
   ".xn--ygbi2ammx": {
-    "host": "whois.pnina.ps"
+    "adapter": "none"
   }
 }
