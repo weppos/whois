@@ -2686,6 +2686,18 @@
   ".shriram": {
     "host": "whois.afilias-srs.net"
   },
+  ".bank": {
+    "host": "whois.nic.bank"
+  },
+  ".fit": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".kddi": {
+    "host": "whois.nic.gmo"
+  },
+  ".lat": {
+    "host": "whois.nic.lat"
+  },
 
 
   ".xn--3e0b707e": {
