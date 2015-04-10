@@ -2674,6 +2674,18 @@
   ".garden": {
     "host": "whois-dub.mm-registry.com"
   },
+  ".sale": {
+    "host": "whois.rightside.co"
+  },
+  ".video": {
+    "host": "whois.rightside.co"
+  },
+  ".zuerich": {
+    "host": "whois.ksregistry.net"
+  },
+  ".shriram": {
+    "host": "whois.afilias-srs.net"
+  },
 
 
   ".xn--3e0b707e": {
