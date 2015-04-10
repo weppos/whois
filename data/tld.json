@@ -2647,11 +2647,32 @@
   ".racing": {
     "adapter": "none"
   },
+  ".iwc": {
+    "adapter": "none"
+  },
+  ".lidl": {
+    "adapter": "none"
+  },
+  ".osaka": {
+    "adapter": "none"
+  },
+  ".schwarz": {
+    "adapter": "none"
+  },
   ".cyou": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".sew": {
     "host": "whois.afilias-srs.net"
   },
   ".xn--kcrx77d1x4a": {
     "host": "whois.nic.xn--kcrx77d1x4a"
+  },
+  ".doosan": {
+    "host": "whois.nic.xn--cg4bki"
+  },
+  ".garden": {
+    "host": "whois-dub.mm-registry.com"
   },
 
 
