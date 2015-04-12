@@ -2704,6 +2704,42 @@
   ".lat": {
     "host": "whois.nic.lat"
   },
+  ".barclaycard": {
+    "host": "whois.nic.barclaycard"
+  },
+  ".barclays": {
+    "host": "whois.nic.barclays"
+  },
+  ".dabur": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".dclk": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".design": {
+    "host": "whois.centralnic.com"
+  },
+  ".goog": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".hangout": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".hermes": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".ifm": {
+    "host": "whois.nic.ifm"
+  },
+  ".jcb": {
+    "host": "whois.nic.gmo"
+  },
+  ".temasek": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--b4w605ferd": {
+    "host": "whois.afilias-srs.net"
+  },
 
 
   ".xn--3e0b707e": {
