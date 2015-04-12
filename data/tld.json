@@ -660,9 +660,7 @@
     "url": "http://www.kw/"
   },
   ".ky": {
-    "host": null,
-    "adapter": "web",
-    "url": "http://kynseweb.messagesecure.com/kywebadmin/"
+    "host": "whois.kyregistry.ky"
   },
   ".kz": {
     "host": "whois.nic.kz"
@@ -2734,11 +2732,29 @@
   ".jcb": {
     "host": "whois.nic.gmo"
   },
+  ".canon": {
+    "host": "whois.nic.gmo"
+  },
+  ".toshiba": {
+    "host": "whois.nic.gmo"
+  },
   ".temasek": {
     "host": "whois.afilias-srs.net"
   },
   ".xn--b4w605ferd": {
     "host": "whois.afilias-srs.net"
+  },
+  ".bingo": {
+    "host": "whois.donuts.co"
+  },
+  ".chat": {
+    "host": "whois.donuts.co"
+  },
+  ".style": {
+    "host": "whois.donuts.co"
+  },
+  ".tennis": {
+    "host": "whois.donuts.co"
   },
 
 
