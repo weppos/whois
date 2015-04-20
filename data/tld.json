@@ -2738,6 +2738,12 @@
   ".toshiba": {
     "host": "whois.nic.gmo"
   },
+  ".goldpoint": {
+    "host": "whois.nic.gmo"
+  },
+  ".yodobashi": {
+    "host": "whois.nic.gmo"
+  },
   ".temasek": {
     "host": "whois.afilias-srs.net"
   },
@@ -2755,6 +2761,18 @@
   },
   ".tennis": {
     "host": "whois.donuts.co"
+  },
+  ".casino": {
+    "host": "whois.donuts.co"
+  },
+  ".school": {
+    "host": "whois.donuts.co"
+  },
+  ".football": {
+    "host": "whois.donuts.co"
+  },
+  ".fans": {
+    "host": "whois.centralnic.com"
   },
 
 
