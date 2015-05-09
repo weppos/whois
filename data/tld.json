@@ -2192,6 +2192,15 @@
   ".krd": {
     "host": "whois.aridnrs.net.au"
   },
+  ".saxo": {
+    "host": "whois.aridnrs.net.au"
+  },
+  ".courses": {
+    "host": "whois.aridnrs.net.au"
+  },
+  ".epson": {
+    "host": "whois.aridnrs.net.au"
+  },
   ".nrw": {
     "host": "whois.nic.nrw"
   },
@@ -2582,9 +2591,6 @@
   ".flowers": {
     "host": "whois.uniregistry.net"
   },
-  ".saxo": {
-    "host": "whois.aridnrs.net.au"
-  },
   ".gdn": {
     "host": "whois.gdnregistry.com"
   },
@@ -2596,9 +2602,6 @@
   },
   ".boats": {
     "host": "whois.afilias-srs.net"
-  },
-  ".courses": {
-    "host": "whois.aridnrs.net.au"
   },
   ".study": {
     "host": "whois.nic.study"
@@ -2720,6 +2723,9 @@
   ".jcb": {
     "host": "whois.nic.gmo"
   },
+  ".goo": {
+    "host": "whois.nic.gmo"
+  },
   ".canon": {
     "host": "whois.nic.canon"
   },
@@ -2773,6 +2779,21 @@
   },
   ".fans": {
     "host": "whois.centralnic.com"
+  },
+  ".java": {
+    "host": "whois.nic.java"
+  },
+  ".oracle": {
+    "host": "whois.nic.oracle"
+  },
+  ".leclerc": {
+    "host": "whois-leclerc.nic.fr"
+  },
+  ".maif": {
+    "adapter": "none"
+  },
+  ".xn--mxtq1m": {
+    "host": "whois.nic.xn--mxtq1m"
   },
 
 
