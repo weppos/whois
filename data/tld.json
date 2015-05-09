@@ -2490,7 +2490,7 @@
     "host": "whois.afilias-srs.net"
   },
   ".kyoto": {
-    "host": "whois.nic.tokyo"
+    "host": "whois.nic.kyoto"
   },
   ".eurovision": {
     "host": "whois.nic.eurovision"
@@ -2581,12 +2581,6 @@
   },
   ".flowers": {
     "host": "whois.uniregistry.net"
-  },
-  ".ggee": {
-    "host": "whois.nic.gmo"
-  },
-  ".nico": {
-    "host": "whois.nic.gmo"
   },
   ".saxo": {
     "host": "whois.aridnrs.net.au"
@@ -2693,12 +2687,6 @@
   ".fit": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".kddi": {
-    "host": "whois.nic.gmo"
-  },
-  ".lotte": {
-    "host": "whois.nic.gmo"
-  },
   ".lat": {
     "host": "whois.nic.lat"
   },
@@ -2733,13 +2721,25 @@
     "host": "whois.nic.gmo"
   },
   ".canon": {
+    "host": "whois.nic.canon"
+  },
+  ".ggee": {
+    "host": "whois.nic.ggee"
+  },
+  ".nico": {
     "host": "whois.nic.gmo"
   },
   ".toshiba": {
     "host": "whois.nic.gmo"
   },
-  ".goldpoint": {
+  ".kddi": {
+    "host": "whois.nic.kddi"
+  },
+  ".lotte": {
     "host": "whois.nic.gmo"
+  },
+  ".goldpoint": {
+    "host": "whois.nic.goldpoint"
   },
   ".yodobashi": {
     "host": "whois.nic.gmo"
