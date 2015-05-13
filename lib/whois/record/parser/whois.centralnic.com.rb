@@ -15,7 +15,7 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.centralnic.net server.
+      # Parser for the whois.centralnic.com server.
       class WhoisCentralnicCom < Base
         include Scanners::Scannable
 
@@ -38,7 +38,10 @@ module Whois
 
         property_supported :status do
           # OK, RENEW PERIOD, ...
-          Array.wrap(node("Status"))
+          Array.wrap(
+            node("Status") ||
+            node("Domain Status")
+          )
         end
 
         property_supported :available? do
@@ -51,15 +54,18 @@ module Whois
 
 
         property_supported :created_on do
-          node("Created On") { |str| Time.parse(str) }
+          node("Created On")  { |str| Time.parse(str) } ||
+          node("Creation Date") { |str| Time.parse(str) }
         end
 
         property_supported :updated_on do
-          node("Last Updated On") { |str| Time.parse(str) }
+          node("Last Updated On") { |str| Time.parse(str) } ||
+          node("Updated Date") { |str| Time.parse(str) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |str| Time.parse(str) }
+          node("Expiration Date") { |str| Time.parse(str) } ||
+          node("Registry Expiry Date") { |str| Time.parse(str) }
         end
 
 
@@ -70,6 +76,14 @@ module Whois
                 :name         => nil,
                 :organization => node("Sponsoring Registrar Organization"),
                 :url          => node("Sponsoring Registrar Website")
+            )
+          end ||
+          node("Sponsoring Registrar IANA ID") do
+            Record::Registrar.new(
+                :id           => node("Sponsoring Registrar IANA ID"),
+                :name         => node("Sponsoring Registrar"),
+                :organization => nil,
+                :url          => nil
             )
           end
         end
@@ -98,7 +112,7 @@ module Whois
 
         def build_contact(element, type)
           node("#{element} ID") do
-            address = (1..3).
+            address = [nil, 1, 2, 3].
                 map { |i| node("#{element} Street#{i}") }.
                 delete_if { |i| i.nil? || i.empty? }.
                 join("\n")
@@ -115,7 +129,7 @@ module Whois
                 :state        => node("#{element} State/Province"),
                 :country_code => node("#{element} Country"),
                 :phone        => node("#{element} Phone"),
-                :fax          => node("#{element} FAX"),
+                :fax          => node("#{element} FAX") || node("#{element} Fax"),
                 :email        => node("#{element} Email")
             )
           end

@@ -1773,7 +1773,7 @@
     "host": "whois.nic.quebec"
   },
   ".college": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.college"
   },
   ".desi": {
     "host": "whois.ksregistry.net"
@@ -2706,7 +2706,7 @@
     "host": "domain-registry-whois.l.google.com"
   },
   ".design": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.design"
   },
   ".goog": {
     "host": "domain-registry-whois.l.google.com"
