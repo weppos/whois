@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby -w
-
-load File.join(File.expand_path("../", __FILE__), "whoisrb")

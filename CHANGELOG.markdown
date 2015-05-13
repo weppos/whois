@@ -9,6 +9,8 @@
 
 - NEW: Added whois.nic.college, whois.nic.design parsers
 
+- CHANGED: The executable is now "whoisrb", removed "ruby-whois"
+
 
 #### Release 3.5.9
 
