@@ -25,7 +25,7 @@ spec = Gem::Specification.new do |s|
   s.files             = %w( LICENSE.txt .yardopts ) +
                         Dir.glob("*.{markdown,gemspec}") +
                         Dir.glob("{bin,data,lib}/**/*")
-  s.executables       = %w( whoisrb ruby-whois )
+  s.executables       = %w( whoisrb )
   s.require_paths     = %w( lib )
 
   s.add_dependency "activesupport", ">= 3"
@@ -45,10 +45,6 @@ spec = Gem::Specification.new do |s|
 
   Does your project or organization use this gem? Add it to the apps wiki.
   https://github.com/weppos/whois/wiki/apps
-
-  Are you looking for a quick and convenient way to perform WHOIS queries?
-  Check out RoboWhois WHOIS API.
-  https://www.robowhois.com/
 
 ********************************************************************************
 EOS
