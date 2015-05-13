@@ -2750,6 +2750,18 @@
   ".yodobashi": {
     "host": "whois.nic.gmo"
   },
+  ".datsun": {
+    "host": "whois.nic.gmo"
+  },
+  ".infiniti": {
+    "host": "whois.nic.gmo"
+  },
+  ".mtpc": {
+    "host": "whois.nic.gmo"
+  },
+  ".nissan": {
+    "host": "whois.nic.gmo"
+  },
   ".temasek": {
     "host": "whois.afilias-srs.net"
   },
