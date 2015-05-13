@@ -2733,16 +2733,16 @@
     "host": "whois.nic.ggee"
   },
   ".nico": {
-    "host": "whois.nic.gmo"
+    "host": "whois.nic.nico"
   },
   ".toshiba": {
-    "host": "whois.nic.gmo"
+    "host": "whois.nic.toshiba"
   },
   ".kddi": {
     "host": "whois.nic.kddi"
   },
   ".lotte": {
-    "host": "whois.nic.gmo"
+    "host": "whois.nic.lotte"
   },
   ".goldpoint": {
     "host": "whois.nic.goldpoint"
