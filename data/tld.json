@@ -1737,7 +1737,7 @@
     "host": "whois-dub.mm-registry.com"
   },
   ".moe": {
-    "adapter": "none"
+    "host": "whois.nic.moe"
   },
   ".rodeo": {
     "host": "whois-dub.mm-registry.com"
