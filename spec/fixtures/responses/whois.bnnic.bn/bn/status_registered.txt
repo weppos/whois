@@ -1,0 +1,50 @@
+
+----------------------------------------------------------------------  
+ BNNIC WHOIS Server
+---------------------------------------------------------------------- 
+
+The following data is provided for information purposes only.
+
+Registrar:   TELEKOM BRUNEI BERHAD
+
+    Domain Name:		TELBRU.COM.BN 
+    Creation Date:		07-Oct-2014 00:00:00
+    Modified Date:		17-Dec-2014 18:07:42
+    Expiration Date:		07-Oct-2015 00:00:00
+    Domain Status:		ok
+
+
+    Registrant:
+
+        Name:           BruNet| Telekom Brunei Berhad - (BNC875T)        
+        
+
+
+    Administrative Contact:
+          
+        Name:           BruNet| Telekom Brunei Berhad - (BNC875T)        
+        
+
+
+    Technical Contact:
+        
+        Name:           BruNet| Telekom Brunei Berhad - (BNC875T)        
+        Email:          info@telbru.com.bn
+        
+
+
+    Name Servers:
+        DNS.BRUNET.BN  (61.6.254.147)
+        DNS2.BRUNET.BN  (61.6.254.148, 61.6.254.149)
+        DNS3.BRUNET.BN  (61.6.254.166)
+        DNS4.BRUNET.BN  (61.6.254.168, 61.6.254.167)
+
+
+
+
+
+
+
+
+
+

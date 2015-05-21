@@ -11,6 +11,8 @@
 
 - CHANGED: The executable is now "whoisrb", removed "ruby-whois"
 
+- CHANGED: Updated .BN parser and definition from whois.bn to whois.bnnic.bn
+
 
 #### Release 3.5.9
 

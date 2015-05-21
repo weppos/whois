@@ -15,7 +15,7 @@
   %s == nil
 
 #expires_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 
 #nameservers

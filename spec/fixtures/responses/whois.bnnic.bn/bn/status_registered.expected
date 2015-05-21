@@ -1,0 +1,42 @@
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2014-10-07 00:00:00}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2014-12-17 18:07:42}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2015-10-07 00:00:00}
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{4}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "dns.brunet.bn"
+  %s[0].ipv4 == "61.6.254.147"
+  %s[0].ipv6 == nil
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "dns2.brunet.bn"
+  %s[1].ipv4 == "61.6.254.148"
+  %s[1].ipv6 == nil
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "dns3.brunet.bn"
+  %s[2].ipv4 == "61.6.254.166"
+  %s[2].ipv6 == nil
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "dns4.brunet.bn"
+  %s[3].ipv4 == "61.6.254.168"
+  %s[3].ipv6 == nil
