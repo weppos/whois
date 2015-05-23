@@ -1215,7 +1215,7 @@
     "host": "whois.donuts.co"
   },
   ".buzz": {
-    "adapter": "none"
+    "host": "whois.nic.buzz"
   },
   ".cab": {
     "host": "whois.donuts.co"
@@ -1785,7 +1785,7 @@
     "host": "whois.unitedtld.com"
   },
   ".xn--ses554g": {
-    "adapter": "none"
+    "host": "whois.gtld.knet.cn"
   },
   ".career": {
     "host": "whois.nic.career"
