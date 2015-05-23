@@ -2810,6 +2810,9 @@
   ".brother": {
     "host": "whois.nic.brother"
   },
+  ".chloe": {
+    "adapter": "none"
+  },
 
 
   ".xn--3e0b707e": {
