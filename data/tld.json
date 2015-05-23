@@ -1379,9 +1379,6 @@
   ".immobilien": {
     "host": "whois.unitedtld.com"
   },
-  ".ink": {
-    "host": "whois.centralnic.com"
-  },
   ".industries": {
     "host": "whois.donuts.co"
   },
@@ -1780,6 +1777,18 @@
   },
   ".feedback": {
     "host": "whois.centralnic.com"
+  },
+  ".ink": {
+    "host": "whois.centralnic.com"
+  },
+  ".fans": {
+    "host": "whois.centralnic.com"
+  },
+  ".love": {
+    "host": "whois.centralnic.com"
+  },
+  ".wme": {
+    "host": "whois.nic.wme"
   },
   ".rocks": {
     "host": "whois.unitedtld.com"
@@ -2402,9 +2411,6 @@
   ".pharmacy": {
     "adapter": "none"
   },
-  ".wme": {
-    "host": "whois.centralnic.com"
-  },
   ".gmx": {
     "host": "whois-fe1.gmx.tango.knipp.de"
   },
@@ -2630,9 +2636,6 @@
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
   },
-  ".love": {
-    "host": "whois.centralnic.com"
-  },
   ".scholarships": {
     "host": "whois.afilias-srs.net"
   },
@@ -2788,9 +2791,6 @@
   },
   ".football": {
     "host": "whois.donuts.co"
-  },
-  ".fans": {
-    "host": "whois.centralnic.com"
   },
   ".java": {
     "host": "whois.nic.java"
