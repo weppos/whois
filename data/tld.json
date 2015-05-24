@@ -2810,7 +2810,16 @@
   ".brother": {
     "host": "whois.nic.brother"
   },
+  ".erni": {
+    "host": "whois.nic.erni"
+  },
   ".chloe": {
+    "adapter": "none"
+  },
+  ".forex": {
+    "adapter": "none"
+  },
+  ".markets": {
     "adapter": "none"
   },
 
