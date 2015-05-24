@@ -2817,10 +2817,10 @@
     "adapter": "none"
   },
   ".forex": {
-    "adapter": "none"
+    "host": "whois.nic.forex"
   },
   ".markets": {
-    "adapter": "none"
+    "host": "whois.nic.markets"
   },
 
 
