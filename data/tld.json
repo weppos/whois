@@ -1776,7 +1776,7 @@
     "host": "whois.ksregistry.net"
   },
   ".feedback": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.feedback"
   },
   ".ink": {
     "host": "whois.centralnic.com"
