@@ -2822,6 +2822,15 @@
   ".markets": {
     "host": "whois.nic.markets"
   },
+  ".cfd": {
+    "host": "whois.nic.cfd"
+  },
+  ".spreadbetting": {
+    "host": "whois.nic.spreadbetting"
+  },
+  ".trading": {
+    "host": "whois.nic.trading"
+  },
 
 
   ".xn--3e0b707e": {
