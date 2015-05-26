@@ -1784,7 +1784,16 @@
   ".fans": {
     "host": "whois.centralnic.com"
   },
+  ".fan": {
+    "host": "whois.centralnic.com"
+  },
+  ".online": {
+    "host": "whois.centralnic.com"
+  },
   ".love": {
+    "host": "whois.centralnic.com"
+  },
+  ".site": {
     "host": "whois.centralnic.com"
   },
   ".wme": {
@@ -1843,12 +1852,6 @@
   },
   ".xn--cg4bki": {
     "host": "whois.kr"
-  },
-  ".foo": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".soy": {
-    "host": "domain-registry-whois.l.google.com"
   },
   ".frogans": {
     "host": "whois-frogans.nic.fr"
@@ -2240,9 +2243,6 @@
   ".reit": {
     "host": "whois.nic.reit"
   },
-  ".android": {
-    "host": "domain-registry-whois.l.google.com"
-  },
   ".top": {
     "host": "whois.nic.top"
   },
@@ -2309,9 +2309,6 @@
   ".ltda": {
     "host": "whois.afilias-srs.net"
   },
-  ".how": {
-    "host": "domain-registry-whois.l.google.com"
-  },
   ".caravan": {
     "adapter": "none"
   },
@@ -2339,11 +2336,17 @@
   ".gbiz": {
     "host": "domain-registry-whois.l.google.com"
   },
-  ".immo": {
-    "host": "whois.donuts.co"
+  ".how": {
+    "host": "domain-registry-whois.l.google.com"
   },
-  ".otsuka": {
-    "adapter": "none"
+  ".android": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".foo": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".soy": {
+    "host": "domain-registry-whois.l.google.com"
   },
   ".dad": {
     "host": "domain-registry-whois.l.google.com"
@@ -2356,9 +2359,6 @@
   },
   ".eat": {
     "host": "domain-registry-whois.l.google.com"
-  },
-  ".frl": {
-    "host": "whois.nic.frl"
   },
   ".mov": {
     "host": "domain-registry-whois.l.google.com"
@@ -2401,6 +2401,39 @@
   },
   ".ing": {
     "host": "domain-registry-whois.l.google.com"
+  },
+  ".xn--flw351e": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".xn--qcka1pmc": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".dev": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".docs": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".dclk": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".goog": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".hangout": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".page": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".immo": {
+    "host": "whois.donuts.co"
+  },
+  ".otsuka": {
+    "adapter": "none"
+  },
+  ".frl": {
+    "host": "whois.nic.frl"
   },
   ".world": {
     "host": "whois.donuts.co"
@@ -2489,12 +2522,6 @@
   ".madrid": {
     "host": "whois.madrid.rs.corenic.net"
   },
-  ".xn--flw351e": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".xn--qcka1pmc": {
-    "host": "domain-registry-whois.l.google.com"
-  },
   ".lds": {
     "host": "whois.afilias-srs.net"
   },
@@ -2578,12 +2605,6 @@
   },
   ".sky": {
     "host": "whois.nic.sky"
-  },
-  ".dev": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".docs": {
-    "host": "domain-registry-whois.l.google.com"
   },
   ".tires": {
     "host": "whois.donuts.co"
@@ -2705,17 +2726,8 @@
   ".dabur": {
     "host": "whois.afilias-srs.net"
   },
-  ".dclk": {
-    "host": "domain-registry-whois.l.google.com"
-  },
   ".design": {
     "host": "whois.nic.design"
-  },
-  ".goog": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".hangout": {
-    "host": "domain-registry-whois.l.google.com"
   },
   ".hermes": {
     "host": "whois.afilias-srs.net"
@@ -2814,6 +2826,9 @@
     "host": "whois.nic.erni"
   },
   ".chloe": {
+    "adapter": "none"
+  },
+  ".piaget": {
     "adapter": "none"
   },
   ".forex": {
