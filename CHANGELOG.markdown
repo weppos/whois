@@ -13,6 +13,8 @@
 
 - CHANGED: Updated .BN parser and definition from whois.bn to whois.bnnic.bn
 
+- CHANGED: Updated .MA parser and definition from whois.iam.net.ma to whois.registre.ma
+
 
 #### Release 3.5.9
 

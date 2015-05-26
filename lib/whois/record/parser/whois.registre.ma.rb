@@ -15,9 +15,9 @@ module Whois
     class Parser
 
       #
-      # = whois.iam.net.ma parser
+      # = whois.registre.ma parser
       #
-      # Parser for the whois.iam.net.ma server.
+      # Parser for the whois.registre.ma server.
       #
       # NOTE: This parser is just a stub and provides only a few basic methods
       # to check for domain availability and get domain status.
@@ -25,7 +25,7 @@ module Whois
       # See WhoisNicIt parser for an explanation of all available methods
       # and examples.
       #
-      class WhoisIamNetMa < Base
+      class WhoisRegistreMa < Base
 
         property_supported :status do
           if available?
