@@ -2849,11 +2849,17 @@
   ".trading": {
     "host": "whois.nic.trading"
   },
-  ".trading": {
+  ".bbc": {
     "host": "whois.nic.bbc"
   },
   ".news": {
     "host": "whois.rightside.co"
+  },
+  ".komatsu": {
+    "host": "whois.nic.komatsu"
+  },
+  ".sap": {
+    "host": "whois.nic.sap"
   },
 
 
