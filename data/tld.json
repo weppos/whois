@@ -1454,9 +1454,6 @@
   ".okinawa": {
     "adapter": "none"
   },
-  ".onl": {
-    "host": "whois.afilias-srs.net"
-  },
   ".partners": {
     "host": "whois.donuts.co"
   },
@@ -1510,9 +1507,6 @@
   },
   ".reviews": {
     "host": "whois.unitedtld.com"
-  },
-  ".rich": {
-    "host": "whois.afilias-srs.net"
   },
   ".ruhr": {
     "host": "whois.nic.ruhr"
@@ -1604,6 +1598,9 @@
   ".wang": {
     "host": "whois.gtld.knet.cn"
   },
+  ".xn--9et52u": {
+    "host": "whois.nic.wang"
+  },
   ".watch": {
     "host": "whois.donuts.co"
   },
@@ -1621,9 +1618,6 @@
   },
   ".xn--3bst00m": {
     "host": "whois.gtld.knet.cn"
-  },
-  ".xn--3ds443g": {
-    "host": "whois.afilias-srs.net"
   },
   ".xn--55qw42g": {
     "host": "whois.conac.cn"
@@ -1645,9 +1639,6 @@
   },
   ".xn--d1acj3b": {
     "host": "whois.nic.xn--d1acj3b"
-  },
-  ".xn--fiq228c5hs": {
-    "host": "whois.afilias-srs.net"
   },
   ".xn--i1b6b1a6a2e": {
     "host": "whois.publicinterestregistry.net"
@@ -1738,9 +1729,6 @@
   },
   ".rodeo": {
     "host": "whois-dub.mm-registry.com"
-  },
-  ".vegas": {
-    "host": "whois.afilias-srs.net"
   },
   ".vodka": {
     "host": "whois-dub.mm-registry.com"
@@ -1940,9 +1928,6 @@
   ".airforce": {
     "host": "whois.unitedtld.com"
   },
-  ".bayern": {
-    "host": "whois-dub.mm-registry.com"
-  },
   ".globo": {
     "host": "whois.gtlds.nic.br"
   },
@@ -1958,21 +1943,6 @@
   ".digital": {
     "host": "whois.donuts.co"
   },
-  ".audio": {
-    "host": "whois.uniregistry.net"
-  },
-  ".hiphop": {
-    "host": "whois.uniregistry.net"
-  },
-  ".juegos": {
-    "host": "whois.uniregistry.net"
-  },
-  ".beer": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".luxe": {
-    "host": "whois-dub.mm-registry.com"
-  },
   ".church": {
     "host": "whois.donuts.co"
   },
@@ -1985,6 +1955,42 @@
   ".loans": {
     "host": "whois.donuts.co"
   },
+  ".bingo": {
+    "host": "whois.donuts.co"
+  },
+  ".chat": {
+    "host": "whois.donuts.co"
+  },
+  ".style": {
+    "host": "whois.donuts.co"
+  },
+  ".tennis": {
+    "host": "whois.donuts.co"
+  },
+  ".casino": {
+    "host": "whois.donuts.co"
+  },
+  ".school": {
+    "host": "whois.donuts.co"
+  },
+  ".football": {
+    "host": "whois.donuts.co"
+  },
+  ".ltda": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".nra": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".bnpparibas": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".emerck": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".cern": {
+    "host": "whois.afilias-srs.net"
+  },
   ".autos": {
     "host": "whois.afilias-srs.net"
   },
@@ -1994,14 +2000,23 @@
   ".motorcycles": {
     "host": "whois.afilias-srs.net"
   },
-  ".reise": {
-    "host": "whois.nic.reise"
+  ".vegas": {
+    "host": "whois.afilias-srs.net"
   },
-  ".rio": {
-    "host": "whois.gtlds.nic.br"
+  ".xn--fiq228c5hs": {
+    "host": "whois.afilias-srs.net"
   },
-  ".versicherung": {
-    "host": "whois.nic.versicherung"
+  ".xn--3ds443g": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".rich": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".onl": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".redstone": {
+    "host": "whois.afilias-srs.net"
   },
   ".yachts": {
     "host": "whois.afilias-srs.net"
@@ -2009,29 +2024,8 @@
   ".xn--4gbrim": {
     "host": "whois.afilias-srs.net"
   },
-  ".degree": {
-    "host": "whois.rightside.co"
-  },
-  ".mortgage": {
-    "host": "whois.rightside.co"
-  },
-  ".space": {
-    "host": "whois.nic.space"
-  },
-  ".website": {
-    "host": "whois.nic.website"
-  },
-  ".attorney": {
-    "host": "whois.rightside.co"
-  },
-  ".dentist": {
-    "host": "whois.rightside.co"
-  },
   ".hiv": {
     "host": "whois.afilias-srs.net"
-  },
-  ".global": {
-    "host": "whois.nic.global"
   },
   ".organic": {
     "host": "whois.afilias-srs.net"
@@ -2045,20 +2039,95 @@
   ".adult": {
     "host": "whois.afilias-srs.net"
   },
+  ".homes": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".lds": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".mormon": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".porn": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".boats": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".abbott": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xin": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".scholarships": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".cyou": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".sew": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".shriram": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".marriott": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".dabur": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".hermes": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".temasek": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--b4w605ferd": {
+    "host": "whois.afilias-srs.net"
+  },
   ".green": {
     "host": "whois.afilias.net"
   },
-  ".host": {
-    "host": "whois.nic.host"
+  ".lotto": {
+    "host": "whois.afilias.net"
+  },
+  ".lgbt": {
+    "host": "whois.afilias.net"
+  },
+  ".band": {
+    "host": "whois.rightside.co"
+  },
+  ".rip": {
+    "host": "whois.rightside.co"
+  },
+  ".sale": {
+    "host": "whois.rightside.co"
+  },
+  ".video": {
+    "host": "whois.rightside.co"
+  },
+  ".news": {
+    "host": "whois.rightside.co"
+  },
+  ".degree": {
+    "host": "whois.rightside.co"
+  },
+  ".mortgage": {
+    "host": "whois.rightside.co"
+  },
+  ".attorney": {
+    "host": "whois.rightside.co"
+  },
+  ".dentist": {
+    "host": "whois.rightside.co"
   },
   ".lawyer": {
     "host": "whois.rightside.co"
   },
   ".market": {
     "host": "whois.rightside.co"
-  },
-  ".press": {
-    "host": "whois.nic.press"
   },
   ".software": {
     "host": "whois.rightside.co"
@@ -2084,92 +2153,8 @@
   ".republican": {
     "host": "whois.rightside.co"
   },
-  ".bio": {
-    "host": "whois.ksregistry.net"
-  },
-  ".hamburg": {
-    "host": "whois.nic.hamburg"
-  },
-  ".brussels": {
-    "host": "whois.nic.brussels"
-  },
-  ".vlaanderen": {
-    "host": "whois.nic.vlaanderen"
-  },
-  ".tirol": {
-    "host": "whois.nic.tirol"
-  },
-  ".scot": {
-    "host": "whois.scot.coreregistry.net"
-  },
-  ".bzh": {
-    "host": "whois-bzh.nic.fr"
-  },
-  ".surf": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".nhk": {
-    "adapter": "none"
-  },
-  ".capetown": {
-    "host": "capetown-whois.registry.net.za"
-  },
-  ".durban": {
-    "host": "durban-whois.registry.net.za"
-  },
-  ".joburg": {
-    "host": "joburg-whois.registry.net.za"
-  },
-  ".lotto": {
-    "host": "whois.afilias.net"
-  },
-  ".ovh": {
-    "host": "whois-ovh.nic.fr"
-  },
-  ".physio": {
-    "host": "whois.nic.physio"
-  },
-  ".bmw": {
-    "host": "whois.ksregistry.net"
-  },
-  ".mini": {
-    "host": "whois.ksregistry.net"
-  },
-  ".ceo": {
-    "host": "whois.nic.ceo"
-  },
-  ".bloomberg": {
-    "adapter": "none"
-  },
   ".energy": {
     "host": "whois.donuts.co"
-  },
-  ".yandex": {
-    "adapter": "none"
-  },
-  ".praxi": {
-    "adapter": "none"
-  },
-  ".whoswho": {
-    "host": "whois.nic.whoswho"
-  },
-  ".williamhill": {
-    "adapter": "none"
-  },
-  ".suzuki": {
-    "adapter": "none"
-  },
-  ".science": {
-    "adapter": "none"
-  },
-  ".realtor": {
-    "adapter": "none"
-  },
-  ".sydney": {
-    "host": "whois.nic.sydney"
-  },
-  ".taipei": {
-    "host": "whois.nic.taipei"
   },
   ".delivery": {
     "host": "whois.donuts.co"
@@ -2186,20 +2171,32 @@
   ".deals": {
     "host": "whois.donuts.co"
   },
-  ".auction": {
-    "host": "whois.unitedtld.com"
-  },
-  ".healthcare": {
+  ".restaurant": {
     "host": "whois.donuts.co"
   },
-  ".cancerresearch": {
-    "host": "whois.nic.cancerresearch"
+  ".sarl": {
+    "host": "whois.donuts.co"
   },
-  ".cuisinella": {
-    "host": "whois.nic.cuisinella"
+  ".network": {
+    "host": "whois.donuts.co"
   },
-  ".schmidt": {
-    "host": "whois.nic.schmidt"
+  ".business": {
+    "host": "whois.donuts.co"
+  },
+  ".xn--vhquv": {
+    "host": "whois.donuts.co"
+  },
+  ".gifts": {
+    "host": "whois.donuts.co"
+  },
+  ".immo": {
+    "host": "whois.donuts.co"
+  },
+  ".world": {
+    "host": "whois.donuts.co"
+  },
+  ".pizza": {
+    "host": "whois.donuts.co"
   },
   ".melbourne": {
     "host": "whois.aridnrs.net.au"
@@ -2216,81 +2213,6 @@
   ".epson": {
     "host": "whois.aridnrs.net.au"
   },
-  ".nrw": {
-    "host": "whois.nic.nrw"
-  },
-  ".scb": {
-    "host": "whois.nic.scb"
-  },
-  ".lacaixa": {
-    "host": "whois.nic.lacaixa"
-  },
-  ".lgbt": {
-    "host": "whois.afilias.net"
-  },
-  ".ngo": {
-    "host": "whois.publicinterestregistry.net"
-  },
-  ".ong": {
-    "host": "whois.publicinterestregistry.net"
-  },
-  ".spiegel": {
-    "host": "whois.ksregistry.net"
-  },
-  ".nra": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".gent": {
-    "host": "whois.nic.gent"
-  },
-  ".reit": {
-    "host": "whois.nic.reit"
-  },
-  ".top": {
-    "host": "whois.nic.top"
-  },
-  ".wales": {
-    "host": "whois.nic.wales"
-  },
-  ".sca": {
-    "host": "whois.nic.sca"
-  },
-  ".bnpparibas": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".emerck": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".tatar": {
-    "host": "whois.nic.tatar"
-  },
-  ".cymru": {
-    "host": "whois.nic.cymru"
-  },
-  ".restaurant": {
-    "host": "whois.donuts.co"
-  },
-  ".sarl": {
-    "host": "whois.donuts.co"
-  },
-  ".xn--1qqw23a": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--xhq521b": {
-    "host": "whois.ngtld.cn"
-  },
-  ".network": {
-    "host": "whois.donuts.co"
-  },
-  ".business": {
-    "host": "whois.donuts.co"
-  },
-  ".xn--vhquv": {
-    "host": "whois.donuts.co"
-  },
-  ".gifts": {
-    "host": "whois.donuts.co"
-  },
   ".hosting": {
     "host": "whois.uniregistry.net"
   },
@@ -2300,26 +2222,20 @@
   ".diet": {
     "host": "whois.uniregistry.net"
   },
-  ".ooo": {
-    "host": "whois.nic.ooo"
+  ".audio": {
+    "host": "whois.uniregistry.net"
   },
-  ".uol": {
-    "host": "whois.gtlds.nic.br"
+  ".hiphop": {
+    "host": "whois.uniregistry.net"
+  },
+  ".juegos": {
+    "host": "whois.uniregistry.net"
   },
   ".property": {
     "host": "whois.uniregistry.net"
   },
-  ".ltda": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".caravan": {
-    "adapter": "none"
-  },
   ".click": {
     "host": "whois.uniregistry.net"
-  },
-  ".cern": {
-    "host": "whois.afilias-srs.net"
   },
   ".here": {
     "host": "domain-registry-whois.l.google.com"
@@ -2429,8 +2345,251 @@
   ".page": {
     "host": "domain-registry-whois.l.google.com"
   },
-  ".immo": {
+  ".jcb": {
+    "host": "whois.nic.gmo"
+  },
+  ".goo": {
+    "host": "whois.nic.gmo"
+  },
+  ".canon": {
+    "host": "whois.nic.canon"
+  },
+  ".ggee": {
+    "host": "whois.nic.ggee"
+  },
+  ".nico": {
+    "host": "whois.nic.nico"
+  },
+  ".toshiba": {
+    "host": "whois.nic.toshiba"
+  },
+  ".kddi": {
+    "host": "whois.nic.kddi"
+  },
+  ".lotte": {
+    "host": "whois.nic.lotte"
+  },
+  ".goldpoint": {
+    "host": "whois.nic.goldpoint"
+  },
+  ".yodobashi": {
+    "host": "whois.nic.gmo"
+  },
+  ".datsun": {
+    "host": "whois.nic.gmo"
+  },
+  ".infiniti": {
+    "host": "whois.nic.gmo"
+  },
+  ".mtpc": {
+    "host": "whois.nic.gmo"
+  },
+  ".nissan": {
+    "host": "whois.nic.gmo"
+  },
+  ".wedding": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".yoga": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".budapest": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".casa": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".work": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".fashion": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".abogado": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".beer": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".luxe": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".bayern": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".reise": {
+    "host": "whois.nic.reise"
+  },
+  ".rio": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".versicherung": {
+    "host": "whois.nic.versicherung"
+  },
+  ".space": {
+    "host": "whois.nic.space"
+  },
+  ".website": {
+    "host": "whois.nic.website"
+  },
+  ".global": {
+    "host": "whois.nic.global"
+  },
+  ".host": {
+    "host": "whois.nic.host"
+  },
+  ".press": {
+    "host": "whois.nic.press"
+  },
+  ".bio": {
+    "host": "whois.ksregistry.net"
+  },
+  ".hamburg": {
+    "host": "whois.nic.hamburg"
+  },
+  ".brussels": {
+    "host": "whois.nic.brussels"
+  },
+  ".vlaanderen": {
+    "host": "whois.nic.vlaanderen"
+  },
+  ".tirol": {
+    "host": "whois.nic.tirol"
+  },
+  ".scot": {
+    "host": "whois.scot.coreregistry.net"
+  },
+  ".bzh": {
+    "host": "whois-bzh.nic.fr"
+  },
+  ".surf": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".nhk": {
+    "adapter": "none"
+  },
+  ".capetown": {
+    "host": "capetown-whois.registry.net.za"
+  },
+  ".durban": {
+    "host": "durban-whois.registry.net.za"
+  },
+  ".joburg": {
+    "host": "joburg-whois.registry.net.za"
+  },
+  ".ovh": {
+    "host": "whois-ovh.nic.fr"
+  },
+  ".physio": {
+    "host": "whois.nic.physio"
+  },
+  ".bmw": {
+    "host": "whois.ksregistry.net"
+  },
+  ".mini": {
+    "host": "whois.ksregistry.net"
+  },
+  ".ceo": {
+    "host": "whois.nic.ceo"
+  },
+  ".bloomberg": {
+    "adapter": "none"
+  },
+  ".yandex": {
+    "adapter": "none"
+  },
+  ".praxi": {
+    "adapter": "none"
+  },
+  ".whoswho": {
+    "host": "whois.nic.whoswho"
+  },
+  ".williamhill": {
+    "adapter": "none"
+  },
+  ".suzuki": {
+    "adapter": "none"
+  },
+  ".science": {
+    "adapter": "none"
+  },
+  ".realtor": {
+    "adapter": "none"
+  },
+  ".sydney": {
+    "host": "whois.nic.sydney"
+  },
+  ".taipei": {
+    "host": "whois.nic.taipei"
+  },
+  ".auction": {
+    "host": "whois.unitedtld.com"
+  },
+  ".healthcare": {
     "host": "whois.donuts.co"
+  },
+  ".cancerresearch": {
+    "host": "whois.nic.cancerresearch"
+  },
+  ".cuisinella": {
+    "host": "whois.nic.cuisinella"
+  },
+  ".schmidt": {
+    "host": "whois.nic.schmidt"
+  },
+  ".nrw": {
+    "host": "whois.nic.nrw"
+  },
+  ".scb": {
+    "host": "whois.nic.scb"
+  },
+  ".lacaixa": {
+    "host": "whois.nic.lacaixa"
+  },
+  ".ngo": {
+    "host": "whois.publicinterestregistry.net"
+  },
+  ".ong": {
+    "host": "whois.publicinterestregistry.net"
+  },
+  ".spiegel": {
+    "host": "whois.ksregistry.net"
+  },
+  ".gent": {
+    "host": "whois.nic.gent"
+  },
+  ".reit": {
+    "host": "whois.nic.reit"
+  },
+  ".top": {
+    "host": "whois.nic.top"
+  },
+  ".wales": {
+    "host": "whois.nic.wales"
+  },
+  ".sca": {
+    "host": "whois.nic.sca"
+  },
+  ".tatar": {
+    "host": "whois.nic.tatar"
+  },
+  ".cymru": {
+    "host": "whois.nic.cymru"
+  },
+  ".xn--1qqw23a": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--xhq521b": {
+    "host": "whois.ngtld.cn"
+  },
+  ".ooo": {
+    "host": "whois.nic.ooo"
+  },
+  ".uol": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".caravan": {
+    "adapter": "none"
   },
   ".otsuka": {
     "adapter": "none"
@@ -2438,20 +2597,11 @@
   ".frl": {
     "host": "whois.nic.frl"
   },
-  ".world": {
-    "host": "whois.donuts.co"
-  },
-  ".pizza": {
-    "host": "whois.donuts.co"
-  },
   ".pharmacy": {
     "adapter": "none"
   },
   ".gmx": {
     "host": "whois-fe1.gmx.tango.knipp.de"
-  },
-  ".homes": {
-    "host": "whois.afilias-srs.net"
   },
   ".horse": {
     "host": "whois-dub.mm-registry.com"
@@ -2486,12 +2636,6 @@
   ".alsace": {
     "host": "whois-alsace.nic.fr"
   },
-  ".abogado": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".band": {
-    "host": "whois.rightside.co"
-  },
   ".crs": {
     "adapter": "none"
   },
@@ -2501,47 +2645,17 @@
   ".poker": {
     "host": "whois.afilias.net"
   },
-  ".rip": {
-    "host": "whois.rightside.co"
-  },
-  ".wedding": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".yoga": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".budapest": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".casa": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".work": {
-    "host": "whois-dub.mm-registry.com"
-  },
   ".firmdale": {
     "host": "whois.nic.firmdale"
   },
   ".madrid": {
     "host": "whois.madrid.rs.corenic.net"
   },
-  ".lds": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".mormon": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".porn": {
-    "host": "whois.afilias-srs.net"
-  },
   ".kyoto": {
     "host": "whois.nic.kyoto"
   },
   ".eurovision": {
     "host": "whois.nic.eurovision"
-  },
-  ".fashion": {
-    "host": "whois-dub.mm-registry.com"
   },
   ".trust": {
     "host": "whois.nic.trust"
@@ -2630,9 +2744,6 @@
   ".apartments": {
     "host": "whois.donuts.co"
   },
-  ".boats": {
-    "host": "whois.afilias-srs.net"
-  },
   ".study": {
     "host": "whois.nic.study"
   },
@@ -2642,14 +2753,8 @@
   ".xn--90ais": {
     "host": "whois.cctld.by"
   },
-  ".abbott": {
-    "host": "whois.afilias-srs.net"
-  },
   ".pictet": {
     "adapter": "none"
-  },
-  ".xin": {
-    "host": "whois.afilias-srs.net"
   },
   ".fans": {
     "host": "whois.nic.fans"
@@ -2659,9 +2764,6 @@
   },
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
-  },
-  ".scholarships": {
-    "host": "whois.afilias-srs.net"
   },
   ".xn--nyqy26a": {
     "adapter": "none"
@@ -2681,12 +2783,6 @@
   ".schwarz": {
     "adapter": "none"
   },
-  ".cyou": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".sew": {
-    "host": "whois.afilias-srs.net"
-  },
   ".xn--kcrx77d1x4a": {
     "host": "whois.nic.xn--kcrx77d1x4a"
   },
@@ -2696,20 +2792,8 @@
   ".garden": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".sale": {
-    "host": "whois.rightside.co"
-  },
-  ".video": {
-    "host": "whois.rightside.co"
-  },
   ".zuerich": {
     "host": "whois.ksregistry.net"
-  },
-  ".shriram": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".marriott": {
-    "host": "whois.afilias-srs.net"
   },
   ".bank": {
     "host": "whois.nic.bank"
@@ -2726,86 +2810,11 @@
   ".barclays": {
     "host": "whois.nic.barclays"
   },
-  ".dabur": {
-    "host": "whois.afilias-srs.net"
-  },
   ".design": {
     "host": "whois.nic.design"
   },
-  ".hermes": {
-    "host": "whois.afilias-srs.net"
-  },
   ".ifm": {
     "host": "whois.nic.ifm"
-  },
-  ".jcb": {
-    "host": "whois.nic.gmo"
-  },
-  ".goo": {
-    "host": "whois.nic.gmo"
-  },
-  ".canon": {
-    "host": "whois.nic.canon"
-  },
-  ".ggee": {
-    "host": "whois.nic.ggee"
-  },
-  ".nico": {
-    "host": "whois.nic.nico"
-  },
-  ".toshiba": {
-    "host": "whois.nic.toshiba"
-  },
-  ".kddi": {
-    "host": "whois.nic.kddi"
-  },
-  ".lotte": {
-    "host": "whois.nic.lotte"
-  },
-  ".goldpoint": {
-    "host": "whois.nic.goldpoint"
-  },
-  ".yodobashi": {
-    "host": "whois.nic.gmo"
-  },
-  ".datsun": {
-    "host": "whois.nic.gmo"
-  },
-  ".infiniti": {
-    "host": "whois.nic.gmo"
-  },
-  ".mtpc": {
-    "host": "whois.nic.gmo"
-  },
-  ".nissan": {
-    "host": "whois.nic.gmo"
-  },
-  ".temasek": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--b4w605ferd": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".bingo": {
-    "host": "whois.donuts.co"
-  },
-  ".chat": {
-    "host": "whois.donuts.co"
-  },
-  ".style": {
-    "host": "whois.donuts.co"
-  },
-  ".tennis": {
-    "host": "whois.donuts.co"
-  },
-  ".casino": {
-    "host": "whois.donuts.co"
-  },
-  ".school": {
-    "host": "whois.donuts.co"
-  },
-  ".football": {
-    "host": "whois.donuts.co"
   },
   ".java": {
     "host": "whois.nic.java"
@@ -2849,17 +2858,20 @@
   ".trading": {
     "host": "whois.nic.trading"
   },
+  ".bond": {
+    "host": "whois.nic.bond"
+  },
   ".bbc": {
     "host": "whois.nic.bbc"
-  },
-  ".news": {
-    "host": "whois.rightside.co"
   },
   ".komatsu": {
     "host": "whois.nic.komatsu"
   },
   ".sap": {
     "host": "whois.nic.sap"
+  },
+  ".afl": {
+    "host": "whois.nic.afl"
   },
 
 
