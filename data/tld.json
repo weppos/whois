@@ -1796,6 +1796,9 @@
   ".site": {
     "host": "whois.centralnic.com"
   },
+  ".tech": {
+    "host": "whois.centralnic.com"
+  },
   ".wme": {
     "host": "whois.nic.wme"
   },
@@ -2845,6 +2848,12 @@
   },
   ".trading": {
     "host": "whois.nic.trading"
+  },
+  ".trading": {
+    "host": "whois.nic.bbc"
+  },
+  ".news": {
+    "host": "whois.rightside.co"
   },
 
 
