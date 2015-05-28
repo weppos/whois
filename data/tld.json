@@ -2775,13 +2775,13 @@
     "adapter": "none"
   },
   ".lidl": {
-    "adapter": "none"
+    "host": "whois.nic.lidl"
   },
   ".osaka": {
     "adapter": "none"
   },
   ".schwarz": {
-    "adapter": "none"
+    "host": "whois.nic.schwarz"
   },
   ".xn--kcrx77d1x4a": {
     "host": "whois.nic.xn--kcrx77d1x4a"
