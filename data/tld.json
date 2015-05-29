@@ -1175,6 +1175,108 @@
   },
 
 
+  ".maif": {
+    "adapter": "none"
+  },
+  ".chloe": {
+    "adapter": "none"
+  },
+  ".piaget": {
+    "adapter": "none"
+  },
+  ".bloomberg": {
+    "adapter": "none"
+  },
+  ".yandex": {
+    "adapter": "none"
+  },
+  ".praxi": {
+    "adapter": "none"
+  },
+  ".ryukyu": {
+    "adapter": "none"
+  },
+  ".yokohama": {
+    "adapter": "none"
+  },
+  ".yokohama": {
+    "adapter": "sener"
+  },
+  ".xn--ses554g": {
+    "adapter": "none"
+  },
+  ".williamhill": {
+    "adapter": "none"
+  },
+  ".suzuki": {
+    "adapter": "none"
+  },
+  ".science": {
+    "adapter": "none"
+  },
+  ".realtor": {
+    "adapter": "none"
+  },
+  ".bid": {
+    "adapter": "none"
+  },
+  ".buzz": {
+    "adapter": "none"
+  },
+  ".dnp": {
+    "adapter": "none"
+  },
+  ".jetzt": {
+    "adapter": "none"
+  },
+  ".kred": {
+    "adapter": "none"
+  },
+  ".nagoya": {
+    "adapter": "none"
+  },
+  ".neustar": {
+    "adapter": "none"
+  },
+  ".okinawa": {
+    "adapter": "none"
+  },
+  ".qpon": {
+    "adapter": "none"
+  },
+  ".tokyo": {
+    "adapter": "none"
+  },
+  ".caravan": {
+    "adapter": "none"
+  },
+  ".otsuka": {
+    "adapter": "none"
+  },
+  ".xn--rhqv96g": {
+    "adapter": "none"
+  },
+  ".axa": {
+    "adapter": "none"
+  },
+  ".weir": {
+    "adapter": "none"
+  },
+  ".trade": {
+    "adapter": "none"
+  },
+  ".webcam": {
+    "adapter": "none"
+  },
+  ".sohu": {
+    "adapter": "none"
+  },
+  ".ren": {
+    "adapter": "none"
+  },
+  ".pharmacy": {
+    "adapter": "none"
+  },
   ".actor": {
     "host": "whois.unitedtld.com"
   },
@@ -2114,6 +2216,9 @@
   ".jcb": {
     "host": "whois.nic.gmo"
   },
+  ".hitachi": {
+    "host": "whois.nic.gmo"
+  },
   ".goo": {
     "host": "whois.nic.gmo"
   },
@@ -2213,17 +2318,11 @@
   ".best": {
     "host": "whois.nic.best"
   },
-  ".bid": {
-    "adapter": "none"
-  },
   ".blue": {
     "host": "whois.afilias.net"
   },
   ".build": {
     "host": "whois.nic.build"
-  },
-  ".buzz": {
-    "adapter": "none"
   },
   ".ceo": {
     "host": "whois.nic.ceo"
@@ -2231,20 +2330,11 @@
   ".club": {
     "host": "whois.nic.club"
   },
-  ".dnp": {
-    "adapter": "none"
-  },
-  ".jetzt": {
-    "adapter": "none"
-  },
   ".kim": {
     "host": "whois.afilias.net"
   },
   ".kiwi": {
     "host": "whois.nic.kiwi"
-  },
-  ".kred": {
-    "adapter": "none"
   },
   ".luxury": {
     "host": "whois.nic.luxury"
@@ -2258,20 +2348,8 @@
   ".monash": {
     "host": "whois.nic.monash"
   },
-  ".nagoya": {
-    "adapter": "none"
-  },
-  ".neustar": {
-    "adapter": "none"
-  },
-  ".okinawa": {
-    "adapter": "none"
-  },
   ".pink": {
     "host": "whois.afilias.net"
-  },
-  ".qpon": {
-    "adapter": "none"
   },
   ".red": {
     "host": "whois.afilias.net"
@@ -2281,9 +2359,6 @@
   },
   ".shiksha": {
     "host": "whois.afilias.net"
-  },
-  ".tokyo": {
-    "adapter": "none"
   },
   ".vote": {
     "host": "whois.afilias.net"
@@ -2354,35 +2429,17 @@
   ".xn--q9jyb4c": {
     "host": "domain-registry-whois.l.google.com"
   },
-  ".xn--rhqv96g": {
-    "adapter": "none"
-  },
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
   },
   ".xyz": {
     "host": "whois.nic.xyz"
   },
-  ".axa": {
-    "adapter": "none"
-  },
   ".cologne": {
     "host": "whois-fe1.pdt.cologne.tango.knipp.de"
   },
-  ".trade": {
-    "adapter": "none"
-  },
-  ".webcam": {
-    "adapter": "none"
-  },
   ".london": {
     "host": "whois-lon.mm-registry.com"
-  },
-  ".sohu": {
-    "adapter": "none"
-  },
-  ".ren": {
-    "adapter": "none"
   },
   ".black": {
     "host": "whois.afilias.net"
@@ -2402,12 +2459,6 @@
   ".saarland": {
     "host": "whois.ksregistry.net"
   },
-  ".ryukyu": {
-    "adapter": "none"
-  },
-  ".yokohama": {
-    "adapter": "none"
-  },
   ".gop": {
     "host": "whois-cl01.mm-registry.com"
   },
@@ -2419,9 +2470,6 @@
   },
   ".desi": {
     "host": "whois.ksregistry.net"
-  },
-  ".xn--ses554g": {
-    "adapter": "none"
   },
   ".career": {
     "host": "whois.nic.career"
@@ -2528,29 +2576,8 @@
   ".ceo": {
     "host": "whois.nic.ceo"
   },
-  ".bloomberg": {
-    "adapter": "none"
-  },
-  ".yandex": {
-    "adapter": "none"
-  },
-  ".praxi": {
-    "adapter": "none"
-  },
   ".whoswho": {
     "host": "whois.nic.whoswho"
-  },
-  ".williamhill": {
-    "adapter": "none"
-  },
-  ".suzuki": {
-    "adapter": "none"
-  },
-  ".science": {
-    "adapter": "none"
-  },
-  ".realtor": {
-    "adapter": "none"
   },
   ".sydney": {
     "host": "whois.nic.sydney"
@@ -2621,17 +2648,8 @@
   ".uol": {
     "host": "whois.gtlds.nic.br"
   },
-  ".caravan": {
-    "adapter": "none"
-  },
-  ".otsuka": {
-    "adapter": "none"
-  },
   ".frl": {
     "host": "whois.nic.frl"
-  },
-  ".pharmacy": {
-    "adapter": "none"
   },
   ".gmx": {
     "host": "whois-fe1.gmx.tango.knipp.de"
@@ -2834,9 +2852,6 @@
   ".leclerc": {
     "host": "whois-leclerc.nic.fr"
   },
-  ".maif": {
-    "adapter": "none"
-  },
   ".xn--mxtq1m": {
     "host": "whois.nic.xn--mxtq1m"
   },
@@ -2845,12 +2860,6 @@
   },
   ".erni": {
     "host": "whois.nic.erni"
-  },
-  ".chloe": {
-    "adapter": "none"
-  },
-  ".piaget": {
-    "adapter": "none"
   },
   ".forex": {
     "host": "whois.nic.forex"
@@ -2893,6 +2902,12 @@
   },
   ".honda": {
     "host": "whois.nic.honda"
+  },
+  ".bridgestone": {
+    "host": "whois.nic.bridgestone"
+  },
+  ".toray": {
+    "host": "whois.nic.toray"
   },
 
 
