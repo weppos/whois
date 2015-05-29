@@ -1253,6 +1253,9 @@
   ".tech": {
     "host": "whois.centralnic.com"
   },
+  ".rent": {
+    "host": "whois.centralnic.com"
+  },
   ".tires": {
     "host": "whois.donuts.co"
   },
@@ -2884,6 +2887,12 @@
   },
   ".broker": {
     "host": "whois.nic.broker"
+  },
+  ".swiss": {
+    "host": "whois.nic.swiss"
+  },
+  ".honda": {
+    "host": "whois.nic.honda"
   },
 
 
