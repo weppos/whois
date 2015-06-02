@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the capetown-whois.registry.net.za server.
+      # Parser for the joburg-whois.registry.net.za server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class CapetownWhoisRegistryNetZa < ZaCentralRegistry
+      class JoburgWhoisRegistryNetZa < ZaCentralRegistry
 
       end
 

@@ -1,0 +1,81 @@
+Domain Name: usedautos.joburg
+Domain ID: dom_7P-9999
+WHOIS Server: joburg-whois2.registry.net.za
+
+Updated Date: 2014-11-10T07:08:28Z
+Creation Date: 2014-11-03T22:00:08Z
+Registry Expiry Date: 2015-11-03T22:00:08Z
+Sponsoring Registrar: Lexsynergy
+Sponsoring Registrar IANA ID: 1466 
+Domain Status: clientDeleteProhibited
+Domain Status:clientTransferProhibited
+Domain Status:clientUpdateProhibited
+
+Registrant ID: LEX-5FP-22YL
+Registrant Name: Domain Administrator
+Registrant Organization: The Car Trader (Pty) Ltd
+Registrant Street: 154 Bram Fischer Drive Randburg 
+Registrant City: Johannesburg
+Registrant State/Province: 
+Registrant Postal Code: 2194
+Registrant Country: ZA
+Registrant Phone: +27.116860900
+Registrant Phone Ext: 
+Registrant Fax: +27.117896449
+Registrant Fax Ext: 
+Registrant Email: domains@autotrader.co.za
+
+Admin ID: LEX-5FP-22YL
+Admin Name: Domain Administrator
+Admin Organization: The Car Trader (Pty) Ltd
+Admin Street: 154 Bram Fischer Drive Randburg 
+Admin City: Johannesburg
+Admin State/Province: 
+Admin Postal Code: 2194
+Admin Country: ZA
+Admin Phone: +27.116860900
+Admin Phone Ext: 
+Admin Fax: +27.117896449
+Admin Fax Ext: 
+Admin Email: domains@autotrader.co.za
+
+Billing ID: LEX-1-PGD
+Billing Name: Domain Name Department
+Billing Organization: Lexsynergy Limited
+Billing Street: 130 Hampstead House 176 Finchley Road 
+Billing City: London
+Billing State/Province: 
+Billing Postal Code: NW3 6BT
+Billing Country: GB
+Billing Phone: +44.2081331319
+Billing Phone Ext: 
+Billing Fax: +44.2081331319
+Billing Fax Ext: 
+Billing Email: domains@lexsynergy.com
+
+Tech ID: LEX-5FP-22YL
+Tech Name: Domain Administrator
+Tech Organization: The Car Trader (Pty) Ltd
+Tech Street: 154 Bram Fischer Drive Randburg 
+Tech City: Johannesburg
+Tech State/Province: 
+Tech Postal Code: 2194
+Tech Country: ZA
+Tech Phone: +27.116860900
+Tech Phone Ext: 
+Tech Fax: +27.117896449
+Tech Fax Ext: 
+Tech Email: domains@autotrader.co.za
+
+
+Name Server: ns1.lexsynergy.net
+Name Server: ns2.lexsynergy.us
+Name Server: ns3.lexsynergy.info
+DNSSEC: unsigned
+>>> Last update of WHOIS database: 2015-06-02T09:11:02Z <<<
+
+#    WHOIS lookup made at 2015-06-02T09:11:02Z
+# --
+# The use of this Whois facility is subject to the following terms and
+# conditions. https://registry.net.za/whois_terms
+# Copyright (c) ZACR 1995-2015
