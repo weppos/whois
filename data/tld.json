@@ -2309,6 +2309,54 @@
   ".bayern": {
     "host": "whois-dub.mm-registry.com"
   },
+  ".archi": {
+    "host": "whois.ksregistry.net"
+  },
+  ".saarland": {
+    "host": "whois.ksregistry.net"
+  },
+  ".desi": {
+    "host": "whois.ksregistry.net"
+  },
+  ".bio": {
+    "host": "whois.ksregistry.net"
+  },
+  ".bmw": {
+    "host": "whois.ksregistry.net"
+  },
+  ".mini": {
+    "host": "whois.ksregistry.net"
+  },
+  ".spiegel": {
+    "host": "whois.ksregistry.net"
+  },
+  ".tui": {
+    "host": "whois.ksregistry.net"
+  },
+  ".pohl": {
+    "host": "whois.ksregistry.net"
+  },
+  ".allfinanz": {
+    "host": "whois.ksregistry.net"
+  },
+  ".dvag": {
+    "host": "whois.ksregistry.net"
+  },
+  ".xn--vermgensberatung-pwb": {
+    "host": "whois.ksregistry.net"
+  },
+  ".xn--vermgensberater-ctb": {
+    "host": "whois.ksregistry.net"
+  },
+  ".flsmidth": {
+    "host": "whois.ksregistry.net"
+  },
+  ".zuerich": {
+    "host": "whois.ksregistry.net"
+  },
+  ".ski": {
+    "host": "whois.ksregistry.net"
+  },
   ".bar": {
     "host": "whois.nic.bar"
   },
@@ -2447,17 +2495,11 @@
   ".meet": {
     "host": "whois.afilias.net"
   },
-  ".archi": {
-    "host": "whois.ksregistry.net"
-  },
   ".moe": {
     "host": "whois.nic.moe"
   },
   ".xn--czru2d": {
     "host": "whois.gtld.knet.cn"
-  },
-  ".saarland": {
-    "host": "whois.ksregistry.net"
   },
   ".gop": {
     "host": "whois-cl01.mm-registry.com"
@@ -2467,9 +2509,6 @@
   },
   ".college": {
     "host": "whois.nic.college"
-  },
-  ".desi": {
-    "host": "whois.ksregistry.net"
   },
   ".career": {
     "host": "whois.nic.career"
@@ -2525,9 +2564,6 @@
   ".press": {
     "host": "whois.nic.press"
   },
-  ".bio": {
-    "host": "whois.ksregistry.net"
-  },
   ".hamburg": {
     "host": "whois.nic.hamburg"
   },
@@ -2567,12 +2603,6 @@
   ".physio": {
     "host": "whois.nic.physio"
   },
-  ".bmw": {
-    "host": "whois.ksregistry.net"
-  },
-  ".mini": {
-    "host": "whois.ksregistry.net"
-  },
   ".ceo": {
     "host": "whois.nic.ceo"
   },
@@ -2611,9 +2641,6 @@
   },
   ".ong": {
     "host": "whois.publicinterestregistry.net"
-  },
-  ".spiegel": {
-    "host": "whois.ksregistry.net"
   },
   ".gent": {
     "host": "whois.nic.gent"
@@ -2660,24 +2687,6 @@
   ".xn--p1acf": {
     "host": "whois.nic.xn--p1acf"
   },
-  ".tui": {
-    "host": "whois.ksregistry.net"
-  },
-  ".pohl": {
-    "host": "whois.ksregistry.net"
-  },
-  ".allfinanz": {
-    "host": "whois.ksregistry.net"
-  },
-  ".dvag": {
-    "host": "whois.ksregistry.net"
-  },
-  ".xn--vermgensberatung-pwb": {
-    "host": "whois.ksregistry.net"
-  },
-  ".xn--vermgensberater-ctb": {
-    "host": "whois.ksregistry.net"
-  },
   ".forsale": {
     "host": "whois.unitedtld.com"
   },
@@ -2689,9 +2698,6 @@
   },
   ".crs": {
     "adapter": "none"
-  },
-  ".flsmidth": {
-    "host": "whois.ksregistry.net"
   },
   ".poker": {
     "host": "whois.afilias.net"
@@ -2807,6 +2813,9 @@
   ".osaka": {
     "adapter": "none"
   },
+  ".xn--imr513n": {
+    "adapter": "none"
+  },
   ".schwarz": {
     "host": "whois.nic.schwarz"
   },
@@ -2818,9 +2827,6 @@
   },
   ".garden": {
     "host": "whois-dub.mm-registry.com"
-  },
-  ".zuerich": {
-    "host": "whois.ksregistry.net"
   },
   ".bank": {
     "host": "whois.nic.bank"
