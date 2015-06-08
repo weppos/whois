@@ -2705,6 +2705,9 @@
   ".xbox": {
     "adapter": "none"
   },
+  ".azure": {
+    "adapter": "none"
+  },
   ".poker": {
     "host": "whois.afilias.net"
   },
