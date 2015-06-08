@@ -1790,6 +1790,9 @@
   ".football": {
     "host": "whois.donuts.co"
   },
+  ".homedepot": {
+    "host": "whois.afilias-srs.net"
+  },
   ".sex": {
     "host": "whois.afilias-srs.net"
   },
@@ -2697,6 +2700,9 @@
     "host": "whois-alsace.nic.fr"
   },
   ".crs": {
+    "adapter": "none"
+  },
+  ".xbox": {
     "adapter": "none"
   },
   ".poker": {
