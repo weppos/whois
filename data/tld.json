@@ -2696,6 +2696,9 @@
   ".ibm": {
     "host": "whois.nic.ibm"
   },
+  ".icu": {
+    "host": "whois.nic.icu"
+  },
   ".alsace": {
     "host": "whois-alsace.nic.fr"
   },
