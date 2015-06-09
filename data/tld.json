@@ -2594,6 +2594,9 @@
   ".nhk": {
     "adapter": "none"
   },
+  ".earth": {
+    "adapter": "none"
+  },
   ".capetown": {
     "host": "capetown-whois.registry.net.za"
   },
