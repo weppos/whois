@@ -1361,6 +1361,12 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".express": {
+    "host": "whois.donuts.co"
+  },
+  ".cafe": {
+    "host": "whois.donuts.co"
+  },
   ".theater": {
     "host": "whois.donuts.co"
   },
@@ -2887,6 +2893,9 @@
   },
   ".erni": {
     "host": "whois.nic.erni"
+  },
+  ".bauhaus": {
+    "host": "whois.nic.bauhaus"
   },
   ".forex": {
     "host": "whois.nic.forex"
