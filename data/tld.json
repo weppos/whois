@@ -2838,7 +2838,7 @@
     "host": "whois.nic.lidl"
   },
   ".osaka": {
-    "adapter": "none"
+    "host": "whois.nic.osaka"
   },
   ".xn--imr513n": {
     "adapter": "none"
