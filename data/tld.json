@@ -1361,6 +1361,18 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".plus": {
+    "host": "whois.donuts.co"
+  },
+  ".tours": {
+    "host": "whois.donuts.co"
+  },
+  ".gold": {
+    "host": "whois.donuts.co"
+  },
+  ".golf": {
+    "host": "whois.donuts.co"
+  },
   ".express": {
     "host": "whois.donuts.co"
   },
@@ -2117,6 +2129,12 @@
   ".sexy": {
     "host": "whois.uniregistry.net"
   },
+  ".ads": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".guge": {
+    "host": "domain-registry-whois.l.google.com"
+  },
   ".here": {
     "host": "domain-registry-whois.l.google.com"
   },
@@ -2774,26 +2792,35 @@
   ".everbank": {
     "host": "whois.nic.everbank"
   },
+  ".amsterdam": {
+    "host": "whois.nic.amsterdam"
+  },
+  ".sucks": {
+    "host": "whois.nic.sucks"
+  },
+  ".fans": {
+    "host": "whois.nic.fans"
+  },
+  ".film": {
+    "host": "whois.nic.film"
+  },
+  ".latrobe": {
+    "host": "whois.nic.latrobe"
+  },
+  ".sky": {
+    "host": "whois.nic.sky"
+  },
   ".aquarelle": {
     "host": "whois-aquarelle.nic.fr"
   },
   ".irish": {
     "host": "whois.afilias-srs.net"
   },
-  ".latrobe": {
-    "host": "whois.nic.latrobe"
-  },
   ".xn--hxt814e": {
     "host": "whois.nic.xn--hxt814e"
   },
-  ".sky": {
-    "host": "whois.nic.sky"
-  },
   ".ntt": {
     "adapter": "none"
-  },
-  ".amsterdam": {
-    "host": "whois.nic.amsterdam"
   },
   ".gdn": {
     "host": "whois.gdnregistry.com"
@@ -2804,17 +2831,11 @@
   ".study": {
     "host": "whois.nic.study"
   },
-  ".sucks": {
-    "host": "whois.nic.sucks"
-  },
   ".xn--90ais": {
     "host": "whois.cctld.by"
   },
   ".pictet": {
     "adapter": "none"
-  },
-  ".fans": {
-    "host": "whois.nic.fans"
   },
   ".mma": {
     "host": "whois-mma.nic.fr"
