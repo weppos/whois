@@ -83,13 +83,13 @@ describe Whois::Record::Parser::WhoisEu, "status_registered.expected" do
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(0).items
+      expect(subject.technical_contacts.size).to eq(0)
     end
   end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns4.google.com")
       expect(subject.nameservers[0].ipv4).to eq(nil)

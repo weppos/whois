@@ -91,7 +91,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].id).to eq(nil)
@@ -110,7 +110,7 @@ describe Whois::Record::Parser::WhoisDenicDe, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.google.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)

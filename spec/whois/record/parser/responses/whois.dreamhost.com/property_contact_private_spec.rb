@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
   describe "#registrant_contacts" do
     it do
       expect(subject.registrant_contacts).to be_a(Array)
-      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts.size).to eq(1)
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
       expect(subject.registrant_contacts[0].name).to eq("PRIVATE REGISTRANT")
@@ -42,7 +42,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
   describe "#admin_contacts" do
     it do
       expect(subject.admin_contacts).to be_a(Array)
-      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts.size).to eq(1)
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
       expect(subject.admin_contacts[0].name).to eq("PRIVATE REGISTRANT")
@@ -60,7 +60,7 @@ describe Whois::Record::Parser::WhoisDreamhostCom, "property_contact_private.exp
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].name).to eq("PRIVATE REGISTRANT")

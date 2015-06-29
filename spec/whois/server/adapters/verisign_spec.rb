@@ -15,7 +15,7 @@ describe Whois::Server::Adapters::Verisign do
 
         record = server.lookup("example.test")
         record.to_s.should  == expected
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
         record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.test")]
       end
     end
@@ -30,7 +30,7 @@ describe Whois::Server::Adapters::Verisign do
 
         record = server.lookup("example.test")
         record.to_s.should  == expected
-        record.parts.should have(2).parts
+        record.parts.size.should eq(2)
         record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.test"), Whois::Record::Part.new(:body => response, :host => "whois.markmonitor.com")]
       end
 
@@ -40,7 +40,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).with("example.test", "whois.markmonitor.com", 43).returns("")
 
         record = server.lookup("example.test")
-        record.parts.should have(2).parts
+        record.parts.size.should eq(2)
       end
 
       it "ignores referral if is not defined" do
@@ -49,7 +49,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).never
 
         record = server.lookup("example.test")
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
       end
 
       it "ignores referral if options[:referral] is false" do
@@ -59,7 +59,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).never
 
         record = server.lookup("example.test")
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
       end
 
       # (see #103)
@@ -70,7 +70,7 @@ describe Whois::Server::Adapters::Verisign do
         server.query_handler.expects(:call).never
 
         record = server.lookup("example.test")
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
       end
     end
   end

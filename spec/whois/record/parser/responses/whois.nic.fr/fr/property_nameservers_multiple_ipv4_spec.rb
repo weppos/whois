@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisNicFr, "property_nameservers_multiple_ipv4.
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.boursedirect.fr")
       expect(subject.nameservers[0].ipv4).to eq("212.157.203.190")

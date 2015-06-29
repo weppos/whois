@@ -34,44 +34,44 @@ describe Whois::Server::Adapters::Base do
     it "returns true when other is the same instance" do
       one = two = described_class.new(*definition)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns true when other has same class and has the same attributes" do
       one, two = described_class.new(*definition), described_class.new(*definition)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns true when other has descendant class and has the same attributes" do
       subklass = Class.new(described_class)
       one, two = described_class.new(*definition), subklass.new(*definition)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns false when other has different class and has the same attributes" do
       one, two = described_class.new(*definition), Struct.new(:type, :allocation, :host, :options).new(*definition)
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
 
     it "returns false when other has different attributes" do
       one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".cool", "whois.test")
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
 
     it "returns false when other has different options" do
       one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".test", "whois.test", { :foo => "bar" })
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
   end
 

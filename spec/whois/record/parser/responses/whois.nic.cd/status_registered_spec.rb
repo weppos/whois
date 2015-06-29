@@ -73,7 +73,7 @@ describe Whois::Record::Parser::WhoisNicCd, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(0).items
+      expect(subject.nameservers.size).to eq(0)
     end
   end
 end

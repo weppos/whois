@@ -56,7 +56,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_expired.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1550.hostgator.com")
       expect(subject.nameservers[0].ipv4).to eq("174.132.145.195")

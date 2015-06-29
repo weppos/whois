@@ -8,7 +8,7 @@ describe Whois::Record::Parser::Blank do
   }
 
   Whois::Record::Parser::PROPERTIES.each do |method|
-    describe method do
+    describe "##{method}" do
       it "raises Whois::ParserNotFound" do
         expect {
           described_class.new(part).send(method)
