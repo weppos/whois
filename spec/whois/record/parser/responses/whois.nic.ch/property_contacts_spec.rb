@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisNicCh, "property_contacts.expected" do
   describe "#registrant_contacts" do
     it do
       expect(subject.registrant_contacts).to be_a(Array)
-      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts.size).to eq(1)
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].name).to eq("EISD John")
       expect(subject.registrant_contacts[0].address).to eq("Room 208, Furong Road, Changsha City\nCN-41000 Changsha\nChina")
@@ -33,7 +33,7 @@ describe Whois::Record::Parser::WhoisNicCh, "property_contacts.expected" do
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].name).to eq("xie huijie")
       expect(subject.technical_contacts[0].address).to eq("xie huijie\nNo95.Lane768.Ruili Road.Minhang District\nCN-200240 shanghai\nChina")

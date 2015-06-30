@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisRnidsRs, "property_nameservers_hyphenated.e
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("bits-hq.bitsyu.net")
       expect(subject.nameservers[0].ipv4).to eq("217.24.17.10")

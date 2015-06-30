@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisRegistroBr, "property_nameservers_with_ip.e
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns1.hostgator.com.br")
       expect(subject.nameservers[0].ipv4).to eq("74.53.28.178")

@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisSgnicSg, "property_nameservers_schema_1_wit
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(3).items
+      expect(subject.nameservers.size).to eq(3)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("dnssec1.singnet.com.sg")
       expect(subject.nameservers[0].ipv4).to eq("165.21.83.11")

@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisNicFr, "property_contact_without_changed.ex
   describe "#admin_contacts" do
     it do
       expect(subject.admin_contacts).to be_a(Array)
-      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts.size).to eq(1)
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
       expect(subject.admin_contacts[0].id).to eq("JMR39-FRNIC")

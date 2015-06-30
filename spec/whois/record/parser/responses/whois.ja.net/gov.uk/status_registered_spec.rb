@@ -57,7 +57,7 @@ describe Whois::Record::Parser::WhoisJaNet, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(8).items
+      expect(subject.nameservers.size).to eq(8)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("eur5.akam.net")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)

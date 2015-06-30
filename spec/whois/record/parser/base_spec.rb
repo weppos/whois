@@ -22,16 +22,16 @@ describe Whois::Record::Parser::Base do
     it "returns false if the property is not supported" do
       koncrete = Class.new(described_class) do
       end
-      koncrete.new(part).property_supported?(:disclaimer).should be_false
-      koncrete.new(part).respond_to?(:disclaimer).should be_true
+      koncrete.new(part).property_supported?(:disclaimer).should be_falsey
+      koncrete.new(part).respond_to?(:disclaimer).should be_truthy
     end
 
     it "returns true if the property is supported" do
       koncrete = Class.new(described_class) do
         property_register(:disclaimer, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED) {}
       end
-      koncrete.new(part).property_supported?(:disclaimer).should be_true
-      koncrete.new(part).respond_to?(:disclaimer).should be_true
+      koncrete.new(part).property_supported?(:disclaimer).should be_truthy
+      koncrete.new(part).respond_to?(:disclaimer).should be_truthy
     end
   end
 
@@ -75,7 +75,7 @@ describe Whois::Record::Parser::Base do
     end
     it "does not call the method if the object does not respond to the method" do
       koncrete = Class.new(described_class).new(Whois::Record::Part.new)
-      koncrete.is(:response_throttled?).should be_false
+      koncrete.is(:response_throttled?).should be_falsey
     end
   end
 
@@ -123,19 +123,19 @@ describe Whois::Record::Parser::Base do
 
     it "returns true if self and other references the same object" do
       i = described_class.new(part)
-      i.unchanged?(i).should be_true
+      i.unchanged?(i).should be_truthy
     end
 
     it "returns true if the content_for_scanner is the same" do
       i = described_class.new(Whois::Record::Part.new(:body => "This is the\nresponse 1.", :host => "whois.example.test"))
       o = described_class.new(Whois::Record::Part.new(:body => "This is the\r\nresponse 1.", :host => "whois.example.test"))
-      i.unchanged?(o).should be_true
+      i.unchanged?(o).should be_truthy
     end
 
     it "returns false if the content_for_scanner is not the same" do
       i = described_class.new(Whois::Record::Part.new(:body => "This is the response 1.", :host => "whois.example.test"))
       o = described_class.new(Whois::Record::Part.new(:body => "This is the response 2.", :host => "whois.example.test"))
-      i.unchanged?(o).should be_false
+      i.unchanged?(o).should be_falsey
     end
   end
 
@@ -162,7 +162,7 @@ describe Whois::Record::Parser::Base do
 
   describe "#response_incomplete?" do
     it "is undefined" do
-      described_class.new(part).respond_to?(:response_incomplete?).should be_false
+      described_class.new(part).respond_to?(:response_incomplete?).should be_falsey
     end
 
     # it "returns nil" do
@@ -172,13 +172,13 @@ describe Whois::Record::Parser::Base do
     #
     # it "is false" do
     #   i = described_class.new(part)
-    #   i.response_incomplete?.should be_false
+    #   i.response_incomplete?.should be_falsey
     # end
   end
 
   describe "#response_throttled?" do
     it "is undefined" do
-      described_class.new(part).respond_to?(:response_throttled?).should be_false
+      described_class.new(part).respond_to?(:response_throttled?).should be_falsey
     end
 
     # it "returns nil" do
@@ -188,13 +188,13 @@ describe Whois::Record::Parser::Base do
     #
     # it "is false" do
     #   i = described_class.new(part)
-    #   i.response_throttled?.should be_false
+    #   i.response_throttled?.should be_falsey
     # end
   end
 
   describe "#response_unavailable?" do
     it "is undefined" do
-      described_class.new(part).respond_to?(:response_unavailable?).should be_false
+      described_class.new(part).respond_to?(:response_unavailable?).should be_falsey
     end
 
     # it "returns nil" do
@@ -204,7 +204,7 @@ describe Whois::Record::Parser::Base do
     #
     # it "is false" do
     #   i = described_class.new(part)
-    #   i.response_unavailable?.should be_false
+    #   i.response_unavailable?.should be_falsey
     # end
   end
 

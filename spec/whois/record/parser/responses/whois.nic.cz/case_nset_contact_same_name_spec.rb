@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisNicCz, "case_nset_contact_same_name.expecte
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].id).to eq("WEBAREAL-CZ")
       expect(subject.technical_contacts[0].name).to eq("Jaroslav Hansal")

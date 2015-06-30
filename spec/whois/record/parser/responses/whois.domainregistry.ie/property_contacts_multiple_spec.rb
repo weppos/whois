@@ -24,7 +24,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_contacts_multip
   describe "#admin_contacts" do
     it do
       expect(subject.admin_contacts).to be_a(Array)
-      expect(subject.admin_contacts).to have(2).items
+      expect(subject.admin_contacts.size).to eq(2)
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
       expect(subject.admin_contacts[0].id).to eq("JL241-IEDR")
@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisDomainregistryIe, "property_contacts_multip
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
       expect(subject.technical_contacts[0].id).to eq("JM474-IEDR")
