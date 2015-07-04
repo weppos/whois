@@ -1361,6 +1361,15 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".team": {
+    "host": "whois.donuts.co"
+  },
+  ".jewelry": {
+    "host": "whois.donuts.co"
+  },
+  ".show": {
+    "host": "whois.donuts.co"
+  },
   ".plus": {
     "host": "whois.donuts.co"
   },
@@ -1811,6 +1820,75 @@
   ".football": {
     "host": "whois.donuts.co"
   },
+  ".energy": {
+    "host": "whois.donuts.co"
+  },
+  ".delivery": {
+    "host": "whois.donuts.co"
+  },
+  ".direct": {
+    "host": "whois.donuts.co"
+  },
+  ".place": {
+    "host": "whois.donuts.co"
+  },
+  ".city": {
+    "host": "whois.donuts.co"
+  },
+  ".deals": {
+    "host": "whois.donuts.co"
+  },
+  ".restaurant": {
+    "host": "whois.donuts.co"
+  },
+  ".sarl": {
+    "host": "whois.donuts.co"
+  },
+  ".network": {
+    "host": "whois.donuts.co"
+  },
+  ".business": {
+    "host": "whois.donuts.co"
+  },
+  ".xn--vhquv": {
+    "host": "whois.donuts.co"
+  },
+  ".gifts": {
+    "host": "whois.donuts.co"
+  },
+  ".immo": {
+    "host": "whois.donuts.co"
+  },
+  ".world": {
+    "host": "whois.donuts.co"
+  },
+  ".pizza": {
+    "host": "whois.donuts.co"
+  },
+  ".coach": {
+    "host": "whois.donuts.co"
+  },
+  ".works": {
+    "host": "whois.donuts.co"
+  },
+  ".dog": {
+    "host": "whois.donuts.co"
+  },
+  ".healthcare": {
+    "host": "whois.donuts.co"
+  },
+  ".xn--czrs0t": {
+    "host": "whois.donuts.co"
+  },
+  ".legal": {
+    "host": "whois.donuts.co"
+  },
+  ".memorial": {
+    "host": "whois.donuts.co"
+  },
+  ".money": {
+    "host": "whois.donuts.co"
+  },
   ".homedepot": {
     "host": "whois.afilias-srs.net"
   },
@@ -1993,75 +2071,6 @@
   },
   ".republican": {
     "host": "whois.rightside.co"
-  },
-  ".energy": {
-    "host": "whois.donuts.co"
-  },
-  ".delivery": {
-    "host": "whois.donuts.co"
-  },
-  ".direct": {
-    "host": "whois.donuts.co"
-  },
-  ".place": {
-    "host": "whois.donuts.co"
-  },
-  ".city": {
-    "host": "whois.donuts.co"
-  },
-  ".deals": {
-    "host": "whois.donuts.co"
-  },
-  ".restaurant": {
-    "host": "whois.donuts.co"
-  },
-  ".sarl": {
-    "host": "whois.donuts.co"
-  },
-  ".network": {
-    "host": "whois.donuts.co"
-  },
-  ".business": {
-    "host": "whois.donuts.co"
-  },
-  ".xn--vhquv": {
-    "host": "whois.donuts.co"
-  },
-  ".gifts": {
-    "host": "whois.donuts.co"
-  },
-  ".immo": {
-    "host": "whois.donuts.co"
-  },
-  ".world": {
-    "host": "whois.donuts.co"
-  },
-  ".pizza": {
-    "host": "whois.donuts.co"
-  },
-  ".coach": {
-    "host": "whois.donuts.co"
-  },
-  ".works": {
-    "host": "whois.donuts.co"
-  },
-  ".dog": {
-    "host": "whois.donuts.co"
-  },
-  ".healthcare": {
-    "host": "whois.donuts.co"
-  },
-  ".xn--czrs0t": {
-    "host": "whois.donuts.co"
-  },
-  ".legal": {
-    "host": "whois.donuts.co"
-  },
-  ".memorial": {
-    "host": "whois.donuts.co"
-  },
-  ".money": {
-    "host": "whois.donuts.co"
   },
   ".melbourne": {
     "host": "whois.aridnrs.net.au"
@@ -2606,6 +2615,9 @@
   ".vlaanderen": {
     "host": "whois.nic.vlaanderen"
   },
+  ".sony": {
+    "host": "whois.nic.sony"
+  },
   ".tirol": {
     "host": "whois.nic.tirol"
   },
@@ -2695,6 +2707,9 @@
   },
   ".tatar": {
     "host": "whois.nic.tatar"
+  },
+  ".xerox": {
+    "host": "whois.nic.xerox"
   },
   ".cymru": {
     "host": "whois.nic.cymru"
