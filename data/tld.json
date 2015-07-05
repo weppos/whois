@@ -2090,6 +2090,15 @@
   ".blackfriday": {
     "host": "whois.uniregistry.net"
   },
+  ".lol": {
+    "host": "whois.uniregistry.net"
+  },
+  ".auto": {
+    "host": "whois.uniregistry.net"
+  },
+  ".cars": {
+    "host": "whois.uniregistry.net"
+  },
   ".flowers": {
     "host": "whois.uniregistry.net"
   },
@@ -2465,6 +2474,9 @@
   ".wed": {
     "host": "whois.nic.wed"
   },
+  ".nadex": {
+    "host": "whois.nic.nadex"
+  },
   ".wien": {
     "host": "whois.nic.wien"
   },
@@ -2539,6 +2551,12 @@
   },
   ".moe": {
     "host": "whois.nic.moe"
+  },
+  ".cfa": {
+    "host": "whois.nic.cfa"
+  },
+  ".liaison": {
+    "host": "whois.nic.liaison"
   },
   ".xn--czru2d": {
     "host": "whois.gtld.knet.cn"
@@ -2853,6 +2871,9 @@
     "host": "whois.cctld.by"
   },
   ".pictet": {
+    "adapter": "none"
+  },
+  ".aig": {
     "adapter": "none"
   },
   ".mma": {
