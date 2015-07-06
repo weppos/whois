@@ -2888,6 +2888,9 @@
   ".aig": {
     "adapter": "none"
   },
+  ".cisco": {
+    "adapter": "none"
+  },
   ".mma": {
     "host": "whois-mma.nic.fr"
   },
