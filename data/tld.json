@@ -1361,7 +1361,16 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".hockey": {
+    "host": "whois.donuts.co"
+  },
   ".team": {
+    "host": "whois.donuts.co"
+  },
+  ".run": {
+    "host": "whois.donuts.co"
+  },
+  ".taxi": {
     "host": "whois.donuts.co"
   },
   ".jewelry": {
@@ -1938,6 +1947,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".yachts": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--estv75g": {
     "host": "whois.afilias-srs.net"
   },
   ".xn--4gbrim": {
@@ -2903,6 +2915,9 @@
   ".xn--imr513n": {
     "adapter": "none"
   },
+  ".xn--mgbpl2fh": {
+    "adapter": "none"
+  },
   ".schwarz": {
     "host": "whois.nic.schwarz"
   },
@@ -2998,6 +3013,9 @@
   },
   ".honda": {
     "host": "whois.nic.honda"
+  },
+  ".xn--y9a3aq": {
+    "host": "whois.amnic.net"
   },
   ".bridgestone": {
     "host": "whois.nic.bridgestone"
