@@ -2939,6 +2939,9 @@
   ".montblanc": {
     "adapter": "none"
   },
+  ".bharti": {
+    "adapter": "none"
+  },
   ".lidl": {
     "host": "whois.nic.lidl"
   },
