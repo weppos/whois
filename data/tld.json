@@ -1904,6 +1904,12 @@
   ".money": {
     "host": "whois.donuts.co"
   },
+  ".irish": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".lasalle": {
+    "host": "whois.afilias-srs.net"
+  },
   ".homedepot": {
     "host": "whois.afilias-srs.net"
   },
@@ -2872,9 +2878,6 @@
   },
   ".aquarelle": {
     "host": "whois-aquarelle.nic.fr"
-  },
-  ".irish": {
-    "host": "whois.afilias-srs.net"
   },
   ".xn--hxt814e": {
     "host": "whois.nic.xn--hxt814e"
