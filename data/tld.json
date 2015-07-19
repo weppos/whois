@@ -2630,6 +2630,30 @@
   ".paris": {
     "host": "whois-paris.nic.fr"
   },
+  ".leclerc": {
+    "host": "whois-leclerc.nic.fr"
+  },
+  ".bzh": {
+    "host": "whois-bzh.nic.fr"
+  },
+  ".ovh": {
+    "host": "whois-ovh.nic.fr"
+  },
+  ".alsace": {
+    "host": "whois-alsace.nic.fr"
+  },
+  ".aquarelle": {
+    "host": "whois-aquarelle.nic.fr"
+  },
+  ".mma": {
+    "host": "whois-mma.nic.fr"
+  },
+  ".corsica": {
+    "host": "whois-corsica.nic.fr"
+  },
+  ".sncf": {
+    "host": "whois-sncf.nic.fr"
+  },
   ".reise": {
     "host": "whois.nic.reise"
   },
@@ -2672,9 +2696,6 @@
   ".scot": {
     "host": "whois.scot.coreregistry.net"
   },
-  ".bzh": {
-    "host": "whois-bzh.nic.fr"
-  },
   ".surf": {
     "host": "whois-dub.mm-registry.com"
   },
@@ -2692,9 +2713,6 @@
   },
   ".joburg": {
     "host": "joburg-whois.registry.net.za"
-  },
-  ".ovh": {
-    "host": "whois-ovh.nic.fr"
   },
   ".physio": {
     "host": "whois.nic.physio"
@@ -2795,9 +2813,6 @@
   ".icu": {
     "host": "whois.nic.icu"
   },
-  ".alsace": {
-    "host": "whois-alsace.nic.fr"
-  },
   ".crs": {
     "adapter": "none"
   },
@@ -2876,9 +2891,6 @@
   ".sky": {
     "host": "whois.nic.sky"
   },
-  ".aquarelle": {
-    "host": "whois-aquarelle.nic.fr"
-  },
   ".xn--hxt814e": {
     "host": "whois.nic.xn--hxt814e"
   },
@@ -2905,12 +2917,6 @@
   },
   ".cisco": {
     "adapter": "none"
-  },
-  ".mma": {
-    "host": "whois-mma.nic.fr"
-  },
-  ".corsica": {
-    "host": "whois-corsica.nic.fr"
   },
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
@@ -2992,9 +2998,6 @@
   },
   ".oracle": {
     "host": "whois.nic.oracle"
-  },
-  ".leclerc": {
-    "host": "whois-leclerc.nic.fr"
   },
   ".xn--mxtq1m": {
     "host": "whois.nic.xn--mxtq1m"
