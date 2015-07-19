@@ -1331,6 +1331,12 @@
   ".ink": {
     "host": "whois.centralnic.com"
   },
+  ".forum": {
+    "host": "whois.centralnic.com"
+  },
+  ".realty": {
+    "host": "whois.centralnic.com"
+  },
   ".feedback": {
     "host": "whois.nic.feedback"
   },
