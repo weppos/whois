@@ -2936,6 +2936,9 @@
   ".sakura": {
     "adapter": "none"
   },
+  ".montblanc": {
+    "adapter": "none"
+  },
   ".lidl": {
     "host": "whois.nic.lidl"
   },
