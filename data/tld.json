@@ -2099,6 +2099,9 @@
   ".epson": {
     "host": "whois.aridnrs.net.au"
   },
+  ".iinet": {
+    "host": "whois.aridnrs.net.au"
+  },
   ".blackfriday": {
     "host": "whois.uniregistry.net"
   },
@@ -2912,6 +2915,9 @@
   ".lupin": {
     "adapter": "none"
   },
+  ".hsbc": {
+    "adapter": "none"
+  },
   ".iwc": {
     "adapter": "none"
   },
@@ -3035,8 +3041,14 @@
   ".bridgestone": {
     "host": "whois.nic.bridgestone"
   },
+  ".bentley": {
+    "host": "whois.nic.bentley"
+  },
   ".toray": {
     "host": "whois.nic.toray"
+  },
+  ".orange": {
+    "host": "whois.nic.orange"
   },
 
 
