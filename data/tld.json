@@ -3068,6 +3068,9 @@
   ".orange": {
     "host": "whois.nic.orange"
   },
+  ".men": {
+    "host": "whois.nic.men"
+  },
 
 
   ".xn--3e0b707e": {
