@@ -1925,9 +1925,6 @@
   ".cern": {
     "host": "whois.afilias-srs.net"
   },
-  ".autos": {
-    "host": "whois.afilias-srs.net"
-  },
   ".homes": {
     "host": "whois.afilias-srs.net"
   },
@@ -2031,6 +2028,9 @@
     "host": "whois.afilias.net"
   },
   ".lgbt": {
+    "host": "whois.afilias.net"
+  },
+  ".autos": {
     "host": "whois.afilias.net"
   },
   ".band": {
