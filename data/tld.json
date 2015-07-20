@@ -1220,9 +1220,6 @@
   ".bid": {
     "adapter": "none"
   },
-  ".buzz": {
-    "adapter": "none"
-  },
   ".dnp": {
     "adapter": "none"
   },
@@ -3070,6 +3067,9 @@
   },
   ".men": {
     "host": "whois.nic.men"
+  },
+  ".buzz": {
+    "host": "whois.nic.buzz"
   },
 
 
