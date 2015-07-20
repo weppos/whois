@@ -5,6 +5,8 @@
 
 - SERVER: Updated .BUZZ
 
+- NEW: Added whois.safenames.net (GH-#385) parser. [Thanks @robholland ]
+
 
 #### Release 3.6.0
 
