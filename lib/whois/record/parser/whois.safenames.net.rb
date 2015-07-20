@@ -30,30 +30,19 @@ module Whois
           end
         end
 
+
         private
 
-        def build_contact(element, type)
-          node("#{element} Name") do
-            address = (1..2).
-              map { |i| node("#{element} Address Line #{i}") }.
-              compact.join("\n").chomp
-
-            Record::Contact.new(
-              type:         type,
-              id:           node("Registry #{element} ID").presence,
-              name:         value_for_property(element, 'Name'),
-              organization: value_for_property(element, 'Organisation'),
-              address:      address,
-              city:         value_for_property(element, 'City'),
-              zip:          value_for_property(element, 'Postal Code'),
-              state:        value_for_property(element, 'State/Province'),
-              country_code: value_for_property(element, 'Country'),
-              phone:        value_for_phone_property(element, 'Phone'),
-              fax:          value_for_phone_property(element, 'Fax'),
-              email:        value_for_property(element, 'Email')
-            )
-          end
+        def contact_organization_attribute(element)
+          value_for_property(element, 'Organisation')
         end
+
+        def contact_address_attribute(element)
+          address = (1..2).
+            map { |i| node("#{element} Address Line #{i}") }.
+            compact.join("\n").chomp
+        end
+
       end
 
     end
