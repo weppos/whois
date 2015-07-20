@@ -5,7 +5,9 @@
 
 - SERVER: Updated .BUZZ
 
-- NEW: Added whois.safenames.net (GH-#385) parser. [Thanks @robholland ]
+- NEW: Added whois.safenames.net (GH-385) parser. [Thanks @robholland ]
+
+- CHANGED: Updated whois.nic.as to the new response format (GH-334). [Thanks @case]
 
 
 #### Release 3.6.0

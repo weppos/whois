@@ -19,56 +19,42 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicAs < BaseCocca
-
-        class_attribute :status_mapping
-
-        self.status_mapping = {
-          "active" => :registered,
-          "ok" => :registered,
-          "delegated" => :registered,
-          "available" => :available
-        }
-
-        property_supported :domain do
-          content_for_scanner =~ /Domain Name:\s+(.+?)\n/
-          $1 || Whois.bug!(ParserError, "Unable to parse domain.")
-        end
+      class WhoisNicAs < Base
 
         property_supported :status do
-          if content_for_scanner =~ /Domain Status:\s+(.+?)\n/
-            status = $1.downcase
-            self.class.status_mapping[status] || Whois.bug!(ParserError, "Unknown status `#{status}'.")
+          if available?
+            :available
           else
-            Whois.bug!(ParserError, "Unable to parse status.")
+            :registered
           end
         end
+
+        property_supported :available? do
+          !!(content_for_scanner =~ /NOT FOUND/)
+        end
+
+        property_supported :registered? do
+          !available?
+        end
+
 
         property_supported :created_on do
-          if content_for_scanner =~ /Creation Date:\s+(.+?)\n/
-            Time.parse($1)
-          end
+          nil # TODO
         end
+
+        property_not_supported :updated_on
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Registry Expiry Date:\s+(.+?)\n/
-            Time.parse($1)
-          end
+          nil # TODO
         end
 
-        property_supported :registrar do
-          if content_for_scanner =~ /Sponsoring Registrar: (.+)\n/
-            Record::Registrar.new(
-                name:         $1,
-                organization: nil,
-                url:          content_for_scanner.slice(/Registration URL: (.+)\n/, 1)
-            )
-          end
-        end
 
         property_supported :nameservers do
-          content_for_scanner.scan(/Name Server:\s+(.+)\n/).flatten.map do |name|
-            Record::Nameserver.new(:name => name.downcase)
+          if content_for_scanner =~ /Name servers:\n((.+\n)+)\n/
+            $1.strip.split("\n").map do |line|
+              name, ipv4, ipv6 = line.strip.split(/\s+/)
+              Record::Nameserver.new(name: name, ipv4: ipv4, ipv6: ipv6)
+            end
           end
         end
 
