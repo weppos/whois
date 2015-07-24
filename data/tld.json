@@ -11,6 +11,9 @@
   ".cn.com": {
     "host": "whois.centralnic.com"
   },
+  ".co.com": {
+    "host": "whois.centralnic.net"
+  },
   ".com.de": {
     "host": "whois.centralnic.com"
   },
