@@ -3,9 +3,11 @@
 
 #### master
 
+- SERVER: Added .co.com (GH-428). [Thanks @turigabor]
+
 - SERVER: Updated .BUZZ
 
-- NEW: Added whois.safenames.net (GH-385) parser. [Thanks @robholland ]
+- NEW: Added whois.safenames.net (GH-385) parser. [Thanks @robholland]
 
 - CHANGED: Updated whois.nic.as to the new response format (GH-334). [Thanks @case]
 
