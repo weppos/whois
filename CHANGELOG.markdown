@@ -3,7 +3,7 @@
 
 #### master
 
-- SERVER: Added .co.com (GH-428). [Thanks @turigabor]
+- SERVER: Add .co.com (GH-428) [Thanks @turigabor], .STATOIL, .CROWN
 
 - SERVER: Updated .BUZZ
 
