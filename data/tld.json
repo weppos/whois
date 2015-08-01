@@ -1373,6 +1373,9 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".movie": {
+    "host": "whois.donuts.co"
+  },
   ".hockey": {
     "host": "whois.donuts.co"
   },
@@ -2585,6 +2588,9 @@
   ".trading": {
     "host": "whois.nic.trading"
   },
+  ".mtn": {
+    "host": "whois.nic.mtn"
+  },
   ".bond": {
     "host": "whois.nic.bond"
   },
@@ -2873,7 +2879,22 @@
   ".schwarz": {
     "host": "whois.nic.schwarz"
   },
+  ".doha": {
+    "host": "whois.nic.doha"
+  },
   ".crown": {
+    "adapter": "none"
+  },
+  ".download": {
+    "adapter": "none"
+  },
+  ".faith": {
+    "adapter": "none"
+  },
+  ".loan": {
+    "adapter": "none"
+  },
+  ".panerai": {
     "adapter": "none"
   },
   ".nhk": {
@@ -2946,6 +2967,12 @@
     "adapter": "none"
   },
   ".bharti": {
+    "adapter": "none"
+  },
+  ".accountant": {
+    "adapter": "none"
+  },
+  ".date": {
     "adapter": "none"
   },
   ".mango": {
