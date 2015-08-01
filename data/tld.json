@@ -1370,6 +1370,9 @@
   ".rent": {
     "host": "whois.centralnic.com"
   },
+  ".tickets": {
+    "host": "whois.centralnic.com"
+  },
   ".tires": {
     "host": "whois.donuts.co"
   },
@@ -2891,10 +2894,16 @@
   ".faith": {
     "adapter": "none"
   },
+  ".win": {
+    "adapter": "none"
+  },
   ".loan": {
     "adapter": "none"
   },
   ".panerai": {
+    "adapter": "none"
+  },
+  ".review": {
     "adapter": "none"
   },
   ".nhk": {
