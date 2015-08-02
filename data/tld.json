@@ -1916,6 +1916,9 @@
   ".money": {
     "host": "whois.donuts.co"
   },
+  ".xn--fjq720a": {
+    "host": "whois.donuts.co"
+  },
   ".irish": {
     "host": "whois.afilias-srs.net"
   },
@@ -2884,6 +2887,15 @@
   },
   ".doha": {
     "host": "whois.nic.doha"
+  },
+  ".nec": {
+    "host": "whois.nic.nec"
+  },
+  ".philips": {
+    "host": "whois.nic.philips"
+  },
+  ".accenture": {
+    "adapter": "none"
   },
   ".crown": {
     "adapter": "none"
