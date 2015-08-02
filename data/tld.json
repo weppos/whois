@@ -1376,6 +1376,12 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".coupons": {
+    "host": "whois.donuts.co"
+  },
+  ".soccer": {
+    "host": "whois.donuts.co"
+  },
   ".movie": {
     "host": "whois.donuts.co"
   },
@@ -1920,6 +1926,9 @@
     "host": "whois.donuts.co"
   },
   ".irish": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".icbc": {
     "host": "whois.afilias-srs.net"
   },
   ".lasalle": {
