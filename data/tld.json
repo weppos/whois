@@ -1382,6 +1382,9 @@
   ".soccer": {
     "host": "whois.donuts.co"
   },
+  ".fyi": {
+    "host": "whois.donuts.co"
+  },
   ".movie": {
     "host": "whois.donuts.co"
   },
@@ -1922,6 +1925,9 @@
   ".money": {
     "host": "whois.donuts.co"
   },
+  ".mba": {
+    "host": "whois.donuts.co"
+  },
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
   },
@@ -1929,6 +1935,12 @@
     "host": "whois.afilias-srs.net"
   },
   ".icbc": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".thd": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".jll": {
     "host": "whois.afilias-srs.net"
   },
   ".lasalle": {
