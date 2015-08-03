@@ -5,7 +5,7 @@
 
 - SERVER: Add .co.com (GH-428) [Thanks @turigabor], .STATOIL, .CROWN, .ACCOUNTANT, .DATE, .DOHA, .DOWNLOAD, .FAITH, .LOAN, .MOVIE, .MTN, .PANERAI, .REVIEW, .TICKETS, .WIN, .ACCENTURE, .NEC, .PHILIPS, .XN--FJQ720A, .COUPONS, .ICBC, .SOCCER, .FYI, .JLL, .MBA, .THD, .BBVA, .SANDVIK, .SANDVIKCOROMANT, .WALTER
 
-- SERVER: Updated .BUZZ
+- SERVER: Updated .CR, .BUZZ
 
 - NEW: Added whois.safenames.net (GH-385) parser. [Thanks @robholland]
 

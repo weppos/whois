@@ -352,9 +352,7 @@
     "host": "whois.nic.co"
   },
   ".cr": {
-    "host": null,
-    "adapter": "web",
-    "url": "http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do"
+    "host": "whois.nic.cr"
   },
   ".cu": {
     "host": null,
