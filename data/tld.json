@@ -2915,7 +2915,19 @@
   ".philips": {
     "host": "whois.nic.philips"
   },
+  ".sandvik": {
+    "host": "whois.nic.sandvik"
+  },
+  ".sandvikcoromant": {
+    "host": "whois.nic.sandvikcoromant"
+  },
+  ".walter": {
+    "host": "whois.nic.walter"
+  },
   ".accenture": {
+    "adapter": "none"
+  },
+  ".bbva": {
     "adapter": "none"
   },
   ".crown": {
