@@ -1,0 +1,83 @@
+Domain Name: nic.physio
+Domain ID: DFC3E2BC459584A369B6D0C32199B03F8-ARI
+WHOIS Server:
+Referral URL:
+Updated Date: 2015-05-28T06:46:19Z
+Creation Date: 2014-06-04T02:32:22Z
+Registry Expiry Date: 2016-06-04T02:32:22Z
+Sponsoring Registrar: dotPhysio Registry-Registrar
+Sponsoring Registrar IANA ID: 9999
+Domain Status: ok http://www.icann.org/epp#OK
+Domain Status: autoRenewPeriod http://www.icann.org/epp#autoRenewPeriod
+Registrant ID: C947D1B02EE2B4B7B85D4CBB89BA90EA2-ARI
+Registrant Name: Phys Biz Pty Ltd
+Registrant Organization:
+Registrant Street: 88
+Registrant Street: Rosedale Street
+Registrant Street:
+Registrant City: Floreat
+Registrant State/Province: WA
+Registrant Postal Code: 6014
+Registrant Country: au
+Registrant Phone: +61.892849684
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: enquiries@registry.physio
+Admin ID: C947D1B02EE2B4B7B85D4CBB89BA90EA2-ARI
+Admin Name: Phys Biz Pty Ltd
+Admin Organization:
+Admin Street: 88
+Admin Street: Rosedale Street
+Admin Street:
+Admin City: Floreat
+Admin State/Province: WA
+Admin Postal Code: 6014
+Admin Country: au
+Admin Phone: +61.892849684
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: enquiries@registry.physio
+Tech ID: C947D1B02EE2B4B7B85D4CBB89BA90EA2-ARI
+Tech Name: Phys Biz Pty Ltd
+Tech Organization:
+Tech Street: 88
+Tech Street: Rosedale Street
+Tech Street:
+Tech City: Floreat
+Tech State/Province: WA
+Tech Postal Code: 6014
+Tech Country: au
+Tech Phone: +61.892849684
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: enquiries@registry.physio
+Name Server: d.nic.physio
+Name Server: b.nic.physio
+Name Server: c.nic.physio
+Name Server: a.nic.physio
+DNSSEC: signedDelegation
+>>> Last update of WHOIS database: 2015-07-15T12:29:46Z <<<
+
+The Service is provided so that you may look up certain information in relation to domain names that we store in our database.
+
+Use of the Service is subject to our policies, in particular you should familiarise yourself with our Acceptable Use Policy and our Privacy Policy.
+
+The information provided by this Service is 'as is' and we make no guarantee of it its accuracy.
+
+You agree that by your use of the Service you will not use the information provided by us in a way which is:
+* inconsistent with any applicable laws,
+* inconsistent with any policy issued by us,
+* to generate, distribute, or facilitate unsolicited mass email, promotions, advertisings or other solicitations, or
+* to enable high volume, automated, electronic processes that apply to the Service.
+
+You acknowledge that:
+* a response from the Service that a domain name is 'available', does not guarantee that is able to be registered,
+* we may restrict, suspend or terminate your access to the Service at any time, and
+* the copying, compilation, repackaging, dissemination or other use of the information provided by the Service is not permitted, without our express written consent.
+
+This information has been prepared and published in order to represent administrative and technical management of the TLD.
+
+We may discontinue or amend any part or the whole of these Terms of Service from time to time at our absolute discretion.

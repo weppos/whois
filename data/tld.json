@@ -2181,6 +2181,9 @@
   ".iinet": {
     "host": "whois.aridnrs.net.au"
   },
+  ".physio": {
+    "host": "whois.aridnrs.net.au"
+  },
   ".blackfriday": {
     "host": "whois.uniregistry.net"
   },
