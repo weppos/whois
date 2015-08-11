@@ -2163,6 +2163,12 @@
   ".republican": {
     "host": "whois.rightside.co"
   },
+  ".live": {
+    "host": "whois.rightside.co"
+  },
+  ".studio": {
+    "host": "whois.rightside.co"
+  },
   ".melbourne": {
     "host": "whois.aridnrs.net.au"
   },
@@ -2180,6 +2186,9 @@
   },
   ".iinet": {
     "host": "whois.aridnrs.net.au"
+  },
+  ".game": {
+    "host": "whois.uniregistry.net"
   },
   ".blackfriday": {
     "host": "whois.uniregistry.net"
@@ -2925,7 +2934,19 @@
   ".bbva": {
     "host": "whois.nic.bbva"
   },
+  ".airtel": {
+    "host": "whois.nic.airtel"
+  },
+  ".barcelona": {
+    "host": "whois.nic.barcelona"
+  },
+  ".bcn": {
+    "host": "whois.nic.bcn"
+  },
   ".accenture": {
+    "adapter": "none"
+  },
+  ".jprs": {
     "adapter": "none"
   },
   ".crown": {
