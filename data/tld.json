@@ -2370,6 +2370,9 @@
   ".app": {
     "host": "whois.nic.google"
   },
+  ".play": {
+    "host": "whois.nic.google"
+  },
   ".jcb": {
     "host": "whois.nic.gmo"
   },
