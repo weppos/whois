@@ -1833,6 +1833,9 @@
   ".irish": {
     "host": "whois.afilias-srs.net"
   },
+  ".nokia": {
+    "host": "whois.afilias-srs.net"
+  },
   ".icbc": {
     "host": "whois.afilias-srs.net"
   },
@@ -2495,6 +2498,9 @@
   },
   ".sncf": {
     "host": "whois-sncf.nic.fr"
+  },
+  ".lancaster": {
+    "host": "whois-lancaster.nic.fr"
   },
   ".gmx": {
     "host": "whois-fe1.gmx.tango.knipp.de"
