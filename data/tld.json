@@ -1962,6 +1962,9 @@
   ".xn--b4w605ferd": {
     "host": "whois.afilias-srs.net"
   },
+  ".bnl": {
+    "host": "whois.afilias-srs.net"
+  },
   ".xn--6frz82g": {
     "host": "whois.afilias.net"
   },
@@ -2388,6 +2391,15 @@
   ".bayern": {
     "host": "whois-dub.mm-registry.com"
   },
+  ".london": {
+    "host": "whois-lon.mm-registry.com"
+  },
+  ".gop": {
+    "host": "whois-cl01.mm-registry.com"
+  },
+  ".bradesco": {
+    "host": "whois-cl01.mm-registry.com"
+  },
   ".archi": {
     "host": "whois.ksregistry.net"
   },
@@ -2483,6 +2495,54 @@
   },
   ".sncf": {
     "host": "whois-sncf.nic.fr"
+  },
+  ".gmx": {
+    "host": "whois-fe1.gmx.tango.knipp.de"
+  },
+  ".koeln": {
+    "host": "whois-fe1.pdt.koeln.tango.knipp.de"
+  },
+  ".cologne": {
+    "host": "whois-fe1.pdt.cologne.tango.knipp.de"
+  },
+  ".movistar": {
+    "host": "whois-fe.movistar.tango.knipp.de"
+  },
+  ".telefonica": {
+    "host": "whois-fe.telefonica.tango.knipp.de"
+  },
+  ".xn--80asehdb": {
+    "host": "whois.online.rs.corenic.net"
+  },
+  ".xn--80aswg": {
+    "host": "whois.online.rs.corenic.net"
+  },
+  ".madrid": {
+    "host": "whois.madrid.rs.corenic.net"
+  },
+  ".xn--mgbab2bd": {
+    "host": "whois.bazaar.coreregistry.net"
+  },
+  ".eus": {
+    "host": "whois.eus.coreregistry.net"
+  },
+  ".gal": {
+    "host": "whois.gal.coreregistry.net"
+  },
+  ".mango": {
+    "host": "whois.mango.coreregistry.net"
+  },
+  ".scot": {
+    "host": "whois.scot.coreregistry.net"
+  },
+  ".capetown": {
+    "host": "capetown-whois.registry.net.za"
+  },
+  ".durban": {
+    "host": "durban-whois.registry.net.za"
+  },
+  ".joburg": {
+    "host": "joburg-whois.registry.net.za"
   },
   ".lat": {
     "host": "whois.nic.lat"
@@ -2886,6 +2946,12 @@
   ".accountant": {
     "host": "whois.nic.accountant"
   },
+  ".omega": {
+    "host": "whois.nic.omega"
+  },
+  ".swatch": {
+    "host": "whois.nic.swatch"
+  },
   ".bid": {
     "host": "whois.nic.bid"
   },
@@ -2922,7 +2988,13 @@
   ".win": {
     "host": "whois.nic.win"
   },
+  ".cloud": {
+    "host": "whois.nic.cloud"
+  },
   ".maif": {
+    "adapter": "none"
+  },
+  ".hoteles": {
     "adapter": "none"
   },
   ".chloe": {
@@ -3105,9 +3177,6 @@
   ".bharti": {
     "adapter": "none"
   },
-  ".mango": {
-    "host": "whois.mango.coreregistry.net"
-  },
   ".xn--y9a3aq": {
     "host": "whois.amnic.net"
   },
@@ -3135,17 +3204,8 @@
   ".xn--6qq986b3xl": {
     "host": "whois.gtld.knet.cn"
   },
-  ".xn--80asehdb": {
-    "host": "whois.online.rs.corenic.net"
-  },
-  ".xn--80aswg": {
-    "host": "whois.online.rs.corenic.net"
-  },
   ".xn--io0a7i": {
     "host": "whois.ngtld.cn"
-  },
-  ".xn--mgbab2bd": {
-    "host": "whois.bazaar.coreregistry.net"
   },
   ".xn--ngbc5azd": {
     "host": "whois.nic.xn--ngbc5azd"
@@ -3153,23 +3213,8 @@
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
   },
-  ".cologne": {
-    "host": "whois-fe1.pdt.cologne.tango.knipp.de"
-  },
-  ".london": {
-    "host": "whois-lon.mm-registry.com"
-  },
   ".xn--czru2d": {
     "host": "whois.gtld.knet.cn"
-  },
-  ".gop": {
-    "host": "whois-cl01.mm-registry.com"
-  },
-  ".eus": {
-    "host": "whois.eus.coreregistry.net"
-  },
-  ".gal": {
-    "host": "whois.gal.coreregistry.net"
   },
   ".xn--80adxhks": {
     "host": "whois.nic.xn--80adxhks"
@@ -3183,18 +3228,6 @@
   ".rio": {
     "host": "whois.gtlds.nic.br"
   },
-  ".scot": {
-    "host": "whois.scot.coreregistry.net"
-  },
-  ".capetown": {
-    "host": "capetown-whois.registry.net.za"
-  },
-  ".durban": {
-    "host": "durban-whois.registry.net.za"
-  },
-  ".joburg": {
-    "host": "joburg-whois.registry.net.za"
-  },
   ".xn--1qqw23a": {
     "host": "whois.ngtld.cn"
   },
@@ -3204,20 +3237,11 @@
   ".uol": {
     "host": "whois.gtlds.nic.br"
   },
-  ".gmx": {
-    "host": "whois-fe1.gmx.tango.knipp.de"
-  },
   ".xn--p1acf": {
     "host": "whois.nic.xn--p1acf"
   },
-  ".madrid": {
-    "host": "whois.madrid.rs.corenic.net"
-  },
   ".samsung": {
     "host": "whois.nic.xn--cg4bki"
-  },
-  ".koeln": {
-    "host": "whois-fe1.pdt.koeln.tango.knipp.de"
   },
   ".xn--hxt814e": {
     "host": "whois.nic.xn--hxt814e"
