@@ -1237,10 +1237,10 @@
     "host": "whois.centralnic.com"
   },
   ".forum": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.forum"
   },
   ".realty": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.realty"
   },
   ".feedback": {
     "host": "whois.nic.feedback"
@@ -1249,15 +1249,12 @@
     "host": "whois.centralnic.com"
   },
   ".fan": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.fan"
   },
   ".online": {
     "host": "whois.centralnic.com"
   },
   ".love": {
-    "host": "whois.centralnic.com"
-  },
-  ".site": {
     "host": "whois.centralnic.com"
   },
   ".wme": {
@@ -1267,9 +1264,12 @@
     "host": "whois.nic.tech"
   },
   ".rent": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.rent"
   },
   ".tickets": {
+    "host": "whois.nic.tickets"
+  },
+  ".site": {
     "host": "whois.centralnic.com"
   },
   ".tires": {
