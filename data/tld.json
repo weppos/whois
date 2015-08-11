@@ -1120,7 +1120,7 @@
     "host": "whois.nic.ve"
   },
   ".vg": {
-    "host": "ccwhois.ksregistry.net"
+    "host": "whois.nic.vg"
   },
   ".vi": {
     "host": null,
@@ -1363,7 +1363,7 @@
     "host": "whois.nic.wme"
   },
   ".tech": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.tech"
   },
   ".rent": {
     "host": "whois.centralnic.com"
@@ -2922,10 +2922,10 @@
   ".walter": {
     "host": "whois.nic.walter"
   },
-  ".accenture": {
-    "adapter": "none"
-  },
   ".bbva": {
+    "host": "whois.nic.bbva"
+  },
+  ".accenture": {
     "adapter": "none"
   },
   ".crown": {
