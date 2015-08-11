@@ -1980,6 +1980,9 @@
   ".bet": {
     "host": "whois.afilias.net"
   },
+  ".pet": {
+    "host": "whois.afilias.net"
+  },
   ".blue": {
     "host": "whois.afilias.net"
   },
@@ -3017,6 +3020,15 @@
   },
   ".tatamotors": {
     "host": "whois.nic.tatamotors"
+  },
+  ".toyota": {
+    "host": "whois.nic.toyota"
+  },
+  ".lixil": {
+    "host": "whois.nic.lixil"
+  },
+  ".ipiranga": {
+    "adapter": "none"
   },
   ".maif": {
     "adapter": "none"
