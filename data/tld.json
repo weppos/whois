@@ -2943,6 +2943,21 @@
   ".bcn": {
     "host": "whois.nic.bcn"
   },
+  ".bing": {
+    "adapter": "none"
+  },
+  ".hotmail": {
+    "adapter": "none"
+  },
+  ".microsoft": {
+    "adapter": "none"
+  },
+  ".windows": {
+    "adapter": "none"
+  },
+  ".jlc": {
+    "adapter": "none"
+  },
   ".accenture": {
     "adapter": "none"
   },
