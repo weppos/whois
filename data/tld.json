@@ -2955,6 +2955,27 @@
   ".genting": {
     "host": "whois.nic.genting"
   },
+  ".cba": {
+    "host": "whois.nic.cba"
+  },
+  ".commbank": {
+    "host": "whois.nic.commbank"
+  },
+  ".netbank": {
+    "host": "whois.nic.netbank"
+  },
+  ".ricoh": {
+    "host": "whois.nic.ricoh"
+  },
+  ".starhub": {
+    "host": "whois.nic.starhub"
+  },
+  ".vista": {
+    "host": "whois.nic.vista"
+  },
+  ".vistaprint": {
+    "host": "whois.nic.vistaprint"
+  },
   ".bing": {
     "adapter": "none"
   },
