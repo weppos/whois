@@ -2373,6 +2373,9 @@
   ".play": {
     "host": "whois.nic.google"
   },
+  ".drive": {
+    "host": "whois.nic.google"
+  },
   ".jcb": {
     "host": "whois.nic.gmo"
   },
@@ -2945,6 +2948,12 @@
   },
   ".bcn": {
     "host": "whois.nic.bcn"
+  },
+  ".aeg": {
+    "host": "whois.nic.aeg"
+  },
+  ".genting": {
+    "host": "whois.nic.genting"
   },
   ".bing": {
     "adapter": "none"
