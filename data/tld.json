@@ -1218,9 +1218,6 @@
   ".consulting": {
     "host": "whois.unitedtld.com"
   },
-  ".rest": {
-    "host": "whois.unitedtld.com"
-  },
   ".ninja": {
     "host": "whois.unitedtld.com"
   },
@@ -1268,6 +1265,9 @@
   },
   ".tickets": {
     "host": "whois.nic.tickets"
+  },
+  ".rest": {
+    "host": "whois.nic.rest"
   },
   ".site": {
     "host": "whois.centralnic.com"
@@ -2999,6 +2999,12 @@
   },
   ".ice": {
     "host": "whois.nic.ice"
+  },
+  ".lexus": {
+    "host": "whois.nic.lexus"
+  },
+  ".man": {
+    "host": "whois.nic.man"
   },
   ".maif": {
     "adapter": "none"
