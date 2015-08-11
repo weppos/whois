@@ -1839,6 +1839,9 @@
   ".icbc": {
     "host": "whois.afilias-srs.net"
   },
+  ".srl": {
+    "host": "whois.afilias-srs.net"
+  },
   ".thd": {
     "host": "whois.afilias-srs.net"
   },
@@ -1972,6 +1975,9 @@
     "host": "whois.afilias.net"
   },
   ".kim": {
+    "host": "whois.afilias.net"
+  },
+  ".bet": {
     "host": "whois.afilias.net"
   },
   ".blue": {
@@ -3005,6 +3011,12 @@
   },
   ".man": {
     "host": "whois.nic.man"
+  },
+  ".sanofi": {
+    "host": "whois.nic.sanofi"
+  },
+  ".tatamotors": {
+    "host": "whois.nic.tatamotors"
   },
   ".maif": {
     "adapter": "none"
