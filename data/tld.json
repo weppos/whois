@@ -2976,6 +2976,15 @@
   ".vistaprint": {
     "host": "whois.nic.vistaprint"
   },
+  ".scor": {
+    "host": "whois.nic.scor"
+  },
+  ".office": {
+    "adapter": "none"
+  },
+  ".skype": {
+    "adapter": "none"
+  },
   ".bing": {
     "adapter": "none"
   },
