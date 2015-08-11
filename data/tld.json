@@ -1176,105 +1176,6 @@
   },
 
 
-  ".maif": {
-    "adapter": "none"
-  },
-  ".chloe": {
-    "adapter": "none"
-  },
-  ".piaget": {
-    "adapter": "none"
-  },
-  ".bloomberg": {
-    "adapter": "none"
-  },
-  ".yandex": {
-    "adapter": "none"
-  },
-  ".praxi": {
-    "adapter": "none"
-  },
-  ".ryukyu": {
-    "adapter": "none"
-  },
-  ".yokohama": {
-    "adapter": "none"
-  },
-  ".yokohama": {
-    "adapter": "sener"
-  },
-  ".xn--ses554g": {
-    "adapter": "none"
-  },
-  ".williamhill": {
-    "adapter": "none"
-  },
-  ".suzuki": {
-    "adapter": "none"
-  },
-  ".science": {
-    "adapter": "none"
-  },
-  ".realtor": {
-    "adapter": "none"
-  },
-  ".bid": {
-    "adapter": "none"
-  },
-  ".dnp": {
-    "adapter": "none"
-  },
-  ".jetzt": {
-    "adapter": "none"
-  },
-  ".kred": {
-    "adapter": "none"
-  },
-  ".nagoya": {
-    "adapter": "none"
-  },
-  ".neustar": {
-    "adapter": "none"
-  },
-  ".okinawa": {
-    "adapter": "none"
-  },
-  ".qpon": {
-    "adapter": "none"
-  },
-  ".tokyo": {
-    "adapter": "none"
-  },
-  ".caravan": {
-    "adapter": "none"
-  },
-  ".otsuka": {
-    "adapter": "none"
-  },
-  ".xn--rhqv96g": {
-    "adapter": "none"
-  },
-  ".axa": {
-    "adapter": "none"
-  },
-  ".weir": {
-    "adapter": "none"
-  },
-  ".trade": {
-    "adapter": "none"
-  },
-  ".webcam": {
-    "adapter": "none"
-  },
-  ".sohu": {
-    "adapter": "none"
-  },
-  ".ren": {
-    "adapter": "none"
-  },
-  ".pharmacy": {
-    "adapter": "none"
-  },
   ".auction": {
     "host": "whois.unitedtld.com"
   },
@@ -2424,6 +2325,9 @@
   ".surf": {
     "host": "whois-dub.mm-registry.com"
   },
+  ".law": {
+    "host": "whois-dub.mm-registry.com"
+  },
   ".horse": {
     "host": "whois-dub.mm-registry.com"
   },
@@ -2979,6 +2883,129 @@
   ".scor": {
     "host": "whois.nic.scor"
   },
+  ".accountant": {
+    "host": "whois.nic.accountant"
+  },
+  ".bid": {
+    "host": "whois.nic.bid"
+  },
+  ".date": {
+    "host": "whois.nic.date"
+  },
+  ".download": {
+    "host": "whois.nic.download"
+  },
+  ".faith": {
+    "host": "whois.nic.faith"
+  },
+  ".loan": {
+    "host": "whois.nic.loan"
+  },
+  ".party": {
+    "host": "whois.nic.party"
+  },
+  ".racing": {
+    "host": "whois.nic.racing"
+  },
+  ".review": {
+    "host": "whois.nic.review"
+  },
+  ".science": {
+    "host": "whois.nic.science"
+  },
+  ".trade": {
+    "host": "whois.nic.trade"
+  },
+  ".webcam": {
+    "host": "whois.nic.webcam"
+  },
+  ".win": {
+    "host": "whois.nic.win"
+  },
+  ".maif": {
+    "adapter": "none"
+  },
+  ".chloe": {
+    "adapter": "none"
+  },
+  ".piaget": {
+    "adapter": "none"
+  },
+  ".bloomberg": {
+    "adapter": "none"
+  },
+  ".yandex": {
+    "adapter": "none"
+  },
+  ".praxi": {
+    "adapter": "none"
+  },
+  ".ryukyu": {
+    "adapter": "none"
+  },
+  ".yokohama": {
+    "adapter": "none"
+  },
+  ".xn--ses554g": {
+    "adapter": "none"
+  },
+  ".williamhill": {
+    "adapter": "none"
+  },
+  ".suzuki": {
+    "adapter": "none"
+  },
+  ".realtor": {
+    "adapter": "none"
+  },
+  ".dnp": {
+    "adapter": "none"
+  },
+  ".jetzt": {
+    "adapter": "none"
+  },
+  ".kred": {
+    "adapter": "none"
+  },
+  ".nagoya": {
+    "adapter": "none"
+  },
+  ".neustar": {
+    "adapter": "none"
+  },
+  ".okinawa": {
+    "adapter": "none"
+  },
+  ".qpon": {
+    "adapter": "none"
+  },
+  ".tokyo": {
+    "adapter": "none"
+  },
+  ".caravan": {
+    "adapter": "none"
+  },
+  ".otsuka": {
+    "adapter": "none"
+  },
+  ".xn--rhqv96g": {
+    "adapter": "none"
+  },
+  ".axa": {
+    "adapter": "none"
+  },
+  ".weir": {
+    "adapter": "none"
+  },
+  ".sohu": {
+    "adapter": "none"
+  },
+  ".ren": {
+    "adapter": "none"
+  },
+  ".pharmacy": {
+    "adapter": "none"
+  },
   ".office": {
     "adapter": "none"
   },
@@ -3009,22 +3036,7 @@
   ".crown": {
     "adapter": "none"
   },
-  ".download": {
-    "adapter": "none"
-  },
-  ".faith": {
-    "adapter": "none"
-  },
-  ".win": {
-    "adapter": "none"
-  },
-  ".loan": {
-    "adapter": "none"
-  },
   ".panerai": {
-    "adapter": "none"
-  },
-  ".review": {
     "adapter": "none"
   },
   ".nhk": {
@@ -3043,9 +3055,6 @@
     "adapter": "none"
   },
   ".cartier": {
-    "adapter": "none"
-  },
-  ".party": {
     "adapter": "none"
   },
   ".xn--45q11c": {
@@ -3075,9 +3084,6 @@
   ".xn--nyqy26a": {
     "adapter": "none"
   },
-  ".racing": {
-    "adapter": "none"
-  },
   ".lupin": {
     "adapter": "none"
   },
@@ -3097,12 +3103,6 @@
     "adapter": "none"
   },
   ".bharti": {
-    "adapter": "none"
-  },
-  ".accountant": {
-    "adapter": "none"
-  },
-  ".date": {
     "adapter": "none"
   },
   ".mango": {
