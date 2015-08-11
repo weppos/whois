@@ -2997,7 +2997,13 @@
   ".cloud": {
     "host": "whois.nic.cloud"
   },
+  ".ice": {
+    "host": "whois.nic.ice"
+  },
   ".maif": {
+    "adapter": "none"
+  },
+  ".itau": {
     "adapter": "none"
   },
   ".hoteles": {
