@@ -3042,6 +3042,9 @@
   ".xperia": {
     "host": "whois.nic.xperia"
   },
+  ".gdn": {
+    "host": "whois.nic.gdn"
+  },
   ".ipiranga": {
     "adapter": "none"
   },
@@ -3302,9 +3305,6 @@
   },
   ".xn--hxt814e": {
     "host": "whois.nic.xn--hxt814e"
-  },
-  ".gdn": {
-    "host": "whois.gdnregistry.com"
   },
   ".xn--90ais": {
     "host": "whois.cctld.by"
