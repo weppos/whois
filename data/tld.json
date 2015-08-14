@@ -1275,6 +1275,12 @@
   ".tires": {
     "host": "whois.donuts.co"
   },
+  ".wine": {
+    "host": "whois.donuts.co"
+  },
+  ".vin": {
+    "host": "whois.donuts.co"
+  },
   ".coupons": {
     "host": "whois.donuts.co"
   },
@@ -3026,6 +3032,15 @@
   },
   ".lixil": {
     "host": "whois.nic.lixil"
+  },
+  ".boots": {
+    "host": "whois.nic.boots"
+  },
+  ".chanel": {
+    "host": "whois.nic.chanel"
+  },
+  ".xperia": {
+    "host": "whois.nic.xperia"
   },
   ".ipiranga": {
     "adapter": "none"
