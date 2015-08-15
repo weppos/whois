@@ -3045,6 +3045,9 @@
   ".gdn": {
     "host": "whois.nic.gdn"
   },
+  ".giving": {
+    "host": "whois.nic.giving"
+  },
   ".ipiranga": {
     "adapter": "none"
   },
