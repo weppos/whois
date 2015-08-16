@@ -2031,6 +2031,9 @@
   ".band": {
     "host": "whois.rightside.co"
   },
+  ".family": {
+    "host": "whois.rightside.co"
+  },
   ".rip": {
     "host": "whois.rightside.co"
   },
@@ -3047,6 +3050,9 @@
   },
   ".giving": {
     "host": "whois.nic.giving"
+  },
+  ".seek": {
+    "host": "whois.nic.seek"
   },
   ".ipiranga": {
     "adapter": "none"
