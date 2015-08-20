@@ -25,6 +25,12 @@ module Whois
       #
       class WhoisTcinetRu < Base
 
+        property_supported :disclaimer do
+          if content_for_scanner =~ /(% By submitting(.+\n)+)/
+            $1
+          end
+        end
+
         property_supported :domain do
           if content_for_scanner =~ /domain:\s+(.+?)\n/
             $1.downcase
