@@ -10,11 +10,11 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2003-09-11}
+  %s == Time.zone.parse("2003-09-11 JST")
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2009-10-23 19:22:08}
+  %s == Time.zone.parse("2009-10-23 19:22:08 JST")
 
 #expires_on
   %s == nil

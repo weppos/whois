@@ -10,15 +10,15 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2005-05-30}
+  %s == Time.zone.parse("2005-05-30 JST")
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-06-01 01:05:07}
+  %s == Time.zone.parse("2013-06-01 01:05:07 JST")
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-05-31}
+  %s == Time.zone.parse("2014-05-31 JST")
 
 
 #nameservers

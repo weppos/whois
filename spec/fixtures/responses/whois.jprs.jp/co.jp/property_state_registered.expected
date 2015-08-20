@@ -1,8 +1,24 @@
+#disclaimer
+  %s == "JPRS database provides information on network administration. Its use isrestricted to network administration purposes. For further information,use 'whois -h whois.jprs.jp help'. To suppress Japanese output, add'/e'at the end of command, e.g. 'whois -h whois.jprs.jp xxx/e'."
+
+#registered?
+  %s == true
+
+#domain
+  %s == "YAHOO.CO.JP"
+
 #status
   %s == :registered
 
 #available?
   %s == false
 
-#registered?
-  %s == true
+#created_on
+  %s == Time.zone.parse("2000/11/17 JST")
+
+#updated_on
+  %s == Time.zone.parse("2015-02-27 10:26:20 JST")
+
+#registrar
+  %s be_a(Whois::Record::Registrar)
+  %s.organization == "Yahoo Japan Corporation"

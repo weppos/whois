@@ -39,19 +39,19 @@ describe Whois::Record::Parser::WhoisJprsJp, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2005-05-30"))
+      expect(subject.created_on).to eq(Time.zone.parse("2005-05-30 JST"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-06-01 01:05:07"))
+      expect(subject.updated_on).to eq(Time.zone.parse("2013-06-01 01:05:07 JST"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-05-31"))
+      expect(subject.expires_on).to eq(Time.zone.parse("2014-05-31 JST"))
     end
   end
   describe "#nameservers" do
