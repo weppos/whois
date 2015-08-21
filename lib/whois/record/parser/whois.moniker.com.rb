@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.safenames.net server.
+      # Parser for the whois.moniker.com server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisSafenamesNet < BaseVerisign2
+      class WhoisMonikerCom < BaseVerisign2
         
       end
 
