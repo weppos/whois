@@ -1,4 +1,3 @@
- 
  -------------------------------------------------------------------------------
  Whois server by HKIRC
  -------------------------------------------------------------------------------
@@ -8,16 +7,15 @@
 
 
 
-Domain Name:  GOOGLE.HK 
-
+Domain Name:  DISCUSS.COM.HK 
+Bundled Domain Name:  討論區.公司.香港 
 Domain Status: Active 
 
+Contract Version:   HKDNR latest version   
 
-Contract Version:   Refer to registrar   
+Registrar Name: Hong Kong Domain Name Registration Company Limited
 
-Registrar Name: MARKMONITOR INC.
-
-Registrar Contact Information: Email: ccops@markmonitor.com
+Registrar Contact Information: Email: enquiry@hkdnr.hk                       Hotline: +852 2319 1313 
 
 Reseller: 
 
@@ -26,57 +24,56 @@ Reseller:
 
 Registrant Contact Information:
 
-Company English Name (It should be the same as the registered/corporation name on your Business Register Certificate or relevant documents): GOOGLE INC.
-Company Chinese name:  - 
-Address: 1600 AMPHITHEATRE PARKWAY   94043  
-Country: US
-Email: dns-admin@google.com 
-Domain Name Commencement Date: 06-04-2004
-Expiry Date: 31-03-2014 
+Company English Name (It should be the same as the registered/corporation name on your Business Register Certificate or relevant documents): NETWORLD TECHNOLOGY LIMITED
+Company Chinese name:  網滙科技有限公司 
+Address: ROOM 15-18, 16/F., DELTA HOUSE, 3 ON YIU STREET, SHATIN, N.T., HONG KONG.     
+Country: HK
+Email: techsupport@networld.hk 
+Domain Name Commencement Date: 14-10-2003
+Expiry Date: 23-09-2016 
 Re-registration Status:  Complete   
 
 
 
 Administrative Contact Information:
 
-Given name: DNS    
-Family name: ADMIN  
-Company name: GOOGLE INC.
-Address: 1600 AMPHITHEATRE PARKWAY   94043 
-Country: US
-Phone: +1-6502530000
-Fax: +1-6502530001
-Email: dns-admin@google.com
-Account Name: HK3602487T
+Given name: OSCAR    
+Family name: LEUNG  
+Company name: NETWORLD TECHNOLOGY LIMITED
+Address: ROOM 15-18, 16/F., DELTA HOUSE, 3 ON YIU STREET, SHATIN, N.T., HONG KONG.    
+Country: HK
+Phone: +852-34262277
+Fax: +852-35807610
+Email: techsupport@networld.hk
+Account Name: HK2803202T
 
 
 
 
 Technical Contact Information:
 
-Family name: ADMIN  
-Company name: GOOGLE INC.
-Address: 1600 AMPHITHEATRE PARKWAY   94043 
-Country: US
-Phone: +1-6502530000
-Fax: +1-6502530001
-Email: dns-admin@google.com
+Family name: LEUNG  
+Company name: NETWORLD TECHNOLOGY LIMITED
+Address: ROOM 15-18, 16/F., DELTA HOUSE, 3 ON YIU STREET, SHATIN, N.T., HONG KONG.    
+Country: HK
+Phone: +852-34262277
+Fax: +852-35807610
+Email: techsupport@networld.hk
 
 
 
 
 Name Servers Information:
 
-NS1.GOOGLE.COM
-NS2.GOOGLE.COM
-NS3.GOOGLE.COM
-NS4.GOOGLE.COM
+NS1.DISCUSS.COM.HK
+NS2.DISCUSS.COM.HK
 
 
 
 Status Information:
 
 Domain Prohibit Status: 
+
 
 
  -------------------------------------------------------------------------------
@@ -103,9 +100,4 @@ d.    use such data to derive an economic benefit for yourself.
 HKDNR in its sole discretion may terminate your access to the WHOIS search enquiry service (including, without limitation, blocking your IP address) at any time including, without limitation, for excessive use of the WHOIS search enquiry service.
 
 HKDNR may modify these terms of use at any time by publishing the modified terms of use on its website.
-
-
-
-
-
 

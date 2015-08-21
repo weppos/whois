@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisHkircHk, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq("By using this WHOIS search enquiry service you agree to these terms of use.\nThe data in HKDNR's WHOIS search engine is for information purposes only and HKDNR does not guarantee the accuracy of the data. The data is provided to assist people to obtain information about the registration record of domain names registered by HKDNR. You agree to use the data for lawful purposes only.\n")
+    end
+  end
   describe "#status" do
     it do
       expect(subject.status).to eq(:registered)
@@ -39,7 +44,7 @@ describe Whois::Record::Parser::WhoisHkircHk, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2004-04-06"))
+      expect(subject.created_on).to eq(Time.parse("2003-10-14"))
     end
   end
   describe "#updated_on" do
@@ -50,21 +55,83 @@ describe Whois::Record::Parser::WhoisHkircHk, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-03-31"))
+      expect(subject.expires_on).to eq(Time.parse("2016-09-23"))
+    end
+  end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.name).to eq("Hong Kong Domain Name Registration Company Limited")
+    end
+  end
+  describe "#registrant_contacts" do
+    it do
+      expect(subject.registrant_contacts).to be_a(Array)
+      expect(subject.registrant_contacts.size).to eq(1)
+      expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("NETWORLD TECHNOLOGY LIMITED")
+      expect(subject.registrant_contacts[0].organization).to eq(nil)
+      expect(subject.registrant_contacts[0].address).to eq("ROOM 15-18, 16/F., DELTA HOUSE, 3 ON YIU STREET, SHATIN, N.T., HONG KONG.")
+      expect(subject.registrant_contacts[0].city).to eq("SHATIN",)
+      expect(subject.registrant_contacts[0].state).to eq("N.T.")
+      expect(subject.registrant_contacts[0].country).to eq("HK")
+      expect(subject.registrant_contacts[0].phone).to eq(nil)
+      expect(subject.registrant_contacts[0].fax).to eq(nil)
+      expect(subject.registrant_contacts[0].email).to eq("techsupport@networld.hk")
+      expect(subject.registrant_contacts[0].created_on).to eq(Time.parse("2003-10-14"))
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
+    end
+  end
+  describe "#admin_contacts" do
+    it do
+      expect(subject.admin_contacts).to be_a(Array)
+      expect(subject.admin_contacts.size).to eq(1)
+      expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq("HK2803202T")
+      expect(subject.admin_contacts[0].name).to eq("OSCAR LEUNG")
+      expect(subject.admin_contacts[0].organization).to eq("NETWORLD TECHNOLOGY LIMITED")
+      expect(subject.admin_contacts[0].address).to eq("ROOM 15-18, 16/F., DELTA HOUSE, 3 ON YIU STREET")
+      expect(subject.admin_contacts[0].city).to eq("SHATIN",)
+      expect(subject.admin_contacts[0].state).to eq("N.T.")
+      expect(subject.admin_contacts[0].country).to eq("HK")
+      expect(subject.admin_contacts[0].phone).to eq("+852-34262277")
+      expect(subject.admin_contacts[0].fax).to eq("+852-35807610")
+      expect(subject.admin_contacts[0].email).to eq("techsupport@networld.hk")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
+    end
+  end
+  describe "#technical_contacts" do
+    it do
+      expect(subject.technical_contacts).to be_a(Array)
+      expect(subject.technical_contacts.size).to eq(1)
+      expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
+      expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq(nil)
+      expect(subject.technical_contacts[0].name).to eq("LEUNG")
+      expect(subject.technical_contacts[0].organization).to eq("NETWORLD TECHNOLOGY LIMITED")
+      expect(subject.technical_contacts[0].address).to eq("ROOM 15-18, 16/F., DELTA HOUSE, 3 ON YIU STREET")
+      expect(subject.technical_contacts[0].city).to eq("SHATIN",)
+      expect(subject.technical_contacts[0].state).to eq("N.T.")
+      expect(subject.technical_contacts[0].country).to eq("HK")
+      expect(subject.technical_contacts[0].phone).to eq("+852-34262277")
+      expect(subject.technical_contacts[0].fax).to eq("+852-35807610")
+      expect(subject.technical_contacts[0].email).to eq("techsupport@networld.hk")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers.size).to eq(4)
+      expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns1.google.com")
+      expect(subject.nameservers[0].name).to eq("ns1.discuss.com.hk")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns2.google.com")
-      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[2].name).to eq("ns3.google.com")
-      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[3].name).to eq("ns4.google.com")
+      expect(subject.nameservers[1].name).to eq("ns2.discuss.com.hk")
     end
   end
 end
