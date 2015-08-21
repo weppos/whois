@@ -58,6 +58,87 @@ module Whois
           end
         end
 
+        property_supported :registrant_contacts do
+          if content_for_scanner =~ /Registrant:\s+((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            name = lines[0]
+            organization_email = lines[1].split("  ")
+            organization = organization_email[0]
+            email = organization_email[1]
+            phone = lines[2]
+            fax = lines[3]
+            address = lines[4, 3]
+            
+            Record::Contact.new(
+                :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+                :id           => nil,
+                :name         => name,
+                :organization => organization,
+                :address      => address,
+                :city         => nil,
+                :zip          => nil,
+                :state        => nil,
+                :country_code => nil,
+                :phone        => phone,
+                :fax          => fax,
+                :email        => email
+            )
+          end
+        end
+
+        property_supported :admin_contacts do
+          if content_for_scanner =~ /Administrative Contact:\s+((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            name = lines[0]
+            organization_email = lines[1].split("  ")
+            organization = organization_email[0]
+            email = organization_email[1]
+            phone = lines[2]
+            fax = lines[3]
+            
+            Record::Contact.new(
+                :type         => Whois::Record::Contact::TYPE_ADMINISTRATIVE,
+                :id           => nil,
+                :name         => name,
+                :organization => organization,
+                :address      => nil,
+                :city         => nil,
+                :zip          => nil,
+                :state        => nil,
+                :country_code => nil,
+                :phone        => phone,
+                :fax          => fax,
+                :email        => email
+            )
+          end
+        end
+
+        property_supported :technical_contacts do
+          if content_for_scanner =~ /Technical Contact:\s+((.+\n)+)\n/
+            lines = $1.split("\n").map(&:strip)
+            name = lines[0]
+            organization_email = lines[1].split("  ")
+            organization = organization_email[0]
+            email = organization_email[1]
+            phone = lines[2]
+            fax = lines[3]
+            
+            Record::Contact.new(
+                :type         => Whois::Record::Contact::TYPE_TECHNICAL,
+                :id           => nil,
+                :name         => name,
+                :organization => organization,
+                :address      => nil,
+                :city         => nil,
+                :zip          => nil,
+                :state        => nil,
+                :country_code => nil,
+                :phone        => phone,
+                :fax          => fax,
+                :email        => email
+            )
+          end
+        end
 
         property_supported :nameservers do
           if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
