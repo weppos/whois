@@ -50,7 +50,8 @@ describe Whois::Record::Parser::WhoisJprsJp, "status_registered.expected" do
   end
   describe "#expires_on" do
     it do
-      expect(subject.expires_on).to eq(nil)
+      expect(subject.expires_on).to be_a(Time)
+      expect(subject.expires_on).to eq(Time.parse("2010-09-30"))
     end
   end
   describe "#nameservers" do
