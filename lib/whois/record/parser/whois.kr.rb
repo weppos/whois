@@ -60,6 +60,45 @@ module Whois
           end
         end
 
+        property_supported :domain do
+          if content_for_scanner =~ /Domain Name\s+:(.+)\n/
+            $1.downcase.strip
+          end
+        end
+
+        # For .kr domains registrant contacts, only name, address, and zip code were
+        # available.
+        property_supported :registrant_contacts do
+          Record::Contact.new(
+              :type         => Whois::Record::Contact::TYPE_REGISTRANT,
+              :name         => content_for_scanner[/Registrant\s+:(.+?)\n/, 1].to_s.strip,
+              :address      => content_for_scanner[/Registrant Address\s+:(.+?)\n/, 1].to_s.strip,
+              :city         => nil,
+              :zip          => content_for_scanner[/Registrant Zip Code\s+:(.+?)\n/, 1].to_s.strip,
+              :state        => nil,
+              :country_code => nil,
+              :phone        => nil,
+              :fax          => nil,
+              :email        => nil
+          ) 
+        end
+        
+        # For .kr domains administrative contacts, only name, email, and phone were
+        # available.
+        property_supported :admin_contacts do
+          Record::Contact.new(
+              :type         => Whois::Record::Contact::TYPE_ADMINISTRATIVE,
+              :name         => content_for_scanner[/Administrative Contact\(AC\)\s+:(.+?)\n/, 1].to_s.strip,
+              :address      => nil,
+              :city         => nil,
+              :zip          => nil,
+              :state        => nil,
+              :country_code => nil,
+              :phone        => content_for_scanner[/AC Phone Number\s+:(.+?)\n/, 1].to_s.strip,
+              :fax          => nil,
+              :email        => content_for_scanner[/AC E-Mail\s+:(.+?)\n/, 1].to_s.strip
+          ) 
+        end
 
         property_supported :nameservers do
           content_for_scanner.scan(/^\w+ Name Server\n((?:.+\n)+)\n/).flatten.map do |group|
