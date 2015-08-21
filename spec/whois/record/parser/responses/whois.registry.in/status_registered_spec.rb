@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("Access to .IN WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the .IN registry database. The data in this record is provided by .IN Registry for informational purposes only, and .IN does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. .IN reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.")
+      expect(subject.disclaimer).to eq("Access to .IN WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the .IN registry database. The data in this record is provided by .IN Registry for informational purposes only, and .IN does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to(a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. .IN reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.")
     end
   end
   describe "#domain" do
@@ -58,12 +58,12 @@ describe Whois::Record::Parser::WhoisRegistryIn, "status_registered.expected" do
   end
   describe "#updated_on" do
     it do
-      expect(subject.updated_on).to eq(Time.parse("2014-01-13 10:20:18 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2015-01-13 10:22:36 UTC"))
     end
   end
   describe "#expires_on" do
     it do
-      expect(subject.expires_on).to eq(Time.parse("2015-02-14 20:35:14 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2016-02-14 20:35:14 UTC"))
     end
   end
   describe "#registrar" do

@@ -44,7 +44,7 @@ describe Whois::Record::Parser::WhoisJprsJp, "status_reserved.expected" do
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2001-02-21 00:00:00"))
+      expect(subject.updated_on).to eq(Time.zone.parse("2001-02-21 00:00:00"))
     end
   end
   describe "#expires_on" do

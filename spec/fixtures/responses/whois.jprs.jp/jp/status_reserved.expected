@@ -13,11 +13,10 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2001-02-21 00:00:00}
+  %s == Time.zone.parse("2001-02-21 00:00:00")
 
 #expires_on
   %s == nil
-
 
 #nameservers
   %s %CLASS{array}

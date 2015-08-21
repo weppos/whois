@@ -8,6 +8,7 @@
 
 
 require 'whois/record/parser/base'
+require 'whois/record/scanners/whois.nic.mx.rb'
 
 
 module Whois
@@ -26,6 +27,21 @@ module Whois
       # and examples.
       #
       class WhoisNicMx < Base
+        include Scanners::Scannable
+
+        # We call WhoisNicMx scanner which hashes the given server string into 
+        # key, value hashes.
+        self.scanner = Scanners::WhoisNicMx
+
+        property_supported :disclaimer do
+           node("field:disclaimer")
+        end
+
+        property_supported :domain do
+          if content_for_scanner =~ /Domain Name:\s+(.*)\n/
+            $1
+          end
+        end
 
         property_supported :status do
           if available?
@@ -50,14 +66,11 @@ module Whois
           end
         end
 
-        # FIXME: the response contains localized data
-        # Expiration Date: 10-may-2011
-        # Last Updated On: 15-abr-2010 <--
-        # property_supported :updated_on do
-        #   if content_for_scanner =~ /Last Updated On:\s+(.*)\n/
-        #     Time.parse($1)
-        #   end
-        # end
+        property_supported :updated_on do
+          if content_for_scanner =~ /Last Updated On:\s+(.*)\n/
+            Time.parse($1)
+          end
+        end
 
         property_supported :expires_on do
           if content_for_scanner =~ /Expiration Date:\s+(.*)\n/
@@ -74,8 +87,48 @@ module Whois
           end
         end
 
-      end
+        # .mx domains only output name and url
+        property_supported :registrar do
 
+          Record::Registrar.new(
+              :name => content_for_scanner[/Registrar:\s+(.+)\n/, 1],
+              :url => content_for_scanner[/URL:\s+(.+)\n/, 1]
+          )
+        end
+
+        property_supported :registrant_contacts do
+          build_contact("Registrant", Whois::Record::Contact::TYPE_REGISTRANT)
+        end
+
+        property_supported :admin_contacts do
+          build_contact("Administrative Contact", Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+        end
+
+        property_supported :technical_contacts do
+          build_contact("Technical Contact", Whois::Record::Contact::TYPE_TECHNICAL)
+        end
+
+        # This method retrieves the hashed information from the scanner and parses it into contact.
+        # whois.nic.mx only gives out contact information with name, city, state, and country.
+        def build_contact(element, type)
+          node(element) do |hash|
+            Record::Contact.new(
+              :type         => type,
+              :id           => nil,
+              :name         => hash["Name"],
+              :organization => nil,
+              :address      => nil,
+              :city         => hash["City"],
+              :zip          => nil,
+              :state        => hash["State"],
+              :country      => hash["Country"],
+              :phone        => nil,
+              :fax          => nil,
+              :email        => nil
+            )
+          end
+        end
+      end
     end
   end
 end

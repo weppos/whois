@@ -21,6 +21,21 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_state_registered.expected
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq("JPRS database provides information on network administration. Its use isrestricted to network administration purposes. For further information,use 'whois -h whois.jprs.jp help'. To suppress Japanese output, add'/e'at the end of command, e.g. 'whois -h whois.jprs.jp xxx/e'.")
+    end
+  end
+  describe "#registered?" do
+    it do
+      expect(subject.registered?).to eq(true)
+    end
+  end
+  describe "#domain" do
+    it do
+      expect(subject.domain).to eq("YAHOO.CO.JP")
+    end
+  end
   describe "#status" do
     it do
       expect(subject.status).to eq(:registered)
@@ -31,9 +46,20 @@ describe Whois::Record::Parser::WhoisJprsJp, "property_state_registered.expected
       expect(subject.available?).to eq(false)
     end
   end
-  describe "#registered?" do
+  describe "#created_on" do
     it do
-      expect(subject.registered?).to eq(true)
+      expect(subject.created_on).to eq(Time.zone.parse("2000/11/17 JST"))
+    end
+  end
+  describe "#updated_on" do
+    it do
+      expect(subject.updated_on).to eq(Time.zone.parse("2015-02-27 10:26:20 JST"))
+    end
+  end
+  describe "#registrar" do
+    it do
+      expect(subject.registrar).to be_a(Whois::Record::Registrar)
+      expect(subject.registrar.organization).to eq("Yahoo Japan Corporation")
     end
   end
 end

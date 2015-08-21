@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/base_icann_compliant'
+require 'whois/record/parser/base_verisign2'
 
 
 module Whois
@@ -19,30 +19,8 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisSafenamesNet < BaseIcannCompliant
-        self.scanner = Scanners::BaseIcannCompliant, {
-            pattern_available: /^No match for "[\w\.]+"\.\n/
-        }
-
-        property_supported :created_on do
-          node('Created Date') do |value|
-            parse_time(value)
-          end
-        end
-
-
-        private
-
-        def contact_organization_attribute(element)
-          value_for_property(element, 'Organisation')
-        end
-
-        def contact_address_attribute(element)
-          address = (1..2).
-            map { |i| node("#{element} Address Line #{i}") }.
-            compact.join("\n").chomp
-        end
-
+      class WhoisSafenamesNet < BaseVerisign2
+        
       end
 
     end
