@@ -1,0 +1,74 @@
+Domain Name: onclickads.net
+Registry Domain ID: 1805898170_DOMAIN_NET-VRSN
+Registrar WHOIS Server: whois.eurodns.com
+Registrar URL: http://www.eurodns.com
+Updated Date: 2015-05-15T12:18:25Z
+Creation Date: 2013-06-03T00:00:00Z
+Registrar Registration Expiration Date: 2018-06-02T00:00:00Z
+Registrar: Eurodns S.A.
+Registrar IANA ID: 1052
+Registrar Abuse Contact Email: legalservices[at]eurodns.com
+Registrar Abuse Contact Phone: +352.27220150
+Domain Status: clientTransferProhibited
+Registry Registrant ID: 
+Registrant Name: Avery Chris
+Registrant Organization: Advertising Technologies Ltd.
+Registrant Street: Quijano Chambers, P.O. Box 3159
+Registrant City: Road Town
+Registrant State/Province:
+Registrant Postal Code: VG1110
+Registrant Country: VG
+Registrant Phone: +1284
+Registrant Fax: 
+Registrant Email: advtechnologieshelp@gmail.com
+Registry Admin ID: 
+Admin Name: Avery Chris
+Admin Organization: Advertising Technologies Ltd.
+Admin Street: Quijano Chambers, P.O. Box 3159
+Admin City: Road Town
+Admin State/Province:
+Admin Postal Code: VG1110
+Admin Country: VG
+Admin Phone: +1284
+Admin Fax: 
+Admin Email: advtechnologieshelp@gmail.com
+Registry Tech ID: 
+Tech Name: Avery Chris
+Tech Organization: Advertising Technologies Ltd.
+Tech Street: Quijano Chambers, P.O. Box 3159
+Tech City: Road Town
+Tech State/Province:
+Tech Postal Code: VG1110
+Tech Country: VG
+Tech Phone: +1284
+Tech Fax: 
+Tech Email: advtechnologieshelp@gmail.com
+Name Server: ns-1454.awsdns-53.org
+Name Server: ns-1828.awsdns-36.co.uk
+Name Server: ns-233.awsdns-29.com
+Name Server: ns-599.awsdns-10.net
+DNSSEC: unsigned
+ICANN WHOIS Data Problem Reporting System:  http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2015-07-22T20:38:00Z <<<
+
+Please email the listed admin email address if you wish to raise a legal issue.
+
+Whois History: 216 records have been archived since 2013-06-04
+http://www.domaintools.com/research/whois-history/?page=results&Affiliate_ID=1001861&q=onclickads.net
+
+The Data in EuroDNS WHOIS database is provided for information purposes only.
+The fact that EuroDNS display such information does not provide any guarantee
+expressed or implied on the purpose for which the database may be used, its
+accuracy or usefulness. By submitting a WHOIS query, you agree that you will
+use this Data only for lawful purposes and that, under no circumstances will
+you use this Data to:
+
+(1) allow, enable, or otherwise support the transmission of mass unsolicited,
+commercial advertising or solicitations via e-mail (spam); or
+(2) enable high volume, automated, electronic processes that apply to EuroDNS
+(or its systems). EuroDNS reserves the right to modify these terms at any time.
+
+By submitting this query, you agree to abide by the above policy.
+
+For more information on Whois status codes, please visit: https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en
+disclaimer: TERMS OF USE: You are not authorized to access or query our Whois database through the use of electronic processes that are high-volume and automated except as reasonably necessary to register domain names or modify existing registrations; the Data in VeriSign Global Registry Services' ("VeriSign") Whois database is provided by VeriSign for information purposes only, and to assist persons in obtaining information about or related to a domain name registration record. VeriSign does not guarantee its accuracy. By submitting a Whois query, you agree to abide by the following terms of use: You agree that you may use this Data only for lawful purposes and that under no circumstances will you use this Data to: (1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via e-mail, telephone, or facsimile; or (2) enable high volume, automated, electronic processes that apply to VeriSign (or its computer systems). The compilation, repackaging, dissemination or other use of this Data is expressly prohibited without the prior written consent of VeriSign. You agree not to use electronic processes that are automated and high-volume to access or query the Whois database except as reasonably necessary to register domain names or modify existing registrations. VeriSign reserves the right to restrict your access to the Whois database in its sole discretion to ensure operational stability.  VeriSign may restrict or terminate your access to the Whois database for failure to abide by these terms of use. VeriSign reserves the right to modify these terms at any time.
