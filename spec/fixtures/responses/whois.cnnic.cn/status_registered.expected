@@ -28,7 +28,7 @@
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-03-17 12:48:36}
+  %s %TIME{2017-03-17 12:48:36}
 
 
 #registrar
@@ -58,9 +58,9 @@
   %s %CLASS{array}
   %s %SIZE{4}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns2.google.com"
+  %s[0].name == "ns1.google.com"
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns1.google.com"
+  %s[1].name == "ns2.google.com"
   %s[2] %CLASS{nameserver}
   %s[2].name == "ns3.google.com"
   %s[3] %CLASS{nameserver}

@@ -65,7 +65,7 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_registered.expected" do
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-03-17 12:48:36"))
+      expect(subject.expires_on).to eq(Time.parse("2017-03-17 12:48:36"))
     end
   end
   describe "#registrar" do
@@ -103,9 +103,9 @@ describe Whois::Record::Parser::WhoisCnnicCn, "status_registered.expected" do
       expect(subject.nameservers).to be_a(Array)
       expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns2.google.com")
+      expect(subject.nameservers[0].name).to eq("ns1.google.com")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns1.google.com")
+      expect(subject.nameservers[1].name).to eq("ns2.google.com")
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("ns3.google.com")
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
