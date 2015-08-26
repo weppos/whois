@@ -57,7 +57,7 @@ describe Whois::Record::Parser::WhoisBnnicBn, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("dns.brunet.bn")
       expect(subject.nameservers[0].ipv4).to eq("61.6.254.147")

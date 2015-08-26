@@ -16,7 +16,7 @@ Name Server Handle.........: NSGO29H-NORID
 
 Additional information:
 Created:         2001-02-26
-Last updated:    2014-01-27
+Last updated:    2015-01-27
 
 NORID Handle...............: GNA233O-NORID
 Type.......................: organization

@@ -22,7 +22,7 @@ describe Whois::Record do
       lambda { described_class.new(server) }.should raise_error(ArgumentError)
       lambda { described_class.new(server, parts) }.should_not raise_error
     end
-    
+
     it "sets server and parts from arguments" do
       instance = described_class.new(server, parts)
       instance.server.should be(server)
@@ -49,31 +49,31 @@ describe Whois::Record do
     end
 
     it "returns true if method is in self" do
-      subject.respond_to?(:to_s).should be_true
+      subject.respond_to?(:to_s).should be_truthy
     end
 
     it "returns true if method is in hierarchy" do
-      subject.respond_to?(:nil?).should be_true
+      subject.respond_to?(:nil?).should be_truthy
     end
 
     it "returns true if method is a property" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      subject.respond_to?(:test_property).should be_true
+      subject.respond_to?(:test_property).should be_truthy
     end
 
     it "returns true if method is a property?" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      subject.respond_to?(:test_property?).should be_true
+      subject.respond_to?(:test_property?).should be_truthy
     end
 
     it "returns true if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      subject.respond_to?(:test_method).should be_true
+      subject.respond_to?(:test_method).should be_truthy
     end
 
     it "returns true if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      subject.respond_to?(:test_method?).should be_true
+      subject.respond_to?(:test_method?).should be_truthy
     end
   end
 
@@ -103,63 +103,63 @@ describe Whois::Record do
     it "returns true when other is the same instance" do
       one = two = described_class.new(server, parts)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns true when other has same class and has the same parts" do
       one, two = described_class.new(server, parts), described_class.new(server, parts)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns true when other has descendant class and has the same parts" do
       subklass = Class.new(described_class)
       one, two = described_class.new(server, parts), subklass.new(server, parts)
 
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns true when other has same class and has equal parts" do
       one, two = described_class.new(server, parts), described_class.new(server, parts.dup)
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns true when other has same class, different server and the same parts" do
       one, two = described_class.new(server, parts), described_class.new(nil, parts)
-      (one == two).should be_true
-      (one.eql? two).should be_true
+      (one == two).should be_truthy
+      (one.eql? two).should be_truthy
     end
 
     it "returns false when other has different class and has the same parts" do
       one, two = described_class.new(server, parts), Struct.new(:server, :parts).new(server, parts)
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
 
     it "returns false when other has different parts" do
       one, two = described_class.new(server, parts), described_class.new(server, [])
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
 
     it "returns false when other is string and has the same content" do
       one, two = described_class.new(server, parts), described_class.new(server, parts).to_s
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
 
     it "returns false when other is string and has different content" do
       one, two = described_class.new(server, parts), "different"
 
-      (one == two).should be_false
-      (one.eql? two).should be_false
+      (one == two).should be_falsey
+      (one.eql? two).should be_falsey
     end
   end
 
@@ -247,7 +247,7 @@ describe Whois::Record do
   describe "#property_any_supported?" do
     it "delegates to parsers" do
       subject.parser.expects(:property_any_supported?).with(:example).returns(true)
-      subject.property_any_supported?(:example).should be_true
+      subject.property_any_supported?(:example).should be_truthy
     end
   end
 
@@ -295,7 +295,7 @@ describe Whois::Record do
     it "raises if the argument is not an instance of the same class" do
       lambda do
         described_class.new(nil, []).changed?(Object.new)
-      end.should raise_error
+      end.should raise_error(ArgumentError)
 
       lambda do
         described_class.new(nil, []).changed?(described_class.new(nil, []))
@@ -307,7 +307,7 @@ describe Whois::Record do
     it "raises if the argument is not an instance of the same class" do
       lambda do
         described_class.new(nil, []).unchanged?(Object.new)
-      end.should raise_error
+      end.should raise_error(ArgumentError)
 
       lambda do
         described_class.new(nil, []).unchanged?(described_class.new(nil, []))
@@ -316,7 +316,7 @@ describe Whois::Record do
 
     it "returns true if self and other references the same object" do
       instance = described_class.new(nil, [])
-      instance.unchanged?(instance).should be_true
+      instance.unchanged?(instance).should be_truthy
     end
 
     it "delegates to #parser if self and other references different objects" do

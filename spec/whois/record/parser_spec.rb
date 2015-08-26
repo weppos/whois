@@ -82,31 +82,31 @@ describe Whois::Record::Parser do
     end
 
     it "returns true if method is in self" do
-      expect(subject.respond_to?(:to_s)).to be_true
+      expect(subject.respond_to?(:to_s)).to be_truthy
     end
 
     it "returns true if method is in hierarchy" do
-      expect(subject.respond_to?(:nil?)).to be_true
+      expect(subject.respond_to?(:nil?)).to be_truthy
     end
 
     it "returns true if method is a property" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      expect(subject.respond_to?(:test_property)).to be_true
+      expect(subject.respond_to?(:test_property)).to be_truthy
     end
 
     it "returns false if method is a property?" do
       Whois::Record::Parser::PROPERTIES << :test_property
-      expect(subject.respond_to?(:test_property?)).to be_false
+      expect(subject.respond_to?(:test_property?)).to be_falsey
     end
 
     it "returns true if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      expect(subject.respond_to?(:test_method)).to be_true
+      expect(subject.respond_to?(:test_method)).to be_truthy
     end
 
     it "returns false if method is a method" do
       Whois::Record::Parser::METHODS << :test_method
-      expect(subject.respond_to?(:test_method?)).to be_false
+      expect(subject.respond_to?(:test_method?)).to be_falsey
     end
   end
 
@@ -193,20 +193,20 @@ describe Whois::Record::Parser do
     it "returns 0 parsers when 0 parts" do
       record = Whois::Record.new(nil, [])
       parser = described_class.new(record)
-      parser.parsers.should have(0).parsers
+      parser.parsers.size.should eq(0)
       parser.parsers.should == []
     end
 
     it "returns 1 parser when 1 part" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "whois.nic.it")])
       parser = described_class.new(record)
-      parser.parsers.should have(1).parsers
+      parser.parsers.size.should eq(1)
     end
 
     it "returns 2 parsers when 2 part" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "whois.verisign-grs.com"), Whois::Record::Part.new(body: nil, host: "whois.nic.it")])
       parser = described_class.new(record)
-      parser.parsers.should have(2).parsers
+      parser.parsers.size.should eq(2)
     end
 
     it "initializes the parsers in reverse order" do
@@ -232,27 +232,27 @@ describe Whois::Record::Parser do
   describe "#property_any_supported?" do
     it "returns false when 0 parts" do
       record = Whois::Record.new(nil, [])
-      described_class.new(record).property_any_supported?(:disclaimer).should be_false
+      described_class.new(record).property_any_supported?(:disclaimer).should be_falsey
     end
 
     it "returns true when 1 part supported" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "whois.nic.it")])
-      described_class.new(record).property_any_supported?(:disclaimer).should be_true
+      described_class.new(record).property_any_supported?(:disclaimer).should be_truthy
     end
 
     it "returns false when 1 part supported" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "missing.nic.it")])
-      described_class.new(record).property_any_supported?(:disclaimer).should be_false
+      described_class.new(record).property_any_supported?(:disclaimer).should be_falsey
     end
 
     it "returns true when 2 parts" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "whois.verisign-grs.com"), Whois::Record::Part.new(host: "whois.nic.it")])
-      described_class.new(record).property_any_supported?(:disclaimer).should be_true
+      described_class.new(record).property_any_supported?(:disclaimer).should be_truthy
     end
 
     it "returns true when 1 part supported 1 part not supported" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(host: "missing.nic.it"), Whois::Record::Part.new(host: "whois.nic.it")])
-      described_class.new(record).property_any_supported?(:disclaimer).should be_true
+      described_class.new(record).property_any_supported?(:disclaimer).should be_truthy
     end
   end
 
@@ -280,21 +280,21 @@ describe Whois::Record::Parser do
     it "returns an array of contact when 1 part is supported" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "contacts2.test")])
       parser = described_class.new(record)
-      parser.contacts.should have(2).contacts
+      parser.contacts.size.should eq(2)
       parser.contacts.should == %w( p2-a1 p2-t1 )
     end
 
     it "returns an array of contact when 1 part is not supported" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "contacts1.test")])
       parser = described_class.new(record)
-      parser.contacts.should have(0).contacts
+      parser.contacts.size.should eq(0)
       parser.contacts.should == %w()
     end
 
     it "merges the contacts and returns an array of contact when 2 parts" do
       record = Whois::Record.new(nil, [Whois::Record::Part.new(body: nil, host: "contacts2.test"), Whois::Record::Part.new(body: nil, host: "contacts3.test")])
       parser = described_class.new(record)
-      parser.contacts.should have(3).contacts
+      parser.contacts.size.should eq(3)
       parser.contacts.should == %w( p3-t1 p2-a1 p2-t1 )
     end
   end
@@ -302,42 +302,42 @@ describe Whois::Record::Parser do
 
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
-      lambda do
+      expect do
         described_class.new(record).changed?(Object.new)
-      end.should raise_error
+      end.to raise_error(ArgumentError)
 
-      lambda do
+      expect do
         described_class.new(record).changed?(described_class.new(record))
-      end.should_not raise_error
+      end.to_not raise_error
     end
   end
 
   describe "#unchanged?" do
     it "raises if the argument is not an instance of the same class" do
-      lambda do
+      expect do
         described_class.new(record).unchanged?(Object.new)
-      end.should raise_error
+      end.to raise_error(ArgumentError)
 
-      lambda do
+      expect do
         described_class.new(record).unchanged?(described_class.new(record))
-      end.should_not raise_error
+      end.to_not raise_error
     end
 
     it "returns true if self and other references the same object" do
       instance = described_class.new(record)
-      instance.unchanged?(instance).should be_true
+      instance.unchanged?(instance).should be_truthy
     end
 
     it "returns false if parser and other.parser have different number of elements" do
       instance = described_class.new(Whois::Record.new(nil, []))
       other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "", host: "foo.example.test")]))
-      instance.unchanged?(other).should be_false
+      instance.unchanged?(other).should be_falsey
     end
 
     it "returns true if parsers and other.parsers have 0 elements" do
       instance = described_class.new(Whois::Record.new(nil, []))
       other    = described_class.new(Whois::Record.new(nil, []))
-      instance.unchanged?(other).should be_true
+      instance.unchanged?(other).should be_truthy
     end
 
 
@@ -345,14 +345,14 @@ describe Whois::Record::Parser do
       instance = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "hello", host: "bar.example.test")]))
       other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "hello", host: "bar.example.test")]))
 
-      instance.unchanged?(other).should be_true
+      instance.unchanged?(other).should be_truthy
     end
 
     it "returns false unless every parser in self marches the corresponding parser in other" do
       instance = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "world", host: "bar.example.test")]))
       other    = described_class.new(Whois::Record.new(nil, [Whois::Record::Part.new(body: "hello", host: "foo.example.test"), Whois::Record::Part.new(body: "baby!", host: "bar.example.test")]))
 
-      instance.unchanged?(other).should be_false
+      instance.unchanged?(other).should be_falsey
     end
   end
 

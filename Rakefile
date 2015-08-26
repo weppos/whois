@@ -18,7 +18,7 @@ spec = Gem::Specification.new do |s|
 
   s.authors           = ["Simone Carletti"]
   s.email             = ["weppos@weppos.net"]
-  s.homepage          = "http://www.ruby-whois.org/"
+  s.homepage          = "http://whoisrb.org/"
   s.license           = "MIT"
   s.rubyforge_project = "whois"
 
@@ -31,7 +31,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency "activesupport", ">= 3"
 
   s.add_development_dependency "rake"
-  s.add_development_dependency "rspec", "~> 2.0"
+  s.add_development_dependency "rspec", "~> 3.0"
   s.add_development_dependency "mocha"
   s.add_development_dependency "yard"
 

@@ -56,7 +56,7 @@ describe Whois::Record::Parser::WhoisDnsPt, "status_inactive.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(0).items
+      expect(subject.nameservers.size).to eq(0)
     end
   end
 end

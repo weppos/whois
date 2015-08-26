@@ -54,7 +54,7 @@ describe Whois::Record::Parser::KeroYachayPe, "status_inactive.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(0).items
+      expect(subject.nameservers.size).to eq(0)
       expect(subject.nameservers).to eq([])
     end
   end

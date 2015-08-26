@@ -1,39 +1,49 @@
-TERMS OF USE: You are not authorized to access or query our WHOIS database through the use of electronic processes that are high-volume and automated.  THis WHOIS database is provided by as a service to the internet community.
+Domain:
+     google.as
 
-The data is for information purposes only. We do not guarantee its accuracy. By submitting a WHOIS query, you agree to abide by the following terms of use: You agree that you may use this Data only for lawful purposes and that under no circumstances will you use this Data to: (1) allow, enable, or otherwise support the transmission of mass unsolicited, commercial advertising or solicitations via e-mail, telephone, or facsimile; or (2) enable high volume, automated, electronic processes that apply to CoCCA it's members (or CoCCA or member computer systems). The compilation, repackaging, dissemination or other use of this Data is expressly prohibited.
-
-Domain Information
-Query: google.as
-Status: Active
-Created: 02 Aug 2000 00:00 UTC
-Expires: 02 Aug 2014 00:00 UTC
-Name Servers:
-    ns1.google.com
-    ns2.google.com
-    ns3.google.com
-    ns4.google.com
-
-Registrar Information
-Registrar Name: MarkMonitor Inc.
-
-
-
+Status:
+      ST_CL_UPDATEPROHIBITED ST_CL_DELETEPROHIBITED ST_CL_TRANSFERPROHIBITED 
 
 Registrant:
-Name: Google, Inc.
+     Google, Inc.
+     
 
+Registrar:
+     MarkMonitor Inc. (http://www.markmonitor.com)
 
-Admin Contact:
-Name: Google, Inc.
-Organisation: DNS Admin
+Relevant dates:
+     Registered on 02nd August 2000
+     Registry fee due on 02nd August each year
 
+Registration status:
+     Registered until cancelled
 
-Technical Contact:
-Name: Google, Inc.
-Organisation: DNS Admin
+Name servers:
+     ns1.google.com
+     ns2.google.com
+     ns3.google.com
+     ns4.google.com
+     
 
+WHOIS lookup made on Mon, 20 Jul 2015 12:24:55 BST
 
-Billing Contact:
-Name: MarkMonitor
-Organisation: Admin, CCOPS
+This WHOIS information is provided for free by CIDR, operator of
+the backend registry for domain names ending in GG, JE, and AS.
+
+Copyright (c) and database right AS Domain Registry 1997 - 2015.
+
+You may not access this WHOIS server or use any data from it except
+as permitted by the relevant Terms and Condition, available in full at
+http://""www.nic.as/policy.cfm  
+
+They include restrictions and prohibitions on
+
+- using or re-using the data for advertising;
+- using or re-using the service for commercial purposes without a licence;
+- repackaging, recompilation, redistribution or reuse;
+- obscuring, removing or hiding any or all of this notice;
+- exceeding query rate or volume limits.
+
+The data is provided on an 'as-is' basis and may lag behind the
+register. Access may be withdrawn or restricted at any time. 
 

@@ -49,6 +49,10 @@ end
       expect(subject.%{attribute}).to %{match}
   RUBY
 
+  TPL_MATCH_SIZE = <<-RUBY.chomp!
+      expect(subject.%{attribute}.size).to eq(%{size})
+  RUBY
+
   TPL_MATCH_RAISE = <<-RUBY.chomp!
       expect { subject.%{attribute} }.to %{match}
   RUBY
@@ -108,8 +112,11 @@ end
       contexts = tests.map do |attr, specs|
         matches = specs.map do |method, condition|
           attribute = method % attr
-          if condition.index("raise_error")
+          case condition
+          when /raise_error/
             TPL_MATCH_RAISE % { attribute: attribute, match: condition }
+          when /^%SIZE\{(\d+)\}$/
+            TPL_MATCH_SIZE % { attribute: attribute, size: $1 }
           else
             TPL_MATCH % { attribute: attribute, match: condition }
           end
@@ -146,10 +153,6 @@ end
     # %s %CLASS{time} -> %s be_a(time)
     when c =~ /^%CLASS\{(.+)\}$/
       c = "be_a(#{_build_condition_typeof($1)})"
-
-    # %s %SIZE{3} -> %s have(3).items
-    when c =~ /^%SIZE\{(.+)\}$/
-      c = "have(#{$1}).items"
 
     # %s %TIME{...} -> %s Time.parse(...)
     when c =~ /^%TIME\{(.+)\}$/

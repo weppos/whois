@@ -13,7 +13,7 @@ describe Whois::Server::Adapters::Arin do
         server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(response)
         record = server.lookup("0.0.0.0")
         record.to_s.should  == expected
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
         record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.arin.net")]
       end
     end
@@ -28,7 +28,7 @@ describe Whois::Server::Adapters::Arin do
 
         record = server.lookup("0.0.0.0")
         record.to_s.should  == expected
-        record.parts.should have(2).parts
+        record.parts.size.should eq(2)
         record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.arin.net"),
                                 Whois::Record::Part.new(:body => response, :host => "whois.ripe.net")]
       end
@@ -42,7 +42,7 @@ describe Whois::Server::Adapters::Arin do
 
         record = server.lookup("0.0.0.0")
         record.to_s.should  == expected
-        record.parts.should have(2).parts
+        record.parts.size.should eq(2)
         record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.arin.net"),
                                 Whois::Record::Part.new(:body => response, :host => "rwhois.servernap.net")]
       end
@@ -52,18 +52,18 @@ describe Whois::Server::Adapters::Arin do
         server.options[:referral] = false
         server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(referral)
         server.query_handler.expects(:call).with("0.0.0.0", "whois.ripe.net", 43).never
-       
+
         record = server.lookup("0.0.0.0")
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
       end
 
       it "ignores referral (gracefully) if missing" do
         referral = File.read(fixture("referrals/arin_referral_missing.txt"))
         server.query_handler.expects(:call).with("n + 0.0.0.0", "whois.arin.net", 43).returns(referral)
         server.query_handler.expects(:call).never
-       
+
         record = server.lookup("0.0.0.0")
-        record.parts.should have(1).part
+        record.parts.size.should eq(1)
       end
 
       it "folows referrals without ports" do
@@ -73,7 +73,7 @@ describe Whois::Server::Adapters::Arin do
         server.query_handler.expects(:call).with("0.0.0.0", "whois.apnic.net", 43).returns(response)
 
         record = server.lookup("0.0.0.0")
-        record.parts.should have(2).parts
+        record.parts.size.should eq(2)
         record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.arin.net"),
                                 Whois::Record::Part.new(:body => response, :host => "whois.apnic.net")]
       end

@@ -54,7 +54,7 @@ describe Whois::Record::Parser::KeroYachayPe, "status_suspended.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(4).items
+      expect(subject.nameservers.size).to eq(4)
     end
   end
   describe "#response_throttled?" do

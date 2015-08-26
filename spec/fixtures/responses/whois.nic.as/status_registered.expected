@@ -1,10 +1,3 @@
-#domain
-  %s == "google.as"
-
-#domain_id
-  %s %ERROR{AttributeNotSupported}
-
-
 #status
   %s == :registered
 
@@ -16,23 +9,13 @@
 
 
 #created_on
-  %s %CLASS{time}
-  %s %TIME{2000-08-02 00:00:00 UTC}
-
-#updated_on
   %s == nil
 
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
 #expires_on
-  %s %CLASS{time}
-  %s %TIME{2014-08-02 00:00:00 UTC}
-
-
-#registrar
-  %s %CLASS{registrar}
-  %s.id           == nil
-  %s.name         == "MarkMonitor Inc."
-  %s.organization == nil
-  %s.url          == nil
+  %s == nil
 
 
 #nameservers

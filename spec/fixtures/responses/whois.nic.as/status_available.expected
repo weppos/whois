@@ -1,10 +1,3 @@
-#domain
-  %s == "u34jedzcq.as"
-
-#domain_id
-  %s %ERROR{AttributeNotSupported}
-
-
 #status
   %s == :available
 
@@ -19,13 +12,9 @@
   %s == nil
 
 #updated_on
-  %s == nil
+  %s %ERROR{AttributeNotSupported}
 
 #expires_on
-  %s == nil
-
-
-#registrar
   %s == nil
 
 

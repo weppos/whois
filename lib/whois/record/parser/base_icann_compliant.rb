@@ -105,7 +105,7 @@ module Whois
         end
 
 
-        private
+        protected
 
         def build_contact(element, type)
           node("#{element} Name") do
@@ -113,8 +113,8 @@ module Whois
                 type:         type,
                 id:           node("Registry #{element} ID").presence,
                 name:         value_for_property(element, 'Name'),
-                organization: value_for_property(element, 'Organization'),
-                address:      value_for_property(element, 'Street'),
+                organization: contact_organization_attribute(element),
+                address:      contact_address_attribute(element),
                 city:         value_for_property(element, 'City'),
                 zip:          value_for_property(element, 'Postal Code'),
                 state:        value_for_property(element, 'State/Province'),
@@ -125,6 +125,17 @@ module Whois
             )
           end
         end
+
+        def contact_organization_attribute(element)
+          value_for_property(element, 'Organization')
+        end
+
+        def contact_address_attribute(element)
+          value_for_property(element, 'Street')
+        end
+
+
+        private
 
         def parse_time(value)
           Time.parse(value)

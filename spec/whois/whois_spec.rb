@@ -17,7 +17,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 1")
 
-        Whois.available?("example.test").should be_true
+        Whois.available?("example.test").should be_truthy
       end
     end
 
@@ -26,7 +26,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 2")
 
-        Whois.available?("example.test").should be_false
+        Whois.available?("example.test").should be_falsey
       end
     end
 
@@ -47,7 +47,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 1")
 
-        Whois.registered?("example.test").should be_false
+        Whois.registered?("example.test").should be_falsey
       end
     end
 
@@ -56,7 +56,7 @@ describe Whois do
         Whois::Server.define(:tld, ".test", "parser.test")
         Whois::Server::Adapters::Standard.any_instance.expects(:query_the_socket).with("example.test", "parser.test").returns("1 == 2")
 
-        Whois.registered?("example.test").should be_true
+        Whois.registered?("example.test").should be_truthy
       end
     end
 

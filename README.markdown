@@ -16,12 +16,12 @@ This library was extracted from [RoboWhois](https://www.robowhois.com/) and [Rob
 
 ## Features
 
-- Ability to lookup WHOIS record for [IPv4, IPv6, TLDs, and ICANN new gTLDs](http://ruby-whois.org/manual/usage/#usage-objects)
-- Ability to [parse WHOIS responses](http://ruby-whois.org/manual/parser/)
-- Flexible and extensible interface (e.g. You can define [custom servers](http://ruby-whois.org/manual/server/) on the fly)
+- Ability to lookup WHOIS record for [IPv4, IPv6, TLDs, and ICANN new gTLDs](http://whoisrb.org/manual/usage/#usage-objects)
+- Ability to [parse WHOIS responses](http://whoisrb.org/manual/parser/)
+- Flexible and extensible interface (e.g. You can define [custom servers](http://whoisrb.org/manual/server/) on the fly)
 - Object oriented design, featuring 10 different design patterns
 - Pure Ruby library, without any external dependency other than Ruby itself
-- Successfully tested against several [Ruby implementations](http://ruby-whois.org/manual/interpreters/)
+- Successfully tested against several [Ruby implementations](http://whoisrb.org/manual/interpreters/)
 
 
 ## Requirements
