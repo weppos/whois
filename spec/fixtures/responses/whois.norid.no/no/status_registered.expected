@@ -14,7 +14,7 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2014-01-27}
+  %s %TIME{2015-01-27}
 
 #expires_on
   %s %ERROR{AttributeNotSupported}

@@ -882,8 +882,9 @@ nl:
     _server: whois.domain-registry.nl
     status_available: u34jedzcq.nl
     status_registered: google.nl
-nl:
+no:
     _server: whois.norid.no
+    _subdir: no
     status_available: u34jedzcq.no
     status_registered: google.no
 np:
