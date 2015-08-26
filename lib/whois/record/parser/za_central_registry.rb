@@ -41,6 +41,7 @@ module Whois
           !node("Creation Date")
         end
 
+
         private
 
         def build_contact(element, type)

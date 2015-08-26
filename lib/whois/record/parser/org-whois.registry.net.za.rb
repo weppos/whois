@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/za_central_egistry'
+require 'whois/record/parser/za_central_registry'
 
 
 module Whois
@@ -20,7 +20,6 @@ module Whois
       # Parser for the whois.org.za server.
       #
       class OrgWhoisRegistryNetZa < ZaCentralRegistry
-
       end
 
     end

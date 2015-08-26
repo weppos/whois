@@ -7,7 +7,7 @@
 #++
 
 
-require 'whois/record/parser/za_central_egistry'
+require 'whois/record/parser/za_central_registry'
 
 
 module Whois
@@ -20,7 +20,6 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class DurbanWhoisRegistryNetZa < ZaCentralRegistry
-
       end
 
     end
