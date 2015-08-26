@@ -5,6 +5,8 @@
 
 - CHANGED: Updated whois.cnnic.cn to the new response format (GH-432). [Thanks @ledowong]
 
+- CHANGED: Added expires_on at "co.jp" domain (GH-437). [Thanks @kubihie]
+
 
 #### Release 3.6.1
 
