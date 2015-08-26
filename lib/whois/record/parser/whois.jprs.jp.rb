@@ -80,7 +80,7 @@ module Whois
 
         # TODO: timezone ('Asia/Tokyo')
         property_supported :expires_on do
-          if content_for_scanner =~ /\[Expires on\][ \t]+(.*)\n/
+          if content_for_scanner =~ /\[(?:Expires on|State)\][ \t]+(.*)\n/
             ($1.empty?) ? nil : Time.parse($1)
           end
         end
