@@ -1,0 +1,109 @@
+#domain
+  %s == "wordpress.durban"
+
+#domain_id
+  %s == "dom_7G-9999"
+
+
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+
+#created_on
+  %s %CLASS{time}
+  %s %TIME{2014-11-04T06:00:01Z}
+
+#updated_on
+  %s %CLASS{time}
+  %s %TIME{2014-11-11T06:00:03Z}
+
+#expires_on
+  %s %CLASS{time}
+  %s %TIME{2016-11-04T06:00:01Z}
+
+
+#registrar
+  %s %CLASS{registrar}
+  %s.id           == "292"
+  %s.name         == "MarkMonitor"
+  %s.organization == "MarkMonitor"
+  %s.url          == nil
+
+#registrant_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == "mmr-132163"
+  %s[0].name          == "DNStination Inc."
+  %s[0].organization  == ""
+  %s[0].address       == "425 Market St 5th Floor"
+  %s[0].city          == "San Francisco"
+  %s[0].state         == "CA"
+  %s[0].zip           == "94105"
+  %s[0].country       == nil
+  %s[0].country_code  == "US"
+  %s[0].phone         == "+1.4155319335"
+  %s[0].fax           == "+1.4155319336"
+  %s[0].email         == "admin@dnstinations.com"
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
+
+#admin_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == "mmr-132163"
+  %s[0].name          == "DNStination Inc."
+  %s[0].organization  == ""
+  %s[0].address       == "425 Market St 5th Floor"
+  %s[0].city          == "San Francisco"
+  %s[0].state         == "CA"
+  %s[0].zip           == "94105"
+  %s[0].country       == nil
+  %s[0].country_code  == "US"
+  %s[0].phone         == "+1.4155319335"
+  %s[0].fax           == "+1.4155319336"
+  %s[0].email         == "admin@dnstinations.com"
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
+
+#technical_contacts
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{contact}
+  %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == "mmr-132163"
+  %s[0].name          == "DNStination Inc."
+  %s[0].organization  == ""
+  %s[0].address       == "425 Market St 5th Floor"
+  %s[0].city          == "San Francisco"
+  %s[0].state         == "CA"
+  %s[0].zip           == "94105"
+  %s[0].country       == nil
+  %s[0].country_code  == "US"
+  %s[0].phone         == "+1.4155319335"
+  %s[0].fax           == "+1.4155319336"
+  %s[0].email         == "admin@dnstinations.com"
+  %s[0].created_on    == nil
+  %s[0].updated_on    == nil
+
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns3.markmonitor.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns1.markmonitor.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

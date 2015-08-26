@@ -1161,7 +1161,7 @@
     "host": "whois.gov.za"
   },
   ".org.za": {
-    "host": "whois.org.za"
+    "host": "org-whois.registry.net.za"
   },
   ".za": {
     "host": null,

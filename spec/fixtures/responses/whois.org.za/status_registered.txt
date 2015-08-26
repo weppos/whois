@@ -1,3 +1,0 @@
-joburg.org.za: Registered
-	Please see the following for details:
-	http://www.org.za/cgi-bin/rwhois?domain=joburg.org.za&format=full

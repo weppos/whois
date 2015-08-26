@@ -3,6 +3,8 @@
 
 #### master
 
+- NEW: Added capetown-whois.registry.net.za, durban-whois.registry.net.za, joburg-whois.registry.net.za, org-whois.registry.net.za parsers (GH-405). [Thanks @sheldonh]
+
 - CHANGED: Updated whois.cnnic.cn to the new response format (GH-432). [Thanks @ledowong]
 
 - CHANGED: Added expires_on at "co.jp" domain (GH-437). [Thanks @kubihie]
