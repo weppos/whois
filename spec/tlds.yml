@@ -1222,7 +1222,7 @@ gov.za:
     status_available: u34jedzcq.gov.za
     status_registered: dha.gov.za
 org.za:
-    _server: whois.org.za
+    _server: org-whois.registry.net.za
     status_available: u34jedzcq.org.za
     status_registered: joburg.org.za
 za:
