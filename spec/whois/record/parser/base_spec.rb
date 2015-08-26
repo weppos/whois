@@ -102,7 +102,7 @@ describe Whois::Record::Parser::Base do
     it "raises if the argument is not an instance of the same class" do
       lambda do
         described_class.new(part).changed?(Object.new)
-      end.should raise_error
+      end.should raise_error(ArgumentError)
 
       lambda do
         described_class.new(part).changed?(described_class.new(part))
@@ -114,7 +114,7 @@ describe Whois::Record::Parser::Base do
     it "raises if the argument is not an instance of the same class" do
       lambda do
         described_class.new(part).unchanged?(Object.new)
-      end.should raise_error
+      end.should raise_error(ArgumentError)
 
       lambda do
         described_class.new(part).unchanged?(described_class.new(part))

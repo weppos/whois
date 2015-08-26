@@ -295,7 +295,7 @@ describe Whois::Record do
     it "raises if the argument is not an instance of the same class" do
       lambda do
         described_class.new(nil, []).changed?(Object.new)
-      end.should raise_error
+      end.should raise_error(ArgumentError)
 
       lambda do
         described_class.new(nil, []).changed?(described_class.new(nil, []))
@@ -307,7 +307,7 @@ describe Whois::Record do
     it "raises if the argument is not an instance of the same class" do
       lambda do
         described_class.new(nil, []).unchanged?(Object.new)
-      end.should raise_error
+      end.should raise_error(ArgumentError)
 
       lambda do
         described_class.new(nil, []).unchanged?(described_class.new(nil, []))

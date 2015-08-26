@@ -302,25 +302,25 @@ describe Whois::Record::Parser do
 
   describe "#changed?" do
     it "raises if the argument is not an instance of the same class" do
-      lambda do
+      expect do
         described_class.new(record).changed?(Object.new)
-      end.should raise_error
+      end.to raise_error(ArgumentError)
 
-      lambda do
+      expect do
         described_class.new(record).changed?(described_class.new(record))
-      end.should_not raise_error
+      end.to_not raise_error
     end
   end
 
   describe "#unchanged?" do
     it "raises if the argument is not an instance of the same class" do
-      lambda do
+      expect do
         described_class.new(record).unchanged?(Object.new)
-      end.should raise_error
+      end.to raise_error(ArgumentError)
 
-      lambda do
+      expect do
         described_class.new(record).unchanged?(described_class.new(record))
-      end.should_not raise_error
+      end.to_not raise_error
     end
 
     it "returns true if self and other references the same object" do
