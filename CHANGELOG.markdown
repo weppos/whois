@@ -1,7 +1,7 @@
 # Changelog
 
 
-#### master
+#### Release 3.6.2
 
 - SERVER: Update .LOVE
 
