@@ -1839,6 +1839,9 @@
   ".irish": {
     "host": "whois.afilias-srs.net"
   },
+  ".aco": {
+    "host": "whois.afilias-srs.net"
+  },
   ".nokia": {
     "host": "whois.afilias-srs.net"
   },
