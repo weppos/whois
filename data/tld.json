@@ -1233,6 +1233,12 @@
   ".ink": {
     "host": "whois.centralnic.com"
   },
+  ".stcgroup": {
+    "host": "whois.centralnic.com"
+  },
+  ".viva": {
+    "host": "whois.centralnic.com"
+  },
   ".forum": {
     "host": "whois.nic.forum"
   },
@@ -1840,6 +1846,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".aco": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".gea": {
     "host": "whois.afilias-srs.net"
   },
   ".nokia": {
@@ -3056,6 +3065,9 @@
   },
   ".seek": {
     "host": "whois.nic.seek"
+  },
+  ".aaa": {
+    "adapter": "none"
   },
   ".ipiranga": {
     "adapter": "none"
