@@ -5,6 +5,8 @@
 
 - SERVER: Add .ACO, .AAA, .GEA, .STCGROUP, .VIVA
 
+- NEW: Added whois.nic.tech parser
+
 
 #### Release 3.6.2
 
