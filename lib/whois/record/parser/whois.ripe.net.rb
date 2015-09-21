@@ -63,6 +63,11 @@ module Whois
           end
         end
 
+        property_supported :registrar do
+          content_for_scanner.scan(/role: \s+(.+)/)
+
+          Record::Registrar.new(name: $1)
+        end
       end
 
     end
