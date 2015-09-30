@@ -1278,6 +1278,9 @@
   ".site": {
     "host": "whois.centralnic.com"
   },
+  ".group": {
+    "host": "whois.donuts.co"
+  },
   ".tires": {
     "host": "whois.donuts.co"
   },
@@ -1841,6 +1844,12 @@
   },
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
+  },
+  ".ceb": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".fage": {
+    "host": "whois.afilias-srs.net"
   },
   ".irish": {
     "host": "whois.afilias-srs.net"
