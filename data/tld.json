@@ -2136,6 +2136,9 @@
   ".game": {
     "host": "whois.uniregistry.net"
   },
+  ".mom": {
+    "host": "whois.uniregistry.net"
+  },
   ".blackfriday": {
     "host": "whois.uniregistry.net"
   },
