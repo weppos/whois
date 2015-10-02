@@ -3,7 +3,7 @@
 
 #### master
 
-- SERVER: Add .ACO, .AAA, .GEA, .STCGROUP, .VIVA, .GROUP, .CEB, .FAGE, .MOM
+- SERVER: Add .ACO, .AAA, .GEA, .STCGROUP, .VIVA, .GROUP, .CEB, .FAGE, .MOM, .AMICA, .STC
 
 
 #### Release 3.6.2

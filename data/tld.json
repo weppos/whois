@@ -1233,6 +1233,9 @@
   ".ink": {
     "host": "whois.centralnic.com"
   },
+  ".stc": {
+    "host": "whois.centralnic.com"
+  },
   ".stcgroup": {
     "host": "whois.centralnic.com"
   },
@@ -3079,6 +3082,9 @@
     "host": "whois.nic.seek"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".amica": {
     "adapter": "none"
   },
   ".ipiranga": {
