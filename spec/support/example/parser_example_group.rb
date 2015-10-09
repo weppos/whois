@@ -13,11 +13,11 @@ RSpec::Matchers.define :cache_property do |property|
       @cached_properties
     end
 
-    cache.key?(property).should be_falsey
+    expect(cache.key?(property)).to be_falsey
     value = instance.send(property)
 
-    cache.key?(property).should be_truthy
-    cache[property].should == value
+    expect(cache.key?(property)).to be_truthy
+    expect(cache[property]).to eq(value)
 
     true
   end
