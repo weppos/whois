@@ -66,6 +66,7 @@ module Whois
         property_supported :registrar do
           content_for_scanner.scan(/role: \s+(.+)/)
 
+          content_for_scanner.scan(/person: \s+(.+)/) unless $1
           Record::Registrar.new(name: $1)
         end
       end
