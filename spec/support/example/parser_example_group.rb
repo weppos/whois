@@ -35,7 +35,5 @@ RSpec::configure do |c|
     /#{parts.join('\/')}/
   end
 
-  c.include ParserExampleGroup, :example_group => {
-    :file_path => c.escaped_path(%w( spec whois record parser ))
-  }
+  c.include ParserExampleGroup, file_path: c.escaped_path(%w( spec whois record parser ))
 end
