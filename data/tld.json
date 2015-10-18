@@ -3090,6 +3090,9 @@
   ".amica": {
     "adapter": "none"
   },
+  ".kinder": {
+    "adapter": "none"
+  },
   ".ipiranga": {
     "adapter": "none"
   },
