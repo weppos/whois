@@ -1863,6 +1863,9 @@
   ".cipriani": {
     "host": "whois.afilias-srs.net"
   },
+  ".stockholm": {
+    "host": "whois.afilias-srs.net"
+  },
   ".stada": {
     "host": "whois.afilias-srs.net"
   },
@@ -2658,6 +2661,12 @@
   ".globo": {
     "host": "whois.gtlds.nic.br"
   },
+  ".bom": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".final": {
+    "host": "whois.gtlds.nic.br"
+  },
   ".rio": {
     "host": "whois.gtlds.nic.br"
   },
@@ -3023,6 +3032,15 @@
   },
   ".sandvik": {
     "host": "whois.nic.sandvik"
+  },
+  ".hyundai": {
+    "host": "whois.nic.hyundai"
+  },
+  ".kia": {
+    "host": "whois.nic.kia"
+  },
+  ".seven": {
+    "host": "whois.nic.seven"
   },
   ".sandvikcoromant": {
     "host": "whois.nic.sandvikcoromant"
