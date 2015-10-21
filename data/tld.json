@@ -2139,6 +2139,9 @@
   ".iinet": {
     "host": "whois.aridnrs.net.au"
   },
+  ".car": {
+    "host": "whois.uniregistry.net"
+  },
   ".game": {
     "host": "whois.uniregistry.net"
   },
