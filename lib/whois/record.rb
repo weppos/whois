@@ -14,8 +14,6 @@ module Whois
 
   class Record
 
-    autoload :Parser, 'whois/record/parser'
-
 
     # @return [Whois::Server] The server that originated this record.
     attr_reader :server

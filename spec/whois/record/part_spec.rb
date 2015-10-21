@@ -2,11 +2,6 @@ require 'spec_helper'
 
 describe Whois::Record::Part do
 
-  it "inherits from SuperStruct" do
-    expect(described_class.ancestors).to include(SuperStruct)
-  end
-
-
   describe "#initialize" do
     it "accepts an empty value" do
       expect {

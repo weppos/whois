@@ -67,12 +67,7 @@ module Whois
     #   # => true
     #
     def available?(object)
-      result = lookup(object).available?
-      if result.nil?
-        warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.lookup('#{object}') instead."
-      end
-      result
+      # ParserRequired
     end
 
     # Checks whether the object represented by <tt>object</tt> is registered.
@@ -98,12 +93,7 @@ module Whois
     #   # => false
     #
     def registered?(object)
-      result = lookup(object).registered?
-      if result.nil?
-        warn  "This method is not supported for this kind of object.\n" +
-              "Use Whois.lookup('#{object}') instead."
-      end
-      result
+      # ParserRequired
     end
 
 
@@ -135,7 +125,7 @@ module Whois
         " http://github.com/weppos/whois/issues"
     end
 
-  private
+    private
 
     def deprecation_caller_message(callstack)
       file, line, method = extract_callstack(callstack)
