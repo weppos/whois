@@ -3123,6 +3123,12 @@
   ".party": {
     "host": "whois.nic.party"
   },
+  ".mtr": {
+    "host": "whois.nic.mtr"
+  },
+  ".virgin": {
+    "host": "whois.nic.virgin"
+  },
   ".racing": {
     "host": "whois.nic.racing"
   },
@@ -3223,6 +3229,9 @@
     "host": "whois.nic.xn--tckwe"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".moi": {
     "adapter": "none"
   },
   ".aramco": {
