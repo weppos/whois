@@ -3234,6 +3234,9 @@
   ".moi": {
     "adapter": "none"
   },
+  ".yamaxun": {
+    "adapter": "none"
+  },
   ".aramco": {
     "adapter": "none"
   },
