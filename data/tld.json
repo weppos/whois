@@ -3066,6 +3066,9 @@
   ".aeg": {
     "host": "whois.nic.aeg"
   },
+  ".arte": {
+    "host": "whois.nic.arte"
+  },
   ".genting": {
     "host": "whois.nic.genting"
   },
