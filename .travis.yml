@@ -1,7 +1,6 @@
 sudo: false
 language: ruby
 rvm:
-  - 1.9.3
   - 2.0
   - 2.1
   - 2.2
@@ -16,6 +15,3 @@ matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-19mode
-  include:
-    - rvm: 1.9.2
-      gemfile: Gemfile.ruby-1.9.2

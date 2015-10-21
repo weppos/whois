@@ -1,5 +1,8 @@
 # Changelog
 
+#### whois-only
+
+- CHANGED: Removed support for Ruby < 2.0
 
 #### master
 
