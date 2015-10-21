@@ -2610,6 +2610,54 @@
   ".joburg": {
     "host": "joburg-whois.registry.net.za"
   },
+  ".xn--55qx5d": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--vuq861b": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--io0a7i": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--1qqw23a": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--xhq521b": {
+    "host": "whois.ngtld.cn"
+  },
+  ".xn--fiqs8s": {
+    "host": "cwhois.cnnic.cn"
+  },
+  ".xn--fiqz9s": {
+    "host": "cwhois.cnnic.cn"
+  },
+  ".xn--ses554g": {
+    "host": "whois.registry.knet.cn"
+  },
+  ".xn--fiq64b": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".wang": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".xn--3bst00m": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".xn--6qq986b3xl": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".xn--czru2d": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".globo": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".rio": {
+    "host": "whois.gtlds.nic.br"
+  },
+  ".uol": {
+    "host": "whois.gtlds.nic.br"
+  },
   ".lat": {
     "host": "whois.nic.lat"
   },
@@ -3177,9 +3225,6 @@
   ".yokohama": {
     "adapter": "none"
   },
-  ".xn--ses554g": {
-    "adapter": "none"
-  },
   ".williamhill": {
     "adapter": "none"
   },
@@ -3342,29 +3387,11 @@
   ".voting": {
     "host": "whois.voting.tld-box.at"
   },
-  ".wang": {
-    "host": "whois.gtld.knet.cn"
-  },
   ".xn--9et52u": {
     "host": "whois.nic.wang"
   },
-  ".xn--3bst00m": {
-    "host": "whois.gtld.knet.cn"
-  },
   ".xn--55qw42g": {
     "host": "whois.conac.cn"
-  },
-  ".xn--55qx5d": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--vuq861b": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--6qq986b3xl": {
-    "host": "whois.gtld.knet.cn"
-  },
-  ".xn--io0a7i": {
-    "host": "whois.ngtld.cn"
   },
   ".xn--ngbc5azd": {
     "host": "whois.nic.xn--ngbc5azd"
@@ -3372,29 +3399,11 @@
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
   },
-  ".xn--czru2d": {
-    "host": "whois.gtld.knet.cn"
-  },
   ".xn--80adxhks": {
     "host": "whois.nic.xn--80adxhks"
   },
   ".xn--cg4bki": {
     "host": "whois.kr"
-  },
-  ".globo": {
-    "host": "whois.gtlds.nic.br"
-  },
-  ".rio": {
-    "host": "whois.gtlds.nic.br"
-  },
-  ".xn--1qqw23a": {
-    "host": "whois.ngtld.cn"
-  },
-  ".xn--xhq521b": {
-    "host": "whois.ngtld.cn"
-  },
-  ".uol": {
-    "host": "whois.gtlds.nic.br"
   },
   ".xn--p1acf": {
     "host": "whois.nic.xn--p1acf"
@@ -3436,15 +3445,6 @@
   },
   ".xn--clchc0ea0b2g2a9gcd": {
     "host": "whois.sgnic.sg"
-  },
-  ".xn--fiq64b": {
-    "host": "whois.gtld.knet.cn"
-  },
-  ".xn--fiqs8s": {
-    "host": "cwhois.cnnic.cn"
-  },
-  ".xn--fiqz9s": {
-    "host": "cwhois.cnnic.cn"
   },
   ".xn--fpcrj9c3d": {
     "adapter": "none"
