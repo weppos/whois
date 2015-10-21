@@ -3084,6 +3084,9 @@
   ".seek": {
     "host": "whois.nic.seek"
   },
+  ".csc": {
+    "host": "whois.nic.csc"
+  },
   ".xn--11b4c3d": {
     "host": "whois.nic.xn--11b4c3d"
   },
