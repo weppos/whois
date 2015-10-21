@@ -1233,6 +1233,12 @@
   ".ink": {
     "host": "whois.centralnic.com"
   },
+  ".theatre": {
+    "host": "whois.centralnic.com"
+  },
+  ".protection": {
+    "host": "whois.centralnic.com"
+  },
   ".stc": {
     "host": "whois.centralnic.com"
   },
@@ -1849,6 +1855,9 @@
     "host": "whois.donuts.co"
   },
   ".cipriani": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".stada": {
     "host": "whois.afilias-srs.net"
   },
   ".ceb": {
