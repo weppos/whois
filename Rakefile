@@ -20,7 +20,6 @@ spec = Gem::Specification.new do |s|
   s.email             = ["weppos@weppos.net"]
   s.homepage          = "http://whoisrb.org/"
   s.license           = "MIT"
-  s.rubyforge_project = "whois"
 
   s.files             = %w( LICENSE.txt .yardopts ) +
                         Dir.glob("*.{markdown,gemspec}") +
