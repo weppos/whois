@@ -1231,7 +1231,7 @@
     "host": "whois.unitedtld.com"
   },
   ".ink": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.ink"
   },
   ".theatre": {
     "host": "whois.centralnic.com"
@@ -2784,6 +2784,9 @@
   ".build": {
     "host": "whois.nic.build"
   },
+  ".clubmed": {
+    "host": "whois.nic.clubmed"
+  },
   ".ceo": {
     "host": "whois.nic.ceo"
   },
@@ -3217,6 +3220,15 @@
     "host": "whois.nic.xn--tckwe"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".aramco": {
+    "adapter": "none"
+  },
+  ".xn--mgba3a3ejt": {
+    "adapter": "none"
+  },
+  ".dell": {
     "adapter": "none"
   },
   ".amica": {
