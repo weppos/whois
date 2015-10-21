@@ -1234,7 +1234,7 @@
     "host": "whois.nic.ink"
   },
   ".theatre": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.theatre"
   },
   ".security": {
     "host": "whois.centralnic.com"
