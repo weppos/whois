@@ -2754,6 +2754,9 @@
   ".buzz": {
     "host": "whois.nic.buzz"
   },
+  ".linde": {
+    "host": "whois.nic.linde"
+  },
   ".bar": {
     "host": "whois.nic.bar"
   },
