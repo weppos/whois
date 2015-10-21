@@ -44,11 +44,6 @@ module Whois
 
     alias_method :whois, :lookup
 
-    def query(object)
-      deprecate("Whois.query is now Whois.lookup")
-      lookup(object)
-    end
-
     # Checks whether the object represented by <tt>object</tt> is available.
     #
     # Warning: this method is only available if a Whois parser exists
