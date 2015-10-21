@@ -1237,7 +1237,7 @@
     "host": "whois.nic.theatre"
   },
   ".security": {
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.security"
   },
   ".protection": {
     "host": "whois.centralnic.com"
