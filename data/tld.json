@@ -1293,6 +1293,9 @@
   ".group": {
     "host": "whois.donuts.co"
   },
+  ".ltd": {
+    "host": "whois.donuts.co"
+  },
   ".tires": {
     "host": "whois.donuts.co"
   },
@@ -2787,8 +2790,14 @@
   ".menu": {
     "host": "whois.nic.menu"
   },
+  ".obi": {
+    "host": "whois.nic.obi"
+  },
   ".monash": {
     "host": "whois.nic.monash"
+  },
+  ".bms": {
+    "host": "whois.nic.bms"
   },
   ".moe": {
     "host": "whois.nic.moe"
