@@ -1,4 +1,4 @@
-{
+  {
   ".ae.org": {
     "host": "whois.centralnic.com"
   },
@@ -3083,6 +3083,39 @@
   },
   ".seek": {
     "host": "whois.nic.seek"
+  },
+  ".xn--11b4c3d": {
+    "host": "whois.nic.xn--11b4c3d"
+  },
+  ".xn--3pxu8k": {
+    "host": "whois.nic.xn--3pxu8k"
+  },
+  ".xn--42c2d9a": {
+    "host": "whois.nic.xn--42c2d9a"
+  },
+  ".xn--9dbq2a": {
+    "host": "whois.nic.xn--9dbq2a"
+  },
+  ".xn--c2br7g": {
+    "host": "whois.nic.xn--c2br7g"
+  },
+  ".xn--fhbei": {
+    "host": "whois.nic.xn--fhbei"
+  },
+  ".xn--j1aef": {
+    "host": "whois.nic.xn--j1aef"
+  },
+  ".xn--mk1bu44c": {
+    "host": "whois.nic.xn--mk1bu44c"
+  },
+  ".xn--pssy2u": {
+    "host": "whois.nic.xn--pssy2u"
+  },
+  ".xn--t60b56a": {
+    "host": "whois.nic.xn--t60b56a"
+  },
+  ".xn--tckwe": {
+    "host": "whois.nic.xn--tckwe"
   },
   ".aaa": {
     "adapter": "none"
