@@ -1,4 +1,4 @@
-  {
+{
   ".ae.org": {
     "host": "whois.centralnic.com"
   },
@@ -3090,6 +3090,9 @@
   ".vista": {
     "host": "whois.nic.vista"
   },
+  ".jaguar": {
+    "host": "whois.nic.jaguar"
+  },
   ".vistaprint": {
     "host": "whois.nic.vistaprint"
   },
@@ -3232,6 +3235,9 @@
     "adapter": "none"
   },
   ".moi": {
+    "adapter": "none"
+  },
+  ".gucci": {
     "adapter": "none"
   },
   ".yamaxun": {
