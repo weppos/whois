@@ -3093,6 +3093,9 @@
   ".jaguar": {
     "host": "whois.nic.jaguar"
   },
+  ".landrover": {
+    "host": "whois.nic.landrover"
+  },
   ".vistaprint": {
     "host": "whois.nic.vistaprint"
   },
