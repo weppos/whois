@@ -1866,6 +1866,9 @@
   ".stockholm": {
     "host": "whois.afilias-srs.net"
   },
+  ".zara": {
+    "host": "whois.afilias-srs.net"
+  },
   ".stada": {
     "host": "whois.afilias-srs.net"
   },
@@ -3095,6 +3098,9 @@
   },
   ".landrover": {
     "host": "whois.nic.landrover"
+  },
+  ".rwe": {
+    "host": "whois.nic.rwe"
   },
   ".vistaprint": {
     "host": "whois.nic.vistaprint"
