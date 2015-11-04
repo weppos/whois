@@ -3444,6 +3444,12 @@
   ".hsbc": {
     "adapter": "none"
   },
+  ".ping": {
+    "adapter": "none"
+  },
+  ".sapo": {
+    "adapter": "none"
+  },
   ".iwc": {
     "adapter": "none"
   },
