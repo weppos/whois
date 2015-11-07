@@ -65,7 +65,6 @@ module Whois
       end
     end
 
-
     # Lookup and returns the definition list for given <tt>type</tt>,
     # or all definitions if <tt>type</tt> is <tt>nil</tt>.
     #
@@ -184,7 +183,6 @@ module Whois
       adapter.new(type, allocation, host, options)
     end
 
-
     # Parses <tt>string</tt> and tries to guess the right server.
     #
     # It successfully detects the following query types:
@@ -240,17 +238,20 @@ module Whois
         return find_for_asn(string)
       end
 
+      # RIPE match
+      if matches_ripe?(string)
+        return factory(:ripe, nil, 'whois.ripe.net.')
+      end
+
       # Game Over
       raise ServerNotFound, "Unable to find a WHOIS server for `#{string}'"
     end
-
 
   private
 
     def self.camelize(string)
       string.to_s.split("_").collect(&:capitalize).join
     end
-
 
     def self.matches_tld?(string)
       string =~ /^\.(xn--)?[a-z0-9]+$/
@@ -266,6 +267,10 @@ module Whois
 
     def self.matches_asn?(string)
       string =~ /^as\d+$/i
+    end
+
+    def self.matches_ripe?(string)
+      string =~ /^[a-z]{2}[0-9]+-ripe$/i
     end
 
     def self.find_for_ip(string)
@@ -304,7 +309,6 @@ module Whois
       end
       raise AllocationUnknown, "Unknown AS number - `#{asn}'."
     end
-
 
     def self.valid_ipv4?(addr)
       if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
