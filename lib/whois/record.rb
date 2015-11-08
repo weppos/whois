@@ -164,6 +164,40 @@ module Whois
 
     # @!group Methods
 
+    def domain_handle
+      if property_any_supported?(:domain_handle)
+        parser.domain_handle.first
+      end
+    end
+
+    def person_handle
+      if property_any_supported?(:person_handle)
+        parser.person_handle.first
+      end
+    end
+
+    def role_handle
+      if property_any_supported?(:role_handle)
+        parser.role_handle.first
+      end
+    end
+
+    def organisation_handle
+      if property_any_supported?(:organisation_handle)
+        parser.organisation_handle.first
+      end
+    end
+
+    def maintainer_handle
+      if property_any_supported?(:maintainer_handle)
+        parser.maintainer_handle.first
+      end
+    end
+
+    def handle
+      parser.handle
+    end
+
     # Shortcut for <tt>#registrant_contacts.first</tt>.
     #
     # @return [Whois::Record::Contact]
