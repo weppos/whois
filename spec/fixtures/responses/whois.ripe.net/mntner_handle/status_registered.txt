@@ -1,0 +1,41 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to 'ENUM-NL-MNT'
+
+mntner:         ENUM-NL-MNT
+descr:          ENUM NL MAINTAINER
+admin-c:        ENT6-RIPE
+tech-c:         ENT6-RIPE
+auth:           MD5-PW # Filtered
+auth:           SSO # Filtered
+mnt-by:         ENUM-NL-MNT
+created:        2006-08-31T13:11:58Z
+last-modified:  2015-09-25T06:00:02Z
+source:         RIPE # Filtered
+
+role:           ENUM NL Tech
+address:        Stichting ENUM Nederland
+address:        Meander 501
+address:        PO Box 5022
+address:        6802 EA Arnhem
+address:        The Netherlands
+phone:          +31 26 3525576
+fax-no:         +31 26 3525577
+admin-c:        EM3116-RIPE
+tech-c:         MG2054-RIPE
+nic-hdl:        ENT6-RIPE
+mnt-by:         ENUM-NL-MNT
+created:        2006-08-31T12:55:45Z
+last-modified:  2015-02-20T10:52:27Z
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.82 (DB-4)
+
+

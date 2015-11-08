@@ -177,6 +177,18 @@ describe Whois::Server do
       expect(server.type).to eq(:asn32)
     end
 
+    it "recognizes ripe person handle" do
+      server = Whois::Server.guess('SK2374-RIPE')
+      expect(server).to be_a(Whois::Server::Adapters::Base)
+      expect(server.type).to eq(:ripe)
+    end
+
+    it "recognizes ripe maintainer handle" do
+      server = Whois::Server.guess('ENUM-NL-MNT')
+      expect(server).to be_a(Whois::Server::Adapters::Base)
+      expect(server.type).to eq(:ripe)
+    end
+
     it "recognizes email" do
       expect {
         Whois::Server.guess("email@example.org")

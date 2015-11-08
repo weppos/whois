@@ -182,6 +182,7 @@ end
     when "contact"    then "Whois::Record::Contact"
     when "registrar"  then "Whois::Record::Registrar"
     when "nameserver" then "Whois::Record::Nameserver"
+    when 'handle'     then "Whois::Record::Handle"
     else
       raise "Unknown class `#{described_class}'"
     end

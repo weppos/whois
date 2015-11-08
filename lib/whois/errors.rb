@@ -17,6 +17,22 @@ module Whois
   class ConnectionError < Error
   end
 
+  # @!group Handle
+
+  # Generic class for handle errors.
+  class HandleError < Error
+  end
+
+  # Raised when the format hasn't been implemented.
+  class HandleFormatNotImplemented < HandleError
+  end
+
+  # Raised when the type hasn't been implemented.
+  class HandleTypeNotImplemented < HandleError
+  end
+
+  # @!endgroup
+
 
   # @!group Server
 

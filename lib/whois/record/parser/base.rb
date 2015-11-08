@@ -9,6 +9,7 @@
 
 require 'time'
 require 'whois/record/contact'
+require 'whois/record/handle'
 require 'whois/record/registrar'
 require 'whois/record/nameserver'
 require 'whois/record/scanners/scannable'
@@ -149,7 +150,6 @@ module Whois
         #
         def self.property_supported(property, &block)
           property_register(property, Whois::Record::Parser::PROPERTY_STATE_SUPPORTED)
-
           define_method("_property_#{property}", &block)
           private :"_property_#{property}"
         end
@@ -238,6 +238,13 @@ module Whois
 
 
         # @!group Methods
+
+        def handle
+          [:domain_handle, :person_handle, :role_handle, :organisation_handle, :maintainer_handle].inject([]) do |handle, property|
+            handle += send(property) if property_supported?(property)
+            handle
+          end
+        end
 
         # Collects and returns all the available contacts.
         #
@@ -384,7 +391,7 @@ module Whois
             value = send(:"_property_#{property}", *args)
 
             case property.to_s
-            when /_contacts$/, "nameservers"
+            when /_contacts$|_handle$/, "nameservers"
               typecast(value, Array)
             else
               value

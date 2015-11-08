@@ -1,0 +1,72 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '1.3.e164.arpa'
+
+domain:         1.3.e164.arpa
+descr:          Stichting ENUM Nederland
+org:            ORG-SEN3-RIPE
+admin-c:        MD6066-RIPE
+tech-c:         ENT6-RIPE
+zone-c:         ENT6-RIPE
+nserver:        ns1.sidn.nl
+nserver:        ns2.sidn.nl
+ds-rdata:       3931 8 1 3527240DDE1C239A9F53E39D3B8CDA478F1C040E
+ds-rdata:       3931 8 2 8113890C1E9880620845FECFC4CEEACCEFFD9351F0CACBBCD8525FD7211C8308
+mnt-by:         ENUM-NL-MNT
+created:        2002-08-28T15:58:29Z
+last-modified:  2013-10-31T13:35:10Z
+source:         RIPE # Filtered
+
+organisation:   ORG-SEN3-RIPE
+org-name:       Stichting Enum Nederland
+org-type:       OTHER
+address:        Meander 501
+address:        PO Box 5022
+address:        6802 EA Arnhem
+address:        The Netherlands
+mnt-ref:        ENUM-NL-MNT
+mnt-by:         ENUM-NL-MNT
+created:        2006-08-31T13:30:22Z
+last-modified:  2012-02-07T14:54:42Z
+source:         RIPE # Filtered
+
+role:           ENUM NL Tech
+address:        Stichting ENUM Nederland
+address:        Meander 501
+address:        PO Box 5022
+address:        6802 EA Arnhem
+address:        The Netherlands
+phone:          +31 26 3525576
+fax-no:         +31 26 3525577
+admin-c:        EM3116-RIPE
+tech-c:         MG2054-RIPE
+nic-hdl:        ENT6-RIPE
+mnt-by:         ENUM-NL-MNT
+created:        2006-08-31T12:55:45Z
+last-modified:  2015-02-20T10:52:27Z
+source:         RIPE # Filtered
+
+person:         Managing Director
+address:        Stichting ENUM Nederland
+address:        Utrechtseweg 310
+                PO Box 5022
+                6802 EA Arnhem
+                The Netherlands
+phone:          +31 26 3525576
+fax-no:         +31 26 3525577
+nic-hdl:        MD6066-RIPE
+mnt-by:         ENUM-NL-MNT
+created:        2006-08-31T12:44:01Z
+last-modified:  2006-08-31T13:15:24Z
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.82 (DB-4)
+
+

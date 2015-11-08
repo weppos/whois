@@ -1,0 +1,115 @@
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+#created_on
+  %s %ERROR{AttributeNotSupported}
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{2}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "ns1.sidn.nl"
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "ns2.sidn.nl"
+
+#domain_handle
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{handle}
+  %s[0].admin_c == 'md6066-ripe'
+  %s[0].created == '2002-08-28t15:58:29z'
+  %s[0].descr == 'stichting enum nederland'
+  %s[0].domain == '1.3.e164.arpa'
+  %s[0].ds_rdata %CLASS{array}
+  %s[0].ds_rdata[0] == '3931 8 1 3527240dde1c239a9f53e39d3b8cda478f1c040e'
+  %s[0].ds_rdata[1] == '3931 8 2 8113890c1e9880620845fecfc4ceeacceffd9351f0cacbbcd8525fd7211c8308'
+  %s[0].format == 'rpsl'
+  %s[0].handle_type == 'domain'
+  %s[0].last_modified == '2013-10-31t13:35:10z'
+  %s[0].mnt_by == 'enum-nl-mnt'
+  %s[0].nserver %CLASS{array}
+  %s[0].nserver[0] == 'ns1.sidn.nl'
+  %s[0].nserver[1] == 'ns2.sidn.nl'
+  %s[0].org == 'org-sen3-ripe'
+  %s[0].source == 'ripe # filtered'
+  %s[0].tech_c == 'ent6-ripe'
+  %s[0].zone_c == 'ent6-ripe'
+
+#person_handle
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{handle}
+  %s[0].address %CLASS{array}
+  %s[0].address[0] == 'stichting enum nederland'
+  %s[0].address[1] == 'utrechtseweg 310'
+  %s[0].address[2] == 'po box 5022'
+  %s[0].address[3] == '6802 ea arnhem'
+  %s[0].address[4] == 'the netherlands'
+  %s[0].created == '2006-08-31t12:44:01z'
+  %s[0].fax_no == '+31 26 3525577'
+  %s[0].format == 'rpsl'
+  %s[0].handle_type == 'person'
+  %s[0].last_modified == '2006-08-31t13:15:24z'
+  %s[0].mnt_by == 'enum-nl-mnt'
+  %s[0].nic_hdl == 'md6066-ripe'
+  %s[0].person == 'managing director'
+  %s[0].phone == '+31 26 3525576'
+  %s[0].source == 'ripe # filtered'
+
+#organisation_handle
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{handle}
+  %s[0].address[0] == 'meander 501'
+  %s[0].address[1] == 'po box 5022'
+  %s[0].address[2] == '6802 ea arnhem'
+  %s[0].address[3] == 'the netherlands'
+  %s[0].created == '2006-08-31t13:30:22z'
+  %s[0].format == 'rpsl'
+  %s[0].handle_type == 'organisation'
+  %s[0].last_modified == '2012-02-07t14:54:42z'
+  %s[0].mnt_by == 'enum-nl-mnt'
+  %s[0].mnt_ref == 'enum-nl-mnt'
+  %s[0].org_name == 'stichting enum nederland'
+  %s[0].org_type == 'other'
+  %s[0].organisation == 'org-sen3-ripe'
+  %s[0].source == 'ripe # filtered'
+
+#role_handle
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{handle}
+  %s[0].address %CLASS{array}
+  %s[0].address[0] == 'stichting enum nederland'
+  %s[0].address[1] == 'meander 501'
+  %s[0].address[2] == 'po box 5022'
+  %s[0].address[3] == '6802 ea arnhem'
+  %s[0].address[4] == 'the netherlands'
+  %s[0].admin_c == 'em3116-ripe'
+  %s[0].created == '2006-08-31t12:55:45z'
+  %s[0].fax_no == '+31 26 3525577'
+  %s[0].format == 'rpsl'
+  %s[0].handle_type == 'role'
+  %s[0].last_modified == '2015-02-20t10:52:27z'
+  %s[0].mnt_by == 'enum-nl-mnt'
+  %s[0].nic_hdl == 'ent6-ripe'
+  %s[0].phone == '+31 26 3525576'
+  %s[0].role == 'enum nl tech'
+  %s[0].source == 'ripe # filtered'
+  %s[0].tech_c == 'mg2054-ripe'
+
+#maintainer_handle
+  %s %CLASS{array}
+  %s %SIZE{0}

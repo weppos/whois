@@ -22,7 +22,7 @@ module Whois
     class Parser
 
       METHODS = [
-        :contacts,
+        :contacts, :handle,
         :changed?, :unchanged?,
         # :response_incomplete?, :response_throttled?, :response_unavailable?,
         # :referral_whois, :referral_url,
@@ -36,6 +36,7 @@ module Whois
         :registrar,
         :registrant_contacts, :admin_contacts, :technical_contacts,
         :nameservers,
+        :domain_handle, :person_handle, :role_handle, :organisation_handle, :maintainer_handle
       ]
 
       PROPERTY_STATE_NOT_IMPLEMENTED = :not_implemented
@@ -183,6 +184,10 @@ module Whois
 
 
       # @!group Methods
+
+      def handle
+        parsers.map(&:handle).flatten
+      end
 
       # Collects and returns all the contacts from all the record parts.
       #

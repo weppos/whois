@@ -1,31 +1,18 @@
-#--
-# Ruby Whois
-#
-# An intelligent pure Ruby WHOIS client and parser.
-#
-# Copyright (c) 2009-2015 Simone Carletti <weppos@weppos.net>
-#++
-
-
 require 'whois/record/parser/base'
-
+require 'whois/record/scanners/whois.ripe.net.rb'
 
 module Whois
   class Record
     class Parser
 
-      #
       # = whois.ripe.net parser
-      #
-      # Parser for the whois.ripe.net server.
-      #
-      # NOTE: This parser is just a stub and provides only a few basic methods
-      # to check for domain availability and get domain status.
-      # Please consider to contribute implementing missing methods.
-      # See WhoisNicIt parser for an explanation of all available methods
-      # and examples.
-      #
       class WhoisRipeNet < Base
+        include Scanners::Scannable
+        self.scanner = Scanners::WhoisRipeNet
+
+        property_not_supported :created_on
+        property_not_supported :expires_on
+        property_not_supported :updated_on
 
         property_supported :status do
           if available?
@@ -43,14 +30,6 @@ module Whois
           !available?
         end
 
-
-        property_not_supported :created_on
-
-        property_not_supported :updated_on
-
-        property_not_supported :expires_on
-
-
         # Nameservers are listed in the following formats:
         #
         #   nserver:      ns.nic.mc
@@ -63,8 +42,33 @@ module Whois
           end
         end
 
-      end
+        property_supported :domain_handle do
+          build_handle(:domain)
+        end
 
+        property_supported :person_handle do
+          build_handle(:person)
+        end
+
+        property_supported :organisation_handle do
+          build_handle(:organisation)
+        end
+
+        property_supported :role_handle do
+          build_handle(:role)
+        end
+
+        property_supported :maintainer_handle do
+          build_handle(:mntner)
+        end
+
+        private
+        def build_handle(handle_type)
+          node("#{handle_type}_handle".to_sym) do |hash|
+            handle = Record::Handle.new('rpsl', handle_type, hash)
+          end
+        end
+      end
     end
   end
 end
