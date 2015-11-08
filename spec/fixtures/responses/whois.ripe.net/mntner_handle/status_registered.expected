@@ -1,0 +1,39 @@
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+#created_on
+  %s %ERROR{AttributeNotSupported}
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{0}
+
+#maintainer_handle
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{handle}
+  %s[0].admin_c == 'ent6-ripe'
+  %s[0].auth %CLASS{array}
+  %s[0].auth[0] == 'md5-pw # filtered'
+  %s[0].auth[1] == 'sso # filtered'
+  %s[0].created == '2006-08-31t13:11:58z'
+  %s[0].descr == 'enum nl maintainer'
+  %s[0].format == 'rpsl'
+  %s[0].handle_type == 'mntner'
+  %s[0].last_modified == '2015-09-25t06:00:02z'
+  %s[0].maintainer == 'enum-nl-mnt'
+  %s[0].mnt_by == 'enum-nl-mnt'
+  %s[0].source == 'ripe # filtered'
+  %s[0].tech_c == 'ent6-ripe'

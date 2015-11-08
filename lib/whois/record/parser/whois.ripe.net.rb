@@ -43,28 +43,28 @@ module Whois
         end
 
         property_supported :domain_handle do
-          build_handle(:domain_handle)
+          build_handle(:domain)
         end
 
         property_supported :person_handle do
-          build_handle(:person_handle)
+          build_handle(:person)
         end
 
         property_supported :organisation_handle do
-          build_handle(:organisation_handle)
+          build_handle(:organisation)
         end
 
         property_supported :role_handle do
-          build_handle(:role_handle)
+          build_handle(:role)
         end
 
         property_supported :maintainer_handle do
-          build_handle(:maintainer_handle)
+          build_handle(:mntner)
         end
 
         private
         def build_handle(handle_type)
-          node(handle_type) do |hash|
+          node("#{handle_type}_handle".to_sym) do |hash|
             handle = Record::Handle.new('rpsl', handle_type, hash)
           end
         end

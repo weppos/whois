@@ -1,0 +1,47 @@
+#status
+  %s == :registered
+
+#available?
+  %s == false
+
+#registered?
+  %s == true
+
+#created_on
+  %s %ERROR{AttributeNotSupported}
+
+#updated_on
+  %s %ERROR{AttributeNotSupported}
+
+#expires_on
+  %s %ERROR{AttributeNotSupported}
+
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{0}
+
+#person_handle
+  %s %CLASS{array}
+  %s %SIZE{1}
+  %s[0] %CLASS{handle}
+  %s[0].abuse_mailbox == 'abuse@hetzner.de'
+  %s[0].address %CLASS{array}
+  %s[0].address[0] == 'hetzner online ag'
+  %s[0].address[1] == 'industriestrasse 25'
+  %s[0].address[2] == 'd-91710 gunzenhausen'
+  %s[0].address[3] == 'germany'
+  %s[0].created == '2004-08-03t08:57:54z'
+  %s[0].fax_no == '+4998315053'
+  %s[0].format == 'rpsl'
+  %s[0].handle_type == 'person'
+  %s[0].last_modified == '2015-07-17t12:50:22z'
+  %s[0].mnt_by == 'hos-gun'
+  %s[0].nic_hdl == 'sk2374-ripe'
+  %s[0].phone == '+4998315050'
+  %s[0].person == 'stephan konvickova'
+  %s[0].remarks %CLASS{array}
+  %s[0].remarks[0] == '*************************************************'
+  %s[0].remarks[1] == '* for spam/abuse/security issues please contact *'
+  %s[0].remarks[2] == '* abuse@hetzner.de ,  not  this  address        *'
+  %s[0].remarks[3] == '*************************************************'
+  %s[0].source == 'ripe # filtered'

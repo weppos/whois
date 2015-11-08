@@ -1,0 +1,32 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to 'SK2374-RIPE'
+
+person:         Stephan Konvickova
+address:        Hetzner Online AG
+address:        Industriestrasse 25
+address:        D-91710 Gunzenhausen
+address:        Germany
+phone:          +4998315050
+fax-no:         +4998315053
+nic-hdl:        SK2374-RIPE
+remarks:        *************************************************
+remarks:        * For spam/abuse/security issues please contact *
+remarks:        * abuse@hetzner.de ,  not  this  address        *
+remarks:        *************************************************
+abuse-mailbox:  abuse@hetzner.de
+mnt-by:         HOS-GUN
+created:        2004-08-03T08:57:54Z
+last-modified:  2015-07-17T12:50:22Z
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.82 (DB-1)
+
+

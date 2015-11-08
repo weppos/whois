@@ -240,7 +240,7 @@ module Whois
 
       # RIPE match
       if matches_ripe?(string)
-        return factory(:ripe, nil, 'whois.ripe.net.')
+        return factory(:ripe, nil, 'whois.ripe.net')
       end
 
       # Game Over
@@ -270,7 +270,7 @@ module Whois
     end
 
     def self.matches_ripe?(string)
-      string =~ /^[a-z]{2}[0-9]+-ripe$/i
+      string =~ /^[a-z0-9\-]+-ripe$/i || string =~ /^[a-z0-9\-]+-mnt$/i
     end
 
     def self.find_for_ip(string)
