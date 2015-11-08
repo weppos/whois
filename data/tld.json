@@ -3204,6 +3204,9 @@
   ".csc": {
     "host": "whois.nic.csc"
   },
+  ".sbs": {
+    "host": "whois.nic.sbs"
+  },
   ".xn--efvy88h": {
     "host": "whois.nic.xn--efvy88h"
   },
