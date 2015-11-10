@@ -343,7 +343,7 @@
     "host": "whois.netcom.cm"
   },
   ".edu.cn": {
-    "host": "whois.edu.cn"
+    "adapter": "none",
   },
   ".cn": {
     "host": "whois.cnnic.cn"

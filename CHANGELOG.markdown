@@ -7,6 +7,8 @@
 
 - SERVER: Update .XN--SES554G, .INK
 
+- SERVER: Disabled whois.edu.cn as it has not been working for the last 6 years (GH-59).
+
 
 #### Release 3.6.2
 
