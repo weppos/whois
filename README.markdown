@@ -4,7 +4,7 @@
 
 This library was extracted from [RoboWhois](https://www.robowhois.com/) and [RoboDomain](http://robodomain.com/). It has been performing queries in production since July 2009.
 
-[![Build Status](https://secure.travis-ci.org/weppos/whois.png)](http://travis-ci.org/weppos/whois)
+[![Build Status](https://travis-ci.org/weppos/whois.svg?branch=master)](https://travis-ci.org/weppos/whois)
 
 
 ## Donate a coffee
