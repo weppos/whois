@@ -1860,6 +1860,12 @@
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
   },
+  ".beats": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".apple": {
+    "host": "whois.afilias-srs.net"
+  },
   ".cipriani": {
     "host": "whois.afilias-srs.net"
   },
@@ -2676,6 +2682,9 @@
   ".uol": {
     "host": "whois.gtlds.nic.br"
   },
+  ".aarp": {
+    "host": "whois.nic.aarp"
+  },
   ".lat": {
     "host": "whois.nic.lat"
   },
@@ -3467,6 +3476,12 @@
   },
   ".bharti": {
     "adapter": "none"
+  },
+  ".xn--qxam": {
+    "adapter": "none"
+  },
+  ".xn--mgbtx2b": {
+    "host": "whois.cmc.iq"
   },
   ".xn--y9a3aq": {
     "host": "whois.amnic.net"
