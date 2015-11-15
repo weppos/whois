@@ -110,14 +110,12 @@
     "host": "whois.iana.org"
   },
   ".mil": {
-    "host": null,
     "adapter": "none"
   },
   ".e164.arpa": {
     "host": "whois.ripe.net"
   },
   ".in-addr.arpa": {
-    "host": null,
     "adapter": "arpa"
   },
   ".arpa": {
@@ -171,7 +169,6 @@
     "host": "whois.nic.ac"
   },
   ".ad": {
-    "host": null,
     "adapter": "none"
   },
   ".ae": {
@@ -187,26 +184,21 @@
     "host": "whois.ai"
   },
   ".al": {
-    "host": null,
     "adapter": "none"
   },
   ".am": {
     "host": "whois.nic.am"
   },
   ".an": {
-    "host": null,
     "adapter": "none"
   },
   ".ao": {
-    "host": null,
     "adapter": "none"
   },
   ".aq": {
-    "host": null,
     "adapter": "none"
   },
   ".ar": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.ar/"
   },
@@ -229,22 +221,18 @@
     "host": "whois.ax"
   },
   ".az": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.az/"
   },
   ".ba": {
-    "host": null,
     "adapter": "web",
     "url": "http://nic.ba/lat/menu/view/13"
   },
   ".bb": {
-    "host": null,
     "adapter": "web",
     "url": "http://whois.telecoms.gov.bb/search_domain.php"
   },
   ".bd": {
-    "host": null,
     "adapter": "web",
     "url": "http://whois.btcl.net.bd/"
   },
@@ -252,14 +240,12 @@
     "host": "whois.dns.be"
   },
   ".bf": {
-    "host": null,
     "adapter": "none"
   },
   ".bg": {
     "host": "whois.register.bg"
   },
   ".bh": {
-    "host": null,
     "adapter": "none"
   },
   ".bi": {
@@ -269,7 +255,6 @@
     "host": "whois.nic.bj"
   },
   ".bm": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.bermudanic.bm/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO"
   },
@@ -283,17 +268,14 @@
     "host": "whois.registro.br"
   },
   ".bs": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.bs/cgi-bin/search.pl"
   },
   ".bt": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.bt/"
   },
   ".bv": {
-    "host": null,
     "adapter": "none"
   },
   ".by": {
@@ -323,7 +305,6 @@
     "host": "whois.dot.cf"
   },
   ".cg": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.cg/cgi-bin/whois.pl"
   },
@@ -355,24 +336,20 @@
     "host": "whois.nic.cr"
   },
   ".cu": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.cu/"
   },
   ".cv": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.dns.cv/"
   },
   ".cw": {
-    "host": null,
     "adapter": "none"
   },
   ".cx": {
     "host": "whois.nic.cx"
   },
   ".cy": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.cy/nslookup/online_database.php"
   },
@@ -385,7 +362,6 @@
     "format": "-T dn,ace %s"
   },
   ".dj": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.dj/whois.php"
   },
@@ -398,7 +374,6 @@
     "host": "whois.nic.dm"
   },
   ".do": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.do/whois-h.php3"
   },
@@ -412,19 +387,16 @@
     "host": "whois.tld.ee"
   },
   ".eg": {
-    "host": null,
     "adapter": "web",
     "url": "http://lookup.egregistry.eg/english.aspx"
   },
   ".er": {
-    "host": null,
     "adapter": "none"
   },
   ".es": {
     "host": "whois.nic.es"
   },
   ".et": {
-    "host": null,
     "adapter": "none"
   },
   ".eu": {
@@ -437,11 +409,9 @@
     "host": "whois.usp.ac.fj"
   },
   ".fk": {
-    "host": null,
     "adapter": "none"
   },
   ".fm": {
-    "host": null,
     "adapter": "web",
     "url": "http://dot.fm/whois.html"
   },
@@ -485,23 +455,19 @@
     "host": "whois.nic.fr"
   },
   ".ga": {
-    "host": null,
     "adapter": "none"
   },
   ".gb": {
-    "host": null,
     "adapter": "none"
   },
   ".gd": {
     "host": "whois.nic.gd"
   },
   ".ge": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.registration.ge/"
   },
   ".gf": {
-    "host": null,
     "adapter": "web",
     "url": "https://www.dom-enic.com/whois.html"
   },
@@ -509,7 +475,6 @@
     "host": "whois.gg"
   },
   ".gh": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.gh/customer/search_c.htm"
   },
@@ -521,23 +486,19 @@
     "host": "whois.nic.gl"
   },
   ".gm": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.gm/htmlpages/whois.htm"
   },
   ".gn": {
-    "host": null,
     "adapter": "none"
   },
   ".gp": {
-    "host": null,
     "adapter": "none"
   },
   ".gq": {
     "host": "whois.dominio.gq"
   },
   ".gr": {
-    "host": null,
     "adapter": "web",
     "url": "https://grweb.ics.forth.gr/Whois?lang=en"
   },
@@ -545,17 +506,14 @@
     "host": "whois.nic.gs"
   },
   ".gt": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.gt/whois.html"
   },
   ".gu": {
-    "host": null,
     "adapter": "web",
     "url": "http://gadao.gov.gu/domainsearch.htm"
   },
   ".gw": {
-    "host": null,
     "adapter": "none"
   },
   ".gy": {
@@ -613,11 +571,9 @@
     "host": "whois.je"
   },
   ".jm": {
-    "host": null,
     "adapter": "none"
   },
   ".jo": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.dns.jo/Whois.aspx"
   },
@@ -633,30 +589,25 @@
     "host": "whois.domain.kg"
   },
   ".kh": {
-    "host": null,
     "adapter": "none"
   },
   ".ki": {
     "host": "whois.nic.ki"
   },
   ".km": {
-    "host": null,
     "adapter": "none"
   },
   ".kn": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.kn/"
   },
   ".kp": {
-    "host": null,
     "adapter": "none"
   },
   ".kr": {
     "host": "whois.kr"
   },
   ".kw": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.kw/"
   },
@@ -670,7 +621,6 @@
     "host": "whois.nic.la"
   },
   ".lb": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.aub.edu.lb/lbdr/"
   },
@@ -685,11 +635,9 @@
     "host": "whois.nic.lk"
   },
   ".lr": {
-    "host": null,
     "adapter": "none"
   },
   ".ls": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.co.ls/co.asp"
   },
@@ -709,7 +657,6 @@
     "host": "whois.registre.ma"
   },
   ".mc": {
-    "host": null,
     "adapter": "none"
   },
   ".md": {
@@ -722,7 +669,6 @@
     "host": "whois.nic.mg"
   },
   ".mh": {
-    "host": null,
     "adapter": "none"
   },
   ".mk": {
@@ -732,7 +678,6 @@
     "host": "whois.dot.ml"
   },
   ".mm": {
-    "host": null,
     "adapter": "none"
   },
   ".mn": {
@@ -743,23 +688,19 @@
     "host": "whois.monic.mo"
   },
   ".mp": {
-    "host": null,
     "adapter": "none"
   },
   ".mq": {
-    "host": null,
     "adapter": "web",
     "url": "https://www.dom-enic.com/whois.html"
   },
   ".mr": {
-    "host": null,
     "adapter": "none"
   },
   ".ms": {
     "host": "whois.nic.ms"
   },
   ".mt": {
-    "host": null,
     "adapter": "web",
     "url": "https://www.nic.org.mt/dotmt/"
   },
@@ -767,11 +708,9 @@
     "host": "whois.nic.mu"
   },
   ".mv": {
-    "host": null,
     "adapter": "none"
   },
   ".mw": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.registrar.mw/"
   },
@@ -810,12 +749,10 @@
     "host": "whois.norid.no"
   },
   ".np": {
-    "host": null,
     "adapter": "web",
     "url": "http://register.mos.com.np/userSearchInc.asp"
   },
   ".nr": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.cenpac.net.nr/dns/whois.html"
   },
@@ -829,7 +766,6 @@
     "host": "whois.registry.om"
   },
   ".pa": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.pa/"
   },
@@ -840,16 +776,13 @@
     "host": "whois.registry.pf"
   },
   ".pg": {
-    "host": null,
     "adapter": "none"
   },
   ".ph": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.dot.ph/whois"
   },
   ".pk": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.pknic.net.pk/"
   },
@@ -863,7 +796,6 @@
     "host": "whois.nic.fr"
   },
   ".pn": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.pitcairn.pn/PnRegistry/"
   },
@@ -883,7 +815,6 @@
     "host": "whois.nic.pw"
   },
   ".py": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.py/consultas.html"
   },
@@ -906,7 +837,6 @@
     "host": "whois.tcinet.ru"
   },
   ".rw": {
-    "host": null,
     "adapter": "none"
   },
   ".sa": {
@@ -920,7 +850,6 @@
     "adapter": "afilias"
   },
   ".sd": {
-    "host": null,
     "adapter": "none"
   },
   ".se": {
@@ -936,7 +865,6 @@
     "host": "whois.register.si"
   },
   ".sj": {
-    "host": null,
     "adapter": "none"
   },
   ".sk": {
@@ -955,7 +883,6 @@
     "host": "whois.nic.so"
   },
   ".sr": {
-    "host": null,
     "adapter": "none"
   },
   ".st": {
@@ -965,7 +892,6 @@
     "host": "whois.tcinet.ru"
   },
   ".sv": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.uca.edu.sv/dns/"
   },
@@ -976,14 +902,12 @@
     "host": "whois.tld.sy"
   },
   ".sz": {
-    "host": null,
     "adapter": "none"
   },
   ".tc": {
     "host": "whois.nic.tc"
   },
   ".td": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.td/"
   },
@@ -991,7 +915,6 @@
     "host": "whois.nic.fr"
   },
   ".tg": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.tg/"
   },
@@ -999,7 +922,6 @@
     "host": "whois.thnic.co.th"
   },
   ".tj": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.tj/whois.html"
   },
@@ -1019,14 +941,12 @@
     "host": "whois.tonic.to"
   },
   ".tp": {
-    "host": null,
     "adapter": "none"
   },
   ".tr": {
     "host": "whois.nic.tr"
   },
   ".tt": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.tt/cgi-bin/search.pl"
   },
@@ -1053,42 +973,33 @@
     "host": "whois.ja.net"
   },
   ".bl.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".british-library.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".gov.uk": {
     "host": "whois.ja.net"
   },
   ".icnet.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".jet.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".mod.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".nhs.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".nls.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".parliament.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".police.uk": {
-    "host": null,
     "adapter": "none"
   },
   ".uk": {
@@ -1098,7 +1009,6 @@
     "host": "whois.nic.us"
   },
   ".com.uy": {
-    "host": null,
     "adapter": "web",
     "url": "https://nic.anteldata.com.uy/dns/consultaWhois/whois.action"
   },
@@ -1109,7 +1019,6 @@
     "host": "whois.cctld.uz"
   },
   ".va": {
-    "host": null,
     "adapter": "none"
   },
   ".vc": {
@@ -1123,12 +1032,10 @@
     "host": "whois.nic.vg"
   },
   ".vi": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.nic.vi/whoisform.htm"
   },
   ".vn": {
-    "host": null,
     "adapter": "web",
     "url": "http://www.vnnic.vn/en/domain"
   },
@@ -1145,7 +1052,6 @@
     "host": "whois.nic.xxx"
   },
   ".ye": {
-    "host": null,
     "adapter": "none"
   },
   ".yt": {
@@ -1164,14 +1070,12 @@
     "host": "org-whois.registry.net.za"
   },
   ".za": {
-    "host": null,
     "adapter": "none"
   },
   ".zm": {
     "host": "whois.nic.zm"
   },
   ".zw": {
-    "host": null,
     "adapter": "none"
   },
 
