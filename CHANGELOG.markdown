@@ -2,7 +2,9 @@
 
 #### master
 
-- Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
+- NEW: Added whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
+
+- FIXED: Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
 
 
 #### Release 3.6.3
@@ -12,8 +14,6 @@
 - SERVER: Update .XN--SES554G, .INK
 
 - SERVER: Disabled whois.edu.cn as it has not been working for the last 6 years (GH-59).
-
-- NEW: Added whois.nic.tech parser
 
 
 #### Release 3.6.2
