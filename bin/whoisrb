@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
 $:.unshift(File.expand_path("../../lib", __FILE__))
 

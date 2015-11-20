@@ -1,9 +1,17 @@
 # Changelog
 
-
 #### master
 
-- SERVER: Add .ACO, .AAA, .GEA, .STCGROUP, .VIVA
+- Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
+
+
+#### Release 3.6.3
+
+- SERVER: Add .ACO, .AAA, .GEA, .STCGROUP, .VIVA, .GROUP, .CEB, .FAGE, .MOM, .AMICA, .STC, .CIPRIANI, .KINDER, .XN--11B4C3D, .XN--3PXU8K, .XN--42C2D9A, .XN--9DBQ2A, .XN--C2BR7G, .XN--FHBEI, .XN--J1AEF, .XN--MK1BU44C, .XN--PSSY2U, .XN--T60B56A, .XN--TCKWE, .XN--EFVY88H, .CSC, .CAR, .PROTECTION, .STADA, .THEATRE, .LINDE, .SECURITY, .BMS, .LTD, .OBI, .BOM, .FINAL, .HYUNDAI, .KIA, .SEVEN, .STOCKHOLM, .CLUBMED, .DELL, .ARAMCO, .XN--MGBA3A3EJT, .MOI, .MTR, .VIRGIN, .YAMAXUN, .GUCCI, .JAGUAR, .LANDROVER, .RWE, .ZARA, .MEO, .PING, .SAPO, .SBS, .AARP, .APPLE, .BEATS, .XN--MGBTX2B, .XN--QXAM
+
+- SERVER: Update .XN--SES554G, .INK
+
+- SERVER: Disabled whois.edu.cn as it has not been working for the last 6 years (GH-59).
 
 - NEW: Added whois.nic.tech parser
 

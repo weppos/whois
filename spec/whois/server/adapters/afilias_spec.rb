@@ -14,9 +14,9 @@ describe Whois::Server::Adapters::Afilias do
         server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(response)
 
         record = server.lookup("example.test")
-        record.to_s.should  == expected
-        record.parts.size.should eq(1)
-        record.parts.should == [Whois::Record::Part.new(:body => response, :host => "whois.afilias-grs.info")]
+        expect(record.to_s).to eq(expected)
+        expect(record.parts.size).to eq(1)
+        expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.afilias-grs.info")])
       end
     end
 
@@ -29,9 +29,9 @@ describe Whois::Server::Adapters::Afilias do
         server.query_handler.expects(:call).with("example.test", "whois.belizenic.bz", 43).returns(response)
 
         record = server.lookup("example.test")
-        record.to_s.should  == expected
-        record.parts.size.should eq(2)
-        record.parts.should == [Whois::Record::Part.new(:body => referral, :host => "whois.afilias-grs.info"), Whois::Record::Part.new(:body => response, :host => "whois.belizenic.bz")]
+        expect(record.to_s).to eq(expected)
+        expect(record.parts.size).to eq(2)
+        expect(record.parts).to eq([Whois::Record::Part.new(body: referral, host: "whois.afilias-grs.info"), Whois::Record::Part.new(body: response, host: "whois.belizenic.bz")])
       end
 
       it "ignores referral if options[:referral] is false" do
@@ -41,7 +41,7 @@ describe Whois::Server::Adapters::Afilias do
         server.query_handler.expects(:call).with("example.test", "whois.belizenic.bz", 43).never
 
         record = server.lookup("example.test")
-        record.parts.size.should eq(1)
+        expect(record.parts.size).to eq(1)
       end
     end
   end
