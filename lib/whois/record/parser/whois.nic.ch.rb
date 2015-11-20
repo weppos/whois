@@ -49,6 +49,17 @@ module Whois
 
         property_not_supported :expires_on
 
+        # Registrar is given in the following format:
+        #   Registrar:
+        #   Name
+        property_supported :registrar do
+          if content_for_scanner =~ /Registrar:\n(.+?)\n/m
+            Record::Registrar.new(
+                name:  $1 
+            )
+          end
+        end        
+
         # Registrant is given in the following format:
         #
         #   Holder of domain name:
