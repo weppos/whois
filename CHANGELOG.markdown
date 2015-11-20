@@ -1,5 +1,9 @@
 # Changelog
 
+#### master
+
+- Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
+
 
 #### Release 3.6.3
 
