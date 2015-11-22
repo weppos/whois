@@ -2,6 +2,8 @@
 
 #### master
 
+- SERVER: Add .ROCHER, .XN--VUQ861B
+
 - NEW: Added whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
 
 - FIXED: Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
