@@ -2610,6 +2610,9 @@
   ".java": {
     "host": "whois.nic.java"
   },
+  ".comsec": {
+    "host": "whois.nic.comsec"
+  },
   ".vana": {
     "host": "whois.nic.vana"
   },
