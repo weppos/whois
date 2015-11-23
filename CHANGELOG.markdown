@@ -2,7 +2,7 @@
 
 #### master
 
-- SERVER: Add .ROCHER, .XN--VUQ861B
+- SERVER: Add .ROCHER, .XN--VUQ861B, .CITYEATS, .CREDITUNION, .LIFESTYLE, .VANA
 
 - NEW: Added whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
 

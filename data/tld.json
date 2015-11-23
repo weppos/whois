@@ -1767,6 +1767,9 @@
   ".beats": {
     "host": "whois.afilias-srs.net"
   },
+  ".creditunion": {
+    "host": "whois.afilias-srs.net"
+  },
   ".apple": {
     "host": "whois.afilias-srs.net"
   },
@@ -2607,6 +2610,12 @@
   ".java": {
     "host": "whois.nic.java"
   },
+  ".vana": {
+    "host": "whois.nic.vana"
+  },
+  ".lifestyle": {
+    "host": "whois.nic.lifestyle"
+  },
   ".oracle": {
     "host": "whois.nic.oracle"
   },
@@ -2633,6 +2642,9 @@
   },
   ".spreadbetting": {
     "host": "whois.nic.spreadbetting"
+  },
+  ".cityeats": {
+    "host": "whois.nic.cityeats"
   },
   ".trading": {
     "host": "whois.nic.trading"
