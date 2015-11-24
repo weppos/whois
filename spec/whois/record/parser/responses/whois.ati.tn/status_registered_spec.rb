@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisAtiTn, "status_registered.expected" do
 
   describe "#disclaimer" do
     it do
-      expect(subject.disclaimer).to eq("All rights reserved.\nCopyright \"Tunisian Internet Agency - http://whois.tn\"")
+      expect(subject.disclaimer).to eq("This is JWhoisServer serving ccTLD tn;تونس\nJava Whois Server 0.4.1.1    (c) 2006 - 2013 Klaus Zerwes zero-sys.net\nAll rights reserved.\nCopyright \"Tunisian Internet Agency - http://whois.tn\"")
     end
   end
   describe "#domain" do
