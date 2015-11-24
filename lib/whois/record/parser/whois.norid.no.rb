@@ -34,6 +34,7 @@ module Whois
         end
 
         property_supported :available? do
+          return false if !!(content_for_scanner =~ /^% Kopibeskyttet/)
           !!(content_for_scanner =~ /^% No match/)
         end
 
