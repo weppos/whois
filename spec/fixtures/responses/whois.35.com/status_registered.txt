@@ -1,0 +1,58 @@
+
+Domain Name: zwad.net
+Registry Domain ID:
+Registrar WHOIS Server: whois.35.com
+Registrar URL: http://www.35.com
+Updated Date: 2014-08-21 23:48:59
+Creation Date: 2010-09-10
+Registrar Registration Expiration Date: 2015-09-10
+Registrar: 35 Technology Co., Ltd.
+Registrar IANA ID: 1316
+Registrar Abuse Contact Email: abuse@35.cn
+Registrar Abuse Contact Phone: +86.5925391800
+Reseller: �������Ϻ��������Ǵ�ƽ�����ƹ�����                          
+Domain Status: clientTransferProhibited
+Registry Registrant ID:
+Registrant Name:baolei
+Registrant Organization:jiaxing zhongwang ad co.,ltd.
+Registrant Street:126# jiyang rd.
+Registrant City:jiaxing
+Registrant State/Province:zhejiang
+Registrant Postal Code:314000
+Registrant Country:CN
+Registrant Phone:+86.57382033533
+Registrant Phone Ext:
+Registrant Fax:+86.57382033533
+Registrant Fax Ext:
+Registrant Email:aaa@zjcf.com
+Registry Admin ID:
+Admin Name:baolei
+Admin Organization:jiaxing zhongwang ad co.,ltd.
+Admin Street:126# jiyang rd.
+Admin City:jiaxing
+Admin State/Province:zhejiang
+Admin Postal Code:314000
+Admin Country:CN
+Admin Phone:+86.57382033533
+Admin Phone Ext:
+Admin Fax:+86.57382033533
+Admin Fax Ext:
+Admin Email:aaa@zjcf.com
+Registry Tech ID:
+Tech Name:baolei
+Tech Organization:jiaxing zhongwang ad co.,ltd.
+Tech Street:126# jiyang rd.
+Tech City:jiaxing
+Tech State/Province:zhejiang
+Tech Postal Code:314000
+Tech Country:CN
+Tech Phone:+86.57382033533
+Tech Phone Ext:
+Tech Fax:+86.57382033533
+Tech Fax Ext:
+Tech Email:aaa@zjcf.com
+Name Server: ns3.dns-diy.com
+Name Server: ns4.dns-diy.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System:http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2014-08-21 23:48:59 <<<
