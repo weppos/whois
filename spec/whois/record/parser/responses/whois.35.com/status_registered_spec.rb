@@ -66,14 +66,17 @@ describe Whois::Record::Parser::Whois35Com, "status_registered.expected" do
   describe "#registrant_contacts" do
     it do
       expect(subject.registrant_contacts).to be_a(Array)
-      expect(subject.registrant_contacts).to have(1).items
+      expect(subject.registrant_contacts.size).to eq(1)
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
+      expect(subject.registrant_contacts[0].id).to eq(nil)
       expect(subject.registrant_contacts[0].name).to eq("baolei")
       expect(subject.registrant_contacts[0].organization).to eq("jiaxing zhongwang ad co.,ltd.")
       expect(subject.registrant_contacts[0].address).to eq("126# jiyang rd.")
       expect(subject.registrant_contacts[0].city).to eq("jiaxing")
       expect(subject.registrant_contacts[0].zip).to eq("314000")
+      expect(subject.registrant_contacts[0].state).to eq("zhejiang")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("CN")
       expect(subject.registrant_contacts[0].phone).to eq("+86.57382033533")
       expect(subject.registrant_contacts[0].fax).to eq("+86.57382033533")
@@ -83,14 +86,17 @@ describe Whois::Record::Parser::Whois35Com, "status_registered.expected" do
   describe "#admin_contacts" do
     it do
       expect(subject.admin_contacts).to be_a(Array)
-      expect(subject.admin_contacts).to have(1).items
+      expect(subject.admin_contacts.size).to eq(1)
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
+      expect(subject.admin_contacts[0].id).to eq(nil)
       expect(subject.admin_contacts[0].name).to eq("baolei")
       expect(subject.admin_contacts[0].organization).to eq("jiaxing zhongwang ad co.,ltd.")
       expect(subject.admin_contacts[0].address).to eq("126# jiyang rd.")
       expect(subject.admin_contacts[0].city).to eq("jiaxing")
       expect(subject.admin_contacts[0].zip).to eq("314000")
+      expect(subject.admin_contacts[0].state).to eq("zhejiang")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("CN")
       expect(subject.admin_contacts[0].phone).to eq("+86.57382033533")
       expect(subject.admin_contacts[0].fax).to eq("+86.57382033533")
@@ -100,14 +106,17 @@ describe Whois::Record::Parser::Whois35Com, "status_registered.expected" do
   describe "#technical_contacts" do
     it do
       expect(subject.technical_contacts).to be_a(Array)
-      expect(subject.technical_contacts).to have(1).items
+      expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
+      expect(subject.technical_contacts[0].id).to eq(nil)
       expect(subject.technical_contacts[0].name).to eq("baolei")
       expect(subject.technical_contacts[0].organization).to eq("jiaxing zhongwang ad co.,ltd.")
       expect(subject.technical_contacts[0].address).to eq("126# jiyang rd.")
       expect(subject.technical_contacts[0].city).to eq("jiaxing")
       expect(subject.technical_contacts[0].zip).to eq("314000")
+      expect(subject.technical_contacts[0].state).to eq("zhejiang")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("CN")
       expect(subject.technical_contacts[0].phone).to eq("+86.57382033533")
       expect(subject.technical_contacts[0].fax).to eq("+86.57382033533")
@@ -117,11 +126,15 @@ describe Whois::Record::Parser::Whois35Com, "status_registered.expected" do
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers).to have(2).items
+      expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns3.dns-diy.com")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns4.dns-diy.com")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

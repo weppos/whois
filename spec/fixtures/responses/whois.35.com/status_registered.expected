@@ -33,11 +33,14 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  %s[0].id            == nil
   %s[0].name          == "baolei"
   %s[0].organization  == "jiaxing zhongwang ad co.,ltd."
   %s[0].address       == "126# jiyang rd."
   %s[0].city          == "jiaxing"
   %s[0].zip           == "314000"
+  %s[0].state         == "zhejiang"
+  %s[0].country       == nil
   %s[0].country_code  == "CN"
   %s[0].phone         == "+86.57382033533"
   %s[0].fax           == "+86.57382033533"
@@ -48,11 +51,14 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
+  %s[0].id            == nil
   %s[0].name          == "baolei"
   %s[0].organization  == "jiaxing zhongwang ad co.,ltd."
   %s[0].address       == "126# jiyang rd."
   %s[0].city          == "jiaxing"
   %s[0].zip           == "314000"
+  %s[0].state         == "zhejiang"
+  %s[0].country       == nil
   %s[0].country_code  == "CN"
   %s[0].phone         == "+86.57382033533"
   %s[0].fax           == "+86.57382033533"
@@ -63,20 +69,29 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  %s[0].id            == nil
   %s[0].name          == "baolei"
   %s[0].organization  == "jiaxing zhongwang ad co.,ltd."
   %s[0].address       == "126# jiyang rd."
   %s[0].city          == "jiaxing"
   %s[0].zip           == "314000"
+  %s[0].state         == "zhejiang"
+  %s[0].country       == nil
   %s[0].country_code  == "CN"
   %s[0].phone         == "+86.57382033533"
   %s[0].fax           == "+86.57382033533"
   %s[0].email         == "aaa@zjcf.com"
+
 
 #nameservers
   %s %CLASS{array}
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns3.dns-diy.com"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns4.dns-diy.com"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
+

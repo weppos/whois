@@ -4,9 +4,11 @@
 
 - SERVER: Add .ROCHER, .XN--VUQ861B, .CITYEATS, .CREDITUNION, .LIFESTYLE, .VANA, .COMSEC
 
-- NEW: Added whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
+- NEW: Add whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
 
-- FIXED: Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
+- NEW: Add whois.35.com parser (GH-391). [Thanks @alpo]
+
+- FIXED: Remov option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
 
 
 #### Release 3.6.3
