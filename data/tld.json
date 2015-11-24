@@ -2058,6 +2058,9 @@
   ".melbourne": {
     "host": "whois.aridnrs.net.au"
   },
+  ".physio": {
+    "host": "whois.nic.physio"
+  },
   ".krd": {
     "host": "whois.aridnrs.net.au"
   },
@@ -2783,9 +2786,6 @@
   },
   ".brussels": {
     "host": "whois.nic.brussels"
-  },
-  ".physio": {
-    "host": "whois.nic.physio"
   },
   ".ceo": {
     "host": "whois.nic.ceo"
