@@ -2295,6 +2295,12 @@
   ".kddi": {
     "host": "whois.nic.kddi"
   },
+  ".fairwinds": {
+    "host": "whois.nic.fairwinds"
+  },
+  ".tab": {
+    "host": "whois.nic.tab"
+  },
   ".lotte": {
     "host": "whois.nic.lotte"
   },
@@ -3172,6 +3178,9 @@
     "host": "whois.nic.xn--tckwe"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".grainger": {
     "adapter": "none"
   },
   ".rocher": {
