@@ -1764,6 +1764,18 @@
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
   },
+  ".audi": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".bugatti": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".lamborghini": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".boehringer": {
+    "host": "whois.afilias-srs.net"
+  },
   ".beats": {
     "host": "whois.afilias-srs.net"
   },
@@ -2298,6 +2310,9 @@
   ".fairwinds": {
     "host": "whois.nic.fairwinds"
   },
+  ".verisign": {
+    "host": "whois.nic.verisign"
+  },
   ".tab": {
     "host": "whois.nic.tab"
   },
@@ -2321,6 +2336,9 @@
   },
   ".nissan": {
     "host": "whois.nic.gmo"
+  },
+  ".vip": {
+    "host": "whois-dub.mm-registry.com"
   },
   ".surf": {
     "host": "whois-dub.mm-registry.com"
@@ -2465,6 +2483,9 @@
   },
   ".xn--nqv7fs00ema": {
     "host": "whois.publicinterestregistry.net"
+  },
+  ".bostik": {
+    "host": "whois-bostik.nic.fr"
   },
   ".frogans": {
     "host": "whois-frogans.nic.fr"
