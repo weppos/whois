@@ -2394,6 +2394,9 @@
   ".gop": {
     "host": "whois-cl01.mm-registry.com"
   },
+  ".broadway": {
+    "host": "whois-cl01.mm-registry.com"
+  },
   ".bradesco": {
     "host": "whois-cl01.mm-registry.com"
   },
