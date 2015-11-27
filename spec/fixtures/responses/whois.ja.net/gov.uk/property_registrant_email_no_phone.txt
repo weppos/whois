@@ -1,0 +1,40 @@
+
+Domain:
+	service.gov.uk
+
+Registered For:
+	Government Digital Service
+
+Domain Owner:
+	HM Government Cabinet Office
+
+Registered By:
+	HM Government Cabinet Office
+
+Servers:
+	ns1.p08.dynect.net	
+	ns2.p08.dynect.net	
+	ns3.p08.dynect.net	
+	ns4.p08.dynect.net	
+
+Registrant Contact:
+	Government Digital Service
+
+Registrant Address:
+	6th Floor
+	Aviation House
+	125 Kingsway
+	LONDON
+	WC2B 6SE
+	United Kingdom
+	hostmaster@digital.cabinet-office.gov.uk
+
+Renewal date:
+	Tuesday 7th Mar 2017
+
+Entry updated:
+	Tuesday 10th February 2015
+
+Entry created:
+	Thursday 7th March 2013
+

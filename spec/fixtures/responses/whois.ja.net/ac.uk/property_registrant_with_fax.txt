@@ -1,0 +1,45 @@
+
+Domain:
+	ic.ac.uk
+
+Registered For:
+	Imperial College London
+
+Domain Owner:
+	Imperial College of Science, Technology and Medicine
+
+Registered By:
+	Imperial College of Science, Technology and Medicine
+
+Servers:
+	ns0.ic.ac.uk	155.198.142.80
+	ns0.ic.ac.uk	2001:630:12:600:1::80
+	ns1.ic.ac.uk	155.198.142.81
+	ns1.ic.ac.uk	2001:630:12:600:1::81
+	ns2.ic.ac.uk	155.198.142.82
+	ns2.ic.ac.uk	2001:630:12:600:1::82
+	authdns1.csx.cam.ac.uk	
+
+Registrant Contact:
+	Imperial College Hostmaster
+
+Registrant Address:
+	ICT
+	Imperial College
+	Exhibition Road
+	London
+	SW7 2AZ
+	United Kingdom
+	+44 20 7594 6965 (Phone)
+	+44 20 7594 6958 (FAX)
+	hostmaster@ic.ac.uk
+
+Renewal date:
+	Friday 14th Apr 2017
+
+Entry updated:
+	Saturday 14th March 2015
+
+Entry created:
+	Friday 7th November 2003
+
