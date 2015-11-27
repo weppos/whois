@@ -54,7 +54,7 @@ describe Whois::Record::Parser::WhoisNicSn, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2008-05-08 17:59:38.43"))
+      expect(subject.created_on).to eq(Time.parse("2008-05-08 17:59:38"))
     end
   end
   describe "#updated_on" do

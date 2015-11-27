@@ -24,19 +24,19 @@ module Whois
 
         property_supported :created_on do
           node("Domain Create Date") do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 
         property_supported :updated_on do
           node("Domain Last Updated Date") do |value|
-            Time.parse(value) unless value.empty?
+            parse_time(value) unless value.empty?
           end
         end
 
         property_supported :expires_on do
           node("Domain Expiration Date") do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 

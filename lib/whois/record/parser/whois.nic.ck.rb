@@ -48,13 +48,13 @@ module Whois
 
         property_supported :updated_on do
           if content_for_scanner =~ /changed:\s+(.*)\n/
-            Time.parse($1.split(" ", 2).last)
+            parse_time($1.split(" ", 2).last)
           end
         end
 
         property_supported :expires_on do
           if content_for_scanner =~ /remarks:\s+expires (.+)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 

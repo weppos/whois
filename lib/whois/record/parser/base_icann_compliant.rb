@@ -137,10 +137,6 @@ module Whois
 
         private
 
-        def parse_time(value)
-          Time.parse(value)
-        end
-
         def value_for_phone_property(element, property)
           [
             value_for_property(element, "#{property}"),

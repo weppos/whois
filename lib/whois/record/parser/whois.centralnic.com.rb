@@ -54,18 +54,18 @@ module Whois
 
 
         property_supported :created_on do
-          node("Created On")  { |str| Time.parse(str) } ||
-          node("Creation Date") { |str| Time.parse(str) }
+          node("Created On")  { |str| parse_time(str) } ||
+          node("Creation Date") { |str| parse_time(str) }
         end
 
         property_supported :updated_on do
-          node("Last Updated On") { |str| Time.parse(str) } ||
-          node("Updated Date") { |str| Time.parse(str) }
+          node("Last Updated On") { |str| parse_time(str) } ||
+          node("Updated Date") { |str| parse_time(str) }
         end
 
         property_supported :expires_on do
-          node("Expiration Date") { |str| Time.parse(str) } ||
-          node("Registry Expiry Date") { |str| Time.parse(str) }
+          node("Expiration Date") { |str| parse_time(str) } ||
+          node("Registry Expiry Date") { |str| parse_time(str) }
         end
 
 

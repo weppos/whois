@@ -44,7 +44,7 @@ module Whois
 
         property_supported :created_on do
           if content_for_scanner =~ /Domain Name Commencement Date:\s(.+?)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 
@@ -53,7 +53,7 @@ module Whois
         property_supported :expires_on do
           if content_for_scanner =~ /Expiry Date:\s(.+?)\n/
             time = $1.strip
-            Time.parse(time) unless time == 'null'
+            parse_time(time) unless time == 'null'
           end
         end
 

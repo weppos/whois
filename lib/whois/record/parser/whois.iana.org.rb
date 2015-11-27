@@ -55,11 +55,11 @@ module Whois
 
 
         property_supported :created_on do
-          node("dates") { |raw| Time.parse(raw["created"]) if raw.has_key? "created" }
+          node("dates") { |raw| parse_time(raw["created"]) if raw.has_key? "created" }
         end
 
         property_supported :updated_on do
-          node("dates") { |raw| Time.parse(raw["changed"]) if raw.has_key? "changed" }
+          node("dates") { |raw| parse_time(raw["changed"]) if raw.has_key? "changed" }
         end
 
         property_not_supported :expires_on

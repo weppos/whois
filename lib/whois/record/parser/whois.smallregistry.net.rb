@@ -65,15 +65,15 @@ module Whois
 
 
         property_supported :created_on do
-          node("created") { |str| Time.parse(str) }
+          node("created") { |str| parse_time(str) }
         end
 
         property_supported :updated_on do
-          node("updated") { |str| Time.parse(str) }
+          node("updated") { |str| parse_time(str) }
         end
 
         property_supported :expires_on do
-          node("expired") { |str| Time.parse(str) }
+          node("expired") { |str| parse_time(str) }
         end
 
 
@@ -122,7 +122,7 @@ module Whois
               :phone        => hash['phone'],
               :fax          => hash['fax'],
               :email        => hash['mobile'],
-              :updated_on   => Time.parse(hash['updated'])
+              :updated_on   => parse_time(hash['updated'])
             )
           end
         end

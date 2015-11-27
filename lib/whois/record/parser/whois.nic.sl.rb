@@ -46,21 +46,21 @@ module Whois
 
         property_supported :created_on do
           if content_for_scanner =~ /^Registration Date:\s+(.+)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 
         property_supported :updated_on do
           if content_for_scanner =~ /^Last Updated:\s+(.+)\n/
             if $1 != "0000-00-00"
-              Time.parse($1)
+              parse_time($1)
             end
           end
         end
 
         property_supported :expires_on do
           if content_for_scanner =~ /^Expiration Date:\s+(.+)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 

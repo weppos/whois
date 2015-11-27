@@ -22,7 +22,7 @@ module Whois
       class WhoisVerisignGrsCom < BaseVerisign
 
         property_supported :expires_on do
-          node("Expiration Date") { |value| Time.parse(value) }
+          node("Expiration Date") { |value| parse_time(value) }
         end
 
 

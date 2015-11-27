@@ -65,15 +65,15 @@ module Whois
 
 
         property_supported :created_on do
-          node("domain_dateregistered") { |value| Time.parse(value) }
+          node("domain_dateregistered") { |value| parse_time(value) }
         end
 
         property_supported :updated_on do
-          node("domain_datelastmodified") { |value| Time.parse(value) }
+          node("domain_datelastmodified") { |value| parse_time(value) }
         end
 
         property_supported :expires_on do
-          node("domain_datebilleduntil") { |value| Time.parse(value) }
+          node("domain_datebilleduntil") { |value| parse_time(value) }
         end
 
 

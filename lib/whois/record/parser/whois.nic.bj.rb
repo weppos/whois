@@ -53,13 +53,13 @@ module Whois
 
         property_supported :created_on do
           if section =~ /Created:\s+(.+)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 
         property_supported :updated_on do
           if section =~ /Updated:\s+(.+)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 

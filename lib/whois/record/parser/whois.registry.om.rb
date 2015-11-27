@@ -27,7 +27,7 @@ module Whois
 
 
         property_supported :updated_on do
-          node("Last Modified") { |value| Time.parse(value) }
+          node("Last Modified") { |value| parse_time(value) }
         end
 
 

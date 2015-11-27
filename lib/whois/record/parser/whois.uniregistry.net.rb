@@ -56,10 +56,6 @@ module Whois
           contact
         end
 
-        def parse_time(value)
-          Time.parse(value).change(usec: 0)
-        end
-
       end
 
     end

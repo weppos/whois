@@ -46,7 +46,7 @@ module Whois
 
         property_supported :updated_on do
           if content_for_scanner =~ /changed:\s+(.*)\n/
-            Time.parse($1)
+            parse_time($1)
           end
         end
 
