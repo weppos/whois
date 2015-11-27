@@ -61,7 +61,7 @@ module Whois
         end
 
         property_supported :updated_on do
-          node("Updated Date") { |value| parse_time(value) unless value.empty? }
+          node("Updated Date") { |value| parse_time(value) }
         end
 
         property_supported :expires_on do

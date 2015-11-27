@@ -60,7 +60,7 @@ module Whois
         end
 
         property_supported :updated_on do
-          node("modified") { |value| parse_time(value) unless value == "-" }
+          node("modified") { |value| parse_time(value) }
         end
 
 

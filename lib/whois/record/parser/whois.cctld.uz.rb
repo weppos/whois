@@ -63,7 +63,7 @@ module Whois
 
         property_supported :expires_on do
           if content_for_scanner =~ /Expiration Date:\s+(.+)\n/
-            parse_time($1) unless $1 == '-'
+            parse_time($1)
           end
         end
 

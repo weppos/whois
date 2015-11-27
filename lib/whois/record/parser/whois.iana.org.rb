@@ -59,7 +59,7 @@ module Whois
         end
 
         property_supported :updated_on do
-          node("dates") { |raw| parse_time(raw["changed"]) if raw.has_key? "changed" }
+          node("dates") { |raw| parse_time(raw["changed"]) }
         end
 
         property_not_supported :expires_on

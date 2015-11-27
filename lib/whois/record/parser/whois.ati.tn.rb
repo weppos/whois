@@ -106,7 +106,7 @@ module Whois
               fax:          node("#{element} Fax"),
               email:        node("#{element} Email"),
               created_on:   node("#{element} Created") { |value| parse_time(value) },
-              updated_on:   node("#{element} Updated") { |value| parse_time(value) if value != "None" }
+              updated_on:   node("#{element} Updated") { |value| parse_time(value) }
             )
           end
         end
