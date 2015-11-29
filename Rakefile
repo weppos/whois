@@ -27,8 +27,6 @@ spec = Gem::Specification.new do |s|
   s.executables       = %w( whoisrb )
   s.require_paths     = %w( lib )
 
-  s.add_dependency "activesupport", ">= 3"
-
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec", "~> 3.0"
   s.add_development_dependency "mocha"

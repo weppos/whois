@@ -7,8 +7,6 @@
 #++
 
 
-require 'active_support/core_ext/class/attribute'
-
 require 'whois/version'
 require 'whois/errors'
 require 'whois/client'

@@ -8,7 +8,7 @@ describe Whois do
     it "works" do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
-        Whois::Server::Adapters::Base.
+        Whois::Server::Adapters::Standard.
             query_handler.expects(:call).
             with("example.it", "whois.nic.it", 43).
             returns(response)
@@ -29,7 +29,7 @@ describe Whois do
     it "binds the WHOIS query to given host and port" do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
-        Whois::Server::Adapters::Base.
+        Whois::Server::Adapters::Standard.
             query_handler.expects(:call).
             with("example.it", "whois.nic.it", 43, "192.168.1.1", 3000).
             returns(response)
@@ -44,7 +44,7 @@ describe Whois do
     it "binds the WHOIS query to given port and defaults host" do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
-        Whois::Server::Adapters::Base.
+        Whois::Server::Adapters::Standard.
             query_handler.expects(:call).
             with("example.it", "whois.nic.it", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, 3000).
             returns(response)
@@ -59,7 +59,7 @@ describe Whois do
     it "forces the WHOIS query to given host" do
       with_definitions do
         Whois::Server.define(:tld, ".it", "whois.nic.it")
-        Whois::Server::Adapters::Base.
+        Whois::Server::Adapters::Standard.
             query_handler.expects(:call).
             with("example.it", "whois.example.com", 43).
             returns(response)

@@ -17,14 +17,20 @@ module Whois
     module Adapters
 
       class Base
+        class << self
+          def query_handler
+            @query_handler ||= SocketHandler.new
+          end
+
+          def query_handler=(handler)
+            @query_handler = handler
+          end
+        end
 
         # Default WHOIS request port.
         DEFAULT_WHOIS_PORT = 43
         # Default bind hostname.
         DEFAULT_BIND_HOST = "0.0.0.0"
-
-        class_attribute :query_handler
-        self.query_handler = SocketHandler.new
 
         # @return [Symbol] The type of WHOIS server.
         attr_reader :type
@@ -122,6 +128,15 @@ module Whois
         #
         def request(string)
           raise NotImplementedError
+        end
+
+        # Gets the current query handler for this class.
+        #
+        # @see Whois::Servers::Adapters::Base.query_handler
+        #
+        # @return [Object] the query handler
+        def query_handler
+          self.class.query_handler
         end
 
 
