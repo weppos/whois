@@ -1,0 +1,49 @@
+Domain Name: CDMON.COM
+Registrar WHOIS Server: whois.cdmon.com
+Registrar URL: https://www.cdmon.com
+Updated Date: 2009-12-16T11:40:44Z
+Creation Date: 2001-08-12T15:02:57Z
+Registrar Registration Expiration Date: 2024-08-12T15:02:53Z
+Registrar: 10DENCEHISPAHARD, S.L
+Registrar IANA ID: 1403
+Registrar Abuse Contact Email: abuse@cdmon.com
+Registrar Abuse Contact Phone: +34.935677577
+Domain Status: clientUpdateProhibited http://www.icann.org/epp#clientUpdateProhibited
+Domain Status: clientDeleteProhibited http://www.icann.org/epp#clientDeleteProhibited
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: 10dencehispahard,s.l.
+Registrant Organization: 10dencehispahard,s.l.
+Registrant Street: Girona 81-83 local 6
+Registrant City: Malgrat de Mar
+Registrant State/Province:
+Registrant Postal Code: 08380
+Registrant Country: ES
+Registrant Phone: +34.902364138
+Registrant Email: info@cdmon.com
+Registry Admin ID:
+Admin Name: 10dencehispahard,s.l.
+Admin Organization: 10dencehispahard,s.l.
+Admin Street: Girona 81-83 local 6
+Admin City: Malgrat de Mar
+Admin State/Province:
+Admin Postal Code: 08380
+Admin Country: ES
+Admin Phone: +34.902364138
+Admin Email: info@cdmon.com
+Registry Tech ID:
+Tech Name: 10dencehispahard,s.l.
+Tech Organization: 10dencehispahard,s.l.
+Tech Street: Girona 81-83 local 6
+Tech City: Malgrat de Mar
+Tech State/Province:
+Tech Postal Code: 08380
+Tech Country: ES
+Tech Phone: +34.902364138
+Tech Email: info@cdmon.com
+Name Server: ns2.cdmon.es
+Name Server: ns3.cdmon.es
+Name Server: ns1.cdmon.es
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of whois database: 2015-11-28T14:37:15+0100 <<<
