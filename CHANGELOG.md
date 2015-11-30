@@ -10,6 +10,8 @@
 
 - NEW: Add whois.nic.space parser (GH-463, GH-374). [Thanks @linrock]
 
+- NEW: Add whois.nic.xyz parser (GH-373, GH-460). [Thanks @mpchadwick]
+
 - FIXED: Remove option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
 
 - CHANGED: Update whois.wildwestdomains.com to the new response format (GH-392, GH-462). [Thanks @linrock]
