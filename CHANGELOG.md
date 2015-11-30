@@ -10,6 +10,8 @@
 
 - FIXED: Remov option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
 
+- CHANGED: Updated whois.wildwestdomains.com to the new response format (GH-392, GH-462). [Thanks @linrock]
+
 
 #### Release 3.6.3
 
