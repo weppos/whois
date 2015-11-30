@@ -1,0 +1,86 @@
+Domain Name: NIC.SPACE
+Domain ID: D2361836-CNIC
+WHOIS Server: whois.centralnic.com
+Referral URL: http://www.centralnic.com/
+Updated Date: 2015-04-04T00:14:21.0Z
+Creation Date: 2014-04-10T09:14:07.0Z
+Registry Expiry Date: 2016-04-10T23:59:59.0Z
+Sponsoring Registrar: CentralNic Ltd
+Sponsoring Registrar IANA ID: 9999
+Domain Status: ok https://icann.org/epp#ok
+Registrant ID: C11480
+Registrant Name: Domain Administrator
+Registrant Organization: CentralNic Ltd
+Registrant Street: 35-39 Moorgate
+Registrant City: London
+Registrant State/Province: 
+Registrant Postal Code: EC2R 6AR
+Registrant Country: GB
+Registrant Phone: +44.2033880600
+Registrant Phone Ext: 
+Registrant Fax: +44.2033880601
+Registrant Fax Ext: 
+Registrant Email: domains@centralnic.com
+Admin ID: C11480
+Admin Name: Domain Administrator
+Admin Organization: CentralNic Ltd
+Admin Street: 35-39 Moorgate
+Admin City: London
+Admin State/Province: 
+Admin Postal Code: EC2R 6AR
+Admin Country: GB
+Admin Phone: +44.2033880600
+Admin Phone Ext: 
+Admin Fax: +44.2033880601
+Admin Fax Ext: 
+Admin Email: domains@centralnic.com
+Tech ID: C11480
+Tech Name: Domain Administrator
+Tech Organization: CentralNic Ltd
+Tech Street: 35-39 Moorgate
+Tech City: London
+Tech State/Province: 
+Tech Postal Code: EC2R 6AR
+Tech Country: GB
+Tech Phone: +44.2033880600
+Tech Phone Ext: 
+Tech Fax: +44.2033880601
+Tech Fax Ext: 
+Tech Email: domains@centralnic.com
+Name Server: NS0.CENTRALNIC-DNS.COM
+Name Server: NS1.CENTRALNIC-DNS.COM
+Name Server: NS2.CENTRALNIC-DNS.COM
+Name Server: NS3.CENTRALNIC-DNS.COM
+Name Server: NS4.CENTRALNIC-DNS.COM
+Name Server: NS5.CENTRALNIC-DNS.COM
+DNSSEC: unsigned
+Billing ID: C11480
+Billing Name: Domain Administrator
+Billing Organization: CentralNic Ltd
+Billing Street: 35-39 Moorgate
+Billing City: London
+Billing State/Province: 
+Billing Postal Code: EC2R 6AR
+Billing Country: GB
+Billing Phone: +44.2033880600
+Billing Phone Ext: 
+Billing Fax: +44.2033880601
+Billing Fax Ext: 
+Billing Email: domains@centralnic.com
+>>> Last update of WHOIS database: 2015-11-30T04:08:49.0Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+This whois service is provided by CentralNic Ltd and only contains
+information pertaining to Internet domain names registered by our
+our customers. By using this service you are agreeing (1) not to use any
+information presented here for any purpose other than determining
+ownership of domain names, (2) not to store or reproduce this data in 
+any way, (3) not to use any high-volume, automated, electronic processes
+to obtain data from this service. Abuse of this service is monitored and
+actions in contravention of these terms will result in being permanently
+blacklisted. All data is (c) CentralNic Ltd https://www.centralnic.com/
+
+Access to the whois service is rate limited. For more information, please
+see https://registrar-console.centralnic.com/pub/whois_guidance.
+
