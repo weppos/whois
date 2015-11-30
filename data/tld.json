@@ -1134,6 +1134,9 @@
   ".social": {
     "host": "whois.unitedtld.com"
   },
+  ".protection": {
+    "host": "whois.centralnic.com"
+  },
   ".ink": {
     "host": "whois.nic.ink"
   },
@@ -1143,14 +1146,14 @@
   ".security": {
     "host": "whois.nic.security"
   },
-  ".protection": {
-    "host": "whois.centralnic.com"
-  },
   ".stc": {
     "host": "whois.centralnic.com"
   },
   ".stcgroup": {
     "host": "whois.centralnic.com"
+  },
+  ".xyz": {
+    "host": "whois.nic.xyz"
   },
   ".space": {
     "host": "whois.nic.space"
@@ -2897,9 +2900,6 @@
   },
   ".sky": {
     "host": "whois.nic.sky"
-  },
-  ".xyz": {
-    "host": "whois.nic.xyz"
   },
   ".quebec": {
     "host": "whois.nic.quebec"
