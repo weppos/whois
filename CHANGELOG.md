@@ -675,7 +675,7 @@
 
 - FIXED: In some cases the parser class is not correctly detected from hostname (GH-173). [Thanks @JustinCampbell]
 
-- FIXED: whois.ua parser raises ArgumentError when the created_on object invalid data.
+- FIXED: whois.ua parser raises ArgumcentError when the created_on object invalid data.
 
 - FIXED: Whois::Server may occasionally raise an error trying to resolve an IPv6 matching query object (GH-174). [Thanks @aeden].
 

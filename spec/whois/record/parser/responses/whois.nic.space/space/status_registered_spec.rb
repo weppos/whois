@@ -91,10 +91,13 @@ describe Whois::Record::Parser::WhoisNicSpace, "status_registered.expected" do
       expect(subject.registrant_contacts[0].city).to eq("London")
       expect(subject.registrant_contacts[0].zip).to eq("EC2R 6AR")
       expect(subject.registrant_contacts[0].state).to eq("")
+      expect(subject.registrant_contacts[0].country).to eq(nil)
       expect(subject.registrant_contacts[0].country_code).to eq("GB")
       expect(subject.registrant_contacts[0].phone).to eq("+44.2033880600")
       expect(subject.registrant_contacts[0].fax).to eq("+44.2033880601")
       expect(subject.registrant_contacts[0].email).to eq("domains@centralnic.com")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#admin_contacts" do
@@ -110,10 +113,13 @@ describe Whois::Record::Parser::WhoisNicSpace, "status_registered.expected" do
       expect(subject.admin_contacts[0].city).to eq("London")
       expect(subject.admin_contacts[0].zip).to eq("EC2R 6AR")
       expect(subject.admin_contacts[0].state).to eq("")
+      expect(subject.admin_contacts[0].country).to eq(nil)
       expect(subject.admin_contacts[0].country_code).to eq("GB")
       expect(subject.admin_contacts[0].phone).to eq("+44.2033880600")
       expect(subject.admin_contacts[0].fax).to eq("+44.2033880601")
       expect(subject.admin_contacts[0].email).to eq("domains@centralnic.com")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#technical_contacts" do
@@ -128,10 +134,13 @@ describe Whois::Record::Parser::WhoisNicSpace, "status_registered.expected" do
       expect(subject.technical_contacts[0].city).to eq("London")
       expect(subject.technical_contacts[0].zip).to eq("EC2R 6AR")
       expect(subject.technical_contacts[0].state).to eq("")
+      expect(subject.technical_contacts[0].country).to eq(nil)
       expect(subject.technical_contacts[0].country_code).to eq("GB")
       expect(subject.technical_contacts[0].phone).to eq("+44.2033880600")
       expect(subject.technical_contacts[0].fax).to eq("+44.2033880601")
       expect(subject.technical_contacts[0].email).to eq("domains@centralnic.com")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(nil)
     end
   end
   describe "#nameservers" do
