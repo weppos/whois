@@ -1,40 +1,69 @@
 Domain Name: WILDWESTDOMAINS.COM
+Registry Domain ID: 33386184_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.wildwestdomains.com
 Registrar URL: http://www.wildwestdomains.com
-Updated Date: 2011-11-01 16:31:47
-Creation Date: 2000-08-22 18:29:11
-Registrar Expiration Date: 2021-11-01 06:59:59
+Update Date: 2011-11-01T21:31:47Z
+Creation Date: 2000-08-22T23:29:11Z
+Registrar Registration Expiration Date: 2021-11-01T11:59:59Z
 Registrar: Wild West Domains, LLC
+Registrar IANA ID: 440
+Registrar Abuse Contact Email: abuse@wildwestdomains.com
+Registrar Abuse Contact Phone: +1.4806242505
 Reseller: WWDomains.com
-Registrant Name: Wild West Domains Wild West Domains
-Registrant Organization: Wild West Domains
-Registrant Street: 14455 N Hayden Rd Suite 219
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited http://www.icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited http://www.icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited http://www.icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: 
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com
+Registrant Street: 14747 N Northsight Blvd Suite 111, PMB 309
 Registrant City: Scottsdale
 Registrant State/Province: Arizona
 Registrant Postal Code: 85260
 Registrant Country: United States
-Admin Name: Wild West Domains Wild West Domains
-Admin Organization: Wild West Domains
-Admin Street: 14455 N Hayden Rd Suite 219
+Registrant Phone: +1.4806242599
+Registrant Phone Ext: 
+Registrant Fax: +1.4806242598
+Registrant Fax Ext: 
+Registrant Email: WILDWESTDOMAINS.COM@domainsbyproxy.com
+Registry Admin ID: 
+Admin Name: Registration Private
+Admin Organization: Domains By Proxy, LLC
+Admin Street: DomainsByProxy.com
+Admin Street: 14747 N Northsight Blvd Suite 111, PMB 309
 Admin City: Scottsdale
 Admin State/Province: Arizona
 Admin Postal Code: 85260
 Admin Country: United States
-Admin Phone: +1.4805058800
-Admin Fax: +1.4805058844
-Admin Email: dns@wildwestdomains.com
-Tech Name: Wild West Domains Wild West Domains
-Tech Organization: Wild West Domains
-Tech Street: 14455 N Hayden Rd Suite 219
+Admin Phone: +1.4806242599
+Admin Phone Ext: 
+Admin Fax: +1.4806242598
+Admin Fax Ext: 
+Admin Email: WILDWESTDOMAINS.COM@domainsbyproxy.com
+Registry Tech ID: 
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com
+Tech Street: 14747 N Northsight Blvd Suite 111, PMB 309
 Tech City: Scottsdale
 Tech State/Province: Arizona
 Tech Postal Code: 85260
 Tech Country: United States
-Tech Phone: +1.4805058800
-Tech Fax: +1.4805058844
-Tech Email: dns@wildwestdomains.com
+Tech Phone: +1.4806242599
+Tech Phone Ext: 
+Tech Fax: +1.4806242598
+Tech Fax Ext: 
+Tech Email: WILDWESTDOMAINS.COM@domainsbyproxy.com
 Name Server: CNS1.SECURESERVER.NET
 Name Server: CNS2.SECURESERVER.NET
 Name Server: CNS3.SECURESERVER.NET
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2015-11-30T03:00:00Z <<<
+
+For more information on Whois status codes, please visit https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en
 
 ****************************************************
 See Business Registration Listing
@@ -61,4 +90,3 @@ commercial purposes.
 
 Please note: the owner of the domain name is specified in the "registrant" section. 
 In most cases, the Registrar is not the owner of domain names listed in this database.
-
