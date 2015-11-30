@@ -51,6 +51,11 @@ describe Whois::Record::Parser::WhoisAero, "status_available.expected" do
       expect(subject.registered?).to eq(false)
     end
   end
+  describe "#reserved?" do
+    it do
+      expect(subject.reserved?).to eq(false)
+    end
+  end
   describe "#created_on" do
     it do
       expect(subject.created_on).to eq(nil)

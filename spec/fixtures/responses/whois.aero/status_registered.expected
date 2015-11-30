@@ -18,6 +18,9 @@
 #registered?
   %s == true
 
+#reserved?
+  %s == false
+
 
 #created_on
   %s %CLASS{time}

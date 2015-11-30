@@ -18,6 +18,9 @@
 #registered?
   %s == false
 
+#reserved?
+  %s == false
+
 
 #created_on
   %s == nil

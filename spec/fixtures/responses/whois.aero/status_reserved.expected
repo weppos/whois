@@ -12,11 +12,14 @@
 #status
   %s == :reserved
 
-#reserved?
-  %s == true
-
 #available?
   %s == false
+
+#registered?
+  %s == true
+
+#reserved?
+  %s == true
 
 
 #created_on
