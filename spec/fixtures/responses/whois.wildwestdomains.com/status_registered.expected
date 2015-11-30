@@ -2,7 +2,7 @@
   %s == "wildwestdomains.com"
 
 #domain_id
-  %s == nil
+  %s == "33386184_DOMAIN_COM-VRSN"
 
 
 #status
@@ -17,20 +17,20 @@
 
 #created_on
   %s %CLASS{time}
-  %s %TIME{2000-08-22 18:29:11}
+  %s %TIME{2000-08-22 23:29:11 UTC}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2011-11-01 16:31:47}
+  %s %TIME{2011-11-01 21:31:47 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2021-11-01 06:59:59}
+  %s %TIME{2021-11-01 11:59:59 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == nil
+  %s.id           == "440"
   %s.name         == "Wild West Domains, LLC"
   %s.organization == "Wild West Domains, LLC"
   %s.url          == "http://www.wildwestdomains.com"
@@ -42,17 +42,17 @@
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
   %s[0].id            == nil
-  %s[0].name          == "Wild West Domains Wild West Domains"
-  %s[0].organization  == "Wild West Domains"
-  %s[0].address       == "14455 N Hayden Rd Suite 219"
+  %s[0].name          == "Registration Private"
+  %s[0].organization  == "Domains By Proxy, LLC"
+  %s[0].address       == "DomainsByProxy.com, 14747 N Northsight Blvd Suite 111, PMB 309"
   %s[0].city          == "Scottsdale"
   %s[0].zip           == "85260"
   %s[0].state         == "Arizona"
   %s[0].country       == nil
   %s[0].country_code  == "United States"
-  %s[0].phone         == ""
-  %s[0].fax           == ""
-  %s[0].email         == ""
+  %s[0].phone         == "+1.4806242599"
+  %s[0].fax           == "+1.4806242598"
+  %s[0].email         == "WILDWESTDOMAINS.COM@domainsbyproxy.com"
   %s[0].created_on    == nil
   %s[0].updated_on    == nil
 
@@ -62,17 +62,17 @@
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
   %s[0].id            == nil
-  %s[0].name          == "Wild West Domains Wild West Domains"
-  %s[0].organization  == "Wild West Domains"
-  %s[0].address       == "14455 N Hayden Rd Suite 219"
+  %s[0].name          == "Registration Private"
+  %s[0].organization  == "Domains By Proxy, LLC"
+  %s[0].address       == "DomainsByProxy.com, 14747 N Northsight Blvd Suite 111, PMB 309"
   %s[0].city          == "Scottsdale"
   %s[0].zip           == "85260"
   %s[0].state         == "Arizona"
   %s[0].country       == nil
   %s[0].country_code  == "United States"
-  %s[0].phone         == "+1.4805058800"
-  %s[0].fax           == "+1.4805058844"
-  %s[0].email         == "dns@wildwestdomains.com"
+  %s[0].phone         == "+1.4806242599"
+  %s[0].fax           == "+1.4806242598"
+  %s[0].email         == "WILDWESTDOMAINS.COM@domainsbyproxy.com"
   %s[0].created_on    == nil
   %s[0].updated_on    == nil
 
@@ -82,17 +82,17 @@
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
   %s[0].id            == nil
-  %s[0].name          == "Wild West Domains Wild West Domains"
-  %s[0].organization  == "Wild West Domains"
-  %s[0].address       == "14455 N Hayden Rd Suite 219"
+  %s[0].name          == "Registration Private"
+  %s[0].organization  == "Domains By Proxy, LLC"
+  %s[0].address       == "DomainsByProxy.com, 14747 N Northsight Blvd Suite 111, PMB 309"
   %s[0].city          == "Scottsdale"
   %s[0].zip           == "85260"
   %s[0].state         == "Arizona"
   %s[0].country       == nil
   %s[0].country_code  == "United States"
-  %s[0].phone         == "+1.4805058800"
-  %s[0].fax           == "+1.4805058844"
-  %s[0].email         == "dns@wildwestdomains.com"
+  %s[0].phone         == "+1.4806242599"
+  %s[0].fax           == "+1.4806242598"
+  %s[0].email         == "WILDWESTDOMAINS.COM@domainsbyproxy.com"
   %s[0].created_on    == nil
   %s[0].updated_on    == nil
 
