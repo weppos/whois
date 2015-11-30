@@ -21,8 +21,17 @@ module Whois
       #
       class WhoisAero < BaseAfilias
 
+        self.scanner = Scanners::BaseAfilias, {
+          pattern_reserved: /^Name is restricted from registration\n/,
+        }
+
+
         property_supported :status do
-          Array.wrap(node("Domain Status"))
+          if reserved?
+            :reserved
+          else
+            Array.wrap(node("Domain Status"))
+          end
         end
 
 
@@ -36,6 +45,11 @@ module Whois
           node("Expires On") do |value|
             Time.parse(value)
           end
+        end
+
+        # NEWPROPERTY
+        def reserved?
+          !!node("status:reserved")
         end
 
       end
