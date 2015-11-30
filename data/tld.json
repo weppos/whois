@@ -1152,6 +1152,9 @@
   ".stcgroup": {
     "host": "whois.centralnic.com"
   },
+  ".space": {
+    "host": "whois.nic.space"
+  },
   ".viva": {
     "host": "whois.centralnic.com"
   },
@@ -2795,9 +2798,6 @@
   },
   ".versicherung": {
     "host": "whois.nic.versicherung"
-  },
-  ".space": {
-    "host": "whois.nic.space"
   },
   ".website": {
     "host": "whois.nic.website"
