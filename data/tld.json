@@ -3204,6 +3204,9 @@
   ".aaa": {
     "adapter": "none"
   },
+  ".sfr": {
+    "adapter": "none"
+  },
   ".grainger": {
     "adapter": "none"
   },
