@@ -16,6 +16,8 @@
 
 - CHANGED: Update whois.wildwestdomains.com to the new response format (GH-392, GH-462). [Thanks @linrock]
 
+- CHANGED: Update whois.afilias.info to the new response format (GH-481).
+
 
 #### Release 3.6.3
 

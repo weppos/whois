@@ -20,6 +20,7 @@ module Whois
       #   The Example parser for the list of all available methods.
       #
       class WhoisUniregistryNet < BaseIcannCompliant
+
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: />>> Domain \".+\" is available/
         }

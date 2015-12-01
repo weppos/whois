@@ -72,13 +72,16 @@ module Whois
 
         property_supported :registrar do
           node("Sponsoring Registrar") do |value|
-            id, name = decompose_registrar(value) ||
-                Whois.bug!(ParserError, "Unknown registrar format `#{value}'")
+            id, name = if value =~ /(.+?) \((.+?)\)/
+              [$2, $1]
+            else
+              [node("Sponsoring Registrar IANA ID"), node("Sponsoring Registrar")]
+            end
 
-            Record::Registrar.new(
+            Record::Registrar.new({
                 id:           id,
-                name:         name
-            )
+                name:         name,
+            })
           end
         end
 
@@ -97,7 +100,7 @@ module Whois
 
         property_supported :nameservers do
           Array.wrap(node("Name Server")).reject(&:empty?).map do |name|
-            Nameserver.new(:name => name.downcase)
+            Nameserver.new(name: name.downcase)
           end
         end
 
@@ -125,12 +128,6 @@ module Whois
                 :fax          => node("#{element} FAX") || node("#{element} Fax"),
                 :email        => node("#{element} Email")
             )
-          end
-        end
-
-        def decompose_registrar(value)
-          if value =~ /(.+?) \((.+?)\)/
-            [$2, $1]
           end
         end
 

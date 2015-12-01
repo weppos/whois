@@ -38,7 +38,7 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
   end
   describe "#status" do
     it do
-      expect(subject.status).to eq(["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"])
+      expect(subject.status).to eq(["clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited", "clientTransferProhibited https://icann.org/epp#clientTransferProhibited", "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"])
     end
   end
   describe "#available?" do
@@ -60,19 +60,19 @@ describe Whois::Record::Parser::WhoisAfiliasInfo, "status_registered.expected" d
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2013-06-29 09:26:18 UTC"))
+      expect(subject.updated_on).to eq(Time.parse("2015-06-29 09:26:47 UTC"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2014-07-31 23:57:50 UTC"))
+      expect(subject.expires_on).to eq(Time.parse("2016-07-31 23:57:50 UTC"))
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("R151-LRMS")
+      expect(subject.registrar.id).to eq("292")
       expect(subject.registrar.name).to eq("MarkMonitor Inc.")
       expect(subject.registrar.organization).to eq(nil)
       expect(subject.registrar.url).to eq(nil)

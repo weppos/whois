@@ -18,7 +18,7 @@ module Whois
       class WhoisPirOrg < BaseAfilias
 
         self.scanner = Scanners::WhoisPirOrg
-        
+
         # Checks whether the response has been throttled.
         #
         # @return [Boolean]
@@ -42,7 +42,7 @@ module Whois
             )
           end
         end
-        
+
         property_supported :created_on do
           node("Creation Date") do |value|
             Time.parse(value)

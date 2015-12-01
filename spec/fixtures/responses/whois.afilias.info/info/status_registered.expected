@@ -10,7 +10,7 @@
 
 
 #status
-  %s == ["clientDeleteProhibited", "clientTransferProhibited", "clientUpdateProhibited"]
+  %s == ["clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited", "clientTransferProhibited https://icann.org/epp#clientTransferProhibited", "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"]
 
 #available?
   %s == false
@@ -25,16 +25,16 @@
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2013-06-29 09:26:18 UTC}
+  %s %TIME{2015-06-29 09:26:47 UTC}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2014-07-31 23:57:50 UTC}
+  %s %TIME{2016-07-31 23:57:50 UTC}
 
 
 #registrar
   %s %CLASS{registrar}
-  %s.id           == "R151-LRMS"
+  %s.id           == "292"
   %s.name         == "MarkMonitor Inc."
   %s.organization == nil
   %s.url          == nil
