@@ -10,16 +10,16 @@
 
 
 #status
-  %s == []
+  %s == :reserved
 
 #available?
-  %s == true
+  %s == false
 
 #registered?
-  %s == false
+  %s == true
 
 #reserved?
-  %s == false
+  %s == true
 
 
 #created_on
