@@ -2916,6 +2916,9 @@
   ".kyoto": {
     "host": "whois.nic.kyoto"
   },
+  ".one": {
+    "host": "whois.nic.one"
+  },
   ".eurovision": {
     "host": "whois.nic.eurovision"
   },
