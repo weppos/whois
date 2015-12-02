@@ -18,6 +18,8 @@
 
 - CHANGED: Update whois.afilias.info to the new response format (GH-481).
 
+- CHANGED: whois.aero now recognizes reserved domains (GH-464, GH-418). [Thanks @linrock]
+
 
 #### Release 3.6.3
 
