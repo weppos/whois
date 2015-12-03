@@ -18,6 +18,8 @@
 
 - CHANGED: Update whois.afilias.info to the new response format (GH-481).
 
+- CHANGED: Update whois.tld.ee to the new response format (GH-489).
+
 
 #### Release 3.6.3
 

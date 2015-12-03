@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
 
   describe "#domain" do
     it do
-      expect(subject.domain).to eq("edicy.ee")
+      expect(subject.domain).to eq("internet.ee")
     end
   end
   describe "#domain_id" do
@@ -49,28 +49,32 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
   describe "#created_on" do
     it do
       expect(subject.created_on).to be_a(Time)
-      expect(subject.created_on).to eq(Time.parse("2010-07-04 07:10:32"))
+      expect(subject.created_on).to eq(Time.parse("2010-08-10 16:43:38 +03:00"))
     end
   end
   describe "#updated_on" do
     it do
       expect(subject.updated_on).to be_a(Time)
-      expect(subject.updated_on).to eq(Time.parse("2010-12-10 13:37:11"))
+      expect(subject.updated_on).to eq(Time.parse("2010-11-29 13:32:16 +02:00"))
     end
   end
   describe "#expires_on" do
     it do
       expect(subject.expires_on).to be_a(Time)
-      expect(subject.expires_on).to eq(Time.parse("2012-12-10"))
+      expect(subject.expires_on).to eq(Time.parse("2017-02-04"))
+    end
+  end
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq("Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee")
     end
   end
   describe "#registrar" do
     it do
       expect(subject.registrar).to be_a(Whois::Record::Registrar)
-      expect(subject.registrar.id).to eq("fraktal")
-      expect(subject.registrar.name).to eq("fraktal")
-      expect(subject.registrar.organization).to eq(nil)
-      expect(subject.registrar.url).to eq(nil)
+      expect(subject.registrar.name).to eq("Elisa Eesti AS")
+      expect(subject.registrar.organization).to eq("Elisa Eesti AS")
+      expect(subject.registrar.url).to eq("http://www.elisa.ee")
     end
   end
   describe "#registrant_contacts" do
@@ -79,8 +83,8 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.registrant_contacts.size).to eq(1)
       expect(subject.registrant_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.registrant_contacts[0].type).to eq(Whois::Record::Contact::TYPE_REGISTRANT)
-      expect(subject.registrant_contacts[0].id).to eq("CID:FRAKTAL:1")
-      expect(subject.registrant_contacts[0].name).to eq("Priit Haamer")
+      expect(subject.registrant_contacts[0].id).to eq(nil)
+      expect(subject.registrant_contacts[0].name).to eq("Eesti Interneti Sihtasutus")
       expect(subject.registrant_contacts[0].organization).to eq(nil)
       expect(subject.registrant_contacts[0].address).to eq(nil)
       expect(subject.registrant_contacts[0].city).to eq(nil)
@@ -90,8 +94,9 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.registrant_contacts[0].country_code).to eq(nil)
       expect(subject.registrant_contacts[0].phone).to eq(nil)
       expect(subject.registrant_contacts[0].fax).to eq(nil)
-      expect(subject.registrant_contacts[0].email).to eq("Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS")
-      expect(subject.registrant_contacts[0].created_on).to eq(Time.parse("2010-12-09 16:08:33"))
+      expect(subject.registrant_contacts[0].email).to eq("Not Disclosed - Visit www.internet.ee for webbased WHOIS")
+      expect(subject.registrant_contacts[0].created_on).to eq(nil)
+      expect(subject.registrant_contacts[0].updated_on).to eq(Time.parse("2010-11-29 13:32:16 +02:00"))
     end
   end
   describe "#admin_contacts" do
@@ -100,8 +105,8 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.admin_contacts.size).to eq(1)
       expect(subject.admin_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.admin_contacts[0].type).to eq(Whois::Record::Contact::TYPE_ADMINISTRATIVE)
-      expect(subject.admin_contacts[0].id).to eq("CID:FRAKTAL:7")
-      expect(subject.admin_contacts[0].name).to eq("Tõnu Runnel")
+      expect(subject.admin_contacts[0].id).to eq(nil)
+      expect(subject.admin_contacts[0].name).to eq("Jaana Järve")
       expect(subject.admin_contacts[0].organization).to eq(nil)
       expect(subject.admin_contacts[0].address).to eq(nil)
       expect(subject.admin_contacts[0].city).to eq(nil)
@@ -111,8 +116,9 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.admin_contacts[0].country_code).to eq(nil)
       expect(subject.admin_contacts[0].phone).to eq(nil)
       expect(subject.admin_contacts[0].fax).to eq(nil)
-      expect(subject.admin_contacts[0].email).to eq("Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS")
-      expect(subject.admin_contacts[0].created_on).to eq(Time.parse("2010-12-10 13:35:38"))
+      expect(subject.admin_contacts[0].email).to eq("Not Disclosed - Visit www.internet.ee for webbased WHOIS")
+      expect(subject.admin_contacts[0].created_on).to eq(nil)
+      expect(subject.admin_contacts[0].updated_on).to eq(Time.parse("2015-10-30 08:31:21 +02:00"))
     end
   end
   describe "#technical_contacts" do
@@ -121,8 +127,8 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.technical_contacts.size).to eq(1)
       expect(subject.technical_contacts[0]).to be_a(Whois::Record::Contact)
       expect(subject.technical_contacts[0].type).to eq(Whois::Record::Contact::TYPE_TECHNICAL)
-      expect(subject.technical_contacts[0].id).to eq("CID:FRAKTAL:1")
-      expect(subject.technical_contacts[0].name).to eq("Priit Haamer")
+      expect(subject.technical_contacts[0].id).to eq(nil)
+      expect(subject.technical_contacts[0].name).to eq("Jaana Järve")
       expect(subject.technical_contacts[0].organization).to eq(nil)
       expect(subject.technical_contacts[0].address).to eq(nil)
       expect(subject.technical_contacts[0].city).to eq(nil)
@@ -132,20 +138,23 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.technical_contacts[0].country_code).to eq(nil)
       expect(subject.technical_contacts[0].phone).to eq(nil)
       expect(subject.technical_contacts[0].fax).to eq(nil)
-      expect(subject.technical_contacts[0].email).to eq("Not Disclosed - Visit www.eestiinternet.ee for webbased WHOIS")
-      expect(subject.technical_contacts[0].created_on).to eq(Time.parse("2010-12-09 16:08:33"))
+      expect(subject.technical_contacts[0].email).to eq("Not Disclosed - Visit www.internet.ee for webbased WHOIS")
+      expect(subject.technical_contacts[0].created_on).to eq(nil)
+      expect(subject.technical_contacts[0].updated_on).to eq(Time.parse("2015-10-30 08:31:21 +02:00"))
     end
   end
   describe "#nameservers" do
     it do
       expect(subject.nameservers).to be_a(Array)
-      expect(subject.nameservers.size).to eq(2)
+      expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[0].name).to eq("ns3.edicy.net")
-      expect(subject.nameservers[0].ipv4).to eq("82.129.24.69")
+      expect(subject.nameservers[0].name).to eq("c.tld.ee")
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
-      expect(subject.nameservers[1].name).to eq("ns4.edicy.net")
-      expect(subject.nameservers[1].ipv4).to eq("82.199.86.42")
+      expect(subject.nameservers[1].name).to eq("d.tld.ee")
+      expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[2].name).to eq("b.tld.ee")
+      expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
+      expect(subject.nameservers[3].name).to eq("e.tld.ee")
     end
   end
 end

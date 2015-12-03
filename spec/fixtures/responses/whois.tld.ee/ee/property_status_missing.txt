@@ -1,8 +1,0 @@
-%  This Whois Server contains information on
-% Estonian Top Level Domain ee TLD
-
-%ERROR:101: no entries found
-% 
-% No entries found.
-
-

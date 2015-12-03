@@ -1,0 +1,44 @@
+Estonia .ee Top Level Domain WHOIS server
+
+Domain:
+name:       samanacrafts.ee
+status:     expired
+status:     serverHold
+registered: 2014-11-01 20:38:55 +02:00
+changed:    2014-11-01 20:38:55 +02:00
+expire:     2015-11-01
+outzone:    2015-11-16
+delete:     2015-12-16
+
+Registrant:
+name:    Anastassia Hisamova
+email:   Not Disclosed - Visit www.internet.ee for webbased WHOIS
+changed: 2014-11-01 20:38:55 +02:00
+
+Administrative contact
+name:       Anastassia Hisamova
+email:      Not Disclosed - Visit www.internet.ee for webbased WHOIS
+changed:    2014-11-01 20:38:55 +02:00
+name:       Anastassia Hisamova
+email:      Not Disclosed - Visit www.internet.ee for webbased WHOIS
+changed:    2014-11-01 20:38:55 +02:00
+
+
+Technical contact:
+name:       Priit Haamer
+email:      Not Disclosed - Visit www.internet.ee for webbased WHOIS
+changed:    2010-12-09 16:08:33 +02:00
+
+Registrar:
+name:       Edicy OÜ
+url:        http://www.edicy.com
+phone:      +3727460064
+changed:    2015-11-30 23:29:03 +02:00
+
+Name servers:
+nserver:   ns4.edicy.net
+nserver:   ns3.edicy.net
+changed:   2014-06-29 16:31:04 +03:00
+
+Estonia .ee Top Level Domain WHOIS server
+More information at http://internet.ee
