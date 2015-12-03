@@ -90,9 +90,9 @@ module Whois
         property_supported :registrar do
           node('Registrar') do |hash|
             Record::Registrar.new(
-              name:         hash['name'],
-              organization: hash['name'],
-              url:          hash['url']
+              :name         => hash['name'],
+              :organization => hash['name'],
+              :url          => hash['url']
             )
           end
         end
@@ -100,7 +100,7 @@ module Whois
         property_supported :nameservers do
           node('Name servers') do |hash|
             Array.wrap(hash['nserver']).map do |name|
-              Nameserver.new(name: name.downcase)
+              Nameserver.new(:name => name.downcase)
             end
           end
         end
@@ -113,10 +113,10 @@ module Whois
 
             (0...el_size).map do |i|
               Record::Contact.new(
-                type:       type,
-                name:       Array.wrap(hash['name'])[i],
-                email:      Array.wrap(hash['email'])[i],
-                updated_on: Time.parse(Array.wrap(hash['changed'])[i])
+                :type       => type,
+                :name       => Array.wrap(hash['name'])[i],
+                :email      => Array.wrap(hash['email'])[i],
+                :updated_on => Time.parse(Array.wrap(hash['changed'])[i])
               )
             end
           end
