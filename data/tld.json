@@ -940,9 +940,6 @@
   ".to": {
     "host": "whois.tonic.to"
   },
-  ".tp": {
-    "adapter": "none"
-  },
   ".tr": {
     "host": "whois.nic.tr"
   },

@@ -4,6 +4,8 @@
 
 - SERVER: Add .ROCHER, .XN--VUQ861B, .CITYEATS, .CREDITUNION, .LIFESTYLE, .VANA, .COMSEC, .FAIRWINDS, .GRAINGER, .TAB, .BROADWAY, .AUDI, .BOEHRINGER, .BOSTIK, .BUGATTI, .LAMBORGHINI, .VERISIGN, .VIP., .SFR, .INSURANCE, .MED, .NORTON, .SYMANTEC
 
+- SERVER: Delete .TP
+
 - NEW: Add whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
 
 - NEW: Add whois.35.com parser (GH-391). [Thanks @alpo]
