@@ -189,9 +189,6 @@
   ".am": {
     "host": "whois.nic.am"
   },
-  ".an": {
-    "adapter": "none"
-  },
   ".ao": {
     "adapter": "none"
   },
