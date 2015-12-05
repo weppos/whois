@@ -2319,6 +2319,18 @@
   ".verisign": {
     "host": "whois.nic.verisign"
   },
+  ".insurance": {
+    "host": "whois.nic.insurance"
+  },
+  ".med": {
+    "host": "whois.nic.med"
+  },
+  ".norton": {
+    "host": "whois.nic.norton"
+  },
+  ".symantec": {
+    "host": "whois.nic.symantec"
+  },
   ".tab": {
     "host": "whois.nic.tab"
   },
