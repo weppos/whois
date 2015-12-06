@@ -1767,6 +1767,9 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".travelers": {
+    "host": "whois.afilias-srs.net"
+  },
   ".bugatti": {
     "host": "whois.afilias-srs.net"
   },
@@ -2349,8 +2352,20 @@
   ".mtpc": {
     "host": "whois.nic.gmo"
   },
+  ".sharp": {
+    "host": "whois.nic.gmo"
+  },
   ".nissan": {
     "host": "whois.nic.gmo"
+  },
+  ".shia": {
+    "host": "whois.agitsys.net"
+  },
+  ".tci": {
+    "host": "whois.agitsys.net"
+  },
+  ".nowruz": {
+    "host": "whois.agitsys.net"
   },
   ".vip": {
     "host": "whois-dub.mm-registry.com"
@@ -3216,7 +3231,37 @@
   ".aaa": {
     "adapter": "none"
   },
+  ".smile": {
+    "adapter": "none"
+  },
   ".got": {
+    "adapter": "none"
+  },
+  ".salon": {
+    "adapter": "none"
+  },
+  ".safe": {
+    "adapter": "none"
+  },
+  ".room": {
+    "adapter": "none"
+  },
+  ".read": {
+    "adapter": "none"
+  },
+  ".zero": {
+    "adapter": "none"
+  },
+  ".pin": {
+    "adapter": "none"
+  },
+  ".like": {
+    "adapter": "none"
+  },
+  ".joy": {
+    "adapter": "none"
+  },
+  ".jot": {
     "adapter": "none"
   },
   ".call": {
