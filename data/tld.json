@@ -1941,6 +1941,9 @@
   ".hermes": {
     "host": "whois.afilias-srs.net"
   },
+  ".buy": {
+    "host": "whois.afilias-srs.net"
+  },
   ".temasek": {
     "host": "whois.afilias-srs.net"
   },
@@ -3211,6 +3214,30 @@
     "host": "whois.nic.xn--tckwe"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".got": {
+    "adapter": "none"
+  },
+  ".call": {
+    "adapter": "none"
+  },
+  ".fast": {
+    "adapter": "none"
+  },
+  ".cirle": {
+    "adapter": "none"
+  },
+  ".firestone": {
+    "adapter": "none"
+  },
+  ".author": {
+    "adapter": "none"
+  },
+  ".book": {
+    "adapter": "none"
+  },
+  ".bot": {
     "adapter": "none"
   },
   ".sfr": {
