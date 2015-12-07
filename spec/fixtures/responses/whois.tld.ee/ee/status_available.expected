@@ -1,3 +1,6 @@
+#disclaimer
+  %s == "Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee"
+
 #domain
   %s == nil
 

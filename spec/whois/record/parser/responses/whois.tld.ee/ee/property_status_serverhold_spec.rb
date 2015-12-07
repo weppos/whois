@@ -21,9 +21,19 @@ describe Whois::Record::Parser::WhoisTldEe, "property_status_serverhold.expected
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq("Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee")
+    end
+  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq("samanacrafts.ee")
+    end
+  end
+  describe "#domain_id" do
+    it do
+      expect { subject.domain_id }.to raise_error(Whois::AttributeNotSupported)
     end
   end
   describe "#status" do
@@ -57,11 +67,6 @@ describe Whois::Record::Parser::WhoisTldEe, "property_status_serverhold.expected
     it do
       expect(subject.expires_on).to be_a(Time)
       expect(subject.expires_on).to eq(Time.parse("2015-11-01"))
-    end
-  end
-  describe "#disclaimer" do
-    it do
-      expect(subject.disclaimer).to eq("Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee")
     end
   end
   describe "#registrar" do
@@ -160,8 +165,12 @@ describe Whois::Record::Parser::WhoisTldEe, "property_status_serverhold.expected
       expect(subject.nameservers.size).to eq(2)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("ns4.edicy.net")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("ns3.edicy.net")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
     end
   end
 end

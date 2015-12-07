@@ -1,3 +1,6 @@
+#disclaimer
+  %s == "Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee"
+
 #domain
   %s == "internet.ee"
 
@@ -24,9 +27,6 @@
 #expires_on
   %s %CLASS{time}
   %s %TIME{2017-02-04}
-
-#disclaimer
-  %s == "Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee"
 
 #registrar
   %s %CLASS{registrar}
@@ -99,9 +99,17 @@
   %s %SIZE{4}
   %s[0] %CLASS{nameserver}
   %s[0].name == "c.tld.ee"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "d.tld.ee"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil
   %s[2] %CLASS{nameserver}
   %s[2].name == "b.tld.ee"
+  %s[2].ipv4 == nil
+  %s[2].ipv6 == nil
   %s[3] %CLASS{nameserver}
   %s[3].name == "e.tld.ee"
+  %s[3].ipv4 == nil
+  %s[3].ipv6 == nil

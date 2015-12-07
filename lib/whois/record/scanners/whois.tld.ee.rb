@@ -20,7 +20,6 @@ module Whois
             :skip_head,
             :scan_section,
             :skip_empty_line,
-            # :skip_end,
             :scan_disclaimer
         ]
 

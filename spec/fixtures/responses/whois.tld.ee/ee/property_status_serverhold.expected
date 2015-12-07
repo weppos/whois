@@ -1,5 +1,11 @@
+#disclaimer
+  %s == "Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee"
+
 #domain
   %s == "samanacrafts.ee"
+
+#domain_id
+  %s %ERROR{AttributeNotSupported}
 
 #status
   %s == :expired
@@ -21,9 +27,6 @@
 #expires_on
   %s %CLASS{time}
   %s %TIME{2015-11-01}
-
-#disclaimer
-  %s == "Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee"
 
 #registrar
   %s %CLASS{registrar}
@@ -112,5 +115,9 @@
   %s %SIZE{2}
   %s[0] %CLASS{nameserver}
   %s[0].name == "ns4.edicy.net"
+  %s[0].ipv4 == nil
+  %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
   %s[1].name == "ns3.edicy.net"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == nil

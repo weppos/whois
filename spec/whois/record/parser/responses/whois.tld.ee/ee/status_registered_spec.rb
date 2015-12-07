@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq("Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee")
+    end
+  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq("internet.ee")
@@ -62,11 +67,6 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
     it do
       expect(subject.expires_on).to be_a(Time)
       expect(subject.expires_on).to eq(Time.parse("2017-02-04"))
-    end
-  end
-  describe "#disclaimer" do
-    it do
-      expect(subject.disclaimer).to eq("Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee")
     end
   end
   describe "#registrar" do
@@ -149,12 +149,20 @@ describe Whois::Record::Parser::WhoisTldEe, "status_registered.expected" do
       expect(subject.nameservers.size).to eq(4)
       expect(subject.nameservers[0]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[0].name).to eq("c.tld.ee")
+      expect(subject.nameservers[0].ipv4).to eq(nil)
+      expect(subject.nameservers[0].ipv6).to eq(nil)
       expect(subject.nameservers[1]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[1].name).to eq("d.tld.ee")
+      expect(subject.nameservers[1].ipv4).to eq(nil)
+      expect(subject.nameservers[1].ipv6).to eq(nil)
       expect(subject.nameservers[2]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[2].name).to eq("b.tld.ee")
+      expect(subject.nameservers[2].ipv4).to eq(nil)
+      expect(subject.nameservers[2].ipv6).to eq(nil)
       expect(subject.nameservers[3]).to be_a(Whois::Record::Nameserver)
       expect(subject.nameservers[3].name).to eq("e.tld.ee")
+      expect(subject.nameservers[3].ipv4).to eq(nil)
+      expect(subject.nameservers[3].ipv6).to eq(nil)
     end
   end
 end
