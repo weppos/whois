@@ -1758,6 +1758,9 @@
   ".money": {
     "host": "whois.donuts.co"
   },
+  ".salon": {
+    "host": "whois.donuts.co"
+  },
   ".mba": {
     "host": "whois.donuts.co"
   },
@@ -3117,6 +3120,9 @@
   ".loan": {
     "host": "whois.nic.loan"
   },
+  ".firestone": {
+    "host": "whois.nic.firestone"
+  },
   ".party": {
     "host": "whois.nic.party"
   },
@@ -3237,9 +3243,6 @@
   ".got": {
     "adapter": "none"
   },
-  ".salon": {
-    "adapter": "none"
-  },
   ".safe": {
     "adapter": "none"
   },
@@ -3271,9 +3274,6 @@
     "adapter": "none"
   },
   ".cirle": {
-    "adapter": "none"
-  },
-  ".firestone": {
     "adapter": "none"
   },
   ".author": {
