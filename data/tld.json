@@ -2361,6 +2361,12 @@
   ".nissan": {
     "host": "whois.nic.gmo"
   },
+  ".pars": {
+    "host": "whois.agitsys.net"
+  },
+  ".xn--mgbt3dhd": {
+    "host": "whois.agitsys.net"
+  },
   ".shia": {
     "host": "whois.agitsys.net"
   },
