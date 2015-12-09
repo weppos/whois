@@ -92,8 +92,8 @@ describe Whois::Server::Adapters::Base do
 
     it "overrides @host if :host option exists" do
       a = described_class.new(:tld, ".test", "whois.test", { :hello => "world" })
-      a.configure(foo: "bar", :host => "whois.example.com")
-      expect(a.options).to eq({ :hello => "world", foo: "bar", :host => "whois.example.com" })
+      a.configure(foo: "bar", host: "whois.example.com")
+      expect(a.options).to eq({ :hello => "world", foo: "bar", host: "whois.example.com" })
       expect(a.host).to eq("whois.example.com")
     end
   end

@@ -14,7 +14,7 @@ describe Whois::Server::Adapters::Standard do
 
       record = server.lookup("domain.test")
       expect(record.to_s).to eq(expected)
-      expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.test")])
+      expect(record.parts).to eq([Whois::Record::Part.new(body: response, host: "whois.test")])
     end
 
     context "with port option" do

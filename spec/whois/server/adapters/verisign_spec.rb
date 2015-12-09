@@ -16,7 +16,7 @@ describe Whois::Server::Adapters::Verisign do
         record = server.lookup("example.test")
         expect(record.to_s).to eq(expected)
         expect(record.parts.size).to eq(1)
-        expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.test")])
+        expect(record.parts).to eq([Whois::Record::Part.new(body: response, host: "whois.test")])
       end
     end
 
@@ -31,7 +31,7 @@ describe Whois::Server::Adapters::Verisign do
         record = server.lookup("example.test")
         expect(record.to_s).to eq(expected)
         expect(record.parts.size).to eq(2)
-        expect(record.parts).to eq([Whois::Record::Part.new(:body => referral, :host => "whois.test"), Whois::Record::Part.new(:body => response, :host => "whois.markmonitor.com")])
+        expect(record.parts).to eq([Whois::Record::Part.new(body: referral, host: "whois.test"), Whois::Record::Part.new(body: response, host: "whois.markmonitor.com")])
       end
 
       it "extracts the closest referral if multiple referrals" do

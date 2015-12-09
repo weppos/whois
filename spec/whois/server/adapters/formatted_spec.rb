@@ -14,7 +14,7 @@ describe Whois::Server::Adapters::Formatted do
 
       record = server.lookup("domain.de")
       expect(record.to_s).to eq(expected)
-      expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.denic.de")])
+      expect(record.parts).to eq([Whois::Record::Part.new(body: response, host: "whois.denic.de")])
     end
 
     context "without format option" do

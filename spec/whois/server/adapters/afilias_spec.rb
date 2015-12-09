@@ -16,7 +16,7 @@ describe Whois::Server::Adapters::Afilias do
         record = server.lookup("example.test")
         expect(record.to_s).to eq(expected)
         expect(record.parts.size).to eq(1)
-        expect(record.parts).to eq([Whois::Record::Part.new(:body => response, :host => "whois.afilias-grs.info")])
+        expect(record.parts).to eq([Whois::Record::Part.new(body: response, host: "whois.afilias-grs.info")])
       end
     end
 
