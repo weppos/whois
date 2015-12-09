@@ -28,6 +28,7 @@ module Whois
           node('field:disclaimer').to_s.strip
         end
 
+
         property_supported :domain do
           if (content_for_scanner =~ /^Domain:\nname:\s+(.+)\n/)
             $1.to_s.strip.downcase
@@ -35,6 +36,7 @@ module Whois
         end
 
         property_not_supported :domain_id
+
 
         property_supported :status do
           if content_for_scanner =~ /status:\s+(.+?)\n/
@@ -59,6 +61,7 @@ module Whois
           !available?
         end
 
+
         property_supported :created_on do
           if content_for_scanner =~ /registered:\s+(.+?)\n/
             Time.parse($1)
@@ -76,6 +79,7 @@ module Whois
             Time.parse($1)
           end
         end
+
 
         property_supported :registrar do
           node('Registrar') do |hash|
@@ -99,6 +103,7 @@ module Whois
           build_contact('Technical contact', Whois::Record::Contact::TYPE_TECHNICAL)
         end
 
+
         property_supported :nameservers do
           node('Name servers') do |hash|
             Array.wrap(hash['nserver']).map do |name|
@@ -106,6 +111,7 @@ module Whois
             end
           end
         end
+
 
         private
 

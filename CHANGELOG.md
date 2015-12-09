@@ -6,6 +6,8 @@
 
 - SERVER: Updated .SALON, .FIRESTONE
 
+- CHANGED: Updated whois.tld.ee to the new response format (GH-489, GH-490). [Thanks @tanelj]
+
 
 #### Release 3.6.4
 
@@ -28,8 +30,6 @@
 - CHANGED: Updated whois.afilias.info to the new response format (GH-481).
 
 - CHANGED: whois.aero now recognizes reserved domains (GH-464, GH-418). [Thanks @linrock]
-
-- CHANGED: Update whois.tld.ee to the new response format (GH-489).
 
 
 #### Release 3.6.3
