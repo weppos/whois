@@ -10,7 +10,7 @@ describe Whois::Server::Adapters::Formatted do
       response = "Whois Response"
       expected = response
       server = described_class.new(*definition)
-      server.query_handler.expects(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43).returns(response)
+      expect(server.query_handler).to receive(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43).and_return(response)
 
       record = server.lookup("domain.de")
       expect(record.to_s).to eq(expected)
@@ -20,7 +20,7 @@ describe Whois::Server::Adapters::Formatted do
     context "without format option" do
       it "raises an error" do
         server = described_class.new(*[:tld, ".de", "whois.denic.de", {}])
-        server.query_handler.expects(:call).never
+        expect(server.query_handler).to receive(:call).never
 
         expect {
           server.lookup("domain.de")
@@ -32,7 +32,7 @@ describe Whois::Server::Adapters::Formatted do
       it "sends the request to given port" do
         response = "Whois Response"
         server = described_class.new(:tld, ".de", "whois.denic.de", { :format => "-T dn,ace -C US-ASCII %s", :port => 20 })
-        server.query_handler.expects(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 20).returns(response)
+        expect(server.query_handler).to receive(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 20).and_return(response)
 
         server.lookup("domain.de")
       end
@@ -43,7 +43,7 @@ describe Whois::Server::Adapters::Formatted do
         response = "Whois Response"
         server = described_class.new(:tld, ".de", "whois.denic.de", { :format => "-T dn,ace -C US-ASCII %s" })
         server.configure(:bind_host => "192.168.1.1", :bind_port => 3000)
-        server.query_handler.expects(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43, "192.168.1.1", 3000).returns(response)
+        expect(server.query_handler).to receive(:call).with("-T dn,ace -C US-ASCII domain.de", "whois.denic.de", 43, "192.168.1.1", 3000).and_return(response)
 
         server.lookup("domain.de")
       end

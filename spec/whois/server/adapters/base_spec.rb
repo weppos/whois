@@ -120,9 +120,7 @@ describe Whois::Server::Adapters::Base do
       let(:server) { described_class.new(:tld, ".test", "whois.test", {}) }
 
       it "does not bind the WHOIS query" do
-        described_class.
-            query_handler.expects(:call).
-            with("example.test", "whois.test", 43)
+        expect(described_class.query_handler).to receive(:call).with("example.test", "whois.test", 43)
 
         server.send(:query_the_socket, "example.test", "whois.test", 43)
       end
@@ -132,9 +130,7 @@ describe Whois::Server::Adapters::Base do
       let(:server) { described_class.new(:tld, ".test", "whois.test", { :bind_host => "192.168.1.1", :bind_port => 3000 }) }
 
       it "binds the WHOIS query to given host and port" do
-        described_class.
-            query_handler.expects(:call).
-            with("example.test", "whois.test", 43, "192.168.1.1", 3000)
+        expect(described_class.query_handler).to receive(:call).with("example.test", "whois.test", 43, "192.168.1.1", 3000)
 
         server.send(:query_the_socket, "example.test", "whois.test", 43)
       end
@@ -144,9 +140,7 @@ describe Whois::Server::Adapters::Base do
       let(:server) { described_class.new(:tld, ".test", "whois.test", { :bind_port => 3000 }) }
 
       it "binds the WHOIS query to given port and defaults host" do
-        described_class.
-            query_handler.expects(:call).
-            with("example.test", "whois.test", 43, described_class::DEFAULT_BIND_HOST, 3000)
+        expect(described_class.query_handler).to receive(:call).with("example.test", "whois.test", 43, described_class::DEFAULT_BIND_HOST, 3000)
 
         server.send(:query_the_socket, "example.test", "whois.test", 43)
       end

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Whois::Server do
   describe ".load_json" do
     it "loads a definition from a JSON file" do
-      File.expects(:read).with("tld.json").returns(<<-JSON)
+      expect(File).to receive(:read).with("tld.json").and_return(<<-JSON)
 {
   ".ae.org": {
     "host": "whois.centralnic.com"
@@ -23,7 +23,7 @@ describe Whois::Server do
     end
 
     it "convert option keys to Symbol" do
-      File.expects(:read).with("tld.json").returns(<<-JSON)
+      expect(File).to receive(:read).with("tld.json").and_return(<<-JSON)
 {
   ".com": {
     "host": "whois.crsnic.net",

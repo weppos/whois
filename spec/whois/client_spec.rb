@@ -50,16 +50,16 @@ describe Whois::Client do
       end
 
       server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
-      server.expects(:lookup).with("example.test")
-      Whois::Server.expects(:guess).with("example.test").returns(server)
+      expect(server).to receive(:lookup).with("example.test")
+      expect(Whois::Server).to receive(:guess).with("example.test").and_return(server)
 
       described_class.new.lookup(query)
     end
 
     it "converts the argument to downcase" do
       server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
-      server.expects(:lookup).with("example.test")
-      Whois::Server.expects(:guess).with("example.test").returns(server)
+      expect(server).to receive(:lookup).with("example.test")
+      expect(Whois::Server).to receive(:guess).with("example.test").and_return(server)
 
       described_class.new.lookup("Example.TEST")
     end
@@ -92,7 +92,7 @@ describe Whois::Client do
           sleep(2)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
+      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, ".test", "whois.test"))
 
       client = described_class.new(:timeout => 1)
       expect {
@@ -106,7 +106,7 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
+      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, ".test", "whois.test"))
 
       client = described_class.new(:timeout => 5)
       expect {
@@ -120,7 +120,7 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      Whois::Server.expects(:guess).returns(adapter.new(:tld, ".test", "whois.test"))
+      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, ".test", "whois.test"))
 
       client = described_class.new.tap { |c| c.timeout = nil }
       expect {

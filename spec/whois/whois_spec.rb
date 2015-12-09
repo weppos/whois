@@ -4,9 +4,9 @@ describe Whois do
 
   describe ".lookup" do
     it "delegates the lookup to a new client" do
-      client = mock()
-      client.expects(:lookup).with("example.com").returns(:result)
-      Whois::Client.expects(:new).returns(client)
+      client = double()
+      expect(client).to receive(:lookup).with("example.com").and_return(:result)
+      expect(Whois::Client).to receive(:new).and_return(client)
 
       expect(described_class.lookup("example.com")).to eq(:result)
     end

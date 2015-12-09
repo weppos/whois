@@ -11,7 +11,7 @@ describe Whois::Server::Adapters::Afilias do
       it "returns the WHOIS record" do
         response = "No match for example.test."
         expected = response
-        server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(response)
+        expect(server.query_handler).to receive(:call).with("example.test", "whois.afilias-grs.info", 43).and_return(response)
 
         record = server.lookup("example.test")
         expect(record.to_s).to eq(expected)
@@ -25,8 +25,8 @@ describe Whois::Server::Adapters::Afilias do
         referral = File.read(fixture("referrals/afilias.bz.txt"))
         response = "Match for example.test."
         expected = referral + "\n" + response
-        server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(referral)
-        server.query_handler.expects(:call).with("example.test", "whois.belizenic.bz", 43).returns(response)
+        expect(server.query_handler).to receive(:call).with("example.test", "whois.afilias-grs.info", 43).and_return(referral)
+        expect(server.query_handler).to receive(:call).with("example.test", "whois.belizenic.bz", 43).and_return(response)
 
         record = server.lookup("example.test")
         expect(record.to_s).to eq(expected)
@@ -37,8 +37,8 @@ describe Whois::Server::Adapters::Afilias do
       it "ignores referral if options[:referral] is false" do
         referral = File.read(fixture("referrals/afilias.bz.txt"))
         server.options[:referral] = false
-        server.query_handler.expects(:call).with("example.test", "whois.afilias-grs.info", 43).returns(referral)
-        server.query_handler.expects(:call).with("example.test", "whois.belizenic.bz", 43).never
+        expect(server.query_handler).to receive(:call).with("example.test", "whois.afilias-grs.info", 43).and_return(referral)
+        expect(server.query_handler).to receive(:call).with("example.test", "whois.belizenic.bz", 43).never
 
         record = server.lookup("example.test")
         expect(record.parts.size).to eq(1)
