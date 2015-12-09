@@ -29,6 +29,8 @@
 
 - CHANGED: whois.aero now recognizes reserved domains (GH-464, GH-418). [Thanks @linrock]
 
+- CHANGED: Update whois.tld.ee to the new response format (GH-489).
+
 
 #### Release 3.6.3
 

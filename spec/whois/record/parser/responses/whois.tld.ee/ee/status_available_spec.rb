@@ -21,6 +21,11 @@ describe Whois::Record::Parser::WhoisTldEe, "status_available.expected" do
     described_class.new(part)
   end
 
+  describe "#disclaimer" do
+    it do
+      expect(subject.disclaimer).to eq("Estonia .ee Top Level Domain WHOIS server\nMore information at http://internet.ee")
+    end
+  end
   describe "#domain" do
     it do
       expect(subject.domain).to eq(nil)
