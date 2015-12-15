@@ -2,7 +2,7 @@
 
 #### master
 
-- SERVER: Added .PARS, .XN--MGBT3DHD
+- SERVER: Added .PARS, .XN--MGBT3DHD, .REDUMBRELLA, .TRV
 
 - SERVER: Updated .SALON, .FIRESTONE
 

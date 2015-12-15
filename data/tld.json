@@ -1770,6 +1770,12 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".trv": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".redumbrella": {
+    "host": "whois.afilias-srs.net"
+  },
   ".travelers": {
     "host": "whois.afilias-srs.net"
   },
