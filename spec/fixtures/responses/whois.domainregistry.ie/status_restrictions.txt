@@ -1,0 +1,13 @@
+% Dot IE domain names must:
+
+  -be less than 66 characters in length, including the '.ie' characters
+
+  -not start with a hyphen '-'
+
+  -not have a label ending in a hyphen before the '.ie' e.g. 'xyz-.ie'
+
+  -not start with 'xn--' which is reserved for IDN usage, e.g. �ire.ie
+
+  -contain at least 5 characters, including the three for '.ie'
+
+  -have at least one alphabetic character, e.g. ' would be invalid'
