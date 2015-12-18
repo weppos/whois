@@ -1,0 +1,31 @@
+#nameservers
+  %s %CLASS{array}
+  %s %SIZE{7}
+  %s[0] %CLASS{nameserver}
+  %s[0].name == "authdns0.csx.cam.ac.uk"
+  %s[0].ipv4 == "131.111.8.37"
+  %s[0].ipv6 == nil
+  %s[1] %CLASS{nameserver}
+  %s[1].name == "authdns0.csx.cam.ac.uk"
+  %s[1].ipv4 == nil
+  %s[1].ipv6 == "2001:630:212:8::d:a0"
+  %s[2] %CLASS{nameserver}
+  %s[2].name == "dns0.cl.cam.ac.uk"
+  %s[2].ipv4 == "128.232.0.19"
+  %s[2].ipv6 == nil
+  %s[3] %CLASS{nameserver}
+  %s[3].name == "dns0.cl.cam.ac.uk"
+  %s[3].ipv4 == nil
+  %s[3].ipv6 == "2001:630:212:200::d:a0"
+  %s[4] %CLASS{nameserver}
+  %s[4].name == "dns0.eng.cam.ac.uk"
+  %s[4].ipv4 == "129.169.8.8"
+  %s[4].ipv6 == nil
+  %s[5] %CLASS{nameserver}
+  %s[5].name == "ns2.ic.ac.uk"
+  %s[5].ipv4 == nil
+  %s[5].ipv6 == nil
+  %s[6] %CLASS{nameserver}
+  %s[6].name == "sns-pb.isc.org"
+  %s[6].ipv4 == nil
+  %s[6].ipv6 == nil

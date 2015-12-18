@@ -1,0 +1,44 @@
+
+Domain:
+	cam.ac.uk
+
+Registered For:
+	The University of Cambridge
+
+Domain Owner:
+	University of Cambridge
+
+Registered By:
+	University of Cambridge
+
+Servers:
+	authdns0.csx.cam.ac.uk	131.111.8.37
+	authdns0.csx.cam.ac.uk	2001:630:212:8::d:a0
+	dns0.cl.cam.ac.uk	128.232.0.19
+	dns0.cl.cam.ac.uk	2001:630:212:200::d:a0
+	dns0.eng.cam.ac.uk	129.169.8.8
+	ns2.ic.ac.uk	
+	sns-pb.isc.org	
+
+Registrant Contact:
+	Tony Finch
+
+Registrant Address:
+	Cambridge University Information Services
+	Roger Needham Building
+	7 JJ Thomson Avenue
+	Cambridge
+	Cambridgeshire
+	CB3 0RB
+	+44 1223 748440 (Phone)
+	hostmaster@cam.ac.uk
+
+Renewal date:
+	Saturday 13th Aug 2016
+
+Entry updated:
+	Monday 14th September 2015
+
+Entry created:
+	Wednesday 17th September 2003
+
