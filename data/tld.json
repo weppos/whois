@@ -1128,6 +1128,9 @@
   ".social": {
     "host": "whois.unitedtld.com"
   },
+  ".kfh": {
+    "host": "whois.centralnic.com"
+  },
   ".protection": {
     "host": "whois.centralnic.com"
   },
@@ -1192,6 +1195,9 @@
     "host": "whois.nic.rest"
   },
   ".site": {
+    "host": "whois.centralnic.com"
+  },
+  ".xn--ngbe9e0a": {
     "host": "whois.centralnic.com"
   },
   ".group": {
@@ -1962,6 +1968,9 @@
   ".xn--b4w605ferd": {
     "host": "whois.afilias-srs.net"
   },
+  ".travelersinsurance": {
+    "host": "whois.afilias-srs.net"
+  },
   ".bnl": {
     "host": "whois.afilias-srs.net"
   },
@@ -2697,6 +2706,9 @@
   ".lifestyle": {
     "host": "whois.nic.lifestyle"
   },
+  ".shell": {
+    "host": "whois.nic.shell"
+  },
   ".oracle": {
     "host": "whois.nic.oracle"
   },
@@ -3246,10 +3258,22 @@
   ".xn--tckwe": {
     "host": "whois.nic.xn--tckwe"
   },
+  ".xn--ngbc5azd": {
+    "host": "whois.nic.xn--ngbc5azd"
+  },
+  ".xn--80adxhks": {
+    "host": "whois.nic.xn--80adxhks"
+  },
+  ".xn--kcrx77d1x4a": {
+    "host": "whois.nic.xn--kcrx77d1x4a"
+  },
   ".aaa": {
     "adapter": "none"
   },
-  ".xn--eckvdtc9d": {
+  ".wanggou": {
+    "adapter": "none"
+  },
+  ".kpn": {
     "adapter": "none"
   },
   ".watches": {
@@ -3328,9 +3352,6 @@
     "adapter": "none"
   },
   ".aramco": {
-    "adapter": "none"
-  },
-  ".xn--mgba3a3ejt": {
     "adapter": "none"
   },
   ".dell": {
@@ -3414,9 +3435,6 @@
   ".otsuka": {
     "adapter": "none"
   },
-  ".xn--rhqv96g": {
-    "adapter": "none"
-  },
   ".axa": {
     "adapter": "none"
   },
@@ -3483,16 +3501,7 @@
   ".cartier": {
     "adapter": "none"
   },
-  ".xn--45q11c": {
-    "adapter": "none"
-  },
   ".ntt": {
-    "adapter": "none"
-  },
-  ".xn--imr513n": {
-    "adapter": "none"
-  },
-  ".xn--mgbpl2fh": {
     "adapter": "none"
   },
   ".cbn": {
@@ -3505,9 +3514,6 @@
     "adapter": "none"
   },
   ".cisco": {
-    "adapter": "none"
-  },
-  ".xn--nyqy26a": {
     "adapter": "none"
   },
   ".lupin": {
@@ -3537,8 +3543,38 @@
   ".bharti": {
     "adapter": "none"
   },
+  ".xn--mgba3a3ejt": {
+    "adapter": "none"
+  },
+  ".xn--eckvdtc9d": {
+    "adapter": "none"
+  },
+  ".xn--kpu716f": {
+    "adapter": "none"
+  },
+  ".xn--pbt977c": {
+    "adapter": "none"
+  },
+  ".xn--rhqv96g": {
+    "adapter": "none"
+  },
+  ".xn--45q11c": {
+    "adapter": "none"
+  },
+  ".xn--imr513n": {
+    "adapter": "none"
+  },
+  ".xn--mgbpl2fh": {
+    "adapter": "none"
+  },
+  ".xn--nyqy26a": {
+    "adapter": "none"
+  },
   ".xn--qxam": {
     "adapter": "none"
+  },
+  ".voting": {
+    "host": "whois.voting.tld-box.at"
   },
   ".xn--mgbtx2b": {
     "host": "whois.cmc.iq"
@@ -3546,23 +3582,14 @@
   ".xn--y9a3aq": {
     "host": "whois.amnic.net"
   },
-  ".voting": {
-    "host": "whois.voting.tld-box.at"
-  },
   ".xn--9et52u": {
     "host": "whois.nic.wang"
   },
   ".xn--55qw42g": {
     "host": "whois.conac.cn"
   },
-  ".xn--ngbc5azd": {
-    "host": "whois.nic.xn--ngbc5azd"
-  },
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
-  },
-  ".xn--80adxhks": {
-    "host": "whois.nic.xn--80adxhks"
   },
   ".xn--cg4bki": {
     "host": "whois.kr"
@@ -3581,9 +3608,6 @@
   },
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
-  },
-  ".xn--kcrx77d1x4a": {
-    "host": "whois.nic.xn--kcrx77d1x4a"
   },
   ".doosan": {
     "host": "whois.nic.xn--cg4bki"
