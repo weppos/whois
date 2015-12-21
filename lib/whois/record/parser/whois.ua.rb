@@ -42,19 +42,19 @@ module Whois
 
           def created_on
             if content =~ /created:\s+(.+)\n/
-              Time.parse($1)
+              Base.parse_time($1)
             end
           end
 
           def updated_on
             if content =~ /modified:\s+(.+)\n/
-              Time.parse($1)
+              Base.parse_time($1)
             end
           end
 
           def expires_on
             if content =~ /expires:\s+(.+)\n/
-              Time.parse($1)
+              Base.parse_time($1)
             end
           end
 
@@ -82,7 +82,7 @@ module Whois
                 phone:        textblock.slice(/phone:\s+(.+)\n/, 1),
                 fax:          textblock.slice(/fax:\s+(.+)\n/, 1),
                 email:        textblock.slice(/e-mail:\s+(.+)\n/, 1),
-                created_on:   Time.parse(textblock.slice(/created:\s+(.+)\n/, 1))
+                created_on:   Base.parse_time(textblock.slice(/created:\s+(.+)\n/, 1))
               )
             end
           end
@@ -112,21 +112,21 @@ module Whois
           def created_on
             if content =~ /created:\s+(.+)\n/
               time = $1.split(" ").last
-              Time.parse(time)
+              Base.parse_time(time)
             end
           end
 
           def updated_on
             if content =~ /changed:\s+(.+)\n/
               time = $1.split(" ").last
-              Time.parse(time)
+              Base.parse_time(time)
             end
           end
 
           def expires_on
             if content =~ /status:\s+(.+)\n/
               time = $1.split(" ").last
-              Time.parse(time)
+              Base.parse_time(time)
             end
           end
 
@@ -158,7 +158,7 @@ module Whois
                 phone:        textblock.slice(/phone:\s+(.+)\n/, 1),
                 fax:          textblock.slice(/fax-no:\s+(.+)\n/, 1),
                 email:        textblock.slice(/e-mail:\s+(.+)\n/, 1),
-                updated_on:   (Time.parse($1.split(" ").last) if textblock =~ /changed:\s+(.+)\n/)
+                updated_on:   (Base.parse_time($1.split(" ").last) if textblock =~ /changed:\s+(.+)\n/)
               )
             end
           end

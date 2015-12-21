@@ -58,15 +58,15 @@ module Whois
 
 
         property_supported :created_on do
-          node('registered') { |string| Time.parse(string) }
+          node('registered') { |string| parse_time(string) }
         end
 
         property_supported :updated_on do
-          node('changed') { |string| Time.parse(string) }
+          node('changed') { |string| parse_time(string) }
         end
 
         property_supported :expires_on do
-          node('expire') { |string| Time.parse(string) }
+          node('expire') { |string| parse_time(string) }
         end
 
 
@@ -135,7 +135,7 @@ module Whois
                 :country_code   => hash['country'],
                 :phone          => hash['phone'],
                 :email          => hash['e-mail'],
-                :created_on     => Time.parse(hash['created'])
+                :created_on     => parse_time(hash['created'])
             )
           end
         end

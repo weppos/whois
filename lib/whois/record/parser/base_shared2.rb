@@ -53,15 +53,15 @@ module Whois
 
 
         property_supported :created_on do
-          node("Domain Registration Date") { |value| Time.parse(value) }
+          node("Domain Registration Date") { |value| parse_time(value) }
         end
 
         property_supported :updated_on do
-          node("Domain Last Updated Date") { |value| Time.parse(value) }
+          node("Domain Last Updated Date") { |value| parse_time(value) }
         end
 
         property_supported :expires_on do
-          node("Domain Expiration Date") { |value| Time.parse(value) }
+          node("Domain Expiration Date") { |value| parse_time(value) }
         end
 
 

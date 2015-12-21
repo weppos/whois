@@ -37,13 +37,13 @@ module Whois
 
         property_supported :updated_on do
           node("Updated On") do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 
         property_supported :expires_on do
           node("Expires On") do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 

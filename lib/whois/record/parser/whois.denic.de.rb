@@ -72,7 +72,7 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          node("Changed") { |value| Time.parse(value) }
+          node("Changed") { |value| parse_time(value) }
         end
 
         property_not_supported :expires_on

@@ -33,7 +33,7 @@ module Whois
 
         property_supported :expires_on do
           node('Registry Expiry Date') do |value|
-            Time.parse(value)
+            parse_time(value)
           end
         end
 

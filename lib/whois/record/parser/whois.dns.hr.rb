@@ -58,7 +58,7 @@ module Whois
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          node("expires") { |value| Time.parse(value) }
+          node("expires") { |value| parse_time(value) }
         end
 
 

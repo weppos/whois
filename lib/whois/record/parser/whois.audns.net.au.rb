@@ -57,7 +57,7 @@ module Whois
         property_not_supported :created_on
 
         property_supported :updated_on do
-          node("Last Modified") { |value| Time.parse(value) }
+          node("Last Modified") { |value| parse_time(value) }
         end
 
         property_not_supported :expires_on

@@ -49,7 +49,7 @@ module Whois
         # TODO: custom date format with foreign month names
         # property_supported :updated_on do
         #   if content_for_scanner =~ /changed:\s+(.*)\n/
-        #     Time.parse($1.split(" ", 2).last)
+        #     parse_time($1.split(" ", 2).last)
         #   end
         # end
 

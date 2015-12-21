@@ -63,13 +63,13 @@ module Whois
 
 
         property_supported :created_on do
-          node("registration") { |value| Time.parse(value) }
+          node("registration") { |value| parse_time(value) }
         end
 
         property_not_supported :updated_on
 
         property_supported :expires_on do
-          node("renewal") { |value| Time.parse(value) }
+          node("renewal") { |value| parse_time(value) }
         end
 
 

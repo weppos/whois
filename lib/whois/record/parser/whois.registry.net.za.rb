@@ -63,7 +63,7 @@ module Whois
         property_supported :created_on do
           node("node:dates") do |array|
             array[0] =~ /Registration Date:\s*(\d{4}-\d{2}-\d{2})/
-            parse_date($1)
+            parse_time($1)
           end
         end
 
@@ -72,7 +72,7 @@ module Whois
         property_supported :expires_on do
           node("node:dates") do |array|
             array[1] =~ /Renewal Date:\s*(\d{4}-\d{2}-\d{2})/
-            parse_date($1)
+            parse_time($1)
           end
         end
 
@@ -132,10 +132,6 @@ module Whois
               fax:          fax,
               email:        email
           )
-        end
-
-        def parse_date(date_string)
-          Time.parse(date_string) if date_string
         end
 
       end

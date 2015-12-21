@@ -57,7 +57,7 @@ module Whois
         property_supported :updated_on do
           if content_for_scanner =~ /changed:\s+(.+)\n/
             t = content_for_scanner.scan(/changed:\s+(?:.+?) (\d+) \(.+\)\n/).flatten.last
-            Time.parse(t)
+            parse_time(t)
           end
         end
 

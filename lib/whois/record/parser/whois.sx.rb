@@ -106,11 +106,6 @@ module Whois
 
       private
 
-        def parse_time(value)
-          # Hack to remove usec. Do you know a better way?
-          Time.utc(*Time.parse(value).to_a)
-        end
-
         def build_contact(element, type)
           node("#{element} ID") do |id|
             Record::Contact.new(

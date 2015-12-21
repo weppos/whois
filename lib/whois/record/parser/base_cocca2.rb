@@ -61,7 +61,7 @@ module Whois
         end
 
         property_supported :updated_on do
-          node("Updated Date") { |value| parse_time(value) unless value.empty? }
+          node("Updated Date") { |value| parse_time(value) }
         end
 
         property_supported :expires_on do
@@ -86,15 +86,7 @@ module Whois
           end
         end
 
-
-        private
-
-        def parse_time(value)
-          Time.parse(value).change(usec: 0)
-        end
-
       end
-
     end
   end
 end

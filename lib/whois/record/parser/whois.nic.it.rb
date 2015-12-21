@@ -80,15 +80,15 @@ module Whois
 
 
         property_supported :created_on do
-          node("Created") { |str| Time.parse(str) }
+          node("Created") { |str| parse_time(str) }
         end
 
         property_supported :updated_on do
-          node("Last Update") { |str| Time.parse(str) }
+          node("Last Update") { |str| parse_time(str) }
         end
 
         property_supported :expires_on do
-          node("Expire Date") { |str| Time.parse(str) }
+          node("Expire Date") { |str| parse_time(str) }
         end
 
 
@@ -148,8 +148,8 @@ module Whois
               :zip          => address[2],
               :state        => address[3],
               :country_code => address[4],
-              :created_on   => str["Created"] ? Time.parse(str["Created"]) : nil,
-              :updated_on   => str["Last Update"] ? Time.parse(str["Last Update"]) : nil
+              :created_on   => str["Created"] ? parse_time(str["Created"]) : nil,
+              :updated_on   => str["Last Update"] ? parse_time(str["Last Update"]) : nil
             )
           end
         end

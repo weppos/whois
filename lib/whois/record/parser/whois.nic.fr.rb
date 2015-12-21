@@ -59,14 +59,14 @@ module Whois
         property_supported :created_on do
           if content_for_scanner =~ /created:\s+(.+)\n/
             d, m, y = $1.split("/")
-            Time.parse("#{y}-#{m}-#{d}")
+            parse_time("#{y}-#{m}-#{d}")
           end
         end
 
         property_supported :updated_on do
           if content_for_scanner =~ /last-update:\s+(.+)\n/
             d, m, y = $1.split("/")
-            Time.parse("#{y}-#{m}-#{d}")
+            parse_time("#{y}-#{m}-#{d}")
           end
         end
 
