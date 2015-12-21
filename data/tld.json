@@ -1965,13 +1965,16 @@
   ".temasek": {
     "host": "whois.afilias-srs.net"
   },
-  ".xn--b4w605ferd": {
-    "host": "whois.afilias-srs.net"
-  },
   ".travelersinsurance": {
     "host": "whois.afilias-srs.net"
   },
   ".bnl": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".storage": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--b4w605ferd": {
     "host": "whois.afilias-srs.net"
   },
   ".xn--6frz82g": {
@@ -2024,6 +2027,9 @@
   },
   ".autos": {
     "host": "whois.afilias.net"
+  },
+  ".xn--jlq61u9w7b": {
+    "host": "whois.afilias-srs.net"
   },
   ".band": {
     "host": "whois.rightside.co"
@@ -3271,6 +3277,18 @@
     "adapter": "none"
   },
   ".wanggou": {
+    "adapter": "none"
+  },
+  ".sas": {
+    "adapter": "none"
+  },
+  ".lincoln": {
+    "adapter": "none"
+  },
+  ".jmp": {
+    "adapter": "none"
+  },
+  ".ford": {
     "adapter": "none"
   },
   ".kpn": {
