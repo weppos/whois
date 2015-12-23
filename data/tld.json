@@ -3282,6 +3282,9 @@
   ".sas": {
     "adapter": "none"
   },
+  ".analytics": {
+    "adapter": "none"
+  },
   ".lincoln": {
     "adapter": "none"
   },
