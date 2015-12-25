@@ -1,7 +1,0 @@
-% This is the ISNIC Whois server.
-%
-% Rights restricted by copyright.
-% See http://www.isnic.is/copyright.php
-
-%
-% No entries found for query "u34jedzcq.is".

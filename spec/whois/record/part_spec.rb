@@ -2,11 +2,6 @@ require 'spec_helper'
 
 describe Whois::Record::Part do
 
-  it "inherits from SuperStruct" do
-    expect(described_class.ancestors).to include(SuperStruct)
-  end
-
-
   describe "#initialize" do
     it "accepts an empty value" do
       expect {
@@ -23,7 +18,7 @@ describe Whois::Record::Part do
     end
 
     it "initializes a new instance from given hash" do
-      instance = described_class.new(:body => "This is a WHOIS record.", :host => "whois.example.test")
+      instance = described_class.new(body: "This is a WHOIS record.", host: "whois.example.test")
 
       expect(instance.body).to eq("This is a WHOIS record.")
       expect(instance.host).to eq("whois.example.test")

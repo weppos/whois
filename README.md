@@ -26,7 +26,7 @@ This library was extracted from [RoboWhois](https://www.robowhois.com/) and [Rob
 
 ## Requirements
 
-* Ruby >= 1.9.2
+* Ruby >= 2.0.0
 
 For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 

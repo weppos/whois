@@ -1,9 +1,0 @@
-#nameservers
-  %s %CLASS{array}
-  %s %SIZE{2}
-  %s[0] %CLASS{nameserver}
-  %s[0].name == "ns0.netbenefit.co.uk"
-  %s[0].ipv4 == "212.53.64.30"
-  %s[1] %CLASS{nameserver}
-  %s[1].name == "ns1.netbenefit.co.uk"
-  %s[1].ipv4 == "212.53.77.30"

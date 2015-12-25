@@ -1,9 +1,0 @@
-#status
-  %s == :invalid
-
-
-#valid?
-  %s == false
-
-#invalid?
-  %s == true

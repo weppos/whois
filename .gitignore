@@ -1,5 +1,3 @@
-utils/whois-utf8.rb
-
 # Bundler
 .bundle
 pkg/*
@@ -11,3 +9,5 @@ Gemfile.lock
 # YARD
 .yardoc
 yardoc/
+
+utils/whois-utf8.rb

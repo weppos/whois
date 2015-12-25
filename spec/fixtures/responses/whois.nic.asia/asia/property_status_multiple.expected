@@ -1,8 +1,0 @@
-#status
-  %s == ["CLIENT DELETE PROHIBITED", "CLIENT TRANSFER PROHIBITED"]
-
-#available?
-  %s == false
-
-#registered?
-  %s == true

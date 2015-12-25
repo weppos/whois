@@ -1,6 +1,0 @@
-#registrar
-  %s %CLASS{registrar}
-  %s.id           == "NETNAMES"
-  %s.name         == "NetNames Limited"
-  %s.name         == "NetNames Limited"
-  %s.url          == "http://www.netnames.co.uk"

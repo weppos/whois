@@ -1,9 +1,0 @@
-#nameservers
-  %s %CLASS{array}
-  %s %SIZE{2}
-  %s[0] %CLASS{nameserver}
-  %s[0].name == "dns1.pentex.pl"
-  %s[0].ipv4 == "188.165.232.46"
-  %s[1] %CLASS{nameserver}
-  %s[1].name == "dns2.pentex.pl"
-  %s[1].ipv4 == "83.142.46.21"

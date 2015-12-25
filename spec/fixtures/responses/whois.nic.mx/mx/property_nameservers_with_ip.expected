@@ -1,9 +1,0 @@
-#nameservers
-  %s %CLASS{array}
-  %s %SIZE{2}
-  %s[0] %CLASS{nameserver}
-  %s[0].name == "dns1.mpsnet.net.mx"
-  %s[0].ipv4 == "200.4.48.15"
-  %s[1] %CLASS{nameserver}
-  %s[1].name == "dns2.mpsnet.net.mx"
-  %s[1].ipv4 == "200.4.48.16"

@@ -1,8 +1,0 @@
-#status
-  %s == :suspended
-
-#available?
-  %s == false
-
-#registered?
-  %s == true

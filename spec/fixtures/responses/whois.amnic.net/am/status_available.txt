@@ -1,6 +1,0 @@
-%
-%AM TLD whois server #1
-%
-
-No match
-

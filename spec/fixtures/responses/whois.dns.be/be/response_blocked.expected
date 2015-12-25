@@ -1,5 +1,0 @@
-#response_throttled?
-  %s == true
-
-#response_blocked?
-  %s == true
