@@ -13,7 +13,7 @@ module Whois
   module Version
     MAJOR = 3
     MINOR = 6
-    PATCH = 4
+    PATCH = 5
     BUILD = nil
 
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join(".")
