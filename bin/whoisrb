@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
 $:.unshift(File.expand_path("../../lib", __FILE__))
 
@@ -8,12 +8,12 @@ require 'whois'
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner     = "Whois: an intelligent pure Ruby Whois client"
-  opts.define_head  "Usage: ruby-whois [options] object"
+  opts.banner     = "Whois: an intelligent pure Ruby WHOIS client"
+  opts.define_head  "Usage: whoisrb [options] object"
   opts.separator    ""
   opts.separator    "Examples:"
-  opts.separator    " ruby-whois ruby-lang.com"
-  opts.separator    " ruby-whois 213.149.247.64"
+  opts.separator    " whoisrb ruby-lang.com"
+  opts.separator    " whoisrb 213.149.247.64"
   opts.separator    ""
   opts.separator    "Options:"
 
@@ -35,7 +35,7 @@ OptionParser.new do |opts|
   end
 
   opts.on_tail("--version", "output version information and exit") do
-    puts "ruby-whois #{Whois::VERSION}"
+    puts "whoisrb #{Whois::VERSION}"
     exit
   end
 

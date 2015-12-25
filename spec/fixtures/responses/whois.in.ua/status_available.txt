@@ -1,4 +1,0 @@
-% In.UA whois server. (whois.in.ua)
-% All questions regarding this service please send to help@whois.in.ua
-% To search for domains and In.UA maintainers using the web, visit http://whois.in.ua
-% No records found for object U34JEDZCQ.IN.UA

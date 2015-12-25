@@ -1,9 +1,0 @@
-#nameservers
-  %s %CLASS{array}
-  %s %SIZE{2}
-  %s[0] %CLASS{nameserver}
-  %s[0].name == "prmns.lg.co.kr"
-  %s[0].ipv4 == "165.243.5.15"
-  %s[1] %CLASS{nameserver}
-  %s[1].name == "secns.lg.co.kr"
-  %s[1].ipv4 == "203.247.133.133"

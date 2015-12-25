@@ -1,8 +1,0 @@
-#status
-  %s == :available
-
-#available?
-  %s == true
-
-#registered?
-  %s == false

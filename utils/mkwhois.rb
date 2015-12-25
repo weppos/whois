@@ -13,9 +13,10 @@ d = ARGV.shift || raise("Missing domain")
 n = ARGV.shift || raise("Missing file name")
 
 r = Whois.lookup(d)
+t = r.server.allocation[1..-1]
 
 r.parts.each do |part|
-  target = File.expand_path("../../spec/fixtures/responses/#{part.host}/#{n}.txt", __FILE__)
+  target = File.expand_path("../../spec/fixtures/responses/#{part.host}/#{t}/#{n}.txt", __FILE__)
   FileUtils.mkdir_p(File.dirname(target))
   File.open(target, "w+") { |f| f.write(part.body) }
   puts "#{target}"

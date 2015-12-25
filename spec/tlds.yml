@@ -417,9 +417,7 @@ ci:
     status_available: u34jedzcq.ci
     status_registered: google.ci
 ck:
-    _server: whois.nic.ck
-    status_available: u34jedzcq.co.ck
-    status_registered: google.co.ck
+    _adapter: none
 cl:
     _server: whois.nic.cl
     status_available: u34jedzcq.cl

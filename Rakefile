@@ -22,7 +22,7 @@ spec = Gem::Specification.new do |s|
   s.license           = "MIT"
 
   s.files             = %w( LICENSE.txt .yardopts ) +
-                        Dir.glob("*.{markdown,gemspec}") +
+                        Dir.glob("*.{md,gemspec}") +
                         Dir.glob("{bin,data,lib}/**/*")
   s.executables       = %w( whoisrb )
   s.require_paths     = %w( lib )

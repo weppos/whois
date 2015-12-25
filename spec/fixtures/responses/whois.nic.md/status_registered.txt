@@ -1,7 +1,0 @@
-Domain name: google.md
-Registrant: Google Inc.
-Created: 2006-05-02
-Expiration date: 2014-05-02
-Name server: ns1.google.com  216.239.32.10
-Name server: ns2.google.com  216.239.34.10
-DNS update:  

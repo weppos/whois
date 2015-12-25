@@ -1,6 +1,0 @@
-#status
-  %s == :incomplete
-
-
-#response_incomplete?
-  %s == true

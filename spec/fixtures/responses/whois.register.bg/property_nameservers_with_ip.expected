@@ -1,9 +1,0 @@
-#nameservers
-  %s %CLASS{array}
-  %s %SIZE{2}
-  %s[0] %CLASS{nameserver}
-  %s[0].name == "chicken.orbitel.bg"
-  %s[0].ipv4 == "195.24.32.5"
-  %s[1] %CLASS{nameserver}
-  %s[1].name == "ns.orbitel.bg"
-  %s[1].ipv4 == "195.24.32.2"

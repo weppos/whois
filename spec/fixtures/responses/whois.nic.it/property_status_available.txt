@@ -1,2 +1,0 @@
-Domain:             google.it
-Status:             AVAILABLE

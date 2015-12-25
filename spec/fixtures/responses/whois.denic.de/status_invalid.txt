@@ -1,4 +1,0 @@
-Domain: googlededewdedewdewde.foo.de
-Status: invalid
-
-% DB time is 2010-09-22T00:37:18+02:00
