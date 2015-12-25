@@ -172,7 +172,7 @@
     "format": "domain=%s"
   },
   ".pro": {
-    "host": "whois.registrypro.pro"
+    "host": "whois.dotproregistry.net"
   },
   ".tel": {
     "host": "whois.nic.tel"

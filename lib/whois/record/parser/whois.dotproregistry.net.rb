@@ -14,12 +14,12 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.registrypro.pro server.
+      # Parser for the whois.dotproregistry.net server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisRegistryproPro < BaseAfilias
+      class WhoisDotproregistryNet < BaseAfilias
 
         property_supported :status do
           if reserved?
