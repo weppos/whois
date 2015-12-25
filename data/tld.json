@@ -763,7 +763,7 @@
   },
   ".np": {
     "adapter": "web",
-    "url": "http://register.mos.com.np/userSearchInc.asp"
+    "url": "http://register.mos.com.np/np-whois-lookup"
   },
   ".nr": {
     "adapter": "web",
@@ -829,7 +829,7 @@
   },
   ".py": {
     "adapter": "web",
-    "url": "http://www.nic.py/consultas.html"
+    "url": "http://www.nic.py/consulta-datos.php"
   },
   ".qa": {
     "host": "whois.registry.qa"
@@ -906,7 +906,7 @@
   },
   ".sv": {
     "adapter": "web",
-    "url": "http://www.uca.edu.sv/dns/"
+    "url": "http://www.svnet.org.sv/"
   },
   ".sx": {
     "host": "whois.sx"
@@ -1043,7 +1043,7 @@
   },
   ".vi": {
     "adapter": "web",
-    "url": "http://www.nic.vi/whoisform.htm"
+    "url": "https://secure.nic.vi/whois-lookup/"
   },
   ".vn": {
     "adapter": "web",
@@ -1070,14 +1070,23 @@
   ".ac.za": {
     "host": "whois.ac.za"
   },
+  ".alt.za": {
+    "host": "whois.alt.za"
+  },
   ".co.za": {
     "host": "whois.registry.net.za"
   },
   ".gov.za": {
     "host": "whois.gov.za"
   },
+  ".net.za": {
+    "host": "net-whois.registry.net.za"
+  },
   ".org.za": {
     "host": "org-whois.registry.net.za"
+  },
+  ".web.za": {
+    "host": "web-whois.registry.net.za"
   },
   ".za": {
     "adapter": "none"
@@ -1087,6 +1096,139 @@
   },
   ".zw": {
     "adapter": "none"
+  },
+
+
+  ".xn--3e0b707e": {
+    "host": "whois.kr"
+  },
+  ".xn--45brj9c": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--80ao21a": {
+    "host": "whois.nic.kz"
+  },
+  ".xn--90a3ac": {
+    "host": "whois.rnids.rs"
+  },
+  ".xn--90ais": {
+    "host": "whois.cctld.by"
+  },
+  ".xn--clchc0ea0b2g2a9gcd": {
+    "host": "whois.sgnic.sg"
+  },
+  ".xn--d1alf": {
+    "host": "whois.marnet.mk"
+  },
+  ".xn--fiqs8s": {
+    "host": "cwhois.cnnic.cn"
+  },
+  ".xn--fiqz9s": {
+    "host": "cwhois.cnnic.cn"
+  },
+  ".xn--fpcrj9c3d": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--fzc2c9e2c": {
+    "host": "whois.nic.lk"
+  },
+  ".xn--gecrj9c": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--h2brj9c": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--j1amh": {
+    "host": "whois.dotukr.com"
+  },
+  ".xn--j6w193g": {
+    "host": "whois.hkirc.hk"
+  },
+  ".xn--kprw13d": {
+    "host": "whois.twnic.net.tw"
+  },
+  ".xn--kpry57d": {
+    "host": "whois.twnic.net.tw"
+  },
+  ".xn--l1acc": {
+    "adapter": "none"
+  },
+  ".xn--lgbbat1ad8j": {
+    "host": "whois.nic.dz"
+  },
+  ".xn--mgb9awbf": {
+    "host": "whois.registry.om"
+  },
+  ".xn--mgba3a4f16a": {
+    "host": "whois.nic.ir"
+  },
+  ".xn--mgbaam7a8h": {
+    "host": "whois.aeda.net.ae"
+  },
+  ".xn--mgbayh7gpa": {
+    "adapter": "web",
+    "url": "http://idn.jo/whois_a.aspx"
+  },
+  ".xn--mgbbh1a71e": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--mgbc0a9azcg": {
+    "adapter": "none"
+  },
+  ".xn--mgberp4a5d4ar": {
+    "host": "whois.nic.net.sa"
+  },
+  ".xn--mgbpl2fh": {
+    "adapter": "none"
+  },
+  ".xn--mgbtx2b": {
+    "host": "whois.cmc.iq"
+  },
+  ".xn--mgbx4cd0ab": {
+    "host": "whois.mynic.my"
+  },
+  ".xn--node": {
+    "host": "whois.itdc.ge"
+  },
+  ".xn--o3cw4h": {
+    "host": "whois.thnic.co.th"
+  },
+  ".xn--ogbpf8fl": {
+    "host": "whois.tld.sy"
+  },
+  ".xn--p1ai": {
+    "host": "whois.tcinet.ru"
+  },
+  ".xn--pgbs0dh": {
+    "adapter": "none"
+  },
+  ".xn--qxam": {
+    "adapter": "web",
+    "url": "https://grweb.ics.forth.gr/public/whois.jsp?lang=en"
+  },
+  ".xn--s9brj9c": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--wgbh1c": {
+    "host": "whois.dotmasr.eg"
+  },
+  ".xn--wgbl6a": {
+    "host": "whois.registry.qa"
+  },
+  ".xn--xkc2al3hye2a": {
+    "host": "whois.nic.lk"
+  },
+  ".xn--xkc2dl3a5ee0h": {
+    "host": "whois.inregistry.net"
+  },
+  ".xn--y9a3aq": {
+    "host": "whois.amnic.net"
+  },
+  ".xn--yfro4i67o": {
+    "host": "whois.sgnic.sg"
+  },
+  ".xn--ygbi2ammx": {
+    "host": "whois.pnina.ps"
   },
 
 
@@ -2671,18 +2813,6 @@
   ".xn--xhq521b": {
     "host": "whois.ngtld.cn"
   },
-  ".xn--fiqs8s": {
-    "host": "cwhois.cnnic.cn"
-  },
-  ".xn--fiqz9s": {
-    "host": "cwhois.cnnic.cn"
-  },
-  ".xn--ses554g": {
-    "host": "whois.registry.knet.cn"
-  },
-  ".xn--fiq64b": {
-    "host": "whois.gtld.knet.cn"
-  },
   ".wang": {
     "host": "whois.gtld.knet.cn"
   },
@@ -3274,9 +3404,6 @@
   ".xn--efvy88h": {
     "host": "whois.nic.xn--efvy88h"
   },
-  ".xn--11b4c3d": {
-    "host": "whois.nic.xn--11b4c3d"
-  },
   ".xn--3pxu8k": {
     "host": "whois.nic.xn--3pxu8k"
   },
@@ -3625,6 +3752,14 @@
   ".bharti": {
     "adapter": "none"
   },
+  ".voting": {
+    "host": "whois.voting.tld-box.at"
+  },
+  ".samsung": {
+    "host": "whois.nic.xn--cg4bki"
+  },
+
+
   ".xn--mgba3a3ejt": {
     "adapter": "none"
   },
@@ -3646,23 +3781,8 @@
   ".xn--imr513n": {
     "adapter": "none"
   },
-  ".xn--mgbpl2fh": {
-    "adapter": "none"
-  },
   ".xn--nyqy26a": {
     "adapter": "none"
-  },
-  ".xn--qxam": {
-    "adapter": "none"
-  },
-  ".voting": {
-    "host": "whois.voting.tld-box.at"
-  },
-  ".xn--mgbtx2b": {
-    "host": "whois.cmc.iq"
-  },
-  ".xn--y9a3aq": {
-    "host": "whois.amnic.net"
   },
   ".xn--9et52u": {
     "host": "whois.nic.wang"
@@ -3679,14 +3799,8 @@
   ".xn--p1acf": {
     "host": "whois.nic.xn--p1acf"
   },
-  ".samsung": {
-    "host": "whois.nic.xn--cg4bki"
-  },
   ".xn--hxt814e": {
     "host": "whois.nic.xn--hxt814e"
-  },
-  ".xn--90ais": {
-    "host": "whois.cctld.by"
   },
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
@@ -3694,109 +3808,13 @@
   ".doosan": {
     "host": "whois.nic.xn--cg4bki"
   },
-
-
-  ".xn--3e0b707e": {
-    "host": "whois.kr"
-  },
-  ".xn--45brj9c": {
-    "adapter": "none"
-  },
-  ".xn--80ao21a": {
-    "host": "whois.nic.kz"
-  },
-  ".xn--90a3ac": {
-    "host": "whois.rnids.rs"
-  },
   ".xn--cg4bki": {
     "host": "whois.kr"
   },
-  ".xn--clchc0ea0b2g2a9gcd": {
-    "host": "whois.sgnic.sg"
+  ".xn--fiq64b": {
+    "host": "whois.gtld.knet.cn"
   },
-  ".xn--fpcrj9c3d": {
-    "adapter": "none"
-  },
-  ".xn--fzc2c9e2c": {
-    "host": "whois.nic.lk"
-  },
-  ".xn--gecrj9c": {
-    "adapter": "none"
-  },
-  ".xn--h2brj9c": {
-    "adapter": "none"
-  },
-  ".xn--j1amh": {
-    "host": "whois.dotukr.com"
-  },
-  ".xn--j6w193g": {
-    "host": "whois.hkirc.hk"
-  },
-  ".xn--kprw13d": {
-    "host": "whois.twnic.net.tw"
-  },
-  ".xn--kpry57d": {
-    "host": "whois.twnic.net.tw"
-  },
-  ".xn--lgbbat1ad8j": {
-    "host": "whois.nic.dz"
-  },
-  ".xn--mgb9awbf": {
-    "host": "whois.registry.om"
-  },
-  ".xn--mgba3a4f16a": {
-    "host": "whois.nic.ir"
-  },
-  ".xn--mgbaam7a8h": {
-    "host": "whois.aeda.net.ae"
-  },
-  ".xn--mgbayh7gpa": {
-    "adapter": "web",
-    "url": "http://idn.jo/whois_a.aspx"
-  },
-  ".xn--mgbbh1a71e": {
-    "adapter": "none"
-  },
-  ".xn--mgbc0a9azcg": {
-    "adapter": "none"
-  },
-  ".xn--mgberp4a5d4ar": {
-    "host": "whois.nic.net.sa"
-  },
-  ".xn--mgbx4cd0ab": {
-    "host": "whois.domainregistry.my"
-  },
-  ".xn--o3cw4h": {
-    "host": "whois.thnic.co.th"
-  },
-  ".xn--ogbpf8fl": {
-    "adapter": "none"
-  },
-  ".xn--p1ai": {
-    "host": "whois.tcinet.ru"
-  },
-  ".xn--pgbs0dh": {
-    "adapter": "none"
-  },
-  ".xn--s9brj9c": {
-    "adapter": "none"
-  },
-  ".xn--wgbh1c": {
-    "host": "whois.dotmasr.eg"
-  },
-  ".xn--wgbl6a": {
-    "host": "whois.registry.qa"
-  },
-  ".xn--xkc2al3hye2a": {
-    "host": "whois.nic.lk"
-  },
-  ".xn--xkc2dl3a5ee0h": {
-    "adapter": "none"
-  },
-  ".xn--yfro4i67o": {
-    "host": "whois.sgnic.sg"
-  },
-  ".xn--ygbi2ammx": {
-    "host": "whois.pnina.ps"
+  ".xn--ses554g": {
+    "host": "whois.registry.knet.cn"
   }
 }
