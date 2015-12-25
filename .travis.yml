@@ -8,6 +8,8 @@ rvm:
 - jruby-19mode
 env:
 - COVERALL=1
+cache:
+- bundler
 
 notifications:
   recipients:
