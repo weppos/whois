@@ -317,8 +317,7 @@
     "host": "whois.dot.cf"
   },
   ".cg": {
-    "adapter": "web",
-    "url": "http://www.nic.cg/cgi-bin/whois.pl"
+    "adapter": "none"
   },
   ".ch": {
     "host": "whois.nic.ch"
@@ -327,7 +326,7 @@
     "host": "whois.nic.ci"
   },
   ".ck": {
-    "host": "whois.nic.ck"
+    "adapter": "none"
   },
   ".cl": {
     "host": "whois.nic.cl"
@@ -505,7 +504,8 @@
     "adapter": "none"
   },
   ".gp": {
-    "adapter": "none"
+    "adapter": "web",
+    "url": "https://www.dom-enic.com/whois.html"
   },
   ".gq": {
     "host": "whois.dominio.gq"
@@ -519,14 +519,15 @@
   },
   ".gt": {
     "adapter": "web",
-    "url": "http://www.gt/whois.html"
+    "url": "http://www.gt/"
   },
   ".gu": {
     "adapter": "web",
     "url": "http://gadao.gov.gu/domainsearch.htm"
   },
   ".gw": {
-    "adapter": "none"
+    "adapter": "web",
+    "url": "http://nic.gw/en/whois/"
   },
   ".gy": {
     "host": "whois.registry.gy"

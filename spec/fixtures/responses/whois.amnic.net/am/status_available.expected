@@ -9,7 +9,7 @@
 
 
 #created_on
-  %s %ERROR{AttributeNotSupported}
+  %s == nil
 
 #updated_on
   %s == nil
