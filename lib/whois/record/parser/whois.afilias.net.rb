@@ -14,8 +14,8 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.afilias.info server.
-      class WhoisAfiliasInfo < BaseAfilias2
+      # Parser for the whois.afilias.net server.
+      class WhoisAfiliasNet < BaseAfilias2
 
         self.scanner = Scanners::BaseAfilias, {
             pattern_disclaimer: /^Access to/
