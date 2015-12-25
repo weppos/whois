@@ -1,14 +1,13 @@
 # Changelog
 
-<<<<<<< HEAD:CHANGELOG.markdown
+
 #### whois-only
 
 - CHANGED: Removed support for Ruby < 2.0
 
 - REMOVED: Deleted deprecated Whois.query method.
 
-=======
->>>>>>> master:CHANGELOG.md
+
 #### master
 
 - SERVER: Added .PARS, .XN--MGBT3DHD, .REDUMBRELLA, .TRV, .TUSHU, .WATCHES, .XN--ECKVDTC9D, .KFH, .KPN, .SHELL, .TRAVELERSINSURANCE, .WANGGOU, .XN--KPU716F, .XN--NGBE9E0A, .XN--PBT977C, .FORD, .JMP, .LINCOLN, .SAS, .STORAGE, .XN--JLQ61U9W7B, .ANALYTICS, .MOBILITY, .XN--MGBB9FBPOB, .CONTACT, .PID, .STAR, .WEBER, .BOSCH, .DEALER, .FOX, .LAMER, .ORIGINS, .REXROTH, .SAFETY, .SCHAEFFLER, .STATEFARM
