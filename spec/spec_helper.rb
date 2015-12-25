@@ -1,10 +1,9 @@
-require 'rspec'
-
 if ENV['COVERALL']
   require 'coveralls'
   Coveralls.wear!
 end
 
+require 'rspec'
 require 'whois'
 
 unless defined?(SPEC_ROOT)
