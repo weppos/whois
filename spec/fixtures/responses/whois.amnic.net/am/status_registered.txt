@@ -1,0 +1,44 @@
+%
+%AM TLD whois server #1
+%
+
+   Domain name: google.am
+   Registrar:   abcdomain
+   Status:      active
+
+   Registrant:
+      Google, Inc.
+      1600 Amphitheatre Parkway
+      Mountain View, CA,  94043
+      US
+
+   Administrative contact:
+      Google, Inc.
+      Google, Inc.
+      1600 Amphitheatre Parkway
+      Mountain View, CA, 94043
+      US
+      ccops@markmonitor.com
+      1 6502530000
+      1 6506188571
+
+   Technical contact:
+      DNS Admin
+      Google, Inc.
+      1600 Amphitheatre Parkway
+      Mountain View, CA, 94043
+      US
+      ccops@markmonitor.com
+      1 6502530000
+      1 6506188571
+
+   DNS servers:
+      ns1.google.com
+      ns2.google.com
+      ns3.google.com
+      ns4.google.com
+
+   Registered:    1999-06-05
+   Last modified: 2014-02-13
+   Expires:       2014-04-15
+
