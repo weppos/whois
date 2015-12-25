@@ -1776,6 +1776,9 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".star": {
+    "host": "whois.afilias-srs.net"
+  },
   ".trv": {
     "host": "whois.afilias-srs.net"
   },
@@ -2744,6 +2747,15 @@
   },
   ".cityeats": {
     "host": "whois.nic.cityeats"
+  },
+  ".contact": {
+    "host": "whois.nic.contact"
+  },
+  ".pid": {
+    "host": "whois.nic.pid"
+  },
+  ".weber": {
+    "host": "whois.nic.weber"
   },
   ".trading": {
     "host": "whois.nic.trading"
