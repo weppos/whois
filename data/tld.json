@@ -1974,7 +1974,19 @@
   ".bnl": {
     "host": "whois.afilias-srs.net"
   },
+  ".origin": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".lamer": {
+    "host": "whois.afilias-srs.net"
+  },
   ".storage": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".schaeffler": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--jlq61u9w7b": {
     "host": "whois.afilias-srs.net"
   },
   ".xn--b4w605ferd": {
@@ -2030,9 +2042,6 @@
   },
   ".autos": {
     "host": "whois.afilias.net"
-  },
-  ".xn--jlq61u9w7b": {
-    "host": "whois.afilias-srs.net"
   },
   ".band": {
     "host": "whois.rightside.co"
@@ -2727,6 +2736,9 @@
   ".brother": {
     "host": "whois.nic.brother"
   },
+  ".rexroth": {
+    "host": "whois.nic.rexroth"
+  },
   ".erni": {
     "host": "whois.nic.erni"
   },
@@ -2738,6 +2750,9 @@
   },
   ".markets": {
     "host": "whois.nic.markets"
+  },
+  ".bosch": {
+    "host": "whois.nic.bosch"
   },
   ".cfd": {
     "host": "whois.nic.cfd"
@@ -3286,6 +3301,18 @@
     "host": "whois.nic.xn--kcrx77d1x4a"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".fox": {
+    "adapter": "none"
+  },
+  ".safety": {
+    "adapter": "none"
+  },
+  ".statefarm": {
+    "adapter": "none"
+  },
+  ".dealer": {
     "adapter": "none"
   },
   ".mobily": {
