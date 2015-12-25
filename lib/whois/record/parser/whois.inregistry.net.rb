@@ -14,8 +14,8 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.registry.in server.
-      class WhoisRegistryIn < BaseAfilias
+      # Parser for the whois.inregistry.net server.
+      class WhoisInregistryNet < BaseAfilias
 
         self.scanner = Scanners::BaseAfilias, {
             # Disclaimer starts with "Access to" in .in servers
