@@ -14,7 +14,7 @@ module Whois
   class Record
     class Parser
 
-      # Parser for the whois.nic.am server.
+      # Parser for the whois.amnic.net server.
       #
       # @note This parser is just a stub and provides only a few basic methods
       #   to check for domain availability and get domain status.
@@ -23,7 +23,7 @@ module Whois
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
       #
-      class WhoisNicAm < Base
+      class WhoisAmnicNet < Base
 
         property_supported :status do
           if content_for_scanner =~ /\s+Status:\s+(.+)\n/
