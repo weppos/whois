@@ -1,11 +1,6 @@
 require 'rspec'
 require 'whois'
 
-if ENV['COVERALL']
-  require 'coveralls'
-  Coveralls.wear!
-end
-
 unless defined?(SPEC_ROOT)
   SPEC_ROOT = File.expand_path("../", __FILE__)
 end
