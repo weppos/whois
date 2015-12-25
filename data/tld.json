@@ -11,10 +11,10 @@
   ".cn.com": {
     "host": "whois.centralnic.com"
   },
-  ".co.com": {
-    "host": "whois.centralnic.net"
-  },
   ".com.de": {
+    "host": "whois.centralnic.com"
+  },
+  ".com.se": {
     "host": "whois.centralnic.com"
   },
   ".de.com": {
@@ -29,10 +29,10 @@
   ".gb.net": {
     "host": "whois.centralnic.com"
   },
-  ".gr.com": {
+  ".hu.com": {
     "host": "whois.centralnic.com"
   },
-  ".hu.com": {
+  ".hu.net": {
     "host": "whois.centralnic.com"
   },
   ".jp.net": {
@@ -71,14 +71,29 @@
   ".us.com": {
     "host": "whois.centralnic.com"
   },
-  ".us.org": {
+  ".uy.com": {
     "host": "whois.centralnic.com"
   },
-  ".uy.com": {
+  ".za.bz": {
     "host": "whois.centralnic.com"
   },
   ".za.com": {
     "host": "whois.centralnic.com"
+  },
+  ".africa.com": {
+    "host": "whois.centralnic.com"
+  },
+  ".gr.com": {
+    "host": "whois.centralnic.com"
+  },
+  "in.net": {
+    "host": "whois.centralnic.com"
+  },
+  ".us.org": {
+    "host": "whois.centralnic.com"
+  },
+  ".co.com": {
+    "host": "whois.centralnic.net"
   },
   ".com": {
     "host": "whois.verisign-grs.com",

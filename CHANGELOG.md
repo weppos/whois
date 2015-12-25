@@ -6,6 +6,8 @@
 
 - SERVER: Updated .SALON, .FIRESTONE
 
+- SERVER: Sync Centralnic definitions. Added .COM.SE, .HU.COM, .HU.NET, .UY.COM, .ZA.BZ, .AFRICA.COM, .IN.NET
+
 - CHANGED: Updated whois.tld.ee to the new response format (GH-489, GH-490). [Thanks @tanelj]
 
 
