@@ -75,6 +75,14 @@ module Whois
           end
         end
 
+        # Checks whether the response has been throttled.
+        #
+        # @return [Boolean]
+        #
+        def response_throttled?
+          !!(content_for_scanner =~ /# Too many connections[.]/)
+        end
+
       end
 
     end
