@@ -563,7 +563,7 @@
     "host": "whois.nic.im"
   },
   ".in": {
-    "host": "whois.inregistry.net"
+    "host": "whois.inregistry.nea"
   },
   ".io": {
     "host": "whois.nic.io"
@@ -731,7 +731,7 @@
     "host": "whois.nic.mx"
   },
   ".my": {
-    "host": "whois.domainregistry.my"
+    "host": "whois.mynic.my"
   },
   ".mz": {
     "host": "whois.nic.mz"
