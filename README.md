@@ -33,7 +33,7 @@ For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
 ## Installation
 
-The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/). [Learn more](http://whoisrb.org/manual/installing/).
+The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) — [Learn more](http://whoisrb.org/manual/installing/)
 
     $ gem install whois
 
@@ -152,7 +152,7 @@ w.lookup("google.com")
 
 ## Credits
 
-<tt>Whois</tt> was created and is maintained by [Simone Carletti](http://simonecarletti.com/). Many improvements and bugfixes were contributed by the [open source community](https://github.com/weppos/whois/graphs/contributors).
+<tt>Whois</tt> was created and is maintained by [Simone Carletti](https://simonecarletti.com/). Many improvements and bugfixes were contributed by the [open source community](https://github.com/weppos/whois/graphs/contributors).
 
 
 ## Contributing
