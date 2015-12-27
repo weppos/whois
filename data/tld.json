@@ -835,7 +835,7 @@
     "host": "whois.registry.qa"
   },
   ".re": {
-    "host": "whois.nic.fr"
+    "host": "whois.nic.re"
   },
   ".ro": {
     "host": "whois.rotld.ro"
