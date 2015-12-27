@@ -3,6 +3,8 @@
 
 #### whois-only
 
+- SERVER: Updated .PM
+
 - CHANGED: Removed support for Ruby < 2.0
 
 - REMOVED: Deleted deprecated Whois.query method.

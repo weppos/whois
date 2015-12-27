@@ -806,7 +806,7 @@
     "host": "whois.dns.pl"
   },
   ".pm": {
-    "host": "whois.nic.fr"
+    "host": "whois.nic.pm"
   },
   ".pn": {
     "adapter": "web",
