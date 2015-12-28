@@ -3,7 +3,7 @@
 
 #### whois-only
 
-- SERVER: Updated .PM, .RE, .WF, .YT
+- SERVER: Updated .PM, .RE, .WF, .YT, .TG
 
 - CHANGED: Removed support for Ruby < 2.0
 

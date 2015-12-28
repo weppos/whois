@@ -928,8 +928,7 @@
     "host": "whois.nic.fr"
   },
   ".tg": {
-    "adapter": "web",
-    "url": "http://www.nic.tg/"
+    "host": "whois.nic.tg"
   },
   ".th": {
     "host": "whois.thnic.co.th"
