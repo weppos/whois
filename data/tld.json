@@ -1933,6 +1933,9 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".clinique": {
+    "host": "whois.afilias-srs.net"
+  },
   ".star": {
     "host": "whois.afilias-srs.net"
   },
@@ -3443,6 +3446,9 @@
     "host": "whois.nic.xn--kcrx77d1x4a"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".living": {
     "adapter": "none"
   },
   ".fox": {

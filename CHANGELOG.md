@@ -3,6 +3,8 @@
 
 #### whois-only
 
+- SERVER: Added .CLINIQUE, .LIVING
+
 - SERVER: Updated .PM, .RE, .WF, .YT, .TG
 
 - CHANGED: Removed support for Ruby < 2.0
