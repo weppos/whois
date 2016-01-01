@@ -3448,6 +3448,9 @@
   ".aaa": {
     "adapter": "none"
   },
+  ".promo": {
+    "adapter": "none"
+  },
   ".living": {
     "adapter": "none"
   },
