@@ -2197,6 +2197,9 @@
   ".lotto": {
     "host": "whois.afilias.net"
   },
+  ".promo": {
+    "host": "whois.afilias.net"
+  },
   ".lgbt": {
     "host": "whois.afilias.net"
   },
@@ -3446,9 +3449,6 @@
     "host": "whois.nic.xn--kcrx77d1x4a"
   },
   ".aaa": {
-    "adapter": "none"
-  },
-  ".promo": {
     "adapter": "none"
   },
   ".living": {
