@@ -694,8 +694,7 @@
     "adapter": "none"
   },
   ".mn": {
-    "host": "whois.afilias-grs.info",
-    "adapter": "afilias"
+    "host": "whois.nic.mn"
   },
   ".mo": {
     "host": "whois.monic.mo"
