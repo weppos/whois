@@ -960,7 +960,7 @@
     "url": "http://www.nic.tt/cgi-bin/search.pl"
   },
   ".tv": {
-    "host": "whois.nic.tv",
+    "host": "tvwhois.verisign-grs.com",
     "adapter": "verisign"
   },
   ".tw": {

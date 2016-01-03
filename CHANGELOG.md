@@ -5,7 +5,7 @@
 
 - SERVER: Added .CLINIQUE, .LIVING, .PROMO
 
-- SERVER: Updated .PM, .RE, .WF, .YT, .TG
+- SERVER: Updated .PM, .RE, .WF, .YT, .TG, .TV
 
 - CHANGED: Removed support for Ruby < 2.0
 
