@@ -850,6 +850,7 @@
     "host": "whois.tcinet.ru"
   },
   ".rw": {
+    "host": "whois.ricta.org.rw"
     "adapter": "none"
   },
   ".sa": {
