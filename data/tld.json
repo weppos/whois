@@ -466,7 +466,7 @@
     "host": "whois.nic.fr"
   },
   ".ga": {
-    "adapter": "none"
+    "host": "whois.dot.ga"
   },
   ".gb": {
     "adapter": "none"
@@ -851,7 +851,6 @@
   },
   ".rw": {
     "host": "whois.ricta.org.rw"
-    "adapter": "none"
   },
   ".sa": {
     "host": "whois.nic.net.sa"
