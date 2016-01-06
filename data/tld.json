@@ -2802,6 +2802,9 @@
   ".joburg": {
     "host": "joburg-whois.registry.net.za"
   },
+  ".baidu": {
+    "host": "whois.ngtld.cn"
+  },
   ".xn--55qx5d": {
     "host": "whois.ngtld.cn"
   },

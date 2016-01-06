@@ -3,7 +3,7 @@
 
 #### whois-only
 
-- SERVER: Added .CLINIQUE, .LIVING, .PROMO
+- SERVER: Added .CLINIQUE, .LIVING, .PROMO, .BAIDU
 
 - SERVER: Updated .RW, .GA, .MN, .PM, .RE, .WF, .YT, .TG, .TV
 
