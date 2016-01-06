@@ -1,7 +1,8 @@
 # Changelog
 
+This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
-#### whois-only
+#### master
 
 - SERVER: Added .CLINIQUE, .LIVING, .PROMO, .BAIDU
 
