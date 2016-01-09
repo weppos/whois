@@ -1350,10 +1350,10 @@
   ".rest": {
     "host": "whois.nic.rest"
   },
-  ".site": {
-    "host": "whois.centralnic.com"
-  },
   ".xn--ngbe9e0a": {
+    "host": "whois.nic.xn--ngbe9e0a"
+  },
+  ".site": {
     "host": "whois.centralnic.com"
   },
   ".group": {
