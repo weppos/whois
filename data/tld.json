@@ -2532,6 +2532,9 @@
   ".tab": {
     "host": "whois.nic.tab"
   },
+  ".sfr": {
+    "host": "whois.nic.sfr"
+  },
   ".lotte": {
     "host": "whois.nic.lotte"
   },
@@ -3547,9 +3550,6 @@
     "adapter": "none"
   },
   ".bot": {
-    "adapter": "none"
-  },
-  ".sfr": {
     "adapter": "none"
   },
   ".grainger": {
