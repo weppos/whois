@@ -7,7 +7,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 - SERVER: Added .CLINIQUE, .LIVING, .PROMO, .BAIDU
 
-- SERVER: Updated .RW, .GA, .MN, .PM, .RE, .WF, .YT, .TG, .TV, .SFR, .XN--NGBE9E0A, .KFH
+- SERVER: Updated .RW, .GA, .MN, .PM, .RE, .WF, .YT, .TG, .TV, .SFR, .XN--NGBE9E0A, .KFH, .KN
 
 - CHANGED: Removed support for Ruby < 2.0
 

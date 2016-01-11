@@ -611,8 +611,7 @@
     "adapter": "none"
   },
   ".kn": {
-    "adapter": "web",
-    "url": "http://www.nic.kn/"
+    "host": "whois.nic.kn"
   },
   ".kp": {
     "adapter": "none"
