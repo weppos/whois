@@ -2888,9 +2888,6 @@
   ".xn--mxtq1m": {
     "host": "whois.nic.xn--mxtq1m"
   },
-  ".brother": {
-    "host": "whois.nic.brother"
-  },
   ".rexroth": {
     "host": "whois.nic.rexroth"
   },
@@ -2900,14 +2897,20 @@
   ".bauhaus": {
     "host": "whois.nic.bauhaus"
   },
+  ".bosch": {
+    "host": "whois.nic.bosch"
+  },
+  ".brother": {
+    "host": "whois.nic.brother"
+  },
+  ".dubai": {
+    "host": "whois.nic.dubai"
+  },
   ".forex": {
     "host": "whois.nic.forex"
   },
   ".markets": {
     "host": "whois.nic.markets"
-  },
-  ".bosch": {
-    "host": "whois.nic.bosch"
   },
   ".cfd": {
     "host": "whois.nic.cfd"
