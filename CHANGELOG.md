@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Added .CLINIQUE, .LIVING, .PROMO, .BAIDU, .TUBE, .DUBAI, .FRESENIUS
+- SERVER: Added .CLINIQUE, .LIVING, .PROMO, .BAIDU, .TUBE, .DUBAI, .FRESENIUS, .VOLKSWAGEN
 
 - SERVER: Updated .RW, .GA, .MN, .PM, .RE, .WF, .YT, .TG, .TV, .SFR, .XN--NGBE9E0A, .KFH, .KN
 

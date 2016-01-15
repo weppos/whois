@@ -1931,6 +1931,9 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".volkswagen": {
+    "host": "whois.afilias-srs.net"
+  },
   ".clinique": {
     "host": "whois.afilias-srs.net"
   },
