@@ -2657,6 +2657,9 @@
   ".archi": {
     "host": "whois.ksregistry.net"
   },
+  ".fresenius": {
+    "host": "whois.ksregistry.net"
+  },
   ".saarland": {
     "host": "whois.ksregistry.net"
   },
