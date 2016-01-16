@@ -3464,7 +3464,13 @@
   ".aaa": {
     "adapter": "none"
   },
-  ".tube": {
+  ".aig": {
+    "adapter": "none"
+  },
+  ".bharti": {
+    "adapter": "none"
+  },
+  ".cisco": {
     "adapter": "none"
   },
   ".living": {
@@ -3740,12 +3746,6 @@
   ".pictet": {
     "adapter": "none"
   },
-  ".aig": {
-    "adapter": "none"
-  },
-  ".cisco": {
-    "adapter": "none"
-  },
   ".lupin": {
     "adapter": "none"
   },
@@ -3770,7 +3770,10 @@
   ".montblanc": {
     "adapter": "none"
   },
-  ".bharti": {
+  ".tube": {
+    "adapter": "none"
+  },
+  ".weather": {
     "adapter": "none"
   },
   ".voting": {
