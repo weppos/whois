@@ -2858,8 +2858,8 @@
   ".aarp": {
     "host": "whois.nic.aarp"
   },
-  ".lat": {
-    "host": "whois.nic.lat"
+  ".bauhaus": {
+    "host": "whois.nic.bauhaus"
   },
   ".barclaycard": {
     "host": "whois.nic.barclaycard"
@@ -2867,11 +2867,65 @@
   ".barclays": {
     "host": "whois.nic.barclays"
   },
-  ".design": {
-    "host": "whois.nic.design"
+  ".bosch": {
+    "host": "whois.nic.bosch"
+  },
+  ".brother": {
+    "host": "whois.nic.brother"
+  },
+  ".cfd": {
+    "host": "whois.nic.cfd"
+  },
+  ".compare": {
+    "host": "whois.nic.compare"
+  },
+  ".dubai": {
+    "host": "whois.nic.dubai"
+  },
+  ".forex": {
+    "host": "whois.nic.forex"
+  },
+  ".iselect": {
+    "host": "whois.nic.iselect"
   },
   ".ifm": {
     "host": "whois.nic.ifm"
+  },
+  ".lat": {
+    "host": "whois.nic.lat"
+  },
+  ".makeup": {
+    "host": "whois.nic.makeup"
+  },
+  ".markets": {
+    "host": "whois.nic.markets"
+  },
+  ".mtn": {
+    "host": "whois.nic.mtn"
+  },
+  ".select": {
+    "host": "whois.nic.select"
+  },
+  ".skin": {
+    "host": "whois.nic.skin"
+  },
+  ".sap": {
+    "host": "whois.nic.sap"
+  },
+  ".seat": {
+    "host": "whois.nic.seat"
+  },
+  ".swiss": {
+    "host": "whois.nic.swiss"
+  },
+  ".shell": {
+    "host": "whois.nic.shell"
+  },
+  ".spreadbetting": {
+    "host": "whois.nic.spreadbetting"
+  },
+  ".design": {
+    "host": "whois.nic.design"
   },
   ".java": {
     "host": "whois.nic.java"
@@ -2885,9 +2939,6 @@
   ".lifestyle": {
     "host": "whois.nic.lifestyle"
   },
-  ".shell": {
-    "host": "whois.nic.shell"
-  },
   ".oracle": {
     "host": "whois.nic.oracle"
   },
@@ -2900,30 +2951,6 @@
   ".erni": {
     "host": "whois.nic.erni"
   },
-  ".bauhaus": {
-    "host": "whois.nic.bauhaus"
-  },
-  ".bosch": {
-    "host": "whois.nic.bosch"
-  },
-  ".brother": {
-    "host": "whois.nic.brother"
-  },
-  ".dubai": {
-    "host": "whois.nic.dubai"
-  },
-  ".forex": {
-    "host": "whois.nic.forex"
-  },
-  ".markets": {
-    "host": "whois.nic.markets"
-  },
-  ".cfd": {
-    "host": "whois.nic.cfd"
-  },
-  ".spreadbetting": {
-    "host": "whois.nic.spreadbetting"
-  },
   ".cityeats": {
     "host": "whois.nic.cityeats"
   },
@@ -2933,14 +2960,8 @@
   ".pid": {
     "host": "whois.nic.pid"
   },
-  ".weber": {
-    "host": "whois.nic.weber"
-  },
   ".trading": {
     "host": "whois.nic.trading"
-  },
-  ".mtn": {
-    "host": "whois.nic.mtn"
   },
   ".bond": {
     "host": "whois.nic.bond"
@@ -2951,20 +2972,11 @@
   ".komatsu": {
     "host": "whois.nic.komatsu"
   },
-  ".sap": {
-    "host": "whois.nic.sap"
-  },
   ".afl": {
     "host": "whois.nic.afl"
   },
-  ".seat": {
-    "host": "whois.nic.seat"
-  },
   ".broker": {
     "host": "whois.nic.broker"
-  },
-  ".swiss": {
-    "host": "whois.nic.swiss"
   },
   ".honda": {
     "host": "whois.nic.honda"
@@ -3049,9 +3061,6 @@
   },
   ".versicherung": {
     "host": "whois.nic.versicherung"
-  },
-  ".website": {
-    "host": "whois.nic.website"
   },
   ".global": {
     "host": "whois.nic.global"
@@ -3139,9 +3148,6 @@
   },
   ".film": {
     "host": "whois.nic.film"
-  },
-  ".wed": {
-    "host": "whois.nic.wed"
   },
   ".latrobe": {
     "host": "whois.nic.latrobe"
@@ -3365,12 +3371,6 @@
   ".trade": {
     "host": "whois.nic.trade"
   },
-  ".webcam": {
-    "host": "whois.nic.webcam"
-  },
-  ".win": {
-    "host": "whois.nic.win"
-  },
   ".cloud": {
     "host": "whois.nic.cloud"
   },
@@ -3401,9 +3401,6 @@
   ".chanel": {
     "host": "whois.nic.chanel"
   },
-  ".xperia": {
-    "host": "whois.nic.xperia"
-  },
   ".gdn": {
     "host": "whois.nic.gdn"
   },
@@ -3418,6 +3415,24 @@
   },
   ".sbs": {
     "host": "whois.nic.sbs"
+  },
+  ".website": {
+    "host": "whois.nic.website"
+  },
+  ".wed": {
+    "host": "whois.nic.wed"
+  },
+  ".webcam": {
+    "host": "whois.nic.webcam"
+  },
+  ".win": {
+    "host": "whois.nic.win"
+  },
+  ".weber": {
+    "host": "whois.nic.weber"
+  },
+  ".xperia": {
+    "host": "whois.nic.xperia"
   },
   ".xn--efvy88h": {
     "host": "whois.nic.xn--efvy88h"
