@@ -70,9 +70,11 @@ module Whois
           end
         end
 
-        # TODO: Use anniversary
-        property_not_supported :expires_on
-
+        property_supported :expires_on do
+          if content_for_scanner =~ /Expiry Date:\s+(.+)\n/
+            Time.parse($1)
+          end
+        end
 
         property_supported :registrant_contacts do
           parse_contact("holder-c", Whois::Record::Contact::TYPE_REGISTRANT)
