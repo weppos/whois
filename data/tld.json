@@ -2141,6 +2141,12 @@
   ".lamer": {
     "host": "whois.afilias-srs.net"
   },
+  ".alipay": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".alibaba": {
+    "host": "whois.afilias-srs.net"
+  },
   ".storage": {
     "host": "whois.afilias-srs.net"
   },
@@ -2148,6 +2154,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".xn--jlq61u9w7b": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--g2xx48c": {
     "host": "whois.afilias-srs.net"
   },
   ".xn--b4w605ferd": {
@@ -2905,6 +2914,9 @@
   },
   ".select": {
     "host": "whois.nic.select"
+  },
+  ".softbank": {
+    "host": "whois.nic.softbank"
   },
   ".skin": {
     "host": "whois.nic.skin"

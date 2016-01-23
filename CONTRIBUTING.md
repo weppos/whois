@@ -1,7 +1,5 @@
 # Contributing
 
-We love pull requests from everyone. By participating in this project, you agree to abide by the contribution [code of conduct](http://contributor-covenant.org/version/1/2/0/).
-
 ## Workflow
 
 Fork, then clone the repo:
