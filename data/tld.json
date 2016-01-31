@@ -1931,25 +1931,28 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
-  ".volkswagen": {
+  ".bugatti": {
     "host": "whois.afilias-srs.net"
   },
   ".clinique": {
     "host": "whois.afilias-srs.net"
   },
-  ".star": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".trv": {
+  ".edeka": {
     "host": "whois.afilias-srs.net"
   },
   ".redumbrella": {
     "host": "whois.afilias-srs.net"
   },
+  ".star": {
+    "host": "whois.afilias-srs.net"
+  },
   ".travelers": {
     "host": "whois.afilias-srs.net"
   },
-  ".bugatti": {
+  ".trv": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".volkswagen": {
     "host": "whois.afilias-srs.net"
   },
   ".lamborghini": {
@@ -2888,6 +2891,12 @@
   ".compare": {
     "host": "whois.nic.compare"
   },
+  ".comsec": {
+    "host": "whois.nic.comsec"
+  },
+  ".design": {
+    "host": "whois.nic.design"
+  },
   ".dubai": {
     "host": "whois.nic.dubai"
   },
@@ -2899,6 +2908,9 @@
   },
   ".ifm": {
     "host": "whois.nic.ifm"
+  },
+  ".java": {
+    "host": "whois.nic.java"
   },
   ".lat": {
     "host": "whois.nic.lat"
@@ -2936,14 +2948,8 @@
   ".spreadbetting": {
     "host": "whois.nic.spreadbetting"
   },
-  ".design": {
-    "host": "whois.nic.design"
-  },
-  ".java": {
-    "host": "whois.nic.java"
-  },
-  ".comsec": {
-    "host": "whois.nic.comsec"
+  ".tiffay": {
+    "host": "whois.nic.tiffany"
   },
   ".vana": {
     "host": "whois.nic.vana"
@@ -3503,13 +3509,25 @@
   ".cisco": {
     "adapter": "none"
   },
+  ".ford": {
+    "adapter": "none"
+  },
   ".fox": {
     "adapter": "none"
   },
   ".dealer": {
     "adapter": "none"
   },
+  ".jmp": {
+    "adapter": "none"
+  },
+  ".kpn": {
+    "adapter": "none"
+  },
   ".lifeinsurance": {
+    "adapter": "none"
+  },
+  ".lincoln": {
     "adapter": "none"
   },
   ".living": {
@@ -3521,28 +3539,19 @@
   ".safety": {
     "adapter": "none"
   },
+  ".sas": {
+    "adapter": "none"
+  },
   ".statefarm": {
+    "adapter": "none"
+  },
+  ".tmall": {
     "adapter": "none"
   },
   ".xn--mgbb9fbpob": {
     "adapter": "none"
   },
   ".wanggou": {
-    "adapter": "none"
-  },
-  ".sas": {
-    "adapter": "none"
-  },
-  ".lincoln": {
-    "adapter": "none"
-  },
-  ".jmp": {
-    "adapter": "none"
-  },
-  ".ford": {
-    "adapter": "none"
-  },
-  ".kpn": {
     "adapter": "none"
   },
   ".watches": {
