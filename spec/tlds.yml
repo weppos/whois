@@ -226,7 +226,7 @@ name:
     status_available: u34jedzcq.name
     status_registered: carletti.name
 pro:
-    _server: whois.registrypro.pro
+    _server: whois.afilias.net
     status_available: u34jedzcq.pro
     status_registered: google.pro
 tel:
