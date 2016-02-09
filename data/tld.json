@@ -1931,13 +1931,43 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".active": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".adult": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".abbott": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".apple": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".boehringer": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".beats": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".boats": {
+    "host": "whois.afilias-srs.net"
+  },
   ".bugatti": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".creditunion": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".cipriani": {
     "host": "whois.afilias-srs.net"
   },
   ".clinique": {
     "host": "whois.afilias-srs.net"
   },
   ".edeka": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".helsinki": {
     "host": "whois.afilias-srs.net"
   },
   ".redumbrella": {
@@ -1956,21 +1986,6 @@
     "host": "whois.afilias-srs.net"
   },
   ".lamborghini": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".boehringer": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".beats": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".creditunion": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".apple": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".cipriani": {
     "host": "whois.afilias-srs.net"
   },
   ".stockholm": {
@@ -2078,12 +2093,6 @@
   ".xn--kput3i": {
     "host": "whois.afilias-srs.net"
   },
-  ".active": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".adult": {
-    "host": "whois.afilias-srs.net"
-  },
   ".homes": {
     "host": "whois.afilias-srs.net"
   },
@@ -2094,12 +2103,6 @@
     "host": "whois.afilias-srs.net"
   },
   ".porn": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".boats": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".abbott": {
     "host": "whois.afilias-srs.net"
   },
   ".xin": {
@@ -3500,6 +3503,9 @@
   ".aaa": {
     "adapter": "none"
   },
+  ".adac": {
+    "adapter": "none"
+  },
   ".analytics": {
     "adapter": "none"
   },
@@ -3536,10 +3542,16 @@
   ".dealer": {
     "adapter": "none"
   },
+  ".health": {
+    "adapter": "none"
+  },
   ".jmp": {
     "adapter": "none"
   },
   ".kpn": {
+    "adapter": "none"
+  },
+  ".lanxess": {
     "adapter": "none"
   },
   ".lifeinsurance": {
