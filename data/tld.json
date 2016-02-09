@@ -3554,6 +3554,9 @@
   ".mobily": {
     "adapter": "none"
   },
+  ".pamperedchef": {
+    "adapter": "none"
+  },
   ".safety": {
     "adapter": "none"
   },
@@ -3561,6 +3564,9 @@
     "adapter": "none"
   },
   ".statefarm": {
+    "adapter": "none"
+  },
+  ".taobao": {
     "adapter": "none"
   },
   ".tmall": {
