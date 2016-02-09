@@ -2924,6 +2924,9 @@
   ".mtn": {
     "host": "whois.nic.mtn"
   },
+  ".quest": {
+    "host": "whois.nic.quest"
+  },
   ".select": {
     "host": "whois.nic.select"
   },
@@ -3503,13 +3506,28 @@
   ".aig": {
     "adapter": "none"
   },
+  ".azure": {
+    "adapter": "none"
+  },
   ".bharti": {
+    "adapter": "none"
+  },
+  ".crs": {
+    "adapter": "none"
+  },
+  ".cartier": {
+    "adapter": "none"
+  },
+  ".cbn": {
     "adapter": "none"
   },
   ".cisco": {
     "adapter": "none"
   },
   ".ford": {
+    "adapter": "none"
+  },
+  ".frontier": {
     "adapter": "none"
   },
   ".fox": {
@@ -3764,22 +3782,10 @@
   ".earth": {
     "adapter": "none"
   },
-  ".crs": {
-    "adapter": "none"
-  },
   ".xbox": {
     "adapter": "none"
   },
-  ".azure": {
-    "adapter": "none"
-  },
-  ".cartier": {
-    "adapter": "none"
-  },
   ".ntt": {
-    "adapter": "none"
-  },
-  ".cbn": {
     "adapter": "none"
   },
   ".pictet": {
@@ -3813,6 +3819,9 @@
     "adapter": "none"
   },
   ".weather": {
+    "adapter": "none"
+  },
+  ".xn--8y0a063a": {
     "adapter": "none"
   },
   ".voting": {
