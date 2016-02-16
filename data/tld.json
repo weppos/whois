@@ -2754,7 +2754,7 @@
     "host": "whois-leclerc.nic.fr"
   },
   ".bzh": {
-    "host": "whois-bzh.nic.fr"
+    "host": "whois.nic.bzh"
   },
   ".ovh": {
     "host": "whois-ovh.nic.fr"
