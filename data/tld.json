@@ -2927,6 +2927,9 @@
   ".mtn": {
     "host": "whois.nic.mtn"
   },
+  ".nikon": {
+    "host": "whois.nic.nikon"
+  },
   ".quest": {
     "host": "whois.nic.quest"
   },
@@ -3509,6 +3512,15 @@
   ".analytics": {
     "adapter": "none"
   },
+  ".axa": {
+    "adapter": "none"
+  },
+  ".aramco": {
+    "adapter": "none"
+  },
+  ".amica": {
+    "adapter": "none"
+  },
   ".aig": {
     "adapter": "none"
   },
@@ -3569,6 +3581,18 @@
   ".pamperedchef": {
     "adapter": "none"
   },
+  ".room": {
+    "adapter": "none"
+  },
+  ".read": {
+    "adapter": "none"
+  },
+  ".smile": {
+    "adapter": "none"
+  },
+  ".safe": {
+    "adapter": "none"
+  },
   ".safety": {
     "adapter": "none"
   },
@@ -3587,6 +3611,9 @@
   ".xn--mgbb9fbpob": {
     "adapter": "none"
   },
+  ".weatherchannel": {
+    "adapter": "none"
+  },
   ".wanggou": {
     "adapter": "none"
   },
@@ -3596,19 +3623,7 @@
   ".tushu": {
     "adapter": "none"
   },
-  ".smile": {
-    "adapter": "none"
-  },
   ".got": {
-    "adapter": "none"
-  },
-  ".safe": {
-    "adapter": "none"
-  },
-  ".room": {
-    "adapter": "none"
-  },
-  ".read": {
     "adapter": "none"
   },
   ".zero": {
@@ -3662,13 +3677,7 @@
   ".yamaxun": {
     "adapter": "none"
   },
-  ".aramco": {
-    "adapter": "none"
-  },
   ".dell": {
-    "adapter": "none"
-  },
-  ".amica": {
     "adapter": "none"
   },
   ".kinder": {
@@ -3744,9 +3753,6 @@
     "adapter": "none"
   },
   ".otsuka": {
-    "adapter": "none"
-  },
-  ".axa": {
     "adapter": "none"
   },
   ".weir": {
