@@ -3554,6 +3554,9 @@
   ".dealer": {
     "adapter": "none"
   },
+  ".deloitte": {
+    "adapter": "none"
+  },
   ".health": {
     "adapter": "none"
   },
