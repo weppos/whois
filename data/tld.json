@@ -157,7 +157,7 @@
     "host": "whois.afilias.net"
   },
   ".jobs": {
-    "host": "jobswhois.verisign-grs.com",
+    "host": "whois.nic.jobs",
     "adapter": "verisign"
   },
   ".mobi": {
