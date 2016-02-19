@@ -3608,7 +3608,13 @@
   ".taobao": {
     "adapter": "none"
   },
+  ".tushu": {
+    "adapter": "none"
+  },
   ".tmall": {
+    "adapter": "none"
+  },
+  ".unicom": {
     "adapter": "none"
   },
   ".xn--mgbb9fbpob": {
@@ -3621,9 +3627,6 @@
     "adapter": "none"
   },
   ".watches": {
-    "adapter": "none"
-  },
-  ".tushu": {
     "adapter": "none"
   },
   ".got": {
