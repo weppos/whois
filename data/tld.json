@@ -172,7 +172,7 @@
     "format": "domain=%s"
   },
   ".pro": {
-    "host": "whois.dotproregistry.net"
+    "host": "whois.afilias.net"
   },
   ".tel": {
     "host": "whois.nic.tel"
