@@ -3557,6 +3557,9 @@
   ".deloitte": {
     "adapter": "none"
   },
+  ".got": {
+    "adapter": "none"
+  },
   ".health": {
     "adapter": "none"
   },
@@ -3617,9 +3620,6 @@
   ".unicom": {
     "adapter": "none"
   },
-  ".xn--mgbb9fbpob": {
-    "adapter": "none"
-  },
   ".weatherchannel": {
     "adapter": "none"
   },
@@ -3629,10 +3629,13 @@
   ".watches": {
     "adapter": "none"
   },
-  ".got": {
+  ".zero": {
     "adapter": "none"
   },
-  ".zero": {
+  ".xn--mgbb9fbpob": {
+    "adapter": "none"
+  },
+  "xn--bck1b9a5dre4c": {
     "adapter": "none"
   },
   ".pin": {
