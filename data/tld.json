@@ -2084,9 +2084,6 @@
   ".xn--4gbrim": {
     "host": "whois.afilias-srs.net"
   },
-  ".hiv": {
-    "host": "whois.afilias-srs.net"
-  },
   ".organic": {
     "host": "whois.afilias-srs.net"
   },
@@ -2309,22 +2306,25 @@
   ".iinet": {
     "host": "whois.aridnrs.net.au"
   },
+  ".auto": {
+    "host": "whois.uniregistry.net"
+  },
+  ".blackfriday": {
+    "host": "whois.uniregistry.net"
+  },
   ".car": {
     "host": "whois.uniregistry.net"
   },
   ".game": {
     "host": "whois.uniregistry.net"
   },
+  ".hiv": {
+    "host": "whois.uniregistry.net"
+  },
   ".mom": {
     "host": "whois.uniregistry.net"
   },
-  ".blackfriday": {
-    "host": "whois.uniregistry.net"
-  },
   ".lol": {
-    "host": "whois.uniregistry.net"
-  },
-  ".auto": {
     "host": "whois.uniregistry.net"
   },
   ".cars": {
@@ -3635,7 +3635,7 @@
   ".xn--mgbb9fbpob": {
     "adapter": "none"
   },
-  ".XN--E1A4C": {
+  ".xn--e1a4c": {
     "adapter": "none"
   },
   ".xn--bck1b9a5dre4c": {
