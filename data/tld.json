@@ -3548,6 +3548,9 @@
   ".frontier": {
     "adapter": "none"
   },
+  ".flickr": {
+    "adapter": "none"
+  },
   ".fox": {
     "adapter": "none"
   },
@@ -3618,6 +3621,9 @@
     "adapter": "none"
   },
   ".unicom": {
+    "adapter": "none"
+  },
+  ".yahoo": {
     "adapter": "none"
   },
   ".weatherchannel": {
