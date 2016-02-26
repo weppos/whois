@@ -3614,6 +3614,12 @@
   ".taobao": {
     "adapter": "none"
   },
+  ".tunes": {
+    "adapter": "none"
+  },
+  ".telecity": {
+    "adapter": "none"
+  },
   ".tushu": {
     "adapter": "none"
   },
