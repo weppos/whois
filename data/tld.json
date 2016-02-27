@@ -1967,10 +1967,28 @@
   ".edeka": {
     "host": "whois.afilias-srs.net"
   },
+  ".gallup": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".hdfcbank": {
+    "host": "whois.afilias-srs.net"
+  },
   ".helsinki": {
     "host": "whois.afilias-srs.net"
   },
+  ".lamborghini": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".natura": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".pwc": {
+    "host": "whois.afilias-srs.net"
+  },
   ".redumbrella": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".stockholm": {
     "host": "whois.afilias-srs.net"
   },
   ".star": {
@@ -1988,10 +2006,7 @@
   ".volkswagen": {
     "host": "whois.afilias-srs.net"
   },
-  ".lamborghini": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".stockholm": {
+  ".wolterskluwer": {
     "host": "whois.afilias-srs.net"
   },
   ".zara": {
@@ -3916,17 +3931,20 @@
   ".xn--55qw42g": {
     "host": "whois.conac.cn"
   },
-  ".xn--zfr164b": {
-    "host": "whois.conac.cn"
-  },
   ".xn--cg4bki": {
     "host": "whois.kr"
+  },
+  ".xn--hxt814e": {
+    "host": "whois.nic.xn--hxt814e"
+  },
+  ".xn--mix891f": {
+    "host": "whois.monic.mo"
   },
   ".xn--p1acf": {
     "host": "whois.nic.xn--p1acf"
   },
-  ".xn--hxt814e": {
-    "host": "whois.nic.xn--hxt814e"
+  ".xn--zfr164b": {
+    "host": "whois.conac.cn"
   },
   ".xn--30rr7y": {
     "host": "whois.nic.wang"
