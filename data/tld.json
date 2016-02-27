@@ -1976,6 +1976,9 @@
   ".star": {
     "host": "whois.afilias-srs.net"
   },
+  ".tvs": {
+    "host": "whois.afilias-srs.net"
+  },
   ".travelers": {
     "host": "whois.afilias-srs.net"
   },
