@@ -2984,6 +2984,9 @@
   ".tiffay": {
     "host": "whois.nic.tiffany"
   },
+  ".telecity": {
+    "host": "whois.nic.telecity"
+  },
   ".vana": {
     "host": "whois.nic.vana"
   },
@@ -3647,7 +3650,7 @@
   ".tunes": {
     "adapter": "none"
   },
-  ".telecity": {
+  ".tunes": {
     "adapter": "none"
   },
   ".tushu": {
