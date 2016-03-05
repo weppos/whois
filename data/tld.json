@@ -1934,6 +1934,9 @@
   ".active": {
     "host": "whois.afilias-srs.net"
   },
+  ".alipay": {
+    "host": "whois.afilias-srs.net"
+  },
   ".adult": {
     "host": "whois.afilias-srs.net"
   },
@@ -1941,6 +1944,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".apple": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".aco": {
     "host": "whois.afilias-srs.net"
   },
   ".boehringer": {
@@ -1953,6 +1959,12 @@
     "host": "whois.afilias-srs.net"
   },
   ".bugatti": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".cern": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".ceb": {
     "host": "whois.afilias-srs.net"
   },
   ".creditunion": {
@@ -2003,6 +2015,9 @@
   ".trv": {
     "host": "whois.afilias-srs.net"
   },
+  ".viking": {
+    "host": "whois.afilias-srs.net"
+  },
   ".volkswagen": {
     "host": "whois.afilias-srs.net"
   },
@@ -2015,16 +2030,10 @@
   ".stada": {
     "host": "whois.afilias-srs.net"
   },
-  ".ceb": {
-    "host": "whois.afilias-srs.net"
-  },
   ".fage": {
     "host": "whois.afilias-srs.net"
   },
   ".irish": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".aco": {
     "host": "whois.afilias-srs.net"
   },
   ".gea": {
@@ -2064,9 +2073,6 @@
     "host": "whois.afilias-srs.net"
   },
   ".emerck": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".cern": {
     "host": "whois.afilias-srs.net"
   },
   ".homes": {
@@ -2160,9 +2166,6 @@
     "host": "whois.afilias-srs.net"
   },
   ".lamer": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".alipay": {
     "host": "whois.afilias-srs.net"
   },
   ".alibaba": {
@@ -2951,6 +2954,9 @@
   ".quest": {
     "host": "whois.nic.quest"
   },
+  ".store": {
+    "host": "whois.nic.store"
+  },
   ".select": {
     "host": "whois.nic.select"
   },
@@ -3605,6 +3611,9 @@
   ".mobily": {
     "adapter": "none"
   },
+  ".passagens": {
+    "adapter": "none"
+  },
   ".pamperedchef": {
     "adapter": "none"
   },
@@ -3650,6 +3659,9 @@
   ".unicom": {
     "adapter": "none"
   },
+  ".vuelos": {
+    "adapter": "none"
+  },
   ".yahoo": {
     "adapter": "none"
   },
@@ -3672,6 +3684,9 @@
     "adapter": "none"
   },
   ".xn--bck1b9a5dre4c": {
+    "adapter": "none"
+  },
+  ".xn--jvr189m": {
     "adapter": "none"
   },
   ".pin": {
