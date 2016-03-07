@@ -3557,6 +3557,9 @@
   ".bharti": {
     "adapter": "none"
   },
+  ".coupon": {
+    "adapter": "none"
+  },
   ".crs": {
     "adapter": "none"
   },
@@ -3626,6 +3629,9 @@
   ".read": {
     "adapter": "none"
   },
+  ".spot": {
+    "adapter": "none"
+  },
   ".smile": {
     "adapter": "none"
   },
@@ -3680,16 +3686,28 @@
   ".zero": {
     "adapter": "none"
   },
-  ".xn--mgbb9fbpob": {
-    "adapter": "none"
-  },
-  ".xn--e1a4c": {
+  ".xn--1ck2e1b": {
     "adapter": "none"
   },
   ".xn--bck1b9a5dre4c": {
     "adapter": "none"
   },
+  ".xn--cck2b3b": {
+    "adapter": "none"
+  },
+  ".xn--gckr3f0f": {
+    "adapter": "none"
+  },
+  ".xn--e1a4c": {
+    "adapter": "none"
+  },
+  ".xn--mgbb9fbpob": {
+    "adapter": "none"
+  },
   ".xn--jvr189m": {
+    "adapter": "none"
+  },
+  ".xn--rovu88b": {
     "adapter": "none"
   },
   ".pin": {
