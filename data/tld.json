@@ -2936,6 +2936,18 @@
   ".java": {
     "host": "whois.nic.java"
   },
+  ".kerryproperties": {
+    "host": "whois.nic.kerryproperties"
+  },
+  ".kerryhotels": {
+    "host": "whois.nic.kerryhotels"
+  },
+  ".kerrylogistics": {
+    "host": "whois.nic.kerrylogistics"
+  },
+  ".kuokgroup": {
+    "host": "whois.nic.kuokgroup"
+  },
   ".lat": {
     "host": "whois.nic.lat"
   },
@@ -2995,6 +3007,9 @@
   },
   ".oracle": {
     "host": "whois.nic.oracle"
+  },
+  ".xn--w4r85el8fhu5dnra": {
+    "host": "whois.nic.xn--w4r85el8fhu5dnra"
   },
   ".xn--mxtq1m": {
     "host": "whois.nic.xn--mxtq1m"
