@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
   s.require_paths     = %w( lib )
 
   s.add_development_dependency "rake"
-  s.add_development_dependency "rspec", "~> 3.0"
+  s.add_development_dependency "rspec"
   s.add_development_dependency "yard"
 
   s.post_install_message = <<EOS
