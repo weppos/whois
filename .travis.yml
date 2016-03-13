@@ -1,15 +1,15 @@
 sudo: false
 language: ruby
 rvm:
-- 2.0
-- 2.1
-- 2.2
-- ruby-head
-- jruby-19mode
+  - 2.0
+  - 2.1
+  - 2.2
+  - ruby-head
+  - jruby-19mode
 env:
-- COVERALL=1
+  - COVERALL=1
 cache:
-- bundler
+  - bundler
 
 notifications:
   recipients:
@@ -17,5 +17,5 @@ notifications:
 
 matrix:
   allow_failures:
-  - rvm: ruby-head
-  - rvm: jruby-19mode
+    - rvm: ruby-head
+    - rvm: jruby-19mode
