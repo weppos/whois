@@ -119,7 +119,7 @@
     "host": "whois.educause.edu"
   },
   ".gov": {
-    "host": "whois.dotgovSee https://github.com/whois/ianawhois/blob/master/GOV.gov"
+    "host": "whois.dotgov.gov"
   },
   ".int": {
     "host": "whois.iana.org"
