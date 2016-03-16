@@ -1,4 +1,5 @@
 {
+  // gTLDs / ccTLDs (and suffixes)
   ".ae.org": {
     "host": "whois.centralnic.com"
   },
@@ -1095,7 +1096,7 @@
     "adapter": "none"
   },
 
-
+  // gTLDs IDNA
   ".xn--3e0b707e": {
     "host": "whois.kr"
   },
@@ -1228,7 +1229,7 @@
     "host": "whois.pnina.ps"
   },
 
-
+  // new gTLDs
   ".auction": {
     "host": "whois.unitedtld.com"
   },
@@ -3951,7 +3952,7 @@
     "host": "whois.nic.xn--cg4bki"
   },
 
-
+  // new gTLDs IDNA
   ".xn--mgba3a3ejt": {
     "adapter": "none"
   },
