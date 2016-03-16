@@ -3576,6 +3576,9 @@
   ".coupon": {
     "adapter": "none"
   },
+  ".chase": {
+    "adapter": "none"
+  },
   ".crs": {
     "adapter": "none"
   },
@@ -3613,6 +3616,9 @@
     "adapter": "none"
   },
   ".jmp": {
+    "adapter": "none"
+  },
+  ".jpmorgan": {
     "adapter": "none"
   },
   ".kpn": {
