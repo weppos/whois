@@ -1284,17 +1284,15 @@
   ".social": {
     "host": "whois.unitedtld.com"
   },
+  // centralnic
   ".kfh": {
     "host": "whois.nic.kfh"
-  },
-  ".protection": {
-    "host": "whois.centralnic.com"
   },
   ".ink": {
     "host": "whois.nic.ink"
   },
-  ".theatre": {
-    "host": "whois.nic.theatre"
+  ".protection": {
+    "host": "whois.centralnic.com"
   },
   ".security": {
     "host": "whois.nic.security"
@@ -1304,6 +1302,9 @@
   },
   ".stcgroup": {
     "host": "whois.centralnic.com"
+  },
+  ".theatre": {
+    "host": "whois.nic.theatre"
   },
   ".xyz": {
     "host": "whois.nic.xyz"
@@ -1335,31 +1336,47 @@
   ".love": {
     "host": "whois.nic.love"
   },
-  ".wme": {
-    "host": "whois.nic.wme"
-  },
-  ".tech": {
-    "host": "whois.nic.tech"
-  },
   ".rent": {
     "host": "whois.nic.rent"
-  },
-  ".tickets": {
-    "host": "whois.nic.tickets"
   },
   ".rest": {
     "host": "whois.nic.rest"
   },
+  ".site": {
+    "host": "whois.centralnic.com"
+  },
+  ".tech": {
+    "host": "whois.nic.tech"
+  },
+  ".tickets": {
+    "host": "whois.nic.tickets"
+  },
   ".xn--ngbe9e0a": {
     "host": "whois.nic.xn--ngbe9e0a"
   },
-  ".site": {
-    "host": "whois.centralnic.com"
+  ".wme": {
+    "host": "whois.nic.wme"
+  },
+  // donuts
+  ".apartments": {
+    "host": "whois.donuts.co"
+  },
+  ".cafe": {
+    "host": "whois.donuts.co"
+  },
+  ".coupons": {
+    "host": "whois.donuts.co"
+  },
+  ".gmbh": {
+    "host": "whois.donuts.co"
   },
   ".group": {
     "host": "whois.donuts.co"
   },
   ".ltd": {
+    "host": "whois.donuts.co"
+  },
+  ".soccer": {
     "host": "whois.donuts.co"
   },
   ".tires": {
@@ -1369,12 +1386,6 @@
     "host": "whois.donuts.co"
   },
   ".vin": {
-    "host": "whois.donuts.co"
-  },
-  ".coupons": {
-    "host": "whois.donuts.co"
-  },
-  ".soccer": {
     "host": "whois.donuts.co"
   },
   ".fyi": {
@@ -1416,13 +1427,7 @@
   ".express": {
     "host": "whois.donuts.co"
   },
-  ".cafe": {
-    "host": "whois.donuts.co"
-  },
   ".theater": {
-    "host": "whois.donuts.co"
-  },
-  ".apartments": {
     "host": "whois.donuts.co"
   },
   ".partners": {
@@ -1932,6 +1937,9 @@
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
+  ".avianca": {
+    "host": "whois.afilias-srs.net"
+  },
   ".active": {
     "host": "whois.afilias-srs.net"
   },
@@ -1957,6 +1965,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".boats": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".bcg": {
     "host": "whois.afilias-srs.net"
   },
   ".bugatti": {
@@ -2763,11 +2774,27 @@
   ".xn--nqv7fs00ema": {
     "host": "whois.publicinterestregistry.net"
   },
+  // nic.fr
+  ".alsace": {
+    "host": "whois-alsace.nic.fr"
+  },
+  ".aquarelle": {
+    "host": "whois-aquarelle.nic.fr"
+  },
+  ".bzh": {
+    "host": "whois.nic.bzh"
+  },
   ".bostik": {
     "host": "whois-bostik.nic.fr"
   },
+  ".corsica": {
+    "host": "whois-corsica.nic.fr"
+  },
   ".frogans": {
     "host": "whois-frogans.nic.fr"
+  },
+  ".lancaster": {
+    "host": "whois-lancaster.nic.fr"
   },
   ".paris": {
     "host": "whois-paris.nic.fr"
@@ -2775,38 +2802,27 @@
   ".leclerc": {
     "host": "whois-leclerc.nic.fr"
   },
-  ".bzh": {
-    "host": "whois.nic.bzh"
-  },
   ".ovh": {
     "host": "whois-ovh.nic.fr"
-  },
-  ".alsace": {
-    "host": "whois-alsace.nic.fr"
-  },
-  ".aquarelle": {
-    "host": "whois-aquarelle.nic.fr"
   },
   ".mma": {
     "host": "whois-mma.nic.fr"
   },
-  ".corsica": {
-    "host": "whois-corsica.nic.fr"
-  },
   ".sncf": {
     "host": "whois-sncf.nic.fr"
   },
-  ".lancaster": {
-    "host": "whois-lancaster.nic.fr"
+  ".total": {
+    "host": "whois-total.nic.fr"
+  },
+  // knipp
+  ".cologne": {
+    "host": "whois-fe1.pdt.cologne.tango.knipp.de"
   },
   ".gmx": {
     "host": "whois-fe1.gmx.tango.knipp.de"
   },
   ".koeln": {
     "host": "whois-fe1.pdt.koeln.tango.knipp.de"
-  },
-  ".cologne": {
-    "host": "whois-fe1.pdt.cologne.tango.knipp.de"
   },
   ".movistar": {
     "host": "whois-fe.movistar.tango.knipp.de"
@@ -3622,6 +3638,9 @@
     "adapter": "none"
   },
   ".kpn": {
+    "adapter": "none"
+  },
+  ".locus": {
     "adapter": "none"
   },
   ".lanxess": {
