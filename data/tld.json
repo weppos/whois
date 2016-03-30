@@ -1934,6 +1934,9 @@
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
   },
+  ".ally": {
+    "host": "whois.afilias-srs.net"
+  },
   ".audi": {
     "host": "whois.afilias-srs.net"
   },
@@ -3563,6 +3566,9 @@
     "host": "whois.nic.xn--kcrx77d1x4a"
   },
   ".aaa": {
+    "adapter": "none"
+  },
+  ".aws": {
     "adapter": "none"
   },
   ".adac": {
