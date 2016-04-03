@@ -1934,6 +1934,7 @@
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
   },
+  // afilias
   ".ally": {
     "host": "whois.afilias-srs.net"
   },
@@ -2003,6 +2004,9 @@
   ".helsinki": {
     "host": "whois.afilias-srs.net"
   },
+  ".jcp": {
+    "host": "whois.afilias-srs.net"
+  },
   ".lamborghini": {
     "host": "whois.afilias-srs.net"
   },
@@ -2013,6 +2017,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".redumbrella": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".sina": {
     "host": "whois.afilias-srs.net"
   },
   ".stockholm": {
@@ -2881,6 +2888,18 @@
   ".xn--1qqw23a": {
     "host": "whois.ngtld.cn"
   },
+  ".anquan": {
+    "host": "whois.teleinfo.cn"
+  },
+  ".shouji": {
+    "host": "whois.teleinfo.cn"
+  },
+  ".xihuan": {
+    "host": "whois.teleinfo.cn"
+  },
+  ".yun": {
+    "host": "whois.teleinfo.cn"
+  },
   ".xn--xhq521b": {
     "host": "whois.teleinfo.cn"
   },
@@ -2979,6 +2998,9 @@
   },
   ".mtn": {
     "host": "whois.nic.mtn"
+  },
+  ".nissay": {
+    "host": "whois.nic.nissay"
   },
   ".nikon": {
     "host": "whois.nic.nikon"
