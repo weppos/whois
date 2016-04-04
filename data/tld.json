@@ -3659,6 +3659,9 @@
   ".health": {
     "adapter": "none"
   },
+  ".htc": {
+    "adapter": "none"
+  },
   ".jmp": {
     "adapter": "none"
   },
