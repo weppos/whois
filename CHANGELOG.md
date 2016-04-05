@@ -9,6 +9,8 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 - SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC
 
+- SERVER: Updated .DELOITTE
+
 
 **Beta 1**
 

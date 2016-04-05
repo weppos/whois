@@ -2960,6 +2960,9 @@
   ".design": {
     "host": "whois.nic.design"
   },
+  ".deloitte": {
+    "host": "whois.nic.deloitte"
+  },
   ".dubai": {
     "host": "whois.nic.dubai"
   },
@@ -3648,9 +3651,6 @@
     "adapter": "none"
   },
   ".dealer": {
-    "adapter": "none"
-  },
-  ".deloitte": {
     "adapter": "none"
   },
   ".got": {
