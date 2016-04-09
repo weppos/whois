@@ -4,8 +4,8 @@ rvm:
   - 2.0
   - 2.1
   - 2.2
+  - jruby-9.0.0.0
   - ruby-head
-  - jruby-19mode
 env:
   - COVERALL=1
 cache:
@@ -18,4 +18,4 @@ notifications:
 matrix:
   allow_failures:
     - rvm: ruby-head
-    - rvm: jruby-19mode
+    - rvm: jruby-9.0.0.0
