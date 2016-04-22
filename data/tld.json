@@ -3623,6 +3623,9 @@
   ".azure": {
     "adapter": "none"
   },
+  ".baby": {
+    "adapter": "none"
+  },
   ".bharti": {
     "adapter": "none"
   },
@@ -3669,6 +3672,9 @@
     "adapter": "none"
   },
   ".jmp": {
+    "adapter": "none"
+  },
+  ".jnj": {
     "adapter": "none"
   },
   ".jpmorgan": {
