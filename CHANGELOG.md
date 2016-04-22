@@ -7,7 +7,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 **master**
 
-- SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC
+- SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC, .PROGRESSIVE, .MLS
 
 - SERVER: Updated .DELOITTE
 

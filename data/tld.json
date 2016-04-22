@@ -2013,6 +2013,9 @@
   ".natura": {
     "host": "whois.afilias-srs.net"
   },
+  ".progressive": {
+    "host": "whois.afilias-srs.net"
+  },
   ".pwc": {
     "host": "whois.afilias-srs.net"
   },
@@ -2992,6 +2995,9 @@
   },
   ".lat": {
     "host": "whois.nic.lat"
+  },
+  ".mls": {
+    "host": "whois.nic.mls"
   },
   ".makeup": {
     "host": "whois.nic.makeup"
