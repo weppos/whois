@@ -147,7 +147,7 @@
     "host": "whois.biz"
   },
   ".cat": {
-    "host": "whois.cat",
+    "host": "whois.nic.cat",
     "adapter": "formatted",
     "format": "-C US-ASCII ace %s"
   },
@@ -1995,6 +1995,9 @@
   ".edeka": {
     "host": "whois.afilias-srs.net"
   },
+  ".extraspace": {
+    "host": "whois.afilias-srs.net"
+  },
   ".gallup": {
     "host": "whois.afilias-srs.net"
   },
@@ -2122,6 +2125,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".redstone": {
+    "host": "whois.nic.redstone"
+  },
+  ".shaw": {
     "host": "whois.afilias-srs.net"
   },
   ".yachts": {
@@ -2152,7 +2158,7 @@
     "host": "whois.afilias-srs.net"
   },
   ".xin": {
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.xin"
   },
   ".scholarships": {
     "host": "whois.afilias-srs.net"
@@ -2906,13 +2912,20 @@
   ".xn--xhq521b": {
     "host": "whois.teleinfo.cn"
   },
+  // whois.gtld.knet.cn
   ".wang": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".xn--30rr7y": {
     "host": "whois.gtld.knet.cn"
   },
   ".xn--3bst00m": {
     "host": "whois.gtld.knet.cn"
   },
   ".xn--6qq986b3xl": {
+    "host": "whois.gtld.knet.cn"
+  },
+  ".xn--9et52u": {
     "host": "whois.gtld.knet.cn"
   },
   ".xn--czru2d": {
@@ -2951,6 +2964,9 @@
   ".brother": {
     "host": "whois.nic.brother"
   },
+  ".barefoot": {
+    "host": "whois.nic.barefoot"
+  },
   ".cfd": {
     "host": "whois.nic.cfd"
   },
@@ -2971,6 +2987,9 @@
   },
   ".forex": {
     "host": "whois.nic.forex"
+  },
+  ".gallo": {
+    "host": "whois.nic.gallo"
   },
   ".iselect": {
     "host": "whois.nic.iselect"
@@ -2995,6 +3014,9 @@
   },
   ".lat": {
     "host": "whois.nic.lat"
+  },
+  ".locus": {
+    "host": "whois.nic.locus"
   },
   ".mls": {
     "host": "whois.nic.mls"
@@ -3686,9 +3708,6 @@
   ".kpn": {
     "adapter": "none"
   },
-  ".locus": {
-    "adapter": "none"
-  },
   ".lanxess": {
     "adapter": "none"
   },
@@ -3737,10 +3756,13 @@
   ".statefarm": {
     "adapter": "none"
   },
+  ".stream": {
+    "adapter": "none"
+  },
   ".taobao": {
     "adapter": "none"
   },
-  ".tunes": {
+  ".talk": {
     "adapter": "none"
   },
   ".tunes": {
@@ -4010,30 +4032,36 @@
   ".montblanc": {
     "adapter": "none"
   },
+  ".samsung": {
+    "host": "whois.nic.xn--cg4bki"
+  },
   ".tube": {
+    "adapter": "none"
+  },
+  ".you": {
     "adapter": "none"
   },
   ".weather": {
     "adapter": "none"
   },
-  ".xn--8y0a063a": {
-    "adapter": "none"
-  },
   ".voting": {
     "host": "whois.voting.tld-box.at"
   },
-  ".samsung": {
-    "host": "whois.nic.xn--cg4bki"
-  },
 
   // new gTLDs IDNA
-  ".xn--mgba3a3ejt": {
+  ".xn--8y0a063a": {
     "adapter": "none"
   },
   ".xn--eckvdtc9d": {
     "adapter": "none"
   },
+  ".xn--fct429k": {
+    "adapter": "none"
+  },
   ".xn--kpu716f": {
+    "adapter": "none"
+  },
+  ".xn--mgba3a3ejt": {
     "adapter": "none"
   },
   ".xn--pbt977c": {
@@ -4050,9 +4078,6 @@
   },
   ".xn--nyqy26a": {
     "adapter": "none"
-  },
-  ".xn--9et52u": {
-    "host": "whois.nic.wang"
   },
   ".xn--55qw42g": {
     "host": "whois.conac.cn"
@@ -4071,9 +4096,6 @@
   },
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
-  },
-  ".xn--30rr7y": {
-    "host": "whois.nic.wang"
   },
   ".doosan": {
     "host": "whois.nic.xn--cg4bki"

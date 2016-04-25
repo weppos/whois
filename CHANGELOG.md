@@ -7,9 +7,9 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 **master**
 
-- SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC, .PROGRESSIVE, .MLS, .BABY, JNJ, .FTR, .XN--5TZM5G
+- SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC, .PROGRESSIVE, .MLS, .BABY, JNJ, .FTR, .XN--5TZM5G, .EXTRASPACE, .BAREFOOT, .GALLO, .SHAW, .STREAM, .TALK, .XN--FCT429K, .XN--FCT429K, .YOU
 
-- SERVER: Updated .DELOITTE
+- SERVER: Updated .DELOITTE, .CAT, .REDSTONE, .LOCUS, .XIN
 
 
 **Beta 1**
