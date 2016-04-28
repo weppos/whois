@@ -3708,6 +3708,9 @@
   ".kpn": {
     "adapter": "none"
   },
+  ".kpmg": {
+    "adapter": "none"
+  },
   ".lanxess": {
     "adapter": "none"
   },
@@ -3721,6 +3724,9 @@
     "adapter": "none"
   },
   ".mobily": {
+    "adapter": "none"
+  },
+  ".mutual": {
     "adapter": "none"
   },
   ".passagens": {
