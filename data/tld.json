@@ -1934,8 +1934,15 @@
   ".xn--fjq720a": {
     "host": "whois.donuts.co"
   },
-  // afilias
+
+  // whois.afilias-srs.net
+  ".alibaba": {
+    "host": "whois.afilias-srs.net"
+  },
   ".ally": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".abbvie": {
     "host": "whois.afilias-srs.net"
   },
   ".audi": {
@@ -1977,6 +1984,9 @@
   ".bugatti": {
     "host": "whois.afilias-srs.net"
   },
+  ".bnpparibas": {
+    "host": "whois.afilias-srs.net"
+  },
   ".cern": {
     "host": "whois.afilias-srs.net"
   },
@@ -1998,13 +2008,28 @@
   ".extraspace": {
     "host": "whois.afilias-srs.net"
   },
+  ".fage": {
+    "host": "whois.afilias-srs.net"
+  },
   ".gallup": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".gea": {
     "host": "whois.afilias-srs.net"
   },
   ".hdfcbank": {
     "host": "whois.afilias-srs.net"
   },
   ".helsinki": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".homedepot": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".homes": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".irish": {
     "host": "whois.afilias-srs.net"
   },
   ".jcp": {
@@ -2031,7 +2056,16 @@
   ".stockholm": {
     "host": "whois.afilias-srs.net"
   },
+  ".stada": {
+    "host": "whois.afilias-srs.net"
+  },
   ".star": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".srl": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".thd": {
     "host": "whois.afilias-srs.net"
   },
   ".tvs": {
@@ -2046,25 +2080,49 @@
   ".viking": {
     "host": "whois.afilias-srs.net"
   },
+  ".vig": {
+    "host": "whois.afilias-srs.net"
+  },
   ".volkswagen": {
     "host": "whois.afilias-srs.net"
   },
   ".wolterskluwer": {
     "host": "whois.afilias-srs.net"
   },
+  ".weibo": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--estv75g": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--4gbrim": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--kput3i": {
+    "host": "whois.nic.xn--kput3i"
+  },
+  ".xn--9krt00a": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--mgbca7dzdo": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--fiq228c5hs": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--jlq61u9w7b": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--g2xx48c": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--b4w605ferd": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".xn--3ds443g": {
+    "host": "whois.afilias-srs.net"
+  },
   ".zara": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".stada": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".fage": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".irish": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".gea": {
     "host": "whois.afilias-srs.net"
   },
   ".nokia": {
@@ -2073,19 +2131,10 @@
   ".icbc": {
     "host": "whois.afilias-srs.net"
   },
-  ".srl": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".thd": {
-    "host": "whois.afilias-srs.net"
-  },
   ".jll": {
     "host": "whois.afilias-srs.net"
   },
   ".lasalle": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".homedepot": {
     "host": "whois.afilias-srs.net"
   },
   ".sex": {
@@ -2097,25 +2146,13 @@
   ".nra": {
     "host": "whois.afilias-srs.net"
   },
-  ".bnpparibas": {
-    "host": "whois.afilias-srs.net"
-  },
   ".emerck": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".homes": {
     "host": "whois.afilias-srs.net"
   },
   ".motorcycles": {
     "host": "whois.afilias-srs.net"
   },
   ".vegas": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--fiq228c5hs": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--3ds443g": {
     "host": "whois.afilias-srs.net"
   },
   ".rich": {
@@ -2133,19 +2170,7 @@
   ".yachts": {
     "host": "whois.afilias-srs.net"
   },
-  ".xn--estv75g": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--4gbrim": {
-    "host": "whois.afilias-srs.net"
-  },
   ".organic": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--kput3i": {
-    "host": "whois.nic.xn--kput3i"
-  },
-  ".homes": {
     "host": "whois.afilias-srs.net"
   },
   ".lds": {
@@ -2199,24 +2224,14 @@
   ".lamer": {
     "host": "whois.afilias-srs.net"
   },
-  ".alibaba": {
-    "host": "whois.afilias-srs.net"
-  },
   ".storage": {
     "host": "whois.afilias-srs.net"
   },
   ".schaeffler": {
     "host": "whois.afilias-srs.net"
   },
-  ".xn--jlq61u9w7b": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--g2xx48c": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--b4w605ferd": {
-    "host": "whois.afilias-srs.net"
-  },
+
+  // whois.afilias.net
   ".xn--6frz82g": {
     "host": "whois.afilias.net"
   },
@@ -2946,8 +2961,13 @@
   ".uol": {
     "host": "whois.gtlds.nic.br"
   },
+
+  // whois.nic.*
   ".aarp": {
     "host": "whois.nic.aarp"
+  },
+  ".abudhabi": {
+    "host": "whois.nic.abudhabi"
   },
   ".bauhaus": {
     "host": "whois.nic.bauhaus"
@@ -3618,6 +3638,8 @@
   ".xn--kcrx77d1x4a": {
     "host": "whois.nic.xn--kcrx77d1x4a"
   },
+
+  // none
   ".aaa": {
     "adapter": "none"
   },
@@ -3727,6 +3749,9 @@
     "adapter": "none"
   },
   ".mutual": {
+    "adapter": "none"
+  },
+  ".northwesternmutual": {
     "adapter": "none"
   },
   ".passagens": {
