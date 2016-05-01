@@ -1939,6 +1939,12 @@
   ".alibaba": {
     "host": "whois.afilias-srs.net"
   },
+  ".agakhan": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".akdn": {
+    "host": "whois.afilias-srs.net"
+  },
   ".ally": {
     "host": "whois.afilias-srs.net"
   },
@@ -2029,6 +2035,12 @@
   ".homes": {
     "host": "whois.afilias-srs.net"
   },
+  ".ismaili": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".imamat": {
+    "host": "whois.afilias-srs.net"
+  },
   ".irish": {
     "host": "whois.afilias-srs.net"
   },
@@ -2063,6 +2075,12 @@
     "host": "whois.afilias-srs.net"
   },
   ".srl": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".statebank": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".sbi": {
     "host": "whois.afilias-srs.net"
   },
   ".thd": {
