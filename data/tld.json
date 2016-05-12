@@ -3074,6 +3074,9 @@
   ".nikon": {
     "host": "whois.nic.nikon"
   },
+  ".olayangroup": {
+    "host": "whois.nic.olayangroup"
+  },
   ".quest": {
     "host": "whois.nic.quest"
   },
