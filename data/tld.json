@@ -3724,6 +3724,9 @@
   ".fox": {
     "adapter": "none"
   },
+  ".flir": {
+    "adapter": "none"
+  },
   ".ftr": {
     "adapter": "none"
   },
