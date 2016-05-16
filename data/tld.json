@@ -2035,6 +2035,9 @@
   ".homes": {
     "host": "whois.afilias-srs.net"
   },
+  ".hkt": {
+    "host": "whois.afilias-srs.net"
+  },
   ".ismaili": {
     "host": "whois.afilias-srs.net"
   },
