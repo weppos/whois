@@ -3017,6 +3017,12 @@
   ".comsec": {
     "host": "whois.nic.comsec"
   },
+  ".cityeats": {
+    "host": "whois.nic.cityeats"
+  },
+  ".contact": {
+    "host": "whois.nic.contact"
+  },
   ".design": {
     "host": "whois.nic.design"
   },
@@ -3059,6 +3065,9 @@
   ".locus": {
     "host": "whois.nic.locus"
   },
+  ".lifestyle": {
+    "host": "whois.nic.lifestyle"
+  },
   ".mls": {
     "host": "whois.nic.mls"
   },
@@ -3076,6 +3085,9 @@
   },
   ".nikon": {
     "host": "whois.nic.nikon"
+  },
+  ".oracle": {
+    "host": "whois.nic.oracle"
   },
   ".olayangroup": {
     "host": "whois.nic.olayangroup"
@@ -3119,11 +3131,8 @@
   ".vana": {
     "host": "whois.nic.vana"
   },
-  ".lifestyle": {
-    "host": "whois.nic.lifestyle"
-  },
-  ".oracle": {
-    "host": "whois.nic.oracle"
+  ".whois.nic.xn--w4rs40l": {
+    "host": "whois.nic.whois.nic.xn--w4rs40l"
   },
   ".xn--w4r85el8fhu5dnra": {
     "host": "whois.nic.xn--w4r85el8fhu5dnra"
@@ -3136,12 +3145,6 @@
   },
   ".erni": {
     "host": "whois.nic.erni"
-  },
-  ".cityeats": {
-    "host": "whois.nic.cityeats"
-  },
-  ".contact": {
-    "host": "whois.nic.contact"
   },
   ".pid": {
     "host": "whois.nic.pid"
