@@ -3122,7 +3122,10 @@
   ".spreadbetting": {
     "host": "whois.nic.spreadbetting"
   },
-  ".tiffay": {
+  ".teva": {
+    "host": "whois.nic.teva"
+  },
+  ".tiffany": {
     "host": "whois.nic.tiffany"
   },
   ".telecity": {
