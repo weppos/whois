@@ -3739,6 +3739,9 @@
   ".got": {
     "adapter": "none"
   },
+  ".guardian": {
+    "adapter": "none"
+  },
   ".health": {
     "adapter": "none"
   },
