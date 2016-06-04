@@ -1361,10 +1361,46 @@
   ".apartments": {
     "host": "whois.donuts.co"
   },
+  ".clinic": {
+    "host": "whois.donuts.co"
+  },
+  ".care": {
+    "host": "whois.donuts.co"
+  },
+  ".cash": {
+    "host": "whois.donuts.co"
+  },
   ".cafe": {
     "host": "whois.donuts.co"
   },
   ".coupons": {
+    "host": "whois.donuts.co"
+  },
+  ".dental": {
+    "host": "whois.donuts.co"
+  },
+  ".discount": {
+    "host": "whois.donuts.co"
+  },
+  ".exchange": {
+    "host": "whois.donuts.co"
+  },
+  ".fyi": {
+    "host": "whois.donuts.co"
+  },
+  ".financial": {
+    "host": "whois.donuts.co"
+  },
+  ".fail": {
+    "host": "whois.donuts.co"
+  },
+  ".fund": {
+    "host": "whois.donuts.co"
+  },
+  ".furniture": {
+    "host": "whois.donuts.co"
+  },
+  ".gratis": {
     "host": "whois.donuts.co"
   },
   ".gmbh": {
@@ -1373,61 +1409,19 @@
   ".group": {
     "host": "whois.donuts.co"
   },
-  ".ltd": {
-    "host": "whois.donuts.co"
-  },
-  ".soccer": {
-    "host": "whois.donuts.co"
-  },
-  ".tires": {
-    "host": "whois.donuts.co"
-  },
-  ".wine": {
-    "host": "whois.donuts.co"
-  },
-  ".vin": {
-    "host": "whois.donuts.co"
-  },
-  ".fyi": {
-    "host": "whois.donuts.co"
-  },
-  ".movie": {
-    "host": "whois.donuts.co"
-  },
-  ".hockey": {
-    "host": "whois.donuts.co"
-  },
-  ".team": {
-    "host": "whois.donuts.co"
-  },
-  ".run": {
-    "host": "whois.donuts.co"
-  },
-  ".taxi": {
-    "host": "whois.donuts.co"
-  },
-  ".jewelry": {
-    "host": "whois.donuts.co"
-  },
-  ".show": {
-    "host": "whois.donuts.co"
-  },
-  ".plus": {
-    "host": "whois.donuts.co"
-  },
-  ".tours": {
-    "host": "whois.donuts.co"
-  },
   ".gold": {
     "host": "whois.donuts.co"
   },
   ".golf": {
     "host": "whois.donuts.co"
   },
-  ".express": {
+  ".investments": {
     "host": "whois.donuts.co"
   },
-  ".theater": {
+  ".ltd": {
+    "host": "whois.donuts.co"
+  },
+  ".limited": {
     "host": "whois.donuts.co"
   },
   ".partners": {
@@ -1461,6 +1455,9 @@
     "host": "whois.donuts.co"
   },
   ".report": {
+    "host": "whois.donuts.co"
+  },
+  ".soccer": {
     "host": "whois.donuts.co"
   },
   ".shoes": {
@@ -1499,10 +1496,52 @@
   ".today": {
     "host": "whois.donuts.co"
   },
-  ".xn--unup4y": {
+  ".taxi": {
+    "host": "whois.donuts.co"
+  },
+  ".team": {
+    "host": "whois.donuts.co"
+  },
+  ".tires": {
+    "host": "whois.donuts.co"
+  },
+  ".vin": {
+    "host": "whois.donuts.co"
+  },
+  ".wine": {
     "host": "whois.donuts.co"
   },
   ".zone": {
+    "host": "whois.donuts.co"
+  },
+  ".movie": {
+    "host": "whois.donuts.co"
+  },
+  ".hockey": {
+    "host": "whois.donuts.co"
+  },
+  ".run": {
+    "host": "whois.donuts.co"
+  },
+  ".jewelry": {
+    "host": "whois.donuts.co"
+  },
+  ".show": {
+    "host": "whois.donuts.co"
+  },
+  ".plus": {
+    "host": "whois.donuts.co"
+  },
+  ".tours": {
+    "host": "whois.donuts.co"
+  },
+  ".express": {
+    "host": "whois.donuts.co"
+  },
+  ".theater": {
+    "host": "whois.donuts.co"
+  },
+  ".xn--unup4y": {
     "host": "whois.donuts.co"
   },
   ".tools": {
@@ -1568,49 +1607,10 @@
   ".university": {
     "host": "whois.donuts.co"
   },
-  ".clinic": {
-    "host": "whois.donuts.co"
-  },
   ".fitness": {
     "host": "whois.donuts.co"
   },
   ".schule": {
-    "host": "whois.donuts.co"
-  },
-  ".care": {
-    "host": "whois.donuts.co"
-  },
-  ".cash": {
-    "host": "whois.donuts.co"
-  },
-  ".dental": {
-    "host": "whois.donuts.co"
-  },
-  ".discount": {
-    "host": "whois.donuts.co"
-  },
-  ".exchange": {
-    "host": "whois.donuts.co"
-  },
-  ".fail": {
-    "host": "whois.donuts.co"
-  },
-  ".financial": {
-    "host": "whois.donuts.co"
-  },
-  ".fund": {
-    "host": "whois.donuts.co"
-  },
-  ".furniture": {
-    "host": "whois.donuts.co"
-  },
-  ".gratis": {
-    "host": "whois.donuts.co"
-  },
-  ".investments": {
-    "host": "whois.donuts.co"
-  },
-  ".limited": {
     "host": "whois.donuts.co"
   },
   ".surgery": {
@@ -2885,6 +2885,7 @@
   ".telefonica": {
     "host": "whois-fe.telefonica.tango.knipp.de"
   },
+  // corenic
   ".xn--80asehdb": {
     "host": "whois.online.rs.corenic.net"
   },
