@@ -2008,6 +2008,9 @@
   ".clinique": {
     "host": "whois.afilias-srs.net"
   },
+  ".dot": {
+    "host": "whois.afilias-srs.net"
+  },
   ".edeka": {
     "host": "whois.afilias-srs.net"
   },
@@ -3005,6 +3008,9 @@
   },
   ".bosch": {
     "host": "whois.nic.bosch"
+  },
+  ".blog": {
+    "host": "whois.nic.blog"
   },
   ".brother": {
     "host": "whois.nic.brother"
