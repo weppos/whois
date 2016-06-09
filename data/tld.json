@@ -3803,10 +3803,16 @@
   ".mobily": {
     "adapter": "none"
   },
+  ".mattel": {
+    "adapter": "none"
+  },
   ".mlb": {
     "adapter": "none"
   },
   ".mutual": {
+    "adapter": "none"
+  },
+  ".netflix": {
     "adapter": "none"
   },
   ".northwesternmutual": {
