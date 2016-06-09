@@ -5,6 +5,10 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### Release 4.0.0
 
+The WHOIS parsers are no longer part of this repository, and they have been extracted into a separate repository at https://github.com/weppos/whois-parser.
+
+The `whois` library is now simply a WHOIS client. If you want to use the parsing features, install the `whois-ruby` gem (that already defines `whois` as a dependency).
+
 **beta-2**
 
 - SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC, .PROGRESSIVE, .MLS, .BABY, JNJ, .FTR, .XN--4TZM5G, .EXTRASPACE, .BAREFOOT, .GALLO, .SHAW, .STREAM, .TALK, .XN--FCT429K, .XN--FCT429K, .YOU, .KPMG, .MUTUAL, .ABBVIE, .ABUDHABI, .NORTHWESTERNMUTUAL, .VIG, .WEIBO, .XN--9KRT00A, .XN--MGBCA7DZDO, .AGAKHAN, .AKDN, .IMAMAT, .ISMAILI, .SBI, .STATEBANK, .OLAYANGROUP, .FLIR, HKT, .GUARDIAN, .XN--W4RS40L, .TEVA, .FINANCIAL, .UPS, .MLB, .REALESTATE, .SHOP, .AETNA, .BLOG, .DOT, .MATTEL, .NETFLIX
