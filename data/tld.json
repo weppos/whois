@@ -3701,6 +3701,9 @@
   ".aig": {
     "adapter": "none"
   },
+  ".aetna": {
+    "adapter": "none"
+  },
   ".azure": {
     "adapter": "none"
   },
