@@ -3639,9 +3639,6 @@
   ".xperia": {
     "host": "whois.nic.xperia"
   },
-  ".xn--efvy88h": {
-    "host": "whois.nic.xn--efvy88h"
-  },
   ".xn--3pxu8k": {
     "host": "whois.nic.xn--3pxu8k"
   },
@@ -3653,6 +3650,12 @@
   },
   ".xn--c2br7g": {
     "host": "whois.nic.xn--c2br7g"
+  },
+  ".xn--e1a4c": {
+    "host": "whois.eu"
+  },
+  ".xn--efvy88h": {
+    "host": "whois.nic.xn--efvy88h"
   },
   ".xn--fhbei": {
     "host": "whois.nic.xn--fhbei"
@@ -3897,9 +3900,6 @@
     "adapter": "none"
   },
   ".xn--gckr3f0f": {
-    "adapter": "none"
-  },
-  ".xn--e1a4c": {
     "adapter": "none"
   },
   ".xn--mgbb9fbpob": {
