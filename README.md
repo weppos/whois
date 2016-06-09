@@ -2,7 +2,7 @@
 
 <tt>Whois</tt> is an intelligent — pure Ruby — WHOIS client and parser.
 
-This library was extracted from [RoboWhois](https://www.robowhois.com/) and [RoboDomain](http://robodomain.com/). It has been performing queries in production since July 2009.
+This library was extracted from [RoboWhois](http://www.robowhois.com/) and [RoboDomain](http://robodomain.com/), and it's now in use at [DNSimple](https://dnsimple.com/). It has been performing queries in production since July 2009.
 
 [![Build Status](https://travis-ci.org/weppos/whois.svg?branch=master)](https://travis-ci.org/weppos/whois)
 
@@ -179,4 +179,4 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 
 ## License
 
-Copyright (c) 2009-2015 Simone Carletti. This is Free Software distributed under the MIT license.
+Copyright (c) 2009-2016 Simone Carletti. This is Free Software distributed under the MIT license.
