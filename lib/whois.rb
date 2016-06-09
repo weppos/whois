@@ -38,15 +38,41 @@ module Whois
     alias_method :whois, :lookup
 
 
-    # Echoes a deprecation warning message.
-    #
-    # @param  [String] message The message to display.
-    # @return [void]
-    #
-    # @api private
-    # @private
+    # @deprecated
+    def available?(object)
+      unless defined? Whois::Parser
+        warn("Whois.available? requires the gem `whois-parser`")
+        return
+      end
+
+      deprecate(%Q{Whois.available? is deprecated. Call Whois.whois("#{object}").available?})
+
+      result = lookup(object).parser.available?
+      if result.nil?
+        warn  "This method is not supported for this kind of object.\n" +
+              "Use Whois.lookup('#{object}') instead."
+      end
+      result
+    end
+
+    # @deprecated
+    def registered?(object)
+      unless defined? Whois::Parser
+        warn("Whois.registered? requires the gem `whois-parser`")
+        return
+      end
+
+      deprecate(%Q{Whois.registered? is deprecated. Call Whois.whois("#{object}").available?})
+
+      result = lookup(object).parser.registered?
+      if result.nil?
+        warn  "This method is not supported for this kind of object.\n" +
+              "Use Whois.lookup('#{object}') instead."
+      end
+      result
+    end
+
     def deprecate(message = nil, callstack = caller)
-      message ||= "You are using deprecated behavior which will be removed from the next major or minor release."
       # warn("DEPRECATION WARNING: #{message} #{deprecation_caller_message(callstack)}")
       warn("DEPRECATION WARNING: #{message}")
     end
@@ -65,6 +91,7 @@ module Whois
         " Please report the issue at" <<
         " http://github.com/weppos/whois/issues"
     end
+
 
     private
 
