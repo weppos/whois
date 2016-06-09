@@ -2098,6 +2098,9 @@
   ".trv": {
     "host": "whois.afilias-srs.net"
   },
+  ".ups": {
+    "host": "whois.afilias-srs.net"
+  },
   ".viking": {
     "host": "whois.afilias-srs.net"
   },
