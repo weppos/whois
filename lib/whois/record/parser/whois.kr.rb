@@ -26,19 +26,21 @@ module Whois
       class WhoisKr < Base
 
         property_supported :status do
-          if available?
+          if content_for_scanner =~ /^Above domain name is not registered to KRNIC/
             :available
+          elsif content_for_scanner =~ /^The WHOIS query included an invalid character.\n^No domains found./
+            :unavailable
           else
             :registered
           end
         end
 
         property_supported :available? do
-          !!(content_for_scanner =~ /^Above domain name is not registered to KRNIC/)
+          status == :available
         end
 
         property_supported :registered? do
-          !available?
+          status == :registered
         end
 
 
