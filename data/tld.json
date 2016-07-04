@@ -2011,6 +2011,9 @@
   ".dot": {
     "host": "whois.afilias-srs.net"
   },
+  ".dtv": {
+    "host": "whois.afilias-srs.net"
+  },
   ".edeka": {
     "host": "whois.afilias-srs.net"
   },
@@ -2053,10 +2056,19 @@
   ".jcp": {
     "host": "whois.afilias-srs.net"
   },
+  ".locker": {
+    "host": "whois.afilias-srs.net"
+  },
   ".lamborghini": {
     "host": "whois.afilias-srs.net"
   },
   ".natura": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".ott": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".ollo": {
     "host": "whois.afilias-srs.net"
   },
   ".progressive": {
@@ -2589,15 +2601,19 @@
   ".xn--q9jyb4c": {
     "host": "domain-registry-whois.l.google.com"
   },
+
+  // whois.nic.google
   ".app": {
-    "host": "whois.nic.google"
-  },
-  ".play": {
     "host": "whois.nic.google"
   },
   ".drive": {
     "host": "whois.nic.google"
   },
+  ".play": {
+    "host": "whois.nic.google"
+  },
+
+  // whois.nic.gmo
   ".jcb": {
     "host": "whois.nic.gmo"
   },
