@@ -2782,7 +2782,18 @@
   ".bradesco": {
     "host": "whois-cl01.mm-registry.com"
   },
+
+  // whois.ksregistry.net
   ".archi": {
+    "host": "whois.ksregistry.net"
+  },
+  ".bio": {
+    "host": "whois.ksregistry.net"
+  },
+  ".bmw": {
+    "host": "whois.ksregistry.net"
+  },
+  ".cam": {
     "host": "whois.ksregistry.net"
   },
   ".fresenius": {
@@ -2792,12 +2803,6 @@
     "host": "whois.ksregistry.net"
   },
   ".desi": {
-    "host": "whois.ksregistry.net"
-  },
-  ".bio": {
-    "host": "whois.ksregistry.net"
-  },
-  ".bmw": {
     "host": "whois.ksregistry.net"
   },
   ".mini": {
