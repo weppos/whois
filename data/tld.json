@@ -2065,6 +2065,9 @@
   ".natura": {
     "host": "whois.afilias-srs.net"
   },
+  ".orientexpress": {
+    "host": "whois.afilias-srs.net"
+  },
   ".ott": {
     "host": "whois.afilias-srs.net"
   },
@@ -3107,6 +3110,9 @@
   },
   ".lat": {
     "host": "whois.nic.lat"
+  },
+  ".lego": {
+    "host": "whois.nic.lego"
   },
   ".locus": {
     "host": "whois.nic.locus"
