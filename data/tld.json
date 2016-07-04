@@ -2020,6 +2020,9 @@
   ".extraspace": {
     "host": "whois.afilias-srs.net"
   },
+  ".fedex": {
+    "host": "whois.afilias-srs.net"
+  },
   ".fage": {
     "host": "whois.afilias-srs.net"
   },
@@ -3783,6 +3786,9 @@
     "adapter": "none"
   },
   ".cisco": {
+    "adapter": "none"
+  },
+  ".farmers": {
     "adapter": "none"
   },
   ".ford": {
