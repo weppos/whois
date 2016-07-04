@@ -1,0 +1,37 @@
+query : google.xn--3e0b707e
+
+
+
+# KOREAN(UTF8)
+
+도메인이름 조회 형식이 옳지 않습니다.
+아래 예제를 확인 하신 후 다시 조회하여 주시기 바랍니다.
+
+도메인 네임 검색    : 예) nic.or.kr
+IPv4 검색           : 예) 202.30.50.0
+IPv6 검색           : 예) 2001:02B8:00A2:: 또는 2001:02B8:00A2::/48
+AS번호 검색         : 예) AS9700
+한글 도메인 검색    : 예) 한국인터넷정보센터.kr
+
+
+# ENGLISH
+
+The WHOIS query included an invalid character.
+No domains found.
+
+Domain Name Search  : ex) nic.or.kr
+IPv4 Address Search : ex) 202.30.50.0
+IPv6 Address Search : ex) 2001:02B8:00A2:: or 2001:02B8:00A2::/48
+AS Number Search    : ex) AS9700
+
+
+상기 정보는 UTF-8 인코딩되어 서비스되고 있습니다.
+EUC-KR 인코딩 서비스는 oldwhois.kisa.or.kr에서 서비스 되고 있습니다.
+The above information is encoded with UTF-8
+EUC-KR encoding WHOIS is being serviced in this URL:oldwhois.kisa.or.kr
+
+
+- KISA/KRNIC WHOIS Service -
+
+
+
