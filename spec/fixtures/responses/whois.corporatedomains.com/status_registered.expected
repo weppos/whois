@@ -1,9 +1,8 @@
 #domain
-  %s == "google.com"
+  %s == "corporatedomains.com"
 
 #domain_id
-  %s == ""
-
+  %s == "2546326_DOMAIN_COM-VRSN"
 
 #status
   %s == :registered
@@ -14,26 +13,24 @@
 #registered?
   %s == true
 
-
 #created_on
   %s %CLASS{time}
-  %s %TIME{1992-11-24 00:00:00 -0500}
-  
+  %s %TIME{1997-10-16 04:00:00 +0000}
 
 #updated_on
   %s %CLASS{time}
-  %s %TIME{2012-05-16 09:28:56 -0400}
+  %s %TIME{2015-10-11 08:26:53 -0000}
 
 #expires_on
   %s %CLASS{time}
-  %s %TIME{2013-11-23 00:00:00 -0500}
+  %s %TIME{2016-10-15 04:00:00 +0000}
 
 
 #registrar
   %s %CLASS{registrar}
   %s.id           == "299"
-  %s.name         == "CORPORATE DOMAINS, INC."
-  %s.organization == "CORPORATE DOMAINS, INC."
+  %s.name         == "CSC CORPORATE DOMAINS, INC."
+  %s.organization == "CSC CORPORATE DOMAINS, INC."
   %s.url          == "www.cscprotectsbrands.com"
 
 
@@ -42,16 +39,16 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
-  %s[0].name          == "Dns Admin"
-  %s[0].organization  == "Google Inc."
-  %s[0].address       == "Please contact contact-admin@google.com, 1600 Amphitheatre Parkway"
-  %s[0].city          == "Mountain View"
-  %s[0].zip           == "94043"
-  %s[0].state         == "CA"
+  %s[0].name          == "Domain Administrator"
+  %s[0].organization  == "CSC Corporate Domains, Inc."
+  %s[0].address       == "2711 Centerville Road, Ste. 400"
+  %s[0].city          == "Wilmington"
+  %s[0].zip           == "19808"
+  %s[0].state         == "DE"
   %s[0].country_code  == "US"
-  %s[0].phone         == "+1.6502530000"
-  %s[0].fax           == "+1.6506188571"
-  %s[0].email         == "dns-admin@google.com"
+  %s[0].phone         == "+1.3026365400"
+  %s[0].fax           == "+1.3026365454"
+  %s[0].email         == "admin@internationaladmin.com"
   %s[0].created_on    == nil
   %s[0].updated_on    == nil
 
@@ -60,16 +57,16 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_ADMINISTRATIVE
-  %s[0].name          == "DNS Admin"
-  %s[0].organization  == "Google Inc."
-  %s[0].address       == "1600 Amphitheatre Parkway"
-  %s[0].city          == "Mountain View"
-  %s[0].zip           == "94043"
-  %s[0].state         == "CA"
+  %s[0].name          == "Domain Administrator"
+  %s[0].organization  == "CSC Corporate Domains, Inc."
+  %s[0].address       == "2711 Centerville Road, Ste. 400"
+  %s[0].city          == "Wilmington"
+  %s[0].zip           == "19808"
+  %s[0].state         == "DE"
   %s[0].country_code  == "US"
-  %s[0].phone         == "+1.6506234000"
-  %s[0].fax           == "+1.6506188571"
-  %s[0].email         == "dns-admin@google.com"
+  %s[0].phone         == "+1.3026365400"
+  %s[0].fax           == "+1.3026365454"
+  %s[0].email         == "admin@internationaladmin.com"
   %s[0].created_on    == nil
   %s[0].updated_on    == nil
 
@@ -78,36 +75,28 @@
   %s %SIZE{1}
   %s[0] %CLASS{contact}
   %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
-  %s[0].name          == "DNS Admin"
-  %s[0].organization  == "Google Inc."
-  %s[0].address       == "2400 E. Bayshore Pkwy"
-  %s[0].city          == "Mountain View"
-  %s[0].zip           == "94043"
-  %s[0].state         == "CA"
+  %s[0].name          == "Domain Administrator"
+  %s[0].organization  == "CSC Corporate Domains, Inc."
+  %s[0].address       == "2711 Centerville Road, Ste. 400"
+  %s[0].city          == "Wilmington"
+  %s[0].zip           == "19808"
+  %s[0].state         == "DE"
   %s[0].country_code  == "US"
-  %s[0].phone         == "+1.6503300100"
-  %s[0].fax           == "+1.6506181499"
-  %s[0].email         == "dns-admin@google.com"
+  %s[0].phone         == "+1.3026365400"
+  %s[0].fax           == "+1.3026365454"
+  %s[0].email         == "admin@internationaladmin.com"
   %s[0].created_on    == nil
   %s[0].updated_on    == nil
 
 
 #nameservers
   %s %CLASS{array}
-  %s %SIZE{4}
+  %s %SIZE{2}
   %s[0] %CLASS{nameserver}
-  %s[0].name == "ns2.google.com"
+  %s[0].name == "pdns1.cscdns.net"
   %s[0].ipv4 == nil
   %s[0].ipv6 == nil
   %s[1] %CLASS{nameserver}
-  %s[1].name == "ns1.google.com"
+  %s[1].name == "pdns2.cscdns.net"
   %s[1].ipv4 == nil
   %s[1].ipv6 == nil
-  %s[2] %CLASS{nameserver}
-  %s[2].name == "ns3.google.com"
-  %s[2].ipv4 == nil
-  %s[2].ipv6 == nil
-  %s[3] %CLASS{nameserver}
-  %s[3].name == "ns4.google.com"
-  %s[3].ipv4 == nil
-  %s[3].ipv6 == nil
