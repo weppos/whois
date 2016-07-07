@@ -23,8 +23,29 @@ module Whois
         self.scanner = Scanners::BaseIcannCompliant, {
             pattern_available: /^No match for/
         }
-      end
 
+        property_supported :domain_id do
+          node('Domain ID')
+        end
+
+        property_supported :expires_on do
+          node('Registry Expiry Date') do |value|
+            parse_time(value)
+          end
+        end
+
+        property_supported :registrar do
+          return unless node('Sponsoring Registrar')
+          Record::Registrar.new(
+              id:           node('Sponsoring Registrar IANA ID'),
+              name:         node('Sponsoring Registrar'),
+              organization: node('Sponsoring Registrar'),
+              url:          node('Referral URL'),
+          )
+        end
+
+
+      end
     end
   end
 end
