@@ -1,0 +1,62 @@
+Domain Name: nic.rio
+Domain ID: D54-RIO
+WHOIS Server: whois.gtlds.nic.br
+Referral URL: http://gtlds.nic.br
+Updated Date: 2015-05-12T19:56:09Z
+Creation Date: 2014-05-19T22:46:02Z
+Registry Expiry Date: 2025-05-19T22:46:02Z
+Sponsoring Registrar: NIC.br New gTLD Back-End Registry Services
+Sponsoring Registrar IANA ID: 9999
+Domain Status: ok https://www.icann.org/epp#ok
+Registrant ID: C4R3-NICBR
+Registrant Name: Empresa Municipal de Informatica SA - IPLANRIO
+Registrant Organization: 73.214.439/0001-90
+Registrant Street: Av. Presidente Vargas 3131 Sala 1204
+Registrant City: Rio de Janeiro
+Registrant State/Province: RJ
+Registrant Postal Code: 20210-030
+Registrant Country: BR
+Registrant Phone: +55.2139711818
+Registrant Fax: 
+Registrant Email: gtlds-rio@registro.br
+Admin ID: C4R3-NICBR
+Admin Name: Empresa Municipal de Informatica SA - IPLANRIO
+Admin Organization: 73.214.439/0001-90
+Admin Street: Av. Presidente Vargas 3131 Sala 1204
+Admin City: Rio de Janeiro
+Admin State/Province: RJ
+Admin Postal Code: 20210-030
+Admin Country: BR
+Admin Phone: +55.2139711818
+Admin Fax: 
+Admin Email: gtlds-rio@registro.br
+Tech ID: C4R3-NICBR
+Tech Name: Empresa Municipal de Informatica SA - IPLANRIO
+Tech Organization: 73.214.439/0001-90
+Tech Street: Av. Presidente Vargas 3131 Sala 1204
+Tech City: Rio de Janeiro
+Tech State/Province: RJ
+Tech Postal Code: 20210-030
+Tech Country: BR
+Tech Phone: +55.2139711818
+Tech Fax: 
+Tech Email: gtlds-rio@registro.br
+Name Server: ns.dns.br
+Name Server: ns2.dns.br
+DNSSEC: signedDelegation
+
+>>> Last update of WHOIS database: 2016-07-20T18:04:56Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+% The queried data can only be used for technical or
+% administrative requirements associated with the Internet
+% or in order to contact the domain or block holder over
+% legal problems, being prohibited the distribution,
+% repackaging, modification, comercialization or
+% reproduction, in particular, to use it for advertising or
+% any similar purpose;
+%
+% Any prohibited use or harvesting, may cause, without
+% previous warning, access restriction, without prejudice
+% of future legal action.
