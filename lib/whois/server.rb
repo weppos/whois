@@ -30,6 +30,7 @@ module Whois
       autoload :Arpa,             "whois/server/adapters/arpa"
       autoload :Afilias,          "whois/server/adapters/afilias"
       autoload :Formatted,        "whois/server/adapters/formatted"
+      autoload :Nicbr,            "whois/server/adapters/nicbr"
       autoload :None,             "whois/server/adapters/none"
       autoload :NotImplemented,   "whois/server/adapters/not_implemented"
       autoload :Standard,         "whois/server/adapters/standard"

@@ -278,7 +278,8 @@
     "host": "whois.nic.bo"
   },
   ".br": {
-    "host": "whois.registro.br"
+    "host": "whois.registro.br",
+    "adapter": "nicbr"
   },
   ".bs": {
     "adapter": "web",
@@ -3001,20 +3002,27 @@
   ".xn--czru2d": {
     "host": "whois.gtld.knet.cn"
   },
+
+  // whois.gtlds.nic.br
   ".globo": {
-    "host": "whois.gtlds.nic.br"
+    "host": "whois.gtlds.nic.br",
+    "adapter": "nicbr"
   },
   ".bom": {
-    "host": "whois.gtlds.nic.br"
+    "host": "whois.gtlds.nic.br",
+    "adapter": "nicbr"
   },
   ".final": {
-    "host": "whois.gtlds.nic.br"
+    "host": "whois.gtlds.nic.br",
+    "adapter": "nicbr"
   },
   ".rio": {
-    "host": "whois.gtlds.nic.br"
+    "host": "whois.gtlds.nic.br",
+    "adapter": "nicbr"
   },
   ".uol": {
-    "host": "whois.gtlds.nic.br"
+    "host": "whois.gtlds.nic.br",
+    "adapter": "nicbr"
   },
 
   // whois.nic.*
