@@ -278,7 +278,8 @@
     "host": "whois.nic.bo"
   },
   ".br": {
-    "host": "whois.registro.br"
+    "host": "whois.registro.br",
+    "adapter": "nicbr"
   },
   ".bs": {
     "adapter": "web",
