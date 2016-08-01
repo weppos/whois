@@ -11,7 +11,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 **master**
 
-- SERVER: Added .LIPSY, .NEXT, .NEXTDIRECT, .OLAYAN, .WARMAN, .XN--MGBA7C0BBN0A, .TDK, .DTV, .LOCKER, .OLLO, .OTT, .CAM, .LEGO, .ORIENTEXPRESS, .FEDEX, .FARMERS
+- SERVER: Added .LIPSY, .NEXT, .NEXTDIRECT, .OLAYAN, .WARMAN, .XN--MGBA7C0BBN0A, .TDK, .DTV, .LOCKER, .OLLO, .OTT, .CAM, .LEGO, .ORIENTEXPRESS, .FEDEX, .FARMERS, .TIAA
 
 
 **beta-2**

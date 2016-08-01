@@ -3195,6 +3195,9 @@
   ".teva": {
     "host": "whois.nic.teva"
   },
+  ".tiia": {
+    "host": "whois.nic.tiia"
+  },
   ".tiffany": {
     "host": "whois.nic.tiffany"
   },
