@@ -1984,6 +1984,9 @@
   ".boats": {
     "host": "whois.afilias-srs.net"
   },
+  ".bestbuy": {
+    "host": "whois.afilias-srs.net"
+  },
   ".bcg": {
     "host": "whois.afilias-srs.net"
   },
@@ -3092,6 +3095,12 @@
   },
   ".ifm": {
     "host": "whois.nic.ifm"
+  },
+  ".lpl": {
+    "host": "whois.nic.lpl"
+  },
+  ".lplfinancial": {
+    "host": "whois.nic.lplfinancial"
   },
   ".java": {
     "host": "whois.nic.java"
