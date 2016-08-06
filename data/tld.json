@@ -3295,6 +3295,9 @@
   ".symantec": {
     "host": "whois.nic.symantec"
   },
+  ".shangrila": {
+    "host": "whois.nic.shangrila"
+  },
   ".store": {
     "host": "whois.nic.store"
   },
@@ -3351,6 +3354,9 @@
   },
   ".verisign": {
     "host": "whois.nic.verisign"
+  },
+  ".xn--5su34j936bgsg": {
+    "host": "whois.nic.xn--5su34j936bgsg"
   },
   ".xn--mxtq1m": {
     "host": "whois.nic.xn--mxtq1m"
@@ -3897,6 +3903,9 @@
   ".cartier": {
     "adapter": "none"
   },
+  ".cbre": {
+    "adapter": "none"
+  },
   ".cbn": {
     "adapter": "none"
   },
@@ -4107,31 +4116,10 @@
   ".zappos": {
     "adapter": "none"
   },
+  ".zippo": {
+    "adapter": "none"
+  },
   ".zero": {
-    "adapter": "none"
-  },
-  ".xn--1ck2e1b": {
-    "adapter": "none"
-  },
-  ".xn--5tzm5g": {
-    "adapter": "none"
-  },
-  ".xn--bck1b9a5dre4c": {
-    "adapter": "none"
-  },
-  ".xn--cck2b3b": {
-    "adapter": "none"
-  },
-  ".xn--gckr3f0f": {
-    "adapter": "none"
-  },
-  ".xn--mgbb9fbpob": {
-    "adapter": "none"
-  },
-  ".xn--jvr189m": {
-    "adapter": "none"
-  },
-  ".xn--rovu88b": {
     "adapter": "none"
   },
   ".pin": {
@@ -4341,18 +4329,47 @@
   ".weather": {
     "adapter": "none"
   },
+
+  // new gTLDs
   ".voting": {
     "host": "whois.voting.tld-box.at"
   },
 
   // new gTLDs IDNA
+  ".xn--1ck2e1b": {
+    "adapter": "none"
+  },
+  ".xn--5tzm5g": {
+    "adapter": "none"
+  },
   ".xn--8y0a063a": {
+    "host": "whois.imena.bg"
+  },
+  ".xn--90ae": {
+    "adapter": "none"
+  },
+  ".xn--bck1b9a5dre4c": {
     "adapter": "none"
   },
   ".xn--eckvdtc9d": {
     "adapter": "none"
   },
   ".xn--fct429k": {
+    "adapter": "none"
+  },
+  
+    "adapter": "none"
+  },
+  ".xn--gckr3f0f": {
+    "adapter": "none"
+  },
+  ".xn--mgbb9fbpob": {
+    "adapter": "none"
+  },
+  ".xn--jvr189m": {
+    "adapter": "none"
+  },
+  ".xn--rovu88b": {
     "adapter": "none"
   },
   ".xn--kpu716f": {
