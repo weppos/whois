@@ -1466,6 +1466,9 @@
   ".singles": {
     "host": "whois.donuts.co"
   },
+  ".shopping": {
+    "host": "whois.donuts.co"
+  },
   ".solar": {
     "host": "whois.donuts.co"
   },
@@ -2066,6 +2069,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".irish": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".itv": {
     "host": "whois.afilias-srs.net"
   },
   ".jcp": {
@@ -3024,6 +3030,9 @@
   ".abudhabi": {
     "host": "whois.nic.abudhabi"
   },
+  ".anz": {
+    "host": "whois.nic.anz"
+  },
   ".afl": {
     "host": "whois.nic.afl"
   },
@@ -3041,6 +3050,9 @@
   },
   ".bbc": {
     "host": "whois.nic.bbc"
+  },
+  ".blanco": {
+    "host": "whois.nic.blanco"
   },
   ".bauhaus": {
     "host": "whois.nic.bauhaus"
@@ -3783,6 +3795,9 @@
     "adapter": "none"
   },
   ".aws": {
+    "adapter": "none"
+  },
+  ".able": {
     "adapter": "none"
   },
   ".audible": {
