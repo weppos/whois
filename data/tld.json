@@ -3764,6 +3764,9 @@
   ".aws": {
     "adapter": "none"
   },
+  ".audible": {
+    "adapter": "none"
+  },
   ".adac": {
     "adapter": "none"
   },
@@ -3803,6 +3806,9 @@
   ".bot": {
     "adapter": "none"
   },
+  ".chintai": {
+    "adapter": "none"
+  },
   ".call": {
     "adapter": "none"
   },
@@ -3827,10 +3833,19 @@
   ".cisco": {
     "adapter": "none"
   },
+  ".deal": {
+    "adapter": "none"
+  },
   ".dhl": {
     "adapter": "none"
   },
   ".dealer": {
+    "adapter": "none"
+  },
+  ".epost": {
+    "adapter": "none"
+  },
+  ".fire": {
     "adapter": "none"
   },
   ".farmers": {
@@ -3881,6 +3896,12 @@
   ".kpmg": {
     "adapter": "none"
   },
+  ".imdb": {
+    "adapter": "none"
+  },
+  ".kindle": {
+    "adapter": "none"
+  },
   ".lanxess": {
     "adapter": "none"
   },
@@ -3905,6 +3926,9 @@
   ".mutual": {
     "adapter": "none"
   },
+  ".now": {
+    "adapter": "none"
+  },
   ".netflix": {
     "adapter": "none"
   },
@@ -3915,6 +3939,9 @@
     "adapter": "none"
   },
   ".pamperedchef": {
+    "adapter": "none"
+  },
+  ".prime": {
     "adapter": "none"
   },
   ".room": {
@@ -3938,6 +3965,12 @@
   ".sas": {
     "adapter": "none"
   },
+  ".save": {
+    "adapter": "none"
+  },
+  ".silk": {
+    "adapter": "none"
+  },
   ".shop": {
     "adapter": "none"
   },
@@ -3948,6 +3981,9 @@
     "adapter": "none"
   },
   ".stream": {
+    "adapter": "none"
+  },
+  ".tdk": {
     "adapter": "none"
   },
   ".taobao": {
