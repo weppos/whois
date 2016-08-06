@@ -2334,10 +2334,21 @@
   ".autos": {
     "host": "whois.afilias.net"
   },
+
+  // whois.rightside.co
+  ".attorney": {
+    "host": "whois.rightside.co"
+  },
   ".band": {
     "host": "whois.rightside.co"
   },
+  ".degree": {
+    "host": "whois.rightside.co"
+  },
   ".family": {
+    "host": "whois.rightside.co"
+  },
+  ".games": {
     "host": "whois.rightside.co"
   },
   ".rip": {
@@ -2352,13 +2363,7 @@
   ".news": {
     "host": "whois.rightside.co"
   },
-  ".degree": {
-    "host": "whois.rightside.co"
-  },
   ".mortgage": {
-    "host": "whois.rightside.co"
-  },
-  ".attorney": {
     "host": "whois.rightside.co"
   },
   ".dentist": {
@@ -2623,67 +2628,49 @@
   },
 
   // whois.nic.gmo
-  ".jcb": {
-    "host": "whois.nic.gmo"
+  ".canon": {
+    "host": "whois.nic.canon"
   },
-  ".hitachi": {
+  ".datsun": {
     "host": "whois.nic.gmo"
   },
   ".goo": {
     "host": "whois.nic.gmo"
   },
-  ".canon": {
-    "host": "whois.nic.canon"
-  },
   ".ggee": {
     "host": "whois.nic.ggee"
-  },
-  ".nico": {
-    "host": "whois.nic.nico"
-  },
-  ".toshiba": {
-    "host": "whois.nic.toshiba"
-  },
-  ".kddi": {
-    "host": "whois.nic.kddi"
-  },
-  ".fairwinds": {
-    "host": "whois.nic.fairwinds"
-  },
-  ".verisign": {
-    "host": "whois.nic.verisign"
-  },
-  ".insurance": {
-    "host": "whois.nic.insurance"
-  },
-  ".med": {
-    "host": "whois.nic.med"
-  },
-  ".norton": {
-    "host": "whois.nic.norton"
-  },
-  ".symantec": {
-    "host": "whois.nic.symantec"
-  },
-  ".tab": {
-    "host": "whois.nic.tab"
-  },
-  ".sfr": {
-    "host": "whois.nic.sfr"
-  },
-  ".lotte": {
-    "host": "whois.nic.lotte"
   },
   ".goldpoint": {
     "host": "whois.nic.goldpoint"
   },
-  ".yodobashi": {
+  ".hisamitsu": {
     "host": "whois.nic.gmo"
   },
-  ".datsun": {
+  ".hitachi": {
     "host": "whois.nic.gmo"
   },
   ".infiniti": {
+    "host": "whois.nic.gmo"
+  },
+  ".jcb": {
+    "host": "whois.nic.gmo"
+  },
+  ".kddi": {
+    "host": "whois.nic.kddi"
+  },
+  ".lotte": {
+    "host": "whois.nic.lotte"
+  },
+  ".nico": {
+    "host": "whois.nic.nico"
+  },
+  ".pioneer": {
+    "host": "whois.nic.gmo"
+  },
+  ".toshiba": {
+    "host": "whois.nic.toshiba"
+  },
+  ".yodobashi": {
     "host": "whois.nic.gmo"
   },
   ".mtpc": {
@@ -2695,6 +2682,7 @@
   ".nissan": {
     "host": "whois.nic.gmo"
   },
+
   ".pars": {
     "host": "whois.agitsys.net"
   },
@@ -3087,6 +3075,9 @@
   ".forex": {
     "host": "whois.nic.forex"
   },
+  ".fairwinds": {
+    "host": "whois.nic.fairwinds"
+  },
   ".gallo": {
     "host": "whois.nic.gallo"
   },
@@ -3096,11 +3087,8 @@
   ".ifm": {
     "host": "whois.nic.ifm"
   },
-  ".lpl": {
-    "host": "whois.nic.lpl"
-  },
-  ".lplfinancial": {
-    "host": "whois.nic.lplfinancial"
+  ".insurance": {
+    "host": "whois.nic.insurance"
   },
   ".java": {
     "host": "whois.nic.java"
@@ -3117,6 +3105,12 @@
   ".kuokgroup": {
     "host": "whois.nic.kuokgroup"
   },
+  ".lpl": {
+    "host": "whois.nic.lpl"
+  },
+  ".lplfinancial": {
+    "host": "whois.nic.lplfinancial"
+  },
   ".lipsy": {
     "host": "whois.nic.lipsy"
   },
@@ -3132,6 +3126,9 @@
   ".lifestyle": {
     "host": "whois.nic.lifestyle"
   },
+  ".med": {
+    "host": "whois.nic.med"
+  },
   ".mls": {
     "host": "whois.nic.mls"
   },
@@ -3143,6 +3140,9 @@
   },
   ".mtn": {
     "host": "whois.nic.mtn"
+  },
+  ".norton": {
+    "host": "whois.nic.norton"
   },
   ".next": {
     "host": "whois.nic.next"
@@ -3174,6 +3174,9 @@
   ".realestate": {
     "host": "whois.nic.realestate"
   },
+  ".symantec": {
+    "host": "whois.nic.symantec"
+  },
   ".store": {
     "host": "whois.nic.store"
   },
@@ -3195,11 +3198,17 @@
   ".swiss": {
     "host": "whois.nic.swiss"
   },
+  ".sfr": {
+    "host": "whois.nic.sfr"
+  },
   ".shell": {
     "host": "whois.nic.shell"
   },
   ".spreadbetting": {
     "host": "whois.nic.spreadbetting"
+  },
+  ".tab": {
+    "host": "whois.nic.tab"
   },
   ".teva": {
     "host": "whois.nic.teva"
@@ -3215,6 +3224,9 @@
   },
   ".vana": {
     "host": "whois.nic.vana"
+  },
+  ".verisign": {
+    "host": "whois.nic.verisign"
   },
   ".xn--mxtq1m": {
     "host": "whois.nic.xn--mxtq1m"
@@ -3776,10 +3788,25 @@
   ".azure": {
     "adapter": "none"
   },
+  ".author": {
+    "adapter": "none"
+  },
   ".baby": {
     "adapter": "none"
   },
   ".bharti": {
+    "adapter": "none"
+  },
+  ".book": {
+    "adapter": "none"
+  },
+  ".bot": {
+    "adapter": "none"
+  },
+  ".call": {
+    "adapter": "none"
+  },
+  ".circle": {
     "adapter": "none"
   },
   ".coupon": {
@@ -3798,6 +3825,12 @@
     "adapter": "none"
   },
   ".cisco": {
+    "adapter": "none"
+  },
+  ".dhl": {
+    "adapter": "none"
+  },
+  ".dealer": {
     "adapter": "none"
   },
   ".farmers": {
@@ -3819,9 +3852,6 @@
     "adapter": "none"
   },
   ".ftr": {
-    "adapter": "none"
-  },
-  ".dealer": {
     "adapter": "none"
   },
   ".got": {
@@ -3953,6 +3983,9 @@
   ".watches": {
     "adapter": "none"
   },
+  ".zappos": {
+    "adapter": "none"
+  },
   ".zero": {
     "adapter": "none"
   },
@@ -3992,22 +4025,7 @@
   ".jot": {
     "adapter": "none"
   },
-  ".call": {
-    "adapter": "none"
-  },
   ".fast": {
-    "adapter": "none"
-  },
-  ".circle": {
-    "adapter": "none"
-  },
-  ".author": {
-    "adapter": "none"
-  },
-  ".book": {
-    "adapter": "none"
-  },
-  ".bot": {
     "adapter": "none"
   },
   ".grainger": {
