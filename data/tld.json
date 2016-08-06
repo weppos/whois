@@ -3078,6 +3078,9 @@
   ".contact": {
     "host": "whois.nic.contact"
   },
+  ".chintai": {
+    "host": "whois.nic.chintai"
+  },
   ".design": {
     "host": "whois.nic.design"
   },
@@ -3822,9 +3825,6 @@
     "adapter": "none"
   },
   ".bot": {
-    "adapter": "none"
-  },
-  ".chintai": {
     "adapter": "none"
   },
   ".call": {
