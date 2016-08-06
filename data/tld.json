@@ -3226,6 +3226,9 @@
   ".linde": {
     "host": "whois.nic.linde"
   },
+  ".macys": {
+    "host": "whois.nic.macys"
+  },
   ".men": {
     "host": "whois.nic.men"
   },
@@ -3951,6 +3954,9 @@
   ".htc": {
     "adapter": "none"
   },
+  ".intuit": {
+    "adapter": "none"
+  },
   ".jmp": {
     "adapter": "none"
   },
@@ -3982,6 +3988,9 @@
     "adapter": "none"
   },
   ".living": {
+    "adapter": "none"
+  },
+  ".mint": {
     "adapter": "none"
   },
   ".mobily": {
