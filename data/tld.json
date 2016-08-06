@@ -1284,7 +1284,11 @@
   ".social": {
     "host": "whois.unitedtld.com"
   },
+
   // centralnic
+  ".art": {
+    "host": "whois.centralnic.com"
+  },
   ".kfh": {
     "host": "whois.nic.kfh"
   },
@@ -3072,8 +3076,38 @@
   ".brother": {
     "host": "whois.nic.brother"
   },
+  ".bridgestone": {
+    "host": "whois.nic.bridgestone"
+  },
+  ".bentley": {
+    "host": "whois.nic.bentley"
+  },
   ".barefoot": {
     "host": "whois.nic.barefoot"
+  },
+  ".buzz": {
+    "host": "whois.nic.buzz"
+  },
+  ".bar": {
+    "host": "whois.nic.bar"
+  },
+  ".berlin": {
+    "host": "whois.nic.berlin"
+  },
+  ".best": {
+    "host": "whois.nic.best"
+  },
+  ".build": {
+    "host": "whois.nic.build"
+  },
+  ".clubmed": {
+    "host": "whois.nic.clubmed"
+  },
+  ".ceo": {
+    "host": "whois.nic.ceo"
+  },
+  ".club": {
+    "host": "whois.nic.club"
   },
   ".cfd": {
     "host": "whois.nic.cfd"
@@ -3086,6 +3120,9 @@
   },
   ".cityeats": {
     "host": "whois.nic.cityeats"
+  },
+  ".cookingchannel": {
+    "host": "whois.nic.cookingchannel"
   },
   ".contact": {
     "host": "whois.nic.contact"
@@ -3102,11 +3139,20 @@
   ".dubai": {
     "host": "whois.nic.dubai"
   },
+  ".erni": {
+    "host": "whois.nic.erni"
+  },
   ".ericsson": {
     "host": "whois.nic.ericsson"
   },
   ".forex": {
     "host": "whois.nic.forex"
+  },
+  ".frontdoor": {
+    "host": "whois.nic.frontdoor"
+  },
+  ".foodnetwork": {
+    "host": "whois.nic.foodnetwork"
   },
   ".fairwinds": {
     "host": "whois.nic.fairwinds"
@@ -3119,6 +3165,9 @@
   },
   ".ifm": {
     "host": "whois.nic.ifm"
+  },
+  ".hgtv": {
+    "host": "whois.nic.hgtv"
   },
   ".insurance": {
     "host": "whois.nic.insurance"
@@ -3159,6 +3208,30 @@
   ".lifestyle": {
     "host": "whois.nic.lifestyle"
   },
+  ".luxury": {
+    "host": "whois.nic.luxury"
+  },
+  ".lacaixa": {
+    "host": "whois.nic.lacaixa"
+  },
+  ".liaison": {
+    "host": "whois.nic.liaison"
+  },
+  ".linde": {
+    "host": "whois.nic.linde"
+  },
+  ".men": {
+    "host": "whois.nic.men"
+  },
+  ".menu": {
+    "host": "whois.nic.menu"
+  },
+  ".monash": {
+    "host": "whois.nic.monash"
+  },
+  ".moe": {
+    "host": "whois.nic.moe"
+  },
   ".med": {
     "host": "whois.nic.med"
   },
@@ -3197,6 +3270,9 @@
   },
   ".olayangroup": {
     "host": "whois.nic.olayangroup"
+  },
+  ".politie": {
+    "host": "whois.nicpolitie"
   },
   ".quest": {
     "host": "whois.nic.quest"
@@ -3243,6 +3319,9 @@
   ".tab": {
     "host": "whois.nic.tab"
   },
+  ".travelchannel": {
+    "host": "whois.nic.travelchannel"
+  },
   ".teva": {
     "host": "whois.nic.teva"
   },
@@ -3276,8 +3355,8 @@
   ".warman": {
     "host": "whois.nic.warman"
   },
-  ".erni": {
-    "host": "whois.nic.erni"
+  ".woodside": {
+    "host": "whois.nic.woodside"
   },
   ".pid": {
     "host": "whois.nic.pid"
@@ -3291,74 +3370,23 @@
   ".honda": {
     "host": "whois.nic.honda"
   },
-  ".bridgestone": {
-    "host": "whois.nic.bridgestone"
-  },
-  ".bentley": {
-    "host": "whois.nic.bentley"
-  },
   ".toray": {
     "host": "whois.nic.toray"
   },
   ".orange": {
     "host": "whois.nic.orange"
   },
-  ".men": {
-    "host": "whois.nic.men"
-  },
-  ".buzz": {
-    "host": "whois.nic.buzz"
-  },
-  ".linde": {
-    "host": "whois.nic.linde"
-  },
-  ".bar": {
-    "host": "whois.nic.bar"
-  },
-  ".berlin": {
-    "host": "whois.nic.berlin"
-  },
-  ".best": {
-    "host": "whois.nic.best"
-  },
-  ".build": {
-    "host": "whois.nic.build"
-  },
-  ".clubmed": {
-    "host": "whois.nic.clubmed"
-  },
-  ".ceo": {
-    "host": "whois.nic.ceo"
-  },
-  ".club": {
-    "host": "whois.nic.club"
-  },
   ".kiwi": {
     "host": "whois.nic.kiwi"
-  },
-  ".luxury": {
-    "host": "whois.nic.luxury"
-  },
-  ".menu": {
-    "host": "whois.nic.menu"
   },
   ".obi": {
     "host": "whois.nic.obi"
   },
-  ".monash": {
-    "host": "whois.nic.monash"
-  },
   ".bms": {
     "host": "whois.nic.bms"
   },
-  ".moe": {
-    "host": "whois.nic.moe"
-  },
   ".cfa": {
     "host": "whois.nic.cfa"
-  },
-  ".liaison": {
-    "host": "whois.nic.liaison"
   },
   ".ruhr": {
     "host": "whois.nic.ruhr"
@@ -3413,9 +3441,6 @@
   },
   ".scb": {
     "host": "whois.nic.scb"
-  },
-  ".lacaixa": {
-    "host": "whois.nic.lacaixa"
   },
   ".vlaanderen": {
     "host": "whois.nic.vlaanderen"
@@ -3960,6 +3985,9 @@
     "adapter": "none"
   },
   ".mutual": {
+    "adapter": "none"
+  },
+  ".nfl": {
     "adapter": "none"
   },
   ".now": {
