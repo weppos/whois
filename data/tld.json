@@ -3054,6 +3054,8 @@
   ".xn--czru2d": {
     "host": "whois.gtld.knet.cn"
   },
+
+  // nic.br
   ".globo": {
     "host": "whois.gtlds.nic.br"
   },
@@ -3833,6 +3835,7 @@
   ".xperia": {
     "host": "whois.nic.xperia"
   },
+
   ".xn--3pxu8k": {
     "host": "whois.nic.xn--3pxu8k"
   },
@@ -4363,9 +4366,6 @@
   ".montblanc": {
     "adapter": "none"
   },
-  ".samsung": {
-    "host": "whois.nic.xn--cg4bki"
-  },
   ".tube": {
     "adapter": "none"
   },
@@ -4376,7 +4376,13 @@
     "adapter": "none"
   },
 
-  // new gTLDs
+  // other gTLDs
+  ".doosan": {
+    "host": "whois.nic.xn--cg4bki"
+  },
+  ".samsung": {
+    "host": "whois.nic.xn--cg4bki"
+  },
   ".voting": {
     "host": "whois.voting.tld-box.at"
   },
@@ -4456,9 +4462,6 @@
   },
   ".xn--zfr164b": {
     "host": "whois.conac.cn"
-  },
-  ".doosan": {
-    "host": "whois.nic.xn--cg4bki"
   },
   ".xn--cg4bki": {
     "host": "whois.kr"
