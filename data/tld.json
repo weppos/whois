@@ -2014,6 +2014,9 @@
   ".dot": {
     "host": "whois.afilias-srs.net"
   },
+  ".dunlop": {
+    "host": "whois.afilias-srs.net"
+  },
   ".dtv": {
     "host": "whois.afilias-srs.net"
   },
@@ -2032,6 +2035,9 @@
   ".gallup": {
     "host": "whois.afilias-srs.net"
   },
+  ".goodyear": {
+    "host": "whois.afilias-srs.net"
+  },
   ".gea": {
     "host": "whois.afilias-srs.net"
   },
@@ -2048,6 +2054,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".hkt": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".kosher": {
     "host": "whois.afilias-srs.net"
   },
   ".ismaili": {
@@ -3018,6 +3027,12 @@
   ".afl": {
     "host": "whois.nic.afl"
   },
+  ".airbus": {
+    "host": "whois.nic.airbus"
+  },
+  ".alstom": {
+    "host": "whois.nic.alstom"
+  },
   ".broker": {
     "host": "whois.nic.broker"
   },
@@ -3071,6 +3086,9 @@
   },
   ".dubai": {
     "host": "whois.nic.dubai"
+  },
+  ".ericsson": {
+    "host": "whois.nic.ericsson"
   },
   ".forex": {
     "host": "whois.nic.forex"
@@ -3837,6 +3855,9 @@
     "adapter": "none"
   },
   ".dhl": {
+    "adapter": "none"
+  },
+  ".dupont": {
     "adapter": "none"
   },
   ".dealer": {
