@@ -2087,6 +2087,9 @@
   ".lamborghini": {
     "host": "whois.afilias-srs.net"
   },
+  ".mit": {
+    "host": "whois.afilias-srs.net"
+  },
   ".natura": {
     "host": "whois.afilias-srs.net"
   },
