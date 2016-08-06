@@ -2535,132 +2535,130 @@
 
   // google
   ".ads": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".guge": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".here": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".esq": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".gmail": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".youtube": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".prod": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".gbiz": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".how": {
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
   ".android": {
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
-  ".foo": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".soy": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".dad": {
-    "host": "domain-registry-whois.l.google.com"
+  ".app": {
+    "host": "whois.nic.google"
   },
   ".boo": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".day": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".eat": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".mov": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".new": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".rsvp": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".meme": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".zip": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".prof": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".nexus": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".google": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".gle": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".fly": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".chrome": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".channel": {
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
   ".cal": {
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
-  ".ing": {
-    "host": "domain-registry-whois.l.google.com"
+  ".channel": {
+    "host": "whois.nic.google"
   },
-  ".xn--flw351e": {
-    "host": "domain-registry-whois.l.google.com"
+  ".chrome": {
+    "host": "whois.nic.google"
   },
-  ".xn--qcka1pmc": {
-    "host": "domain-registry-whois.l.google.com"
+  ".dad": {
+    "host": "whois.nic.google"
   },
-  ".dev": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".docs": {
-    "host": "domain-registry-whois.l.google.com"
+  ".day": {
+    "host": "whois.nic.google"
   },
   ".dclk": {
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
-  ".goog": {
-    "host": "domain-registry-whois.l.google.com"
+  ".docs": {
+    "host": "whois.nic.google"
   },
-  ".hangout": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".page": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-  ".xn--q9jyb4c": {
-    "host": "domain-registry-whois.l.google.com"
-  },
-
-  // whois.nic.google
-  ".app": {
+  ".dev": {
     "host": "whois.nic.google"
   },
   ".drive": {
     "host": "whois.nic.google"
   },
+  ".eat": {
+    "host": "whois.nic.google"
+  },
+  ".esq": {
+    "host": "whois.nic.google"
+  },
+  ".fly": {
+    "host": "whois.nic.google"
+  },
+  ".foo": {
+    "host": "whois.nic.google"
+  },
+  ".gbiz": {
+    "host": "whois.nic.google"
+  },
+  ".gle": {
+    "host": "whois.nic.google"
+  },
+  ".gmail": {
+    "host": "whois.nic.google"
+  },
+  ".goog": {
+    "host": "whois.nic.google"
+  },
+  ".google": {
+    "host": "whois.nic.google"
+  },
+  ".guge": {
+    "host": "whois.nic.google"
+  },
+  ".hangout": {
+    "host": "whois.nic.google"
+  },
+  ".here": {
+    "host": "whois.nic.google"
+  },
+  ".how": {
+    "host": "whois.nic.google"
+  },
+  ".ing": {
+    "host": "whois.nic.google"
+  },
+  ".meme": {
+    "host": "whois.nic.google"
+  },
+  ".mov": {
+    "host": "whois.nic.google"
+  },
+  ".new": {
+    "host": "whois.nic.google"
+  },
+  ".nexus": {
+    "host": "whois.nic.google"
+  },
+  ".page": {
+    "host": "whois.nic.google"
+  },
   ".play": {
     "host": "whois.nic.google"
+  },
+  ".prod": {
+    "host": "whois.nic.google"
+  },
+  ".prof": {
+    "host": "whois.nic.google"
+  },
+  ".rsvp": {
+    "host": "whois.nic.google"
+  },
+  ".youtube": {
+    "host": "whois.nic.google"
+  },
+  ".zip": {
+    "host": "whois.nic.google"
+  },
+  ".xn--qcka1pmc": {
+    "host": "whois.nic.google"
+  },
+  ".xn--flw351e": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".soy": {
+    "host": "domain-registry-whois.l.google.com"
+  },
+  ".xn--q9jyb4c": {
+    "host": "domain-registry-whois.l.google.com"
   },
 
   // whois.nic.gmo
