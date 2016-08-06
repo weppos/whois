@@ -2101,6 +2101,9 @@
   ".mit": {
     "host": "whois.afilias-srs.net"
   },
+  ".mckinsey": {
+    "host": "whois.afilias-srs.net"
+  },
   ".natura": {
     "host": "whois.afilias-srs.net"
   },
@@ -3094,6 +3097,9 @@
   ".americanfamily": {
     "host": "whois.nic.americanfamily"
   },
+  ".afamilycompany": {
+    "host": "whois.nic.afamilycompany"
+  },
   ".broker": {
     "host": "whois.nic.broker"
   },
@@ -4055,6 +4061,9 @@
     "adapter": "none"
   },
   ".living": {
+    "adapter": "none"
+  },
+  ".lilly": {
     "adapter": "none"
   },
   ".mint": {
