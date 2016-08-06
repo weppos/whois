@@ -3304,6 +3304,9 @@
   ".skin": {
     "host": "whois.nic.skin"
   },
+  ".ses": {
+    "host": "whois.nic.ses"
+  },
   ".sap": {
     "host": "whois.nic.sap"
   },
@@ -3991,6 +3994,9 @@
     "adapter": "none"
   },
   ".mutual": {
+    "adapter": "none"
+  },
+  ".nike": {
     "adapter": "none"
   },
   ".nfl": {
