@@ -2174,9 +2174,6 @@
   ".xn--mgbca7dzdo": {
     "host": "whois.afilias-srs.net"
   },
-  ".xn--fiq228c5hs": {
-    "host": "whois.afilias-srs.net"
-  },
   ".xn--jlq61u9w7b": {
     "host": "whois.afilias-srs.net"
   },
@@ -2184,9 +2181,6 @@
     "host": "whois.afilias-srs.net"
   },
   ".xn--b4w605ferd": {
-    "host": "whois.afilias-srs.net"
-  },
-  ".xn--3ds443g": {
     "host": "whois.afilias-srs.net"
   },
   ".zara": {
@@ -2977,6 +2971,8 @@
   ".xn--1qqw23a": {
     "host": "whois.ngtld.cn"
   },
+
+  // teleinfo.cn
   ".anquan": {
     "host": "whois.teleinfo.cn"
   },
@@ -2989,9 +2985,16 @@
   ".yun": {
     "host": "whois.teleinfo.cn"
   },
+  ".xn--fiq228c5hs": {
+    "host": "whois.teleinfo.cn"
+  },
+  ".xn--3ds443g": {
+    "host": "whois.teleinfo.cn"
+  },
   ".xn--xhq521b": {
     "host": "whois.teleinfo.cn"
   },
+
   // whois.gtld.knet.cn
   ".wang": {
     "host": "whois.gtld.knet.cn"
