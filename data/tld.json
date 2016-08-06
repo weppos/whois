@@ -3052,6 +3052,9 @@
   ".alstom": {
     "host": "whois.nic.alstom"
   },
+  ".americanfamily": {
+    "host": "whois.nic.americanfamily"
+  },
   ".broker": {
     "host": "whois.nic.broker"
   },
@@ -3960,6 +3963,18 @@
   ".health": {
     "adapter": "none"
   },
+  ".honeywell": {
+    "adapter": "none"
+  },
+  ".hsbc": {
+    "adapter": "none"
+  },
+  ".hotmail": {
+    "adapter": "none"
+  },
+  ".hoteles": {
+    "adapter": "none"
+  },
   ".htc": {
     "adapter": "none"
   },
@@ -4170,9 +4185,6 @@
   ".itau": {
     "adapter": "none"
   },
-  ".hoteles": {
-    "adapter": "none"
-  },
   ".chloe": {
     "adapter": "none"
   },
@@ -4254,9 +4266,6 @@
   ".bing": {
     "adapter": "none"
   },
-  ".hotmail": {
-    "adapter": "none"
-  },
   ".microsoft": {
     "adapter": "none"
   },
@@ -4294,9 +4303,6 @@
     "adapter": "none"
   },
   ".lupin": {
-    "adapter": "none"
-  },
-  ".hsbc": {
     "adapter": "none"
   },
   ".ping": {
@@ -4351,13 +4357,13 @@
   ".xn--bck1b9a5dre4c": {
     "adapter": "none"
   },
+  ".xn--cck2b3b": {
+    "adapter": "none"
+  },
   ".xn--eckvdtc9d": {
     "adapter": "none"
   },
   ".xn--fct429k": {
-    "adapter": "none"
-  },
-  
     "adapter": "none"
   },
   ".xn--gckr3f0f": {
