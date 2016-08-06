@@ -1,5 +1,6 @@
 {
   // gTLDs / ccTLDs (and suffixes)
+
   ".ae.org": {
     "host": "whois.centralnic.com"
   },
@@ -1096,7 +1097,8 @@
     "adapter": "none"
   },
 
-  // gTLDs IDNA
+  // gTLDs / ccTLDs IDNA
+
   ".xn--3e0b707e": {
     "host": "whois.kr"
   },
@@ -1117,6 +1119,9 @@
   },
   ".xn--d1alf": {
     "host": "whois.marnet.mk"
+  },
+  ".xn--e1a4c": {
+    "host": "whois.eu"
   },
   ".xn--fiqs8s": {
     "host": "cwhois.cnnic.cn"
@@ -1230,6 +1235,8 @@
   },
 
   // new gTLDs
+
+  // unitedtld
   ".auction": {
     "host": "whois.unitedtld.com"
   },
@@ -1361,6 +1368,7 @@
   ".wme": {
     "host": "whois.nic.wme"
   },
+
   // donuts
   ".apartments": {
     "host": "whois.donuts.co"
@@ -2424,6 +2432,8 @@
   ".studio": {
     "host": "whois.rightside.co"
   },
+
+  // aridnrs  
   ".melbourne": {
     "host": "whois.aridnrs.net.au"
   },
@@ -2445,6 +2455,8 @@
   ".iinet": {
     "host": "whois.aridnrs.net.au"
   },
+
+  // uniregistry
   ".auto": {
     "host": "whois.uniregistry.net"
   },
@@ -2517,6 +2529,8 @@
   ".sexy": {
     "host": "whois.uniregistry.net"
   },
+
+  // google
   ".ads": {
     "host": "domain-registry-whois.l.google.com"
   },
@@ -2708,6 +2722,7 @@
     "host": "whois.nic.gmo"
   },
 
+  // agitsys
   ".pars": {
     "host": "whois.agitsys.net"
   },
@@ -2723,6 +2738,8 @@
   ".nowruz": {
     "host": "whois.agitsys.net"
   },
+
+  // mm-registry
   ".vip": {
     "host": "whois-dub.mm-registry.com"
   },
@@ -2860,6 +2877,8 @@
   ".ski": {
     "host": "whois.ksregistry.net"
   },
+
+  // publicinterestregistry
   ".ngo": {
     "host": "whois.publicinterestregistry.net"
   },
@@ -2878,6 +2897,7 @@
   ".xn--nqv7fs00ema": {
     "host": "whois.publicinterestregistry.net"
   },
+
   // nic.fr
   ".alsace": {
     "host": "whois-alsace.nic.fr"
@@ -2918,6 +2938,7 @@
   ".total": {
     "host": "whois-total.nic.fr"
   },
+
   // knipp
   ".cologne": {
     "host": "whois-fe1.pdt.cologne.tango.knipp.de"
@@ -2934,6 +2955,7 @@
   ".telefonica": {
     "host": "whois-fe.telefonica.tango.knipp.de"
   },
+
   // corenic
   ".xn--80asehdb": {
     "host": "whois.online.rs.corenic.net"
@@ -2944,6 +2966,8 @@
   ".madrid": {
     "host": "whois.madrid.rs.corenic.net"
   },
+
+  // coreregistry
   ".xn--mgbab2bd": {
     "host": "whois.bazaar.coreregistry.net"
   },
@@ -2959,6 +2983,8 @@
   ".scot": {
     "host": "whois.scot.coreregistry.net"
   },
+
+  // registry.net.za
   ".capetown": {
     "host": "capetown-whois.registry.net.za"
   },
@@ -2968,6 +2994,8 @@
   ".joburg": {
     "host": "joburg-whois.registry.net.za"
   },
+
+  // ngtld
   ".baidu": {
     "host": "whois.ngtld.cn"
   },
@@ -3369,6 +3397,9 @@
   },
   ".verisign": {
     "host": "whois.nic.verisign"
+  },
+  ".xfinity": {
+    "host": "whois.nic.xfinity"
   },
   ".xn--5su34j936bgsg": {
     "host": "whois.nic.xn--5su34j936bgsg"
@@ -3813,9 +3844,6 @@
   },
   ".xn--c2br7g": {
     "host": "whois.nic.xn--c2br7g"
-  },
-  ".xn--e1a4c": {
-    "host": "whois.eu"
   },
   ".xn--efvy88h": {
     "host": "whois.nic.xn--efvy88h"
