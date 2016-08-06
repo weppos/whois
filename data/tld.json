@@ -2042,6 +2042,9 @@
   ".gallup": {
     "host": "whois.afilias-srs.net"
   },
+  ".godaddy": {
+    "host": "whois.afilias-srs.net"
+  },
   ".goodyear": {
     "host": "whois.afilias-srs.net"
   },
@@ -2650,6 +2653,9 @@
   ".datsun": {
     "host": "whois.nic.gmo"
   },
+  ".fujitsu": {
+    "host": "whois.nic.gmo"
+  },
   ".goo": {
     "host": "whois.nic.gmo"
   },
@@ -2677,6 +2683,15 @@
   ".lotte": {
     "host": "whois.nic.lotte"
   },
+  ".mtpc": {
+    "host": "whois.nic.gmo"
+  },
+  ".mitsubishi": {
+    "host": "whois.nic.gmo"
+  },
+  ".nissan": {
+    "host": "whois.nic.gmo"
+  },
   ".nico": {
     "host": "whois.nic.nico"
   },
@@ -2689,13 +2704,7 @@
   ".yodobashi": {
     "host": "whois.nic.gmo"
   },
-  ".mtpc": {
-    "host": "whois.nic.gmo"
-  },
   ".sharp": {
-    "host": "whois.nic.gmo"
-  },
-  ".nissan": {
     "host": "whois.nic.gmo"
   },
 
@@ -3117,6 +3126,9 @@
   },
   ".club": {
     "host": "whois.nic.club"
+  },
+  ".comcast": {
+    "host": "whois.nic.comcast"
   },
   ".cfd": {
     "host": "whois.nic.cfd"
