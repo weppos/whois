@@ -12,8 +12,8 @@ OptionParser.new do |opts|
   opts.define_head  "Usage: whoisrb [options] object"
   opts.separator    ""
   opts.separator    "Examples:"
-  opts.separator    " whoisrb ruby-lang.com"
-  opts.separator    " whoisrb 213.149.247.64"
+  opts.separator    "\t whoisrb ruby-lang.com"
+  opts.separator    "\t whoisrb 213.149.247.64"
   opts.separator    ""
   opts.separator    "Options:"
 
