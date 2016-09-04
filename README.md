@@ -21,7 +21,7 @@ This library was extracted from [RoboWhois](https://robowhois.com/) and [RoboDom
 - Flexible and extensible interface (e.g. You can define [custom servers](http://whoisrb.org/manual/server/) on the fly)
 - Object oriented design, featuring 10 different design patterns
 - Pure Ruby library, without any external dependency other than Ruby itself
-- Successfully tested against several [Ruby implementations](http://whoisrb.org/manual/interpreters/)
+- Successfully tested against several Ruby implementations
 
 
 ## Requirements
