@@ -40,7 +40,7 @@ The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) 
 
 ## Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://whoisrb.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The [documentation](https://whoisrb.org/docs/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 ### Querying a WHOIS
 
