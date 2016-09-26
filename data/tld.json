@@ -2104,6 +2104,9 @@
   ".mit": {
     "host": "whois.afilias-srs.net"
   },
+  ".monster": {
+    "host": "whois.afilias-srs.net"
+  },
   ".mckinsey": {
     "host": "whois.afilias-srs.net"
   },
