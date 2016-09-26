@@ -2442,7 +2442,7 @@
     "host": "whois.rightside.co"
   },
 
-  // aridnrs  
+  // aridnrs
   ".melbourne": {
     "host": "whois.aridnrs.net.au"
   },
@@ -3190,6 +3190,9 @@
   },
   ".chintai": {
     "host": "whois.nic.chintai"
+  },
+  ".diy": {
+    "host": "whois.nic.diy"
   },
   ".design": {
     "host": "whois.nic.design"
