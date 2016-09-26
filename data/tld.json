@@ -2050,6 +2050,9 @@
   ".fage": {
     "host": "whois.afilias-srs.net"
   },
+  ".fido": {
+    "host": "whois.afilias-srs.net"
+  },
   ".gallup": {
     "host": "whois.afilias-srs.net"
   },
@@ -2129,6 +2132,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".redumbrella": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".rogers": {
     "host": "whois.afilias-srs.net"
   },
   ".sina": {
