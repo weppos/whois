@@ -4178,6 +4178,9 @@
   ".tmall": {
     "adapter": "none"
   },
+  ".uno": {
+    "adapter": "none"
+  },
   ".unicom": {
     "adapter": "none"
   },
