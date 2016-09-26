@@ -3089,6 +3089,9 @@
   ".anz": {
     "host": "whois.nic.anz"
   },
+  ".asda": {
+    "host": "whois.nic.asda"
+  },
   ".afl": {
     "host": "whois.nic.afl"
   },
@@ -4017,6 +4020,9 @@
     "adapter": "none"
   },
   ".guardian": {
+    "adapter": "none"
+  },
+  ".hbo": {
     "adapter": "none"
   },
   ".health": {
