@@ -2753,29 +2753,26 @@
   },
 
   // mm-registry
-  ".vip": {
+  ".abogado": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".surf": {
+  ".beer": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".law": {
+  ".broadway": {
+    "host": "whois-cl01.mm-registry.com"
+  },
+  ".bradesco": {
+    "host": "whois-cl01.mm-registry.com"
+  },
+  ".budapest": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".horse": {
+  ".bayern": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".garden": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".fit": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".rodeo": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".vodka": {
-    "host": "whois-dub.mm-registry.com"
+  ".casa": {
+    "host": "whois.nic.casa"
   },
   ".cooking": {
     "host": "whois-dub.mm-registry.com"
@@ -2783,56 +2780,59 @@
   ".country": {
     "host": "whois-dub.mm-registry.com"
   },
+  ".dds": {
+    "host": "whois.nic.dds"
+  },
+  ".fit": {
+    "host": "whois-dub.mm-registry.com"
+  },
   ".fishing": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".horse": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".miami": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".wedding": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".yoga": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".budapest": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".casa": {
-    "host": "whois.nic.casa"
-  },
-  ".work": {
     "host": "whois-dub.mm-registry.com"
   },
   ".fashion": {
     "host": "whois-dub.mm-registry.com"
   },
-  ".abogado": {
+  ".garden": {
     "host": "whois-dub.mm-registry.com"
-  },
-  ".beer": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".luxe": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".bayern": {
-    "host": "whois-dub.mm-registry.com"
-  },
-  ".london": {
-    "host": "whois-lon.mm-registry.com"
   },
   ".gop": {
     "host": "whois-cl01.mm-registry.com"
   },
-  ".broadway": {
-    "host": "whois-cl01.mm-registry.com"
+  ".horse": {
+    "host": "whois-dub.mm-registry.com"
   },
-  ".bradesco": {
-    "host": "whois-cl01.mm-registry.com"
+  ".law": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".luxe": {
+    "host": "whois.nic.luxe"
+  },
+  ".london": {
+    "host": "whois-lon.mm-registry.com"
+  },
+  ".miami": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".rodeo": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".surf": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".vodka": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".vip": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".wedding": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".work": {
+    "host": "whois-dub.mm-registry.com"
+  },
+  ".yoga": {
+    "host": "whois-dub.mm-registry.com"
   },
 
   // whois.ksregistry.net
