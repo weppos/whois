@@ -2035,6 +2035,9 @@
   ".dtv": {
     "host": "whois.afilias-srs.net"
   },
+  ".eco": {
+    "host": "whois.afilias-srs.net"
+  },
   ".edeka": {
     "host": "whois.afilias-srs.net"
   },
@@ -3400,6 +3403,9 @@
   },
   ".vana": {
     "host": "whois.nic.vana"
+  },
+  ".vanguard": {
+    "host": "whois.nic.vanguard"
   },
   ".verisign": {
     "host": "whois.nic.verisign"
