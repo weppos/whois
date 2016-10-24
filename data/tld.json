@@ -1073,7 +1073,7 @@
     "host": "whois.alt.za"
   },
   ".co.za": {
-    "host": "whois.registry.net.za"
+    "host": "coza-whois.registry.net.za"
   },
   ".gov.za": {
     "host": "whois.gov.za"
