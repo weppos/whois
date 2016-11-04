@@ -2823,7 +2823,7 @@
     "host": "whois-dub.mm-registry.com"
   },
   ".surf": {
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.surf"
   },
   ".vodka": {
     "host": "whois-dub.mm-registry.com"
@@ -2835,7 +2835,7 @@
     "host": "whois-dub.mm-registry.com"
   },
   ".work": {
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.work"
   },
   ".yoga": {
     "host": "whois-dub.mm-registry.com"
@@ -4438,6 +4438,9 @@
     "adapter": "none"
   },
   ".xn--5tzm5g": {
+    "adapter": "none"
+  },
+  ".xn--54b7fta0cc": {
     "adapter": "none"
   },
   ".xn--8y0a063a": {
