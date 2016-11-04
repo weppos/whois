@@ -1963,6 +1963,9 @@
   ".ally": {
     "host": "whois.afilias-srs.net"
   },
+  ".allstate": {
+    "host": "whois.afilias-srs.net"
+  },
   ".abbvie": {
     "host": "whois.afilias-srs.net"
   },
@@ -2057,6 +2060,9 @@
     "host": "whois.afilias-srs.net"
   },
   ".godaddy": {
+    "host": "whois.afilias-srs.net"
+  },
+  ".goodhands": {
     "host": "whois.afilias-srs.net"
   },
   ".goodyear": {
@@ -3271,6 +3277,9 @@
   },
   ".lat": {
     "host": "whois.nic.lat"
+  },
+  ".lefrak": {
+    "host": "whois.nic.lefrak"
   },
   ".lego": {
     "host": "whois.nic.lego"
