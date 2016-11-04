@@ -3425,6 +3425,9 @@
   ".verisign": {
     "host": "whois.nic.verisign"
   },
+  ".volvo": {
+    "host": "whois.nic.volvo"
+  },
   ".xfinity": {
     "host": "whois.nic.xfinity"
   },
