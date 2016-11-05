@@ -1,4 +1,5 @@
 language: ruby
+
 rvm:
   - 2.0
   - 2.1
@@ -6,19 +7,16 @@ rvm:
   - jruby-9.0.5.0
   - ruby-head
 
-sudo: false
+before_install:
+  - gem install bundler
+
 cache:
   - bundler
 
 env:
   - COVERALL=1
 
-notifications:
-  recipients:
-    - weppos@weppos.net
-
 matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-9.0.5.0
-
