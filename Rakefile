@@ -30,20 +30,6 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
   s.add_development_dependency "yard"
-
-  s.post_install_message = <<EOS
-********************************************************************************
-
-  Thank you for installing the whois gem!
-
-  If you like this gem, please support the project.
-  http://pledgie.com/campaigns/11383
-
-  Does your project or organization use this gem? Add it to the apps wiki.
-  https://github.com/weppos/whois/wiki/apps
-
-********************************************************************************
-EOS
 end
 
 
