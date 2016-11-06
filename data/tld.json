@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:09:19 UTC"
+    "updated": "2016-11-06 15:09:46 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -51,6 +51,7 @@
   },
   ".actor": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".ad": {
@@ -108,6 +109,7 @@
   },
   ".airforce": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".airtel": {
@@ -241,6 +243,7 @@
   },
   ".auction": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".audi": {
@@ -987,6 +990,7 @@
   },
   ".consulting": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".contact": {
@@ -1099,6 +1103,7 @@
   },
   ".dance": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".date": {
@@ -1158,6 +1163,7 @@
   },
   ".democrat": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".dental": {
@@ -1559,6 +1565,7 @@
   },
   ".forsale": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".forum": {
@@ -1642,6 +1649,7 @@
   },
   ".futbol": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".fyi": {
@@ -1892,6 +1900,7 @@
   },
   ".haus": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".hbo": {
@@ -2058,6 +2067,7 @@
   },
   ".immobilien": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".in": {
@@ -2217,6 +2227,7 @@
   },
   ".kaufen": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".kddi": {
@@ -2442,6 +2453,7 @@
   },
   ".link": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".lipsy": {
@@ -2686,6 +2698,7 @@
   },
   ".moda": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".moe": {
@@ -2910,6 +2923,7 @@
   },
   ".ninja": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".nissan": {
@@ -3260,6 +3274,7 @@
   },
   ".pub": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".pw": {
@@ -3370,6 +3385,7 @@
   },
   ".reviews": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".rexroth": {
@@ -3395,6 +3411,7 @@
   },
   ".rocks": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".rodeo": {
@@ -3696,6 +3713,7 @@
   },
   ".social": {
     "_group": "unitedtld",
+    "_type": "newgtld",
     "host": "whois.unitedtld.com"
   },
   ".softbank": {
