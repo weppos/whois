@@ -15,6 +15,10 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Updated .CASA, .MEET, .WORK, .SURF, .XN--54B7FTA0CC
 
+- CHANGED: Definitions are now private and you cannot access/modify the internal representation directly. Instead, use the accessor methods.
+
+- CHANGED: Definitions internal representation changed to be indexed. This change drastically improved the lookup performances for domains, as well fixing the bug GH-536 where the order of the definitions were relevant. 
+
 **beta-2**
 
 - SERVER: Added .ALLY, .AWS, .ANQUAN, .JCP, .NISSAY, .SHOUJI, .SINA, .XIHUAN, .YUN, .HTC, .PROGRESSIVE, .MLS, .BABY, JNJ, .FTR, .XN--4TZM5G, .EXTRASPACE, .BAREFOOT, .GALLO, .SHAW, .STREAM, .TALK, .XN--FCT429K, .XN--FCT429K, .YOU, .KPMG, .MUTUAL, .ABBVIE, .ABUDHABI, .NORTHWESTERNMUTUAL, .VIG, .WEIBO, .XN--9KRT00A, .XN--MGBCA7DZDO, .AGAKHAN, .AKDN, .IMAMAT, .ISMAILI, .SBI, .STATEBANK, .OLAYANGROUP, .FLIR, HKT, .GUARDIAN, .XN--W4RS40L, .TEVA, .FINANCIAL, .UPS, .MLB, .REALESTATE, .SHOP, .AETNA, .BLOG, .DOT, .MATTEL, .NETFLIX
