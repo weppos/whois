@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:43:26 UTC"
+    "updated": "2016-11-06 16:52:47 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -139,6 +139,10 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "aigo": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
+  },
   "airbus": {
     "_type": "newgtld",
     "host": "whois.nic.airbus"
@@ -201,9 +205,15 @@
   "am": {
     "host": "whois.amnic.net"
   },
+  "americanexpress": {
+    "adapter": "none"
+  },
   "americanfamily": {
     "_type": "newgtld",
     "host": "whois.nic.americanfamily"
+  },
+  "amex": {
+    "adapter": "none"
   },
   "amfam": {
     "host": "whois.nic.amfam"
@@ -236,6 +246,9 @@
   },
   "ao": {
     "adapter": "none"
+  },
+  "aol": {
+    "host": "whois.nic.aol"
   },
   "apartments": {
     "_group": "donuts",
@@ -347,6 +360,9 @@
     "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
+  "auspost": {
+    "host": "whois.nic.auspost"
+  },
   "author": {
     "_type": "newgtld",
     "adapter": "none"
@@ -440,6 +456,9 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.donuts.co"
+  },
+  "baseball": {
+    "adapter": "none"
   },
   "basketball": {
     "_group": "centralnic",
@@ -842,6 +861,9 @@
     "_type": "newgtld",
     "host": "whois.donuts.co"
   },
+  "capitalone": {
+    "host": "whois.nic.capitalone"
+  },
   "car": {
     "_group": "uniregistry",
     "_type": "newgtld",
@@ -883,6 +905,14 @@
     "_group": "mmregistry",
     "_type": "newgtld",
     "host": "whois.nic.casa"
+  },
+  "case": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
+  },
+  "caseih": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "cash": {
     "_group": "donuts",
@@ -1557,6 +1587,10 @@
   "discover": {
     "adapter": "none"
   },
+  "dish": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
+  },
   "diy": {
     "_type": "newgtld",
     "host": "whois.nic.diy"
@@ -1658,6 +1692,10 @@
     "_group": "ksregistry",
     "_type": "newgtld",
     "host": "whois.ksregistry.net"
+  },
+  "dvr": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "dz": {
     "host": "whois.nic.dz"
@@ -2200,6 +2238,9 @@
     "_type": "newgtld",
     "host": "whois.nic.genting"
   },
+  "george": {
+    "host": "whois.nic.george"
+  },
   "gf": {
     "adapter": "web",
     "url": "https://www.dom-enic.com/whois.html"
@@ -2447,6 +2488,10 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "hdfc": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
+  },
   "hdfcbank": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -2572,6 +2617,10 @@
     "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
+  "hot": {
+    "_group": "amazonregistry",
+    "adapter": "none"
+  },
   "hoteles": {
     "_type": "newgtld",
     "adapter": "none"
@@ -2606,6 +2655,10 @@
   },
   "hu": {
     "host": "whois.nic.hu"
+  },
+  "hughes": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "hyatt": {
     "adapter": "none"
@@ -2774,6 +2827,10 @@
   "itv": {
     "_group": "afiliassrs",
     "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
+  },
+  "iveco": {
+    "_group": "afiliassrs",
     "host": "whois.afilias-srs.net"
   },
   "iwc": {
@@ -3372,6 +3429,12 @@
   "mc": {
     "adapter": "none"
   },
+  "mcd": {
+    "adapter": "none"
+  },
+  "mcdonalds": {
+    "adapter": "none"
+  },
   "mckinsey": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -3633,6 +3696,9 @@
   "na": {
     "host": "whois.na-nic.com.na"
   },
+  "nab": {
+    "host": "whois.nic.nab"
+  },
   "nadex": {
     "_type": "newgtld",
     "host": "whois.nic.nadex"
@@ -3730,6 +3796,10 @@
     "_group": "google",
     "_type": "newgtld",
     "host": "whois.nic.google"
+  },
+  "newholland": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "news": {
     "_group": "rightside",
@@ -3927,6 +3997,9 @@
     "_type": "newgtld",
     "host": "whois.nic.ooo"
   },
+  "open": {
+    "adapter": "none"
+  },
   "oracle": {
     "_type": "newgtld",
     "host": "whois.nic.oracle"
@@ -4034,6 +4107,10 @@
   },
   "passagens": {
     "_type": "newgtld",
+    "adapter": "none"
+  },
+  "pay": {
+    "_group": "amazonregistry",
     "adapter": "none"
   },
   "pe": {
@@ -4301,6 +4378,9 @@
     "_type": "newgtld",
     "host": "whois.nic.racing"
   },
+  "radio": {
+    "host": "whois.nic.radio"
+  },
   "raid": {
     "host": "whois.nic.raid"
   },
@@ -4526,6 +4606,9 @@
     "_type": "newgtld",
     "host": "whois.donuts.co"
   },
+  "samsclub": {
+    "host": "whois.nic.samsclub"
+  },
   "samsung": {
     "_type": "newgtld",
     "host": "whois.nic.xn--cg4bki"
@@ -4650,6 +4733,10 @@
   "seat": {
     "_type": "newgtld",
     "host": "whois.nic.seat"
+  },
+  "secure": {
+    "_group": "amazonregistry",
+    "adapter": "none"
   },
   "security": {
     "_group": "centralnic",
@@ -4810,6 +4897,10 @@
   },
   "sl": {
     "host": "whois.nic.sl"
+  },
+  "sling": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "sm": {
     "host": "whois.nic.sm"
@@ -5377,6 +5468,9 @@
   "in.ua": {
     "host": "whois.in.ua"
   },
+  "ubank": {
+    "host": "whois.nic.ubank"
+  },
   "uconnect": {
     "_group": "afiliassrs",
     "host": "whois.afilias-srs.net"
@@ -5624,6 +5718,9 @@
     "_type": "newgtld",
     "host": "whois.nic.wales"
   },
+  "walmart": {
+    "host": "whois.nic.walmart"
+  },
   "walter": {
     "_type": "newgtld",
     "host": "whois.nic.walter"
@@ -5752,6 +5849,10 @@
     "_type": "newgtld",
     "host": "whois.donuts.co"
   },
+  "wow": {
+    "_group": "amazonregistry",
+    "adapter": "none"
+  },
   "ws": {
     "host": "whois.website.ws"
   },
@@ -5812,6 +5913,10 @@
   },
   "xn--3e0b707e": {
     "host": "whois.kr"
+  },
+  "xn--3oq18vl8pn36a": {
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "xn--3pxu8k": {
     "_type": "newgtld",
@@ -6019,6 +6124,10 @@
   },
   "xn--gecrj9c": {
     "host": "whois.inregistry.net"
+  },
+  "xn--gk3at1e": {
+    "_group": "amazonregistry",
+    "adapter": "none"
   },
   "xn--h2brj9c": {
     "host": "whois.inregistry.net"
