@@ -13,7 +13,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Added .LIPSY, .NEXT, .NEXTDIRECT, .OLAYAN, .WARMAN, .XN--MGBA8C0BBN0A, .TDK, .DTV, .LOCKER, .OLLO, .OTT, .CAM, .LEGO, .ORIENTEXPRESS, .FEDEX, .FARMERS, .TIAA, .BESTBUY, .LPL, .LPLFINANCIAL, .DHL, .GAMES, .HISAMITSU, .PIONEER, .ZAPPOS, .AUDIBLE, .CHINTAI, .DEAL, .EPOST, .FIRE, .IMDB, .KINDLE, .NOW, .PRIME, .SAVE, .SILK, .TDK, .AIRBUS, .ALSTOM, .DUNLOP, .DUPONT, .ERICSSON, .GOODYEAR, .KOSHER, .ABLE, .ANZ, .BLANCO, .ITV, .SHOPPING, .ART, .COOKINGCHANNEL, .FOODNETWORK, .FRONTDOOR, .HGTV, .NFL, .POLITIE, .TRAVELCHANNEL, .WOODSIDE, .MIT, .NIKE, .SES, .INTUIT, .MACYS, .MINT, .CBRE, .SHANGRILA, .XN--5SU34J936BGSG, .XN--90AE, .ZIPPO, .AMERICANFAMILY, .HONEYWELL, .COMCAST, .FUJITSU, .GODADDY, .MITSUBISHI, .XFINITY, .AFAMILYCOMPANY, .LILLY, .MCKINSEY, .ECO, .VANGUARD, .MONSTER, .DIY, .ASDA, .HBO, .UNO, .FIDO, .ROGERS, .DDS, .VOLVO, .LEFRAK, .GOODHANDS, .ALLSTATE, .OBSERVER
 
-- SERVER: Updated .CASA, .MEET, .WORK, .SURF, .XN--54B7FTA0CC
+- SERVER: Updated .CASA, .MEET, .WORK, .SURF, .XN--54B7FTA0CC, .CO.ZA [thanks @ranaldobowker]
 
 - CHANGED: Definitions are now private and you cannot access/modify the internal representation directly. Instead, use the accessor methods.
 
@@ -44,7 +44,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Sync Centralnic definitions. Added .COM.SE, .HU.COM, .HU.NET, .UY.COM, .ZA.BZ, .AFRICA.COM, .IN.NET
 
-- CHANGED: Updated whois.tld.ee to the new response format (GH-489, GH-490). [Thanks @tanelj]
+- CHANGED: Updated whois.tld.ee to the new response format (GH-489, GH-490). [thanks @tanelj]
 
 
 #### Release 3.6.4
@@ -53,21 +53,21 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Deleted .TP, .AN
 
-- NEW: Added whois.nic.tech parser (GH-443). [Thanks @mattbrictson]
+- NEW: Added whois.nic.tech parser (GH-443). [thanks @mattbrictson]
 
-- NEW: Added whois.35.com parser (GH-391). [Thanks @alpo]
+- NEW: Added whois.35.com parser (GH-391). [thanks @alpo]
 
-- NEW: Added whois.nic.space parser (GH-463, GH-374). [Thanks @linrock]
+- NEW: Added whois.nic.space parser (GH-463, GH-374). [thanks @linrock]
 
-- NEW: Added whois.nic.xyz parser (GH-373, GH-460). [Thanks @mpchadwick]
+- NEW: Added whois.nic.xyz parser (GH-373, GH-460). [thanks @mpchadwick]
 
-- FIXED: Removed option to /usr/bin/env as not supported on all platforms (GH-453). [Thanks @martin-schmidt]
+- FIXED: Removed option to /usr/bin/env as not supported on all platforms (GH-453). [thanks @martin-schmidt]
 
-- CHANGED: Updated whois.wildwestdomains.com to the new response format (GH-392, GH-462). [Thanks @linrock]
+- CHANGED: Updated whois.wildwestdomains.com to the new response format (GH-392, GH-462). [thanks @linrock]
 
 - CHANGED: Updated whois.afilias.info to the new response format (GH-481).
 
-- CHANGED: whois.aero now recognizes reserved domains (GH-464, GH-418). [Thanks @linrock]
+- CHANGED: whois.aero now recognizes reserved domains (GH-464, GH-418). [thanks @linrock]
 
 
 #### Release 3.6.3
@@ -83,22 +83,22 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Updated .LOVE
 
-- NEW: Added capetown-whois.registry.net.za, durban-whois.registry.net.za, joburg-whois.registry.net.za, org-whois.registry.net.za parsers (GH-405). [Thanks @sheldonh]
+- NEW: Added capetown-whois.registry.net.za, durban-whois.registry.net.za, joburg-whois.registry.net.za, org-whois.registry.net.za parsers (GH-405). [thanks @sheldonh]
 
-- CHANGED: Updated whois.cnnic.cn to the new response format (GH-432). [Thanks @ledowong]
+- CHANGED: Updated whois.cnnic.cn to the new response format (GH-432). [thanks @ledowong]
 
-- CHANGED: Added expires_on at "co.jp" domain (GH-437). [Thanks @kubihie]
+- CHANGED: Added expires_on at "co.jp" domain (GH-437). [thanks @kubihie]
 
 
 #### Release 3.6.1
 
-- SERVER: Added .co.com (GH-428) [Thanks @turigabor], .STATOIL, .CROWN, .ACCOUNTANT, .DATE, .DOHA, .DOWNLOAD, .FAITH, .LOAN, .MOVIE, .MTN, .PANERAI, .REVIEW, .TICKETS, .WIN, .ACCENTURE, .NEC, .PHILIPS, .XN--FJQ720A, .COUPONS, .ICBC, .SOCCER, .FYI, .JLL, .MBA, .THD, .BBVA, .SANDVIK, .SANDVIKCOROMANT, .WALTER, .AIRTEL, .BARCELONA, .BCN, .GAME, .JPRS, .LIVE, .STUDIO, .BING, .HOTMAIL, .JLC, .MICROSOFT, .WINDOWS, .PLAY, .AEG, .DRIVE, .GENTING, .CBA, .COMMBANK, .NETBANK, .RICOH, .STARHUB, .VISTA, .VISTAPRINT, .OFFICE, .SCOR, .SKYPE, .LAW, .BNL, .BRADESCO, .HOTELES, .OMEGA, .SWATCH, .TELEFONICA, .LANCASTER, .NOKIA, .ICE, .ITAU, .LEXUS, .MAN, .BET, .SANOFI, .SRL, .TATAMOTORS, .IPIRANGA, .LEXUS, .PET, .TOYOTA, .LIXIL, .BOOTS, .CHANEL, .VIN, .WINE, .XPERIA, .GIVING, .FAMILY, .SEEK
+- SERVER: Added .co.com (GH-428) [thanks @turigabor], .STATOIL, .CROWN, .ACCOUNTANT, .DATE, .DOHA, .DOWNLOAD, .FAITH, .LOAN, .MOVIE, .MTN, .PANERAI, .REVIEW, .TICKETS, .WIN, .ACCENTURE, .NEC, .PHILIPS, .XN--FJQ720A, .COUPONS, .ICBC, .SOCCER, .FYI, .JLL, .MBA, .THD, .BBVA, .SANDVIK, .SANDVIKCOROMANT, .WALTER, .AIRTEL, .BARCELONA, .BCN, .GAME, .JPRS, .LIVE, .STUDIO, .BING, .HOTMAIL, .JLC, .MICROSOFT, .WINDOWS, .PLAY, .AEG, .DRIVE, .GENTING, .CBA, .COMMBANK, .NETBANK, .RICOH, .STARHUB, .VISTA, .VISTAPRINT, .OFFICE, .SCOR, .SKYPE, .LAW, .BNL, .BRADESCO, .HOTELES, .OMEGA, .SWATCH, .TELEFONICA, .LANCASTER, .NOKIA, .ICE, .ITAU, .LEXUS, .MAN, .BET, .SANOFI, .SRL, .TATAMOTORS, .IPIRANGA, .LEXUS, .PET, .TOYOTA, .LIXIL, .BOOTS, .CHANEL, .VIN, .WINE, .XPERIA, .GIVING, .FAMILY, .SEEK
 
 - SERVER: Updated .CR, .VG, .BUZZ, .TECH, .GDN
 
-- NEW: Added whois.safenames.net (GH-385) parser. [Thanks @robholland]
+- NEW: Added whois.safenames.net (GH-385) parser. [thanks @robholland]
 
-- CHANGED: Updated whois.nic.as to the new response format (GH-334). [Thanks @case]
+- CHANGED: Updated whois.nic.as to the new response format (GH-334). [thanks @case]
 
 
 #### Release 3.6.0
@@ -122,7 +122,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Updated .SI, .WHOSWHO, .QUEBEC, .GLOBAL, .REIT, .BM (GH-397 @ydnar)
 
-- FIXED: whois.schlund.info crashes with empty update date (GH-398). [Thanks @alexaitken]
+- FIXED: whois.schlund.info crashes with empty update date (GH-398). [thanks @alexaitken]
 
 
 #### Release 3.5.8
@@ -131,11 +131,11 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Updated .TC
 
-- NEW: whois.registry.om now recognizes reserved domains (GH-332). [Thanks @case]
+- NEW: whois.registry.om now recognizes reserved domains (GH-332). [thanks @case]
 
 - FIXED: Fixed invalid JSON definition file (GH-349).
 
-- FIXED: Fixed the ARIN referral regex to correctly consider ports optional (GH-350). [Thanks @jrideout]
+- FIXED: Fixed the ARIN referral regex to correctly consider ports optional (GH-350). [thanks @jrideout]
 
 
 #### Release 3.5.7
@@ -151,24 +151,24 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Updated whois.nic.cx to the new response format.
 
-- FIXED: ruby-whois --version crashes (GH-356). [Thanks @micat]
+- FIXED: ruby-whois --version crashes (GH-356). [thanks @micat]
 
-- FIXED: whois.register.com parser crashes when the update date is empty (GH-353). [Thanks @alexaitken]
+- FIXED: whois.register.com parser crashes when the update date is empty (GH-353). [thanks @alexaitken]
 
 
 #### Release 3.5.5
 
-- NEW: Added registrar and contact support for whois.dns.lu (GH-329). [Thanks @huyphan]
+- NEW: Added registrar and contact support for whois.dns.lu (GH-329). [thanks @huyphan]
 
 - CHANGED: Updated whois.iis.se and whois.iis.nu to the new response format (GH-328).
 
-- FIXED: whois.fi parser crashes when the domain is reserved (GH-339). [Thanks @case]
+- FIXED: whois.fi parser crashes when the domain is reserved (GH-339). [thanks @case]
 
-- FIXED: whois.whois.nic.asia parser crashes when the status is reserved (GH-340). [Thanks @case]
+- FIXED: whois.whois.nic.asia parser crashes when the status is reserved (GH-340). [thanks @case]
 
-- FIXED: whois.netcom.cm parser crashes when the status is suspended (GH-333). [Thanks @case]
+- FIXED: whois.netcom.cm parser crashes when the status is suspended (GH-333). [thanks @case]
 
-- FIXED: whois.nic.gd parser crashes when the domain is reserved (GH-335). [Thanks @case]
+- FIXED: whois.nic.gd parser crashes when the domain is reserved (GH-335). [thanks @case]
 
 
 #### Release 3.5.4
@@ -177,7 +177,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Updated .CEO, .CLUB, .VG
 
-- FIXED: whois.enom.com and whois.yoursrs.com parsers crash when trying to access an empty update date (GH-327). [Thanks @alexaitken]
+- FIXED: whois.enom.com and whois.yoursrs.com parsers crash when trying to access an empty update date (GH-327). [thanks @alexaitken]
 
 - NEW: whois.markmonitor.com parser now recognizes throttled responses.
 
@@ -187,9 +187,9 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Updated whois.arnesi.si to the new response format.
 
-- CHANGED: Updated whois.dreamhost.com to the new response format (GH-326). [Thanks @shingonoide]
+- CHANGED: Updated whois.dreamhost.com to the new response format (GH-326). [thanks @shingonoide]
 
-- CHANGED: whois.cctld.uz now supports updated_on (GH-315). [Thanks @huyphan]
+- CHANGED: whois.cctld.uz now supports updated_on (GH-315). [thanks @huyphan]
 
 
 #### Release 3.5.3
@@ -204,9 +204,9 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 #### Release 3.5.1
 
-- NEW: Added whois.corporatedomains.com parser (GH-311). [Thanks @huyphan]
+- NEW: Added whois.corporatedomains.com parser (GH-311). [thanks @huyphan]
 
-- CHANGED: Added ActiveSupport as dependency (GH-317) [Thanks @byroot].
+- CHANGED: Added ActiveSupport as dependency (GH-317) [thanks @byroot].
 
 - FIXED: NameError: wrong constant name when querying IPs (GH-310).
 
@@ -219,7 +219,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 #### Release 3.5.0
 
-- SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [Thanks @itsbalamurali]
+- SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [thanks @itsbalamurali]
 
 - SERVER: Added new gTLDs (GH-305)
 
@@ -265,7 +265,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Backported several fixture updates.
 
-- CHANGED: Updated whois.pir.org parser to the new response format (GH-300). [Thanks @muffinista]
+- CHANGED: Updated whois.pir.org parser to the new response format (GH-300). [thanks @muffinista]
 
 
 #### Release 3.4.3
@@ -295,7 +295,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Updated whois.registry.net.za parser to the new response format.
 
-- CHANGED: Updated whois.ascio.com parser to the new response format (GH-285). [Thanks @takama]
+- CHANGED: Updated whois.ascio.com parser to the new response format (GH-285). [thanks @takama]
 
 
 #### Release 3.4.1
@@ -304,19 +304,19 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: whois.whois.kenic.or.ke parser now recognizes invalid status.
 
-- NEW: Added whois.tucows.com parser (GH-260). [Thanks @takama]
+- NEW: Added whois.tucows.com parser (GH-260). [thanks @takama]
 
-- NEW: Added whois.wildwestdomains.com parser (GH-271). [Thanks @gromnsk]
+- NEW: Added whois.wildwestdomains.com parser (GH-271). [thanks @gromnsk]
 
-- NEW: Added whois.pairnic.com parser (GH-275). [Thanks @gromnsk]
+- NEW: Added whois.pairnic.com parser (GH-275). [thanks @gromnsk]
 
-- NEW: Added whois.1und1.info parser (GH-278). [Thanks @gromnsk]
+- NEW: Added whois.1und1.info parser (GH-278). [thanks @gromnsk]
 
-- FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [Thanks @Pietr]
+- FIXED: whois.dk-hostmaster.dk crashes when the status is `reserved` (GH-281). [thanks @Pietr]
 
 - CHANGED: Updated whois.nic.hu parser to the new response format.
 
-- CHANGED: Updated whois.networksolutions.com parser to the new response format (GH-280). [Thanks @takama]
+- CHANGED: Updated whois.networksolutions.com parser to the new response format (GH-280). [thanks @takama]
 
 - CHANGED: Updated whois.gandi.net parser to the new response format.
 
@@ -333,15 +333,15 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Scanners now accepts customizable settings.
 
-- NEW: Added whois.yoursrs.com parser (GH-266). [Thanks @takama]
+- NEW: Added whois.yoursrs.com parser (GH-266). [thanks @takama]
 
-- NEW: Added whois.ascio.com parser (GH-262). [Thanks @takama]
+- NEW: Added whois.ascio.com parser (GH-262). [thanks @takama]
 
-- NEW: Added whois.rrpproxy.net parser (GH-259). [Thanks @takama]
+- NEW: Added whois.rrpproxy.net parser (GH-259). [thanks @takama]
 
-- NEW: Added whois.schlund.info parser (GH-270). [Thanks @takama]
+- NEW: Added whois.schlund.info parser (GH-270). [thanks @takama]
 
-- NEW: Added whois.udag.net parser (GH-272). [Thanks @gromnsk]
+- NEW: Added whois.udag.net parser (GH-272). [thanks @gromnsk]
 
 - NEW: Added whois.nic.bj parser (GH-6).
 
@@ -355,18 +355,18 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Changed .SE TLD to the new response format and parser.
 
-- CHANGED: Updated whois.register.com parser to the new response format (GH-273). [Thanks @gromnsk]
+- CHANGED: Updated whois.register.com parser to the new response format (GH-273). [thanks @gromnsk]
 
 
 #### Release 3.3.1
 
 - SERVER: Updated .KR, .ES (GH-267) TLD definitions.
 
-- NEW: Added whois.nic.es parser (GH-267). [Thanks @takama]
+- NEW: Added whois.nic.es parser (GH-267). [thanks @takama]
 
-- NEW: Added whois.gandi.net parser (GH-261). [Thanks @takama]
+- NEW: Added whois.gandi.net parser (GH-261). [thanks @takama]
 
-- CHANGED: Updated whois.enom.com parser to the new response format (GH-269). [Thanks @takama]
+- CHANGED: Updated whois.enom.com parser to the new response format (GH-269). [thanks @takama]
 
 
 #### Release 3.3.0
@@ -375,9 +375,9 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Added whois.dot.cf parser.
 
-- NEW: Added support for ASN queries (GH-243). [Thanks @linrock]
+- NEW: Added support for ASN queries (GH-243). [thanks @linrock]
 
-- FIXED: Added contact support for whois.nic.ch (GH-246). [Thanks @Pietr]
+- FIXED: Added contact support for whois.nic.ch (GH-246). [thanks @Pietr]
 
 - CHANGED: Deprecated Whois.query. Replaced with Whois.lookup to match client. Fixed README to use Whois.whois instead of Whois.lookup
 
@@ -385,11 +385,11 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - FIXED: whois.cira.ca should support `pending delete` status.
 
-- FIXED: whois.fi should support `Grace Period` status (GH-252). [Thanks @Pietr]
+- FIXED: whois.fi should support `Grace Period` status (GH-252). [thanks @Pietr]
 
-- FIXED: additional status for whois.ua (GH-244). [Thanks @Pietr]
+- FIXED: additional status for whois.ua (GH-244). [thanks @Pietr]
 
-- FIXED: whois.jprs.jp should support `Registered` status (GH-253). [Thanks @Pietr]
+- FIXED: whois.jprs.jp should support `Registered` status (GH-253). [thanks @Pietr]
 
 
 #### Release 3.2.1
@@ -455,13 +455,13 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 #### Release 3.1.2
 
-- NEW: Added full whois.comlaude.com parser (GH-222). [Thanks @delwyn]
+- NEW: Added full whois.comlaude.com parser (GH-222). [thanks @delwyn]
 
 - NEW: Added #domain, #domain_id to whois.tcinet.ru.
 
-- NEW: Added full whois.eu parser (GH-223). [Thanks @delwyn]
+- NEW: Added full whois.eu parser (GH-223). [thanks @delwyn]
 
-- FIXED: ARIN queries required additional params (GH-220, GH-10). [Thanks @linrock]
+- FIXED: ARIN queries required additional params (GH-220, GH-10). [thanks @linrock]
 
 - FIXED: Fixed ARPA Reverse DNS lookup.
 
@@ -474,7 +474,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 #### Release 3.1.1
 
-- FIXED: Fixed CLI crash (GH-219). [Thanks @linrock]
+- FIXED: Fixed CLI crash (GH-219). [thanks @linrock]
 
 
 #### Release 3.1.0
@@ -483,7 +483,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Updated .BN (GH-214), .SY (GH-196) TLD definitions.
 
-- NEW: Added #domain and #registrar to whois.dns.be parser (GH-216). [Thanks @chuckadams]
+- NEW: Added #domain and #registrar to whois.dns.be parser (GH-216). [thanks @chuckadams]
 
 - NEW: Added full whois.dotpostregistry.net parser (GH-192).
 
@@ -491,7 +491,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Added whois.bn parser (GH-214).
 
-- CHANGED: Rescue all SystemCallError instead of a few Errno errors (GH-212). [Thanks @mat813]
+- CHANGED: Rescue all SystemCallError instead of a few Errno errors (GH-212). [thanks @mat813]
 
 - CHANGED: Removed deprecated method Whois::Client#query.
 
@@ -503,9 +503,9 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - FIXED: whois.dns.pl crashes when expiration date is not defined.
 
-- FIXED: Handle ReferralServer directive in ARIN whois queries (GH-204, GH-37). [Thanks @linrock]
+- FIXED: Handle ReferralServer directive in ARIN whois queries (GH-204, GH-37). [thanks @linrock]
 
-- FIXED: Record#technical_contact raised a NoMethodError (GH-217). [Thanks @yspro]
+- FIXED: Record#technical_contact raised a NoMethodError (GH-217). [thanks @yspro]
 
 
 #### Release 3.0.0
@@ -586,11 +586,11 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Updated whois.cnnic.cn parser to the new response format.
 
-- CHANGED: Updated whois.thnic.co.th parser to the new response format (GH-194). [Thanks @ATimofeev]
+- CHANGED: Updated whois.thnic.co.th parser to the new response format (GH-194). [thanks @ATimofeev]
 
 - CHANGED: Updated whois.nic.ms parser to the new response format.
 
-- CHANGED: whois.coza.net.za became whois.registry.net.za (GH-191). [Thanks @rorymckinley]
+- CHANGED: whois.coza.net.za became whois.registry.net.za (GH-191). [thanks @rorymckinley]
 
 - CHANGED: Definitions are now stored as JSON.
 
@@ -622,7 +622,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - FIXED: whois.nic.cz crashes when nsset node has the same ID of a contact.
 
-- FIXED: whois.register.com fails to parse name servers in some cases (GH-207). [Thanks @stormsilver]
+- FIXED: whois.register.com fails to parse name servers in some cases (GH-207). [thanks @stormsilver]
 
 - FIXED: whois.nc crashes when the address is missing the state.
 
@@ -664,7 +664,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Added full whois.register.com parser.
 
-- NEW: whois.networksolutions.com parser now recognizes throttled responses (GH-182). [Thanks @JustinCampbell]
+- NEW: whois.networksolutions.com parser now recognizes throttled responses (GH-182). [thanks @JustinCampbell]
 
 - NEW: Added full whois.cmc.iq parser (GH-171).
 
@@ -676,7 +676,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Added full whois.monic.mo parser.
 
-- FIXED: Fixed whois.register.com parser for enom formats (GH-181). [Thanks @JustinCampbell]
+- FIXED: Fixed whois.register.com parser for enom formats (GH-181). [thanks @JustinCampbell]
 
 - FIXED: whois.jprs.js parser should support status `Suspended`.
 
@@ -686,7 +686,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - CHANGED: Changed .NAME to a formatted adapter to fetch additional properties.
 
-- CHANGED: whois.dns.pl now supports expires_on (GH-185). [Thanks @y3ti]
+- CHANGED: whois.dns.pl now supports expires_on (GH-185). [thanks @y3ti]
 
 
 #### Release 2.6.4
@@ -711,7 +711,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - FIXED: whois.rnids.rs parser should support statuses Locked, Expired, and In Transfer.
 
-- FIXED: whois.nic.gs parser should support status `Excluded - Pending Delete - Restorable` (GH-180). [Thanks @smith]
+- FIXED: whois.nic.gs parser should support status `Excluded - Pending Delete - Restorable` (GH-180). [thanks @smith]
 
 - CHANGED: Deprecated options[:web] for :web adapter in favor of options[:url].
 
@@ -728,11 +728,11 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: whois.registrypro.pro is now a full parser.
 
-- FIXED: In some cases the parser class is not correctly detected from hostname (GH-173). [Thanks @JustinCampbell]
+- FIXED: In some cases the parser class is not correctly detected from hostname (GH-173). [thanks @JustinCampbell]
 
 - FIXED: whois.ua parser raises ArgumcentError when the created_on object invalid data.
 
-- FIXED: Whois::Server may occasionally raise an error trying to resolve an IPv6 matching query object (GH-174). [Thanks @aeden].
+- FIXED: Whois::Server may occasionally raise an error trying to resolve an IPv6 matching query object (GH-174). [thanks @aeden].
 
 - CHANGED: Updated whois.registrypro.pro parser to the new response format.
 
@@ -741,11 +741,11 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - SERVER: Added .SX TLD server (GH-170).
 
-- NEW: Added full whois.networksolutions.com parser (GH-168). [Thanks @bramp]
+- NEW: Added full whois.networksolutions.com parser (GH-168). [thanks @bramp]
 
 - NEW: Added full whois.sx parser (GH-170).
 
-- NEW: whois.ua parser is now a full parser (GH-169). [Thanks @Uko]
+- NEW: whois.ua parser is now a full parser (GH-169). [thanks @Uko]
 
 
 #### Release 2.6.1
@@ -767,29 +767,29 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Added full whois.educause.edu parser.
 
-- NEW: Implement registrar property for CoCCA (GH-165). [Thanks @sherwind]
+- NEW: Implement registrar property for CoCCA (GH-165). [thanks @sherwind]
 
 - CHANGED: whois.nic.uk changed response format.
 
-- CHANGED: whois.nic.gl now inherits from CoCCA and learns new properties (GH-166). [Thanks @sherwind]
+- CHANGED: whois.nic.gl now inherits from CoCCA and learns new properties (GH-166). [thanks @sherwind]
 
 - CHANGED: Deprecate SuperStruct initialization with list of params.
 
 - FIXED: whois.hkirc.hk parser crashes when expiration date is "null".
 
-- FIXED: whois.na-nic.com.na parser fails to support 'Delegate' status (GH-159). [Thanks @sherwind]
+- FIXED: whois.na-nic.com.na parser fails to support 'Delegate' status (GH-159). [thanks @sherwind]
 
-- FIXED: whois.rnids.rs parser crashes when domain is private (GH-163). [Thanks @sherwind]
+- FIXED: whois.rnids.rs parser crashes when domain is private (GH-163). [thanks @sherwind]
 
-- FIXED: whois.rnids.rs parser not to split nameserver name at the hypen (GH-164). [Thanks @sherwind]
+- FIXED: whois.rnids.rs parser not to split nameserver name at the hypen (GH-164). [thanks @sherwind]
 
 - FIXED: whois.co.ug parser fails to support 'Unconfirmed' status.
 
-- FIXED: whois.cctld.uz parser crashes when expiration date is dash (GH-161). [Thanks @sherwind]
+- FIXED: whois.cctld.uz parser crashes when expiration date is dash (GH-161). [thanks @sherwind]
 
-- FIXED: whois.cctld.uz parser fails to support 'RESERVED' status (GH-162). [Thanks @sherwind]
+- FIXED: whois.cctld.uz parser fails to support 'RESERVED' status (GH-162). [thanks @sherwind]
 
-- FIXED: whois.tznic.or.tz parser fails to support 'Expired' status (GH-160). [Thanks @sherwind]
+- FIXED: whois.tznic.or.tz parser fails to support 'Expired' status (GH-160). [thanks @sherwind]
 
 
 ## Release 2.5.1
@@ -813,7 +813,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Added full whois.audns.net.au parser.
 
-- NEW: Added full whois.cctld.by parser (GH-154). [Thanks @kliuchnikau]
+- NEW: Added full whois.cctld.by parser (GH-154). [thanks @kliuchnikau]
 
 - NEW: Added full whois.domainregistry.ie parser.
 
@@ -966,9 +966,9 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: whois.nic.xxs parser now recognizes reserved domains.
 
-- NEW: whois.nic.uk parser now recognizes throttled responses (GH-118). [Thanks @semaperepelitsa]
+- NEW: whois.nic.uk parser now recognizes throttled responses (GH-118). [thanks @semaperepelitsa]
 
-- NEW: whois.nic.uk parser now extracts registrant_contacts (GH-118). [Thanks @semaperepelitsa]
+- NEW: whois.nic.uk parser now extracts registrant_contacts (GH-118). [thanks @semaperepelitsa]
 
 - FIXED: whois.nic.it parser doesn't correctly understand reserved domains.
 
@@ -1013,7 +1013,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
     - whois.nic.xx
     - whois.afilias.info
     - whois.registry.qa (GH-114)
-    - whois.godaddy.com (GH-105) [Thanks @pmyteh]
+    - whois.godaddy.com (GH-105) [thanks @pmyteh]
 
 - CHANGED: use the first public .XXX domain to test the whois.nic.xx response format.
 
@@ -1090,7 +1090,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
   when the response from the Verisign database doesn't contain a
   referral (GH-103)
 
-- FIXED: whois.eu parser changed the format of the nameserver property (GH-99). [Thanks @armins]
+- FIXED: whois.eu parser changed the format of the nameserver property (GH-99). [thanks @armins]
 
 - FIXED: whois.nic.uk parser should return `:invalid' status when the domain is invalid.
 
@@ -1126,7 +1126,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 ## Release 2.0.2
 
-- CHANGED: whois.ripn.net now returns an array of contacts, one for each email (GH-89). [Thanks @semaperepelitsa]
+- CHANGED: whois.ripn.net now returns an array of contacts, one for each email (GH-89). [thanks @semaperepelitsa]
 
 - FIXED: whois.nic.it parser must support UNASSIGNABLE status.
 
@@ -1193,9 +1193,9 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 
 - NEW: Extracted Whois::Answer::Parser::Features and Extracted Whois::Answer::Parser::Scanners::Base.
 
-- NEW: whois.nic.uk now supports #registrar (GH-81, GH-82). [Thanks @geoffgarside]
+- NEW: whois.nic.uk now supports #registrar (GH-81, GH-82). [thanks @geoffgarside]
 
-- NEW: Added simple whois.markmonitor.net parser (GH-83). [Thanks @semaperepelitsa]
+- NEW: Added simple whois.markmonitor.net parser (GH-83). [thanks @semaperepelitsa]
 
 - CHANGED: Renamed whois.centralnic.net to whois.centralnic.com (GH-28).
 
@@ -2019,7 +2019,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 - NEW: Simple .wf, .yt TLD parser (whois.nic.fr).
 
-- NEW: Simple .dk TLD parser [Thanks Mikkel Kristensen]
+- NEW: Simple .dk TLD parser [thanks Mikkel Kristensen]
 
 - NEW: Simple .uk TLD parser (whois.nic.uk).
 
@@ -2153,7 +2153,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 ## Release 0.8.1
 
-- FIXED: Updated the whois.denic.de parser to the new format (REDMINE-314). [Thanks David Krentzlin]
+- FIXED: Updated the whois.denic.de parser to the new format (REDMINE-314). [thanks David Krentzlin]
 
 - FIXED: In case of thin server the client should select the closest whois server match (closes REDMINE-264)
 
