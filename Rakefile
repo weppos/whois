@@ -12,13 +12,13 @@ spec = Gem::Specification.new do |s|
   s.name              = "whois"
   s.version           = Whois::VERSION
   s.summary           = "An intelligent pure Ruby WHOIS client and parser."
-  s.description       = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, parse and convert responses into easy-to-use Ruby objects."
+  s.description       = "Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, and parse the responses into easy-to-use Ruby objects via the whois-parser library."
 
   s.required_ruby_version = ">= 2.0.0"
 
   s.authors           = ["Simone Carletti"]
   s.email             = ["weppos@weppos.net"]
-  s.homepage          = "http://whoisrb.org/"
+  s.homepage          = "https://whoisrb.org/"
   s.license           = "MIT"
 
   s.files             = %w( LICENSE.txt .yardopts ) +
