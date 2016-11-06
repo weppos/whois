@@ -143,6 +143,7 @@ class TldDefs
     update do |defs|
       tlds.each do |tld|
         tld = TldDef.name(tld)
+        # puts(tld) if !defs.key?(tld)
         next if !defs.key?(tld) && @settings[:ignore_missing]
         raise ChangeError, "error updating `#{tld}`, tld is missing" if !defs.key?(tld) && !@settings[:ignore_missing]
 

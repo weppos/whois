@@ -17,7 +17,7 @@ when "retag-newgtld"
 
   puts "Updating #{tlds.size} newGTLDs..."
   puts "utils/deftld.rb update #{tlds.join(" ")} --type newgtld"
-  `utils/deftld.rb update #{tlds.join(" ")} --type newgtld`
+  puts `utils/deftld.rb update #{tlds.join(" ")} --type newgtld`
 
 else
   puts "Unknown command `#{command}`"
