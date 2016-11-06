@@ -74,6 +74,7 @@ module Whois
         type = File.basename(file, File.extname(file)).to_sym
         JSON.load(File.read(file)).each do |allocation, settings|
           next if allocation == "_"
+          settings.reject! { |k, _| k.start_with?("_") }
           define(type, allocation, settings.delete("host"), Hash[settings.map { |k,v| [k.to_sym, v] }])
         end
       end
