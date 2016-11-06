@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:56:54 UTC"
+    "updated": "2016-11-06 16:58:54 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1988,7 +1988,7 @@
   "fishing": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.fishing"
   },
   "fit": {
     "_group": "mmregistry",
@@ -2215,7 +2215,7 @@
   "garden": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.garden"
   },
   "gb": {
     "adapter": "none"
@@ -5709,7 +5709,7 @@
   "vodka": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.vodka"
   },
   "volkswagen": {
     "_group": "afiliassrs",
@@ -5807,7 +5807,7 @@
   "wedding": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.wedding"
   },
   "weibo": {
     "_group": "afiliassrs",
@@ -6495,7 +6495,7 @@
   "yoga": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.yoga"
   },
   "yokohama": {
     "_type": "newgtld",
