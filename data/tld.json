@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:21:01 UTC"
+    "updated": "2016-11-06 15:22:12 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -715,6 +715,8 @@
     "host": "whois.nic.canon"
   },
   ".capetown": {
+    "_group": "zaregistry",
+    "_type": "newgtld",
     "host": "capetown-whois.registry.net.za"
   },
   ".capital": {
@@ -1453,6 +1455,8 @@
     "adapter": "none"
   },
   ".durban": {
+    "_group": "zaregistry",
+    "_type": "newgtld",
     "host": "durban-whois.registry.net.za"
   },
   ".dvag": {
@@ -1574,6 +1578,8 @@
     "host": "whois.nic.eurovision"
   },
   ".eus": {
+    "_group": "coreregistry",
+    "_type": "newgtld",
     "host": "whois.eus.coreregistry.net"
   },
   ".events": {
@@ -1883,6 +1889,8 @@
     "host": "whois.dot.ga"
   },
   ".gal": {
+    "_group": "coreregistry",
+    "_type": "newgtld",
     "host": "whois.gal.coreregistry.net"
   },
   ".gallery": {
@@ -2525,6 +2533,8 @@
     "adapter": "verisign"
   },
   ".joburg": {
+    "_group": "zaregistry",
+    "_type": "newgtld",
     "host": "joburg-whois.registry.net.za"
   },
   ".jot": {
@@ -2942,6 +2952,8 @@
     "host": "whois.donuts.co"
   },
   ".mango": {
+    "_group": "coreregistry",
+    "_type": "newgtld",
     "host": "whois.mango.coreregistry.net"
   },
   ".market": {
@@ -4071,6 +4083,8 @@
     "host": "whois.nic.scor"
   },
   ".scot": {
+    "_group": "coreregistry",
+    "_type": "newgtld",
     "host": "whois.scot.coreregistry.net"
   },
   ".sd": {
@@ -5340,6 +5354,8 @@
     "host": "whois.aeda.net.ae"
   },
   ".xn--mgbab2bd": {
+    "_group": "coreregistry",
+    "_type": "newgtld",
     "host": "whois.bazaar.coreregistry.net"
   },
   ".xn--mgbayh7gpa": {
