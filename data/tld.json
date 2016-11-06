@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:50:33 UTC"
+    "updated": "2016-11-06 16:22:06 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -4664,7 +4664,7 @@
   "soy": {
     "_group": "google",
     "_type": "newgtld",
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
   "space": {
     "_group": "centralnic",
@@ -5753,7 +5753,7 @@
   "xn--flw351e": {
     "_group": "google",
     "_type": "newgtld",
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
   "xn--fpcrj9c3d": {
     "host": "whois.inregistry.net"
@@ -5960,7 +5960,7 @@
   "xn--q9jyb4c": {
     "_group": "google",
     "_type": "newgtld",
-    "host": "domain-registry-whois.l.google.com"
+    "host": "whois.nic.google"
   },
   "xn--qcka1pmc": {
     "_group": "google",
