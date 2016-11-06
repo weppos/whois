@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:04:31 UTC"
+    "updated": "2016-11-06 15:06:30 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -531,6 +531,7 @@
   },
   ".za.bz": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".bzh": {
@@ -773,86 +774,107 @@
   },
   ".africa.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".ar.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".br.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".cn.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".co.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.net"
   },
   ".de.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".eu.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".gb.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".gr.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".hu.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".jpn.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".kr.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".no.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".qc.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".ru.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".sa.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".se.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".uk.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".us.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".uy.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".za.com": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".comcast": {
@@ -1009,6 +1031,7 @@
   },
   ".com.de": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".deal": {
@@ -2538,26 +2561,32 @@
   },
   ".gb.net": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".hu.net": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".in.net": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".jp.net": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".se.net": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".uk.net": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".za.net": {
@@ -2725,6 +2754,7 @@
   },
   ".ae.org": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".eu.org": {
@@ -2732,6 +2762,7 @@
   },
   ".us.org": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".za.org": {
@@ -3208,6 +3239,7 @@
   },
   ".com.se": {
     "_group": "centralnic",
+    "_type": "private",
     "host": "whois.centralnic.com"
   },
   ".seat": {
