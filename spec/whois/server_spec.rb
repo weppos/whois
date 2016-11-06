@@ -41,33 +41,20 @@ describe Whois::Server do
   end
 
   describe ".definitions" do
-    it "returns the definitions hash when type argument is nil" do
+    it "returns the definitions array for given type" do
       with_definitions do
-        definition = described_class.definitions
-        expect(definition).to be_a(Hash)
-        expect(definition.keys).to match([:tld, :ipv4, :ipv6, :asn16, :asn32])
-      end
-
-      with_definitions do
-        definition = described_class.definitions(nil)
-        expect(definition).to be_a(Hash)
-        expect(definition.keys).to match([:tld, :ipv4, :ipv6, :asn16, :asn32])
-      end
-    end
-
-    it "returns the definitions array for given type when type argument is not nil and given type exists" do
-      with_definitions do
-        Whois::Server.define(:foo, ".foo", "whois.foo")
-        definition = described_class.definitions(:foo)
+        Whois::Server.define(Whois::Server::TYPE_TLD, ".foo", "whois.foo")
+        definition = described_class.definitions(Whois::Server::TYPE_TLD)
         expect(definition).to be_a(Array)
         expect(definition).to eq([[".foo", "whois.foo", {}]])
       end
     end
 
-    it "returns nil when type argument is not nil and given type doesn't exist" do
+    it "raises ArgumentError when the type is invalid" do
       with_definitions do
-        definition = described_class.definitions(:foo)
-        expect(definition).to be_nil
+        expect {
+          described_class.definitions(:foo)
+        }.to raise_error(ArgumentError)
       end
     end
   end
@@ -75,22 +62,15 @@ describe Whois::Server do
   describe ".define" do
     it "adds a new definition with given arguments" do
       with_definitions do
-        Whois::Server.define(:foo, ".foo", "whois.foo")
-        expect(described_class.definitions(:foo)).to eq([[".foo", "whois.foo", {}]])
+        Whois::Server.define(Whois::Server::TYPE_TLD, ".foo", "whois.foo")
+        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([[".foo", "whois.foo", {}]])
       end
     end
 
     it "accepts a hash of options" do
       with_definitions do
-        Whois::Server.define(:foo, ".foo", "whois.foo", foo: "bar")
-        expect(described_class.definitions(:foo)).to eq([[".foo", "whois.foo", { :foo => "bar" }]])
-      end
-    end
-
-    it "accepts any kind of definition type" do
-      with_definitions do
-        Whois::Server.define(:ipv4, ".foo", "whois.foo", foo: "bar")
-        expect(described_class.definitions(:ipv4)).to eq([[".foo", "whois.foo", { :foo => "bar" }]])
+        Whois::Server.define(Whois::Server::TYPE_TLD, ".foo", "whois.foo", foo: "bar")
+        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([[".foo", "whois.foo", { :foo => "bar" }]])
       end
     end
   end
@@ -138,43 +118,43 @@ describe Whois::Server do
     it "recognizes tld" do
       server = Whois::Server.guess(".com")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:tld)
+      expect(server.type).to eq(Whois::Server::TYPE_TLD)
     end
 
     it "recognizes domain" do
       server = Whois::Server.guess("example.com")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:tld)
+      expect(server.type).to eq(Whois::Server::TYPE_TLD)
     end
 
     it "recognizes ipv4" do
       server = Whois::Server.guess("127.0.0.1")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:ipv4)
+      expect(server.type).to eq(Whois::Server::TYPE_IPV4)
     end
 
     it "recognizes ipv6" do
       server = Whois::Server.guess("2001:0db8:85a3:0000:0000:8a2e:0370:7334")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:ipv6)
+      expect(server.type).to eq(Whois::Server::TYPE_IPV6)
     end
 
     it "recognizes ipv6 when zero groups" do
       server = Whois::Server.guess("2002::1")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:ipv6)
+      expect(server.type).to eq(Whois::Server::TYPE_IPV6)
     end
 
     it "recognizes asn16" do
       server = Whois::Server.guess("AS23456")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:asn16)
+      expect(server.type).to eq(Whois::Server::TYPE_ASN16)
     end
 
     it "recognizes asn32" do
       server = Whois::Server.guess("AS131072")
       expect(server).to be_a(Whois::Server::Adapters::Base)
-      expect(server.type).to eq(:asn32)
+      expect(server.type).to eq(Whois::Server::TYPE_ASN32)
     end
 
     it "recognizes email" do
@@ -208,11 +188,59 @@ describe Whois::Server do
         end
       end
 
-      it "doesn't consider the dot as a regexp pattern", :regression => true do
+      it "doesn't consider the dot as a regexp pattern" do
         with_definitions do
           Whois::Server.define(:tld, ".no.com", "whois.no.com")
           Whois::Server.define(:tld, ".com", "whois.com")
           expect(Whois::Server.guess("antoniocangiano.com")).to eq(Whois::Server.factory(:tld, ".com", "whois.com"))
+        end
+      end
+
+      it "returns the closer definition" do
+        with_definitions do
+          Whois::Server.define(:tld, ".com", com = "whois.com")
+          Whois::Server.define(:tld, ".com.foo", comfoo = "whois.com.foo")
+          Whois::Server.define(:tld, ".foo.com", foocom = "whois.foo.com")
+
+          expect(Whois::Server.guess("example.com").host).to eq(com)
+          expect(Whois::Server.guess("example.com.foo").host).to eq(comfoo)
+          expect(Whois::Server.guess("example.foo.com").host).to eq(foocom)
+        end
+      end
+    end
+
+    context "when the input is an asn16" do
+      it "lookups definitions and returns the adapter" do
+        with_definitions do
+          Whois::Server.define(:asn16, "0 65535", "whois.test")
+          expect(Whois::Server.guess("AS65535")).to eq(Whois::Server.factory(:asn16, "0 65535", "whois.test"))
+        end
+      end
+
+      it "raises if definition is not found" do
+        with_definitions do
+          Whois::Server.define(:asn16, "0 60000", "whois.test")
+          expect {
+            Whois::Server.guess("AS65535")
+          }.to raise_error(Whois::AllocationUnknown)
+        end
+      end
+    end
+
+    context "when the input is an asn32" do
+      it "lookups definitions and returns the adapter" do
+        with_definitions do
+          Whois::Server.define(:asn32, "65536 394239", "whois.test")
+          expect(Whois::Server.guess("AS65536")).to eq(Whois::Server.factory(:asn32, "65536 394239", "whois.test"))
+        end
+      end
+
+      it "raises if definition is not found" do
+        with_definitions do
+          Whois::Server.define(:asn32, "65536 131071", "whois.test")
+          expect {
+            Whois::Server.guess("AS200000")
+          }.to raise_error(Whois::AllocationUnknown)
         end
       end
     end
@@ -221,7 +249,7 @@ describe Whois::Server do
       it "lookups definitions and returns the adapter" do
         with_definitions do
           Whois::Server.define(:ipv4, "192.168.1.0/10", "whois.test")
-          expect(Whois::Server.guess("192.168.1.1")).to eq(Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.test"))
+          expect(Whois::Server.find_for_ip("192.168.1.1")).to eq(Whois::Server.factory(:ipv4, "192.168.1.0/10", "whois.test"))
         end
       end
 
@@ -259,47 +287,10 @@ describe Whois::Server do
         end
       end
 
-      # https://github.com/weppos/whois/issues/174
-      it "rescues IPAddr ArgumentError" do
+      it "rescues IPAddr ArgumentError", issue: "weppos/whois#174" do
         with_definitions do
           expect {
             Whois::Server.guess("f53")
-          }.to raise_error(Whois::AllocationUnknown)
-        end
-      end
-    end
-
-    context "when the input is an asn16" do
-      it "lookups definitions and returns the adapter" do
-        with_definitions do
-          Whois::Server.define(:asn16, "0 65535", "whois.test")
-          expect(Whois::Server.guess("AS65535")).to eq(Whois::Server.factory(:asn16, "0 65535", "whois.test"))
-        end
-      end
-
-      it "raises if definition is not found" do
-        with_definitions do
-          Whois::Server.define(:asn16, "0 60000", "whois.test")
-          expect {
-            Whois::Server.guess("AS65535")
-          }.to raise_error(Whois::AllocationUnknown)
-        end
-      end
-    end
-
-    context "when the input is an asn32" do
-      it "lookups definitions and returns the adapter" do
-        with_definitions do
-          Whois::Server.define(:asn32, "65536 394239", "whois.test")
-          expect(Whois::Server.guess("AS65536")).to eq(Whois::Server.factory(:asn32, "65536 394239", "whois.test"))
-        end
-      end
-
-      it "raises if definition is not found" do
-        with_definitions do
-          Whois::Server.define(:asn32, "65536 131071", "whois.test")
-          expect {
-            Whois::Server.guess("AS200000")
           }.to raise_error(Whois::AllocationUnknown)
         end
       end
