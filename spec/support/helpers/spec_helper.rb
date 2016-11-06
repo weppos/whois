@@ -16,12 +16,12 @@ module RSpecSupportSpecHelpers
   end
 
   def definitions_setup
-    @_definitions = Whois::Server.send :class_variable_get, :@@definitions
-    Whois::Server.send :class_variable_set, :@@definitions, {}
+    @_definitions = Whois::Server.send :instance_variable_get, :@definitions
+    Whois::Server.clear_definitions
   end
 
   def definitions_teardown
-    Whois::Server.send :class_variable_set, :@@definitions, @_definitions
+    Whois::Server.send :instance_variable_set, :@definitions, @_definitions
   end
 
 end

@@ -48,11 +48,12 @@ module Whois
 
     class << self
 
-      # The WHOIS server definitions.
+      # Clears the definition and reset them to an empty list.
       #
-      # @return [{ Symbol => Array }] The definition Hash.
-      # @private
-      @@definitions = {}
+      # @return [void]
+      def clear_definitions
+        @definitions = {}
+      end
 
       # Searches the +/definitions+ folder for definition files and loads them.
       # This method is automatically invoked when this file is parsed
@@ -60,6 +61,7 @@ module Whois
       #
       # @return [void]
       def load_definitions
+        clear_definitions
         Dir[File.expand_path("../../../data/*.json", __FILE__)].each { |f| load_json(f) }
       end
 
@@ -98,7 +100,7 @@ module Whois
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        defs = @@definitions[type] || {}
+        defs = @definitions[type] || {}
         defs.values
       end
 
@@ -143,8 +145,8 @@ module Whois
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        @@definitions[type] ||= {}
-        @@definitions[type][allocation] = [allocation, host, options]
+        @definitions[type] ||= {}
+        @definitions[type][allocation] = [allocation, host, options]
       end
 
       # Creates a new server adapter from given arguments
