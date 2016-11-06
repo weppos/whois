@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 14:55:45 UTC"
+    "updated": "2016-11-06 15:04:31 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -197,6 +197,7 @@
     "adapter": "arpa"
   },
   ".art": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".arte": {
@@ -529,6 +530,7 @@
     "adapter": "afilias"
   },
   ".za.bz": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".bzh": {
@@ -770,66 +772,87 @@
     "adapter": "verisign"
   },
   ".africa.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".ar.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".br.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".cn.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".co.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.net"
   },
   ".de.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".eu.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".gb.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".gr.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".hu.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".jpn.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".kr.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".no.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".qc.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".ru.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".sa.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".se.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".uk.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".us.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".uy.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".za.com": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".comcast": {
@@ -985,6 +1008,7 @@
     "format": "-T dn,ace %s"
   },
   ".com.de": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".deal": {
@@ -1236,9 +1260,11 @@
     "host": "whois.rightside.co"
   },
   ".fan": {
+    "_group": "centralnic",
     "host": "whois.nic.fan"
   },
   ".fans": {
+    "_group": "centralnic",
     "host": "whois.nic.fans"
   },
   ".farm": {
@@ -1257,6 +1283,7 @@
     "host": "whois.afilias-srs.net"
   },
   ".feedback": {
+    "_group": "centralnic",
     "host": "whois.nic.feedback"
   },
   ".fi": {
@@ -1351,6 +1378,7 @@
     "host": "whois.unitedtld.com"
   },
   ".forum": {
+    "_group": "centralnic",
     "host": "whois.nic.forum"
   },
   ".foundation": {
@@ -1817,6 +1845,7 @@
     "host": "whois.nic.google"
   },
   ".ink": {
+    "_group": "centralnic",
     "host": "whois.nic.ink"
   },
   ".institute": {
@@ -1962,6 +1991,7 @@
     "host": "whois.nic.kerryproperties"
   },
   ".kfh": {
+    "_group": "centralnic",
     "host": "whois.nic.kfh"
   },
   ".kg": {
@@ -2193,6 +2223,7 @@
     "host": "whois.afilias.net"
   },
   ".love": {
+    "_group": "centralnic",
     "host": "whois.nic.love"
   },
   ".lpl": {
@@ -2506,21 +2537,27 @@
     "adapter": "verisign"
   },
   ".gb.net": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".hu.net": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".in.net": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".jp.net": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".se.net": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".uk.net": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".za.net": {
@@ -2671,6 +2708,7 @@
     "host": "whois.afilias-srs.net"
   },
   ".online": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".ooo": {
@@ -2686,12 +2724,14 @@
     "host": "whois.pir.org"
   },
   ".ae.org": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".eu.org": {
     "host": "whois.eu.org"
   },
   ".us.org": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".za.org": {
@@ -2894,6 +2934,7 @@
     "host": "whois.uniregistry.net"
   },
   ".protection": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".ps": {
@@ -2943,6 +2984,7 @@
     "adapter": "none"
   },
   ".realty": {
+    "_group": "centralnic",
     "host": "whois.nic.realty"
   },
   ".recipes": {
@@ -2973,6 +3015,7 @@
     "adapter": "none"
   },
   ".rent": {
+    "_group": "centralnic",
     "host": "whois.nic.rent"
   },
   ".rentals": {
@@ -2988,6 +3031,7 @@
     "host": "whois.rightside.co"
   },
   ".rest": {
+    "_group": "centralnic",
     "host": "whois.nic.rest"
   },
   ".restaurant": {
@@ -3163,12 +3207,14 @@
     "host": "whois.iis.se"
   },
   ".com.se": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".seat": {
     "host": "whois.nic.seat"
   },
   ".security": {
+    "_group": "centralnic",
     "host": "whois.nic.security"
   },
   ".seek": {
@@ -3253,6 +3299,7 @@
     "host": "whois.donuts.co"
   },
   ".site": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".sj": {
@@ -3322,6 +3369,7 @@
     "host": "domain-registry-whois.l.google.com"
   },
   ".space": {
+    "_group": "centralnic",
     "host": "whois.nic.space"
   },
   ".spiegel": {
@@ -3361,9 +3409,11 @@
     "host": "whois.nic.statoil"
   },
   ".stc": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".stcgroup": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".stockholm": {
@@ -3483,6 +3533,7 @@
     "host": "whois.donuts.co"
   },
   ".tech": {
+    "_group": "centralnic",
     "host": "whois.nic.tech"
   },
   ".technology": {
@@ -3522,9 +3573,11 @@
     "host": "whois.donuts.co"
   },
   ".theatre": {
+    "_group": "centralnic",
     "host": "whois.nic.theatre"
   },
   ".tickets": {
+    "_group": "centralnic",
     "host": "whois.nic.tickets"
   },
   ".tienda": {
@@ -3807,6 +3860,7 @@
     "host": "whois.nic.vistaprint"
   },
   ".viva": {
+    "_group": "centralnic",
     "host": "whois.centralnic.com"
   },
   ".vlaanderen": {
@@ -3916,6 +3970,7 @@
     "host": "whois.donuts.co"
   },
   ".wme": {
+    "_group": "centralnic",
     "host": "whois.nic.wme"
   },
   ".wolterskluwer": {
@@ -4241,6 +4296,7 @@
     "host": "whois.nic.xn--ngbc5azd"
   },
   ".xn--ngbe9e0a": {
+    "_group": "centralnic",
     "host": "whois.nic.xn--ngbe9e0a"
   },
   ".xn--node": {
@@ -4359,6 +4415,7 @@
     "host": "whois.nic.xxx"
   },
   ".xyz": {
+    "_group": "centralnic",
     "host": "whois.nic.xyz"
   },
   ".yachts": {
