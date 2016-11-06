@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:27:11 UTC"
+    "updated": "2016-11-06 16:31:44 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -440,6 +440,9 @@
     "_type": "newgtld",
     "host": "whois.nic.bbc"
   },
+  "bbt": {
+    "host": "whois.nic.bbt"
+  },
   "bbva": {
     "_type": "newgtld",
     "host": "whois.nic.bbva"
@@ -464,6 +467,10 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
+  },
+  "beauty": {
+  },
+  "whois.nic.beauty": {
   },
   "beer": {
     "_group": "mmregistry",
@@ -2016,6 +2023,9 @@
     "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
+  "fujixerox": {
+    "host": "whois.nic.fujixerox"
+  },
   "fund": {
     "_group": "donuts",
     "_type": "newgtld",
@@ -2441,10 +2451,16 @@
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
   },
+  "homegoods": {
+    "adapter": "none"
+  },
   "homes": {
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
+  },
+  "homesense": {
+    "adapter": "none"
   },
   "honda": {
     "_type": "newgtld",
@@ -2904,6 +2920,9 @@
     "_type": "newgtld",
     "host": "whois-lancaster.nic.fr"
   },
+  "lancome": {
+    "host": "whois.nic.lancome"
+  },
   "land": {
     "_group": "donuts",
     "_type": "newgtld",
@@ -3139,6 +3158,9 @@
   "lu": {
     "host": "whois.dns.lu"
   },
+  "lundbeck": {
+    "host": "whois.nic.lundbeck"
+  },
   "lupin": {
     "_type": "newgtld",
     "adapter": "none"
@@ -3215,6 +3237,9 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
+  },
+  "marshalls": {
+    "adapter": "none"
   },
   "mattel": {
     "_type": "newgtld",
@@ -3495,6 +3520,9 @@
     "adapter": "formatted",
     "format": "domain=%s"
   },
+  "nationwide": {
+    "host": "whois.nic.nationwide"
+  },
   "natura": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -3757,6 +3785,9 @@
     "_type": "newgtld",
     "host": "whois.centralnic.com"
   },
+  "onyourside": {
+    "host": "whois.nic.onyourside"
+  },
   "ooo": {
     "_type": "newgtld",
     "host": "whois.nic.ooo"
@@ -3834,6 +3865,10 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "panasonic": {
+    "_group": "gmo",
+    "host": "whois.nic.gmo"
+  },
   "panerai": {
     "_type": "newgtld",
     "adapter": "none"
@@ -3876,6 +3911,9 @@
   },
   "pf": {
     "host": "whois.registry.pf"
+  },
+  "pfizer": {
+    "adapter": "none"
   },
   "pg": {
     "adapter": "none"
@@ -4616,6 +4654,9 @@
   "sm": {
     "host": "whois.nic.sm"
   },
+  "smart": {
+    "host": "whois-gtld.smart.com.ph"
+  },
   "smile": {
     "_type": "newgtld",
     "adapter": "none"
@@ -4710,6 +4751,9 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
+  },
+  "staples": {
+    "adapter": "none"
   },
   "star": {
     "_group": "afiliassrs",
@@ -5000,8 +5044,17 @@
     "adapter": "web",
     "url": "http://www.nic.tj/whois.html"
   },
+  "tjmaxx": {
+    "adapter": "none"
+  },
+  "tjx": {
+    "adapter": "none"
+  },
   "tk": {
     "host": "whois.dot.tk"
+  },
+  "tkmaxx": {
+    "adapter": "none"
   },
   "tl": {
     "host": "whois.nic.tl"
@@ -5339,6 +5392,9 @@
     "_type": "newgtld",
     "host": "whois.centralnic.com"
   },
+  "vivo": {
+    "adapter": "none"
+  },
   "vlaanderen": {
     "_type": "newgtld",
     "host": "whois.nic.vlaanderen"
@@ -5486,6 +5542,9 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.donuts.co"
+  },
+  "winners": {
+    "adapter": "none"
   },
   "wme": {
     "_group": "centralnic",
