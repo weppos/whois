@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:16:51 UTC"
+    "updated": "2016-11-06 15:17:40 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -23,6 +23,8 @@
     "adapter": "none"
   },
   ".abogado": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".abudhabi": {
@@ -372,6 +374,8 @@
     "host": "whois.nic.bauhaus"
   },
   ".bayern": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".bb": {
@@ -405,6 +409,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".beer": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".bentley": {
@@ -564,12 +570,16 @@
     "host": "whois.registro.br"
   },
   ".bradesco": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-cl01.mm-registry.com"
   },
   ".bridgestone": {
     "host": "whois.nic.bridgestone"
   },
   ".broadway": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-cl01.mm-registry.com"
   },
   ".broker": {
@@ -590,6 +600,8 @@
     "url": "http://www.nic.bt/"
   },
   ".budapest": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".bugatti": {
@@ -727,6 +739,8 @@
     "adapter": "none"
   },
   ".casa": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois.nic.casa"
   },
   ".cash": {
@@ -1100,6 +1114,8 @@
     "host": "whois.donuts.co"
   },
   ".cooking": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".cookingchannel": {
@@ -1117,6 +1133,8 @@
     "host": "whois-corsica.nic.fr"
   },
   ".country": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".coupon": {
@@ -1238,6 +1256,8 @@
     "host": "whois.nic.google"
   },
   ".dds": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois.nic.dds"
   },
   ".de": {
@@ -1601,6 +1621,8 @@
     "adapter": "none"
   },
   ".fashion": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".fast": {
@@ -1654,9 +1676,13 @@
     "host": "whois.donuts.co"
   },
   ".fishing": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".fit": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".fitness": {
@@ -1851,6 +1877,8 @@
     "host": "whois.rightside.co"
   },
   ".garden": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".gb": {
@@ -2005,6 +2033,8 @@
     "host": "whois.nic.google"
   },
   ".gop": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-cl01.mm-registry.com"
   },
   ".got": {
@@ -2214,6 +2244,8 @@
     "adapter": "none"
   },
   ".horse": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".host": {
@@ -2635,6 +2667,8 @@
     "host": "whois.nic.latrobe"
   },
   ".law": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".lawyer": {
@@ -2773,6 +2807,8 @@
     "host": "whois.uniregistry.net"
   },
   ".london": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-lon.mm-registry.com"
   },
   ".lotte": {
@@ -2822,6 +2858,8 @@
     "adapter": "none"
   },
   ".luxe": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois.nic.luxe"
   },
   ".luxury": {
@@ -2948,6 +2986,8 @@
     "adapter": "none"
   },
   ".miami": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".microsoft": {
@@ -3815,6 +3855,8 @@
     "host": "whois.unitedtld.com"
   },
   ".rodeo": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".rogers": {
@@ -4287,6 +4329,8 @@
     "host": "whois.donuts.co"
   },
   ".surf": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois.nic.surf"
   },
   ".surgery": {
@@ -4755,6 +4799,8 @@
     "host": "whois.donuts.co"
   },
   ".vip": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".virgin": {
@@ -4783,6 +4829,8 @@
     "url": "http://www.vnnic.vn/en/domain"
   },
   ".vodka": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".volkswagen": {
@@ -4859,6 +4907,8 @@
     "host": "whois.nic.wed"
   },
   ".wedding": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".weibo": {
@@ -4908,6 +4958,8 @@
     "host": "whois.nic.woodside"
   },
   ".work": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois.nic.work"
   },
   ".works": {
@@ -5411,6 +5463,8 @@
     "host": "whois.nic.gmo"
   },
   ".yoga": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
     "host": "whois-dub.mm-registry.com"
   },
   ".yokohama": {
