@@ -86,7 +86,7 @@ class TldDefs
   end
 
   def write(data)
-    data = Hash[data.sort]
+    data = Hash[data.sort_by { |tld, _| tld.split(".").reverse.join(".") }]
     JSON.pretty_generate(data)
   end
 
