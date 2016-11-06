@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:19:03 UTC"
+    "updated": "2016-11-06 15:19:47 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -165,6 +165,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".alsace": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-alsace.nic.fr"
   },
   ".alstom": {
@@ -218,6 +220,8 @@
     "adapter": "none"
   },
   ".aquarelle": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-aquarelle.nic.fr"
   },
   ".ar": {
@@ -564,6 +568,8 @@
     "host": "whois.nic.bosch"
   },
   ".bostik": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-bostik.nic.fr"
   },
   ".bot": {
@@ -657,6 +663,8 @@
     "host": "whois.centralnic.com"
   },
   ".bzh": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois.nic.bzh"
   },
   ".ca": {
@@ -1140,6 +1148,8 @@
     "host": "whois.nic.coop"
   },
   ".corsica": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-corsica.nic.fr"
   },
   ".country": {
@@ -1829,6 +1839,8 @@
     "host": "whois.nic.frl"
   },
   ".frogans": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-frogans.nic.fr"
   },
   ".frontdoor": {
@@ -2660,6 +2672,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".lancaster": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-lancaster.nic.fr"
   },
   ".land": {
@@ -2713,6 +2727,8 @@
     "host": "whois.donuts.co"
   },
   ".leclerc": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-leclerc.nic.fr"
   },
   ".lefrak": {
@@ -3048,6 +3064,8 @@
     "adapter": "none"
   },
   ".mma": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-mma.nic.fr"
   },
   ".mn": {
@@ -3479,6 +3497,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".ovh": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-ovh.nic.fr"
   },
   ".pa": {
@@ -3497,6 +3517,8 @@
     "adapter": "none"
   },
   ".paris": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-paris.nic.fr"
   },
   ".pars": {
@@ -4205,6 +4227,8 @@
     "host": "whois.nic.sn"
   },
   ".sncf": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-sncf.nic.fr"
   },
   ".so": {
@@ -4585,6 +4609,8 @@
     "host": "whois.nic.toshiba"
   },
   ".total": {
+    "_group": "nicfr",
+    "_type": "newgtld",
     "host": "whois-total.nic.fr"
   },
   ".tours": {
