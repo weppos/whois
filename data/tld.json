@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:17:40 UTC"
+    "updated": "2016-11-06 15:18:22 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -150,6 +150,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".allfinanz": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".allstate": {
@@ -226,6 +228,8 @@
     "adapter": "none"
   },
   ".archi": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".army": {
@@ -467,6 +471,8 @@
     "host": "whois.donuts.co"
   },
   ".bio": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".biz": {
@@ -507,6 +513,8 @@
     "host": "whois.nic.bms"
   },
   ".bmw": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".bn": {
@@ -676,6 +684,8 @@
     "adapter": "none"
   },
   ".cam": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".camera": {
@@ -1313,6 +1323,8 @@
     "host": "whois.rightside.co"
   },
   ".desi": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".design": {
@@ -1432,6 +1444,8 @@
     "host": "durban-whois.registry.net.za"
   },
   ".dvag": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".dz": {
@@ -1718,6 +1732,8 @@
     "host": "whois.uniregistry.net"
   },
   ".flsmidth": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".fly": {
@@ -1805,6 +1821,8 @@
     "host": "whois.smallregistry.net"
   },
   ".fresenius": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".frl": {
@@ -2997,6 +3015,8 @@
     "adapter": "none"
   },
   ".mini": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".mint": {
@@ -3618,6 +3638,8 @@
     "url": "http://www.pitcairn.pn/PnRegistry/"
   },
   ".pohl": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".poker": {
@@ -3902,6 +3924,8 @@
     "host": "whois.nic.net.sa"
   },
   ".saarland": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".safe": {
@@ -4151,6 +4175,8 @@
     "host": "whois.sk-nic.sk"
   },
   ".ski": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".skin": {
@@ -4227,6 +4253,8 @@
     "host": "whois.nic.space"
   },
   ".spiegel": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".spot": {
@@ -4619,6 +4647,8 @@
     "adapter": "none"
   },
   ".tui": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".tunes": {
@@ -5384,9 +5414,13 @@
     "host": "whois.donuts.co"
   },
   ".xn--vermgensberater-ctb": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".xn--vermgensberatung-pwb": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".xn--vhquv": {
@@ -5536,6 +5570,8 @@
     "host": "whois.donuts.co"
   },
   ".zuerich": {
+    "_group": "ksregistry",
+    "_type": "newgtld",
     "host": "whois.ksregistry.net"
   },
   ".zw": {
