@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:55:32 UTC"
+    "updated": "2016-11-06 16:56:54 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1332,7 +1332,7 @@
   "cooking": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.cooking"
   },
   "cookingchannel": {
     "_type": "newgtld",
@@ -1912,7 +1912,7 @@
   "fashion": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.fashion"
   },
   "fast": {
     "_group": "amazonregistry",
@@ -1993,7 +1993,7 @@
   "fit": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.fit"
   },
   "fitness": {
     "_group": "donuts",
@@ -2618,7 +2618,7 @@
   "horse": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.horse"
   },
   "host": {
     "_type": "newgtld",
@@ -3513,7 +3513,7 @@
   "miami": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.miami"
   },
   "microsoft": {
     "_type": "newgtld",
@@ -4553,7 +4553,7 @@
   "rodeo": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.rodeo"
   },
   "rogers": {
     "_group": "afiliassrs",
