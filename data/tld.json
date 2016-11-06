@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:59:59 UTC"
+    "updated": "2016-11-06 17:00:54 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -475,7 +475,7 @@
   "bayern": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.bayern"
   },
   "bb": {
     "adapter": "web",
@@ -520,7 +520,7 @@
   "beer": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.beer"
   },
   "bentley": {
     "_type": "newgtld",
@@ -2386,7 +2386,7 @@
   "gop": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-cl01.mm-registry.com"
+    "host": "whois.nic.gop"
   },
   "got": {
     "_group": "amazonregistry",
