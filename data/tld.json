@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:22:12 UTC"
+    "updated": "2016-11-06 15:22:51 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -348,6 +348,8 @@
     "adapter": "none"
   },
   ".baidu": {
+    "_group": "ngtld",
+    "_type": "newgtld",
     "host": "whois.ngtld.cn"
   },
   ".band": {
@@ -5090,6 +5092,8 @@
     "adapter": "none"
   },
   ".xn--1qqw23a": {
+    "_group": "ngtld",
+    "_type": "newgtld",
     "host": "whois.ngtld.cn"
   },
   ".xn--30rr7y": {
@@ -5128,6 +5132,8 @@
     "host": "whois.conac.cn"
   },
   ".xn--55qx5d": {
+    "_group": "ngtld",
+    "_type": "newgtld",
     "host": "whois.ngtld.cn"
   },
   ".xn--5su34j936bgsg": {
@@ -5296,6 +5302,8 @@
     "adapter": "none"
   },
   ".xn--io0a7i": {
+    "_group": "ngtld",
+    "_type": "newgtld",
     "host": "whois.ngtld.cn"
   },
   ".xn--j1aef": {
@@ -5499,6 +5507,8 @@
     "host": "whois.donuts.co"
   },
   ".xn--vuq861b": {
+    "_group": "ngtld",
+    "_type": "newgtld",
     "host": "whois.ngtld.cn"
   },
   ".xn--w4r85el8fhu5dnra": {
