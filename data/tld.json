@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:58:54 UTC"
+    "updated": "2016-11-06 16:59:59 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -726,7 +726,7 @@
   "broadway": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-cl01.mm-registry.com"
+    "host": "whois.nic.broadway"
   },
   "broker": {
     "_type": "newgtld",
