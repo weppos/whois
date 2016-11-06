@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:16:08 UTC"
+    "updated": "2016-11-06 15:16:51 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -3287,6 +3287,8 @@
     "adapter": "none"
   },
   ".nowruz": {
+    "_group": "agitsys",
+    "_type": "newgtld",
     "host": "whois.agitsys.net"
   },
   ".np": {
@@ -3434,6 +3436,8 @@
     "host": "whois-paris.nic.fr"
   },
   ".pars": {
+    "_group": "agitsys",
+    "_type": "newgtld",
     "host": "whois.agitsys.net"
   },
   ".partners": {
@@ -4043,6 +4047,8 @@
     "host": "whois.nic.shell"
   },
   ".shia": {
+    "_group": "agitsys",
+    "_type": "newgtld",
     "host": "whois.agitsys.net"
   },
   ".shiksha": {
@@ -4358,6 +4364,8 @@
     "host": "whois.nic.tc"
   },
   ".tci": {
+    "_group": "agitsys",
+    "_type": "newgtld",
     "host": "whois.agitsys.net"
   },
   ".td": {
@@ -5227,6 +5235,8 @@
     "adapter": "none"
   },
   ".xn--mgbt3dhd": {
+    "_group": "agitsys",
+    "_type": "newgtld",
     "host": "whois.agitsys.net"
   },
   ".xn--mgbtx2b": {
