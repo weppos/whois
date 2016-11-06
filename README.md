@@ -17,11 +17,18 @@ This library was extracted from [RoboWhois](https://robowhois.com/) and [RoboDom
 ## Features
 
 - Ability to lookup WHOIS record for [IPv4, IPv6, TLDs, and ICANN new gTLDs](http://whoisrb.org/manual/usage/#usage-objects)
-- Ability to [parse WHOIS responses](http://whoisrb.org/manual/parser/)
+- Ability to [parse WHOIS responses](http://whoisrb.org/manual/parser/) (via the `whois-parser` library)
 - Flexible and extensible interface (e.g. You can define [custom servers](http://whoisrb.org/manual/server/) on the fly)
 - Object oriented design, featuring 10 different design patterns
 - Pure Ruby library, without any external dependency other than Ruby itself
 - Successfully tested against different Ruby implementations, including Ruby and JRuby
+
+
+## Whois and Whois parser
+
+Starting from version 4, WHOIS parser component is available in a separate repository called [whois-parser](https://github.com/weppos/whois-parser), and released as a separate gem called `whois-parser`.
+
+This repository contains the core whois library, that includes the WHOIS client, the server definitions and all the features required to perform WHOIS queries and obtain the WHOIS record.
 
 
 ## Requirements
@@ -33,9 +40,31 @@ For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
 ## Installation
 
-The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) — [Learn more](http://whoisrb.org/manual/installing/)
+You can install the gem manually:
 
-    $ gem install whois
+```shell
+$ gem install whois
+```
+
+Or use Bundler and define it as a dependency in your `Gemfile`:
+
+```ruby
+gem 'whois'
+```
+
+If you also need the WHOIS parser component, you need to install the `whois-parser` gem:
+
+```shell
+$ gem install whois-parser
+```
+
+```ruby
+gem 'whois-parser'
+```
+
+The `whois-parser` gem already depends on the `whois` gem. If you install `whois-parser`, `whois` will be installed as well and it will also be automatically required when you `require 'whois-parser'`.
+
+If you are upgrading to 4.0, see [4.0-Upgrade.md](4.0-Upgrade.md).
 
 
 ## Getting Started
@@ -50,35 +79,35 @@ Check out the following examples:
 
 ```ruby
 # Domain WHOIS
-w = Whois::Client.new
-w.lookup("google.com")
+whois = Whois::Client.new
+whois.lookup("google.com")
 # => #<Whois::Record>
 
 # TLD WHOIS
-w = Whois::Client.new
-w.lookup(".com")
+whois = Whois::Client.new
+whois.lookup(".com")
 # => #<Whois::Record>
 
 # IPv4 WHOIS
-w = Whois::Client.new
-w.lookup("74.125.67.100")
+whois = Whois::Client.new
+whois.lookup("74.125.67.100")
 # => #<Whois::Record>
 
 # IPv6 WHOIS
-w = Whois::Client.new
-w.lookup("2001:db8::1428:57ab")
+whois = Whois::Client.new
+whois.lookup("2001:db8::1428:57ab")
 # => #<Whois::Record>
 ```
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
 ```ruby
-w = Whois::Client.new
-w.lookup("google.com")
-w.lookup(".com")
-w.lookup("74.125.67.100")
-w.lookup("2001:db8::1428:57ab")
-w.lookup("google.it")
+whois = Whois::Client.new
+whois.lookup("google.com")
+whois.lookup(".com")
+whois.lookup("74.125.67.100")
+whois.lookup("2001:db8::1428:57ab")
+whois.lookup("google.it")
 ```
 
 If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the `Whois` module provides an all-in-one method called `Whois.whois`. This is the simplest way to send a WHOIS request.
@@ -104,28 +133,33 @@ end
 
 Any WHOIS query returns a `Whois::Record`. This object looks like a String, but it's way more powerful.
 
-`Whois::Record` encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, by using an object oriented syntax.
+`Whois::Record` encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, when the `whois-parser` gem is installed and loaded.
 
 ```ruby
-r = Whois.whois("google.it")
+require 'whois-parser'
+
+record = Whois.whois("google.it")
 # => #<Whois::Record>
 
-r.available?
+parser = record.parser
+# => #<Whois::Parser>
+
+parser.available?
 # => false
-r.registered?
+parser.registered?
 # => true
 
-r.created_on
+parser.created_on
 # => Fri Dec 10 00:00:00 +0100 1999
 
-t = r.technical_contact
+tech = parser.technical_contact
 # => #<Whois::Record::Contact>
-t.id
+tech.id
 # => "TS7016-ITNIC"
-t.name
+tech.name
 # => "Technical Services"
 
-r.nameservers.each do |nameserver|
+parser.nameservers.each do |nameserver|
   puts nameserver
 end
 ```
@@ -141,12 +175,12 @@ By default, each query run though the client has a timeout value of 5 seconds. I
 Of course, you can customize the timeout value setting a different value. If timeout is `nil`, the client will until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know you are doing!
 
 ```ruby
-w = Whois::Client.new(:timeout => 10)
-w.timeout # => 10
-w.timeout = 5
-w.timeout # => 5
+whois = Whois::Client.new(:timeout => 10)
+whois.timeout # => 10
+whois.timeout = 5
+whois.timeout # => 5
 
-w.lookup("google.com")
+whois.lookup("google.com")
 ```
 
 
@@ -167,8 +201,8 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 ## More Information
 
 - [Homepage](http://whoisrb.org/)
-- [RubyGems](https://rubygems.org/gems/whois)
-- [Issues](https://github.com/weppos/whois)
+- RubyGems: [`whois`](https://rubygems.org/gems/whois) and [`whois-parser`](https://rubygems.org/gems/whois-parser)
+- Issues: [`whois`](https://github.com/weppos/whois) and [`whois-parser`](https://github.com/weppos/whois-parser)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/whois-ruby)
 
 
