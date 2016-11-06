@@ -5,10 +5,10 @@ describe Whois::Server do
     it "loads a definition from a JSON file" do
       expect(File).to receive(:read).with("tld.json").and_return(<<-JSON)
 {
-  ".ae.org": {
+  "ae.org": {
     "host": "whois.centralnic.com"
   },
-  ".ar.com": {
+  "ar.com": {
     "host": "whois.centralnic.com"
   }
 }
@@ -16,8 +16,8 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-          [".ae.org", "whois.centralnic.com", {}],
-          [".ar.com", "whois.centralnic.com", {}],
+          ["ae.org", "whois.centralnic.com", {}],
+          ["ar.com", "whois.centralnic.com", {}],
         ])
       end
     end
@@ -25,7 +25,7 @@ describe Whois::Server do
     it "convert option keys to Symbol" do
       expect(File).to receive(:read).with("tld.json").and_return(<<-JSON)
 {
-  ".com": {
+  "com": {
     "host": "whois.crsnic.net",
     "adapter": "verisign"
   }
@@ -34,7 +34,7 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-          [".com", "whois.crsnic.net", adapter: "verisign"],
+          ["com", "whois.crsnic.net", adapter: "verisign"],
         ])
       end
     end
@@ -43,10 +43,10 @@ describe Whois::Server do
   describe ".definitions" do
     it "returns the definitions array for given type" do
       with_definitions do
-        Whois::Server.define(Whois::Server::TYPE_TLD, ".foo", "whois.foo")
+        Whois::Server.define(Whois::Server::TYPE_TLD, "foo", "whois.foo")
         definition = described_class.definitions(Whois::Server::TYPE_TLD)
         expect(definition).to be_a(Array)
-        expect(definition).to eq([[".foo", "whois.foo", {}]])
+        expect(definition).to eq([["foo", "whois.foo", {}]])
       end
     end
 
@@ -62,30 +62,30 @@ describe Whois::Server do
   describe ".define" do
     it "adds a new definition with given arguments" do
       with_definitions do
-        Whois::Server.define(Whois::Server::TYPE_TLD, ".foo", "whois.foo")
-        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([[".foo", "whois.foo", {}]])
+        Whois::Server.define(Whois::Server::TYPE_TLD, "foo", "whois.foo")
+        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([["foo", "whois.foo", {}]])
       end
     end
 
     it "accepts a hash of options" do
       with_definitions do
-        Whois::Server.define(Whois::Server::TYPE_TLD, ".foo", "whois.foo", foo: "bar")
-        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([[".foo", "whois.foo", { :foo => "bar" }]])
+        Whois::Server.define(Whois::Server::TYPE_TLD, "foo", "whois.foo", foo: "bar")
+        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([["foo", "whois.foo", { :foo => "bar" }]])
       end
     end
   end
 
   describe ".factory" do
     it "returns an adapter initialized with given arguments" do
-      server = Whois::Server.factory(:tld, ".test", "whois.test")
+      server = Whois::Server.factory(:tld, "test", "whois.test")
       expect(server.type).to eq(:tld)
-      expect(server.allocation).to eq(".test")
+      expect(server.allocation).to eq("test")
       expect(server.host).to eq("whois.test")
       expect(server.options).to eq(Hash.new)
     end
 
     it "returns a standard adapter by default" do
-      server = Whois::Server.factory(:tld, ".test", "whois.test")
+      server = Whois::Server.factory(:tld, "test", "whois.test")
       expect(server).to be_a(Whois::Server::Adapters::Standard)
     end
 
@@ -96,20 +96,20 @@ describe Whois::Server do
           @args = args
         end
       end
-      server = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => a)
+      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => a)
       expect(server).to be_a(a)
-      expect(server.args).to eq([:tld, ".test", "whois.test", {}])
+      expect(server.args).to eq([:tld, "test", "whois.test", {}])
     end
 
     it "accepts an :adapter option as Symbol or String, load Class and returns an instance of given adapter" do
-      server = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => :none)
+      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => :none)
       expect(server).to be_a(Whois::Server::Adapters::None)
-      server = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => "none")
+      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => "none")
       expect(server).to be_a(Whois::Server::Adapters::None)
     end
 
     it "deletes the adapter option" do
-      server = Whois::Server.factory(:tld, ".test", "whois.test", :adapter => Whois::Server::Adapters::None, :foo => "bar")
+      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => Whois::Server::Adapters::None, :foo => "bar")
       expect(server.options).to eq({ :foo => "bar" })
     end
   end
@@ -183,24 +183,24 @@ describe Whois::Server do
     context "when the input is a domain" do
       it "lookups definitions and returns the adapter" do
         with_definitions do
-          Whois::Server.define(:tld, ".test", "whois.test")
-          expect(Whois::Server.guess("example.test")).to eq(Whois::Server.factory(:tld, ".test", "whois.test"))
+          Whois::Server.define(:tld, "test", "whois.test")
+          expect(Whois::Server.guess("example.test")).to eq(Whois::Server.factory(:tld, "test", "whois.test"))
         end
       end
 
       it "doesn't consider the dot as a regexp pattern" do
         with_definitions do
-          Whois::Server.define(:tld, ".no.com", "whois.no.com")
-          Whois::Server.define(:tld, ".com", "whois.com")
-          expect(Whois::Server.guess("antoniocangiano.com")).to eq(Whois::Server.factory(:tld, ".com", "whois.com"))
+          Whois::Server.define(:tld, "no.com", "whois.no.com")
+          Whois::Server.define(:tld, "com", "whois.com")
+          expect(Whois::Server.guess("antoniocangiano.com")).to eq(Whois::Server.factory(:tld, "com", "whois.com"))
         end
       end
 
       it "returns the closer definition" do
         with_definitions do
-          Whois::Server.define(:tld, ".com", com = "whois.com")
-          Whois::Server.define(:tld, ".com.foo", comfoo = "whois.com.foo")
-          Whois::Server.define(:tld, ".foo.com", foocom = "whois.foo.com")
+          Whois::Server.define(:tld, "com", com = "whois.com")
+          Whois::Server.define(:tld, "com.foo", comfoo = "whois.com.foo")
+          Whois::Server.define(:tld, "foo.com", foocom = "whois.foo.com")
 
           expect(Whois::Server.guess("example.com").host).to eq(com)
           expect(Whois::Server.guess("example.com.foo").host).to eq(comfoo)

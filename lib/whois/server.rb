@@ -74,6 +74,7 @@ module Whois
         type = File.basename(file, File.extname(file)).to_sym
         JSON.load(File.read(file)).each do |allocation, settings|
           next if allocation == "_"
+          settings.reject! { |k, _| k.start_with?("_") }
           define(type, allocation, settings.delete("host"), Hash[settings.map { |k,v| [k.to_sym, v] }])
         end
       end
@@ -124,7 +125,7 @@ module Whois
       # @example
       #
       #   # Define a server for the .it extension
-      #   Whois::Server.define :tld, ".it", "whois.nic.it"
+      #   Whois::Server.define :tld, "it", "whois.nic.it"
       #
       #   # Define a new server for an range of IPv4 addresses
       #   Whois::Server.define :ipv4, "61.192.0.0/12", "whois.nic.ad.jp"
@@ -133,11 +134,11 @@ module Whois
       #   Whois::Server.define :ipv6, "2001:2000::/19", "whois.ripe.net"
       #
       #   # Define a new server with a custom adapter
-      #   Whois::Server.define :tld, ".test", nil,
+      #   Whois::Server.define :tld, "test", nil,
       #     :adapter => Whois::Server::Adapter::None
       #
       #   # Define a new server with a custom adapter and options
-      #   Whois::Server.define :tld, ".ar", nil,
+      #   Whois::Server.define :tld, "ar", nil,
       #     :adapter => Whois::Server::Adapters::Web,
       #     :url => "http://www.nic.ar/"
       #
@@ -155,10 +156,10 @@ module Whois
       # You can customize the behavior passing a custom adapter class
       # as <tt>:adapter</tt> option.
       #
-      #   Whois::Server.factory :tld, ".it", "whois.nic.it"
+      #   Whois::Server.factory :tld, "it", "whois.nic.it"
       #   # => #<Whois::Servers::Adapter::Standard>
       #
-      #   Whois::Server.factory :tld, ".it", "whois.nic.it",
+      #   Whois::Server.factory :tld, "it", "whois.nic.it",
       #     :option => Whois::Servers::Adapter::Custom
       #   # => #<Whois::Servers::Adapter::Custom>
       #
@@ -298,7 +299,7 @@ module Whois
             index = token.index(".")
             break if index.nil?
 
-            token = token[index..-1]
+            token = token[(index + 1)..-1]
           end
         end
 
