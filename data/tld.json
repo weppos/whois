@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:10:54 UTC"
+    "updated": "2016-11-06 15:11:53 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -288,6 +288,8 @@
     "host": "whois.uniregistry.net"
   },
   ".autos": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".avianca": {
@@ -404,6 +406,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".bet": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".bf": {
@@ -450,6 +454,8 @@
     "host": "whois.nic.bj"
   },
   ".black": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".blackfriday": {
@@ -465,6 +471,8 @@
     "adapter": "none"
   },
   ".blue": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".bm": {
@@ -1930,6 +1938,8 @@
     "host": "whois.donuts.co"
   },
   ".green": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".gripe": {
@@ -2378,6 +2388,8 @@
     "host": "whois.nic.kia"
   },
   ".kim": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".kinder": {
@@ -2528,6 +2540,8 @@
     "host": "whois.nic.lexus"
   },
   ".lgbt": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".li": {
@@ -2623,6 +2637,8 @@
     "host": "whois.nic.lotte"
   },
   ".lotto": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".love": {
@@ -3264,6 +3280,8 @@
     "host": "kero.yachay.pe"
   },
   ".pet": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".pf": {
@@ -3322,6 +3340,8 @@
     "adapter": "none"
   },
   ".pink": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".pioneer": {
@@ -3371,6 +3391,8 @@
     "host": "whois.ksregistry.net"
   },
   ".poker": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".politie": {
@@ -3416,6 +3438,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".promo": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".properties": {
@@ -3490,6 +3514,8 @@
     "host": "whois.donuts.co"
   },
   ".red": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".redstone": {
@@ -3812,6 +3838,8 @@
     "host": "whois.agitsys.net"
   },
   ".shiksha": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".shoes": {
@@ -4536,12 +4564,16 @@
     "host": "whois.nic.volvo"
   },
   ".vote": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".voting": {
     "host": "whois.voting.tld-box.at"
   },
   ".voto": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".voyage": {
@@ -4737,6 +4769,8 @@
     "adapter": "none"
   },
   ".xn--6frz82g": {
+    "_group": "afilias",
+    "_type": "newgtld",
     "host": "whois.afilias.net"
   },
   ".xn--6qq986b3xl": {
