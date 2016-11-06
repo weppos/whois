@@ -5,6 +5,14 @@ require 'pathname'
 require 'json'
 
 class TldDefs
+
+  KEY_SCHEMA = "_".freeze
+
+  # The current schema version for the definition file
+  #
+  # @return [String] version
+  SCHEMA_VERSION = "2".freeze
+
   class TldDef
     attr_accessor :name
 
@@ -86,6 +94,7 @@ class TldDefs
   end
 
   def write(data)
+    data[KEY_SCHEMA] = schema_attributes
     data = Hash[data.sort_by { |tld, _| tld.split(".").reverse.join(".") }]
     JSON.pretty_generate(data)
   end
@@ -128,6 +137,16 @@ class TldDefs
       TldDef.new(tld, data)
     end; nil
   end
+
+  private
+
+  def schema_attributes
+    {
+        "schema" => SCHEMA_VERSION,
+        "updated" => Time.now.utc,
+    }
+  end
+
 end
 
 args = ARGV
