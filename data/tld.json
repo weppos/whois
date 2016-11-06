@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:23:14 UTC"
+    "updated": "2016-11-06 16:27:11 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -276,7 +276,7 @@
   "art": {
     "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.art"
   },
   "arte": {
     "_type": "newgtld",
@@ -417,6 +417,11 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.donuts.co"
+  },
+  "basketball": {
+    "_group": "centralnic",
+    "_type": "newgtld",
+    "host": "whois.nic.basketball"
   },
   "bauhaus": {
     "_type": "newgtld",
@@ -3699,6 +3704,11 @@
   "obi": {
     "_type": "newgtld",
     "host": "whois.nic.obi"
+  },
+  "observer": {
+    "_group": "centralnic",
+    "_type": "newgtld",
+    "host": "whois.nic.observer"
   },
   "office": {
     "_type": "newgtld",
