@@ -46,13 +46,13 @@ You can install the gem manually:
 $ gem install whois
 ```
 
-Or use Bundler and define it as a dependency in your `Gemfile`:
+Or use [Bundler](http://bundler.io/) and define it as a dependency in your `Gemfile`:
 
 ```ruby
 gem 'whois'
 ```
 
-If you also need the WHOIS parser component, you need to install the `whois-parser` gem:
+To use the WHOIS parser component you need to install the `whois-parser` gem:
 
 ```shell
 $ gem install whois-parser
