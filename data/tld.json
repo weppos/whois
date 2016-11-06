@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:13:26 UTC"
+    "updated": "2016-11-06 15:14:04 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -283,12 +283,16 @@
     "adapter": "none"
   },
   ".audio": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".author": {
     "adapter": "none"
   },
   ".auto": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".autos": {
@@ -465,6 +469,8 @@
     "host": "whois.afilias.net"
   },
   ".blackfriday": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".blanco": {
@@ -675,6 +681,8 @@
     "host": "whois.donuts.co"
   },
   ".car": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".caravan": {
@@ -699,6 +707,8 @@
     "host": "whois.donuts.co"
   },
   ".cars": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".cartier": {
@@ -802,6 +812,8 @@
     "adapter": "none"
   },
   ".christmas": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".chrome": {
@@ -851,6 +863,8 @@
     "host": "whois.donuts.co"
   },
   ".click": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".clinic": {
@@ -1272,6 +1286,8 @@
     "host": "whois.donuts.co"
   },
   ".diet": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".digital": {
@@ -1637,6 +1653,8 @@
     "host": "whois.donuts.co"
   },
   ".flowers": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".flsmidth": {
@@ -1783,6 +1801,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".game": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".games": {
@@ -1839,6 +1859,8 @@
     "adapter": "afilias"
   },
   ".gift": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".gifts": {
@@ -2000,6 +2022,8 @@
     "host": "whois.donuts.co"
   },
   ".guitars": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".guru": {
@@ -2042,6 +2066,8 @@
     "host": "whois.donuts.co"
   },
   ".help": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".helsinki": {
@@ -2061,6 +2087,8 @@
     "host": "whois.nic.hgtv"
   },
   ".hiphop": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".hisamitsu": {
@@ -2070,6 +2098,8 @@
     "host": "whois.nic.gmo"
   },
   ".hiv": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".hk": {
@@ -2124,6 +2154,8 @@
     "host": "whois.nic.host"
   },
   ".hosting": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".hoteles": {
@@ -2373,6 +2405,8 @@
     "adapter": "none"
   },
   ".juegos": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".kaufen": {
@@ -2658,6 +2692,8 @@
     "host": "whois.nic.locus"
   },
   ".lol": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".london": {
@@ -2894,6 +2930,8 @@
     "adapter": "none"
   },
   ".mom": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".monash": {
@@ -3341,6 +3379,8 @@
     "host": "whois.nic.philips"
   },
   ".photo": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".photography": {
@@ -3362,6 +3402,8 @@
     "adapter": "none"
   },
   ".pics": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".pictet": {
@@ -3490,6 +3532,8 @@
     "host": "whois.donuts.co"
   },
   ".property": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".protection": {
@@ -3861,6 +3905,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".sexy": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".sfr": {
@@ -4182,6 +4228,8 @@
     "host": "whois.nic.tatar"
   },
   ".tattoo": {
+    "_group": "uniregistry",
+    "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
   ".tax": {
