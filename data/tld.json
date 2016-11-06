@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:52:47 UTC"
+    "updated": "2016-11-06 16:55:32 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -352,6 +352,7 @@
     "host": "whois.afilias-srs.net"
   },
   "audible": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -364,6 +365,7 @@
     "host": "whois.nic.auspost"
   },
   "author": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -386,6 +388,7 @@
     "host": "whois.nic.aw"
   },
   "aws": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -678,6 +681,7 @@
     "host": "whois.nic.google"
   },
   "book": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -698,6 +702,7 @@
     "host": "whois-bostik.nic.fr"
   },
   "bot": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -768,7 +773,7 @@
     "host": "whois.donuts.co"
   },
   "buy": {
-    "_group": "afiliassrs",
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
   },
@@ -821,6 +826,7 @@
     "host": "whois.nic.google"
   },
   "call": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -1052,6 +1058,7 @@
     "host": "whois.afilias-srs.net"
   },
   "circle": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -1350,6 +1357,7 @@
     "host": "whois-dub.mm-registry.com"
   },
   "coupon": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -1491,6 +1499,7 @@
     "host": "whois.centralnic.com"
   },
   "deal": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -1906,6 +1915,7 @@
     "host": "whois-dub.mm-registry.com"
   },
   "fast": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -1958,6 +1968,7 @@
     "host": "whois.donuts.co"
   },
   "fire": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -2378,6 +2389,7 @@
     "host": "whois-cl01.mm-registry.com"
   },
   "got": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -2714,6 +2726,7 @@
     "host": "whois.afilias-srs.net"
   },
   "imdb": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -2905,10 +2918,12 @@
     "host": "joburg-whois.registry.net.za"
   },
   "jot": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
   "joy": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -2986,6 +3001,7 @@
     "adapter": "none"
   },
   "kindle": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -3203,6 +3219,7 @@
     "host": "whois.donuts.co"
   },
   "like": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -3570,6 +3587,7 @@
     "host": "whois.nic.moe"
   },
   "moi": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -3889,6 +3907,7 @@
     "host": "whois.nic.norton"
   },
   "now": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4185,6 +4204,7 @@
     "host": "whois.nic.pid"
   },
   "pin": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4281,6 +4301,7 @@
     "host": "whois.nic.press"
   },
   "prime": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4388,6 +4409,7 @@
     "host": "whois.nic.re"
   },
   "read": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4539,6 +4561,7 @@
     "host": "whois.afilias-srs.net"
   },
   "room": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4585,6 +4608,7 @@
     "host": "whois.ksregistry.net"
   },
   "safe": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4643,6 +4667,7 @@
     "adapter": "none"
   },
   "save": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4854,6 +4879,7 @@
     "host": "whois.register.si"
   },
   "silk": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4909,6 +4935,7 @@
     "host": "whois-gtld.smart.com.ph"
   },
   "smile": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4957,6 +4984,7 @@
     "host": "whois.donuts.co"
   },
   "song": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -4980,6 +5008,7 @@
     "host": "whois.ksregistry.net"
   },
   "spot": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -5156,6 +5185,7 @@
     "host": "whois.nic.taipei"
   },
   "talk": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -5440,10 +5470,12 @@
     "host": "whois.ksregistry.net"
   },
   "tunes": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
   "tushu": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -5731,6 +5763,7 @@
     "host": "whois.gtld.knet.cn"
   },
   "wanggou": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -5888,6 +5921,7 @@
     "host": "whois.nic.xin"
   },
   "xn--1ck2e1b": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6018,6 +6052,7 @@
     "host": "whois.afilias-srs.net"
   },
   "xn--bck1b9a5dre4c": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6031,6 +6066,7 @@
     "host": "whois.nic.xn--c2br7g"
   },
   "xn--cck2b3b": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6062,6 +6098,7 @@
     "host": "whois.eu"
   },
   "xn--eckvdtc9d": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6075,6 +6112,7 @@
     "host": "whois.afilias-srs.net"
   },
   "xn--fct429k": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6119,6 +6157,7 @@
     "host": "whois.afilias-srs.net"
   },
   "xn--gckr3f0f": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6166,6 +6205,7 @@
     "host": "whois.afilias-srs.net"
   },
   "xn--jvr189m": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6332,6 +6372,7 @@
     "adapter": "none"
   },
   "xn--rovu88b": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6435,6 +6476,7 @@
     "adapter": "none"
   },
   "yamaxun": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6460,6 +6502,7 @@
     "adapter": "none"
   },
   "you": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6501,6 +6544,7 @@
     "host": "web-whois.registry.net.za"
   },
   "zappos": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
@@ -6510,6 +6554,7 @@
     "host": "whois.afilias-srs.net"
   },
   "zero": {
+    "_group": "amazonregistry",
     "_type": "newgtld",
     "adapter": "none"
   },
