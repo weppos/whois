@@ -134,6 +134,14 @@ args = ARGV
 options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: deftld command [options]"
+  opts.separator <<~EOS
+
+Commands:
+\tadd
+\tupdate
+
+Options:
+  EOS
 
   TldDefs::TldDef::ATTRIBUTES.each do |key, _|
     opts.on("--#{key} [VALUE]", String, "set the #{key}") do |value|
