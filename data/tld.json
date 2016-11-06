@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:22:51 UTC"
+    "updated": "2016-11-06 15:23:26 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -193,6 +193,8 @@
     "host": "whois.nic.google"
   },
   ".anquan": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".anz": {
@@ -4188,6 +4190,8 @@
     "host": "whois.donuts.co"
   },
   ".shouji": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".show": {
@@ -5081,6 +5085,8 @@
     "host": "whois.nic.xfinity"
   },
   ".xihuan": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".xin": {
@@ -5103,6 +5109,8 @@
     "host": "whois.gtld.knet.cn"
   },
   ".xn--3ds443g": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".xn--3e0b707e": {
@@ -5249,6 +5257,8 @@
     "host": "whois.nic.xn--fhbei"
   },
   ".xn--fiq228c5hs": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".xn--fiq64b": {
@@ -5524,6 +5534,8 @@
     "host": "whois.registry.qa"
   },
   ".xn--xhq521b": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".xn--xkc2al3hye2a": {
@@ -5596,6 +5608,8 @@
     "host": "whois.nic.yt"
   },
   ".yun": {
+    "_group": "teleinfo",
+    "_type": "newgtld",
     "host": "whois.teleinfo.cn"
   },
   ".za": {
