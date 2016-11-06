@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:06:30 UTC"
+    "updated": "2016-11-06 15:07:45 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -46,6 +46,7 @@
     "host": "whois.afilias-srs.net"
   },
   ".actor": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".ad": {
@@ -100,6 +101,7 @@
     "host": "whois.nic.airbus"
   },
   ".airforce": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".airtel": {
@@ -228,6 +230,7 @@
     "host": "whois.audns.net.au"
   },
   ".auction": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".audi": {
@@ -905,6 +908,7 @@
     "host": "whois.donuts.co"
   },
   ".consulting": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".contact": {
@@ -1004,6 +1008,7 @@
     "host": "whois.nic.google"
   },
   ".dance": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".date": {
@@ -1056,6 +1061,7 @@
     "host": "whois.nic.deloitte"
   },
   ".democrat": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".dental": {
@@ -1398,6 +1404,7 @@
     "host": "whois.nic.forex"
   },
   ".forsale": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".forum": {
@@ -1474,6 +1481,7 @@
     "host": "whois.donuts.co"
   },
   ".futbol": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".fyi": {
@@ -1697,6 +1705,7 @@
     "host": "whois.nic.google"
   },
   ".haus": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".hbo": {
@@ -1850,6 +1859,7 @@
     "host": "whois.donuts.co"
   },
   ".immobilien": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".in": {
@@ -1996,6 +2006,7 @@
     "host": "whois.uniregistry.net"
   },
   ".kaufen": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".kddi": {
@@ -2204,6 +2215,7 @@
     "host": "whois.nic.linde"
   },
   ".link": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".lipsy": {
@@ -2431,6 +2443,7 @@
     "adapter": "none"
   },
   ".moda": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".moe": {
@@ -2648,6 +2661,7 @@
     "host": "whois.nic.nikon"
   },
   ".ninja": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".nissan": {
@@ -2975,6 +2989,7 @@
     "host": "whois.dns.pt"
   },
   ".pub": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".pw": {
@@ -3072,6 +3087,7 @@
     "host": "whois.nic.review"
   },
   ".reviews": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".rexroth": {
@@ -3096,6 +3112,7 @@
     "adapter": "none"
   },
   ".rocks": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".rodeo": {
@@ -3374,6 +3391,7 @@
     "host": "whois.donuts.co"
   },
   ".social": {
+    "_group": "unitedtld",
     "host": "whois.unitedtld.com"
   },
   ".softbank": {
