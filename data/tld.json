@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:12:36 UTC"
+    "updated": "2016-11-06 15:13:26 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -1098,6 +1098,8 @@
     "host": "whois.donuts.co"
   },
   ".courses": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.aridnrs.net.au"
   },
   ".cr": {
@@ -1437,6 +1439,8 @@
     "adapter": "none"
   },
   ".epson": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.aridnrs.net.au"
   },
   ".equipment": {
@@ -2178,6 +2182,8 @@
     "host": "whois.nic.ifm"
   },
   ".iinet": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.aridnrs.net.au"
   },
   ".il": {
@@ -2454,6 +2460,8 @@
     "host": "whois.kr"
   },
   ".krd": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.aridnrs.net.au"
   },
   ".kred": {
@@ -2794,6 +2802,8 @@
     "host": "whois.nic.google"
   },
   ".melbourne": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.aridnrs.net.au"
   },
   ".meme": {
@@ -3344,6 +3354,8 @@
     "host": "whois.donuts.co"
   },
   ".physio": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.nic.physio"
   },
   ".piaget": {
@@ -3743,6 +3755,8 @@
     "adapter": "none"
   },
   ".saxo": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
     "host": "whois.aridnrs.net.au"
   },
   ".sb": {
