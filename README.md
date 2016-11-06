@@ -21,7 +21,7 @@ This library was extracted from [RoboWhois](https://robowhois.com/) and [RoboDom
 - Flexible and extensible interface (e.g. You can define [custom servers](http://whoisrb.org/manual/server/) on the fly)
 - Object oriented design, featuring 10 different design patterns
 - Pure Ruby library, without any external dependency other than Ruby itself
-- Successfully tested against several [Ruby implementations](http://whoisrb.org/manual/interpreters/)
+- Successfully tested against different Ruby implementations, including Ruby and JRuby
 
 
 ## Requirements
@@ -40,7 +40,7 @@ The best way to install <tt>Whois</tt> is via [RubyGems](https://rubygems.org/) 
 
 ## Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The [documentation](http://whoisrb.org/documentation/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
+Note. This section covers only the essentials for getting started with the Whois library. The [documentation](https://whoisrb.org/docs/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 ### Querying a WHOIS
 

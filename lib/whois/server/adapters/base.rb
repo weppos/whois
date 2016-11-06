@@ -111,7 +111,7 @@ module Whois
         def lookup(string)
           buffer_start do |buffer|
             request(string)
-            Whois::Record.new(self, buffer)
+            Whois::Record.new(self, buffer.dup)
           end
         end
 
@@ -142,22 +142,15 @@ module Whois
 
         private
 
-        # Store a record part in {#buffer}.
-        #
-        # @param  [String] body
-        # @param  [String] host
-        # @return [void]
-        #
         def buffer_append(body, host)
-          @buffer << Whois::Record::Part.new(:body => body, :host => host)
+          @buffer << Whois::Record::Part.new(body: body, host: host)
         end
 
-        # @api private
         def buffer_start
-          @buffer = []
-          result = yield(@buffer)
-          @buffer = [] # reset
-          result
+          @buffer ||= []
+          yield(@buffer)
+        ensure
+          @buffer.clear
         end
 
         # Prepares and passes the query to the {#query_handler}.
