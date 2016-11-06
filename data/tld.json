@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:14:04 UTC"
+    "updated": "2016-11-06 15:15:13 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -69,6 +69,8 @@
     "adapter": "none"
   },
   ".ads": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".adult": {
@@ -180,6 +182,8 @@
     "adapter": "none"
   },
   ".android": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".anquan": {
@@ -197,6 +201,8 @@
     "host": "whois.donuts.co"
   },
   ".app": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".apple": {
@@ -530,6 +536,8 @@
     "host": "whois.nic.bond"
   },
   ".boo": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".book": {
@@ -648,6 +656,8 @@
     "host": "whois.donuts.co"
   },
   ".cal": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".call": {
@@ -790,6 +800,8 @@
     "host": "whois.nic.chanel"
   },
   ".channel": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".chase": {
@@ -817,6 +829,8 @@
     "host": "whois.uniregistry.net"
   },
   ".chrome": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".church": {
@@ -1189,6 +1203,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".dad": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".dance": {
@@ -1208,9 +1224,13 @@
     "host": "whois.nic.gmo"
   },
   ".day": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".dclk": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".dds": {
@@ -1275,6 +1295,8 @@
     "host": "whois.nic.design"
   },
   ".dev": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".dhl": {
@@ -1333,6 +1355,8 @@
     "url": "http://www.nic.do/whois-h.php3"
   },
   ".docs": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".dog": {
@@ -1360,6 +1384,8 @@
     "host": "whois.nic.download"
   },
   ".drive": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".dtv": {
@@ -1391,6 +1417,8 @@
     "adapter": "none"
   },
   ".eat": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".ec": {
@@ -1477,6 +1505,8 @@
     "host": "whois.nic.es"
   },
   ".esq": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".estate": {
@@ -1661,6 +1691,8 @@
     "host": "whois.ksregistry.net"
   },
   ".fly": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".fm": {
@@ -1671,6 +1703,8 @@
     "host": "whois.nic.fo"
   },
   ".foo": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".foodnetwork": {
@@ -1817,6 +1851,8 @@
     "adapter": "none"
   },
   ".gbiz": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".gd": {
@@ -1885,6 +1921,8 @@
     "host": "whois.donuts.co"
   },
   ".gle": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".global": {
@@ -1898,6 +1936,8 @@
     "url": "http://www.nic.gm/htmlpages/whois.htm"
   },
   ".gmail": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".gmbh": {
@@ -1943,9 +1983,13 @@
     "host": "whois.afilias-srs.net"
   },
   ".goog": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".google": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".gop": {
@@ -2014,6 +2058,8 @@
     "adapter": "none"
   },
   ".guge": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".guide": {
@@ -2042,6 +2088,8 @@
     "host": "whois.nic.hamburg"
   },
   ".hangout": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".haus": {
@@ -2076,6 +2124,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".here": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".hermes": {
@@ -2170,6 +2220,8 @@
     "host": "whois.donuts.co"
   },
   ".how": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".hr": {
@@ -2257,6 +2309,8 @@
     "host": "whois.afilias.net"
   },
   ".ing": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".ink": {
@@ -2835,6 +2889,8 @@
     "host": "whois.donuts.co"
   },
   ".meet": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".melbourne": {
@@ -2843,6 +2899,8 @@
     "host": "whois.aridnrs.net.au"
   },
   ".meme": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".memorial": {
@@ -2969,6 +3027,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".mov": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".movie": {
@@ -3115,6 +3175,8 @@
     "adapter": "none"
   },
   ".new": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".news": {
@@ -3129,6 +3191,8 @@
     "host": "whois.nic.nextdirect"
   },
   ".nexus": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".nf": {
@@ -3324,6 +3388,8 @@
     "url": "http://www.nic.pa/"
   },
   ".page": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".pamperedchef": {
@@ -3452,6 +3518,8 @@
     "host": "whois.donuts.co"
   },
   ".play": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".plumbing": {
@@ -3506,6 +3574,8 @@
     "host": "whois.afilias.net"
   },
   ".prod": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".productions": {
@@ -3514,6 +3584,8 @@
     "host": "whois.donuts.co"
   },
   ".prof": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".progressive": {
@@ -3719,6 +3791,8 @@
     "host": "whois.rnids.rs"
   },
   ".rsvp": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".ru": {
@@ -4060,6 +4134,8 @@
     "host": "whois.nic.sony"
   },
   ".soy": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "domain-registry-whois.l.google.com"
   },
   ".space": {
@@ -4994,6 +5070,8 @@
     "host": "whois.donuts.co"
   },
   ".xn--flw351e": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "domain-registry-whois.l.google.com"
   },
   ".xn--fpcrj9c3d": {
@@ -5169,9 +5247,13 @@
     "host": "whois.nic.xn--pssy2u"
   },
   ".xn--q9jyb4c": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "domain-registry-whois.l.google.com"
   },
   ".xn--qcka1pmc": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".xn--qxam": {
@@ -5288,6 +5370,8 @@
     "adapter": "none"
   },
   ".youtube": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".yt": {
@@ -5332,6 +5416,8 @@
     "adapter": "none"
   },
   ".zip": {
+    "_group": "google",
+    "_type": "newgtld",
     "host": "whois.nic.google"
   },
   ".zippo": {
