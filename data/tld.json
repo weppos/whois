@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:11:53 UTC"
+    "updated": "2016-11-06 15:12:36 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -221,6 +221,8 @@
     "host": "whois.ksregistry.net"
   },
   ".army": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".arpa": {
@@ -260,6 +262,8 @@
     "host": "whois.nic.priv.at"
   },
   ".attorney": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".au": {
@@ -327,6 +331,8 @@
     "host": "whois.ngtld.cn"
   },
   ".band": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".bank": {
@@ -1216,6 +1222,8 @@
     "host": "whois.donuts.co"
   },
   ".degree": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".delivery": {
@@ -1240,6 +1248,8 @@
     "host": "whois.donuts.co"
   },
   ".dentist": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".desi": {
@@ -1409,6 +1419,8 @@
     "host": "whois.donuts.co"
   },
   ".engineer": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".engineering": {
@@ -1514,6 +1526,8 @@
     "host": "whois.nic.faith"
   },
   ".family": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".fan": {
@@ -1768,6 +1782,8 @@
     "host": "whois.uniregistry.net"
   },
   ".games": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".garden": {
@@ -1827,6 +1843,8 @@
     "host": "whois.donuts.co"
   },
   ".gives": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".giving": {
@@ -2502,6 +2520,8 @@
     "host": "whois-dub.mm-registry.com"
   },
   ".lawyer": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".lb": {
@@ -2600,6 +2620,8 @@
     "host": "whois.nic.lipsy"
   },
   ".live": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".living": {
@@ -2721,6 +2743,8 @@
     "host": "whois.mango.coreregistry.net"
   },
   ".market": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".marketing": {
@@ -2884,6 +2908,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".mortgage": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".moscow": {
@@ -2976,6 +3002,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".navy": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".nc": {
@@ -3042,6 +3070,8 @@
     "host": "whois.nic.google"
   },
   ".news": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".next": {
@@ -3529,6 +3559,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".rehab": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".reise": {
@@ -3565,6 +3597,8 @@
     "host": "whois.donuts.co"
   },
   ".republican": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".rest": {
@@ -3599,6 +3633,8 @@
     "host": "whois.gtlds.nic.br"
   },
   ".rip": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".ro": {
@@ -3668,6 +3704,8 @@
     "adapter": "none"
   },
   ".sale": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".salon": {
@@ -3938,6 +3976,8 @@
     "host": "whois.nic.softbank"
   },
   ".software": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".sohu": {
@@ -4035,6 +4075,8 @@
     "adapter": "none"
   },
   ".studio": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".study": {
@@ -4487,6 +4529,8 @@
     "host": "whois.nic.versicherung"
   },
   ".vet": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".vg": {
@@ -4502,6 +4546,8 @@
     "host": "whois.donuts.co"
   },
   ".video": {
+    "_group": "rightside",
+    "_type": "newgtld",
     "host": "whois.rightside.co"
   },
   ".vig": {
