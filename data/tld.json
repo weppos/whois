@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:20:24 UTC"
+    "updated": "2016-11-06 15:21:01 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -2918,6 +2918,8 @@
     "host": "whois.nic.macys"
   },
   ".madrid": {
+    "_group": "corenic",
+    "_type": "newgtld",
     "host": "whois.madrid.rs.corenic.net"
   },
   ".maif": {
@@ -5135,9 +5137,13 @@
     "host": "whois.nic.kz"
   },
   ".xn--80asehdb": {
+    "_group": "corenic",
+    "_type": "newgtld",
     "host": "whois.online.rs.corenic.net"
   },
   ".xn--80aswg": {
+    "_group": "corenic",
+    "_type": "newgtld",
     "host": "whois.online.rs.corenic.net"
   },
   ".xn--8y0a063a": {
