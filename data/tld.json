@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:18:22 UTC"
+    "updated": "2016-11-06 15:19:03 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -3293,6 +3293,8 @@
     "host": "whois.nic.net.ng"
   },
   ".ngo": {
+    "_group": "publicinterestregistry",
+    "_type": "newgtld",
     "host": "whois.publicinterestregistry.net"
   },
   ".nhk": {
@@ -3409,6 +3411,8 @@
     "host": "whois.nic.one"
   },
   ".ong": {
+    "_group": "publicinterestregistry",
+    "_type": "newgtld",
     "host": "whois.publicinterestregistry.net"
   },
   ".onl": {
@@ -5132,6 +5136,8 @@
     "adapter": "none"
   },
   ".xn--c1avg": {
+    "_group": "publicinterestregistry",
+    "_type": "newgtld",
     "host": "whois.publicinterestregistry.net"
   },
   ".xn--c2br7g": {
@@ -5226,6 +5232,8 @@
     "host": "whois.nic.xn--hxt814e"
   },
   ".xn--i1b6b1a6a2e": {
+    "_group": "publicinterestregistry",
+    "_type": "newgtld",
     "host": "whois.publicinterestregistry.net"
   },
   ".xn--imr513n": {
@@ -5347,9 +5355,13 @@
     "host": "whois.itdc.ge"
   },
   ".xn--nqv7f": {
+    "_group": "publicinterestregistry",
+    "_type": "newgtld",
     "host": "whois.publicinterestregistry.net"
   },
   ".xn--nqv7fs00ema": {
+    "_group": "publicinterestregistry",
+    "_type": "newgtld",
     "host": "whois.publicinterestregistry.net"
   },
   ".xn--nyqy26a": {
