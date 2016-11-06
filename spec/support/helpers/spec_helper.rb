@@ -16,9 +16,8 @@ module RSpecSupportSpecHelpers
   end
 
   def definitions_setup
-    @_definitions = Whois::Server.definitions
-    Whois::Server.send :class_variable_set, :@@definitions,
-      { :tld => [], :ipv4 => [], :ipv6 => [], :asn16 => [], :asn32 => [] }
+    @_definitions = Whois::Server.send :class_variable_get, :@@definitions
+    Whois::Server.send :class_variable_set, :@@definitions, {}
   end
 
   def definitions_teardown

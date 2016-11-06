@@ -37,6 +37,15 @@ module Whois
       autoload :Web,              "whois/server/adapters/web"
     end
 
+    # @return [Array<Symbol>] the definition types
+    TYPES = [
+        TYPE_TLD   = :tld,
+        TYPE_IPV4  = :ipv4,
+        TYPE_IPV6  = :ipv6,
+        TYPE_ASN16 = :asn16,
+        TYPE_ASN32 = :asn32,
+    ].freeze
+
 
     # The WHOIS server definitions.
     #
@@ -66,23 +75,15 @@ module Whois
     end
 
 
-    # Lookup and returns the definition list for given <tt>type</tt>,
-    # or all definitions if <tt>type</tt> is <tt>nil</tt>.
+    # Lookup and returns the definition list for given `type`.
     #
     # @param  [Symbol] type The type of WHOIS server to lookup.
-    #         Known values are :tld, :ipv4, :ipv6.
+    #         See Whois::Server::TYPES for valid types.
     #
     # @return [{ Symbol => Array }]
     #         The definition Hash if +type+ is +nil+.
     # @return [Array<Hash>]
     #         The definitions for given +type+ if +type+ is not +nil+ and +type+ exists.
-    # @return [nil]
-    #         The definitions for given +type+ if +type+ is not +nil+ and +type+ doesn't exist.
-    #
-    # @example Return the definition database.
-    #
-    #   Whois::Server.definitions
-    #   # => { :tld => [...], :ipv4 => [], ... }
     #
     # @example Return the definitions for given key.
     #
@@ -92,12 +93,12 @@ module Whois
     #   Whois::Server.definitions(:invalid)
     #   # => nil
     #
-    def self.definitions(type = nil)
-      if type.nil?
-        @@definitions
-      else
-        @@definitions[type]
-      end
+    def self.definitions(type)
+      TYPES.include?(type) or
+        raise(ArgumentError, "`#{type}` is not a valid definition type")
+
+      defs = @@definitions[type] || {}
+      defs.values
     end
 
     # Defines a new server for <tt>:type</tt> queries.
@@ -138,8 +139,11 @@ module Whois
     #     :url => "http://www.nic.ar/"
     #
     def self.define(type, allocation, host, options = {})
-      @@definitions[type] ||= []
-      @@definitions[type] <<  [allocation, host, options]
+      TYPES.include?(type) or
+          raise(ArgumentError, "`#{type}` is not a valid definition type")
+
+      @@definitions[type] ||= {}
+      @@definitions[type][allocation] = [allocation, host, options]
     end
 
     # Creates a new server adapter from given arguments
@@ -174,9 +178,8 @@ module Whois
     #         Defaults to {Whois::Server::Adapters::Standard} unless specified.
     #         All the other options are passed directly to the adapter which can decide how to use them.
     #
-    # @return [Whois::Server::Adapters::Standard]
-    #         An adapter that can be used to perform queries.
-    #
+    # @return [Whois::Server::Adapters::Base]
+    #         a server adapter that can be used to perform queries.
     def self.factory(type, allocation, host, options = {})
       options = options.dup
       adapter = options.delete(:adapter) || Adapters::Standard
@@ -201,19 +204,19 @@ module Whois
     #   Whois::Server.guess "mail@example.com"
     #
     #
-    # @param  [String] string
+    # @param  string [String]
     # @return [Whois::Server::Adapters::Base]
-    #         The adapter that can be used to perform
-    #         WHOIS queries for <tt>string</tt>.
+    #         a server adapter that can be used to perform queries.
     #
+    # @raise  [Whois::AllocationUnknown]
+    #         when the input is an IP, but the IP doesn't have a specific known allocation
+    #         that matches one of the existing server definitions.
     # @raise  [Whois::ServerNotFound]
-    #         When unable to find an appropriate WHOIS adapter
-    #         for <tt>string</tt>. Most of the cases, the <tt>string</tt>
-    #         haven't been recognised as one of the supported query types.
+    #         when unable to find an appropriate WHOIS adapter. In most of the cases, the input
+    #         is not recognised as one of the supported query types.
     # @raise  [Whois::ServerNotSupported]
-    #         When the <tt>string</tt> type is detected,
+    #         when the string type is detected,
     #         but the object type doesn't have any supported WHOIS adapter associated.
-    #
     def self.guess(string)
       # Top Level Domain match
       if matches_tld?(string)
@@ -231,7 +234,7 @@ module Whois
       end
 
       # Domain Name match
-      if server = find_for_domain(string)
+      if (server = find_for_domain(string))
         return server
       end
 
@@ -245,7 +248,71 @@ module Whois
     end
 
 
-  private
+    # Searches for definition that matches given IP.
+    #
+    # @param  string [String]
+    # @return [Whois::Server::Adapters::Base, nil]
+    #         a server adapter that can be used to perform queries.
+    # @raise  [Whois::AllocationUnknown]
+    #         when the IP doesn't have a specific known allocation
+    #         that matches one of the existing server definitions.
+    def self.find_for_ip(string)
+      begin
+        ip = IPAddr.new(string)
+        type = ip.ipv4? ? TYPE_IPV4 : TYPE_IPV6
+        definitions(type).each do |definition|
+          if IPAddr.new(definition.first).include?(ip)
+            return factory(type, *definition)
+          end
+        end
+      rescue ArgumentError
+        # continue
+      end
+      raise AllocationUnknown, "IP Allocation for `#{string}' unknown"
+    end
+
+    # Searches for definition that matches given email.
+    #
+    # @param  string [String]
+    # @raise  [Whois::ServerNotSupported]
+    #         emails are not supported.
+    def self.find_for_email(string)
+      raise ServerNotSupported, "No WHOIS server is known for email objects"
+    end
+
+    # Searches for definition that matches given domain.
+    #
+    # @param  string [String]
+    # @return [Whois::Server::Adapters::Base, nil]
+    #         a server adapter that can be used to perform queries.
+    def self.find_for_domain(string)
+      definitions(TYPE_TLD).each do |definition|
+        return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
+      end
+      nil
+    end
+
+    # Searches for definition that matches given ASN string.
+    #
+    # @param  string [String]
+    # @return [Whois::Server::Adapters::Base, nil]
+    #         a server adapter that can be used to perform queries.
+    # @raise  [Whois::AllocationUnknown]
+    #         when the IP doesn't have a specific known allocation
+    #         that matches one of the existing server definitions.
+    def self.find_for_asn(string)
+      asn = string[/\d+/].to_i
+      asn_type = asn <= 65535 ? TYPE_ASN16 : TYPE_ASN32
+      definitions(asn_type).each do |definition|
+        if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
+          return factory(asn_type, *definition)
+        end
+      end
+      raise AllocationUnknown, "Unknown AS number - `#{asn}'."
+    end
+
+
+    private
 
     def self.camelize(string)
       string.to_s.split("_").collect(&:capitalize).join
@@ -266,43 +333,6 @@ module Whois
 
     def self.matches_asn?(string)
       string =~ /^as\d+$/i
-    end
-
-    def self.find_for_ip(string)
-      begin
-        ip = IPAddr.new(string)
-        type = ip.ipv4? ? :ipv4 : :ipv6
-        definitions(type).each do |definition|
-          if IPAddr.new(definition.first).include?(ip)
-            return factory(type, *definition)
-          end
-        end
-      rescue ArgumentError
-        # continue
-      end
-      raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
-    end
-
-    def self.find_for_email(string)
-      raise ServerNotSupported, "No WHOIS server is known for email objects"
-    end
-
-    def self.find_for_domain(string)
-      definitions(:tld).each do |definition|
-        return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
-      end
-      nil
-    end
-
-    def self.find_for_asn(string)
-      asn = string[/\d+/].to_i
-      asn_type = asn <= 65535 ? :asn16 : :asn32
-      definitions(asn_type).each do |definition|
-        if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
-          return factory(asn_type, *definition)
-        end
-      end
-      raise AllocationUnknown, "Unknown AS number - `#{asn}'."
     end
 
 
