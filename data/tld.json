@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:19:47 UTC"
+    "updated": "2016-11-06 15:20:24 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -970,6 +970,8 @@
     "host": "whois.nic.college"
   },
   ".cologne": {
+    "_group": "knipp",
+    "_type": "newgtld",
     "host": "whois-fe1.pdt.cologne.tango.knipp.de"
   },
   ".com": {
@@ -2012,6 +2014,8 @@
     "host": "whois.donuts.co"
   },
   ".gmx": {
+    "_group": "knipp",
+    "_type": "newgtld",
     "host": "whois-fe1.gmx.tango.knipp.de"
   },
   ".gn": {
@@ -2609,6 +2613,8 @@
     "host": "whois.nic.kn"
   },
   ".koeln": {
+    "_group": "knipp",
+    "_type": "newgtld",
     "host": "whois-fe1.pdt.koeln.tango.knipp.de"
   },
   ".komatsu": {
@@ -3141,6 +3147,8 @@
     "host": "whois.donuts.co"
   },
   ".movistar": {
+    "_group": "knipp",
+    "_type": "newgtld",
     "host": "whois-fe.movistar.tango.knipp.de"
   },
   ".mp": {
@@ -4496,6 +4504,8 @@
     "host": "whois.nic.telecity"
   },
   ".telefonica": {
+    "_group": "knipp",
+    "_type": "newgtld",
     "host": "whois-fe.telefonica.tango.knipp.de"
   },
   ".temasek": {
