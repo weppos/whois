@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:23:26 UTC"
+    "updated": "2016-11-06 15:24:28 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -4964,6 +4964,8 @@
     "host": "whois.nic.walter"
   },
   ".wang": {
+    "_group": "knet",
+    "_type": "newgtld",
     "host": "whois.gtld.knet.cn"
   },
   ".wanggou": {
@@ -5103,9 +5105,13 @@
     "host": "whois.ngtld.cn"
   },
   ".xn--30rr7y": {
+    "_group": "knet",
+    "_type": "newgtld",
     "host": "whois.gtld.knet.cn"
   },
   ".xn--3bst00m": {
+    "_group": "knet",
+    "_type": "newgtld",
     "host": "whois.gtld.knet.cn"
   },
   ".xn--3ds443g": {
@@ -5156,6 +5162,8 @@
     "host": "whois.afilias.net"
   },
   ".xn--6qq986b3xl": {
+    "_group": "knet",
+    "_type": "newgtld",
     "host": "whois.gtld.knet.cn"
   },
   ".xn--80adxhks": {
@@ -5190,6 +5198,8 @@
     "host": "whois.nic.xn--9dbq2a"
   },
   ".xn--9et52u": {
+    "_group": "knet",
+    "_type": "newgtld",
     "host": "whois.gtld.knet.cn"
   },
   ".xn--9krt00a": {
@@ -5228,6 +5238,8 @@
     "host": "whois.donuts.co"
   },
   ".xn--czru2d": {
+    "_group": "knet",
+    "_type": "newgtld",
     "host": "whois.gtld.knet.cn"
   },
   ".xn--d1acj3b": {
