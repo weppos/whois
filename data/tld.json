@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:24:28 UTC"
+    "updated": "2016-11-06 15:25:06 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -552,6 +552,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".bom": {
+    "_group": "nicbr",
+    "_type": "newgtld",
     "host": "whois.gtlds.nic.br"
   },
   ".bond": {
@@ -1685,6 +1687,8 @@
     "host": "whois.nic.film"
   },
   ".final": {
+    "_group": "nicbr",
+    "_type": "newgtld",
     "host": "whois.gtlds.nic.br"
   },
   ".finance": {
@@ -2009,6 +2013,8 @@
     "host": "whois.nic.global"
   },
   ".globo": {
+    "_group": "nicbr",
+    "_type": "newgtld",
     "host": "whois.gtlds.nic.br"
   },
   ".gm": {
@@ -3910,6 +3916,8 @@
     "host": "whois.nic.ricoh"
   },
   ".rio": {
+    "_group": "nicbr",
+    "_type": "newgtld",
     "host": "whois.gtlds.nic.br"
   },
   ".rip": {
@@ -4791,6 +4799,8 @@
     "adapter": "none"
   },
   ".uol": {
+    "_group": "nicbr",
+    "_type": "newgtld",
     "host": "whois.gtlds.nic.br"
   },
   ".ups": {
