@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 15:15:13 UTC"
+    "updated": "2016-11-06 15:16:08 UTC"
   },
   ".aaa": {
     "adapter": "none"
@@ -680,6 +680,8 @@
     "host": "whois.nic.cancerresearch"
   },
   ".canon": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.canon"
   },
   ".capetown": {
@@ -1221,6 +1223,8 @@
     "host": "whois.donuts.co"
   },
   ".datsun": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".day": {
@@ -1793,6 +1797,8 @@
     "adapter": "none"
   },
   ".fujitsu": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".fund": {
@@ -1884,6 +1890,8 @@
     "host": "whois.gg"
   },
   ".ggee": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.ggee"
   },
   ".gh": {
@@ -1962,6 +1970,8 @@
     "host": "whois.donuts.co"
   },
   ".goldpoint": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.goldpoint"
   },
   ".golf": {
@@ -1970,6 +1980,8 @@
     "host": "whois.donuts.co"
   },
   ".goo": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".goodhands": {
@@ -2142,9 +2154,13 @@
     "host": "whois.uniregistry.net"
   },
   ".hisamitsu": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".hitachi": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".hiv": {
@@ -2303,6 +2319,8 @@
     "host": "whois.donuts.co"
   },
   ".infiniti": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".info": {
@@ -2395,6 +2413,8 @@
     "host": "whois.nic.java"
   },
   ".jcb": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".jcp": {
@@ -2469,6 +2489,8 @@
     "host": "whois.unitedtld.com"
   },
   ".kddi": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.kddi"
   },
   ".ke": {
@@ -2754,6 +2776,8 @@
     "host": "whois-lon.mm-registry.com"
   },
   ".lotte": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.lotte"
   },
   ".lotto": {
@@ -2944,6 +2968,8 @@
     "host": "whois.afilias-srs.net"
   },
   ".mitsubishi": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".mk": {
@@ -3060,6 +3086,8 @@
     "host": "whois.nic.mtn"
   },
   ".mtpc": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".mtr": {
@@ -3215,6 +3243,8 @@
     "url": "http://www.nic.ni/"
   },
   ".nico": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.nico"
   },
   ".nike": {
@@ -3229,6 +3259,8 @@
     "host": "whois.unitedtld.com"
   },
   ".nissan": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".nissay": {
@@ -3495,6 +3527,8 @@
     "host": "whois.afilias.net"
   },
   ".pioneer": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".pizza": {
@@ -3996,6 +4030,8 @@
     "host": "whois.nic.shangrila"
   },
   ".sharp": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".shaw": {
@@ -4460,6 +4496,8 @@
     "host": "whois.nic.toray"
   },
   ".toshiba": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.toshiba"
   },
   ".total": {
@@ -5358,6 +5396,8 @@
     "adapter": "none"
   },
   ".yodobashi": {
+    "_group": "gmo",
+    "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
   ".yoga": {
