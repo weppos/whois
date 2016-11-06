@@ -100,7 +100,7 @@ module Whois
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        defs = @definitions[type] || {}
+        defs = _definitions[type]
         defs.values
       end
 
@@ -145,8 +145,7 @@ module Whois
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        @definitions[type] ||= {}
-        @definitions[type][allocation] = [allocation, host, options]
+        _definitions[type][allocation] = [allocation, host, options]
       end
 
       # Creates a new server adapter from given arguments
@@ -263,7 +262,7 @@ module Whois
         begin
           ip = IPAddr.new(string)
           type = ip.ipv4? ? TYPE_IPV4 : TYPE_IPV6
-          definitions(type).each do |definition|
+          _definitions(type).each do |_, definition|
             if IPAddr.new(definition.first).include?(ip)
               return factory(type, *definition)
             end
@@ -289,7 +288,7 @@ module Whois
       # @return [Whois::Server::Adapters::Base, nil]
       #         a server adapter that can be used to perform queries.
       def find_for_domain(string)
-        definitions(TYPE_TLD).each do |definition|
+        _definitions(TYPE_TLD).each do |_, definition|
           return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
         end
         nil
@@ -306,7 +305,7 @@ module Whois
       def find_for_asn(string)
         asn = string[/\d+/].to_i
         asn_type = asn <= 65535 ? TYPE_ASN16 : TYPE_ASN32
-        definitions(asn_type).each do |definition|
+        _definitions(asn_type).each do |_, definition|
           if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
             return factory(asn_type, *definition)
           end
@@ -317,10 +316,18 @@ module Whois
 
       private
 
+      def _definitions(type = nil)
+        if type.nil?
+          @definitions
+        else
+          @definitions[type] ||= {}
+        end
+      end
+
+
       def camelize(string)
         string.to_s.split("_").collect(&:capitalize).join
       end
-
 
       def matches_tld?(string)
         string =~ /^\.(xn--)?[a-z0-9]+$/
