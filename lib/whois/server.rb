@@ -100,8 +100,7 @@ module Whois
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        defs = _definitions[type]
-        defs.values
+        _definitions(type).values
       end
 
       # Defines a new server for <tt>:type</tt> queries.
@@ -145,7 +144,7 @@ module Whois
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        _definitions[type][allocation] = [allocation, host, options]
+        _definitions(type)[allocation] = [allocation, host, options]
       end
 
       # Creates a new server adapter from given arguments
@@ -288,9 +287,20 @@ module Whois
       # @return [Whois::Server::Adapters::Base, nil]
       #         a server adapter that can be used to perform queries.
       def find_for_domain(string)
-        _definitions(TYPE_TLD).each do |_, definition|
-          return factory(:tld, *definition) if /#{Regexp.escape(definition.first)}$/ =~ string
+        token = string
+        defs  = _definitions(TYPE_TLD)
+
+        while token != "" do
+          if (found = defs[token])
+            return factory(:tld, *found)
+          else
+            index = token.index(".")
+            break if index.nil?
+
+            token = token[index..-1]
+          end
         end
+
         nil
       end
 

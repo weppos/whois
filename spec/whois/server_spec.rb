@@ -195,6 +195,18 @@ describe Whois::Server do
           expect(Whois::Server.guess("antoniocangiano.com")).to eq(Whois::Server.factory(:tld, ".com", "whois.com"))
         end
       end
+
+      it "returns the closer definition" do
+        with_definitions do
+          Whois::Server.define(:tld, ".com", com = "whois.com")
+          Whois::Server.define(:tld, ".com.foo", comfoo = "whois.com.foo")
+          Whois::Server.define(:tld, ".foo.com", foocom = "whois.foo.com")
+
+          expect(Whois::Server.guess("example.com").host).to eq(com)
+          expect(Whois::Server.guess("example.com.foo").host).to eq(comfoo)
+          expect(Whois::Server.guess("example.foo.com").host).to eq(foocom)
+        end
+      end
     end
 
     context "when the input is an asn16" do
