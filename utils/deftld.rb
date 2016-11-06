@@ -13,6 +13,10 @@ class TldDefs
   # @return [String] version
   SCHEMA_VERSION = "2".freeze
 
+
+  class ChangeError < StandardError
+  end
+
   class TldDef
     attr_accessor :name
 
@@ -31,9 +35,9 @@ class TldDefs
         format: :format,
         url: :url,
 
-        type: :_type,
         group: :_group,
         note: :_note,
+        type: :_type,
     }
 
 
@@ -52,41 +56,63 @@ class TldDefs
       update(attributes)
     end
 
+    def load(attributes = {})
+      validate(ATTRIBUTES.values, attributes)
+
+      attributes.each do |key, value|
+        @attributes[key.to_sym] = value
+      end
+
+      self
+    end
+
     # Updates the definition attributes.
     #
     # @param  attributes [Hash]
     # @return [void]
     def update(attributes = {})
-      validate(attributes)
+      validate(ATTRIBUTES.keys, attributes)
 
       attributes.each do |key, value|
         @attributes[ATTRIBUTES[key.to_sym]] = value
       end
+
+      self
     end
 
     # Validates the definitions to make sure there are no unknown attributes.
     #
+    # @param  allowed [Array]
     # @param  attributes [Hash]
     # @return [void]
     # @raise  [ArgumentError] when a definition attribute is unknown
-    def validate(attributes)
-      keys = ATTRIBUTES.keys
+    def validate(allowed, attributes)
       attributes.each do |key, _|
-        keys.include?(key.to_sym) or
+        allowed.include?(key.to_sym) or
             raise ArgumentError, "Invalid attribute `#{key}`"
       end
     end
 
     # Dump the definition object into a serializable Hash.
     #
+    # Private attributes (starting by _) are added on top.
+    # Keys are sorted alphabetically.
+    #
     # @return [Hash] the serializable hash
     def dump
-      @attributes.reject { |_, value| value.nil? }
+      Hash[@attributes.reject { |_, value| value.nil? }.sort]
     end
   end
 
-  def initialize(file_path)
+
+  # @param  file_path [String] path to the TLD definition file
+  # @param  ignore_missing [Boolean] set to true to silently skip missing TLDs on update.
+  #         When set to false, an error will be raised.
+  def initialize(file_path, ignore_missing: true)
     @path = Pathname.new(file_path)
+    @settings = {
+        ignore_missing: ignore_missing
+    }
   end
 
   def read
@@ -96,7 +122,7 @@ class TldDefs
   def write(data)
     data[KEY_SCHEMA] = schema_attributes
     data = Hash[data.sort_by { |tld, _| tld.split(".").reverse.join(".") }]
-    JSON.pretty_generate(data)
+    File.write(@path, JSON.pretty_generate(data))
   end
 
   def count
@@ -117,7 +143,10 @@ class TldDefs
     update do |defs|
       tlds.each do |tld|
         tld = TldDef.name(tld)
-        tlddef = TldDef.new(tld, defs[tld]).update(attributes)
+        next if !defs.key?(tld) && @settings[:ignore_missing]
+        raise ChangeError, "error updating `#{tld}`, tld is missing" if !defs.key?(tld) && !@settings[:ignore_missing]
+
+        tlddef = TldDef.new(tld).load(defs[tld]).update(attributes)
         defs[tld] = tlddef.dump
       end
     end
@@ -126,7 +155,7 @@ class TldDefs
   def update
     data = read
     puts "#{data.count} definitions read"
-    yield data
+    yield data if block_given?
     write(data)
     puts "#{data.count} definitions written"
     data
@@ -149,6 +178,9 @@ class TldDefs
 
 end
 
+
+defs = TldDefs.new(File.expand_path("../../data/tld.json", __FILE__))
+
 args = ARGV
 options = {}
 OptionParser.new do |opts|
@@ -158,6 +190,8 @@ OptionParser.new do |opts|
 Commands:
 \tadd
 \tupdate
+\tvalidate
+\tfmt
 
 Options:
   EOS
@@ -181,9 +215,11 @@ Options:
   end
 end
 
-defs = TldDefs.new(File.expand_path("../../data/tld.json", __FILE__))
-
 case command = args.shift
+when "validate"
+  defs.validate
+when "fmt"
+  defs.update
 when "add"
   defs.tlds_add(*args, options)
 when "update"
