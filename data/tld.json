@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 16:22:06 UTC"
+    "updated": "2016-11-06 16:23:14 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3341,7 +3341,8 @@
     "host": "whois.monic.mo"
   },
   "mobi": {
-    "host": "whois.dotmobiregistry.net"
+    "_group": "afilias",
+    "host": "whois.afilias.net"
   },
   "mobily": {
     "_type": "newgtld",
