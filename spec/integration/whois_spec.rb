@@ -7,7 +7,7 @@ describe Whois do
   describe "Basic WHOIS querying and parsing" do
     it "works" do
       with_definitions do
-        Whois::Server.define(:tld, ".it", "whois.nic.it")
+        Whois::Server.define(:tld, "it", "whois.nic.it")
         expect(Whois::Server::Adapters::Standard.query_handler).to receive(:call)
           .with("example.it", "whois.nic.it", 43)
           .and_return(response)
@@ -27,7 +27,7 @@ describe Whois do
   describe "Passing :bind_host and :bind_port options" do
     it "binds the WHOIS query to given host and port" do
       with_definitions do
-        Whois::Server.define(:tld, ".it", "whois.nic.it")
+        Whois::Server.define(:tld, "it", "whois.nic.it")
         expect(Whois::Server::Adapters::Standard.query_handler).to receive(:call)
           .with("example.it", "whois.nic.it", 43, "192.168.1.1", 3000)
           .and_return(response)
@@ -41,7 +41,7 @@ describe Whois do
   describe "Passing :bind_port options" do
     it "binds the WHOIS query to given port and defaults host" do
       with_definitions do
-        Whois::Server.define(:tld, ".it", "whois.nic.it")
+        Whois::Server.define(:tld, "it", "whois.nic.it")
         expect(Whois::Server::Adapters::Standard.query_handler).to receive(:call)
           .with("example.it", "whois.nic.it", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, 3000)
           .and_return(response)
@@ -55,7 +55,7 @@ describe Whois do
   describe "Passing :host options" do
     it "forces the WHOIS query to given host" do
       with_definitions do
-        Whois::Server.define(:tld, ".it", "whois.nic.it")
+        Whois::Server.define(:tld, "it", "whois.nic.it")
         expect(Whois::Server::Adapters::Standard.query_handler).to receive(:call)
           .with("example.it", "whois.example.com", 43)
           .and_return(response)

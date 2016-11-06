@@ -46,7 +46,7 @@ class TldDefs
     # @return [String] the normalized TLD name
     def self.name(string)
       string = string.to_str
-      string.start_with?(".") ? string : ".#{string}"
+      string.start_with?(".") ? string[1..-1] : string
     end
 
     def initialize(name, attributes = {})

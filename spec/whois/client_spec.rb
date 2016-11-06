@@ -8,17 +8,17 @@ describe Whois::Client do
     end
 
     it "accepts a settings parameter" do
-      expect { described_class.new({ :foo => "bar" }) }.to_not raise_error
+      expect { described_class.new({ foo: "bar" }) }.to_not raise_error
     end
 
 
     it "accepts a timeout setting with a value in seconds" do
-      client = described_class.new(:timeout => 100)
+      client = described_class.new(timeout: 100)
       expect(client.timeout).to eq(100)
     end
 
     it "accepts a timeout setting with a nil value" do
-      client = described_class.new(:timeout => nil)
+      client = described_class.new(timeout: nil)
       expect(client.timeout).to be_nil
     end
 
@@ -35,8 +35,8 @@ describe Whois::Client do
     end
 
     it "sets settings to given argument, except timeout" do
-      client = described_class.new(:timeout => nil, :foo => "bar")
-      expect(client.settings).to eq({ :foo => "bar" })
+      client = described_class.new(timeout: nil, foo: "bar")
+      expect(client.settings).to eq({ foo: "bar" })
     end
   end
 
@@ -49,7 +49,7 @@ describe Whois::Client do
         end
       end
 
-      server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
+      server = Whois::Server::Adapters::Base.new(:tld, "test", "whois.test")
       expect(server).to receive(:lookup).with("example.test")
       expect(Whois::Server).to receive(:guess).with("example.test").and_return(server)
 
@@ -57,7 +57,7 @@ describe Whois::Client do
     end
 
     it "converts the argument to downcase" do
-      server = Whois::Server::Adapters::Base.new(:tld, ".test", "whois.test")
+      server = Whois::Server::Adapters::Base.new(:tld, "test", "whois.test")
       expect(server).to receive(:lookup).with("example.test")
       expect(Whois::Server).to receive(:guess).with("example.test").and_return(server)
 
@@ -71,7 +71,7 @@ describe Whois::Client do
     end
 
     it "works with domain with no whois" do
-      Whois::Server.define(:tld, ".nowhois", nil, :adapter => Whois::Server::Adapters::None)
+      Whois::Server.define(:tld, "nowhois", nil, adapter: Whois::Server::Adapters::None)
 
       expect {
         described_class.new.lookup("domain.nowhois")
@@ -79,7 +79,7 @@ describe Whois::Client do
     end
 
     it "works with domain with web whois" do
-      Whois::Server.define(:tld, ".webwhois", nil, :adapter => Whois::Server::Adapters::Web, :url => "http://www.example.com/")
+      Whois::Server.define(:tld, "webwhois", nil, adapter: Whois::Server::Adapters::Web, url: "http://www.example.com/")
 
       expect {
         described_class.new.lookup("domain.webwhois")
@@ -92,9 +92,9 @@ describe Whois::Client do
           sleep(2)
         end
       end
-      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, ".test", "whois.test"))
+      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, "test", "whois.test"))
 
-      client = described_class.new(:timeout => 1)
+      client = described_class.new(timeout: 1)
       expect {
         client.lookup("example.test")
       }.to raise_error(Timeout::Error)
@@ -106,9 +106,9 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, ".test", "whois.test"))
+      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, "test", "whois.test"))
 
-      client = described_class.new(:timeout => 5)
+      client = described_class.new(timeout: 5)
       expect {
         client.lookup("example.test")
       }.to_not raise_error
@@ -120,7 +120,7 @@ describe Whois::Client do
           sleep(1)
         end
       end
-      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, ".test", "whois.test"))
+      expect(Whois::Server).to receive(:guess).and_return(adapter.new(:tld, "test", "whois.test"))
 
       client = described_class.new.tap { |c| c.timeout = nil }
       expect {
