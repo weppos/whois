@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-10 11:13:41 UTC"
+    "updated": "2016-11-10 11:21:22 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1247,6 +1247,11 @@
     "_group": "centralnic",
     "_type": "private",
     "host": "whois.centralnic.com"
+  },
+  "hk.com": {
+    "_group": "udrregistry",
+    "_type": "private",
+    "host": "whois.registry.hk.com"
   },
   "hu.com": {
     "_group": "centralnic",
@@ -2654,6 +2659,16 @@
   },
   "hk": {
     "host": "whois.hkirc.hk"
+  },
+  "inc.hk": {
+    "_group": "udrregistry",
+    "_type": "private",
+    "host": "whois.registry.hk.com"
+  },
+  "ltd.hk": {
+    "_group": "udrregistry",
+    "_type": "private",
+    "host": "whois.registry.hk.com"
   },
   "hkt": {
     "_group": "afiliassrs",
@@ -4189,6 +4204,11 @@
   },
   "eu.org": {
     "host": "whois.eu.org"
+  },
+  "hk.org": {
+    "_group": "udrregistry",
+    "_type": "private",
+    "host": "whois.registry.hk.com"
   },
   "us.org": {
     "_group": "centralnic",

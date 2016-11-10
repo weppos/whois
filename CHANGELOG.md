@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Add .FREE
+- SERVER: Add .FREE, .HK.COM, .HK.ORG, .LTD.HK, .INC.HK
 
 - SERVER: Update .ONLINE, .SITE, .STC, .STCGROUP
 
