@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-10 11:07:01 UTC"
+    "updated": "2016-11-10 11:10:03 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2176,6 +2176,11 @@
   },
   "veterinaire.fr": {
     "host": "whois.smallregistry.net"
+  },
+  "free": {
+    "_group": "amazonregistry",
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "fresenius": {
     "_group": "ksregistry",

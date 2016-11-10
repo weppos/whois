@@ -5,6 +5,8 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
+- SERVER: Add .FREE
+
 - SERVER: Update .ONLINE, .SITE, .STC, .STCGROUP
 
 #### Release 4.0.0
