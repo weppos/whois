@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-10 11:10:03 UTC"
+    "updated": "2016-11-10 11:13:41 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2145,36 +2145,58 @@
     "host": "whois.nic.fr"
   },
   "aeroport.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "avocat.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "chambagri.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "chirurgiens-dentistes.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "experts-comptables.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "geometre-expert.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "medecin.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "notaires.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "pharmacien.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "port.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "veterinaire.fr": {
+    "_group": "smallregistry",
+    "_type": "private",
     "host": "whois.smallregistry.net"
   },
   "free": {
