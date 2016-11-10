@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-06 17:24:05 UTC"
+    "updated": "2016-11-10 11:07:01 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -4130,7 +4130,7 @@
   "online": {
     "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.online"
   },
   "onyourside": {
     "_type": "newgtld",
@@ -5064,7 +5064,7 @@
   "site": {
     "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.site"
   },
   "sj": {
     "adapter": "none"
@@ -5236,12 +5236,12 @@
   "stc": {
     "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.stc"
   },
   "stcgroup": {
     "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.stcgroup"
   },
   "stockholm": {
     "_group": "afiliassrs",
@@ -5881,7 +5881,7 @@
   "viva": {
     "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.centralnic.com"
+    "host": "whois.nic.viva"
   },
   "vivo": {
     "_type": "newgtld",

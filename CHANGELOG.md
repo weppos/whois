@@ -3,6 +3,10 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+#### master
+
+- SERVER: Update .ONLINE, .SITE, .STC, .STCGROUP
+
 #### Release 4.0.0
 
 The WHOIS parsers are no longer part of this repository, and they have been extracted into a separate repository at https://github.com/weppos/whois-parser.
