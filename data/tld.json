@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-10 11:21:22 UTC"
+    "updated": "2016-11-18 15:41:23 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -41,7 +41,7 @@
   "abogado": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.abogado"
   },
   "abudhabi": {
     "_type": "newgtld",
@@ -738,7 +738,7 @@
   "bradesco": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-cl01.mm-registry.com"
+    "host": "whois.nic.bradesco"
   },
   "bridgestone": {
     "_type": "newgtld",
@@ -3272,7 +3272,7 @@
   "law": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.law"
   },
   "lawyer": {
     "_group": "rightside",
@@ -3435,7 +3435,7 @@
   "london": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-lon.mm-registry.com"
+    "host": "whois.nic.london"
   },
   "lotte": {
     "_group": "gmo",
@@ -5901,7 +5901,7 @@
   "vip": {
     "_group": "mmregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.nic.vip"
   },
   "virgin": {
     "_type": "newgtld",
