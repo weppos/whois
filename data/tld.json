@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-18 15:41:23 UTC"
+    "updated": "2016-11-18 15:47:54 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -732,6 +732,11 @@
     "_type": "newgtld",
     "host": "whois.donuts.co"
   },
+  "box": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
+    "host": "whois.aridnrs.net.au"
+  },
   "br": {
     "host": "whois.registro.br"
   },
@@ -1439,6 +1444,11 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "cruise": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
+  },
   "cruises": {
     "_group": "donuts",
     "_type": "newgtld",
@@ -2108,6 +2118,10 @@
     "_group": "google",
     "_type": "newgtld",
     "host": "whois.nic.google"
+  },
+  "food": {
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "foodnetwork": {
     "_type": "newgtld",
@@ -3011,6 +3025,11 @@
     "_type": "newgtld",
     "host": "whois.donuts.co"
   },
+  "jio": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
+  },
   "jlc": {
     "_type": "newgtld",
     "adapter": "none"
@@ -3778,6 +3797,10 @@
   "moscow": {
     "_type": "newgtld",
     "host": "whois.nic.moscow"
+  },
+  "moto": {
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "motorcycles": {
     "_group": "afiliassrs",
@@ -4664,6 +4687,11 @@
     "_type": "newgtld",
     "host": "whois.nic.reit"
   },
+  "reliance": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
+  },
   "ren": {
     "_type": "newgtld",
     "adapter": "none"
@@ -4733,6 +4761,11 @@
   "rightathome": {
     "_type": "newgtld",
     "host": "whois.nic.rightathome"
+  },
+  "ril": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
   },
   "rio": {
     "_group": "nicbr",
