@@ -532,9 +532,8 @@
     "host": "whois.afilias-srs.net"
   },
   "beauty": {
-    "_type": "newgtld"
-  },
-  "whois.nic.beauty": {
+    "_type": "newgtld",
+    "host": "whois.nic.beauty"
   },
   "beer": {
     "_group": "mmregistry",
