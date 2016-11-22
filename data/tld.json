@@ -3400,6 +3400,7 @@
     "host": "whois.nic.linde"
   },
   "link": {
+    "_group": "uniregistry",
     "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
