@@ -2,6 +2,10 @@
 
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
+#### master
+
+- SERVER: Update .LINK (GH-543)
+
 
 #### Release 4.0.1
 
