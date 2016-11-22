@@ -3400,9 +3400,8 @@
     "host": "whois.nic.linde"
   },
   "link": {
-    "_group": "unitedtld",
     "_type": "newgtld",
-    "host": "whois.unitedtld.com"
+    "host": "whois.uniregistry.net"
   },
   "lipsy": {
     "_type": "newgtld",
