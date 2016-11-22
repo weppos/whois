@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-18 15:47:54 UTC"
+    "updated": "2016-11-22 10:09:41 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3400,9 +3400,9 @@
     "host": "whois.nic.linde"
   },
   "link": {
-    "_group": "unitedtld",
+    "_group": "uniregistry",
     "_type": "newgtld",
-    "host": "whois.unitedtld.com"
+    "host": "whois.uniregistry.net"
   },
   "lipsy": {
     "_type": "newgtld",
