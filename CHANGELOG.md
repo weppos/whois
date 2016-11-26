@@ -4,14 +4,13 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Update .LINK (GH-543)
-
+- SERVER: Update .LINK (GH-543), .AR
 
 #### Release 4.0.1
 
-- SERVER: Add .FREE, .HK.COM, .HK.ORG, .LTD.HK, .INC.HK, .BOX, .CRUISE, .FOOD, .JIO, .MOTO, .RELIANCE, .RIL
+- SERVER: Added .FREE, .HK.COM, .HK.ORG, .LTD.HK, .INC.HK, .BOX, .CRUISE, .FOOD, .JIO, .MOTO, .RELIANCE, .RIL
 
-- SERVER: Update .ONLINE, .SITE, .STC, .STCGROUP
+- SERVER: Updated .ONLINE, .SITE, .STC, .STCGROUP
 
 #### Release 4.0.0
 

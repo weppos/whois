@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-22 10:09:41 UTC"
+    "updated": "2016-11-26 11:28:05 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -286,8 +286,7 @@
     "host": "whois-aquarelle.nic.fr"
   },
   "ar": {
-    "adapter": "web",
-    "url": "http://www.nic.ar/"
+    "host": "whois.nic.ar"
   },
   "aramco": {
     "_type": "newgtld",
