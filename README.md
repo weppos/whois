@@ -118,7 +118,7 @@ r.registered?
 r.created_on
 # => Fri Dec 10 00:00:00 +0100 1999
 
-t = r.technical_contact
+t = r.technical_contacts.first
 # => #<Whois::Record::Contact>
 t.id
 # => "TS7016-ITNIC"
