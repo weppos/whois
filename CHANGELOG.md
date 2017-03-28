@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 #### master
 
 - SERVER: Added .AFRICA, .XN--MGBAI9AZGQP6J
-- SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY, .GF
+- SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY, .GF, .KG
 
 #### Release 4.0.1
 

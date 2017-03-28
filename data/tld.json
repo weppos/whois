@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:33:39 UTC"
+    "updated": "2017-03-28 16:35:06 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3129,7 +3129,7 @@
     "host": "whois.nic.kfh"
   },
   "kg": {
-    "host": "whois.domain.kg"
+    "host": "whois.kg"
   },
   "kh": {
     "adapter": "none"
