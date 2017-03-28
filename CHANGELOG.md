@@ -6,7 +6,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 - SERVER: Added .AFRICA, .XN--MGBAI9AZGQP6J, .FUN
 - SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY, .GF, .KG
-- SERVER: Deleted .IINET, .MUTUELLE
+- SERVER: Deleted .IINET, .MUTUELLE, .FLSMIDTH
 
 #### Release 4.0.1
 

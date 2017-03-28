@@ -2101,11 +2101,6 @@
     "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
-  "flsmidth": {
-    "_group": "ksregistry",
-    "_type": "newgtld",
-    "host": "whois.ksregistry.net"
-  },
   "fly": {
     "_group": "google",
     "_type": "newgtld",
