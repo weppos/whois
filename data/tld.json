@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:31:35 UTC"
+    "updated": "2017-03-28 16:33:39 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2946,9 +2946,9 @@
     "host": "whois.nic.ir"
   },
   "irish": {
-    "_group": "afiliassrs",
+    "_group": "donuts",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.donuts.co"
   },
   "is": {
     "host": "whois.isnic.is"
