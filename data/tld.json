@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:35:06 UTC"
+    "updated": "2017-03-28 16:37:40 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2261,6 +2261,11 @@
     "_type": "newgtld",
     "host": "whois.nic.fujixerox"
   },
+  "fun": {
+    "_group": "centralnic",
+    "_type": "newgtld",
+    "host": "whois.nic.fun"
+  },
   "fund": {
     "_group": "donuts",
     "_type": "newgtld",
@@ -2835,11 +2840,6 @@
   "ifm": {
     "_type": "newgtld",
     "host": "whois.nic.ifm"
-  },
-  "iinet": {
-    "_group": "aridnrs",
-    "_type": "newgtld",
-    "host": "whois.aridnrs.net.au"
   },
   "ikano": {
     "_type": "newgtld",
@@ -3867,11 +3867,6 @@
   "mutual": {
     "_type": "newgtld",
     "adapter": "none"
-  },
-  "mutuelle": {
-    "_group": "nicfr",
-    "_type": "newgtld",
-    "host": "whois-mutuelle.nic.fr"
   },
   "mv": {
     "adapter": "none"
