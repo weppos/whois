@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:24:56 UTC"
+    "updated": "2017-03-28 16:26:22 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2354,8 +2354,7 @@
     "host": "whois.nic.george"
   },
   "gf": {
-    "adapter": "web",
-    "url": "https://www.dom-enic.com/whois.html"
+    "host": "whois.mediaserv.net"
   },
   "gg": {
     "host": "whois.gg"
@@ -3825,8 +3824,7 @@
     "adapter": "none"
   },
   "mq": {
-    "host": "whois.mediaserv.net",
-    "url": "https://www.dom-enic.com/whois.html"
+    "host": "whois.mediaserv.net"
   },
   "mr": {
     "adapter": "none"

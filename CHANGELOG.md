@@ -4,7 +4,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY
+- SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY, .GF
 
 #### Release 4.0.1
 
