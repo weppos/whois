@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:21:00 UTC"
+    "updated": "2017-03-28 16:24:56 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -295,7 +295,7 @@
   "archi": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.afilias.net"
   },
   "army": {
     "_group": "rightside",
@@ -602,7 +602,7 @@
   "bio": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.afilias.net"
   },
   "biz": {
     "host": "whois.biz"
@@ -5153,7 +5153,7 @@
   "ski": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.afilias.net"
   },
   "skin": {
     "_type": "newgtld",
