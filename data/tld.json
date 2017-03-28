@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:46:26 UTC"
+    "updated": "2017-03-28 16:50:35 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -978,6 +978,11 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.donuts.co"
+  },
+  "catholic": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
+    "host": "whois.aridnrs.net.au"
   },
   "cba": {
     "_type": "newgtld",
@@ -6311,6 +6316,11 @@
   "xn--80ao21a": {
     "host": "whois.nic.kz"
   },
+  "xn--80aqecdr1a": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
+    "host": "whois.aridnrs.net.au"
+  },
   "xn--80asehdb": {
     "_group": "corenic",
     "_type": "newgtld",
@@ -6590,6 +6600,11 @@
   "xn--mgberp4a5d4ar": {
     "host": "whois.nic.net.sa"
   },
+  "xn--mgbi4ecexp": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
+    "host": "whois.aridnrs.net.au"
+  },
   "xn--mgbpl2fh": {
     "adapter": "none"
   },
@@ -6702,6 +6717,11 @@
   "xn--tckwe": {
     "_type": "newgtld",
     "host": "whois.nic.xn--tckwe"
+  },
+  "xn--tiq49xqyj": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
+    "host": "whois.aridnrs.net.au"
   },
   "xn--unup4y": {
     "_group": "donuts",
