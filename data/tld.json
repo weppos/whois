@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2016-11-26 11:28:05 UTC"
+    "updated": "2017-03-28 16:21:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3825,7 +3825,7 @@
     "adapter": "none"
   },
   "mq": {
-    "adapter": "web",
+    "host": "whois.mediaserv.net",
     "url": "https://www.dom-enic.com/whois.html"
   },
   "mr": {
