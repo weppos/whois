@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:26:22 UTC"
+    "updated": "2017-03-28 16:31:35 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -124,6 +124,11 @@
   "afl": {
     "_type": "newgtld",
     "host": "whois.nic.afl"
+  },
+  "africa": {
+    "_group": "zaregistry",
+    "_type": "newgtld",
+    "host": "africa-whois.registry.net.za"
   },
   "ag": {
     "host": "whois.nic.ag"
@@ -6534,6 +6539,10 @@
     "_group": "coreregistry",
     "_type": "newgtld",
     "host": "whois.bazaar.coreregistry.net"
+  },
+  "xn--mgbai9azgqp6j": {
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "xn--mgbayh7gpa": {
     "adapter": "web",
