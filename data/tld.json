@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:37:40 UTC"
+    "updated": "2017-03-28 16:46:26 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -725,6 +725,11 @@
     "_group": "nicfr",
     "_type": "newgtld",
     "host": "whois-bostik.nic.fr"
+  },
+  "boston": {
+    "_group": "mmregistry",
+    "_type": "newgtld",
+    "host": "whois.nic.boston"
   },
   "bot": {
     "_group": "amazonregistry",
@@ -1510,6 +1515,11 @@
     "_group": "unitedtld",
     "_type": "newgtld",
     "host": "whois.unitedtld.com"
+  },
+  "data": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
   },
   "date": {
     "_type": "newgtld",
@@ -2592,6 +2602,10 @@
   "gy": {
     "host": "whois.registry.gy"
   },
+  "hair": {
+    "_type": "newgtld",
+    "adapter": "none"
+  },
   "hamburg": {
     "_type": "newgtld",
     "host": "whois.nic.hamburg"
@@ -2742,6 +2756,11 @@
     "_group": "mmregistry",
     "_type": "newgtld",
     "host": "whois.nic.horse"
+  },
+  "hospital": {
+    "_group": "donuts",
+    "_type": "newgtld",
+    "host": "whois.donuts.co"
   },
   "host": {
     "_type": "newgtld",
@@ -3736,6 +3755,11 @@
     "_group": "afilias",
     "host": "whois.afilias.net"
   },
+  "mobile": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
+  },
   "mobily": {
     "_type": "newgtld",
     "adapter": "none"
@@ -4360,6 +4384,11 @@
     "_type": "newgtld",
     "host": "whois.nic.philips"
   },
+  "phone": {
+    "_group": "afiliassrs",
+    "_type": "newgtld",
+    "host": "whois.afilias-srs.net"
+  },
   "photo": {
     "_group": "uniregistry",
     "_type": "newgtld",
@@ -4768,6 +4797,11 @@
     "_group": "rightside",
     "_type": "newgtld",
     "host": "whois.rightside.co"
+  },
+  "rmit": {
+    "_group": "aridnrs",
+    "_type": "newgtld",
+    "host": "whois.aridnrs.net.au"
   },
   "ro": {
     "host": "whois.rotld.ro"
