@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-03-28 16:50:35 UTC"
+    "updated": "2017-04-27 07:47:41 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3876,7 +3876,7 @@
   "mtpc": {
     "_group": "gmo",
     "_type": "newgtld",
-    "host": "whois.nic.gmo"
+    "host": "whois.nic.mtpc"
   },
   "mtr": {
     "_type": "newgtld",
