@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-04-27 07:47:41 UTC"
+    "updated": "2017-04-27 10:37:55 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2785,6 +2785,10 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "hotels": {
+    "_type": "newgtld",
+    "adapter": "none"
+  },
   "hotmail": {
     "_type": "newgtld",
     "adapter": "none"
@@ -4848,6 +4852,11 @@
   },
   "edu.ru": {
     "host": "whois.informika.ru"
+  },
+  "rugby": {
+    "_group": "centralnic",
+    "_type": "newgtld",
+    "host": "whois.centralnic.com"
   },
   "ruhr": {
     "_type": "newgtld",
