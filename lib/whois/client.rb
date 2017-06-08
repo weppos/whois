@@ -59,10 +59,15 @@ module Whois
     #     c.lookup("google.com")
     #   end
     #
+    # @example Using a SOCKS proxy (requires socksify gem)
+    #   client = Whois::Client.new(:socks_server => "127.0.0.1", :socks_port => 4343)
+    #   client.query("google.com")
+    #
     # @example Binding the requests to a custom local IP
     #   client = Whois::Client.new(:bind_host => "127.0.0.1", :bind_port => 80)
     #   client.lookup("google.com")
     #
+    
     def initialize(settings = {})
       settings = settings.dup
 
