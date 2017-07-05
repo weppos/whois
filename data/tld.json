@@ -3890,11 +3890,6 @@
     "_type": "newgtld",
     "host": "whois.nic.mtn"
   },
-  "mtpc": {
-    "_group": "gmo",
-    "_type": "newgtld",
-    "host": "whois.nic.mtpc"
-  },
   "mtr": {
     "_type": "newgtld",
     "host": "whois.nic.mtr"
