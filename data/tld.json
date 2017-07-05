@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-05 09:05:31 UTC"
+    "updated": "2017-07-05 09:08:11 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -6578,6 +6578,10 @@
   "xn--mgba7c0bbn0a": {
     "_type": "newgtld",
     "host": "whois.nic.xn--mgba7c0bbn0a"
+  },
+  "xn--mgbaakc7dvf": {
+    "_group": "centralnic",
+    "host": "whois.centralnic.com"
   },
   "xn--mgbaam7a8h": {
     "host": "whois.aeda.net.ae"
