@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-05 09:17:09 UTC"
+    "updated": "2017-07-05 09:18:18 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -5391,9 +5391,9 @@
     "host": "whois.afilias-srs.net"
   },
   "storage": {
-    "_group": "afiliassrs",
+    "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.storage"
   },
   "store": {
     "_type": "newgtld",
