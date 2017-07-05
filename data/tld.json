@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-05 09:15:23 UTC"
+    "updated": "2017-07-05 09:17:09 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1900,6 +1900,10 @@
   },
   "et": {
     "adapter": "none"
+  },
+  "etisalat": {
+    "_group": "centralnic",
+    "host": "whois.centralnic.com"
   },
   "eu": {
     "host": "whois.eu"
