@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-05 09:08:11 UTC"
+    "updated": "2017-07-05 09:15:23 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3594,6 +3594,11 @@
     "_type": "newgtld",
     "host": "whois.mango.coreregistry.net"
   },
+  "map": {
+    "_group": "google",
+    "_type": "newgtld",
+    "host": "whois.nic.google"
+  },
   "market": {
     "_group": "rightside",
     "_type": "newgtld",
@@ -4393,6 +4398,11 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "phd": {
+    "_group": "google",
+    "_type": "newgtld",
+    "host": "whois.nic.google"
+  },
   "philips": {
     "_type": "newgtld",
     "host": "whois.nic.philips"
@@ -5039,6 +5049,11 @@
     "_group": "centralnic",
     "_type": "private",
     "host": "whois.centralnic.com"
+  },
+  "search": {
+    "_group": "google",
+    "_type": "newgtld",
+    "host": "whois.nic.google"
   },
   "seat": {
     "_type": "newgtld",
@@ -6249,6 +6264,10 @@
     "_type": "newgtld",
     "host": "whois.ngtld.cn"
   },
+  "xn--2scrj9c": {
+    "_type": "newgtld",
+    "adapter": "none"
+  },
   "xn--30rr7y": {
     "_group": "knet",
     "_type": "newgtld",
@@ -6279,6 +6298,10 @@
   "xn--42c2d9a": {
     "_type": "newgtld",
     "host": "whois.nic.xn--42c2d9a"
+  },
+  "xn--45br5cyl": {
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "xn--45brj9c": {
     "host": "whois.inregistry.net"
@@ -6499,8 +6522,16 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "xn--h2breg3eve": {
+    "_type": "newgtld",
+    "adapter": "none"
+  },
   "xn--h2brj9c": {
     "host": "whois.inregistry.net"
+  },
+  "xn--h2brj9c8c": {
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "xn--hxt814e": {
     "_type": "newgtld",
@@ -6603,6 +6634,10 @@
     "_type": "newgtld",
     "adapter": "none"
   },
+  "xn--mgbbh1a": {
+    "_type": "newgtld",
+    "adapter": "none"
+  },
   "xn--mgbbh1a71e": {
     "host": "whois.inregistry.net"
   },
@@ -6616,6 +6651,10 @@
   },
   "xn--mgberp4a5d4ar": {
     "host": "whois.nic.net.sa"
+  },
+  "xn--mgbgu82a": {
+    "_type": "newgtld",
+    "adapter": "none"
   },
   "xn--mgbi4ecexp": {
     "_group": "aridnrs",
@@ -6717,6 +6756,10 @@
   },
   "xn--rovu88b": {
     "_group": "amazonregistry",
+    "_type": "newgtld",
+    "adapter": "none"
+  },
+  "xn--rvc1e0am3e": {
     "_type": "newgtld",
     "adapter": "none"
   },
