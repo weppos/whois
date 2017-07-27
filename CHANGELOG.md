@@ -2,6 +2,10 @@
 
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
+#### master
+
+- FIXED: Updated Verisign adapter to properly detect the new label for referral servers (GH-559)
+
 #### Release 4.0.2
 
 - SERVER: Added .AFRICA, .XN--MGBAI9AZGQP6J, .FUN, .RMIT, .HOSPITAL, .BOSTON, .DATA, .MOBILE, .PHONE, .HAIR, .LADBROKES, .CATHOLIC, .XN--80AQECDR1A, .XN--MGBI4ECEXP, .XN--TIQ49XQYJ, .RUGBY, .HOTELS, .GROCERY, .XN--MGBAAKC7DVF, .MAP, .PHD, .SEARCH, .XN--2SCRJ9C, .XN--45BR5CYL, .XN--H2BREG3EVE, .XN--H2BRJ9C8C, .XN--MGBBH1A, .XN--MGBGU82A, .XN--RVC1E0AM3E, .ETISALAT
