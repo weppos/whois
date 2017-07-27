@@ -39,11 +39,9 @@ module Whois
         private
 
         def extract_referral(response)
-          if response =~ /Domain Name:/
-            server = response.scan(/Registrar WHOIS Server:(.+?)$/i).flatten.last
-            server.strip! if server != nil
-            server
-          end
+          return unless (match = response.match(/Registrar WHOIS Server:(.+?)$/))
+          server = match[match.size - 1].strip
+          server.empty? ? nil : server
         end
 
       end

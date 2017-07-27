@@ -29,7 +29,7 @@ module Whois
           response = query_the_socket(string, host)
           buffer_append response, host
 
-          if options[:referral] != false && referral = extract_referral(response)
+          if options[:referral] != false && (referral = extract_referral(response))
             response = query_the_socket(string, referral)
             buffer_append(response, referral)
           end
@@ -39,9 +39,9 @@ module Whois
         private
 
         def extract_referral(response)
-          if response =~ /Domain Name:/
-            response.slice(/Whois Server:(\S+)/, 1)
-          end
+          return unless (match = response.match(/Registrar WHOIS Server:(.+?)$/))
+          server = match[match.size - 1].strip
+          server.empty? ? nil : server
         end
 
       end
