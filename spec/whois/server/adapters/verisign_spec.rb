@@ -34,15 +34,6 @@ describe Whois::Server::Adapters::Verisign do
         expect(record.parts).to eq([Whois::Record::Part.new(body: referral, host: "whois.test"), Whois::Record::Part.new(body: response, host: "whois.markmonitor.com")])
       end
 
-      it "ignores referral if is not defined" do
-        referral = File.read(fixture("referrals/crsnic.com_referral_not_defined.txt"))
-        expect(server.query_handler).to receive(:call).with("=example.test", "whois.test", 43).and_return(referral)
-        expect(server.query_handler).to receive(:call).never
-
-        record = server.lookup("example.test")
-        expect(record.parts.size).to eq(1)
-      end
-
       it "ignores referral if options[:referral] is false" do
         referral = File.read(fixture("referrals/crsnic.com.txt"))
         server.options[:referral] = false

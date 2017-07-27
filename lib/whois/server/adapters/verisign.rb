@@ -42,7 +42,6 @@ module Whois
           if response =~ /Domain Name:/
             server = response.scan(/Registrar WHOIS Server:(.+?)$/i).flatten.last
             server.strip! if server != nil
-            server = nil  if server == "not defined"
             server
           end
         end
