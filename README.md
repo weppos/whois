@@ -9,9 +9,9 @@ This library was extracted from [RoboWhois](https://robowhois.com/) and [RoboDom
 
 ## Donate a coffee
 
-<p id="pledgie" class="alignright"><a href="https://pledgie.com/campaigns/11383"><img alt="Click here to lend your support to: whois and make a donation at pledgie.com !" src="https://pledgie.com/campaigns/11383.png?skin_name=chrome" border="0" style="max-width:100%;"></a></p>
+<tt>Whois</tt> is free software, but it requires a lot of coffee to write, test, and distribute it. You can support the development by [donating a coffee](https://whoisrb.org/contribute/#donate).
 
-<tt>Whois</tt> is free software, but it requires a lot of coffee to write, test, and distribute it. You can support the development by [donating a coffee](https://pledgie.com/campaigns/11383).
+Any amount is greatly appreciated.
 
 
 ## Features
