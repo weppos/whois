@@ -2,7 +2,7 @@
 
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
-#### master
+#### Release 4.0.3
 
 - FIXED: Updated Verisign adapter to properly detect the new label for referral servers (GH-559)
 
