@@ -3933,7 +3933,7 @@
   },
   "nagoya": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.nagoya"
   },
   "name": {
     "host": "whois.nic.name",
@@ -4184,7 +4184,7 @@
   },
   "okinawa": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.okinawa"
   },
   "olayan": {
     "_type": "newgtld",
@@ -4889,7 +4889,7 @@
   },
   "ryukyu": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.ryukyu"
   },
   "sa": {
     "host": "whois.nic.net.sa"
@@ -5688,7 +5688,7 @@
   },
   "tokyo": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.tokyo"
   },
   "tools": {
     "_group": "donuts",
@@ -6890,7 +6890,7 @@
   },
   "yokohama": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.yokohama"
   },
   "you": {
     "_group": "amazonregistry",
