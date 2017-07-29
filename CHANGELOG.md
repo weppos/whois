@@ -6,7 +6,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 #### master
 
 - SERVER: Added .MERCKMSD
-- SERVER: Updated .KOSHER, .LDS, .BESTBUY, .DUNLOP, .GOODYEAR
+- SERVER: Updated .KOSHER, .LDS, .BESTBUY, .DUNLOP, .GOODYEAR, .TVS, .BNL
 
 
 #### Release 4.0.3

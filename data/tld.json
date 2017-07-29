@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:23:33 UTC"
+    "updated": "2017-07-29 16:26:23 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -666,7 +666,7 @@
   "bnl": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.bnl"
   },
   "bnpparibas": {
     "_group": "afiliassrs",
@@ -5808,7 +5808,7 @@
   "tvs": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.tvs"
   },
   "tw": {
     "host": "whois.twnic.net.tw"
