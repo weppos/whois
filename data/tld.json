@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:29:31 UTC"
+    "updated": "2017-07-29 16:31:31 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1600,7 +1600,7 @@
   "delta": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.delta"
   },
   "democrat": {
     "_group": "unitedtld",
@@ -5355,7 +5355,7 @@
   "star": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.star"
   },
   "starhub": {
     "_type": "newgtld",
@@ -6709,7 +6709,7 @@
   "xn--nqv7fs00ema": {
     "_group": "publicinterestregistry",
     "_type": "newgtld",
-    "host": "whois.publicinterestregistry.net"
+    "host": "whois.nic.xn--nqv7fs00ema"
   },
   "xn--nyqy26a": {
     "_type": "newgtld",
