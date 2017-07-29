@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:21:22 UTC"
+    "updated": "2017-07-29 16:23:33 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -559,7 +559,7 @@
   "bestbuy": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.bestbuy"
   },
   "bet": {
     "_group": "afilias",
@@ -1760,7 +1760,7 @@
   "dunlop": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.dunlop"
   },
   "duns": {
     "_type": "newgtld",
@@ -2500,7 +2500,7 @@
   "goodyear": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.goodyear"
   },
   "goog": {
     "_group": "google",
