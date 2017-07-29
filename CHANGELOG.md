@@ -2,9 +2,16 @@
 
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
+
+#### master
+
+- SERVER: Added .MERCKMSD
+
+
 #### Release 4.0.3
 
 - FIXED: Updated Verisign adapter to properly detect the new label for referral servers (GH-559)
+
 
 #### Release 4.0.2
 
@@ -12,10 +19,12 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 - SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY, .GF, .KG, .STORAGE, .BIBLE
 - SERVER: Deleted .IINET, .MUTUELLE, .FLSMIDTH, .MTPC
 
+
 #### Release 4.0.1
 
 - SERVER: Added .FREE, .HK.COM, .HK.ORG, .LTD.HK, .INC.HK, .BOX, .CRUISE, .FOOD, .JIO, .MOTO, .RELIANCE, .RIL
 - SERVER: Updated .ONLINE, .SITE, .STC, .STCGROUP
+
 
 #### Release 4.0.0
 

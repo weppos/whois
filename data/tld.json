@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-05 09:20:23 UTC"
+    "updated": "2017-07-29 16:08:07 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3700,6 +3700,10 @@
     "host": "whois.nic.menu"
   },
   "meo": {
+    "_type": "newgtld",
+    "adapter": "none"
+  },
+  "merckmsd": {
     "_type": "newgtld",
     "adapter": "none"
   },
