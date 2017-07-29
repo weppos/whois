@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:31:31 UTC"
+    "updated": "2017-07-29 16:34:59 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -204,7 +204,7 @@
   "ally": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.ally"
   },
   "alsace": {
     "_group": "nicfr",
@@ -517,7 +517,7 @@
   "bcg": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.bcg"
   },
   "bcn": {
     "_type": "newgtld",
@@ -632,7 +632,7 @@
   "blockbuster": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.blockbuster"
   },
   "blog": {
     "_type": "newgtld",
@@ -952,12 +952,12 @@
   "case": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.case"
   },
   "caseih": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.caseih"
   },
   "cash": {
     "_group": "donuts",
@@ -1162,7 +1162,7 @@
   "clinique": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.clinique"
   },
   "clothing": {
     "_group": "donuts",
@@ -1461,7 +1461,7 @@
   "cruise": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.cruise"
   },
   "cruises": {
     "_group": "donuts",
@@ -1501,7 +1501,7 @@
   "cyou": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.cyou"
   },
   "cz": {
     "host": "whois.nic.cz"
@@ -1524,7 +1524,7 @@
   "data": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.data"
   },
   "date": {
     "_type": "newgtld",
@@ -1672,7 +1672,7 @@
   "dish": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.dish"
   },
   "diy": {
     "_type": "newgtld",
@@ -1733,7 +1733,7 @@
   "dot": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.dot"
   },
   "download": {
     "_type": "newgtld",
@@ -1747,7 +1747,7 @@
   "dtv": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.dtv"
   },
   "dubai": {
     "_type": "newgtld",
@@ -2006,7 +2006,7 @@
   "fedex": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.fedex"
   },
   "feedback": {
     "_group": "centralnic",
@@ -2016,7 +2016,7 @@
   "ferrari": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.ferrari"
   },
   "ferrero": {
     "_type": "newgtld",
@@ -2320,7 +2320,7 @@
   "gallup": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.gallup"
   },
   "game": {
     "_group": "uniregistry",
@@ -2664,7 +2664,7 @@
   "helsinki": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.helsinki"
   },
   "here": {
     "_group": "google",
@@ -2848,7 +2848,7 @@
   "icbc": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.icbc"
   },
   "ice": {
     "_type": "newgtld",
@@ -3629,7 +3629,7 @@
   "maserati": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.maserati"
   },
   "mattel": {
     "_type": "newgtld",
@@ -3654,7 +3654,7 @@
   "mckinsey": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.mckinsey"
   },
   "md": {
     "host": "whois.nic.md"
@@ -3821,7 +3821,7 @@
   "monster": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.monster"
   },
   "montblanc": {
     "_type": "newgtld",
@@ -3835,7 +3835,7 @@
   "mormon": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.mormon"
   },
   "mortgage": {
     "_group": "rightside",
@@ -6335,8 +6335,10 @@
     "host": "whois.nic.xn--5su34j936bgsg"
   },
   "xn--5tzm5g": {
+    "_group": "afiliassrs",
     "_type": "newgtld",
-    "adapter": "none"
+    "adapter": "none",
+    "host": "whois.nic.xn--5tzm5g"
   },
   "xn--6frz82g": {
     "_group": "afilias",
@@ -6460,7 +6462,7 @@
   "xn--estv75g": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.xn--estv75g"
   },
   "xn--fct429k": {
     "_group": "amazonregistry",
