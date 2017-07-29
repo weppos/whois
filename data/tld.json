@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:08:07 UTC"
+    "updated": "2017-07-29 16:21:22 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3213,7 +3213,7 @@
   "kosher": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.kosher"
   },
   "kp": {
     "adapter": "none"
@@ -3343,7 +3343,7 @@
   "lds": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.lds"
   },
   "lease": {
     "_group": "donuts",
