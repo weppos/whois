@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:26:23 UTC"
+    "updated": "2017-07-29 16:29:31 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2742,7 +2742,7 @@
   "homedepot": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.homedepot"
   },
   "homegoods": {
     "_type": "newgtld",
@@ -2831,7 +2831,7 @@
   "hughes": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.hughes"
   },
   "hyatt": {
     "_type": "newgtld",
@@ -3018,7 +3018,7 @@
   "iveco": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.iveco"
   },
   "iwc": {
     "_type": "newgtld",
@@ -3275,7 +3275,7 @@
   "lamer": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.lamer"
   },
   "lancaster": {
     "_group": "nicfr",
@@ -3316,7 +3316,7 @@
   "latino": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.latino"
   },
   "latrobe": {
     "_type": "newgtld",
@@ -3470,7 +3470,7 @@
   "locker": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.locker"
   },
   "locus": {
     "_type": "newgtld",
@@ -3710,7 +3710,7 @@
   "metlife": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.metlife"
   },
   "mg": {
     "host": "whois.nic.mg"
@@ -3784,7 +3784,7 @@
   "mobile": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.mobile"
   },
   "mobily": {
     "_type": "newgtld",
@@ -4034,7 +4034,7 @@
   "newholland": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.newholland"
   },
   "news": {
     "_group": "rightside",
@@ -4205,7 +4205,7 @@
   "ollo": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.ollo"
   },
   "om": {
     "host": "whois.registry.om"
@@ -4295,7 +4295,7 @@
   "origins": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.origins"
   },
   "osaka": {
     "_type": "newgtld",
@@ -4308,7 +4308,7 @@
   "ott": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.ott"
   },
   "ovh": {
     "_group": "nicfr",
@@ -4413,7 +4413,7 @@
   "phone": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.phone"
   },
   "photo": {
     "_group": "uniregistry",
@@ -4526,7 +4526,7 @@
   "pnc": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.pnc"
   },
   "pohl": {
     "_group": "ksregistry",
@@ -4979,7 +4979,7 @@
   "sbi": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.sbi"
   },
   "sbs": {
     "_type": "newgtld",
@@ -5009,7 +5009,7 @@
   "scholarships": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.scholarships"
   },
   "school": {
     "_group": "donuts",
@@ -5236,7 +5236,7 @@
   "sling": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.sling"
   },
   "sm": {
     "host": "whois.nic.sm"
@@ -5364,7 +5364,7 @@
   "statebank": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.statebank"
   },
   "statefarm": {
     "_type": "newgtld",
@@ -5603,7 +5603,7 @@
   "thd": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.thd"
   },
   "theater": {
     "_group": "donuts",
@@ -5895,7 +5895,7 @@
   "ups": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.ups"
   },
   "us": {
     "host": "whois.nic.us"
@@ -6193,7 +6193,7 @@
   "wolterskluwer": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.wolterskluwer"
   },
   "woodside": {
     "_type": "newgtld",
