@@ -152,7 +152,7 @@ parser.registered?
 parser.created_on
 # => Fri Dec 10 00:00:00 +0100 1999
 
-tech = parser.technical_contact
+tech = parser.technical_contacts.first
 # => #<Whois::Record::Contact>
 tech.id
 # => "TS7016-ITNIC"
