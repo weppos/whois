@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-08-09 09:33:57 UTC"
+    "updated": "2017-08-09 09:35:50 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -6569,7 +6569,7 @@
   "xn--jlq61u9w7b": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.xn--jlq61u9w7b"
   },
   "xn--jvr189m": {
     "_group": "amazonregistry",
