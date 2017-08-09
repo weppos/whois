@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-07-29 16:34:59 UTC"
+    "updated": "2017-08-09 09:33:57 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -184,12 +184,12 @@
   "alibaba": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.alibaba"
   },
   "alipay": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.alipay"
   },
   "allfinanz": {
     "_group": "ksregistry",
@@ -2640,7 +2640,7 @@
   "hdfc": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.hdfc"
   },
   "hdfcbank": {
     "_group": "afiliassrs",
@@ -5195,7 +5195,7 @@
   "sina": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.sina"
   },
   "singles": {
     "_group": "donuts",
@@ -6143,7 +6143,7 @@
   "weibo": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.weibo"
   },
   "weir": {
     "_type": "newgtld",
@@ -6397,7 +6397,7 @@
   "xn--9krt00a": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.xn--9krt00a"
   },
   "xn--b4w605ferd": {
     "_group": "afiliassrs",
