@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-08-09 09:35:50 UTC"
+    "updated": "2017-10-03 13:14:47 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -6811,7 +6811,7 @@
   "xn--vuq861b": {
     "_group": "ngtld",
     "_type": "newgtld",
-    "host": "whois.ngtld.cn"
+    "host": "whois.teleinfo.cn"
   },
   "xn--w4r85el8fhu5dnra": {
     "_type": "newgtld",
