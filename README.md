@@ -170,9 +170,9 @@ If you create a new parser, please consider releasing it to the public so that i
 
 ### Timeout
 
-By default, each query run though the client has a timeout value of 5 seconds. If the execution exceeds timeout limit, the client raises a `Timeout::Error` exception.
+By default, each query run though the client has a timeout value of 5 seconds. If the execution exceeds the timeout limit, the client raises a `Timeout::Error` exception.
 
-Of course, you can customize the timeout value setting a different value. If timeout is `nil`, the client will until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know you are doing!
+Of course, you can customize the timeout value setting a different value. If timeout is `nil`, the client will wait until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know what you are doing!
 
 ```ruby
 whois = Whois::Client.new(:timeout => 10)
