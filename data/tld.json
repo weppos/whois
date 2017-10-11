@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-10-03 13:14:47 UTC"
+    "updated": "2017-10-11 07:17:45 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2645,7 +2645,7 @@
   "hdfcbank": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.hdfcbank"
   },
   "health": {
     "_type": "newgtld",
@@ -4725,7 +4725,7 @@
   "reliance": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.reliance"
   },
   "ren": {
     "_type": "newgtld",
@@ -4800,7 +4800,7 @@
   "ril": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.ril"
   },
   "rio": {
     "_group": "nicbr",
