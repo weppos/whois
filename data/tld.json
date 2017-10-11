@@ -4316,10 +4316,6 @@
     "_type": "newgtld",
     "host": "whois.nic.google"
   },
-  "pamperedchef": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "panasonic": {
     "_group": "gmo",
     "_type": "newgtld",
