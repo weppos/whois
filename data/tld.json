@@ -3643,14 +3643,6 @@
   "mc": {
     "adapter": "none"
   },
-  "mcd": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
-  "mcdonalds": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "mckinsey": {
     "_group": "afiliassrs",
     "_type": "newgtld",
