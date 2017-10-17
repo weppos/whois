@@ -1071,10 +1071,6 @@
     "_type": "newgtld",
     "host": "whois.nic.chintai"
   },
-  "chloe": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "christmas": {
     "_group": "uniregistry",
     "_type": "newgtld",
