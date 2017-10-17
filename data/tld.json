@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-10-11 07:22:16 UTC"
+    "updated": "2017-10-17 08:14:20 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2716,7 +2716,7 @@
   "hkt": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.hkt"
   },
   "hm": {
     "host": "whois.registry.hm"
@@ -2859,7 +2859,7 @@
     "host": "whois.nic.icu"
   },
   "id": {
-    "host": "whois.pandi.or.id"
+    "host": "whois.id"
   },
   "ie": {
     "host": "whois.domainregistry.ie"
@@ -3063,7 +3063,7 @@
   "jio": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.jio"
   },
   "jlc": {
     "_type": "newgtld",
@@ -4129,7 +4129,7 @@
   "nowtv": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.nowtv"
   },
   "np": {
     "adapter": "web",
@@ -4362,7 +4362,7 @@
   "pccw": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.pccw"
   },
   "pe": {
     "host": "kero.yachay.pe"
@@ -4788,7 +4788,7 @@
   "richardli": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.richardli"
   },
   "ricoh": {
     "_type": "newgtld",
@@ -6281,7 +6281,7 @@
   "xn--3oq18vl8pn36a": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.xn--3oq18vl8pn36a"
   },
   "xn--3pxu8k": {
     "_type": "newgtld",
@@ -6496,7 +6496,7 @@
   "xn--fzys8d69uvgm": {
     "_group": "afiliassrs",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.xn--fzys8d69uvgm"
   },
   "xn--g2xx48c": {
     "_group": "afiliassrs",
