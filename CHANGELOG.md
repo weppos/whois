@@ -3,11 +3,12 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
-#### master
+#### Release 4.0.5
 
 - SERVER: Updated .ALIBABA, .ALIPAY, .HDFC, .SINA, .WEIBO, .XN--9KRT00A, .XN--JLQ61U9W7B
 
 - SERVER: Deleted .MCD, .MCDONALDS, .PAMPEREDCHEF, .MONTBLANK, .CHLOE
+
 
 #### Release 4.0.4
 
