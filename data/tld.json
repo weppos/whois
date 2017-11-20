@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-10-17 08:14:20 UTC"
+    "updated": "2017-11-20 14:13:39 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3891,7 +3891,7 @@
     "host": "whois.nic.mu"
   },
   "museum": {
-    "host": "whois.museum"
+    "host": "whois.nic.museum"
   },
   "mutual": {
     "_type": "newgtld",
