@@ -2817,10 +2817,6 @@
   "ht": {
     "host": "whois.nic.ht"
   },
-  "htc": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "hu": {
     "host": "whois.nic.hu"
   },
