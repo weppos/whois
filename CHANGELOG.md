@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Updated .MUSEUM
+- SERVER: Updated .MUSEUM, .MR
 - SERVER: Deleted .HTC
 
 

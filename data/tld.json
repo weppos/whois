@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2017-11-20 14:13:39 UTC"
+    "updated": "2018-03-06 15:00:43 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3862,7 +3862,8 @@
     "host": "whois.mediaserv.net"
   },
   "mr": {
-    "adapter": "none"
+    "adapter": "none",
+    "host": "whois.nic.mr"
   },
   "ms": {
     "host": "whois.nic.ms"
