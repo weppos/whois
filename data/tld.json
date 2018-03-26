@@ -2353,8 +2353,7 @@
     "host": "whois.nic.gdn"
   },
   "ge": {
-    "adapter": "web",
-    "url": "http://www.registration.ge/"
+    "host": "whois.registration.ge"
   },
   "gea": {
     "_group": "afiliassrs",
