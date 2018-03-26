@@ -5,8 +5,8 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Added .SPORT, .LLC
-- SERVER: Updated .MUSEUM, .MR, .PR, .AI, .SMART, .BAIDU, .GE
+- SERVER: Added .SPORT, .LLC, .FM (GH-568)
+- SERVER: Updated .MUSEUM, .MR, .PR, .AI, .SMART, .BAIDU, .GE, several newGTLDs
 - SERVER: Deleted .HTC
 
 
