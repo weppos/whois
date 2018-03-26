@@ -43,7 +43,7 @@ For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 You can install the gem manually:
 
 ```shell
-$ gem install whois
+gem install whois
 ```
 
 Or use [Bundler](http://bundler.io/) and define it as a dependency in your `Gemfile`:
@@ -55,7 +55,7 @@ gem 'whois'
 To use the WHOIS parser component you need to install the `whois-parser` gem:
 
 ```shell
-$ gem install whois-parser
+gem install whois-parser
 ```
 
 ```ruby
@@ -213,4 +213,4 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 
 ## License
 
-Copyright (c) 2009-2017 [Simone Carletti](https://simonecarletti.com/). This is Free Software distributed under the MIT license.
+Copyright (c) 2009-2018 [Simone Carletti](https://simonecarletti.com/). This is Free Software distributed under the MIT license.
