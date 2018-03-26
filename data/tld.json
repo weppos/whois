@@ -2122,8 +2122,7 @@
     "host": "whois.nic.google"
   },
   "fm": {
-    "adapter": "web",
-    "url": "http://dot.fm/whois.html"
+    "host": "whois.nic.fm"
   },
   "fo": {
     "host": "whois.nic.fo"
