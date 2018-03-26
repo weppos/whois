@@ -5,7 +5,8 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Updated .MUSEUM, .MR
+- SERVER: Added .SPORT, .LLC
+- SERVER: Updated .MUSEUM, .MR, .PR, .AI, .SMART, .BAIDU
 - SERVER: Deleted .HTC
 
 

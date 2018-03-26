@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-03-06 15:00:43 UTC"
+    "updated": "2018-03-26 12:59:40 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -144,7 +144,7 @@
     "host": "whois.donuts.co"
   },
   "ai": {
-    "host": "whois.ai"
+    "host": "whois.nic.ai"
   },
   "aig": {
     "_type": "newgtld",
@@ -298,7 +298,7 @@
     "adapter": "none"
   },
   "archi": {
-    "_group": "ksregistry",
+    "_group": "afilias",
     "_type": "newgtld",
     "host": "whois.afilias.net"
   },
@@ -434,9 +434,9 @@
     "adapter": "none"
   },
   "baidu": {
-    "_group": "ngtld",
+    "_group": "knet",
     "_type": "newgtld",
-    "host": "whois.ngtld.cn"
+    "host": "whois.gtld.knet.cn"
   },
   "banamex": {
     "_type": "newgtld",
@@ -3451,6 +3451,11 @@
   "lk": {
     "host": "whois.nic.lk"
   },
+  "llc": {
+    "_group": "afilias",
+    "_type": "newgtld",
+    "host": "whois.afilias.net"
+  },
   "loan": {
     "_type": "newgtld",
     "host": "whois.nic.loan"
@@ -4533,7 +4538,8 @@
     "host": "whois.dotpostregistry.net"
   },
   "pr": {
-    "host": "whois.nic.pr"
+    "_group": "afiliassrs",
+    "host": "whois.afilias-srs.net"
   },
   "pramerica": {
     "_type": "newgtld",
@@ -5224,8 +5230,9 @@
     "host": "whois.nic.sm"
   },
   "smart": {
+    "_group": "centralnic",
     "_type": "newgtld",
-    "host": "whois-gtld.smart.com.ph"
+    "host": "whois.nic.smart"
   },
   "smile": {
     "_group": "amazonregistry",
@@ -5299,6 +5306,10 @@
     "_group": "ksregistry",
     "_type": "newgtld",
     "host": "whois.ksregistry.net"
+  },
+  "sport": {
+    "_type": "newgtld",
+    "host": "whois.nic.sport"
   },
   "spot": {
     "_group": "amazonregistry",
@@ -6704,6 +6715,9 @@
   },
   "xn--ogbpf8fl": {
     "host": "whois.tld.sy"
+  },
+  "xn--otu796d": {
+    "adapter": "none"
   },
   "xn--p1acf": {
     "_type": "newgtld",
