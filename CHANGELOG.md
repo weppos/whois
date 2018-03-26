@@ -3,7 +3,7 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
-#### master
+#### Release 4.0.6
 
 - SERVER: Added .SPORT, .LLC, .FM (GH-568)
 - SERVER: Updated .MUSEUM, .MR, .PR, .AI, .SMART, .BAIDU, .GE, several newGTLDs
