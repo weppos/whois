@@ -713,10 +713,6 @@
     "_type": "newgtld",
     "adapter": "none"
   },
-  "boots": {
-    "_type": "newgtld",
-    "host": "whois.nic.boots"
-  },
   "bosch": {
     "_type": "newgtld",
     "host": "whois.nic.bosch"
