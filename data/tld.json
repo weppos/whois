@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-03-26 13:29:17 UTC"
+    "updated": "2018-06-07 16:47:10 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3684,10 +3684,6 @@
     "_type": "newgtld",
     "host": "whois.nic.menu"
   },
-  "meo": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "merckmsd": {
     "_type": "newgtld",
     "adapter": "none"
@@ -4932,10 +4928,6 @@
   "sap": {
     "_type": "newgtld",
     "host": "whois.nic.sap"
-  },
-  "sapo": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "sarl": {
     "_group": "donuts",
