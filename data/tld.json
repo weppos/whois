@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-06-07 16:47:10 UTC"
+    "updated": "2018-06-07 16:50:32 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1907,7 +1907,7 @@
   "eus": {
     "_group": "coreregistry",
     "_type": "newgtld",
-    "host": "whois.eus.coreregistry.net"
+    "host": "whois.nic.eus"
   },
   "events": {
     "_group": "donuts",
@@ -2297,7 +2297,7 @@
   "gal": {
     "_group": "coreregistry",
     "_type": "newgtld",
-    "host": "whois.gal.coreregistry.net"
+    "host": "whois.nic.gal"
   },
   "gallery": {
     "_group": "donuts",
@@ -5015,7 +5015,7 @@
   "scot": {
     "_group": "coreregistry",
     "_type": "newgtld",
-    "host": "whois.scot.coreregistry.net"
+    "host": "whois.nic.scot"
   },
   "sd": {
     "adapter": "none"
