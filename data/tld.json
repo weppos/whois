@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-07-19 16:35:31 UTC"
+    "updated": "2018-07-19 16:36:18 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -356,7 +356,7 @@
     "host": "whois.nic.attorney"
   },
   "au": {
-    "host": "whois.audns.net.au"
+    "host": "whois.auda.org.au"
   },
   "auction": {
     "_group": "donuts",
