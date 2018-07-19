@@ -6,6 +6,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 #### master
 
 - SERVER: Updated .COLOGNE, KOELN
+- SERVER: Deleted .IWC
 
 
 #### Release 4.0.6

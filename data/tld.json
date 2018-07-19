@@ -3006,10 +3006,6 @@
     "_type": "newgtld",
     "host": "whois.nic.iveco"
   },
-  "iwc": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "jaguar": {
     "_type": "newgtld",
     "host": "whois.nic.jaguar"
