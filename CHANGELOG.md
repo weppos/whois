@@ -6,7 +6,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 #### master
 
 - SERVER: Added .CHARITY
-- SERVER: Updated .COLOGNE, KOELN
+- SERVER: Updated .COLOGNE, .KOELN, .IE
 - SERVER: Deleted .IWC
 
 

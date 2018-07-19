@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-07-19 16:34:49 UTC"
+    "updated": "2018-07-19 16:35:31 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2853,7 +2853,7 @@
     "host": "whois.id"
   },
   "ie": {
-    "host": "whois.domainregistry.ie"
+    "host": "whois.iedr.ie"
   },
   "ieee": {
     "_type": "newgtld",
