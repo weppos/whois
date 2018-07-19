@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Added .CHARITY
+- SERVER: Added .CHARITY, .INC
 - SERVER: Updated .COLOGNE, .KOELN, .IE, .AU
 - SERVER: Deleted .IWC
 
