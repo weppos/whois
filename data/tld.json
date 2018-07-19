@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-07-19 16:33:53 UTC"
+    "updated": "2018-07-19 16:34:49 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1972,7 +1972,7 @@
     "host": "whois.nic.family"
   },
   "fan": {
-    "_group": "centralnic",
+    "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.nic.fan"
   },
