@@ -9,5 +9,5 @@
 
 module Whois
   # The current library version.
-  VERSION = "4.0.6".freeze
+  VERSION = "4.0.7".freeze
 end

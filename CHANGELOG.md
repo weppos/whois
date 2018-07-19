@@ -3,7 +3,7 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
-#### master
+#### Release 4.0.7
 
 - SERVER: Added .CHARITY, .INC
 - SERVER: Updated .COLOGNE, .KOELN, .IE, .AU
