@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-07-19 16:30:04 UTC"
+    "updated": "2018-07-19 16:33:53 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1048,6 +1048,11 @@
     "_group": "google",
     "_type": "newgtld",
     "host": "whois.nic.google"
+  },
+  "charity": {
+    "_group": "donuts",
+    "_type": "newgtld",
+    "host": "whois.nic.charity"
   },
   "chase": {
     "_type": "newgtld",
