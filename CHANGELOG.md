@@ -3,6 +3,11 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+#### master
+
+- SERVER: Updated .COLOGNE, KOELN
+
+
 #### Release 4.0.6
 
 - SERVER: Added .SPORT, .LLC, .FM (GH-568)

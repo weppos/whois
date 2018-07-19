@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-06-07 16:50:32 UTC"
+    "updated": "2018-07-19 16:30:04 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1207,7 +1207,7 @@
   "cologne": {
     "_group": "knipp",
     "_type": "newgtld",
-    "host": "whois-fe1.pdt.cologne.tango.knipp.de"
+    "host": "whois.ryce-rsp.com"
   },
   "com": {
     "host": "whois.verisign-grs.com",
@@ -3192,7 +3192,7 @@
   "koeln": {
     "_group": "knipp",
     "_type": "newgtld",
-    "host": "whois-fe1.pdt.koeln.tango.knipp.de"
+    "host": "whois.ryce-rsp.com"
   },
   "komatsu": {
     "_type": "newgtld",
