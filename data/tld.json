@@ -6840,10 +6840,6 @@
     "_type": "newgtld",
     "host": "whois.conac.cn"
   },
-  "xperia": {
-    "_type": "newgtld",
-    "host": "whois.nic.xperia"
-  },
   "xxx": {
     "host": "whois.nic.xxx"
   },

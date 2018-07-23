@@ -3,6 +3,11 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+#### master
+
+- SERVER: Deleted .XPERIA
+
+
 #### Release 4.0.7
 
 - SERVER: Added .CHARITY, .INC
