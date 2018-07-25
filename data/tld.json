@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-07-19 16:37:10 UTC"
+    "updated": "2018-07-25 14:06:19 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3595,7 +3595,7 @@
   "mango": {
     "_group": "coreregistry",
     "_type": "newgtld",
-    "host": "whois.mango.coreregistry.net"
+    "host": "whois.nic.mango"
   },
   "map": {
     "_group": "google",
