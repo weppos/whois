@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### master
 
-- SERVER: Deleted .XPERIA
+- SERVER: Deleted .XPERIA, .TELECITY, .VISTA, .JLC, .PANERAI, .GOODHANDS
 
 
 #### Release 4.0.7

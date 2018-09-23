@@ -2487,11 +2487,6 @@
     "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
-  "goodhands": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
-  },
   "goodyear": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -3057,10 +3052,6 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.nic.jio"
-  },
-  "jlc": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "jll": {
     "_group": "afiliassrs",
@@ -4317,10 +4308,6 @@
     "_type": "newgtld",
     "host": "whois.nic.gmo"
   },
-  "panerai": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "paris": {
     "_group": "nicfr",
     "_type": "newgtld",
@@ -5554,10 +5541,6 @@
   "tel": {
     "host": "whois.nic.tel"
   },
-  "telecity": {
-    "_type": "newgtld",
-    "host": "whois.nic.telecity"
-  },
   "telefonica": {
     "_group": "knipp",
     "_type": "newgtld",
@@ -5996,10 +5979,6 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.nic.vision"
-  },
-  "vista": {
-    "_type": "newgtld",
-    "host": "whois.nic.vista"
   },
   "vistaprint": {
     "_type": "newgtld",
