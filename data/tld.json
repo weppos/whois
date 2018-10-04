@@ -5125,7 +5125,7 @@
   },
   "shop": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.shop"
   },
   "shopping": {
     "_group": "donuts",
