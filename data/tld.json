@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-10-05 11:37:44 UTC"
+    "updated": "2018-10-05 11:43:46 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -4257,9 +4257,9 @@
     "host": "whois.za.org"
   },
   "organic": {
-    "_group": "afiliassrs",
+    "_group": "afilias",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.afilias.net"
   },
   "orientexpress": {
     "_group": "afiliassrs",
