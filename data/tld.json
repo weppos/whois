@@ -5343,10 +5343,6 @@
     "_type": "newgtld",
     "adapter": "none"
   },
-  "statoil": {
-    "_type": "newgtld",
-    "host": "whois.nic.statoil"
-  },
   "stc": {
     "_group": "centralnic",
     "_type": "newgtld",
