@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2018-10-05 11:43:46 UTC"
+    "updated": "2019-02-21 09:08:29 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -3883,8 +3883,7 @@
     "adapter": "none"
   },
   "mw": {
-    "adapter": "web",
-    "url": "http://www.registrar.mw/"
+    "host": "whois.nic.mw"
   },
   "mx": {
     "host": "whois.nic.mx"
