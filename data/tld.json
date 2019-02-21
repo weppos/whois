@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-02-21 09:11:24 UTC"
+    "updated": "2019-02-21 09:12:28 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -6573,6 +6573,9 @@
     "_group": "coreregistry",
     "_type": "newgtld",
     "host": "whois.nic.xn--mgbab2bd"
+  },
+  "xn--mgbah1a3hjkrd": {
+    "host": "whois.nic.mr"
   },
   "xn--mgbai9azgqp6j": {
     "_type": "newgtld",
