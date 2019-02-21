@@ -73,11 +73,6 @@
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
   },
-  "active": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
-  },
   "actor": {
     "_group": "donuts",
     "_type": "newgtld",
