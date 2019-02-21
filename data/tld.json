@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-02-21 09:08:29 UTC"
+    "updated": "2019-02-21 09:11:24 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -6572,7 +6572,7 @@
   "xn--mgbab2bd": {
     "_group": "coreregistry",
     "_type": "newgtld",
-    "host": "whois.bazaar.coreregistry.net"
+    "host": "whois.nic.xn--mgbab2bd"
   },
   "xn--mgbai9azgqp6j": {
     "_type": "newgtld",
