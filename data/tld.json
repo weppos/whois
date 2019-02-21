@@ -625,10 +625,6 @@
     "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
-  "blanco": {
-    "_type": "newgtld",
-    "host": "whois.nic.blanco"
-  },
   "blockbuster": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -1851,10 +1847,6 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.nic.enterprises"
-  },
-  "epost": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "epson": {
     "_group": "aridnrs",
@@ -5282,11 +5274,6 @@
     "_type": "newgtld",
     "host": "whois.nic.space"
   },
-  "spiegel": {
-    "_group": "ksregistry",
-    "_type": "newgtld",
-    "host": "whois.ksregistry.net"
-  },
   "sport": {
     "_type": "newgtld",
     "host": "whois.nic.sport"
@@ -6919,10 +6906,6 @@
     "_group": "google",
     "_type": "newgtld",
     "host": "whois.nic.google"
-  },
-  "zippo": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "zm": {
     "host": "whois.nic.zm"
