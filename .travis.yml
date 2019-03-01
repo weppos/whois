@@ -7,6 +7,7 @@ rvm:
   - 2.3
   - 2.4
   - 2.5
+  - 2.6
   - jruby-9.1.5.0
   - ruby-head
 
@@ -23,5 +24,5 @@ matrix:
     - rvm: jruby-9.1.5.0
 
 before_install:
-  - rvm get latest
+  # - rvm get latest
   - gem install bundler
