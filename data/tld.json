@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-01 15:47:11 UTC"
+    "updated": "2019-03-03 15:29:59 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1397,9 +1397,9 @@
     "host": "whois-corsica.nic.fr"
   },
   "country": {
-    "_group": "mmregistry",
+    "_group": "uniregistry",
     "_type": "newgtld",
-    "host": "whois-dub.mm-registry.com"
+    "host": "whois.uniregistry.net"
   },
   "coupon": {
     "_group": "amazonregistry",
