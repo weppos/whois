@@ -2,6 +2,10 @@
 
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
+#### master
+
+- SERVER: Add .SS
+
 
 #### Release 4.0.8
 

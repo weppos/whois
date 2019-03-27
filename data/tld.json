@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-03 15:29:59 UTC"
+    "updated": "2019-03-27 09:15:37 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -5293,6 +5293,9 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
+  },
+  "ss": {
+    "host": "whois.nic.ss"
   },
   "st": {
     "host": "whois.nic.st"
