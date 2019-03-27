@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-27 10:48:02 UTC"
+    "updated": "2019-03-27 10:48:55 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -426,7 +426,7 @@
   },
   "baby": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.baby"
   },
   "baidu": {
     "_group": "knet",
