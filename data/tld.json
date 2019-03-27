@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-27 09:18:16 UTC"
+    "updated": "2019-03-27 10:48:02 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -649,7 +649,7 @@
   "bmw": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.bmw"
   },
   "bn": {
     "host": "whois.bnnic.bn"
@@ -3698,7 +3698,7 @@
   "mini": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.mini"
   },
   "mint": {
     "_type": "newgtld",
