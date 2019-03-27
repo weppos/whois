@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-27 09:15:37 UTC"
+    "updated": "2019-03-27 09:18:16 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -189,7 +189,7 @@
   "allfinanz": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.allfinanz"
   },
   "allstate": {
     "_group": "afiliassrs",
@@ -859,7 +859,7 @@
   "cam": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.cam"
   },
   "camera": {
     "_group": "donuts",
@@ -1766,7 +1766,7 @@
   "dvag": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.dvag"
   },
   "dvr": {
     "_group": "afiliassrs",
@@ -2226,7 +2226,7 @@
   "fresenius": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.fresenius"
   },
   "frl": {
     "_type": "newgtld",
@@ -4488,7 +4488,7 @@
   "pohl": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.pohl"
   },
   "poker": {
     "_group": "afilias",
@@ -5738,7 +5738,7 @@
   "tui": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.tui"
   },
   "tunes": {
     "_group": "amazonregistry",
@@ -6750,12 +6750,12 @@
   "xn--vermgensberater-ctb": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.xn--vermgensberater-ctb"
   },
   "xn--vermgensberatung-pwb": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.xn--vermgensberatung-pwb"
   },
   "xn--vhquv": {
     "_group": "donuts",
@@ -6921,7 +6921,7 @@
   "zuerich": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.zuerich"
   },
   "zw": {
     "adapter": "none"

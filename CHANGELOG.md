@@ -5,6 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 #### master
 
 - SERVER: Add .SS
+- SERVER: Update .ALLFINANZ, .CAM, .DVAG, .FRESENIUS, .POHL, .TUI, .XN--VERMGENSBERATER-CTB, .XN--VERMGENSBERATUNG-PWB, .ZUERICH
 
 
 #### Release 4.0.8
