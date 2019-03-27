@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-27 10:48:55 UTC"
+    "updated": "2019-03-27 10:49:51 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1608,7 +1608,7 @@
   "desi": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.desi"
   },
   "design": {
     "_type": "newgtld",
@@ -4859,7 +4859,7 @@
   "saarland": {
     "_group": "ksregistry",
     "_type": "newgtld",
-    "host": "whois.ksregistry.net"
+    "host": "whois.nic.saarland"
   },
   "safe": {
     "_group": "amazonregistry",
