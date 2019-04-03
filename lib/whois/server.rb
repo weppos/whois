@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 #--
 # Ruby Whois
 #
@@ -75,7 +76,9 @@ module Whois
         JSON.load(File.read(file)).each do |allocation, settings|
           next if allocation == "_"
           settings.reject! { |k, _| k.start_with?("_") }
-          define(type, allocation, settings.delete("host"), Hash[settings.map { |k,v| [k.to_sym, v] }])
+          host = settings.delete("host")
+          host = intern_string(host) if host
+          define(type, allocation, host, Hash[settings.map { |k,v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }])
         end
       end
 
@@ -336,6 +339,15 @@ module Whois
         end
       end
 
+      if String.method_defined?(:-@)
+        def intern_string(string)
+          -string
+        end
+      else
+        def intern_string(string)
+          string.freeze
+        end
+      end
 
       def camelize(string)
         string.to_s.split("_").collect(&:capitalize).join
