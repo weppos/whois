@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-03-28 16:58:59 UTC"
+    "updated": "2019-04-10 08:57:37 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2333,6 +2333,7 @@
     "host": "whois.nic.google"
   },
   "gd": {
+    "_group": "centralnic",
     "host": "whois.nic.gd"
   },
   "gdn": {
