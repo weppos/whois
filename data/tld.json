@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-04-10 08:57:37 UTC"
+    "updated": "2019-04-19 09:09:51 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -1705,10 +1705,6 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.nic.dog"
-  },
-  "doha": {
-    "_type": "newgtld",
-    "host": "whois.nic.doha"
   },
   "domains": {
     "_group": "donuts",
