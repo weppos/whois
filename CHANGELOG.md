@@ -6,6 +6,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 - SERVER: Add .SS
 - SERVER: Update .ALLFINANZ, .CAM, .DVAG, .FRESENIUS, .POHL, .TUI, .XN--VERMGENSBERATER-CTB, .XN--VERMGENSBERATUNG-PWB, .ZUERICH, .BMW, .MINI, .BABY, .DESI, .SAARLAND, .ECO
+- ENHANCED: Reduce string allocations and retentions (GH-437). Thanks @casperisfine @byroot
 
 
 #### Release 4.0.8
