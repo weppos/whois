@@ -4,27 +4,39 @@
 
 Fork, then clone the repo:
 
-    $ git clone git@github.com:your-username/whois.git
+~~~
+git clone git@github.com:your-username/whois.git
+~~~
 
 Set up your machine:
 
-    $ bundle
+~~~
+bundle
+~~~
 
 Make sure the tests pass:
 
-    $ bundle exec rake
+~~~
+bundle exec rake
+~~~
 
 To propose a change/feature/patch, create your feature branch:
 
-    $ git checkout -b my-new-feature
+~~~
+git checkout -b my-new-feature
+~~~
 
 Make your change. Add tests for your change. Make the tests pass:
 
-    $ bundle exec rake
+~~~
+bundle exec rake
+~~~
 
 Commit your changes:
 
-    $ git commit -am 'Add some feature'
+~~~
+git commit -am 'Add some feature'
+~~~
 
 Push to your fork and [submit a pull request](https://github.com/weppos/whois/compare/).
 

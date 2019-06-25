@@ -3,6 +3,11 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+#### master
+
+- CHANGED: Minimum Ruby version 2.3
+
+
 #### Release 4.1.0
 
 - SERVER: Add .SS
