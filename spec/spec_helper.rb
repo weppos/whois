@@ -1,8 +1,3 @@
-if ENV['COVERALL']
-  require 'coveralls'
-  Coveralls.wear!
-end
-
 require 'rspec'
 require 'whois'
 
