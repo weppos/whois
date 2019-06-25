@@ -33,7 +33,7 @@ This repository contains the core whois library, that includes the WHOIS client,
 
 ## Requirements
 
-* Ruby >= 2.0.0
+- Ruby >= 2.3
 
 For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
@@ -42,25 +42,25 @@ For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
 You can install the gem manually:
 
-```shell
+~~~shell
 gem install whois
-```
+~~~
 
 Or use [Bundler](http://bundler.io/) and define it as a dependency in your `Gemfile`:
 
-```ruby
+~~~ruby
 gem 'whois'
-```
+~~~
 
 To use the WHOIS parser component you need to install the `whois-parser` gem:
 
-```shell
+~~~shell
 gem install whois-parser
-```
+~~~
 
-```ruby
+~~~ruby
 gem 'whois-parser'
-```
+~~~
 
 The `whois-parser` gem already depends on the `whois` gem. If you install `whois-parser`, `whois` will be installed as well and it will also be automatically required when you `require 'whois-parser'`.
 
@@ -69,7 +69,7 @@ If you are upgrading to 4.0, see [4.0-Upgrade.md](4.0-Upgrade.md).
 
 ## Getting Started
 
-Note. This section covers only the essentials for getting started with the Whois library. The [documentation](https://whoisrb.org/docs/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
+This section covers only the essentials for getting started with the Whois library. The [documentation](https://whoisrb.org/docs/) provides a more accurate explanation including tutorials, more examples and technical details about the client/server/record/parser architecture.
 
 ### Querying a WHOIS
 
@@ -77,7 +77,7 @@ Note. This section covers only the essentials for getting started with the Whois
 
 Check out the following examples:
 
-```ruby
+~~~ruby
 # Domain WHOIS
 whois = Whois::Client.new
 whois.lookup("google.com")
@@ -97,29 +97,29 @@ whois.lookup("74.125.67.100")
 whois = Whois::Client.new
 whois.lookup("2001:db8::1428:57ab")
 # => #<Whois::Record>
-```
+~~~
 
 The query method is stateless. For this reason, you can safely re-use the same client instance for multiple queries.
 
-```ruby
+~~~ruby
 whois = Whois::Client.new
 whois.lookup("google.com")
 whois.lookup(".com")
 whois.lookup("74.125.67.100")
 whois.lookup("2001:db8::1428:57ab")
 whois.lookup("google.it")
-```
+~~~
 
 If you just need a WHOIS response and you don't care about a full control of the WHOIS client, the `Whois` module provides an all-in-one method called `Whois.whois`. This is the simplest way to send a WHOIS request.
 
-```ruby
+~~~ruby
 Whois.whois("google.com")
 # => #<Whois::Record>
-```
+~~~
 
 Did I mention you can even use blocks?
 
-```ruby
+~~~ruby
 Whois::Client.new do |w|
   w.lookup("google.com")
   w.lookup(".com")
@@ -127,7 +127,7 @@ Whois::Client.new do |w|
   w.lookup("2001:db8::1428:57ab")
   w.lookup("google.it")
 end
-```
+~~~
 
 ### Consuming the Record
 
@@ -135,7 +135,7 @@ Any WHOIS query returns a `Whois::Record`. This object looks like a String, but 
 
 `Whois::Record` encapsulates a WHOIS record and provides the ability to parse the WHOIS response programmatically, when the `whois-parser` gem is installed and loaded.
 
-```ruby
+~~~ruby
 require 'whois-parser'
 
 record = Whois.whois("google.it")
@@ -162,7 +162,7 @@ tech.name
 parser.nameservers.each do |nameserver|
   puts nameserver
 end
-```
+~~~
 
 This feature is made possible by the <tt>Whois</tt> record parsers. Unfortunately, due to the lack of a global standard, each WHOIS server requires a specific parser. For this reason, the library doesn't support all existing WHOIS servers.
 
@@ -174,14 +174,14 @@ By default, each query run though the client has a timeout value of 5 seconds. I
 
 Of course, you can customize the timeout value setting a different value. If timeout is `nil`, the client will wait until the response is sent back from the server or the process is killed. Don't disable the timeout unless you really know what you are doing!
 
-```ruby
+~~~ruby
 whois = Whois::Client.new(:timeout => 10)
 whois.timeout # => 10
 whois.timeout = 5
 whois.timeout # => 5
 
 whois.lookup("google.com")
-```
+~~~
 
 
 ## Credits
