@@ -2735,10 +2735,6 @@
     "_type": "newgtld",
     "host": "whois.nic.honda"
   },
-  "honeywell": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "horse": {
     "_group": "mmregistry",
     "_type": "newgtld",
