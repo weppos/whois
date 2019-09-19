@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-09-19 10:00:00 UTC"
+    "updated": "2019-09-19 11:00:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -366,7 +366,7 @@
   "audible": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.audible"
   },
   "audio": {
     "_group": "uniregistry",
@@ -380,7 +380,7 @@
   "author": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.author"
   },
   "auto": {
     "_group": "uniregistry",
@@ -403,7 +403,7 @@
   "aws": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.aws"
   },
   "ax": {
     "host": "whois.ax"
@@ -698,7 +698,7 @@
   "book": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.book"
   },
   "booking": {
     "_type": "newgtld",
@@ -721,7 +721,7 @@
   "bot": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.bot"
   },
   "boutique": {
     "_group": "donuts",
@@ -797,7 +797,7 @@
   "buy": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
+    "host": "whois.nic.buy"
   },
   "buzz": {
     "_type": "newgtld",
@@ -850,7 +850,7 @@
   "call": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.call"
   },
   "calvinklein": {
     "_type": "newgtld",
@@ -1092,7 +1092,7 @@
   "circle": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.cirle"
   },
   "cisco": {
     "_type": "newgtld",
@@ -1402,7 +1402,7 @@
   "coupon": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.coupon"
   },
   "coupons": {
     "_group": "donuts",
@@ -1554,7 +1554,7 @@
   "deal": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.deal"
   },
   "dealer": {
     "_type": "newgtld",
@@ -1979,7 +1979,7 @@
   "fast": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.fast"
   },
   "fedex": {
     "_group": "afiliassrs",
@@ -2039,7 +2039,7 @@
   "fire": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.fire"
   },
   "firestone": {
     "_type": "newgtld",
@@ -2152,7 +2152,7 @@
   },
   "fox": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.fox"
   },
   "fr": {
     "host": "whois.nic.fr"
@@ -2215,7 +2215,7 @@
   "free": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.free"
   },
   "fresenius": {
     "_group": "ksregistry",
@@ -2492,7 +2492,7 @@
   "got": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.got"
   },
   "gov": {
     "host": "whois.dotgov.gov"
@@ -2755,7 +2755,7 @@
   "hot": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.hot"
   },
   "hoteles": {
     "_type": "newgtld",
@@ -2854,7 +2854,7 @@
   "imdb": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.imdb"
   },
   "immo": {
     "_group": "donuts",
@@ -3063,12 +3063,12 @@
   "jot": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.jot"
   },
   "joy": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.joy"
   },
   "jp": {
     "host": "whois.jprs.jp",
@@ -3147,7 +3147,7 @@
   "kindle": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.kindle"
   },
   "kitchen": {
     "_group": "donuts",
@@ -3372,7 +3372,7 @@
   "like": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.like"
   },
   "lilly": {
     "_type": "newgtld",
@@ -3758,7 +3758,7 @@
   "moi": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.moi"
   },
   "mom": {
     "_group": "uniregistry",
@@ -4082,12 +4082,12 @@
   "now": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.now"
   },
   "nowruz": {
     "_group": "agitsys",
     "_type": "newgtld",
-    "host": "whois.agitsys.net"
+    "host": "whois.nic.nowruz"
   },
   "nowtv": {
     "_group": "afiliassrs",
@@ -4293,7 +4293,7 @@
   "pars": {
     "_group": "agitsys",
     "_type": "newgtld",
-    "host": "whois.agitsys.net"
+    "host": "whois.nic.pars"
   },
   "partners": {
     "_group": "donuts",
@@ -4316,7 +4316,7 @@
   "pay": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.pay"
   },
   "pccw": {
     "_group": "afiliassrs",
@@ -4408,7 +4408,7 @@
   "pin": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.pin"
   },
   "ping": {
     "_type": "newgtld",
@@ -4517,7 +4517,7 @@
   "prime": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.prime"
   },
   "pro": {
     "host": "whois.afilias.net"
@@ -4630,7 +4630,7 @@
   "read": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.read"
   },
   "realestate": {
     "_type": "newgtld",
@@ -4803,7 +4803,7 @@
   "room": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.room"
   },
   "rs": {
     "host": "whois.rnids.rs"
@@ -4855,7 +4855,7 @@
   "safe": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.safe"
   },
   "safety": {
     "_type": "newgtld",
@@ -4911,7 +4911,7 @@
   "save": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.save"
   },
   "saxo": {
     "_group": "aridnrs",
@@ -5010,7 +5010,7 @@
   "secure": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.secure"
   },
   "security": {
     "_group": "centralnic",
@@ -5088,7 +5088,7 @@
   "shia": {
     "_group": "agitsys",
     "_type": "newgtld",
-    "host": "whois.agitsys.net"
+    "host": "whois.nic.shia"
   },
   "shiksha": {
     "_group": "afilias",
@@ -5135,7 +5135,7 @@
   "silk": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.silk"
   },
   "sina": {
     "_group": "afiliassrs",
@@ -5194,7 +5194,7 @@
   "smile": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.smile"
   },
   "sn": {
     "host": "whois.nic.sn"
@@ -5243,7 +5243,7 @@
   "song": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.song"
   },
   "sony": {
     "_type": "newgtld",
@@ -5266,7 +5266,7 @@
   "spot": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.spot"
   },
   "spreadbetting": {
     "_type": "newgtld",
@@ -5445,7 +5445,7 @@
   "talk": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.talk"
   },
   "taobao": {
     "_type": "newgtld",
@@ -5484,7 +5484,7 @@
   "tci": {
     "_group": "agitsys",
     "_type": "newgtld",
-    "host": "whois.agitsys.net"
+    "host": "whois.nic.tci"
   },
   "td": {
     "adapter": "web",
@@ -5734,12 +5734,12 @@
   "tunes": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.tunes"
   },
   "tushu": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.tushu"
   },
   "tv": {
     "host": "tvwhois.verisign-grs.com",
@@ -6032,7 +6032,7 @@
   "wanggou": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.wanggou"
   },
   "warman": {
     "_type": "newgtld",
@@ -6153,7 +6153,7 @@
   "wow": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.wow"
   },
   "ws": {
     "host": "whois.website.ws"
@@ -6614,7 +6614,7 @@
   "xn--mgbt3dhd": {
     "_group": "agitsys",
     "_type": "newgtld",
-    "host": "whois.agitsys.net"
+    "host": "whois.nic.xn--mgbt3dhd"
   },
   "xn--mgbtx2b": {
     "host": "whois.cmc.iq"
@@ -6816,7 +6816,7 @@
   "yamaxun": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.yamaxun"
   },
   "yandex": {
     "_type": "newgtld",
@@ -6842,7 +6842,7 @@
   "you": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.you"
   },
   "youtube": {
     "_group": "google",
@@ -6884,7 +6884,7 @@
   "zappos": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.zappos"
   },
   "zara": {
     "_group": "afiliassrs",
@@ -6894,7 +6894,7 @@
   "zero": {
     "_group": "amazonregistry",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.zero"
   },
   "zip": {
     "_group": "google",
@@ -6902,7 +6902,7 @@
     "host": "whois.nic.google"
   },
   "zm": {
-    "host": "whois.nic.zm"
+    "host": "whois.zicta.zm"
   },
   "zone": {
     "_group": "donuts",
