@@ -7,10 +7,12 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 - CHANGED: Minimum Ruby version 2.3
 
+- FIXED: Fixed issue that prevented to query .CAT domains (GH-583).
+
 
 #### Release 4.1.0
 
-- SERVER: Add .SS
+- SERVER: Added .SS
 - SERVER: Update .ALLFINANZ, .CAM, .DVAG, .FRESENIUS, .POHL, .TUI, .XN--VERMGENSBERATER-CTB, .XN--VERMGENSBERATUNG-PWB, .ZUERICH, .BMW, .MINI, .BABY, .DESI, .SAARLAND, .ECO
 - SERVER: Deleted .DOHA
 

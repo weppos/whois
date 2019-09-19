@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-04-19 09:09:51 UTC"
+    "updated": "2019-09-19 10:00:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -957,9 +957,7 @@
     "host": "whois.nic.casino"
   },
   "cat": {
-    "host": "whois.nic.cat",
-    "adapter": "formatted",
-    "format": "-C US-ASCII ace %s"
+    "host": "whois.nic.cat"
   },
   "catering": {
     "_group": "donuts",
