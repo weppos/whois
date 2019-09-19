@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = 'Whois is an intelligent WHOIS client and parser written in pure Ruby. It can query registry data for IPv4, IPv6 and top level domains, and parse the responses into easy-to-use Ruby objects via the whois-parser library.'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 2.3'
+  s.required_ruby_version = '>= 2.4'
 
   s.require_paths    = %w( lib )
   s.executables      =%w( whoisrb )
