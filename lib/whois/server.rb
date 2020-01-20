@@ -47,6 +47,9 @@ module Whois
         TYPE_ASN32 = :asn32,
     ].freeze
 
+    EMPTY_HASH = {}.freeze
+    private_constant :EMPTY_HASH
+
     class << self
 
       # Clears the definition and reset them to an empty list.
@@ -78,7 +81,12 @@ module Whois
           settings.reject! { |k, _| k.start_with?("_") }
           host = settings.delete("host")
           host = intern_string(host) if host
-          define(type, allocation, host, Hash[settings.map { |k,v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }])
+          options = if settings.empty?
+            EMPTY_HASH
+          else
+            Hash[settings.map { |k,v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }].freeze
+          end
+          define(type, allocation, host, options)
         end
       end
 
@@ -145,11 +153,11 @@ module Whois
       #     :adapter => Whois::Server::Adapters::Web,
       #     :url => "http://www.nic.ar/"
       #
-      def define(type, allocation, host, options = {})
+      def define(type, allocation, host, options = EMPTY_HASH)
         TYPES.include?(type) or
             raise(ArgumentError, "`#{type}` is not a valid definition type")
 
-        _definitions(type)[allocation] = [allocation, host, options]
+        _definitions(type)[allocation] = [allocation, host, options.freeze]
       end
 
       # Creates a new server adapter from given arguments
