@@ -41,7 +41,7 @@ P = Whois::Record::Parser
 PROPERTIES = [:disclaimer, :domain, :domain_id, :status, :available?, :registered?, :created_on, :updated_on, :expires_on, :registrar, :registrant_contacts, :admin_contacts, :technical_contacts, :nameservers]
 
 hosts = Dir.glob(File.join(LIB, "whois/record/parser/*.rb"))
-           .reject { |f| f =~ /\/(base|blank|example)/ }
+           .reject { |f| f.match?(/\/(base|blank|example)/) }
            .map { |f| File.basename(f, ".rb") }
 
 pthin = %w(

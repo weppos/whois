@@ -13,7 +13,7 @@ end
 
 Dir.glob("#{File.expand_path(IANAWHOIS_DIR)}/*").each do |entry|
   basename = File.basename(entry)
-  next unless basename =~ /^[A-Z]+$/
+  next unless basename.match?(/^[A-Z]+$/)
   content = File.read(entry)
   server  = content =~ /^whois:\s+(.+)\n$/ && $1
   servers[".#{basename.downcase}"] = server
