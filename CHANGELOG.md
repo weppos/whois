@@ -5,7 +5,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 #### Release 5.0.0
 
-- CHANGED: Minimum Ruby version 2.5
+- CHANGED: Minimum Ruby version 2.4
 - SERVER: Update Amazon Registry whois hosts
 
 - FIXED: Fixed issue that prevented to query .CAT domains (GH-583).
