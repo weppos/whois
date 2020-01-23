@@ -354,7 +354,7 @@ module Whois
       end
 
       def matches_tld?(string)
-        string =~ /^\.(xn--)?[a-z0-9]+$/
+        string.match?(/^\.(xn--)?[a-z0-9]+$/)
       end
 
       def matches_ip?(string)
@@ -362,13 +362,12 @@ module Whois
       end
 
       def matches_email?(string)
-        string =~ /@/
+        string.include?('@')
       end
 
       def matches_asn?(string)
-        string =~ /^as\d+$/i
+        string.match?(/^as\d+$/i)
       end
-
 
       def valid_ipv4?(addr)
         if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
@@ -379,9 +378,9 @@ module Whois
 
       def valid_ipv6?(addr)
         # IPv6 (normal)
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*\Z/ =~ addr
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/ =~ addr
-        return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/ =~ addr
+        return true if addr.match?(/\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*\Z/)
+        return true if addr.match?(/\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/)
+        return true if addr.match?(/\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/)
         # IPv6 (IPv4 compat)
         return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?($')
         return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
