@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Ruby Whois
 #
@@ -9,5 +11,5 @@
 
 module Whois
   # The current library version.
-  VERSION = "5.0.1".freeze
+  VERSION = "5.0.1"
 end

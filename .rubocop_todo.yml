@@ -380,13 +380,6 @@ Style/FormatStringToken:
   Exclude:
     - 'tasks/spec.rake'
 
-# Offense count: 43
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 # Offense count: 8
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
