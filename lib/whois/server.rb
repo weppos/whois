@@ -47,6 +47,7 @@ module Whois
         TYPE_ASN32 = :asn32,
     ].freeze
 
+    # Empty hash constant used to save allocation for definitions with empty settings.
     EMPTY_HASH = {}.freeze
     private_constant :EMPTY_HASH
 
