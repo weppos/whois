@@ -13,7 +13,8 @@ describe Whois::Record do
     [
       Whois::Record::Part.new(body: "This is a record from foo.", host: "foo.example.test"),
       Whois::Record::Part.new(body: "This is a record from bar.", host: "bar.example.test")
-    ]}
+    ]
+  }
   let(:content) {
     parts.map(&:body).join("\n")
   }
