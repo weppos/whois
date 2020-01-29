@@ -208,12 +208,6 @@ Lint/EmptyWhen:
     - 'tasks/spec.rake'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Lint/NonDeterministicRequireOrder:
-  Exclude:
-    - 'spec/spec_helper.rb'
-
-# Offense count: 1
 # Configuration parameters: IgnoreImplicitReferences.
 Lint/ShadowedArgument:
   Exclude:
