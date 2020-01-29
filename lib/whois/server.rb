@@ -114,7 +114,7 @@ module Whois
       #
       def definitions(type)
         TYPES.include?(type) or
-            raise(ArgumentError, "`#{type}` is not a valid definition type")
+          raise(ArgumentError, "`#{type}` is not a valid definition type")
 
         _definitions(type).values
       end
@@ -158,7 +158,7 @@ module Whois
       #
       def define(type, allocation, host, options = EMPTY_HASH)
         TYPES.include?(type) or
-            raise(ArgumentError, "`#{type}` is not a valid definition type")
+          raise(ArgumentError, "`#{type}` is not a valid definition type")
 
         _definitions(type)[allocation] = [allocation, host, options.freeze]
       end
@@ -383,7 +383,7 @@ module Whois
 
       def valid_ipv4?(addr)
         if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
-          return $LAST_MATCH_INFO.captures.all? {|i| i.to_i < 256}
+          return $LAST_MATCH_INFO.captures.all? { |i| i.to_i < 256 }
         end
 
         false

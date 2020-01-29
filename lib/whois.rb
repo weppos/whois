@@ -90,8 +90,8 @@ module Whois
     # @private
     def bug!(error, message)
       raise error, message.dup <<
-        " Please report the issue at" \
-        " http://github.com/weppos/whois/issues"
+                   " Please report the issue at" \
+                   " http://github.com/weppos/whois/issues"
     end
 
 

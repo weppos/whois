@@ -64,25 +64,6 @@ Layout/HeredocIndentation:
 
 # Offense count: 4
 # Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: aligned, indented
-Layout/MultilineOperationIndentation:
-  Exclude:
-    - 'lib/whois.rb'
-    - 'lib/whois/server.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideBlockBraces:
-  Exclude:
-    - 'lib/whois/server.rb'
-    - 'spec/whois/record_spec.rb'
-
-# Offense count: 4
-# Cop supports --auto-correct.
 Layout/SpaceInsidePercentLiteralDelimiters:
   Exclude:
     - 'tasks/spec.rake'
