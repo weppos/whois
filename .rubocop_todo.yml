@@ -191,16 +191,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'tasks/spec.rake'
 
-# Offense count: 5
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'bin/whoisrb'
-    - 'lib/whois.rb'
-    - 'lib/whois/server.rb'
-    - 'spec/spec_helper.rb'
-    - 'tasks/spec.rake'
-
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.

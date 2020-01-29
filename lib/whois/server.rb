@@ -68,7 +68,7 @@ module Whois
       # @return [void]
       def load_definitions
         clear_definitions
-        Dir[File.expand_path("../../../data/*.json", __FILE__)].each { |f| load_json(f) }
+        Dir[File.expand_path('../../data/*.json', __dir__)].each { |f| load_json(f) }
       end
 
       # Loads the definitions from a JSON file.

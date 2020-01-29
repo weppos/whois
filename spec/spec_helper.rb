@@ -4,7 +4,7 @@ require 'rspec'
 require 'whois'
 
 unless defined?(SPEC_ROOT)
-  SPEC_ROOT = File.expand_path("../", __FILE__)
+  SPEC_ROOT = File.expand_path(__dir__)
 end
 
 # The fixtures are UTF-8 encoded.

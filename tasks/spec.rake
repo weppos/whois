@@ -3,7 +3,7 @@
 require 'fileutils'
 
 namespace :spec do
-  ROOT_DIR      = File.expand_path("../../", __FILE__)
+  ROOT_DIR      = File.expand_path('..', __dir__)
   TARGET_DIR    = File.join(ROOT_DIR, %w( spec whois record parser responses ))
 
   SOURCE_DIR    = File.join(ROOT_DIR, %w( spec fixtures responses ))
