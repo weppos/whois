@@ -37,14 +37,6 @@ Layout/EmptyLinesAroundModuleBody:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Exclude:
-    - 'spec/integration/whois_spec.rb'
-    - 'spec/whois/server/adapters/base_spec.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: squiggly, active_support, powerpack, unindent
 Layout/HeredocIndentation:
