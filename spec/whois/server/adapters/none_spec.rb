@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Server::Adapters::None do
-
   describe "#lookup" do
     it "raises Whois::NoInterfaceError" do
       expect {
@@ -19,5 +20,4 @@ describe Whois::Server::Adapters::None do
       }.to raise_error(Whois::NoInterfaceError, /ipv4/)
     end
   end
-
 end

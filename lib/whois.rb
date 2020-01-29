@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Ruby Whois
 #
@@ -45,11 +47,11 @@ module Whois
         return
       end
 
-      deprecate(%Q{Whois.available? is deprecated. Call Whois.whois("#{object}").available?})
+      deprecate(%{Whois.available? is deprecated. Call Whois.whois("#{object}").available?})
 
       result = lookup(object).parser.available?
       if result.nil?
-        warn  "This method is not supported for this kind of object.\n" +
+        warn  "This method is not supported for this kind of object.\n" \
               "Use Whois.lookup('#{object}') instead."
       end
       result
@@ -62,11 +64,11 @@ module Whois
         return
       end
 
-      deprecate(%Q{Whois.registered? is deprecated. Call Whois.whois("#{object}").available?})
+      deprecate(%{Whois.registered? is deprecated. Call Whois.whois("#{object}").available?})
 
       result = lookup(object).parser.registered?
       if result.nil?
-        warn  "This method is not supported for this kind of object.\n" +
+        warn  "This method is not supported for this kind of object.\n" \
               "Use Whois.lookup('#{object}') instead."
       end
       result
@@ -87,9 +89,9 @@ module Whois
     # @api private
     # @private
     def bug!(error, message)
-      raise error, message.dup        <<
-        " Please report the issue at" <<
-        " http://github.com/weppos/whois/issues"
+      raise error, message.dup <<
+                   " Please report the issue at" \
+                   " http://github.com/weppos/whois/issues"
     end
 
 
@@ -107,10 +109,10 @@ module Whois
     end
 
     def extract_callstack(callstack)
-      gem_root = File.expand_path("../../../", __FILE__) + "/"
+      gem_root = File.expand_path('../..', __dir__) + "/"
       offending_line = callstack.find { |line| !line.start_with?(gem_root) } || callstack.first
       if offending_line
-        if md = offending_line.match(/^(.+?):(\d+)(?::in `(.*?)')?/)
+        if (md = offending_line.match(/^(.+?):(\d+)(?::in `(.*?)')?/))
           md.captures
         else
           offending_line

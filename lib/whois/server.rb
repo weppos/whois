@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #--
 # Ruby Whois
 #
@@ -40,11 +41,11 @@ module Whois
 
     # @return [Array<Symbol>] the definition types
     TYPES = [
-        TYPE_TLD   = :tld,
-        TYPE_IPV4  = :ipv4,
-        TYPE_IPV6  = :ipv6,
-        TYPE_ASN16 = :asn16,
-        TYPE_ASN32 = :asn32,
+      TYPE_TLD = :tld,
+      TYPE_IPV4  = :ipv4,
+      TYPE_IPV6  = :ipv6,
+      TYPE_ASN16 = :asn16,
+      TYPE_ASN32 = :asn32,
     ].freeze
 
     # Empty hash constant used to save allocation for definitions with empty settings.
@@ -67,7 +68,7 @@ module Whois
       # @return [void]
       def load_definitions
         clear_definitions
-        Dir[File.expand_path("../../../data/*.json", __FILE__)].each { |f| load_json(f) }
+        Dir[File.expand_path('../../data/*.json', __dir__)].each { |f| load_json(f) }
       end
 
       # Loads the definitions from a JSON file.
@@ -77,16 +78,17 @@ module Whois
       # @return [void]
       def load_json(file)
         type = File.basename(file, File.extname(file)).to_sym
-        JSON.load(File.read(file)).each do |allocation, settings|
+        JSON.parse(File.read(file)).each do |allocation, settings|
           next if allocation == "_"
+
           settings.reject! { |k, _| k.start_with?("_") }
           host = settings.delete("host")
           host = intern_string(host) if host
           options = if settings.empty?
-            EMPTY_HASH
-          else
-            Hash[settings.map { |k,v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }].freeze
-          end
+                      EMPTY_HASH
+                    else
+                      Hash[settings.map { |k, v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }].freeze
+                    end
           define(type, allocation, host, options)
         end
       end
@@ -112,7 +114,7 @@ module Whois
       #
       def definitions(type)
         TYPES.include?(type) or
-            raise(ArgumentError, "`#{type}` is not a valid definition type")
+          raise(ArgumentError, "`#{type}` is not a valid definition type")
 
         _definitions(type).values
       end
@@ -156,7 +158,7 @@ module Whois
       #
       def define(type, allocation, host, options = EMPTY_HASH)
         TYPES.include?(type) or
-            raise(ArgumentError, "`#{type}` is not a valid definition type")
+          raise(ArgumentError, "`#{type}` is not a valid definition type")
 
         _definitions(type)[allocation] = [allocation, host, options.freeze]
       end
@@ -282,6 +284,7 @@ module Whois
           end
         rescue ArgumentError
           # continue
+          nil
         end
         raise AllocationUnknown, "IP Allocation for `#{string}' unknown"
       end
@@ -304,7 +307,7 @@ module Whois
         token = string
         defs  = _definitions(TYPE_TLD)
 
-        while token != "" do
+        while token != ""
           if (found = defs[token])
             return factory(:tld, *found)
           else
@@ -328,7 +331,7 @@ module Whois
       #         that matches one of the existing server definitions.
       def find_for_asn(string)
         asn = string[/\d+/].to_i
-        asn_type = asn <= 65535 ? TYPE_ASN16 : TYPE_ASN32
+        asn_type = asn <= 65_535 ? TYPE_ASN16 : TYPE_ASN32
         _definitions(asn_type).each do |_, definition|
           if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
             return factory(asn_type, *definition)
@@ -379,9 +382,10 @@ module Whois
       end
 
       def valid_ipv4?(addr)
-        if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
-          return $~.captures.all? {|i| i.to_i < 256}
+        if (m = /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/.match(addr))
+          return m.captures.all? { |i| i.to_i < 256 }
         end
+
         false
       end
 
@@ -394,6 +398,7 @@ module Whois
         return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?($')
         return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
         return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
+
         false
       end
 

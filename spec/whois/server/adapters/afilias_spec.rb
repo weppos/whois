@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Afilias do
-
   let(:definition) { [:tld, ".test", "whois.afilias-grs.info", {}] }
   let(:server) { described_class.new(*definition) }
 
@@ -45,5 +46,4 @@ describe Whois::Server::Adapters::Afilias do
       end
     end
   end
-
 end

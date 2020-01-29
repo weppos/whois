@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Record do
-
   subject { described_class.new(server, parts) }
 
   let(:server) {
     Whois::Server.factory(:tld, ".foo", "whois.example.test")
   }
-  let(:parts) {[
-    Whois::Record::Part.new(body: "This is a record from foo.", host: "foo.example.test"),
-    Whois::Record::Part.new(body: "This is a record from bar.", host: "bar.example.test")
-  ]}
+  let(:parts) {
+    [
+      Whois::Record::Part.new(body: "This is a record from foo.", host: "foo.example.test"),
+      Whois::Record::Part.new(body: "This is a record from bar.", host: "bar.example.test"),
+    ]
+  }
   let(:content) {
     parts.map(&:body).join("\n")
   }
@@ -154,5 +157,4 @@ describe Whois::Record do
       expect(described_class.new(nil, []).content).to eq("")
     end
   end
-
 end

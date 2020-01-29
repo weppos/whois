@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Web do
-
   before(:each) do
-    @definition = [:tld, ".test", nil, { :url => "http://whois.test" }]
+    @definition = [:tld, ".test", nil, { url: "http://whois.test" }]
   end
 
 
@@ -20,5 +21,4 @@ describe Whois::Server::Adapters::Web do
       }.to raise_error(Whois::WebInterfaceError, /whois\.test/)
     end
   end
-
 end

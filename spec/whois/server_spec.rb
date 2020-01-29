@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Server do
@@ -16,9 +18,9 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-          ["ae.org", "whois.centralnic.com", {}],
-          ["ar.com", "whois.centralnic.com", {}],
-        ])
+                                                          ["ae.org", "whois.centralnic.com", {}],
+                                                          ["ar.com", "whois.centralnic.com", {}],
+                                                        ])
       end
     end
 
@@ -34,8 +36,8 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-          ["com", "whois.crsnic.net", adapter: "verisign"],
-        ])
+                                                          ["com", "whois.crsnic.net", adapter: "verisign"],
+                                                        ])
       end
     end
   end
@@ -70,7 +72,7 @@ describe Whois::Server do
     it "accepts a hash of options" do
       with_definitions do
         Whois::Server.define(Whois::Server::TYPE_TLD, "foo", "whois.foo", foo: "bar")
-        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([["foo", "whois.foo", { :foo => "bar" }]])
+        expect(described_class.definitions(Whois::Server::TYPE_TLD)).to eq([["foo", "whois.foo", { foo: "bar" }]])
       end
     end
   end
@@ -81,7 +83,7 @@ describe Whois::Server do
       expect(server.type).to eq(:tld)
       expect(server.allocation).to eq("test")
       expect(server.host).to eq("whois.test")
-      expect(server.options).to eq(Hash.new)
+      expect(server.options).to eq({})
     end
 
     it "returns a standard adapter by default" do
@@ -96,21 +98,21 @@ describe Whois::Server do
           @args = args
         end
       end
-      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => a)
+      server = Whois::Server.factory(:tld, "test", "whois.test", adapter: a)
       expect(server).to be_a(a)
       expect(server.args).to eq([:tld, "test", "whois.test", {}])
     end
 
     it "accepts an :adapter option as Symbol or String, load Class and returns an instance of given adapter" do
-      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => :none)
+      server = Whois::Server.factory(:tld, "test", "whois.test", adapter: :none)
       expect(server).to be_a(Whois::Server::Adapters::None)
-      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => "none")
+      server = Whois::Server.factory(:tld, "test", "whois.test", adapter: "none")
       expect(server).to be_a(Whois::Server::Adapters::None)
     end
 
     it "deletes the adapter option" do
-      server = Whois::Server.factory(:tld, "test", "whois.test", :adapter => Whois::Server::Adapters::None, :foo => "bar")
-      expect(server.options).to eq({ :foo => "bar" })
+      server = Whois::Server.factory(:tld, "test", "whois.test", adapter: Whois::Server::Adapters::None, foo: "bar")
+      expect(server.options).to eq({ foo: "bar" })
     end
   end
 
@@ -296,5 +298,4 @@ describe Whois::Server do
       end
     end
   end
-
 end

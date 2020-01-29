@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Ruby Whois
 #
@@ -22,9 +24,9 @@ module Whois
       # Array of connection errors to rescue
       # and wrap into a {Whois::ConnectionError}
       RESCUABLE_CONNECTION_ERRORS = [
-          SystemCallError,
-          SocketError,
-      ]
+        SystemCallError,
+        SocketError,
+      ].freeze
 
       # Performs the Socket request.
       #
@@ -36,8 +38,8 @@ module Whois
       #
       def call(query, *args)
         execute(query, *args)
-      rescue *RESCUABLE_CONNECTION_ERRORS => error
-        raise ConnectionError, "#{error.class}: #{error.message}"
+      rescue *RESCUABLE_CONNECTION_ERRORS => e
+        raise ConnectionError, "#{e.class}: #{e.message}"
       end
 
       # Executes the low-level Socket connection.

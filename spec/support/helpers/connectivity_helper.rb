@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RSpecSupportConnectivityHelpers
   def need_connectivity
     if connectivity_available?

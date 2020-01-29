@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Ruby Whois
 #
@@ -69,7 +71,7 @@ module Whois
 
   # Raised when the class has found a server but it doesn't support the
   # standard WHOIS interface via port 43. This is the case of some
-  # specific domains that only provide a web–based WHOIS interface. (\x01)
+  # specific domains that only provide a web-based WHOIS interface. (\x01)
   class WebInterfaceError < InterfaceNotSupported
 
     # @return [String] The URL of the web-based WHOIS interface.

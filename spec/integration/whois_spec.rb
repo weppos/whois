@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois do
-
-  let(:response)    { "Domain:             example.it\nStatus:             AVAILABLE\n" }
+  let(:response) { "Domain:             example.it\nStatus:             AVAILABLE\n" }
 
   describe "Basic WHOIS querying and parsing" do
     it "works" do
@@ -32,7 +33,7 @@ describe Whois do
           .with("example.it", "whois.nic.it", 43, "192.168.1.1", 3000)
           .and_return(response)
 
-        client = Whois::Client.new(:bind_host => "192.168.1.1", :bind_port => 3000)
+        client = Whois::Client.new(bind_host: "192.168.1.1", bind_port: 3000)
         client.lookup("example.it")
       end
     end
@@ -46,7 +47,7 @@ describe Whois do
           .with("example.it", "whois.nic.it", 43, Whois::Server::Adapters::Base::DEFAULT_BIND_HOST, 3000)
           .and_return(response)
 
-        client = Whois::Client.new(:bind_port => 3000)
+        client = Whois::Client.new(bind_port: 3000)
         client.lookup("example.it")
       end
     end
@@ -60,7 +61,7 @@ describe Whois do
           .with("example.it", "whois.example.com", 43)
           .and_return(response)
 
-        client = Whois::Client.new(:host => "whois.example.com")
+        client = Whois::Client.new(host: "whois.example.com")
         record = client.lookup("example.it")
 
         expect(record.parts.size).to eq(1)
@@ -69,5 +70,4 @@ describe Whois do
       end
     end
   end
-
 end

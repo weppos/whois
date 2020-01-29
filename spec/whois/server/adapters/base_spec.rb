@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Base do
-
-  let(:definition)  { [:tld, ".test", "whois.test", { foo: "bar" }] }
+  let(:definition) { [:tld, ".test", "whois.test", { foo: "bar" }] }
 
 
   describe "#initialize" do
@@ -78,22 +79,22 @@ describe Whois::Server::Adapters::Base do
 
   describe "#configure" do
     it "merges settings with current options" do
-      a = described_class.new(:tld, ".test", "whois.test", { :hello => "world" })
+      a = described_class.new(:tld, ".test", "whois.test", { hello: "world" })
       a.configure(foo: "bar")
-      expect(a.options).to eq({ :hello => "world", foo: "bar" })
+      expect(a.options).to eq({ hello: "world", foo: "bar" })
     end
 
     it "gives higher priority to settings argument" do
       a = described_class.new(:tld, ".test", "whois.test", { foo: "bar" })
       expect(a.options).to eq({ foo: "bar" })
-      a.configure(:foo => "baz")
-      expect(a.options).to eq({ :foo => "baz" })
+      a.configure(foo: "baz")
+      expect(a.options).to eq({ foo: "baz" })
     end
 
     it "overrides @host if :host option exists" do
-      a = described_class.new(:tld, ".test", "whois.test", { :hello => "world" })
+      a = described_class.new(:tld, ".test", "whois.test", { hello: "world" })
       a.configure(foo: "bar", host: "whois.example.com")
-      expect(a.options).to eq({ :hello => "world", foo: "bar", host: "whois.example.com" })
+      expect(a.options).to eq({ hello: "world", foo: "bar", host: "whois.example.com" })
       expect(a.host).to eq("whois.example.com")
     end
   end
@@ -127,7 +128,7 @@ describe Whois::Server::Adapters::Base do
     end
 
     context "with :bind_host and :bind_port options" do
-      let(:server) { described_class.new(:tld, ".test", "whois.test", { :bind_host => "192.168.1.1", :bind_port => 3000 }) }
+      let(:server) { described_class.new(:tld, ".test", "whois.test", { bind_host: "192.168.1.1", bind_port: 3000 }) }
 
       it "binds the WHOIS query to given host and port" do
         expect(described_class.query_handler).to receive(:call).with("example.test", "whois.test", 43, "192.168.1.1", 3000)
@@ -137,7 +138,7 @@ describe Whois::Server::Adapters::Base do
     end
 
     context "with :bind_port and without :bind_host options" do
-      let(:server) { described_class.new(:tld, ".test", "whois.test", { :bind_port => 3000 }) }
+      let(:server) { described_class.new(:tld, ".test", "whois.test", { bind_port: 3000 }) }
 
       it "binds the WHOIS query to given port and defaults host" do
         expect(described_class.query_handler).to receive(:call).with("example.test", "whois.test", 43, described_class::DEFAULT_BIND_HOST, 3000)
@@ -146,5 +147,4 @@ describe Whois::Server::Adapters::Base do
       end
     end
   end
-
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Whois::Record::Part do
-
   describe "#initialize" do
     it "accepts an empty value" do
       expect {
@@ -34,5 +35,4 @@ describe Whois::Record::Part do
       expect(instance.host).to eq("whois.example.test")
     end
   end
-
 end

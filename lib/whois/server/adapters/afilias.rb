@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Ruby Whois
 #
@@ -40,6 +42,7 @@ module Whois
 
         def extract_referral(response)
           return unless (match = response.match(/Registrar WHOIS Server:(.+?)$/))
+
           server = match[match.size - 1].strip
           server.empty? ? nil : server
         end
