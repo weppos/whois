@@ -33,6 +33,7 @@ module Whois
           unless string.match?(/^([0-9]{1,3}\.?){0,4}in-addr\.arpa$/)
             raise ServerError, "Invalid .in-addr.arpa address"
           end
+
           a, b, c, d = string.scan(/[0-9]{1,3}\./).reverse
           [a, b, c, d].map do |token|
             token = (token ||= 0).to_i

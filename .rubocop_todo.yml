@@ -6,15 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 7
-# Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'lib/whois/server.rb'
-    - 'lib/whois/server/adapters/afilias.rb'
-    - 'lib/whois/server/adapters/arin.rb'
-    - 'lib/whois/server/adapters/arpa.rb'
-    - 'lib/whois/server/adapters/verisign.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

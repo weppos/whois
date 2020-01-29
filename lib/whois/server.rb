@@ -79,6 +79,7 @@ module Whois
         type = File.basename(file, File.extname(file)).to_sym
         JSON.parse(File.read(file)).each do |allocation, settings|
           next if allocation == "_"
+
           settings.reject! { |k, _| k.start_with?("_") }
           host = settings.delete("host")
           host = intern_string(host) if host
@@ -383,6 +384,7 @@ module Whois
         if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
           return $LAST_MATCH_INFO.captures.all? {|i| i.to_i < 256}
         end
+
         false
       end
 
@@ -395,6 +397,7 @@ module Whois
         return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?($')
         return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
         return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
+
         false
       end
 
