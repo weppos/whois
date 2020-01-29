@@ -329,7 +329,7 @@ module Whois
       #         that matches one of the existing server definitions.
       def find_for_asn(string)
         asn = string[/\d+/].to_i
-        asn_type = asn <= 65535 ? TYPE_ASN16 : TYPE_ASN32
+        asn_type = asn <= 65_535 ? TYPE_ASN16 : TYPE_ASN32
         _definitions(asn_type).each do |_, definition|
           if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
             return factory(asn_type, *definition)
