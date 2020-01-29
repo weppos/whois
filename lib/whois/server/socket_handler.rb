@@ -26,7 +26,7 @@ module Whois
       RESCUABLE_CONNECTION_ERRORS = [
         SystemCallError,
         SocketError,
-      ]
+      ].freeze
 
       # Performs the Socket request.
       #
