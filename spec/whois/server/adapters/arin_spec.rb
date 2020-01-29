@@ -31,7 +31,7 @@ describe Whois::Server::Adapters::Arin do
         expect(record.to_s).to eq(expected)
         expect(record.parts.size).to eq(2)
         expect(record.parts).to eq([Whois::Record::Part.new(body: referral, host: "whois.arin.net"),
-                                    Whois::Record::Part.new(body: response, host: "whois.ripe.net")])
+                                    Whois::Record::Part.new(body: response, host: "whois.ripe.net"),])
       end
 
       it "follows rwhois:// referrals" do
@@ -45,7 +45,7 @@ describe Whois::Server::Adapters::Arin do
         expect(record.to_s).to eq(expected)
         expect(record.parts.size).to eq(2)
         expect(record.parts).to eq([Whois::Record::Part.new(body: referral, host: "whois.arin.net"),
-                                    Whois::Record::Part.new(body: response, host: "rwhois.servernap.net")])
+                                    Whois::Record::Part.new(body: response, host: "rwhois.servernap.net"),])
       end
 
       it "ignores referral if options[:referral] is false" do
@@ -76,7 +76,7 @@ describe Whois::Server::Adapters::Arin do
         record = server.lookup("0.0.0.0")
         expect(record.parts.size).to eq(2)
         expect(record.parts).to eq([Whois::Record::Part.new(body: referral, host: "whois.arin.net"),
-                                    Whois::Record::Part.new(body: response, host: "whois.apnic.net")])
+                                    Whois::Record::Part.new(body: response, host: "whois.apnic.net"),])
       end
     end
   end

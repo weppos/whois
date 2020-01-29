@@ -44,7 +44,7 @@ module Whois
 
           {
             host: $1,
-            port: $2 ? $2.to_i : nil
+            port: $2 ? $2.to_i : nil,
           }
         end
 

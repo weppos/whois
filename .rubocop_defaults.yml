@@ -105,9 +105,6 @@ Style/FormatString:
 Style/FormatStringToken:
   Enabled: false
 
-Style/RescueStandardError:
-  Enabled: false
-
 # unless is not always cool.
 Style/NegatedIf:
   Enabled: false
