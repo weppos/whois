@@ -9,7 +9,7 @@ require 'whois'
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner     = "Whois: an intelligent pure Ruby WHOIS client"
+  opts.banner = "Whois: an intelligent pure Ruby WHOIS client"
   opts.define_head  "Usage: whoisrb [options] object"
   opts.separator    ""
   opts.separator    "Examples:"

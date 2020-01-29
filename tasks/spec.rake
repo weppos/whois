@@ -39,7 +39,7 @@ describe %{described_class}, "%{descr}" do
 end
   RUBY
 
-  TPL_CONTEXT  = <<-RUBY.chomp!
+  TPL_CONTEXT = <<-RUBY.chomp!
   describe "#%{descr}" do
     it do
 %{examples}
@@ -128,7 +128,7 @@ end
 
       describe = <<-RUBY
 #{TPL_DESCRIBE % {
-  :described_class    => described_class,
+  :described_class => described_class,
   :khost    => khost,
   :descr    => kfile,
   :sfile    => relativize(source_path),
