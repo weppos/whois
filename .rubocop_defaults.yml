@@ -14,21 +14,6 @@ Layout/LineLength:
     - 'test/**/*_test.rb'
   Max: 100
 
-# Array indentation should be considered like MultilineMethodCallIndentation indentation
-# and use 4 spaces instead of 2.
-Layout/FirstArrayElementIndentation:
-  IndentationWidth: 4
-
-# Hash indentation should be considered like MultilineMethodCallIndentation indentation
-# and use 4 spaces instead of 2.
-Layout/FirstHashElementIndentation:
-  IndentationWidth: 4
-
-# Multi-line differs from standard indentation, they are indented twice.
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-  IndentationWidth: 4
-
 # [codesmell]
 Metrics/AbcSize:
   Enabled: false

@@ -24,8 +24,8 @@ module Whois
       # Array of connection errors to rescue
       # and wrap into a {Whois::ConnectionError}
       RESCUABLE_CONNECTION_ERRORS = [
-          SystemCallError,
-          SocketError,
+        SystemCallError,
+        SocketError,
       ]
 
       # Performs the Socket request.

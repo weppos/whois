@@ -18,9 +18,9 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-          ["ae.org", "whois.centralnic.com", {}],
-          ["ar.com", "whois.centralnic.com", {}],
-        ])
+                                                          ["ae.org", "whois.centralnic.com", {}],
+                                                          ["ar.com", "whois.centralnic.com", {}],
+                                                        ])
       end
     end
 
@@ -36,8 +36,8 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-          ["com", "whois.crsnic.net", adapter: "verisign"],
-        ])
+                                                          ["com", "whois.crsnic.net", adapter: "verisign"],
+                                                        ])
       end
     end
   end

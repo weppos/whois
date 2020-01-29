@@ -127,10 +127,10 @@ end
       describe = <<-RUBY
 #{TPL_DESCRIBE % {
   :described_class => described_class,
-  :khost    => khost,
-  :descr    => kfile,
-  :sfile    => relativize(source_path),
-  :fixture  => parts.join("/").gsub(".expected", ".txt"),
+  :khost => khost,
+  :descr => kfile,
+  :sfile => relativize(source_path),
+  :fixture => parts.join("/").gsub(".expected", ".txt"),
   :contexts => contexts
 }}
       RUBY

@@ -53,26 +53,6 @@ Layout/ExtraSpacing:
     - 'spec/whois/server/adapters/base_spec.rb'
     - 'tasks/spec.rake'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_brackets
-Layout/FirstArrayElementIndentation:
-  Exclude:
-    - 'lib/whois/server.rb'
-    - 'lib/whois/server/socket_handler.rb'
-    - 'spec/whois/server_spec.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: AllowMultipleStyles, EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
-# SupportedHashRocketStyles: key, separator, table
-# SupportedColonStyles: key, separator, table
-# SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
-Layout/HashAlignment:
-  Exclude:
-    - 'tasks/spec.rake'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
@@ -81,14 +61,6 @@ Layout/HeredocIndentation:
   Exclude:
     - 'spec/whois/server_spec.rb'
     - 'tasks/spec.rake'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Exclude:
-    - 'lib/whois/server.rb'
-    - 'lib/whois/server/adapters/arpa.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.

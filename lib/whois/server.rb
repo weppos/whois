@@ -41,11 +41,11 @@ module Whois
 
     # @return [Array<Symbol>] the definition types
     TYPES = [
-        TYPE_TLD   = :tld,
-        TYPE_IPV4  = :ipv4,
-        TYPE_IPV6  = :ipv6,
-        TYPE_ASN16 = :asn16,
-        TYPE_ASN32 = :asn32,
+      TYPE_TLD = :tld,
+      TYPE_IPV4  = :ipv4,
+      TYPE_IPV6  = :ipv6,
+      TYPE_ASN16 = :asn16,
+      TYPE_ASN32 = :asn32,
     ].freeze
 
     # Empty hash constant used to save allocation for definitions with empty settings.
