@@ -83,7 +83,7 @@ describe Whois::Server do
       expect(server.type).to eq(:tld)
       expect(server.allocation).to eq("test")
       expect(server.host).to eq("whois.test")
-      expect(server.options).to eq(Hash.new)
+      expect(server.options).to eq({})
     end
 
     it "returns a standard adapter by default" do

@@ -348,12 +348,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'tasks/spec.rake'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyLiteral:
-  Exclude:
-    - 'spec/whois/server_spec.rb'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
