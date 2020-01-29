@@ -85,11 +85,6 @@ Lint/UnusedMethodArgument:
     - 'lib/whois/server/adapters/not_implemented.rb'
     - 'lib/whois/server/adapters/web.rb'
 
-# Offense count: 1
-Lint/UselessAssignment:
-  Exclude:
-    - 'lib/whois/server/adapters/arpa.rb'
-
 # Offense count: 2
 Metrics/AbcSize:
   Max: 20
