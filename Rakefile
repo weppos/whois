@@ -4,8 +4,8 @@ require 'bundler/gem_tasks'
 
 
 # Run test by default.
-task :default => :spec
-task :test => :spec
+task default: :spec
+task test: :spec
 
 
 require 'rspec/core/rake_task'
@@ -27,7 +27,7 @@ namespace :yardoc do
   end
 end
 
-task :clobber => "yardoc:clobber"
+task clobber: "yardoc:clobber"
 
 
 Dir["tasks/**/*.rake"].each do |file|

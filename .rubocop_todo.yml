@@ -219,22 +219,6 @@ Style/GuardClause:
     - 'lib/whois/server/adapters/verisign.rb'
     - 'spec/support/helpers/connectivity_helper.rb'
 
-# Offense count: 42
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  Exclude:
-    - 'Rakefile'
-    - 'spec/integration/whois_spec.rb'
-    - 'spec/whois/server/adapters/base_spec.rb'
-    - 'spec/whois/server/adapters/formatted_spec.rb'
-    - 'spec/whois/server/adapters/not_implemented_spec.rb'
-    - 'spec/whois/server/adapters/standard_spec.rb'
-    - 'spec/whois/server/adapters/web_spec.rb'
-    - 'spec/whois/server_spec.rb'
-    - 'tasks/spec.rake'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 Style/IfUnlessModifier:

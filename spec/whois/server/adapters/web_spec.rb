@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe Whois::Server::Adapters::Web do
   before(:each) do
-    @definition = [:tld, ".test", nil, { :url => "http://whois.test" }]
+    @definition = [:tld, ".test", nil, { url: "http://whois.test" }]
   end
 
 

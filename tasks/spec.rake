@@ -63,7 +63,7 @@ end
   end
 
 
-  task :generate => :generate_parsers
+  task generate: :generate_parsers
 
   task :generate_parsers do
     Dir["#{SOURCE_DIR}/**/*.expected"].each do |source_path|
@@ -126,12 +126,12 @@ end
 
       describe = <<-RUBY
 #{TPL_DESCRIBE % {
-  :described_class => described_class,
-  :khost => khost,
-  :descr => kfile,
-  :sfile => relativize(source_path),
-  :fixture => parts.join("/").gsub(".expected", ".txt"),
-  :contexts => contexts
+  described_class: described_class,
+  khost: khost,
+  descr: kfile,
+  sfile: relativize(source_path),
+  fixture: parts.join("/").gsub(".expected", ".txt"),
+  contexts: contexts
 }}
       RUBY
 
