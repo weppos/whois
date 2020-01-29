@@ -36,8 +36,8 @@ module Whois
       #
       def call(query, *args)
         execute(query, *args)
-      rescue *RESCUABLE_CONNECTION_ERRORS => error
-        raise ConnectionError, "#{error.class}: #{error.message}"
+      rescue *RESCUABLE_CONNECTION_ERRORS => e
+        raise ConnectionError, "#{e.class}: #{e.message}"
       end
 
       # Executes the low-level Socket connection.

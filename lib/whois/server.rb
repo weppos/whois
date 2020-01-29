@@ -77,7 +77,7 @@ module Whois
       # @return [void]
       def load_json(file)
         type = File.basename(file, File.extname(file)).to_sym
-        JSON.load(File.read(file)).each do |allocation, settings|
+        JSON.parse(File.read(file)).each do |allocation, settings|
           next if allocation == "_"
           settings.reject! { |k, _| k.start_with?("_") }
           host = settings.delete("host")
@@ -282,6 +282,7 @@ module Whois
           end
         rescue ArgumentError
           # continue
+          nil
         end
         raise AllocationUnknown, "IP Allocation for `#{string}' unknown"
       end
