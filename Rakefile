@@ -23,7 +23,11 @@ end
 
 namespace :yardoc do
   task :clobber do
-    rm_r "yardoc" rescue nil
+    begin
+      rm_r "yardoc"
+    rescue StandardError
+      nil
+    end
   end
 end
 
