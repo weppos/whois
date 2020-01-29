@@ -22,9 +22,7 @@ module Whois
             @query_handler ||= SocketHandler.new
           end
 
-          def query_handler=(handler)
-            @query_handler = handler
-          end
+          attr_writer :query_handler
         end
 
         # Default WHOIS request port.
