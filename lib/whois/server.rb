@@ -381,7 +381,7 @@ module Whois
 
       def valid_ipv4?(addr)
         if /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/ =~ addr
-          return $~.captures.all? {|i| i.to_i < 256}
+          return $LAST_MATCH_INFO.captures.all? {|i| i.to_i < 256}
         end
         false
       end
