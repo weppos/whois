@@ -3,11 +3,11 @@
 #
 # An intelligent pure Ruby WHOIS client and parser.
 #
-# Copyright (c) 2009-2019 Simone Carletti <weppos@weppos.net>
+# Copyright (c) 2009-2020 Simone Carletti <weppos@weppos.net>
 #++
 
 
 module Whois
   # The current library version.
-  VERSION = "5.0.0".freeze
+  VERSION = "5.0.1".freeze
 end

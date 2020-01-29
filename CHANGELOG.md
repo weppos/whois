@@ -3,7 +3,7 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
-#### master
+#### Release 5.0.1
 
 - CHANGED: Use `String#match?` rather than `#=~` to improve performance (GH-589). Thanks @casperisfine @byroot
 - CHANGED: Empty Hash allocation optimization (GH-588). Thanks @casperisfine @byroot
