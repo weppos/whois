@@ -111,14 +111,6 @@ Layout/HeredocIndentation:
     - 'spec/whois/server_spec.rb'
     - 'tasks/spec.rake'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: normal, indented_internal_methods
-Layout/IndentationConsistency:
-  Exclude:
-    - 'lib/whois/server/adapters/arpa.rb'
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.
