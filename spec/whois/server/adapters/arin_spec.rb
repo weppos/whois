@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Arin do
-
   let(:definition) { [:ipv4, "0.0.0.0/1", "whois.arin.net"] }
   let(:server) { described_class.new(*definition) }
 
@@ -80,7 +79,5 @@ describe Whois::Server::Adapters::Arin do
                                     Whois::Record::Part.new(body: response, host: "whois.apnic.net")])
       end
     end
-
   end
-
 end

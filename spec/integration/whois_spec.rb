@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois do
-
   let(:response)    { "Domain:             example.it\nStatus:             AVAILABLE\n" }
 
   describe "Basic WHOIS querying and parsing" do
@@ -71,5 +70,4 @@ describe Whois do
       end
     end
   end
-
 end

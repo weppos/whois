@@ -3,7 +3,6 @@
 require 'fileutils'
 
 namespace :spec do
-
   ROOT_DIR      = File.expand_path("../../", __FILE__)
   TARGET_DIR    = File.join(ROOT_DIR, %w( spec whois record parser responses ))
 
@@ -68,7 +67,6 @@ end
 
   task :generate_parsers do
     Dir["#{SOURCE_DIR}/**/*.expected"].each do |source_path|
-
       # Generate the filename and described_class name from the test file.
       parts = (source_path.split("/") - SOURCE_PARTS)
       khost = parts.first
@@ -142,7 +140,6 @@ end
       File.open(target_path, "w+") { |f| f.write(describe) }
       print "done!\n"
     end
-
   end
 
 
@@ -197,5 +194,4 @@ end
       raise "Unknown class `#{described_class}'"
     end
   end
-
 end

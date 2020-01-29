@@ -4,7 +4,6 @@ require 'spec_helper'
 require 'whois/server/adapters/arin'
 
 describe Whois::Server::Adapters::Arpa do
-
   let(:definition) { [:tld, ".in-addr.arpa", nil, {}] }
 
   describe "#lookup" do
@@ -18,5 +17,4 @@ describe Whois::Server::Adapters::Arpa do
       expect(record.parts).to eq([Whois::Record::Part.new(body: response, host: "whois.arin.net")])
     end
   end
-
 end

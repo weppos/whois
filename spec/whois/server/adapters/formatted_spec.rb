@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Formatted do
-
   let(:definition) { [:tld, ".de", "whois.denic.de", { :format => "-T dn,ace -C US-ASCII %s" }] }
 
 
@@ -51,5 +50,4 @@ describe Whois::Server::Adapters::Formatted do
       end
     end
   end
-
 end

@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Base do
-
   let(:definition)  { [:tld, ".test", "whois.test", { foo: "bar" }] }
 
 
@@ -148,5 +147,4 @@ describe Whois::Server::Adapters::Base do
       end
     end
   end
-
 end

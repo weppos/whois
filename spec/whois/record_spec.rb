@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois::Record do
-
   subject { described_class.new(server, parts) }
 
   let(:server) {
@@ -158,5 +157,4 @@ describe Whois::Record do
       expect(described_class.new(nil, []).content).to eq("")
     end
   end
-
 end

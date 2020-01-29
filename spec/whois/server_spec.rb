@@ -298,5 +298,4 @@ describe Whois::Server do
       end
     end
   end
-
 end

@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois::Client do
-
   describe "#initialize" do
     it "accepts a zero parameters" do
       expect { described_class.new }.to_not raise_error
@@ -129,7 +128,6 @@ describe Whois::Client do
         client.lookup("example.test")
       }.to_not raise_error
     end
-
   end
 
   # FIXME: use RSpec metadata
@@ -142,5 +140,4 @@ describe Whois::Client do
       end
     end
   end
-
 end

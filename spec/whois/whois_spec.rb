@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois do
-
   describe ".lookup" do
     it "delegates the lookup to a new client" do
       client = double
@@ -13,5 +12,4 @@ describe Whois do
       expect(described_class.lookup("example.com")).to eq(:result)
     end
   end
-
 end

@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Whois::Server::Adapters::Verisign do
-
   let(:definition) { [:tld, ".test", "whois.test", {}] }
   let(:server) { described_class.new(*definition) }
 
@@ -58,5 +57,4 @@ describe Whois::Server::Adapters::Verisign do
       end
     end
   end
-
 end
