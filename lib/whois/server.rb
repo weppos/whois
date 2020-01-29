@@ -307,7 +307,7 @@ module Whois
         token = string
         defs  = _definitions(TYPE_TLD)
 
-        while token != "" do
+        while token != ""
           if (found = defs[token])
             return factory(:tld, *found)
           else
