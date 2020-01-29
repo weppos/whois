@@ -74,12 +74,6 @@ Lint/AssignmentInCondition:
   Exclude:
     - 'lib/whois.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Lint/DeprecatedClassMethods:
-  Exclude:
-    - 'tasks/spec.rake'
-
 # Offense count: 2
 Lint/EmptyWhen:
   Exclude:

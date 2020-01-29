@@ -136,7 +136,7 @@ end
       RUBY
 
       print "Generating #{relativize(target_path)}... "
-      File.dirname(target_path).tap { |d| File.exists?(d) || FileUtils.mkdir_p(d) }
+      File.dirname(target_path).tap { |d| File.exist?(d) || FileUtils.mkdir_p(d) }
       File.open(target_path, "w+") { |f| f.write(describe) }
       print "done!\n"
     end
