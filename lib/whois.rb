@@ -49,7 +49,7 @@ module Whois
 
       result = lookup(object).parser.available?
       if result.nil?
-        warn  "This method is not supported for this kind of object.\n" +
+        warn  "This method is not supported for this kind of object.\n" \
               "Use Whois.lookup('#{object}') instead."
       end
       result
@@ -66,7 +66,7 @@ module Whois
 
       result = lookup(object).parser.registered?
       if result.nil?
-        warn  "This method is not supported for this kind of object.\n" +
+        warn  "This method is not supported for this kind of object.\n" \
               "Use Whois.lookup('#{object}') instead."
       end
       result
@@ -87,8 +87,8 @@ module Whois
     # @api private
     # @private
     def bug!(error, message)
-      raise error, message.dup        <<
-        " Please report the issue at" <<
+      raise error, message.dup <<
+        " Please report the issue at" \
         " http://github.com/weppos/whois/issues"
     end
 

@@ -424,19 +424,6 @@ Style/IfUnlessModifier:
     - 'spec/spec_helper.rb'
     - 'spec/support/helpers/connectivity_helper.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/LineEndConcatenation:
-  Exclude:
-    - 'lib/whois.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: IgnoredMethods.
-Style/MethodCallWithoutArgsParentheses:
-  Exclude:
-    - 'spec/whois/whois_spec.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.

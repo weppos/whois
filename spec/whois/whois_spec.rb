@@ -4,7 +4,7 @@ describe Whois do
 
   describe ".lookup" do
     it "delegates the lookup to a new client" do
-      client = double()
+      client = double
       expect(client).to receive(:lookup).with("example.com").and_return(:result)
       expect(Whois::Client).to receive(:new).and_return(client)
 
