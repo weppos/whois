@@ -119,6 +119,9 @@ Style/PercentLiteralDelimiters:
 Style/RescueModifier:
   Enabled: false
 
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
 # Sorry, but using trailing spaces helps readability.
 #
 #   %w( foo bar )
