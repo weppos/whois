@@ -73,12 +73,6 @@ Lint/EmptyWhen:
   Exclude:
     - 'tasks/spec.rake'
 
-# Offense count: 1
-# Configuration parameters: IgnoreImplicitReferences.
-Lint/ShadowedArgument:
-  Exclude:
-    - 'lib/whois/server/adapters/arpa.rb'
-
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods.

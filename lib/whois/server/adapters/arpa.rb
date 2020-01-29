@@ -36,7 +36,7 @@ module Whois
 
           a, b, c, d = string.scan(/[0-9]{1,3}\./).reverse
           [a, b, c, d].map do |token|
-            token = (token ||= 0).to_i
+            token = (token || 0).to_i
             if token <= 255 && token >= 0
               token
             else
