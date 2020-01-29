@@ -84,7 +84,7 @@ module Whois
           host = intern_string(host) if host
           options = if settings.empty?
             EMPTY_HASH
-          else
+                    else
             Hash[settings.map { |k,v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }].freeze
           end
           define(type, allocation, host, options)
