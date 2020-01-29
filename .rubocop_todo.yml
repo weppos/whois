@@ -183,14 +183,6 @@ Layout/SpaceInsidePercentLiteralDelimiters:
     - 'tasks/spec.rake'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Exclude:
-    - 'lib/whois/server/adapters/standard.rb'
-
-# Offense count: 1
 # Configuration parameters: AllowSafeAssignment.
 Lint/AssignmentInCondition:
   Exclude:
