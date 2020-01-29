@@ -68,12 +68,6 @@ Layout/SpaceInsidePercentLiteralDelimiters:
   Exclude:
     - 'tasks/spec.rake'
 
-# Offense count: 1
-# Configuration parameters: AllowSafeAssignment.
-Lint/AssignmentInCondition:
-  Exclude:
-    - 'lib/whois.rb'
-
 # Offense count: 2
 Lint/EmptyWhen:
   Exclude:
