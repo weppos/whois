@@ -324,12 +324,6 @@ Style/BracesAroundHashParameters:
     - 'spec/whois/server/adapters/standard_spec.rb'
     - 'spec/whois/server_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ColonMethodCall:
-  Exclude:
-    - 'lib/whois/client.rb'
-
 # Offense count: 6
 Style/Documentation:
   Exclude:
