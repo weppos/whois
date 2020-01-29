@@ -49,7 +49,7 @@ module Whois
         #
         def request(string)
           options[:format] || raise(ServerError, "Missing mandatory :format option for adapter `Formatted'")
-          response = query_the_socket(sprintf(options[:format], string), host)
+          response = query_the_socket(format(options[:format], string), host)
           buffer_append response, host
         end
 

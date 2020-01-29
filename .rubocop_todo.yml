@@ -146,14 +146,6 @@ Style/Documentation:
     - 'lib/whois/server/adapters/base.rb'
     - 'lib/whois/server/adapters/not_implemented.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: format, sprintf, percent
-Style/FormatString:
-  Exclude:
-    - 'lib/whois/server/adapters/formatted.rb'
-
 # Offense count: 8
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
