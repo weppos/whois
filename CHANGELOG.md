@@ -3,21 +3,27 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
-#### Release 5.0.1
+## Release 5.0.1
 
-- CHANGED: Use `String#match?` rather than `#=~` to improve performance (GH-589). Thanks @casperisfine @byroot
-- CHANGED: Empty Hash allocation optimization (GH-588). Thanks @casperisfine @byroot
+### Changed
 
-
-#### Release 5.0.0
-
-- CHANGED: Minimum Ruby version 2.4
-- SERVER: Update Amazon Registry whois hosts
-
-- FIXED: Fixed issue that prevented to query .CAT domains (GH-583).
+- Use `String#match?` rather than `#=~` to improve performance (GH-589). Thanks @casperisfine @byroot
+- Empty Hash allocation optimization (GH-588). Thanks @casperisfine @byroot
 
 
-#### Release 4.1.0
+## Release 5.0.0
+
+## Changed
+
+- Update Amazon Registry whois hosts
+- Minimum Ruby version 2.4
+
+## Fixed
+
+- Fixed issue that prevented to query .CAT domains (GH-583).
+
+
+## Release 4.1.0
 
 - SERVER: Added .SS
 - SERVER: Update .ALLFINANZ, .CAM, .DVAG, .FRESENIUS, .POHL, .TUI, .XN--VERMGENSBERATER-CTB, .XN--VERMGENSBERATUNG-PWB, .ZUERICH, .BMW, .MINI, .BABY, .DESI, .SAARLAND, .ECO
@@ -26,58 +32,58 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 - CHANGED: Reduce string allocations and retentions (GH-437). Thanks @casperisfine @byroot
 
 
-#### Release 4.0.8
+## Release 4.0.8
 
 - SERVER: Deleted .XPERIA, .TELECITY, .VISTA, .JLC, .PANERAI, .GOODHANDS, .STATOIL, .ACTIVE, .BLANCO, .EPOST, .SPIEGEL, .ZIPPO
 - SERVER: Updated .SHOP, .NAGOYA, .OKINAWA, .RYUKYU, .TOKYO, .YOKOHAMA, .ORGANIC, .XN--MGBAB2BD, .MW, .IN, .XN--2SCRJ9C, .XN--3HCRJ9C, .XN--45BR5CYL, .XN--45BRJ9C, .XN--FPCRJ9C3D, .XN--GECRJ9C, .XN--H2BREG3EVE, .XN--H2BRJ9C, .XN--H2BRJ9C8C, .XN--MGBBH1A, .XN--MGBBH1A71E, .XN--MGBGU82A, .XN--RVC1E0AM3E, .XN--S9BRJ9C, .XN--XKC2DL3A5EE0H, .COUNTRY
 - SERVER: Added .XN--MGBAH1A3HJKRD
 
 
-#### Release 4.0.7
+## Release 4.0.7
 
 - SERVER: Added .CHARITY, .INC
 - SERVER: Updated .COLOGNE, .KOELN, .IE, .AU
 - SERVER: Deleted .IWC
 
 
-#### Release 4.0.6
+## Release 4.0.6
 
 - SERVER: Added .SPORT, .LLC, .FM (GH-568)
 - SERVER: Updated .MUSEUM, .MR, .PR, .AI, .SMART, .BAIDU, .GE, several newGTLDs
 - SERVER: Deleted .HTC
 
 
-#### Release 4.0.5
+## Release 4.0.5
 
 - SERVER: Updated .ALIBABA, .ALIPAY, .HDFC, .SINA, .WEIBO, .XN--9KRT00A, .XN--JLQ61U9W7B
 - SERVER: Deleted .MCD, .MCDONALDS, .PAMPEREDCHEF, .MONTBLANK, .CHLOE
 
 
-#### Release 4.0.4
+## Release 4.0.4
 
 - SERVER: Added .MERCKMSD
 - SERVER: Updated .KOSHER, .LDS, .BESTBUY, .DUNLOP, .GOODYEAR, .TVS, .BNL, .HOMEDEPOT, .HUGHES, .IVECO, .LAMER, .LATINO, .LOCKER, .METLIFE, .MOBILE, .NEWHOLLAND, .OLLO, .ORIGINS, .OTT, .PHONE, .PNC, .SBI, .SCHOLARSHIPS, .SLING, .STATEBANK, .THD, .UPS, .WOLTERSKLUWER, .XN--NQV7FS00EMA, .DELTA, .STAR, .ALLY, .BCG, .BLOCKBUSTER, .CASE, .CASEIH, .CLINIQUE, .CRUISE, .CYOU, .DATA, .DISH, .DOT, .DTV, .FEDEX, .FERRARI, .GALLUP, .HELSINKI, .ICBC, .MASERATI, .MCKINSEY, .MONSTER, .MORMON, .XN, .XN
 
 
-#### Release 4.0.3
+## Release 4.0.3
 
 - FIXED: Updated Verisign adapter to properly detect the new label for referral servers (GH-559)
 
 
-#### Release 4.0.2
+## Release 4.0.2
 
 - SERVER: Added .AFRICA, .XN--MGBAI9AZGQP6J, .FUN, .RMIT, .HOSPITAL, .BOSTON, .DATA, .MOBILE, .PHONE, .HAIR, .LADBROKES, .CATHOLIC, .XN--80AQECDR1A, .XN--MGBI4ECEXP, .XN--TIQ49XQYJ, .RUGBY, .HOTELS, .GROCERY, .XN--MGBAAKC7DVF, .MAP, .PHD, .SEARCH, .XN--2SCRJ9C, .XN--45BR5CYL, .XN--H2BREG3EVE, .XN--H2BRJ9C8C, .XN--MGBBH1A, .XN--MGBGU82A, .XN--RVC1E0AM3E, .ETISALAT
 - SERVER: Updated .LINK (GH-543), .AR, .MQ, .ARCHI, .BIO, .SKY, .GF, .KG, .STORAGE, .BIBLE
 - SERVER: Deleted .IINET, .MUTUELLE, .FLSMIDTH, .MTPC
 
 
-#### Release 4.0.1
+## Release 4.0.1
 
 - SERVER: Added .FREE, .HK.COM, .HK.ORG, .LTD.HK, .INC.HK, .BOX, .CRUISE, .FOOD, .JIO, .MOTO, .RELIANCE, .RIL
 - SERVER: Updated .ONLINE, .SITE, .STC, .STCGROUP
 
 
-#### Release 4.0.0
+## Release 4.0.0
 
 The WHOIS parsers are no longer part of this repository, and they have been extracted into a separate repository at https://github.com/weppos/whois-parser.
 
@@ -106,7 +112,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - REMOVED: Deleted deprecated Whois.query method.
 
 
-#### Release 3.6.5
+## Release 3.6.5
 
 - SERVER: Added .PARS, .XN--MGBT3DHD, .REDUMBRELLA, .TRV, .TUSHU, .WATCHES, .XN--ECKVDTC9D, .KFH, .KPN, .SHELL, .TRAVELERSINSURANCE, .WANGGOU, .XN--KPU716F, .XN--NGBE9E0A, .XN--PBT977C, .FORD, .JMP, .LINCOLN, .SAS, .STORAGE, .XN--JLQ61U9W7B, .ANALYTICS, .MOBILITY, .XN--MGBB9FBPOB, .CONTACT, .PID, .STAR, .WEBER, .BOSCH, .DEALER, .FOX, .LAMER, .ORIGINS, .REXROTH, .SAFETY, .SCHAEFFLER, .STATEFARM
 
@@ -117,7 +123,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.tld.ee to the new response format (GH-489, GH-490). [thanks @tanelj]
 
 
-#### Release 3.6.4
+## Release 3.6.4
 
 - SERVER: Added .ROCHER, .XN--VUQ861B, .CITYEATS, .CREDITUNION, .LIFESTYLE, .VANA, .COMSEC, .FAIRWINDS, .GRAINGER, .TAB, .BROADWAY, .AUDI, .BOEHRINGER, .BOSTIK, .BUGATTI, .LAMBORGHINI, .VERISIGN, .VIP., .SFR, .INSURANCE, .MED, .NORTON, .SYMANTEC, .AUTHOR, .BOOK, .BOT, .BUY, .CALL, .CIRCLE, .FAST, .FIRESTONE, .GOT, .JOT, .JOY, .LIKE, .NOWRUZ, .PIN, .READ, .ROOM, .SAFE, .SALON, .SHARP, .SHIA, .SMILE, .TCI, .TRAVELERS, .ZERO
 
@@ -140,7 +146,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: whois.aero now recognizes reserved domains (GH-464, GH-418). [thanks @linrock]
 
 
-#### Release 3.6.3
+## Release 3.6.3
 
 - SERVER: Added .ACO, .AAA, .GEA, .STCGROUP, .VIVA, .GROUP, .CEB, .FAGE, .MOM, .AMICA, .STC, .CIPRIANI, .KINDER, .XN--11B4C3D, .XN--3PXU8K, .XN--42C2D9A, .XN--9DBQ2A, .XN--C2BR7G, .XN--FHBEI, .XN--J1AEF, .XN--MK1BU44C, .XN--PSSY2U, .XN--T60B56A, .XN--TCKWE, .XN--EFVY88H, .CSC, .CAR, .PROTECTION, .STADA, .THEATRE, .LINDE, .SECURITY, .BMS, .LTD, .OBI, .BOM, .FINAL, .HYUNDAI, .KIA, .SEVEN, .STOCKHOLM, .CLUBMED, .DELL, .ARAMCO, .XN--MGBA3A3EJT, .MOI, .MTR, .VIRGIN, .YAMAXUN, .GUCCI, .JAGUAR, .LANDROVER, .RWE, .ZARA, .MEO, .PING, .SAPO, .SBS, .AARP, .APPLE, .BEATS, .XN--MGBTX2B, .XN--QXAM
 
@@ -149,7 +155,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - SERVER: Disabled whois.edu.cn as it has not been working for the last 6 years (GH-59).
 
 
-#### Release 3.6.2
+## Release 3.6.2
 
 - SERVER: Updated .LOVE
 
@@ -160,7 +166,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Added expires_on at "co.jp" domain (GH-437). [thanks @kubihie]
 
 
-#### Release 3.6.1
+## Release 3.6.1
 
 - SERVER: Added .co.com (GH-428) [thanks @turigabor], .STATOIL, .CROWN, .ACCOUNTANT, .DATE, .DOHA, .DOWNLOAD, .FAITH, .LOAN, .MOVIE, .MTN, .PANERAI, .REVIEW, .TICKETS, .WIN, .ACCENTURE, .NEC, .PHILIPS, .XN--FJQ720A, .COUPONS, .ICBC, .SOCCER, .FYI, .JLL, .MBA, .THD, .BBVA, .SANDVIK, .SANDVIKCOROMANT, .WALTER, .AIRTEL, .BARCELONA, .BCN, .GAME, .JPRS, .LIVE, .STUDIO, .BING, .HOTMAIL, .JLC, .MICROSOFT, .WINDOWS, .PLAY, .AEG, .DRIVE, .GENTING, .CBA, .COMMBANK, .NETBANK, .RICOH, .STARHUB, .VISTA, .VISTAPRINT, .OFFICE, .SCOR, .SKYPE, .LAW, .BNL, .BRADESCO, .HOTELES, .OMEGA, .SWATCH, .TELEFONICA, .LANCASTER, .NOKIA, .ICE, .ITAU, .LEXUS, .MAN, .BET, .SANOFI, .SRL, .TATAMOTORS, .IPIRANGA, .LEXUS, .PET, .TOYOTA, .LIXIL, .BOOTS, .CHANEL, .VIN, .WINE, .XPERIA, .GIVING, .FAMILY, .SEEK
 
@@ -171,7 +177,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.nic.as to the new response format (GH-334). [thanks @case]
 
 
-#### Release 3.6.0
+## Release 3.6.0
 
 - SERVER: Added .MMA, .XN--30RR7Y, .LOVE, .SCHOLARSHIPS, .XN--NYQY26A, .CYOU, .RACING, .XN--KCRX77D1X4A, .DOOSAN, .GARDEN, .IWC, .LIDL, .OSAKA, .SCHWARZ, .SEW, .SALE, .VIDEO, .ZUERICH, .SHRIRAM, .BANK, .FIT, .KDDI, .LAT, .LOTTE, .MARRIOTT, .BARCLAYCARD, .BARCLAYS, .DABUR, .DCLK, .DESIGN, .GOOG, .HANGOUT, .HERMES, .IFM, .JCB, .TEMASEK, .XN--B4W605FERD, .BINGO, .CANON, .CHAT, .STYLE, .TENNIS, .TOSHIBA, .CASINO, .FANS, .FOOTBALL, .GOLDPOINT, .SCHOOL, .YODOBASHI, .EPSON, .GOO, .JAVA, .LECLERC, .ORACLE, .MAIF, .XN--MXTQ1M, .DATSUN, .INFINITI, .MTPC, .NISSAN, .BROTHER, .CHLOE, .ERNI, .FOREX, .MARKETS, .CFD, .SPREADBETTING, .TRADING, .FAN, .ONLINE, .PAGE, .PIAGET, .SITE, .BBC, .NEWS, .TECH, .KOMATSU, .SAP, .BOND, .XN--9ET52U, .AFL, .REDSTONE, .SEAT, .SEX, .BROKER, .DOG, .RENT, .SWISS, .HONDA, .WEIR, .BRIDGESTONE, .HITACHI, .SENER, .TORAY, .SKY, .XN--IMR513N, .BIBLE, .HOMEDEPOT, .XBOX, .AZURE, .ICU, .THEATER, .EARTH, .EXPRESS, .CAFE, .BAUHAUS, .ADS, .FILM, .GOLD, .GOLF, .GUGE, .PLUS, .TOURS, .XN--VUQ861B, .JEWELRY, .SHOW, .SONY, .TEAM, .XEROX, .AIG, .AUTO, .CARS, .CFA, .LIAISON, .LOL, .NADEX, .HOCKEY, .RUN, .TAXI, .XN--ESTV75G, .XN--MGBPL2FH, .XN--Y9A3AQ, .CORSICA, .LUPIN, .APP, .SAKURA, .BENTLEY, .HSBC, .IINET, .ORANGE, .FORUM, .REALTY, .AUTOS, .LASALLE, .MONTBLANC, .BHARTI, .SNCF, .MEN
 
@@ -186,7 +192,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated .MA parser and definition from whois.iam.net.ma to whois.registre.ma
 
 
-#### Release 3.5.9
+## Release 3.5.9
 
 - SERVER: Added .KYOTO, .ONE, .CRICKET, .PARTY, .XN--45Q11C, XN--CZRS0T, .SAMSUNG, .CARTIER, .ADULT, .EUROVISION, .FASHION, .PORN, .TRUST, .KOELN, .XN--C1AVG, .NYC, .SAMSUNG, .COACH, .EVERBANK, .LEGAL, .MEMORIAL, .MONEY, .AQUARELLE, .IRISH, .LATROBE, .XN--HXT814E, .SKY, .DEV, .DOCS, .TYRES, .DOOSAN, .NTT, .AMSTERDAM, .FLOWERS, .GGEE, .CBN, .GDN, .APARTMENTS, .NICO, .SAXO, .BOATS, .COURSES, .STUDY, .SUCKS, .XN--90AIS, .ABBOTT, .PICTET, .XIN, .FANS
 
@@ -195,7 +201,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.schlund.info crashes with empty update date (GH-398). [thanks @alexaitken]
 
 
-#### Release 3.5.8
+## Release 3.5.8
 
 - SERVER: Created .FIRMDALE, .MADRID, .XN--FLW351E, .XN--QCKA1PMC, .LDS, .MORMON
 
@@ -208,14 +214,14 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: Fixed the ARIN referral regex to correctly consider ports optional (GH-350). [thanks @jrideout]
 
 
-#### Release 3.5.7
+## Release 3.5.7
 
 - SERVER: Updated .AW, .BW, .GQ, .MK, .ML, .MZ, .PF, .VU, .ZM, .KIWI, .CAREER, .REISE, .VERSICHERUNG, .HOST, .PRESS, .HAMBURG, .BRUSSELS, .VLAANDEREN
 
 - SERVER: Created .BLOOMBERG, .ENERGY, .YANDEX, .PRAXI, .WHOSWHO, .WILLIAMHILL, .SUZUKI, .SCIENCE, .REALTOR, .SYDNEY, .TAIPEI, .DELIVERY, .DIRECT, .PLACE, .CITY, .DEALS, .AUCTION, .HEALTHCARE, .CANCERRESEARCH, .CUISINELLA, .SCHMIDT, .MELBOURNE, .KRD, .NRW, .SCB, .LACAIXA, .LGBT, .NGO, .ONG, .SPIEGEL, .NRA, .GENT, .REIT, .ANDROID, .TOP, .WALES, .SCA, .BNPPARIBAS, .EMERCK, .TATAR, .CYMRU, .RESTAURANT, .SARL, .XN--1QQW23A, .XN--XHQ521B, .NETWORK, .BUSINESS, .XN--VHQUV, .GIFTS, .HOSTING, .HELP, .DIET, .OOO, .UOL, .PROPERTY, .LTDA, .HOW, .CARAVAN, .CLICK, .CERN, .HERE, .ESQ, .GMAIL, .YOUTUBE, .PROD, .GBIZ, .IMMO, .OTSUKA, .DAD, .BOO, .DAY, .EAT, .FRL, .MOV, .NEW, .RSVP, .MEME, .ZIP, .PROF, .NEXUS, .GOOGLE, .GLE, .FLY, .CHROME, .CHANNEL, .CAL, .ING, .WORLD, .PIZZA, .PHARMACY, .WME, .GMX, .HOMES, .HORSE, .XN--P1ACF, .TUI, .POHL, .ALLFINANZ, .DVAG, .XN--VERMGENSBERATUNG-PWB, .XN--VERMGENSBERATER-CTB, .FORSALE, .IBM, .ALSACE, .ABOGADO, .BAND, .CRS, .FLSMIDTH, .POKER, .RIP, .WEDDING, .YOGA, .BUDAPEST, .CASA, .WORK
 
 
-#### Release 3.5.6
+## Release 3.5.6
 
 - SERVER: Created .AUDIO, .BEER, .CHURCH, .GUIDE, .HIPHOP, .JUEGOS, .LIFE, .LOANS, .LUXE, .BEST, .AUTOS, .HOMES, .MOTORCYCLES, .REISE, .RIO, .VERSICHERUNG, .YACHTS, .XN, .DEGREE, .SPACE, .WEBSITE, .ATTORNEY, .DENTIST, .HIV, .HOST, .LAWYER, .MARKET, .MORTGAGE, .PRESS, .SOFTWARE, .VET, .BIO, .ARMY, .ENGINEER, .GIVES, .HAMBURG, .NAVY, .NHK, .REHAB, .REPUBLICAN, .TIROL, .GLOBAL, .ORGANIC, .SCOT, .BZH, .XN, .BRUSSELS, .SURF, .VLAANDEREN, .CAPETOWN, .DURBAN, .GREEN, .JOBURG, .LOTTO, .OVH, .PHYSIO, .BMW, .CEO, .MINI, .ACTIVE
 
@@ -226,7 +232,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.register.com parser crashes when the update date is empty (GH-353). [thanks @alexaitken]
 
 
-#### Release 3.5.5
+## Release 3.5.5
 
 - NEW: Added registrar and contact support for whois.dns.lu (GH-329). [thanks @huyphan]
 
@@ -241,7 +247,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.nic.gd parser crashes when the domain is reserved (GH-335). [thanks @case]
 
 
-#### Release 3.5.4
+## Release 3.5.4
 
 - SERVER: Created .QUEBEC, .COLLEGE, .DESI, .FEEDBACK, .ROCKS, .XN, .ASSOCIATES, .CAPITAL, .CAREER, .ENGINEERING, .EUS, .GAL, .GRIPE, .LEASE, .MEDIA, .PICTURES, .REISEN, .SERVICES, .TOWN, .TOYS, .UNIVERSITY, .XN, .FOO, .FROGANS, .PARIS, .SOY, .BLACKFRIDAY, .CLINIC, .FITNESS, .SCHULE, .CARE, .CASH, .DENTAL, .DISCOUNT, .EXCHANGE, .FAIL, .FINANCIAL, .FUND, .FURNITURE, .GRATIS, .INVESTMENTS, .LIMITED, .SURGERY, .TAX, .WTF, .MOSCOW, .XN, .CREDITCARD, .FINANCE, .INSURE, .WTC, .AIRFORCE, .BAYERN, .GLOBO, .ACCOUNTANTS, .CLAIMS, .CREDIT, .DIGITAL
 
@@ -262,17 +268,17 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: whois.cctld.uz now supports updated_on (GH-315). [thanks @huyphan]
 
 
-#### Release 3.5.3
+## Release 3.5.3
 
 - CHANGED: Updated whois.pir.org to the new response format.
 
 
-#### Release 3.5.2
+## Release 3.5.2
 
 - SERVER: Added new gTLDs
 
 
-#### Release 3.5.1
+## Release 3.5.1
 
 - NEW: Added whois.corporatedomains.com parser (GH-311). [thanks @huyphan]
 
@@ -287,7 +293,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.ua parser crashes when the status is clientTransferProhibited.
 
 
-#### Release 3.5.0
+## Release 3.5.0
 
 - SERVER: Updated list of latest ASN allocations of 16-bit & 32-bit ASN's from IANA (GH-293). [thanks @itsbalamurali]
 
@@ -304,7 +310,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.registry.net.za parser crashes with some registrant contact formats.
 
 
-#### Release 3.4.5
+## Release 3.4.5
 
 - SERVER: Added new IDN TLDs: .XN--3BST00M, .XN--3DS443G, .XN--55QX5D, .XN--6FRZ82G, .XN--6QQ986B3XL, .XN--FIQ228C5HS, .XN--FIQ64B, .XN--IO0A7I, .XN--CG4BKI, .XN--MGBAB2BD, .XN--55QW42G, .XN--ZFR164B
 
@@ -329,7 +335,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Afilias is using a slightly different whois response for some TLDs, including .INFO and .XXX (GH-304)
 
 
-#### Release 3.4.4
+## Release 3.4.4
 
 - CHANGED: Updated IBC parser and fixtures (.IO, .AC, .SH and .TM).
 
@@ -338,7 +344,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.pir.org parser to the new response format (GH-300). [thanks @muffinista]
 
 
-#### Release 3.4.3
+## Release 3.4.3
 
 - SERVER: Updated .COM, .NET, .CC, .WS TLD definitions.
 
@@ -361,14 +367,14 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.nic.gl parser to the new response format.
 
 
-#### Release 3.4.2
+## Release 3.4.2
 
 - CHANGED: Updated whois.registry.net.za parser to the new response format.
 
 - CHANGED: Updated whois.ascio.com parser to the new response format (GH-285). [thanks @takama]
 
 
-#### Release 3.4.1
+## Release 3.4.1
 
 - SERVER: Updated .XN--NGBC5AZD IDN TLD definition.
 
@@ -391,7 +397,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.gandi.net parser to the new response format.
 
 
-#### Release 3.4.0
+## Release 3.4.0
 
 - SERVER: Added .XN--MGBX4CD0AB (.ایران, Iran) IDN TLD definition.
 
@@ -428,7 +434,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.register.com parser to the new response format (GH-273). [thanks @gromnsk]
 
 
-#### Release 3.3.1
+## Release 3.3.1
 
 - SERVER: Updated .KR, .ES (GH-267) TLD definitions.
 
@@ -439,7 +445,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.enom.com parser to the new response format (GH-269). [thanks @takama]
 
 
-#### Release 3.3.0
+## Release 3.3.0
 
 - SERVER: Added .CF TLD definition.
 
@@ -462,7 +468,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.jprs.jp should support `Registered` status (GH-253). [thanks @Pietr]
 
 
-#### Release 3.2.1
+## Release 3.2.1
 
 - NEW: Added full whois.nic.tr parser.
 
@@ -483,7 +489,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Deprecate Whois::Record::Contact::TYPE_ADMIN in favor of Whois::Record::Contact::TYPE_ADMINISTRATIVE
 
 
-#### Release 3.2.0
+## Release 3.2.0
 
 - SERVER: Added .JP.NET (GH-240), XN--J1AMH TLD definitions.
 
@@ -506,7 +512,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: Arin adapter is incorrectly passing an Arin flag to referral queries.
 
 
-#### Release 3.1.3
+## Release 3.1.3
 
 - SERVER: Updated .GD (GH-227), .TC (GH-228) TLD definitions.
 
@@ -523,7 +529,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.ua is mixing two kinds of responses (GH-235).
 
 
-#### Release 3.1.2
+## Release 3.1.2
 
 - NEW: Added full whois.comlaude.com parser (GH-222). [thanks @delwyn]
 
@@ -542,12 +548,12 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: whois.nic.fr parser crashes when the contact has no changed attribute (GH-226).
 
 
-#### Release 3.1.1
+## Release 3.1.1
 
 - FIXED: Fixed CLI crash (GH-219). [thanks @linrock]
 
 
-#### Release 3.1.0
+## Release 3.1.0
 
 - SERVER: Added .POST (GH-192) TLD definition.
 
@@ -578,7 +584,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - FIXED: Record#technical_contact raised a NoMethodError (GH-217). [thanks @yspro]
 
 
-#### Release 3.0.0
+## Release 3.0.0
 
 - SERVER: Added .AX TLD definition.
 
@@ -720,7 +726,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
   - Whois::PropertyNotAvailable -> Whois::AttributeNotImplemented
 
 
-#### Release 2.7.0
+## Release 2.7.0
 
 - SERVER: Added .IQ TLD server (GH-171).
 
@@ -759,7 +765,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: whois.dns.pl now supports expires_on (GH-185). [thanks @y3ti]
 
 
-#### Release 2.6.4
+## Release 2.6.4
 
 - SERVER: Added .CW TLD server.
 
@@ -794,7 +800,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Removed support for .gemtest and removed /spec folder from the packaged gem.
 
 
-#### Release 2.6.3
+## Release 2.6.3
 
 - NEW: whois.registrypro.pro is now a full parser.
 
@@ -807,7 +813,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - CHANGED: Updated whois.registrypro.pro parser to the new response format.
 
 
-#### Release 2.6.2
+## Release 2.6.2
 
 - SERVER: Added .SX TLD server (GH-170).
 
@@ -818,7 +824,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - NEW: whois.ua parser is now a full parser (GH-169). [thanks @Uko]
 
 
-#### Release 2.6.1
+## Release 2.6.1
 
 - Reverted partial commit about .SX definitions included in v2.6.0 by mistake.
 
