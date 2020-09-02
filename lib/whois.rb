@@ -109,7 +109,7 @@ module Whois
     end
 
     def extract_callstack(callstack)
-      gem_root = File.expand_path('../..', __dir__) + "/"
+      gem_root = "#{File.expand_path('../..', __dir__)}/"
       offending_line = callstack.find { |line| !line.start_with?(gem_root) } || callstack.first
       if offending_line
         if (md = offending_line.match(/^(.+?):(\d+)(?::in `(.*?)')?/))

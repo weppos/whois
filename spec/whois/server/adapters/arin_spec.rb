@@ -23,7 +23,7 @@ describe Whois::Server::Adapters::Arin do
       it "follows whois:// referrals" do
         referral = File.read(fixture("referrals/arin_referral_whois.txt"))
         response = "Whois Response"
-        expected = referral + "\n" + response
+        expected = "#{referral}\n#{response}"
         expect(server.query_handler).to receive(:call).with("n + 0.0.0.0", "whois.arin.net", 43).and_return(referral)
         expect(server.query_handler).to receive(:call).with("0.0.0.0", "whois.ripe.net", 43).and_return(response)
 
@@ -37,7 +37,7 @@ describe Whois::Server::Adapters::Arin do
       it "follows rwhois:// referrals" do
         referral = File.read(fixture("referrals/arin_referral_rwhois.txt"))
         response = "Whois Response"
-        expected = referral + "\n" + response
+        expected = "#{referral}\n#{response}"
         expect(server.query_handler).to receive(:call).with("n + 0.0.0.0", "whois.arin.net", 43).and_return(referral)
         expect(server.query_handler).to receive(:call).with("0.0.0.0", "rwhois.servernap.net", 4321).and_return(response)
 

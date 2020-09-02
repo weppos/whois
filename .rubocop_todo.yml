@@ -57,18 +57,6 @@ Style/BlockDelimiters:
     - 'spec/whois/server/socket_handler_spec.rb'
     - 'spec/whois/server_spec.rb'
 
-# Offense count: 20
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: braces, no_braces, context_dependent
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'spec/whois/client_spec.rb'
-    - 'spec/whois/server/adapters/base_spec.rb'
-    - 'spec/whois/server/adapters/formatted_spec.rb'
-    - 'spec/whois/server/adapters/standard_spec.rb'
-    - 'spec/whois/server_spec.rb'
-
 # Offense count: 6
 Style/Documentation:
   Exclude:
