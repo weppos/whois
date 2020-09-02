@@ -25,7 +25,7 @@ describe Whois::Server::Adapters::Verisign do
       it "follows all referrals" do
         referral = File.read(fixture("referrals/crsnic.com.txt"))
         response = "Match for example.test."
-        expected = referral + "\n" + response
+        expected = "#{referral}\n#{response}"
         expect(server.query_handler).to receive(:call).with("=example.test", "whois.test", 43).and_return(referral)
         expect(server.query_handler).to receive(:call).with("example.test", "whois.markmonitor.com", 43).and_return(response)
 

@@ -5,6 +5,7 @@ AllCops:
     # Exclude vendored folders
     - 'tmp/**/*'
     - 'vendor/**/*'
+  NewCops: enable
 
 # [codesmell]
 Layout/LineLength:

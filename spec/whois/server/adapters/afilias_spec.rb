@@ -25,7 +25,7 @@ describe Whois::Server::Adapters::Afilias do
       it "follows all referrals" do
         referral = File.read(fixture("referrals/afilias.bz.txt"))
         response = "Match for example.test."
-        expected = referral + "\n" + response
+        expected = "#{referral}\n#{response}"
         expect(server.query_handler).to receive(:call).with("example.test", "whois.afilias-grs.info", 43).and_return(referral)
         expect(server.query_handler).to receive(:call).with("example.test", "whois.belizenic.bz", 43).and_return(response)
 

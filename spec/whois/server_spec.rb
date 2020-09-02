@@ -36,7 +36,7 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-                                                          ["com", "whois.crsnic.net", adapter: "verisign"],
+                                                          ["com", "whois.crsnic.net", { adapter: "verisign"}],
                                                         ])
       end
     end
@@ -94,6 +94,7 @@ describe Whois::Server do
     it "accepts an :adapter option as Class and returns an instance of given adapter" do
       a = Class.new do
         attr_reader :args
+
         def initialize(*args)
           @args = args
         end
