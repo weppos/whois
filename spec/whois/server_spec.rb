@@ -36,7 +36,7 @@ describe Whois::Server do
       with_definitions do
         described_class.load_json("tld.json")
         expect(described_class.definitions(:tld)).to eq([
-                                                          ["com", "whois.crsnic.net", { adapter: "verisign"}],
+                                                          ["com", "whois.crsnic.net", { adapter: "verisign" }],
                                                         ])
       end
     end
