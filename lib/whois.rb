@@ -47,7 +47,7 @@ module Whois
         return
       end
 
-      deprecate(%{Whois.available? is deprecated. Call Whois.whois("#{object}").available?})
+      deprecate(%{Whois.available? is deprecated. Call Whois.whois("#{object}").parser.available?})
 
       result = lookup(object).parser.available?
       if result.nil?
@@ -64,7 +64,7 @@ module Whois
         return
       end
 
-      deprecate(%{Whois.registered? is deprecated. Call Whois.whois("#{object}").available?})
+      deprecate(%{Whois.registered? is deprecated. Call Whois.whois("#{object}").parser.available?})
 
       result = lookup(object).parser.registered?
       if result.nil?
