@@ -5,15 +5,15 @@ require 'spec_helper'
 describe Whois::Server do
   describe ".load_json" do
     it "loads a definition from a JSON file" do
-      expect(File).to receive(:read).with("tld.json").and_return(<<-JSON)
-{
-  "ae.org": {
-    "host": "whois.centralnic.com"
-  },
-  "ar.com": {
-    "host": "whois.centralnic.com"
-  }
-}
+      expect(File).to receive(:read).with("tld.json").and_return(<<~JSON)
+        {
+          "ae.org": {
+            "host": "whois.centralnic.com"
+          },
+          "ar.com": {
+            "host": "whois.centralnic.com"
+          }
+        }
       JSON
       with_definitions do
         described_class.load_json("tld.json")
@@ -25,13 +25,13 @@ describe Whois::Server do
     end
 
     it "convert option keys to Symbol" do
-      expect(File).to receive(:read).with("tld.json").and_return(<<-JSON)
-{
-  "com": {
-    "host": "whois.crsnic.net",
-    "adapter": "verisign"
-  }
-}
+      expect(File).to receive(:read).with("tld.json").and_return(<<~JSON)
+        {
+          "com": {
+            "host": "whois.crsnic.net",
+            "adapter": "verisign"
+          }
+        }
       JSON
       with_definitions do
         described_class.load_json("tld.json")
