@@ -10,11 +10,11 @@ describe Whois::Server::Adapters::Base do
     it "requires type, allocation, and host parameters" do
       expect { described_class.new(:tld) }.to raise_error(ArgumentError)
       expect { described_class.new(:tld, ".test") }.to raise_error(ArgumentError)
-      expect { described_class.new(:tld, ".test", "whois.test") }.to_not raise_error
+      expect { described_class.new(:tld, ".test", "whois.test") }.not_to raise_error
     end
 
     it "accepts an options parameter" do
-      expect { described_class.new(:tld, ".test", "whois.test", { foo: "bar" }) }.to_not raise_error
+      expect { described_class.new(:tld, ".test", "whois.test", { foo: "bar" }) }.not_to raise_error
     end
 
     it "sets instance variables from arguments" do

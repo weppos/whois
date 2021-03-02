@@ -51,13 +51,6 @@ RSpec/ExampleLength:
     - 'spec/whois/server/socket_handler_spec.rb'
     - 'spec/whois/server_spec.rb'
 
-# Offense count: 1
-# Configuration parameters: Include, CustomTransform, IgnoreMethods, SpecSuffixOnly.
-# Include: **/*_spec*rb*, **/spec/**/*
-RSpec/FilePath:
-  Exclude:
-    - 'spec/whois/errors_spec.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: .

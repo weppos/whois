@@ -9,9 +9,9 @@ describe Whois::WebInterfaceError do
     end
 
     it "requires the URL argument" do
-      expect {
+      expect do
         described_class.new
-      }.to raise_error(ArgumentError)
+      end.to raise_error(ArgumentError)
     end
   end
 

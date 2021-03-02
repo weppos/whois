@@ -23,7 +23,7 @@ describe Whois::Record do
     it "requires a server and parts" do
       expect { described_class.new }.to raise_error(ArgumentError)
       expect { described_class.new(server) }.to raise_error(ArgumentError)
-      expect { described_class.new(server, parts) }.to_not raise_error
+      expect { described_class.new(server, parts) }.not_to raise_error
     end
 
     it "sets server and parts from arguments" do
