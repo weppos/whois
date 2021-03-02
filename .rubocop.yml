@@ -2,6 +2,9 @@ inherit_from:
   - .rubocop_opinionated.yml
   - .rubocop_todo.yml
 
+require:
+  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.5
   Exclude:
