@@ -314,7 +314,7 @@ module Whois
             index = token.index(".")
             break if index.nil?
 
-            token = token[(index + 1)..]
+            token = token[(index + 1)..-1]
           end
         end
 

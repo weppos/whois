@@ -3,6 +3,7 @@ inherit_from:
   - .rubocop_todo.yml
 
 AllCops:
+  TargetRubyVersion: 2.5
   Exclude:
     # Exclude .gemspec files because they are generally auto-generated
     - '*.gemspec'
