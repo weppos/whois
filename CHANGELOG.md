@@ -3,6 +3,13 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+## master
+
+### Changed
+
+- SERVER: Update 43.0.0.0/8 allocation (GH-615). Thanks @taketo1113
+
+
 ## Release 5.0.1
 
 ### Changed
