@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2021-03-02 11:02:00 UTC"
+    "updated": "2021-03-02 11:55:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -5871,10 +5871,6 @@
     "_type": "newgtld",
     "host": "whois.nic.vision"
   },
-  "vistaprint": {
-    "_type": "newgtld",
-    "host": "whois.nic.vistaprint"
-  },
   "viva": {
     "_group": "centralnic",
     "_type": "newgtld",
@@ -6313,11 +6309,6 @@
   "xn--efvy88h": {
     "_type": "newgtld",
     "host": "whois.nic.xn--efvy88h"
-  },
-  "xn--estv75g": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.nic.xn--estv75g"
   },
   "xn--fct429k": {
     "_group": "amazonregistry",

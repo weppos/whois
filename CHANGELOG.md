@@ -3,6 +3,13 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+## master
+
+### Changed
+
+- SERVER: Deleted .VISTAPRINT, .XN--ESTV75G
+
+
 ## Release 5.0.2
 
 ### Changed
