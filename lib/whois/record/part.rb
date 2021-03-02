@@ -22,8 +22,7 @@ module Whois
     # @attr [String] body The body containing the WHOIS output.
     # @attr [String] host The host which returned the body.
     #
-    class Part < Struct.new(:body, :host)
-
+    Part = Struct.new(:body, :host) do
       def initialize(*args)
         if args.first.is_a? Hash
           initialize_with_hash(args.first)

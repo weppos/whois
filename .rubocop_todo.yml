@@ -267,12 +267,6 @@ Style/StringLiterals:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/StructInheritance:
-  Exclude:
-    - 'lib/whois/record/part.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Style/ZeroLengthPredicate:
   Exclude:
     - 'lib/whois/record/part.rb'
