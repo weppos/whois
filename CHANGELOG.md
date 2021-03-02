@@ -8,6 +8,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 ### Changed
 
 - SERVER: Update 43.0.0.0/8 allocation (GH-615). Thanks @taketo1113
+- SERVER: Deleted .LIAISON, .MOVISTAR, .TELEFONICA, .BNL, .CARTIER, .EVERBANK, .LADBROKES, .PIAGET, .STARHUB, .MOPAR, .MOBILY, .ISELECT, .XN--MGBB9FBPOB, .DODGE, .WARMAN, .DUNS, .LANCOME, .CHRYSLER, .SRT, .UCONNECT
 
 
 ## Release 5.0.1

@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2019-09-19 11:00:00 UTC"
+    "updated": "2021-03-02 10:53:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -654,11 +654,6 @@
   "bn": {
     "host": "whois.bnnic.bn"
   },
-  "bnl": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.nic.bnl"
-  },
   "bnpparibas": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -927,10 +922,6 @@
     "_type": "newgtld",
     "host": "whois.uniregistry.net"
   },
-  "cartier": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "casa": {
     "_group": "mmregistry",
     "_type": "newgtld",
@@ -1070,11 +1061,6 @@
     "_group": "google",
     "_type": "newgtld",
     "host": "whois.nic.google"
-  },
-  "chrysler": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
   },
   "church": {
     "_group": "donuts",
@@ -1694,11 +1680,6 @@
     "_type": "newgtld",
     "host": "whois.nic.doctor"
   },
-  "dodge": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
-  },
   "dog": {
     "_group": "donuts",
     "_type": "newgtld",
@@ -1743,10 +1724,6 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.nic.dunlop"
-  },
-  "duns": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "dupont": {
     "_type": "newgtld",
@@ -1899,10 +1876,6 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.nic.events"
-  },
-  "everbank": {
-    "_type": "newgtld",
-    "host": "whois.nic.everbank"
   },
   "exchange": {
     "_group": "donuts",
@@ -2953,10 +2926,6 @@
   "is": {
     "host": "whois.isnic.is"
   },
-  "iselect": {
-    "_type": "newgtld",
-    "host": "whois.nic.iselect"
-  },
   "ismaili": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -3226,10 +3195,6 @@
     "_type": "newgtld",
     "host": "whois.nic.lacaixa"
   },
-  "ladbrokes": {
-    "_type": "newgtld",
-    "host": "whois.nic.ladbrokes"
-  },
   "lamborghini": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -3249,10 +3214,6 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
-  },
-  "lancome": {
-    "_type": "newgtld",
-    "host": "whois.nic.lancome"
   },
   "land": {
     "_group": "donuts",
@@ -3342,10 +3303,6 @@
   },
   "li": {
     "host": "whois.nic.li"
-  },
-  "liaison": {
-    "_type": "newgtld",
-    "host": "whois.nic.liaison"
   },
   "lidl": {
     "_type": "newgtld",
@@ -3742,10 +3699,6 @@
     "_type": "newgtld",
     "host": "whois.nic.mobile"
   },
-  "mobily": {
-    "_type": "newgtld",
-    "adapter": "none"
-  },
   "moda": {
     "_group": "donuts",
     "_type": "newgtld",
@@ -3783,11 +3736,6 @@
     "_type": "newgtld",
     "adapter": "none"
   },
-  "mopar": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
-  },
   "mormon": {
     "_group": "afiliassrs",
     "_type": "newgtld",
@@ -3820,11 +3768,6 @@
     "_group": "donuts",
     "_type": "newgtld",
     "host": "whois.nic.movie"
-  },
-  "movistar": {
-    "_group": "knipp",
-    "_type": "newgtld",
-    "host": "whois-fe.movistar.tango.knipp.de"
   },
   "mp": {
     "adapter": "none"
@@ -4382,10 +4325,6 @@
     "_group": "aridnrs",
     "_type": "newgtld",
     "host": "whois.nic.physio"
-  },
-  "piaget": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "pics": {
     "_group": "uniregistry",
@@ -5280,11 +5219,6 @@
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
   },
-  "srt": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
-  },
   "ss": {
     "host": "whois.nic.ss"
   },
@@ -5304,10 +5238,6 @@
     "_group": "afiliassrs",
     "_type": "newgtld",
     "host": "whois.nic.star"
-  },
-  "starhub": {
-    "_type": "newgtld",
-    "host": "whois.nic.starhub"
   },
   "statebank": {
     "_group": "afiliassrs",
@@ -5511,11 +5441,6 @@
   },
   "tel": {
     "host": "whois.nic.tel"
-  },
-  "telefonica": {
-    "_group": "knipp",
-    "_type": "newgtld",
-    "host": "whois-fe.telefonica.tango.knipp.de"
   },
   "temasek": {
     "_group": "afiliassrs",
@@ -5769,11 +5694,6 @@
   "ubs": {
     "_type": "newgtld",
     "host": "whois.nic.ubs"
-  },
-  "uconnect": {
-    "_group": "afiliassrs",
-    "_type": "newgtld",
-    "host": "whois.afilias-srs.net"
   },
   "ug": {
     "host": "whois.co.ug"
@@ -6033,10 +5953,6 @@
     "_group": "amazonregistry",
     "_type": "newgtld",
     "host": "whois.nic.wanggou"
-  },
-  "warman": {
-    "_type": "newgtld",
-    "host": "whois.nic.warman"
   },
   "watch": {
     "_group": "donuts",
@@ -6576,10 +6492,6 @@
   "xn--mgbayh7gpa": {
     "adapter": "web",
     "url": "http://idn.jo/whois_a.aspx"
-  },
-  "xn--mgbb9fbpob": {
-    "_type": "newgtld",
-    "adapter": "none"
   },
   "xn--mgbbh1a": {
     "_type": "newgtld",
