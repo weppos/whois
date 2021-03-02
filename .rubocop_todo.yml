@@ -89,17 +89,6 @@ RSpec/NamedSubject:
     - 'spec/whois/record_spec.rb'
     - 'spec/whois/server/socket_handler_spec.rb'
 
-# Offense count: 9
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: not_to, to_not
-RSpec/NotToNot:
-  Exclude:
-    - 'spec/whois/client_spec.rb'
-    - 'spec/whois/record/part_spec.rb'
-    - 'spec/whois/record_spec.rb'
-    - 'spec/whois/server/adapters/base_spec.rb'
-
 # Offense count: 15
 # Cop supports --auto-correct.
 # Configuration parameters: Strict, EnforcedStyle, AllowedExplicitMatchers.

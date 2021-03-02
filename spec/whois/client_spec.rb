@@ -5,11 +5,11 @@ require 'spec_helper'
 describe Whois::Client do
   describe "#initialize" do
     it "accepts a zero parameters" do
-      expect { described_class.new }.to_not raise_error
+      expect { described_class.new }.not_to raise_error
     end
 
     it "accepts a settings parameter" do
-      expect { described_class.new({ foo: "bar" }) }.to_not raise_error
+      expect { described_class.new({ foo: "bar" }) }.not_to raise_error
     end
 
 
@@ -112,7 +112,7 @@ describe Whois::Client do
       client = described_class.new(timeout: 5)
       expect {
         client.lookup("example.test")
-      }.to_not raise_error
+      }.not_to raise_error
     end
 
     it "supports unlimited timeout" do
@@ -126,7 +126,7 @@ describe Whois::Client do
       client = described_class.new.tap { |c| c.timeout = nil }
       expect {
         client.lookup("example.test")
-      }.to_not raise_error
+      }.not_to raise_error
     end
   end
 

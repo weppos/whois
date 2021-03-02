@@ -8,14 +8,14 @@ describe Whois::Record::Part do
       expect {
         instance = described_class.new
         expect(instance.body).to be_nil
-      }.to_not raise_error
+      }.not_to raise_error
     end
 
     it "accepts an empty hash" do
       expect {
         instance = described_class.new({})
         expect(instance.body).to be_nil
-      }.to_not raise_error
+      }.not_to raise_error
     end
 
     it "initializes a new instance from given hash" do
