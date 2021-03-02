@@ -39,9 +39,7 @@
     "host": "whois.apnic.net"
   },
   "43.0.0.0/8": {
-    "host": "whois.nic.ad.jp",
-    "adapter": "formatted",
-    "format": "%s/e"
+    "host": "whois.apnic.net"
   },
   "46.0.0.0/8": {
     "host": "whois.ripe.net"
