@@ -138,12 +138,6 @@ RSpec/SubjectStub:
   Exclude:
     - 'spec/whois/server/socket_handler_spec.rb'
 
-# Offense count: 1
-# Configuration parameters: IgnoreNameless, IgnoreSymbolicNames.
-RSpec/VerifiedDoubles:
-  Exclude:
-    - 'spec/whois/server/socket_handler_spec.rb'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.

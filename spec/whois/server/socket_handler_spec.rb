@@ -14,12 +14,14 @@ describe Whois::Server::SocketHandler do
       end
 
       it "executes a socket connection for given args" do
-        socket = double("Handler")
+        socket = instance_double(TCPSocket)
         expect(socket).to receive(:write).with("example.test\r\n")
         expect(socket).to receive(:read)
         expect(socket).to receive(:close)
 
-        expect(TCPSocket).to receive(:new).with("whois.test", 43).and_return(socket)
+        expect(TCPSocket).to receive(:new)
+          .with("whois.test", 43)
+          .and_return(socket)
         subject.call("example.test", "whois.test", 43)
       end
     end
