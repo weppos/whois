@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2021-03-02 10:53:00 UTC"
+    "updated": "2021-03-02 11:02:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -5274,7 +5274,7 @@
   },
   "stream": {
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.stream"
   },
   "studio": {
     "_group": "donuts",
