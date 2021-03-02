@@ -87,7 +87,7 @@ module Whois
           options = if settings.empty?
                       EMPTY_HASH
                     else
-                      Hash[settings.map { |k, v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }].freeze
+                      settings.map { |k, v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }.to_h.freeze
                     end
           define(type, allocation, host, options)
         end
@@ -314,7 +314,7 @@ module Whois
             index = token.index(".")
             break if index.nil?
 
-            token = token[(index + 1)..-1]
+            token = token[(index + 1)..]
           end
         end
 
@@ -395,9 +395,9 @@ module Whois
         return true if addr.match?(/\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/)
         return true if addr.match?(/\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*)?\Z/)
         # IPv6 (IPv4 compat)
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?($')
-        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
-        return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?($')
+        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:/ =~ addr && valid_ipv4?(Regexp.last_match.post_match)
+        return true if /\A[\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?(Regexp.last_match.post_match)
+        return true if /\A::([\dA-Fa-f]{1,4}(:[\dA-Fa-f]{1,4})*:)?/ =~ addr && valid_ipv4?(Regexp.last_match.post_match)
 
         false
       end
