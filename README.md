@@ -213,4 +213,4 @@ Report issues or feature requests to [GitHub Issues](https://github.com/weppos/w
 
 ## License
 
-Copyright (c) 2009-2020 [Simone Carletti](https://simonecarletti.com/). This is Free Software distributed under the MIT license.
+Copyright (c) 2009-2021 [Simone Carletti](https://simonecarletti.com/). This is Free Software distributed under the MIT license.
