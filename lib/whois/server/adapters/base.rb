@@ -48,15 +48,10 @@ module Whois
         attr_reader :buffer
 
 
-        # @param  [Symbol] type
-        #         The type of WHOIS adapter to define.
-        #         Known values are :tld, :ipv4, :ipv6.
-        # @param  [String] allocation
-        #         The allocation, range or hostname, this server is responsible for.
-        # @param  [String, nil] host
-        #         The server hostname. Use nil if unknown or not available.
-        # @param  [Hash] options Optional adapter properties.
-        #
+        # @param  type [Symbol] the type of WHOIS adapter to define. Known values are :tld, :ipv4, :ipv6,
+        # @param  allocation [String] the allocation, range or hostname, this server is responsible for.
+        # @param  host [String, nil] the server hostname. Use nil if unknown or not available.
+        # @param  options [Hash] optional adapter properties
         def initialize(type, allocation, host, options = {})
           @type       = type
           @allocation = allocation
@@ -66,10 +61,9 @@ module Whois
 
         # Checks self and other for equality.
         #
-        # @param  [The Whois::Server::Adapters::Base] other
-        # @return [Boolean] Returns true if the other is the same object,
+        # @param  other [The Whois::Server::Adapters::Base]
+        # @return [Boolean] true if the other is the same object,
         #         or <tt>other</tt> attributes matches this object attributes.
-        #
         def ==(other)
           (
             self.equal?(other)
@@ -87,27 +81,23 @@ module Whois
 
         # Merges given +settings+ into current {#options}.
         #
-        # @param  [Hash] settings
-        # @return [Hash] The updated options for this object.
-        #
+        # @param  settings [Hash]
+        # @return [Hash] the updated options for this object
         def configure(settings)
           @host = settings[:host] if settings[:host]
           options.merge!(settings)
         end
 
 
-        # Performs a Whois lookup for <tt>string</tt>
-        # using the current server adapter.
+        # Performs a Whois lookup for <tt>string</tt> using the current server adapter.
         #
-        # Internally, this method calls {#request}
-        # using the Template Method design pattern.
+        # Internally, this method calls {#request} using the Template Method design pattern.
         #
         #   server.lookup("google.com")
         #   # => Whois::Record
         #
-        # @param  [String] string The string to be sent as query parameter.
+        # @param  string [String] the string to query
         # @return [Whois::Record]
-        #
         def lookup(string)
           buffer_start do |buffer|
             request(string)
@@ -121,11 +111,10 @@ module Whois
         # it is intended to be overwritten in the concrete subclasses.
         # This is the heart of the Template Method design pattern.
         #
-        # @param  [String] string The string to be sent as query parameter.
+        # @param  string [String] the string to query
         # @return [void]
         # @raise  [NotImplementedError]
         # @abstract
-        #
         def request(string)
           raise NotImplementedError
         end
