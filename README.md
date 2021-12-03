@@ -4,7 +4,7 @@
 
 This library was extracted from [RoboWhois](https://robowhois.com/) and [RoboDomain](https://robodomain.com/), and it's now in use at [DNSimple](https://dnsimple.com/). It has been performing queries in production since July 2009.
 
-[![Build Status](https://github.com/weppos/whois-ruby/actions/workflows/tests.yml/badge.svg)](https://github.com/weppos/whois-ruby/actions/workflows/tests.yml)
+[![Build Status](https://github.com/weppos/whois/actions/workflows/tests.yml/badge.svg)](https://github.com/weppos/whois/actions/workflows/tests.yml)
 
 
 ## Donate a coffee
