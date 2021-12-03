@@ -99,10 +99,8 @@ module Whois
         # @param  string [String] the string to query
         # @return [Whois::Record]
         def lookup(string)
-          buffer_start do |buffer|
-            request(string)
-            Whois::Record.new(self, buffer.dup)
-          end
+          parts = buffer_start { request(string) }
+          Whois::Record.new(self, parts)
         end
 
         # Performs the real WHOIS request.
@@ -138,6 +136,7 @@ module Whois
         def buffer_start
           @buffer ||= []
           yield(@buffer)
+          @buffer.dup
         ensure
           @buffer.clear
         end
