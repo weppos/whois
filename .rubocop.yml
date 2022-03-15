@@ -16,6 +16,7 @@ AllCops:
     # Exclude artifacts
     - 'pkg/**/*'
     # Other
+    - '.simplecov'
     - 'test/benchmarks/**/*'
     - 'test/profilers/**/*'
     - 'utils/**/*'
