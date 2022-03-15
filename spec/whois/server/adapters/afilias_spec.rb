@@ -39,7 +39,7 @@ describe Whois::Server::Adapters::Afilias do
         referral = File.read(fixture("referrals/afilias.bz.txt"))
         server.options[:referral] = false
         expect(server.query_handler).to receive(:call).with("example.test", "whois.afilias-grs.info", 43).and_return(referral)
-        expect(server.query_handler).to receive(:call).with("example.test", "whois.belizenic.bz", 43).never
+        expect(server.query_handler).not_to receive(:call).with("example.test", "whois.belizenic.bz", 43)
 
         record = server.lookup("example.test")
         expect(record.parts.size).to eq(1)

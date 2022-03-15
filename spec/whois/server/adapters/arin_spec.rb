@@ -52,7 +52,7 @@ describe Whois::Server::Adapters::Arin do
         referral = File.read(fixture("referrals/arin_referral_whois.txt"))
         server.options[:referral] = false
         expect(server.query_handler).to receive(:call).with("n + 0.0.0.0", "whois.arin.net", 43).and_return(referral)
-        expect(server.query_handler).to receive(:call).with("0.0.0.0", "whois.ripe.net", 43).never
+        expect(server.query_handler).not_to receive(:call).with("0.0.0.0", "whois.ripe.net", 43)
 
         record = server.lookup("0.0.0.0")
         expect(record.parts.size).to eq(1)
@@ -61,7 +61,7 @@ describe Whois::Server::Adapters::Arin do
       it "ignores referral (gracefully) if missing" do
         referral = File.read(fixture("referrals/arin_referral_missing.txt"))
         expect(server.query_handler).to receive(:call).with("n + 0.0.0.0", "whois.arin.net", 43).and_return(referral)
-        expect(server.query_handler).to receive(:call).never
+        expect(server.query_handler).not_to receive(:call)
 
         record = server.lookup("0.0.0.0")
         expect(record.parts.size).to eq(1)

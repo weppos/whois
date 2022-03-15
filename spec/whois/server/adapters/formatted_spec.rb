@@ -21,7 +21,7 @@ describe Whois::Server::Adapters::Formatted do
     context "without format option" do
       it "raises an error" do
         server = described_class.new(:tld, ".de", "whois.denic.de", {})
-        expect(server.query_handler).to receive(:call).never
+        expect(server.query_handler).not_to receive(:call)
 
         expect {
           server.lookup("domain.de")

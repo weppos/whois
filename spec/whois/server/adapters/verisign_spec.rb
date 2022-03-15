@@ -39,7 +39,7 @@ describe Whois::Server::Adapters::Verisign do
         referral = File.read(fixture("referrals/crsnic.com.txt"))
         server.options[:referral] = false
         expect(server.query_handler).to receive(:call).with("=example.test", "whois.test", 43).and_return(referral)
-        expect(server.query_handler).to receive(:call).never
+        expect(server.query_handler).not_to receive(:call)
 
         record = server.lookup("example.test")
         expect(record.parts.size).to eq(1)
@@ -50,7 +50,7 @@ describe Whois::Server::Adapters::Verisign do
       it "ignores referral (gracefully) if missing" do
         referral = File.read(fixture("referrals/crsnic.com_referral_missing.txt"))
         expect(server.query_handler).to receive(:call).with("=example.test", "whois.test", 43).and_return(referral)
-        expect(server.query_handler).to receive(:call).never
+        expect(server.query_handler).not_to receive(:call)
 
         record = server.lookup("example.test")
         expect(record.parts.size).to eq(1)

@@ -78,15 +78,6 @@ RSpec/PredicateMatcher:
     - 'spec/whois/record_spec.rb'
     - 'spec/whois/server/adapters/base_spec.rb'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-RSpec/ReceiveNever:
-  Exclude:
-    - 'spec/whois/server/adapters/afilias_spec.rb'
-    - 'spec/whois/server/adapters/arin_spec.rb'
-    - 'spec/whois/server/adapters/formatted_spec.rb'
-    - 'spec/whois/server/adapters/verisign_spec.rb'
-
 # Offense count: 40
 RSpec/StubbedMock:
   Exclude:
