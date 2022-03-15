@@ -11,7 +11,16 @@
 
 require 'ipaddr'
 require 'json'
-require 'whois/server/adapters/base'
+require "whois/server/adapters/base"
+require "whois/server/adapters/arin"
+require "whois/server/adapters/arpa"
+require "whois/server/adapters/afilias"
+require "whois/server/adapters/formatted"
+require "whois/server/adapters/none"
+require "whois/server/adapters/not_implemented"
+require "whois/server/adapters/standard"
+require "whois/server/adapters/verisign"
+require "whois/server/adapters/web"
 
 
 module Whois
@@ -27,16 +36,6 @@ module Whois
     # WHOIS server adapters. Each adapter is a subclass of {Whois::Server::Adapters::Base},
     # customized to handle WHOIS queries for a type or a group of servers.
     module Adapters
-      autoload :Base,             "whois/server/adapters/base"
-      autoload :Arin,             "whois/server/adapters/arin"
-      autoload :Arpa,             "whois/server/adapters/arpa"
-      autoload :Afilias,          "whois/server/adapters/afilias"
-      autoload :Formatted,        "whois/server/adapters/formatted"
-      autoload :None,             "whois/server/adapters/none"
-      autoload :NotImplemented,   "whois/server/adapters/not_implemented"
-      autoload :Standard,         "whois/server/adapters/standard"
-      autoload :Verisign,         "whois/server/adapters/verisign"
-      autoload :Web,              "whois/server/adapters/web"
     end
 
     # @return [Array<Symbol>] the definition types
