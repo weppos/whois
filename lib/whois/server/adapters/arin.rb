@@ -43,8 +43,8 @@ module Whois
           return unless response =~ /ReferralServer:\s*r?whois:\/\/([\w.-]+)(?::(\d+))?/
 
           {
-            host: $1,
-            port: $2 ? $2.to_i : nil,
+            host: Regexp.last_match(1),
+            port: Regexp.last_match(2) ? Regexp.last_match(2).to_i : nil,
           }
         end
 
