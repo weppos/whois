@@ -65,12 +65,12 @@ module Whois
         # @return [Boolean] true if the other is the same object,
         #         or <tt>other</tt> attributes matches this object attributes.
         def ==(other)
-          self.equal?(other) || (
+          equal?(other) || (
             other.is_a?(self.class) &&
-            self.type == other.type &&
-            self.allocation == other.allocation &&
-            self.host == other.host &&
-            self.options == other.options
+            type == other.type &&
+            allocation == other.allocation &&
+            host == other.host &&
+            options == other.options
           )
         end
 
