@@ -8,6 +8,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 ### Changed
 
 - SERVER: Deleted .VISTAPRINT, .XN--ESTV75G
+- CHANGED: Eager load all adapters (GH-644). Thanks @casperisfine @byroot
 
 
 ## Release 5.0.2
