@@ -40,7 +40,7 @@ module Whois
         private
 
         def extract_referral(response)
-          return unless response =~ /ReferralServer:\s*r?whois:\/\/([\w.-]+)(?::(\d+))?/
+          return unless response =~ %r{ReferralServer:\s*r?whois://([\w.-]+)(?::(\d+))?}
 
           {
             host: Regexp.last_match(1),
