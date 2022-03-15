@@ -3,9 +3,7 @@
 require 'rspec'
 require 'whois'
 
-unless defined?(SPEC_ROOT)
-  SPEC_ROOT = File.expand_path(__dir__)
-end
+SPEC_ROOT = File.expand_path(__dir__) unless defined?(SPEC_ROOT)
 
 # The fixtures are UTF-8 encoded.
 # Make sure Ruby uses the proper encoding.

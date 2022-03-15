@@ -2,9 +2,7 @@
 
 module RSpecSupportConnectivityHelpers
   def need_connectivity
-    if connectivity_available?
-      yield
-    end
+    yield if connectivity_available?
   end
 
   def connectivity_available?

@@ -235,19 +235,13 @@ module Whois
       #         but the object type doesn't have any supported WHOIS adapter associated.
       def guess(string)
         # Top Level Domain match
-        if matches_tld?(string)
-          return factory(:tld, ".", "whois.iana.org")
-        end
+        return factory(:tld, ".", "whois.iana.org") if matches_tld?(string)
 
         # IP address (secure match)
-        if matches_ip?(string)
-          return find_for_ip(string)
-        end
+        return find_for_ip(string) if matches_ip?(string)
 
         # Email Address (secure match)
-        if matches_email?(string)
-          return find_for_email(string)
-        end
+        return find_for_email(string) if matches_email?(string)
 
         # Domain Name match
         if (server = find_for_domain(string))
@@ -255,9 +249,7 @@ module Whois
         end
 
         # ASN match
-        if matches_asn?(string)
-          return find_for_asn(string)
-        end
+        return find_for_asn(string) if matches_asn?(string)
 
         # Game Over
         raise ServerNotFound, "Unable to find a WHOIS server for `#{string}'"
@@ -277,9 +269,7 @@ module Whois
           ip = IPAddr.new(string)
           type = ip.ipv4? ? TYPE_IPV4 : TYPE_IPV6
           _definitions(type).each do |_, definition|
-            if IPAddr.new(definition.first).include?(ip)
-              return factory(type, *definition)
-            end
+            return factory(type, *definition) if IPAddr.new(definition.first).include?(ip)
           end
         rescue ArgumentError
           # continue
