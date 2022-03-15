@@ -37,7 +37,7 @@ module Whois
       Client.new.lookup(object)
     end
 
-    alias_method :whois, :lookup
+    alias whois lookup
 
 
     # @deprecated

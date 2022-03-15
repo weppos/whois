@@ -76,7 +76,7 @@ module Whois
           )
         end
 
-        alias_method :eql?, :==
+        alias eql? ==
 
 
         # Merges given +settings+ into current {#options}.
@@ -171,7 +171,7 @@ module Whois
           self.class.query_handler.call(query, *args)
         end
 
-        alias :query_the_socket :query
+        alias query_the_socket query
 
       end
 

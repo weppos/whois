@@ -67,7 +67,7 @@ module Whois
       end
     end
 
-    alias_method :eql?, :==
+    alias eql? ==
 
 
     # Invokes {#match} on record {#content}

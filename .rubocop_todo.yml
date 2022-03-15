@@ -98,16 +98,6 @@ RSpec/SubjectStub:
   Exclude:
     - 'spec/whois/server/socket_handler_spec.rb'
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: prefer_alias, prefer_alias_method
-Style/Alias:
-  Exclude:
-    - 'lib/whois.rb'
-    - 'lib/whois/record.rb'
-    - 'lib/whois/server/adapters/base.rb'
-
 # Offense count: 31
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, ProceduralMethods, FunctionalMethods, IgnoredMethods, AllowBracesOnProceduralOneLiners, BracesRequiredMethods.
