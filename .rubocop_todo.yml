@@ -45,13 +45,6 @@ RSpec/ExampleLength:
     - 'spec/whois/server/socket_handler_spec.rb'
     - 'spec/whois/server_spec.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: .
-# SupportedStyles: implicit, each, example
-RSpec/HookArgument:
-  EnforcedStyle: each
-
 # Offense count: 4
 # Configuration parameters: AssignmentOnly.
 RSpec/InstanceVariable:
