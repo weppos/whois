@@ -4212,7 +4212,7 @@
   "ovh": {
     "_group": "nicfr",
     "_type": "newgtld",
-    "host": "whois-ovh.nic.fr"
+    "host": "whois.ovh.com"
   },
   "pa": {
     "adapter": "web",
