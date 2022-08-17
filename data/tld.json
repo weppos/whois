@@ -2717,6 +2717,7 @@
     "host": "whois.nic.hospital"
   },
   "host": {
+    "_group": "centralnic",
     "_type": "newgtld",
     "host": "whois.nic.host"
   },
@@ -5269,6 +5270,7 @@
     "host": "whois.nic.storage"
   },
   "store": {
+    "_group": "centralnic",
     "_type": "newgtld",
     "host": "whois.nic.store"
   },
@@ -5744,8 +5746,9 @@
     "host": "whois.nic.university"
   },
   "uno": {
+    "_group": "centralnic",
     "_type": "newgtld",
-    "adapter": "none"
+    "host": "whois.nic.uno"
   },
   "uol": {
     "_group": "nicbr",
@@ -5976,6 +5979,7 @@
     "host": "whois.nic.weber"
   },
   "website": {
+    "_group": "centralnic",
     "_type": "newgtld",
     "host": "whois.nic.website"
   },
