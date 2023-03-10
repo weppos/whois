@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Release Gem
-        uses: cadwallion/publish-rubygems-action@d9474d9633f4674e59afb0c343f2dafe25181328
+        uses: cadwallion/publish-rubygems-action@94a6f4cd5350581749c569b5001eecc864e3ad0b
         env:
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
           RELEASE_COMMAND: rake release
