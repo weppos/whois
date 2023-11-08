@@ -135,8 +135,8 @@ describe Whois::Client do
     describe "#query" do
       it "sends a query for given domain" do
         record = described_class.new.lookup("weppos.it")
-        assert record.match?(/Domain:\s+weppos\.it/)
-        assert record.match?(/Created:/)
+        expect(record.match?(/Domain:\s+weppos\.it/)).to be(true)
+        expect(record.match?(/Created:/)).to be(true)
       end
     end
   end

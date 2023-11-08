@@ -6,7 +6,7 @@ describe Whois do
   let(:response) { "Domain:             example.it\nStatus:             AVAILABLE\n" }
 
   describe "Basic WHOIS querying and parsing" do
-    it "works" do
+    it "queries and returns a record" do
       with_definitions do
         Whois::Server.define(:tld, "it", "whois.nic.it")
         expect(Whois::Server::Adapters::Standard.query_handler).to receive(:call)
