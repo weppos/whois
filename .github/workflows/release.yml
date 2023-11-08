@@ -8,7 +8,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Release Gem
         uses: cadwallion/publish-rubygems-action@d9474d9633f4674e59afb0c343f2dafe25181328
         env:
