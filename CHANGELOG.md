@@ -8,6 +8,8 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 ### Changed
 
 - SERVER: Updated .UNO (GH-648)
+- SERVER: Updated .OVH (GH-647)
+- SERVER: Updated .TV (GH-657)
 
 
 ## Release 5.1.0
@@ -119,7 +121,7 @@ The `whois` library is now simply a WHOIS client. If you want to use the parsing
 - SERVER: Updated .CASA, .MEET, .WORK, .SURF, .XN--54B7FTA0CC, .CO.ZA [thanks @ranaldobowker], .MOBI
 
 - CHANGED: Definitions are now private and you cannot access/modify the internal representation directly. Instead, use the accessor methods.
-- CHANGED: Definitions internal representation changed to be indexed. This change drastically improved the lookup performances for domains, as well fixing the bug GH-536 where the order of the definitions were relevant. 
+- CHANGED: Definitions internal representation changed to be indexed. This change drastically improved the lookup performances for domains, as well fixing the bug GH-536 where the order of the definitions were relevant.
 
 **beta-2**
 
