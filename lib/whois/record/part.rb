@@ -26,7 +26,7 @@ module Whois
       def initialize(*args)
         if args.first.is_a? Hash
           initialize_with_hash(args.first)
-        elsif args.size.zero?
+        elsif args.empty?
           super
         else
           raise ArgumentError

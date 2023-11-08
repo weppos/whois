@@ -47,7 +47,7 @@ OptionParser.new do |opts|
     exit 1
   end
 
-  if ARGV.size.zero?
+  if ARGV.empty?
     puts opts
     exit 1
   end

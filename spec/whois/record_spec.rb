@@ -138,8 +138,8 @@ describe Whois::Record do
 
   describe "#match?" do
     it "calls match and checks for match" do
-      expect(subject.match?(/record/)).to eq(true)
-      expect(subject.match?(/nomatch/)).to eq(false)
+      expect(subject.match?(/record/)).to be(true)
+      expect(subject.match?(/nomatch/)).to be(false)
     end
   end
 

@@ -44,7 +44,7 @@ module Whois
     def available?(object)
       unless defined? Whois::Parser
         warn("Whois.available? requires the gem `whois-parser`")
-        return
+        return false
       end
 
       deprecate(%{Whois.available? is deprecated. Call Whois.whois("#{object}").parser.available?})
@@ -61,7 +61,7 @@ module Whois
     def registered?(object)
       unless defined? Whois::Parser
         warn("Whois.registered? requires the gem `whois-parser`")
-        return
+        return false
       end
 
       deprecate(%{Whois.registered? is deprecated. Call Whois.whois("#{object}").parser.registered?})
@@ -90,8 +90,8 @@ module Whois
     # @private
     def bug!(error, message)
       raise error, message.dup <<
-                   " Please report the issue at" \
-                   " http://github.com/weppos/whois/issues"
+                   " Please report the issue at " \
+                   "http://github.com/weppos/whois/issues"
     end
 
 

@@ -44,7 +44,7 @@ module Whois
 
           {
             host: Regexp.last_match(1),
-            port: Regexp.last_match(2) ? Regexp.last_match(2).to_i : nil,
+            port: Regexp.last_match(2)&.to_i,
           }
         end
 
