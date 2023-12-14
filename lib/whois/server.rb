@@ -268,7 +268,7 @@ module Whois
         begin
           ip = IPAddr.new(string)
           type = ip.ipv4? ? TYPE_IPV4 : TYPE_IPV6
-          _definitions(type).each do |_, definition|
+          _definitions(type).each_value do |definition|
             return factory(type, *definition) if IPAddr.new(definition.first).include?(ip)
           end
         rescue ArgumentError
@@ -321,7 +321,7 @@ module Whois
       def find_for_asn(string)
         asn = string[/\d+/].to_i
         asn_type = asn <= 65_535 ? TYPE_ASN16 : TYPE_ASN32
-        _definitions(asn_type).each do |_, definition|
+        _definitions(asn_type).each_value do |definition|
           if (range = definition.first.split.map(&:to_i)) && asn >= range.first && asn <= range.last
             return factory(asn_type, *definition)
           end
