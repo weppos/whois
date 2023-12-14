@@ -33,7 +33,7 @@ This repository contains the core whois library, that includes the WHOIS client,
 
 ## Requirements
 
-- Ruby >= 2.4
+- Ruby >= 3.0
 
 For older versions of Ruby, see the [CHANGELOG](CHANGELOG.md).
 
