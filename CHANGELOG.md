@@ -3,6 +3,13 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+## major
+
+### Changed
+
+- Minimum Rubu version 3.0
+
+
 ## Release 5.1.1
 
 ### Changed
