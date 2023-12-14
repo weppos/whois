@@ -86,7 +86,7 @@ module Whois
           options = if settings.empty?
                       EMPTY_HASH
                     else
-                      settings.map { |k, v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }.to_h.freeze
+                      settings.to_h { |k, v| [k.to_sym, v.is_a?(String) ? intern_string(v) : v] }.freeze
                     end
           define(type, allocation, host, options)
         end
@@ -303,7 +303,7 @@ module Whois
             index = token.index(".")
             break if index.nil?
 
-            token = token[(index + 1)..-1]
+            token = token[(index + 1)..]
           end
         end
 
