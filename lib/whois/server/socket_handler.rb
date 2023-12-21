@@ -54,9 +54,19 @@ module Whois
       # @api private
       #
       def execute(query, *args)
-        client = TCPSocket.new(*args)
-        client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
-        client.read                     # but write/read is more symmetric than puts/read
+        begin
+          client = TCPSocket.new(*args)
+          Thread.new do
+            begin
+              client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
+            rescue => e
+              print e.message
+            end
+          end
+          client.read                     # but write/read is more symmetric than puts/read
+        rescue => e
+          print e.message
+        end
       ensure                            # and I really want to use read instead of gets.
         client.close if client          # If != client something went wrong.
       end
