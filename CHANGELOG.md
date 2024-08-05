@@ -7,7 +7,8 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 ### Changed
 
-- Minimum Rubu version 3.0
+- Minimum Ruby version 3.0
+- SERVER: Updated .GOV.UK and .AC.UK (GH-554). The official whois servers are not responding correctly, I am reverting them to the .UK TLD.
 
 
 ## Release 5.1.1

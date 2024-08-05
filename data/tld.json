@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2023-11-08 10:10:00 UTC"
+    "updated": "2024-08-05 11:39:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -5703,18 +5703,18 @@
   "uk": {
     "host": "whois.nic.uk"
   },
-  "ac.uk": {
-    "host": "whois.ja.net"
-  },
+  // "ac.uk": {
+  //   "host": "whois.nic.ac.uk"
+  // },
   "bl.uk": {
     "adapter": "none"
   },
   "british-library.uk": {
     "adapter": "none"
   },
-  "gov.uk": {
-    "host": "whois.ja.net"
-  },
+  // "gov.uk": {
+  //   "host": "whois.gov.uk"
+  // },
   "icnet.uk": {
     "adapter": "none"
   },
