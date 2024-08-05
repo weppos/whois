@@ -5,6 +5,10 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 ## major
 
+### Fixed
+
+- Fixed badly anchored regular expression (GH-661)
+
 ### Changed
 
 - Minimum Ruby version 3.0
