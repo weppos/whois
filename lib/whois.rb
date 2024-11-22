@@ -99,24 +99,24 @@ module Whois
 
     def deprecation_caller_message(callstack)
       file, line, method = extract_callstack(callstack)
-      if file
-        if line && method
-          "(called from #{method} at #{file}:#{line})"
-        else
-          "(called from #{file}:#{line})"
-        end
+      return unless file
+
+      if line && method
+        "(called from #{method} at #{file}:#{line})"
+      else
+        "(called from #{file}:#{line})"
       end
     end
 
     def extract_callstack(callstack)
       gem_root = "#{File.expand_path('../..', __dir__)}/"
       offending_line = callstack.find { |line| !line.start_with?(gem_root) } || callstack.first
-      if offending_line
-        if (md = offending_line.match(/^(.+?):(\d+)(?::in `(.*?)')?/))
-          md.captures
-        else
-          offending_line
-        end
+      return unless offending_line
+
+      if (md = offending_line.match(/^(.+?):(\d+)(?::in `(.*?)')?/))
+        md.captures
+      else
+        offending_line
       end
     end
   end
