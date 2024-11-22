@@ -32,7 +32,7 @@ module Whois
         #
         # @raise  [Whois::WebInterfaceError] For every request.
         #
-        def request(string)
+        def request(_string)
           raise WebInterfaceError, options[:url]
         end
 

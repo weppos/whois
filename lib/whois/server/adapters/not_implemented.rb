@@ -22,7 +22,7 @@ module Whois
         #
         # @raise  [Whois::ServerNotImplemented] For every request.
         #
-        def request(string)
+        def request(_string)
           raise ServerNotImplemented, "The `#{host}' feature has not been implemented yet."
         end
 

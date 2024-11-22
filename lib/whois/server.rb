@@ -283,7 +283,7 @@ module Whois
       # @param  string [String]
       # @raise  [Whois::ServerNotSupported]
       #         emails are not supported.
-      def find_for_email(string)
+      def find_for_email(_string)
         raise ServerNotSupported, "No WHOIS server is known for email objects"
       end
 

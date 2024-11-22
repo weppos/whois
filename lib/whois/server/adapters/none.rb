@@ -36,7 +36,7 @@ module Whois
         #
         # @raise  [Whois::NoInterfaceError] For every request.
         #
-        def request(string)
+        def request(_string)
           raise NoInterfaceError, "This `#{type}' has no whois server"
         end
 

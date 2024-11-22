@@ -74,7 +74,7 @@ module Whois
       result
     end
 
-    def deprecate(message = nil, callstack = caller)
+    def deprecate(message = nil, _callstack = caller)
       # warn("DEPRECATION WARNING: #{message} #{deprecation_caller_message(callstack)}")
       warn("DEPRECATION WARNING: #{message}")
     end

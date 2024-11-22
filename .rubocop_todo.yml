@@ -6,17 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods, IgnoreNotImplementedMethods.
-Lint/UnusedMethodArgument:
-  Exclude:
-    - 'lib/whois.rb'
-    - 'lib/whois/server.rb'
-    - 'lib/whois/server/adapters/none.rb'
-    - 'lib/whois/server/adapters/not_implemented.rb'
-    - 'lib/whois/server/adapters/web.rb'
-
 # Offense count: 35
 # Configuration parameters: Max.
 RSpec/ExampleLength:
