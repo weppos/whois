@@ -113,13 +113,6 @@ Style/GuardClause:
     - 'lib/whois/server/adapters/verisign.rb'
     - 'spec/support/helpers/connectivity_helper.rb'
 
-# Offense count: 13
-# Cop supports --auto-correct.
-Style/ParallelAssignment:
-  Exclude:
-    - 'spec/whois/record_spec.rb'
-    - 'spec/whois/server/adapters/base_spec.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: ConvertCodeThatCanStartToReturnNil, AllowedMethods.

@@ -40,7 +40,8 @@ describe Whois::Server::Adapters::Base do
     end
 
     it "returns true when other has same class and has the same attributes" do
-      one, two = described_class.new(*definition), described_class.new(*definition)
+      one = described_class.new(*definition)
+      two = described_class.new(*definition)
 
       expect(one == two).to be_truthy
       expect(one).to eql(two)
@@ -48,28 +49,32 @@ describe Whois::Server::Adapters::Base do
 
     it "returns true when other has descendant class and has the same attributes" do
       subklass = Class.new(described_class)
-      one, two = described_class.new(*definition), subklass.new(*definition)
+      one = described_class.new(*definition)
+      two = subklass.new(*definition)
 
       expect(one == two).to be_truthy
       expect(one).to eql(two)
     end
 
     it "returns false when other has different class and has the same attributes" do
-      one, two = described_class.new(*definition), Struct.new(:type, :allocation, :host, :options).new(*definition)
+      one = described_class.new(*definition)
+      two = Struct.new(:type, :allocation, :host, :options).new(*definition)
 
       expect(one == two).to be_falsey
       expect(one).not_to eql(two)
     end
 
     it "returns false when other has different attributes" do
-      one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".cool", "whois.test")
+      one = described_class.new(:tld, ".test", "whois.test")
+      two = described_class.new(:tld, ".cool", "whois.test")
 
       expect(one == two).to be_falsey
       expect(one).not_to eql(two)
     end
 
     it "returns false when other has different options" do
-      one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".test", "whois.test", { foo: "bar" })
+      one = described_class.new(:tld, ".test", "whois.test")
+      two = described_class.new(:tld, ".test", "whois.test", { foo: "bar" })
 
       expect(one == two).to be_falsey
       expect(one).not_to eql(two)
