@@ -2,6 +2,12 @@
 
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
+## main
+
+### Changed
+
+- SERVER: Updated .TV (GH-662).
+
 
 ## Release 6.0.0
 
