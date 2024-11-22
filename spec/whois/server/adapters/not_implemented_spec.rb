@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe Whois::Server::Adapters::NotImplemented do
   before do
-    @definition = [:ipv6, "2001:0000::/32", "teredo", { adapter: Whois::Server::Adapters::NotImplemented }]
+    @definition = [:ipv6, "2001:0000::/32", "teredo", { adapter: described_class }]
   end
 
 

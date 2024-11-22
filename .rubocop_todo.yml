@@ -17,16 +17,6 @@ Lint/UnusedMethodArgument:
     - 'lib/whois/server/adapters/not_implemented.rb'
     - 'lib/whois/server/adapters/web.rb'
 
-# Offense count: 61
-# Cop supports --auto-correct.
-# Configuration parameters: SkipBlocks, EnforcedStyle.
-# SupportedStyles: described_class, explicit
-RSpec/DescribedClass:
-  Exclude:
-    - 'spec/integration/whois_spec.rb'
-    - 'spec/whois/server/adapters/not_implemented_spec.rb'
-    - 'spec/whois/server_spec.rb'
-
 # Offense count: 35
 # Configuration parameters: Max.
 RSpec/ExampleLength:

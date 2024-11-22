@@ -13,7 +13,7 @@ describe Whois do
           .with("example.it", "whois.nic.it", 43)
           .and_return(response)
 
-        record = Whois.lookup("example.it")
+        record = described_class.lookup("example.it")
 
         expect(record).to be_a(Whois::Record)
         # expect(record.available?).to be_truthy
