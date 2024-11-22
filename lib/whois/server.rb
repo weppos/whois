@@ -9,8 +9,8 @@
 #++
 
 
-require 'ipaddr'
-require 'json'
+require "ipaddr"
+require "json"
 require "whois/server/adapters/base"
 require "whois/server/adapters/arin"
 require "whois/server/adapters/arpa"
@@ -67,7 +67,7 @@ module Whois
       # @return [void]
       def load_definitions
         clear_definitions
-        Dir[File.expand_path('../../data/*.json', __dir__)].each { |f| load_json(f) }
+        Dir[File.expand_path("../../data/*.json", __dir__)].each { |f| load_json(f) }
       end
 
       # Loads the definitions from a JSON file.
@@ -363,7 +363,7 @@ module Whois
       end
 
       def matches_email?(string)
-        string.include?('@')
+        string.include?("@")
       end
 
       def matches_asn?(string)

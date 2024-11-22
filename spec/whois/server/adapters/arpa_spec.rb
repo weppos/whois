@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-require 'whois/server/adapters/arin'
+require "spec_helper"
+require "whois/server/adapters/arin"
 
 describe Whois::Server::Adapters::Arpa do
   let(:definition) { [:tld, ".in-addr.arpa", nil, {}] }

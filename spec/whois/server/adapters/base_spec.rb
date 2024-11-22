@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe Whois::Server::Adapters::Base do
   let(:definition) { [:tld, ".test", "whois.test", { foo: "bar" }] }

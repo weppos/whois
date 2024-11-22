@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe Whois::Server::Adapters::Formatted do
   let(:definition) { [:tld, ".de", "whois.denic.de", { format: "-T dn,ace -C US-ASCII %s" }] }

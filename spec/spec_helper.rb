@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require 'whois'
+require "rspec"
+require "whois"
 
 SPEC_ROOT = File.expand_path(__dir__) unless defined?(SPEC_ROOT)
 

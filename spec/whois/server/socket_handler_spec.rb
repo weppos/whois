@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-require 'whois/server/socket_handler'
+require "spec_helper"
+require "whois/server/socket_handler"
 
 describe Whois::Server::SocketHandler do
   describe "#call" do

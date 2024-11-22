@@ -9,7 +9,7 @@
 #++
 
 
-require 'timeout'
+require "timeout"
 
 
 module Whois

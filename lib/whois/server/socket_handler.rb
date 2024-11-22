@@ -9,8 +9,8 @@
 #++
 
 
-require 'socket'
-require 'whois/errors'
+require "socket"
+require "whois/errors"
 
 
 module Whois

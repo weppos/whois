@@ -9,9 +9,9 @@
 #++
 
 
-require 'whois/record/part'
-require 'whois/record'
-require 'whois/server/socket_handler'
+require "whois/record/part"
+require "whois/record"
+require "whois/server/socket_handler"
 
 
 module Whois

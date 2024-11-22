@@ -9,7 +9,7 @@
 #++
 
 
-require 'whois/record/part'
+require "whois/record/part"
 
 
 module Whois

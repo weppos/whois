@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe Whois::Server::Adapters::Arin do
   let(:definition) { [:ipv4, "0.0.0.0/1", "whois.arin.net"] }
