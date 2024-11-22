@@ -35,7 +35,6 @@ class TldDefs
         format: :format,
         url: :url,
 
-        group: :_group,
         note: :_note,
         type: :_type,
     }
