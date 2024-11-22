@@ -36,14 +36,14 @@ describe Whois::Server::Adapters::Base do
       one = two = described_class.new(*definition)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns true when other has same class and has the same attributes" do
       one, two = described_class.new(*definition), described_class.new(*definition)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns true when other has descendant class and has the same attributes" do
@@ -51,28 +51,28 @@ describe Whois::Server::Adapters::Base do
       one, two = described_class.new(*definition), subklass.new(*definition)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns false when other has different class and has the same attributes" do
       one, two = described_class.new(*definition), Struct.new(:type, :allocation, :host, :options).new(*definition)
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
 
     it "returns false when other has different attributes" do
       one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".cool", "whois.test")
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
 
     it "returns false when other has different options" do
       one, two = described_class.new(:tld, ".test", "whois.test"), described_class.new(:tld, ".test", "whois.test", { foo: "bar" })
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
   end
 

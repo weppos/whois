@@ -65,14 +65,14 @@ describe Whois::Record do
       one = two = described_class.new(server, parts)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns true when other has same class and has the same parts" do
       one, two = described_class.new(server, parts), described_class.new(server, parts)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns true when other has descendant class and has the same parts" do
@@ -80,49 +80,49 @@ describe Whois::Record do
       one, two = described_class.new(server, parts), subklass.new(server, parts)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns true when other has same class and has equal parts" do
       one, two = described_class.new(server, parts), described_class.new(server, parts.dup)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns true when other has same class, different server and the same parts" do
       one, two = described_class.new(server, parts), described_class.new(nil, parts)
 
       expect(one == two).to be_truthy
-      expect(one.eql?(two)).to be_truthy
+      expect(one).to eql(two)
     end
 
     it "returns false when other has different class and has the same parts" do
       one, two = described_class.new(server, parts), Struct.new(:server, :parts).new(server, parts)
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
 
     it "returns false when other has different parts" do
       one, two = described_class.new(server, parts), described_class.new(server, [])
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
 
     it "returns false when other is string and has the same content" do
       one, two = described_class.new(server, parts), described_class.new(server, parts).to_s
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
 
     it "returns false when other is string and has different content" do
       one, two = described_class.new(server, parts), "different"
 
       expect(one == two).to be_falsey
-      expect(one.eql?(two)).to be_falsey
+      expect(one).not_to eql(two)
     end
   end
 
