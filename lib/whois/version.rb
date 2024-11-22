@@ -11,5 +11,5 @@
 
 module Whois
   # The current library version.
-  VERSION = "6.0.0"
+  VERSION = "6.0.1"
 end
