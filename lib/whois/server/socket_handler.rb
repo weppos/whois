@@ -58,7 +58,7 @@ module Whois
         client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
         client.read                     # but write/read is more symmetric than puts/read
       ensure                            # and I really want to use read instead of gets.
-        client.close if client          # If != client something went wrong.
+        client&.close # If != client something went wrong.
       end
     end
 
