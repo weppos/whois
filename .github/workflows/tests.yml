@@ -16,9 +16,7 @@ jobs:
           - "3.2"
           - "3.3"
           - "3.4"
-        platform:
-          - ubuntu-latest
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - name: Set up Ruby
