@@ -2,7 +2,7 @@ inherit_from:
   - .rubocop_opinionated.yml
   - .rubocop_todo.yml
 
-require:
+plugins:
   - rubocop-rspec
 
 AllCops:

@@ -35,7 +35,7 @@ module Whois
           a, b, c, d = string.scan(/[0-9]{1,3}\./).reverse
           [a, b, c, d].map do |token|
             token = (token || 0).to_i
-            raise ServerError, "Invalid .in-addr.arpa token `#{token}'" unless token <= 255 && token >= 0
+            raise ServerError, "Invalid .in-addr.arpa token `#{token}'" unless token.between?(0, 255)
 
             token
           end.join(".")
