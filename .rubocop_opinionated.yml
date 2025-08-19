@@ -123,13 +123,3 @@ Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: consistent_comma
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
-
-Style/TrivialAccessors:
-  # IgnoreClassMethods because I want to be able to define class-level accessors
-  # that sets an instance variable on the metaclass, such as:
-  #
-  #    def self.default=(value)
-  #      @default = value
-  #    end
-  #
-  IgnoreClassMethods: true
