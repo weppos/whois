@@ -4,37 +4,37 @@
 
 Fork, then clone the repo:
 
-```
+```shell
 git clone git@github.com:your-username/whois.git
 ```
 
 Set up your machine:
 
-```
+```shell
 bundle
 ```
 
 Make sure the tests pass:
 
-```
+```shell
 bundle exec rake
 ```
 
 To propose a change/feature/patch, create your feature branch:
 
-```
+```shell
 git checkout -b my-new-feature
 ```
 
 Make your change. Add tests for your change. Make the tests pass:
 
-```
+```shell
 bundle exec rake
 ```
 
 Commit your changes:
 
-```
+```shell
 git commit -am 'Add some feature'
 ```
 
