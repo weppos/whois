@@ -13,9 +13,7 @@ require "timeout"
 
 
 module Whois
-
   class Client
-
     # The maximum time to run a WHOIS query, expressed in seconds.
     #
     # @return [Fixnum] Timeout value in seconds.
@@ -96,7 +94,5 @@ module Whois
         @server.lookup(string)
       end
     end
-
   end
-
 end

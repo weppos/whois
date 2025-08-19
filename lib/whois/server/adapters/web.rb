@@ -12,7 +12,6 @@
 module Whois
   class Server
     module Adapters
-
       #
       # = Web Adapter
       #
@@ -23,7 +22,6 @@ module Whois
       # adapter, just a little bit more specific.
       #
       class Web < Base
-
         # Always raises a {Whois::WebInterfaceError} exception
         # including the web address for the WHOIS inteface.
         #
@@ -35,9 +33,7 @@ module Whois
         def request(_string)
           raise WebInterfaceError, options[:url]
         end
-
       end
-
     end
   end
 end

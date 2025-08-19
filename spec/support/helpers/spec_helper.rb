@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module RSpecSupportSpecHelpers
-
   def fixture(*names)
     File.join(SPEC_ROOT, "fixtures", *names)
   end
@@ -25,7 +24,6 @@ module RSpecSupportSpecHelpers
   def definitions_teardown
     Whois::Server.send :instance_variable_set, :@definitions, @_definitions
   end
-
 end
 
 RSpec.configure do |config|

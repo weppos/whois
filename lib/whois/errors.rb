@@ -10,7 +10,6 @@
 
 
 module Whois
-
   # The base error class for all <tt>Whois</tt> error classes.
   class Error < StandardError
   end
@@ -73,7 +72,6 @@ module Whois
   # standard WHOIS interface via port 43. This is the case of some
   # specific domains that only provide a web-based WHOIS interface. (\x01)
   class WebInterfaceError < InterfaceNotSupported
-
     # @return [String] The URL of the web-based WHOIS interface.
     attr_reader :url
 
@@ -84,9 +82,7 @@ module Whois
       @url = url
       super("This TLD has no WHOIS server, but you can access the WHOIS database at `#{@url}'")
     end
-
   end
 
   # @!endgroup
-
 end

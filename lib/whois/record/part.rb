@@ -11,7 +11,6 @@
 
 module Whois
   class Record
-
     # A single {Whois::Record} fragment. For instance,
     # in case of *thin server*, a {Whois::Record} can be composed by
     # one or more parts corresponding to all responses
@@ -42,6 +41,5 @@ module Whois
         end
       end
     end
-
   end
 end

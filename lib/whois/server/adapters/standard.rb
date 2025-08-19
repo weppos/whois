@@ -12,7 +12,6 @@
 module Whois
   class Server
     module Adapters
-
       #
       # = Standard Adapter
       #
@@ -38,7 +37,6 @@ module Whois
       # * +:port+ - Specifies a port number different than 43
       #
       class Standard < Base
-
         # Executes a WHOIS query to the WHOIS interface
         # listening at +host+ and appends the response
         # to the client buffer.
@@ -53,9 +51,7 @@ module Whois
           response = query_the_socket(string, host)
           buffer_append response, host
         end
-
       end
-
     end
   end
 end

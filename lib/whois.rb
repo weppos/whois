@@ -17,9 +17,7 @@ require "whois/record"
 
 
 module Whois
-
   class << self
-
     # Queries the WHOIS server for <tt>object</tt> and returns
     # the response from the server.
     #
@@ -120,5 +118,4 @@ module Whois
       end
     end
   end
-
 end

@@ -79,16 +79,6 @@ Style/Documentation:
 Layout/EmptyLines:
   Enabled: false
 
-# In most cases, a space is nice. Sometimes, it's not.
-# Just be consistent with the rest of the surrounding code.
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
-
-# In most cases, a space is nice. Sometimes, it's not.
-# Just be consistent with the rest of the surrounding code.
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
-
 # This is quite buggy, as it doesn't recognize double lines.
 # Double empty lines are useful to separate conceptually different methods
 # in the same class or module.

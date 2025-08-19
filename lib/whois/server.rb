@@ -24,14 +24,12 @@ require "whois/server/adapters/web"
 
 
 module Whois
-
   # The {Whois::Server} class has two important roles:
   #
   # 1. it acts as a database for the WHOIS server definitions
   # 2. it is responsible for selecting the right adapter used to handle the query to the WHOIS server(s).
   #
   class Server
-
     # The {Whois::Server::Adapters} module is a namespace for all
     # WHOIS server adapters. Each adapter is a subclass of {Whois::Server::Adapters::Base},
     # customized to handle WHOIS queries for a type or a group of servers.
@@ -52,7 +50,6 @@ module Whois
     private_constant :EMPTY_HASH
 
     class << self
-
       # Clears the definition and reset them to an empty list.
       #
       # @return [void]
@@ -390,10 +387,8 @@ module Whois
 
         false
       end
-
     end
   end
-
 end
 
 Whois::Server.load_definitions

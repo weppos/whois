@@ -12,9 +12,7 @@
 module Whois
   class Server
     module Adapters
-
       class NotImplemented < Base
-
         # Always raises a {Whois::ServerNotImplemented} exception.
         #
         # @param  [String] string
@@ -25,9 +23,7 @@ module Whois
         def request(_string)
           raise ServerNotImplemented, "The `#{host}' feature has not been implemented yet."
         end
-
       end
-
     end
   end
 end

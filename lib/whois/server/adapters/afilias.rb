@@ -12,14 +12,12 @@
 module Whois
   class Server
     module Adapters
-
       #
       # = Afilias Adapter
       #
       # Provides ability to query Afilias WHOIS interfaces.
       #
       class Afilias < Base
-
         # Executes a WHOIS query to the Afilias WHOIS interface,
         # resolving any intermediate referral,
         # and appends the response to the client buffer.
@@ -46,9 +44,7 @@ module Whois
           server = match[match.size - 1].strip
           server.empty? ? nil : server
         end
-
       end
-
     end
   end
 end

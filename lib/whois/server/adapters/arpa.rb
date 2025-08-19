@@ -12,9 +12,7 @@
 module Whois
   class Server
     module Adapters
-
       class Arpa < Base
-
         def request(string)
           record = Server.guess(inaddr_to_ip(string)).lookup(string)
           part   = record.parts.first
@@ -40,9 +38,7 @@ module Whois
             token
           end.join(".")
         end
-
       end
-
     end
   end
 end

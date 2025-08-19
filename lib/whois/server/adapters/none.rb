@@ -12,7 +12,6 @@
 module Whois
   class Server
     module Adapters
-
       #
       # = None Adapter
       #
@@ -28,7 +27,6 @@ module Whois
       # adapter raises a {Whois::NoInterfaceError} exception.
       #
       class None < Base
-
         # Always raises a {Whois::NoInterfaceError} exception.
         #
         # @param  [String] string
@@ -39,9 +37,7 @@ module Whois
         def request(_string)
           raise NoInterfaceError, "This `#{type}' has no whois server"
         end
-
       end
-
     end
   end
 end

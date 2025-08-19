@@ -17,7 +17,6 @@ require "whois/server/socket_handler"
 module Whois
   class Server
     module Adapters
-
       class Base
         class << self
           def query_handler
@@ -170,9 +169,7 @@ module Whois
         end
 
         alias query_the_socket query
-
       end
-
     end
   end
 end

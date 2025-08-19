@@ -15,12 +15,10 @@ require "whois/errors"
 
 module Whois
   class Server
-
     # The SocketHandler is the default query handler provided with the
     # Whois library. It performs the WHOIS query using a synchronous
     # socket connection.
     class SocketHandler
-
       # Array of connection errors to rescue
       # and wrap into a {Whois::ConnectionError}
       RESCUABLE_CONNECTION_ERRORS = [
@@ -61,6 +59,5 @@ module Whois
         client&.close # If != client something went wrong.
       end
     end
-
   end
 end

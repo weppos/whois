@@ -12,14 +12,12 @@
 module Whois
   class Server
     module Adapters
-
       #
       # = Verisign Adapter
       #
       # Provides ability to query Verisign WHOIS interfaces.
       #
       class Verisign < Base
-
         # Executes a WHOIS query to the Verisign WHOIS interface,
         # resolving any intermediate referral,
         # and appends the response to the client buffer.
@@ -46,9 +44,7 @@ module Whois
           server = match[match.size - 1].strip
           server.empty? ? nil : server
         end
-
       end
-
     end
   end
 end

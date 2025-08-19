@@ -12,14 +12,12 @@
 module Whois
   class Server
     module Adapters
-
       #
       # = Arin Adapter
       #
       # Provides ability to query Arin WHOIS interfaces.
       #
       class Arin < Base
-
         # Executes a WHOIS query to the Arin WHOIS interface,
         # resolving any intermediate referral,
         # and appends the response to the client buffer.
@@ -47,9 +45,7 @@ module Whois
             port: Regexp.last_match(2)&.to_i,
           }
         end
-
       end
-
     end
   end
 end

@@ -13,10 +13,7 @@ require "whois/record/part"
 
 
 module Whois
-
   class Record
-
-
     # @return [Whois::Server] The server that originated this record.
     attr_reader :server
 
@@ -113,7 +110,5 @@ module Whois
     def content
       @content ||= parts.map(&:body).join("\n")
     end
-
   end
-
 end
