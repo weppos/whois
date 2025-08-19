@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2024-11-02 13:38:00 UTC"
+    "updated": "2025-08-19 13:40:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -2488,7 +2488,7 @@
     "host": "whois.nic.immobilien"
   },
   "in": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "inc": {
     "_type": "newgtld",
@@ -5042,18 +5042,12 @@
   "uk": {
     "host": "whois.nic.uk"
   },
-  // "ac.uk": {
-  //   "host": "whois.nic.ac.uk"
-  // },
   "bl.uk": {
     "adapter": "none"
   },
   "british-library.uk": {
     "adapter": "none"
   },
-  // "gov.uk": {
-  //   "host": "whois.gov.uk"
-  // },
   "icnet.uk": {
     "adapter": "none"
   },
@@ -5420,7 +5414,7 @@
   },
   "xn--2scrj9c": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--30rr7y": {
     "_type": "newgtld",
@@ -5438,7 +5432,7 @@
     "host": "whois.kr"
   },
   "xn--3hcrj9c": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--3oq18vl8pn36a": {
     "_type": "newgtld",
@@ -5454,10 +5448,10 @@
   },
   "xn--45br5cyl": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--45brj9c": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--45q11c": {
     "_type": "newgtld",
@@ -5623,7 +5617,7 @@
     "host": "whois.nic.google"
   },
   "xn--fpcrj9c3d": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--fzc2c9e2c": {
     "host": "whois.nic.lk"
@@ -5641,7 +5635,7 @@
     "adapter": "none"
   },
   "xn--gecrj9c": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--gk3at1e": {
     "_type": "newgtld",
@@ -5649,14 +5643,14 @@
   },
   "xn--h2breg3eve": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--h2brj9c": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--h2brj9c8c": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--hxt814e": {
     "_type": "newgtld",
@@ -5753,10 +5747,10 @@
   },
   "xn--mgbbh1a": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--mgbbh1a71e": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--mgbc0a9azcg": {
     "adapter": "none"
@@ -5770,7 +5764,7 @@
   },
   "xn--mgbgu82a": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--mgbi4ecexp": {
     "_type": "newgtld",
@@ -5872,10 +5866,10 @@
   },
   "xn--rvc1e0am3e": {
     "_type": "newgtld",
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--s9brj9c": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--ses554g": {
     "_type": "newgtld",
@@ -5935,7 +5929,7 @@
     "host": "whois.nic.lk"
   },
   "xn--xkc2dl3a5ee0h": {
-    "host": "whois.registry.in"
+    "host": "whois.nixiregistry.in"
   },
   "xn--y9a3aq": {
     "host": "whois.amnic.net"
