@@ -83,7 +83,7 @@ Layout/EmptyLines:
 # Double empty lines are useful to separate conceptually different methods
 # in the same class or module.
 Layout/EmptyLineBetweenDefs:
-  Enabled: false
+  NumberOfEmptyLines: [1, 2]
 
 # Annotated tokens (like %<foo>s) are a good thing, but in most cases we don't need them.
 # %s is a simpler and straightforward version that works in almost all cases. So don't complain.
