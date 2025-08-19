@@ -3,7 +3,9 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
-## main
+## Release 6.0.2
+
+### Changed
 
 - SERVER: Updated .IN and other registry.in TLDs (GH-663).
 
