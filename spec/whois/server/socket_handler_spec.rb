@@ -7,9 +7,11 @@ describe Whois::Server::SocketHandler do
   describe "#call" do
     [Errno::ECONNRESET, Errno::EHOSTUNREACH, Errno::ECONNREFUSED, Errno::ETIMEDOUT, Errno::EPIPE, SocketError].each do |error|
       it "re-raises #{error} as Whois::ConnectionError" do
-        expect(subject).to receive(:execute).and_raise(error)
+        handler = described_class.new
+        expect(handler).to receive(:execute).and_raise(error)
+
         expect {
-          subject.call("example.test", "whois.test", 43)
+          handler.call("example.test", "whois.test", 43)
         }.to raise_error(Whois::ConnectionError, "#{error}: #{error.new.message}")
       end
 
@@ -22,7 +24,9 @@ describe Whois::Server::SocketHandler do
         expect(TCPSocket).to receive(:new)
           .with("whois.test", 43)
           .and_return(socket)
-        subject.call("example.test", "whois.test", 43)
+
+        handler = described_class.new
+        handler.call("example.test", "whois.test", 43)
       end
     end
   end
