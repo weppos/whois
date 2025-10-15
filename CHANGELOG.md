@@ -8,6 +8,7 @@ This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 ### Changed
 
 - SERVER: Updated .CO (GH-669).
+- SERVER: Updated .TR (GH-667).
 
 
 ## Release 6.0.2

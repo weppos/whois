@@ -1,7 +1,7 @@
 {
   "_": {
     "schema": "2",
-    "updated": "2025-10-15 09:22:00 UTC"
+    "updated": "2025-10-15 09:25:00 UTC"
   },
   "aaa": {
     "_type": "newgtld",
@@ -4952,7 +4952,7 @@
     "host": "whois.nic.toys"
   },
   "tr": {
-    "host": "whois.nic.tr"
+    "host": "whois.trabis.gov.tr"
   },
   "trade": {
     "_type": "newgtld",
