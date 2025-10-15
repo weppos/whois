@@ -3,6 +3,13 @@
 This project uses [Semantic Versioning 2.0.0](http://semver.org/).
 
 
+## Release 6.0.3
+
+### Changed
+
+- SERVER: Updated .CO (GH-669).
+
+
 ## Release 6.0.2
 
 ### Changed
