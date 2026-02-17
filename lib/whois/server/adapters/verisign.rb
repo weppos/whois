@@ -41,7 +41,7 @@ module Whois
         def extract_referral(response)
           return unless (match = response.match(/Registrar WHOIS Server:(.+?)$/))
 
-          server = match[match.size - 1].strip
+          server = match[-1].strip
           server.empty? ? nil : server
         end
       end
