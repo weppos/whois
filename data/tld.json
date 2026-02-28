@@ -4805,6 +4805,10 @@
     "_type": "newgtld",
     "host": "whois.nic.technology"
   },
+  "technology": {
+    "_type": "newgtld",
+    "host": "whois.ovh.com"
+  },
   "tel": {
     "host": "whois.nic.tel"
   },
