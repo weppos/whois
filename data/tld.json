@@ -155,6 +155,10 @@
   "al": {
     "adapter": "none"
   },
+  "int.al": {
+    "_type": "private",
+    "host": "whois43.publiczone.org"
+  },
   "alfaromeo": {
     "_type": "newgtld",
     "host": "whois.afilias-srs.net"
@@ -2331,6 +2335,10 @@
   "hm": {
     "host": "whois.registry.hm"
   },
+  "ac.hm": {
+    "_type": "private",
+    "host": "whois43.publiczone.org"
+  },
   "hn": {
     "host": "whois.nic.hn"
   },
@@ -3245,6 +3253,10 @@
   },
   "mn": {
     "host": "whois.nic.mn"
+  },
+  "nyc.mn": {
+    "_type": "private",
+    "host": "whois43.publiczone.org"
   },
   "mo": {
     "host": "whois.monic.mo"
@@ -4613,6 +4625,10 @@
   },
   "st": {
     "host": "whois.nic.st"
+  },
+  "cn.st": {
+    "_type": "private",
+    "host": "whois43.publiczone.org"
   },
   "stada": {
     "_type": "newgtld",
